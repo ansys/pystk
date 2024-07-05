@@ -3,7 +3,7 @@ VectorGeometryToolAxesFixed
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesFixed
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFixed`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFixed`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes fixed in reference axes.
 

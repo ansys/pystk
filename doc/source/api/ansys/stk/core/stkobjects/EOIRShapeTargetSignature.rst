@@ -3,7 +3,7 @@ EOIRShapeTargetSignature
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeTargetSignature
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeTargetSignature`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeTargetSignature`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    TargetSignature shape class.
 

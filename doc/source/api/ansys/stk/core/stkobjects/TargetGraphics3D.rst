@@ -3,7 +3,7 @@ TargetGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.TargetGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITargetGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITargetGraphics3D`
 
    Class defining 3D Graphics for a Target object.
 

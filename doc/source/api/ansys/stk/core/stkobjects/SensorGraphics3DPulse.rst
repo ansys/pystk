@@ -3,7 +3,7 @@ SensorGraphics3DPulse
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DPulse
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DPulse`
 
    Class defining 3D pulse properties of a Sensor.
 

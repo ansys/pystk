@@ -3,7 +3,7 @@ PickInfoData
 
 .. py:class:: ansys.stk.core.stkx.PickInfoData
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IPickInfoData`
+   Bases: :py:class:`~ansys.stk.core.stkx.IPickInfoData`
 
    Single mouse pick result.
 

@@ -3,7 +3,7 @@ DirectionRADec
 
 .. py:class:: ansys.stk.core.stkutil.DirectionRADec
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IDirectionRADec`, py:obj:`~ansys.stk.core.stkutil.IDirection`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IDirectionRADec`, :py:class:`~ansys.stk.core.stkutil.IDirection`
 
    Spherical direction (Right Ascension and Declination).
 

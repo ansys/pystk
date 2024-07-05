@@ -3,7 +3,7 @@ BandExtractFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.BandExtractFilterFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IBandExtractFilterFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IBandExtractFilterFactory`
 
    Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
 

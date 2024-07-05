@@ -3,7 +3,7 @@ VehicleAttitudeSlewConstrained
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeSlewConstrained
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewConstrained`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
 
    Constrained slew mode.
 

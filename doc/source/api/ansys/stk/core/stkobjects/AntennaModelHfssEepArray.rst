@@ -3,7 +3,7 @@ AntennaModelHfssEepArray
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelHfssEepArray
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelHfssEepArray`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an HFSS EEP array antenna model.
 

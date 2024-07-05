@@ -3,7 +3,7 @@ StateCalcOrbitDelaunayH
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitDelaunayH
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayH`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitDelaunayH`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass AsStateCalcOrbitDelaunayH.
 

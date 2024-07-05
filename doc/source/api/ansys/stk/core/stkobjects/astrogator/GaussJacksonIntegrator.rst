@@ -3,7 +3,7 @@ GaussJacksonIntegrator
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IGaussJacksonIntegrator`, :py:class:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    Gauss-Jackson Numerical Integrator.
 

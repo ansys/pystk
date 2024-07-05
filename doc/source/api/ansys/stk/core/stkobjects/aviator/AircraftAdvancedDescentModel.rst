@@ -3,7 +3,7 @@ AircraftAdvancedDescentModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAdvancedDescentModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftAdvancedDescentModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the advanced descent performance model for an Aviator aircraft.
 

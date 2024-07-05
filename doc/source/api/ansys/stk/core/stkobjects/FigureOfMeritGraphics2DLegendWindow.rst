@@ -3,7 +3,7 @@ FigureOfMeritGraphics2DLegendWindow
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLegendWindow
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DLegendWindow`
 
    Properties of contour legend on 2D map.
 

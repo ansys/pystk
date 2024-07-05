@@ -3,7 +3,7 @@ VehicleGraphics3DSystemsElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElement`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase`
 
    Element for reference system used for displaying vehicle orbits and trajectories.
 

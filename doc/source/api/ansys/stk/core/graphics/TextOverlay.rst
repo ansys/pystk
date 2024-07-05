@@ -3,7 +3,7 @@ TextOverlay
 
 .. py:class:: ansys.stk.core.graphics.TextOverlay
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITextOverlay`, py:obj:`~ansys.stk.core.graphics.IScreenOverlay`, py:obj:`~ansys.stk.core.graphics.IOverlay`, py:obj:`~ansys.stk.core.graphics.IScreenOverlayContainer`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITextOverlay`, :py:class:`~ansys.stk.core.graphics.IScreenOverlay`, :py:class:`~ansys.stk.core.graphics.IOverlay`, :py:class:`~ansys.stk.core.graphics.IScreenOverlayContainer`
 
    A rectangular overlay that contains text.
 

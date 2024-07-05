@@ -3,7 +3,7 @@ RadarWaveformMonostaticSearchTrackFixedPRF
 
 .. py:class:: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackFixedPRF
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF`, py:obj:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformMonostaticSearchTrackFixedPRF`, :py:class:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack`
 
    Class defining a monostatic fixed PRF waveform.
 

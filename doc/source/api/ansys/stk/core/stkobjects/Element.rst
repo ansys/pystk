@@ -3,7 +3,7 @@ Element
 
 .. py:class:: ansys.stk.core.stkobjects.Element
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElement`
 
    Class defining a phased array element.
 

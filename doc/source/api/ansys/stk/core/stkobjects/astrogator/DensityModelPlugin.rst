@@ -3,7 +3,7 @@ DensityModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDensityModelPlugin`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Plugin atmospheric density propagator function.
 

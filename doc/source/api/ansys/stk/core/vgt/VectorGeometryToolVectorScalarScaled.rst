@@ -3,7 +3,7 @@ VectorGeometryToolVectorScalarScaled
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorScalarScaled
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorScalarScaled`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Scaled version of the input vector using scalar.
 

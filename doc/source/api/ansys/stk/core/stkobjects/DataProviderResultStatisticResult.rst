@@ -3,7 +3,7 @@ DataProviderResultStatisticResult
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultStatisticResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultStatisticResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultStatisticResult`
 
    Results returned by statistics computation.
 

@@ -3,7 +3,7 @@ SpacecraftParameters
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SpacecraftParameters
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ISpacecraftParameters`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Spacecraft parameters.
 

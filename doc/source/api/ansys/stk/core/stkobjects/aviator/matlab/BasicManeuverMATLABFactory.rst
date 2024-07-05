@@ -3,7 +3,7 @@ BasicManeuverMATLABFactory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.matlab.BasicManeuverMATLABFactory
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IAutomationStrategyFactory`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IAutomationStrategyFactory`
 
    Class defining the factory to create the basic maneuver PropNav strategies.
 

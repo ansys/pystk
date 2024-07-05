@@ -3,7 +3,7 @@ BisectionResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBisectionResultCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBisectionResultCollection`
 
    Bisection result collection.
 

@@ -3,7 +3,7 @@ StateCalcSEETSAAFlux
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSEETSAAFlux
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETSAAFlux`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETSAAFlux`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcSEETSAAFlux.
 

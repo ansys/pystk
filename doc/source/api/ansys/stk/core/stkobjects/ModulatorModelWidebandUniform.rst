@@ -3,7 +3,7 @@ ModulatorModelWidebandUniform
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelWidebandUniform
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a wideband uniform modulator model.
 

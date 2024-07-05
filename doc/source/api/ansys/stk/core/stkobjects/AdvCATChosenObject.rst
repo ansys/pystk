@@ -3,7 +3,7 @@ AdvCATChosenObject
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATChosenObject
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATChosenObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAdvCATChosenObject`
 
    A chosen object.
 

@@ -3,7 +3,7 @@ VectorGeometryToolAxesRefTo
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesRefTo
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesRefTo`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
 
    Represents a reference to a VGT axes.
 

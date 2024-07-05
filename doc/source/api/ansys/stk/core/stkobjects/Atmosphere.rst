@@ -3,7 +3,7 @@ Atmosphere
 
 .. py:class:: ansys.stk.core.stkobjects.Atmosphere
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphere`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment`, :py:class:`~ansys.stk.core.stkobjects.IAtmosphere`
 
    Class defining local atmosphere.
 

@@ -3,7 +3,7 @@ CoverageBoundsCustomRegions
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions`, py:obj:`~ansys.stk.core.stkobjects.ICoverageBounds`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageBoundsCustomRegions`, :py:class:`~ansys.stk.core.stkobjects.ICoverageBounds`
 
    Custom Regions.
 

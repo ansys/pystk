@@ -3,7 +3,7 @@ DemodulatorModelWidebandGaussian
 
 .. py:class:: ansys.stk.core.stkobjects.DemodulatorModelWidebandGaussian
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a wideband gaussian modulator model.
 

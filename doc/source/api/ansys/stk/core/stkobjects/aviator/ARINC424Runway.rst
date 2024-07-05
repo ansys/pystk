@@ -3,7 +3,7 @@ ARINC424Runway
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ARINC424Runway
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Runway`, py:obj:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Runway`, :py:class:`~ansys.stk.core.stkobjects.aviator.IARINC424Item`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogRunway`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogWaypoint`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining an ARINC424 Runway.
 

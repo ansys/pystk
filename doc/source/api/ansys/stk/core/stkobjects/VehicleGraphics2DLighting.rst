@@ -3,7 +3,7 @@ VehicleGraphics2DLighting
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLighting
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLighting`
 
    Lighting.
 

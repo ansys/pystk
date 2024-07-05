@@ -3,7 +3,7 @@ StateCalcCloseApproachY
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachY
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCloseApproachY`
 
    CloseApproachY Calc objects.
 

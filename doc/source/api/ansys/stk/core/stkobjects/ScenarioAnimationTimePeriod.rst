@@ -3,7 +3,7 @@ ScenarioAnimationTimePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenarioAnimationTimePeriod`
 
    Configure the scenario's animation time.
 

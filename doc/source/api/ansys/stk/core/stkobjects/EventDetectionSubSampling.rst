@@ -3,7 +3,7 @@ EventDetectionSubSampling
 
 .. py:class:: ansys.stk.core.stkobjects.EventDetectionSubSampling
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling`, py:obj:`~ansys.stk.core.stkobjects.IEventDetectionStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEventDetectionSubSampling`, :py:class:`~ansys.stk.core.stkobjects.IEventDetectionStrategy`
 
    Event detection strategy involving subsampling.
 

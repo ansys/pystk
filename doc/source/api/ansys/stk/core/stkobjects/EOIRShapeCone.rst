@@ -3,7 +3,7 @@ EOIRShapeCone
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeCone
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCone`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCone`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Cone shape class.
 

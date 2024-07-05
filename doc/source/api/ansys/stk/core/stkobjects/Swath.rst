@@ -3,7 +3,7 @@ Swath
 
 .. py:class:: ansys.stk.core.stkobjects.Swath
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISwath`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISwath`
 
    Class defining Swath properties.
 

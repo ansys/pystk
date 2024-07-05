@@ -3,7 +3,7 @@ RadarActivity
 
 .. py:class:: ansys.stk.core.stkobjects.RadarActivity
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarActivity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarActivity`
 
    Class defining radar activity.
 

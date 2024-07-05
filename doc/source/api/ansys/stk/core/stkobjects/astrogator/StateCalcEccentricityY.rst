@@ -3,7 +3,7 @@ StateCalcEccentricityY
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEccentricityY
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityY`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityY`
 
    EccentricityY Calc objects.
 

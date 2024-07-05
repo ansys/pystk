@@ -3,7 +3,7 @@ SensorHalfPowerPattern
 
 .. py:class:: ansys.stk.core.stkobjects.SensorHalfPowerPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`, :py:class:`~ansys.stk.core.stkobjects.ISensorHalfPowerPattern`
 
    Class defining the half-power pattern for a Sensor.
 

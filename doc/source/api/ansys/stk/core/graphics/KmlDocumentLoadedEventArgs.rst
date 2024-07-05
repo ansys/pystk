@@ -3,7 +3,7 @@ KmlDocumentLoadedEventArgs
 
 .. py:class:: ansys.stk.core.graphics.KmlDocumentLoadedEventArgs
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs`
 
    The event is raised when a KML document has been loaded.
 

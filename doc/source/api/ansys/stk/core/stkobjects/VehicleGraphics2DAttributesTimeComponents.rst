@@ -3,7 +3,7 @@ VehicleGraphics2DAttributesTimeComponents
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesTimeComponents
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesTimeComponents`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState`
 
    Allow configuring the 2D attributes using the time components.
 

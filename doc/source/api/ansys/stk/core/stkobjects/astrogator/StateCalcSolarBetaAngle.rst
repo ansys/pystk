@@ -3,7 +3,7 @@ StateCalcSolarBetaAngle
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSolarBetaAngle`
 
    Solar Beta Angle objects.
 

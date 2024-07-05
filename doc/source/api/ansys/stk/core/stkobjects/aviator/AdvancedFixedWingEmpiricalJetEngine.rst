@@ -3,7 +3,7 @@ AdvancedFixedWingEmpiricalJetEngine
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingEmpiricalJetEngine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingEmpiricalJetEngine`
 
    Class defining the Turbojet and Turbofan empirical models in the Advanced Fixed Wing Tool.
 

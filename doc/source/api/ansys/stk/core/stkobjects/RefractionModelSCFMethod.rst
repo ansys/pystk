@@ -3,7 +3,7 @@ RefractionModelSCFMethod
 
 .. py:class:: ansys.stk.core.stkobjects.RefractionModelSCFMethod
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRefractionModelSCFMethod`
 
    SCF Method.
 

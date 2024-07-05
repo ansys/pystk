@@ -3,7 +3,7 @@ ReferenceStateForwardFlightOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateForwardFlightOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IReferenceStateForwardFlightOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IReferenceStateForwardFlightOptions`
 
    Class defining the Forward Flight options for a Reference State procedure.
 

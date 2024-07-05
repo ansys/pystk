@@ -3,7 +3,7 @@ SensorEOIRSaturationCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRSaturationCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorEOIRSaturationCollection`
 
    Class defining the Saturations collection for an EOIR Sensor.
 

@@ -3,7 +3,7 @@ AtmosphericAbsorptionModel
 
 .. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 

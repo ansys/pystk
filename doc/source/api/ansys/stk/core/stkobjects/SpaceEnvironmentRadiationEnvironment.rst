@@ -3,7 +3,7 @@ SpaceEnvironmentRadiationEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadiationEnvironment`
 
    Radiation Environment model settings.
 

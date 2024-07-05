@@ -3,7 +3,7 @@ ChainConstraints
 
 .. py:class:: ansys.stk.core.stkobjects.ChainConstraints
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainConstraints`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainConstraints`
 
    Chain constraints.
 

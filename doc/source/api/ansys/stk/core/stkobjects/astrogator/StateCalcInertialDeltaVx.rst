@@ -3,7 +3,7 @@ StateCalcInertialDeltaVx
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcInertialDeltaVx
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVx`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcInertialDeltaVx`
 
    InertialDeltaVx Calc objects.
 

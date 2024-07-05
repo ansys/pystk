@@ -3,7 +3,7 @@ OrbitStateGeodetic
 
 .. py:class:: ansys.stk.core.stkobjects.OrbitStateGeodetic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic`, py:obj:`~ansys.stk.core.stkobjects.IOrbitState`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOrbitStateGeodetic`, :py:class:`~ansys.stk.core.stkobjects.IOrbitState`
 
    Geodetic coordinate type (available only with a Fixed coordinate system).
 

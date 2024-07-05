@@ -3,7 +3,7 @@ VmGraphics3DVolume
 
 .. py:class:: ansys.stk.core.stkobjects.VmGraphics3DVolume
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmGraphics3DVolume`
 
    Class defining planar cross-sections through the volumetric grid.
 

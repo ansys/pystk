@@ -3,7 +3,7 @@ VehicleAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAdvanced
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleAdvanced`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAdvanced`
 
    Class defining advanced atmospheric density options for the LOP propagator.
 

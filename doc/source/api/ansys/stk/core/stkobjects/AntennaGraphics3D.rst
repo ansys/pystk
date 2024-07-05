@@ -3,7 +3,7 @@ AntennaGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaGraphics3D`
 
    Class defining 3D Graphics properties of a Antenna.
 

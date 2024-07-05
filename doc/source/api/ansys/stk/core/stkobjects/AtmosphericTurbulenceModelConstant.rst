@@ -3,7 +3,7 @@ AtmosphericTurbulenceModelConstant
 
 .. py:class:: ansys.stk.core.stkobjects.AtmosphericTurbulenceModelConstant
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModelConstant`, :py:class:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel`
 
    Class defining a constant atmospheric turbulence model.
 

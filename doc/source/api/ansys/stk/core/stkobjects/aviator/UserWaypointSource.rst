@@ -3,7 +3,7 @@ UserWaypointSource
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.UserWaypointSource
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IUserWaypointSource`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining the user waypoint source in the Aviator catalog.
 

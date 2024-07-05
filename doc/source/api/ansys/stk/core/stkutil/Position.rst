@@ -3,7 +3,7 @@ Position
 
 .. py:class:: ansys.stk.core.stkutil.Position
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.ILocationData`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.ILocationData`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    The Position class.
 

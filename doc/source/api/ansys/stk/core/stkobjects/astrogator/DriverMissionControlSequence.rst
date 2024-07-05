@@ -3,7 +3,7 @@ DriverMissionControlSequence
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDriverMissionControlSequence`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IVehiclePropagator`
 
    Basic properties of an Astrogator satellite.
 

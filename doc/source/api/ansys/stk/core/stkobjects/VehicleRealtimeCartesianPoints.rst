@@ -3,7 +3,7 @@ VehicleRealtimeCartesianPoints
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRealtimeCartesianPoints
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleRealtimeCartesianPoints`
 
    AgVeRealtimeCartesianPoint Class.
 

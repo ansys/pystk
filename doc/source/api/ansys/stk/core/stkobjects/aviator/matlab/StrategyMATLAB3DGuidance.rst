@@ -3,7 +3,7 @@ StrategyMATLAB3DGuidance
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance`, py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance`, :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
 
    Class defining the MATLAB - 3D Guidance strategy for a basic maneuver procedure.
 

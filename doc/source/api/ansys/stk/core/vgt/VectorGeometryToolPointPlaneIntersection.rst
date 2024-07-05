@@ -3,7 +3,7 @@ VectorGeometryToolPointPlaneIntersection
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneIntersection`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Point on a plane located along a given direction looking from a given origin.
 

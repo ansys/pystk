@@ -3,7 +3,7 @@ MissileTurbojetProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileTurbojetProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileTurbojetProp`
 
    Class defining the Turbojet propulsion options for a missile.
 

@@ -3,7 +3,7 @@ PathPoint
 
 .. py:class:: ansys.stk.core.graphics.PathPoint
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPathPoint`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPathPoint`
 
    Represents a path point used in conjunction with the Path Primitive.
 

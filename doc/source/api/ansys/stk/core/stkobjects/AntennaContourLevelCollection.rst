@@ -3,7 +3,7 @@ AntennaContourLevelCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaContourLevelCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaContourLevelCollection`
 
    Class defining a collection of antenna contour levels.
 

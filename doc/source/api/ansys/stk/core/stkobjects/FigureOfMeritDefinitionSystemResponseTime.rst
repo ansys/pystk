@@ -3,7 +3,7 @@ FigureOfMeritDefinitionSystemResponseTime
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemResponseTime`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSystemResponseTime`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    System Response Time Figure of Merit.
 

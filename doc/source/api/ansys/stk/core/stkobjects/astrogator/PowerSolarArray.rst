@@ -3,7 +3,7 @@ PowerSolarArray
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PowerSolarArray
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IPowerSolarArray`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Power - Solar Array.
 

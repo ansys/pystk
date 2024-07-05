@@ -3,7 +3,7 @@ Graphics3DReferenceVectorGeometryToolAngle
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolAngle
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining a reference angle (3D Graphics, Vector Geometry Tool).
 

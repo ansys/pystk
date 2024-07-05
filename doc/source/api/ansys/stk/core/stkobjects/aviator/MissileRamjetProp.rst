@@ -3,7 +3,7 @@ MissileRamjetProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileRamjetProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileRamjetProp`
 
    Class defining the Ramjet propulsion options for a missile.
 

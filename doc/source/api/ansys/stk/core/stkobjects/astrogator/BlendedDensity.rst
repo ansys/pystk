@@ -3,7 +3,7 @@ BlendedDensity
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BlendedDensity
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBlendedDensity`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Blended atmospheric density propagator function.
 

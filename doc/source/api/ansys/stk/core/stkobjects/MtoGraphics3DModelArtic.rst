@@ -3,7 +3,7 @@ MtoGraphics3DModelArtic
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DModelArtic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DModelArtic`
 
    Class defining MTO model articulations.
 

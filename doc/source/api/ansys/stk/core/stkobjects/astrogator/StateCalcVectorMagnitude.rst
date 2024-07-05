@@ -3,7 +3,7 @@ StateCalcVectorMagnitude
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude`
 
    VectorMag Calc objects.
 

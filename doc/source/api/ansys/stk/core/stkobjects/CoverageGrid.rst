@@ -3,7 +3,7 @@ CoverageGrid
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGrid
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGrid`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageGrid`
 
    Grid Definition and resolution.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorPeriapsis
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorPeriapsis
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorPeriapsis`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorPeriapsis`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
 

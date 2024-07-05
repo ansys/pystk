@@ -3,7 +3,7 @@ ObjectCoverageFigureOfMerit
 
 .. py:class:: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IObjectCoverageFigureOfMerit`
 
    Class defining the fom on the coverage object tool.
 

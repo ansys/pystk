@@ -3,7 +3,7 @@ AccessTimeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessTimeCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessTimeCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessTimeCollection`
 
    Collection of access times.
 

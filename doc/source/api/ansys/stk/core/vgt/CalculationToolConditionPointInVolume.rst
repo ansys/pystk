@@ -3,7 +3,7 @@ CalculationToolConditionPointInVolume
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionPointInVolume
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume`, py:obj:`~ansys.stk.core.vgt.ICalculationToolCondition`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolConditionPointInVolume`, :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
 

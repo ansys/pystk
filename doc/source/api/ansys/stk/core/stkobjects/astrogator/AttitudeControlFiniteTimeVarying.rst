@@ -3,7 +3,7 @@ AttitudeControlFiniteTimeVarying
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFiniteTimeVarying`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The time varying attitude control for a finite maneuver.
 

@@ -3,7 +3,7 @@ VehicleEllipseDataCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEllipseDataCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleEllipseDataCollection`
 
    Ellipse Data Collection.
 

@@ -3,7 +3,7 @@ AircraftBasicCruiseModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftBasicCruiseModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.IPerformanceModel`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the basic cruise performance model for an Aviator aircraft.
 

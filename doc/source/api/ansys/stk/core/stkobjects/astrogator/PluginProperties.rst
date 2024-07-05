@@ -3,7 +3,7 @@ PluginProperties
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PluginProperties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IPluginProperties`
 
    The plugin attitude control type.
 

@@ -3,7 +3,7 @@ RainLossModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.RainLossModelScriptPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRainLossModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.IRainLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRainLossModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IRainLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a rain loss model.
 

@@ -3,7 +3,7 @@ PointTargetGraphics3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.PointTargetGraphics3DModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPointTargetGraphics3DModel`, :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModel`
 
    Point properties for a 3D model.
 

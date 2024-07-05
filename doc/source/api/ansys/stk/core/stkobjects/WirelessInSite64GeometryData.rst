@@ -3,7 +3,7 @@ WirelessInSite64GeometryData
 
 .. py:class:: ansys.stk.core.stkobjects.WirelessInSite64GeometryData
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IWirelessInSite64GeometryData`
 
    Class defining the REMCOM Wireless InSite 64 geometry data.
 

@@ -3,7 +3,7 @@ Graphics3DModelTransformation
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelTransformation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModelTransformation`
 
    Class to modify transformation values.
 

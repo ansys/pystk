@@ -3,7 +3,7 @@ VehicleDuration
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleDuration
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleDuration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleDuration`
 
    Look ahead and look behind duration options.
 

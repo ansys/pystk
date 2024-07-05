@@ -3,7 +3,7 @@ IPOPTControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControlCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IIPOPTControlCollection`
 
    Properties for the list of IPOPT control parameters.
 

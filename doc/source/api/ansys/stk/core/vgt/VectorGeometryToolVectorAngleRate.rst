@@ -3,7 +3,7 @@ VectorGeometryToolVectorAngleRate
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Angle rate vector perpendicular to the plane in which the angle is defined.
 

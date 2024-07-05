@@ -3,7 +3,7 @@ BasicManeuverTargetPositionVelNoisyBrgRng
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBrgRng
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverTargetPositionVelNoisyBrgRng`
 
    Class defining the position and velocity strategy, Noisy Bearing Range.
 

@@ -3,7 +3,7 @@ VmExternalFile
 
 .. py:class:: ansys.stk.core.stkobjects.VmExternalFile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmGridDefinition`, py:obj:`~ansys.stk.core.stkobjects.IVmExternalFile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmGridDefinition`, :py:class:`~ansys.stk.core.stkobjects.IVmExternalFile`
 
    Class defining the volume external file.
 

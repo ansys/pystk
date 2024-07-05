@@ -3,7 +3,7 @@ EdgeDetectFilter
 
 .. py:class:: ansys.stk.core.graphics.EdgeDetectFilter
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IEdgeDetectFilter`, py:obj:`~ansys.stk.core.graphics.IConvolutionFilter`, py:obj:`~ansys.stk.core.graphics.IRasterFilter`
+   Bases: :py:class:`~ansys.stk.core.graphics.IEdgeDetectFilter`, :py:class:`~ansys.stk.core.graphics.IConvolutionFilter`, :py:class:`~ansys.stk.core.graphics.IRasterFilter`
 
    Apply a convolution filter to detect edges in the source raster.
 

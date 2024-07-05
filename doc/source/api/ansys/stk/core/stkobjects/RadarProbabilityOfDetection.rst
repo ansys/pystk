@@ -3,7 +3,7 @@ RadarProbabilityOfDetection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarProbabilityOfDetection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection`
 
    Class defining the probability of detection.
 

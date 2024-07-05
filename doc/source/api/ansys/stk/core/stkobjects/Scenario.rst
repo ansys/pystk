@@ -3,7 +3,7 @@ Scenario
 
 .. py:class:: ansys.stk.core.stkobjects.Scenario
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenario`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenario`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Scenario object.
 

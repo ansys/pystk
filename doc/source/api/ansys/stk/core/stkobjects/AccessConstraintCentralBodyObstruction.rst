@@ -3,7 +3,7 @@ AccessConstraintCentralBodyObstruction
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintCentralBodyObstruction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCentralBodyObstruction`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining constraints in terms of obstruction by a specified central body.
 

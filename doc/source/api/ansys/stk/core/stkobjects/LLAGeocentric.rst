@@ -3,7 +3,7 @@ LLAGeocentric
 
 .. py:class:: ansys.stk.core.stkobjects.LLAGeocentric
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILLAGeocentric`, py:obj:`~ansys.stk.core.stkobjects.ILLAPosition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILLAGeocentric`, :py:class:`~ansys.stk.core.stkobjects.ILLAPosition`
 
    Geocentric LLA position.
 

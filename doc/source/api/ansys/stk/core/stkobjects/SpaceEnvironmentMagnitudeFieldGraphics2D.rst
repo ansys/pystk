@@ -3,7 +3,7 @@ SpaceEnvironmentMagnitudeFieldGraphics2D
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentMagnitudeFieldGraphics2D`
 
    Geomagnetic field graphics settings.
 

@@ -3,7 +3,7 @@ ScreenOverlayPickResult
 
 .. py:class:: ansys.stk.core.graphics.ScreenOverlayPickResult
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IScreenOverlayPickResult`
+   Bases: :py:class:`~ansys.stk.core.graphics.IScreenOverlayPickResult`
 
    Describes a picked screen overlay as a result of a call to pick screen overlays.
 

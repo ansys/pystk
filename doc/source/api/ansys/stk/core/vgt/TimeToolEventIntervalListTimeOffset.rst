@@ -3,7 +3,7 @@ TimeToolEventIntervalListTimeOffset
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListTimeOffset
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalListTimeOffset`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval List defined by shifting the specified reference interval list by a fixed time offset.
 

@@ -3,7 +3,7 @@ FrameRate
 
 .. py:class:: ansys.stk.core.graphics.FrameRate
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IFrameRate`
+   Bases: :py:class:`~ansys.stk.core.graphics.IFrameRate`
 
    Keeps track of how many times the scenes are rendered per second.
 

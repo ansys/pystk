@@ -3,7 +3,7 @@ RadarAntennaBeamCollection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarAntennaBeamCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarAntennaBeamCollection`
 
    Class defining an radar antenna beam collection.
 

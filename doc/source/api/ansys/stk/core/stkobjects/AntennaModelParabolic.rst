@@ -3,7 +3,7 @@ AntennaModelParabolic
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelParabolic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModelParabolic`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModelParabolic`
 
    Class defining a parabolic antenna model.
 

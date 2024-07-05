@@ -3,7 +3,7 @@ MtoTrackPointCollection
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrackPointCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoTrackPointCollection`
 
    MTO track point list.
 

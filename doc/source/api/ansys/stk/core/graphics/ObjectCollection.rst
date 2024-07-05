@@ -3,7 +3,7 @@ ObjectCollection
 
 .. py:class:: ansys.stk.core.graphics.ObjectCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IObjectCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.IObjectCollection`
 
    A collection of objects.
 

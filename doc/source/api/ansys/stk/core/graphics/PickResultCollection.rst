@@ -3,7 +3,7 @@ PickResultCollection
 
 .. py:class:: ansys.stk.core.graphics.PickResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPickResultCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPickResultCollection`
 
    A collection of picked objects.
 

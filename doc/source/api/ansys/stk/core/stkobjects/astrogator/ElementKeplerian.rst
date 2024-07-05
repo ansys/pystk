@@ -3,7 +3,7 @@ ElementKeplerian
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementKeplerian
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementKeplerian`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Keplerian elements.
 

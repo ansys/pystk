@@ -3,7 +3,7 @@ AircraftVTOL
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftVTOL
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOL`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftVTOL`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the VTOL category of an Aviator aircraft.
 

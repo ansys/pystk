@@ -3,7 +3,7 @@ SensorGraphics3DSpaceProjectionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DSpaceProjectionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics3DSpaceProjectionCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics3DSpaceProjectionCollection`
 
    Time Dependent Space Projection List.
 

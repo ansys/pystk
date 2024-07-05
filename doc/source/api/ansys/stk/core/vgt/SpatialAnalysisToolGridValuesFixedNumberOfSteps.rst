@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesFixedNumberOfSteps`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 

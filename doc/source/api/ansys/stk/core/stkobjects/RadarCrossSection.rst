@@ -3,7 +3,7 @@ RadarCrossSection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSection`
 
    Class defining a radar cross section.
 

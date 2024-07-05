@@ -3,7 +3,7 @@ DrawElemCollection
 
 .. py:class:: ansys.stk.core.stkx.DrawElemCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemCollection`
+   Bases: :py:class:`~ansys.stk.core.stkx.IDrawElemCollection`
 
    Collection of elements to draw on the control.
 

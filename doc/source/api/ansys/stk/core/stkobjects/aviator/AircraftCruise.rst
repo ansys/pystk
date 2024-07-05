@@ -3,7 +3,7 @@ AircraftCruise
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftCruise
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftCruise`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogItem`
 
    Class defining the aircraft cruise category of an Aviator aircraft.
 

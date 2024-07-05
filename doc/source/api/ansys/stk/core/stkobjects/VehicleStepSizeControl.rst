@@ -3,7 +3,7 @@ VehicleStepSizeControl
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleStepSizeControl
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleStepSizeControl`
 
    Class defining step size control for the HPOP integrator.
 

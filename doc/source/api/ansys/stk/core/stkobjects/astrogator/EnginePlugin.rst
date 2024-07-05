@@ -3,7 +3,7 @@ EnginePlugin
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EnginePlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IEnginePlugin`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Plugin engine model.
 

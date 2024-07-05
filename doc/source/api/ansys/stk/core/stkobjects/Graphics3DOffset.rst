@@ -3,7 +3,7 @@ Graphics3DOffset
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DOffset
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DOffset`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DOffset`
 
    Class defining 3D offset attributes.
 

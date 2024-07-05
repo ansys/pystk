@@ -3,7 +3,7 @@ SurfaceTriangulatorResult
 
 .. py:class:: ansys.stk.core.graphics.SurfaceTriangulatorResult
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult`, py:obj:`~ansys.stk.core.graphics.ITriangulatorResult`
+   Bases: :py:class:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult`, :py:class:`~ansys.stk.core.graphics.ITriangulatorResult`
 
    The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh...
 

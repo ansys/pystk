@@ -3,7 +3,7 @@ VehiclePropagator11ParamDescriptorCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagator11ParamDescriptorCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator11ParamDescriptorCollection`
 
    A collection of 11-Parameter files.
 

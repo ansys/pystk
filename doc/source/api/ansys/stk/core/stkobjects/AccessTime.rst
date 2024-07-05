@@ -3,7 +3,7 @@ AccessTime
 
 .. py:class:: ansys.stk.core.stkobjects.AccessTime
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessTime`
 
    Class for defining Sensor target times in terms of access.
 

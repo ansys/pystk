@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentParticleFlux
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentParticleFlux
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentParticleFlux`
 
    Particle Flux settings.
 

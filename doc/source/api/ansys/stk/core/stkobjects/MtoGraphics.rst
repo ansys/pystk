@@ -3,7 +3,7 @@ MtoGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics`
 
    MTO 2D Graphics.
 

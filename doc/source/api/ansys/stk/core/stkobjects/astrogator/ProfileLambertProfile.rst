@@ -3,7 +3,7 @@ ProfileLambertProfile
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileLambertProfile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileLambertProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Lambert profile.
 

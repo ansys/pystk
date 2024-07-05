@@ -3,7 +3,7 @@ TimeToolEventIntervalListFactory
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListFactory
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFactory`
 
    The factory creates event interval lists.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorFixedAtEpoch
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFixedAtEpoch
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFixedAtEpoch`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Based on another vector fixed at a specified epoch.
 

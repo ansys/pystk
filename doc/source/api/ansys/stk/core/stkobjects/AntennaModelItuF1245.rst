@@ -3,7 +3,7 @@ AntennaModelItuF1245
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelItuF1245
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuF1245`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a ITU-R F1245-3 antenna model.
 

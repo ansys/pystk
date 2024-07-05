@@ -3,7 +3,7 @@ Receiver
 
 .. py:class:: ansys.stk.core.stkobjects.Receiver
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IReceiver`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IReceiver`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the receiver object.
 

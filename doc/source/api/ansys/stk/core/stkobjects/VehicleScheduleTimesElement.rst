@@ -3,7 +3,7 @@ VehicleScheduleTimesElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleScheduleTimesElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesElement`
 
    Parameters for scheduled times for target pointing attitude.
 

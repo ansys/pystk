@@ -3,7 +3,7 @@ VehicleGPSAlmanacProperties
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSAlmanacProperties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties`
 
    A common base for GPS almanac properties.
 

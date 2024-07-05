@@ -3,7 +3,7 @@ AntennaVolumeGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaVolumeGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaVolumeGraphics`
 
    Class defining 3D Volume Graphics properties of a Antenna.
 

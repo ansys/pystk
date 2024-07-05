@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAxesTransformResult
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesTransformResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult`
 
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 

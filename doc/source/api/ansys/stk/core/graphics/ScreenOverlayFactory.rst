@@ -3,7 +3,7 @@ ScreenOverlayFactory
 
 .. py:class:: ansys.stk.core.graphics.ScreenOverlayFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IScreenOverlayFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IScreenOverlayFactory`
 
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 

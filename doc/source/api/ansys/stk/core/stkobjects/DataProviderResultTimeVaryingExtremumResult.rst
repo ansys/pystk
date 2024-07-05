@@ -3,7 +3,7 @@ DataProviderResultTimeVaryingExtremumResult
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultTimeVaryingExtremumResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultTimeVaryingExtremumResult`
 
    Results returned by time varying extremum computation.
 

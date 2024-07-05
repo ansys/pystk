@@ -3,7 +3,7 @@ ScatteringPointProviderCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointProviderCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointProviderCollection`
 
    Class defining an scattering point provider collection.
 

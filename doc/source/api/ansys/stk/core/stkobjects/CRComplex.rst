@@ -3,7 +3,7 @@ CRComplex
 
 .. py:class:: ansys.stk.core.stkobjects.CRComplex
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICRComplex`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICRComplex`
 
    Class defining a complex number.
 

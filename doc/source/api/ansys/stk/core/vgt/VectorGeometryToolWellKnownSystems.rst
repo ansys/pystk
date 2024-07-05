@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownSystems
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSystems
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSystems`
 
    Well-known coordinate reference systems.
 

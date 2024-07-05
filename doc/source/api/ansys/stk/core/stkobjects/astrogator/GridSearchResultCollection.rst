@@ -3,7 +3,7 @@ GridSearchResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GridSearchResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IGridSearchResultCollection`
 
    Properties for the list of Grid Search result parameters.
 

@@ -3,7 +3,7 @@ BeamformerUniform
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerUniform
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerUniform`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerUniform`
 
    Class defining a uniform tapered beamformer.
 

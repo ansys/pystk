@@ -3,7 +3,7 @@ StateCalcOrbitSemiLatusRectum
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitSemiLatusRectum
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcOrbitSemiLatusRectum`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass AsStateCalcOrbitSemiLatusRectum.
 

@@ -3,7 +3,7 @@ AGIProcessedImageGlobeOverlayFactory
 
 .. py:class:: ansys.stk.core.graphics.AGIProcessedImageGlobeOverlayFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory`
 
    A globe image overlay for handling AGI Processed Image (PDTTX) files.
 

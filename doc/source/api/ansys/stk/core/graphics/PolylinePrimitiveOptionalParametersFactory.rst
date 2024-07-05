@@ -3,7 +3,7 @@ PolylinePrimitiveOptionalParametersFactory
 
 .. py:class:: ansys.stk.core.graphics.PolylinePrimitiveOptionalParametersFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory`
 
    Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
 

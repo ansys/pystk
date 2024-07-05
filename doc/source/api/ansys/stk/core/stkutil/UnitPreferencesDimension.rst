@@ -3,7 +3,7 @@ UnitPreferencesDimension
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesDimension
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IUnitPreferencesDimension`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesDimension`
 
    Object that contains info on the Dimension.
 

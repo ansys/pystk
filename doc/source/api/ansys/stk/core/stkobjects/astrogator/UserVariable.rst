@@ -3,7 +3,7 @@ UserVariable
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariable
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariable`
 
    User Variable.
 

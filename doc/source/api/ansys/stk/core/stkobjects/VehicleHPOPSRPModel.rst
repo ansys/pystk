@@ -3,7 +3,7 @@ VehicleHPOPSRPModel
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPSRPModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPSRPModel`
 
    SRP Model Base CoClass.
 

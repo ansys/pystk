@@ -3,7 +3,7 @@ ModulatorModel8psk
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModel8psk
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a 8PSK modulator model.
 

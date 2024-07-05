@@ -3,7 +3,7 @@ DAFIFSource
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.DAFIFSource
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource`, py:obj:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IDAFIFSource`, :py:class:`~ansys.stk.core.stkobjects.aviator.ICatalogSource`
 
    Class defining an DAFIF source in the Aviator catalog.
 

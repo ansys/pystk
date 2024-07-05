@@ -3,7 +3,7 @@ VehicleSpaceEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironment
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironment`
 
    SpaceEnvironment settings.
 

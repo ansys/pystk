@@ -3,7 +3,7 @@ StrategyMATLABProfile
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABProfile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABProfile`, py:obj:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABProfile`, :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IBasicManeuverStrategy`
 
    Class defining the MATLAB - Vertical Plane strategy for a basic maneuver procedure.
 

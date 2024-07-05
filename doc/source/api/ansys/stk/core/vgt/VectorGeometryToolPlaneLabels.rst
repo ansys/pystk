@@ -3,7 +3,7 @@ VectorGeometryToolPlaneLabels
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneLabels
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneLabels`
 
    Allow configuring the X and Y axes labels.
 

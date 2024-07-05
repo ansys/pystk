@@ -3,7 +3,7 @@ RadarModelMonostatic
 
 .. py:class:: ansys.stk.core.stkobjects.RadarModelMonostatic
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModelMonostatic`, py:obj:`~ansys.stk.core.stkobjects.IRadarModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarModelMonostatic`, :py:class:`~ansys.stk.core.stkobjects.IRadarModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a monostatic radar model.
 

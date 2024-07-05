@@ -3,7 +3,7 @@ ElementMixedSpherical
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementMixedSpherical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementMixedSpherical`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Mixed Spherical elements.
 

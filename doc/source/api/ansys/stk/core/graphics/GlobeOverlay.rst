@@ -3,7 +3,7 @@ GlobeOverlay
 
 .. py:class:: ansys.stk.core.graphics.GlobeOverlay
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
+   Bases: :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    The base class of all terrain overlay and globe image overlay objects.
 

@@ -3,7 +3,7 @@ MtoGraphics3DMarker
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DMarker
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3DMarker`
 
    MTO 3D graphics marker options.
 

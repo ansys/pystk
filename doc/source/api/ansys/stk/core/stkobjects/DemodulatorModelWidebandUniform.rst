@@ -3,7 +3,7 @@ DemodulatorModelWidebandUniform
 
 .. py:class:: ansys.stk.core.stkobjects.DemodulatorModelWidebandUniform
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDemodulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a wideband uniform modulator model.
 

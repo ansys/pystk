@@ -3,7 +3,7 @@ TimeToolEventSignaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventSignaled
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventSignaled`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventSignaled`, :py:class:`~ansys.stk.core.vgt.ITimeToolEvent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event recorded on specified clock via signal transmission from original time instant recorded on different clock.
 

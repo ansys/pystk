@@ -3,7 +3,7 @@ TimeToolEventFindOccurrenceResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventFindOccurrenceResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventFindOccurrenceResult`
 
    Contains the results returned with IAgCrdnEvent.FindOccurrence method.
 

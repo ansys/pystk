@@ -3,7 +3,7 @@ DesignER3BPObject
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DesignER3BPObject
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDesignER3BPObject`
 
    ER3BP associated object definition.
 

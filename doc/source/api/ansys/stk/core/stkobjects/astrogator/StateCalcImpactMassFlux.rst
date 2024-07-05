@@ -3,7 +3,7 @@ StateCalcImpactMassFlux
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcImpactMassFlux
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcImpactMassFlux`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcImpactMassFlux`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcImpactMassFlux.
 

@@ -3,7 +3,7 @@ EOIRShapePlate
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapePlate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapePlate`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapePlate`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Plate shape class.
 

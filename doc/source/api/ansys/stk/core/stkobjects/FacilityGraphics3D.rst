@@ -3,7 +3,7 @@ FacilityGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.FacilityGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFacilityGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFacilityGraphics3D`
 
    3D Graphics properties of a Facility.
 

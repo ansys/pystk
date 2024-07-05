@@ -3,7 +3,7 @@ ProfileBisection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileBisection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileBisection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Single Parameter Bisection profile.
 

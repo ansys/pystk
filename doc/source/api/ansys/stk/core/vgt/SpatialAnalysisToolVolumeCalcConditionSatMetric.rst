@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeCalcConditionSatMetric
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcConditionSatMetric
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalcConditionSatMetric`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc condition satisfaction interface.
 

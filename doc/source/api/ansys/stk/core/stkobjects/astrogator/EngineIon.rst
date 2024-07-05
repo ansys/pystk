@@ -3,7 +3,7 @@ EngineIon
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineIon
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineIon`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IEngineIon`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Ion Engine engine model.
 

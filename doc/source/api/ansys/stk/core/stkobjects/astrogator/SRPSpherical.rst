@@ -3,7 +3,7 @@ SRPSpherical
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SRPSpherical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ISRPSpherical`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Spherical SRP propagator function.
 

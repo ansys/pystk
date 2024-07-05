@@ -3,7 +3,7 @@ VehicleGraphics3DControlBox
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DControlBox`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
 
    Define a volume around the object that moves with the object.
 

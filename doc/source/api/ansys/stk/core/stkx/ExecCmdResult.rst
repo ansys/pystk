@@ -3,7 +3,7 @@ ExecCmdResult
 
 .. py:class:: ansys.stk.core.stkx.ExecCmdResult
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IExecCmdResult`
+   Bases: :py:class:`~ansys.stk.core.stkx.IExecCmdResult`
 
    Collection of strings returned by the ExecuteCommand.
 

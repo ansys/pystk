@@ -3,7 +3,7 @@ BasicManeuverStrategyRelSpeedAltitude
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelSpeedAltitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyRelSpeedAltitude`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Relative Speed/Altitude strategy for a basic maneuver procedure.
 

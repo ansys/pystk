@@ -3,7 +3,7 @@ StateCalcSEETVehTemp
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSEETVehTemp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETVehTemp`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSEETVehTemp`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcSEETVehTemp.
 

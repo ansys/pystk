@@ -3,7 +3,7 @@ CentralBodyShapeSphere
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyShapeSphere
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShapeSphere`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
 
    Central Body Shape - Sphere.
 

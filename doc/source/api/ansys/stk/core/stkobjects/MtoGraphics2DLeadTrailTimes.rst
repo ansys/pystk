@@ -3,7 +3,7 @@ MtoGraphics2DLeadTrailTimes
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DLeadTrailTimes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics2DLeadTrailTimes`
 
    MTO track lead/trail times.
 

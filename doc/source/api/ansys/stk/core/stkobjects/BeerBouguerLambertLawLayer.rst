@@ -3,7 +3,7 @@ BeerBouguerLambertLawLayer
 
 .. py:class:: ansys.stk.core.stkobjects.BeerBouguerLambertLawLayer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeerBouguerLambertLawLayer`
 
    Class defining a row of an input back off vs output back off table.
 

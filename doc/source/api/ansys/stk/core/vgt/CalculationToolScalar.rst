@@ -3,7 +3,7 @@ CalculationToolScalar
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalar
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Any scalar calculation that is not constant by construction.
 

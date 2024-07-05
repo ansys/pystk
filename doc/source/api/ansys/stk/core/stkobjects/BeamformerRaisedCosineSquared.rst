@@ -3,7 +3,7 @@ BeamformerRaisedCosineSquared
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerRaisedCosineSquared
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`, py:obj:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosineSquared`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerRaisedCosineSquared`
 
    Class defining a raised cosine squared tapered beamformer.
 

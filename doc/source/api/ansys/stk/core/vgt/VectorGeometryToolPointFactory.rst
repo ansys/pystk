@@ -3,7 +3,7 @@ VectorGeometryToolPointFactory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointFactory
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointFactory`
 
    A Factory object to create points.
 

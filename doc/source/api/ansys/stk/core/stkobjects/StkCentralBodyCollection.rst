@@ -3,7 +3,7 @@ StkCentralBodyCollection
 
 .. py:class:: ansys.stk.core.stkobjects.StkCentralBodyCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkCentralBodyCollection`
 
    Central body collection coclass.
 

@@ -3,7 +3,7 @@ LabelNote
 
 .. py:class:: ansys.stk.core.stkobjects.LabelNote
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILabelNote`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILabelNote`
 
    Class defining label notes.
 

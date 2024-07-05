@@ -3,7 +3,7 @@ VehicleLOPForceModelDrag
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleLOPForceModelDrag`
 
    Class defining the atmospheric drag model for the LOP propagator.
 

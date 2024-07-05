@@ -3,7 +3,7 @@ CelestialBodyInfo
 
 .. py:class:: ansys.stk.core.stkobjects.CelestialBodyInfo
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICelestialBodyInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICelestialBodyInfo`
 
    Represents a celestial body information.
 

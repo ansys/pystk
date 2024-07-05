@@ -3,7 +3,7 @@ AGICustomTerrainOverlay
 
 .. py:class:: ansys.stk.core.graphics.AGICustomTerrainOverlay
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IAGICustomTerrainOverlay`, py:obj:`~ansys.stk.core.graphics.ITerrainOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
+   Bases: :py:class:`~ansys.stk.core.graphics.IAGICustomTerrainOverlay`, :py:class:`~ansys.stk.core.graphics.ITerrainOverlay`, :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A terrain overlay for handling AGI Cesium Terrain.
 

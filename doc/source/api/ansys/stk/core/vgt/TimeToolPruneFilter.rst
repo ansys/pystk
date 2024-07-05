@@ -3,7 +3,7 @@ TimeToolPruneFilter
 
 .. py:class:: ansys.stk.core.vgt.TimeToolPruneFilter
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    A filter used with event interval list pruned class to prune interval lists...
 

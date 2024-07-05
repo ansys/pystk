@@ -3,7 +3,7 @@ BoundingSphereFactory
 
 .. py:class:: ansys.stk.core.graphics.BoundingSphereFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IBoundingSphereFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IBoundingSphereFactory`
 
    Create bounding spheres.
 

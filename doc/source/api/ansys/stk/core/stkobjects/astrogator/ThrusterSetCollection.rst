@@ -3,7 +3,7 @@ ThrusterSetCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IThrusterSetCollection`
 
    Thruster Set Collection.
 

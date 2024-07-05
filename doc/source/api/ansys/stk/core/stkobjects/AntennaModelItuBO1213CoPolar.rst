@@ -3,7 +3,7 @@ AntennaModelItuBO1213CoPolar
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelItuBO1213CoPolar
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar`, py:obj:`~ansys.stk.core.stkobjects.IAntennaModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelItuBO1213CoPolar`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a ITU-R BO1213 co-polar antenna model.
 

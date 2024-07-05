@@ -3,7 +3,7 @@ EquinoctialSizeShapeMeanMotion
 
 .. py:class:: ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion`, :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Mean Motion, an element of the Equinoctial coordinate type.
 

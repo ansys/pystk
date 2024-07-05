@@ -3,7 +3,7 @@ VehicleGraphics2DLeadDataFraction
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLeadDataFraction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, py:obj:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailData`, :py:class:`~ansys.stk.core.stkobjects.IVehicleLeadTrailDataFraction`
 
    2D Graphics pass: fraction of leading portion of vehicle track to display.
 

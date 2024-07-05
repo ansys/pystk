@@ -3,7 +3,7 @@ AircraftProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftProp`
 
    Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft.
 

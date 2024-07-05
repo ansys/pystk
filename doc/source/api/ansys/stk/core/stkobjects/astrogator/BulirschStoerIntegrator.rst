@@ -3,7 +3,7 @@ BulirschStoerIntegrator
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator`, py:obj:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBulirschStoerIntegrator`, :py:class:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
 
    Bulirsch-Stoer Numerical Integrator.
 

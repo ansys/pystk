@@ -3,7 +3,7 @@ VehicleGraphics3DOrbitDropLines
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitDropLines
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitDropLines`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DOrbitDropLines`
 
    Droplines collections.
 

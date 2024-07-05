@@ -3,7 +3,7 @@ OnePointAccessResult
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccessResult
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessResult`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessResult`
 
    One Point Access Result.
 

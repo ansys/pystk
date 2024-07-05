@@ -3,7 +3,7 @@ CoverageGridPointSelection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGridPointSelection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageGridPointSelection`
 
    Represents a set of points selected with the grid inspector.
 

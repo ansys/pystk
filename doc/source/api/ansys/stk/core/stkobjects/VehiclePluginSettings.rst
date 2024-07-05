@@ -3,7 +3,7 @@ VehiclePluginSettings
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePluginSettings
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePluginSettings`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePluginSettings`
 
    Class defining force model plugin settings for HPOP.
 

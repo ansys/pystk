@@ -3,7 +3,7 @@ DoublesCollection
 
 .. py:class:: ansys.stk.core.stkutil.DoublesCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IDoublesCollection`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IDoublesCollection`
 
    A collection of doubles.
 

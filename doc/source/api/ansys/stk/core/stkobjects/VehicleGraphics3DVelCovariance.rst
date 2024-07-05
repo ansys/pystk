@@ -3,7 +3,7 @@ VehicleGraphics3DVelCovariance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DVelCovariance`
 
    3D velocity covariance ellipsoids.
 

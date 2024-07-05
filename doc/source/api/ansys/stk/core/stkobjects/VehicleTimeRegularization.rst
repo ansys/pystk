@@ -3,7 +3,7 @@ VehicleTimeRegularization
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTimeRegularization
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTimeRegularization`
 
    Class defining time regularization for the HPOP integrator, i.e. integration the orbit with respect to regularized time.
 

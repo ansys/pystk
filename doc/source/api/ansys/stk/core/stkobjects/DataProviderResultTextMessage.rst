@@ -3,7 +3,7 @@ DataProviderResultTextMessage
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultTextMessage
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultTextMessage`
 
    Notification or failure messages returned by the data provider.
 

@@ -3,7 +3,7 @@ VehicleCorrelationListElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleCorrelationListElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleCorrelationListElement`
 
    Class representing an element of an HPOP covariance matrix.
 

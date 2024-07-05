@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBodyCollection
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBodyCollection`
 
    A collection of central body names.
 

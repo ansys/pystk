@@ -3,7 +3,7 @@ ScenarioAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioAnimation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioAnimation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenarioAnimation`
 
    Class defining the animation properties of a Scenario.
 

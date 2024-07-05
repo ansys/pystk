@@ -3,7 +3,7 @@ VectorGeometryToolAxesGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesGroup
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesGroup`
 
    Access or create VGT axes associated with an object or a central body.
 

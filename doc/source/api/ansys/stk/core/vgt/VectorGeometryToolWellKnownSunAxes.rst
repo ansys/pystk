@@ -3,7 +3,7 @@ VectorGeometryToolWellKnownSunAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolWellKnownSunAxes`
 
    Well-known Sun's axes.
 

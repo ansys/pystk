@@ -3,7 +3,7 @@ BoundingSphere
 
 .. py:class:: ansys.stk.core.graphics.BoundingSphere
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IBoundingSphere`
+   Bases: :py:class:`~ansys.stk.core.graphics.IBoundingSphere`
 
    A sphere that encapsulates an object.
 

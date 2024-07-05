@@ -3,7 +3,7 @@ KmlDocumentCollection
 
 .. py:class:: ansys.stk.core.graphics.KmlDocumentCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IKmlDocumentCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlDocumentCollection`
 
    A collection of KML documents.
 

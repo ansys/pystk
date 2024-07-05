@@ -3,7 +3,7 @@ ClassicalLocationTrueAnomaly
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalLocationTrueAnomaly
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalLocationTrueAnomaly`, py:obj:`~ansys.stk.core.stkobjects.IClassicalLocation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationTrueAnomaly`, :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
 
    True Anomaly, used in specifying the spacecraft's location within its orbit at epoch.
 

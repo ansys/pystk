@@ -3,7 +3,7 @@ AviatorPropagator
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AviatorPropagator
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAviatorPropagator`
 
    Class defining the Aviator propagator.
 

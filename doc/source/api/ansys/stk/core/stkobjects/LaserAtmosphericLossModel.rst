@@ -3,7 +3,7 @@ LaserAtmosphericLossModel
 
 .. py:class:: ansys.stk.core.stkobjects.LaserAtmosphericLossModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an laser propagation loss model.
 

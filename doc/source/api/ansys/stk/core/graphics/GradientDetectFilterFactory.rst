@@ -3,7 +3,7 @@ GradientDetectFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.GradientDetectFilterFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IGradientDetectFilterFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IGradientDetectFilterFactory`
 
    Apply a convolution filter to detect gradients in the source raster.
 

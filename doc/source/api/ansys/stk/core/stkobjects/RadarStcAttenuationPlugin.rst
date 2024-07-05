@@ -3,7 +3,7 @@ RadarStcAttenuationPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuationPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuationPlugin`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationPlugin`
 
    Class defining an radar stc Com Plugin.
 

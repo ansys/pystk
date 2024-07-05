@@ -3,7 +3,7 @@ OrientationQuaternion
 
 .. py:class:: ansys.stk.core.stkutil.OrientationQuaternion
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationQuaternion`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IOrientationQuaternion`, :py:class:`~ansys.stk.core.stkutil.IOrientation`
 
    Quaternion orientation method.
 

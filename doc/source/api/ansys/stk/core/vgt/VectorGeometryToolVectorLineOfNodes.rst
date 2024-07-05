@@ -3,7 +3,7 @@ VectorGeometryToolVectorLineOfNodes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorLineOfNodes
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLineOfNodes`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorLineOfNodes`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body.
 

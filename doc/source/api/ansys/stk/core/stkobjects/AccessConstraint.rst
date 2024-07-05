@@ -3,7 +3,7 @@ AccessConstraint
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining access constraints.
 

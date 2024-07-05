@@ -3,7 +3,7 @@ CalcObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CalcObjectCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICalcObjectCollection`
 
    The Calculation Object component folder.
 

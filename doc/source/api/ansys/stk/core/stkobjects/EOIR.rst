@@ -3,7 +3,7 @@ EOIR
 
 .. py:class:: ansys.stk.core.stkobjects.EOIR
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIR`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIR`
 
    AgEOIR interface class.
 

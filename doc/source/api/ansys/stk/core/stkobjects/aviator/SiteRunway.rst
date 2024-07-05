@@ -3,7 +3,7 @@ SiteRunway
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteRunway
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteRunway`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRunway`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a runway site.
 

@@ -3,7 +3,7 @@ VehicleScheduleTimesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleScheduleTimesCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleScheduleTimesCollection`
 
    List of scheduled accesses.
 

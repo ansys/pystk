@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdate
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdate
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdate`
 
    SGP4 AutoUpdate.
 

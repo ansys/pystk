@@ -3,7 +3,7 @@ DTM2012
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DTM2012
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDTM2012`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDTM2012`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    DTM 2012 atmospheric propagator function.
 

@@ -3,7 +3,7 @@ BasicManeuverStrategyAutopilotProf
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyAutopilotProf`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the autopiloc - vertical plane strategy for a basic maneuver procedure.
 

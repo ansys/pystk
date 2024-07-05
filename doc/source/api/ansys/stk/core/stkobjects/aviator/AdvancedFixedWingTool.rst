@@ -3,7 +3,7 @@ AdvancedFixedWingTool
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTool`
 
    Class defining the options for the Advanced Fixed Wing Tool of an aircraft.
 

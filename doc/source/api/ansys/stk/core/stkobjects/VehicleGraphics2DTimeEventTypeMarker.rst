@@ -3,7 +3,7 @@ VehicleGraphics2DTimeEventTypeMarker
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeMarker
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventType`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeEventTypeMarker`
 
    2D Graphics time event: marker type.
 

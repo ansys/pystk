@@ -3,7 +3,7 @@ FigureOfMeritGraphics3DLegendWindow
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DLegendWindow`
 
    3D graphics contours legend.
 

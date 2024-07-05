@@ -3,7 +3,7 @@ AdvancedFixedWingTurbopropPowerplant
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbopropPowerplant
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingTurbopropPowerplant`
 
    Class defining the Turboprop powerplant in the Advanced Fixed Wing Tool.
 

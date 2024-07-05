@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTargetPoint
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPoint`
 
    3D BPlane TargetPoint.
 

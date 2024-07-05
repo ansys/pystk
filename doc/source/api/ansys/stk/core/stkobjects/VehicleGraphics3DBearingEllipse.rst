@@ -3,7 +3,7 @@ VehicleGraphics3DBearingEllipse
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBearingEllipse
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBearingEllipse`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject`
 
    Define an ellipse, relative to a bearing from the North, around the object.
 

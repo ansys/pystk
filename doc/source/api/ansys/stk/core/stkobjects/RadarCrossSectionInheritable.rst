@@ -3,7 +3,7 @@ RadarCrossSectionInheritable
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionInheritable
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionInheritable`
 
    Class defining a inheritable radar cross section.
 

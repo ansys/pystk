@@ -3,7 +3,7 @@ Graphics3DDetailThreshold
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DDetailThreshold
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DDetailThreshold`
 
    Class defining detail thresholds as an aid for improving performance when viewing in 3D.
 

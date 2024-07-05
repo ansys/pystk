@@ -3,7 +3,7 @@ DataProviders
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviders
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDataProviders`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviders`
 
    Class defining data providers.
 

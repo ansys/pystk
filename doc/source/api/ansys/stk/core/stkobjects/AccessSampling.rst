@@ -3,7 +3,7 @@ AccessSampling
 
 .. py:class:: ansys.stk.core.stkobjects.AccessSampling
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessSampling`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessSampling`
 
    Define properties and methods to configure the sampling strategy used in access computations.
 

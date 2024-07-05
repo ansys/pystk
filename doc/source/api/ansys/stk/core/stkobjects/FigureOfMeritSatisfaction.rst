@@ -3,7 +3,7 @@ FigureOfMeritSatisfaction
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritSatisfaction`
 
    Satisfaction properties for a Figure of Merit.
 

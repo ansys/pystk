@@ -3,7 +3,7 @@ SamplingMethodFixedStep
 
 .. py:class:: ansys.stk.core.stkobjects.SamplingMethodFixedStep
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep`, py:obj:`~ansys.stk.core.stkobjects.ISamplingMethodStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISamplingMethodFixedStep`, :py:class:`~ansys.stk.core.stkobjects.ISamplingMethodStrategy`
 
    Define a fixed time-step sampling method.
 

@@ -3,7 +3,7 @@ BurnoutGeocentric
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBurnoutGeocentric`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IBurnout`
 
    The geocentric burnout point.
 

@@ -3,7 +3,7 @@ EOIRStagePlume
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRStagePlume
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRStagePlume`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRStagePlume`
 
    Plume shape class.
 

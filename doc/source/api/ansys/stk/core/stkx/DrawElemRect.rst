@@ -3,7 +3,7 @@ DrawElemRect
 
 .. py:class:: ansys.stk.core.stkx.DrawElemRect
 
-   Bases: py:obj:`~ansys.stk.core.stkx.IDrawElemRect`
+   Bases: :py:class:`~ansys.stk.core.stkx.IDrawElemRect`
 
    Define a rectangle in window coordinates.
 

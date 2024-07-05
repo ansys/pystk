@@ -3,7 +3,7 @@ CelestialBodyCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CelestialBodyCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICelestialBodyCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICelestialBodyCollection`
 
    Represents a collection of stars.
 

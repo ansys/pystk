@@ -3,7 +3,7 @@ SensorPointing3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointing3DModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointing3DModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointing3DModel`
 
    Class defining the 3D model pointing type for a Sensor.
 

@@ -3,7 +3,7 @@ VehicleProfileCoordinatedTurn
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileCoordinatedTurn
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileCoordinatedTurn`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Coordinated turn attitude profile for aircraft.
 

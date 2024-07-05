@@ -3,7 +3,7 @@ EngineModelIspCoefficients
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelIspCoefficients
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IEngineModelIspCoefficients`
 
    Engine Model Isp Coefficients.
 

@@ -3,7 +3,7 @@ TimeToolPruneFilterFactory
 
 .. py:class:: ansys.stk.core.vgt.TimeToolPruneFilterFactory
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolPruneFilterFactory`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolPruneFilterFactory`
 
    The factory creates pruning filters.
 

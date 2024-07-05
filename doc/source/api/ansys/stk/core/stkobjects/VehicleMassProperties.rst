@@ -3,7 +3,7 @@ VehicleMassProperties
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleMassProperties
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleMassProperties`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleMassProperties`
 
    Satellite Mass properties.
 

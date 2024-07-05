@@ -3,7 +3,7 @@ STKXSSLCertificateErrorEventArgs
 
 .. py:class:: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs
 
-   Bases: py:obj:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs`
+   Bases: :py:class:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs`
 
    Provide information about an SSL certificate that is expired or invalid.
 

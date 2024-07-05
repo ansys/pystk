@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneInstance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneInstance`
 
    An element in the IAgVeVOBPlanePointCollection.
 

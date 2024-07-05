@@ -3,7 +3,7 @@ MtoTrackPoint
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrackPoint
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoTrackPoint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoTrackPoint`
 
    The points defined for the selected track.
 

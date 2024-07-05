@@ -3,7 +3,7 @@ VehicleRadiationPressure
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRadiationPressure
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleRadiationPressure`
 
    Class defining solar radiation pressure on a vehicle.
 

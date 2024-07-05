@@ -3,7 +3,7 @@ SpaceEnvironmentRadEnergyMethodSpecify
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyMethodSpecify
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyMethodSpecify`
 
    Set the electron and proton energies to consider.
 

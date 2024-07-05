@@ -3,7 +3,7 @@ CoverageGraphics2DAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageGraphics2DAnimation`
 
    2D animation graphics options for the coverage grid.
 

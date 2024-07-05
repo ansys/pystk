@@ -3,7 +3,7 @@ Graphics3DMarker
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DMarker
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IGraphics3DMarker`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGraphics3DMarker`
 
    Class defining the 3D marker to represent an object at a specified threshold.
 

@@ -3,7 +3,7 @@ AccessConstraintCondition
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintCondition
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintCondition`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintCondition`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining access constraints in terms of lighting conditions.
 

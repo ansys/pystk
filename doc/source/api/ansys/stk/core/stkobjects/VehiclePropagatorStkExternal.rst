@@ -3,7 +3,7 @@ VehiclePropagatorStkExternal
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorStkExternal
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal`, py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorStkExternal`, :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagator`
 
    Class defining the STK External propagator.
 

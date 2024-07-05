@@ -3,7 +3,7 @@ PctCmpltEventArgs
 
 .. py:class:: ansys.stk.core.stkobjects.PctCmpltEventArgs
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPctCmpltEventArgs`
 
    Represents a structure used by the Percent Complete events.
 

@@ -3,7 +3,7 @@ VehicleExpDensModelParams
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleExpDensModelParams
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleExpDensModelParams`
 
    Class defining the Exponential atmospheric density model for the LOP propagator.
 

@@ -3,7 +3,7 @@ SensorPointingGrazingAltitude
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingGrazingAltitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingGrazingAltitude`
 
    Class defining Grazing Altitude pointing type for a Sensor.
 

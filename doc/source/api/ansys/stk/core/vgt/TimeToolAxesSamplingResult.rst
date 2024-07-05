@@ -3,7 +3,7 @@ TimeToolAxesSamplingResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolAxesSamplingResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolAxesSamplingResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolAxesSamplingResult`
 
    Contains tabulated orientations and angular velocities of axes created by Sample method.
 

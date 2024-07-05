@@ -3,7 +3,7 @@ ClassicalSizeShapePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalSizeShapePeriod
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapePeriod`, :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Orbit size and shape using Period and Eccentricity.
 

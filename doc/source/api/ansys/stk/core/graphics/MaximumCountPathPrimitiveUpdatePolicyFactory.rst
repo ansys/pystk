@@ -3,7 +3,7 @@ MaximumCountPathPrimitiveUpdatePolicyFactory
 
 .. py:class:: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory`
 
    path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count.
 

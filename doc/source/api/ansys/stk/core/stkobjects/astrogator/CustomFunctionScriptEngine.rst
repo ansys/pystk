@@ -3,7 +3,7 @@ CustomFunctionScriptEngine
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CustomFunctionScriptEngine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICustomFunctionScriptEngine`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Custom Function Script Engine.
 

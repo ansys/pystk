@@ -3,7 +3,7 @@ AccessConstraintThirdBody
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintThirdBody
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintThirdBody`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Do not use this class, as it is deprecated. Use AgAccessCnstrCbObstruction instead. Class defining Central Body Obstruction constraints.
 

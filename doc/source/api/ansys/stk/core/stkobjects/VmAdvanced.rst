@@ -3,7 +3,7 @@ VmAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.VmAdvanced
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVmAdvanced`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVmAdvanced`
 
    Class defining the volumetric Computed Data Save options.
 

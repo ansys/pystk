@@ -3,7 +3,7 @@ MarkerBatchPrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory`
 
    Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards...
 

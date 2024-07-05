@@ -3,7 +3,7 @@ TimeToolEventExtremum
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventExtremum
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventExtremum`, py:obj:`~ansys.stk.core.vgt.ITimeToolEvent`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventExtremum`, :py:class:`~ansys.stk.core.vgt.ITimeToolEvent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 

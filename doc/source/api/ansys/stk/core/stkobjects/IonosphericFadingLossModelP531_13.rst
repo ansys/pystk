@@ -3,7 +3,7 @@ IonosphericFadingLossModelP531_13
 
 .. py:class:: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13`, py:obj:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13`, :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a Ionospheric fading loss P.531-13 model.
 

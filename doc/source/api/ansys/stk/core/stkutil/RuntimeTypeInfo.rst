@@ -3,7 +3,7 @@ RuntimeTypeInfo
 
 .. py:class:: ansys.stk.core.stkutil.RuntimeTypeInfo
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IRuntimeTypeInfo`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IRuntimeTypeInfo`
 
    Runtime Type info coclass.
 

@@ -3,7 +3,7 @@ VehicleSpatialInfo
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpatialInfo
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSpatialInfo`
 
    Represents a spatial information of the vehicle.
 

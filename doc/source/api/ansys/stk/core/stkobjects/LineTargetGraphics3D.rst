@@ -3,7 +3,7 @@ LineTargetGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILineTargetGraphics3D`
 
    The AgLtVO class.
 

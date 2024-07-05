@@ -3,7 +3,7 @@ CalculationToolScalarStandardDeviation
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarStandardDeviation
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalarStandardDeviation`, :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 

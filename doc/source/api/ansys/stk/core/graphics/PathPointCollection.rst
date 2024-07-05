@@ -3,7 +3,7 @@ PathPointCollection
 
 .. py:class:: ansys.stk.core.graphics.PathPointCollection
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPathPointCollection`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPathPointCollection`
 
    A collection of path points.
 

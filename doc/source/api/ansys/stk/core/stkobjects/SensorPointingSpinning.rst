@@ -3,7 +3,7 @@ SensorPointingSpinning
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingSpinning
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPointing`, py:obj:`~ansys.stk.core.stkobjects.ISensorPointingSpinning`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingSpinning`
 
    Class defining the spinning pointing type for a Sensor.
 

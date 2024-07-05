@@ -3,7 +3,7 @@ RadarStcAttenuationDecayFactor
 
 .. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuationDecayFactor
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, py:obj:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationDecayFactor`
 
    Class defining an radar decay factor stc.
 

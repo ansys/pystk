@@ -3,7 +3,7 @@ SensorProjection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorProjection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorProjection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorProjection`
 
    Class defining the projection properties of a Sensor.
 

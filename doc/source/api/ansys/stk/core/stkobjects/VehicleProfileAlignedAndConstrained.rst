@@ -3,7 +3,7 @@ VehicleProfileAlignedAndConstrained
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Aligned and Constrained attitude profile.
 

@@ -3,7 +3,7 @@ PropagationChannel
 
 .. py:class:: ansys.stk.core.stkobjects.PropagationChannel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPropagationChannel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPropagationChannel`
 
    Class defining the propagation channel.
 

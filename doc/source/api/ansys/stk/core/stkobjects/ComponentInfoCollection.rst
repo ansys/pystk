@@ -3,7 +3,7 @@ ComponentInfoCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ComponentInfoCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IComponentInfoCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IComponentInfoCollection`
 
    The collection of components and component folders.
 

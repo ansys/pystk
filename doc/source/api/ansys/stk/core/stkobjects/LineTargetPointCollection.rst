@@ -3,7 +3,7 @@ LineTargetPointCollection
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetPointCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTargetPointCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILineTargetPointCollection`
 
    The collection of points for the line target.
 

@@ -3,7 +3,7 @@ TimeToolEventIntervalFixedDuration
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalFixedDuration
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventInterval`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixedDuration`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
 

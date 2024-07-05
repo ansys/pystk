@@ -3,7 +3,7 @@ ElementCartesian
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementCartesian
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementCartesian`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Cartesian elements.
 

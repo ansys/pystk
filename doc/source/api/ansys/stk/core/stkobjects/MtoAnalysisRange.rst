@@ -3,7 +3,7 @@ MtoAnalysisRange
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisRange
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysisRange`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysisRange`
 
    MTO Range Computation.
 

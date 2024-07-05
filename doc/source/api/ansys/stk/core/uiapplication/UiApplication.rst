@@ -3,7 +3,7 @@ UiApplication
 
 .. py:class:: ansys.stk.core.uiapplication.UiApplication
 
-   Bases: py:obj:`~ansys.stk.core.uiapplication.IUiApplication`, py:obj:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
+   Bases: :py:class:`~ansys.stk.core.uiapplication.IUiApplication`, :py:class:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
 
    A root object of the Application Model.
 

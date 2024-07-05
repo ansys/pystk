@@ -3,7 +3,7 @@ Beamformer
 
 .. py:class:: ansys.stk.core.stkobjects.Beamformer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformer`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer.
 

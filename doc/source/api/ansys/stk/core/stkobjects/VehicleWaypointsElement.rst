@@ -3,7 +3,7 @@ VehicleWaypointsElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleWaypointsElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleWaypointsElement`
 
    Class defining a waypoint for a Great Arc vehicle.
 

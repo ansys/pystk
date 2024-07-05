@@ -3,7 +3,7 @@ AccessConstraintAnalysisWorkbenchCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintAnalysisWorkbenchCollection`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Collection of Analysis Workbench constraints.
 

@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataMinAssets
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataMinAssets
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets`, py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataMinAssets`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Minimum number of assets.
 

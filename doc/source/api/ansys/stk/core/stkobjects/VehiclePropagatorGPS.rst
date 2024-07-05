@@ -3,7 +3,7 @@ VehiclePropagatorGPS
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorGPS
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorGPS`
 
    GPS propagator.
 

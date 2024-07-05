@@ -3,7 +3,7 @@ ClassicalSizeShapeMeanMotion
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalSizeShapeMeanMotion
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeMeanMotion`, :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Orbit size and shape using Mean Motion and Eccentricity.
 

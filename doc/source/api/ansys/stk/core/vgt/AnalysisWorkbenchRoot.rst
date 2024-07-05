@@ -3,7 +3,7 @@ AnalysisWorkbenchRoot
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchRoot
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot`
 
    Represents a VGT root.
 

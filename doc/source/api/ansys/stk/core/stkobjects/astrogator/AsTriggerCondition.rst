@@ -3,7 +3,7 @@ AsTriggerCondition
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IAsTriggerCondition`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Constraint.
 

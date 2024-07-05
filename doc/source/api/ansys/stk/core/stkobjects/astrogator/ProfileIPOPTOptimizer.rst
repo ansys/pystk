@@ -3,7 +3,7 @@ ProfileIPOPTOptimizer
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IProfile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfileIPOPTOptimizer`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    IPOPT optimizer profile.
 

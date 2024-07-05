@@ -3,7 +3,7 @@ VehiclePropagatorSP3FileCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSP3FileCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePropagatorSP3FileCollection`
 
    A collection of SP3 files.
 

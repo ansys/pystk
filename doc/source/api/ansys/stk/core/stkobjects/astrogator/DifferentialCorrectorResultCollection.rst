@@ -3,7 +3,7 @@ DifferentialCorrectorResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDifferentialCorrectorResultCollection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The collection of results for a differential corrector.
 

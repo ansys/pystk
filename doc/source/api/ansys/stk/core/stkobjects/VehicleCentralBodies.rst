@@ -3,7 +3,7 @@ VehicleCentralBodies
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleCentralBodies
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleCentralBodies`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleCentralBodies`
 
    Satellite Central Bodies.
 

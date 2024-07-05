@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAngleFindAngleResult
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindAngleResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult`
 
    Contains the results returned with IAgCrdnAngle.FindAngle method.
 

@@ -3,7 +3,7 @@ EngineModelPoly
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelPoly
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IEngineModelPoly`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Polynomial Thrust and Isp engine model.
 

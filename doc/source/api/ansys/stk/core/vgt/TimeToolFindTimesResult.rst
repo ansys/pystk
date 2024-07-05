@@ -3,7 +3,7 @@ TimeToolFindTimesResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolFindTimesResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolFindTimesResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolFindTimesResult`
 
    Return a collection of intervals and an array of times.
 

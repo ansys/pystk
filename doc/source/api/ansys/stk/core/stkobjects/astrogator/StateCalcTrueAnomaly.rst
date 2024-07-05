@@ -3,7 +3,7 @@ StateCalcTrueAnomaly
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTrueAnomaly
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTrueAnomaly`
 
    TrueAnomaly Calc objects.
 

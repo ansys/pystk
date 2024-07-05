@@ -3,7 +3,7 @@ VehicleEllipseDataElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEllipseDataElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleEllipseDataElement`
 
    Ground ellipse data.
 

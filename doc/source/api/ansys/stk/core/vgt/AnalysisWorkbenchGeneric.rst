@@ -3,7 +3,7 @@ AnalysisWorkbenchGeneric
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchGeneric
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Generic VGT component.
 

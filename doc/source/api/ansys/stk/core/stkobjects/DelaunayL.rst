@@ -3,7 +3,7 @@ DelaunayL
 
 .. py:class:: ansys.stk.core.stkobjects.DelaunayL
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDelaunayActionVariable`, py:obj:`~ansys.stk.core.stkobjects.IDelaunayL`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDelaunayActionVariable`, :py:class:`~ansys.stk.core.stkobjects.IDelaunayL`
 
    Delaunay Variable L, which is related to the two-body orbital energy.
 

@@ -3,7 +3,7 @@ MissileGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.MissileGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMissileGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMissileGraphics`
 
    2D Graphics for missiles.
 

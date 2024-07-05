@@ -3,7 +3,7 @@ KeyValueCollection
 
 .. py:class:: ansys.stk.core.stkobjects.KeyValueCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IKeyValueCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IKeyValueCollection`
 
    A collection of keys and values associated with the keys.
 

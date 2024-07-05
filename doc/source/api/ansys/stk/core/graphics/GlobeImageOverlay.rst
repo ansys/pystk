@@ -3,7 +3,7 @@ GlobeImageOverlay
 
 .. py:class:: ansys.stk.core.graphics.GlobeImageOverlay
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IGlobeImageOverlay`, py:obj:`~ansys.stk.core.graphics.IGlobeOverlay`
+   Bases: :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlay`, :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A globe overlay that shows an image.
 

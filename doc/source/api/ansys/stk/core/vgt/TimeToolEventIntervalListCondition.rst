@@ -3,7 +3,7 @@ TimeToolEventIntervalListCondition
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListCondition
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalListCondition`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 

@@ -3,7 +3,7 @@ TimeToolLightTimeDelay
 
 .. py:class:: ansys.stk.core.vgt.TimeToolLightTimeDelay
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolLightTimeDelay`
 
    Manage Light Time Delay options..
 

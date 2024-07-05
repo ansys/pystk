@@ -3,7 +3,7 @@ EOIRShapeCustomMesh
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeCustomMesh
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh`, py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    CustomMesh shape class.
 

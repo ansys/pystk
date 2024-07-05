@@ -3,7 +3,7 @@ SRPModelSpherical
 
 .. py:class:: ansys.stk.core.stkobjects.SRPModelSpherical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISRPModelSpherical`, py:obj:`~ansys.stk.core.stkobjects.ISRPModelBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISRPModelSpherical`, :py:class:`~ansys.stk.core.stkobjects.ISRPModelBase`
 
    Spherical Solar Radiation Pressure Model.
 

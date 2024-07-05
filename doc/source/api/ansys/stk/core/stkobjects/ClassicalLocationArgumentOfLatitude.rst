@@ -3,7 +3,7 @@ ClassicalLocationArgumentOfLatitude
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalLocationArgumentOfLatitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude`, py:obj:`~ansys.stk.core.stkobjects.IClassicalLocation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalLocationArgumentOfLatitude`, :py:class:`~ansys.stk.core.stkobjects.IClassicalLocation`
 
    Argument of Latitude, used in specifying the spacecraft's location within its orbit at epoch.
 

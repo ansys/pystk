@@ -3,7 +3,7 @@ ScatteringPointCollectionElement
 
 .. py:class:: ansys.stk.core.stkobjects.ScatteringPointCollectionElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScatteringPointCollectionElement`
 
    Class defining a scattering point collection element.
 

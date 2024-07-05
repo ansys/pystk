@@ -3,7 +3,7 @@ SiteRelToPrevProcedure
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteRelToPrevProcedure
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteRelToPrevProcedure`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a Relative to Previous Procedure site.
 

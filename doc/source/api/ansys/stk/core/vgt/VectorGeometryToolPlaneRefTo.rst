@@ -3,7 +3,7 @@ VectorGeometryToolPlaneRefTo
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneRefTo
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneRefTo`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
 
    Represents a Plane reference.
 

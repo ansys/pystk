@@ -3,7 +3,7 @@ RFFilterModelGaussianWindow
 
 .. py:class:: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow`, py:obj:`~ansys.stk.core.stkobjects.IRFFilterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow`, :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a cosine window filter model.
 

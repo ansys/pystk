@@ -3,7 +3,7 @@ OnePointAccessResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccessResultCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOnePointAccessResultCollection`
 
    Represents the data sets for one point access.
 

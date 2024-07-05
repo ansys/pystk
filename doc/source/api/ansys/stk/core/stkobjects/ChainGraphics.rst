@@ -3,7 +3,7 @@ ChainGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.ChainGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IChainGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainGraphics`
 
    2D graphics properties of a chain.
 

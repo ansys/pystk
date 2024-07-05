@@ -3,7 +3,7 @@ VectorGeometryToolPointPlaneProjection
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointPlaneProjection
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointPlaneProjection`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The projection of a point onto a reference plane. Specify the Source Point and Reference Plane.
 

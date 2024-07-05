@@ -3,7 +3,7 @@ AntennaBeamTransmit
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeamTransmit
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeamTransmit`, py:obj:`~ansys.stk.core.stkobjects.IAntennaBeam`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamTransmit`, :py:class:`~ansys.stk.core.stkobjects.IAntennaBeam`
 
    Class defining a transmit antenna beam.
 

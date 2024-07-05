@@ -3,7 +3,7 @@ ProcedureFormationFlyer
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureFormationFlyer`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining an formationflyer procedure.
 

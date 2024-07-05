@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelSimpleSatcom
 
 .. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelSimpleSatcom
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom`, py:obj:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelSimpleSatcom`, :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 

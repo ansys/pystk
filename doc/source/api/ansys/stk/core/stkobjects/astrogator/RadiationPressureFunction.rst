@@ -3,7 +3,7 @@ RadiationPressureFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IRadiationPressureFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Radiation Pressure Propagator Function.
 

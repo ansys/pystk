@@ -3,7 +3,7 @@ AccessConstraintIntervals
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintIntervals
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals`, py:obj:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintIntervals`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining the Intervals constraint.
 

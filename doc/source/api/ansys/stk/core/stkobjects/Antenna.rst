@@ -3,7 +3,7 @@ Antenna
 
 .. py:class:: ansys.stk.core.stkobjects.Antenna
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntenna`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntenna`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Class defining the antenna object.
 

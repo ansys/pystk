@@ -3,7 +3,7 @@ SensorRectangularPattern
 
 .. py:class:: ansys.stk.core.stkobjects.SensorRectangularPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorRectangularPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`, :py:class:`~ansys.stk.core.stkobjects.ISensorRectangularPattern`
 
    Class defining the rectangular pattern for a Sensor.
 

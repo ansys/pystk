@@ -3,7 +3,7 @@ ProcedureLaunchDynState
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ProcedureLaunchDynState
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState`, py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedureLaunchDynState`, :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`
 
    Class defining a Launch Dyn State procedure.
 

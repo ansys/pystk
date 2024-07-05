@@ -3,7 +3,7 @@ SatelliteGraphics3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.SatelliteGraphics3DModel
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel`, py:obj:`~ansys.stk.core.stkobjects.IGraphics3DModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISatelliteGraphics3DModel`, :py:class:`~ansys.stk.core.stkobjects.IGraphics3DModel`
 
    All Satellite's VO Model properties.
 

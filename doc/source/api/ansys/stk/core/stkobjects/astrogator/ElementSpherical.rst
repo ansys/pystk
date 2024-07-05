@@ -3,7 +3,7 @@ ElementSpherical
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementSpherical
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementSpherical`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Spherical elements.
 

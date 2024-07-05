@@ -3,7 +3,7 @@ RadarCrossSectionFrequencyBandCollection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBandCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionFrequencyBandCollection`
 
    Class defining a inheritable radar cross section frequency band collection.
 

@@ -3,7 +3,7 @@ VehicleGraphics3DTrajectoryTickMarks
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DTrajectoryTickMarks`
 
    Tick mark data for launch vehicles and missiles.
 

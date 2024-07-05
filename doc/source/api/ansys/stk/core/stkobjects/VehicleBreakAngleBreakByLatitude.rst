@@ -3,7 +3,7 @@ VehicleBreakAngleBreakByLatitude
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLatitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLatitude`
 
    Pass break latitude.
 

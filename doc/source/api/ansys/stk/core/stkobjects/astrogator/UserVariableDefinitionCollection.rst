@@ -3,7 +3,7 @@ UserVariableDefinitionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection`
 
    User Variable Definition Collection.
 

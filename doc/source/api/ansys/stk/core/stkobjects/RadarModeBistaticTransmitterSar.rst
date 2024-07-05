@@ -3,7 +3,7 @@ RadarModeBistaticTransmitterSar
 
 .. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSar
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar`, py:obj:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitterSar`, :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic transmitter sar radar mode.
 

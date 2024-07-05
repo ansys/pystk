@@ -3,7 +3,7 @@ AdvCAT
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCAT
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCAT`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAdvCAT`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    AdvCAT properties.
 

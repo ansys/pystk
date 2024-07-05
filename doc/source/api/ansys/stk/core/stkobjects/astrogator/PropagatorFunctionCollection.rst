@@ -3,7 +3,7 @@ PropagatorFunctionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IPropagatorFunctionCollection`
 
    Propagator Function Collection.
 

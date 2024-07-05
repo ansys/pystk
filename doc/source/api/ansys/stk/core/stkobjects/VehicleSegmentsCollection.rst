@@ -3,7 +3,7 @@ VehicleSegmentsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSegmentsCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSegmentsCollection`
 
    Collection of segments for a vehicle.
 

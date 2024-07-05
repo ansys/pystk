@@ -3,7 +3,7 @@ Geocentric
 
 .. py:class:: ansys.stk.core.stkutil.Geocentric
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IGeocentric`, py:obj:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IGeocentric`, :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining Geocentric position.
 

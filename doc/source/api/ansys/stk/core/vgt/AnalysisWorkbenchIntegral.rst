@@ -3,7 +3,7 @@ AnalysisWorkbenchIntegral
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchIntegral
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Represents a base class for integral definitions.
 

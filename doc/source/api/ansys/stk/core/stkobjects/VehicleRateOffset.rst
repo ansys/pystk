@@ -3,7 +3,7 @@ VehicleRateOffset
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRateOffset
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleRateOffset`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleRateOffset`
 
    AgVeSpin Class.
 

@@ -3,7 +3,7 @@ BeamformerScript
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerScript
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IBeamformerScript`, py:obj:`~ansys.stk.core.stkobjects.IBeamformer`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformerScript`, :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer script plugin.
 

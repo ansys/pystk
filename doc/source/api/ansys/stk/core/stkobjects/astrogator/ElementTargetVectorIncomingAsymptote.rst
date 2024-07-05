@@ -3,7 +3,7 @@ ElementTargetVectorIncomingAsymptote
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IElementTargetVectorIncomingAsymptote`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
 
    Target Vector Incoming Asymptote elements.
 

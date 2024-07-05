@@ -3,7 +3,7 @@ VectorGeometryToolSystemAssembled
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, py:obj:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemAssembled`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A system assembled from an origin point and a set of reference axes.
 

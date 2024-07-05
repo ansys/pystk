@@ -3,7 +3,7 @@ TimeToolIntervalCollection
 
 .. py:class:: ansys.stk.core.vgt.TimeToolIntervalCollection
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolIntervalCollection`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolIntervalCollection`
 
    Represents a collection of intervals.
 

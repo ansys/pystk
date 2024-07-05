@@ -3,7 +3,7 @@ VehicleSpaceEnvironmentRadDoseRateElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadDoseRateElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSpaceEnvironmentRadDoseRateElement`
 
    Class defining dose rate information computed for a shielding thickness.
 

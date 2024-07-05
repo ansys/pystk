@@ -3,7 +3,7 @@ DirectionProviderScript
 
 .. py:class:: ansys.stk.core.stkobjects.DirectionProviderScript
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDirectionProviderScript`, py:obj:`~ansys.stk.core.stkobjects.IDirectionProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderScript`, :py:class:`~ansys.stk.core.stkobjects.IDirectionProvider`
 
    Class defining an script plugin direction provider.
 

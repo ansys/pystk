@@ -3,7 +3,7 @@ VehicleGraphics2DTimeComponentsEventCollectionElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventCollectionElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement`, py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsEventCollectionElement`, :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement`
 
    Provide properties to configure the vehicle's appearance in 2D and 3D views. The interface is used with event interval collections only.
 

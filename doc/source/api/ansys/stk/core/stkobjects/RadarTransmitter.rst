@@ -3,7 +3,7 @@ RadarTransmitter
 
 .. py:class:: ansys.stk.core.stkobjects.RadarTransmitter
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarTransmitter`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarTransmitter`
 
    Class defining the radar transmitter.
 

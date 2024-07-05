@@ -3,7 +3,7 @@ SiteSTKAreaTarget
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.SiteSTKAreaTarget
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget`, py:obj:`~ansys.stk.core.stkobjects.aviator.ISite`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.ISiteSTKAreaTarget`, :py:class:`~ansys.stk.core.stkobjects.aviator.ISite`
 
    Class defining a STK Area Target site.
 

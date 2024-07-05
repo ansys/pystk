@@ -3,7 +3,7 @@ DesignCR3BPObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IDesignCR3BPObjectCollection`
 
    CR3BP associated object Collection.
 

@@ -3,7 +3,7 @@ ModulatorModelDpsk
 
 .. py:class:: ansys.stk.core.stkobjects.ModulatorModelDpsk
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IModulatorModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a DPSK modulator model.
 

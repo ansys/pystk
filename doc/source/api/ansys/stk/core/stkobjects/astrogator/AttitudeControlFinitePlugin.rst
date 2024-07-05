@@ -3,7 +3,7 @@ AttitudeControlFinitePlugin
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.AttitudeControlFinitePlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinitePlugin`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The plugin attitude control for a finite maneuver.
 

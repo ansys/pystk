@@ -3,7 +3,7 @@ ScriptingParameterCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterCollection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Parameter Collection.
 

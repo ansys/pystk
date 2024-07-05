@@ -3,7 +3,7 @@ RadarCrossSectionGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics`
 
    Class defining graphics properties of radar cross section.
 

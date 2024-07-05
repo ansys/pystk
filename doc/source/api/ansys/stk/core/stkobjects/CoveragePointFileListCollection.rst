@@ -3,7 +3,7 @@ CoveragePointFileListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoveragePointFileListCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ICoveragePointFileListCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoveragePointFileListCollection`
 
    Point file list collection.
 

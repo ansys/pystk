@@ -3,7 +3,7 @@ PlanetOrbitDisplayTime
 
 .. py:class:: ansys.stk.core.stkobjects.PlanetOrbitDisplayTime
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IOrbitDisplayData`, py:obj:`~ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IOrbitDisplayData`, :py:class:`~ansys.stk.core.stkobjects.IPlanetOrbitDisplayTime`
 
    Class defining display time of a planet's orbit.
 

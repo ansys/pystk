@@ -3,7 +3,7 @@ SensorGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorGraphics`
 
    Class defining the 2D Graphics properties of a Sensor.
 

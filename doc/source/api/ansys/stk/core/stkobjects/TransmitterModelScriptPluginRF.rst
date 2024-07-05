@@ -3,7 +3,7 @@ TransmitterModelScriptPluginRF
 
 .. py:class:: ansys.stk.core.stkobjects.TransmitterModelScriptPluginRF
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin`, py:obj:`~ansys.stk.core.stkobjects.ITransmitterModel`, py:obj:`~ansys.stk.core.stkobjects.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.ITransmitterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a RF script plugin transmitter model.
 

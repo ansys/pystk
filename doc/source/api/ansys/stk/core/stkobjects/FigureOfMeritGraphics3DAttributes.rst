@@ -3,7 +3,7 @@ FigureOfMeritGraphics3DAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics3DAttributes`
 
    3D static graphics properties for a Figure of Merit.
 

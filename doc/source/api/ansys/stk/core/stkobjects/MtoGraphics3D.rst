@@ -3,7 +3,7 @@ MtoGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoGraphics3D`
 
    MTO 3D graphics properties.
 

@@ -3,7 +3,7 @@ StkPreferencesVDF
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferencesVDF
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IStkPreferencesVDF`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkPreferencesVDF`
 
    Allow configuring VDF preferences.
 

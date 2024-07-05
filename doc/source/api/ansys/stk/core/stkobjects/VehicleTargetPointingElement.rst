@@ -3,7 +3,7 @@ VehicleTargetPointingElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetPointingElement
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetPointingElement`
 
    Target pointing data for target pointing attitude.
 

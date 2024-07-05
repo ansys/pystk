@@ -3,7 +3,7 @@ AccessEventDetection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessEventDetection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAccessEventDetection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessEventDetection`
 
    Define properties and methods to configure the event detection strategy used in access computations.
 

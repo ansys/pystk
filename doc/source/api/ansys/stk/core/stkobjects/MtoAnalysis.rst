@@ -3,7 +3,7 @@ MtoAnalysis
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysis
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoAnalysis`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoAnalysis`
 
    MTO Spatial State Info.
 

@@ -3,7 +3,7 @@ TimeToolPointSamplingInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolPointSamplingInterval
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolPointSamplingInterval`
 
    The interface represents an interval with the time, position and velocity arrays.
 

@@ -3,7 +3,7 @@ MissionControlSequenceSegmentCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegmentCollection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Mission Control Sequence.
 

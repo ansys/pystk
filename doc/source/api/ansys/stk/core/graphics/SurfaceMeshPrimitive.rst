@@ -3,7 +3,7 @@ SurfaceMeshPrimitive
 
 .. py:class:: ansys.stk.core.graphics.SurfaceMeshPrimitive
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
 

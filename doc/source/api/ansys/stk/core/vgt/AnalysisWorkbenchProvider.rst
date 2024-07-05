@@ -3,7 +3,7 @@ AnalysisWorkbenchProvider
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchProvider
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchProvider`
 
    Allow accessing existing Vector Geometry Tool components.
 

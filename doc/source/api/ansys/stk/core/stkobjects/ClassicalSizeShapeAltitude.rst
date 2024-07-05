@@ -3,7 +3,7 @@ ClassicalSizeShapeAltitude
 
 .. py:class:: ansys.stk.core.stkobjects.ClassicalSizeShapeAltitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude`, py:obj:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShapeAltitude`, :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Orbit size and shape using altitude.
 

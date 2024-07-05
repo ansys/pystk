@@ -3,7 +3,7 @@ Procedure
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Procedure
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IProcedure`, py:obj:`~ansys.stk.core.stkobjects.aviator.IConnect`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IProcedure`, :py:class:`~ansys.stk.core.stkobjects.aviator.IConnect`
 
    Class defining an unknown procedure type.
 

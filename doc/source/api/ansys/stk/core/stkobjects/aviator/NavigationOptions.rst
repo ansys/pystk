@@ -3,7 +3,7 @@ NavigationOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.NavigationOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.INavigationOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.INavigationOptions`
 
    Class defining the navigation options in a procedure.
 

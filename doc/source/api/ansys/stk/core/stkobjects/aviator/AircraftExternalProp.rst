@@ -3,7 +3,7 @@ AircraftExternalProp
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftExternalProp
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAircraftExternalProp`
 
    Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft.
 

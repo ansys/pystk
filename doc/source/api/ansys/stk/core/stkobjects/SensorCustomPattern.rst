@@ -3,7 +3,7 @@ SensorCustomPattern
 
 .. py:class:: ansys.stk.core.stkobjects.SensorCustomPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorCustomPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`, :py:class:`~ansys.stk.core.stkobjects.ISensorCustomPattern`
 
    Class defining the custom pattern for a Sensor.
 

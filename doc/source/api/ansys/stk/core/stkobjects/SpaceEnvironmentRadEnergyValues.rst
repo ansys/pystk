@@ -3,7 +3,7 @@ SpaceEnvironmentRadEnergyValues
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyValues
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISpaceEnvironmentRadEnergyValues`
 
    Energy values used by the Radiation Environment model.
 

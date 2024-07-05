@@ -3,7 +3,7 @@ TimeToolEventIntervalListFiltered
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListFiltered
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered`, py:obj:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalListFiltered`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by filtering intervals from original interval list using specified filtering method.
 

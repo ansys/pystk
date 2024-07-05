@@ -3,7 +3,7 @@ VehicleGraphics2DSwath
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DSwath
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DSwath`
 
    Vehicle swath.
 

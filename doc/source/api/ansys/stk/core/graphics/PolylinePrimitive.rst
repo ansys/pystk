@@ -3,7 +3,7 @@ PolylinePrimitive
 
 .. py:class:: ansys.stk.core.graphics.PolylinePrimitive
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPolylinePrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPolylinePrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
 

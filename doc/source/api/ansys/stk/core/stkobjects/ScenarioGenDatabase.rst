@@ -3,7 +3,7 @@ ScenarioGenDatabase
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioGenDatabase
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IScenarioGenDatabase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenarioGenDatabase`
 
    Class defining database settings of the Scenario.
 

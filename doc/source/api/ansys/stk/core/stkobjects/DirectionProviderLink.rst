@@ -3,7 +3,7 @@ DirectionProviderLink
 
 .. py:class:: ansys.stk.core.stkobjects.DirectionProviderLink
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IDirectionProviderLink`, py:obj:`~ansys.stk.core.stkobjects.IDirectionProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDirectionProviderLink`, :py:class:`~ansys.stk.core.stkobjects.IDirectionProvider`
 
    Class defining an link direction provider.
 

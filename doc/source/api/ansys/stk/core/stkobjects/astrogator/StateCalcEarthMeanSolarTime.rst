@@ -3,7 +3,7 @@ StateCalcEarthMeanSolarTime
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanSolarTime
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEarthMeanSolarTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEarthMeanSolarTime`
 
    EarthMeanSolarTime Calc objects.
 

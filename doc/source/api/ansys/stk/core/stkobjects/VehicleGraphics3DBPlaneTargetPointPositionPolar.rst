@@ -3,7 +3,7 @@ VehicleGraphics3DBPlaneTargetPointPositionPolar
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionPolar
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPositionPolar`
 
    3D BPlane target point position polar.
 

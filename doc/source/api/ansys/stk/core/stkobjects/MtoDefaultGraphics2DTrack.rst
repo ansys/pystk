@@ -3,7 +3,7 @@ MtoDefaultGraphics2DTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMtoDefaultGraphics2DTrack`
 
    2D graphics attributes for default MTO tracks.
 

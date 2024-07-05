@@ -3,7 +3,7 @@ PathPrimitive
 
 .. py:class:: ansys.stk.core.graphics.PathPrimitive
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPathPrimitive`, py:obj:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPathPrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
 

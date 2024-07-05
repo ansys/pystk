@@ -3,7 +3,7 @@ Radar
 
 .. py:class:: ansys.stk.core.stkobjects.Radar
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IRadar`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadar`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the radar object.
 

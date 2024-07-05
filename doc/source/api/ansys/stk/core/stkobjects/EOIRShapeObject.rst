@@ -3,7 +3,7 @@ EOIRShapeObject
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeObject
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    Represents a generic shape object.
 

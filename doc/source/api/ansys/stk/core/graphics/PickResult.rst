@@ -3,7 +3,7 @@ PickResult
 
 .. py:class:: ansys.stk.core.graphics.PickResult
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IPickResult`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPickResult`
 
    A single result from Pick.
 

@@ -3,7 +3,7 @@ RenderingEventArgs
 
 .. py:class:: ansys.stk.core.graphics.RenderingEventArgs
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IRenderingEventArgs`
+   Bases: :py:class:`~ansys.stk.core.graphics.IRenderingEventArgs`
 
    The event is raised when the scene is rendered.
 

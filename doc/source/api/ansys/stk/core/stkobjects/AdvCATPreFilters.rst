@@ -3,7 +3,7 @@ AdvCATPreFilters
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATPreFilters
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAdvCATPreFilters`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAdvCATPreFilters`
 
    AdvCAT pre-filters properties.
 

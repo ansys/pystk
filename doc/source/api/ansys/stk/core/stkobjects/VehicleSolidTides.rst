@@ -3,7 +3,7 @@ VehicleSolidTides
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSolidTides
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleSolidTides`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSolidTides`
 
    Class defining the contribution of solid tides.
 

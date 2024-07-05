@@ -3,7 +3,7 @@ VehicleProfileSpinAboutXXX
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileSpinAboutXXX
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX`, py:obj:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileSpinAboutXXX`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Shared for Spin About Nadir and Spin About Sun Vector profile parameters.
 

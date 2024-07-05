@@ -3,7 +3,7 @@ CentralBodyCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyCollection`
 
    Central Body Collection.
 

@@ -3,7 +3,7 @@ TimeIntervalDisplayConditionFactory
 
 .. py:class:: ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory`
 
    Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
 

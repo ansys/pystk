@@ -3,7 +3,7 @@ LineTarget
 
 .. py:class:: ansys.stk.core.stkobjects.LineTarget
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ILineTarget`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IDisplayTime`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ILineTarget`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IDisplayTime`
 
    Line Target Path properties.
 

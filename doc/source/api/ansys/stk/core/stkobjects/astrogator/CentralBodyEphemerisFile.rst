@@ -3,7 +3,7 @@ CentralBodyEphemerisFile
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisFile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile`, py:obj:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - File.
 

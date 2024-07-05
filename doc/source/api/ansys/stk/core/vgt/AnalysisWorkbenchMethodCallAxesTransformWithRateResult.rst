@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAxesTransformWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesTransformWithRateResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult`
 
    Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
 

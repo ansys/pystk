@@ -3,7 +3,7 @@ Missile
 
 .. py:class:: ansys.stk.core.stkobjects.Missile
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IMissile`, py:obj:`~ansys.stk.core.stkobjects.IStkObject`, py:obj:`~ansys.stk.core.stkobjects.ILifetimeInformation`, py:obj:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IMissile`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`, :py:class:`~ansys.stk.core.stkobjects.IProvideSpatialInfo`
 
    Missile object.
 

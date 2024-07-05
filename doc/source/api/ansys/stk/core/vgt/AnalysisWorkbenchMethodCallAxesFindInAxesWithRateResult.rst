@@ -3,7 +3,7 @@ AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult
 
-   Bases: py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, py:obj:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult`
 
    Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
 

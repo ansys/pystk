@@ -3,7 +3,7 @@ BPlaneCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BPlaneCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IBPlaneCollection`
 
    The collection of B-Planes.
 

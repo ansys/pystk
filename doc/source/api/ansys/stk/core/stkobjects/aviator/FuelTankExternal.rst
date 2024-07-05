@@ -3,7 +3,7 @@ FuelTankExternal
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.FuelTankExternal
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IFuelTankExternal`
 
    Class defining an external fuel tank for an Aviator aircraft.
 

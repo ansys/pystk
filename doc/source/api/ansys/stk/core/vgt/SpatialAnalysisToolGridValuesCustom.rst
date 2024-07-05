@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesCustom
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesCustom
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom`, py:obj:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 

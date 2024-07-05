@@ -3,7 +3,7 @@ MissionControlSequenceOptions
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceOptions
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceOptions`
 
    The MCS Options.
 

@@ -3,7 +3,7 @@ AntennaBeam
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeam
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaBeam`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeam`
 
    Class defining an antenna beam.
 

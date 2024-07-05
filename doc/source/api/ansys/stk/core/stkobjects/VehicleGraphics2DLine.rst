@@ -3,7 +3,7 @@ VehicleGraphics2DLine
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLine
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleGraphics2DLine`
 
    Line Style and Line Width properties used in displaying vehicle tracks.
 

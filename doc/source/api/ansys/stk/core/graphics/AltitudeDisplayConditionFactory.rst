@@ -3,7 +3,7 @@ AltitudeDisplayConditionFactory
 
 .. py:class:: ansys.stk.core.graphics.AltitudeDisplayConditionFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory`
 
    Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
 

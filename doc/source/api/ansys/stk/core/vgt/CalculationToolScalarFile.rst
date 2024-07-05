@@ -3,7 +3,7 @@ CalculationToolScalarFile
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFile
 
-   Bases: py:obj:`~ansys.stk.core.vgt.ICalculationToolScalarFile`, py:obj:`~ansys.stk.core.vgt.ICalculationToolScalar`, py:obj:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalarFile`, :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Tabulated scalar calculation data loaded from specified file - a file with .csc extension.
 

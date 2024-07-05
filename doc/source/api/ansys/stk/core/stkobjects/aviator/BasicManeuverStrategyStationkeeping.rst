@@ -3,7 +3,7 @@ BasicManeuverStrategyStationkeeping
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping`, py:obj:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategyStationkeeping`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the Stationkeeping strategy for a basic maneuver procedure.
 

@@ -3,7 +3,7 @@ UserVariableCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IUserVariableCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableCollection`
 
    User Variable Initial Value Collection.
 

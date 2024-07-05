@@ -3,7 +3,7 @@ PlaceGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.PlaceGraphics3D
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IPlaceGraphics3D`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IPlaceGraphics3D`
 
    3D Graphics properties of a Place.
 

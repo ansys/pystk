@@ -3,7 +3,7 @@ SensorTargetCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorTargetCollection
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorTargetCollection`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorTargetCollection`
 
    Class defining the target collection for a target-pointing Sensor.
 

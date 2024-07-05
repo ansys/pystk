@@ -3,7 +3,7 @@ VehicleBreakAngleBreakByLongitude
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLongitude
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLongitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleBreakAngleBreakByLongitude`
 
    Pass break longitude.
 

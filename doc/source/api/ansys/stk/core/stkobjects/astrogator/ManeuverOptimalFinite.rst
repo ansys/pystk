@@ -3,7 +3,7 @@ ManeuverOptimalFinite
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, py:obj:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuverOptimalFinite`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IManeuver`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    The Optimal Finite Maneuver.
 

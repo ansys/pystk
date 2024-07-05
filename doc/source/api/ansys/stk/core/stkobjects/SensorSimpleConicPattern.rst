@@ -3,7 +3,7 @@ SensorSimpleConicPattern
 
 .. py:class:: ansys.stk.core.stkobjects.SensorSimpleConicPattern
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISensorPattern`, py:obj:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPattern`, :py:class:`~ansys.stk.core.stkobjects.ISensorSimpleConicPattern`
 
    Class defining the simple conic pattern for a Sensor.
 

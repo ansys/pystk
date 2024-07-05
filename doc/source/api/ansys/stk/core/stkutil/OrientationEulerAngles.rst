@@ -3,7 +3,7 @@ OrientationEulerAngles
 
 .. py:class:: ansys.stk.core.stkutil.OrientationEulerAngles
 
-   Bases: py:obj:`~ansys.stk.core.stkutil.IOrientationEulerAngles`, py:obj:`~ansys.stk.core.stkutil.IOrientation`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IOrientationEulerAngles`, :py:class:`~ansys.stk.core.stkutil.IOrientation`
 
    Euler Angles orientation method.
 

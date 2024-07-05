@@ -3,7 +3,7 @@ AntennaControl
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaControl
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IAntennaControl`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaControl`
 
    Class defining the properties for a antenna control.
 

@@ -3,7 +3,7 @@ TriangleMeshPrimitiveOptionalParametersFactory
 
 .. py:class:: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParametersFactory
 
-   Bases: py:obj:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParametersFactory`
+   Bases: :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParametersFactory`
 
    Optional parameters for triangle mesh primitive...
 

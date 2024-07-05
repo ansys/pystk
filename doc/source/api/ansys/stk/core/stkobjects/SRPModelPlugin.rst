@@ -3,7 +3,7 @@ SRPModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.SRPModelPlugin
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.ISRPModelPlugin`, py:obj:`~ansys.stk.core.stkobjects.ISRPModelBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISRPModelPlugin`, :py:class:`~ansys.stk.core.stkobjects.ISRPModelBase`
 
    Plugin Light Reflection Model.
 

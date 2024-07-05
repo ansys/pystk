@@ -3,7 +3,7 @@ ElementConfigurationHexagon
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationHexagon
 
-   Bases: py:obj:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon`, py:obj:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationPolygon`, :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a hexagon element configuration.
 
