@@ -256,7 +256,7 @@ globe_plotter.show()
 
 # Create an access object between the fixed sensor and Raton:
 
-fixed_sat_access = fixed_sat_sensor.get_access(raton.path)
+fixed_sat_access = fixed_sat_sensor.get_access_to_object(raton)
 
 # Use the access object to compute the accesses between the sensor and Raton:
 
@@ -300,7 +300,7 @@ moving_sat_sensor.pointing.targets.add(raton.path)
 
 # First, create an access between the moving sensor and Raton:
 
-moving_sat_access = moving_sat_sensor.get_access(raton.path)
+moving_sat_access = moving_sat_sensor.get_access_to_object(raton)
 
 # Use the access object to compute the accesses between the sensor and Raton:
 
@@ -372,7 +372,7 @@ map_plotter.show()
 
 # Create an access between the sensor and the aircraft:
 
-radar_dome_access = radar_dome_sensor.get_access(aircraft.path)
+radar_dome_access = radar_dome_sensor.get_access_to_object(aircraft)
 
 # Compute the accesses between the sensor and aircraft:
 
@@ -506,7 +506,7 @@ map_plotter.show()
 
 # Now, determine when the sweeping radar sensor can see the aircraft flying between Cheyenne and Raton. To do so, first create an access between the sensor and the aircraft:
 
-sweeping_access = radar_sweep_sensor.get_access(aircraft.path)
+sweeping_access = radar_sweep_sensor.get_access_to_object(aircraft)
 
 # Then, compute the access:
 
@@ -567,7 +567,7 @@ ax.xaxis.set_major_formatter(formatter)
 
 # First, create an access between the satellite's fixed sensor and the aircraft:
 
-fixed_aircraft_access = fixed_sat_sensor.get_access(aircraft.path)
+fixed_aircraft_access = fixed_sat_sensor.get_access_to_object(aircraft)
 
 # Then, compute the access:
 
@@ -579,7 +579,7 @@ fixed_aircraft_access_df = fixed_aircraft_access.data_providers.item("Access Dat
 
 # Then, create an access between the satellite's moving sensor and the aircraft:
 
-moving_aircraft_access = moving_sat_sensor.get_access(aircraft.path)
+moving_aircraft_access = moving_sat_sensor.get_access_to_object(aircraft)
 
 # Then, compute the access:
 
