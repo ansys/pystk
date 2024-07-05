@@ -130,20 +130,21 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
     This function requires ``numpy``.
     """
     import numpy
+    from ..stkobjects import DATA_PROVIDER_ELEMENT_TYPE
 
     dtype_element_name_mapping = dict()
 
     for element in data_provider_elements:
-        normalized_element_name = element.Name.lower()
-        element_type_name = element.Type.name.lower()
-        element_dimensions_name = element.DimensionName.lower()
+        element_type = element.type
+        normalized_element_name = element.name.lower()
+        element_dimensions_name = element.dimension_name.lower()
 
         # By default to avoid issues with possible leap seconds or other time precision related issues we map date
         # dimension elements as string dtypes in pandas. Future work plans to implement more robust datetime support
         # for pandas.
-        if element_type_name == "ereal" and element_dimensions_name not in "date":
+        if element_type == DATA_PROVIDER_ELEMENT_TYPE.REAL and element_dimensions_name not in "date":
             pd_dtype = numpy.float64
-        elif element_type_name == "eint":
+        elif element_type == DATA_PROVIDER_ELEMENT_TYPE.INT:
             pd_dtype = numpy.int64
         else:
             # by default make everything else a str, strings like datatime strings can be handled/parsed
