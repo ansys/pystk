@@ -3060,52 +3060,32 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < len(supportedTypes):
-            if (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+            if DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderAsciiFile), True
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.LINK:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.LINK:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.LINK, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderLink(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderLink)
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderObject), False
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.beam_direction_provider_type)
                 filename: str = r"CommRad\VB_BeamDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
                     clr.CastAs(phasedArray.beam_direction_provider, DirectionProviderScript), filename
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
             else:
@@ -3119,42 +3099,26 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < len(supportedTypes):
-            if (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+            if DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderAsciiFile), False
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, phasedArray.null_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderObject), False
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, phasedArray.null_direction_provider_type)
                 filename: str = r"CommRad\VB_NullDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
                     clr.CastAs(phasedArray.null_direction_provider, DirectionProviderScript), filename
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     phasedArray.null_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
             else:
@@ -3202,129 +3166,81 @@ class AntennaHelper(object):
             Assert.assertEqual(r"CommRad\VB_Beamformer.vbs", script.filename)
 
     def Test_IAgAntennaModelHfssEepArray(self, hfssEepArray: "AntennaModelHfssEepArray"):
-        # System.Windows.Forms.MessageBox.Show("HFSS start");
+        # Initial State
+        Assert.assertEqual(0, hfssEepArray.number_of_elements)
+        Assert.assertEqual(0, hfssEepArray.width)
+        Assert.assertEqual(0, hfssEepArray.height)
 
-        # COMMRAD-3556
+        # Element Configuration sub-tab
 
-        # Assert.AreEqual(7, hfssEepArray.NumberOfElements);         // read only
+        hfssEepFile: "ElementConfigurationHfssEepFile" = hfssEepArray.element_configuration
 
-        # if ((hfssEepArray as IAntennaModel).DesignFrequency == 1.0)
-        # {
-        #    Assert.AreEqual(0.45, (double)hfssEepArray.Width, 0.01);   // read only - depends on Design Frequency
-        #    Assert.AreEqual(0.39, (double)hfssEepArray.Height, 0.01);  // read only - depends on Design Frequency
-        # }
-        # else
-        # {
-        #    //TODO Assert.AreEqual(0.15, (double)phasedArray.Width, 0.01);   // read only - depends on Design Frequency
-        #    //TODO Assert.AreEqual(0.13, (double)phasedArray.Height, 0.01);  // read only - depends on Design Frequency
-        # }
+        # hfssEepFile.Filename = @"D:\Misc\4PatM\eepFiles\v1\linear\square_lattice_1x5_E_plane.xml";
+        eepFilename: str = TestBase.GetScenarioFile(
+            "CommRad", "eepFiles", "v1", "linear", "square_lattice_1x5_E_plane.xml"
+        )
+        hfssEepFile.filename = eepFilename
+        Assert.assertTrue(("square_lattice_1x5_E_plane.xml" in hfssEepFile.filename))
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            hfssEepFile.filename = "bogus"
 
-        # TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { hfssEepArray.BeamformerType = BEAMFORMER_TYPE.UNKNOWN; });
+        hfssEepFile.gain_type = HFSS_FFD_GAIN_TYPE.REALIZED_GAIN
+        Assert.assertEqual(HFSS_FFD_GAIN_TYPE.REALIZED_GAIN, hfssEepFile.gain_type)
+        Assert.assertAlmostEqual(-13.04781, hfssEepFile.defined_power_value, delta=1e-05)
 
-        # // Element Configuration sub-tab
+        hfssEepFile.gain_type = HFSS_FFD_GAIN_TYPE.TOTAL_GAIN
+        Assert.assertEqual(HFSS_FFD_GAIN_TYPE.TOTAL_GAIN, hfssEepFile.gain_type)
+        Assert.assertAlmostEqual(-13.43777, hfssEepFile.defined_power_value, delta=1e-05)
 
-        # ElementCollection eleColl = hfssEepArray.Elements;
+        hfssEepFile.user_gain_factor = 1.5
+        Assert.assertAlmostEqual(1.5, hfssEepFile.user_gain_factor, delta=1e-05)
 
-        # for (int i = 0; i < eleColl.Count; i++)
-        # {
-        #    Element e = eleColl[i];
-        #    Console.WriteLine(i.ToString() + "  " + e.X + "  " + e.Y + "  " + e.Enabled + "  " + e.Id);
-        # }
+        Assert.assertTrue(("10 GHz" in hfssEepFile.defined_frequencies))
 
-        # Assert.AreEqual(eleColl[0].X, -1.25, 0.01); Assert.AreEqual(eleColl[0].Y, -0.43, 0.01);
-        # Assert.AreEqual(eleColl[1].X, -1.25, 0.01); Assert.AreEqual(eleColl[1].Y, 0.43, 0.01);
-        # Assert.AreEqual(eleColl[2].X, -1.00, 0.01); Assert.AreEqual(eleColl[2].Y, 0.00, 0.01);
-        # Assert.AreEqual(eleColl[3].X, -0.75, 0.01); Assert.AreEqual(eleColl[3].Y, -0.43, 0.01);
-        # Assert.AreEqual(eleColl[4].X, -0.75, 0.01); Assert.AreEqual(eleColl[4].Y, 0.43, 0.01);
-        # Assert.AreEqual(eleColl[5].X, -0.50, 0.01); Assert.AreEqual(eleColl[5].Y, 0.00, 0.01);
-        # Assert.AreEqual(eleColl[6].X, -0.25, 0.01); Assert.AreEqual(eleColl[6].Y, -0.43, 0.01);
-        # Assert.AreEqual(eleColl[7].X, -0.25, 0.01); Assert.AreEqual(eleColl[7].Y, 0.43, 0.01);
-        # Assert.AreEqual(eleColl[8].X, 0.00, 0.01); Assert.AreEqual(eleColl[8].Y, 0.00, 0.01);
-        # Assert.AreEqual(eleColl[9].X, 0.25, 0.01); Assert.AreEqual(eleColl[9].Y, -0.43, 0.01);
-        # Assert.AreEqual(eleColl[10].X, 0.25, 0.01); Assert.AreEqual(eleColl[10].Y, 0.43, 0.01);
-        # Assert.AreEqual(eleColl[11].X, 0.50, 0.01); Assert.AreEqual(eleColl[11].Y, 0.00, 0.01);
-        # Assert.AreEqual(eleColl[12].X, 0.75, 0.01); Assert.AreEqual(eleColl[12].Y, -0.43, 0.01);
-        # Assert.AreEqual(eleColl[13].X, 0.75, 0.01); Assert.AreEqual(eleColl[13].Y, 0.43, 0.01);
-        # Assert.AreEqual(eleColl[14].X, 1.00, 0.01); Assert.AreEqual(eleColl[14].Y, 0.00, 0.01);
+        eleColl: "ElementCollection" = hfssEepArray.elements
 
-        # Assert.AreEqual(eleColl[0].Enabled, false); Assert.AreEqual(eleColl[0].Id, 0);
-        # Assert.AreEqual(eleColl[1].Enabled, false); Assert.AreEqual(eleColl[1].Id, 1);
-        # Assert.AreEqual(eleColl[2].Enabled, false); Assert.AreEqual(eleColl[2].Id, 2);
-        # Assert.AreEqual(eleColl[3].Enabled, false); Assert.AreEqual(eleColl[3].Id, 3);
-        # Assert.AreEqual(eleColl[4].Enabled, false); Assert.AreEqual(eleColl[4].Id, 4);
-        # Assert.AreEqual(eleColl[5].Enabled, true); Assert.AreEqual(eleColl[5].Id, 5);
-        # Assert.AreEqual(eleColl[6].Enabled, true); Assert.AreEqual(eleColl[6].Id, 6);
-        # Assert.AreEqual(eleColl[7].Enabled, true); Assert.AreEqual(eleColl[7].Id, 7);
-        # Assert.AreEqual(eleColl[8].Enabled, true); Assert.AreEqual(eleColl[8].Id, 8);
-        # Assert.AreEqual(eleColl[9].Enabled, true); Assert.AreEqual(eleColl[9].Id, 9);
-        # Assert.AreEqual(eleColl[10].Enabled, true); Assert.AreEqual(eleColl[10].Id, 10);
-        # Assert.AreEqual(eleColl[11].Enabled, true); Assert.AreEqual(eleColl[11].Id, 11);
-        # Assert.AreEqual(eleColl[12].Enabled, false); Assert.AreEqual(eleColl[12].Id, 12);
-        # Assert.AreEqual(eleColl[13].Enabled, false); Assert.AreEqual(eleColl[13].Id, 13);
-        # Assert.AreEqual(eleColl[14].Enabled, false); Assert.AreEqual(eleColl[14].Id, 14);
+        i: int = 0
+        while i < eleColl.count:
+            e: "Element" = eleColl[i]
+            Console.WriteLine(
+                ((((((((str(i) + "  ") + str(e.x)) + "  ") + str(e.y)) + "  ") + str(e.enabled)) + "  ") + str(e.id))
+            )
 
-        # foreach (Element ele in eleColl)
-        # {
-        #    Assert.IsNotNull(ele);
-        #    ele.Enabled = true;
-        #    Assert.IsTrue(ele.Enabled);
-        # }
-        # for (int i = 0; i < eleColl.Count; i++)
-        # {
-        #    Element ele2 = eleColl[i];
-        #    Assert.AreEqual(i, ele2.Id);
+            i += 1
 
-        #    if (i == eleColl.Count - 1)
-        #    {
-        #        TryCatchAssertBlock.ExpectedException("Cannot disable the last element", delegate () { ele2.Enabled = false; });
-        #    }
-        #    else
-        #    {
-        #        ele2.Enabled = false;
-        #        Assert.IsFalse(ele2.Enabled);
-        #    }
-        # }
+        myEle: "Element"
+        for myEle in eleColl:
+            Console.WriteLine(
+                ((((((str(myEle.x) + "  ") + str(myEle.y)) + "  ") + str(myEle.enabled)) + "  ") + str(myEle.id))
+            )
 
-        # foreach (ELEMENT_CONFIGURATION_TYPE elementConfigurationType in Enum.GetValues(typeof(ELEMENT_CONFIGURATION_TYPE)))
-        # {
-        #    switch (elementConfigurationType)
-        #    {
-        #        case ELEMENT_CONFIGURATION_TYPE.ASCII_FILE:
-        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.ASCII_FILE;
-        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.ASCII_FILE, phasedArray.ElementConfigurationType);
-        #            Test_IAgElementConfigurationAsciiFile(phasedArray.ElementConfiguration as ElementConfigurationAsciiFile);
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.CIRCULAR:
-        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.CIRCULAR;
-        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.CIRCULAR, phasedArray.ElementConfigurationType);
-        #            Test_IAgElementConfigurationCircular(phasedArray.ElementConfiguration as ElementConfigurationCircular);
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.HEXAGON:
-        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.HEXAGON;
-        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.HEXAGON, phasedArray.ElementConfigurationType);
-        #            Test_IAgElementConfigurationPolygon(phasedArray.ElementConfiguration as IElementConfigurationPolygon, true);
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.LINEAR:
-        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.LINEAR;
-        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.LINEAR, phasedArray.ElementConfigurationType);
-        #            Test_IAgElementConfigurationLinear(phasedArray.ElementConfiguration as ElementConfigurationLinear);
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.POLYGON:
-        #            phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.POLYGON;
-        #            Assert.AreEqual(ELEMENT_CONFIGURATION_TYPE.POLYGON, phasedArray.ElementConfigurationType);
-        #            Test_IAgElementConfigurationPolygon(phasedArray.ElementConfiguration as IElementConfigurationPolygon, false);
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE:  // not supported for Phased Array
-        #            TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.HFSS_EEP_FILE; });
-        #            break;
-        #        case ELEMENT_CONFIGURATION_TYPE.UNKNOWN:
-        #            TryCatchAssertBlock.ExpectedException("Unrecognized", delegate () { phasedArray.ElementConfigurationType = ELEMENT_CONFIGURATION_TYPE.UNKNOWN; });
-        #            break;
-        #        default:
-        #            Assert.Fail("Untested ELEMENT_CONFIGURATION_TYPE");
-        #            break;
-        #    }
-        # }
+        Assert.assertEqual(5, eleColl.count)
+
+        ele: "Element" = eleColl[0]
+        Assert.assertEqual(0, ele.id)
+        Assert.assertEqual(0, ele.x)
+        Assert.assertEqual(0, ele.y)
+        Assert.assertEqual(True, ele.enabled)
+        ele = eleColl[1]
+        Assert.assertEqual(1, ele.id)
+        Assert.assertEqual(0, ele.x)
+        Assert.assertAlmostEqual(0.01499, ele.y, delta=1e-05)
+        Assert.assertEqual(True, ele.enabled)
+        ele = eleColl[2]
+        Assert.assertEqual(2, ele.id)
+        Assert.assertEqual(0, ele.x)
+        Assert.assertAlmostEqual(0.029979, ele.y, delta=1e-05)
+        Assert.assertEqual(True, ele.enabled)
+        ele = eleColl[3]
+        Assert.assertEqual(3, ele.id)
+        Assert.assertEqual(0, ele.x)
+        Assert.assertAlmostEqual(0.044969, ele.y, delta=1e-05)
+        Assert.assertEqual(True, ele.enabled)
+        ele = eleColl[4]
+        Assert.assertEqual(4, ele.id)
+        Assert.assertEqual(0, ele.x)
+        Assert.assertAlmostEqual(0.059958, ele.y, delta=1e-05)
+        Assert.assertEqual(True, ele.enabled)
 
         # Beam Direction Provider sub-tab
 
@@ -3333,58 +3249,169 @@ class AntennaHelper(object):
 
         i: int = 0
         while i < len(supportedTypes):
-            if (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
+            if DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.ASCII_FILE:
                 hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.ASCII_FILE
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.ASCII_FILE, hfssEepArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderAsciiFile(
                     clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderAsciiFile), True
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.LINK:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.LINK:
                 hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.LINK
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.LINK, hfssEepArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderLink(
                     clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderLink)
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.OBJECT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.OBJECT:
                 hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.OBJECT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.OBJECT, hfssEepArray.beam_direction_provider_type)
                 self.Test_IAgDirectionProviderObject(
                     clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderObject), False
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.SCRIPT:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.SCRIPT:
                 hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.SCRIPT
                 Assert.assertEqual(DIRECTION_PROVIDER_TYPE.SCRIPT, hfssEepArray.beam_direction_provider_type)
                 filename: str = r"CommRad\VB_BeamDirectionProvider.vbs"
                 self.Test_IAgDirectionProviderScript(
                     clr.CastAs(hfssEepArray.beam_direction_provider, DirectionProviderScript), filename
                 )
-            elif (
-                DIRECTION_PROVIDER_TYPE(int(supportedTypes[i]))
-                if (int(supportedTypes[i]) in [item.value for item in DIRECTION_PROVIDER_TYPE])
-                else int(supportedTypes[i])
-            ) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
+            elif DIRECTION_PROVIDER_TYPE(int(supportedTypes[i])) == DIRECTION_PROVIDER_TYPE.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     hfssEepArray.beam_direction_provider_type = DIRECTION_PROVIDER_TYPE.UNKNOWN
             else:
                 Assert.fail("Untested DIRECTION_PROVIDER_TYPE for Beam DP")
 
             i += 1
+
+        # Beam Former sub-tab
+
+        Assert.assertEqual(BEAMFORMER_TYPE.UNIFORM, hfssEepArray.beamformer_type)  # default
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
+            hfssEepArray.beamformer_type = BEAMFORMER_TYPE.UNKNOWN
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            hfssEepArray.beamformer_type = BEAMFORMER_TYPE.MVDR
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            hfssEepArray.beamformer_type = BEAMFORMER_TYPE.SCRIPT
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            hfssEepArray.beamformer_type = BEAMFORMER_TYPE.ASCII_FILE
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.BLACKMAN_HARRIS
+        Assert.assertEqual(BEAMFORMER_TYPE.BLACKMAN_HARRIS, hfssEepArray.beamformer_type)
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.COSINE
+        Assert.assertEqual(BEAMFORMER_TYPE.COSINE, hfssEepArray.beamformer_type)
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.COSINE_X
+        Assert.assertEqual(BEAMFORMER_TYPE.COSINE_X, hfssEepArray.beamformer_type)
+
+        cosineX: "BeamformerCosineX" = clr.CastAs(hfssEepArray.beamformer, BeamformerCosineX)
+        cosineX.x = 1
+        Assert.assertEqual(1, cosineX.x)
+        cosineX.x = 6
+        Assert.assertEqual(6, cosineX.x)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            cosineX.x = 0
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            cosineX.x = 7
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.CUSTOM_TAPER_FILE
+        Assert.assertEqual(BEAMFORMER_TYPE.CUSTOM_TAPER_FILE, hfssEepArray.beamformer_type)
+
+        customTaperFile: "BeamformerCustomTaperFile" = clr.CastAs(hfssEepArray.beamformer, BeamformerCustomTaperFile)
+        # customTaperFile.Filename = @"D:\Misc\4PatM\customTaperFile\weights_5El_hamming.ewf";
+        ctfFilename: str = TestBase.GetScenarioFile("CommRad", "eepFiles", "customTaperFile", "weights_5El_hamming.ewf")
+        customTaperFile.filename = ctfFilename
+        Assert.assertTrue(("weights_5El_hamming.ewf" in customTaperFile.filename))
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            customTaperFile.filename = "bogus"
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.DOLPH_CHEBYSHEV
+        Assert.assertEqual(BEAMFORMER_TYPE.DOLPH_CHEBYSHEV, hfssEepArray.beamformer_type)
+
+        dolphChebyshev: "BeamformerDolphChebyshev" = clr.CastAs(hfssEepArray.beamformer, BeamformerDolphChebyshev)
+        dolphChebyshev.sidelobe_level = -300
+        Assert.assertEqual(-300, dolphChebyshev.sidelobe_level)
+        dolphChebyshev.sidelobe_level = 0
+        Assert.assertEqual(0, dolphChebyshev.sidelobe_level)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            dolphChebyshev.sidelobe_level = -301
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            dolphChebyshev.sidelobe_level = 1
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.HAMMING
+        Assert.assertEqual(BEAMFORMER_TYPE.HAMMING, hfssEepArray.beamformer_type)
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.HANN
+        Assert.assertEqual(BEAMFORMER_TYPE.HANN, hfssEepArray.beamformer_type)
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.RAISED_COSINE
+        Assert.assertEqual(BEAMFORMER_TYPE.RAISED_COSINE, hfssEepArray.beamformer_type)
+
+        raisedCosine: "BeamformerRaisedCosine" = clr.CastAs(hfssEepArray.beamformer, BeamformerRaisedCosine)
+        raisedCosine.p = 0
+        Assert.assertEqual(0, raisedCosine.p)
+        raisedCosine.p = 20
+        Assert.assertEqual(20, raisedCosine.p)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            raisedCosine.p = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            raisedCosine.p = 21
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.RAISED_COSINE_SQUARED
+        Assert.assertEqual(BEAMFORMER_TYPE.RAISED_COSINE_SQUARED, hfssEepArray.beamformer_type)
+
+        raisedCosineSquared: "BeamformerRaisedCosineSquared" = clr.CastAs(
+            hfssEepArray.beamformer, BeamformerRaisedCosineSquared
+        )
+        raisedCosineSquared.p = 0
+        Assert.assertEqual(0, raisedCosineSquared.p)
+        raisedCosineSquared.p = 20
+        Assert.assertEqual(20, raisedCosineSquared.p)
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            raisedCosineSquared.p = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
+            raisedCosineSquared.p = 21
+
+        hfssEepArray.beamformer_type = BEAMFORMER_TYPE.UNIFORM
+        Assert.assertEqual(BEAMFORMER_TYPE.UNIFORM, hfssEepArray.beamformer_type)
+
+        # Use a different file
+
+        # hfssEepFile.Filename = @"D:\Misc\4PatM\eepFiles\v1\planar\square_lattice_5x5.xml";
+        eepFilename = TestBase.GetScenarioFile("CommRad", "eepFiles", "v1", "planar", "square_lattice_5x5.xml")
+        hfssEepFile.filename = eepFilename
+        Assert.assertTrue(("square_lattice_5x5.xml" in hfssEepFile.filename))
+        with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+            hfssEepFile.filename = "bogus"
+
+        beamformerType: "BEAMFORMER_TYPE"
+
+        for beamformerType in Enum.GetValues(clr.TypeOf(BEAMFORMER_TYPE)):
+            if BEAMFORMER_TYPE.UNIFORM == beamformerType:
+                hfssEepArray.beamformer_type = BEAMFORMER_TYPE.UNIFORM
+                Assert.assertEqual(BEAMFORMER_TYPE.UNIFORM, hfssEepArray.beamformer_type)
+
+            elif BEAMFORMER_TYPE.CUSTOM_TAPER_FILE == beamformerType:
+                hfssEepArray.beamformer_type = BEAMFORMER_TYPE.CUSTOM_TAPER_FILE
+                Assert.assertEqual(BEAMFORMER_TYPE.CUSTOM_TAPER_FILE, hfssEepArray.beamformer_type)
+
+                customTaperFile = clr.CastAs(hfssEepArray.beamformer, BeamformerCustomTaperFile)
+                # customTaperFile.Filename = @"D:\Misc\4PatM\customTaperFile\weights_5El_hamming.ewf";
+                ctfFilename = TestBase.GetScenarioFile(
+                    "CommRad", "eepFiles", "customTaperFile", "weights_5El_hamming.ewf"
+                )
+                customTaperFile.filename = ctfFilename
+                Assert.assertTrue(("weights_5El_hamming.ewf" in customTaperFile.filename))
+                with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
+                    customTaperFile.filename = "bogus"
+
+            elif BEAMFORMER_TYPE.UNKNOWN == beamformerType:
+                with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
+                    hfssEepArray.beamformer_type = beamformerType
+
+            else:
+                with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+                    hfssEepArray.beamformer_type = beamformerType
 
     def Test_IAgAntennaModelPencilBeam(self, pencilBeam: "AntennaModelPencilBeam"):
         Assert.assertAlmostEqual(1.62, float(pencilBeam.beamwidth), delta=0.01)  # read only

@@ -1,0 +1,39 @@
+ANTENNA_MODEL_INPUT_TYPE
+========================
+
+.. py:class:: ansys.stk.core.stkobjects.ANTENNA_MODEL_INPUT_TYPE
+
+   IntEnum
+
+
+.. py:currentmodule:: ANTENNA_MODEL_INPUT_TYPE
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~BEAMWIDTH`
+              - Beamwidth input type.
+
+            * - :py:attr:`~DIAMETER`
+              - Diameter input type.
+
+            * - :py:attr:`~MAINLOBE_GAIN`
+              - Main-lobe gain input type.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ANTENNA_MODEL_INPUT_TYPE
+
+

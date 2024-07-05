@@ -41,6 +41,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("ScenarioTests", "ScenarioTests.sc"))
             EarlyBoundTests.AG_SC = Scenario(TestBase.Application.current_scenario)
+            scenarioObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)
 
             EarlyBoundTests.today = str(
                 TestBase.Application.current_scenario.vgt.events["Today"].find_occurrence().epoch
@@ -50,15 +51,11 @@ class EarlyBoundTests(TestBase):
             )
 
             EarlyBoundTests.todayEpoch = clr.CastAs(
-                (clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)).vgt.events.factory.create_smart_epoch_from_time(
-                    EarlyBoundTests.today
-                ),
+                scenarioObj.vgt.events.factory.create_smart_epoch_from_time(EarlyBoundTests.today),
                 TimeToolEventSmartEpoch,
             )
             EarlyBoundTests.tomorrowEpoch = clr.CastAs(
-                (clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)).vgt.events.factory.create_smart_epoch_from_time(
-                    EarlyBoundTests.tomorrow
-                ),
+                scenarioObj.vgt.events.factory.create_smart_epoch_from_time(EarlyBoundTests.tomorrow),
                 TimeToolEventSmartEpoch,
             )
 
@@ -657,7 +654,7 @@ class EarlyBoundTests(TestBase):
         oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
         oTerrain.use_terrain = True
 
-        aircraft: "IStkObject" = (clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)).children.new(
+        aircraft: "IStkObject" = (IStkObject(EarlyBoundTests.AG_SC)).children.new(
             STK_OBJECT_TYPE.AIRCRAFT, "MyAircraft"
         )
         ac: "Aircraft" = clr.CastAs(aircraft, Aircraft)
@@ -2095,9 +2092,9 @@ class EarlyBoundTests(TestBase):
         magFieldGfx.line_width = LINE_WIDTH.WIDTH3
         Assert.assertEqual(LINE_WIDTH.WIDTH3, magFieldGfx.line_width)
         with pytest.raises(Exception):
-            magFieldGfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            magFieldGfx.line_width = -1
         with pytest.raises(Exception):
-            magFieldGfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            magFieldGfx.line_width = 11
 
         magFieldGfx.max_translucency = 55
         Assert.assertAlmostEqual(55, magFieldGfx.max_translucency, delta=Math2.Epsilon12)

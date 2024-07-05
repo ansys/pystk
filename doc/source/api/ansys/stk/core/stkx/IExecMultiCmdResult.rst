@@ -1,0 +1,79 @@
+IExecMultiCmdResult
+===================
+
+.. py:class:: ansys.stk.core.stkx.IExecMultiCmdResult
+
+   object
+   
+   Collection of objects returned by the ExecuteMultipleCommands.
+
+.. py:currentmodule:: IExecMultiCmdResult
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult.item`
+              - Get the element at the specified index (0-based).
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult.count`
+              - Number of elements contained in the collection.
+            * - :py:attr:`~ansys.stk.core.stkx.IExecMultiCmdResult._NewEnum`
+              - Returns an object that can be used to iterate through all the objects in the collection.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkx import IExecMultiCmdResult
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkx.IExecMultiCmdResult.count
+    :type: int
+
+    Number of elements contained in the collection.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkx.IExecMultiCmdResult._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an object that can be used to iterate through all the objects in the collection.
+
+
+Method detail
+-------------
+
+
+.. py:method:: item(self, index: int) -> IExecCmdResult
+    :canonical: ansys.stk.core.stkx.IExecMultiCmdResult.item
+
+    Get the element at the specified index (0-based).
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~IExecCmdResult`
+
+

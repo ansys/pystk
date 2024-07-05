@@ -23,6 +23,7 @@ from .stkobjects              import StkObjectRoot, StkObjectModelContext, StkOb
 from .uiapplication           import UiApplication
 
 class ThreadMarshaller(object):
+    """Automate multiple STK instances from one Python script using threads."""
     _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":
@@ -247,7 +248,7 @@ class STKDesktop(object):
                 from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
-            client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
                 pAppImpl = client.get_stk_application_interface()
                 app = STKDesktopApplication()

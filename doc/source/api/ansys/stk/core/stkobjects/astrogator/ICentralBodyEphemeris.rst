@@ -1,0 +1,24 @@
+ICentralBodyEphemeris
+=====================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris
+
+   object
+   
+   The central body ephemeris source.
+
+.. py:currentmodule:: ICentralBodyEphemeris
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import ICentralBodyEphemeris
+
+
+

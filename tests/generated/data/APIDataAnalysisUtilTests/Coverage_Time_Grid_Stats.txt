@@ -1,0 +1,33 @@
+                                               23 Nov 2021 16:46:50
+FigureOfMerit-Coverage_Time
+
+
+                        Coverage Properties                        
+-------------------------------------------------------------------
+Custom Regions Coverage                                            
+Grid Altitude: 0.0000 (km)                                         
+Ground Altitude set from grid altitude reference (On ellipsoid)    
+Resolution: 1.0000 (deg)                                           
+Number of Points: 1235                                             
+Assets required for a valid access: At Least 1                     
+Assigned Assets:                                                   
+    Satellite/Repeat_Sat/Sensor/Repeat_Sensor:    Active           
+Access Interval: 1 Jul 2020 16:00:00.000 to 2 Jul 2020 16:00:00.000
+Regional Acceleration: Automatic                                   
+Light time delay: Ignored                                          
+Maximum Sampling Time Step: 360.000 secs                           
+Minimum Sampling Time Step: 0.010 secs                             
+Time Convergence: 5.000e-03 secs                                   
+Value Convergence: Relative 1.000e-08 - Absolute 1.000e-14         
+
+
+            FOM Properties            
+--------------------------------------
+Total Time covered by 1 or more assets
+Satisfaction is not enabled           
+FOM value range check is not enabled. 
+
+
+Minimum (sec)    Maximum (sec)    Average (sec)
+-------------    -------------    -------------
+        0.000           49.076           10.905

@@ -1,0 +1,35 @@
+                                               23 Nov 2021 13:59:53
+FigureOfMerit-Simple_Coverage
+
+
+                        Coverage Properties                        
+-------------------------------------------------------------------
+Global Coverage                                                    
+Grid Altitude: 0.0000 (km)                                         
+Ground Altitude set from grid altitude reference (On ellipsoid)    
+Resolution: 4.0000 (deg)                                           
+Number of Points: 2588                                             
+Assets required for a valid access: At Least 1                     
+Assigned Assets:                                                   
+    Satellite/Circ_Sat/Sensor/Circ_Sensor:    Active               
+    Satellite/Repeat_Sat/Sensor/Repeat_Sensor:    Active           
+    Satellite/Sun_Sat/Sensor/Sun_Sensor:    Active                 
+Access Interval: 1 Jul 2020 16:00:00.000 to 2 Jul 2020 16:00:00.000
+Regional Acceleration: Automatic                                   
+Light time delay: Ignored                                          
+Maximum Sampling Time Step: 360.000 secs                           
+Minimum Sampling Time Step: 0.010 secs                             
+Time Convergence: 5.000e-03 secs                                   
+Value Convergence: Relative 1.000e-08 - Absolute 1.000e-14         
+
+
+            FOM Properties           
+-------------------------------------
+Simple Coverage FOM                  
+Satisfaction is not enabled          
+FOM value range check is not enabled.
+
+
+% Satisfied    Area Satisfied (km^2)
+-----------    ---------------------
+      77.69             396268846.50

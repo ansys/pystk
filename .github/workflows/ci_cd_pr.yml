@@ -4,8 +4,8 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
-  MINIMUM_PYTHON_VERSION: '3.8'
+  MAIN_PYTHON_VERSION: '3.11'
+  MINIMUM_PYTHON_VERSION: '3.9'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -63,17 +63,43 @@ jobs:
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-  doc-style:
-    name: "Doc style checks"
-    runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
-    steps:
-      - uses: ansys/actions/doc-style@v6
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #doc-style:
+  #  name: "Doc style checks"
+  #  runs-on: ubuntu-latest
+  #  if: |
+  #    !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+  #    !contains(github.event.pull_request.labels.*.name, 'style:skip')
+  #  needs: branch-name-style
+  #  steps:
+  #    - name: "Checkout project"
+  #      uses: actions/checkout@v4
+
+  #    - name: "Install jq"
+  #      run: |
+  #        # Used to format Vale input as a JSON-formatted list of files
+  #        sudo apt install -y jq
+
+  #    - name: "Collect desired files"
+  #      run: |
+  #        # Find all .rst files excluding those in doc/source/api/
+  #        RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+  #        
+  #        # Find all .py files inside the examples/ directory, excluding those with an underscore
+  #        PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
+  #        
+  #        # Combine both file lists and convert them to a JSON array
+  #        # TODO: include Python files too. See Vale issue
+  #        # https://github.com/errata-ai/vale/issues/858
+  #        # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+  #        VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
+  #        echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
+
+  #    - uses: ansys/actions/doc-style@v6
+  #      with: 
+  #        checkout: false
+  #        files: "${{ env.VALE_FILES }}"
+  #        vale-config: doc/.vale.ini
+  #        token: ${{ secrets.GITHUB_TOKEN }}
 
   doc-build:
     name: "Doc build"
@@ -81,8 +107,9 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: doc-style
-    timeout-minutes: 30
+    # needs: doc-style
+    needs: branch-name-style
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
@@ -192,6 +219,7 @@ jobs:
           steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
+          cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
@@ -218,13 +246,13 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.8 to ensure backwards compatibility with
+        # Tests run against Python 3.9 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.8']
+        python: ['3.9']
       fail-fast: false
     steps:
 

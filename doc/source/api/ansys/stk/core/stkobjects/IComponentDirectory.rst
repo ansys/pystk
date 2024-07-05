@@ -1,0 +1,51 @@
+IComponentDirectory
+===================
+
+.. py:class:: ansys.stk.core.stkobjects.IComponentDirectory
+
+   object
+   
+   Manages all components.
+
+.. py:currentmodule:: IComponentDirectory
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.IComponentDirectory.get_components`
+              - Return the specified components.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IComponentDirectory
+
+
+
+Method detail
+-------------
+
+.. py:method:: get_components(self, eComponent: COMPONENT) -> IComponentInfoCollection
+    :canonical: ansys.stk.core.stkobjects.IComponentDirectory.get_components
+
+    Return the specified components.
+
+    :Parameters:
+
+    **eComponent** : :obj:`~COMPONENT`
+
+    :Returns:
+
+        :obj:`~IComponentInfoCollection`
+
