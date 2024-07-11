@@ -10,7 +10,7 @@
 
 # The Telluride Regional Airport runway sits on a plateau and dips slightly in the center, providing a challenging landing for pilots. Weather conditions in the area also often rapidly change, and pilots must be aware of issues impacting the airfield such as high terrain which exceeds $14,000$ ft and the runway's location on a plateau with a thousand-foot drop should the aircraft slide off of the runway.
 #
-# A small commuter jet flies from Colorado Springs Municipal Airport to Telluride Regional airport. The jet takes off from Colorado Springs Municipal Airport and flies direct to the radio beacon Blue Mesa VOR/DME, then flies to Cones VOR/DME, then lands at Telluride. The jet has an empty weight of $31000$ lb, accounting for the pilot, instructor, and baggage. The flight takes place during constant wind conditions, with wind with a bearing of $180^\circ$ and a speed of $20$ nm/hr. Model the jet's flight as a mission consisting of one phase, taking off from a runway at Colorado Springs Municipal Airport, and landing at Telluride Regional. Determine how much fuel is required for the mission, and how much fuel is left unused upon landing.
+# A small commuter jet flies from Colorado Springs Municipal Airport to Telluride Regional airport. The jet takes off from Colorado Springs Municipal Airport and flies direct to the radio beacon at Blue Mesa, then flies to the Cones radio beacon, then lands at Telluride. The jet has an empty weight of $31000$ lb, accounting for the pilot, instructor, and baggage. The flight takes place during constant wind conditions, with wind with a bearing of $180^\circ$ and a speed of $20$ nm/hr. Model the jet's flight as a mission consisting of one phase, taking off from a runway at Colorado Springs Municipal Airport, and landing at Telluride Regional. Determine how much fuel is required for the mission, and how much fuel is left unused upon landing.
 #
 # The mission parameters are:
 #
@@ -25,9 +25,9 @@
 #
 # - a takeoff from Colorado Springs, using a low runway heading and a runway altitude offset of $7$ ft
 # - a basic maneuver consisting of a $20$ nm flight straight ahead, with an altitude increase of $10000$ ft
-# - a basic point to point procedure flying the aircraft directly from the end of the last proceure to the Blue Mesa VOR/DME, with a turn factor of $5$
-# - a basic point to point procedure flying the aircraft from the Blue Mesa VOR/DME to the Cones VOR/DME, with a constant altitude of $15000$ fy, a turn factor of $5$, and a cruise airspeed of $250$ nm/hr
-# - a landing from the Cones VOR/DME to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of $7$ ft
+# - a basic point to point procedure flying the aircraft directly from the end of the last proceure to the Blue Mesa radio beacon, with a turn factor of $5$
+# - a basic point to point procedure flying the aircraft from Blue Mesa to the Cones radio beacon, with a constant altitude of $15000$ fy, a turn factor of $5$, and a cruise airspeed of $250$ nm/hr
+# - a landing from Cones to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of $7$ ft
 
 # ## Launch a new STK instance
 
@@ -116,7 +116,7 @@ runway_catalog.arinc424_runways.child_names[:5]
 
 print(f"There are {len(runway_catalog.arinc424_runways.child_names)} runways stored in the catalog.")
 
-# Now, use the catalog to select the runway at Telluride Regional Aiport. Later in the scenario, the runway is included in the aircraft's mission planning as the landing destination.
+# Now, use the catalog to select the runway at Telluride Regional Airport. Later in the scenario, the runway is included in the aircraft's mission planning as the landing destination.
 
 telluride_runway = runway_catalog.arinc424_runways.get_arinc424_item("TELLURIDE RGNL 09 27")
 
@@ -283,7 +283,7 @@ wind_model.mode_as_constant.wind_speed = 20
 
 # ## Create the aircraft's flight plan
 
-# The aircraft has one phase in its flight plan. The aircraft takes off from Colorado Springs Municipal Airport and flies direct to Blue Mesa VOR/DME. A VOR/DME is a radio beacon that combines a VHF omnidirectional range (VOR) with distance measuring equipment (DME). Turning at Blue Mesa VOR/DME, the aircraft flies to Cones VOR/DME, and then begins its final approach and lands at Telluride Regional Airport.
+# The aircraft has one phase in its flight plan. The aircraft takes off from Colorado Springs Municipal Airport and flies direct to Blue Mesa radio beacon. Turning at Blue Mesa , the aircraft flies to Cones, and then begins its final approach and lands at Telluride Regional Airport.
 
 # The aircraft will first take off from the Colorado Springs runway named "CITY OF COLORADO SPRINGS MUNI 17L 35R", so the first procedure is a takeoff procedure using a catalog runway as a site type. Insert the first procedure in the phase:
 
@@ -319,7 +319,7 @@ takeoff_procedure.mode_as_normal.runway_altitude_offset = 7
 
 takeoff_procedure.mode_as_normal.use_runway_terrain = True
 
-# Because of terrain, the aircraft must gain altitude before flying to Blue Mesa VOR/DME. It will do so in a basic maneuver procedure following takeoff. A basic maneuver procedure is a single action undertaken by the aircraft. It is unlike most procedures in Aviator, which represent sets of actions that together comprise a common flying procedure.
+# Because of terrain, the aircraft must gain altitude before flying to Blue Mesa. It will do so in a basic maneuver procedure following takeoff. A basic maneuver procedure is a single action undertaken by the aircraft. It is unlike most procedures in Aviator, which represent sets of actions that together comprise a common flying procedure.
 
 # Insert a basic maneuver procedure that starts from the end of the previous procedure:
 
@@ -353,13 +353,13 @@ climb_procedure.profile.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIF
 
 climb_procedure.profile.relative_altitude_change = 10000
 
-# The next procedure flies the aircraft to the Blue Mesa VOR/DME after it has finished its climb. The site for the procedure is derived from a Navaid in the catalog representing Blue Mesa VOR/DME, and the aircraft flies between two waypoints.
+# The next procedure flies the aircraft to Blue Mesa after it has finished its climb. The site for the procedure is derived from a Navaid in the catalog representing Blue Mesa, and the aircraft flies between two waypoints.
 
 # Insert a procedure after the climb procedure, with a site type of `SITE_NAVAID_FROM_CATALOG` and a procedure type of `PROC_BASIC_POINT_TO_POINT`:
 
 blue_mesa_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT)
 
-# Because of the procedure type designation, the procedure's `site` property contains an `ISiteNavaidFromCatalog` object. First, get the navaid catalog item corresponding to "HBU", which is the FAA designator for the Blue Mesa VOR/DME.
+# Because of the procedure type designation, the procedure's `site` property contains an `ISiteNavaidFromCatalog` object. First, get the navaid catalog item corresponding to "HBU", which is the FAA designator for the Blue Mesa radio site.
 
 blue_mesa_navaid = aviator_propagator.avtr_catalog.navaid_category.arinc424_navaids.get_arinc424_item("HBU")
 
@@ -391,11 +391,11 @@ blue_mesa_procedure.navigation_options.nav_mode = POINT_TO_POINT_MODE.FLY_DIRECT
 
 blue_mesa_procedure.enroute_options.max_turn_radius_factor = 5
 
-# Next, insert another basic point to point procedure to fly from the Blue Mesa VOR/DME to the Cones VOR/DME, which has an FAA designator of "ETL". 
+# Next, insert another basic point to point procedure to fly from Blue Mesa to Cones, which has an FAA designator of "ETL". 
 
 cones_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT)
 
-# Get the navaid catalog item corresponding to the Cones VOR/DME:
+# Get the navaid catalog item corresponding to the Cones beacon:
 
 cones_navaid = aviator_propagator.avtr_catalog.navaid_category.arinc424_navaids.get_arinc424_item("ETL")
 
