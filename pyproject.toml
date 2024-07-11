@@ -39,7 +39,7 @@ tests = [
 doc = [
     "ansys-sphinx-theme==0.16.6",
     "jupyterlab==4.2.3",
-    "jupytext==1.16.2",
+    "jupytext==1.16.3",
     "jupyter-server==2.14.1",
     "myst-parser==3.0.1",
     "nbsphinx==0.9.4",
