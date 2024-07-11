@@ -13,7 +13,9 @@ import numpy as np
 import os
 import time
 
+from IPython.display import Image, display
 from jupyter_rfb import RemoteFrameBuffer
+from jupyter_rfb._png import array2png
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
@@ -362,9 +364,13 @@ class WidgetBase(RemoteFrameBuffer):
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
+    def snapshot(self):
+        """Return an :class:`~Ipython.display.Image` of the current frame."""
+        return Image(array2png(self.get_frame()))
+
     def show(self, in_sidecar=False, **snapshot_kwargs):
         needs_snapshot = os.environ.get("BUILD_EXAMPLES", "false") == "true"
-        canvas = self.snapshot(**snapshot_kwargs) if needs_snapshot else self
+        canvas = self.snapshot() if needs_snapshot else self
         if in_sidecar:
             from sidecar import Sidecar
             with Sidecar(title=self.title):
