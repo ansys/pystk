@@ -1,0 +1,63 @@
+CONTROL_UPDATE
+==============
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CONTROL_UPDATE
+
+   IntEnum
+
+
+.. py:currentmodule:: CONTROL_UPDATE
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CD_VAL`
+              - Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area.
+
+            * - :py:attr:`~CR_VAL`
+              - Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+
+            * - :py:attr:`~DRAG_AREA_VAL`
+              - Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared.
+
+            * - :py:attr:`~DRY_MASS_VAL`
+              - Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg).
+
+            * - :py:attr:`~FUEL_DENSITY_VAL`
+              - Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3).
+
+            * - :py:attr:`~FUEL_MASS_VAL`
+              - Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg).
+
+            * - :py:attr:`~RADIATION_PRESSURE_AREA_VAL`
+              - The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared.
+
+            * - :py:attr:`~RADIATION_PRESSURE_COEFFICIENT_VAL`
+              - Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
+
+            * - :py:attr:`~SRP_AREA_VAL`
+              - Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared.
+
+            * - :py:attr:`~TANK_PRESSURE_VAL`
+              - Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
+
+            * - :py:attr:`~TANK_TEMP_VAL`
+              - Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import CONTROL_UPDATE
+
+

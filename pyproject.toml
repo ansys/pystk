@@ -7,7 +7,7 @@ name = "ansys-stk-core"
 dynamic = ["version"]
 description = "A Python API for STK"
 readme = "README.rst"
-requires-python = ">=3.6"
+requires-python = ">=3.9"
 license = {file = "LICENSE"}
 authors = [
     {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
@@ -33,11 +33,12 @@ tests = [
     "pytest-cov==5.0.0",
     "pytz==2024.1",
     "parameterized==0.9.0",
+    "pandas==2.2.2",
+    "numpy==2.0.0"
 ]
 doc = [
-    "ansys-sphinx-theme==0.16.5",
-    "enum-tools[sphinx]==0.12.0",
-    "jupyterlab==4.2.1",
+    "ansys-sphinx-theme==0.16.6",
+    "jupyterlab==4.2.3",
     "jupytext==1.16.2",
     "jupyter-server==2.14.1",
     "myst-parser==3.0.1",
@@ -48,17 +49,19 @@ doc = [
     "sphinx-design==0.6.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
+    "pandas==2.2.2",
+    "matplotlib==3.9.1"
 ]
 visualization = [
-    "numpy==1.26.4",
     "jupyter-rfb==0.4.4",
-    "Pillow==10.3.0",
-    "simplejpeg==1.7.2",
+    "numpy==2.0.0",
+    "Pillow==10.4.0",
+    "simplejpeg==1.7.4",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
-    "bandit==1.7.8",
-    "safety==3.2.1",
+    "bandit==1.7.9",
+    "safety==3.2.4",
 ]
 
 [tool.flit.module]

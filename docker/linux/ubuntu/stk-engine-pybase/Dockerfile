@@ -21,9 +21,9 @@ RUN set -e; \
 
 # Install OpenSSL 1.1
 RUN set -e; \
-   wget --no-check-certificate https://ftp.openssl.org/source/openssl-1.1.1k.tar.gz; \
-   tar -xzvf openssl-1.1.1k.tar.gz; \
-   cd openssl-1.1.1k; \
+   wget --no-check-certificate https://www.openssl.org/source/openssl-1.1.1w.tar.gz; \
+   tar -xzvf openssl-1.1.1w.tar.gz; \
+   cd openssl-1.1.1w; \
    ./config --prefix=/tmp/openssl no-shared zlib-dynamic; \
    make && make install_sw;
 

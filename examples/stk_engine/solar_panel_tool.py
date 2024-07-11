@@ -105,7 +105,7 @@ class SolarPanelTool:
         oTwobody.Propagate()
 
         modelFile = oSat.VO.Model.ModelData
-        modelFile.Filename = r"\STKData\VO\Models\Space\satellite.mdl"
+        modelFile.Filename = r"\STKData\VO\Models\Space\satellite.glb"
 
         self.newSatelliteBtn["state"] = "disabled"
         self.computeBtn["state"] = "normal"
@@ -124,7 +124,7 @@ class SolarPanelTool:
     def _compute(self):
         self._get_report_file_path()
         if self.firstTime:
-            self.root.execute_command("VO */Satellite/Satellite1 SolarPanel " + "Visualization AddGroup default")
+            self.root.execute_command("VO */Satellite/Satellite1 SolarPanel " + "Visualization AddGroup Panels")
             self.firstTime = False
         else:
             self.root.execute_command("VO */Satellite/Satellite1 SolarPanel DeleteData")

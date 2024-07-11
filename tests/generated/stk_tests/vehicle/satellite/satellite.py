@@ -205,11 +205,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = (
-                VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ATTITUDE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_SAT.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -660,11 +656,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             geo.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(geo)
             hpop.propagate()
@@ -701,11 +693,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             cart.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(cart)
             hpop.propagate()
@@ -742,11 +730,7 @@ class EarlyBoundTests(TestBase):
 
         i: int = 0
         while i < len(supportedCSTypes):
-            coordType: "COORDINATE_SYSTEM" = (
-                COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
-                if (int(supportedCSTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCSTypes[i][0])
-            )
+            coordType: "COORDINATE_SYSTEM" = COORDINATE_SYSTEM(int(supportedCSTypes[i][0]))
             sph.coordinate_system_type = coordType
             hpop.initial_state.representation.assign(sph)
             hpop.propagate()
@@ -794,11 +778,7 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", supportedCoordTypes[i][0], supportedCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(supportedCoordTypes[i][0]))
-                if (int(supportedCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(supportedCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(supportedCoordTypes[i][0]))
 
             i += 1
 
@@ -852,14 +832,19 @@ class EarlyBoundTests(TestBase):
             STK_OBJECT_TYPE.SATELLITE, "SatelliteOnEarth"
         )
 
-        (clr.CastAs((clr.CastAs(oMoonSat, Satellite)).propagator, VehiclePropagatorTwoBody)).propagate()
-        (clr.CastAs((clr.CastAs(oEarthSat, Satellite)).propagator, VehiclePropagatorTwoBody)).propagate()
+        moonSat: "Satellite" = clr.CastAs(oMoonSat, Satellite)
+        earthSat: "Satellite" = clr.CastAs(oEarthSat, Satellite)
+
+        moonSatPropagator: "VehiclePropagatorTwoBody" = clr.CastAs(moonSat.propagator, VehiclePropagatorTwoBody)
+        earthSatPropagator: "VehiclePropagatorTwoBody" = clr.CastAs(earthSat.propagator, VehiclePropagatorTwoBody)
+
+        moonSatPropagator.propagate()
+        earthSatPropagator.propagate()
 
         cart = OrbitStateCartesian(
-            (
-                clr.CastAs((clr.CastAs(oMoonSat, Satellite)).propagator, VehiclePropagatorTwoBody)
-            ).initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            moonSatPropagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
+
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
         moonCoordTypes = cart.supported_coordinate_system_types
@@ -870,18 +855,12 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", moonCoordTypes[i][0], moonCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(moonCoordTypes[i][0]))
-                if (int(moonCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(moonCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(moonCoordTypes[i][0]))
 
             i += 1
 
         cart = OrbitStateCartesian(
-            (
-                clr.CastAs((clr.CastAs(oEarthSat, Satellite)).propagator, VehiclePropagatorTwoBody)
-            ).initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            earthSatPropagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
         )
         # Print the coordinate systems for the moon satellite
         TestBase.logger.WriteLine("Coordinate systems for the Moon satellite")
@@ -893,11 +872,7 @@ class EarlyBoundTests(TestBase):
                 "Coordinate System Name: {0}, value: {1}", earthCoordTypes[i][0], earthCoordTypes[i][1]
             )
 
-            cart.coordinate_system_type = (
-                COORDINATE_SYSTEM(int(earthCoordTypes[i][0]))
-                if (int(earthCoordTypes[i][0]) in [item.value for item in COORDINATE_SYSTEM])
-                else int(earthCoordTypes[i][0])
-            )
+            cart.coordinate_system_type = COORDINATE_SYSTEM(int(earthCoordTypes[i][0]))
 
             i += 1
 
@@ -1225,11 +1200,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ATTRIBUTES])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1477,11 +1448,7 @@ class EarlyBoundTests(TestBase):
                 "\tPass type {0}: {1} ({2})",
                 i,
                 arSupportedTypes[i][1],
-                (
-                    VEHICLE_GRAPHICS_2D_PASS(int(arSupportedTypes[i][0]))
-                    if (int(arSupportedTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_PASS])
-                    else int(arSupportedTypes[i][0])
-                ),
+                VEHICLE_GRAPHICS_2D_PASS(int(arSupportedTypes[i][0])),
             )
 
             i += 1
@@ -2781,11 +2748,6 @@ class EarlyBoundTests(TestBase):
             while iIndex < len(arTypes):
                 ePosition: "VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION" = (
                     VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION(int(arTypes[iIndex][0]))
-                    if (
-                        int(arTypes[iIndex][0])
-                        in [item.value for item in VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION]
-                    )
-                    else int(arTypes[iIndex][0])
                 )
                 TestBase.logger.WriteLine7("\t\t\tType {0}: {1}", iIndex, ePosition)
                 if not oPoint.is_position_type_supported(ePosition):
@@ -3342,7 +3304,8 @@ class EarlyBoundTests(TestBase):
         hpop.propagate()
 
         # *** AzEl
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_AzEl"))
+        ers1Obj: "IStkObject" = clr.CastAs(ers1, IStkObject)
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_AzEl"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         azel: "IOrientationAzEl" = IOrientationAzEl(fixed.orientation.convert_to(ORIENTATION_TYPE.AZ_EL))
@@ -3350,7 +3313,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(azel)
 
         # *** Euler
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Euler"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Euler"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
@@ -3360,7 +3323,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(euler)
 
         # *** Quaternion
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Quaternion"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_Quaternion"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         quat: "IOrientationQuaternion" = IOrientationQuaternion(
@@ -3369,7 +3332,7 @@ class EarlyBoundTests(TestBase):
         fixed.orientation.assign(quat)
 
         # *** Quaternion
-        sensor = Sensor((clr.CastAs(ers1, IStkObject)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_YPR"))
+        sensor = Sensor(ers1Obj.children.new(STK_OBJECT_TYPE.SENSOR, "Sensor_YPR"))
         sensor.set_pointing_type(SENSOR_POINTING.POINT_FIXED)
         fixed = SensorPointingFixed(sensor.pointing)
         ypr: "IOrientationYPRAngles" = IOrientationYPRAngles(fixed.orientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
@@ -3917,8 +3880,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(pb)
         if not TestBase.NoGraphicsMode:
             sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_REALTIME)
-            (clr.CastAs(sat.graphics.attributes, VehicleGraphics2DAttributesRealtime)).history.is_visible = True
-            (clr.CastAs(sat.graphics.attributes, VehicleGraphics2DAttributesRealtime)).spline.is_visible = True
+            gfxAttributesRealtime: "VehicleGraphics2DAttributesRealtime" = VehicleGraphics2DAttributesRealtime(
+                sat.graphics.attributes
+            )
+            gfxAttributesRealtime.history.is_visible = True
+            gfxAttributesRealtime.spline.is_visible = True
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):

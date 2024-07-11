@@ -1,0 +1,24 @@
+StateCalcRARate
+===============
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRARate
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRARate`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+
+   RightAscensionRate Calc objects.
+
+.. py:currentmodule:: StateCalcRARate
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import StateCalcRARate
+
+
+

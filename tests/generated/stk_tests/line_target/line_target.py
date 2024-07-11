@@ -207,9 +207,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", gfx.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH2, gfx.line_width)
         with pytest.raises(Exception):
-            gfx.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            gfx.line_width = -1
         with pytest.raises(Exception):
-            gfx.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            gfx.line_width = 11
 
         # LineStyle
         TestBase.logger.WriteLine6("\tThe current LineStyle is: {0}", gfx.line_style)

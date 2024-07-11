@@ -1,0 +1,47 @@
+ISiteSuperProcedure
+===================
+
+.. py:class:: ansys.stk.core.stkobjects.aviator.ISiteSuperProcedure
+
+   object
+   
+   Interface used to access the options for a Super Procedure site.
+
+.. py:currentmodule:: ISiteSuperProcedure
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISiteSuperProcedure.get_as_site`
+              - Get the site interface.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import ISiteSuperProcedure
+
+
+
+Method detail
+-------------
+
+.. py:method:: get_as_site(self) -> ISite
+    :canonical: ansys.stk.core.stkobjects.aviator.ISiteSuperProcedure.get_as_site
+
+    Get the site interface.
+
+    :Returns:
+
+        :obj:`~ISite`
+

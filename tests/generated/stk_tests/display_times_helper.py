@@ -27,14 +27,7 @@ class DisplayTimesHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -51,11 +44,7 @@ class DisplayTimesHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "DISPLAY_TIMES_TYPE" = (
-                DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "DISPLAY_TIMES_TYPE" = DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
             if not oDisplay.is_display_status_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 

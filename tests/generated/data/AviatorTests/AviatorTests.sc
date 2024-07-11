@@ -1644,8 +1644,8 @@ BEGIN Scenario
 
         Class Aircraft
 
-            NUNIT_CSharp_Test		
-            NUNIT_VBS_Test		
+            EarlyBoundTest_Aircraft		
+            LateBoundTest_Aircraft		
 
         END Class
 
@@ -1655,11 +1655,11 @@ BEGIN Scenario
         Instance *
             *		
         END Instance
-        Instance Aircraft/NUNIT_CSharp_Test
-            Aircraft/NUNIT_CSharp_Test		
+        Instance Aircraft/EarlyBoundTest_Aircraft
+            Aircraft/EarlyBoundTest_Aircraft		
         END Instance
-        Instance Aircraft/NUNIT_VBS_Test
-            Aircraft/NUNIT_VBS_Test		
+        Instance Aircraft/LateBoundTest_Aircraft
+            Aircraft/LateBoundTest_Aircraft		
         END Instance
     END References
 

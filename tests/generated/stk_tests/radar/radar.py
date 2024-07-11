@@ -65,11 +65,10 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.radar = clr.CastAs(EarlyBoundTests.oRadar, Radar)
             EarlyBoundTests.radar.set_model("Bistatic Receiver")  # Because some properties cannot be set on Monostatic
 
-            spplColl: "ComponentInfoCollection" = (
-                (clr.CastAs(TestBase.Application.current_scenario, Scenario))
-                .component_directory.get_components(COMPONENT.RADAR)
-                .get_folder("Scattering Point Provider List")
-            )
+            scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+            spplColl: "ComponentInfoCollection" = scenario.component_directory.get_components(
+                COMPONENT.RADAR
+            ).get_folder("Scattering Point Provider List")
             spplColl.duplicate_component("Scattering Point Provider List", "Scattering Point Provider List Dup")
             if not TestBase.NoGraphicsMode:
                 # 2D
@@ -685,49 +684,16 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaContourGraphics_SupportedContourTypes(self):
         arSupportedContourTypes = EarlyBoundTests.antennaContourGraphics.supported_contour_types
         Assert.assertEqual(5, len(arSupportedContourTypes))
-        Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.GAIN,
-            (
-                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[0][0]))
-                if (int(arSupportedContourTypes[0][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
-                else int(arSupportedContourTypes[0][0])
-            ),
-        )
+        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[0][0])))
         Assert.assertEqual("Antenna Gain", arSupportedContourTypes[0][1])
-        Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.EIRP,
-            (
-                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[1][0]))
-                if (int(arSupportedContourTypes[1][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
-                else int(arSupportedContourTypes[1][0])
-            ),
-        )
+        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[1][0])))
         Assert.assertEqual("EIRP", arSupportedContourTypes[1][1])
-        Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.FLUX_DENSITY,
-            (
-                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[2][0]))
-                if (int(arSupportedContourTypes[2][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
-                else int(arSupportedContourTypes[2][0])
-            ),
-        )
+        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.FLUX_DENSITY, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[2][0])))
         Assert.assertEqual("Flux Density", arSupportedContourTypes[2][1])
-        Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.RIP,
-            (
-                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[3][0]))
-                if (int(arSupportedContourTypes[3][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
-                else int(arSupportedContourTypes[3][0])
-            ),
-        )
+        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[3][0])))
         Assert.assertEqual("RIP", arSupportedContourTypes[3][1])
         Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY,
-            (
-                ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[4][0]))
-                if (int(arSupportedContourTypes[4][0]) in [item.value for item in ANTENNA_CONTOUR_TYPE])
-                else int(arSupportedContourTypes[4][0])
-            ),
+            ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[4][0]))
         )
         Assert.assertEqual("Spectral Flux Density", arSupportedContourTypes[4][1])
 
@@ -1005,36 +971,9 @@ class EarlyBoundTests(TestBase):
         i: int = 0
         while i < len(arRefrSuppTypes):
             if (
-                (
-                    (
-                        (
-                            SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
-                            if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
-                            else int(arRefrSuppTypes[1][0])
-                        )
-                        == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD
-                    )
-                )
-                or (
-                    (
-                        (
-                            SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
-                            if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
-                            else int(arRefrSuppTypes[1][0])
-                        )
-                        == SENSOR_REFRACTION_TYPE.ITU_R_P834_4
-                    )
-                )
-            ) or (
-                (
-                    (
-                        SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
-                        if (int(arRefrSuppTypes[1][0]) in [item.value for item in SENSOR_REFRACTION_TYPE])
-                        else int(arRefrSuppTypes[1][0])
-                    )
-                    == SENSOR_REFRACTION_TYPE.SCF_METHOD
-                )
-            ):
+                ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD))
+                or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.ITU_R_P834_4))
+            ) or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.SCF_METHOD)):
                 pass
             else:
                 Assert.fail("Unknown or untested Refraction Type")
@@ -2566,7 +2505,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, compLinkEmbedControl.reference_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            (clr.CastAs(compLinkEmbedControl.component, ScatteringPointProviderList)).point_providers.add()
+            readOnlyscatteringPointProviderList: "ScatteringPointProviderList" = clr.CastAs(
+                compLinkEmbedControl.component, ScatteringPointProviderList
+            )
+            readOnlyscatteringPointProviderList.point_providers.add()
 
         compLinkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, compLinkEmbedControl.reference_type)
