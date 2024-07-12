@@ -30,7 +30,7 @@ RUN set -e; \
     find /stk/Data/Resources/ -type f -not -name 'FAANFD18' -exec rm -rf {} \;; \
     rm -rf /stk/Data/HtmlInterface/; \
     rm -rf /stk/Data/HtmlUtilities/; \
-    rm -rf /stk/Data/LicAndReg/; \\
+    rm -rf /stk/Data/LicAndReg/; \
     rm -rf /stk/Data/Viewer/; \
     rm -rf /stk/licensingclient/linx64/ClientSettings
 
