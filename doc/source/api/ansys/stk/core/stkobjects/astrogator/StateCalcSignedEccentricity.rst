@@ -3,7 +3,7 @@ StateCalcSignedEccentricity
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSignedEccentricity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    SignedEccentricity Calc objects.
 
@@ -11,6 +11,20 @@ StateCalcSignedEccentricity
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity.central_body_name`
+              - Gets or sets the central body of the component.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity.element_type`
+              - Gets or sets the element type.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcSignedEccentricity
 
+
+Property detail
+---------------
+
+.. py:property:: central_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity.central_body_name
+    :type: str
+
+    Gets or sets the central body of the component.
+
+.. py:property:: element_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSignedEccentricity.element_type
+    :type: CALC_OBJECT_ELEM
+
+    Gets or sets the element type.
 
 

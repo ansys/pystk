@@ -3,7 +3,7 @@ LevelsFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.LevelsFilterFactory
 
-   Bases: :py:class:`~ansys.stk.core.graphics.ILevelsFilterFactory`
+   Bases: 
 
    Adjusts the band levels of the source raster linearly.
 
@@ -11,6 +11,18 @@ LevelsFilterFactory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.LevelsFilterFactory.initialize`
+              - Initialize a new instance.
+
 
 
 Import detail
@@ -21,4 +33,16 @@ Import detail
     from ansys.stk.core.graphics import LevelsFilterFactory
 
 
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> LevelsFilter
+    :canonical: ansys.stk.core.graphics.LevelsFilterFactory.initialize
+
+    Initialize a new instance.
+
+    :Returns:
+
+        :obj:`~LevelsFilter`
 

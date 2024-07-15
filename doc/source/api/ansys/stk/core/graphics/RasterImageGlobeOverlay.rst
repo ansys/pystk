@@ -3,7 +3,7 @@ RasterImageGlobeOverlay
 
 .. py:class:: ansys.stk.core.graphics.RasterImageGlobeOverlay
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay`, :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlay`, :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
+   Bases: :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlay`, :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
 
    A globe image overlay for handling rasters.
 
@@ -11,6 +11,20 @@ RasterImageGlobeOverlay
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.RasterImageGlobeOverlay.use_transparent_color`
+              - Gets or sets whether transparent color should be used.
+            * - :py:attr:`~ansys.stk.core.graphics.RasterImageGlobeOverlay.transparent_color`
+              - Gets or sets the color that will become transparent.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.graphics import RasterImageGlobeOverlay
 
+
+Property detail
+---------------
+
+.. py:property:: use_transparent_color
+    :canonical: ansys.stk.core.graphics.RasterImageGlobeOverlay.use_transparent_color
+    :type: bool
+
+    Gets or sets whether transparent color should be used.
+
+.. py:property:: transparent_color
+    :canonical: ansys.stk.core.graphics.RasterImageGlobeOverlay.transparent_color
+    :type: agcolor.Color
+
+    Gets or sets the color that will become transparent.
 
 

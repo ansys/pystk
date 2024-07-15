@@ -8564,7 +8564,7 @@ class Definition(TestBase):
         self.Visibility()
         self.Visibility2()
         (
-            StkObjectRoot(TestBase.Application)
+            IAnimation(TestBase.Application)
         ).current_time = 0  # Set back to original because this gets changed in NoGfx case.
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("MTO_Integrity", "MTO_Test.sc"))
@@ -8626,7 +8626,7 @@ class Definition(TestBase):
         fov: "MtoAnalysisFieldOfView" = mto.analysis.field_of_view
         fov.sensor = "Satellite/Geo1/Sensor/A_Sensor"
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
 
         results: "ExecCmdResult" = TestBase.Application.execute_command(
@@ -8893,7 +8893,7 @@ class Definition(TestBase):
     def Position(self):
         results: "ExecCmdResult" = TestBase.Application.execute_command("Position_RM */MTO/A_MTO")
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
         mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["A_MTO"], Mto)
         position: "MtoAnalysisPosition" = mto.analysis.position
@@ -9066,7 +9066,7 @@ class Definition(TestBase):
         range.stk_object_path = "Satellite/Geo1"
         results: "ExecCmdResult" = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1")
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
         isInRange: bool = range.is_any_track_in_range(date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))

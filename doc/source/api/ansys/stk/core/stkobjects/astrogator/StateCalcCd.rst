@@ -3,7 +3,7 @@ StateCalcCd
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCd
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCd`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Cd Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcCd
 
 Overview
 --------
+
 
 
 Import detail

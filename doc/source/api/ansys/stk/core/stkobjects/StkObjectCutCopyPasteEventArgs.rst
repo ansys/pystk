@@ -3,7 +3,7 @@ StkObjectCutCopyPasteEventArgs
 
 .. py:class:: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObjectCutCopyPasteEventArgs`
+   Bases: 
 
    Arguments for the OnStkObjectPreCut, OnStkObjectCopy and OnStkObjectPaste events.
 
@@ -11,6 +11,22 @@ StkObjectCutCopyPasteEventArgs
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.selected_object_path`
+              - Selected Object path that is being cut, copied or pasted.
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.object_paths`
+              - Returns an array of object paths that are cut, copied or pasted.
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.pasted_object_paths`
+              - Returns an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.stkobjects import StkObjectCutCopyPasteEventArgs
 
+
+Property detail
+---------------
+
+.. py:property:: selected_object_path
+    :canonical: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.selected_object_path
+    :type: str
+
+    Selected Object path that is being cut, copied or pasted.
+
+.. py:property:: object_paths
+    :canonical: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.object_paths
+    :type: list
+
+    Returns an array of object paths that are cut, copied or pasted.
+
+.. py:property:: pasted_object_paths
+    :canonical: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArgs.pasted_object_paths
+    :type: list
+
+    Returns an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
 
 

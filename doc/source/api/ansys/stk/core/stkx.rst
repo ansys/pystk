@@ -19,27 +19,6 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.ISTKXSSLCertificateErrorEventArgs`
-              - Provide information about an SSL certificate that is expired or invalid.
-
-            * - :py:class:`~ansys.stk.core.stkx.ISTKXConControlQuitReceivedEventArgs`
-              - Arguments for the OnConControlQuitReceived event.
-
-            * - :py:class:`~ansys.stk.core.stkx.IPickInfoData`
-              - Mouse pick details.
-
-            * - :py:class:`~ansys.stk.core.stkx.IRubberBandPickInfoData`
-              - Rubber-band mouse pick result.
-
-            * - :py:class:`~ansys.stk.core.stkx.ISTKXApplication`
-              - STK X Application object.
-
-            * - :py:class:`~ansys.stk.core.stkx.IDataObject`
-              - IAgDataObject is used for OLE drag and drop operations.
-
-            * - :py:class:`~ansys.stk.core.stkx.IObjPathCollection`
-              - Collection of object paths.
-
             * - :py:class:`~ansys.stk.core.stkx.IDrawElem`
               - Draw element.
 
@@ -48,33 +27,6 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkx.IDrawElemCollection`
               - Collection of elements to draw on the control.
-
-            * - :py:class:`~ansys.stk.core.stkx.IWinProjectionPosition`
-              - Projected window position detail.
-
-            * - :py:class:`~ansys.stk.core.stkx.IDrawElemLine`
-              - Define a line in control coordinates.
-
-            * - :py:class:`~ansys.stk.core.stkx.IExecCmdResult`
-              - Collection of strings returned by the ExecuteCommand.
-
-            * - :py:class:`~ansys.stk.core.stkx.IExecMultiCmdResult`
-              - Collection of objects returned by the ExecuteMultipleCommands.
-
-            * - :py:class:`~ansys.stk.core.stkx.IUiAxGraphics3DCntrl`
-              - AGI Globe control.
-
-            * - :py:class:`~ansys.stk.core.stkx.IUiAx2DCntrl`
-              - AGI Map control.
-
-            * - :py:class:`~ansys.stk.core.stkx.ISTKXApplicationPartnerAccess`
-              - Access to the application object model for business partners.
-
-            * - :py:class:`~ansys.stk.core.stkx.IDataObjectFiles`
-              - Collection of file names.
-
-            * - :py:class:`~ansys.stk.core.stkx.IUiAxGraphics2DAnalysisCntrl`
-              - AGI Gfx Analysis control.
 
     
     .. tab-item:: Classes
@@ -244,25 +196,9 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-     ISTKXSSLCertificateErrorEventArgs<stkx/ISTKXSSLCertificateErrorEventArgs>
-     ISTKXConControlQuitReceivedEventArgs<stkx/ISTKXConControlQuitReceivedEventArgs>
-     IPickInfoData<stkx/IPickInfoData>
-     IRubberBandPickInfoData<stkx/IRubberBandPickInfoData>
-     ISTKXApplication<stkx/ISTKXApplication>
-     IDataObject<stkx/IDataObject>
-     IObjPathCollection<stkx/IObjPathCollection>
      IDrawElem<stkx/IDrawElem>
      IDrawElemRect<stkx/IDrawElemRect>
      IDrawElemCollection<stkx/IDrawElemCollection>
-     IWinProjectionPosition<stkx/IWinProjectionPosition>
-     IDrawElemLine<stkx/IDrawElemLine>
-     IExecCmdResult<stkx/IExecCmdResult>
-     IExecMultiCmdResult<stkx/IExecMultiCmdResult>
-     IUiAxGraphics3DCntrl<stkx/IUiAxGraphics3DCntrl>
-     IUiAx2DCntrl<stkx/IUiAx2DCntrl>
-     ISTKXApplicationPartnerAccess<stkx/ISTKXApplicationPartnerAccess>
-     IDataObjectFiles<stkx/IDataObjectFiles>
-     IUiAxGraphics2DAnalysisCntrl<stkx/IUiAxGraphics2DAnalysisCntrl>
 
 .. toctree::
     :titlesonly:

@@ -244,7 +244,7 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_access(self, objectPath: str) -> IStkAccess
+.. py:method:: get_access(self, objectPath: str) -> StkAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access
 
     Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
@@ -255,9 +255,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IStkAccess`
+        :obj:`~StkAccess`
 
-.. py:method:: get_access_to_object(self, pObject: IStkObject) -> IStkAccess
+.. py:method:: get_access_to_object(self, pObject: IStkObject) -> StkAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access_to_object
 
     Return an IAgStkAccess object associated with this STK object and another STK object.
@@ -268,10 +268,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~IStkAccess`
+        :obj:`~StkAccess`
 
 
-.. py:method:: create_one_point_access(self, pathToObject: str) -> IOnePointAccess
+.. py:method:: create_one_point_access(self, pathToObject: str) -> OnePointAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.create_one_point_access
 
     Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
@@ -282,7 +282,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~IOnePointAccess`
+        :obj:`~OnePointAccess`
 
 
 .. py:method:: unload(self) -> None

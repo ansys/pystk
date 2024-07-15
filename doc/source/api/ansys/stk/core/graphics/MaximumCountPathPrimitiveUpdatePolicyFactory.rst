@@ -3,7 +3,7 @@ MaximumCountPathPrimitiveUpdatePolicyFactory
 
 .. py:class:: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory`
+   Bases: 
 
    path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count.
 
@@ -11,6 +11,20 @@ MaximumCountPathPrimitiveUpdatePolicyFactory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory.initialize`
+              - Construct a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front.
+            * - :py:attr:`~ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory.initialize_with_parameters`
+              - Initialize a policy with the specified maximumCount and removeLocation.
+
 
 
 Import detail
@@ -21,4 +35,30 @@ Import detail
     from ansys.stk.core.graphics import MaximumCountPathPrimitiveUpdatePolicyFactory
 
 
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> MaximumCountPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory.initialize
+
+    Construct a default update policy. This is equivalent to constructing a policy with maximum count set to 0 and a remove location of Front.
+
+    :Returns:
+
+        :obj:`~MaximumCountPathPrimitiveUpdatePolicy`
+
+.. py:method:: initialize_with_parameters(self, maximumCount: int, removeLocation: PATH_PRIMITIVE_REMOVE_LOCATION) -> MaximumCountPathPrimitiveUpdatePolicy
+    :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory.initialize_with_parameters
+
+    Initialize a policy with the specified maximumCount and removeLocation.
+
+    :Parameters:
+
+    **maximumCount** : :obj:`~int`
+    **removeLocation** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
+
+    :Returns:
+
+        :obj:`~MaximumCountPathPrimitiveUpdatePolicy`
 

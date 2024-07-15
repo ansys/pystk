@@ -3,7 +3,7 @@ AntennaModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaModelScriptPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a script plguin antenna model.
 
@@ -11,6 +11,18 @@ AntennaModelScriptPlugin
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelScriptPlugin.filename`
+              - Gets or sets the script plugin filename.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import AntennaModelScriptPlugin
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.AntennaModelScriptPlugin.filename
+    :type: str
+
+    Gets or sets the script plugin filename.
 
 

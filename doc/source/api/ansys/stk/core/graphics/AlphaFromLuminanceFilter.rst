@@ -3,7 +3,7 @@ AlphaFromLuminanceFilter
 
 .. py:class:: ansys.stk.core.graphics.AlphaFromLuminanceFilter
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IAlphaFromLuminanceFilter`, :py:class:`~ansys.stk.core.graphics.IRasterFilter`
+   Bases: :py:class:`~ansys.stk.core.graphics.IRasterFilter`
 
    Add an alpha band to the source raster derived from the luminance of the raster's color bands.
 
@@ -11,6 +11,7 @@ AlphaFromLuminanceFilter
 
 Overview
 --------
+
 
 
 Import detail

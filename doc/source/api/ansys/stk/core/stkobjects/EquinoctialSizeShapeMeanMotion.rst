@@ -3,7 +3,7 @@ EquinoctialSizeShapeMeanMotion
 
 .. py:class:: ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IEquinoctialSizeShapeMeanMotion`, :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IClassicalSizeShape`
 
    Mean Motion, an element of the Equinoctial coordinate type.
 
@@ -11,6 +11,18 @@ EquinoctialSizeShapeMeanMotion
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion.mean_motion`
+              - Gets or sets the average angular rate of the satellite based on 2-body motion. Uses AngleRate Dimension.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import EquinoctialSizeShapeMeanMotion
 
+
+Property detail
+---------------
+
+.. py:property:: mean_motion
+    :canonical: ansys.stk.core.stkobjects.EquinoctialSizeShapeMeanMotion.mean_motion
+    :type: float
+
+    Gets or sets the average angular rate of the satellite based on 2-body motion. Uses AngleRate Dimension.
 
 

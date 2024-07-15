@@ -3,7 +3,7 @@ RFFilterModelGaussianWindow
 
 .. py:class:: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelGaussianWindow`, :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a cosine window filter model.
 
@@ -11,6 +11,20 @@ RFFilterModelGaussianWindow
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency`
+              - Gets or sets the sampling frequency.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.order`
+              - Gets or sets the filter order.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import RFFilterModelGaussianWindow
 
+
+Property detail
+---------------
+
+.. py:property:: sampling_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.sampling_frequency
+    :type: float
+
+    Gets or sets the sampling frequency.
+
+.. py:property:: order
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelGaussianWindow.order
+    :type: int
+
+    Gets or sets the filter order.
 
 

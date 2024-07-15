@@ -3,7 +3,7 @@ StateCalcMagnitudeFieldDipoleL
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMagnitudeFieldDipoleL
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMagnitudeFieldDipoleL`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcMagFieldDipoleL.
 
@@ -11,6 +11,7 @@ StateCalcMagnitudeFieldDipoleL
 
 Overview
 --------
+
 
 
 Import detail

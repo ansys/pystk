@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBody
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBody
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchCentralBody`
+   Bases: 
 
    Represents an central body.
 
@@ -11,6 +11,18 @@ AnalysisWorkbenchCentralBody
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBody.name`
+              - A name of the central body.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.vgt import AnalysisWorkbenchCentralBody
 
+
+Property detail
+---------------
+
+.. py:property:: name
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBody.name
+    :type: str
+
+    A name of the central body.
 
 

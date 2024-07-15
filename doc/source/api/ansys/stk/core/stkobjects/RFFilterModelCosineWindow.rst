@@ -3,7 +3,7 @@ RFFilterModelCosineWindow
 
 .. py:class:: ansys.stk.core.stkobjects.RFFilterModelCosineWindow
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelCosineWindow`, :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a cosine window filter model.
 
@@ -11,6 +11,18 @@ RFFilterModelCosineWindow
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelCosineWindow.sampling_frequency`
+              - Gets or sets the sampling frequency.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import RFFilterModelCosineWindow
 
+
+Property detail
+---------------
+
+.. py:property:: sampling_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelCosineWindow.sampling_frequency
+    :type: float
+
+    Gets or sets the sampling frequency.
 
 

@@ -3,7 +3,7 @@ UserVariableCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableCollection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableCollection`
+   Bases: 
 
    User Variable Initial Value Collection.
 
@@ -11,6 +11,33 @@ UserVariableCollection
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection.get_item_by_index`
+              - Retrieve a user variable in the collection by index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection.get_item_by_name`
+              - Retrieve a user variable in the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection.count`
+              - Returns the size of the collection.
+
 
 
 Import detail
@@ -21,4 +48,63 @@ Import detail
     from ansys.stk.core.stkobjects.astrogator import UserVariableCollection
 
 
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, indexOrName: typing.Any) -> UserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~UserVariable`
+
+
+
+.. py:method:: get_item_by_index(self, index: int) -> UserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.get_item_by_index
+
+    Retrieve a user variable in the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~UserVariable`
+
+.. py:method:: get_item_by_name(self, name: str) -> UserVariable
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.get_item_by_name
+
+    Retrieve a user variable in the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~UserVariable`
 

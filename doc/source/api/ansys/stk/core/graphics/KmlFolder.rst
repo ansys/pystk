@@ -3,7 +3,7 @@ KmlFolder
 
 .. py:class:: ansys.stk.core.graphics.KmlFolder
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IKmlFolder`, :py:class:`~ansys.stk.core.graphics.IKmlContainer`, :py:class:`~ansys.stk.core.graphics.IKmlFeature`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlContainer`, :py:class:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML folder.
 
@@ -11,6 +11,7 @@ KmlFolder
 
 Overview
 --------
+
 
 
 Import detail

@@ -3,7 +3,7 @@ AntennaBeamSelectionStrategyScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyScriptPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategyScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy`
 
    Class defining a script plugin beam selection strategy.
 
@@ -11,6 +11,18 @@ AntennaBeamSelectionStrategyScriptPlugin
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyScriptPlugin.filename`
+              - Gets or sets the script filename.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import AntennaBeamSelectionStrategyScriptPlugin
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.AntennaBeamSelectionStrategyScriptPlugin.filename
+    :type: str
+
+    Gets or sets the script filename.
 
 

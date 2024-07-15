@@ -23,7 +23,7 @@ from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
     GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
-from ...stkobjects import StkObjectRoot
+from ...stkengine import STKEngineApplication
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
@@ -214,12 +214,12 @@ class WidgetBase(RemoteFrameBuffer):
     _mouse3 = 0x0400
 
     def __init__(self,
-                 root: StkObjectRoot,
+                 stk: STKEngineApplication,
                  w: int = 800,
                  h: int = 600,
-                 title: str = None,
                  resizable: bool = True):
         """Construct an object of type WidgetBase."""
+
         super().__init__()
 
         self.frame = None
@@ -266,16 +266,14 @@ class WidgetBase(RemoteFrameBuffer):
         if asyncioTimerManager is None:
             asyncioTimerManager = AsyncioTimerManager()
 
-        self.root = root
-        self.title = title or self.root.current_scenario.instance_name
-        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
+        self.stk = stk
 
     def __del__(self):
         del self._rfb
         del self._rfbHostImpl
         del self._rfbHost
         del self._unk
-        self.root = None
+        self.stk = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -354,27 +352,9 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
-    def set_title(self, title):
-        self.title = title
-
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
-    
-    def animate(self, time_step):        
-        self.root.current_scenario.animation.anim_step_value = time_step
-        self.root.execute_command("Animate * Start Loop")
-        self.show()
-
-    def show(self, in_sidecar=False, **snapshot_kwargs):
-        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "false") == "true"
-        canvas = self.snapshot(**snapshot_kwargs) if needs_snapshot else self
-        if in_sidecar:
-            from sidecar import Sidecar
-            with Sidecar(title=self.title):
-                display(canvas)
-        else:
-            return canvas
 
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
@@ -386,7 +366,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
     #   stk = STKEngine.StartApplication(noGraphics=False)
     #   root = stk.NewObjectRoot()
-    #   g = GlobeWidget(root, 600, 400)
+    #   g = GlobeWidget(stk, 600, 400)
     #   root.NewScenario("RemoteFrameBuffer")
     #   root.ExecuteCommand('Animate * Start Loop')
     #   g
@@ -394,9 +374,9 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = UiAxGraphics3DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, stk: STKEngineApplication, w: int, h: int):
         """Construct an object of type GlobeWidget."""
-        WidgetBase.__init__(self, root, w, h, title)
+        WidgetBase.__init__(self, stk, w, h)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
@@ -409,9 +389,9 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, stk: STKEngineApplication, w: int, h: int):
         """Construct an object of type MapWidget."""
-        WidgetBase.__init__(self, root, w, h, title)
+        WidgetBase.__init__(self, stk, w, h)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
@@ -424,9 +404,9 @@ class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 
-    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
+    def __init__(self, stk: STKEngineApplication, w: int, h: int):
         """Construct an object of type GfxAnalysisWidget."""
-        WidgetBase.__init__(self, root, w, h, title)
+        WidgetBase.__init__(self, stk, w, h)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""

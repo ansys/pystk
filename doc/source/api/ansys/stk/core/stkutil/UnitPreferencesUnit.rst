@@ -3,7 +3,7 @@ UnitPreferencesUnit
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnit
 
-   Bases: :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesUnit`
+   Bases: 
 
    Object that contains info on the unit.
 
@@ -11,6 +11,24 @@ UnitPreferencesUnit
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.full_name`
+              - Returns the fullname of the unit.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.abbrv`
+              - Returns the abbreviation of the unit.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.id`
+              - Returns the ID of the unit.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.dimension`
+              - Returns the Dimension for this unit.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkutil import UnitPreferencesUnit
 
+
+Property detail
+---------------
+
+.. py:property:: full_name
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.full_name
+    :type: str
+
+    Returns the fullname of the unit.
+
+.. py:property:: abbrv
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.abbrv
+    :type: str
+
+    Returns the abbreviation of the unit.
+
+.. py:property:: id
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.id
+    :type: int
+
+    Returns the ID of the unit.
+
+.. py:property:: dimension
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.dimension
+    :type: IUnitPreferencesDimension
+
+    Returns the Dimension for this unit.
 
 

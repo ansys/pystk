@@ -1497,7 +1497,7 @@ class EarlyBoundTests(TestBase):
             scene.animation.enable_anim_cycle_time = True
             scene.animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
             scene.animation.anim_cycle_time = "1 Jan 1994 00:00:00.00"
-            (StkObjectRoot(TestBase.Application)).rewind()
+            (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -1917,11 +1917,11 @@ class EarlyBoundTests(TestBase):
         ts2.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         driver.run_mission_control_sequence()
         if not TestBase.NoGraphicsMode:
-            (StkObjectRoot(TestBase.Application)).rewind()
+            (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                (StkObjectRoot(TestBase.Application)).rewind()
+                (IAnimation(TestBase.Application)).rewind()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])

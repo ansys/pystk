@@ -3,7 +3,7 @@ AccessConstraintGrazingAltitude
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintGrazingAltitude`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessConstraintMinMax`, :py:class:`~ansys.stk.core.stkobjects.IAccessConstraint`
 
    Class defining the Grazing Altidude constraint.
 
@@ -11,6 +11,18 @@ AccessConstraintGrazingAltitude
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_tgt`
+              - Determines if positions beyond target object are considered in grazing altitude calculation.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import AccessConstraintGrazingAltitude
 
+
+Property detail
+---------------
+
+.. py:property:: compute_beyond_tgt
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_tgt
+    :type: bool
+
+    Determines if positions beyond target object are considered in grazing altitude calculation.
 
 

@@ -3,7 +3,7 @@ RunwayCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RunwayCategory
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IRunwayCategory`
+   Bases: 
 
    Class defining the runway category in the Aviator catalog.
 
@@ -11,6 +11,22 @@ RunwayCategory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways`
+              - Get the user runways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.arinc424_runways`
+              - Get the ARINC-424 runways.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayCategory.dafif_runways`
+              - Get the DAFIF runways.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.stkobjects.aviator import RunwayCategory
 
+
+Property detail
+---------------
+
+.. py:property:: user_runways
+    :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways
+    :type: IUserRunwaySource
+
+    Get the user runways.
+
+.. py:property:: arinc424_runways
+    :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.arinc424_runways
+    :type: IARINC424Source
+
+    Get the ARINC-424 runways.
+
+.. py:property:: dafif_runways
+    :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.dafif_runways
+    :type: IDAFIFSource
+
+    Get the DAFIF runways.
 
 

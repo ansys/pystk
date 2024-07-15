@@ -3,7 +3,7 @@ IonosphericFadingLossModelP531_13
 
 .. py:class:: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModelP531_13`, :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a Ionospheric fading loss P.531-13 model.
 
@@ -11,6 +11,20 @@ IonosphericFadingLossModelP531_13
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13.use_alternate_ap_file`
+              - Gets or sets the option for alternate AP data file.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13.filename`
+              - Gets or sets the alternate AP filename.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import IonosphericFadingLossModelP531_13
 
+
+Property detail
+---------------
+
+.. py:property:: use_alternate_ap_file
+    :canonical: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13.use_alternate_ap_file
+    :type: bool
+
+    Gets or sets the option for alternate AP data file.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13.filename
+    :type: str
+
+    Gets or sets the alternate AP filename.
 
 

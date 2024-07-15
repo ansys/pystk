@@ -8920,7 +8920,7 @@ class EclipsingBodiesHelper(object):
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9008,7 +9008,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9078,7 +9078,7 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -9135,7 +9135,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
 # region PlatformRF_Environment_EnvironmentalDataHelper
 class PlatformRF_Environment_EnvironmentalDataHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_itu_618_section2_p5 = False
@@ -9150,7 +9150,7 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 # region PlatformRF_Environment_RainCloudFog_RainModelHelper
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9314,7 +9314,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
         root.unit_preferences.set_current_unit("MassUnit", "g")
@@ -9558,7 +9558,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9584,7 +9584,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -9634,7 +9634,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -9751,7 +9751,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere", IsVehicle: bool):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", IsVehicle: bool):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9924,7 +9924,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -10061,7 +10061,7 @@ class PlatformRF_Environment_CustomModelsHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         self.Test_IAgCustomPropagationModel(propChan.custom_a)

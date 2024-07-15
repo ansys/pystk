@@ -3,7 +3,7 @@ VehicleEOIR
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEOIR
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleEOIR`, :py:class:`~ansys.stk.core.stkobjects.IEOIR`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIR`
 
    AgVeEOIR interface class.
 
@@ -11,6 +11,18 @@ VehicleEOIR
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEOIR.shape`
+              - Property used to access the EOIR interface.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehicleEOIR
 
+
+Property detail
+---------------
+
+.. py:property:: shape
+    :canonical: ansys.stk.core.stkobjects.VehicleEOIR.shape
+    :type: IEOIRShape
+
+    Property used to access the EOIR interface.
 
 

@@ -3,7 +3,7 @@ DistanceToGlobeOverlayDisplayCondition
 
 .. py:class:: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition`, :py:class:`~ansys.stk.core.graphics.IDisplayCondition`
+   Bases: :py:class:`~ansys.stk.core.graphics.IDisplayCondition`
 
    Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
 
@@ -11,6 +11,26 @@ DistanceToGlobeOverlayDisplayCondition
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.globe_overlay`
+              - Gets or sets the globe overlay associated with this instance.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.minimum_distance`
+              - Gets or sets the minimum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.minimum_distance_squared`
+              - Gets the squared minimum distance of the inclusive distance interval.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.maximum_distance`
+              - Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
+            * - :py:attr:`~ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.maximum_distance_squared`
+              - Gets the squared maximum distance of the inclusive distance interval.
+
 
 
 Import detail
@@ -20,5 +40,38 @@ Import detail
 
     from ansys.stk.core.graphics import DistanceToGlobeOverlayDisplayCondition
 
+
+Property detail
+---------------
+
+.. py:property:: globe_overlay
+    :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.globe_overlay
+    :type: IGlobeOverlay
+
+    Gets or sets the globe overlay associated with this instance.
+
+.. py:property:: minimum_distance
+    :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.minimum_distance
+    :type: float
+
+    Gets or sets the minimum distance of the inclusive distance interval.
+
+.. py:property:: minimum_distance_squared
+    :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.minimum_distance_squared
+    :type: float
+
+    Gets the squared minimum distance of the inclusive distance interval.
+
+.. py:property:: maximum_distance
+    :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.maximum_distance
+    :type: float
+
+    Gets or sets the maximum distance of the inclusive distance interval. Use Double.MaxValue to ignore checking the maximum distance.
+
+.. py:property:: maximum_distance_squared
+    :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayCondition.maximum_distance_squared
+    :type: float
+
+    Gets the squared maximum distance of the inclusive distance interval.
 
 

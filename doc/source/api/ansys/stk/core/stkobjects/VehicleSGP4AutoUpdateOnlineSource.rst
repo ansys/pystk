@@ -3,7 +3,7 @@ VehicleSGP4AutoUpdateOnlineSource
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateOnlineSource
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleSGP4AutoUpdateOnlineSource`
+   Bases: 
 
    Configure the SGP4 automatic updates using online source (AGI server).
 
@@ -11,6 +11,18 @@ VehicleSGP4AutoUpdateOnlineSource
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateOnlineSource.preview`
+              - Preview the elements.
+
 
 
 Import detail
@@ -21,4 +33,16 @@ Import detail
     from ansys.stk.core.stkobjects import VehicleSGP4AutoUpdateOnlineSource
 
 
+
+Method detail
+-------------
+
+.. py:method:: preview(self) -> list
+    :canonical: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateOnlineSource.preview
+
+    Preview the elements.
+
+    :Returns:
+
+        :obj:`~list`
 

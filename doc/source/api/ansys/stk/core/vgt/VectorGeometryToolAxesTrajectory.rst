@@ -3,7 +3,7 @@ VectorGeometryToolAxesTrajectory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTrajectory`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes based on trajectory of the point relative to the reference coordinate system.
 
@@ -11,6 +11,22 @@ VectorGeometryToolAxesTrajectory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_point`
+              - Specify a trajectory point.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.reference_system`
+              - Specify a reference system.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_axes_type`
+              - Specify a type of the trajectory's coordinate frame.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.vgt import VectorGeometryToolAxesTrajectory
 
+
+Property detail
+---------------
+
+.. py:property:: trajectory_point
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_point
+    :type: IVectorGeometryToolPointRefTo
+
+    Specify a trajectory point.
+
+.. py:property:: reference_system
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.reference_system
+    :type: IVectorGeometryToolSystemRefTo
+
+    Specify a reference system.
+
+.. py:property:: trajectory_axes_type
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_axes_type
+    :type: CRDN_TRAJECTORY_AXES_TYPE
+
+    Specify a type of the trajectory's coordinate frame.
 
 

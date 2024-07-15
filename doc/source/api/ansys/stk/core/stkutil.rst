@@ -25,41 +25,8 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.IPosition`
               - IAgPosition provides access to the position of the object.
 
-            * - :py:class:`~ansys.stk.core.stkutil.IPlanetocentric`
-              - Planetocentric Position Type.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IGeocentric`
-              - Geocentric Position Type.
-
-            * - :py:class:`~ansys.stk.core.stkutil.ISpherical`
-              - Spherical Position Type.
-
-            * - :py:class:`~ansys.stk.core.stkutil.ICylindrical`
-              - Cylindrical Position Type.
-
-            * - :py:class:`~ansys.stk.core.stkutil.ICartesian`
-              - IAgCartesian Interface used to access a position using Cartesian Coordinates.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IGeodetic`
-              - IAgGeodetic sets the position using Geodetic properties.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IPlanetodetic`
-              - IAgPlanetodetic sets the position using Planetodetic properties.
-
             * - :py:class:`~ansys.stk.core.stkutil.IDirection`
               - Interface to set and retrieve direction options for aligned and constrained vectors.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDirectionEuler`
-              - Interface for Euler direction sequence.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDirectionPR`
-              - Interface for Pitch-Roll (PR) direction sequence.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDirectionRADec`
-              - Interface for Spherical direction (Right Ascension and Declination).
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDirectionXYZ`
-              - Interface for Cartesian direction.
 
             * - :py:class:`~ansys.stk.core.stkutil.ICartesian3Vector`
               - Represents a cartesian 3-D vector.
@@ -85,50 +52,8 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.IOrbitState`
               - Interface to set and retrieve the coordinate type used to specify the orbit state.
 
-            * - :py:class:`~ansys.stk.core.stkutil.ICartesian2Vector`
-              - Represents a cartesian 2-D vector.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesDimension`
-              - Provide info on a Dimension from the global unit table.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IPropertyInfo`
-              - Property information.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IPropertyInfoCollection`
-              - The collection of properties.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IRuntimeTypeInfo`
-              - Interface used to retrieve the properties at runtime.
-
             * - :py:class:`~ansys.stk.core.stkutil.IRuntimeTypeInfoProvider`
               - Access point for IAgRuntimeTypeInfo.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IExecCmdResult`
-              - Collection of strings returned by the ExecuteCommand.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IExecMultiCmdResult`
-              - Collection of objects returned by the ExecuteMultipleCommands.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesUnit`
-              - Provide info about a unit.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesUnitCollection`
-              - Provide access to the Unit collection.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IUnitPreferencesDimensionCollection`
-              - Provide accesses to the global unit table.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IQuantity`
-              - Provide helper methods for a quantity.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDate`
-              - Provide helper methods for a date.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IConversionUtility`
-              - Provide conversion utilities.
-
-            * - :py:class:`~ansys.stk.core.stkutil.IDoublesCollection`
-              - Represents a collection of doubles.
 
     
     .. tab-item:: Classes
@@ -332,18 +257,7 @@ in the STK X and STK Objects libraries.
 
      ILocationData<stkutil/ILocationData>
      IPosition<stkutil/IPosition>
-     IPlanetocentric<stkutil/IPlanetocentric>
-     IGeocentric<stkutil/IGeocentric>
-     ISpherical<stkutil/ISpherical>
-     ICylindrical<stkutil/ICylindrical>
-     ICartesian<stkutil/ICartesian>
-     IGeodetic<stkutil/IGeodetic>
-     IPlanetodetic<stkutil/IPlanetodetic>
      IDirection<stkutil/IDirection>
-     IDirectionEuler<stkutil/IDirectionEuler>
-     IDirectionPR<stkutil/IDirectionPR>
-     IDirectionRADec<stkutil/IDirectionRADec>
-     IDirectionXYZ<stkutil/IDirectionXYZ>
      ICartesian3Vector<stkutil/ICartesian3Vector>
      IOrientation<stkutil/IOrientation>
      IOrientationAzEl<stkutil/IOrientationAzEl>
@@ -352,21 +266,7 @@ in the STK X and STK Objects libraries.
      IOrientationYPRAngles<stkutil/IOrientationYPRAngles>
      IOrientationPositionOffset<stkutil/IOrientationPositionOffset>
      IOrbitState<stkutil/IOrbitState>
-     ICartesian2Vector<stkutil/ICartesian2Vector>
-     IUnitPreferencesDimension<stkutil/IUnitPreferencesDimension>
-     IPropertyInfo<stkutil/IPropertyInfo>
-     IPropertyInfoCollection<stkutil/IPropertyInfoCollection>
-     IRuntimeTypeInfo<stkutil/IRuntimeTypeInfo>
      IRuntimeTypeInfoProvider<stkutil/IRuntimeTypeInfoProvider>
-     IExecCmdResult<stkutil/IExecCmdResult>
-     IExecMultiCmdResult<stkutil/IExecMultiCmdResult>
-     IUnitPreferencesUnit<stkutil/IUnitPreferencesUnit>
-     IUnitPreferencesUnitCollection<stkutil/IUnitPreferencesUnitCollection>
-     IUnitPreferencesDimensionCollection<stkutil/IUnitPreferencesDimensionCollection>
-     IQuantity<stkutil/IQuantity>
-     IDate<stkutil/IDate>
-     IConversionUtility<stkutil/IConversionUtility>
-     IDoublesCollection<stkutil/IDoublesCollection>
 
 .. toctree::
     :titlesonly:

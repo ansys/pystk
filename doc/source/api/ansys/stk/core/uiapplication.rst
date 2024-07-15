@@ -19,20 +19,8 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.uiapplication.IMRUCollection`
-              - Provide information about most recently used (MRU) list.
-
-            * - :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExt`
-              - Access to file open dialog that allows multiple file specifications.
-
-            * - :py:class:`~ansys.stk.core.uiapplication.IUiApplication`
-              - IAgUiApplication represents a root of the Application Model.
-
             * - :py:class:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess`
               - Access to the application object model for business partners.
-
-            * - :py:class:`~ansys.stk.core.uiapplication.IUiFileOpenExtCollection`
-              - Multiple file open collection.
 
     
     .. tab-item:: Classes
@@ -92,11 +80,7 @@ The STK UI Application library is a COM library containing classes, interfaces a
     :maxdepth: 1
     :hidden:
 
-     IMRUCollection<uiapplication/IMRUCollection>
-     IUiFileOpenExt<uiapplication/IUiFileOpenExt>
-     IUiApplication<uiapplication/IUiApplication>
      IUiApplicationPartnerAccess<uiapplication/IUiApplicationPartnerAccess>
-     IUiFileOpenExtCollection<uiapplication/IUiFileOpenExtCollection>
 
 .. toctree::
     :titlesonly:

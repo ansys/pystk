@@ -3,7 +3,7 @@ MixedSphericalFPAHorizontal
 
 .. py:class:: ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IMixedSphericalFPAHorizontal`, :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFlightPathAngle`
 
    Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
@@ -11,6 +11,18 @@ MixedSphericalFPAHorizontal
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal.fpa`
+              - Horizontal Flight Path Angle: the complement of the angle between the inertial velocity vector and the radius vector. Uses Angle Dimension.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import MixedSphericalFPAHorizontal
 
+
+Property detail
+---------------
+
+.. py:property:: fpa
+    :canonical: ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal.fpa
+    :type: float
+
+    Horizontal Flight Path Angle: the complement of the angle between the inertial velocity vector and the radius vector. Uses Angle Dimension.
 
 
