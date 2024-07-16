@@ -201,7 +201,6 @@ class RemoteFrameBufferHost(object):
 
 class WidgetBase(RemoteFrameBuffer):
     """Base class for Jupyter controls."""
-    
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
