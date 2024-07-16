@@ -3,7 +3,7 @@ VehicleHPOPDragModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModelPlugin`, :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleHPOPDragModel`
 
    Plugin Drag Model.
 
@@ -11,6 +11,22 @@ VehicleHPOPDragModelPlugin
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.plugin_name`
+              - Gets or sets the complete name of the plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.plugin_settings`
+              - Get the parameters of the selected plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.available_plugins`
+              - Get the list of all the available plugins.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehicleHPOPDragModelPlugin
 
+
+Property detail
+---------------
+
+.. py:property:: plugin_name
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.plugin_name
+    :type: str
+
+    Gets or sets the complete name of the plugin.
+
+.. py:property:: plugin_settings
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.plugin_settings
+    :type: IVehicleHPOPDragModelPluginSettings
+
+    Get the parameters of the selected plugin.
+
+.. py:property:: available_plugins
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPDragModelPlugin.available_plugins
+    :type: list
+
+    Get the list of all the available plugins.
 
 

@@ -3,7 +3,7 @@ StateCalcMass
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMass
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMass`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Mass Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcMass
 
 Overview
 --------
+
 
 
 Import detail

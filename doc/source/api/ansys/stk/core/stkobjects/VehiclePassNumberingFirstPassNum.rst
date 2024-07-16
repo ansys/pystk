@@ -3,7 +3,7 @@ VehiclePassNumberingFirstPassNum
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePassNumberingFirstPassNum
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehiclePassNumberingFirstPassNum`
+   Bases: 
 
    First pass number.
 
@@ -11,6 +11,18 @@ VehiclePassNumberingFirstPassNum
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePassNumberingFirstPassNum.first_pass_num`
+              - Gets or sets the number at which pass numbering begins. Dimensionless.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehiclePassNumberingFirstPassNum
 
+
+Property detail
+---------------
+
+.. py:property:: first_pass_num
+    :canonical: ansys.stk.core.stkobjects.VehiclePassNumberingFirstPassNum.first_pass_num
+    :type: int
+
+    Gets or sets the number at which pass numbering begins. Dimensionless.
 
 

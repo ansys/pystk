@@ -3,7 +3,7 @@ TimeToolIntervalsFilter
 
 .. py:class:: ansys.stk.core.vgt.TimeToolIntervalsFilter
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolIntervalsFilter`, :py:class:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolPruneFilter`
 
    The filter selects intervals of at least/most certain duration.
 
@@ -11,6 +11,20 @@ TimeToolIntervalsFilter
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_kind`
+              - Choose a duration type (at least/at most).
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalsFilter.interval_duration`
+              - The interval duration.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.vgt import TimeToolIntervalsFilter
 
+
+Property detail
+---------------
+
+.. py:property:: duration_kind
+    :canonical: ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_kind
+    :type: CRDN_INTERVAL_DURATION_KIND
+
+    Choose a duration type (at least/at most).
+
+.. py:property:: interval_duration
+    :canonical: ansys.stk.core.vgt.TimeToolIntervalsFilter.interval_duration
+    :type: float
+
+    The interval duration.
 
 

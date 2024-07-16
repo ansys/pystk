@@ -3,7 +3,7 @@ StateCalcDragArea
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDragArea
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDragArea`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    DragArea Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcDragArea
 
 Overview
 --------
+
 
 
 Import detail

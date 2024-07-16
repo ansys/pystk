@@ -3,7 +3,7 @@ GaussianBlurFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.GaussianBlurFilterFactory
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IGaussianBlurFilterFactory`
+   Bases: 
 
    Apply a convolution filter to blur the source raster using the Gaussian function.
 
@@ -11,6 +11,18 @@ GaussianBlurFilterFactory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.GaussianBlurFilterFactory.initialize`
+              - Initialize a new instance.
+
 
 
 Import detail
@@ -21,4 +33,16 @@ Import detail
     from ansys.stk.core.graphics import GaussianBlurFilterFactory
 
 
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> GaussianBlurFilter
+    :canonical: ansys.stk.core.graphics.GaussianBlurFilterFactory.initialize
+
+    Initialize a new instance.
+
+    :Returns:
+
+        :obj:`~GaussianBlurFilter`
 

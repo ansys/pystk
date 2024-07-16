@@ -2966,7 +2966,7 @@ class EarlyBoundTests(TestBase):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -3014,7 +3014,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
             propChan.set_atmos_absorption_model("bogus")
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -3481,7 +3481,7 @@ class EarlyBoundTests(TestBase):
     # region Laser_Environment_AtmosphericLoss_BBLL
     def test_Laser_Environment_AtmosphericLoss_BBLL(self):
         laserEnv: "LaserEnvironment" = EarlyBoundTests.AG_SC.laser_environment
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -3566,7 +3566,7 @@ class EarlyBoundTests(TestBase):
     # region Laser_Environment_AtmosphericLoss_Modtran
     def test_Laser_Environment_AtmosphericLoss_Modtran(self):
         laserEnv: "LaserEnvironment" = EarlyBoundTests.AG_SC.laser_environment
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -3633,7 +3633,7 @@ class EarlyBoundTests(TestBase):
     # region Laser_Environment_TroposphericScintillationLoss
     def test_Laser_Environment_TroposphericScintillationLoss(self):
         laserEnv: "LaserEnvironment" = EarlyBoundTests.AG_SC.laser_environment
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)

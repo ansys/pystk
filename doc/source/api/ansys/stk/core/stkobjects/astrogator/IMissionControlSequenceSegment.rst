@@ -113,14 +113,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: run(self) -> IState
+.. py:method:: run(self) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.run
 
     Run the segment in individual segment mode.  See IAgVADriverMCS.
 
     :Returns:
 
-        :obj:`~IState`
+        :obj:`~State`
 
 
 

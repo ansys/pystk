@@ -3,7 +3,7 @@ BeamformerHann
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerHann
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerHann`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a Hann tapered beamformer.
 
@@ -11,6 +11,7 @@ BeamformerHann
 
 Overview
 --------
+
 
 
 Import detail

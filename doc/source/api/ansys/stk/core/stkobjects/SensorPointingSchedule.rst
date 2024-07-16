@@ -3,7 +3,7 @@ SensorPointingSchedule
 
 .. py:class:: ansys.stk.core.stkobjects.SensorPointingSchedule
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`, :py:class:`~ansys.stk.core.stkobjects.ISensorPointingSchedule`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ISensorPointing`
 
    Allow to schedule a sensor to point at a specific location at a specific time.
 
@@ -11,6 +11,18 @@ SensorPointingSchedule
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointingSchedule.enabled`
+              - Whether scheduled sensor pointing is enabled.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import SensorPointingSchedule
 
+
+Property detail
+---------------
+
+.. py:property:: enabled
+    :canonical: ansys.stk.core.stkobjects.SensorPointingSchedule.enabled
+    :type: bool
+
+    Whether scheduled sensor pointing is enabled.
 
 

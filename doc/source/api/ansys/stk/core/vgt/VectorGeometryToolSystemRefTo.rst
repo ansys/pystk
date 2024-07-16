@@ -3,7 +3,7 @@ VectorGeometryToolSystemRefTo
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemRefTo`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
 
    Represents a System reference.
 
@@ -11,6 +11,24 @@ VectorGeometryToolSystemRefTo
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.set_path`
+              - Set a new system.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.set_system`
+              - Set a new system.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.get_system`
+              - Return the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.has_cyclic_dependency`
+              - Test whether the input component and the target component form a cyclic dependency.
+
 
 
 Import detail
@@ -21,4 +39,55 @@ Import detail
     from ansys.stk.core.vgt import VectorGeometryToolSystemRefTo
 
 
+
+Method detail
+-------------
+
+.. py:method:: set_path(self, path: str) -> None
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.set_path
+
+    Set a new system.
+
+    :Parameters:
+
+    **path** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: set_system(self, system: IVectorGeometryToolSystem) -> None
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.set_system
+
+    Set a new system.
+
+    :Parameters:
+
+    **system** : :obj:`~IVectorGeometryToolSystem`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: get_system(self) -> IVectorGeometryToolSystem
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.get_system
+
+    Return the actual system object behind the reference. Use IAgCrdn.IsValid to test the validity of the returned object.
+
+    :Returns:
+
+        :obj:`~IVectorGeometryToolSystem`
+
+.. py:method:: has_cyclic_dependency(self, system: IVectorGeometryToolSystem) -> bool
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemRefTo.has_cyclic_dependency
+
+    Test whether the input component and the target component form a cyclic dependency.
+
+    :Parameters:
+
+    **system** : :obj:`~IVectorGeometryToolSystem`
+
+    :Returns:
+
+        :obj:`~bool`
 

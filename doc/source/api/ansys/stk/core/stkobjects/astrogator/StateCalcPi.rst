@@ -3,7 +3,7 @@ StateCalcPi
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcPi
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPi`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Pi Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcPi
 
 Overview
 --------
+
 
 
 Import detail

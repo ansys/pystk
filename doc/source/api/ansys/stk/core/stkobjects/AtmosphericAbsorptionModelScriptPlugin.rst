@@ -3,7 +3,7 @@ AtmosphericAbsorptionModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an atmospheric absorption model.
 
@@ -11,6 +11,18 @@ AtmosphericAbsorptionModelScriptPlugin
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin.filename`
+              - Gets or sets the script filename.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import AtmosphericAbsorptionModelScriptPlugin
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin.filename
+    :type: str
+
+    Gets or sets the script filename.
 
 

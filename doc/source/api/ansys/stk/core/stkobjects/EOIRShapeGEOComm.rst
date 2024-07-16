@@ -3,7 +3,7 @@ EOIRShapeGEOComm
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeGEOComm
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeGEOComm`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    GEOComm shape class.
 
@@ -11,6 +11,7 @@ EOIRShapeGEOComm
 
 Overview
 --------
+
 
 
 Import detail

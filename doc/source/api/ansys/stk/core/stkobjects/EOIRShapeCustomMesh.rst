@@ -3,7 +3,7 @@ EOIRShapeCustomMesh
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeCustomMesh
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeCustomMesh`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    CustomMesh shape class.
 
@@ -11,6 +11,18 @@ EOIRShapeCustomMesh
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeCustomMesh.max_dimension`
+              - Property used to access the maximum dimension of a custom mesh shape.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import EOIRShapeCustomMesh
 
+
+Property detail
+---------------
+
+.. py:property:: max_dimension
+    :canonical: ansys.stk.core.stkobjects.EOIRShapeCustomMesh.max_dimension
+    :type: float
+
+    Property used to access the maximum dimension of a custom mesh shape.
 
 

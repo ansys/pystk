@@ -3,7 +3,7 @@ TriangleMeshPrimitiveOptionalParametersFactory
 
 .. py:class:: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParametersFactory
 
-   Bases: :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParametersFactory`
+   Bases: 
 
    Optional parameters for triangle mesh primitive...
 
@@ -11,6 +11,18 @@ TriangleMeshPrimitiveOptionalParametersFactory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParametersFactory.initialize`
+              - Initialize default triangle mesh primitive optional parameters.
+
 
 
 Import detail
@@ -21,4 +33,16 @@ Import detail
     from ansys.stk.core.graphics import TriangleMeshPrimitiveOptionalParametersFactory
 
 
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> TriangleMeshPrimitiveOptionalParameters
+    :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParametersFactory.initialize
+
+    Initialize default triangle mesh primitive optional parameters.
+
+    :Returns:
+
+        :obj:`~TriangleMeshPrimitiveOptionalParameters`
 

@@ -3,7 +3,7 @@ StateCalcDensity
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDensity
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcDensity`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Density  Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcDensity
 
 Overview
 --------
+
 
 
 Import detail

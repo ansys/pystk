@@ -3,7 +3,7 @@ WaveformSelectionStrategyFixed
 
 .. py:class:: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategyFixed`, :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy`
 
    Class defining the waveform selection strategy.
 
@@ -11,6 +11,20 @@ WaveformSelectionStrategyFixed
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.supported_waveforms`
+              - Gets an array of supported waveform names.
+            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.fixed_waveform`
+              - Gets or sets the fixed waveform.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import WaveformSelectionStrategyFixed
 
+
+Property detail
+---------------
+
+.. py:property:: supported_waveforms
+    :canonical: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.supported_waveforms
+    :type: list
+
+    Gets an array of supported waveform names.
+
+.. py:property:: fixed_waveform
+    :canonical: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.fixed_waveform
+    :type: str
+
+    Gets or sets the fixed waveform.
 
 

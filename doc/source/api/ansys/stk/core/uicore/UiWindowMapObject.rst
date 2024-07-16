@@ -3,7 +3,7 @@ UiWindowMapObject
 
 .. py:class:: ansys.stk.core.uicore.UiWindowMapObject
 
-   Bases: :py:class:`~ansys.stk.core.uicore.IUiWindowMapObject`
+   Bases: 
 
    Provide methods and properties to manipulate the 2D map.
 
@@ -11,6 +11,18 @@ UiWindowMapObject
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.uicore.UiWindowMapObject.map_id`
+              - A unique identifier associated with the window that can be used with Connect to control the 2D map.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.uicore import UiWindowMapObject
 
+
+Property detail
+---------------
+
+.. py:property:: map_id
+    :canonical: ansys.stk.core.uicore.UiWindowMapObject.map_id
+    :type: int
+
+    A unique identifier associated with the window that can be used with Connect to control the 2D map.
 
 

@@ -3,7 +3,7 @@ StateCalcEccentricityX
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcEccentricityX
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcEccentricityX`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    EccentricityX Calc objects.
 
@@ -11,6 +11,18 @@ StateCalcEccentricityX
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcEccentricityX.central_body_name`
+              - Gets or sets the central body of the component.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcEccentricityX
 
+
+Property detail
+---------------
+
+.. py:property:: central_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcEccentricityX.central_body_name
+    :type: str
+
+    Gets or sets the central body of the component.
 
 

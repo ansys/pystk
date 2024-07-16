@@ -3,7 +3,7 @@ RFFilterModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.RFFilterModelScriptPlugin
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRFFilterModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a script plugin filter model.
 
@@ -11,6 +11,18 @@ RFFilterModelScriptPlugin
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelScriptPlugin.filename`
+              - Gets or sets the external filename.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import RFFilterModelScriptPlugin
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelScriptPlugin.filename
+    :type: str
+
+    Gets or sets the external filename.
 
 

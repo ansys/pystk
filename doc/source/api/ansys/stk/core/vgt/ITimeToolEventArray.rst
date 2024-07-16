@@ -55,12 +55,12 @@ Method detail
 -------------
 
 
-.. py:method:: find_times(self) -> ITimeToolFindTimesResult
+.. py:method:: find_times(self) -> TimeToolFindTimesResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventArray.find_times
 
     Return computed array of times.
 
     :Returns:
 
-        :obj:`~ITimeToolFindTimesResult`
+        :obj:`~TimeToolFindTimesResult`
 

@@ -3,7 +3,7 @@ PlatformLaserEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.PlatformLaserEnvironment
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IPlatformLaserEnvironment`
+   Bases: 
 
    Class defining the laser environment for an platform.
 
@@ -11,6 +11,18 @@ PlatformLaserEnvironment
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlatformLaserEnvironment.propagation_channel`
+              - Gets the propagation channel.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import PlatformLaserEnvironment
 
+
+Property detail
+---------------
+
+.. py:property:: propagation_channel
+    :canonical: ansys.stk.core.stkobjects.PlatformLaserEnvironment.propagation_channel
+    :type: ILaserPropagationChannel
+
+    Gets the propagation channel.
 
 

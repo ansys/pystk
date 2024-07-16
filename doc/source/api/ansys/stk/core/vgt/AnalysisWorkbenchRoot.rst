@@ -3,7 +3,7 @@ AnalysisWorkbenchRoot
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchRoot
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRoot`
+   Bases: 
 
    Represents a VGT root.
 
@@ -12,6 +12,31 @@ AnalysisWorkbenchRoot
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_template_provider`
+              - Return a template provider. The method takes a class name (i.e. \"Satellite\", \"Facility\", etc.).
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_provider`
+              - Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. \"Satellite/Satellite1\", \"CentralBody/Earth\", etc.).
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_systems`
+              - Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.).
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_axes`
+              - Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.).
+
+
 
 Import detail
 -------------
@@ -19,6 +44,52 @@ Import detail
 .. code-block:: python
 
     from ansys.stk.core.vgt import AnalysisWorkbenchRoot
+
+
+Property detail
+---------------
+
+.. py:property:: well_known_systems
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_systems
+    :type: IVectorGeometryToolWellKnownSystems
+
+    Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.).
+
+.. py:property:: well_known_axes
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_axes
+    :type: IVectorGeometryToolWellKnownAxes
+
+    Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.).
+
+
+Method detail
+-------------
+
+.. py:method:: get_template_provider(self, className: str) -> AnalysisWorkbenchProvider
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_template_provider
+
+    Return a template provider. The method takes a class name (i.e. \"Satellite\", \"Facility\", etc.).
+
+    :Parameters:
+
+    **className** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~AnalysisWorkbenchProvider`
+
+.. py:method:: get_provider(self, instPath: str) -> AnalysisWorkbenchProvider
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_provider
+
+    Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. \"Satellite/Satellite1\", \"CentralBody/Earth\", etc.).
+
+    :Parameters:
+
+    **instPath** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~AnalysisWorkbenchProvider`
 
 
 

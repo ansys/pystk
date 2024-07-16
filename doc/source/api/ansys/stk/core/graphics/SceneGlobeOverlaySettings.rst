@@ -3,7 +3,7 @@ SceneGlobeOverlaySettings
 
 .. py:class:: ansys.stk.core.graphics.SceneGlobeOverlaySettings
 
-   Bases: :py:class:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings`
+   Bases: 
 
    Settings used by globe overlay objects. These settings only affect the scene.
 
@@ -11,6 +11,24 @@ SceneGlobeOverlaySettings
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.SceneGlobeOverlaySettings.anti_alias_imagery`
+              - Gets or sets a value indicating whether or not imagery is anti-aliased.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneGlobeOverlaySettings.terrain_mesh_pixel_error`
+              - Gets or sets the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneGlobeOverlaySettings.imagery_pixel_error`
+              - Gets or sets the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel.
+            * - :py:attr:`~ansys.stk.core.graphics.SceneGlobeOverlaySettings.projected_raster_model_projection`
+              - Gets or sets whether projected raster globe overlays will also project onto models.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.graphics import SceneGlobeOverlaySettings
 
+
+Property detail
+---------------
+
+.. py:property:: anti_alias_imagery
+    :canonical: ansys.stk.core.graphics.SceneGlobeOverlaySettings.anti_alias_imagery
+    :type: bool
+
+    Gets or sets a value indicating whether or not imagery is anti-aliased.
+
+.. py:property:: terrain_mesh_pixel_error
+    :canonical: ansys.stk.core.graphics.SceneGlobeOverlaySettings.terrain_mesh_pixel_error
+    :type: float
+
+    Gets or sets the pixel error for terrain meshes. This is the number of pixels that the rendered terrain is different from the actual terrain data. The default is 2.0 pixels.
+
+.. py:property:: imagery_pixel_error
+    :canonical: ansys.stk.core.graphics.SceneGlobeOverlaySettings.imagery_pixel_error
+    :type: float
+
+    Gets or sets the pixel error for imagery. This is the number of pixels that the rendered imagery is different from the actual imagery data. The default is 1.0 pixel.
+
+.. py:property:: projected_raster_model_projection
+    :canonical: ansys.stk.core.graphics.SceneGlobeOverlaySettings.projected_raster_model_projection
+    :type: bool
+
+    Gets or sets whether projected raster globe overlays will also project onto models.
 
 

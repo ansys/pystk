@@ -36,12 +36,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_availability(self) -> ITimeToolIntervalCollection
+.. py:method:: get_availability(self) -> TimeToolIntervalCollection
     :canonical: ansys.stk.core.vgt.ITimeToolTimeProperties.get_availability
 
     Return a collection of availability intervals.
 
     :Returns:
 
-        :obj:`~ITimeToolIntervalCollection`
+        :obj:`~TimeToolIntervalCollection`
 

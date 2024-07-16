@@ -93,14 +93,14 @@ Method detail
 
 
 
-.. py:method:: find_interval(self) -> ITimeToolEventIntervalResult
+.. py:method:: find_interval(self) -> TimeToolEventIntervalResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventInterval.find_interval
 
     Return computed interval if it exists.
 
     :Returns:
 
-        :obj:`~ITimeToolEventIntervalResult`
+        :obj:`~TimeToolEventIntervalResult`
 
 .. py:method:: occurred(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.vgt.ITimeToolEventInterval.occurred

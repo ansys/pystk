@@ -3,7 +3,7 @@ StateCalcUserValue
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcUserValue
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcUserValue`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    CoClass StateCalcUserValue.
 
@@ -11,6 +11,18 @@ StateCalcUserValue
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcUserValue.variable_name`
+              - Name of the user variable.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcUserValue
 
+
+Property detail
+---------------
+
+.. py:property:: variable_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcUserValue.variable_name
+    :type: str
+
+    Name of the user variable.
 
 

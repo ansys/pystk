@@ -3,7 +3,7 @@ CompositePrimitive
 
 .. py:class:: ansys.stk.core.graphics.CompositePrimitive
 
-   Bases: :py:class:`~ansys.stk.core.graphics.ICompositePrimitive`, :py:class:`~ansys.stk.core.graphics.IPrimitive`
+   Bases: :py:class:`~ansys.stk.core.graphics.IPrimitive`
 
    A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
 
@@ -11,6 +11,37 @@ CompositePrimitive
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.add`
+              - Add a primitive to the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.remove`
+              - Remove a primitive from the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.contains`
+              - Determine whether the composite contains a primitive.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.clear`
+              - Remove all primitives from the composite.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.count`
+              - Gets the number of primitives in the composite.
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order`
+              - Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive._NewEnum`
+              - Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
+
 
 
 Import detail
@@ -20,5 +51,81 @@ Import detail
 
     from ansys.stk.core.graphics import CompositePrimitive
 
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.count
+    :type: int
+
+    Gets the number of primitives in the composite.
+
+.. py:property:: translucent_primitives_sort_order
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order
+    :type: PRIMITIVES_SORT_ORDER
+
+    Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.graphics.CompositePrimitive._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
+
+
+Method detail
+-------------
+
+
+
+
+.. py:method:: add(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.add
+
+    Add a primitive to the composite.
+
+    :Parameters:
+
+    **primitive** : :obj:`~IPrimitive`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove(self, primitive: IPrimitive) -> None
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.remove
+
+    Remove a primitive from the composite.
+
+    :Parameters:
+
+    **primitive** : :obj:`~IPrimitive`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: contains(self, primitive: IPrimitive) -> bool
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.contains
+
+    Determine whether the composite contains a primitive.
+
+    :Parameters:
+
+    **primitive** : :obj:`~IPrimitive`
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.graphics.CompositePrimitive.clear
+
+    Remove all primitives from the composite.
+
+    :Returns:
+
+        :obj:`~None`
 
 
