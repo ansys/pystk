@@ -107,7 +107,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    # needs: doc-style
+    needs: doc-style
     timeout-minutes: 90
     steps:
 
