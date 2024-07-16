@@ -103,7 +103,21 @@ jobs:
 
   doc-build:
     name: "Doc build"
-    runs-on: [self-hosted, pystk]
+    runs-on: ${{ matrix.runner.tags }}
+    # Limitations with one line GitHub actions conditionals forces us to use a
+    # matrix strategy. If examples execution is required, a self-hosted runner
+    # is selected. Otherwise, a GitHub runner is used.
+    strategy:
+      matrix:
+        runner: 
+          - { name: "github", tags: "ubuntu-latest" }
+          - { name: "self-hosted", tags: ["self-hosted", "pystk"]}
+        needs-self-hosted-runner:
+          - contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        exclude:
+          - needs-self-hosted-runner: true
+            runner:
+              - { name: "github", tags: "ubuntu-latest" }
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
