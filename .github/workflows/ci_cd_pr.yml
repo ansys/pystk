@@ -193,7 +193,6 @@ jobs:
         env:
           BUILD_API: true
           BUILD_EXAMPLES: false
-          
       - name: "Build docs excluding 'API' and 'Examples' sections"
         id: build-doc-minimum
         if: |
