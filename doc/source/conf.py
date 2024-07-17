@@ -231,6 +231,8 @@ linkcheck_ignore = [
     "https://www.ansys.com/*"
 ]
 
+# -- MyST Sphinx configuration -----------------------------------------------
+myst_heading_anchors = 3
 
 # -- Sphinx application setup ------------------------------------------------
 
