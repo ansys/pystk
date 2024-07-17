@@ -1,5 +1,7 @@
 """Sphinx documentation configuration file."""
+
 from datetime import datetime
+import subprocess
 import os
 import pathlib
 import shutil
@@ -51,10 +53,7 @@ html_theme_options = {
     "navigation_with_keys": True,
 }
 html_static_path = ["_static"]
-html_css_files = [
-    "css/highlight.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-]
+html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
 
 # Sphinx extensions
 extensions = [
@@ -81,9 +80,7 @@ numpydoc_xref_param_type = True
 # Consider enabling numpydoc validation. See:
 # https://numpydoc.readthedocs.io/en/latest/validation.html#
 numpydoc_validate = True
-numpydoc_validation_checks = (
-    set()
-)  # numpydoc validation is turned off due to performance (see PR#44)
+numpydoc_validation_checks = set()  # numpydoc validation is turned off due to performance (see PR#44)
 # numpydoc_validation_checks = {
 #    "GL06",  # Found unknown section
 #    "GL07",  # Sections are in the wrong order.
@@ -140,9 +137,7 @@ WINDOWS_IMAGES, CENTOS_IMAGES, UBUNTU_IMAGES = [
 def get_images_directories_from_path(path):
     """Get all the Docker images present in the retrieved Path."""
     images = [
-        folder.name
-        for folder in path.glob("**/*")
-        if folder.name != path.name and (folder / "Dockerfile").exists()
+        folder.name for folder in path.glob("**/*") if folder.name != path.name and (folder / "Dockerfile").exists()
     ] or ["No images available."]
     images.sort()
     return images
@@ -153,9 +148,7 @@ BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
     exclude_patterns.extend(["api.rst", "api/**"])
 
-BUILD_EXAMPLES = (
-    True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
-)
+BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
     exclude_patterns.extend(["examples.rst", "examples/**"])
 else:
@@ -241,13 +234,11 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-linkcheck_ignore = [
-    f"https://github.com/{user_repo}/*",
-    "https://www.ansys.com/*"
-]
+linkcheck_ignore = [f"https://github.com/{user_repo}/*", "https://www.ansys.com/*"]
 
 
 # -- Sphinx application setup ------------------------------------------------
+
 
 def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     """
@@ -271,15 +262,16 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     print(f"BUILDER: {app.builder.name}")
 
     for file in status_iterator(
-            examples, 
-            f"Copying example to doc/source/examples/",
-            "green", 
-            len(examples),
-            verbosity=1,
-            stringify_func=(lambda file: file.name),
+        examples,
+        f"Copying example to doc/source/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -310,16 +302,16 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
 
     for file in status_iterator(
-            examples, 
-            f"Copying example to doc/_build/examples/",
-            "green", 
-            len(examples),
-            verbosity=1,
-            stringify_func=(lambda x: x.name),
+        examples,
+        f"Copying example to doc/_build/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
-    
+
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -337,6 +329,43 @@ def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: E
     logger = logging.getLogger(__name__)
     logger.info(f"\nRemoving {EXAMPLES_DIRECTORY} directory...")
     shutil.rmtree(EXAMPLES_DIRECTORY)
+
+
+def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception):
+    """
+    Render notebook examples as PDF files using Quarto.
+
+    Quarto needs to be installed in the system to render the PDF files. See
+    https://quarto.org/docs/get-started/.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
+
+    """
+    try:
+        OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
+        notebooks = OUTPUT_EXAMPLES.glob("*.ipynb")
+
+        for notebook in status_iterator(
+            notebooks,
+            "Rendering notebook as PDF",
+            "green",
+            len(list(notebooks)),
+            verbosity=1,
+            stringify_func=(lambda x: x.name),
+        ):
+            subprocess.run(["quarto", "render", notebook, "--to", "pdf"], check=True)
+    except FileNotFoundError:
+        logger = logging.getLogger(__name__)
+        logger.warning(
+            "Quarto is not installed in the system. PDF files will not be rendered. \
+            See https://quarto.org/docs/get-started/"
+        )
+
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -357,3 +386,4 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
+        app.connect("build-finished", render_examples_as_pdf)
