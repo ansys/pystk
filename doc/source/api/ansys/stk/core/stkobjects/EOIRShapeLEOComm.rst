@@ -3,7 +3,7 @@ EOIRShapeLEOComm
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeLEOComm
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeLEOComm`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    LEOComm shape class.
 
@@ -11,6 +11,7 @@ EOIRShapeLEOComm
 
 Overview
 --------
+
 
 
 Import detail

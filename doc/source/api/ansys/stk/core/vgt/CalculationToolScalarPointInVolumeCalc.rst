@@ -3,7 +3,7 @@ CalculationToolScalarPointInVolumeCalc
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalarPointInVolumeCalc`, :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scalar value of spatial calculation evaluated along trajectory of point.
 
@@ -11,6 +11,20 @@ CalculationToolScalarPointInVolumeCalc
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc.trajectory_point`
+              - Trajectory point.
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc.spatial_calculation`
+              - Spatial Calculation.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.vgt import CalculationToolScalarPointInVolumeCalc
 
+
+Property detail
+---------------
+
+.. py:property:: trajectory_point
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc.trajectory_point
+    :type: IVectorGeometryToolPoint
+
+    Trajectory point.
+
+.. py:property:: spatial_calculation
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc.spatial_calculation
+    :type: ISpatialAnalysisToolVolumeCalc
+
+    Spatial Calculation.
 
 

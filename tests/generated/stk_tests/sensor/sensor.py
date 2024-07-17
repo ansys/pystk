@@ -1021,7 +1021,7 @@ class SensorHelper(object):
         Assert.assertEqual(SENSOR_LOCATION.MODEL_3D, self.m_oSensor.location_type)
         # LocationData
         with pytest.raises(Exception):
-            locationData: "Position" = self.m_oSensor.location_data
+            locationData: "ILocationData" = self.m_oSensor.location_data
 
         # SetLocationType(MODEL_3D_WITH_SCALE)
         self.m_oSensor.set_location_type(SENSOR_LOCATION.MODEL_3D_WITH_SCALE)
@@ -1029,7 +1029,7 @@ class SensorHelper(object):
         Assert.assertEqual(SENSOR_LOCATION.MODEL_3D_WITH_SCALE, self.m_oSensor.location_type)
         # LocationData
         with pytest.raises(Exception):
-            locationData: "Position" = self.m_oSensor.location_data
+            locationData: "ILocationData" = self.m_oSensor.location_data
 
         # SetLocationType(CENTER)
         self.m_oSensor.set_location_type(SENSOR_LOCATION.CENTER)
@@ -1037,7 +1037,7 @@ class SensorHelper(object):
         Assert.assertEqual(SENSOR_LOCATION.CENTER, self.m_oSensor.location_type)
         # LocationData
         with pytest.raises(Exception):
-            locationData: "Position" = self.m_oSensor.location_data
+            locationData: "ILocationData" = self.m_oSensor.location_data
 
         self.m_oSensor.set_location_type(SENSOR_LOCATION.VECTOR_GEOMETRY_TOOL_POINT)
         Assert.assertEqual(SENSOR_LOCATION.VECTOR_GEOMETRY_TOOL_POINT, self.m_oSensor.location_type)
@@ -1907,7 +1907,7 @@ class SensorHelper(object):
         self.m_oSensor.set_az_el_mask(AZ_EL_MASK_TYPE.NONE)
         Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, self.m_oSensor.az_el_mask)
         with pytest.raises(Exception):
-            azElMaskData: "SensorAzElMaskFile" = self.m_oSensor.az_el_mask_data
+            azElMaskData: "IAzElMaskData" = self.m_oSensor.az_el_mask_data
         # SetAzElMask(MASK_FILE)
         with pytest.raises(Exception):
             self.m_oSensor.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE)

@@ -5,7 +5,7 @@ NativeContainerMethods
 
    
 
-   Provide support for STK Engine controls (map, globe, gfx analysis).
+   Provide support for STK Engine controls (map, globe, graphics analysis).
 
 .. py:currentmodule:: NativeContainerMethods
 

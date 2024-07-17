@@ -3,7 +3,7 @@ TimeToolEventArrayFixedTimes
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventArrayFixedTimes
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventArrayFixedTimes`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Array defined by time ordered instants each explicitly specified.
 
@@ -11,6 +11,27 @@ TimeToolEventArrayFixedTimes
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventArrayFixedTimes.set_array_times`
+              - Set array of times.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventArrayFixedTimes.array_times`
+              - The array of times.
+
 
 
 Import detail
@@ -21,4 +42,30 @@ Import detail
     from ansys.stk.core.vgt import TimeToolEventArrayFixedTimes
 
 
+Property detail
+---------------
+
+.. py:property:: array_times
+    :canonical: ansys.stk.core.vgt.TimeToolEventArrayFixedTimes.array_times
+    :type: list
+
+    The array of times.
+
+
+Method detail
+-------------
+
+
+.. py:method:: set_array_times(self, times: list) -> None
+    :canonical: ansys.stk.core.vgt.TimeToolEventArrayFixedTimes.set_array_times
+
+    Set array of times.
+
+    :Parameters:
+
+    **times** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~None`
 

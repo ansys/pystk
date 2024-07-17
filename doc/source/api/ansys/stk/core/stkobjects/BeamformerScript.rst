@@ -3,7 +3,7 @@ BeamformerScript
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerScript
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformerScript`, :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer script plugin.
 
@@ -11,6 +11,18 @@ BeamformerScript
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerScript.filename`
+              - Gets or sets the filename.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import BeamformerScript
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.BeamformerScript.filename
+    :type: str
+
+    Gets or sets the filename.
 
 

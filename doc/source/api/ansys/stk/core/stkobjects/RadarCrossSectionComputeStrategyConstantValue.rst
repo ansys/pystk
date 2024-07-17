@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategyConstantValue
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyConstantValue`, :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 
@@ -11,6 +11,18 @@ RadarCrossSectionComputeStrategyConstantValue
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue.constant_value`
+              - Gets or sets the constant RCS value.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import RadarCrossSectionComputeStrategyConstantValue
 
+
+Property detail
+---------------
+
+.. py:property:: constant_value
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue.constant_value
+    :type: float
+
+    Gets or sets the constant RCS value.
 
 

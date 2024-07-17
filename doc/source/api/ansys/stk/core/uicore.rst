@@ -10,33 +10,7 @@ Summary
 -------
 
 .. tab-set::
-
- 
-    .. tab-item:: Interfaces
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
         
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiToolbar`
-              - Provide methods and properties to control a toolbar.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiToolbarCollection`
-              - Provide methods and properties to obtain a window's toolbars.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindow`
-              - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowsCollection`
-              - Provide methods and properties to manage the application's windows.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowMapObject`
-              - Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowGlobeObject`
-              - Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
-
     
     .. tab-item:: Classes
 
@@ -98,18 +72,6 @@ The STK UI Core library is a COM library containing classes, interfaces and enum
 
 
 .. TABLE OF CONTENTS
-
-.. toctree::
-    :titlesonly:
-    :maxdepth: 1
-    :hidden:
-
-     IUiToolbar<uicore/IUiToolbar>
-     IUiToolbarCollection<uicore/IUiToolbarCollection>
-     IUiWindow<uicore/IUiWindow>
-     IUiWindowsCollection<uicore/IUiWindowsCollection>
-     IUiWindowMapObject<uicore/IUiWindowMapObject>
-     IUiWindowGlobeObject<uicore/IUiWindowGlobeObject>
 
 .. toctree::
     :titlesonly:

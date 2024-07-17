@@ -3,7 +3,7 @@ DataProviderResultSubSection
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultSubSection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderResultSubSection`
+   Bases: 
 
    Represents a subsection in the data returned by the data providers.
 
@@ -11,6 +11,20 @@ DataProviderResultSubSection
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSection.title`
+              - Returns a title of the sub-section.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSection.intervals`
+              - Returns a collection of intervals within the sub-section.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import DataProviderResultSubSection
 
+
+Property detail
+---------------
+
+.. py:property:: title
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.title
+    :type: str
+
+    Returns a title of the sub-section.
+
+.. py:property:: intervals
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.intervals
+    :type: IDataProviderResultIntervalCollection
+
+    Returns a collection of intervals within the sub-section.
 
 

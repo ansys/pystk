@@ -3,7 +3,7 @@ FigureOfMeritDefinitionDataPercentLevel
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDataPercentLevel`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData`
 
    Specified percent level for the 'percent below' Navigation Accuracy compute option.
 
@@ -11,6 +11,18 @@ FigureOfMeritDefinitionDataPercentLevel
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel.percent_level`
+              - Gets or sets the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import FigureOfMeritDefinitionDataPercentLevel
 
+
+Property detail
+---------------
+
+.. py:property:: percent_level
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel.percent_level
+    :type: float
+
+    Gets or sets the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
 
 

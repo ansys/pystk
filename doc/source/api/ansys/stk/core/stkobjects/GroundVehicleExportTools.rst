@@ -3,7 +3,7 @@ GroundVehicleExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.GroundVehicleExportTools
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleExportTools`
+   Bases: 
 
    The GroundVehicle Export Tools.
 
@@ -11,6 +11,24 @@ GroundVehicleExportTools
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleExportTools.get_ephemeris_stk_export_tool`
+              - Return the ephemeris export tool.
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleExportTools.get_prop_definition_export_tool`
+              - Return the Prop Def export tool.
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleExportTools.get_attitude_export_tool`
+              - Return the attitude export tool.
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleExportTools.get_ephemeris_stk_binary_export_tool`
+              - Return an Ephemeris file of the STK Binary ephemeris type for export.
+
 
 
 Import detail
@@ -21,4 +39,43 @@ Import detail
     from ansys.stk.core.stkobjects import GroundVehicleExportTools
 
 
+
+Method detail
+-------------
+
+.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisStkExportTool
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleExportTools.get_ephemeris_stk_export_tool
+
+    Return the ephemeris export tool.
+
+    :Returns:
+
+        :obj:`~VehicleEphemerisStkExportTool`
+
+.. py:method:: get_prop_definition_export_tool(self) -> VehiclePropDefinitionExportTool
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleExportTools.get_prop_definition_export_tool
+
+    Return the Prop Def export tool.
+
+    :Returns:
+
+        :obj:`~VehiclePropDefinitionExportTool`
+
+.. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleExportTools.get_attitude_export_tool
+
+    Return the attitude export tool.
+
+    :Returns:
+
+        :obj:`~VehicleAttitudeExportTool`
+
+.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> VehicleEphemerisStkBinaryExportTool
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleExportTools.get_ephemeris_stk_binary_export_tool
+
+    Return an Ephemeris file of the STK Binary ephemeris type for export.
+
+    :Returns:
+
+        :obj:`~VehicleEphemerisStkBinaryExportTool`
 

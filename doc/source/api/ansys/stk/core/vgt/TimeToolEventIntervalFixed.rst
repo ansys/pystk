@@ -3,7 +3,7 @@ TimeToolEventIntervalFixed
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalFixed
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalFixed`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start.
 
@@ -11,6 +11,29 @@ TimeToolEventIntervalFixed
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalFixed.set_interval`
+              - Set interval's start and stop times.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalFixed.start_time`
+              - The start time of the interval.
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalFixed.stop_time`
+              - The stop time of the interval.
+
 
 
 Import detail
@@ -21,4 +44,38 @@ Import detail
     from ansys.stk.core.vgt import TimeToolEventIntervalFixed
 
 
+Property detail
+---------------
+
+.. py:property:: start_time
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalFixed.start_time
+    :type: typing.Any
+
+    The start time of the interval.
+
+.. py:property:: stop_time
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalFixed.stop_time
+    :type: typing.Any
+
+    The stop time of the interval.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: set_interval(self, startEpoch: typing.Any, stopEpoch: typing.Any) -> None
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalFixed.set_interval
+
+    Set interval's start and stop times.
+
+    :Parameters:
+
+    **startEpoch** : :obj:`~typing.Any`
+    **stopEpoch** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
 

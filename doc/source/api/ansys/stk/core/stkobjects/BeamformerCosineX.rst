@@ -3,7 +3,7 @@ BeamformerCosineX
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerCosineX
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerCosineX`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a cosine^X tapered beamformer.
 
@@ -11,6 +11,18 @@ BeamformerCosineX
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerCosineX.x`
+              - Gets or sets the cosine exponent.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import BeamformerCosineX
 
+
+Property detail
+---------------
+
+.. py:property:: x
+    :canonical: ansys.stk.core.stkobjects.BeamformerCosineX.x
+    :type: float
+
+    Gets or sets the cosine exponent.
 
 

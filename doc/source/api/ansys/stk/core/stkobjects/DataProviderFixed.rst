@@ -3,7 +3,7 @@ DataProviderFixed
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderFixed
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProviderFixed`, :py:class:`~ansys.stk.core.stkobjects.IDataProvider`, :py:class:`~ansys.stk.core.stkobjects.IDataProviderInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IDataProvider`, :py:class:`~ansys.stk.core.stkobjects.IDataProviderInfo`
 
    Support for fixed data providers (i.e. non time-dependent like Facility position).
 
@@ -11,6 +11,20 @@ DataProviderFixed
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.exec`
+              - Compute the data; fixed data providers do not require arguments.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.exec_elements`
+              - Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
+
 
 
 Import detail
@@ -21,4 +35,29 @@ Import detail
     from ansys.stk.core.stkobjects import DataProviderFixed
 
 
+
+Method detail
+-------------
+
+.. py:method:: exec(self) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.exec
+
+    Compute the data; fixed data providers do not require arguments.
+
+    :Returns:
+
+        :obj:`~DataProviderResult`
+
+.. py:method:: exec_elements(self, elementNames: list) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.exec_elements
+
+    Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
+
+    :Parameters:
+
+    **elementNames** : :obj:`~list`
+
+    :Returns:
+
+        :obj:`~DataProviderResult`
 

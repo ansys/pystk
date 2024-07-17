@@ -50,13 +50,13 @@ class RealTimeSnippets(CodeSnippetsTestBase):
         scenario: "Scenario" = clr.CastAs(scenarioObject, Scenario)
 
         scenAnim: "ScenarioAnimation" = None
-        anim: "StkObjectRoot" = None
+        anim: "IAnimation" = None
         holdTimeStepType: "SCENARIO_TIME_STEP_TYPE" = SCENARIO_TIME_STEP_TYPE.REAL_TIME
         if not TestBase.NoGraphicsMode:
             scenAnim = scenario.animation
             holdTimeStepType = scenAnim.anim_step_type
             scenAnim.anim_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
-            anim = clr.CastAs(CodeSnippetsTestBase.m_Root, StkObjectRoot)
+            anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
             anim.play_forward()
 
         RealTimeSnippets.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)

@@ -3,7 +3,7 @@ VehicleProfileAlignedAndConstrained
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleProfileAlignedAndConstrained`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeProfile`
 
    Aligned and Constrained attitude profile.
 
@@ -11,6 +11,24 @@ VehicleProfileAlignedAndConstrained
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.aligned_vector`
+              - Get the aligned vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.constrained_vector`
+              - Get the constrained vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.displayed_aligned_vector_type`
+              - Aligned vector type displayed on GUI.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.displayed_constrained_vector_type`
+              - Constrained vector type displayed on GUI.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehicleProfileAlignedAndConstrained
 
+
+Property detail
+---------------
+
+.. py:property:: aligned_vector
+    :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.aligned_vector
+    :type: IVehicleVector
+
+    Get the aligned vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
+
+.. py:property:: constrained_vector
+    :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.constrained_vector
+    :type: IVehicleVector
+
+    Get the constrained vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
+
+.. py:property:: displayed_aligned_vector_type
+    :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.displayed_aligned_vector_type
+    :type: DIRECTION_TYPE
+
+    Aligned vector type displayed on GUI.
+
+.. py:property:: displayed_constrained_vector_type
+    :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.displayed_constrained_vector_type
+    :type: DIRECTION_TYPE
+
+    Constrained vector type displayed on GUI.
 
 

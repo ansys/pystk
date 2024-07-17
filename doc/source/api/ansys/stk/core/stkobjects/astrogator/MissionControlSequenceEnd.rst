@@ -3,7 +3,7 @@ MissionControlSequenceEnd
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceEnd
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceEnd`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`
 
    The End segment.
 
@@ -11,6 +11,7 @@ MissionControlSequenceEnd
 
 Overview
 --------
+
 
 
 Import detail

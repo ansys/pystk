@@ -3,7 +3,7 @@ RadarActivityTimeComponentList
 
 .. py:class:: ansys.stk.core.stkobjects.RadarActivityTimeComponentList
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarActivity`, :py:class:`~ansys.stk.core.stkobjects.IRadarActivityTimeComponentList`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarActivity`
 
    Class defining a radar time component list activity.
 
@@ -11,6 +11,18 @@ RadarActivityTimeComponentList
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentList.time_components`
+              - Gets the time components collection.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import RadarActivityTimeComponentList
 
+
+Property detail
+---------------
+
+.. py:property:: time_components
+    :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentList.time_components
+    :type: IRadarActivityTimeComponentListCollection
+
+    Gets the time components collection.
 
 

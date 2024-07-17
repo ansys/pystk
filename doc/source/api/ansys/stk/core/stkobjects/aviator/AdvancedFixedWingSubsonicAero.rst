@@ -3,7 +3,7 @@ AdvancedFixedWingSubsonicAero
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IAdvancedFixedWingSubsonicAero`
+   Bases: 
 
    Class defining the subsonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
@@ -11,6 +11,30 @@ AdvancedFixedWingSubsonicAero
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_type`
+              - Gets or sets the type of wing geometry for the aircraft.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_mode_as_basic`
+              - Get the options for a basic geometry wing.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_mode_as_variable`
+              - Get the options for a variable geometry wing.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.max_aoa`
+              - Gets or sets the maximum angle of attack possible.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.cd0`
+              - Gets or sets the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.mach_divergence`
+              - Gets or sets the speed at which the aircraft begins to experience air compression.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.transonic_mach_drag_factor`
+              - Gets or sets the factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence.
+
 
 
 Import detail
@@ -20,5 +44,50 @@ Import detail
 
     from ansys.stk.core.stkobjects.aviator import AdvancedFixedWingSubsonicAero
 
+
+Property detail
+---------------
+
+.. py:property:: geometry_type
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_type
+    :type: ADVANCED_FIXED_WING_GEOMETRY
+
+    Gets or sets the type of wing geometry for the aircraft.
+
+.. py:property:: geometry_mode_as_basic
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_mode_as_basic
+    :type: IAdvancedFixedWingGeometryBasic
+
+    Get the options for a basic geometry wing.
+
+.. py:property:: geometry_mode_as_variable
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.geometry_mode_as_variable
+    :type: IAdvancedFixedWingGeometryVariable
+
+    Get the options for a variable geometry wing.
+
+.. py:property:: max_aoa
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.max_aoa
+    :type: typing.Any
+
+    Gets or sets the maximum angle of attack possible.
+
+.. py:property:: cd0
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.cd0
+    :type: float
+
+    Gets or sets the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence.
+
+.. py:property:: mach_divergence
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.mach_divergence
+    :type: float
+
+    Gets or sets the speed at which the aircraft begins to experience air compression.
+
+.. py:property:: transonic_mach_drag_factor
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubsonicAero.transonic_mach_drag_factor
+    :type: float
+
+    Gets or sets the factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence.
 
 

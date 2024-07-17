@@ -3,7 +3,7 @@ StateCalcCr
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcCr
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcCr`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Cr Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcCr
 
 Overview
 --------
+
 
 
 Import detail

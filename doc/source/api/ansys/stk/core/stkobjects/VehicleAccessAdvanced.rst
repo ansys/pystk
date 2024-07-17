@@ -3,7 +3,7 @@ VehicleAccessAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAccessAdvanced
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAccessAdvanced`, :py:class:`~ansys.stk.core.stkobjects.IAccessAdvanced`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IAccessAdvanced`
 
    Vehicle advanced targeting access computation properties.
 
@@ -11,6 +11,20 @@ VehicleAccessAdvanced
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAccessAdvanced.use_light_time_delay`
+              - Opt whether light time delay is applied when computing accesses.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAccessAdvanced.time_sense`
+              - Signal sense of the clock host.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehicleAccessAdvanced
 
+
+Property detail
+---------------
+
+.. py:property:: use_light_time_delay
+    :canonical: ansys.stk.core.stkobjects.VehicleAccessAdvanced.use_light_time_delay
+    :type: bool
+
+    Opt whether light time delay is applied when computing accesses.
+
+.. py:property:: time_sense
+    :canonical: ansys.stk.core.stkobjects.VehicleAccessAdvanced.time_sense
+    :type: IV_TIME_SENSE
+
+    Signal sense of the clock host.
 
 

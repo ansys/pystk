@@ -3,7 +3,7 @@ StateCalcScalar
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcScalar
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcScalar`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Scalar Calc objects.
 
@@ -11,6 +11,20 @@ StateCalcScalar
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScalar.scalar_name`
+              - Gets or sets the scalar name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScalar.unit_dimension`
+              - Gets or sets the unit dimension.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcScalar
 
+
+Property detail
+---------------
+
+.. py:property:: scalar_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScalar.scalar_name
+    :type: str
+
+    Gets or sets the scalar name.
+
+.. py:property:: unit_dimension
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScalar.unit_dimension
+    :type: str
+
+    Gets or sets the unit dimension.
 
 

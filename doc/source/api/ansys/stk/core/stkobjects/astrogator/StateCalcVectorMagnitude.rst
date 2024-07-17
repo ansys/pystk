@@ -3,7 +3,7 @@ StateCalcVectorMagnitude
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcVectorMagnitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    VectorMag Calc objects.
 
@@ -11,6 +11,20 @@ StateCalcVectorMagnitude
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.vector_name`
+              - Gets or sets the vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.unit_dimension`
+              - Gets or sets the unit dimension.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcVectorMagnitude
 
+
+Property detail
+---------------
+
+.. py:property:: vector_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.vector_name
+    :type: str
+
+    Gets or sets the vector.
+
+.. py:property:: unit_dimension
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.unit_dimension
+    :type: str
+
+    Gets or sets the unit dimension.
 
 

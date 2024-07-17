@@ -3,7 +3,7 @@ RendererTexture2D
 
 .. py:class:: ansys.stk.core.graphics.RendererTexture2D
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IRendererTexture2D`
+   Bases: 
 
    A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory.
 
@@ -11,6 +11,18 @@ RendererTexture2D
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.RendererTexture2D.template`
+              - Gets a template from which the texture was created.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.graphics import RendererTexture2D
 
+
+Property detail
+---------------
+
+.. py:property:: template
+    :canonical: ansys.stk.core.graphics.RendererTexture2D.template
+    :type: IRendererTextureTemplate2D
+
+    Gets a template from which the texture was created.
 
 

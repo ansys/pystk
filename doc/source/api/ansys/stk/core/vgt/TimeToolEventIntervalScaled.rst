@@ -3,7 +3,7 @@ TimeToolEventIntervalScaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalScaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalScaled`, :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined.
 
@@ -11,6 +11,24 @@ TimeToolEventIntervalScaled
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalScaled.original_interval`
+              - The original interval.
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalScaled.absolute_increment`
+              - The absolute increment value which creates a interval by expanding (or shortening if negative) the original interval by shifting its start/stop times equally by half of specified increment value.
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalScaled.relative_increment`
+              - The relative increment value from which absolute increment is obtained by multiplying relative value by interval duration...
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolEventIntervalScaled.use_absolute_increment`
+              - Specify whether to use absolute or relative increment.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.vgt import TimeToolEventIntervalScaled
 
+
+Property detail
+---------------
+
+.. py:property:: original_interval
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalScaled.original_interval
+    :type: ITimeToolEventInterval
+
+    The original interval.
+
+.. py:property:: absolute_increment
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalScaled.absolute_increment
+    :type: float
+
+    The absolute increment value which creates a interval by expanding (or shortening if negative) the original interval by shifting its start/stop times equally by half of specified increment value.
+
+.. py:property:: relative_increment
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalScaled.relative_increment
+    :type: float
+
+    The relative increment value from which absolute increment is obtained by multiplying relative value by interval duration...
+
+.. py:property:: use_absolute_increment
+    :canonical: ansys.stk.core.vgt.TimeToolEventIntervalScaled.use_absolute_increment
+    :type: bool
+
+    Specify whether to use absolute or relative increment.
 
 

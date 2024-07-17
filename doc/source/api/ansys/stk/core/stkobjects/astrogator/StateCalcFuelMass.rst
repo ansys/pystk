@@ -3,7 +3,7 @@ StateCalcFuelMass
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcFuelMass
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcFuelMass`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    FuelMass Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcFuelMass
 
 Overview
 --------
+
 
 
 Import detail

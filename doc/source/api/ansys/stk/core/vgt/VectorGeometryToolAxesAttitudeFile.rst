@@ -3,7 +3,7 @@ VectorGeometryToolAxesAttitudeFile
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesAttitudeFile
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesAttitudeFile`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes specified by data from a file.
 
@@ -11,6 +11,18 @@ VectorGeometryToolAxesAttitudeFile
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesAttitudeFile.filename`
+              - Specify a path to a file. The file must exist. Specifying an invalid path will generate an exception.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.vgt import VectorGeometryToolAxesAttitudeFile
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAttitudeFile.filename
+    :type: str
+
+    Specify a path to a file. The file must exist. Specifying an invalid path will generate an exception.
 
 

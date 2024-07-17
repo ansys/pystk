@@ -3,7 +3,7 @@ EOIRShapeLEOImaging
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeLEOImaging
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeLEOImaging`, :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
 
    LEOImaging shape class.
 
@@ -11,6 +11,7 @@ EOIRShapeLEOImaging
 
 Overview
 --------
+
 
 
 Import detail
