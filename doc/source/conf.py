@@ -28,7 +28,6 @@ html_logo = pyansys_logo_black
 html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
-html_sidebars = {"**": ["globaltoc.html"]}
 html_context = {
     "github_user": "ansys-internal",
     "github_repo": "pystk",
