@@ -27,10 +27,10 @@ RUN mkdir -p /stk/Modules && cp -f /stk/bin/libagascode500.so /stk/Modules/
 #     rm -rf /stk/STKData/VO; \
 RUN set -e; \
     find /stk/Data/ExampleScenarios/ -type f -not -name 'Intro_STK_Aircraft_Systems.vdf' -exec rm -rf {} \;; \
+    find /stk/Data/Resources/ -type f -not -name 'FAANFD18' -exec rm -rf {} \;; \
     rm -rf /stk/Data/HtmlInterface/; \
     rm -rf /stk/Data/HtmlUtilities/; \
     rm -rf /stk/Data/LicAndReg/; \
-    rm -rf /stk/Data/Resources/; \
     rm -rf /stk/Data/Viewer/; \
     rm -rf /stk/licensingclient/linx64/ClientSettings
 
