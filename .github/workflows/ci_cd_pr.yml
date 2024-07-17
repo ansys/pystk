@@ -161,7 +161,7 @@ jobs:
 
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         run: |
-          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} ]]; then
+          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true" ]]; then
             docker exec \
               --workdir ${{ env.PYSTK_DIR }} \
               ${{ env.STK_CONTAINER }} /bin/bash -c \
@@ -256,7 +256,7 @@ jobs:
       - name: "Stop the container"
         if: always()
         run: |
-          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} ]]; then
+          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true" ]]; then
             docker stop ${{ env.STK_CONTAINER }}
             docker logs ${{ env.STK_CONTAINER }}
             docker rm ${{ env.STK_CONTAINER }}
