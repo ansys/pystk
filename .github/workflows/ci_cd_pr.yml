@@ -12,6 +12,7 @@ env:
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  QUARTO_VERSION: '1.5.54'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -157,6 +158,13 @@ jobs:
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "apt update && apt install -y pandoc"
+
+      - name: "Install Quarto for rendering notebooks as PDF"
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: ${{ env.QUARTO_VERSION }}
 
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         run: |

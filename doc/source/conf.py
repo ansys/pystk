@@ -1,10 +1,10 @@
 """Sphinx documentation configuration file."""
 
 from datetime import datetime
-import subprocess
 import os
 import pathlib
 import shutil
+import subprocess
 
 import sphinx
 from sphinx.util import logging
