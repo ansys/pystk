@@ -113,6 +113,8 @@ jobs:
         needs-self-hosted-runner:
           - ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
         exclude:
+          - needs-self-hosted-runner: false
+            runner: "['self-hosted', 'pystk']"
           - needs-self-hosted-runner: true
             runner: "ubuntu-latest"
     if: |
