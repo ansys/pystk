@@ -115,7 +115,7 @@ jobs:
         needs-self-hosted-runner:
           - contains(github.event.pull_request.labels.*.name, 'docs:examples')
         exclude:
-          - needs-self-hosted-runner: true
+          - needs-self-hosted-runner: "true"
             runner:
               - { name: "github", tags: "ubuntu-latest" }
     if: |
