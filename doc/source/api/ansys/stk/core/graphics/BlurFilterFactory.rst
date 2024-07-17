@@ -3,7 +3,7 @@ BlurFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.BlurFilterFactory
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IBlurFilterFactory`
+   Bases: 
 
    Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
 
@@ -11,6 +11,20 @@ BlurFilterFactory
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.BlurFilterFactory.initialize`
+              - Initialize a new instance.
+            * - :py:attr:`~ansys.stk.core.graphics.BlurFilterFactory.initialize_with_method`
+              - Initialize a new instance with the specified blur method.
+
 
 
 Import detail
@@ -21,4 +35,29 @@ Import detail
     from ansys.stk.core.graphics import BlurFilterFactory
 
 
+
+Method detail
+-------------
+
+.. py:method:: initialize(self) -> BlurFilter
+    :canonical: ansys.stk.core.graphics.BlurFilterFactory.initialize
+
+    Initialize a new instance.
+
+    :Returns:
+
+        :obj:`~BlurFilter`
+
+.. py:method:: initialize_with_method(self, method: BLUR_METHOD) -> BlurFilter
+    :canonical: ansys.stk.core.graphics.BlurFilterFactory.initialize_with_method
+
+    Initialize a new instance with the specified blur method.
+
+    :Parameters:
+
+    **method** : :obj:`~BLUR_METHOD`
+
+    :Returns:
+
+        :obj:`~BlurFilter`
 

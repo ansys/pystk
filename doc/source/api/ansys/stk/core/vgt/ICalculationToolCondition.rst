@@ -57,7 +57,7 @@ Method detail
 -------------
 
 
-.. py:method:: evaluate(self, epoch: typing.Any) -> ICalculationToolEvaluateResult
+.. py:method:: evaluate(self, epoch: typing.Any) -> CalculationToolEvaluateResult
     :canonical: ansys.stk.core.vgt.ICalculationToolCondition.evaluate
 
     Return result of evaluating continuously varying condition metric at the specified time, used for detecting condition crossings.
@@ -68,9 +68,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~ICalculationToolEvaluateResult`
+        :obj:`~CalculationToolEvaluateResult`
 
-.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> ICalculationToolEvaluateWithRateResult
+.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> CalculationToolEvaluateWithRateResult
     :canonical: ansys.stk.core.vgt.ICalculationToolCondition.evaluate_with_rate
 
     Return result of evaluating continuously varying condition metric and its rate of change at the specified time, used for detecting condition crossings.
@@ -81,5 +81,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~ICalculationToolEvaluateWithRateResult`
+        :obj:`~CalculationToolEvaluateWithRateResult`
 

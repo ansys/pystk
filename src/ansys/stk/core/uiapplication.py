@@ -4,9 +4,8 @@
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IMRUCollection", "IUiApplication", "IUiApplicationPartnerAccess", "IUiFileOpenExt", 
-"IUiFileOpenExtCollection", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", "UiApplication", "UiFileOpenExt", 
-"UiFileOpenExtCollection"]
+__all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IUiApplicationPartnerAccess", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", 
+"UiApplication", "UiFileOpenExt", "UiFileOpenExtCollection"]
 
 import typing
 
@@ -97,167 +96,46 @@ APP_ERROR_CODES.NO_LICENSE_ERROR.__doc__ = "No license could be found."
 agcls.AgTypeNameMap["APP_ERROR_CODES"] = APP_ERROR_CODES
 
 
-class IMRUCollection(object):
-    """Provide information about most recently used (MRU) list."""
+class IUiApplicationPartnerAccess(object):
+    """Access to the application object model for business partners."""
 
-    _num_methods = 3
-    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _item_method_offset = 1
-    _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
-    _metadata = {
-        "iid_data" : (5511485448271886598, 17798322995058890112),
-        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IMRUCollection."""
-        initialize_from_source_object(self, sourceObject, IMRUCollection)
-        self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IMRUCollection)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IMRUCollection, None)
-    def __iter__(self):
-        """Create an iterator for the IMRUCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
-        self._enumerator.reset()
-        return self
-    def __next__(self) -> str:
-        """Return the next element in the collection."""
-        if self._enumerator is None:
-            raise StopIteration
-        nextval = self._enumerator.next()
-        if nextval is None:
-            raise StopIteration
-        return nextval
-    
-    _item_metadata = { "offset" : _item_method_offset,
-            "arg_types" : (agcom.Variant, POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
-    def item(self, index:typing.Any) -> str:
-        """Get the MRU at the specified index."""
-        return self._intf.invoke(IMRUCollection._metadata, IMRUCollection._item_metadata, index, OutArg())
-
-    _get_count_metadata = { "offset" : _get_count_method_offset,
-            "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.LongArg,) }
-    @property
-    def count(self) -> int:
-        """Get the total count of MRUs in the collection."""
-        return self._intf.get_property(IMRUCollection._metadata, IMRUCollection._get_count_metadata)
-
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IEnumVariantArg,) }
-    @property
-    def _NewEnum(self) -> EnumeratorProxy:
-        """Enumerates through the MRU collection."""
-        return self._intf.get_property(IMRUCollection._metadata, IMRUCollection._get__NewEnum_metadata)
-
-    __getitem__ = item
-
-
-    _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5511485448271886598, 17798322995058890112), IMRUCollection)
-agcls.AgTypeNameMap["IMRUCollection"] = IMRUCollection
-
-class IUiFileOpenExt(object):
-    """Access to file open dialog that allows multiple file specifications."""
-
-    _num_methods = 6
+    _num_methods = 1
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_file_name_method_offset = 1
-    _set_file_name_method_offset = 2
-    _get_filter_description_method_offset = 3
-    _set_filter_description_method_offset = 4
-    _get_filter_pattern_method_offset = 5
-    _set_filter_pattern_method_offset = 6
+    _grant_partner_access_method_offset = 1
     _metadata = {
-        "iid_data" : (5740546309910143078, 16304364896762750623),
+        "iid_data" : (5167873979092294442, 1106320289392679061),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IUiFileOpenExt."""
-        initialize_from_source_object(self, sourceObject, IUiFileOpenExt)
+        """Construct an object of type IUiApplicationPartnerAccess."""
+        initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IUiFileOpenExt)
+        return get_interface_property(attrname, IUiApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IUiFileOpenExt, None)
+        set_interface_attribute(self, attrname, value, IUiApplicationPartnerAccess, None)
     
-    _get_file_name_metadata = { "offset" : _get_file_name_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def file_name(self) -> "UiFileOpenExtCollection":
-        """Get or set the multiple file open collection."""
-        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_file_name_metadata)
-
-    _set_file_name_metadata = { "offset" : _set_file_name_method_offset,
-            "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IUiFileOpenExtCollection"),) }
-    @file_name.setter
-    def file_name(self, newVal:"IUiFileOpenExtCollection") -> None:
-        """Get or set the multiple file open collection."""
-        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_file_name_metadata, newVal)
-
-    _get_filter_description_metadata = { "offset" : _get_filter_description_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def filter_description(self) -> str:
-        """Get or set the file open dialog filter description."""
-        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_description_metadata)
-
-    _set_filter_description_metadata = { "offset" : _set_filter_description_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @filter_description.setter
-    def filter_description(self, newVal:str) -> None:
-        """Get or set the file open dialog filter description."""
-        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_description_metadata, newVal)
-
-    _get_filter_pattern_metadata = { "offset" : _get_filter_pattern_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def filter_pattern(self) -> str:
-        """Get or set the file open dialog filter pattern."""
-        return self._intf.get_property(IUiFileOpenExt._metadata, IUiFileOpenExt._get_filter_pattern_metadata)
-
-    _set_filter_pattern_metadata = { "offset" : _set_filter_pattern_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @filter_pattern.setter
-    def filter_pattern(self, newVal:str) -> None:
-        """Get or set the file open dialog filter pattern."""
-        return self._intf.set_property(IUiFileOpenExt._metadata, IUiFileOpenExt._set_filter_pattern_metadata, newVal)
-
-    _property_names[file_name] = "file_name"
-    _property_names[filter_description] = "filter_description"
-    _property_names[filter_pattern] = "filter_pattern"
+    _grant_partner_access_metadata = { "offset" : _grant_partner_access_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def grant_partner_access(self, vendor:str, product:str, key:str) -> typing.Any:
+        """Provide object model root for authorized business partners."""
+        return self._intf.invoke(IUiApplicationPartnerAccess._metadata, IUiApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
 
 
-agcls.AgClassCatalog.add_catalog_entry((5740546309910143078, 16304364896762750623), IUiFileOpenExt)
-agcls.AgTypeNameMap["IUiFileOpenExt"] = IUiFileOpenExt
 
-class IUiApplication(object):
+agcls.AgClassCatalog.add_catalog_entry((5167873979092294442, 1106320289392679061), IUiApplicationPartnerAccess)
+agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
+
+
+
+class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     """UiApplication represents a root of the Application Model."""
 
     _num_methods = 37
@@ -304,26 +182,15 @@ class IUiApplication(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IUiApplication."""
-        initialize_from_source_object(self, sourceObject, IUiApplication)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IUiApplication)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IUiApplication, None)
+        return get_interface_property(attrname, UiApplication)
     
     _load_personality_metadata = { "offset" : _load_personality_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def load_personality(self, persName:str) -> None:
         """Load a personality by its name."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._load_personality_metadata, persName)
+        return self._intf.invoke(UiApplication._metadata, UiApplication._load_personality_metadata, persName)
 
     _get_personality_metadata = { "offset" : _get_personality_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -331,7 +198,7 @@ class IUiApplication(object):
     @property
     def personality(self) -> typing.Any:
         """Return a reference to the currently loaded personality."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_personality_metadata)
 
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -339,7 +206,7 @@ class IUiApplication(object):
     @property
     def visible(self) -> bool:
         """Get or set whether the main window is visible."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_visible_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_visible_metadata)
 
     _set_visible_metadata = { "offset" : _set_visible_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -347,7 +214,7 @@ class IUiApplication(object):
     @visible.setter
     def visible(self, newVal:bool) -> None:
         """Get or set whether the main window is visible."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_visible_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_visible_metadata, newVal)
 
     _get_user_control_metadata = { "offset" : _get_user_control_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -355,7 +222,7 @@ class IUiApplication(object):
     @property
     def user_control(self) -> bool:
         """Get or set whether the application is user controlled."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_user_control_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_user_control_metadata)
 
     _set_user_control_metadata = { "offset" : _set_user_control_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -363,7 +230,7 @@ class IUiApplication(object):
     @user_control.setter
     def user_control(self, newVal:bool) -> None:
         """Get or set whether the application is user controlled."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_user_control_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_user_control_metadata, newVal)
 
     _get_windows_metadata = { "offset" : _get_windows_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -371,7 +238,7 @@ class IUiApplication(object):
     @property
     def windows(self) -> "IUiWindowsCollection":
         """Return a collection of windows."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_windows_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_windows_metadata)
 
     _get_height_metadata = { "offset" : _get_height_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -379,7 +246,7 @@ class IUiApplication(object):
     @property
     def height(self) -> int:
         """Get or set a height of the main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_height_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_height_metadata)
 
     _set_height_metadata = { "offset" : _set_height_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -387,7 +254,7 @@ class IUiApplication(object):
     @height.setter
     def height(self, newVal:int) -> None:
         """Get or set a height of the main window."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_height_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_height_metadata, newVal)
 
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -395,7 +262,7 @@ class IUiApplication(object):
     @property
     def width(self) -> int:
         """Get or set a width of the main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_width_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_width_metadata)
 
     _set_width_metadata = { "offset" : _set_width_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -403,7 +270,7 @@ class IUiApplication(object):
     @width.setter
     def width(self, newVal:int) -> None:
         """Get or set a width of the main window."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_width_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_width_metadata, newVal)
 
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -411,7 +278,7 @@ class IUiApplication(object):
     @property
     def left(self) -> int:
         """Get or set a vertical coordinate of the main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_left_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_left_metadata)
 
     _set_left_metadata = { "offset" : _set_left_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -419,7 +286,7 @@ class IUiApplication(object):
     @left.setter
     def left(self, newVal:int) -> None:
         """Get or set a vertical coordinate of the main window."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_left_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_left_metadata, newVal)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -427,7 +294,7 @@ class IUiApplication(object):
     @property
     def top(self) -> int:
         """Get or set a horizontal coordinate of the main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_top_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_top_metadata)
 
     _set_top_metadata = { "offset" : _set_top_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -435,7 +302,7 @@ class IUiApplication(object):
     @top.setter
     def top(self, newVal:int) -> None:
         """Get or set a horizontal coordinate of the main window."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_top_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_top_metadata, newVal)
 
     _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -443,7 +310,7 @@ class IUiApplication(object):
     @property
     def window_state(self) -> "WINDOW_STATE":
         """Get or set the state of the main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_window_state_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_window_state_metadata)
 
     _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -451,14 +318,14 @@ class IUiApplication(object):
     @window_state.setter
     def window_state(self, newVal:"WINDOW_STATE") -> None:
         """Get or set the state of the main window."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_window_state_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_window_state_metadata, newVal)
 
     _activate_metadata = { "offset" : _activate_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def activate(self) -> None:
         """Activates the application's main window."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._activate_metadata, )
+        return self._intf.invoke(UiApplication._metadata, UiApplication._activate_metadata, )
 
     _get_mru_list_metadata = { "offset" : _get_mru_list_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -466,14 +333,14 @@ class IUiApplication(object):
     @property
     def mru_list(self) -> "MRUCollection":
         """Return a collection most recently used files."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_mru_list_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_mru_list_metadata)
 
     _file_open_dialog_metadata = { "offset" : _file_open_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def file_open_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
         """Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_open_dialog_metadata, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_metadata, defaultExt, filter, initialDir, OutArg())
 
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -481,35 +348,35 @@ class IUiApplication(object):
     @property
     def path(self) -> str:
         """Return the complete path to the application, excluding the final separator and name of the application. Read-only String."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_path_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_path_metadata)
 
     _create_object_metadata = { "offset" : _create_object_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def create_object(self, progID:str, remoteServer:str) -> typing.Any:
         """Only works from local HTML pages and scripts."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_object_metadata, progID, remoteServer, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._create_object_metadata, progID, remoteServer, OutArg())
 
     _file_save_as_dialog_metadata = { "offset" : _file_save_as_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def file_save_as_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
         """Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_save_as_dialog_metadata, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_save_as_dialog_metadata, defaultExt, filter, initialDir, OutArg())
 
     _quit_metadata = { "offset" : _quit_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def quit(self) -> None:
         """Shuts down the application."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._quit_metadata, )
+        return self._intf.invoke(UiApplication._metadata, UiApplication._quit_metadata, )
 
     _file_open_dialog_ext_metadata = { "offset" : _file_open_dialog_ext_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def file_open_dialog_ext(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "UiFileOpenExt":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._file_open_dialog_ext_metadata, allowMultiSelect, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_ext_metadata, allowMultiSelect, defaultExt, filter, initialDir, OutArg())
 
     _get_hwnd_metadata = { "offset" : _get_hwnd_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -517,14 +384,14 @@ class IUiApplication(object):
     @property
     def hwnd(self) -> int:
         """Return an HWND handle associated with the application main window."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_hwnd_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_hwnd_metadata)
 
     _directory_picker_dialog_metadata = { "offset" : _directory_picker_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
     def directory_picker_dialog(self, title:str, initialDir:str) -> str:
         """Brings up the Directory Picker Dialog and returns a selected directory name."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._directory_picker_dialog_metadata, title, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._directory_picker_dialog_metadata, title, initialDir, OutArg())
 
     _get_message_pending_delay_metadata = { "offset" : _get_message_pending_delay_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -532,7 +399,7 @@ class IUiApplication(object):
     @property
     def message_pending_delay(self) -> int:
         """Get or set message-pending delay for server busy dialog (in milliseconds)."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_message_pending_delay_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_message_pending_delay_metadata)
 
     _set_message_pending_delay_metadata = { "offset" : _set_message_pending_delay_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -540,7 +407,7 @@ class IUiApplication(object):
     @message_pending_delay.setter
     def message_pending_delay(self, newVal:int) -> None:
         """Get or set message-pending delay for server busy dialog (in milliseconds)."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_message_pending_delay_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_message_pending_delay_metadata, newVal)
 
     _get_personality2_metadata = { "offset" : _get_personality2_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -548,21 +415,21 @@ class IUiApplication(object):
     @property
     def personality2(self) -> typing.Any:
         """Return an new instance of the root object of the STK Object Model."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_personality2_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_personality2_metadata)
 
     _open_log_file_metadata = { "offset" : _open_log_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(OPEN_LOG_FILE_MODE), agmarshall.VariantBoolArg,) }
     def open_log_file(self, logFileName:str, logFileMode:"OPEN_LOG_FILE_MODE") -> bool:
         """Specify the current log file to be written to."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._open_log_file_metadata, logFileName, logFileMode, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, logFileName, logFileMode, OutArg())
 
     _log_msg_metadata = { "offset" : _log_msg_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR,),
             "marshallers" : (agmarshall.EnumArg(UI_LOG_MSG_TYPE), agmarshall.BStrArg,) }
     def log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None:
         """Log the Message specified."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._log_msg_metadata, msgType, msg)
+        return self._intf.invoke(UiApplication._metadata, UiApplication._log_msg_metadata, msgType, msg)
 
     _get_log_file_metadata = { "offset" : _get_log_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -570,7 +437,7 @@ class IUiApplication(object):
     @property
     def log_file(self) -> str:
         """Get the current log files full path."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_log_file_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_log_file_metadata)
 
     _get_display_alerts_metadata = { "offset" : _get_display_alerts_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -578,7 +445,7 @@ class IUiApplication(object):
     @property
     def display_alerts(self) -> bool:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_display_alerts_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_display_alerts_metadata)
 
     _set_display_alerts_metadata = { "offset" : _set_display_alerts_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -586,14 +453,14 @@ class IUiApplication(object):
     @display_alerts.setter
     def display_alerts(self, displayAlerts:bool) -> None:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
-        return self._intf.set_property(IUiApplication._metadata, IUiApplication._set_display_alerts_metadata, displayAlerts)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_display_alerts_metadata, displayAlerts)
 
     _create_application_metadata = { "offset" : _create_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def create_application(self) -> "UiApplication":
         """Create a new instance of the application model root object."""
-        return self._intf.invoke(IUiApplication._metadata, IUiApplication._create_application_metadata, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._create_application_metadata, OutArg())
 
     _get_process_id_metadata = { "offset" : _get_process_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -601,7 +468,7 @@ class IUiApplication(object):
     @property
     def process_id(self) -> int:
         """Get process id for the current instance."""
-        return self._intf.get_property(IUiApplication._metadata, IUiApplication._get_process_id_metadata)
+        return self._intf.get_property(UiApplication._metadata, UiApplication._get_process_id_metadata)
 
     _property_names[personality] = "personality"
     _property_names[visible] = "visible"
@@ -621,47 +488,99 @@ class IUiApplication(object):
     _property_names[display_alerts] = "display_alerts"
     _property_names[process_id] = "process_id"
 
+    def __init__(self, sourceObject=None):
+        """Construct an object of type UiApplication."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, UiApplication)
+        IUiApplicationPartnerAccess.__init__(self, sourceObject)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IUiApplicationPartnerAccess._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, UiApplication, [UiApplication, IUiApplicationPartnerAccess])
 
-agcls.AgClassCatalog.add_catalog_entry((5152548327130061473, 179254138349634492), IUiApplication)
-agcls.AgTypeNameMap["IUiApplication"] = IUiApplication
+agcls.AgClassCatalog.add_catalog_entry((5006026089128684578, 1580294365369460875), UiApplication)
+agcls.AgTypeNameMap["UiApplication"] = UiApplication
 
-class IUiApplicationPartnerAccess(object):
-    """Access to the application object model for business partners."""
+class MRUCollection(SupportsDeleteCallback):
+    """Provide information about most recently used (MRU) list."""
 
-    _num_methods = 1
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _grant_partner_access_method_offset = 1
+    _num_methods = 3
+    _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
+    _item_method_offset = 1
+    _get_count_method_offset = 2
+    _get__NewEnum_method_offset = 3
     _metadata = {
-        "iid_data" : (5167873979092294442, 1106320289392679061),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+        "iid_data" : (5511485448271886598, 17798322995058890112),
+        "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, MRUCollection)
+    def __iter__(self):
+        """Create an iterator for the MRUCollection object."""
+        self.__dict__["_enumerator"] = self._NewEnum
+        self._enumerator.reset()
+        return self
+    def __next__(self) -> str:
+        """Return the next element in the collection."""
+        if self._enumerator is None:
+            raise StopIteration
+        nextval = self._enumerator.next()
+        if nextval is None:
+            raise StopIteration
+        return nextval
+    
+    _item_metadata = { "offset" : _item_method_offset,
+            "arg_types" : (agcom.Variant, POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
+    def item(self, index:typing.Any) -> str:
+        """Get the MRU at the specified index."""
+        return self._intf.invoke(MRUCollection._metadata, MRUCollection._item_metadata, index, OutArg())
+
+    _get_count_metadata = { "offset" : _get_count_method_offset,
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.LongArg,) }
+    @property
+    def count(self) -> int:
+        """Get the total count of MRUs in the collection."""
+        return self._intf.get_property(MRUCollection._metadata, MRUCollection._get_count_metadata)
+
+    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.IEnumVariantArg,) }
+    @property
+    def _NewEnum(self) -> EnumeratorProxy:
+        """Enumerates through the MRU collection."""
+        return self._intf.get_property(MRUCollection._metadata, MRUCollection._get__NewEnum_metadata)
+
+    __getitem__ = item
+
+
+    _property_names[count] = "count"
+    _property_names[_NewEnum] = "_NewEnum"
+
     def __init__(self, sourceObject=None):
-        """Construct an object of type IUiApplicationPartnerAccess."""
-        initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
+        """Construct an object of type MRUCollection."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, MRUCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IUiApplicationPartnerAccess)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IUiApplicationPartnerAccess, None)
-    
-    _grant_partner_access_metadata = { "offset" : _grant_partner_access_method_offset,
-            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def grant_partner_access(self, vendor:str, product:str, key:str) -> typing.Any:
-        """Provide object model root for authorized business partners."""
-        return self._intf.invoke(IUiApplicationPartnerAccess._metadata, IUiApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
+        set_class_attribute(self, attrname, value, MRUCollection, [MRUCollection, ])
 
+agcls.AgClassCatalog.add_catalog_entry((4906190746948977919, 5654723336100906907), MRUCollection)
+agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
 
-agcls.AgClassCatalog.add_catalog_entry((5167873979092294442, 1106320289392679061), IUiApplicationPartnerAccess)
-agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
-
-class IUiFileOpenExtCollection(object):
+class UiFileOpenExtCollection(SupportsDeleteCallback):
     """Multiple file open collection."""
 
     _num_methods = 3
@@ -674,22 +593,10 @@ class IUiFileOpenExtCollection(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IUiFileOpenExtCollection."""
-        initialize_from_source_object(self, sourceObject, IUiFileOpenExtCollection)
-        self.__dict__["_enumerator"] = None
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IUiFileOpenExtCollection)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IUiFileOpenExtCollection, None)
+        return get_interface_property(attrname, UiFileOpenExtCollection)
     def __iter__(self):
-        """Create an iterator for the IUiFileOpenExtCollection object."""
+        """Create an iterator for the UiFileOpenExtCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
@@ -708,7 +615,7 @@ class IUiFileOpenExtCollection(object):
     @property
     def count(self) -> int:
         """Get the total count of files in the collection."""
-        return self._intf.get_property(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._get_count_metadata)
+        return self._intf.get_property(UiFileOpenExtCollection._metadata, UiFileOpenExtCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -716,14 +623,14 @@ class IUiFileOpenExtCollection(object):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Enumerates through the file collection."""
-        return self._intf.get_property(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UiFileOpenExtCollection._metadata, UiFileOpenExtCollection._get__NewEnum_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, nIndex:int) -> str:
         """Get the file at the specified index."""
-        return self._intf.invoke(IUiFileOpenExtCollection._metadata, IUiFileOpenExtCollection._item_metadata, nIndex, OutArg())
+        return self._intf.invoke(UiFileOpenExtCollection._metadata, UiFileOpenExtCollection._item_metadata, nIndex, OutArg())
 
     __getitem__ = item
 
@@ -731,90 +638,105 @@ class IUiFileOpenExtCollection(object):
     _property_names[count] = "count"
     _property_names[_NewEnum] = "_NewEnum"
 
-
-agcls.AgClassCatalog.add_catalog_entry((5663541480808773789, 6468980721787839653), IUiFileOpenExtCollection)
-agcls.AgTypeNameMap["IUiFileOpenExtCollection"] = IUiFileOpenExtCollection
-
-
-
-class UiApplication(IUiApplication, IUiApplicationPartnerAccess, SupportsDeleteCallback):
-    """A root object of the Application Model."""
-
-    def __init__(self, sourceObject=None):
-        """Construct an object of type UiApplication."""
-        SupportsDeleteCallback.__init__(self)
-        IUiApplication.__init__(self, sourceObject)
-        IUiApplicationPartnerAccess.__init__(self, sourceObject)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        IUiApplication._private_init(self, intf)
-        IUiApplicationPartnerAccess._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiApplication, [IUiApplication, IUiApplicationPartnerAccess])
-
-agcls.AgClassCatalog.add_catalog_entry((5006026089128684578, 1580294365369460875), UiApplication)
-agcls.AgTypeNameMap["UiApplication"] = UiApplication
-
-class MRUCollection(IMRUCollection, SupportsDeleteCallback):
-    """Provide information about most recently used (MRU) list."""
-
-    def __init__(self, sourceObject=None):
-        """Construct an object of type MRUCollection."""
-        SupportsDeleteCallback.__init__(self)
-        IMRUCollection.__init__(self, sourceObject)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-        IMRUCollection._private_init(self, intf)
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MRUCollection, [IMRUCollection])
-
-agcls.AgClassCatalog.add_catalog_entry((4906190746948977919, 5654723336100906907), MRUCollection)
-agcls.AgTypeNameMap["MRUCollection"] = MRUCollection
-
-class UiFileOpenExtCollection(IUiFileOpenExtCollection, SupportsDeleteCallback):
-    """Multiple file open collection."""
-
     def __init__(self, sourceObject=None):
         """Construct an object of type UiFileOpenExtCollection."""
         SupportsDeleteCallback.__init__(self)
-        IUiFileOpenExtCollection.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, UiFileOpenExtCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IUiFileOpenExtCollection._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiFileOpenExtCollection, [IUiFileOpenExtCollection])
+        set_class_attribute(self, attrname, value, UiFileOpenExtCollection, [UiFileOpenExtCollection, ])
 
 agcls.AgClassCatalog.add_catalog_entry((4816855088544067481, 231753964531063469), UiFileOpenExtCollection)
 agcls.AgTypeNameMap["UiFileOpenExtCollection"] = UiFileOpenExtCollection
 
-class UiFileOpenExt(IUiFileOpenExt, SupportsDeleteCallback):
+class UiFileOpenExt(SupportsDeleteCallback):
     """Access to file open dialog that allows multiple file specifications."""
+
+    _num_methods = 6
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_file_name_method_offset = 1
+    _set_file_name_method_offset = 2
+    _get_filter_description_method_offset = 3
+    _set_filter_description_method_offset = 4
+    _get_filter_pattern_method_offset = 5
+    _set_filter_pattern_method_offset = 6
+    _metadata = {
+        "iid_data" : (5740546309910143078, 16304364896762750623),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, UiFileOpenExt)
+    
+    _get_file_name_metadata = { "offset" : _get_file_name_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def file_name(self) -> "UiFileOpenExtCollection":
+        """Get or set the multiple file open collection."""
+        return self._intf.get_property(UiFileOpenExt._metadata, UiFileOpenExt._get_file_name_metadata)
+
+    _set_file_name_metadata = { "offset" : _set_file_name_method_offset,
+            "arg_types" : (agcom.PVOID,),
+            "marshallers" : (agmarshall.InterfaceInArg("UiFileOpenExtCollection"),) }
+    @file_name.setter
+    def file_name(self, newVal:"UiFileOpenExtCollection") -> None:
+        """Get or set the multiple file open collection."""
+        return self._intf.set_property(UiFileOpenExt._metadata, UiFileOpenExt._set_file_name_metadata, newVal)
+
+    _get_filter_description_metadata = { "offset" : _get_filter_description_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def filter_description(self) -> str:
+        """Get or set the file open dialog filter description."""
+        return self._intf.get_property(UiFileOpenExt._metadata, UiFileOpenExt._get_filter_description_metadata)
+
+    _set_filter_description_metadata = { "offset" : _set_filter_description_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @filter_description.setter
+    def filter_description(self, newVal:str) -> None:
+        """Get or set the file open dialog filter description."""
+        return self._intf.set_property(UiFileOpenExt._metadata, UiFileOpenExt._set_filter_description_metadata, newVal)
+
+    _get_filter_pattern_metadata = { "offset" : _get_filter_pattern_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def filter_pattern(self) -> str:
+        """Get or set the file open dialog filter pattern."""
+        return self._intf.get_property(UiFileOpenExt._metadata, UiFileOpenExt._get_filter_pattern_metadata)
+
+    _set_filter_pattern_metadata = { "offset" : _set_filter_pattern_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @filter_pattern.setter
+    def filter_pattern(self, newVal:str) -> None:
+        """Get or set the file open dialog filter pattern."""
+        return self._intf.set_property(UiFileOpenExt._metadata, UiFileOpenExt._set_filter_pattern_metadata, newVal)
+
+    _property_names[file_name] = "file_name"
+    _property_names[filter_description] = "filter_description"
+    _property_names[filter_pattern] = "filter_pattern"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type UiFileOpenExt."""
         SupportsDeleteCallback.__init__(self)
-        IUiFileOpenExt.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, UiFileOpenExt)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IUiFileOpenExt._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiFileOpenExt, [IUiFileOpenExt])
+        set_class_attribute(self, attrname, value, UiFileOpenExt, [UiFileOpenExt, ])
 
 agcls.AgClassCatalog.add_catalog_entry((4850055024671377715, 12513386433369472389), UiFileOpenExt)
 agcls.AgTypeNameMap["UiFileOpenExt"] = UiFileOpenExt

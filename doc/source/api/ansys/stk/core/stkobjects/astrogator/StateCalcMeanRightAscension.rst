@@ -3,7 +3,7 @@ StateCalcMeanRightAscension
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcMeanRightAscension
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcMeanRightAscension`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    MeanRightAscension Calc objects.
 
@@ -11,6 +11,18 @@ StateCalcMeanRightAscension
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcMeanRightAscension.central_body_name`
+              - Gets or sets the central body of the component.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import StateCalcMeanRightAscension
 
+
+Property detail
+---------------
+
+.. py:property:: central_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcMeanRightAscension.central_body_name
+    :type: str
+
+    Gets or sets the central body of the component.
 
 

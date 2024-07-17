@@ -2486,7 +2486,7 @@ class EarlyBoundTests(TestBase):
         clutter.enabled = False
         Assert.assertFalse(clutter.enabled)
 
-        compLinkEmbedControlX: "ComponentAttrLinkEmbedControl" = clutter.scattering_point_provider_list  # B
+        compLinkEmbedControlX: "IComponentLinkEmbedControl" = clutter.scattering_point_provider_list  # B
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             compLinkEmbedControlX.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -2495,7 +2495,7 @@ class EarlyBoundTests(TestBase):
         clutter.enabled = True
         Assert.assertTrue(clutter.enabled)
 
-        compLinkEmbedControl: "ComponentAttrLinkEmbedControl" = clutter.scattering_point_provider_list  # B
+        compLinkEmbedControl: "IComponentLinkEmbedControl" = clutter.scattering_point_provider_list  # B
         arSupportedComponents = compLinkEmbedControl.supported_components  # C
         Assert.assertEqual(2, Array.Length(arSupportedComponents))
         Assert.assertEqual("Scattering Point Provider List", arSupportedComponents[0])
@@ -2569,7 +2569,7 @@ class EarlyBoundTests(TestBase):
         sppce.enabled = True
         Assert.assertTrue(sppce.enabled)
 
-        compLinkEmbedControl2: "ComponentAttrLinkEmbedControl" = sppce.scattering_point_provider  # G
+        compLinkEmbedControl2: "IComponentLinkEmbedControl" = sppce.scattering_point_provider  # G
         arSupportedComponents = compLinkEmbedControl2.supported_components  # H
 
         compLinkEmbedControl2.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # G1
@@ -2625,7 +2625,7 @@ class EarlyBoundTests(TestBase):
         ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
             Assert.assertIsNotNone(rawObject)
 
-        linkEmbedControl: "ComponentAttrLinkEmbedControl" = sppPlugin.scattering_point_model  # J
+        linkEmbedControl: "IComponentLinkEmbedControl" = sppPlugin.scattering_point_model  # J
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # J1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, linkEmbedControl.reference_type)
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
@@ -2692,7 +2692,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             lat: float = spColl[3].latitude
 
-        linkEmbedControl: "ComponentAttrLinkEmbedControl" = sppPointsFile.default_scattering_point_model  # J
+        linkEmbedControl: "IComponentLinkEmbedControl" = sppPointsFile.default_scattering_point_model  # J
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # J1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, linkEmbedControl.reference_type)
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
@@ -2729,7 +2729,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Smooth Oblate Earth", spp.name)
 
         sppSOE: "ScatteringPointProviderSmoothOblateEarth" = clr.CastAs(spp, ScatteringPointProviderSmoothOblateEarth)
-        linkEmbedControl: "ComponentAttrLinkEmbedControl" = sppSOE.scattering_point_model  # J
+        linkEmbedControl: "IComponentLinkEmbedControl" = sppSOE.scattering_point_model  # J
 
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # J1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, linkEmbedControl.reference_type)
@@ -2769,7 +2769,7 @@ class EarlyBoundTests(TestBase):
         sppROCC: "ScatteringPointProviderRangeOverCFARCells" = clr.CastAs(
             spp, ScatteringPointProviderRangeOverCFARCells
         )
-        linkEmbedControl: "ComponentAttrLinkEmbedControl" = sppROCC.scattering_point_model  # J
+        linkEmbedControl: "IComponentLinkEmbedControl" = sppROCC.scattering_point_model  # J
 
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # J1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, linkEmbedControl.reference_type)
@@ -2807,7 +2807,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Single Point", spp.name)
 
         sppSinglePoint: "ScatteringPointProviderSinglePoint" = clr.CastAs(spp, ScatteringPointProviderSinglePoint)
-        linkEmbedControl: "ComponentAttrLinkEmbedControl" = sppSinglePoint.scattering_point_model  # J
+        linkEmbedControl: "IComponentLinkEmbedControl" = sppSinglePoint.scattering_point_model  # J
 
         linkEmbedControl.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED  # J1
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED, linkEmbedControl.reference_type)

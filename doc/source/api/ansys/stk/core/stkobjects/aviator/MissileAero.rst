@@ -3,7 +3,7 @@ MissileAero
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileAero
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IMissileAero`
+   Bases: 
 
    Class defining the aerodynamic options for a missile.
 
@@ -11,6 +11,24 @@ MissileAero
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAero.aero_strategy`
+              - Gets or sets the aerodynamic strategy type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_simple`
+              - Get the interface for a simple aerodynamics strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_external`
+              - Get the interface for an external file aerodynamics strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_advanced`
+              - Get the interface for an advanced aerodynamics strategy.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkobjects.aviator import MissileAero
 
+
+Property detail
+---------------
+
+.. py:property:: aero_strategy
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAero.aero_strategy
+    :type: MISSILE_AERO_STRATEGY
+
+    Gets or sets the aerodynamic strategy type.
+
+.. py:property:: mode_as_simple
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_simple
+    :type: IMissileSimpleAero
+
+    Get the interface for a simple aerodynamics strategy.
+
+.. py:property:: mode_as_external
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_external
+    :type: IMissileExternalAero
+
+    Get the interface for an external file aerodynamics strategy.
+
+.. py:property:: mode_as_advanced
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAero.mode_as_advanced
+    :type: IMissileAdvancedAero
+
+    Get the interface for an advanced aerodynamics strategy.
 
 

@@ -93,14 +93,14 @@ Method detail
 
 
 
-.. py:method:: find_occurrence(self) -> ITimeToolEventFindOccurrenceResult
+.. py:method:: find_occurrence(self) -> TimeToolEventFindOccurrenceResult
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.find_occurrence
 
     Return computed time instance if it occurs.
 
     :Returns:
 
-        :obj:`~ITimeToolEventFindOccurrenceResult`
+        :obj:`~TimeToolEventFindOccurrenceResult`
 
 .. py:method:: occurs_before(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.vgt.ITimeToolEvent.occurs_before

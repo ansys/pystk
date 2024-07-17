@@ -3,7 +3,7 @@ SpatialAnalysisToolGridValuesCustom
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesCustom
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesCustom`, :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod`
 
    Fixed step grid values.
 
@@ -11,6 +11,18 @@ SpatialAnalysisToolGridValuesCustom
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesCustom.values`
+              - Custom set of coordinate values.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.vgt import SpatialAnalysisToolGridValuesCustom
 
+
+Property detail
+---------------
+
+.. py:property:: values
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesCustom.values
+    :type: list
+
+    Custom set of coordinate values.
 
 

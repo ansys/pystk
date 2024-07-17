@@ -3,7 +3,7 @@ GroundVehicleGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.GroundVehicleGraphics
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IGroundVehicleGraphics`, :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IGreatArcGraphics`
 
    2D Graphics properties for ground vehicles.
 
@@ -11,6 +11,18 @@ GroundVehicleGraphics
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleGraphics.radar_cross_section`
+              - Gets the radar cross section graphics interface.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import GroundVehicleGraphics
 
+
+Property detail
+---------------
+
+.. py:property:: radar_cross_section
+    :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics.radar_cross_section
+    :type: IRadarCrossSectionGraphics
+
+    Gets the radar cross section graphics interface.
 
 

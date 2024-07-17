@@ -3,7 +3,7 @@ FigureOfMeritDefinitionSimpleCoverage
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSimpleCoverage
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionSimpleCoverage`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Simple Coverage Figure of Merit.
 
@@ -11,6 +11,7 @@ FigureOfMeritDefinitionSimpleCoverage
 
 Overview
 --------
+
 
 
 Import detail

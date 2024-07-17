@@ -15,7 +15,7 @@ Summary
             :widths: auto
 
             * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods`
-              - Provide support for STK Engine controls (map, globe, gfx analysis).
+              - Provide support for STK Engine controls (map, globe, graphics analysis).
 
             * - :py:class:`~ansys.stk.core.stkengine.tkcontrols.ControlBase`
               - Base class for Tkinter controls.

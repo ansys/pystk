@@ -3,7 +3,7 @@ CoverageGrid
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGrid
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageGrid`
+   Bases: 
 
    Grid Definition and resolution.
 
@@ -11,6 +11,24 @@ CoverageGrid
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGrid.bounds_type`
+              - Type of bounds used to define the coverage region.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGrid.bounds`
+              - Get the coverage region.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGrid.resolution_type`
+              - Type of criterion used to define grid resolution.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGrid.resolution`
+              - Grid resolution.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkobjects import CoverageGrid
 
+
+Property detail
+---------------
+
+.. py:property:: bounds_type
+    :canonical: ansys.stk.core.stkobjects.CoverageGrid.bounds_type
+    :type: COVERAGE_BOUNDS
+
+    Type of bounds used to define the coverage region.
+
+.. py:property:: bounds
+    :canonical: ansys.stk.core.stkobjects.CoverageGrid.bounds
+    :type: ICoverageBounds
+
+    Get the coverage region.
+
+.. py:property:: resolution_type
+    :canonical: ansys.stk.core.stkobjects.CoverageGrid.resolution_type
+    :type: COVERAGE_RESOLUTION
+
+    Type of criterion used to define grid resolution.
+
+.. py:property:: resolution
+    :canonical: ansys.stk.core.stkobjects.CoverageGrid.resolution
+    :type: ICoverageResolution
+
+    Grid resolution.
 
 

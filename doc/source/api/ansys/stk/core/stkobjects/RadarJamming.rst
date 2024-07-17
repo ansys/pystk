@@ -3,7 +3,7 @@ RadarJamming
 
 .. py:class:: ansys.stk.core.stkobjects.RadarJamming
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarJamming`
+   Bases: 
 
    Class defining radar jamming.
 
@@ -11,6 +11,20 @@ RadarJamming
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarJamming.enabled`
+              - Gets or sets whether the jamming is enabled or disabled.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarJamming.jammers`
+              - Gets the jammers collection.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import RadarJamming
 
+
+Property detail
+---------------
+
+.. py:property:: enabled
+    :canonical: ansys.stk.core.stkobjects.RadarJamming.enabled
+    :type: bool
+
+    Gets or sets whether the jamming is enabled or disabled.
+
+.. py:property:: jammers
+    :canonical: ansys.stk.core.stkobjects.RadarJamming.jammers
+    :type: IObjectLinkCollection
+
+    Gets the jammers collection.
 
 

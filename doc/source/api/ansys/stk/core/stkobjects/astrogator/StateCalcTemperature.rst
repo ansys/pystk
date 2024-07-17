@@ -3,7 +3,7 @@ StateCalcTemperature
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcTemperature
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcTemperature`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Temperature Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcTemperature
 
 Overview
 --------
+
 
 
 Import detail

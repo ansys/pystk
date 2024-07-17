@@ -3,7 +3,7 @@ ScriptingParameterEnumerationChoiceCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IScriptingParameterEnumerationChoiceCollection`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
 
    Scripting Parameter Enumeration Choice Collection.
 
@@ -11,6 +11,45 @@ ScriptingParameterEnumerationChoiceCollection
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.add`
+              - Add an enumeration choice to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.remove`
+              - Remove an enumeration choice.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.cut`
+              - Copy the enumeration choice into the clipboard and removes the enumeration choice from the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.paste`
+              - Pastes the enumeration choice from the clipboard and inserts into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.insert_copy`
+              - Copy the enumeration choice and inserts the copy into the list.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.get_item_by_index`
+              - Retrieve a scripting parameter enumeration choice in the collection by index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.get_item_by_name`
+              - Retrieve a scripting parameter enumeration choice in the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.count`
+              - Returns the size of the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info`
+              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+
 
 
 Import detail
@@ -21,4 +60,131 @@ Import detail
     from ansys.stk.core.stkobjects.astrogator import ScriptingParameterEnumerationChoiceCollection
 
 
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+.. py:property:: provide_runtime_type_info
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info
+    :type: IRuntimeTypeInfo
+
+    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, indexOrName: typing.Any) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
+
+.. py:method:: add(self, choiceName: str) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.add
+
+    Add an enumeration choice to the collection.
+
+    :Parameters:
+
+    **choiceName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
+
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.remove
+
+    Remove an enumeration choice.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: cut(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.cut
+
+    Copy the enumeration choice into the clipboard and removes the enumeration choice from the list.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: paste(self) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.paste
+
+    Pastes the enumeration choice from the clipboard and inserts into the list.
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
+
+.. py:method:: insert_copy(self, choice: ScriptingParameterEnumerationChoice) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.insert_copy
+
+    Copy the enumeration choice and inserts the copy into the list.
+
+    :Parameters:
+
+    **choice** : :obj:`~ScriptingParameterEnumerationChoice`
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
+
+
+.. py:method:: get_item_by_index(self, index: int) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.get_item_by_index
+
+    Retrieve a scripting parameter enumeration choice in the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
+
+.. py:method:: get_item_by_name(self, name: str) -> ScriptingParameterEnumerationChoice
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.get_item_by_name
+
+    Retrieve a scripting parameter enumeration choice in the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~ScriptingParameterEnumerationChoice`
 

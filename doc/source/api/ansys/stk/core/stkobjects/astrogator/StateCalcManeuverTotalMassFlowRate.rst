@@ -3,7 +3,7 @@ StateCalcManeuverTotalMassFlowRate
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcManeuverTotalMassFlowRate
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcManeuverTotalMassFlowRate`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    ManeuverTotalMassFlowRate Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcManeuverTotalMassFlowRate
 
 Overview
 --------
+
 
 
 Import detail

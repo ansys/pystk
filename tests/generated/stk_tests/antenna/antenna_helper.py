@@ -5543,8 +5543,8 @@ class RadarClutterMapInheritableHelper(object):
         Assert.assertEqual(RADAR_CLUTTER_MAP_MODEL_TYPE.CONSTANT_COEFFICIENT, model.type)
         Assert.assertEqual("Constant Coefficient", model.name)
 
-        constantCoefficient: "ScatteringPointModelConstantCoefficient" = clr.CastAs(
-            model, ScatteringPointModelConstantCoefficient
+        constantCoefficient: "IRadarClutterMapModelConstantCoefficient" = clr.CastAs(
+            model, IRadarClutterMapModelConstantCoefficient
         )
         constantCoefficient.constant_coefficient = -200
         Assert.assertEqual(-200, constantCoefficient.constant_coefficient)
@@ -6184,7 +6184,7 @@ class AtmosphereHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -6234,7 +6234,7 @@ class AtmosphereHelper(object):
 
     # endregion
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -6470,7 +6470,7 @@ class LaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
         # LaserEnvironment laserEnv = AG_SC.LaserEnvironment;
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -6558,7 +6558,7 @@ class LaserEnvAtmosLossBBLLHelper(object):
 class LaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -6628,7 +6628,7 @@ class LaserEnvAtmosLossModtranHelper(object):
 class LaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "ObjectLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -7135,7 +7135,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -7185,7 +7185,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True

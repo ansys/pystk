@@ -3,7 +3,7 @@ TerrainOverlayInitializer
 
 .. py:class:: ansys.stk.core.graphics.TerrainOverlayInitializer
 
-   Bases: :py:class:`~ansys.stk.core.graphics.ITerrainOverlayInitializer`
+   Bases: 
 
    A globe overlay which shows terrain.
 
@@ -11,6 +11,18 @@ TerrainOverlayInitializer
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.TerrainOverlayInitializer.supported`
+              - Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.graphics import TerrainOverlayInitializer
 
+
+Property detail
+---------------
+
+.. py:property:: supported
+    :canonical: ansys.stk.core.graphics.TerrainOverlayInitializer.supported
+    :type: bool
+
+    Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
 
 

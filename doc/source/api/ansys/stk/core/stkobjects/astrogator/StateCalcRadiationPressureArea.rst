@@ -3,7 +3,7 @@ StateCalcRadiationPressureArea
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcRadiationPressureArea
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcRadiationPressureArea`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    RadPressureArea Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcRadiationPressureArea
 
 Overview
 --------
+
 
 
 Import detail

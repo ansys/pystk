@@ -75,14 +75,14 @@ Method detail
 
 
 
-.. py:method:: find_intervals(self) -> ITimeToolIntervalListResult
+.. py:method:: find_intervals(self) -> TimeToolIntervalListResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalList.find_intervals
 
     Return computed interval list that can be empty.
 
     :Returns:
 
-        :obj:`~ITimeToolIntervalListResult`
+        :obj:`~TimeToolIntervalListResult`
 
 .. py:method:: occurred(self, epoch: typing.Any) -> bool
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalList.occurred

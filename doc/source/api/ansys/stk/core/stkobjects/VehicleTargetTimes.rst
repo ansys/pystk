@@ -3,7 +3,7 @@ VehicleTargetTimes
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetTimes
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTargetTimes`
+   Bases: 
 
    Target times for target pointing attitude.
 
@@ -11,6 +11,31 @@ VehicleTargetTimes
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.deconflict`
+              - Deconflict intervals.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times`
+              - Opt whether to use access times as target times; otherwise, scheduled times are used.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.access_times`
+              - Get the access times.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetTimes.schedule_times`
+              - Get the scheduled times.
+
 
 
 Import detail
@@ -21,4 +46,41 @@ Import detail
     from ansys.stk.core.stkobjects import VehicleTargetTimes
 
 
+Property detail
+---------------
+
+.. py:property:: use_access_times
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.use_access_times
+    :type: bool
+
+    Opt whether to use access times as target times; otherwise, scheduled times are used.
+
+.. py:property:: access_times
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.access_times
+    :type: IAccessTimeCollection
+
+    Get the access times.
+
+.. py:property:: schedule_times
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.schedule_times
+    :type: IVehicleScheduleTimesCollection
+
+    Get the scheduled times.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: deconflict(self) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.deconflict
+
+    Deconflict intervals.
+
+    :Returns:
+
+        :obj:`~None`
 

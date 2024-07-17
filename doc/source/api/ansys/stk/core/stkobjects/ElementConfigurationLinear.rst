@@ -3,7 +3,7 @@ ElementConfigurationLinear
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationLinear
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationLinear`, :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a linear element configuration.
 
@@ -11,6 +11,24 @@ ElementConfigurationLinear
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.num_elements`
+              - Gets or sets the number of elements on the perimiter of the circle.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.spacing`
+              - Gets or sets the spacing between adjacent elements in wavelengths.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.tilt_angle`
+              - Gets or sets the tilt angle.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationLinear.max_look_angle`
+              - Gets the maximum look angle.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkobjects import ElementConfigurationLinear
 
+
+Property detail
+---------------
+
+.. py:property:: num_elements
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.num_elements
+    :type: int
+
+    Gets or sets the number of elements on the perimiter of the circle.
+
+.. py:property:: spacing
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.spacing
+    :type: float
+
+    Gets or sets the spacing between adjacent elements in wavelengths.
+
+.. py:property:: tilt_angle
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.tilt_angle
+    :type: typing.Any
+
+    Gets or sets the tilt angle.
+
+.. py:property:: max_look_angle
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationLinear.max_look_angle
+    :type: typing.Any
+
+    Gets the maximum look angle.
 
 

@@ -3,7 +3,7 @@ CentralBodyEphemerisFile
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisFile
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemerisFile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
 
    Central Body Ephemeris - File.
 
@@ -11,6 +11,18 @@ CentralBodyEphemerisFile
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisFile.filename`
+              - Gets or sets the ephemeris file name.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects.astrogator import CentralBodyEphemerisFile
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisFile.filename
+    :type: str
+
+    Gets or sets the ephemeris file name.
 
 

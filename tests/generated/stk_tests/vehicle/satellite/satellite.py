@@ -3466,11 +3466,11 @@ class EarlyBoundTests(TestBase):
 
         TestBase.Application.save_scenario_as(sScenarioName)
         if not TestBase.NoGraphicsMode:
-            (StkObjectRoot(TestBase.Application)).rewind()
+            (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                (StkObjectRoot(TestBase.Application)).rewind()
+                (IAnimation(TestBase.Application)).rewind()
 
         TestBase.LoadTestScenario(Path.Combine("SatelliteTests", "SatelliteTests.sc"))
 
