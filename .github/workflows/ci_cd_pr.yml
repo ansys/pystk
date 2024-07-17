@@ -83,10 +83,10 @@ jobs:
         run: |
           # Find all .rst files excluding those in doc/source/api/
           RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
-          
+
           # Find all .py files inside the examples/ directory, excluding those with an underscore
           PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
-          
+
           # Combine both file lists and convert them to a JSON array
           # TODO: include Python files too. See Vale issue
           # https://github.com/errata-ai/vale/issues/858
@@ -95,7 +95,7 @@ jobs:
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
       - uses: ansys/actions/doc-style@v6
-        with: 
+        with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
@@ -108,7 +108,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     needs: doc-style
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"

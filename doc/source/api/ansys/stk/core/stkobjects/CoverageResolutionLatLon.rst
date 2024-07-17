@@ -1,0 +1,45 @@
+CoverageResolutionLatLon
+========================
+
+.. py:class:: ansys.stk.core.stkobjects.CoverageResolutionLatLon
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.ICoverageResolution`
+
+   Lat/Lon: Determine the location of grid coordinates by specifying a latitude/longitude resolution value.
+
+.. py:currentmodule:: CoverageResolutionLatLon
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageResolutionLatLon.lat_lon`
+              - Gets or sets the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import CoverageResolutionLatLon
+
+
+Property detail
+---------------
+
+.. py:property:: lat_lon
+    :canonical: ansys.stk.core.stkobjects.CoverageResolutionLatLon.lat_lon
+    :type: typing.Any
+
+    Gets or sets the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
+
+

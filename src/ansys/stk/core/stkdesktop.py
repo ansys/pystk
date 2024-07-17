@@ -23,6 +23,7 @@ from .stkobjects              import StkObjectRoot, StkObjectModelContext, StkOb
 from .uiapplication           import UiApplication
 
 class ThreadMarshaller(object):
+    """Automate multiple STK instances from one Python script using threads."""
     _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":

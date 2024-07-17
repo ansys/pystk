@@ -4948,7 +4948,7 @@ class EarlyBoundTests(TestBase):
         arincSource: "ICatalogSource" = clr.CastAs(arincAirports, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincAirport: "IARINC424Item" = arincAirports.get_arinc424_item(str(arincNames[0]))
-        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ARINC424Airport))
+        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ICatalogAirport))
         arincName: str = firstArincAirport.get_as_catalog_item().name
         Assert.assertEqual(arincName, catAirport.get_as_site().name)
         arincAirport2: "ICatalogItem" = clr.CastAs(catAirport.get_catalog_airport(), ICatalogItem)
@@ -4973,7 +4973,7 @@ class EarlyBoundTests(TestBase):
         arincSource: "ICatalogSource" = clr.CastAs(arincNavaids, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincNavaid: "IARINC424Item" = arincNavaids.get_arinc424_item(str(arincNames[0]))
-        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ARINC424Navaid))
+        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ICatalogNavaid))
         arincName: str = firstArincNavaid.get_as_catalog_item().name
         Assert.assertEqual(arincName, catNavaid.get_as_site().name)
         arincNavaid2: "ICatalogItem" = clr.CastAs(catNavaid.get_catalog_navaid(), ICatalogItem)

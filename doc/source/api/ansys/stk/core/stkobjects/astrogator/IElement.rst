@@ -1,0 +1,24 @@
+IElement
+========
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.IElement
+
+   object
+   
+   The elements of the selected coordinate type.
+
+.. py:currentmodule:: IElement
+
+Overview
+--------
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import IElement
+
+
+

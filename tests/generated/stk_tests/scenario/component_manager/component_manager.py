@@ -155,7 +155,7 @@ class EarlyBoundTests(TestBase):
         calcObjLECColl.add("MultiBody/Delta Declination", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED)
         Assert.assertEqual((origCount + 2), calcObjLECColl.count)
 
-        clec: "ComponentAttrLinkEmbedControl"
+        clec: "IComponentLinkEmbedControl"
 
         for clec in calcObjLECColl:
             clec.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
@@ -169,16 +169,16 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
-            clec: "ComponentAttrLinkEmbedControl" = calcObjLECColl[calcObjLECColl.count]
+            clec: "IComponentLinkEmbedControl" = calcObjLECColl[calcObjLECColl.count]
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
-            clecA: "ComponentAttrLinkEmbedControl" = calcObjLECColl.get_item_by_index(calcObjLECColl.count)
+            clecA: "IComponentLinkEmbedControl" = calcObjLECColl.get_item_by_index(calcObjLECColl.count)
         with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by ItemOrName could not be found")):
-            clecA: "ComponentAttrLinkEmbedControl" = calcObjLECColl.get_item_by_name("bogus")
+            clecA: "IComponentLinkEmbedControl" = calcObjLECColl.get_item_by_name("bogus")
 
-        clec2: "ComponentAttrLinkEmbedControl" = calcObjLECColl["BMagnitude"]
+        clec2: "IComponentLinkEmbedControl" = calcObjLECColl["BMagnitude"]
         Assert.assertIsNotNone(clec2)
         with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
-            clecX: "ComponentAttrLinkEmbedControl" = calcObjLECColl["Item3"]
+            clecX: "IComponentLinkEmbedControl" = calcObjLECColl["Item3"]
         Assert.assertEqual(3, calcObjLECColl.count)
 
         calcObjLECColl.cut(1)  # BMagnitude
@@ -189,7 +189,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, calcObjLECColl.count)
         Assert.assertEqual("BMagnitude", calcObjLECColl[2].component.name)  # new index 2
 
-        clec3: "ComponentAttrLinkEmbedControl" = calcObjLECColl["BMagnitude"]
+        clec3: "IComponentLinkEmbedControl" = calcObjLECColl["BMagnitude"]
         calcObjLECColl.insert_copy(clec3)
         Assert.assertEqual(4, calcObjLECColl.count)
         Assert.assertEqual("BMagnitude", calcObjLECColl[3].component.name)
@@ -2546,7 +2546,7 @@ class EarlyBoundTests(TestBase):
 
         mScript: "StateCalcScript" = clr.CastAs((ICloneable(scripts["Matlab"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(mScript)
-        objLinkEmbedControl: "ComponentAttrLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
+        objLinkEmbedControl: "IComponentLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
             "Epoch", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         )
         Assert.assertEqual("Epoch", objLinkEmbedControl.component.name)

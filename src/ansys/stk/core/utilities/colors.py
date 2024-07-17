@@ -70,11 +70,12 @@ class ColorRGBA(object):
 
     @property
     def alpha(self) -> float:
-        """Alpha ranges between 0 (fully translucent) and 255 (fully opaque)."""
+        """Get the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque)."""
         return self._alpha
         
     @alpha.setter
     def alpha(self, value:int) -> None:
+        """Set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque)."""
         if value >= 0 and value <= 255:
             self._alpha = value
         else:

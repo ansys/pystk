@@ -33,23 +33,24 @@ tests = [
     "pytest-cov==5.0.0",
     "pytz==2024.1",
     "parameterized==0.9.0",
+    "pandas==2.2.2",
+    "numpy==2.0.0"
 ]
 doc = [
     "ansys-sphinx-theme==0.16.6",
-    "enum-tools[sphinx]==0.12.0",
     "jupyterlab==4.2.3",
-    "jupytext==1.16.2",
-    "jupyter-server==2.14.1",
+    "jupytext==1.16.3",
+    "jupyter-server==2.14.2",
     "myst-parser==3.0.1",
     "nbsphinx==0.9.4",
     "numpydoc==1.7.0",
     "nbconvert==7.16.4",
-    "sphinx==7.3.7",
+    "sphinx==7.4.3",
     "sphinx-design==0.6.0",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.2",
-    "matplotlib==3.9.0"
+    "matplotlib==3.9.1"
 ]
 visualization = [
     "jupyter-rfb==0.4.4",
@@ -60,7 +61,7 @@ visualization = [
 ]
 vulnerabilities = [
     "bandit==1.7.9",
-    "safety==3.2.3",
+    "safety==3.2.4",
 ]
 
 [tool.flit.module]

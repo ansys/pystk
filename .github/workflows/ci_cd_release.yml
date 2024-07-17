@@ -72,7 +72,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     needs: [doc-style]
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
