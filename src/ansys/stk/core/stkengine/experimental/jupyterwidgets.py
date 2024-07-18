@@ -32,7 +32,7 @@ DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 
 
 class AsyncioTimerManager(object):
-
+    """Provide timer support for animation in jupyter notebooks."""
     class TimerInfo(object):
         def __init__(self, id, milliseconds, TIMERPROC, callbackData):
             """Construct an object of type TimerInfo."""
@@ -129,7 +129,6 @@ asyncioTimerManager = None
 
 class RemoteFrameBufferHostVTable(Structure):
     """Structure of the vtable for IRemoteFrameBufferHost."""
-    
     _fields_ = [("IUnknown1",        c_void_p),
                 ("IUnknown2",        c_void_p),
                 ("IUnknown3",        c_void_p),
@@ -142,7 +141,6 @@ class RemoteFrameBufferHost(object):
     
     Assemble a vtable following the layout of that interface
     """
-    
     _IID_IUnknown = GUID(IUnknown._guid)
     _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
@@ -203,7 +201,6 @@ class RemoteFrameBufferHost(object):
 
 class WidgetBase(RemoteFrameBuffer):
     """Base class for Jupyter controls."""
-    
     _shift = 0x0001
     _control = 0x0004
     _lAlt = 0x0008
@@ -378,7 +375,6 @@ class WidgetBase(RemoteFrameBuffer):
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     """The 3D Globe widget for jupyter."""
-
     # Example:
     #   from ansys.stk.core.stkengine import *
     #   from ansys.stk.core.stkengine.jupyterwidgets import GlobeWidget
@@ -404,7 +400,6 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
 
 class MapWidget(UiAx2DCntrl, WidgetBase):
     """The 2D Map widget for jupyter."""
-    
     _progid = "STKX12.2DControl.1"
     _interface = UiAx2DCntrl
 
@@ -419,7 +414,6 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
 
 class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
     """The Graphics Analysis widget for jupyter."""
-    
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = UiAxGraphics2DAnalysisCntrl
 

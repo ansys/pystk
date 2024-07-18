@@ -52,6 +52,7 @@ class IRemoteFrameBufferHost(object):
         return self._intf.invoke(IRemoteFrameBufferHost._metadata, IRemoteFrameBufferHost._refresh_metadata, )
 
 
+
 agcls.AgClassCatalog.add_catalog_entry((4933363163864868357, 6362292819724085430), IRemoteFrameBufferHost)
 agcls.AgTypeNameMap["IRemoteFrameBufferHost"] = IRemoteFrameBufferHost
 
@@ -198,6 +199,7 @@ class IRemoteFrameBuffer(object):
     def update_direct_x_rendering_texture(self, directXTexture:agcom.PVOID, directXSharedHandle:agcom.PVOID) -> None:
         """Update Dirext X texture (for instance after a resize)."""
         return self._intf.invoke(IRemoteFrameBuffer._metadata, IRemoteFrameBuffer._update_direct_x_rendering_texture_metadata, directXTexture, directXSharedHandle)
+
 
 
 agcls.AgClassCatalog.add_catalog_entry((4781006033999273496, 11877164716837129142), IRemoteFrameBuffer)

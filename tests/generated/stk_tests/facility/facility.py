@@ -404,7 +404,7 @@ class EarlyBoundTests(TestBase):
         fac.graphics_3d.model_pointing.pointable_elements[1].assigned_target_object.bind_to("Sun")
         TestBase.Application.execute_command("VO * ViewFromTo Normal From Facility/Facility1 To Facility/Facility1")
 
-        anim: "StkObjectRoot" = clr.CastAs(TestBase.Application, StkObjectRoot)
+        anim: "IAnimation" = clr.CastAs(TestBase.Application, IAnimation)
         anim.current_time = 7200  # move ahead 2 hours
 
         TestBase.LoadTestScenario(Path.Combine("FacilityTests", "FacilityTests.sc"))

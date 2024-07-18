@@ -58,7 +58,6 @@ html_css_files = [
 
 # Sphinx extensions
 extensions = [
-    "enum_tools.autoenum",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
@@ -107,6 +106,13 @@ templates_path = ["_templates"]
 # Directories excluded when looking for source files
 exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
+
+# Ignore warnings
+suppress_warnings = [
+    # TODO: Reactivate warnings for duplicated cross-references in documentation
+    # https://github.com/ansys-internal/pystk/issues/414
+    "ref.python",
+]
 
 # The suffix(es) of source filenames
 source_suffix = {
@@ -280,16 +286,12 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         Exception encountered during the building of the documentation.
 
     """
+    # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
+    # https://github.com/ansys-internal/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     if not OUTPUT_EXAMPLES.exists():
         OUTPUT_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
-    # TODO: investigate why if using:
-    #
-    # EXAMPLES_DIRECTORY = OUTPUT_EXAMPLES.parent.parent.parent / "examples"
-    #
-    # blocks Sphinx from finding the Python examples even if the path is the
-    # right one. Using SOURCE_EXAMPLES is a workaround to this issue.
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
@@ -305,7 +307,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
             stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
-        destination_file.write_text(file.read_text())
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
     
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):

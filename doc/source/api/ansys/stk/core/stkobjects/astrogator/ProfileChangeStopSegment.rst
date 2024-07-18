@@ -1,0 +1,82 @@
+ProfileChangeStopSegment
+========================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IRuntimeTypeInfoProvider`
+
+   The Change Stop Segment profile.
+
+.. py:currentmodule:: ProfileChangeStopSegment
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.set_segment`
+              - Set the stop segment to target.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name`
+              - Gets or sets the targeted stop segment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state`
+              - Gets or sets the new state of the targeted stop segment.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import ProfileChangeStopSegment
+
+
+Property detail
+---------------
+
+.. py:property:: segment_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name
+    :type: str
+
+    Gets or sets the targeted stop segment.
+
+.. py:property:: state
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state
+    :type: STATE
+
+    Gets or sets the new state of the targeted stop segment.
+
+
+Method detail
+-------------
+
+
+
+.. py:method:: set_segment(self, pVAMCSStop: MissionControlSequenceStop) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.set_segment
+
+    Set the stop segment to target.
+
+    :Parameters:
+
+    **pVAMCSStop** : :obj:`~MissionControlSequenceStop`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
