@@ -110,14 +110,14 @@ jobs:
     # is selected. Otherwise, a GitHub runner is used.
     strategy:
       matrix:
-        runner: ["ubuntu-latest", "['self-hosted', 'pystk']"]
+        runner: [ubuntu-latest, [self-hosted, pystk]]
         needs-self-hosted-runner:
           - ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
         exclude:
           - needs-self-hosted-runner: false
-            runner: "['self-hosted', 'pystk']"
+            runner: [self-hosted, pystk]
           - needs-self-hosted-runner: true
-            runner: "ubuntu-latest"
+            runner: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
