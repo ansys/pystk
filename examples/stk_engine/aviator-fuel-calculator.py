@@ -175,9 +175,9 @@ aircraft_models = aviator_propagator.avtr_catalog.aircraft_category.aircraft_mod
 
 business_jet = aircraft_models.get_aircraft('Basic Business Jet')
 
-# Aircraft models are read-only by default, so their performance models cannot be edited. To create a custom aircraft model, first duplicate the model from the catalog, then rename it:
+# Aircraft models are read-only by default, so their performance models cannot be edited. To create a custom aircraft model, duplicate the model from the catalog, then rename it. Remove any catalog item with the same name before doing so.
 
-business_jet.get_as_catalog_item().remove()
+aircraft_models.get_aircraft('Basic Business Jet Copy').remove()
 business_jet.get_as_catalog_item().duplicate().name = 'Basic Business Jet Copy'
 
 # To assign the model to the aircraft, use the Aviator propagator's mission. An Aviator mission describes an aircraft's flight, including its route, flight procedures, and performance characteristics. Get the mission, then use the `vehicle` property to assign the model:
