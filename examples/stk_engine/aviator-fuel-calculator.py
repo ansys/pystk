@@ -4,7 +4,7 @@
 
 # ## What is an Aviator mission?
 
-#  Aviator provides an enhanced method for modeling aircraft - more accurate and more flexible than the standard Great Arc propagator. With Aviator, the aircraft's route is modeled by a sequence of curves parametrized by well-known performance characteristics of aircraft, including cruise airspeed, climb rate, roll rate, and bank angle. The precise state of an aircraft at any given time can be computed analytically - swiftly and without excessive data storage needs. Aviator capability is built upon the concept of an aircraft's mission, as opposed to a mere point-to-point route. An aircraft using Aviator as its propagator can conduct a transit between two points that is more complex than a great arc, and furthermore, can carry out operations that are more complex than a transit between two points (e.g., holding in a pattern). The process of defining a mission in Aviator, therefore, encompasses much more than merely selecting route points. A mission includes the flight procedures and performance characteristics of the aircraft and describes not only where the aircraft goes, but how it goes there and what it does along the way. Defining a mission consists of configuring the aircraft model, defining the phases of the mission and selecting performance models for each, and defining the procedures that the aircraft will execute in each phase.
+# Aviator provides an enhanced method for modeling aircraft - more accurate and more flexible than the standard Great Arc propagator. With Aviator, the aircraft's route is modeled by a sequence of curves parametrized by well-known performance characteristics of aircraft, including cruise airspeed, climb rate, roll rate, and bank angle. The precise state of an aircraft at any given time can be computed analytically - swiftly and without excessive data storage needs. Aviator capability is built upon the concept of an aircraft's mission, as opposed to a mere point-to-point route. An aircraft using Aviator as its propagator can conduct a transit between two points that is more complex than a great arc, and furthermore, can carry out operations that are more complex than a transit between two points (e.g., holding in a pattern). The process of defining a mission in Aviator, therefore, encompasses much more than merely selecting route points. A mission includes the flight procedures and performance characteristics of the aircraft and describes not only where the aircraft goes, but how it goes there and what it does along the way. Defining a mission consists of configuring the aircraft model, defining the phases of the mission and selecting performance models for each, and defining the procedures that the aircraft will execute in each phase.
 
 # ## Problem statement
 
@@ -14,20 +14,20 @@
 #
 # The mission parameters are:
 #
-# - a basic acceleration performance model with level turns and climb and descent transitions scaled by atmosphere density, and a basic fixed wing strategy for modeling aerodynamics and propulsion
-# - a basic climb performance model using aero/propulsion fuel flow
-# - a basic cruise performance model designating that the aircraft climbs to 25000 ft and levels off
-# - a basic descent performance model using aero/propulsion fuel flow
-# - a basic landing performance model using aero/propulsion fuel flow
-# - a basic takeoff performance model using aero/propulsion fuel flow
+# - A basic acceleration performance model with level turns and climb and descent transitions scaled by atmosphere density, and a basic fixed wing strategy for modeling aerodynamics and propulsion
+# - A basic climb performance model using aero/propulsion fuel flow
+# - A basic cruise performance model designating that the aircraft climbs to 25000 ft and levels off
+# - A basic descent performance model using aero/propulsion fuel flow
+# - A basic landing performance model using aero/propulsion fuel flow
+# - A basic takeoff performance model using aero/propulsion fuel flow
 #
 # The mission consists of 1 phase with 5 procedures:
 #
-# - a takeoff from Colorado Springs, using a low runway heading and a runway altitude offset of $7$ ft
-# - a basic maneuver consisting of a $20$ nm flight straight ahead, with an altitude increase of $10000$ ft
-# - a basic point to point procedure flying the aircraft directly from the end of the last proceure to the Blue Mesa radio beacon, with a turn factor of $5$
-# - a basic point to point procedure flying the aircraft from Blue Mesa to the Cones radio beacon, with a constant altitude of $15000$ fy, a turn factor of $5$, and a cruise airspeed of $250$ nm/hr
-# - a landing from Cones to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of $7$ ft
+# - A takeoff from Colorado Springs, using a low runway heading and a runway altitude offset of $7$ ft
+# - A basic maneuver consisting of a $20$ nm flight straight ahead, with an altitude increase of $10000$ ft
+# - A basic point to point procedure flying the aircraft directly from the end of the last proceure to the Blue Mesa radio beacon, with a turn factor of $5$
+# - A basic point to point procedure flying the aircraft from Blue Mesa to the Cones radio beacon, with a constant altitude of $15000$ ft, a turn factor of $5$, and a cruise airspeed of $250$ nm/hr
+# - A landing from Cones to the Telluride Regional Airport, with an Intercept Glideslope approach mode, a low runway heading, and an altitude offset of $7$ ft
 
 # ## Launch a new STK instance
 
