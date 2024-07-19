@@ -527,7 +527,10 @@ flight_profile_df[['weight', 'fuel state']].iloc[[0, -1]]
 # Plot the aircraft's weight and fuel state over the duration of its flight:
 
 # +
+import datetime as dt
+from dateutil import parser
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
 
@@ -553,4 +556,27 @@ ax.set_facecolor('whitesmoke')
 ax.grid(visible=True, which='both')
 ax.legend(shadow=True)
 
+# Add waypoint information
+lla_position_df = aircraft.data_providers.item("LLA State").group.item(1).exec(scenario.start_time, scenario.stop_time, 1).data_sets.to_pandas_dataframe()
+
+def find_waypoint_time(waypoint_lat, waypoint_lon, lla_df):
+    valid_lats = np.isclose(np.array(lla_df['lat'], dtype=float), np.full(len(lla_df), waypoint_lat, dtype=float), rtol=1e-03)
+    valid_lons = np.isclose(np.array(lla_df['lon'], dtype=float), np.full(len(lla_df), waypoint_lon, dtype=float))
+    return parser.parse((lla_df[np.logical_and(valid_lats, valid_lons)]['time']).iloc[0])
+
+telluride_time = find_waypoint_time(telluride_runway.get_value('Latitude'), telluride_runway.get_value('Longitude'), lla_position_df)
+ax.axvline(telluride_time, label="Telluride", color="seagreen", linestyle='--')
+plt.text(telluride_time+dt.timedelta(seconds=30), 20000,'Telluride', rotation=90, color="seagreen")
+colorado_springs_time = find_waypoint_time(colorado_springs_runway.get_value('Latitude'), colorado_springs_runway.get_value('Longitude'), lla_position_df)
+ax.axvline(colorado_springs_time, label="Colorado Springs", color="olivedrab", linestyle='--')
+plt.text(colorado_springs_time+dt.timedelta(seconds=30), 20000,'Colorado Springs',rotation=90, color="olivedrab")
+cones_time = find_waypoint_time(cones_navaid.get_value('Latitude'), cones_navaid.get_value('Longitude'), lla_position_df)
+ax.axvline(cones_time, label="Cones", color = "deepskyblue", linestyle='--')
+plt.text(cones_time+dt.timedelta(seconds=30), 20000,'Cones', rotation=90, color = "deepskyblue")
+blue_mesa_time = find_waypoint_time(blue_mesa_navaid.get_value('Latitude'), blue_mesa_navaid.get_value('Longitude'), lla_position_df)
+ax.axvline(blue_mesa_time, label="Blue Mesa", color="midnightblue", linestyle='--')
+plt.text(blue_mesa_time+dt.timedelta(seconds=30), 20000,'Blue Mesa', rotation=90, color = "midnightblue")
+
+fig = plt.gcf()
+fig.set_size_inches(10, 5)
 plt.show()
