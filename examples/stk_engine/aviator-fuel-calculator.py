@@ -115,7 +115,7 @@ import pathlib
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
-runway_catalog.arinc424_runways.master_data_filepath = pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "FAANFD18"
+runway_catalog.arinc424_runways.master_data_filepath = str(pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "FAANFD18")
 # -
 
 # The runway catalog now contains information about the runways included in the file. View the names of the first 5 runways (alphabetically) in the catalog:
