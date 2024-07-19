@@ -106,7 +106,8 @@ exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/gene
 
 # Ignore warnings
 suppress_warnings = [
-    # TODO: ignore the warnings for more than one target found for cross-reference
+    # TODO: Reactivate warnings for duplicated cross-references in documentation
+    # https://github.com/ansys-internal/pystk/issues/414
     "ref.python",
 ]
 
@@ -285,16 +286,12 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         Exception encountered during the building of the documentation.
 
     """
+    # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
+    # https://github.com/ansys-internal/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
     if not OUTPUT_EXAMPLES.exists():
         OUTPUT_EXAMPLES.mkdir(parents=True, exist_ok=True)
 
-    # TODO: investigate why if using:
-    #
-    # EXAMPLES_DIRECTORY = OUTPUT_EXAMPLES.parent.parent.parent / "examples"
-    #
-    # blocks Sphinx from finding the Python examples even if the path is the
-    # right one. Using SOURCE_EXAMPLES is a workaround to this issue.
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
