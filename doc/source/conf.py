@@ -344,8 +344,9 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
 
     """
     try:
-        OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
-        notebooks = OUTPUT_EXAMPLES.glob("*.ipynb")
+        SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+        RENDERED_EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent / "_build" / "html" / "examples"
+        notebooks = RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb")
 
         for notebook in status_iterator(
             notebooks,
