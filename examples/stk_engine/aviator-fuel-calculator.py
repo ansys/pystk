@@ -111,11 +111,11 @@ runway_catalog = aviator_propagator.avtr_catalog.runway_category
 # Then, upload the "FAANFD18" file provided with the STK install containing information about runways in ARINC424 format. To do so, use a Connect command to find the STK install directory and navigate to the proper file, then set the file as the master data file for ARINC424 runways:
 
 # +
-import os
+import pathlib
 
 
-install_dir = root.execute_command('GetDirectory / STKHome')[0]
-runway_catalog.arinc424_runways.master_data_filepath = os.path.join(install_dir, 'Data', 'Resources', 'stktraining', 'samples', 'FAANFD18')
+install_dir = root.execute_command("GetDirectory / STKHome")[0]
+runway_catalog.arinc424_runways.master_data_filepath = pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "FAANFD18"
 # -
 
 # The runway catalog now contains information about the runways included in the file. View the names of the first 5 runways (alphabetically) in the catalog:
