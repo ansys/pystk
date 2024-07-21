@@ -364,20 +364,29 @@ class WidgetBase(RemoteFrameBuffer):
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
-    def snapshot(self):
-        """Return an :class:`~Ipython.display.Image` of the current frame."""
-        return Image(array2png(self.get_frame()))
+    def _repr_mimebundle_(self, include=None, exclude=None):
+        """Return the desired MIME type representation.
+
+        The MIME type representation is a dictionary relating MIME types to
+        the data that should be rendered in that format.
+
+        The main goal of this function is to provide the right type of data when
+        renedring different types of documents, including HTML, Notebooks, and
+        PDF files.
+
+        """
+        needs_snapshot = os.getenv("BUILD_EXAMPLES", "false") == "true"
+        if not needs_snapshot:
+            data = super()._repr_mimebundle_(include=include, exclude=exclude)
+        else:
+            data = {
+                "image/png": array2png(self.get_frame())
+            }
+        return data
 
     def show(self, in_sidecar=False, **snapshot_kwargs):
-        needs_snapshot = os.environ.get("BUILD_EXAMPLES", "false") == "true"
-        canvas = self.snapshot() if needs_snapshot else self
-        if in_sidecar:
-            from sidecar import Sidecar
-            with Sidecar(title=self.title):
-                display(canvas)
-        else:
-            return canvas
-
+        # TODO: restore code for sidecar
+        return self
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     """The 3D Globe widget for jupyter."""

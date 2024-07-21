@@ -101,7 +101,7 @@ numpydoc_validation_checks = set()  # numpydoc validation is turned off due to p
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
+exclude_examples = ["facility-to-satellite-access.py", "solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # Ignore warnings
@@ -194,7 +194,7 @@ else:
            :color: primary
            :shadow:
         
-            Download as PDF :fas:`file-pdf`
+            Download as PDF document :fas:`file-pdf`
 
 ----
     
@@ -384,4 +384,4 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
-        app.connect("build-finished", render_examples_as_pdf)
+        #app.connect("build-finished", render_examples_as_pdf)
