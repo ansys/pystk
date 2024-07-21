@@ -346,13 +346,13 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
     try:
         SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
         RENDERED_EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent / "_build" / "html" / "examples"
-        notebooks = RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb")
+        notebooks = list(RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb"))
 
         for notebook in status_iterator(
             notebooks,
             "Rendering notebook as PDF",
             "green",
-            len(list(notebooks)),
+            len(notebooks),
             verbosity=1,
             stringify_func=(lambda x: x.name),
         ):
@@ -388,4 +388,4 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
-        #app.connect("build-finished", render_examples_as_pdf)
+        app.connect("build-finished", render_examples_as_pdf)
