@@ -149,7 +149,7 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install pandoc for converting notebooks to HTML using nbsphinx"
+      - name: "Install system dependencies required for building examples"
         if: |
           contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
@@ -157,12 +157,8 @@ jobs:
             --user root \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "apt update && apt install -y pandoc"
+            "apt update && apt install -y wget pandoc"
 
-      - name: "Install Quarto for converting notebooks to PDF"
-        if: |
-          contains(github.event.pull_request.labels.*.name, 'docs:examples')
-        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
@@ -178,16 +174,6 @@ jobs:
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "quarto install tinytex"
-
-      - name: "Install Quarto for rendering notebooks as PDF"
-        if: |
-          contains(github.event.pull_request.labels.*.name, 'docs:examples')
-        uses: quarto-dev/quarto-actions/setup@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          version: ${{ env.QUARTO_VERSION }}
-          tinytex: true
 
       - name: "Install Tox in the GitHub runner or the self-hosted runner"
         run: |
