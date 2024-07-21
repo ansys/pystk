@@ -101,7 +101,7 @@ numpydoc_validation_checks = set()  # numpydoc validation is turned off due to p
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["facility-to-satellite-access.py", "solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
+exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # Ignore warnings
