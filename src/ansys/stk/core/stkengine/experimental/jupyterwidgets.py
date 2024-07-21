@@ -385,8 +385,12 @@ class WidgetBase(RemoteFrameBuffer):
         return data
 
     def show(self, in_sidecar=False, **snapshot_kwargs):
-        # TODO: restore code for sidecar
-        return self
+        if in_sidecar:
+            from sidecar import Sidecar
+            with Sidecar(title=self.title):
+                display(self)
+        else:
+            return self
 
 class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     """The 3D Globe widget for jupyter."""
