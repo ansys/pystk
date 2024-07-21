@@ -13,7 +13,7 @@ import numpy as np
 import os
 import time
 
-from IPython.display import Image, display
+from IPython.display import display
 from jupyter_rfb import RemoteFrameBuffer
 from jupyter_rfb._png import array2png
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
