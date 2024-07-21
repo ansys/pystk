@@ -358,7 +358,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         ):
             subprocess.run(
                     ["quarto", "render", notebook, "--to", "pdf", "-M",
-                     f"author:{author}", "highlight-style:pygments"], 
+                     f"author:{author}", "-M", "highlight-style:pygments"], 
                 check=True
             )
     except FileNotFoundError:
