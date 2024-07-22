@@ -30,3 +30,13 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
 
     examples/hohmann-transfer
     examples/lambert-transfer
+
+
+Aviator mission planning
+========================
+
+This series of tutorials explain how to model and simulate aircraft missions using Python and PySTK's Aviator capabilities.
+
+.. nbgallery::
+
+    examples/aviator-fuel-calculator
