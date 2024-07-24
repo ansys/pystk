@@ -35,16 +35,17 @@ html_context = {
     "github_version": "main",
     "doc_path": "doc/source",
     "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
+    "edit_page_provider_name": "GitHub",
     "edit_page_url_template": """
-{% set base_url = https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ version }} %}
 
-{{% if 'examples/' in {{ file_name }} %}}
+{% set base_url = "https://github.com/{{ github_user }}/{{ github_repo }}/blob/{{ version }}" %}
+
+{% if 'examples/' in file_name %}
 {{ base_url }}/{{ file_name }}
 {% else %} 
 {{ base_url }}/doc/source/{{ file_name }}
 {% endif %}
 """,
- 
 }
 html_theme_options = {
     "github_url": "https://github.com/ansys-internal/pystk",
