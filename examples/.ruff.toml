@@ -1,0 +1,3 @@
+# Dedicated Ruff linter and formatter configurations for examples code style
+extend = ["../pyproject.toml"]
+line-length = 88
