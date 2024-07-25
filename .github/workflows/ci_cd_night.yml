@@ -29,6 +29,7 @@ env:
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  QUARTO_VERSION: '1.5.55'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
