@@ -37,13 +37,7 @@ html_context = {
     "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
     "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
-    "edit_page_url_template": """
-{% if 'examples/' in file_name %}
-{{ base_url }}/{{ file_name }}
-{% else %} 
-{{ base_url }}/doc/source/{{ file_name }}
-{% endif %}
-""",
+    "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
 }
 html_theme_options = {
     "github_url": "https://github.com/ansys-internal/pystk",
