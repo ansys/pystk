@@ -44,7 +44,7 @@ the relation between the different Docker images:
     .. tab-item:: STK images for Windows
         :sync: windows
 
-        .. figure:: https://help.agi.com/stkdevkit/Content/automationTree/images/Windows_Container_Heirarchy.png
+        .. figure:: https://help.agi.com/stkdevkit/Content/automationTree/images/Windows_Container_Hierarchy.png
 
     .. tab-item:: STK images for Linux
         :sync: linux
