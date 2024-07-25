@@ -34,6 +34,10 @@ html_context = {
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
+    "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
+    "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
+    "edit_page_provider_name": "GitHub",
+    "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
 }
 html_theme_options = {
     "github_url": "https://github.com/ansys-internal/pystk",
@@ -256,7 +260,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
 
     print(f"BUILDER: {app.builder.name}")
@@ -293,7 +297,7 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
 
     for file in status_iterator(
