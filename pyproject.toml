@@ -78,7 +78,6 @@ line-length = 120
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
-    "examples/*.py"
 ]
 
 [tool.ruff.lint]
