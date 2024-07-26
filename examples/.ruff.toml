@@ -1,3 +1,6 @@
 # Dedicated Ruff linter and formatter configurations for examples code style
-extend = ["../pyproject.toml"]
+extend = "../pyproject.toml"
 line-length = 88
+ignore = [
+    "D100", # Missing docstring in public module
+]
