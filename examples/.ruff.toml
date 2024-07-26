@@ -4,3 +4,8 @@ line-length = 88
 lint.ignore = [
     "D100", # Missing docstring in public module
 ]
+
+[lint.pydocstyle]
+# Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
+convention = "google"
+
