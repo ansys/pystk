@@ -5,6 +5,8 @@ repos:
   hooks:
     # Run the linter
     - id: ruff
+      args: [ --fix ]
+    - id: ruff-format
 
 - repo: https://github.com/codespell-project/codespell
   rev: v2.3.0
