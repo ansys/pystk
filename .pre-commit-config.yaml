@@ -3,10 +3,11 @@ repos:
 - repo: https://github.com/charliermarsh/ruff-pre-commit
   rev: v0.5.5
   hooks:
-    # Run the linter
     - id: ruff
       args: [ --fix ]
+      exclude: "^examples/*_*.py"
     - id: ruff-format
+      exclude: "^src|^tests"
 
 - repo: https://github.com/codespell-project/codespell
   rev: v2.3.0
