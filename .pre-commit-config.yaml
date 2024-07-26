@@ -1,13 +1,13 @@
 repos:
 
 - repo: https://github.com/charliermarsh/ruff-pre-commit
-  rev: v0.3.4
+  rev: v0.5.5
   hooks:
     # Run the linter
     - id: ruff
 
 - repo: https://github.com/codespell-project/codespell
-  rev: v2.2.6
+  rev: v2.3.0
   hooks:
   - id: codespell
     # HACK: pre-commit is used during the code-style job in CI/CD. This job
