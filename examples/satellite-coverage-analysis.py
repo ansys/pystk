@@ -305,9 +305,26 @@ from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
 lighting_constraint.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
 # -
 
-# Point Nemo now contains the constraint that must be applied to the entire grid. Use a Connect command to set Point Nemo as the grid constraint for the entire coverage definition:
+# Point Nemo now contains the constraint that must be applied to the entire grid. Set the coverage definition's point definition to use place objects as the reference constraint class:
 
-root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid GridConstraint Place UsePointAltitudeType Place/PointNemo")
+# +
+from ansys.stk.core.stkobjects import COVERAGE_GRID_CLASS
+
+
+sat_grave_coverage.point_definition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_PLACE
+# -
+
+# Then, configure the point definition to use an object instance as the grid seed:
+
+sat_grave_coverage.point_definition.use_grid_seed = True
+
+# Set Point Nemo as the point definition's seed object:
+
+sat_grave_coverage.point_definition.seed_instance = point_nemo.path
+
+# Finally, recompute the accesses:
+
+sat_grave_coverage.compute_accesses()
 
 # ## Analyze the results
 

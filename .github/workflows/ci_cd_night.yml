@@ -29,6 +29,7 @@ env:
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  QUARTO_VERSION: '1.5.55'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -62,13 +63,29 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install pandoc for building the examples"
+      - name: "Install system dependencies required for building examples"
         run: |
           docker exec \
             --user root \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "apt update && apt install -y pandoc"
+            "apt update && apt install -y wget pandoc"
+
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${{ env.QUARTO_VERSION }}/quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "dpkg -i quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "quarto install tinytex"
 
       - name: "Install Tox"
         run: |
