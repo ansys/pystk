@@ -624,7 +624,7 @@ relative_course_basic_maneuver2.navigation.cross_track = -1.3
 
 relative_course_basic_maneuver2.navigation.use_approach_turn_mode = True
 
-# Next, set the maneuver factor, which is a dimensionless factor that determines how tightly or gently the aircraft will maneuver. Set the manuever factor to $1$, which represents an aggressive maneuver:
+# Next, set the maneuver factor, which is a dimensionless factor that determines how tightly or gently the aircraft will maneuver. Set the maneuver factor to $1$, which represents an aggressive maneuver:
 
 relative_course_basic_maneuver2.navigation.maneuver_factor = 1
 
@@ -672,7 +672,7 @@ relative_course_basic_maneuver2.profile.airspeed_options.airspeed_mode = BASIC_M
 relative_course_basic_maneuver2.profile.airspeed_options.specified_airspeed_type = AIRSPEED_TYPE.CAS
 relative_course_basic_maneuver2.profile.airspeed_options.specified_airspeed = 145
 
-# Then, override the performance model's acceleration/decceleration, and instead designate a fixed acceleration/decceleration of $0.3$g:
+# Then, override the performance model's acceleration/deceleration, and instead designate a fixed acceleration/deceleration of $0.3$g:
 
 relative_course_basic_maneuver2.profile.airspeed_options.specified_accel_decel_mode = PERF_MODEL_OVERRIDE.OVERRIDE
 relative_course_basic_maneuver2.profile.airspeed_options.specified_accel_decel_g = 0.3
