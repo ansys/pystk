@@ -14,6 +14,7 @@ select = [
 ]
 ignore = [
     "D100", # Missing docstring in public module
+    "TD002", # Missing author in TODOs comment
 ]
 
 [lint.isort]
