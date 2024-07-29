@@ -245,6 +245,8 @@ linkcheck_ignore = [
     "https://support.agi.com/3d-models",
 ]
 
+# -- MyST Sphinx configuration -----------------------------------------------
+myst_heading_anchors = 3
 
 # -- Sphinx application setup ------------------------------------------------
 
