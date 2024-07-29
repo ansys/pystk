@@ -79,7 +79,9 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
 
 
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
+initial_state = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+)
 # -
 
 # A total of six orbital parameters are required to specify the initial state of the satellite. Considering the data provided in this example, Keplerian elements can be used. Thus, it is possible to assign the following parameters:
@@ -102,7 +104,9 @@ initial_state.element.true_anomaly = 0.00
 #
 # The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the Hohmann transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
 
-parking_orbit_propagate = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-")
+parking_orbit_propagate = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-"
+)
 parking_orbit_propagate.propagator_name = "Earth point mass"
 parking_orbit_propagate.stopping_conditions["Duration"].properties.trip = 7200
 
@@ -132,17 +136,27 @@ parking_orbit_propagate.properties.color = Colors.Blue
 from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, ATTITUDE_CONTROL
 
 
-hohmann_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Hohmann Transfer", "-")
+hohmann_transfer = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.SEQUENCE, "Hohmann Transfer", "-"
+)
 
-hohmann_start = hohmann_transfer.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann Start", "-")
-first_impulse = hohmann_start.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
+hohmann_start = hohmann_transfer.segments.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann Start", "-"
+)
+first_impulse = hohmann_start.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "First Impulse", "-"
+)
 first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 first_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 
-hohmann_propagate = hohmann_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Hohmann Propagate", "-")
+hohmann_propagate = hohmann_transfer.segments.insert(
+    SEGMENT_TYPE.PROPAGATE, "Hohmann Propagate", "-"
+)
 hohmann_propagate.propagator_name = "Earth Point Mass"
 
-hohmann_end = hohmann_transfer.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann End", "-")
+hohmann_end = hohmann_transfer.segments.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann End", "-"
+)
 last_impulse = hohmann_end.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
 last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 last_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
@@ -168,7 +182,7 @@ from ansys.stk.core.stkobjects.astrogator import CONTROL_MANEUVER
 
 
 first_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-first_impulse.results.add('Keplerian Elems/Radius of Apoapsis');
+first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 # -
 
 # Now, configure the solver for this first impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
@@ -180,11 +194,15 @@ hohmann_start_solver = hohmann_start.profiles["Differential Corrector"]
 hohmann_start_solver.mode = PROFILE_MODE.ITERATE
 hohmann_start_solver.max_iterations = 50
 
-delta_v1_x = hohmann_start_solver.control_parameters.get_control_by_paths("First Impulse", "ImpulsiveMnvr.Cartesian.X")
+delta_v1_x = hohmann_start_solver.control_parameters.get_control_by_paths(
+    "First Impulse", "ImpulsiveMnvr.Cartesian.X"
+)
 delta_v1_x.enable = True
 delta_v1_x.max_step = 0.30
 
-desired_radius_of_apoapsis = hohmann_start_solver.results.get_result_by_paths("First Impulse", "Radius Of Apoapsis")
+desired_radius_of_apoapsis = hohmann_start_solver.results.get_result_by_paths(
+    "First Impulse", "Radius Of Apoapsis"
+)
 desired_radius_of_apoapsis.enable = True
 desired_radius_of_apoapsis.desired_value = 42238.00
 desired_radius_of_apoapsis.tolerance = 0.10
@@ -206,8 +224,7 @@ hohmann_propagate.properties.color = Colors.Red
 # Again, enable the component of the velocity impulse along the X axis as a control parameter. In this case, add the eccentricity as a result to be achieved.
 
 last_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-last_impulse.results.add("Keplerian Elems/Eccentricity");
-
+last_impulse.results.add("Keplerian Elems/Eccentricity")
 # Now, configure the solver for this last impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
@@ -215,11 +232,15 @@ hohmann_end_solver = hohmann_end.profiles["Differential Corrector"]
 hohmann_end_solver.mode = PROFILE_MODE.ITERATE
 hohmann_end_solver.max_iterations = 50
 
-delta_v2_x = hohmann_end_solver.control_parameters.get_control_by_paths("Last Impulse", "ImpulsiveMnvr.Cartesian.X")
+delta_v2_x = hohmann_end_solver.control_parameters.get_control_by_paths(
+    "Last Impulse", "ImpulsiveMnvr.Cartesian.X"
+)
 delta_v2_x.enable = True
 delta_v2_x.max_step = 0.30
 
-desired_eccentricity = hohmann_end_solver.results.get_result_by_paths("Last Impulse", "Eccentricity")
+desired_eccentricity = hohmann_end_solver.results.get_result_by_paths(
+    "Last Impulse", "Eccentricity"
+)
 desired_eccentricity.enable = True
 desired_eccentricity.desired_value = 0
 desired_eccentricity.tolerance = 0.01
@@ -229,7 +250,9 @@ desired_eccentricity.tolerance = 0.01
 #
 # Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
 
-propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-")
+propagate_final_orbit = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-"
+)
 propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
 propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
