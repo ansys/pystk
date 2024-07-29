@@ -4,7 +4,7 @@
 
 # ## What are sensors?
 
-# Sensor objects model the field-of-views and other properties of sensing devices attached to other STK objects. There are a large variety of sensor types that can be modeled in STK, including electro-optical and infrared sensors, parabolic antennas, push broom sensors, star trackers, and radars. Sensors can be customized in many ways, including by designating the properties of a sensor's field-of-view. Additionally, sensors can behave in different ways. Sensors can be fixed to point in the same direction as their parent object's reference frame, targeted to track other objects, or spinning to model instruments that spin, scan or sweep over time. STK also allows the application of an azimuth-elevation mask to a sensor, and the consideration of this mask during calculations. STK also allows the use of a refraction model to constrain an atmosphere-based sensor's line of sight and elevation angles. It is also possible to customize the resolution of the sensor in terms of focus and image quality. Finally, it is possible to place many access constraints, including elevation, line of sight, sun, and temporal, on sensors to describe in what ways they can see other objects.
+# Sensor objects model the field-of-view and other properties of sensing devices attached to other STK objects. There are a large variety of sensor types that can be modeled in STK, including electro-optical and infrared sensors, parabolic antennas, push broom sensors, star trackers, and radars. Sensors can be customized in many ways, including by designating the properties of a sensor's field-of-view. Additionally, sensors can behave in different ways. Sensors can be fixed to point in the same direction as their parent object's reference frame, targeted to track other objects, or spinning to model instruments that spin, scan or sweep over time. STK also allows the application of an azimuth-elevation mask to a sensor, and the consideration of this mask during calculations. A refraction model to constrain an atmosphere-based sensor's line of sight and elevation angles can be modeled. It is also possible to customize the resolution of the sensor in terms of focus and image quality. Finally, many access constraints can be declared, including elevation, line of sight, sun, and temporal, on sensors to describe in what ways they can see other objects.
 
 # ## Problem statement
 
@@ -559,6 +559,8 @@ ax.grid(visible=True, which='both')
 # Improve x-axis formatting
 formatter = md.DateFormatter('%H:%M:%S')
 ax.xaxis.set_major_formatter(formatter)
+
+plt.show()
 # -
 
 # ## Analyze multiple accesses
@@ -630,6 +632,8 @@ fig.set_size_inches(16, 5)
 formatter = md.DateFormatter('%H:%M:%S')
 ax.xaxis.set_major_formatter(formatter)
 ax.minorticks_on()
+
+plt.show()
 # -
 # The graph shows that all of the sensors can see the aircraft during its flight, with the fixed radar dome able to see the aircraft for the longest duration of time. However, because the sweeping radar sees the aircraft for very short bursts of time, it is difficult to make out the different accesses. To better see the sweeping radar's accesses, create a plot zoomed in on the access between 16:54 and 16:56:
 
@@ -655,6 +659,8 @@ formatter = md.DateFormatter('%H:%M:%S')
 ax.xaxis.set_major_formatter(formatter)
 ax.minorticks_on()
 ax.set_xlim(left=dt.datetime(2016, 7, 1, 16, 54, 0), right=dt.datetime(2016, 7, 1, 16, 56, 0))
+
+plt.show()
 # -
 
 # **Conclusion:** All of the sensors involved in the scenario can see the aircraft during its flight.
