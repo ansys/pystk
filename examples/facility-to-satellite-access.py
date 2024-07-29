@@ -223,8 +223,8 @@ aer_df
 # Visualize the data using a line chart:
 
 # +
-import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import matplotlib.pyplot as plt
 import pandas as pd
 
 

@@ -71,9 +71,9 @@ plotter.show()
 
 # +
 from ansys.stk.core.stkobjects import (
-    STK_OBJECT_TYPE,
-    PLANET_POSITION_SOURCE_TYPE,
     EPHEM_SOURCE_TYPE,
+    PLANET_POSITION_SOURCE_TYPE,
+    STK_OBJECT_TYPE,
 )
 from ansys.stk.core.utilities.colors import Colors
 
@@ -266,7 +266,7 @@ initial_state.element.vz = initial_velocity[2]
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION, MANEUVER_TYPE
+from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, TARGET_SEQ_ACTION
 
 
 lambert_transfer = satellite.propagator.main_sequence.insert(
@@ -353,8 +353,8 @@ print(f"Time of flight: {tof} seconds")
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
-    LAMBERT_SOLUTION_OPTION_TYPE,
     LAMBERT_DIRECTION_OF_MOTION_TYPE,
+    LAMBERT_SOLUTION_OPTION_TYPE,
 )
 
 
@@ -387,6 +387,7 @@ lambert.second_maneuver_segment = last_impulse.name
 
 # +
 from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, PROFILES_FINISH
+
 
 lambert.mode = PROFILE_MODE.ACTIVE
 

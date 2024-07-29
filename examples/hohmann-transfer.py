@@ -133,7 +133,7 @@ parking_orbit_propagate.properties.color = Colors.Blue
 # All maneuvers are modeled as `IMPULSIVE` maneuver type. The attitude control used is of the type `THRUST_VECTOR`.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, ATTITUDE_CONTROL
+from ansys.stk.core.stkobjects.astrogator import ATTITUDE_CONTROL, MANEUVER_TYPE
 
 
 hohmann_transfer = satellite.propagator.main_sequence.insert(
@@ -189,6 +189,7 @@ first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 
 # +
 from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE
+
 
 hohmann_start_solver = hohmann_start.profiles["Differential Corrector"]
 hohmann_start_solver.mode = PROFILE_MODE.ITERATE
@@ -263,6 +264,7 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION
+
 
 hohmann_start.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 hohmann_end.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES

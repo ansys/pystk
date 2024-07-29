@@ -309,8 +309,8 @@ coverage.definition.satisfaction.satisfaction_threshold = 2
 # Set some animation graphics to see when points are covered by neither, one, or both satellites:
 
 # +
-from ansys.stk.core.utilities.colors import Color
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+from ansys.stk.core.utilities.colors import Color
 
 
 coverage.graphics.static.is_visible = False

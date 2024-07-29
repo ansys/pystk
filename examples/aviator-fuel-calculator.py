@@ -300,7 +300,7 @@ wind_model.mode_as_constant.wind_speed = 20
 # The aircraft will first take off from the Colorado Springs runway named "CITY OF COLORADO SPRINGS MUNI 17L 35R", so the first procedure is a takeoff procedure using a catalog runway as a site type. Insert the first procedure in the phase:
 
 # +
-from ansys.stk.core.stkobjects.aviator import SITE_TYPE, PROCEDURE_TYPE
+from ansys.stk.core.stkobjects.aviator import PROCEDURE_TYPE, SITE_TYPE
 
 
 takeoff_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
@@ -528,6 +528,7 @@ flight_profile_df[['weight', 'fuel state']].iloc[[0, -1]]
 
 # +
 import datetime as dt
+
 from dateutil import parser
 import matplotlib.pyplot as plt
 import numpy as np
