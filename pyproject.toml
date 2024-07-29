@@ -98,7 +98,7 @@ ignore = [
 
 [tool.ruff.lint.pydocstyle]
 # Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
-convention = "google"
+convention = "numpy"
 
 # [tool.ruff.format]
 # quote-style = "double"
