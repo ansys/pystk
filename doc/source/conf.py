@@ -232,8 +232,10 @@ autodoc_mock_imports = ["tkinter"]
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
-    f"https://github.com/{user_repo}/*",
     "https://www.ansys.com/*"
+    # Requires sign-in
+    f"https://github.com/{user_repo}/*",
+    "https://support.agi.com/3d-models"
 ]
 
 
