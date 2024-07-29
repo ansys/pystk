@@ -1,8 +1,10 @@
 """Sphinx documentation configuration file."""
+
 from datetime import datetime
 import os
 import pathlib
 import shutil
+import subprocess
 
 import sphinx
 from sphinx.util import logging
@@ -33,6 +35,10 @@ html_context = {
     "github_repo": "pystk",
     "github_version": "main",
     "doc_path": "doc/source",
+    "version": "main" if version.endswith("dev0") else f"release/{version.split('.')[:-1]}",
+    "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
+    "edit_page_provider_name": "GitHub",
+    "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
 }
 html_theme_options = {
     "github_url": "https://github.com/ansys-internal/pystk",
@@ -50,10 +56,7 @@ html_theme_options = {
     "navigation_with_keys": True,
 }
 html_static_path = ["_static"]
-html_css_files = [
-    "css/highlight.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-]
+html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
 
 # Sphinx extensions
 extensions = [
@@ -80,9 +83,7 @@ numpydoc_xref_param_type = True
 # Consider enabling numpydoc validation. See:
 # https://numpydoc.readthedocs.io/en/latest/validation.html#
 numpydoc_validate = True
-numpydoc_validation_checks = (
-    set()
-)  # numpydoc validation is turned off due to performance (see PR#44)
+numpydoc_validation_checks = set()  # numpydoc validation is turned off due to performance (see PR#44)
 # numpydoc_validation_checks = {
 #    "GL06",  # Found unknown section
 #    "GL07",  # Sections are in the wrong order.
@@ -140,9 +141,7 @@ WINDOWS_IMAGES, CENTOS_IMAGES, UBUNTU_IMAGES = [
 def get_images_directories_from_path(path):
     """Get all the Docker images present in the retrieved Path."""
     images = [
-        folder.name
-        for folder in path.glob("**/*")
-        if folder.name != path.name and (folder / "Dockerfile").exists()
+        folder.name for folder in path.glob("**/*") if folder.name != path.name and (folder / "Dockerfile").exists()
     ] or ["No images available."]
     images.sort()
     return images
@@ -153,9 +152,7 @@ BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
     exclude_patterns.extend(["api.rst", "api/**"])
 
-BUILD_EXAMPLES = (
-    True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
-)
+BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
     exclude_patterns.extend(["examples.rst", "examples/**"])
 else:
@@ -172,7 +169,7 @@ else:
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
-.. grid:: 2 
+.. grid:: 3 
     :gutter: 1
 
     .. grid-item::
@@ -193,12 +190,22 @@ else:
         
             Download as Jupyter notebook :fas:`book`
 
+    .. grid-item::
+        :child-align: center
+
+        .. button-link:: {cname_pref}/{pdf_file_loc}
+           :color: primary
+           :shadow:
+        
+            Download as PDF document :fas:`file-pdf`
+
 ----
     
     """.format(
         cname_pref=f"https://{cname}/version/{get_version_match(version)}",
         python_file_loc="{{ env.docname }}.py",
         ipynb_file_loc="{{ env.docname }}.ipynb",
+        pdf_file_loc="{{ env.docname }}.pdf",
     )
 
 
@@ -241,6 +248,7 @@ linkcheck_ignore = [
 
 # -- Sphinx application setup ------------------------------------------------
 
+
 def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     """
     Copy the examples directory to the source directory of the documentation.
@@ -257,21 +265,22 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
 
     print(f"BUILDER: {app.builder.name}")
 
     for file in status_iterator(
-            examples, 
-            f"Copying example to doc/source/examples/",
-            "green", 
-            len(examples),
-            verbosity=1,
-            stringify_func=(lambda file: file.name),
+        examples,
+        f"Copying example to doc/source/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -294,20 +303,20 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("**/*.py"))
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
 
     for file in status_iterator(
-            examples, 
-            f"Copying example to doc/_build/examples/",
-            "green", 
-            len(examples),
-            verbosity=1,
-            stringify_func=(lambda x: x.name),
+        examples,
+        f"Copying example to doc/_build/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
-    
+
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
@@ -325,6 +334,48 @@ def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: E
     logger = logging.getLogger(__name__)
     logger.info(f"\nRemoving {EXAMPLES_DIRECTORY} directory...")
     shutil.rmtree(EXAMPLES_DIRECTORY)
+
+
+def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception):
+    """
+    Render notebook examples as PDF files using Quarto.
+
+    Quarto needs to be installed in the system to render the PDF files. See
+    https://quarto.org/docs/get-started/.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    exception : Exception
+        Exception encountered during the building of the documentation.
+
+    """
+    try:
+        SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+        RENDERED_EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent / "_build" / "html" / "examples"
+        notebooks = list(RENDERED_EXAMPLES_DIRECTORY.glob("*.ipynb"))
+
+        for notebook in status_iterator(
+            notebooks,
+            "Rendering notebook as PDF",
+            "green",
+            len(notebooks),
+            verbosity=1,
+            stringify_func=(lambda x: x.name),
+        ):
+            subprocess.run(
+                    ["quarto", "render", notebook, "--to", "pdf", "-M",
+                     f"author:{author}", "-M", "highlight-style:pygments"], 
+                check=True
+            )
+    except FileNotFoundError:
+        logger = logging.getLogger(__name__)
+        logger.warning(
+            "Quarto is not installed in the system. PDF files will not be rendered. \
+            See https://quarto.org/docs/get-started/"
+        )
+
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -345,3 +396,4 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
+        app.connect("build-finished", render_examples_as_pdf)
