@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~ELECTRIC_POWERPLANT`
               - An electric engine.
 
-            * - :py:attr:`~EXTERNAL_PROP_FILE`
+            * - :py:attr:`~EXTERNAL_PROPULSION_FILE`
               - Define the powerplant using an external .prop file.
 
             * - :py:attr:`~PISTON_POWERPLANT`

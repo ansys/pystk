@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~MAX_AIRSPEED`
               - Maximum airspeed.
 
-            * - :py:attr:`~MAX_PERF_AIRSPEED`
+            * - :py:attr:`~MAX_PERFORMANCE_AIRSPEED`
               - Maximum performance airspeed.
 
 

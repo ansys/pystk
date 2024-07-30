@@ -1,0 +1,69 @@
+MissileAerodynamic
+==================
+
+.. py:class:: ansys.stk.core.stkobjects.aviator.MissileAerodynamic
+
+   Bases: 
+
+   Class defining the aerodynamic options for a missile.
+
+.. py:currentmodule:: MissileAerodynamic
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.aerodynamic_strategy`
+              - Gets or sets the aerodynamic strategy type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_simple`
+              - Get the interface for a simple aerodynamics strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_external`
+              - Get the interface for an external file aerodynamics strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_advanced`
+              - Get the interface for an advanced aerodynamics strategy.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.aviator import MissileAerodynamic
+
+
+Property detail
+---------------
+
+.. py:property:: aerodynamic_strategy
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.aerodynamic_strategy
+    :type: MISSILE_AERODYNAMIC_STRATEGY
+
+    Gets or sets the aerodynamic strategy type.
+
+.. py:property:: mode_as_simple
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_simple
+    :type: IMissileSimpleAerodynamic
+
+    Get the interface for a simple aerodynamics strategy.
+
+.. py:property:: mode_as_external
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_external
+    :type: IMissileExternalAerodynamic
+
+    Get the interface for an external file aerodynamics strategy.
+
+.. py:property:: mode_as_advanced
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_advanced
+    :type: IMissileAdvancedAerodynamic
+
+    Get the interface for an advanced aerodynamics strategy.
+
+

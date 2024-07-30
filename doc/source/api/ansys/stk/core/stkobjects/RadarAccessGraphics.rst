@@ -26,7 +26,7 @@ Overview
               - Gets or sets the SNR contour type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.snr`
               - Gets or sets the SNR.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_tgt_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_target_color`
               - Gets or sets the Radar to Target access color.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_rdr_to_target`
               - Gets or sets the option for showing Bistatic Radar to Target graphics.
@@ -80,8 +80,8 @@ Property detail
 
     Gets or sets the SNR.
 
-.. py:property:: radar_to_tgt_color
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_tgt_color
+.. py:property:: radar_to_target_color
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_target_color
     :type: agcolor.Color
 
     Gets or sets the Radar to Target access color.

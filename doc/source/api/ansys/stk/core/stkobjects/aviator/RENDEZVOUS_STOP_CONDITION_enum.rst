@@ -28,7 +28,7 @@ Overview
             * - :py:attr:`~STOP_AFTER_TARGET_CURRENT_PHASE`
               - Stop after the target completes the current phase.
 
-            * - :py:attr:`~STOP_WHEN_TARGET_PERF_MODE_CHANGES`
+            * - :py:attr:`~STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES`
               - Stop when the target enters a new mode of flight.
 
             * - :py:attr:`~STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES`

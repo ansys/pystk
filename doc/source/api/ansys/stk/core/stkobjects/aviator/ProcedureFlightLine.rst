@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type
-    :type: FLIGHT_LINE_PROC_TYPE
+    :type: FLIGHT_LINE_PROCEDURE_TYPE
 
     Gets or sets the procedure methodology used to calculate the flight line.
 

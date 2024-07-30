@@ -215,10 +215,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.COORDINATE_SYSTEM`
               - Earth-centered coordinate systems for defining certain propagators.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LOG_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_TYPE`
               - Log message types.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LOG_MSG_DISP_ID`
+            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_DISP_ID`
               - Log message destination options.
 
             * - :py:class:`~ansys.stk.core.stkutil.LINE_STYLE`
@@ -327,8 +327,8 @@ in the STK X and STK Objects libraries.
     ≔ YPR_ANGLES_SEQUENCE<stkutil/YPR_ANGLES_SEQUENCE_enum>
     ≔ ORBIT_STATE_TYPE<stkutil/ORBIT_STATE_TYPE_enum>
     ≔ COORDINATE_SYSTEM<stkutil/COORDINATE_SYSTEM_enum>
-    ≔ LOG_MSG_TYPE<stkutil/LOG_MSG_TYPE_enum>
-    ≔ LOG_MSG_DISP_ID<stkutil/LOG_MSG_DISP_ID_enum>
+    ≔ LOG_MESSAGE_TYPE<stkutil/LOG_MESSAGE_TYPE_enum>
+    ≔ LOG_MESSAGE_DISP_ID<stkutil/LOG_MESSAGE_DISP_ID_enum>
     ≔ LINE_STYLE<stkutil/LINE_STYLE_enum>
     ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkutil/EXEC_MULTI_CMD_RESULT_ACTION_enum>
     ≔ FILL_STYLE<stkutil/FILL_STYLE_enum>

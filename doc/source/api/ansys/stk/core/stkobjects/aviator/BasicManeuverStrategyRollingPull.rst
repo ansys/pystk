@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRollingPull.roll_rate_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for the rolling pull.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: pull_g_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRollingPull.pull_g_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the pull G mode for a rolling pull.
 

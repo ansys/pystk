@@ -420,10 +420,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachCosBearing`
               - CloseApproachCosBearing Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelGroundTrackError`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError`
               - RelGroundTrackError Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelAtAOLMaster`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster`
               - RelAOLMaster Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster`
@@ -681,7 +681,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPower`
               - Power Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion`
               - Relative Motion Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle`
@@ -690,16 +690,16 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSolarInPlaneAngle`
               - Solar In Plane Angle objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelPositionDecAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionDecAngle`
               - Relative Position Declination Angle objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelPositionInPlaneAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle`
               - Relative Position Declination Angle objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeInclination`
               - Relative Inclination Angle objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelMotion`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion`
               - Curvilinear Relative Motion objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCustomFunction`
@@ -996,10 +996,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction`
               - EOM Function Plugin propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAeroT20`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerodynamicT20`
               - AeroT20 SRP propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAeroT30`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerodynamicT30`
               - AeroT30 SRP propagator function.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aIIA`
@@ -1646,7 +1646,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.VENUS_GRAM_DENSITY_TYPE`
               - Density Type for VenusGRAM Density Models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.TAB_VEC_INTERP_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.TAB_VEC_INTERPOLATION_METHOD`
               - The interpolation method for tabulated area vector file.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CONST_ACC`
@@ -1855,8 +1855,8 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcCloseApproachX<astrogator/StateCalcCloseApproachX>
      StateCalcCloseApproachY<astrogator/StateCalcCloseApproachY>
      StateCalcCloseApproachCosBearing<astrogator/StateCalcCloseApproachCosBearing>
-     StateCalcRelGroundTrackError<astrogator/StateCalcRelGroundTrackError>
-     StateCalcRelAtAOLMaster<astrogator/StateCalcRelAtAOLMaster>
+     StateCalcRelativeGroundTrackError<astrogator/StateCalcRelativeGroundTrackError>
+     StateCalcRelativeAtAOLMaster<astrogator/StateCalcRelativeAtAOLMaster>
      StateCalcDeltaFromMaster<astrogator/StateCalcDeltaFromMaster>
      StateCalcLonDriftRate<astrogator/StateCalcLonDriftRate>
      StateCalcMeanEarthLon<astrogator/StateCalcMeanEarthLon>
@@ -1942,13 +1942,13 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcInclination<astrogator/StateCalcInclination>
      StateCalcTrueLon<astrogator/StateCalcTrueLon>
      StateCalcPower<astrogator/StateCalcPower>
-     StateCalcRelMotion<astrogator/StateCalcRelMotion>
+     StateCalcRelativeMotion<astrogator/StateCalcRelativeMotion>
      StateCalcSolarBetaAngle<astrogator/StateCalcSolarBetaAngle>
      StateCalcSolarInPlaneAngle<astrogator/StateCalcSolarInPlaneAngle>
-     StateCalcRelPositionDecAngle<astrogator/StateCalcRelPositionDecAngle>
-     StateCalcRelPositionInPlaneAngle<astrogator/StateCalcRelPositionInPlaneAngle>
+     StateCalcRelativePositionDecAngle<astrogator/StateCalcRelativePositionDecAngle>
+     StateCalcRelativePositionInPlaneAngle<astrogator/StateCalcRelativePositionInPlaneAngle>
      StateCalcRelativeInclination<astrogator/StateCalcRelativeInclination>
-     StateCalcCurvilinearRelMotion<astrogator/StateCalcCurvilinearRelMotion>
+     StateCalcCurvilinearRelativeMotion<astrogator/StateCalcCurvilinearRelativeMotion>
      StateCalcCustomFunction<astrogator/StateCalcCustomFunction>
      StateCalcScript<astrogator/StateCalcScript>
      StateCalcCd<astrogator/StateCalcCd>
@@ -2047,8 +2047,8 @@ Object Model components specifically designed to support STK Astrogator.
      TwoBodyFunction<astrogator/TwoBodyFunction>
      HPOPPluginFunction<astrogator/HPOPPluginFunction>
      EOMFuncPluginFunction<astrogator/EOMFuncPluginFunction>
-     SRPAeroT20<astrogator/SRPAeroT20>
-     SRPAeroT30<astrogator/SRPAeroT30>
+     SRPAerodynamicT20<astrogator/SRPAerodynamicT20>
+     SRPAerodynamicT30<astrogator/SRPAerodynamicT30>
      SRPGSPM04aIIA<astrogator/SRPGSPM04aIIA>
      SRPGSPM04aIIR<astrogator/SRPGSPM04aIIR>
      SRPGSPM04aeIIA<astrogator/SRPGSPM04aeIIA>
@@ -2267,7 +2267,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ DRAG_MODEL_TYPE<astrogator/DRAG_MODEL_TYPE_enum>
     ≔ MARS_GRAM_DENSITY_TYPE<astrogator/MARS_GRAM_DENSITY_TYPE_enum>
     ≔ VENUS_GRAM_DENSITY_TYPE<astrogator/VENUS_GRAM_DENSITY_TYPE_enum>
-    ≔ TAB_VEC_INTERP_METHOD<astrogator/TAB_VEC_INTERP_METHOD_enum>
+    ≔ TAB_VEC_INTERPOLATION_METHOD<astrogator/TAB_VEC_INTERPOLATION_METHOD_enum>
     ≔ CONTROL_ENGINE_CONST_ACC<astrogator/CONTROL_ENGINE_CONST_ACC_enum>
     ≔ CONTROL_ENGINE_CONSTANT<astrogator/CONTROL_ENGINE_CONSTANT_enum>
     ≔ CONTROL_ENGINE_CUSTOM<astrogator/CONTROL_ENGINE_CUSTOM_enum>

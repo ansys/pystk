@@ -515,7 +515,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase`
               - Represents an attitude slew base type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IVmGridDefinition`
+            * - :py:class:`~ansys.stk.core.stkobjects.IVolumetricGridDefinition`
               - Base interface IAgVmGridDefinition. IAgVmGridSpatialCalculation and IAgVmExternalFile implement this interface.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IEOIRShapeObject`
@@ -2206,7 +2206,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool`
               - AgVeExternalFileAttitude Class.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropDefinitionExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropulsionDefinitionExportTool`
               - AgVeExternalFileAttitude Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom`
@@ -3757,52 +3757,52 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.Volumetric`
               - The AgVolumetric class.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGridSpatialCalculation`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGridSpatialCalculation`
               - Class defining the volume grid spatial calculation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmExternalFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricExternalFile`
               - Class defining the volume external file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmAnalysisInterval`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval`
               - Class defining the volumetric analysis interval.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmAdvanced`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricAdvanced`
               - Class defining the volumetric Computed Data Save options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3D`
               - Class defining 3D graphics properties of volumetric object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DGrid`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DGrid`
               - Class defining grid properties of 3D graphics for volumetric object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSection`
               - Class defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSectionPlane`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlane`
               - Class defining cross-section plane for volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DCrossSectionPlaneCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlaneCollection`
               - Class defining collection of cross-section planes for volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DVolume`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DVolume`
               - Class defining planar cross-sections through the volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DActiveGridPoints`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints`
               - Class defining Active Grid Points for Volumetric Object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevels`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels`
               - Class defining Spatial Calculation Levels for Volumetric Object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevel`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel`
               - Class defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DSpatialCalculationLevelCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevelCollection`
               - Class defining collections of defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmGraphics3DLegend`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricGraphics3DLegend`
               - Class defining Boundary/Fill legend for volumetric object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VmExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricExportTool`
               - The Volumetric Export Tool.
 
             * - :py:class:`~ansys.stk.core.stkobjects.SatelliteCollection`
@@ -4350,7 +4350,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ALTITUDE_REFERENCE`
               - Reference altitude options for waypoints.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_INTERP_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_INTERPOLATION_METHOD`
               - Interpolation methods.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LAUNCH`
@@ -4476,7 +4476,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_DATA_RETENTION`
               - Data retention options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_REGION_ACCESS_ACCEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_REGION_ACCESS_ACCELERATION`
               - Regional acceleration options.
 
             * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_RESOLUTION`
@@ -4680,25 +4680,25 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT`
               - The different types of components in the component browser.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_DEFINITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DEFINITION_TYPE`
               - Volume grid definition types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_SPATIAL_CALC_EVAL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE`
               - Evaluation of Spatial Calculation types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_SAVE_COMPUTED_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE`
               - Save Computed Data types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_DISPLAY_VOLUME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DISPLAY_VOLUME_TYPE`
               - Graphics volume display type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_DISPLAY_QUALITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DISPLAY_QUALITY_TYPE`
               - Quality of the graphics display types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_LEGEND_NUMERIC_NOTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_LEGEND_NUMERIC_NOTATION`
               - Legend numeric notation types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_LEVEL_ORDER`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_LEVEL_ORDER`
               - Legend level display order.
 
             * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_PROCESSING_LEVELS`
@@ -4743,10 +4743,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SATURATION_MODE`
               - EOIR band irradiance or radiance reference mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_VOLUME_GRID_EXPORT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE`
               - Volumetric data export types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VM_DATA_EXPORT_FORMAT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE`
               - Volumetric data export format types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CONSTELLATION_FROM_TO_PARENT_CONSTRAINT`
@@ -5331,7 +5331,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      IEventDetectionStrategy<stkobjects/IEventDetectionStrategy>
      ISamplingMethodStrategy<stkobjects/ISamplingMethodStrategy>
      IVehicleAttitudeSlewBase<stkobjects/IVehicleAttitudeSlewBase>
-     IVmGridDefinition<stkobjects/IVmGridDefinition>
+     IVolumetricGridDefinition<stkobjects/IVolumetricGridDefinition>
      IEOIRShapeObject<stkobjects/IEOIRShapeObject>
 
 .. toctree::
@@ -5898,7 +5898,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      VehicleEphemerisSpiceExportTool<stkobjects/VehicleEphemerisSpiceExportTool>
      ExportToolTimePeriod<stkobjects/ExportToolTimePeriod>
      VehicleAttitudeExportTool<stkobjects/VehicleAttitudeExportTool>
-     VehiclePropDefinitionExportTool<stkobjects/VehiclePropDefinitionExportTool>
+     VehiclePropulsionDefinitionExportTool<stkobjects/VehiclePropulsionDefinitionExportTool>
      VehicleCoordinateAxesCustom<stkobjects/VehicleCoordinateAxesCustom>
      ExportToolStepSize<stkobjects/ExportToolStepSize>
      PctCmpltEventArgs<stkobjects/PctCmpltEventArgs>
@@ -6415,22 +6415,22 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ComponentInfoCollection<stkobjects/ComponentInfoCollection>
      ComponentAttrLinkEmbedControl<stkobjects/ComponentAttrLinkEmbedControl>
      Volumetric<stkobjects/Volumetric>
-     VmGridSpatialCalculation<stkobjects/VmGridSpatialCalculation>
-     VmExternalFile<stkobjects/VmExternalFile>
-     VmAnalysisInterval<stkobjects/VmAnalysisInterval>
-     VmAdvanced<stkobjects/VmAdvanced>
-     VmGraphics3D<stkobjects/VmGraphics3D>
-     VmGraphics3DGrid<stkobjects/VmGraphics3DGrid>
-     VmGraphics3DCrossSection<stkobjects/VmGraphics3DCrossSection>
-     VmGraphics3DCrossSectionPlane<stkobjects/VmGraphics3DCrossSectionPlane>
-     VmGraphics3DCrossSectionPlaneCollection<stkobjects/VmGraphics3DCrossSectionPlaneCollection>
-     VmGraphics3DVolume<stkobjects/VmGraphics3DVolume>
-     VmGraphics3DActiveGridPoints<stkobjects/VmGraphics3DActiveGridPoints>
-     VmGraphics3DSpatialCalculationLevels<stkobjects/VmGraphics3DSpatialCalculationLevels>
-     VmGraphics3DSpatialCalculationLevel<stkobjects/VmGraphics3DSpatialCalculationLevel>
-     VmGraphics3DSpatialCalculationLevelCollection<stkobjects/VmGraphics3DSpatialCalculationLevelCollection>
-     VmGraphics3DLegend<stkobjects/VmGraphics3DLegend>
-     VmExportTool<stkobjects/VmExportTool>
+     VolumetricGridSpatialCalculation<stkobjects/VolumetricGridSpatialCalculation>
+     VolumetricExternalFile<stkobjects/VolumetricExternalFile>
+     VolumetricAnalysisInterval<stkobjects/VolumetricAnalysisInterval>
+     VolumetricAdvanced<stkobjects/VolumetricAdvanced>
+     VolumetricGraphics3D<stkobjects/VolumetricGraphics3D>
+     VolumetricGraphics3DGrid<stkobjects/VolumetricGraphics3DGrid>
+     VolumetricGraphics3DCrossSection<stkobjects/VolumetricGraphics3DCrossSection>
+     VolumetricGraphics3DCrossSectionPlane<stkobjects/VolumetricGraphics3DCrossSectionPlane>
+     VolumetricGraphics3DCrossSectionPlaneCollection<stkobjects/VolumetricGraphics3DCrossSectionPlaneCollection>
+     VolumetricGraphics3DVolume<stkobjects/VolumetricGraphics3DVolume>
+     VolumetricGraphics3DActiveGridPoints<stkobjects/VolumetricGraphics3DActiveGridPoints>
+     VolumetricGraphics3DSpatialCalculationLevels<stkobjects/VolumetricGraphics3DSpatialCalculationLevels>
+     VolumetricGraphics3DSpatialCalculationLevel<stkobjects/VolumetricGraphics3DSpatialCalculationLevel>
+     VolumetricGraphics3DSpatialCalculationLevelCollection<stkobjects/VolumetricGraphics3DSpatialCalculationLevelCollection>
+     VolumetricGraphics3DLegend<stkobjects/VolumetricGraphics3DLegend>
+     VolumetricExportTool<stkobjects/VolumetricExportTool>
      SatelliteCollection<stkobjects/SatelliteCollection>
      Subset<stkobjects/Subset>
      ElementConfiguration<stkobjects/ElementConfiguration>
@@ -6616,7 +6616,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ VEHICLE_CONSIDER_ANALYSIS_TYPE<stkobjects/VEHICLE_CONSIDER_ANALYSIS_TYPE_enum>
     ≔ VEHICLE_WAYPOINT_COMP_METHOD<stkobjects/VEHICLE_WAYPOINT_COMP_METHOD_enum>
     ≔ VEHICLE_ALTITUDE_REFERENCE<stkobjects/VEHICLE_ALTITUDE_REFERENCE_enum>
-    ≔ VEHICLE_WAYPOINT_INTERP_METHOD<stkobjects/VEHICLE_WAYPOINT_INTERP_METHOD_enum>
+    ≔ VEHICLE_WAYPOINT_INTERPOLATION_METHOD<stkobjects/VEHICLE_WAYPOINT_INTERPOLATION_METHOD_enum>
     ≔ VEHICLE_LAUNCH<stkobjects/VEHICLE_LAUNCH_enum>
     ≔ VEHICLE_IMPACT<stkobjects/VEHICLE_IMPACT_enum>
     ≔ VEHICLE_LAUNCH_CONTROL<stkobjects/VEHICLE_LAUNCH_CONTROL_enum>
@@ -6658,7 +6658,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ COVERAGE_ALTITUDE_METHOD<stkobjects/COVERAGE_ALTITUDE_METHOD_enum>
     ≔ COVERAGE_GROUND_ALTITUDE_METHOD<stkobjects/COVERAGE_GROUND_ALTITUDE_METHOD_enum>
     ≔ COVERAGE_DATA_RETENTION<stkobjects/COVERAGE_DATA_RETENTION_enum>
-    ≔ COVERAGE_REGION_ACCESS_ACCEL<stkobjects/COVERAGE_REGION_ACCESS_ACCEL_enum>
+    ≔ COVERAGE_REGION_ACCESS_ACCELERATION<stkobjects/COVERAGE_REGION_ACCESS_ACCELERATION_enum>
     ≔ COVERAGE_RESOLUTION<stkobjects/COVERAGE_RESOLUTION_enum>
     ≔ COVERAGE_ASSET_STATUS<stkobjects/COVERAGE_ASSET_STATUS_enum>
     ≔ COVERAGE_ASSET_GROUPING<stkobjects/COVERAGE_ASSET_GROUPING_enum>
@@ -6726,13 +6726,13 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ VEHICLE_SLEW_TIMING_BETWEEN_TARGETS<stkobjects/VEHICLE_SLEW_TIMING_BETWEEN_TARGETS_enum>
     ≔ VEHICLE_SLEW_MODE<stkobjects/VEHICLE_SLEW_MODE_enum>
     ≔ COMPONENT<stkobjects/COMPONENT_enum>
-    ≔ VM_DEFINITION_TYPE<stkobjects/VM_DEFINITION_TYPE_enum>
-    ≔ VM_SPATIAL_CALC_EVAL_TYPE<stkobjects/VM_SPATIAL_CALC_EVAL_TYPE_enum>
-    ≔ VM_SAVE_COMPUTED_DATA_TYPE<stkobjects/VM_SAVE_COMPUTED_DATA_TYPE_enum>
-    ≔ VM_DISPLAY_VOLUME_TYPE<stkobjects/VM_DISPLAY_VOLUME_TYPE_enum>
-    ≔ VM_DISPLAY_QUALITY_TYPE<stkobjects/VM_DISPLAY_QUALITY_TYPE_enum>
-    ≔ VM_LEGEND_NUMERIC_NOTATION<stkobjects/VM_LEGEND_NUMERIC_NOTATION_enum>
-    ≔ VM_LEVEL_ORDER<stkobjects/VM_LEVEL_ORDER_enum>
+    ≔ VOLUMETRIC_DEFINITION_TYPE<stkobjects/VOLUMETRIC_DEFINITION_TYPE_enum>
+    ≔ VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE<stkobjects/VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE_enum>
+    ≔ VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE<stkobjects/VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE_enum>
+    ≔ VOLUMETRIC_DISPLAY_VOLUME_TYPE<stkobjects/VOLUMETRIC_DISPLAY_VOLUME_TYPE_enum>
+    ≔ VOLUMETRIC_DISPLAY_QUALITY_TYPE<stkobjects/VOLUMETRIC_DISPLAY_QUALITY_TYPE_enum>
+    ≔ VOLUMETRIC_LEGEND_NUMERIC_NOTATION<stkobjects/VOLUMETRIC_LEGEND_NUMERIC_NOTATION_enum>
+    ≔ VOLUMETRIC_LEVEL_ORDER<stkobjects/VOLUMETRIC_LEVEL_ORDER_enum>
     ≔ SENSOR_EOIR_PROCESSING_LEVELS<stkobjects/SENSOR_EOIR_PROCESSING_LEVELS_enum>
     ≔ SENSOR_EOIR_JITTER_TYPES<stkobjects/SENSOR_EOIR_JITTER_TYPES_enum>
     ≔ SENSOR_EOIR_SCAN_MODES<stkobjects/SENSOR_EOIR_SCAN_MODES_enum>
@@ -6747,8 +6747,8 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ SENSOR_EOIR_BAND_QUANTIZATION_MODE<stkobjects/SENSOR_EOIR_BAND_QUANTIZATION_MODE_enum>
     ≔ SENSOR_EOIR_BAND_WAVELENGTH_TYPE<stkobjects/SENSOR_EOIR_BAND_WAVELENGTH_TYPE_enum>
     ≔ SENSOR_EOIR_BAND_SATURATION_MODE<stkobjects/SENSOR_EOIR_BAND_SATURATION_MODE_enum>
-    ≔ VM_VOLUME_GRID_EXPORT_TYPE<stkobjects/VM_VOLUME_GRID_EXPORT_TYPE_enum>
-    ≔ VM_DATA_EXPORT_FORMAT_TYPE<stkobjects/VM_DATA_EXPORT_FORMAT_TYPE_enum>
+    ≔ VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE<stkobjects/VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE_enum>
+    ≔ VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE<stkobjects/VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE_enum>
     ≔ CONSTELLATION_FROM_TO_PARENT_CONSTRAINT<stkobjects/CONSTELLATION_FROM_TO_PARENT_CONSTRAINT_enum>
     ≔ ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS<stkobjects/ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS_enum>
     ≔ STATISTICS<stkobjects/STATISTICS_enum>

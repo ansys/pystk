@@ -3262,7 +3262,7 @@ class EarlyBoundTests(TestBase):
         exportHelper.EphemerisCode500ExportTool(sat2.export_tools.get_ephemeris_code500_export_tool())
         exportHelper.EphemerisSpiceExportTool(sat2.export_tools.get_ephemeris_spice_export_tool())
         exportHelper.EphemerisSTKExportTool(sat2.export_tools.get_ephemeris_stk_export_tool(), True)
-        exportHelper.PropDefExportTool(sat2.export_tools.get_prop_definition_export_tool())
+        exportHelper.PropDefExportTool(sat2.export_tools.get_propulsion_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(sat2.export_tools.get_ephemeris_stk_binary_export_tool(), True)
 
         sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)

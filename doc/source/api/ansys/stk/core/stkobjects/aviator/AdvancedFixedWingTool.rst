@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_perf_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_performance_models`
               - Create a set of advanced performance models for the aircraft with the given name.
 
     .. tab-item:: Properties
@@ -49,19 +49,19 @@ Overview
               - Gets or sets the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_temperature`
               - Gets or sets the maximum total temperature limit of the aircraft.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aero_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aerodynamic_data`
               - Gets or sets the option to store intermediate results for aerodynamics calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_fuel_flow`
               - Gets or sets the option to store intermediate results for fuel flow calculations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_strategy`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy`
               - Gets or sets the aerodynamic strategy type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_external`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_external`
               - Get the interface for an Extern File Aerodynamics strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_subsonic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_subsonic`
               - Get the interface for a Subsonic Aerodynamics strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_sub_super_hypersonic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_sub_super_hypersonic`
               - Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_supersonic`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_supersonic`
               - Get the interface for a Supersonic Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_strategy`
               - Gets or sets the powerplant strategy type.
@@ -155,8 +155,8 @@ Property detail
 
     Gets or sets the maximum total temperature limit of the aircraft.
 
-.. py:property:: cache_aero_data
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aero_data
+.. py:property:: cache_aerodynamic_data
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aerodynamic_data
     :type: bool
 
     Gets or sets the option to store intermediate results for aerodynamics calculations.
@@ -167,33 +167,33 @@ Property detail
 
     Gets or sets the option to store intermediate results for fuel flow calculations.
 
-.. py:property:: aero_strategy
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_strategy
-    :type: ADVANCED_FIXED_WING_AERO_STRATEGY
+.. py:property:: aerodynamic_strategy
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy
+    :type: ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY
 
     Gets or sets the aerodynamic strategy type.
 
-.. py:property:: aero_mode_as_external
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_external
-    :type: IAdvancedFixedWingExternalAero
+.. py:property:: aerodynamic_mode_as_external
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_external
+    :type: IAdvancedFixedWingExternalAerodynamic
 
     Get the interface for an Extern File Aerodynamics strategy.
 
-.. py:property:: aero_mode_as_subsonic
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_subsonic
-    :type: IAdvancedFixedWingSubsonicAero
+.. py:property:: aerodynamic_mode_as_subsonic
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_subsonic
+    :type: IAdvancedFixedWingSubsonicAerodynamic
 
     Get the interface for a Subsonic Aerodynamics strategy.
 
-.. py:property:: aero_mode_as_sub_super_hypersonic
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_sub_super_hypersonic
-    :type: IAdvancedFixedWingSubSuperHypersonicAero
+.. py:property:: aerodynamic_mode_as_sub_super_hypersonic
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_sub_super_hypersonic
+    :type: IAdvancedFixedWingSubSuperHypersonicAerodynamic
 
     Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy.
 
-.. py:property:: aero_mode_as_supersonic
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aero_mode_as_supersonic
-    :type: IAdvancedFixedWingSupersonicAero
+.. py:property:: aerodynamic_mode_as_supersonic
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_supersonic
+    :type: IAdvancedFixedWingSupersonicAerodynamic
 
     Get the interface for a Supersonic Aerodynamics strategy.
 
@@ -211,7 +211,7 @@ Property detail
 
 .. py:property:: powerplant_mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_external
-    :type: IAdvancedFixedWingExternalProp
+    :type: IAdvancedFixedWingExternalPropulsion
 
     Get the interface for an External Prop File Powerplant strategy.
 
@@ -235,19 +235,19 @@ Property detail
 
 .. py:property:: powerplant_mode_as_basic_turbofan
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_basic_turbofan
-    :type: IAdvancedFixedWingTurbofanBasicABProp
+    :type: IAdvancedFixedWingTurbofanBasicABPropulsion
 
     Get the interface for a Turbofan - Basic w/ AB Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_basic_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_basic_turbojet
-    :type: IAdvancedFixedWingTurbojetBasicABProp
+    :type: IAdvancedFixedWingTurbojetBasicABPropulsion
 
     Get the interface for a Turbojet - Basic w/ AB Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_sub_super_hypersonic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_sub_super_hypersonic
-    :type: IAdvancedFixedWingSubSuperHypersonicProp
+    :type: IAdvancedFixedWingSubSuperHypersonicPropulsion
 
     Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
 
@@ -292,8 +292,8 @@ Method detail
 
 
 
-.. py:method:: create_all_perf_models(self, name: str, overwrite: bool, makeDefault: bool) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_perf_models
+.. py:method:: create_all_performance_models(self, name: str, overwrite: bool, makeDefault: bool) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_performance_models
 
     Create a set of advanced performance models for the aircraft with the given name.
 

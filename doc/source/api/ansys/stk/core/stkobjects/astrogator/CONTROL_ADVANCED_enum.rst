@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PROPAGATE_MAX_PROP_TIME`
+            * - :py:attr:`~PROPAGATE_MAX_PROPULSION_TIME`
               - The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied.
 
-            * - :py:attr:`~PROPAGATE_MIN_PROP_TIME`
+            * - :py:attr:`~PROPAGATE_MIN_PROPULSION_TIME`
               - The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction.
 
 

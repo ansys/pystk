@@ -928,8 +928,8 @@ class EarlyBoundTests(TestBase):
         elemName: str
 
         for elemName in arCurvilinearRelMotionNames:
-            curvRelMotion: "StateCalcCurvilinearRelMotion" = clr.CastAs(
-                (ICloneable(curvilinearRelMotionElems[elemName])).clone_object(), StateCalcCurvilinearRelMotion
+            curvRelMotion: "StateCalcCurvilinearRelativeMotion" = clr.CastAs(
+                (ICloneable(curvilinearRelMotionElems[elemName])).clone_object(), StateCalcCurvilinearRelativeMotion
             )
             Assert.assertIsNotNone(curvRelMotion)
 
@@ -1154,8 +1154,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Satellite/Satellite1", cacb.reference.name)
         formationElems.remove((clr.CastAs(cacb, IComponentInfo)).name)
 
-        gte: "StateCalcRelGroundTrackError" = clr.CastAs(
-            (ICloneable(formationElems["RelGroundTrackError"])).clone_object(), StateCalcRelGroundTrackError
+        gte: "StateCalcRelativeGroundTrackError" = clr.CastAs(
+            (ICloneable(formationElems["RelGroundTrackError"])).clone_object(), StateCalcRelativeGroundTrackError
         )
         Assert.assertIsNotNone(gte)
         gte.central_body_name = "Phobos"
@@ -1190,8 +1190,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Satellite/Satellite1", deltaMaster.reference.name)
         formationElems.remove((clr.CastAs(deltaMaster, IComponentInfo)).name)
 
-        aolMaster: "StateCalcRelAtAOLMaster" = clr.CastAs(
-            (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelAtAOLMaster
+        aolMaster: "StateCalcRelativeAtAOLMaster" = clr.CastAs(
+            (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelativeAtAOLMaster
         )
         Assert.assertIsNotNone(aolMaster)
         aolMaster.calc_object_name = "Relative Motion/CrossTrack"
@@ -2096,8 +2096,8 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems: "ComponentInfoCollection" = components.get_folder("Relative Motion")
 
-        crossTrack: "StateCalcRelMotion" = clr.CastAs(
-            (ICloneable(relMotionElems["CrossTrack"])).clone_object(), StateCalcRelMotion
+        crossTrack: "StateCalcRelativeMotion" = clr.CastAs(
+            (ICloneable(relMotionElems["CrossTrack"])).clone_object(), StateCalcRelativeMotion
         )
         Assert.assertIsNotNone(crossTrack)
 
@@ -2211,9 +2211,9 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems.remove((clr.CastAs(solarInPlanlaneAngle, IComponentInfo)).name)
 
-        relPosDecAngle: "StateCalcRelPositionDecAngle" = clr.CastAs(
+        relPosDecAngle: "StateCalcRelativePositionDecAngle" = clr.CastAs(
             (ICloneable(relMotionElems["Relative Position Declination Angle"])).clone_object(),
-            StateCalcRelPositionDecAngle,
+            StateCalcRelativePositionDecAngle,
         )
         Assert.assertIsNotNone(relPosDecAngle)
 
@@ -2250,9 +2250,9 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems.remove((clr.CastAs(relPosDecAngle, IComponentInfo)).name)
 
-        relPosInPlaneAngle: "StateCalcRelPositionInPlaneAngle" = clr.CastAs(
+        relPosInPlaneAngle: "StateCalcRelativePositionInPlaneAngle" = clr.CastAs(
             (ICloneable(relMotionElems["Relative Position InPlane Angle"])).clone_object(),
-            StateCalcRelPositionInPlaneAngle,
+            StateCalcRelativePositionInPlaneAngle,
         )
         Assert.assertIsNotNone(relPosInPlaneAngle)
 
@@ -4247,12 +4247,12 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "AeroT20 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT20(clr.CastAs(comp, SRPAeroT20))
+                    self.TestAeroT20(clr.CastAs(comp, SRPAerodynamicT20))
 
                 elif comp.name == "AeroT30 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT30(clr.CastAs(comp, SRPAeroT30))
+                    self.TestAeroT30(clr.CastAs(comp, SRPAerodynamicT30))
 
                 elif comp.name == "Earth":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -6639,7 +6639,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestAeroT20(self, t20: "SRPAeroT20"):
+    def TestAeroT20(self, t20: "SRPAerodynamicT20"):
         t20.atmos_altitude = 1
         Assert.assertEqual(1, t20.atmos_altitude)
 
@@ -6676,7 +6676,7 @@ class EarlyBoundTests(TestBase):
             695700.0, t20.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
-    def TestAeroT30(self, t30: "SRPAeroT30"):
+    def TestAeroT30(self, t30: "SRPAerodynamicT30"):
         t30.atmos_altitude = 1
         Assert.assertEqual(1, t30.atmos_altitude)
 
@@ -7304,10 +7304,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             tabareavec.tab_area_vector_definition_file = "Bogus"
 
-        tabareavec.interpolation_method = TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION
-        Assert.assertEqual(TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION, tabareavec.interpolation_method)
-        tabareavec.interpolation_method = TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION
-        Assert.assertEqual(TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION, tabareavec.interpolation_method)
+        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION
+        Assert.assertEqual(
+            TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION, tabareavec.interpolation_method
+        )
+        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION
+        Assert.assertEqual(TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION, tabareavec.interpolation_method)
 
         tabareavec.use_sun_central_body_file_values = True
         Assert.assertTrue(tabareavec.use_sun_central_body_file_values)
@@ -9312,7 +9314,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(98, twoBodyFunc.min_radius_percent)
         Assert.assertEqual(4, wrapper.propagator_functions.count)
 
-        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAeroT20))
+        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAerodynamicT20))
         Assert.assertEqual(5, wrapper.propagator_functions.count)
 
         wrapper.propagator_functions.remove("AeroT20 SRP")
@@ -9475,10 +9477,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9517,10 +9519,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9554,10 +9556,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9595,10 +9597,10 @@ class EarlyBoundTests(TestBase):
         st.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, st.error_control)
 
-        st.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, st.max_abs_err)
-        st.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, st.max_rel_err)
+        st.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, st.max_absolute_err)
+        st.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, st.max_relative_err)
 
         st.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, st.low_safety_coefficient)
@@ -9617,8 +9619,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(59, gji.initial_step)
         gji.max_corrector_iterations = 100
         Assert.assertEqual(100, gji.max_corrector_iterations)
-        gji.max_corrector_rel_err = 1e-10
-        Assert.assertEqual(1e-10, gji.max_corrector_rel_err)
+        gji.max_corrector_relative_err = 1e-10
+        Assert.assertEqual(1e-10, gji.max_corrector_relative_err)
 
         gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.BULIRSCH_STOER)
         Assert.assertEqual(NUMERICAL_INTEGRATOR.BULIRSCH_STOER, gji.single_step_integrator_type)
@@ -9672,8 +9674,8 @@ class EarlyBoundTests(TestBase):
         bsi.min_step = 2
         Assert.assertEqual(2, bsi.min_step)
 
-        bsi.max_rel_err = 1e-11
-        Assert.assertEqual(1e-11, bsi.max_rel_err)
+        bsi.max_relative_err = 1e-11
+        Assert.assertEqual(1e-11, bsi.max_relative_err)
 
         bsi.max_sequences = 2
         Assert.assertEqual(2, bsi.max_sequences)
@@ -9716,10 +9718,10 @@ class EarlyBoundTests(TestBase):
         fourthFifth.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fourthFifth.error_control)
 
-        fourthFifth.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fourthFifth.max_abs_err)
-        fourthFifth.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fourthFifth.max_rel_err)
+        fourthFifth.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fourthFifth.max_absolute_err)
+        fourthFifth.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fourthFifth.max_relative_err)
 
         fourthFifth.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fourthFifth.low_safety_coefficient)

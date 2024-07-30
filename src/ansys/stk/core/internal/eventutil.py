@@ -215,7 +215,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISP_ID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -524,7 +524,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MSG_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MSG_DISP_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISP_ID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter

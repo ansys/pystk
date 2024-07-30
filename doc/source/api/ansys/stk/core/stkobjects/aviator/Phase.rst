@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.get_performance_model_by_type`
               - Get the active performance model for the given category type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.set_default_perf_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.set_default_performance_models`
               - Set the phase to use the default performance models of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.copy_performance_models`
               - Create a copy of the active performance models for the current phase.
@@ -85,8 +85,8 @@ Method detail
 
         :obj:`~PerformanceModelOptions`
 
-.. py:method:: set_default_perf_models(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.Phase.set_default_perf_models
+.. py:method:: set_default_performance_models(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.Phase.set_default_performance_models
 
     Set the phase to use the default performance models of the aircraft.
 

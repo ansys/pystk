@@ -628,23 +628,23 @@ class GatorHelper(object):
 
         Assert.assertTrue(prop.control_parameters_available)
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME))
         cp: "DifferentialCorrectorControl" = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME))
         cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
 
@@ -1506,13 +1506,13 @@ class GatorHelper(object):
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Decl")
 
-        initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
-        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
+        initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA))
         cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Horiz_FPA")
         Assert.assertEqual(cp.parent_name, "myInitState")
         GatorHelper.TestDCControlParameter(cp)
-        initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
-        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
+        initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Horiz_FPA")
 
@@ -1946,13 +1946,13 @@ class GatorHelper(object):
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Azimuth")
 
-        initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
-        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
+        initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA))
         cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Horiz_FPA")
         Assert.assertEqual(cp.parent_name, "myInitState")
         GatorHelper.TestDCControlParameter(cp)
-        initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
-        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
+        initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Horiz_FPA")
 
@@ -4579,10 +4579,10 @@ class GatorHelper(object):
         finite.thrust_efficiency = 2
         Assert.assertEqual(2, finite.thrust_efficiency)
 
-        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW, finite.thrust_efficiency_mode)
-        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_ONLY
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_ONLY, finite.thrust_efficiency_mode)
+        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW, finite.thrust_efficiency_mode)
+        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_ONLY
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_ONLY, finite.thrust_efficiency_mode)
 
         # ANTI_VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
@@ -4847,10 +4847,10 @@ class GatorHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optFinite.thrust_efficiency = -1
 
-        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW, optFinite.thrust_efficiency_mode)
-        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_ONLY
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_ONLY, optFinite.thrust_efficiency_mode)
+        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW, optFinite.thrust_efficiency_mode)
+        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_ONLY
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_ONLY, optFinite.thrust_efficiency_mode)
 
         # Solver tab
 

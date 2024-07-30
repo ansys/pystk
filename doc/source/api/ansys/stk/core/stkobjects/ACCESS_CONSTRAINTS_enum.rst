@@ -187,10 +187,10 @@ Overview
             * - :py:attr:`~SRCH_TRK_SLC_FILTER`
               - Search-track side lobe clutter filter. Use interface IAgAccessConstraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIG_DOPPLER`
+            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_DOPPLER`
               - Search-track unambiguous doppler. Use interface IAgAccessConstraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIG_RANGE`
+            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_RANGE`
               - Search-track unambiguous range. Use interface IAgAccessConstraint.
 
             * - :py:attr:`~SUN_ELEVATION_ANGLE`
@@ -508,7 +508,7 @@ Overview
             * - :py:attr:`~NOISE_TEMPERATURE`
               - Noise Temperature constraint. Use IAgAccessCnstrMinMax.
 
-            * - :py:attr:`~POL_REL_ANGLE`
+            * - :py:attr:`~POL_RELATIVE_ANGLE`
               - Polarization Relative Angle constraint. Use IAgAccessCnstrMinMax.
 
             * - :py:attr:`~POWER_AT_RECEIVER_INPUT`
@@ -535,7 +535,7 @@ Overview
             * - :py:attr:`~FREE_SPACE_LOSS`
               - Free Space Loss constraint. Use IAgAccessCnstrMinMax.
 
-            * - :py:attr:`~PROP_LOSS`
+            * - :py:attr:`~PROPULSION_LOSS`
               - Propagation Loss constraint. Use IAgAccessCnstrMinMax.
 
             * - :py:attr:`~TOTAL_PWR_AT_RCVR_INPUT`
@@ -559,7 +559,7 @@ Overview
             * - :py:attr:`~PROCESS_DELAY`
               - Process Delay constraint. Use IAgAccessCnstrIntervals.
 
-            * - :py:attr:`~RDR_XMT_TGT_ACCESS`
+            * - :py:attr:`~RDR_XMT_TARGET_ACCESS`
               - RdrXmtTgtAccess constraint. Use IAgAccessCnstrIntervals.
 
             * - :py:attr:`~SUN_ILLUMINATION_ANGLE`
