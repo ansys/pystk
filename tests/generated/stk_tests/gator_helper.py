@@ -323,15 +323,11 @@ class GatorHelper(object):
         Assert.assertEqual("CentralBody/Moon Moon_Angular_Velocity", attControl.constraint_vector_name)
 
         with pytest.raises(Exception):
-            attControl.body_axis = BODY_AXIS((-1)) if ((-1) in [item.value for item in BODY_AXIS]) else (-1)
+            attControl.body_axis = -1
         with pytest.raises(Exception):
-            attControl.custom_function = (
-                CUSTOM_FUNCTION((-1)) if ((-1) in [item.value for item in CUSTOM_FUNCTION]) else (-1)
-            )
+            attControl.custom_function = -1
         with pytest.raises(Exception):
-            attControl.constraint_sign = (
-                CONSTRAINT_SIGN((-1)) if ((-1) in [item.value for item in CONSTRAINT_SIGN]) else (-1)
-            )
+            attControl.constraint_sign = -1
         with pytest.raises(Exception):
             attControl.constraint_vector_name = "Bogus"
 
@@ -6883,7 +6879,7 @@ class GatorHelper(object):
             # Enable a Control param and add a Result for use below
             man1: "MissionControlSequenceManeuver" = clr.CastAs(ts.segments["TMan"], MissionControlSequenceManeuver)
             man1.enable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.add("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.add("Epoch")
 
             Assert.assertEqual(iAgVAProfile.type, PROFILE.GRID_SEARCH)
             profGridSearch: "ProfileGridSearch" = ProfileGridSearch(iAgVAProfile)
@@ -6970,7 +6966,7 @@ class GatorHelper(object):
                 GridSearchResult.custom_display_unit = "Bogus"
 
             # Cleanup
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.remove("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.remove("Epoch")
             man1.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
 
     @staticmethod

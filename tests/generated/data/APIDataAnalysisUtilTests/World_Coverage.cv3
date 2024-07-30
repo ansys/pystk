@@ -1,0 +1,8 @@
+VO_V120		
+ShowStatic		 Yes
+StaticPointSize		 2
+ShowAnim		 Yes
+AnimPointSize		 3
+AutoGranularity		 Yes
+ShowAtAltitude		 No
+DrawAtAltMode		 FrontAndBack

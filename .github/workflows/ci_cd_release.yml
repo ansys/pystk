@@ -7,7 +7,7 @@ on:
       - "v*.*.*"
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -33,17 +33,46 @@ jobs:
   doc-style:
     name: "Doc style checks"
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
+    needs: branch-name-style
     steps:
-      - name: "Run code style checks"
-        uses: ansys/actions/doc-style@v6
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Install jq"
+        run: |
+          # Used to format Vale input as a JSON-formatted list of files
+          sudo apt install -y jq
+
+      - name: "Collect desired files"
+        run: |
+          # Find all .rst files excluding those in doc/source/api/
+          RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+          
+          # Find all .py files inside the examples/ directory, excluding those with an underscore
+          PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
+          
+          # Combine both file lists and convert them to a JSON array
+          # TODO: include Python files too. See Vale issue
+          # https://github.com/errata-ai/vale/issues/858
+          # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+          VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
+          echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
+
+      - uses: ansys/actions/doc-style@v6
         with: 
+          checkout: false
+          files: "${{ env.VALE_FILES }}"
+          vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     needs: [doc-style]
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
@@ -107,7 +136,7 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        python: ["3.8", "3.9", "3.10"]
+        python: ["3.9", "3.10", "3.11"]
       fail-fast: false
     steps:
 

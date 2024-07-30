@@ -1,0 +1,80 @@
+ManeuverOptimalFiniteSteeringNodeCollection
+===========================================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection
+
+   Bases: 
+
+   Steering/nodes collection.
+
+.. py:currentmodule:: ManeuverOptimalFiniteSteeringNodeCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.item`
+              - Allow you to iterate through the collection.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.count`
+              - Returns the size of the collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import ManeuverOptimalFiniteSteeringNodeCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, index: int) -> ManeuverOptimalFiniteSteeringNodeElement
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSteeringNodeCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~ManeuverOptimalFiniteSteeringNodeElement`
+
+
+

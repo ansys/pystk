@@ -2308,11 +2308,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = (
-                FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in FIGURE_OF_MERIT_DEFINITION_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
             if not fom.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -2489,14 +2485,12 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("BUG68304")
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        scenarioObj: "IStkObject" = TestBase.Application.current_scenario
         scenario.set_time_period("7 Sep 2012 16:00:00.000", "8 Sep 2012 16:00:00.000")
 
-        sat: "Satellite" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite
-        )
+        sat: "Satellite" = clr.CastAs(scenarioObj.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite)
         covdef: "CoverageDefinition" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"),
-            CoverageDefinition,
+            scenarioObj.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"), CoverageDefinition
         )
 
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)

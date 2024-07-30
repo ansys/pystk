@@ -1,0 +1,121 @@
+CalculationGraphCollection
+==========================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection
+
+   Bases: 
+
+   Calculation Graph Collection.
+
+.. py:currentmodule:: CalculationGraphCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add`
+              - Add a calculation graph.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove`
+              - Remove a parameter.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove_all`
+              - Remove all parameters.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.count`
+              - Returns the size of the collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import CalculationGraphCollection
+
+
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, index: int) -> str
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~str`
+
+
+.. py:method:: add(self, graphName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add
+
+    Add a calculation graph.
+
+    :Parameters:
+
+    **graphName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove(self, graphName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove
+
+    Remove a parameter.
+
+    :Parameters:
+
+    **graphName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove_all
+
+    Remove all parameters.
+
+    :Returns:
+
+        :obj:`~None`
+
+

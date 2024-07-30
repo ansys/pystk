@@ -8,7 +8,7 @@ import unittest
 import sys
 
 import typing
-from typing import List
+from typing import List, TypeVar
 
 from datetime import datetime, timedelta
 
@@ -156,9 +156,12 @@ class ClrTypeOfResult:
         return isinstance(inst, self.typeinfo)
 
 
+T = TypeVar("T")
+
+
 class clr:
     @staticmethod
-    def CastAs(a, b):
+    def CastAs(a, b: T) -> T:
         if isinstance(a, b):
             return a
         else:

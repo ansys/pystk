@@ -48,7 +48,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_Target = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.TARGET, "Target")
 
         acModelsAsCatalogSource: "ICatalogSource" = EarlyBoundTests.AG_AvtrAircraftModels.get_as_catalog_source()
-        EarlyBoundTests.AG_AvtrAircraft = EarlyBoundTests.AG_AvtrAircraftModels.get_aircraft("NUNIT CSharp Test")
+        EarlyBoundTests.AG_AvtrAircraft = EarlyBoundTests.AG_AvtrAircraftModels.get_aircraft("EarlyBoundTest_Aircraft")
         # Assign the aircraft
         EarlyBoundTests.AG_Mission.vehicle = clr.CastAs(EarlyBoundTests.AG_AvtrAircraft, IAviatorVehicle)
 
@@ -83,7 +83,7 @@ class EarlyBoundTests(TestBase):
     # region Mission
     @category("Mission Tests")
     def test_Mission(self):
-        Assert.assertEqual("NUNIT CSharp Test", EarlyBoundTests.AG_Mission.vehicle.get_as_catalog_item().name)
+        Assert.assertEqual("EarlyBoundTest_Aircraft", EarlyBoundTests.AG_Mission.vehicle.get_as_catalog_item().name)
 
     # endregion
 
@@ -4948,7 +4948,7 @@ class EarlyBoundTests(TestBase):
         arincSource: "ICatalogSource" = clr.CastAs(arincAirports, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincAirport: "IARINC424Item" = arincAirports.get_arinc424_item(str(arincNames[0]))
-        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ARINC424Airport))
+        catAirport.set_catalog_airport(clr.CastAs(firstArincAirport, ICatalogAirport))
         arincName: str = firstArincAirport.get_as_catalog_item().name
         Assert.assertEqual(arincName, catAirport.get_as_site().name)
         arincAirport2: "ICatalogItem" = clr.CastAs(catAirport.get_catalog_airport(), ICatalogItem)
@@ -4973,7 +4973,7 @@ class EarlyBoundTests(TestBase):
         arincSource: "ICatalogSource" = clr.CastAs(arincNavaids, ICatalogSource)
         arincNames = arincSource.child_names
         firstArincNavaid: "IARINC424Item" = arincNavaids.get_arinc424_item(str(arincNames[0]))
-        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ARINC424Navaid))
+        catNavaid.set_catalog_navaid(clr.CastAs(firstArincNavaid, ICatalogNavaid))
         arincName: str = firstArincNavaid.get_as_catalog_item().name
         Assert.assertEqual(arincName, catNavaid.get_as_site().name)
         arincNavaid2: "ICatalogItem" = clr.CastAs(catNavaid.get_catalog_navaid(), ICatalogItem)
@@ -5414,7 +5414,7 @@ class EarlyBoundTests(TestBase):
     def test_AircraftModel(self):
         acModelsAsCatalogSource: "ICatalogSource" = EarlyBoundTests.AG_AvtrAircraftModels.get_as_catalog_source()
 
-        containsTestAircraft: bool = acModelsAsCatalogSource.contains("NUNIT CSharp Test")
+        containsTestAircraft: bool = acModelsAsCatalogSource.contains("EarlyBoundTest_Aircraft")
         Assert.assertTrue(containsTestAircraft)
 
         acTestAsCatalogItem: "ICatalogItem" = EarlyBoundTests.AG_AvtrAircraft.get_as_catalog_item()
@@ -5423,10 +5423,10 @@ class EarlyBoundTests(TestBase):
         containsTest = acTestAsCatalogItem.contains_child_item("Airplane")
         Assert.assertFalse(containsTest)
 
-        Assert.assertEqual("NUNIT CSharp Test", acTestAsCatalogItem.name)
-        acTestAsCatalogItem.name = "NUNIT CSharp Test NameChange"
-        Assert.assertEqual("NUNIT CSharp Test NameChange", acTestAsCatalogItem.name)
-        acTestAsCatalogItem.name = "NUNIT CSharp Test"
+        Assert.assertEqual("EarlyBoundTest_Aircraft", acTestAsCatalogItem.name)
+        acTestAsCatalogItem.name = "EarlyBoundTest_Aircraft NameChange"
+        Assert.assertEqual("EarlyBoundTest_Aircraft NameChange", acTestAsCatalogItem.name)
+        acTestAsCatalogItem.name = "EarlyBoundTest_Aircraft"
 
         isReadOnly: bool = acTestAsCatalogItem.is_read_only
         Assert.assertFalse(isReadOnly)
@@ -7341,22 +7341,22 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissileModel(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileAsCatalog: "ICatalogItem" = missile.get_as_catalog_item()
 
-        Assert.assertEqual("NUNIT CSharp Test Missile", missileAsCatalog.name)
-        missileAsCatalog.name = "NUNIT CSharp Test NameChange"
-        Assert.assertEqual("NUNIT CSharp Test NameChange", missileAsCatalog.name)
-        missileAsCatalog.name = "NUNIT CSharp Test Missile"
+        Assert.assertEqual("Test_Missile", missileAsCatalog.name)
+        missileAsCatalog.name = "Test_Missile NameChange"
+        Assert.assertEqual("Test_Missile NameChange", missileAsCatalog.name)
+        missileAsCatalog.name = "Test_Missile"
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7366,12 +7366,12 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missile.max_load_factor = 11
         Assert.assertEqual(11, missile.max_load_factor)
@@ -7456,8 +7456,8 @@ class EarlyBoundTests(TestBase):
 
         self.ConfigurationOptions(missile.default_configuration)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7465,12 +7465,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissileAeroSimple(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE
@@ -7490,8 +7490,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(simple.calculate_aoa)
         Assert.assertEqual(25, float(aoa))
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7499,12 +7499,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissileAeroExternal(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE
@@ -7527,8 +7527,8 @@ class EarlyBoundTests(TestBase):
             externalAero.reference_area = 0.05
         Assert.assertTrue(externalAero.is_valid)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7536,12 +7536,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissileAeroAdvanced(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileAero: "MissileAero" = missile.aerodynamics
         missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED
@@ -7550,8 +7550,8 @@ class EarlyBoundTests(TestBase):
 
         self.AdvancedMissileAero(advancedAero)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7561,12 +7561,12 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE
@@ -7580,8 +7580,8 @@ class EarlyBoundTests(TestBase):
         simpleProp.no_thrust_when_no_fuel = False
         Assert.assertEqual(False, simpleProp.no_thrust_when_no_fuel)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7589,12 +7589,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissilePropExternal(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE
@@ -7618,8 +7618,8 @@ class EarlyBoundTests(TestBase):
         externalProp.no_thrust_when_no_fuel = False
         Assert.assertEqual(False, externalProp.no_thrust_when_no_fuel)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7627,12 +7627,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissilePropRamjet(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET
@@ -7664,8 +7664,8 @@ class EarlyBoundTests(TestBase):
         ramjetProp.no_thrust_when_no_fuel = False
         Assert.assertEqual(False, ramjetProp.no_thrust_when_no_fuel)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7673,12 +7673,12 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_MissilePropTurbojet(self):
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET
@@ -7718,8 +7718,8 @@ class EarlyBoundTests(TestBase):
         turboProp.no_thrust_when_no_fuel = False
         Assert.assertEqual(False, turboProp.no_thrust_when_no_fuel)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7729,12 +7729,12 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         missileModels: "MissileModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.missile_models
-        if missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"):
-            missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
+        if missileModels.get_as_catalog_source().contains("Test_Missile"):
+            missileModels.get_as_catalog_source().remove_child("Test_Missile")
 
-        missile: "MissileModel" = missileModels.add_missile("NUNIT CSharp Test Missile")
-        Assert.assertEqual("NUNIT CSharp Test Missile", missile.get_as_catalog_item().name)
-        Assert.assertTrue(missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missile: "MissileModel" = missileModels.add_missile("Test_Missile")
+        Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
+        Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
         missileProp: "MissileProp" = missile.propulsion
         missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET
@@ -7765,8 +7765,8 @@ class EarlyBoundTests(TestBase):
         rocketProp.no_thrust_when_no_fuel = False
         Assert.assertEqual(False, rocketProp.no_thrust_when_no_fuel)
 
-        missileModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Missile")
-        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("NUNIT CSharp Test Missile"))
+        missileModels.get_as_catalog_source().remove_child("Test_Missile")
+        Assert.assertEqual(False, missileModels.get_as_catalog_source().contains("Test_Missile"))
 
     # endregion
 
@@ -7774,22 +7774,22 @@ class EarlyBoundTests(TestBase):
     @category("Missile Tests")
     def test_RotorcraftModel(self):
         rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
-        if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
-            rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
+        if rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"):
+            rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
 
-        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
-        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("Test_Rotorcraft")
+        Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
+        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
         rotorcraftAsCatalog: "ICatalogItem" = rotorcraft.get_as_catalog_item()
 
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraftAsCatalog.name)
-        rotorcraftAsCatalog.name = "NUNIT CSharp Test Rotorcraft NameChange"
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft NameChange", rotorcraftAsCatalog.name)
-        rotorcraftAsCatalog.name = "NUNIT CSharp Test Rotorcraft"
+        Assert.assertEqual("Test_Rotorcraft", rotorcraftAsCatalog.name)
+        rotorcraftAsCatalog.name = "Test_Rotorcraft NameChange"
+        Assert.assertEqual("Test_Rotorcraft NameChange", rotorcraftAsCatalog.name)
+        rotorcraftAsCatalog.name = "Test_Rotorcraft"
 
-        rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
+        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
     # endregion
 
@@ -7799,12 +7799,12 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
-        if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
-            rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
+        if rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"):
+            rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
 
-        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
-        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("Test_Rotorcraft")
+        Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
+        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
         rotorcraft.max_altitude = 11000
         Assert.assertEqual(11000, rotorcraft.max_altitude)
@@ -7867,8 +7867,8 @@ class EarlyBoundTests(TestBase):
 
         self.ConfigurationOptions(rotorcraft.default_configuration)
 
-        rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
+        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
     # endregion
 
@@ -7876,12 +7876,12 @@ class EarlyBoundTests(TestBase):
     @category("Rotorcraft Tests")
     def test_RotorcraftAero(self):
         rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
-        if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
-            rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
+        if rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"):
+            rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
 
-        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
-        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("Test_Rotorcraft")
+        Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
+        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
         aero: "RotorcraftAero" = rotorcraft.aerodynamics
 
@@ -7914,8 +7914,8 @@ class EarlyBoundTests(TestBase):
         aero.induced_power_correction_factor = 1.2
         Assert.assertEqual(1.2, aero.induced_power_correction_factor)
 
-        rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
+        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
     # endregion
 
@@ -7925,12 +7925,12 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         rotorcraftModels: "RotorcraftModels" = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.rotorcraft_models
-        if rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"):
-            rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
+        if rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"):
+            rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
 
-        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual("NUNIT CSharp Test Rotorcraft", rotorcraft.get_as_catalog_item().name)
-        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraft: "RotorcraftModel" = rotorcraftModels.add_rotorcraft("Test_Rotorcraft")
+        Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
+        Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
         prop: "RotorcraftProp" = rotorcraft.propulsion
 
@@ -7945,8 +7945,8 @@ class EarlyBoundTests(TestBase):
         prop.max_sl_fuel_flow = 5
         Assert.assertAlmostEqual(5, prop.max_sl_fuel_flow, delta=tolerance)
 
-        rotorcraftModels.get_as_catalog_source().remove_child("NUNIT CSharp Test Rotorcraft")
-        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("NUNIT CSharp Test Rotorcraft"))
+        rotorcraftModels.get_as_catalog_source().remove_child("Test_Rotorcraft")
+        Assert.assertEqual(False, rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
     # endregion
 
@@ -7954,28 +7954,28 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     def test_UserRunwaySource(self):
         userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
         names = userRunways.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
-        Assert.assertEqual("NUnitUserRunway", nunitRunway.get_as_catalog_item().name)
-        Assert.assertTrue(userRunways.get_as_catalog_source().contains("NUnitUserRunway"))
+        runway: "UserRunway" = userRunways.add_user_runway("UserRunway")
+        Assert.assertEqual("UserRunway", runway.get_as_catalog_item().name)
+        Assert.assertTrue(userRunways.get_as_catalog_source().contains("UserRunway"))
         names = userRunways.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitRunway2: "UserRunway" = userRunways.get_user_runway("NUnitUserRunway")
-        Assert.assertEqual("NUnitUserRunway", nunitRunway2.get_as_catalog_item().name)
+        runway2: "UserRunway" = userRunways.get_user_runway("UserRunway")
+        Assert.assertEqual("UserRunway", runway2.get_as_catalog_item().name)
 
-        userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        userRunways.get_as_catalog_source().remove_child("UserRunway")
         names = userRunways.get_as_catalog_source().child_names
         nameCount = nameCount - 1
         Assert.assertEqual(nameCount, Array.Length(names))
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
     # endregion
 
@@ -7985,50 +7985,50 @@ class EarlyBoundTests(TestBase):
         tolerance: float = 1e-09
 
         userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
-        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        runway: "UserRunway" = userRunways.add_user_runway("UserRunway")
 
-        nunitRunway.latitude = 1
-        lat: typing.Any = nunitRunway.latitude
+        runway.latitude = 1
+        lat: typing.Any = runway.latitude
         Assert.assertEqual(1, float(lat))
-        nunitRunway.longitude = 2
-        lon: typing.Any = nunitRunway.longitude
+        runway.longitude = 2
+        lon: typing.Any = runway.longitude
         Assert.assertEqual(2, float(lon))
-        nunitRunway.altitude = 5
-        Assert.assertEqual(5, nunitRunway.altitude)
-        terrainAlt: float = nunitRunway.get_terrain_altitude()
-        Assert.assertEqual(terrainAlt, nunitRunway.altitude)
+        runway.altitude = 5
+        Assert.assertEqual(5, runway.altitude)
+        terrainAlt: float = runway.get_terrain_altitude()
+        Assert.assertEqual(terrainAlt, runway.altitude)
 
-        nunitRunway.high_end_heading = 195
-        highEndHeading: typing.Any = nunitRunway.high_end_heading
+        runway.high_end_heading = 195
+        highEndHeading: typing.Any = runway.high_end_heading
         Assert.assertAlmostEqual(195, float(highEndHeading), delta=tolerance)
-        lowEndHeading: typing.Any = nunitRunway.low_end_heading
+        lowEndHeading: typing.Any = runway.low_end_heading
         Assert.assertAlmostEqual(15, float(lowEndHeading), delta=tolerance)
-        nunitRunway.is_magnetic = False
-        Assert.assertEqual(False, nunitRunway.is_magnetic)
+        runway.is_magnetic = False
+        Assert.assertEqual(False, runway.is_magnetic)
 
-        nunitRunway.length = 5
-        Assert.assertEqual(5, nunitRunway.length)
+        runway.length = 5
+        Assert.assertEqual(5, runway.length)
 
-        nunitRunway.copy_site()
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway2"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway2")
+        runway.copy_site()
+        if userRunways.get_as_catalog_source().contains("UserRunway2"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway2")
 
-        nunitRunway2: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway2")
-        nunitRunway2.paste_site()
+        runway2: "UserRunway" = userRunways.add_user_runway("UserRunway2")
+        runway2.paste_site()
 
-        lat = nunitRunway2.latitude
+        lat = runway2.latitude
         Assert.assertEqual(1, float(lat))
-        nunitRunway2.longitude = 2
-        lon = nunitRunway2.longitude
+        runway2.longitude = 2
+        lon = runway2.longitude
         Assert.assertEqual(2, float(lon))
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway2"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway2")
+        if userRunways.get_as_catalog_source().contains("UserRunway2"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway2")
 
     # endregion
 
@@ -8036,28 +8036,28 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     def test_UserVTOLPointSource(self):
         userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
         names = userVTOLPoints.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
-        Assert.assertEqual("NUnitUserVTOLPoint", nunitVTOLPoint.get_as_catalog_item().name)
-        Assert.assertTrue(userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"))
+        vtolPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("UserVTOLPoint")
+        Assert.assertEqual("UserVTOLPoint", vtolPoint.get_as_catalog_item().name)
+        Assert.assertTrue(userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"))
         names = userVTOLPoints.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitVTOLPoint2: "UserVTOLPoint" = userVTOLPoints.get_user_vtol_point("NUnitUserVTOLPoint")
-        Assert.assertEqual("NUnitUserVTOLPoint", nunitVTOLPoint2.get_as_catalog_item().name)
+        vtolPoint2: "UserVTOLPoint" = userVTOLPoints.get_user_vtol_point("UserVTOLPoint")
+        Assert.assertEqual("UserVTOLPoint", vtolPoint2.get_as_catalog_item().name)
 
-        userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
         names = userVTOLPoints.get_as_catalog_source().child_names
         nameCount = nameCount - 1
         Assert.assertEqual(nameCount, Array.Length(names))
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
     # endregion
 
@@ -8065,39 +8065,39 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     def test_UserVTOLPoint(self):
         userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
-        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
+        vtolPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("UserVTOLPoint")
 
-        nunitVTOLPoint.latitude = 1
-        lat: typing.Any = nunitVTOLPoint.latitude
+        vtolPoint.latitude = 1
+        lat: typing.Any = vtolPoint.latitude
         Assert.assertEqual(1, float(lat))
-        nunitVTOLPoint.longitude = 2
-        lon: typing.Any = nunitVTOLPoint.longitude
+        vtolPoint.longitude = 2
+        lon: typing.Any = vtolPoint.longitude
         Assert.assertEqual(2, float(lon))
-        nunitVTOLPoint.altitude = 5
-        Assert.assertEqual(5, nunitVTOLPoint.altitude)
-        terrainAlt: float = nunitVTOLPoint.get_terrain_altitude()
-        Assert.assertEqual(terrainAlt, nunitVTOLPoint.altitude)
+        vtolPoint.altitude = 5
+        Assert.assertEqual(5, vtolPoint.altitude)
+        terrainAlt: float = vtolPoint.get_terrain_altitude()
+        Assert.assertEqual(terrainAlt, vtolPoint.altitude)
 
-        nunitVTOLPoint.copy_site()
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint2"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint2")
+        vtolPoint.copy_site()
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint2"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint2")
 
-        nunitVTOLPoint2: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint2")
-        nunitVTOLPoint2.paste_site()
+        vtolPoint2: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("UserVTOLPoint2")
+        vtolPoint2.paste_site()
 
-        lat = nunitVTOLPoint2.latitude
+        lat = vtolPoint2.latitude
         Assert.assertEqual(1, float(lat))
-        nunitVTOLPoint2.longitude = 2
-        lon = nunitVTOLPoint2.longitude
+        vtolPoint2.longitude = 2
+        lon = vtolPoint2.longitude
         Assert.assertEqual(2, float(lon))
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint2"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint2")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint2"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint2")
 
     # endregion
 
@@ -8105,28 +8105,28 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     def test_UserWaypointSource(self):
         userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
         names = userWaypoints.get_as_catalog_source().child_names
         nameCount: int = Array.Length(names)
 
-        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
-        Assert.assertEqual("NUnitUserWaypoint", nunitWaypoint.get_as_catalog_item().name)
-        Assert.assertTrue(userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"))
+        waypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("UserWaypoint")
+        Assert.assertEqual("UserWaypoint", waypoint.get_as_catalog_item().name)
+        Assert.assertTrue(userWaypoints.get_as_catalog_source().contains("UserWaypoint"))
         names = userWaypoints.get_as_catalog_source().child_names
         nameCount = nameCount + 1
         Assert.assertEqual(nameCount, Array.Length(names))
 
-        nunitWaypoint2: "UserWaypoint" = userWaypoints.get_user_waypoint("NUnitUserWaypoint")
-        Assert.assertEqual("NUnitUserWaypoint", nunitWaypoint2.get_as_catalog_item().name)
+        waypoint2: "UserWaypoint" = userWaypoints.get_user_waypoint("UserWaypoint")
+        Assert.assertEqual("UserWaypoint", waypoint2.get_as_catalog_item().name)
 
-        userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
         names = userWaypoints.get_as_catalog_source().child_names
         nameCount = nameCount - 1
         Assert.assertEqual(nameCount, Array.Length(names))
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
     # endregion
 
@@ -8134,35 +8134,35 @@ class EarlyBoundTests(TestBase):
     @category("Catalog Tests")
     def test_UserWaypoint(self):
         userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
-        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
+        waypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("UserWaypoint")
 
-        nunitWaypoint.latitude = 1
-        lat: typing.Any = nunitWaypoint.latitude
+        waypoint.latitude = 1
+        lat: typing.Any = waypoint.latitude
         Assert.assertEqual(1, float(lat))
-        nunitWaypoint.longitude = 2
-        lon: typing.Any = nunitWaypoint.longitude
+        waypoint.longitude = 2
+        lon: typing.Any = waypoint.longitude
         Assert.assertEqual(2, float(lon))
 
-        nunitWaypoint.copy_site()
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint2"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint2")
+        waypoint.copy_site()
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint2"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint2")
 
-        nunitWaypoint2: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint2")
-        nunitWaypoint2.paste_site()
+        waypoint2: "UserWaypoint" = userWaypoints.add_user_waypoint("UserWaypoint2")
+        waypoint2.paste_site()
 
-        lat = nunitWaypoint2.latitude
+        lat = waypoint2.latitude
         Assert.assertEqual(1, float(lat))
-        nunitWaypoint2.longitude = 2
-        lon = nunitWaypoint2.longitude
+        waypoint2.longitude = 2
+        lon = waypoint2.longitude
         Assert.assertEqual(2, float(lon))
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint2"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint2")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint2"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint2")
 
     # endregion
 
@@ -8202,18 +8202,18 @@ class EarlyBoundTests(TestBase):
         ranch.copy_site()
 
         userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
-        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        runway: "UserRunway" = userRunways.add_user_runway("UserRunway")
 
-        nunitRunway.paste_site()
-        lat: typing.Any = nunitRunway.latitude
+        runway.paste_site()
+        lat: typing.Any = runway.latitude
         Assert.assertAlmostEqual(29.875, float(lat), delta=tolerance)
-        lon: typing.Any = nunitRunway.longitude
+        lon: typing.Any = runway.longitude
         Assert.assertAlmostEqual(-103.697, float(lon), delta=tolerance)
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
     # endregion
 
@@ -8253,19 +8253,19 @@ class EarlyBoundTests(TestBase):
         fourthAveH1.copy_site()
 
         userVTOLPoints: "UserVTOLPointSource" = EarlyBoundTests.AG_AvtrCatalog.vtol_point_category.user_vtol_points
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
-        nunitVTOLPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("NUnitUserVTOLPoint")
+        vtolPoint: "UserVTOLPoint" = userVTOLPoints.add_user_vtol_point("UserVTOLPoint")
 
-        nunitVTOLPoint.paste_site()
-        lat: typing.Any = nunitVTOLPoint.latitude
+        vtolPoint.paste_site()
+        lat: typing.Any = vtolPoint.latitude
         Assert.assertAlmostEqual(47.607, float(lat), delta=tolerance)
-        lon: typing.Any = nunitVTOLPoint.longitude
+        lon: typing.Any = vtolPoint.longitude
         Assert.assertAlmostEqual(-122.334, float(lon), delta=tolerance)
-        Assert.assertAlmostEqual(716, nunitVTOLPoint.altitude, delta=tolerance)
-        if userVTOLPoints.get_as_catalog_source().contains("NUnitUserVTOLPoint"):
-            userVTOLPoints.get_as_catalog_source().remove_child("NUnitUserVTOLPoint")
+        Assert.assertAlmostEqual(716, vtolPoint.altitude, delta=tolerance)
+        if userVTOLPoints.get_as_catalog_source().contains("UserVTOLPoint"):
+            userVTOLPoints.get_as_catalog_source().remove_child("UserVTOLPoint")
 
     # endregion
 
@@ -8305,18 +8305,18 @@ class EarlyBoundTests(TestBase):
         oneb.copy_site()
 
         userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
-        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        runway: "UserRunway" = userRunways.add_user_runway("UserRunway")
 
-        nunitRunway.paste_site()
-        lat: typing.Any = nunitRunway.latitude
+        runway.paste_site()
+        lat: typing.Any = runway.latitude
         Assert.assertAlmostEqual(43.931, float(lat), delta=tolerance)
-        lon: typing.Any = nunitRunway.longitude
+        lon: typing.Any = runway.longitude
         Assert.assertAlmostEqual(-60.023, float(lon), delta=tolerance)
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
     # endregion
 
@@ -8356,19 +8356,19 @@ class EarlyBoundTests(TestBase):
         jfk.copy_site()
 
         userRunways: "UserRunwaySource" = EarlyBoundTests.AG_AvtrCatalog.runway_category.user_runways
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
-        nunitRunway: "UserRunway" = userRunways.add_user_runway("NUnitUserRunway")
+        runway: "UserRunway" = userRunways.add_user_runway("UserRunway")
 
-        nunitRunway.paste_site()
-        lat: typing.Any = nunitRunway.latitude
+        runway.paste_site()
+        lat: typing.Any = runway.latitude
         Assert.assertAlmostEqual(40.63, float(lat), delta=tolerance)
-        lon: typing.Any = nunitRunway.longitude
+        lon: typing.Any = runway.longitude
         Assert.assertAlmostEqual(-73.786, float(lon), delta=tolerance)
-        Assert.assertAlmostEqual(12.5, nunitRunway.altitude, delta=tolerance)
-        if userRunways.get_as_catalog_source().contains("NUnitUserRunway"):
-            userRunways.get_as_catalog_source().remove_child("NUnitUserRunway")
+        Assert.assertAlmostEqual(12.5, runway.altitude, delta=tolerance)
+        if userRunways.get_as_catalog_source().contains("UserRunway"):
+            userRunways.get_as_catalog_source().remove_child("UserRunway")
 
     # endregion
 
@@ -8408,18 +8408,18 @@ class EarlyBoundTests(TestBase):
         aaamy.copy_site()
 
         userWaypoints: "UserWaypointSource" = EarlyBoundTests.AG_AvtrCatalog.waypoint_category.user_waypoints
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
-        nunitWaypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("NUnitUserWaypoint")
+        waypoint: "UserWaypoint" = userWaypoints.add_user_waypoint("UserWaypoint")
 
-        nunitWaypoint.paste_site()
-        lat: typing.Any = nunitWaypoint.latitude
+        waypoint.paste_site()
+        lat: typing.Any = waypoint.latitude
         Assert.assertAlmostEqual(43.069, float(lat), delta=tolerance)
-        lon: typing.Any = nunitWaypoint.longitude
+        lon: typing.Any = waypoint.longitude
         Assert.assertAlmostEqual(-82.615, float(lon), delta=tolerance)
-        if userWaypoints.get_as_catalog_source().contains("NUnitUserWaypoint"):
-            userWaypoints.get_as_catalog_source().remove_child("NUnitUserWaypoint")
+        if userWaypoints.get_as_catalog_source().contains("UserWaypoint"):
+            userWaypoints.get_as_catalog_source().remove_child("UserWaypoint")
 
     # endregion
 
@@ -9179,7 +9179,7 @@ class EarlyBoundTests(TestBase):
     ):
         noisyBrgRng.new_random_engine_seed()
 
-        noisyBrgRng.set_base_dyn_state_link_name("Aircraft/NUNIT_VBS_Test")
+        noisyBrgRng.set_base_dyn_state_link_name("Aircraft/LateBoundTest_Aircraft")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             noisyBrgRng.set_base_dyn_state_link_name("Bogus")
 
@@ -9226,7 +9226,7 @@ class EarlyBoundTests(TestBase):
     ):
         noisySurfTgt.new_random_engine_seed()
 
-        noisySurfTgt.set_base_dyn_state_link_name("Aircraft/NUNIT_CSharp_Test")
+        noisySurfTgt.set_base_dyn_state_link_name("Aircraft/EarlyBoundTest_Aircraft")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             noisySurfTgt.set_base_dyn_state_link_name("Bogus")
 
