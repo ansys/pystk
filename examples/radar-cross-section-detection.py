@@ -312,7 +312,7 @@ airport_radar.model.antenna_control.embedded_model.efficiency = 55
 
 # The transmitter has a frequency range of $2.7-2.9$ GHz, a peak power of $20$ kW, and uses linear polarization.
 
-# First, configure the trasmitter to use frequency (instead of wavelength) as its frequency specification:
+# First, configure the transmitter to use frequency (instead of wavelength) as its frequency specification:
 
 # +
 from ansys.stk.core.stkobjects import RADAR_FREQUENCY_SPEC
