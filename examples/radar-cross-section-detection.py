@@ -1,14 +1,14 @@
-# # Introduction to Radar
+# # Radar cross section detection calculator
 
-# This tutorial demonstrates how to determine how various radar settings affect radar ability to track different sized targets using Python and PySTK. It is inspired by [this](https://help.agi.com/stk/index.htm#training/StartRadar.htm?TocPath=Training%257CLevel%25202%2520-%2520Advanced%2520Training%257C_____7) tutorial.
+# This tutorial demonstrates how to determine a radar's ability to track differently sized targets with varying radar cross sections using Python and PySTK. It is inspired by [this](https://help.agi.com/stk/Content/training/StartRadar.htm) tutorial.
 
 # ## What is radar cross section?
 
-# One important property of a potential radar target is its radar cross section (RCS), which measures how easily the object can be detected by a radar, with a higher RCS corresponding to a more easily detected target. How easily an object can be detected has to do with its echo, which is a function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the same echo signal as the target if it were substituted for the target. Through STK, it is possible to either specify the RCS of all targets at the scenario level, or to specify the RCS individually for each target. It is also possible to select different RCS computation methods, including directly using a constant value and using output files from Ansys HFSS. Finally, STK supports the use of Swerling cases, which account for RCS fluctuations considering a range of fluctuation values and possible correlations between radar scans.
+# One important property of a potential radar target is its radar cross section (RCS), which measures how easily the object can be detected by a radar, with a higher RCS corresponding to a more easily detected target. How easily an object can be detected has to do with its echo, which is a function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the same echo signal as the target if it were substituted for the target. Through STK, it is possible to either specify the RCS of all targets at the scenario level, or to specify the RCS individually for each target. It is also possible to select different RCS computation methods, including directly using a constant value, using output files from Ansys HFSS, and using aspect dependent RCS files. Finally, STK supports the use of Swerling cases, which account for RCS fluctuations considering a range of fluctuation values and possible correlations between radar scans.
 
 # ## Problem statement
 
-# A radar site which aims to surveil aircraft flying over it is located at latitude $35.75174^\circ$ and longitude $139.35621^\circ$. The site's antenna is located $50$ ft above the ground. The radar site has a servo system for antenna positioning, modeled by a sensor with a simple conic field of view with a $2^\circ$ half angle. The sensor locks onto aircraft. The sensor can track aircraft with an elevation angle from $0^\circ$ to $30^\circ$, and a range of up to $150$ km. Anything higher than $30^\circ$ is the cone of silence in which the radar cannot track the aircraft. The sensor has a monostatic aircraft surveillance radar on it with a search/track mode. The radar has a waveform with a fixed pulse repetition frequency of $1000$ Hz and a pulse width of one microsecond. The radar's antenna is modeled by the cosine squared aperture rectangular antenna pattern, with an antenna transmit frequency between $2.7$ and $2.9$ GHz. The antenna also has an X dimension beamwidth of $5^\circ$, a Y dimension beamwidth of $1.4^\circ$, a design frequency of $2.8$ GHz, a main-lobe gain of $34$ dB, and an efficiency of $55$%. The radar's transmitter has a frequency range of $2.7-2.9$ GHz, a peak power of $20$ kW, and uses linear polarization. The radar's receiver uses linear polarization, and computes system noise temperature taking into account Sun and cosmic background noise.
+# A radar site which surveils aircraft flying over it is located at latitude $35.75174^\circ$ and longitude $139.35621^\circ$. The site's antenna is located $50$ ft above the ground. The radar site has a servo system for antenna positioning, modeled by a sensor with a simple conic field of view with a $2^\circ$ half angle. The sensor locks onto aircraft. The sensor can track aircraft with an elevation angle from $0^\circ$ to $30^\circ$, and a range of up to $150$ km. Anything higher than $30^\circ$ is the cone of silence in which the radar cannot track the aircraft. The sensor has a monostatic aircraft surveillance radar on it with a search/track mode. The radar has a waveform with a fixed pulse repetition frequency of $1000$ Hz and a pulse width of $1$ microsecond. The radar's antenna is modeled by the cosine squared aperture rectangular antenna pattern, with an antenna transmit frequency between $2.7$ and $2.9$ GHz. The antenna also has an X dimension beamwidth of $5^\circ$, a Y dimension beamwidth of $1.4^\circ$, a design frequency of $2.8$ GHz, a main-lobe gain of $34$ dB, and an efficiency of $55$%. The radar's transmitter has a frequency range of $2.7-2.9$ GHz, a peak power of $20$ kW, and uses linear polarization. The radar's receiver uses linear polarization, and computes system noise temperature taking into account Sun and cosmic background noise.
 #
 # Using a test aircraft, determine if the aircraft surveillance radar can see a large aircraft (RCS: $19$ dBsm), a medium aircraft (RCS: $10$ dBsm), a small aircraft (RCS: $0$ dBsm), and a bird (RCS: $-20$ dBsm).
 
@@ -70,9 +70,7 @@ from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 aircraft = root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "TargetAircraft")
 # -
 
-# ## Create the target aircraft's flight route
-
-# The aicraft's route is designated by a great arc propagator, which uses waypoints to calculate how the aircraft flies. The aircraft flies between two waypoints. The first is located at latitude $37^\circ$ and longitude $139.7^\circ$, and the second is located at latitude $34^\circ$ and longitude $139.1^\circ$. The aircraft flies at an altitude of $25000$ ft ($7.62$ km) and a speed of $330$ nm/hr at both waypoints.
+# The aircraft's route is designated by a great arc propagator, which uses waypoints to calculate how the aircraft flies. The aircraft flies between two waypoints. The first is located at latitude $37^\circ$ and longitude $139.7^\circ$, and the second is located at latitude $34^\circ$ and longitude $139.1^\circ$. The aircraft flies at an altitude of $25000$ ft ($7.62$ km) and a speed of $330$ nm/hr at both waypoints.
 
 # Insert the first waypoint:
 
@@ -101,9 +99,9 @@ map_widget.show()
 
 # ## Specify the radar cross section
 
-# Before setting up and constraining a radar system, Radar allows specifying a potential radar target's radar cross section (RCS). Use the RCS of a popular four-engined turboprop transport aircraft.
+# Before setting up and constraining a radar system, STK allows the specification of a potential radar target's radar cross section. Use the RCS of a popular four-engined turboprop transport aircraft.
 
-# First, set the radar cross section's `inherit` property to False. When the `inherit` property is set to True, the RCS is inherited from the scenario. In this case, set the property to False to specify the RCS for only the aircraft:
+# First, set the radar cross section's `inherit` property to `False`. When the `inherit` property is set to `True`, the RCS is inherited from the scenario. In this case, set the property to `Fals`e to specify the RCS for only the aircraft:
 
 aircraft.radar_cross_section.inherit = False
 
@@ -115,9 +113,18 @@ band1 = aircraft.radar_cross_section.model.frequency_bands.item(0)
 
 band1.set_compute_strategy('Constant Value')
 
-# Set the constant frequency to $19$ dBsm, which corresponds to the RCS of a sphere that radiates isotropically:
+# Set the constant frequency to $19$ dBsm:
 
 band1.compute_strategy.constant_value = 19
+
+# Next, configure the radar 3D graphics. Enable the visualization of RCS volume for the aircraft:
+
+aircraft.graphics_3d.radar_cross_section.volume_graphics.show = True
+
+# It is now possible to see the aircraft's constant RCS in the 3D graphics window:
+
+globe_widget.camera.position = [3435.3329, 3789.8112, 3815.5677]
+globe_widget.show()
 
 # ## Insert the radar site
 
@@ -162,7 +169,7 @@ antenna_sensor.pointing.targets.add(aircraft.path)
 
 # ## Set range and elevation angle constraints
 
-# A typical airport surveillance radar's nominal range is $60$ miles and the elevation angle of the beam can track from $0^\circ$ to $30^\circ$. Anything higher than $30^\circ$ is the cone of silence in which the radar cannot track the aircraft. Extend the sensor's maximum range further than $60$ miles in order to lock onto the aircraft when it's above the horizon.
+# A typical airport surveillance radar's nominal range is $60$ miles and the elevation angle of the beam can track from $0^\circ$ to $30^\circ$. Anything higher than $30^\circ$ is the cone of silence in which the radar cannot track the aircraft. Extend the sensor's maximum range to $150$ km in order to lock onto the aircraft when it's above the horizon.
 
 # First, insert an elevation angle constraint on the sensor:
 
@@ -187,6 +194,11 @@ range_constraint = antenna_sensor.access_constraints.add_constraint(ACCESS_CONST
 range_constraint.enable_max = True
 range_constraint.max = 150
 
+# View the sensor's field of view using the 3D graphics window:
+
+globe_widget.camera.position = [3555, 4084, 3861]
+globe_widget.show()
+
 # ## Calculate access
 
 # Next, get and compute the access between the sensor and the aircraft:
@@ -196,9 +208,49 @@ basic_access.compute_access()
 
 # Generate an azimuth-elevation-range report to see the effect the constraints have on the accesses:
 
-basic_access.data_providers.item("AER Data").group.item("Default").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+aer_df = basic_access.data_providers.item("AER Data").group.item("Default").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+aer_df
 
 # Notice that the first access ends and the second access begins at an approximate elevation angle of 30 degrees. There is a break in access when the elevation angle exceeds 30 degrees due to the modeled cone of silence.
+
+# It is also possible to see this cone of silence on a plot of the aircraft's elevation when it is accessed by the sensor:
+
+# +
+import matplotlib.pyplot as plt
+import matplotlib.dates as md
+import pandas as pd
+
+
+# Convert columns to correct types
+aer_df['time'] = pd.to_datetime(aer_df["time"])
+aer_df['elevation'] = aer_df['elevation'].apply(pd.to_numeric)
+
+# Create a plot
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# Group by access number, then plot elevation
+aer_df.groupby('access number').plot(x='time', y='elevation', ax=ax, color='dodgerblue')
+
+# Set title and axes labels
+ax.set_title("Access Elevation over Time")
+ax.set_xlabel('Time')
+ax.set_ylabel("Angle (deg)")
+
+# Configure style
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which='both', linestyle='--')
+
+# Improve x-axis formatting
+formatter = md.DateFormatter('%H:%M:%S.%f')
+ax.xaxis.set_major_formatter(formatter)
+# Set major and minor locators
+xlocator_major = md.MicrosecondLocator(interval=100000)
+ax.xaxis.set_major_locator(xlocator_major)
+
+# Remove axis
+ax.get_legend().remove()
+plt.show()
+# -
 
 # ## Insert an airport surveillance radar
 
@@ -273,11 +325,11 @@ airport_radar.model.transmitter.frequency_specification = RADAR_FREQUENCY_SPEC.F
 
 airport_radar.model.transmitter.frequency = 2.8
 
-# Finally, set the transmitter's power to $20$ kW:
+# Finally, set the transmitter's power to $20$ kW ($43.01$ dBW):
 
-airport_radar.model.transmitter.power = 20 
+airport_radar.model.transmitter.power = 43.01
 
-# Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna's orientation.. An ASR system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.
+# Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna's orientation.. An aircraft surveillance radar system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.
 
 # Enable the use of polarization on the transmitter:
 
@@ -297,7 +349,6 @@ airport_radar.model.receiver.enable_polarization = True
 
 # Next, add the receiver's system noise temperature. Compute system noise temperature using the default values, and take into account Sun and cosmic background noise.
 
-# + active=""
 # Set the receiver's system noise temperature compute type to calculate:
 
 # +
@@ -315,7 +366,7 @@ airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.
 
 # ## Determine the probability of detection
 
-# For this radar, the probability of detection (Pdet) is based on a value of 0.800000 or higher, with 1 being the highest value. You will also look at signal-to-noise ratio (SNR) and pulse integration.  Then, you will change Target_Acft's () constant RCS value to simulate a medium-sized aircraft, then a small-sized aircraft, and then a bird. Finally, you'll load a notional Aspect Dependent RCS file to see the difference between that and the constant value RCS sphere.
+# For this radar, the probability of detection (Pdet) is based on a value of 0.800000 or higher, with 1 being the highest value. Determine the Pdet for a large aircraft, a medium aircraft, a small aircraft, and a bird by changing the aircraft's constant RCS value to simulate different sized-targets.
 
 # Start by determining the Pdet of the large turboprop aircraft.
 
@@ -328,43 +379,167 @@ large_aircraft_access.compute_access()
 
 large_aircraft_df = large_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
 
-large_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t pulses integrated']]
+# Select the report's `s/t pdet1` (the Pdet for a single pulse), `s/t integrated pdet` (the Pdet for multiple pulses), `s/t pulses integrated` (the number of pulses integrated), `s/t snr1` (the signal-to-noise ratio (SNR) for a single pulse), and `s/t integrated snr` (the SNR for multiple pulses):
 
-large_aircraft_df[['s/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+large_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+
+# As can be seen by the difference between the `s/t pdet1` and `s/t integrated pdet` columns, pulse integration improves the ability of the radar to detect targets by combining the returns from multiple pulses. Pulse integration also improves the signal-to-noise ratio.
 
 # ## Simulate a medium-sized aircraft
 
+# To simulate a medium-sized aircraft, change the target aircraft's RCS to $10$ dBsm:
+
 band1.compute_strategy.constant_value = 10
+
+# Then, compute access between the aircraft and the radar:
 
 medium_aircraft_access = airport_radar.get_access_to_object(aircraft)
 medium_aircraft_access.compute_access()
 
+# Generate a radar SearchTrack report using a step value of $30$ sec:
+
 medium_aircraft_df = medium_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
 
-medium_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t pulses integrated']]
+# Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
 
-# ## Simulate a small-sized aircraft
+medium_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+
+# The radar's ability to track this aircraft has diminished due to the aircraft's smaller RCS.
+
+# ## Simulate a small aircraft
+
+# To simulate a small aircraft, change the target aircraft's RCS to $0$ dBsm:
 
 band1.compute_strategy.constant_value = 0
+
+# Then, compute access between the aircraft and the radar:
 
 small_aircraft_access = airport_radar.get_access_to_object(aircraft)
 small_aircraft_access.compute_access()
 
+# Generate a radar SearchTrack report using a step value of $30$ sec:
+
 small_aircraft_df = small_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
 
-small_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t pulses integrated']]
+# Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
+
+small_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+
+# The radar's ability to track this aircraft has again diminished due to the aircraft's smaller RCS.
 
 # ## Simulate a bird
 
+# To simulate a bird, change the target aircraft's RCS to $-20$ dBsm:
+
 band1.compute_strategy.constant_value = -20
+
+# Then, compute access between the aircraft and the radar:
 
 bird_aircraft_access = airport_radar.get_access_to_object(aircraft)
 bird_aircraft_access.compute_access()
 
+# Generate a radar SearchTrack report using a step value of $30$ sec:
+
 bird_aircraft_df = bird_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
 
-bird_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t pulses integrated']]
+# Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
+
+bird_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+
+# The Pdet is very low for an object with this RCS. To track objects like birds, the radar system would need a different frequency or higher power.
 
 # ## Load an external Aspect Dependent RCS file
 
+# Using an Aspect Dependent RCS file built for a specific target aircraft generates much more realistic data. 
 
+# To use an external file, first set the target aircraft's RCS to use an external file in computations:
+
+band1.set_compute_strategy('External File')
+
+# Then, upload the `X-47B_Notional_Sample.rcs` file, which is included with the STK install, by using the band's `compute_strategy` property, which now holds a `RadarCrossSectionComputeStrategyExternalFile` object:
+
+# +
+import pathlib
+
+
+install_dir = root.execute_command("GetDirectory / STKHome")[0]
+band1.compute_strategy.filename = str(pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "SeaRangeResources" / "X-47B" / "X-47B_Notional_Sample.rcs")
+# -
+
+# It is now possible to see the aircraft's aspect dependent RCS pattern in the 3D graphics window:
+
+globe_widget.camera.position = [3435.3329, 3789.8112, 3815.5677]
+globe_widget.show()
+
+# Recompute the access between the aircraft and the radar:
+
+aspect_dep_aircraft_access = airport_radar.get_access_to_object(aircraft)
+aspect_dep_aircraft_access.compute_access()
+
+# Generate a radar SearchTrack report using a step value of $30$ sec:
+
+aspect_dep_df = aspect_dep_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+
+# Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
+
+aspect_dep_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+
+# Depending on the reflection from the aircraft back to the radar, it is possible for there to be fluctuation in the values. This is noticeable in the S/T Pulses Integrated column.
+
+# ## Graph the RCS
+
+# Use the Radar RCS report to get information about how the RCS changes over time:
+
+rcs_df = aspect_dep_aircraft_access.data_providers.item("Radar RCS").exec(scenario.start_time, scenario.stop_time, 1).data_sets.to_pandas_dataframe()
+
+rcs_df['incident el bf']
+
+# Visualize changes to the RCS and the elevation:
+
+# +
+import matplotlib.pyplot as plt
+import matplotlib.dates as md
+import pandas as pd
+
+
+# Convert columns to correct types
+rcs_df['time'] = pd.to_datetime(aer_df["time"])
+cols = ['rcs', 'incident el bf']
+rcs_df[cols] = rcs_df[cols].apply(pd.to_numeric)
+
+# Create a plot
+fig, ax = plt.subplots(figsize=(8, 8))
+# Duplicate axis
+ax2 = ax.twinx()
+
+# Group by access number, then plot rcs and elevation
+rcs_df.groupby('access number').plot(x='time', y='rcs', ax=ax, color='dodgerblue', label = 'RCS (dBsm)')
+rcs_df.groupby('access number').plot(x='time', y='incident el bf', ax=ax2, color='tomato', label = 'Elevation (deg)')
+
+# Set title and axes labels
+ax.set_title("Accessed Aircraft RCS over Time")
+ax.set_xlabel('Time')
+ax.set_ylabel("RCS (dBsm)")
+ax2.set_ylabel("Incident Elevation BF (deg)")
+
+# Configure style
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which='both', linestyle='--')
+
+# Combine legends
+lines = [ax.get_lines()[0], ax2.get_lines()[0]]
+labels = [line.get_label() for line in lines]
+ax.legend(lines, labels, shadow=True)
+ax2.get_legend().remove()
+
+# Improve x-axis formatting
+formatter = md.DateFormatter('%H:%M:%S.%f')
+ax.xaxis.set_major_formatter(formatter)
+# Set major and minor locators
+xlocator_major = md.MicrosecondLocator(interval=100000)
+ax.xaxis.set_major_locator(xlocator_major)
+
+plt.show()
+# -
+
+# As seen previously, there is a cone of silence in the middle of the graph, corresponding to when the elevation angle is over $30^\circ$.

@@ -30,6 +30,14 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
     examples/hohmann-transfer
     examples/lambert-transfer
 
+Communications and radar
+========================
+
+This series of tutorials explain how to model and simulate communications and radar systems using Python and PySTK.
+
+.. nbgallery::
+
+    examples/radar-cross-section-detection
 
 Aviator mission planning
 ========================
