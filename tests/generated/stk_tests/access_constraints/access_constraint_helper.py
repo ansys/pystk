@@ -201,7 +201,7 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.CLOUDS_FOG_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.FREE_SPACE_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.NOISE_TEMPERATURE)
-        typesNoTest.append(ACCESS_CONSTRAINTS.PROPULSION_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.PROPAGATION_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.RAIN_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.RDR_XMT_TARGET_ACCESS)
         typesNoTest.append(ACCESS_CONSTRAINTS.TROPO_SCINTILL_LOSS)

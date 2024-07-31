@@ -628,23 +628,23 @@ class GatorHelper(object):
 
         Assert.assertTrue(prop.control_parameters_available)
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         cp: "DifferentialCorrectorControl" = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME))
         cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
 

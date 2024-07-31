@@ -135,8 +135,8 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
         (IStkObject(gv)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "GroundVehicle"):
-        attExTool: "VehiclePropulsionDefinitionExportTool" = (
-            groundVehicle.export_tools.get_propulsion_definition_export_tool()
+        attExTool: "VehiclePropagationDefinitionExportTool" = (
+            groundVehicle.export_tools.get_propagator_definition_export_tool()
         )
 
     # endregion

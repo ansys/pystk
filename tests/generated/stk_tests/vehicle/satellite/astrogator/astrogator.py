@@ -277,7 +277,7 @@ class EarlyBoundTests(TestBase):
         prop1: "MissionControlSequencePropagate" = clr.CastAs(
             ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "prop1", "-"), MissionControlSequencePropagate
         )
-        prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
+        prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
         (IMissionControlSequenceSegment(prop1)).results.add("Epoch")
         dc: "ProfileDifferentialCorrector" = clr.CastAs(ts.profiles[0], ProfileDifferentialCorrector)
         self.TestTargeterGraphsControlDisabled(dc.targeter_graphs, True)
@@ -1336,11 +1336,11 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestStoppingConditionCollection(hold.stopping_conditions)
 
         Assert.assertFalse(hold.control_parameters_available)
-        Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME))
+        Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         with pytest.raises(Exception):
-            hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
+            hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
         with pytest.raises(Exception):
-            hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME)
+            hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
 
         EarlyBoundTests.AG_VA.main_sequence.remove("Holder1")
 

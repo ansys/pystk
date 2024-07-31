@@ -996,10 +996,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EOMFuncPluginFunction`
               - EOM Function Plugin propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerodynamicT20`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT20`
               - AeroT20 SRP propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerodynamicT30`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPAerospaceT30`
               - AeroT30 SRP propagator function.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aIIA`
@@ -2047,8 +2047,8 @@ Object Model components specifically designed to support STK Astrogator.
      TwoBodyFunction<astrogator/TwoBodyFunction>
      HPOPPluginFunction<astrogator/HPOPPluginFunction>
      EOMFuncPluginFunction<astrogator/EOMFuncPluginFunction>
-     SRPAerodynamicT20<astrogator/SRPAerodynamicT20>
-     SRPAerodynamicT30<astrogator/SRPAerodynamicT30>
+     SRPAerospaceT20<astrogator/SRPAerospaceT20>
+     SRPAerospaceT30<astrogator/SRPAerospaceT30>
      SRPGSPM04aIIA<astrogator/SRPGSPM04aIIA>
      SRPGSPM04aIIR<astrogator/SRPGSPM04aIIR>
      SRPGSPM04aeIIA<astrogator/SRPGSPM04aeIIA>

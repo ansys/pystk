@@ -396,7 +396,7 @@ blue_mesa_procedure.name = "Blue Mesa"
 from ansys.stk.core.stkobjects.aviator import POINT_TO_POINT_MODE
 
 
-blue_mesa_procedure.navigation_options.nav_mode = POINT_TO_POINT_MODE.FLY_DIRECT
+blue_mesa_procedure.navigation_options.navigation_mode = POINT_TO_POINT_MODE.FLY_DIRECT
 # -
 
 # Next, configure the procedure's enroute options, which define the turning performance characteristics of the aircraft during enroute segments of the procedure. Set the turn factor, which is the maximum amount - expressed as a multiplier - that the turn radius is increased to minimize the bank angle required to complete turns. Set the turn factor to 5:

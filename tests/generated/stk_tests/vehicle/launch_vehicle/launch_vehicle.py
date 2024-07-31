@@ -714,7 +714,7 @@ class EarlyBoundTests(TestBase):
         exportHelper = ExportDataFileHelper(IStkObject(lv), TestBase.Application)
         exportHelper.AttitudeExportTool(lv.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(lv.export_tools.get_ephemeris_stk_export_tool(), False)
-        exportHelper.PropDefExportTool(lv.export_tools.get_propulsion_definition_export_tool())
+        exportHelper.PropDefExportTool(lv.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(lv.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "ExportLv")

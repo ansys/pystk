@@ -4247,12 +4247,12 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "AeroT20 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT20(clr.CastAs(comp, SRPAerodynamicT20))
+                    self.TestAeroT20(clr.CastAs(comp, SRPAerospaceT20))
 
                 elif comp.name == "AeroT30 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT30(clr.CastAs(comp, SRPAerodynamicT30))
+                    self.TestAeroT30(clr.CastAs(comp, SRPAerospaceT30))
 
                 elif comp.name == "Earth":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -6639,7 +6639,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestAeroT20(self, t20: "SRPAerodynamicT20"):
+    def TestAeroT20(self, t20: "SRPAerospaceT20"):
         t20.atmos_altitude = 1
         Assert.assertEqual(1, t20.atmos_altitude)
 
@@ -6676,7 +6676,7 @@ class EarlyBoundTests(TestBase):
             695700.0, t20.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
-    def TestAeroT30(self, t30: "SRPAerodynamicT30"):
+    def TestAeroT30(self, t30: "SRPAerospaceT30"):
         t30.atmos_altitude = 1
         Assert.assertEqual(1, t30.atmos_altitude)
 
@@ -9314,7 +9314,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(98, twoBodyFunc.min_radius_percent)
         Assert.assertEqual(4, wrapper.propagator_functions.count)
 
-        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAerodynamicT20))
+        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAerospaceT20))
         Assert.assertEqual(5, wrapper.propagator_functions.count)
 
         wrapper.propagator_functions.remove("AeroT20 SRP")

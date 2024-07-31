@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Unsupported model.
 
-            * - :py:attr:`~GPS_BLKIIA_AERODYNAMIC_T20`
+            * - :py:attr:`~GPS_BLKIIA_AEROSPACE_T20`
               - Aerospace T20 solar radiation pressure model for GPS block IIA.
 
             * - :py:attr:`~GPS_BLKIIA_GSP_M_04_A`
@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~GPS_BLKIIA_GSP_M_04_AE`
               - Bar-Sever GPS Solar Pressure Model 04a for block IIA.
 
-            * - :py:attr:`~GPS_BLKIIR_AERODYNAMIC_T30`
+            * - :py:attr:`~GPS_BLKIIA_AEROSPACE_T30`
               - Aerospace T30 solar radiation pressure model for GPS block IIR.
 
             * - :py:attr:`~GPS_BLKIIR_GSP_M_04_A`

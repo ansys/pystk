@@ -66,7 +66,7 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "ROOT_FINDING_ALGORITHM", "ROTATING_COORDINATE_SYSTEM", "RUN_CODE", "RadiationPressureFunction", "RungeKutta2nd3rd", "RungeKutta4th", 
 "RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", "RungeKuttaV8th9th", "SCRIPTING_PARAMETER_TYPE", "SEGMENT_DIFFERENCE_ORDER", 
 "SEGMENT_STATE", "SEGMENT_TYPE", "SEQUENCE_STATE_TO_PASS", "SHADOW_MODEL", "SMART_RUN_MODE", "SNOPTControl", "SNOPTControlCollection", 
-"SNOPTResult", "SNOPTResultCollection", "SNOPT_GOAL", "SOLAR_FORCE_METHOD", "SQUARED_TYPE", "SRPAerodynamicT20", "SRPAerodynamicT30", 
+"SNOPTResult", "SNOPTResultCollection", "SNOPT_GOAL", "SOLAR_FORCE_METHOD", "SQUARED_TYPE", "SRPAerospaceT20", "SRPAerospaceT30", 
 "SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR", "SRPNPlate", "SRPReflectionPlugin", "SRPSpherical", 
 "SRPTabAreaVec", "SRPVariableArea", "STATE", "STM_EIGEN_NUMBER", "STM_PERT_VARIABLES", "STOPPING_CONDITION", "SUN_POSITION", 
 "ScriptingCalcObject", "ScriptingCalcObjectCollection", "ScriptingParameter", "ScriptingParameterCollection", "ScriptingParameterEnumerationChoice", 
@@ -1096,13 +1096,13 @@ agcls.AgTypeNameMap["CONTROL_LAUNCH"] = CONTROL_LAUNCH
 class CONTROL_ADVANCED(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
    
-    PROPAGATE_MAX_PROPULSION_TIME = 600
+    PROPAGATE_MAX_PROPAGATION_TIME = 600
     """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."""
-    PROPAGATE_MIN_PROPULSION_TIME = 601
+    PROPAGATE_MIN_PROPAGATION_TIME = 601
     """The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."""
 
-CONTROL_ADVANCED.PROPAGATE_MAX_PROPULSION_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
-CONTROL_ADVANCED.PROPAGATE_MIN_PROPULSION_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
+CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
+CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
 
 agcls.AgTypeNameMap["CONTROL_ADVANCED"] = CONTROL_ADVANCED
 
@@ -37423,7 +37423,7 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5223247057825617700, 18398972489609883042), EOMFuncPluginFunction)
 agcls.AgTypeNameMap["EOMFuncPluginFunction"] = EOMFuncPluginFunction
 
-class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T20 solar radiation pressure model for GPS block IIA."""
 
     _num_methods = 13
@@ -37447,7 +37447,7 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SRPAerodynamicT20)
+        return get_interface_property(attrname, SRPAerospaceT20)
     
     _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37455,14 +37455,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @atmos_altitude.setter
     def atmos_altitude(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_atmos_altitude_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_atmos_altitude_metadata, inVal)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37470,14 +37470,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
         """Get or set the shadow model type."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_shadow_model_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "offset" : _set_shadow_model_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @shadow_model.setter
     def shadow_model(self, inVal:"SHADOW_MODEL") -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_shadow_model_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_shadow_model_metadata, inVal)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37485,14 +37485,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SUN_POSITION":
         """Get or set the sun position computation."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_sun_position_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @sun_position.setter
     def sun_position(self, inVal:"SUN_POSITION") -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_sun_position_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_sun_position_metadata, inVal)
 
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37500,7 +37500,7 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_eclipsing_bodies_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_eclipsing_bodies_metadata)
 
     _get_include_boundary_mitigation_metadata = { "offset" : _get_include_boundary_mitigation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37508,14 +37508,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def include_boundary_mitigation(self) -> bool:
         """True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_include_boundary_mitigation_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_include_boundary_mitigation_metadata)
 
     _set_include_boundary_mitigation_metadata = { "offset" : _set_include_boundary_mitigation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_boundary_mitigation.setter
     def include_boundary_mitigation(self, mitigation:bool) -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_include_boundary_mitigation_metadata, mitigation)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_include_boundary_mitigation_metadata, mitigation)
 
     _get_use_sun_central_body_file_values_metadata = { "offset" : _get_use_sun_central_body_file_values_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37523,14 +37523,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_sun_central_body_file_values(self) -> bool:
         """True if solar radius should come from the Sun.cb file."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_use_sun_central_body_file_values_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_use_sun_central_body_file_values_metadata)
 
     _set_use_sun_central_body_file_values_metadata = { "offset" : _set_use_sun_central_body_file_values_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_sun_central_body_file_values.setter
     def use_sun_central_body_file_values(self, inVal:bool) -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_use_sun_central_body_file_values_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_use_sun_central_body_file_values_metadata, inVal)
 
     _get_solar_radius_metadata = { "offset" : _get_solar_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37538,14 +37538,14 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_radius(self) -> float:
         """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._get_solar_radius_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "offset" : _set_solar_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @solar_radius.setter
     def solar_radius(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAerodynamicT20._metadata, SRPAerodynamicT20._set_solar_radius_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_solar_radius_metadata, inVal)
 
     _property_names[atmos_altitude] = "atmos_altitude"
     _property_names[shadow_model] = "shadow_model"
@@ -37556,9 +37556,9 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SRPAerodynamicT20."""
+        """Construct an object of type SRPAerospaceT20."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAerodynamicT20)
+        initialize_from_source_object(self, sourceObject, SRPAerospaceT20)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37570,12 +37570,12 @@ class SRPAerodynamicT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SRPAerodynamicT20, [SRPAerodynamicT20, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, SRPAerospaceT20, [SRPAerospaceT20, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5040644487386490720, 8016746528186754470), SRPAerodynamicT20)
-agcls.AgTypeNameMap["SRPAerodynamicT20"] = SRPAerodynamicT20
+agcls.AgClassCatalog.add_catalog_entry((5040644487386490720, 8016746528186754470), SRPAerospaceT20)
+agcls.AgTypeNameMap["SRPAerospaceT20"] = SRPAerospaceT20
 
-class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR."""
 
     _num_methods = 13
@@ -37599,7 +37599,7 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SRPAerodynamicT30)
+        return get_interface_property(attrname, SRPAerospaceT30)
     
     _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37607,14 +37607,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @atmos_altitude.setter
     def atmos_altitude(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_atmos_altitude_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_atmos_altitude_metadata, inVal)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37622,14 +37622,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
         """Get or set the shadow model type."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_shadow_model_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "offset" : _set_shadow_model_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @shadow_model.setter
     def shadow_model(self, inVal:"SHADOW_MODEL") -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_shadow_model_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_shadow_model_metadata, inVal)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37637,14 +37637,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SUN_POSITION":
         """Get or set the sun position computation."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_sun_position_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @sun_position.setter
     def sun_position(self, inVal:"SUN_POSITION") -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_sun_position_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_sun_position_metadata, inVal)
 
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -37652,7 +37652,7 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def eclipsing_bodies(self) -> "CentralBodyCollection":
         """Other eclipsing bodies."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_eclipsing_bodies_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_eclipsing_bodies_metadata)
 
     _get_include_boundary_mitigation_metadata = { "offset" : _get_include_boundary_mitigation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37660,14 +37660,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def include_boundary_mitigation(self) -> bool:
         """True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_include_boundary_mitigation_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_include_boundary_mitigation_metadata)
 
     _set_include_boundary_mitigation_metadata = { "offset" : _set_include_boundary_mitigation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_boundary_mitigation.setter
     def include_boundary_mitigation(self, mitigation:bool) -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_include_boundary_mitigation_metadata, mitigation)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_include_boundary_mitigation_metadata, mitigation)
 
     _get_use_sun_central_body_file_values_metadata = { "offset" : _get_use_sun_central_body_file_values_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37675,14 +37675,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_sun_central_body_file_values(self) -> bool:
         """True if solar radius should come from the Sun.cb file."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_use_sun_central_body_file_values_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_use_sun_central_body_file_values_metadata)
 
     _set_use_sun_central_body_file_values_metadata = { "offset" : _set_use_sun_central_body_file_values_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_sun_central_body_file_values.setter
     def use_sun_central_body_file_values(self, inVal:bool) -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_use_sun_central_body_file_values_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_use_sun_central_body_file_values_metadata, inVal)
 
     _get_solar_radius_metadata = { "offset" : _get_solar_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37690,14 +37690,14 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_radius(self) -> float:
         """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._get_solar_radius_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "offset" : _set_solar_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @solar_radius.setter
     def solar_radius(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAerodynamicT30._metadata, SRPAerodynamicT30._set_solar_radius_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_solar_radius_metadata, inVal)
 
     _property_names[atmos_altitude] = "atmos_altitude"
     _property_names[shadow_model] = "shadow_model"
@@ -37708,9 +37708,9 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SRPAerodynamicT30."""
+        """Construct an object of type SRPAerospaceT30."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAerodynamicT30)
+        initialize_from_source_object(self, sourceObject, SRPAerospaceT30)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37722,10 +37722,10 @@ class SRPAerodynamicT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SRPAerodynamicT30, [SRPAerodynamicT30, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, SRPAerospaceT30, [SRPAerospaceT30, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5064742270983407105, 17229057075486729390), SRPAerodynamicT30)
-agcls.AgTypeNameMap["SRPAerodynamicT30"] = SRPAerodynamicT30
+agcls.AgClassCatalog.add_catalog_entry((5064742270983407105, 17229057075486729390), SRPAerospaceT30)
+agcls.AgTypeNameMap["SRPAerospaceT30"] = SRPAerospaceT30
 
 class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIA."""

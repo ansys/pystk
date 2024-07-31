@@ -1384,7 +1384,7 @@ class EarlyBoundTests(TestBase):
         exportHelper = ExportDataFileHelper(IStkObject(ac), TestBase.Application)
         exportHelper.AttitudeExportTool(ac.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(ac.export_tools.get_ephemeris_stk_export_tool(), False)
-        exportHelper.PropDefExportTool(ac.export_tools.get_propulsion_definition_export_tool())
+        exportHelper.PropDefExportTool(ac.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(ac.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "ExportAc")

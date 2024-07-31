@@ -214,7 +214,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region PropDefExportTool
-    def PropDefExportTool(self, dataFile: "VehiclePropulsionDefinitionExportTool"):
+    def PropDefExportTool(self, dataFile: "VehiclePropagationDefinitionExportTool"):
         dataFile.export(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
         self._root.execute_command(
             (
@@ -3874,12 +3874,12 @@ class PropagatorHPOPHelper(object):
                 (
                     (
                         (
-                            ((eModel == SRP_MODEL.GPS_BLKIIA_AERODYNAMIC_T20))
+                            ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T20))
                             or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A))
                         )
                         or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_AE))
                     )
-                    or ((eModel == SRP_MODEL.GPS_BLKIIR_AERODYNAMIC_T30))
+                    or ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T30))
                 )
                 or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_A))
             ) or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_AE)):

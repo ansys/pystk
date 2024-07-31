@@ -1,13 +1,13 @@
-VehiclePropulsionDefinitionExportTool
-=====================================
+VehiclePropagationDefinitionExportTool
+======================================
 
-.. py:class:: ansys.stk.core.stkobjects.VehiclePropulsionDefinitionExportTool
+.. py:class:: ansys.stk.core.stkobjects.VehiclePropagationDefinitionExportTool
 
    Bases: 
 
    AgVeExternalFileAttitude Class.
 
-.. py:currentmodule:: VehiclePropulsionDefinitionExportTool
+.. py:currentmodule:: VehiclePropagationDefinitionExportTool
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePropulsionDefinitionExportTool.export`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePropagationDefinitionExportTool.export`
               - Export the Propagator (Prop Def) file.
 
 
@@ -30,7 +30,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import VehiclePropulsionDefinitionExportTool
+    from ansys.stk.core.stkobjects import VehiclePropagationDefinitionExportTool
 
 
 
@@ -38,7 +38,7 @@ Method detail
 -------------
 
 .. py:method:: export(self, fileName: str) -> None
-    :canonical: ansys.stk.core.stkobjects.VehiclePropulsionDefinitionExportTool.export
+    :canonical: ansys.stk.core.stkobjects.VehiclePropagationDefinitionExportTool.export
 
     Export the Propagator (Prop Def) file.
 

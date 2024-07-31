@@ -2206,7 +2206,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool`
               - AgVeExternalFileAttitude Class.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropulsionDefinitionExportTool`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagationDefinitionExportTool`
               - AgVeExternalFileAttitude Class.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleCoordinateAxesCustom`
@@ -5898,7 +5898,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      VehicleEphemerisSpiceExportTool<stkobjects/VehicleEphemerisSpiceExportTool>
      ExportToolTimePeriod<stkobjects/ExportToolTimePeriod>
      VehicleAttitudeExportTool<stkobjects/VehicleAttitudeExportTool>
-     VehiclePropulsionDefinitionExportTool<stkobjects/VehiclePropulsionDefinitionExportTool>
+     VehiclePropagationDefinitionExportTool<stkobjects/VehiclePropagationDefinitionExportTool>
      VehicleCoordinateAxesCustom<stkobjects/VehicleCoordinateAxesCustom>
      ExportToolStepSize<stkobjects/ExportToolStepSize>
      PctCmpltEventArgs<stkobjects/PctCmpltEventArgs>

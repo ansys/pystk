@@ -535,7 +535,7 @@ Overview
             * - :py:attr:`~FREE_SPACE_LOSS`
               - Free Space Loss constraint. Use IAgAccessCnstrMinMax.
 
-            * - :py:attr:`~PROPULSION_LOSS`
+            * - :py:attr:`~PROPAGATION_LOSS`
               - Propagation Loss constraint. Use IAgAccessCnstrMinMax.
 
             * - :py:attr:`~TOTAL_PWR_AT_RCVR_INPUT`
