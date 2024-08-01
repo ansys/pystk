@@ -65,19 +65,19 @@ Property detail
 
 .. py:property:: segment_properties
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties
-    :type: IScriptingSegmentCollection
+    :type: ScriptingSegmentCollection
 
     Returns the collection of the segment properties.
 
 .. py:property:: calc_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.calc_objects
-    :type: IScriptingCalcObjectCollection
+    :type: ScriptingCalcObjectCollection
 
     Returns the collection of the calc objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters
-    :type: IScriptingParameterCollection
+    :type: ScriptingParameterCollection
 
     Returns the collection of parameters.
 

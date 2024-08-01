@@ -3,8 +3,6 @@ SensorEOIRBandCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRBandCollection
 
-   Bases: 
-
    Class defining the band collection for an EOIR Sensor.
 
 .. py:currentmodule:: SensorEOIRBandCollection

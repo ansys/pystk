@@ -3,8 +3,6 @@ TransferFunctionPolynomialCollection
 
 .. py:class:: ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection
 
-   Bases: 
-
    Class defining a collection of polynomial coefficients.
 
 .. py:currentmodule:: TransferFunctionPolynomialCollection

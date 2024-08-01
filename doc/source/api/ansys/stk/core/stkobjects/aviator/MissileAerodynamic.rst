@@ -3,8 +3,6 @@ MissileAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileAerodynamic
 
-   Bases: 
-
    Class defining the aerodynamic options for a missile.
 
 .. py:currentmodule:: MissileAerodynamic
@@ -50,19 +48,19 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_simple
-    :type: IMissileSimpleAerodynamic
+    :type: MissileSimpleAerodynamic
 
     Get the interface for a simple aerodynamics strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_external
-    :type: IMissileExternalAerodynamic
+    :type: MissileExternalAerodynamic
 
     Get the interface for an external file aerodynamics strategy.
 
 .. py:property:: mode_as_advanced
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_advanced
-    :type: IMissileAdvancedAerodynamic
+    :type: MissileAdvancedAerodynamic
 
     Get the interface for an advanced aerodynamics strategy.
 

@@ -3,8 +3,6 @@ LinkMargin
 
 .. py:class:: ansys.stk.core.stkobjects.LinkMargin
 
-   Bases: 
-
    Class defining a link margin computation object.
 
 .. py:currentmodule:: LinkMargin

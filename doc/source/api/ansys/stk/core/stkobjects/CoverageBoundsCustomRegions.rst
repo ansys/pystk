@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: region_files
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.region_files
-    :type: ICoverageRegionFilesCollection
+    :type: CoverageRegionFilesCollection
 
     File containing user-defined points defining a specific grid region.
 
 .. py:property:: area_targets
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.area_targets
-    :type: ICoverageAreaTargetsCollection
+    :type: CoverageAreaTargetsCollection
 
     Area target to be used as part of the coverage area.
 

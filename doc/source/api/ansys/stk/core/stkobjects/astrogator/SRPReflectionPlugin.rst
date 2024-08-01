@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.eclipsing_bodies
-    :type: ICentralBodyCollection
+    :type: CentralBodyCollection
 
     Other eclipsing bodies.
 

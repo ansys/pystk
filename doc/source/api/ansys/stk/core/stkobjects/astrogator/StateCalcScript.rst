@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: calc_arguments
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments
-    :type: ICalcObjectCollection
+    :type: CalcObjectCollection
 
     Get the arguments to be applied to the function.
 
@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: calc_arguments_link_embed
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments_link_embed
-    :type: ICalcObjectLinkEmbedControlCollection
+    :type: CalcObjectLinkEmbedControlCollection
 
     Get the arguments to be applied to the function.
 

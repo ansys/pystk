@@ -3,8 +3,6 @@ IAntennaContour
 
 .. py:class:: ansys.stk.core.stkobjects.IAntennaContour
 
-   object
-   
    IAgAntennaContour Interface for a antenna's contour properties.
 
 .. py:currentmodule:: IAntennaContour
@@ -117,7 +115,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.levels
-    :type: IAntennaContourLevelCollection
+    :type: AntennaContourLevelCollection
 
     Gets the collection of contour levels.
 

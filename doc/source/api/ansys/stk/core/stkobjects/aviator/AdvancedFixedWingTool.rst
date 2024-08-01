@@ -3,8 +3,6 @@ AdvancedFixedWingTool
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool
 
-   Bases: 
-
    Class defining the options for the Advanced Fixed Wing Tool of an aircraft.
 
 .. py:currentmodule:: AdvancedFixedWingTool
@@ -175,25 +173,25 @@ Property detail
 
 .. py:property:: aerodynamic_mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_external
-    :type: IAdvancedFixedWingExternalAerodynamic
+    :type: AdvancedFixedWingExternalAerodynamic
 
     Get the interface for an Extern File Aerodynamics strategy.
 
 .. py:property:: aerodynamic_mode_as_subsonic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_subsonic
-    :type: IAdvancedFixedWingSubsonicAerodynamic
+    :type: AdvancedFixedWingSubsonicAerodynamic
 
     Get the interface for a Subsonic Aerodynamics strategy.
 
 .. py:property:: aerodynamic_mode_as_sub_super_hypersonic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_sub_super_hypersonic
-    :type: IAdvancedFixedWingSubSuperHypersonicAerodynamic
+    :type: AdvancedFixedWingSubSuperHypersonicAerodynamic
 
     Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy.
 
 .. py:property:: aerodynamic_mode_as_supersonic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_supersonic
-    :type: IAdvancedFixedWingSupersonicAerodynamic
+    :type: AdvancedFixedWingSupersonicAerodynamic
 
     Get the interface for a Supersonic Aerodynamics strategy.
 
@@ -205,49 +203,49 @@ Property detail
 
 .. py:property:: powerplant_mode_as_electric
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_electric
-    :type: IAdvancedFixedWingElectricPowerplant
+    :type: AdvancedFixedWingElectricPowerplant
 
     Get the interface for an Electric Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_external
-    :type: IAdvancedFixedWingExternalPropulsion
+    :type: AdvancedFixedWingExternalPropulsion
 
     Get the interface for an External Prop File Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_piston
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_piston
-    :type: IAdvancedFixedWingPistonPowerplant
+    :type: AdvancedFixedWingPistonPowerplant
 
     Get the interface for a Piston Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_turboprop
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_turboprop
-    :type: IAdvancedFixedWingTurbopropPowerplant
+    :type: AdvancedFixedWingTurbopropPowerplant
 
     Get the interface for a Turboprop Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_empirical_jet_engine
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_empirical_jet_engine
-    :type: IAdvancedFixedWingEmpiricalJetEngine
+    :type: AdvancedFixedWingEmpiricalJetEngine
 
     Get the interface for an Empirical Jet Engine Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_basic_turbofan
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_basic_turbofan
-    :type: IAdvancedFixedWingTurbofanBasicABPropulsion
+    :type: AdvancedFixedWingTurbofanBasicABPropulsion
 
     Get the interface for a Turbofan - Basic w/ AB Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_basic_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_basic_turbojet
-    :type: IAdvancedFixedWingTurbojetBasicABPropulsion
+    :type: AdvancedFixedWingTurbojetBasicABPropulsion
 
     Get the interface for a Turbojet - Basic w/ AB Powerplant strategy.
 
 .. py:property:: powerplant_mode_as_sub_super_hypersonic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_sub_super_hypersonic
-    :type: IAdvancedFixedWingSubSuperHypersonicPropulsion
+    :type: AdvancedFixedWingSubSuperHypersonicPropulsion
 
     Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
 

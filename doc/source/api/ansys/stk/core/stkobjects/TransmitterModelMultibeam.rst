@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.post_transmit_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMultibeam.antenna_system
-    :type: IAntennaSystem
+    :type: AntennaSystem
 
     Gets the antenna system.
 

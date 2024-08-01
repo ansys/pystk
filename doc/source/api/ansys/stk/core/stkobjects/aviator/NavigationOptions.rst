@@ -3,8 +3,6 @@ NavigationOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.NavigationOptions
 
-   Bases: 
-
    Class defining the navigation options in a procedure.
 
 .. py:currentmodule:: NavigationOptions

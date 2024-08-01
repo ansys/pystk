@@ -3,8 +3,6 @@ SceneCollection
 
 .. py:class:: ansys.stk.core.graphics.SceneCollection
 
-   Bases: 
-
    A collection of scenes.
 
 .. py:currentmodule:: SceneCollection

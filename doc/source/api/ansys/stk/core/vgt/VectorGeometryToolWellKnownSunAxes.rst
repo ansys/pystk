@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownSunAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes
 
-   Bases: 
-
    Well-known Sun's axes.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownSunAxes

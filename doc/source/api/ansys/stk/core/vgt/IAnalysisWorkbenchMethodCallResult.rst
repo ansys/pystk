@@ -3,8 +3,6 @@ IAnalysisWorkbenchMethodCallResult
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult
 
-   object
-   
    Instances of the interface are used to return the result of a computation.
 
 .. py:currentmodule:: IAnalysisWorkbenchMethodCallResult

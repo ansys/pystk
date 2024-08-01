@@ -3,8 +3,6 @@ Phase
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Phase
 
-   Bases: 
-
    Class defining a phase in an Aviator mission.
 
 .. py:currentmodule:: Phase
@@ -55,7 +53,7 @@ Property detail
 
 .. py:property:: procedures
     :canonical: ansys.stk.core.stkobjects.aviator.Phase.procedures
-    :type: IProcedureCollection
+    :type: ProcedureCollection
 
     Returns the procedure collection.
 

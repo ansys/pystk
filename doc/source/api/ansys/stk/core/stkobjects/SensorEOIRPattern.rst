@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: bands
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.bands
-    :type: ISensorEOIRBandCollection
+    :type: SensorEOIRBandCollection
 
     Get the collection of Bands for the sensor.
 

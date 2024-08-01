@@ -3,8 +3,6 @@ IScreenOverlayCollectionBase
 
 .. py:class:: ansys.stk.core.graphics.IScreenOverlayCollectionBase
 
-   object
-   
    The common base class for collections of overlays held by screen overlay and by screen overlay manager.
 
 .. py:currentmodule:: IScreenOverlayCollectionBase

@@ -3,8 +3,6 @@ PathCollection
 
 .. py:class:: ansys.stk.core.stkobjects.PathCollection
 
-   Bases: 
-
    Allow adding and removing of paths.
 
 .. py:currentmodule:: PathCollection

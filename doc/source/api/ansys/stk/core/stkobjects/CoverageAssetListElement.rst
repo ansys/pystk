@@ -3,8 +3,6 @@ CoverageAssetListElement
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAssetListElement
 
-   Bases: 
-
    Coverage asset.
 
 .. py:currentmodule:: CoverageAssetListElement
@@ -75,7 +73,7 @@ Property detail
 
 .. py:property:: sub_asset_list
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.sub_asset_list
-    :type: ICoverageAssetListCollection
+    :type: CoverageAssetListCollection
 
     Returns the sub assets for this asset.
 

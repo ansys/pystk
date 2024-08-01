@@ -3,8 +3,6 @@ IVectorGeometryToolAngleFindWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult
 
-   object
-   
    Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
 
 .. py:currentmodule:: IVectorGeometryToolAngleFindWithRateResult

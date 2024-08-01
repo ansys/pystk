@@ -3,8 +3,6 @@ ScenarioGenDatabase
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioGenDatabase
 
-   Bases: 
-
    Class defining database settings of the Scenario.
 
 .. py:currentmodule:: ScenarioGenDatabase

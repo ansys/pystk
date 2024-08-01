@@ -46,25 +46,25 @@ Property detail
 
 .. py:property:: points
     :canonical: ansys.stk.core.stkobjects.LineTarget.points
-    :type: ILineTargetPointCollection
+    :type: LineTargetPointCollection
 
     Get the points table, which displays a summary of the latitude and longitude values for each point, and indicates which point is currently defined as the anchor point.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.LineTarget.graphics
-    :type: ILineTargetGraphics
+    :type: LineTargetGraphics
 
     Returns the 2D graphics properties of the line target.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.LineTarget.graphics_3d
-    :type: ILineTargetGraphics3D
+    :type: LineTargetGraphics3D
 
     Returns the 3D graphics properties of the line target.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.LineTarget.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Returns the constraints for the line target.
 

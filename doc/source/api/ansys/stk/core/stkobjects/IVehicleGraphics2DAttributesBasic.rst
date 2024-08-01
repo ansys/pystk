@@ -3,8 +3,8 @@ IVehicleGraphics2DAttributesBasic
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic
 
-   IVehicleGraphics2DAttributes
-   
+   Bases: IVehicleGraphics2DAttributes
+
    Basic 2D Graphics Attributes for a vehicle.
 
 .. py:currentmodule:: IVehicleGraphics2DAttributesBasic
@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.line
-    :type: IVehicleGraphics2DLine
+    :type: VehicleGraphics2DLine
 
     Get the line display properties for the vehicle.
 

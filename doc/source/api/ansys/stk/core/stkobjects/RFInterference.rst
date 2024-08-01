@@ -3,8 +3,6 @@ RFInterference
 
 .. py:class:: ansys.stk.core.stkobjects.RFInterference
 
-   Bases: 
-
    Class defining radar jamming.
 
 .. py:currentmodule:: RFInterference
@@ -54,7 +52,7 @@ Property detail
 
 .. py:property:: emitters
     :canonical: ansys.stk.core.stkobjects.RFInterference.emitters
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the interference emitters collection.
 

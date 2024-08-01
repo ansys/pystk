@@ -3,8 +3,6 @@ CalculationToolConditionGroup
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionGroup
 
-   Bases: 
-
    Access or create VGT conditions associated with an object or a central body.
 
 .. py:currentmodule:: CalculationToolConditionGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup.factory
-    :type: ICalculationToolConditionFactory
+    :type: CalculationToolConditionFactory
 
     Returns a factory object used to create calc scalar components.
 

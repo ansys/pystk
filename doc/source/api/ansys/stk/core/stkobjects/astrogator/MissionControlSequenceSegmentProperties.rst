@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: b_planes
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentProperties.b_planes
-    :type: IBPlaneCollection
+    :type: BPlaneCollection
 
     Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition.
 

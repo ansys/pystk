@@ -3,8 +3,6 @@ LandingInterceptGlideslope
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.LandingInterceptGlideslope
 
-   Bases: 
-
    Class defining the intercept glideslope options for a landing procedure.
 
 .. py:currentmodule:: LandingInterceptGlideslope

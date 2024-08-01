@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateGeodetic.coordinate_system
-    :type: IOrbitStateCoordinateSystem
+    :type: OrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch. Note that with the Fixed coordinate system (required for the Geodetic coordinate type), the coordinate epoch is preset.
 

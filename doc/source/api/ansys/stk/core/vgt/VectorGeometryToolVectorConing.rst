@@ -50,13 +50,13 @@ Property detail
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.about_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a vector around which the the reference vector is revolved.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 

@@ -3,8 +3,6 @@ CoverageGraphics2DAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation
 
-   Bases: 
-
    2D animation graphics options for the coverage grid.
 
 .. py:currentmodule:: CoverageGraphics2DAnimation

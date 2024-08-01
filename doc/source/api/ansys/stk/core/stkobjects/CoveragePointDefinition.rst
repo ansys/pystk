@@ -3,8 +3,6 @@ CoveragePointDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.CoveragePointDefinition
 
-   Bases: 
-
    Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
 .. py:currentmodule:: CoveragePointDefinition
@@ -75,7 +73,7 @@ Property detail
 
 .. py:property:: point_file_list
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.point_file_list
-    :type: ICoveragePointFileListCollection
+    :type: CoveragePointFileListCollection
 
     List of point file locations.
 

@@ -3,8 +3,6 @@ PlanetGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.PlanetGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Planet.
 
 .. py:currentmodule:: PlanetGraphics3D

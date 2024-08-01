@@ -3,8 +3,6 @@ SensorTargetCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorTargetCollection
 
-   Bases: 
-
    Class defining the target collection for a target-pointing Sensor.
 
 .. py:currentmodule:: SensorTargetCollection

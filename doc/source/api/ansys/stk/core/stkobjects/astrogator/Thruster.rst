@@ -3,8 +3,6 @@ Thruster
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.Thruster
 
-   Bases: 
-
    Thruster definition.
 
 .. py:currentmodule:: Thruster

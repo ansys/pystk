@@ -3,8 +3,6 @@ MissilePropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissilePropulsion
 
-   Bases: 
-
    Class defining the propulsion options for a missile.
 
 .. py:currentmodule:: MissilePropulsion
@@ -54,31 +52,31 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple
-    :type: IMissileSimplePropulsion
+    :type: MissileSimplePropulsion
 
     Get the interface for a simple propulsion strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_external
-    :type: IMissileExternalPropulsion
+    :type: MissileExternalPropulsion
 
     Get the interface for an external file propulsion strategy.
 
 .. py:property:: mode_as_ramjet
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_ramjet
-    :type: IMissileRamjetPropulsion
+    :type: MissileRamjetPropulsion
 
     Get the interface for an Ramjet propulsion strategy.
 
 .. py:property:: mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_turbojet
-    :type: IMissileTurbojetPropulsion
+    :type: MissileTurbojetPropulsion
 
     Get the interface for an Turbojet propulsion strategy.
 
 .. py:property:: mode_as_rocket
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_rocket
-    :type: IMissileRocketPropulsion
+    :type: MissileRocketPropulsion
 
     Get the interface for an Rocket propulsion strategy.
 

@@ -3,8 +3,6 @@ DataProviderResultTimeArrayElements
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements
 
-   Bases: 
-
    Provide a array result of element values for each time array value.
 
 .. py:currentmodule:: DataProviderResultTimeArrayElements

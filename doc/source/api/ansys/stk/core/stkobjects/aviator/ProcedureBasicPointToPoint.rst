@@ -55,19 +55,19 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.altitude_options
-    :type: IAltitudeOptions
+    :type: AltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.navigation_options
-    :type: INavigationOptions
+    :type: NavigationOptions
 
     Get the navigation options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicPointToPoint.vertical_plane_options
-    :type: IVerticalPlaneAndFlightPathOptions
+    :type: VerticalPlaneAndFlightPathOptions
 
     Get the vertical plane options.
 

@@ -3,8 +3,6 @@ VectorGeometryToolSystemGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemGroup
 
-   Bases: 
-
    Access or create VGT systems associated with an object or a central body.
 
 .. py:currentmodule:: VectorGeometryToolSystemGroup
@@ -75,7 +73,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.factory
-    :type: IVectorGeometryToolSystemFactory
+    :type: VectorGeometryToolSystemFactory
 
     Returns a Factory object used to create custom VGT systems.
 
@@ -87,7 +85,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.common_tasks
-    :type: IVectorGeometryToolSystemCommonTasks
+    :type: VectorGeometryToolSystemCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
 

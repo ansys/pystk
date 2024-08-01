@@ -3,8 +3,6 @@ STKXApplicationPartnerAccess
 
 .. py:class:: ansys.stk.core.stkx.STKXApplicationPartnerAccess
 
-   Bases: 
-
    STK X Application Partner Access object.
 
 .. py:currentmodule:: STKXApplicationPartnerAccess

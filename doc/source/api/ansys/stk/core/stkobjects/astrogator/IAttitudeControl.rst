@@ -3,8 +3,6 @@ IAttitudeControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControl
 
-   object
-   
    Properties for attitude options for a maneuver segment.
 
 .. py:currentmodule:: IAttitudeControl

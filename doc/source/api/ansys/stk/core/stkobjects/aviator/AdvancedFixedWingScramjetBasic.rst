@@ -3,8 +3,6 @@ AdvancedFixedWingScramjetBasic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingScramjetBasic
 
-   Bases: 
-
    Class defining the basic Scramjet model.
 
 .. py:currentmodule:: AdvancedFixedWingScramjetBasic
@@ -90,19 +88,19 @@ Property detail
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingScramjetBasic.fuel_mode_as_afprop
-    :type: IFuelModelKeroseneAFPROP
+    :type: FuelModelKeroseneAFPROP
 
     Get the interface for a Kerosene - AFPROP fuel mode.
 
 .. py:property:: fuel_mode_as_cea
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingScramjetBasic.fuel_mode_as_cea
-    :type: IFuelModelKeroseneCEA
+    :type: FuelModelKeroseneCEA
 
     Get the interface for a Kerosene - CEA fuel mode.
 
 .. py:property:: efficiencies_and_losses
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingScramjetBasic.efficiencies_and_losses
-    :type: IPropulsionEfficiencies
+    :type: PropulsionEfficiencies
 
     Get the jet engine's propulsion efficiencies and losses.
 

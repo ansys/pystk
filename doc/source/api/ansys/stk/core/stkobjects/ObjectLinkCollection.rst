@@ -3,8 +3,6 @@ ObjectLinkCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ObjectLinkCollection
 
-   Bases: 
-
    Collection of names of STK objects that are available in the current Scenario.
 
 .. py:currentmodule:: ObjectLinkCollection

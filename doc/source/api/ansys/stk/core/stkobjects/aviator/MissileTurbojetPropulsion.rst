@@ -3,8 +3,6 @@ MissileTurbojetPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileTurbojetPropulsion
 
-   Bases: 
-
    Class defining the Turbojet propulsion options for a missile.
 
 .. py:currentmodule:: MissileTurbojetPropulsion

@@ -3,8 +3,6 @@ Graphics3DVector
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DVector
 
-   Bases: 
-
    Class defining 3D vectors.
 
 .. py:currentmodule:: Graphics3DVector
@@ -44,7 +42,7 @@ Property detail
 
 .. py:property:: reference_crdns
     :canonical: ansys.stk.core.stkobjects.Graphics3DVector.reference_crdns
-    :type: IGraphics3DReferenceAnalysisWorkbenchCollection
+    :type: Graphics3DReferenceAnalysisWorkbenchCollection
 
     Gets a collection that manages the 3D VGT visualizations.
 

@@ -3,8 +3,6 @@ AtmosphereModelBasic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic
 
-   Bases: 
-
    Class defining the basic atmosphere model.
 
 .. py:currentmodule:: AtmosphereModelBasic

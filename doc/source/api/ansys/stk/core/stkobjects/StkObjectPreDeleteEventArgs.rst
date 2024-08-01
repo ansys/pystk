@@ -3,8 +3,6 @@ StkObjectPreDeleteEventArgs
 
 .. py:class:: ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs
 
-   Bases: 
-
    Arguments for the OnStkObjectPreDelete event.
 
 .. py:currentmodule:: StkObjectPreDeleteEventArgs

@@ -3,8 +3,6 @@ IVectorGeometryToolPoint
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPoint
 
-   object
-   
    The interface defines methods and properties common to all points.
 
 .. py:currentmodule:: IVectorGeometryToolPoint

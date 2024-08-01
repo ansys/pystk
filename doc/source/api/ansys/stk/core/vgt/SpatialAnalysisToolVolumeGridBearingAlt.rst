@@ -56,19 +56,19 @@ Property detail
 
 .. py:property:: along_bearing_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridBearingAlt.along_bearing_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns AlongBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: cross_bearing_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridBearingAlt.cross_bearing_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns CrossBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: altitude_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridBearingAlt.altitude_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns altitude Coordinates parameters for the surface bearing.
 

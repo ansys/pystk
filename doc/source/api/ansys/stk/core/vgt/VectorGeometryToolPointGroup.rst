@@ -3,8 +3,6 @@ VectorGeometryToolPointGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGroup
 
-   Bases: 
-
    Access or create VGT points associated with an object or a central body.
 
 .. py:currentmodule:: VectorGeometryToolPointGroup
@@ -75,7 +73,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.factory
-    :type: IVectorGeometryToolPointFactory
+    :type: VectorGeometryToolPointFactory
 
     Returns a Factory object used to create custom points.
 
@@ -87,7 +85,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.common_tasks
-    :type: IVectorGeometryToolPointCommonTasks
+    :type: VectorGeometryToolPointCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
 

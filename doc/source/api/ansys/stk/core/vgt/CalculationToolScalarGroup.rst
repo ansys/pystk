@@ -3,8 +3,6 @@ CalculationToolScalarGroup
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarGroup
 
-   Bases: 
-
    Access or create VGT calculation scalars associated with an object or a central body.
 
 .. py:currentmodule:: CalculationToolScalarGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolScalarGroup.factory
-    :type: ICalculationToolScalarFactory
+    :type: CalculationToolScalarFactory
 
     Returns a factory object used to create calc scalar components.
 

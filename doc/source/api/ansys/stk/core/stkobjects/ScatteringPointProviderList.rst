@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: point_providers
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderList.point_providers
-    :type: IScatteringPointProviderCollection
+    :type: ScatteringPointProviderCollection
 
     Gets the scattering point provider list collection.
 

@@ -3,8 +3,6 @@ CRComplexCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CRComplexCollection
 
-   Bases: 
-
    Class defining a collection of complex numbers.
 
 .. py:currentmodule:: CRComplexCollection

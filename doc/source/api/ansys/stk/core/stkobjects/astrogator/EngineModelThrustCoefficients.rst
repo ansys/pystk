@@ -3,8 +3,6 @@ EngineModelThrustCoefficients
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients
 
-   Bases: 
-
    Engine Model Thrust Coefficients.
 
 .. py:currentmodule:: EngineModelThrustCoefficients

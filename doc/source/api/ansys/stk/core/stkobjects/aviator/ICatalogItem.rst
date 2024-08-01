@@ -3,8 +3,6 @@ ICatalogItem
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogItem
 
-   object
-   
    Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog.
 
 .. py:currentmodule:: ICatalogItem

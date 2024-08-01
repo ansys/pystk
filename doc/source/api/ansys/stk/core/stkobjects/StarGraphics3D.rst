@@ -3,8 +3,6 @@ StarGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.StarGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Star.
 
 .. py:currentmodule:: StarGraphics3D

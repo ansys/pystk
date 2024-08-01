@@ -3,8 +3,6 @@ ModelArticulation
 
 .. py:class:: ansys.stk.core.graphics.ModelArticulation
 
-   Bases: 
-
    A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
 
 .. py:currentmodule:: ModelArticulation

@@ -3,8 +3,6 @@ SensorTarget
 
 .. py:class:: ansys.stk.core.stkobjects.SensorTarget
 
-   Bases: 
-
    Class defining a Sensor target.
 
 .. py:currentmodule:: SensorTarget

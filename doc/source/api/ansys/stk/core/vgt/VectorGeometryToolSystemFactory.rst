@@ -3,8 +3,6 @@ VectorGeometryToolSystemFactory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemFactory
 
-   Bases: 
-
    A Factory class to create VGT systems.
 
 .. py:currentmodule:: VectorGeometryToolSystemFactory

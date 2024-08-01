@@ -3,8 +3,6 @@ RunwayCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RunwayCategory
 
-   Bases: 
-
    Class defining the runway category in the Aviator catalog.
 
 .. py:currentmodule:: RunwayCategory
@@ -42,19 +40,19 @@ Property detail
 
 .. py:property:: user_runways
     :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.user_runways
-    :type: IUserRunwaySource
+    :type: UserRunwaySource
 
     Get the user runways.
 
 .. py:property:: arinc424_runways
     :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.arinc424_runways
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 runways.
 
 .. py:property:: dafif_runways
     :canonical: ansys.stk.core.stkobjects.aviator.RunwayCategory.dafif_runways
-    :type: IDAFIFSource
+    :type: DAFIFSource
 
     Get the DAFIF runways.
 

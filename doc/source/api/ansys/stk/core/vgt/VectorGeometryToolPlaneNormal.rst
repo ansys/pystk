@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal.normal_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a Normal vector.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal.reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal.reference_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a reference point.
 

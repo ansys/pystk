@@ -3,8 +3,6 @@ BisectionControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionControlCollection
 
-   Bases: 
-
    Bisection control collection.
 
 .. py:currentmodule:: BisectionControlCollection

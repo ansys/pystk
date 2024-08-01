@@ -3,8 +3,6 @@ IOrientationPositionOffset
 
 .. py:class:: ansys.stk.core.stkutil.IOrientationPositionOffset
 
-   object
-   
    Interface for defining the orientation origin position offset relative to the parent object.
 
 .. py:currentmodule:: IOrientationPositionOffset

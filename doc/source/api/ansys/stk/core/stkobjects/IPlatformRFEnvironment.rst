@@ -3,8 +3,6 @@ IPlatformRFEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.IPlatformRFEnvironment
 
-   object
-   
    Provide access to the properties and methods defining the platform RF environment.
 
 .. py:currentmodule:: IPlatformRFEnvironment
@@ -69,7 +67,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.propagation_channel
-    :type: IPropagationChannel
+    :type: PropagationChannel
 
     Gets the propagation channel.
 

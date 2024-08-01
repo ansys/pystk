@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics.elev_contours
-    :type: IVehicleGraphics2DElevContours
+    :type: VehicleGraphics2DElevContours
 
     Get the aircraft's 2D elevation contour graphics.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics.swath
-    :type: IVehicleGraphics2DSwath
+    :type: VehicleGraphics2DSwath
 
     Get the aircraft's 2D swath graphics.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

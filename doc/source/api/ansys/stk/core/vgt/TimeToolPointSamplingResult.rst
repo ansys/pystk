@@ -3,8 +3,6 @@ TimeToolPointSamplingResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolPointSamplingResult
 
-   Bases: 
-
    Contains tabulated positions and velocities of a point created by Sample method.
 
 .. py:currentmodule:: TimeToolPointSamplingResult
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.TimeToolPointSamplingResult.intervals
-    :type: ITimeToolPointSamplingIntervalCollection
+    :type: TimeToolPointSamplingIntervalCollection
 
     A collection of sampling intervals.
 

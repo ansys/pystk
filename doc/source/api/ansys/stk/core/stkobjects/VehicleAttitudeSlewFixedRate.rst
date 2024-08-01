@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: maximum_slew_rate
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedRate.maximum_slew_rate
-    :type: IVehicleAttitudeMaximumSlewRate
+    :type: VehicleAttitudeMaximumSlewRate
 
     Configure how to constrain the slew rate.
 

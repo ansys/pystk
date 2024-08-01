@@ -3,8 +3,6 @@ CoverageAreaTargetsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection
 
-   Bases: 
-
    Collection of Area Targets.
 
 .. py:currentmodule:: CoverageAreaTargetsCollection

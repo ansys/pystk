@@ -3,8 +3,6 @@ CustomPropagationModel
 
 .. py:class:: ansys.stk.core.stkobjects.CustomPropagationModel
 
-   Bases: 
-
    Class defining a custom propatation model.
 
 .. py:currentmodule:: CustomPropagationModel

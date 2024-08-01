@@ -3,8 +3,6 @@ VehicleGraphics3DBPlanes
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes
 
-   Bases: 
-
    3D BPlanes properties.
 
 .. py:currentmodule:: VehicleGraphics3DBPlanes
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: templates
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.templates
-    :type: IVehicleGraphics3DBPlaneTemplatesCollection
+    :type: VehicleGraphics3DBPlaneTemplatesCollection
 
     Returns the 3D BPlane templates collection.
 
 .. py:property:: instances
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanes.instances
-    :type: IVehicleGraphics3DBPlaneInstancesCollection
+    :type: VehicleGraphics3DBPlaneInstancesCollection
 
     Returns the 3D BPlane Instance collection.
 

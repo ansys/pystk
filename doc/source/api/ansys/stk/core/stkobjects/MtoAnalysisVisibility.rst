@@ -3,8 +3,6 @@ MtoAnalysisVisibility
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisVisibility
 
-   Bases: 
-
    MTO Visibility Computation.
 
 .. py:currentmodule:: MtoAnalysisVisibility

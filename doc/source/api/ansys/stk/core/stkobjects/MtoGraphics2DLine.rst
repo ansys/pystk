@@ -3,8 +3,6 @@ MtoGraphics2DLine
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DLine
 
-   Bases: 
-
    MTO track line display options.
 
 .. py:currentmodule:: MtoGraphics2DLine

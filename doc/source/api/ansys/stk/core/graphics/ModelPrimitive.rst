@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: articulations
     :canonical: ansys.stk.core.graphics.ModelPrimitive.articulations
-    :type: IModelArticulationCollection
+    :type: ModelArticulationCollection
 
     Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 

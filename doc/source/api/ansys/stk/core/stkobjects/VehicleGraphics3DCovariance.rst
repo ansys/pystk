@@ -3,8 +3,6 @@ VehicleGraphics3DCovariance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance
 
-   Bases: 
-
    3D position covariance ellipsoids.
 
 .. py:currentmodule:: VehicleGraphics3DCovariance

@@ -3,8 +3,6 @@ AircraftTerrainFollowModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel
 
-   Bases: 
-
    Class defining the TerrainFollow performance model of an aircraft.
 
 .. py:currentmodule:: AircraftTerrainFollowModel

@@ -3,8 +3,6 @@ CalculationToolConditionFactory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionFactory
 
-   Bases: 
-
    The factory creates condition components.
 
 .. py:currentmodule:: CalculationToolConditionFactory

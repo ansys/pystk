@@ -3,8 +3,6 @@ MissileRamjetPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileRamjetPropulsion
 
-   Bases: 
-
    Class defining the Ramjet propulsion options for a missile.
 
 .. py:currentmodule:: MissileRamjetPropulsion

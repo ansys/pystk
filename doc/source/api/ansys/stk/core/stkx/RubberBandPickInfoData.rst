@@ -3,8 +3,6 @@ RubberBandPickInfoData
 
 .. py:class:: ansys.stk.core.stkx.RubberBandPickInfoData
 
-   Bases: 
-
    Rubber-band mouse pick result.
 
 .. py:currentmodule:: RubberBandPickInfoData
@@ -38,7 +36,7 @@ Property detail
 
 .. py:property:: obj_paths
     :canonical: ansys.stk.core.stkx.RubberBandPickInfoData.obj_paths
-    :type: IObjPathCollection
+    :type: ObjPathCollection
 
     List of object paths selected.
 

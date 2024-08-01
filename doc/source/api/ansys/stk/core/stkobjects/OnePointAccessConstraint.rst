@@ -3,8 +3,6 @@ OnePointAccessConstraint
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccessConstraint
 
-   Bases: 
-
    One Point Access Result.
 
 .. py:currentmodule:: OnePointAccessConstraint

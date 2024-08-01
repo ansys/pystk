@@ -3,8 +3,6 @@ ICalculationToolSamplingMethod
 
 .. py:class:: ansys.stk.core.vgt.ICalculationToolSamplingMethod
 
-   object
-   
    A sampling method.
 
 .. py:currentmodule:: ICalculationToolSamplingMethod

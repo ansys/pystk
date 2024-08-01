@@ -3,8 +3,6 @@ DesignER3BPObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DesignER3BPObjectCollection
 
-   Bases: 
-
    ER3BP associated object Collection.
 
 .. py:currentmodule:: DesignER3BPObjectCollection

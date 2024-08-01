@@ -3,8 +3,6 @@ IAntennaModelOpticalSimple
 
 .. py:class:: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple
 
-   object
-   
    Provide access to the properties and methods defining a simple optical antenna model.
 
 .. py:currentmodule:: IAntennaModelOpticalSimple

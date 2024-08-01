@@ -3,8 +3,6 @@ WindModelADDS
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.WindModelADDS
 
-   Bases: 
-
    Class defining a wind model using the NOAA ADDS service for a mission.
 
 .. py:currentmodule:: WindModelADDS
@@ -95,7 +93,7 @@ Property detail
 
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.messages
-    :type: IADDSMessageCollection
+    :type: ADDSMessageCollection
 
     Get the messages from the current forecast.
 

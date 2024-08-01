@@ -3,8 +3,6 @@ ISolarActivityConfiguration
 
 .. py:class:: ansys.stk.core.stkobjects.ISolarActivityConfiguration
 
-   object
-   
    Provide access to the properties and methods defining the solar activity configuration.
 
 .. py:currentmodule:: ISolarActivityConfiguration

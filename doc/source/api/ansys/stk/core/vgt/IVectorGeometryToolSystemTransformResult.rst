@@ -3,8 +3,6 @@ IVectorGeometryToolSystemTransformResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult
 
-   object
-   
    Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
 
 .. py:currentmodule:: IVectorGeometryToolSystemTransformResult

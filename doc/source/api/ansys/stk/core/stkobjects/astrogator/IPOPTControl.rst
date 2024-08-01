@@ -3,8 +3,6 @@ IPOPTControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTControl
 
-   Bases: 
-
    Control parameters for IPOPT optimizer profile.
 
 .. py:currentmodule:: IPOPTControl

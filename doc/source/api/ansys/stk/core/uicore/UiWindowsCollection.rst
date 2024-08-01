@@ -3,8 +3,6 @@ UiWindowsCollection
 
 .. py:class:: ansys.stk.core.uicore.UiWindowsCollection
 
-   Bases: 
-
    Provide methods and properties to manage the windows.
 
 .. py:currentmodule:: UiWindowsCollection

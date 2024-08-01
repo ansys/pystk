@@ -3,8 +3,6 @@ RadarWaveformSearchTrackPulseDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition
 
-   Bases: 
-
    Class defining the pulse definition for a search track waveform.
 
 .. py:currentmodule:: RadarWaveformSearchTrackPulseDefinition

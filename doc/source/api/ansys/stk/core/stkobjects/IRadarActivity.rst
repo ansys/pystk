@@ -3,8 +3,6 @@ IRadarActivity
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarActivity
 
-   object
-   
    Provide access to the properties and methods defining radar activity.
 
 .. py:currentmodule:: IRadarActivity

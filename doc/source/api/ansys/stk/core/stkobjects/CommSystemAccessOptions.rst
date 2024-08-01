@@ -3,8 +3,6 @@ CommSystemAccessOptions
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemAccessOptions
 
-   Bases: 
-
    Class defining a CommSystem access options.
 
 .. py:currentmodule:: CommSystemAccessOptions

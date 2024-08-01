@@ -3,8 +3,6 @@ UserVariable
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariable
 
-   Bases: 
-
    User Variable.
 
 .. py:currentmodule:: UserVariable

@@ -3,8 +3,6 @@ Graphics2DRangeContours
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics2DRangeContours
 
-   Bases: 
-
    Class defining 2D Graphics range contours: circles comprised of points at a given distance from an object and at the same altitude as that object.
 
 .. py:currentmodule:: Graphics2DRangeContours
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes
-    :type: ILevelAttributeCollection
+    :type: LevelAttributeCollection
 
     The collection of level attributes defining the way in which the range contours are displayed.
 

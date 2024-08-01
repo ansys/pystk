@@ -3,8 +3,6 @@ MissileRocketPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileRocketPropulsion
 
-   Bases: 
-
    Class defining the Rocket propulsion options for a missile.
 
 .. py:currentmodule:: MissileRocketPropulsion

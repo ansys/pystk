@@ -3,8 +3,6 @@ ScenSpaceEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.ScenSpaceEnvironment
 
-   Bases: 
-
    SpaceEnvironment settings.
 
 .. py:currentmodule:: ScenSpaceEnvironment
@@ -49,13 +47,13 @@ Property detail
 
 .. py:property:: radiation_environment
     :canonical: ansys.stk.core.stkobjects.ScenSpaceEnvironment.radiation_environment
-    :type: ISpaceEnvironmentRadiationEnvironment
+    :type: SpaceEnvironmentRadiationEnvironment
 
     Gets the radiation environment settings.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ScenSpaceEnvironment.graphics_3d
-    :type: ISpaceEnvironmentScenarioExtGraphics3D
+    :type: SpaceEnvironmentScenarioExtGraphics3D
 
     Gets the 3D Graphics settings.
 

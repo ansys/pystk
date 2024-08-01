@@ -3,8 +3,6 @@ IAutomationStrategyFactory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory
 
-   object
-   
    Interface used to send connect commands to Aviator objects.
 
 .. py:currentmodule:: IAutomationStrategyFactory

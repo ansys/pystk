@@ -3,8 +3,6 @@ ILocationData
 
 .. py:class:: ansys.stk.core.stkutil.ILocationData
 
-   object
-   
    Base interface IAgLocationData. IAgPosition derives from this interface.
 
 .. py:currentmodule:: ILocationData

@@ -3,8 +3,6 @@ IDirectionProvider
 
 .. py:class:: ansys.stk.core.stkobjects.IDirectionProvider
 
-   object
-   
    Provide access to the properties and methods defining an direction provider.
 
 .. py:currentmodule:: IDirectionProvider

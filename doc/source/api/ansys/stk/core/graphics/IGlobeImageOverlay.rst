@@ -3,8 +3,6 @@ IGlobeImageOverlay
 
 .. py:class:: ansys.stk.core.graphics.IGlobeImageOverlay
 
-   object
-   
    A globe overlay that shows an image.
 
 .. py:currentmodule:: IGlobeImageOverlay

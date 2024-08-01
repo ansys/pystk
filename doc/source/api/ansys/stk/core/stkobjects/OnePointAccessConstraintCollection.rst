@@ -3,8 +3,6 @@ OnePointAccessConstraintCollection
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccessConstraintCollection
 
-   Bases: 
-
    Represents the access constraints for the one point access computation.
 
 .. py:currentmodule:: OnePointAccessConstraintCollection

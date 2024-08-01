@@ -3,8 +3,6 @@ MtoGraphics3DDropLines
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DDropLines
 
-   Bases: 
-
    MTO droplines.
 
 .. py:currentmodule:: MtoGraphics3DDropLines
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DDropLines.position
-    :type: IVehicleGraphics3DDropLinePositionItemCollection
+    :type: VehicleGraphics3DDropLinePositionItemCollection
 
     Get a list of droplines from the MTO's current positions.
 
 .. py:property:: ephemeris
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DDropLines.ephemeris
-    :type: IVehicleGraphics3DDropLinePathItemCollection
+    :type: VehicleGraphics3DDropLinePathItemCollection
 
     Get a list of droplines at intervals along the MTO's ephemeris.
 

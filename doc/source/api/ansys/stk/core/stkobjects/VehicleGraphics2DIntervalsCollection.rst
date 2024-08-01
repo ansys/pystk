@@ -3,8 +3,6 @@ VehicleGraphics2DIntervalsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DIntervalsCollection
 
-   Bases: 
-
    Custom Intervals Graphics List.
 
 .. py:currentmodule:: VehicleGraphics2DIntervalsCollection

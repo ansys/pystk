@@ -3,8 +3,6 @@ VehicleAttitudeTargetSlew
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew
 
-   Bases: 
-
    Define the time required for a vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 
 .. py:currentmodule:: VehicleAttitudeTargetSlew

@@ -3,8 +3,6 @@ VehicleEclipseBodies
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEclipseBodies
 
-   Bases: 
-
    Satellite Eclipse Bodies, for defining the eclipse central body list used for lighting computations.
 
 .. py:currentmodule:: VehicleEclipseBodies

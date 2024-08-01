@@ -3,8 +3,6 @@ IUiApplicationPartnerAccess
 
 .. py:class:: ansys.stk.core.uiapplication.IUiApplicationPartnerAccess
 
-   object
-   
    Access to the application object model for business partners.
 
 .. py:currentmodule:: IUiApplicationPartnerAccess

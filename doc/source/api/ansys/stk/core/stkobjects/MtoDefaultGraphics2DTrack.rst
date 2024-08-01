@@ -3,8 +3,6 @@ MtoDefaultGraphics2DTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack
 
-   Bases: 
-
    2D graphics attributes for default MTO tracks.
 
 .. py:currentmodule:: MtoDefaultGraphics2DTrack
@@ -78,31 +76,31 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack.marker
-    :type: IMtoGraphics2DMarker
+    :type: MtoGraphics2DMarker
 
     Get the display properties for the track marker.
 
 .. py:property:: line
     :canonical: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack.line
-    :type: IMtoGraphics2DLine
+    :type: MtoGraphics2DLine
 
     Get the display properties for the track line.
 
 .. py:property:: fade_times
     :canonical: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack.fade_times
-    :type: IMtoGraphics2DFadeTimes
+    :type: MtoGraphics2DFadeTimes
 
     Get the fade times data.
 
 .. py:property:: lead_trail_times
     :canonical: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack.lead_trail_times
-    :type: IMtoGraphics2DLeadTrailTimes
+    :type: MtoGraphics2DLeadTrailTimes
 
     Get the lead/trail times data.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.MtoDefaultGraphics2DTrack.range_contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     Get the MTO's 2D range contour graphics.
 

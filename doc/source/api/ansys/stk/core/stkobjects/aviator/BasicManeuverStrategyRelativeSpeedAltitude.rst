@@ -213,7 +213,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_vel_strategies
-    :type: IBasicManeuverTargetPositionVel
+    :type: BasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Rel Speed Alt.
 

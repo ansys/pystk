@@ -3,8 +3,6 @@ AircraftExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.AircraftExportTools
 
-   Bases: 
-
    The Aircraft Export Tools.
 
 .. py:currentmodule:: AircraftExportTools

@@ -3,8 +3,6 @@ MissileExternalPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileExternalPropulsion
 
-   Bases: 
-
    Class defining the External propulsion options for a missile.
 
 .. py:currentmodule:: MissileExternalPropulsion

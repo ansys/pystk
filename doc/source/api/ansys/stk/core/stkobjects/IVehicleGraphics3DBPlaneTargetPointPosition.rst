@@ -3,8 +3,6 @@ IVehicleGraphics3DBPlaneTargetPointPosition
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DBPlaneTargetPointPosition
 
-   object
-   
    A base class for BPlane target point position interfaces.
 
 .. py:currentmodule:: IVehicleGraphics3DBPlaneTargetPointPosition

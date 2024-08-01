@@ -3,8 +3,6 @@ VolumetricGraphics3DCrossSectionPlane
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DCrossSectionPlane
 
-   Bases: 
-
    Class defining cross-section plane for volumetric grid.
 
 .. py:currentmodule:: VolumetricGraphics3DCrossSectionPlane

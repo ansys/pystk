@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSar.pulse_definition
-    :type: IRadarWaveformSarPulseDefinition
+    :type: RadarWaveformSarPulseDefinition
 
     Gets the interface for configuring the SAR waveform pulse definition.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSar.modulator
-    :type: IRadarModulator
+    :type: RadarModulator
 
     Gets the interface for setting the modulator parameters.
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.RadarModeMonostaticSar.pulse_integration
-    :type: IRadarWaveformSarPulseIntegration
+    :type: RadarWaveformSarPulseIntegration
 
     Gets the interface for configuring the SAR waveform pulse integration.
 

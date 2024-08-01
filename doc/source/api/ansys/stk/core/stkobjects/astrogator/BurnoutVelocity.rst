@@ -3,8 +3,6 @@ BurnoutVelocity
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity
 
-   Bases: 
-
    The burnout velocity.
 
 .. py:currentmodule:: BurnoutVelocity

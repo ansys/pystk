@@ -3,8 +3,6 @@ RotorcraftPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftPropulsion
 
-   Bases: 
-
    Class defining the propulsion options for a rotorcraft.
 
 .. py:currentmodule:: RotorcraftPropulsion

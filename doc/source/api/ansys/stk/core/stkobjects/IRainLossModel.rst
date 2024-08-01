@@ -3,8 +3,6 @@ IRainLossModel
 
 .. py:class:: ansys.stk.core.stkobjects.IRainLossModel
 
-   object
-   
    Provide access to the properties and methods a rain loss model.
 
 .. py:currentmodule:: IRainLossModel

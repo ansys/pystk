@@ -3,8 +3,6 @@ IDAFIFItem
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IDAFIFItem
 
-   object
-   
    Interface used to access the options for an DAFIF Item found in the Aviator catalog.
 
 .. py:currentmodule:: IDAFIFItem

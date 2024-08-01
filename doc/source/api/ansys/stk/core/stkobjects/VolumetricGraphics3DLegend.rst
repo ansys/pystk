@@ -3,8 +3,6 @@ VolumetricGraphics3DLegend
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend
 
-   Bases: 
-
    Class defining Boundary/Fill legend for volumetric object.
 
 .. py:currentmodule:: VolumetricGraphics3DLegend

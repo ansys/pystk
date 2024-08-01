@@ -3,8 +3,6 @@ Graphics3DModelArtic
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelArtic
 
-   Bases: 
-
    Class defining 3D model articulations.
 
 .. py:currentmodule:: Graphics3DModelArtic
@@ -93,7 +91,7 @@ Property detail
 
 .. py:property:: graphics_3d_articulation_file
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelArtic.graphics_3d_articulation_file
-    :type: IGraphics3DArticulationFile
+    :type: Graphics3DArticulationFile
 
     Interface to specify articulation file.
 

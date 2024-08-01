@@ -3,8 +3,6 @@ VehicleJxInitialState
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleJxInitialState
 
-   Bases: 
-
    Class defining initial state for the J2/4 propagators.
 
 .. py:currentmodule:: VehicleJxInitialState

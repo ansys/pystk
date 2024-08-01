@@ -3,8 +3,6 @@ PropertyInfo
 
 .. py:class:: ansys.stk.core.stkutil.PropertyInfo
 
-   Bases: 
-
    Property Information coclass.
 
 .. py:currentmodule:: PropertyInfo

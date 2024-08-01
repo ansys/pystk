@@ -3,8 +3,6 @@ PropagationChannel
 
 .. py:class:: ansys.stk.core.stkobjects.PropagationChannel
 
-   Bases: 
-
    Class defining the propagation channel.
 
 .. py:currentmodule:: PropagationChannel
@@ -135,19 +133,19 @@ Property detail
 
 .. py:property:: custom_a
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.custom_a
-    :type: ICustomPropagationModel
+    :type: CustomPropagationModel
 
     Gets the Custom A propagation model.
 
 .. py:property:: custom_b
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.custom_b
-    :type: ICustomPropagationModel
+    :type: CustomPropagationModel
 
     Gets the Custom B propagation model.
 
 .. py:property:: custom_c
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.custom_c
-    :type: ICustomPropagationModel
+    :type: CustomPropagationModel
 
     Gets the Custom C propagation model.
 

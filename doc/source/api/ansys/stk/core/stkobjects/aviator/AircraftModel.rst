@@ -73,61 +73,61 @@ Property detail
 
 .. py:property:: acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.acceleration
-    :type: IAircraftAcceleration
+    :type: AircraftAcceleration
 
     Get the acceleration interface.
 
 .. py:property:: climb
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.climb
-    :type: IAircraftClimb
+    :type: AircraftClimb
 
     Get the climb interface.
 
 .. py:property:: cruise
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.cruise
-    :type: IAircraftCruise
+    :type: AircraftCruise
 
     Get the cruise interface.
 
 .. py:property:: descent
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.descent
-    :type: IAircraftDescent
+    :type: AircraftDescent
 
     Get the descent interface.
 
 .. py:property:: landing
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.landing
-    :type: IAircraftLanding
+    :type: AircraftLanding
 
     Get the landing interface.
 
 .. py:property:: takeoff
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.takeoff
-    :type: IAircraftTakeoff
+    :type: AircraftTakeoff
 
     Get the takeoff interface.
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.default_configuration
-    :type: IConfiguration
+    :type: Configuration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: advanced_fixed_wing_tool
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.advanced_fixed_wing_tool
-    :type: IAdvancedFixedWingTool
+    :type: AdvancedFixedWingTool
 
     Get the Advanced Fixed Wing Tool for the aircraft.
 
 .. py:property:: vtol
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.vtol
-    :type: IAircraftVTOL
+    :type: AircraftVTOL
 
     Get the VTOL interface.
 
 .. py:property:: terrain_follow
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.terrain_follow
-    :type: IAircraftTerrainFollow
+    :type: AircraftTerrainFollow
 
     Get the TerrainFollow interface.
 

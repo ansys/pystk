@@ -3,8 +3,6 @@ CRLocation
 
 .. py:class:: ansys.stk.core.stkobjects.CRLocation
 
-   Bases: 
-
    Class defining a location.
 
 .. py:currentmodule:: CRLocation

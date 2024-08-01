@@ -87,13 +87,13 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: delay_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the delay cruise airspeed options.
 

@@ -3,8 +3,6 @@ VehicleSGP4Segment
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4Segment
 
-   Bases: 
-
    SGP4 propagator segment.
 
 .. py:currentmodule:: VehicleSGP4Segment

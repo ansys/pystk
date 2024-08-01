@@ -3,8 +3,6 @@ IRadarPulseIntegration
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarPulseIntegration
 
-   object
-   
    Interface which defines an integration method.
 
 .. py:currentmodule:: IRadarPulseIntegration

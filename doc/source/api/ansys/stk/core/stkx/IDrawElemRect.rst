@@ -3,8 +3,8 @@ IDrawElemRect
 
 .. py:class:: ansys.stk.core.stkx.IDrawElemRect
 
-   IDrawElem
-   
+   Bases: IDrawElem
+
    Define a rectangle in control coordinates.
 
 .. py:currentmodule:: IDrawElemRect

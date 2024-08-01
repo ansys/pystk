@@ -3,8 +3,6 @@ VehicleGraphics3DDropLinePathItemCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection
 
-   Bases: 
-
    Collection of drop lines from the vehicle's orbit or trajectory.
 
 .. py:currentmodule:: VehicleGraphics3DDropLinePathItemCollection

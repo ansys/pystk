@@ -3,8 +3,6 @@ TakeoffLowTransition
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.TakeoffLowTransition
 
-   Bases: 
-
    Class defining the low transition options for a takeoff procedure.
 
 .. py:currentmodule:: TakeoffLowTransition

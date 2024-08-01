@@ -3,8 +3,6 @@ GraphicsFont
 
 .. py:class:: ansys.stk.core.graphics.GraphicsFont
 
-   Bases: 
-
    A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
 
 .. py:currentmodule:: GraphicsFont

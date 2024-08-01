@@ -3,8 +3,6 @@ KmlFeatureCollection
 
 .. py:class:: ansys.stk.core.graphics.KmlFeatureCollection
 
-   Bases: 
-
    A collection of KML features.
 
 .. py:currentmodule:: KmlFeatureCollection

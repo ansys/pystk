@@ -3,8 +3,6 @@ PathPoint
 
 .. py:class:: ansys.stk.core.graphics.PathPoint
 
-   Bases: 
-
    Represents a path point used in conjunction with the Path Primitive.
 
 .. py:currentmodule:: PathPoint

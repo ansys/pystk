@@ -3,8 +3,6 @@ DrawElemLine
 
 .. py:class:: ansys.stk.core.stkx.DrawElemLine
 
-   Bases: 
-
    Define a line in window coordinates.
 
 .. py:currentmodule:: DrawElemLine

@@ -3,8 +3,6 @@ IRadarClutterGeometryModel
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarClutterGeometryModel
 
-   object
-   
    Do not use this interface, as it is deprecated. Use IAgScatteringPointProvider interface instead. Provides access to the properties and methods defining a radar clutter geometry model.
 
 .. py:currentmodule:: IRadarClutterGeometryModel

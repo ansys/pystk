@@ -3,8 +3,6 @@ RunwayHeadingOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RunwayHeadingOptions
 
-   Bases: 
-
    Class defining the runway heading options in a takeoff or landing procedure.
 
 .. py:currentmodule:: RunwayHeadingOptions

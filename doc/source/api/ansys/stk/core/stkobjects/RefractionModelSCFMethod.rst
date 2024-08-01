@@ -3,8 +3,6 @@ RefractionModelSCFMethod
 
 .. py:class:: ansys.stk.core.stkobjects.RefractionModelSCFMethod
 
-   Bases: 
-
    SCF Method.
 
 .. py:currentmodule:: RefractionModelSCFMethod
@@ -94,7 +92,7 @@ Property detail
 
 .. py:property:: coefficients
     :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.coefficients
-    :type: IRefractionCoefficients
+    :type: RefractionCoefficients
 
     Gets the polynomial coefficients.
 

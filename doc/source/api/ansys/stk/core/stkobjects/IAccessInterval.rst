@@ -3,8 +3,6 @@ IAccessInterval
 
 .. py:class:: ansys.stk.core.stkobjects.IAccessInterval
 
-   object
-   
    Base interface for IAgTimePeriod and IAgIntervalCollection.
 
 .. py:currentmodule:: IAccessInterval

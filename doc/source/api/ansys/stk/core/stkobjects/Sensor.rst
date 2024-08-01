@@ -153,13 +153,13 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Sensor.graphics
-    :type: ISensorGraphics
+    :type: SensorGraphics
 
     Get the 2D Graphics properties for the sensor.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Sensor.graphics_3d
-    :type: ISensorGraphics3D
+    :type: SensorGraphics3D
 
     Get the 3D Graphics properties for the sensor.
 
@@ -177,13 +177,13 @@ Property detail
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Sensor.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get constraints imposed on the sensor.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.Sensor.swath
-    :type: ISwath
+    :type: Swath
 
     Get the sensor's swath.
 
@@ -207,7 +207,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.Sensor.common_tasks
-    :type: ISensorCommonTasks
+    :type: SensorCommonTasks
 
     Returns an interface that exposes common tasks.
 

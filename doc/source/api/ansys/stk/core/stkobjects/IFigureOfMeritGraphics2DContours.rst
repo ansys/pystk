@@ -3,8 +3,6 @@ IFigureOfMeritGraphics2DContours
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours
 
-   object
-   
    Coverage contours.
 
 .. py:currentmodule:: IFigureOfMeritGraphics2DContours
@@ -75,19 +73,19 @@ Property detail
 
 .. py:property:: ramp_color
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.ramp_color
-    :type: IFigureOfMeritGraphics2DRampColor
+    :type: FigureOfMeritGraphics2DRampColor
 
     Color ramp colors.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.level_attributes
-    :type: IFigureOfMeritGraphics2DLevelAttributesCollection
+    :type: FigureOfMeritGraphics2DLevelAttributesCollection
 
     Contour level display properties.
 
 .. py:property:: legend
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DContours.legend
-    :type: IFigureOfMeritGraphics2DLegend
+    :type: FigureOfMeritGraphics2DLegend
 
     Contour legend.
 

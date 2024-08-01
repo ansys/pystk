@@ -3,8 +3,6 @@ EOIRMaterialElement
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRMaterialElement
 
-   Bases: 
-
    AgEOIRMaterialElement class.
 
 .. py:currentmodule:: EOIRMaterialElement

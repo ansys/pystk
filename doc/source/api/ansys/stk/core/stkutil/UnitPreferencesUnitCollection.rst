@@ -3,8 +3,6 @@ UnitPreferencesUnitCollection
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnitCollection
 
-   Bases: 
-
    Object that contains a collection of IAgUnitPrefsUnit.
 
 .. py:currentmodule:: UnitPreferencesUnitCollection

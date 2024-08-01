@@ -3,8 +3,6 @@ IRadarCrossSectionComputeStrategy
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy
 
-   object
-   
    Provide access to the properties and methods defining a radar cross section compute Strategy.
 
 .. py:currentmodule:: IRadarCrossSectionComputeStrategy

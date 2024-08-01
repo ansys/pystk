@@ -3,8 +3,6 @@ IFigureOfMeritGraphics2DAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes
 
-   object
-   
    Figure of Merit 2D graphics properties.
 
 .. py:currentmodule:: IFigureOfMeritGraphics2DAttributes

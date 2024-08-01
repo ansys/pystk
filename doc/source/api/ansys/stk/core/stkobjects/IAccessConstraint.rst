@@ -3,8 +3,6 @@ IAccessConstraint
 
 .. py:class:: ansys.stk.core.stkobjects.IAccessConstraint
 
-   object
-   
    AgAccessConstraint used to access the AccessConstraint attributes.
 
 .. py:currentmodule:: IAccessConstraint

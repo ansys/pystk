@@ -3,8 +3,6 @@ VehicleHPOPSRPModel
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPSRPModel
 
-   Bases: 
-
    SRP Model Base CoClass.
 
 .. py:currentmodule:: VehicleHPOPSRPModel

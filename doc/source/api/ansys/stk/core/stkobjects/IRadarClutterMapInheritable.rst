@@ -3,8 +3,6 @@ IRadarClutterMapInheritable
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarClutterMapInheritable
 
-   object
-   
    Do not use this interface, as it is deprecated. This interface is no longer used and there is no alternative. Provides access to the properties and methods defining a radar inheritable clutter map.
 
 .. py:currentmodule:: IRadarClutterMapInheritable

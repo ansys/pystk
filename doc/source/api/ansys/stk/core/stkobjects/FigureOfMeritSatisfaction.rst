@@ -3,8 +3,6 @@ FigureOfMeritSatisfaction
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction
 
-   Bases: 
-
    Satisfaction properties for a Figure of Merit.
 
 .. py:currentmodule:: FigureOfMeritSatisfaction

@@ -3,8 +3,6 @@ VehiclePropagatorGPS
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorGPS
 
-   Bases: 
-
    GPS propagator.
 
 .. py:currentmodule:: VehiclePropagatorGPS
@@ -83,13 +81,13 @@ Property detail
 
 .. py:property:: auto_update
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorGPS.auto_update
-    :type: IVehicleGPSAutoUpdate
+    :type: VehicleGPSAutoUpdate
 
     Allows configuring the auto-update parameters and settings. AutoUpdateEnabled must be set to true in order to be able to change the auto-update properties.
 
 .. py:property:: specify_catalog
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorGPS.specify_catalog
-    :type: IVehicleGPSSpecifyAlmanac
+    :type: VehicleGPSSpecifyAlmanac
 
     Specify a catalog. AutoUpdateEnabled must be set to false in order to select an almanac.
 
