@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain.granularity`
               - Defines the distance between sampling points along a vehicle route, used when waypoint altitudes are referenced to terrain. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain.interp_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain.interpolation_method`
               - Gets or sets the terrain interpolation method to be used to define the height of the vehicle with respect to terrain data.
 
 
@@ -44,9 +44,9 @@ Property detail
 
     Defines the distance between sampling points along a vehicle route, used when waypoint altitudes are referenced to terrain. Uses Distance Dimension.
 
-.. py:property:: interp_method
-    :canonical: ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain.interp_method
-    :type: VEHICLE_WAYPOINT_INTERP_METHOD
+.. py:property:: interpolation_method
+    :canonical: ansys.stk.core.stkobjects.VehicleWaypointAltitudeReferenceTerrain.interpolation_method
+    :type: VEHICLE_WAYPOINT_INTERPOLATION_METHOD
 
     Gets or sets the terrain interpolation method to be used to define the height of the vehicle with respect to terrain data.
 

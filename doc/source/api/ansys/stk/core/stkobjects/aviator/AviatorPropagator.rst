@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.avtr_mission`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission`
               - Get the Aviator mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.auto_recalculate`
               - Opt whether to have the propagator auto recalculate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.avtr_catalog`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_catalog`
               - Get the Aviator catalog.
 
 
@@ -49,8 +49,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: avtr_mission
-    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.avtr_mission
+.. py:property:: aviator_mission
+    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission
     :type: IMission
 
     Get the Aviator mission.
@@ -61,8 +61,8 @@ Property detail
 
     Opt whether to have the propagator auto recalculate.
 
-.. py:property:: avtr_catalog
-    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.avtr_catalog
+.. py:property:: aviator_catalog
+    :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_catalog
     :type: ICatalog
 
     Get the Aviator catalog.

@@ -19,7 +19,7 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNavigation`
               - Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABProfile`
@@ -55,7 +55,7 @@ Aerospace Toolbox functions to define the force modeling of the aircraft.
     :maxdepth: 1
     :hidden:
 
-     StrategyMATLABNav<matlab/StrategyMATLABNav>
+     StrategyMATLABNavigation<matlab/StrategyMATLABNavigation>
      StrategyMATLABProfile<matlab/StrategyMATLABProfile>
      StrategyMATLABFull3D<matlab/StrategyMATLABFull3D>
      StrategyMATLAB3DGuidance<matlab/StrategyMATLAB3DGuidance>

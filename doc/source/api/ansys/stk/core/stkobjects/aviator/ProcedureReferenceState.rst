@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: performance_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode
-    :type: REFERENCE_STATE_PERF_MODE
+    :type: REFERENCE_STATE_PERFORMANCE_MODE
 
     Gets or sets the type of motion the aircraft is engaged in.
 

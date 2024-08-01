@@ -699,7 +699,7 @@ class EarlyBoundTests(TestBase):
         exportHelper = ExportDataFileHelper(IStkObject(ms), TestBase.Application)
         exportHelper.AttitudeExportTool(ms.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(ms.export_tools.get_ephemeris_stk_export_tool(), False)
-        exportHelper.PropDefExportTool(ms.export_tools.get_prop_definition_export_tool())
+        exportHelper.PropDefExportTool(ms.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(ms.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "ExportMs")

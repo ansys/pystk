@@ -26,9 +26,9 @@ Overview
               - Set whether to enable and a value for the minimum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_max_absolute_altitude`
               - Set whether to enable and a value for the maximum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_min_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_min_altitude_relative_anchor`
               - Set whether to enable and a value for the minimum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_max_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_max_altitude_relative_anchor`
               - Set whether to enable and a value for the maximum altitude offset from the target.
 
     .. tab-item:: Properties
@@ -57,15 +57,15 @@ Overview
               - Get the maximum absolute altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_max_absolute_altitude`
               - Get the option to specify a maximum absolute altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.min_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.min_altitude_relative_anchor`
               - Get the minimum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_min_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_min_altitude_relative_anchor`
               - Get the option to specify a minimum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.max_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.max_altitude_relative_anchor`
               - Get the maximum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_max_altitude_rel_anchor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_max_altitude_relative_anchor`
               - Get the option to specify a maximum altitude offset from the target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
@@ -141,32 +141,32 @@ Property detail
 
     Get the option to specify a maximum absolute altitude.
 
-.. py:property:: min_altitude_rel_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.min_altitude_rel_anchor
+.. py:property:: min_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.min_altitude_relative_anchor
     :type: float
 
     Get the minimum altitude offset from the target.
 
-.. py:property:: use_min_altitude_rel_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_min_altitude_rel_anchor
+.. py:property:: use_min_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_min_altitude_relative_anchor
     :type: bool
 
     Get the option to specify a minimum altitude offset from the target.
 
-.. py:property:: max_altitude_rel_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.max_altitude_rel_anchor
+.. py:property:: max_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.max_altitude_relative_anchor
     :type: float
 
     Get the maximum altitude offset from the target.
 
-.. py:property:: use_max_altitude_rel_anchor
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_max_altitude_rel_anchor
+.. py:property:: use_max_altitude_relative_anchor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.use_max_altitude_relative_anchor
     :type: bool
 
     Get the option to specify a maximum altitude offset from the target.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
@@ -232,8 +232,8 @@ Method detail
 
 
 
-.. py:method:: set_min_altitude_rel_anchor(self, enable: bool, altitude: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_min_altitude_rel_anchor
+.. py:method:: set_min_altitude_relative_anchor(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_min_altitude_relative_anchor
 
     Set whether to enable and a value for the minimum altitude offset from the target.
 
@@ -248,8 +248,8 @@ Method detail
 
 
 
-.. py:method:: set_max_altitude_rel_anchor(self, enable: bool, altitude: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_max_altitude_rel_anchor
+.. py:method:: set_max_altitude_relative_anchor(self, enable: bool, altitude: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA.set_max_altitude_relative_anchor
 
     Set whether to enable and a value for the maximum altitude offset from the target.
 

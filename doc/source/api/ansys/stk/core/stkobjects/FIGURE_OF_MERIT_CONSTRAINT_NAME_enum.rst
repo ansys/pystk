@@ -295,7 +295,7 @@ Overview
             * - :py:attr:`~INFRARED_DETECTION`
               - Infrared Detection constraint.
 
-            * - :py:attr:`~RDR_XMT_TGT_ACCESS`
+            * - :py:attr:`~RDR_XMT_TARGET_ACCESS`
               - Radar Xmt Target Access constraint.
 
             * - :py:attr:`~RDR_XMT_ACCESS`
@@ -322,10 +322,10 @@ Overview
             * - :py:attr:`~SRCH_TRK_CLEAR_DOPPLER`
               - Search-Track Clear Doppler constraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIG_RANGE`
+            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_RANGE`
               - Search-Track Unambiguous Range constraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIG_DOPPLER`
+            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_DOPPLER`
               - Search-Track Unambiguous Doppler constraint.
 
             * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_SNR_JAMMING`
@@ -478,7 +478,7 @@ Overview
             * - :py:attr:`~BIT_ERROR_RATE`
               - Bit Error Rate constraint.
 
-            * - :py:attr:`~POL_REL_ANGLE`
+            * - :py:attr:`~POL_RELATIVE_ANGLE`
               - Polarization Relative Angle constraint.
 
             * - :py:attr:`~COMM_PLUGIN`

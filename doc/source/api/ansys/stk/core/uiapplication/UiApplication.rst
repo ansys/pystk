@@ -38,7 +38,7 @@ Overview
               - Brings up the Directory Picker Dialog and returns a selected directory name.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.open_log_file`
               - Specify the current log file to be written to.
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.log_msg`
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.log_message`
               - Log the Message specified.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.create_application`
               - Create a new instance of the application model root object.
@@ -344,14 +344,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: log_msg(self, msgType: UI_LOG_MSG_TYPE, msg: str) -> None
-    :canonical: ansys.stk.core.uiapplication.UiApplication.log_msg
+.. py:method:: log_message(self, msgType: UI_LOG_MESSAGE_TYPE, msg: str) -> None
+    :canonical: ansys.stk.core.uiapplication.UiApplication.log_message
 
     Log the Message specified.
 
     :Parameters:
 
-    **msgType** : :obj:`~UI_LOG_MSG_TYPE`
+    **msgType** : :obj:`~UI_LOG_MESSAGE_TYPE`
     **msg** : :obj:`~str`
 
     :Returns:

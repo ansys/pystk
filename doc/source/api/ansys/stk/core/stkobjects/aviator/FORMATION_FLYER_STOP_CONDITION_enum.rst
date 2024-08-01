@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES`
               - Stop When Target PhaseOfFlight Changes.
 
-            * - :py:attr:`~FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES`
+            * - :py:attr:`~FORMATION_FLYER_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES`
               - Stop When Target PerfMode Changes.
 
 

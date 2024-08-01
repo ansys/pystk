@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.perf_model_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types`
               - Get the types of performance models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftModel.acceleration`
               - Get the acceleration interface.
@@ -65,8 +65,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: perf_model_types
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.perf_model_types
+.. py:property:: performance_model_types
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftModel.performance_model_types
     :type: list
 
     Get the types of performance models.

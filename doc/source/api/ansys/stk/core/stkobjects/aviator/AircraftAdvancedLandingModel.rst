@@ -43,7 +43,7 @@ Overview
               - Gets or sets the extension of the flaps during the landing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.speedbrakes`
               - Gets or sets the extension of the speedbrakes during the landing.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.braking_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.braking_deceleration_g`
               - Gets or sets the deceleration rate, in G, when braking.
 
 
@@ -89,8 +89,8 @@ Property detail
 
     Gets or sets the extension of the speedbrakes during the landing.
 
-.. py:property:: braking_decel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.braking_decel_g
+.. py:property:: braking_deceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.braking_deceleration_g
     :type: float
 
     Gets or sets the deceleration rate, in G, when braking.
