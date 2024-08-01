@@ -229,13 +229,13 @@ Property detail
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.aerodynamics
-    :type: IRotorcraftAero
+    :type: IRotorcraftAerodynamic
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.propulsion
-    :type: IRotorcraftProp
+    :type: IRotorcraftPropulsion
 
     Get the propulsion interface.
 

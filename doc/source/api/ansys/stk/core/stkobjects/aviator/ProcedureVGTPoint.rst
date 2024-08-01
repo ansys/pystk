@@ -47,7 +47,7 @@ Overview
               - Gets or sets the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.override_fuel_flow_value`
               - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.consider_accel_for_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.consider_acceleration_for_fuel_flow`
               - Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.flight_mode`
               - Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
@@ -121,8 +121,8 @@ Property detail
 
     Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
 
-.. py:property:: consider_accel_for_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.consider_accel_for_fuel_flow
+.. py:property:: consider_acceleration_for_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVGTPoint.consider_acceleration_for_fuel_flow
     :type: bool
 
     Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.

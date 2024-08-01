@@ -528,10 +528,10 @@ class EarlyBoundTests(TestBase):
         advanced.correlation_file = TestBase.PathCombine(SatDBDir, "stkRelatedObjects.rel")
         Assert.assertEqual("stkRelatedObjects.rel", advanced.correlation_file)
 
-        advanced.show_msg_in_msg_viewer = False
-        Assert.assertFalse(advanced.show_msg_in_msg_viewer)
-        advanced.show_msg_in_msg_viewer = True
-        Assert.assertTrue(advanced.show_msg_in_msg_viewer)
+        advanced.show_message_in_message_viewer = False
+        Assert.assertFalse(advanced.show_message_in_message_viewer)
+        advanced.show_message_in_message_viewer = True
+        Assert.assertTrue(advanced.show_message_in_message_viewer)
 
         advanced.force_repropagation_on_load = False
         Assert.assertFalse(advanced.force_repropagation_on_load)

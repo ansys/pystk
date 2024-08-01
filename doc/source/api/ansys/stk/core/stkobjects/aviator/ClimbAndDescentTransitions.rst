@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode
-    :type: ACCEL_MANEUVER_MODE
+    :type: ACCELERATION_MANEUVER_MODE
 
     Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper
-    :type: IAeroPropManeuverModeHelper
+    :type: IAerodynamicPropulsionManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 

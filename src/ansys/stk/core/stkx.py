@@ -42,7 +42,7 @@ keyboard and mouse interactions and modes.
 __all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
 "DrawElemLine", "DrawElemRect", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", "ExecMultiCmdResult", "FEATURE_CODES", 
 "GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDS", "IDrawElem", "IDrawElemCollection", "IDrawElemRect", "LINE_STYLE", 
-"LOGGING_MODE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", 
+"LOGGING_MODE", "LOG_MESSAGE_DISP_ID", "LOG_MESSAGE_TYPE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", 
 "PROGRESS_IMAGE_Y_ORIGIN", "PickInfoData", "RubberBandPickInfoData", "SHIFT_VALUES", "SHOW_PROGRESS_IMAGE", "STKXApplication", 
 "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", 
 "UiAxGraphics2DAnalysisCntrl", "UiAxGraphics3DCntrl", "WinProjectionPosition"]
@@ -70,7 +70,7 @@ from .stkutil import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class LOG_MSG_TYPE(IntEnum):
+class LOG_MESSAGE_TYPE(IntEnum):
     """Log message types."""
    
     DEBUG = 0
@@ -84,32 +84,32 @@ class LOG_MSG_TYPE(IntEnum):
     ALARM = 4
     """Alarm message."""
 
-LOG_MSG_TYPE.DEBUG.__doc__ = "Debugging message."
-LOG_MSG_TYPE.INFO.__doc__ = "Informational message."
-LOG_MSG_TYPE.FORCE_INFO.__doc__ = "Informational message."
-LOG_MSG_TYPE.WARNING.__doc__ = "Warning message."
-LOG_MSG_TYPE.ALARM.__doc__ = "Alarm message."
+LOG_MESSAGE_TYPE.DEBUG.__doc__ = "Debugging message."
+LOG_MESSAGE_TYPE.INFO.__doc__ = "Informational message."
+LOG_MESSAGE_TYPE.FORCE_INFO.__doc__ = "Informational message."
+LOG_MESSAGE_TYPE.WARNING.__doc__ = "Warning message."
+LOG_MESSAGE_TYPE.ALARM.__doc__ = "Alarm message."
 
-agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
+agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"] = LOG_MESSAGE_TYPE
 
-class LOG_MSG_DISP_ID(IntEnum):
+class LOG_MESSAGE_DISP_ID(IntEnum):
     """Log message destination options."""
    
     ALL = -1
     """STK displays the message in all the log destination."""
     DEFAULT = 0
     """STK displays the message in the default log destination."""
-    MSG_WIN = 1
+    MESSAGE_WIN = 1
     """STK displays the message in the message window."""
     STATUS_BAR = 2
     """STK displays the message in the status bar."""
 
-LOG_MSG_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
-LOG_MSG_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
-LOG_MSG_DISP_ID.MSG_WIN.__doc__ = "STK displays the message in the message window."
-LOG_MSG_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
+LOG_MESSAGE_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
+LOG_MESSAGE_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
+LOG_MESSAGE_DISP_ID.MESSAGE_WIN.__doc__ = "STK displays the message in the message window."
+LOG_MESSAGE_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
 
-agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
+agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"] = LOG_MESSAGE_DISP_ID
 
 class LINE_STYLE(IntEnum):
     """Line Style."""

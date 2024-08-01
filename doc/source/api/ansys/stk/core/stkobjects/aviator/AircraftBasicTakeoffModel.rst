@@ -43,11 +43,11 @@ Overview
               - Get the aircraft's speed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed_type`
               - Get the departure speed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aerodynamic_propulsion_fuel`
               - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.scale_fuel_flow_by_non_std_density`
               - Gets or sets whether to scale fuel flow by non std density.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.accel_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.acceleration_fuel_flow`
               - Gets or sets the aircraft's fuel flow rate while accelerating during takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_fuel_flow`
               - Gets or sets the aircraft's fuel flow rate at departure speed.
@@ -95,8 +95,8 @@ Property detail
 
     Get the departure speed type.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Gets or sets whether to use Aero/Propulsion fuel flow.
@@ -107,8 +107,8 @@ Property detail
 
     Gets or sets whether to scale fuel flow by non std density.
 
-.. py:property:: accel_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.accel_fuel_flow
+.. py:property:: acceleration_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.acceleration_fuel_flow
     :type: float
 
     Gets or sets the aircraft's fuel flow rate while accelerating during takeoff.

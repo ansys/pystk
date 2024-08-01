@@ -43,7 +43,7 @@ Overview
               - Gets or sets the maximum load factor the aircraft can withstand.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.max_speed_limits`
               - Gets or sets the options of what the procedure will do if the aircraft has exceeded the maximum speed limits.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.powered_cruise_mode`
               - Gets or sets the powered cruise mode.
@@ -101,12 +101,12 @@ Property detail
 
 .. py:property:: max_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.max_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
 
     Gets or sets the options of what the procedure will do if the aircraft has exceeded the maximum speed limits.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.

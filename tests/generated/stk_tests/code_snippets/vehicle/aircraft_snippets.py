@@ -76,7 +76,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
             propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
 
         propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 

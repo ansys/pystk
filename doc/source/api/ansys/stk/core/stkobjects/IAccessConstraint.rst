@@ -30,7 +30,7 @@ Overview
               - Property used to access the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_time_step`
               - Maximum time step used in adaptive sampling.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_rel_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.max_relative_motion`
               - Maximum relative motion used in adaptive sampling.
 
 
@@ -75,8 +75,8 @@ Property detail
 
     Maximum time step used in adaptive sampling.
 
-.. py:property:: max_rel_motion
-    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.max_rel_motion
+.. py:property:: max_relative_motion
+    :canonical: ansys.stk.core.stkobjects.IAccessConstraint.max_relative_motion
     :type: float
 
     Maximum relative motion used in adaptive sampling.

@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.airspeed_type`
               - Gets or sets the airspeed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.use_aerodynamic_propulsion_fuel`
               - Opt to use the fuel flow calculated by the acceleration performance model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.scale_fuel_flow_by_non_std_density`
               - Opt to scale the fuel flow by the aircraft's actual altitude.
@@ -34,7 +34,7 @@ Overview
               - Gets or sets the maximum range airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_airspeed`
               - Gets or sets the maximum airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_performance_airspeed`
               - Gets or sets the custom performance airspeed that can be used to model specific flight conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.min_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the minimum airspeed.
@@ -44,7 +44,7 @@ Overview
               - Gets or sets the fuel flow for the maximum range airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the maximum airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_perf_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_performance_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the maximum performance airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_pitch_angle`
               - Gets or sets the maximum pitch angle the aircraft will be allowed to use.
@@ -72,8 +72,8 @@ Property detail
 
     Gets or sets the airspeed type.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Opt to use the fuel flow calculated by the acceleration performance model.
@@ -108,8 +108,8 @@ Property detail
 
     Gets or sets the maximum airspeed.
 
-.. py:property:: max_perf_airspeed
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_perf_airspeed
+.. py:property:: max_performance_airspeed
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_performance_airspeed
     :type: float
 
     Gets or sets the custom performance airspeed that can be used to model specific flight conditions.
@@ -138,8 +138,8 @@ Property detail
 
     Gets or sets the fuel flow for the maximum airspeed.
 
-.. py:property:: max_perf_airspeed_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_perf_airspeed_fuel_flow
+.. py:property:: max_performance_airspeed_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftTerrainFollowModel.max_performance_airspeed_fuel_flow
     :type: float
 
     Gets or sets the fuel flow for the maximum performance airspeed.

@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAileronRoll.roll_rate_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for the aileron roll.
 

@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: region_access_acceleration
     :canonical: ansys.stk.core.stkobjects.CoverageAdvanced.region_access_acceleration
-    :type: COVERAGE_REGION_ACCESS_ACCEL
+    :type: COVERAGE_REGION_ACCESS_ACCELERATION
 
     Controls the use of region access computations to speedup overall coverage computations.
 

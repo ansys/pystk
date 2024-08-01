@@ -22,9 +22,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.EventDetectionSubSampling.time_convergence`
               - Time convergence value used in access computations. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.EventDetectionSubSampling.abs_value_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EventDetectionSubSampling.absolute_value_convergence`
               - Use absolute convergence value for access. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.EventDetectionSubSampling.rel_value_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EventDetectionSubSampling.relative_value_convergence`
               - Use relative convergence value for access. Dimensionless.
 
 
@@ -46,14 +46,14 @@ Property detail
 
     Time convergence value used in access computations. Uses Time Dimension.
 
-.. py:property:: abs_value_convergence
-    :canonical: ansys.stk.core.stkobjects.EventDetectionSubSampling.abs_value_convergence
+.. py:property:: absolute_value_convergence
+    :canonical: ansys.stk.core.stkobjects.EventDetectionSubSampling.absolute_value_convergence
     :type: float
 
     Use absolute convergence value for access. Dimensionless.
 
-.. py:property:: rel_value_convergence
-    :canonical: ansys.stk.core.stkobjects.EventDetectionSubSampling.rel_value_convergence
+.. py:property:: relative_value_convergence
+    :canonical: ansys.stk.core.stkobjects.EventDetectionSubSampling.relative_value_convergence
     :type: float
 
     Use relative convergence value for access. Dimensionless.

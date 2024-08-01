@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PROFILE_ACCEL_PERF_MODEL`
+            * - :py:attr:`~PROFILE_ACCELERATION_PERFORMANCE_MODEL`
               - Use Accel Perf Model.
 
             * - :py:attr:`~PROFILE_PITCH_RATE`

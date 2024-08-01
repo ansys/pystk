@@ -96,9 +96,9 @@ from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
 aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
 # -
 
-# Then, use the aircraft's `route` property to access the `avtr_propagator` property, which holds an `IAviatorPropagator` object:
+# Then, use the aircraft's `route` property to access the `aviator_propagator` property, which holds an `IAviatorPropagator` object:
 
-aviator_propagator = aircraft.route.avtr_propagator
+aviator_propagator = aircraft.route.aviator_propagator
 
 # ## Insert a runway at Telluride Regional Airport
 
@@ -106,7 +106,7 @@ aviator_propagator = aircraft.route.avtr_propagator
 
 # First, get the runway catalog:
 
-runway_catalog = aviator_propagator.avtr_catalog.runway_category
+runway_catalog = aviator_propagator.aviator_catalog.runway_category
 
 # Then, upload the "FAANFD18" file provided with the STK install containing information about runways in ARINC424 format. To do so, use a Connect command to find the STK install directory and navigate to the proper file, then set the file as the master data file for ARINC424 runways:
 
@@ -169,7 +169,7 @@ map_plotter.show()
 
 # First, get the aircraft model catalog using the Aviator propagator:
 
-aircraft_models = aviator_propagator.avtr_catalog.aircraft_category.aircraft_models
+aircraft_models = aviator_propagator.aviator_catalog.aircraft_category.aircraft_models
 
 # Then, get the model corresponding to a basic business jet:
 
@@ -183,7 +183,7 @@ business_jet.get_as_catalog_item().duplicate().name = 'Basic Business Jet Copy'
 
 # To assign the model to the aircraft, use the Aviator propagator's mission. An Aviator mission describes an aircraft's flight, including its route, flight procedures, and performance characteristics. Get the mission, then use the `vehicle` property to assign the model:
 
-mission = aviator_propagator.avtr_mission
+mission = aviator_propagator.aviator_mission
 mission.vehicle = aircraft_models.get_aircraft('Basic Business Jet Copy')
 
 # ## Configure the aircraft performance models
@@ -203,32 +203,32 @@ acceleration_performance_model = phase.get_performance_model_by_type('Accelerati
 # Through the `IAircraftBasicAccelerationModel` object, it is possible to configure the basic, aerodynamics, and propulsion characteristics of the aircraft. Set the level turns to scale by atmosphere density, which causes the aircraft to consider dynamic pressure when calculating turn radius.
 
 # +
-from ansys.stk.core.stkobjects.aviator import ACCEL_MANEUVER_MODE
+from ansys.stk.core.stkobjects.aviator import ACCELERATION_MANEUVER_MODE
 
 
-acceleration_performance_model.level_turns.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
+acceleration_performance_model.level_turns.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
 # -
 
 # Set the climb and descent transitions to scale by atmosphere density:
 
-acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
+acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
 
 # Then, configure the aerodynamics characteristics by setting the aerodynamic strategy type to basic fixed wing aerodynamics. To do so, use the performance model's `aerodynamics` property, which contains an `IAircraftAero` object:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AIRCRAFT_AERO_STRATEGY
+from ansys.stk.core.stkobjects.aviator import AIRCRAFT_AERODYNAMIC_STRATEGY
 
 
-acceleration_performance_model.aerodynamics.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_BASIC_FIXED_WING
+acceleration_performance_model.aerodynamics.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING
 # -
 
 # Then, set the aircraft's propulstion to also use a basic fixed wing strategy by accessing the performance model's `propulsion` property, which contains an `IAircraftProp` object:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AIRCRAFT_PROP_STRATEGY
+from ansys.stk.core.stkobjects.aviator import AIRCRAFT_PROPULSION_STRATEGY
 
 
-acceleration_performance_model.propulsion.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING
+acceleration_performance_model.propulsion.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING
 # -
 
 # Next, configure the aircraft's climb performance model. The basic climb performance model defines the flight characteristics of the aircraft while climbing. Select the climb performance model:
@@ -237,7 +237,7 @@ climb_performance_model = phase.get_performance_model_by_type('Climb').propertie
 
 # Configure the model to use aero/propulsion fuel flow:
 
-climb_performance_model.use_aero_prop_fuel = True
+climb_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # Next, configure the aircraft's cruise performance model, which defines the flight characteristics of the aircraft during level flight. Select the cruise performance model:
 
@@ -249,16 +249,16 @@ cruise_performance_model.default_cruise_altitude = 25000
 
 # Then, configure the model to use aero/propulstion fuel flow:
 
-cruise_performance_model.use_aero_prop_fuel = True
+cruise_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # Next, configure the aircraft's basic descent, landing, and takeoff performance models. Set all three to use aero/propulsion fuel flow:
 
 descent_performance_model = phase.get_performance_model_by_type('Descent').properties
-descent_performance_model.use_aero_prop_fuel = True
+descent_performance_model.use_aerodynamic_propulsion_fuel = True
 landing_performance_model = phase.get_performance_model_by_type('Landing').properties
-landing_performance_model.use_aero_prop_fuel = True
+landing_performance_model.use_aerodynamic_propulsion_fuel = True
 takeoff_performance_model = phase.get_performance_model_by_type('Takeoff').properties
-takeoff_performance_model.use_aero_prop_fuel = True
+takeoff_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # ## Set the aircraft's fuel and payload
 
@@ -303,7 +303,7 @@ wind_model.mode_as_constant.wind_speed = 20
 from ansys.stk.core.stkobjects.aviator import SITE_TYPE, PROCEDURE_TYPE
 
 
-takeoff_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROC_TAKEOFF)
+takeoff_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
 # -
 
 # Then, set the takeoff procedure's site to the catalog entry for the CITY OF COLORADO SPRINGS MUNI 17L 35R runway so that the procedure starts from the runway:
@@ -335,7 +335,7 @@ takeoff_procedure.mode_as_normal.use_runway_terrain = True
 
 # Insert a basic maneuver procedure that starts from the end of the previous procedure:
 
-climb_procedure = phase.procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER)
+climb_procedure = phase.procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER)
 
 # Change the procedure's name to "Climb":
 
@@ -367,13 +367,13 @@ climb_procedure.profile.relative_altitude_change = 10000
 
 # The next procedure flies the aircraft to Blue Mesa after it has finished its climb. The site for the procedure is derived from a Navaid in the catalog representing Blue Mesa, and the aircraft flies between two waypoints.
 
-# Insert a procedure after the climb procedure, with a site type of `SITE_NAVAID_FROM_CATALOG` and a procedure type of `PROC_BASIC_POINT_TO_POINT`:
+# Insert a procedure after the climb procedure, with a site type of `SITE_NAVAID_FROM_CATALOG` and a procedure type of `PROCEDURE_BASIC_POINT_TO_POINT`:
 
-blue_mesa_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT)
+blue_mesa_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT)
 
 # Because of the procedure type designation, the procedure's `site` property contains an `ISiteNavaidFromCatalog` object. First, get the navaid catalog item corresponding to "HBU", which is the FAA designator for the Blue Mesa radio site.
 
-blue_mesa_navaid = aviator_propagator.avtr_catalog.navaid_category.arinc424_navaids.get_arinc424_item("HBU")
+blue_mesa_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item("HBU")
 
 # Set the procedure's site to the navaid:
 
@@ -396,7 +396,7 @@ blue_mesa_procedure.name = "Blue Mesa"
 from ansys.stk.core.stkobjects.aviator import POINT_TO_POINT_MODE
 
 
-blue_mesa_procedure.navigation_options.nav_mode = POINT_TO_POINT_MODE.FLY_DIRECT
+blue_mesa_procedure.navigation_options.navigation_mode = POINT_TO_POINT_MODE.FLY_DIRECT
 # -
 
 # Next, configure the procedure's enroute options, which define the turning performance characteristics of the aircraft during enroute segments of the procedure. Set the turn factor, which is the maximum amount - expressed as a multiplier - that the turn radius is increased to minimize the bank angle required to complete turns. Set the turn factor to 5:
@@ -405,11 +405,11 @@ blue_mesa_procedure.enroute_options.max_turn_radius_factor = 5
 
 # Next, insert another basic point to point procedure to fly from Blue Mesa to Cones, which has an FAA designator of "ETL". 
 
-cones_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT)
+cones_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT)
 
 # Get the navaid catalog item corresponding to the Cones beacon:
 
-cones_navaid = aviator_propagator.avtr_catalog.navaid_category.arinc424_navaids.get_arinc424_item("ETL")
+cones_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item("ETL")
 
 # Then, set the procedure's site to the navaid:
 
@@ -456,7 +456,7 @@ cones_procedure.enroute_cruise_airspeed_options.set_other_airspeed(AIRSPEED_TYPE
 
 # Finally, insert the last procedure in the phase, which is a landing procedure arriving at the Telluride runway. Insert the procedure:
 
-landing_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROC_LANDING)
+landing_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_LANDING)
 
 # Then, set the site to the Telluride runway:
 
@@ -516,7 +516,7 @@ internal_fuel.initial_fuel_state = 14000
 
 # Then, update the aircraft's route and re-calculate the flight profile by time report:
 
-aircraft.route.avtr_propagator.propagate()
+aircraft.route.aviator_propagator.propagate()
 flight_profile_df = aircraft.data_providers.item("Flight Profile By Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
 flight_profile_df[['weight', 'fuel state']].iloc[[0, -1]]
 

@@ -41,9 +41,9 @@ Overview
               - Get the specified turn radius for a control limit mode of specify min turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_turn_rate`
               - Get the specified turn rate for a control limit mode of specify max turn rate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_horiz_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_horizontal_acceleration`
               - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
+    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -95,14 +95,14 @@ Property detail
 
     Get the specified turn rate for a control limit mode of specify max turn rate.
 
-.. py:property:: control_limit_horiz_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_horiz_accel
+.. py:property:: control_limit_horizontal_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_horizontal_acceleration
     :type: float
 
     Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
@@ -121,14 +121,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT, controlLimitValue: float) -> None
+.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, controlLimitValue: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT`
+    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
     **controlLimitValue** : :obj:`~float`
 
     :Returns:

@@ -46,7 +46,7 @@ Overview
               - Gets or sets the damping ratio of the control law.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.airspeed_options`
               - Get the airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.stop_when_conditions_met`
               - Stop when conditions are met.
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_limit_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the control limits mode.
 
@@ -142,8 +142,8 @@ Property detail
 
     Get the airspeed options.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
