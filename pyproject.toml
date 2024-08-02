@@ -92,8 +92,9 @@ select = [
 ]
 ignore = [
 #   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "D204",  # One blank line required after class docstring
     "D212",  # Multi-line docstring summary should start at the first line
-    "D400",  # Empty line between summary docstring and the __init__ method
+    "D400",  # First line should end with a period
     "TD002", # Missing author in TODOs comment
 ]
 
