@@ -84,7 +84,9 @@ root.rewind()
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
 
-aircraft = root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "CommercialAircraft")
+aircraft = root.current_scenario.children.new(
+    STK_OBJECT_TYPE.AIRCRAFT, "CommercialAircraft"
+)
 # -
 
 # The `IAviatorPropagator` interface allows access to all Aviator functions. Through the propagator, it is possible to access the aircraft's mission and plan its route, as well as access the Aviator catalogs, which allow loading and saving aircraft, airports, navaids, runways, VTOL points, and waypoints. To start using Aviator capabilities, first set the aircraft's propagator type to the Aviator propagator:
@@ -115,7 +117,14 @@ import pathlib
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
-runway_catalog.arinc424_runways.master_data_filepath = str(pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "FAANFD18")
+runway_catalog.arinc424_runways.master_data_filepath = str(
+    pathlib.Path(install_dir)
+    / "Data"
+    / "Resources"
+    / "stktraining"
+    / "samples"
+    / "FAANFD18"
+)
 # -
 
 # The runway catalog now contains information about the runways included in the file. View the names of the first 5 runways (alphabetically) in the catalog:
@@ -124,11 +133,15 @@ runway_catalog.arinc424_runways.child_names[:5]
 
 # Determine how many runways are included in the catalog:
 
-print(f"There are {len(runway_catalog.arinc424_runways.child_names)} runways stored in the catalog.")
+print(
+    f"There are {len(runway_catalog.arinc424_runways.child_names)} runways stored in the catalog."
+)
 
 # Now, use the catalog to select the runway at Telluride Regional Airport. Later in the scenario, the runway is included in the aircraft's mission planning as the landing destination.
 
-telluride_runway = runway_catalog.arinc424_runways.get_arinc424_item("TELLURIDE RGNL 09 27")
+telluride_runway = runway_catalog.arinc424_runways.get_arinc424_item(
+    "TELLURIDE RGNL 09 27"
+)
 
 # The catalog item stores information about the runway, including its length, width, location, and bearing. Determine the length of the runway:
 
@@ -142,21 +155,33 @@ telluride = root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "Telluride
 
 # The Telluride runway catalog object stores information about the runway's location. Using that object, assign the location of the place object to the runway's using geodetic coordinates:
 
-telluride.position.assign_geodetic(telluride_runway.get_value('Latitude'), telluride_runway.get_value('Longitude'), telluride_runway.get_value('Altitude'))
+telluride.position.assign_geodetic(
+    telluride_runway.get_value("Latitude"),
+    telluride_runway.get_value("Longitude"),
+    telluride_runway.get_value("Altitude"),
+)
 
 # ## Insert the Colorado Springs Municipal Airport
 
 # First, use the Aviator runway catalog to get a runway at Colorado Springs Municipal Airport:
 
-colorado_springs_runway = runway_catalog.arinc424_runways.get_arinc424_item("CITY OF COLORADO SPRINGS MUNI 17L 35R") 
+colorado_springs_runway = runway_catalog.arinc424_runways.get_arinc424_item(
+    "CITY OF COLORADO SPRINGS MUNI 17L 35R"
+)
 
 # Then, insert a place object to represent the airport:
 
-colorado_springs = root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "ColoradoSprings")
+colorado_springs = root.current_scenario.children.new(
+    STK_OBJECT_TYPE.PLACE, "ColoradoSprings"
+)
 
 # Use the runway catalog item to assign the place object's location to the same coordinates as the runway's:
 
-colorado_springs.position.assign_geodetic(colorado_springs_runway.get_value('Latitude'), colorado_springs_runway.get_value('Longitude'), colorado_springs_runway.get_value('Altitude'))
+colorado_springs.position.assign_geodetic(
+    colorado_springs_runway.get_value("Latitude"),
+    colorado_springs_runway.get_value("Longitude"),
+    colorado_springs_runway.get_value("Altitude"),
+)
 
 # It is now possible to see both airports in the 2D graphics window:
 
@@ -173,18 +198,18 @@ aircraft_models = aviator_propagator.aviator_catalog.aircraft_category.aircraft_
 
 # Then, get the model corresponding to a basic business jet:
 
-business_jet = aircraft_models.get_aircraft('Basic Business Jet')
+business_jet = aircraft_models.get_aircraft("Basic Business Jet")
 
 # Aircraft models are read-only by default, so their performance models cannot be edited. To create a custom aircraft model, duplicate the model from the catalog, then rename it. Remove any catalog item with the same name before doing so.
 
-if aircraft_models.get_as_catalog_source().contains('Basic Business Jet Copy'):
-    aircraft_models.get_aircraft('Basic Business Jet Copy').remove()
-business_jet.get_as_catalog_item().duplicate().name = 'Basic Business Jet Copy'
+if aircraft_models.get_as_catalog_source().contains("Basic Business Jet Copy"):
+    aircraft_models.get_aircraft("Basic Business Jet Copy").remove()
+business_jet.get_as_catalog_item().duplicate().name = "Basic Business Jet Copy"
 
 # To assign the model to the aircraft, use the Aviator propagator's mission. An Aviator mission describes an aircraft's flight, including its route, flight procedures, and performance characteristics. Get the mission, then use the `vehicle` property to assign the model:
 
 mission = aviator_propagator.aviator_mission
-mission.vehicle = aircraft_models.get_aircraft('Basic Business Jet Copy')
+mission.vehicle = aircraft_models.get_aircraft("Basic Business Jet Copy")
 
 # ## Configure the aircraft performance models
 
@@ -198,7 +223,9 @@ phase = mission.phases[0]
 
 # Then, get the phases's acceleration performance model:
 
-acceleration_performance_model = phase.get_performance_model_by_type('Acceleration').properties
+acceleration_performance_model = phase.get_performance_model_by_type(
+    "Acceleration"
+).properties
 
 # Through the `IAircraftBasicAccelerationModel` object, it is possible to configure the basic, aerodynamics, and propulsion characteristics of the aircraft. Set the level turns to scale by atmosphere density, which causes the aircraft to consider dynamic pressure when calculating turn radius.
 
@@ -206,12 +233,16 @@ acceleration_performance_model = phase.get_performance_model_by_type('Accelerati
 from ansys.stk.core.stkobjects.aviator import ACCELERATION_MANEUVER_MODE
 
 
-acceleration_performance_model.level_turns.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
+acceleration_performance_model.level_turns.maneuver_mode = (
+    ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
+)
 # -
 
 # Set the climb and descent transitions to scale by atmosphere density:
 
-acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
+acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = (
+    ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
+)
 
 # Then, configure the aerodynamics characteristics by setting the aerodynamic strategy type to basic fixed wing aerodynamics. To do so, use the performance model's `aerodynamics` property, which contains an `IAircraftAero` object:
 
@@ -219,7 +250,9 @@ acceleration_performance_model.climb_and_descent_transitions.maneuver_mode = ACC
 from ansys.stk.core.stkobjects.aviator import AIRCRAFT_AERODYNAMIC_STRATEGY
 
 
-acceleration_performance_model.aerodynamics.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING
+acceleration_performance_model.aerodynamics.aerodynamic_strategy = (
+    AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING
+)
 # -
 
 # Then, set the aircraft's propulstion to also use a basic fixed wing strategy by accessing the performance model's `propulsion` property, which contains an `IAircraftProp` object:
@@ -228,12 +261,14 @@ acceleration_performance_model.aerodynamics.aerodynamic_strategy = AIRCRAFT_AERO
 from ansys.stk.core.stkobjects.aviator import AIRCRAFT_PROPULSION_STRATEGY
 
 
-acceleration_performance_model.propulsion.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING
+acceleration_performance_model.propulsion.propulsion_strategy = (
+    AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING
+)
 # -
 
 # Next, configure the aircraft's climb performance model. The basic climb performance model defines the flight characteristics of the aircraft while climbing. Select the climb performance model:
 
-climb_performance_model = phase.get_performance_model_by_type('Climb').properties
+climb_performance_model = phase.get_performance_model_by_type("Climb").properties
 
 # Configure the model to use aero/propulsion fuel flow:
 
@@ -241,7 +276,7 @@ climb_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # Next, configure the aircraft's cruise performance model, which defines the flight characteristics of the aircraft during level flight. Select the cruise performance model:
 
-cruise_performance_model = phase.get_performance_model_by_type('Cruise').properties
+cruise_performance_model = phase.get_performance_model_by_type("Cruise").properties
 
 # The aircraft climbs to $25000$ ft and then levels off. Set the default cruise altitude to $25000$ ft:
 
@@ -253,11 +288,11 @@ cruise_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # Next, configure the aircraft's basic descent, landing, and takeoff performance models. Set all three to use aero/propulsion fuel flow:
 
-descent_performance_model = phase.get_performance_model_by_type('Descent').properties
+descent_performance_model = phase.get_performance_model_by_type("Descent").properties
 descent_performance_model.use_aerodynamic_propulsion_fuel = True
-landing_performance_model = phase.get_performance_model_by_type('Landing').properties
+landing_performance_model = phase.get_performance_model_by_type("Landing").properties
 landing_performance_model.use_aerodynamic_propulsion_fuel = True
-takeoff_performance_model = phase.get_performance_model_by_type('Takeoff').properties
+takeoff_performance_model = phase.get_performance_model_by_type("Takeoff").properties
 takeoff_performance_model.use_aerodynamic_propulsion_fuel = True
 
 # ## Set the aircraft's fuel and payload
@@ -268,7 +303,9 @@ mission.configuration.empty_weight = 31000
 
 # Through the `configuration` property, it is also possible to access detail's about the aircraft's weight and capacity. Determine the aircraft's maximum landing weight:
 
-print(f"The aircraft's maximum landing weight is {mission.configuration.max_landing_weight} lb.")
+print(
+    f"The aircraft's maximum landing weight is {mission.configuration.max_landing_weight} lb."
+)
 
 # It is also possible to use the `configuration` property to access the aircraft's internal fuel tanks, stations, and external fuel tanks that are attached to the stations. To do so, use the `get_stations` method:
 
@@ -276,11 +313,13 @@ stations = mission.configuration.get_stations()
 
 # Determine the capacity and initial state of the aircraft's fuel tank. Select the aircraft's internal fuel tank from the list of stations:
 
-internal_fuel = stations.get_internal_fuel_tank_by_name('Internal Fuel')
+internal_fuel = stations.get_internal_fuel_tank_by_name("Internal Fuel")
 
 # Then, determine the fuel tank's capacity and initial state:
 
-print(f"The internal fuel tank has a capacity of {internal_fuel.capacity} lb and initially holds {internal_fuel.initial_fuel_state} lb of fuel")
+print(
+    f"The internal fuel tank has a capacity of {internal_fuel.capacity} lb and initially holds {internal_fuel.initial_fuel_state} lb of fuel"
+)
 
 # ## Configure the mission wind model
 
@@ -303,7 +342,9 @@ wind_model.mode_as_constant.wind_speed = 20
 from ansys.stk.core.stkobjects.aviator import PROCEDURE_TYPE, SITE_TYPE
 
 
-takeoff_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
+takeoff_procedure = phase.procedures.add(
+    SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+)
 # -
 
 # Then, set the takeoff procedure's site to the catalog entry for the CITY OF COLORADO SPRINGS MUNI 17L 35R runway so that the procedure starts from the runway:
@@ -335,11 +376,13 @@ takeoff_procedure.mode_as_normal.use_runway_terrain = True
 
 # Insert a basic maneuver procedure that starts from the end of the previous procedure:
 
-climb_procedure = phase.procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER)
+climb_procedure = phase.procedures.add(
+    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+)
 
 # Change the procedure's name to "Climb":
 
-climb_procedure.name = 'Climb'
+climb_procedure.name = "Climb"
 
 # Then, configure the aircraft's stop conditions. Each basic maneuver requires at least one stopping condition, which dictates when the maneuver will end regardless of whether any other goals are met. The maneuver will stop if any one of the stopping conditions is met.
 
@@ -358,7 +401,9 @@ climb_procedure.max_downrange = 20
 from ansys.stk.core.stkobjects.aviator import AUTOPILOT_ALTITUDE_MODE
 
 
-climb_procedure.profile.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE
+climb_procedure.profile.altitude_mode = (
+    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE
+)
 # -
 
 # Set the relative altitude change to $10000$ ft:
@@ -369,11 +414,15 @@ climb_procedure.profile.relative_altitude_change = 10000
 
 # Insert a procedure after the climb procedure, with a site type of `SITE_NAVAID_FROM_CATALOG` and a procedure type of `PROCEDURE_BASIC_POINT_TO_POINT`:
 
-blue_mesa_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT)
+blue_mesa_procedure = phase.procedures.add(
+    SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT
+)
 
 # Because of the procedure type designation, the procedure's `site` property contains an `ISiteNavaidFromCatalog` object. First, get the navaid catalog item corresponding to "HBU", which is the FAA designator for the Blue Mesa radio site.
 
-blue_mesa_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item("HBU")
+blue_mesa_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item(
+    "HBU"
+)
 
 # Set the procedure's site to the navaid:
 
@@ -382,7 +431,9 @@ blue_mesa_procedure.site.set_catalog_navaid(blue_mesa_navaid)
 # Then, add a place object at the navaid's location:
 
 blue_mesa = root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "BlueMesa")
-blue_mesa.position.assign_geodetic(blue_mesa_navaid.get_value('Latitude'), blue_mesa_navaid.get_value('Longitude'), 0)
+blue_mesa.position.assign_geodetic(
+    blue_mesa_navaid.get_value("Latitude"), blue_mesa_navaid.get_value("Longitude"), 0
+)
 
 # Now, configure the procedure. The procedure type is a basic point to point procedure, which represents a basic traverse between two waypoints. With this procedure type, the aircraft travels a straight line through 3D space from the end of the previous procedure to the site of the current procedure. It smoothly accelerates/decelerates under a constant climb/descent to arrive at the specified speed, altitude, and heading.
 
@@ -403,13 +454,17 @@ blue_mesa_procedure.navigation_options.navigation_mode = POINT_TO_POINT_MODE.FLY
 
 blue_mesa_procedure.enroute_options.max_turn_radius_factor = 5
 
-# Next, insert another basic point to point procedure to fly from Blue Mesa to Cones, which has an FAA designator of "ETL". 
+# Next, insert another basic point to point procedure to fly from Blue Mesa to Cones, which has an FAA designator of "ETL".
 
-cones_procedure = phase.procedures.add(SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT)
+cones_procedure = phase.procedures.add(
+    SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT
+)
 
 # Get the navaid catalog item corresponding to the Cones beacon:
 
-cones_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item("ETL")
+cones_navaid = aviator_propagator.aviator_catalog.navaid_category.arinc424_navaids.get_arinc424_item(
+    "ETL"
+)
 
 # Then, set the procedure's site to the navaid:
 
@@ -418,7 +473,9 @@ cones_procedure.site.set_catalog_navaid(cones_navaid)
 # Add a place object at the navaid's location:
 
 cones = root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "Cones")
-cones.position.assign_geodetic(cones_navaid.get_value('Latitude'), cones_navaid.get_value('Longitude'), 0)
+cones.position.assign_geodetic(
+    cones_navaid.get_value("Latitude"), cones_navaid.get_value("Longitude"), 0
+)
 
 # Set the procedure's name to "Cones":
 
@@ -442,7 +499,9 @@ cones_procedure.enroute_options.max_turn_radius_factor = 5
 from ansys.stk.core.stkobjects.aviator import CRUISE_SPEED
 
 
-cones_procedure.enroute_cruise_airspeed_options.cruise_speed_type = CRUISE_SPEED.OTHER_AIRSPEED
+cones_procedure.enroute_cruise_airspeed_options.cruise_speed_type = (
+    CRUISE_SPEED.OTHER_AIRSPEED
+)
 # -
 
 # Set the airspeed to $250$ nm/hr using calibrated airspeed.:
@@ -451,12 +510,16 @@ cones_procedure.enroute_cruise_airspeed_options.cruise_speed_type = CRUISE_SPEED
 from ansys.stk.core.stkobjects.aviator import AIRSPEED_TYPE
 
 
-cones_procedure.enroute_cruise_airspeed_options.set_other_airspeed(AIRSPEED_TYPE.CAS, 250)
+cones_procedure.enroute_cruise_airspeed_options.set_other_airspeed(
+    AIRSPEED_TYPE.CAS, 250
+)
 # -
 
 # Finally, insert the last procedure in the phase, which is a landing procedure arriving at the Telluride runway. Insert the procedure:
 
-landing_procedure = phase.procedures.add(SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_LANDING)
+landing_procedure = phase.procedures.add(
+    SITE_TYPE.SITE_RUNWAY_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_LANDING
+)
 
 # Then, set the site to the Telluride runway:
 
@@ -500,11 +563,15 @@ map_plotter.show()
 
 # Select the report from the aircraft's `data_providers` method, calculate the data for every minute between the scenario's start and stop times, and convert the report to a pandas dataframe:
 
-flight_profile_df = aircraft.data_providers.item("Flight Profile By Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+flight_profile_df = (
+    aircraft.data_providers.item("Flight Profile By Time")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the columns of the dataframe corresponding to the aircraft's weight and fuel state, then select the first and last rows of each:
 
-flight_profile_df[['weight', 'fuel state']].iloc[[0, -1]]
+flight_profile_df[["weight", "fuel state"]].iloc[[0, -1]]
 
 # The first row corresponds to the aircraft's starting weight and fuel state, and the last row corresponds to the ending weight and fuel state. The plane is approximately $4404$ lb above its maximum landing weight of $40000$ lbs when it touches down, and lands with approximately $13404$ lb of fuel.
 
@@ -517,8 +584,12 @@ internal_fuel.initial_fuel_state = 14000
 # Then, update the aircraft's route and re-calculate the flight profile by time report:
 
 aircraft.route.aviator_propagator.propagate()
-flight_profile_df = aircraft.data_providers.item("Flight Profile By Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
-flight_profile_df[['weight', 'fuel state']].iloc[[0, -1]]
+flight_profile_df = (
+    aircraft.data_providers.item("Flight Profile By Time")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+flight_profile_df[["weight", "fuel state"]].iloc[[0, -1]]
 
 # The aircraft's landing weight is now under the maximum weight, and it still has approximately $7561$ lb of fuel upon landing.
 
@@ -535,48 +606,115 @@ import numpy as np
 import pandas as pd
 
 
-flight_profile_df = aircraft.data_providers.item("Flight Profile By Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
-flight_profile_df[['weight', 'fuel state', 'time']]
+flight_profile_df = (
+    aircraft.data_providers.item("Flight Profile By Time")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
+flight_profile_df[["weight", "fuel state", "time"]]
 
 # Convert data to correct types
-flight_profile_df['time'] = pd.to_datetime(flight_profile_df["time"])
-flight_profile_df['weight'] = pd.to_numeric(flight_profile_df['weight'])
-flight_profile_df['fuel state'] = pd.to_numeric(flight_profile_df['fuel state'])
+flight_profile_df["time"] = pd.to_datetime(flight_profile_df["time"])
+flight_profile_df["weight"] = pd.to_numeric(flight_profile_df["weight"])
+flight_profile_df["fuel state"] = pd.to_numeric(flight_profile_df["fuel state"])
 
 # Plot data
-ax = flight_profile_df.plot(x='time', y='weight', color='dodgerblue', label="Aircraft weight")
-ax = flight_profile_df.plot(x='time', y='fuel state', color='firebrick', ax=ax, label="Fuel state")
+ax = flight_profile_df.plot(
+    x="time", y="weight", color="dodgerblue", label="Aircraft weight"
+)
+ax = flight_profile_df.plot(
+    x="time", y="fuel state", color="firebrick", ax=ax, label="Fuel state"
+)
 
 # Set title and axes labels
-ax.set_title('Aircraft Weight and Fuel State Over Time')
+ax.set_title("Aircraft Weight and Fuel State Over Time")
 ax.set_xlabel("Time")
-ax.set_ylabel('Weight (lb)')
+ax.set_ylabel("Weight (lb)")
 
 # Configure style
-ax.set_facecolor('whitesmoke')
-ax.grid(visible=True, which='both')
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which="both")
 ax.legend(shadow=True)
 
 # Add waypoint information
-lla_position_df = aircraft.data_providers.item("LLA State").group.item(1).exec(scenario.start_time, scenario.stop_time, 1).data_sets.to_pandas_dataframe()
+lla_position_df = (
+    aircraft.data_providers.item("LLA State")
+    .group.item(1)
+    .exec(scenario.start_time, scenario.stop_time, 1)
+    .data_sets.to_pandas_dataframe()
+)
+
 
 def find_waypoint_time(waypoint_lat, waypoint_lon, lla_df):
-    valid_lats = np.isclose(np.array(lla_df['lat'], dtype=float), np.full(len(lla_df), waypoint_lat, dtype=float), rtol=1e-03)
-    valid_lons = np.isclose(np.array(lla_df['lon'], dtype=float), np.full(len(lla_df), waypoint_lon, dtype=float))
-    return parser.parse((lla_df[np.logical_and(valid_lats, valid_lons)]['time']).iloc[0])
+    """Compute the time at which the aircraft flies over a waypoint."""
+    valid_lats = np.isclose(
+        np.array(lla_df["lat"], dtype=float),
+        np.full(len(lla_df), waypoint_lat, dtype=float),
+        rtol=1e-03,
+    )
+    valid_lons = np.isclose(
+        np.array(lla_df["lon"], dtype=float),
+        np.full(len(lla_df), waypoint_lon, dtype=float),
+    )
+    return parser.parse(
+        (lla_df[np.logical_and(valid_lats, valid_lons)]["time"]).iloc[0]
+    )
 
-telluride_time = find_waypoint_time(telluride_runway.get_value('Latitude'), telluride_runway.get_value('Longitude'), lla_position_df)
-ax.axvline(telluride_time, label="Telluride", color="seagreen", linestyle='--')
-plt.text(telluride_time+dt.timedelta(seconds=30), 20000,'Telluride', rotation=90, color="seagreen")
-colorado_springs_time = find_waypoint_time(colorado_springs_runway.get_value('Latitude'), colorado_springs_runway.get_value('Longitude'), lla_position_df)
-ax.axvline(colorado_springs_time, label="Colorado Springs", color="olivedrab", linestyle='--')
-plt.text(colorado_springs_time+dt.timedelta(seconds=30), 20000,'Colorado Springs',rotation=90, color="olivedrab")
-cones_time = find_waypoint_time(cones_navaid.get_value('Latitude'), cones_navaid.get_value('Longitude'), lla_position_df)
-ax.axvline(cones_time, label="Cones", color = "deepskyblue", linestyle='--')
-plt.text(cones_time+dt.timedelta(seconds=30), 20000,'Cones', rotation=90, color = "deepskyblue")
-blue_mesa_time = find_waypoint_time(blue_mesa_navaid.get_value('Latitude'), blue_mesa_navaid.get_value('Longitude'), lla_position_df)
-ax.axvline(blue_mesa_time, label="Blue Mesa", color="midnightblue", linestyle='--')
-plt.text(blue_mesa_time+dt.timedelta(seconds=30), 20000,'Blue Mesa', rotation=90, color = "midnightblue")
+
+telluride_time = find_waypoint_time(
+    telluride_runway.get_value("Latitude"),
+    telluride_runway.get_value("Longitude"),
+    lla_position_df,
+)
+ax.axvline(telluride_time, label="Telluride", color="seagreen", linestyle="--")
+plt.text(
+    telluride_time + dt.timedelta(seconds=30),
+    20000,
+    "Telluride",
+    rotation=90,
+    color="seagreen",
+)
+colorado_springs_time = find_waypoint_time(
+    colorado_springs_runway.get_value("Latitude"),
+    colorado_springs_runway.get_value("Longitude"),
+    lla_position_df,
+)
+ax.axvline(
+    colorado_springs_time, label="Colorado Springs", color="olivedrab", linestyle="--"
+)
+plt.text(
+    colorado_springs_time + dt.timedelta(seconds=30),
+    20000,
+    "Colorado Springs",
+    rotation=90,
+    color="olivedrab",
+)
+cones_time = find_waypoint_time(
+    cones_navaid.get_value("Latitude"),
+    cones_navaid.get_value("Longitude"),
+    lla_position_df,
+)
+ax.axvline(cones_time, label="Cones", color="deepskyblue", linestyle="--")
+plt.text(
+    cones_time + dt.timedelta(seconds=30),
+    20000,
+    "Cones",
+    rotation=90,
+    color="deepskyblue",
+)
+blue_mesa_time = find_waypoint_time(
+    blue_mesa_navaid.get_value("Latitude"),
+    blue_mesa_navaid.get_value("Longitude"),
+    lla_position_df,
+)
+ax.axvline(blue_mesa_time, label="Blue Mesa", color="midnightblue", linestyle="--")
+plt.text(
+    blue_mesa_time + dt.timedelta(seconds=30),
+    20000,
+    "Blue Mesa",
+    rotation=90,
+    color="midnightblue",
+)
 
 fig = plt.gcf()
 fig.set_size_inches(10, 5)
