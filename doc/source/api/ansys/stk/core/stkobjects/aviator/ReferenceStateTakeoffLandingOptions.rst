@@ -3,8 +3,6 @@ ReferenceStateTakeoffLandingOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions
 
-   Bases: 
-
    Class defining the Takeoff or Landing options for a Reference State procedure.
 
 .. py:currentmodule:: ReferenceStateTakeoffLandingOptions

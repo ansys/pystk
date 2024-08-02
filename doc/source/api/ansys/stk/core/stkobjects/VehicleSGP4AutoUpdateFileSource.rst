@@ -3,8 +3,6 @@ VehicleSGP4AutoUpdateFileSource
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateFileSource
 
-   Bases: 
-
    Configure the SGP4 automatic updates using file(s).
 
 .. py:currentmodule:: VehicleSGP4AutoUpdateFileSource

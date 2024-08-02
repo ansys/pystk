@@ -3,8 +3,6 @@ CoverageInterval
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageInterval
 
-   Bases: 
-
    Coverage interval: the time period over which coverage is computed.
 
 .. py:currentmodule:: CoverageInterval

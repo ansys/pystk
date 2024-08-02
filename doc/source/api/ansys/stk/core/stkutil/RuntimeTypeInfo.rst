@@ -3,8 +3,6 @@ RuntimeTypeInfo
 
 .. py:class:: ansys.stk.core.stkutil.RuntimeTypeInfo
 
-   Bases: 
-
    Runtime Type info coclass.
 
 .. py:currentmodule:: RuntimeTypeInfo
@@ -51,7 +49,7 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.properties
-    :type: IPropertyInfoCollection
+    :type: PropertyInfoCollection
 
     Get the collection of properties.
 

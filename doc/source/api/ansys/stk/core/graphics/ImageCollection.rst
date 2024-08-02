@@ -3,8 +3,6 @@ ImageCollection
 
 .. py:class:: ansys.stk.core.graphics.ImageCollection
 
-   Bases: 
-
    A collection of globe image overlay objects.
 
 .. py:currentmodule:: ImageCollection

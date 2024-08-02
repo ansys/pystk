@@ -117,13 +117,13 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode_helper
-    :type: IAerodynamicPropulsionManeuverModeHelper
+    :type: AerodynamicPropulsionManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.attitude_transitions
-    :type: IAttitudeTransitions
+    :type: AttitudeTransitions
 
     Get the attitude transitions interface.
 
@@ -249,19 +249,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.default_configuration
-    :type: IConfiguration
+    :type: Configuration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.aerodynamics
-    :type: IMissileAerodynamic
+    :type: MissileAerodynamic
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.propulsion
-    :type: IMissilePropulsion
+    :type: MissilePropulsion
 
     Get the propulsion interface.
 

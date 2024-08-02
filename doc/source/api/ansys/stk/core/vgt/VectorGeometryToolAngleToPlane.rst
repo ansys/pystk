@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.reference_plane
-    :type: IVectorGeometryToolPlaneRefTo
+    :type: VectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 

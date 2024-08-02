@@ -3,8 +3,6 @@ VehiclePropagatorSGP4CommonTasks
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagatorSGP4CommonTasks
 
-   Bases: 
-
    Most commonly used functionality when working with SGP4 propagator.
 
 .. py:currentmodule:: VehiclePropagatorSGP4CommonTasks

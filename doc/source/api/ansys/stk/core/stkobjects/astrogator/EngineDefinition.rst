@@ -3,8 +3,6 @@ EngineDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineDefinition
 
-   Bases: 
-
    Engine definition.
 
 .. py:currentmodule:: EngineDefinition

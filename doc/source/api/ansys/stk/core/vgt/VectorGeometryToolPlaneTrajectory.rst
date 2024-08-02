@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTrajectory.point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTrajectory.reference_system
-    :type: IVectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

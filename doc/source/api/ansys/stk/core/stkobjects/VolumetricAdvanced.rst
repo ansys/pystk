@@ -3,8 +3,6 @@ VolumetricAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricAdvanced
 
-   Bases: 
-
    Class defining the volumetric Computed Data Save options.
 
 .. py:currentmodule:: VolumetricAdvanced

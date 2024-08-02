@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.Atmosphere.propagation_channel
-    :type: IPropagationChannel
+    :type: PropagationChannel
 
     Gets the propagation channel.
 

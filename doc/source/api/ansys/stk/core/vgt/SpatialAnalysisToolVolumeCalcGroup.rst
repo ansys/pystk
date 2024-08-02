@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeCalcGroup
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcGroup
 
-   Bases: 
-
    Access or create VGT volume calc associated with an object or a central body.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeCalcGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcGroup.factory
-    :type: ISpatialAnalysisToolVolumeCalcFactory
+    :type: SpatialAnalysisToolVolumeCalcFactory
 
     Returns a factory object used to create volume calc components.
 

@@ -3,8 +3,6 @@ MissileSimplePropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileSimplePropulsion
 
-   Bases: 
-
    Class defining the Simple propulsion options for a missile.
 
 .. py:currentmodule:: MissileSimplePropulsion

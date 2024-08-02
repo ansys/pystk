@@ -3,8 +3,6 @@ TimeToolEventIntervalListFactory
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListFactory
 
-   Bases: 
-
    The factory creates event interval lists.
 
 .. py:currentmodule:: TimeToolEventIntervalListFactory

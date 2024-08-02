@@ -3,8 +3,6 @@ SearchPluginControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SearchPluginControl
 
-   Bases: 
-
    Control parameters for a plugin search profile.
 
 .. py:currentmodule:: SearchPluginControl
@@ -86,7 +84,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControl.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 

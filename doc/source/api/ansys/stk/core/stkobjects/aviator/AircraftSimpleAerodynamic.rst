@@ -3,8 +3,6 @@ AircraftSimpleAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftSimpleAerodynamic
 
-   Bases: 
-
    Class defining the simple aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftSimpleAerodynamic

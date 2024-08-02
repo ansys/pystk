@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownEarthAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes
 
-   Bases: 
-
    Well-known Earth's axes.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownEarthAxes

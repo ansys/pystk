@@ -3,8 +3,6 @@ ArcVerticalPlaneOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions
 
-   Bases: 
-
    Class defining the vertical plane options in a procedure.
 
 .. py:currentmodule:: ArcVerticalPlaneOptions

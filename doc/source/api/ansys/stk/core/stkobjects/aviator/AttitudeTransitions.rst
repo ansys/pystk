@@ -3,8 +3,6 @@ AttitudeTransitions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AttitudeTransitions
 
-   Bases: 
-
    Class defining the attitude transition options for an acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AttitudeTransitions

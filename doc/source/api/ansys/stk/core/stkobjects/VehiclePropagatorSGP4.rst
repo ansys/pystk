@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSGP4.segments
-    :type: IVehicleSGP4SegmentCollection
+    :type: VehicleSGP4SegmentCollection
 
     Get the element set list.
 
@@ -77,19 +77,19 @@ Property detail
 
 .. py:property:: auto_update
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSGP4.auto_update
-    :type: IVehicleSGP4AutoUpdate
+    :type: VehicleSGP4AutoUpdate
 
     Allows configuring the auto-update parameters and settings.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSGP4.common_tasks
-    :type: IVehiclePropagatorSGP4CommonTasks
+    :type: VehiclePropagatorSGP4CommonTasks
 
     Most commonly used tasks such as importing file data, etc.
 
 .. py:property:: settings
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSGP4.settings
-    :type: IVehicleSGP4PropagatorSettings
+    :type: VehicleSGP4PropagatorSettings
 
     Propagator settings.
 

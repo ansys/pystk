@@ -3,8 +3,6 @@ VehicleHPOPForceModel
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPForceModel
 
-   Bases: 
-
    Class defining HPOP force models.
 
 .. py:currentmodule:: VehicleHPOPForceModel
@@ -48,37 +46,37 @@ Property detail
 
 .. py:property:: central_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.central_body_gravity
-    :type: IVehicleHPOPCentralBodyGravity
+    :type: VehicleHPOPCentralBodyGravity
 
     Get the central body gravity properties.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.solar_radiation_pressure
-    :type: IVehicleHPOPSolarRadiationPressure
+    :type: VehicleHPOPSolarRadiationPressure
 
     Get the solar radiation pressure properties.
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.drag
-    :type: IVehicleHPOPForceModelDrag
+    :type: VehicleHPOPForceModelDrag
 
     Get the atmospheric drag properties.
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.third_body_gravity
-    :type: IVehicleThirdBodyGravityCollection
+    :type: VehicleThirdBodyGravityCollection
 
     Get the 3rd-body gravity properties.
 
 .. py:property:: more_options
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.more_options
-    :type: IVehicleHPOPForceModelMoreOptions
+    :type: VehicleHPOPForceModelMoreOptions
 
     Get the additional force model options.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.eclipsing_bodies
-    :type: IVehicleEclipsingBodies
+    :type: VehicleEclipsingBodies
 
     Get the eclipsing bodies.
 

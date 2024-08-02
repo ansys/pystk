@@ -3,8 +3,6 @@ IVectorGeometryToolAngle
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngle
 
-   object
-   
    The interface defines methods and properties common to all angles.
 
 .. py:currentmodule:: IVectorGeometryToolAngle

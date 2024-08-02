@@ -3,8 +3,6 @@ AdvancedFixedWingSubSuperHypersonicPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion
 
-   Bases: 
-
    Class defining a Sub/Super/Hypersonic powerplant in the Advanced Fixed Wing Tool.
 
 .. py:currentmodule:: AdvancedFixedWingSubSuperHypersonicPropulsion
@@ -74,13 +72,13 @@ Property detail
 
 .. py:property:: turbine_mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.turbine_mode_as_turbojet
-    :type: IAdvancedFixedWingTurbojetBasicABPropulsion
+    :type: AdvancedFixedWingTurbojetBasicABPropulsion
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
 .. py:property:: turbine_mode_as_turbofan
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.turbine_mode_as_turbofan
-    :type: IAdvancedFixedWingTurbofanBasicABPropulsion
+    :type: AdvancedFixedWingTurbofanBasicABPropulsion
 
     Gets or sets the interface for a Turbojet Basic w/ AB tubrine mode.
 
@@ -92,7 +90,7 @@ Property detail
 
 .. py:property:: ramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.ramjet_mode_as_basic
-    :type: IAdvancedFixedWingRamjetBasic
+    :type: AdvancedFixedWingRamjetBasic
 
     Get the interface for a Ramjet - Basic.
 
@@ -104,7 +102,7 @@ Property detail
 
 .. py:property:: scramjet_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.scramjet_mode_as_basic
-    :type: IAdvancedFixedWingScramjetBasic
+    :type: AdvancedFixedWingScramjetBasic
 
     Get the interface for a Scramjet - Basic.
 

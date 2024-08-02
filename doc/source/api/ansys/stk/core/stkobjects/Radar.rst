@@ -101,19 +101,19 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Radar.graphics_3d
-    :type: IRadarGraphics3D
+    :type: RadarGraphics3D
 
     Get the 3D Graphics properties for the radar.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Radar.graphics
-    :type: IRadarGraphics
+    :type: RadarGraphics
 
     Get the 2D Graphics properties for the radar.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Radar.rf_environment
-    :type: IObjectRFEnvironment
+    :type: ObjectRFEnvironment
 
     Gets the object RF Environment settings.
 

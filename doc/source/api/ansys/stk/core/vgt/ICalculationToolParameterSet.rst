@@ -3,8 +3,6 @@ ICalculationToolParameterSet
 
 .. py:class:: ansys.stk.core.vgt.ICalculationToolParameterSet
 
-   object
-   
    Parameter set contains various sets of scalar computations.
 
 .. py:currentmodule:: ICalculationToolParameterSet

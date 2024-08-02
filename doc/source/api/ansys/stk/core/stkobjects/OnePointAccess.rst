@@ -3,8 +3,6 @@ OnePointAccess
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccess
 
-   Bases: 
-
    One Point Access.
 
 .. py:currentmodule:: OnePointAccess

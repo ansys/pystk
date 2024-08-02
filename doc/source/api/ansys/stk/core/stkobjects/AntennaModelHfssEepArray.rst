@@ -104,13 +104,13 @@ Property detail
 
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.element_configuration
-    :type: IElementConfigurationHfssEepFile
+    :type: ElementConfigurationHfssEepFile
 
     Gets the element configuration.
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.elements
-    :type: IElementCollection
+    :type: ElementCollection
 
     Gets the collection of elements.
 

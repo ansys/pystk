@@ -3,8 +3,6 @@ AnalysisWorkbenchRoot
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchRoot
 
-   Bases: 
-
    Represents a VGT root.
 
 .. py:currentmodule:: AnalysisWorkbenchRoot
@@ -51,13 +49,13 @@ Property detail
 
 .. py:property:: well_known_systems
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_systems
-    :type: IVectorGeometryToolWellKnownSystems
+    :type: VectorGeometryToolWellKnownSystems
 
     Returns the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.).
 
 .. py:property:: well_known_axes
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.well_known_axes
-    :type: IVectorGeometryToolWellKnownAxes
+    :type: VectorGeometryToolWellKnownAxes
 
     Returns the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.).
 

@@ -3,8 +3,6 @@ IVectorGeometryToolPlane
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlane
 
-   object
-   
    The interface defines methods and properties common to all VGT planes.
 
 .. py:currentmodule:: IVectorGeometryToolPlane
@@ -60,7 +58,7 @@ Property detail
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.labels
-    :type: IVectorGeometryToolPlaneLabels
+    :type: VectorGeometryToolPlaneLabels
 
     Allows configuring the plane's X and Y axes labels.
 

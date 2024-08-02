@@ -3,8 +3,6 @@ SurfaceShapesResult
 
 .. py:class:: ansys.stk.core.graphics.SurfaceShapesResult
 
-   Bases: 
-
    Represents the boundary positions of a shape on the surface computed from by a surface shapes method.
 
 .. py:currentmodule:: SurfaceShapesResult

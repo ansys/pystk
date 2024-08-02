@@ -3,8 +3,6 @@ DataProviderResultDataSetCollection
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection
 
-   Bases: 
-
    Represents a collection of datasets in the interval returned by the data providers.
 
 .. py:currentmodule:: DataProviderResultDataSetCollection

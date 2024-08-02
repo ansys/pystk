@@ -3,8 +3,6 @@ ITimePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ITimePeriod
 
-   object
-   
    Provide methods and properties to configure start and stop times.
 
 .. py:currentmodule:: ITimePeriod
@@ -41,13 +39,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ITimePeriod.start_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ITimePeriod.stop_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets a stop time. Uses DateFormat Dimension.
 

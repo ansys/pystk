@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAileronRoll.airspeed_options
-    :type: IBasicManeuverAirspeedOptions
+    :type: BasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

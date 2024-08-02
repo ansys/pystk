@@ -3,8 +3,6 @@ AntennaNoiseTemperature
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaNoiseTemperature
 
-   Bases: 
-
    Class defining antenna noise temperature.
 
 .. py:currentmodule:: AntennaNoiseTemperature

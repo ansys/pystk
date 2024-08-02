@@ -3,8 +3,6 @@ ShipExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.ShipExportTools
 
-   Bases: 
-
    The Ship Export Tools.
 
 .. py:currentmodule:: ShipExportTools

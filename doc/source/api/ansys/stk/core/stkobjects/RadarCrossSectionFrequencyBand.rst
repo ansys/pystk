@@ -3,8 +3,6 @@ RadarCrossSectionFrequencyBand
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand
 
-   Bases: 
-
    Class defining a inheritable radar cross section frequency band.
 
 .. py:currentmodule:: RadarCrossSectionFrequencyBand

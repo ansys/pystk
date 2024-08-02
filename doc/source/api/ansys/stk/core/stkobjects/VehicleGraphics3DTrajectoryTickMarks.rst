@@ -3,8 +3,6 @@ VehicleGraphics3DTrajectoryTickMarks
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks
 
-   Bases: 
-
    Tick mark data for launch vehicles and missiles.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectoryTickMarks
@@ -48,13 +46,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks.ground_track
-    :type: IVehicleGraphics3DPathTickMarks
+    :type: VehicleGraphics3DPathTickMarks
 
     Get the ground track tick marks.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTickMarks.trajectory
-    :type: IVehicleGraphics3DPathTickMarks
+    :type: VehicleGraphics3DPathTickMarks
 
     Get the trajectory tick marks.
 

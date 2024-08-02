@@ -3,8 +3,6 @@ LabelNoteCollection
 
 .. py:class:: ansys.stk.core.stkobjects.LabelNoteCollection
 
-   Bases: 
-
    Collection representing label notes list.
 
 .. py:currentmodule:: LabelNoteCollection

@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceInitialState.spacecraft_parameters
-    :type: ISpacecraftParameters
+    :type: SpacecraftParameters
 
     Get the spacecraft  parameters.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceInitialState.fuel_tank
-    :type: IFuelTank
+    :type: FuelTank
 
     Get the fuel tank parameters.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceInitialState.user_variables
-    :type: IUserVariableCollection
+    :type: UserVariableCollection
 
     Interface used to modify user variables for the initial state segment.
 

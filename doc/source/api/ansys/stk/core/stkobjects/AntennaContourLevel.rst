@@ -3,8 +3,6 @@ AntennaContourLevel
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaContourLevel
 
-   Bases: 
-
    Class defining an antenna contour level.
 
 .. py:currentmodule:: AntennaContourLevel

@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: precession
     :canonical: ansys.stk.core.stkobjects.VehicleProfilePrecessingSpin.precession
-    :type: IVehicleRateOffset
+    :type: VehicleRateOffset
 
     Get the precession rate and offset.
 
 .. py:property:: spin
     :canonical: ansys.stk.core.stkobjects.VehicleProfilePrecessingSpin.spin
-    :type: IVehicleRateOffset
+    :type: VehicleRateOffset
 
     Get the spin rate and offset.
 

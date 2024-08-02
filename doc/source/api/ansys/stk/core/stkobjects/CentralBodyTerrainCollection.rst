@@ -3,8 +3,6 @@ CentralBodyTerrainCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CentralBodyTerrainCollection
 
-   Bases: 
-
    Represents a collection of terrains associated with central bodies. This collection enables adding terrain to any central bodies and not just to the current scenario's central body.
 
 .. py:currentmodule:: CentralBodyTerrainCollection

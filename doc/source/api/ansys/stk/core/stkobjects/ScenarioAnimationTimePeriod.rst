@@ -3,8 +3,6 @@ ScenarioAnimationTimePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod
 
-   Bases: 
-
    Configure the scenario's animation time.
 
 .. py:currentmodule:: ScenarioAnimationTimePeriod
@@ -46,13 +44,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.start_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets the animation's start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.stop_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets the animation's stop time. Uses DateFormat Dimension.
 

@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.PointTargetGraphics3DModel.marker
-    :type: IGraphics3DMarker
+    :type: Graphics3DMarker
 
     VO Marker attributes.
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.PointTargetGraphics3DModel.gltf_image_based
-    :type: IGraphics3DModelGltfImageBased
+    :type: Graphics3DModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

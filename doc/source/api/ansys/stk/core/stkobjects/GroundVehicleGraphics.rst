@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

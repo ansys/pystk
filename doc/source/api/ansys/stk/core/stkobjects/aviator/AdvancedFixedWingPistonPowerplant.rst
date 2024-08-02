@@ -3,8 +3,6 @@ AdvancedFixedWingPistonPowerplant
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingPistonPowerplant
 
-   Bases: 
-
    Class defining a Piston powerplant in the Advanced Fixed Wing Tool.
 
 .. py:currentmodule:: AdvancedFixedWingPistonPowerplant

@@ -3,8 +3,6 @@ SatelliteExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.SatelliteExportTools
 
-   Bases: 
-
    The Satellite Export Tools.
 
 .. py:currentmodule:: SatelliteExportTools

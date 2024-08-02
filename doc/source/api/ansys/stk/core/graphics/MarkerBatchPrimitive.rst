@@ -155,13 +155,13 @@ Property detail
 
 .. py:property:: distance_display_condition_per_marker
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.distance_display_condition_per_marker
-    :type: IDistanceDisplayCondition
+    :type: DistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.texture
-    :type: IRendererTexture2D
+    :type: RendererTexture2D
 
     Gets or sets the per-batch texture, which is applied to each marker in the batch.
 
@@ -221,7 +221,7 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.texture_filter
-    :type: ITextureFilter2D
+    :type: TextureFilter2D
 
     Gets or sets the filter used for per-marker or per-batch textures.
 

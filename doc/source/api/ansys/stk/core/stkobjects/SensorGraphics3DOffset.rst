@@ -3,8 +3,6 @@ SensorGraphics3DOffset
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DOffset
 
-   Bases: 
-
    Class defining 3D Graphics vertex offset properties of a Sensor.
 
 .. py:currentmodule:: SensorGraphics3DOffset

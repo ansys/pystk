@@ -3,8 +3,6 @@ LevelTurns
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.LevelTurns
 
-   Bases: 
-
    Class defining the level turns options for an acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: LevelTurns
@@ -103,7 +101,7 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper
-    :type: IAerodynamicPropulsionManeuverModeHelper
+    :type: AerodynamicPropulsionManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 

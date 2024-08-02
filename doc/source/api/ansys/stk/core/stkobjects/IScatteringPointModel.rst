@@ -3,8 +3,6 @@ IScatteringPointModel
 
 .. py:class:: ansys.stk.core.stkobjects.IScatteringPointModel
 
-   object
-   
    Provide access to the properties and methods defining a scattering point model model.
 
 .. py:currentmodule:: IScatteringPointModel

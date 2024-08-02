@@ -3,8 +3,6 @@ AdvCATAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATAdvanced
 
-   Bases: 
-
    AdvCAT advanced properties.
 
 .. py:currentmodule:: AdvCATAdvanced
@@ -72,13 +70,13 @@ Property detail
 
 .. py:property:: advanced_ellipsoid
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.advanced_ellipsoid
-    :type: IAdvCATAdvancedEllipsoid
+    :type: AdvCATAdvancedEllipsoid
 
     Get AdvCAT advanced ellipsoid properties.
 
 .. py:property:: pre_filters
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.pre_filters
-    :type: IAdvCATPreFilters
+    :type: AdvCATPreFilters
 
     Get AdvCAT filter settings.
 

@@ -3,8 +3,6 @@ AntennaGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Antenna.
 
 .. py:currentmodule:: AntennaGraphics3D
@@ -44,7 +42,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.AntennaGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the antenna's Vector properties.
 
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: volume_graphics
     :canonical: ansys.stk.core.stkobjects.AntennaGraphics3D.volume_graphics
-    :type: IAntennaVolumeGraphics
+    :type: AntennaVolumeGraphics
 
     Gets the antenna volume graphics interface.
 

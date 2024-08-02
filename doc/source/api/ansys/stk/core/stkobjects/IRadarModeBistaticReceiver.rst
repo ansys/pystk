@@ -3,8 +3,6 @@ IRadarModeBistaticReceiver
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticReceiver
 
-   object
-   
    Provide access to the properties and methods defining a bistatic receiver mode.
 
 .. py:currentmodule:: IRadarModeBistaticReceiver

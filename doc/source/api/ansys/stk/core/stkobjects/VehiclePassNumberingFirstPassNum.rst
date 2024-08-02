@@ -3,8 +3,6 @@ VehiclePassNumberingFirstPassNum
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePassNumberingFirstPassNum
 
-   Bases: 
-
    First pass number.
 
 .. py:currentmodule:: VehiclePassNumberingFirstPassNum

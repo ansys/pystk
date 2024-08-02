@@ -3,8 +3,6 @@ VehicleSegmentsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSegmentsCollection
 
-   Bases: 
-
    Collection of segments for a vehicle.
 
 .. py:currentmodule:: VehicleSegmentsCollection

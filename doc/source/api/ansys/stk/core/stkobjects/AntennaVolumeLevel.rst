@@ -3,8 +3,6 @@ AntennaVolumeLevel
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaVolumeLevel
 
-   Bases: 
-
    Class defining an antenna volume level.
 
 .. py:currentmodule:: AntennaVolumeLevel

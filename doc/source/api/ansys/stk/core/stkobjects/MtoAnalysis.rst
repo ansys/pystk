@@ -3,8 +3,6 @@ MtoAnalysis
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysis
 
-   Bases: 
-
    MTO Spatial State Info.
 
 .. py:currentmodule:: MtoAnalysis
@@ -44,25 +42,25 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.MtoAnalysis.position
-    :type: IMtoAnalysisPosition
+    :type: MtoAnalysisPosition
 
     Returns a spatial state of the mto at specified time.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.MtoAnalysis.range
-    :type: IMtoAnalysisRange
+    :type: MtoAnalysisRange
 
     Returns the range from an Mto track to another object.
 
 .. py:property:: field_of_view
     :canonical: ansys.stk.core.stkobjects.MtoAnalysis.field_of_view
-    :type: IMtoAnalysisFieldOfView
+    :type: MtoAnalysisFieldOfView
 
     Returns the field of view from an Mto track to a sensor.
 
 .. py:property:: visibility
     :canonical: ansys.stk.core.stkobjects.MtoAnalysis.visibility
-    :type: IMtoAnalysisVisibility
+    :type: MtoAnalysisVisibility
 
     Returns the visibility from an Mto track to another object.
 

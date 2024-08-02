@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: filter_factory
     :canonical: ansys.stk.core.vgt.TimeToolEventIntervalListFiltered.filter_factory
-    :type: ITimeToolPruneFilterFactory
+    :type: TimeToolPruneFilterFactory
 
     Get the prune filter factory.
 

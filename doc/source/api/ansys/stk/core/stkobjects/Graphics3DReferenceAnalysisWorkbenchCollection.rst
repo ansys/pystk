@@ -3,8 +3,6 @@ Graphics3DReferenceAnalysisWorkbenchCollection
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DReferenceAnalysisWorkbenchCollection
 
-   Bases: 
-
    Collection of reference vectors, axes, points, planes and angles (3D Graphics, Vector Geometry Tool).
 
 .. py:currentmodule:: Graphics3DReferenceAnalysisWorkbenchCollection

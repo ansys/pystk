@@ -3,8 +3,6 @@ SatelliteGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.SatelliteGraphics
 
-   Bases: 
-
    Satellite 2D Graphics properties.
 
 .. py:currentmodule:: SatelliteGraphics
@@ -103,73 +101,73 @@ Property detail
 
 .. py:property:: time_events
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.time_events
-    :type: IVehicleGraphics2DTimeEventsCollection
+    :type: VehicleGraphics2DTimeEventsCollection
 
     Get the satellite's TimeEvents properties.
 
 .. py:property:: passes
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.passes
-    :type: IVehicleGraphics2DPasses
+    :type: VehicleGraphics2DPasses
 
     Get the pass display settings of the satellite's Pass properties.
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.pass_data
-    :type: IVehicleGraphics2DOrbitPassData
+    :type: VehicleGraphics2DOrbitPassData
 
     Get the leading/trailing ground track and orbit settings of the satellite's Pass properties.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.resolution
-    :type: IVehicleGraphics2DPassResolution
+    :type: VehicleGraphics2DPassResolution
 
     Get the path resolution settings of the satellite's Pass properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.elev_contours
-    :type: IVehicleGraphics2DElevContours
+    :type: VehicleGraphics2DElevContours
 
     Get the satellite's Elevation Contours properties.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.saa
-    :type: IVehicleGraphics2DSAA
+    :type: VehicleGraphics2DSAA
 
     Get the satellite's South Atlantic Anomaly Contour properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.range_contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     Get the satellite's Range Contours properties.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.lighting
-    :type: IVehicleGraphics2DLighting
+    :type: VehicleGraphics2DLighting
 
     Get the satellite's Lighting properties.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.swath
-    :type: IVehicleGraphics2DSwath
+    :type: VehicleGraphics2DSwath
 
     Get the satellite's Swath properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.ground_ellipses
-    :type: IVehicleGraphics2DGroundEllipsesCollection
+    :type: VehicleGraphics2DGroundEllipsesCollection
 
     Get the satellite's Ground Ellipses properties.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
 .. py:property:: ground_track_central_body_display
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.ground_track_central_body_display
-    :type: IVehicleCentralBodies
+    :type: VehicleCentralBodies
 
     Gets the ground track display central bodies.
 
@@ -193,7 +191,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

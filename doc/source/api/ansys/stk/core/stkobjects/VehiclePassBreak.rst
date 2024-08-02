@@ -3,8 +3,6 @@ VehiclePassBreak
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePassBreak
 
-   Bases: 
-
    Satellite Pass Break properties.
 
 .. py:currentmodule:: VehiclePassBreak
@@ -59,7 +57,7 @@ Property detail
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.VehiclePassBreak.definition
-    :type: IVehicleDefinition
+    :type: VehicleDefinition
 
     Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
 
@@ -77,7 +75,7 @@ Property detail
 
 .. py:property:: repeat_ground_track_numbering
     :canonical: ansys.stk.core.stkobjects.VehiclePassBreak.repeat_ground_track_numbering
-    :type: IVehicleRepeatGroundTrackNumbering
+    :type: VehicleRepeatGroundTrackNumbering
 
     Get data on repeat ground track numbering.
 

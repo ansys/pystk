@@ -3,8 +3,6 @@ IVehicleGraphics2DAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributes
 
-   object
-   
    Base Interface for Vehicle 2D Graphics Attributes.
 
 .. py:currentmodule:: IVehicleGraphics2DAttributes

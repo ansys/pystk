@@ -3,8 +3,6 @@ RadarClutterGeometry
 
 .. py:class:: ansys.stk.core.stkobjects.RadarClutterGeometry
 
-   Bases: 
-
    Class defining a radar clutter geometry.
 
 .. py:currentmodule:: RadarClutterGeometry

@@ -3,8 +3,6 @@ AircraftExternalPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion
 
-   Bases: 
-
    Class defining the external propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftExternalPropulsion

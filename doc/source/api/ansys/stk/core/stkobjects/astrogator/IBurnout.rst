@@ -3,8 +3,6 @@ IBurnout
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IBurnout
 
-   object
-   
    The burnout point reference frame.
 
 .. py:currentmodule:: IBurnout

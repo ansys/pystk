@@ -3,8 +3,6 @@ AltitudeMSLAndLevelOffOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions
 
-   Bases: 
-
    Class defining the altitude MSL and Level off options in a procedure.
 
 .. py:currentmodule:: AltitudeMSLAndLevelOffOptions

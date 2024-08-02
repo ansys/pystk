@@ -3,8 +3,6 @@ BasicManeuverTargetPositionVelNoisySurfTarget
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget
 
-   Bases: 
-
    Class defining the position and velocity strategy, Noisy Surface Target.
 
 .. py:currentmodule:: BasicManeuverTargetPositionVelNoisySurfTarget

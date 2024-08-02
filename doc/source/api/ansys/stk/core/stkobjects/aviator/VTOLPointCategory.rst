@@ -3,8 +3,6 @@ VTOLPointCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.VTOLPointCategory
 
-   Bases: 
-
    Class defining the VTOL point category in the Aviator catalog.
 
 .. py:currentmodule:: VTOLPointCategory
@@ -42,19 +40,19 @@ Property detail
 
 .. py:property:: user_vtol_points
     :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.user_vtol_points
-    :type: IUserVTOLPointSource
+    :type: UserVTOLPointSource
 
     Get the User VTOL Points.
 
 .. py:property:: arinc424_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.arinc424_helipads
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 helipads.
 
 .. py:property:: dafif_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.VTOLPointCategory.dafif_helipads
-    :type: IDAFIFSource
+    :type: DAFIFSource
 
     Get the DAFIF helipads.
 

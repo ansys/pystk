@@ -50,19 +50,19 @@ Property detail
 
 .. py:property:: x_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.x_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns X Coordinates parameters for the Cartesian system.
 
 .. py:property:: y_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.y_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns Y Coordinates parameters for the Cartesian system.
 
 .. py:property:: z_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.z_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns Z Coordinates parameters for the Cartesian system.
 

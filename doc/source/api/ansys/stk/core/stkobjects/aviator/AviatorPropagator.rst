@@ -3,8 +3,6 @@ AviatorPropagator
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AviatorPropagator
 
-   Bases: 
-
    Class defining the Aviator propagator.
 
 .. py:currentmodule:: AviatorPropagator
@@ -51,7 +49,7 @@ Property detail
 
 .. py:property:: aviator_mission
     :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_mission
-    :type: IMission
+    :type: Mission
 
     Get the Aviator mission.
 
@@ -63,7 +61,7 @@ Property detail
 
 .. py:property:: aviator_catalog
     :canonical: ansys.stk.core.stkobjects.aviator.AviatorPropagator.aviator_catalog
-    :type: ICatalog
+    :type: Catalog
 
     Get the Aviator catalog.
 

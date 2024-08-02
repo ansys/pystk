@@ -3,8 +3,6 @@ IPerformanceModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IPerformanceModel
 
-   object
-   
    Interface for a performance model of an Aviator vehicle.
 
 .. py:currentmodule:: IPerformanceModel

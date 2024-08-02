@@ -3,8 +3,6 @@ ElementConfigurationHfssEepFile
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationHfssEepFile
 
-   Bases: 
-
    Class defining an HFSS EEP file element configuration.
 
 .. py:currentmodule:: ElementConfigurationHfssEepFile

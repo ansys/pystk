@@ -3,8 +3,6 @@ IAreaTypeData
 
 .. py:class:: ansys.stk.core.stkobjects.IAreaTypeData
 
-   object
-   
    Base interface IAgAreaTypeData. IAgAreaTypePatternCollection and IAgAreaTypeEllipse derive from it.
 
 .. py:currentmodule:: IAreaTypeData

@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: engine_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.engine_definition
-    :type: IEngineDefinition
+    :type: EngineDefinition
 
     Get the engine definition.
 

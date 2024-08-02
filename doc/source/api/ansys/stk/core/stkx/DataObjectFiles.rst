@@ -3,8 +3,6 @@ DataObjectFiles
 
 .. py:class:: ansys.stk.core.stkx.DataObjectFiles
 
-   Bases: 
-
    Collection of files for OLE drag & drop operations.
 
 .. py:currentmodule:: DataObjectFiles

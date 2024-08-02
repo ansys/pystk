@@ -3,8 +3,6 @@ AirportCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AirportCategory
 
-   Bases: 
-
    Class defining the airport category in the Aviator catalog.
 
 .. py:currentmodule:: AirportCategory
@@ -38,7 +36,7 @@ Property detail
 
 .. py:property:: arinc424_airports
     :canonical: ansys.stk.core.stkobjects.aviator.AirportCategory.arinc424_airports
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 airports.
 

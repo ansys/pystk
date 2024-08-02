@@ -3,8 +3,6 @@ Graphics3DDataDisplayElement
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement
 
-   Bases: 
-
    Class defining 3D Graphics data display element.
 
 .. py:currentmodule:: Graphics3DDataDisplayElement

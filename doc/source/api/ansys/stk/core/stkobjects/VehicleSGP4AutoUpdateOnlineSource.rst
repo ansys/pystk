@@ -3,8 +3,6 @@ VehicleSGP4AutoUpdateOnlineSource
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4AutoUpdateOnlineSource
 
-   Bases: 
-
    Configure the SGP4 automatic updates using online source (AGI server).
 
 .. py:currentmodule:: VehicleSGP4AutoUpdateOnlineSource

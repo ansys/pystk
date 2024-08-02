@@ -170,7 +170,7 @@ Property detail
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.AntennaModelPhasedArray.elements
-    :type: IElementCollection
+    :type: ElementCollection
 
     Gets the collection of elements.
 

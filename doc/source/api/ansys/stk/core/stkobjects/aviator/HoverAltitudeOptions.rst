@@ -3,8 +3,6 @@ HoverAltitudeOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.HoverAltitudeOptions
 
-   Bases: 
-
    Class defining the altitude options for a VTOL procedure.
 
 .. py:currentmodule:: HoverAltitudeOptions

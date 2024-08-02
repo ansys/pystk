@@ -3,8 +3,6 @@ IAviatorVehicle
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IAviatorVehicle
 
-   object
-   
    Interface for a vehicle in Aviator.
 
 .. py:currentmodule:: IAviatorVehicle

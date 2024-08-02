@@ -3,8 +3,6 @@ AircraftVTOLModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel
 
-   Bases: 
-
    Class defining the VTOL performance model of an aircraft.
 
 .. py:currentmodule:: AircraftVTOLModel

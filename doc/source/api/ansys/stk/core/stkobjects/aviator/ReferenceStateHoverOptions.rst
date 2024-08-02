@@ -3,8 +3,6 @@ ReferenceStateHoverOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions
 
-   Bases: 
-
    Class defining the Hover options for a Reference State procedure.
 
 .. py:currentmodule:: ReferenceStateHoverOptions

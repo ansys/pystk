@@ -135,13 +135,13 @@ Property detail
 
 .. py:property:: std_military2525_b_symbols
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols
-    :type: IStdMilitary2525bSymbols
+    :type: StdMilitary2525bSymbols
 
     Returns the interface that enables creating 2525b symbols.
 
 .. py:property:: available_features
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.available_features
-    :type: IAvailableFeatures
+    :type: AvailableFeatures
 
     Allows the user to inquiry about the available features.
 
@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
-    :type: IStkCentralBodyCollection
+    :type: StkCentralBodyCollection
 
     Returns a collection of available central bodies.
 
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: stk_preferences
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences
-    :type: IStkPreferences
+    :type: StkPreferences
 
     Configures STK preferences.
 

@@ -3,8 +3,6 @@ Swath
 
 .. py:class:: ansys.stk.core.stkobjects.Swath
 
-   Bases: 
-
    Class defining Swath properties.
 
 .. py:currentmodule:: Swath

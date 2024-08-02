@@ -3,8 +3,6 @@ MarkerBatchPrimitiveOptionalParametersFactory
 
 .. py:class:: ansys.stk.core.graphics.MarkerBatchPrimitiveOptionalParametersFactory
 
-   Bases: 
-
    Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
 
 .. py:currentmodule:: MarkerBatchPrimitiveOptionalParametersFactory

@@ -3,8 +3,6 @@ VolumetricAnalysisInterval
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricAnalysisInterval
 
-   Bases: 
-
    Class defining the volumetric analysis interval.
 
 .. py:currentmodule:: VolumetricAnalysisInterval

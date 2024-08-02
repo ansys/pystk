@@ -3,8 +3,6 @@ FigureOfMeritGraphics2DLegendWindow
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLegendWindow
 
-   Bases: 
-
    Properties of contour legend on 2D map.
 
 .. py:currentmodule:: FigureOfMeritGraphics2DLegendWindow
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DLegendWindow.position_on_map
-    :type: IFigureOfMeritGraphics2DPositionOnMap
+    :type: FigureOfMeritGraphics2DPositionOnMap
 
     Get the position of the contour legend on the 2D map in pixel coordinates.
 

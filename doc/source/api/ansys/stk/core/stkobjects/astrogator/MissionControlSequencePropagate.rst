@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequencePropagate.stopping_conditions
-    :type: IStoppingConditionCollection
+    :type: StoppingConditionCollection
 
     Get the list of stopping conditions defined for the segment.
 

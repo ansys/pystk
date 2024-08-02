@@ -3,8 +3,6 @@ VehiclePositionVelocityElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePositionVelocityElement
 
-   Bases: 
-
    Class defining position and velocity elements for HPOP covariance.
 
 .. py:currentmodule:: VehiclePositionVelocityElement

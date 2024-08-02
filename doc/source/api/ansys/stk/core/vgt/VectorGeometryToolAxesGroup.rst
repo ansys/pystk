@@ -3,8 +3,6 @@ VectorGeometryToolAxesGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesGroup
 
-   Bases: 
-
    Access or create VGT axes associated with an object or a central body.
 
 .. py:currentmodule:: VectorGeometryToolAxesGroup
@@ -75,7 +73,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.factory
-    :type: IVectorGeometryToolAxesFactory
+    :type: VectorGeometryToolAxesFactory
 
     Returns a Factory object used to create custom axes.
 
@@ -87,7 +85,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.common_tasks
-    :type: IVectorGeometryToolAxesCommonTasks
+    :type: VectorGeometryToolAxesCommonTasks
 
     Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc.
 

@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownSystems
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSystems
 
-   Bases: 
-
    Well-known coordinate reference systems.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownSystems
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSystems.earth
-    :type: IVectorGeometryToolWellKnownEarthSystems
+    :type: VectorGeometryToolWellKnownEarthSystems
 
     Earth's coordinate reference systems.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSystems.sun
-    :type: IVectorGeometryToolWellKnownSunSystems
+    :type: VectorGeometryToolWellKnownSunSystems
 
     The Sun's coordinate reference systems.
 

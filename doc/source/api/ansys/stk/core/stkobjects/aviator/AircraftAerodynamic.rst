@@ -3,8 +3,6 @@ AircraftAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic
 
-   Bases: 
-
    Class defining the aerodynamic options for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftAerodynamic
@@ -56,25 +54,25 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_simple
-    :type: IAircraftSimpleAerodynamic
+    :type: AircraftSimpleAerodynamic
 
     Get the interface for a simple aerodynamics strategy.
 
 .. py:property:: mode_as_basic_fixed_wing
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_basic_fixed_wing
-    :type: IAircraftBasicFixedWingAerodynamic
+    :type: AircraftBasicFixedWingAerodynamic
 
     Get the interface for a basic fixed wing aerodynamics strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_external
-    :type: IAircraftExternalAerodynamic
+    :type: AircraftExternalAerodynamic
 
     Get the interface for an external file aerodynamics strategy.
 
 .. py:property:: mode_as_advanced_missile
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_advanced_missile
-    :type: IMissileAdvancedAerodynamic
+    :type: MissileAdvancedAerodynamic
 
     Get the interface for an advanced missile aerodynamics strategy.
 

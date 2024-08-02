@@ -3,8 +3,6 @@ VectorGeometryToolVectorFactory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFactory
 
-   Bases: 
-
    A Factory object to create vectors.
 
 .. py:currentmodule:: VectorGeometryToolVectorFactory

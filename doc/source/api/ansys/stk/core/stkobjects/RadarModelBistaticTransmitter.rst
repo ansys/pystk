@@ -67,19 +67,19 @@ Property detail
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticTransmitter.transmitter
-    :type: IRadarTransmitter
+    :type: RadarTransmitter
 
     Gets the radar transmitter.
 
 .. py:property:: bistatic_receivers
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticTransmitter.bistatic_receivers
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the bistatic receiver collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticTransmitter.antenna_control
-    :type: IAntennaControl
+    :type: AntennaControl
 
     Gets the radar antenna control.
 

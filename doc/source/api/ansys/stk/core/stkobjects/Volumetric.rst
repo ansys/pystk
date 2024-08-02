@@ -75,19 +75,19 @@ Property detail
 
 .. py:property:: volume_analysis_interval
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_analysis_interval
-    :type: IVolumetricAnalysisInterval
+    :type: VolumetricAnalysisInterval
 
     Get Volume Analysis Interval.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.Volumetric.advanced
-    :type: IVolumetricAdvanced
+    :type: VolumetricAdvanced
 
     Get Advanced options.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Volumetric.graphics_3d
-    :type: IVolumetricGraphics3D
+    :type: VolumetricGraphics3D
 
     Get the 3D Graphics properties for the volumetric object.
 

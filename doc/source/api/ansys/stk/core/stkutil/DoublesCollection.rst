@@ -3,8 +3,6 @@ DoublesCollection
 
 .. py:class:: ansys.stk.core.stkutil.DoublesCollection
 
-   Bases: 
-
    A collection of doubles.
 
 .. py:currentmodule:: DoublesCollection

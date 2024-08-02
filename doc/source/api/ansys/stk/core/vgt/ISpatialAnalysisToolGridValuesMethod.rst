@@ -3,8 +3,6 @@ ISpatialAnalysisToolGridValuesMethod
 
 .. py:class:: ansys.stk.core.vgt.ISpatialAnalysisToolGridValuesMethod
 
-   object
-   
    A grid values method.
 
 .. py:currentmodule:: ISpatialAnalysisToolGridValuesMethod

@@ -3,8 +3,6 @@ VehicleGravity
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGravity
 
-   Bases: 
-
    Class defining gravity modeling options for a vehicle.
 
 .. py:currentmodule:: VehicleGravity

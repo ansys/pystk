@@ -3,8 +3,6 @@ RadarCrossSectionVolumeLevelCollection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevelCollection
 
-   Bases: 
-
    Class defining a collection of radar cross section volume levels.
 
 .. py:currentmodule:: RadarCrossSectionVolumeLevelCollection

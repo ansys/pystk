@@ -3,8 +3,6 @@ FlipFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.FlipFilterFactory
 
-   Bases: 
-
    Flips the source raster along the given flip axis.
 
 .. py:currentmodule:: FlipFilterFactory

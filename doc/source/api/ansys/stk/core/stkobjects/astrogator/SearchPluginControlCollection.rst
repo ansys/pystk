@@ -3,8 +3,6 @@ SearchPluginControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection
 
-   Bases: 
-
    The list of search plugin control parameters.
 
 .. py:currentmodule:: SearchPluginControlCollection

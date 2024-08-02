@@ -3,8 +3,6 @@ AdvancedFixedWingExternalPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingExternalPropulsion
 
-   Bases: 
-
    Class defining an External Prop File powerplant in the Advanced Fixed Wing Tool.
 
 .. py:currentmodule:: AdvancedFixedWingExternalPropulsion

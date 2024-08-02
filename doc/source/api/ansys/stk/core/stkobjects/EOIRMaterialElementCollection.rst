@@ -3,8 +3,6 @@ EOIRMaterialElementCollection
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRMaterialElementCollection
 
-   Bases: 
-
    Collection of material elements.
 
 .. py:currentmodule:: EOIRMaterialElementCollection

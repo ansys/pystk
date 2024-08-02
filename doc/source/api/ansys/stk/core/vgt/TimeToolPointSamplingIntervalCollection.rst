@@ -3,8 +3,6 @@ TimeToolPointSamplingIntervalCollection
 
 .. py:class:: ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection
 
-   Bases: 
-
    A collection of intervals where each interval contains the time, position and velocity arrays.
 
 .. py:currentmodule:: TimeToolPointSamplingIntervalCollection

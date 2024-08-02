@@ -3,8 +3,6 @@ VehicleGraphics2DTrajectoryResolution
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution
 
-   Bases: 
-
    Ground track and trajectory resolution for launch vehicles and missiles in terms of ephemeris steps.
 
 .. py:currentmodule:: VehicleGraphics2DTrajectoryResolution

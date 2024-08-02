@@ -3,8 +3,6 @@ AdvCATChosenObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATChosenObjectCollection
 
-   Bases: 
-
    The chosen object collection.
 
 .. py:currentmodule:: AdvCATChosenObjectCollection

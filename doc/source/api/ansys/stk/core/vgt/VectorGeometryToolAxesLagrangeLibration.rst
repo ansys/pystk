@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: primary_central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesLagrangeLibration.primary_central_body
-    :type: IAnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyRefTo
 
     Specify a primary central body.
 
@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: secondary_central_bodies
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesLagrangeLibration.secondary_central_bodies
-    :type: IAnalysisWorkbenchCentralBodyCollection
+    :type: AnalysisWorkbenchCentralBodyCollection
 
     Specify secondary central bodies.
 

@@ -3,8 +3,6 @@ VectorGeometryToolPlaneGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup
 
-   Bases: 
-
    Represents a VGT Plane component.
 
 .. py:currentmodule:: VectorGeometryToolPlaneGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup.factory
-    :type: IVectorGeometryToolPlaneFactory
+    :type: VectorGeometryToolPlaneFactory
 
     Returns a Factory object used to create custom planes.
 

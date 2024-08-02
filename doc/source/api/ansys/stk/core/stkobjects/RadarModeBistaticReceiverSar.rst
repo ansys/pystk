@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: pulse_integration
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSar.pulse_integration
-    :type: IRadarWaveformSarPulseIntegration
+    :type: RadarWaveformSarPulseIntegration
 
     Gets the interface for configuring the SAR waveform pulse integration.
 

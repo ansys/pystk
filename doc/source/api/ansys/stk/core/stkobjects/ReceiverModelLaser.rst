@@ -115,19 +115,19 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demod_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.link_margin
-    :type: ILinkMargin
+    :type: LinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -187,7 +187,7 @@ Property detail
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.antenna_control
-    :type: IAntennaControl
+    :type: AntennaControl
 
     Gets the receiver antenna control.
 
@@ -235,7 +235,7 @@ Property detail
 
 .. py:property:: propagation_loss_models
     :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.propagation_loss_models
-    :type: ILaserPropagationLossModels
+    :type: LaserPropagationLossModels
 
     This property is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
 

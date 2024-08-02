@@ -3,8 +3,6 @@ DataProviderElement
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderElement
 
-   Bases: 
-
    Class defining a data provider element.
 
 .. py:currentmodule:: DataProviderElement

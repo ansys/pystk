@@ -3,8 +3,6 @@ VolumetricGraphics3DActiveGridPoints
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DActiveGridPoints
 
-   Bases: 
-
    Class defining Active Grid Points for Volumetric Object.
 
 .. py:currentmodule:: VolumetricGraphics3DActiveGridPoints

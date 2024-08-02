@@ -3,8 +3,6 @@ FacilityGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.FacilityGraphics
 
-   Bases: 
-
    2D Graphics properties of a Facility.
 
 .. py:currentmodule:: FacilityGraphics
@@ -86,13 +84,13 @@ Property detail
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.az_el_mask
-    :type: IBasicAzElMask
+    :type: BasicAzElMask
 
     The graphics az-el mask properties for the facility, place or target.
 
 .. py:property:: contours
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     The range contours properties for the facility, place or target.
 
@@ -110,7 +108,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -134,7 +132,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

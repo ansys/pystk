@@ -3,8 +3,6 @@ ReferenceStateWeightOnWheelsOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions
 
-   Bases: 
-
    Class defining the Weight on Wheels options for a Reference State procedure.
 
 .. py:currentmodule:: ReferenceStateWeightOnWheelsOptions

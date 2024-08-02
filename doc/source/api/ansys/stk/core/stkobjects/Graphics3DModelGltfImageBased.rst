@@ -3,8 +3,6 @@ Graphics3DModelGltfImageBased
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelGltfImageBased
 
-   Bases: 
-
    Class defining glTF Reflection Settings.
 
 .. py:currentmodule:: Graphics3DModelGltfImageBased

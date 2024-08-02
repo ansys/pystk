@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: reference
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointFixedInSystem.reference
-    :type: IVectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

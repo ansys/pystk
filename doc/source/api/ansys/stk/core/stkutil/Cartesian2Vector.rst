@@ -3,8 +3,6 @@ Cartesian2Vector
 
 .. py:class:: ansys.stk.core.stkutil.Cartesian2Vector
 
-   Bases: 
-
    A 2-D cartesian vector.
 
 .. py:currentmodule:: Cartesian2Vector

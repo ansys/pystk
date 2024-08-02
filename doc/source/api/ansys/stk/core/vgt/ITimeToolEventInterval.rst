@@ -3,8 +3,6 @@ ITimeToolEventInterval
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventInterval
 
-   object
-   
    A single time interval.
 
 .. py:currentmodule:: ITimeToolEventInterval

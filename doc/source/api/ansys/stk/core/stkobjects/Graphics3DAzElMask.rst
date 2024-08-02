@@ -3,8 +3,6 @@ Graphics3DAzElMask
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DAzElMask
 
-   Bases: 
-
    Class to define display labels and adjust the translucency of the 3D azimuth-elevation mask for a facility, place or target.
 
 .. py:currentmodule:: Graphics3DAzElMask
@@ -78,7 +76,7 @@ Property detail
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.Graphics3DAzElMask.label_swap_distance
-    :type: IGraphics3DLabelSwapDistance
+    :type: Graphics3DLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

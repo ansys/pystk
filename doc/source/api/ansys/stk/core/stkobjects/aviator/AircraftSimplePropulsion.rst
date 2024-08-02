@@ -3,8 +3,6 @@ AircraftSimplePropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftSimplePropulsion
 
-   Bases: 
-
    Class defining the basic fixed wing propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftSimplePropulsion

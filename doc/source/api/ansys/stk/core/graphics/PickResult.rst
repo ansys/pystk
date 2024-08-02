@@ -3,8 +3,6 @@ PickResult
 
 .. py:class:: ansys.stk.core.graphics.PickResult
 
-   Bases: 
-
    A single result from Pick.
 
 .. py:currentmodule:: PickResult
@@ -42,7 +40,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.graphics.PickResult.objects
-    :type: IObjectCollection
+    :type: ObjectCollection
 
     Gets a collection of objects that were on the pick stack for the picked object.
 
