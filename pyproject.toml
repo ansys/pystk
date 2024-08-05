@@ -78,7 +78,6 @@ line-length = 120
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
-    "examples/*.py"
 ]
 
 [tool.ruff.lint]
@@ -92,14 +91,16 @@ select = [
     "TD",    # flake8-todos, https://docs.astral.sh/ruff/rules/#flake8-todos-td
 ]
 ignore = [
-#    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-    "D212", # Multi-line docstring summary should start at the first line
+#   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "D204",  # One blank line required after class docstring
+    "D212",  # Multi-line docstring summary should start at the first line
+    "D400",  # First line should end with a period
     "TD002", # Missing author in TODOs comment
 ]
 
 [tool.ruff.lint.pydocstyle]
 # Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
-convention = "google"
+convention = "numpy"
 
 # [tool.ruff.format]
 # quote-style = "double"

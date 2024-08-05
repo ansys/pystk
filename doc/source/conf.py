@@ -367,9 +367,18 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
             stringify_func=(lambda x: x.name),
         ):
             subprocess.run(
-                    ["quarto", "render", notebook, "--to", "pdf", "-M",
-                     f"author:{author}", "-M", "highlight-style:pygments"], 
-                check=True
+                [
+                    "quarto",
+                    "render",
+                    notebook,
+                    "--to",
+                    "pdf",
+                    "-M",
+                    f"author:{author}",
+                    "-M",
+                    "highlight-style:pygments",
+                ],
+                check=True,
             )
     except FileNotFoundError:
         logger = logging.getLogger(__name__)
