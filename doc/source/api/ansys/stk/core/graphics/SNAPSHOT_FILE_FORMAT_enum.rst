@@ -1,12 +1,12 @@
-CAMERA_SNAPSHOT_FILE_FORMAT
-===========================
+SNAPSHOT_FILE_FORMAT
+====================
 
-.. py:class:: ansys.stk.core.graphics.CAMERA_SNAPSHOT_FILE_FORMAT
+.. py:class:: ansys.stk.core.graphics.SNAPSHOT_FILE_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: CAMERA_SNAPSHOT_FILE_FORMAT
+.. py:currentmodule:: SNAPSHOT_FILE_FORMAT
 
 Overview
 --------
@@ -37,6 +37,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import CAMERA_SNAPSHOT_FILE_FORMAT
+    from ansys.stk.core.graphics import SNAPSHOT_FILE_FORMAT
 
 

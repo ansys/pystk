@@ -14,61 +14,62 @@ well as in STK Engine custom applications.
 
 __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
 "AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
-"ANTI_ALIASING", "AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", 
+"ANTI_ALIASING_METHOD", "AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", 
 "AlphaFromRasterFilter", "AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", 
 "AxesPrimitive", "AxesPrimitiveFactory", "BINARY_LOGIC_OPERATION", "BLUR_METHOD", "BandExtractFilter", "BandExtractFilterFactory", 
 "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", "BlurFilter", "BlurFilterFactory", "BoundingSphere", 
-"BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter", "BrightnessFilterFactory", "CAMERA_SNAPSHOT_FILE_FORMAT", 
-"CAMERA_VIDEO_FORMAT", "CONSTRAINED_UP_AXIS", "CULL_FACE", "CYLINDER_FILL", "Camera", "CameraSnapshot", "CameraVideoRecording", 
-"CentralBodyGraphics", "CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", 
-"CompositeDisplayCondition", "CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", 
-"ConstantDisplayConditionFactory", "ContrastFilter", "ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", 
-"CustomImageGlobeOverlay", "CustomImageGlobeOverlayPluginActivator", "CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", 
-"CylinderTriangulatorInitializer", "DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory", "DistanceToGlobeOverlayDisplayCondition", 
+"BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter", "BrightnessFilterFactory", "CONSTRAINED_UP_AXIS", 
+"CYLINDER_FILL_OPTIONS", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics", "CentralBodyGraphicsIndexer", 
+"Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition", "CompositeDisplayConditionFactory", 
+"CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory", "ContrastFilter", 
+"ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay", "CustomImageGlobeOverlayPluginActivator", 
+"CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", "CylinderTriangulatorInitializer", 
+"DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory", "DistanceToGlobeOverlayDisplayCondition", 
 "DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition", "DistanceToPositionDisplayConditionFactory", 
 "DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory", "DurationPathPrimitiveUpdatePolicy", 
 "DurationPathPrimitiveUpdatePolicyFactory", "EDGE_DETECT_METHOD", "EdgeDetectFilter", "EdgeDetectFilterFactory", "EllipsoidTriangulatorInitializer", 
-"ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", "FLIP_AXIS", "FONT_STYLE", "FactoryAndInitializers", 
-"FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory", "FrameRate", "GLOBE_OVERLAY_ROLE", 
-"GRADIENT_DETECT_METHOD", "GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory", 
-"GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", 
-"GlobeImageOverlayInitializer", "GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", 
-"GraphicsFont", "GraphicsFontFactory", "GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", "IDisplayCondition", 
-"IGlobeImageOverlay", "IGlobeOverlay", "IKmlContainer", "IKmlFeature", "INDICES_ORDER_HINT", "INTERNAL_TEXTURE_FORMAT", 
-"IOverlay", "IPathPrimitiveUpdatePolicy", "IPositionInterpolator", "IPrimitive", "IProjection", "IRaster", "IRasterFilter", 
-"IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase", "IScreenOverlayContainer", "ITerrainOverlay", "ITriangulatorResult", 
-"ImageCollection", "JPEG2000_COMPRESSION_PROFILE", "Jpeg2000WriterInitializer", "KML_NETWORK_LINK_REFRESH_MODE", "KML_NETWORK_LINK_VIEW_REFRESH_MODE", 
-"KmlContainer", "KmlDocument", "KmlDocumentCollection", "KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", 
-"KmlFolder", "KmlGraphics", "KmlNetworkLink", "LevelsFilter", "LevelsFilterFactory", "Lighting", "MAGNIFICATION_FILTER", 
-"MAINTAIN_ASPECT_RATIO", "MAP_PROJECTION", "MARKER_BATCH_RENDERING_METHOD", "MARKER_BATCH_RENDER_PASS", "MARKER_BATCH_SIZE_SOURCE", 
-"MARKER_BATCH_SORT_ORDER", "MARKER_BATCH_UNIT", "MINIFICATION_FILTER", "MODEL_TRANSFORMATION_TYPE", "MODEL_UP_AXIS", "MarkerBatchPrimitive", 
-"MarkerBatchPrimitiveFactory", "MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", 
+"ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", "FACE_CULLING_MODE", "FONT_STYLE", "FactoryAndInitializers", 
+"FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory", "FrameRate", "GRADIENT_DETECT_METHOD", 
+"GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory", "GeospatialImageGlobeOverlay", 
+"GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", "GlobeImageOverlayInitializer", 
+"GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", "GraphicsFont", "GraphicsFontFactory", 
+"GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", "IDisplayCondition", "IGlobeImageOverlay", 
+"IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy", "IPositionInterpolator", "IPrimitive", 
+"IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase", "IScreenOverlayContainer", 
+"ITerrainOverlay", "ITriangulatorResult", "ImageCollection", "JPEG2000_COMPRESSION_PROFILE", "Jpeg2000WriterInitializer", 
+"KML_NETWORK_LINK_REFRESH_MODE", "KML_NETWORK_LINK_VIEW_REFRESH_MODE", "KmlContainer", "KmlDocument", "KmlDocumentCollection", 
+"KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", "KmlFolder", "KmlGraphics", "KmlNetworkLink", "LevelsFilter", 
+"LevelsFilterFactory", "Lighting", "MAGNIFICATION_FILTER", "MAP_PROJECTION", "MARKER_BATCH_RENDERING_METHOD", "MARKER_BATCH_RENDER_PASS", 
+"MARKER_BATCH_SIZE_SOURCE", "MARKER_BATCH_SIZE_UNIT", "MARKER_BATCH_SORT_ORDER", "MINIFICATION_FILTER", "MODEL_TRANSFORMATION_TYPE", 
+"MODEL_UP_AXIS", "MarkerBatchPrimitive", "MarkerBatchPrimitiveFactory", "MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", 
 "MaximumCountPathPrimitiveUpdatePolicy", "MaximumCountPathPrimitiveUpdatePolicyFactory", "ModelArticulation", "ModelArticulationCollection", 
-"ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation", "ORIGIN", "OUTLINE_APPEARANCE", "ObjectCollection", "Overlay", 
-"PATH_PRIMITIVE_REMOVE_LOCATION", "POLYLINE_TYPE", "PRIMITIVES_SORT_ORDER", "PathPoint", "PathPointCollection", "PathPointFactory", 
-"PathPrimitive", "PathPrimitiveFactory", "PathPrimitiveUpdatePolicy", "PickResult", "PickResultCollection", "PixelSizeDisplayCondition", 
-"PixelSizeDisplayConditionFactory", "PointBatchPrimitive", "PointBatchPrimitiveFactory", "PointBatchPrimitiveOptionalParameters", 
-"PointBatchPrimitiveOptionalParametersFactory", "PolylinePrimitive", "PolylinePrimitiveFactory", "PolylinePrimitiveOptionalParameters", 
-"PolylinePrimitiveOptionalParametersFactory", "PositionInterpolator", "Primitive", "PrimitiveManager", "ProjectedRasterOverlay", 
-"ProjectedRasterOverlayFactory", "Projection", "ProjectionFactory", "ProjectionRasterStreamPluginActivator", "ProjectionRasterStreamPluginActivatorFactory", 
-"ProjectionRasterStreamPluginProxy", "ProjectionStream", "RASTER_BAND", "RASTER_FORMAT", "RASTER_ORIENTATION", "RASTER_TYPE", 
-"REFRESH_RATE", "RENDERER_SHADE_MODEL", "RENDER_PASS", "RENDER_PASS_HINT", "Raster", "RasterAttributes", "RasterAttributesFactory", 
+"ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation", "ORIGIN", "OUTLINE_APPEARANCE", "OVERLAY_ASPECT_RATIO_MODE", 
+"OVERLAY_ROLE", "ObjectCollection", "Overlay", "PATH_PRIMITIVE_REMOVE_LOCATION", "POLYLINE_TYPE", "PRIMITIVES_SORT_ORDER", 
+"PRIMITIVE_INDICES_ORDER_HINT", "PathPoint", "PathPointCollection", "PathPointFactory", "PathPrimitive", "PathPrimitiveFactory", 
+"PathPrimitiveUpdatePolicy", "PickResult", "PickResultCollection", "PixelSizeDisplayCondition", "PixelSizeDisplayConditionFactory", 
+"PointBatchPrimitive", "PointBatchPrimitiveFactory", "PointBatchPrimitiveOptionalParameters", "PointBatchPrimitiveOptionalParametersFactory", 
+"PolylinePrimitive", "PolylinePrimitiveFactory", "PolylinePrimitiveOptionalParameters", "PolylinePrimitiveOptionalParametersFactory", 
+"PositionInterpolator", "Primitive", "PrimitiveManager", "ProjectedRasterOverlay", "ProjectedRasterOverlayFactory", "Projection", 
+"ProjectionFactory", "ProjectionRasterStreamPluginActivator", "ProjectionRasterStreamPluginActivatorFactory", "ProjectionRasterStreamPluginProxy", 
+"ProjectionStream", "RASTER_BAND", "RASTER_FLIP_AXIS", "RASTER_FORMAT", "RASTER_ORIENTATION", "RASTER_SHARPEN_METHOD", "RASTER_TYPE", 
+"REFRESH_RATE", "RENDERER_SHADING_MODEL", "RENDER_PASS", "RENDER_PASS_HINT", "Raster", "RasterAttributes", "RasterAttributesFactory", 
 "RasterFactory", "RasterFilter", "RasterImageGlobeOverlay", "RasterImageGlobeOverlayFactory", "RasterStream", "RendererTexture2D", 
 "RendererTextureTemplate2D", "RenderingEventArgs", "RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", 
-"RotateFilterFactory", "SCREEN_OVERLAY_ORIGIN", "SCREEN_OVERLAY_PINNING_ORIGIN", "SCREEN_OVERLAY_UNIT", "SET_HINT", "SHARPEN_METHOD", 
+"RotateFilterFactory", "SCREEN_OVERLAY_ORIGIN", "SCREEN_OVERLAY_PINNING_ORIGIN", "SCREEN_OVERLAY_UNIT", "SET_HINT", "SNAPSHOT_FILE_FORMAT", 
 "STEREOSCOPIC_DISPLAY_MODE", "STEREO_PROJECTION_MODE", "SURFACE_MESH_RENDERING_METHOD", "Scene", "SceneCollection", "SceneDisplayCondition", 
 "SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", "SceneManagerInitializer", "ScreenOverlay", 
 "ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", "ScreenOverlayManager", "ScreenOverlayPickResult", 
 "ScreenOverlayPickResultCollection", "SequenceFilter", "SequenceFilterFactory", "SharpenFilter", "SharpenFilterFactory", 
 "SolidPrimitive", "SolidPrimitiveFactory", "SolidTriangulatorResult", "Stereoscopic", "SurfaceExtentTriangulatorInitializer", 
 "SurfaceMeshPrimitive", "SurfaceMeshPrimitiveFactory", "SurfacePolygonTriangulatorInitializer", "SurfaceShapesInitializer", 
-"SurfaceShapesResult", "SurfaceTriangulatorResult", "TEXTURE_WRAP", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs", 
+"SurfaceShapesResult", "SurfaceTriangulatorResult", "TEXTURE_FORMAT", "TEXTURE_WRAP", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs", 
 "TerrainOverlayCollection", "TerrainOverlayInitializer", "TextBatchPrimitive", "TextBatchPrimitiveFactory", "TextBatchPrimitiveOptionalParameters", 
 "TextBatchPrimitiveOptionalParametersFactory", "TextOverlay", "TextOverlayFactory", "Texture2DFactory", "TextureFilter2D", 
 "TextureFilter2DFactory", "TextureMatrix", "TextureMatrixFactory", "TextureScreenOverlay", "TextureScreenOverlayFactory", 
 "TimeIntervalDisplayCondition", "TimeIntervalDisplayConditionFactory", "TriangleMeshPrimitive", "TriangleMeshPrimitiveFactory", 
-"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VIDEO_PLAYBACK", 
-"VISIBILITY", "VectorPrimitive", "VectorPrimitiveFactory", "VideoStream", "VideoStreamFactory", "VisualEffects", "WINDING_ORDER"]
+"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VIDEO_FORMAT", 
+"VIDEO_PLAYBACK", "VISIBILITY", "VectorPrimitive", "VectorPrimitiveFactory", "VideoStream", "VideoStreamFactory", "VisualEffects", 
+"WINDING_ORDER"]
 
 import typing
 
@@ -93,7 +94,7 @@ from .vgt import *
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class CYLINDER_FILL(IntFlag):
+class CYLINDER_FILL_OPTIONS(IntFlag):
     """Cylinder faces that can be filled."""
    
     WALL = 1
@@ -105,12 +106,12 @@ class CYLINDER_FILL(IntFlag):
     ALL = 7
     """Completely fill the cylinder, including its wall, bottom, and top cap."""
 
-CYLINDER_FILL.WALL.__doc__ = "Fill the cylinder's wall."
-CYLINDER_FILL.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
-CYLINDER_FILL.TOP_CAP.__doc__ = "Fill the cylinder's top cap."
-CYLINDER_FILL.ALL.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
+CYLINDER_FILL_OPTIONS.WALL.__doc__ = "Fill the cylinder's wall."
+CYLINDER_FILL_OPTIONS.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
+CYLINDER_FILL_OPTIONS.TOP_CAP.__doc__ = "Fill the cylinder's top cap."
+CYLINDER_FILL_OPTIONS.ALL.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
 
-agcls.AgTypeNameMap["CYLINDER_FILL"] = CYLINDER_FILL
+agcls.AgTypeNameMap["CYLINDER_FILL_OPTIONS"] = CYLINDER_FILL_OPTIONS
 
 class WINDING_ORDER(IntEnum):
     """Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
@@ -128,7 +129,7 @@ WINDING_ORDER.COMPUTE.__doc__ = "The winding order is unknown and should be comp
 
 agcls.AgTypeNameMap["WINDING_ORDER"] = WINDING_ORDER
 
-class CAMERA_SNAPSHOT_FILE_FORMAT(IntEnum):
+class SNAPSHOT_FILE_FORMAT(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
    
     BMP = 0
@@ -140,14 +141,14 @@ class CAMERA_SNAPSHOT_FILE_FORMAT(IntEnum):
     PNG = 4
     """PNG file format."""
 
-CAMERA_SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format."
-CAMERA_SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format."
-CAMERA_SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format."
-CAMERA_SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format."
+SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format."
+SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format."
+SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format."
+SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format."
 
-agcls.AgTypeNameMap["CAMERA_SNAPSHOT_FILE_FORMAT"] = CAMERA_SNAPSHOT_FILE_FORMAT
+agcls.AgTypeNameMap["SNAPSHOT_FILE_FORMAT"] = SNAPSHOT_FILE_FORMAT
 
-class CAMERA_VIDEO_FORMAT(IntEnum):
+class VIDEO_FORMAT(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
    
     H264 = 0
@@ -155,10 +156,10 @@ class CAMERA_VIDEO_FORMAT(IntEnum):
     WMV = 1
     """Windows Media Video (WMV) file format."""
 
-CAMERA_VIDEO_FORMAT.H264.__doc__ = "H.264 file format."
-CAMERA_VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format."
+VIDEO_FORMAT.H264.__doc__ = "H.264 file format."
+VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format."
 
-agcls.AgTypeNameMap["CAMERA_VIDEO_FORMAT"] = CAMERA_VIDEO_FORMAT
+agcls.AgTypeNameMap["VIDEO_FORMAT"] = VIDEO_FORMAT
 
 class CONSTRAINED_UP_AXIS(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
@@ -188,7 +189,7 @@ CONSTRAINED_UP_AXIS.NONE.__doc__ = "No axis is contained."
 
 agcls.AgTypeNameMap["CONSTRAINED_UP_AXIS"] = CONSTRAINED_UP_AXIS
 
-class GLOBE_OVERLAY_ROLE(IntEnum):
+class OVERLAY_ROLE(IntEnum):
     """The role of a globe overlay."""
    
     BASE = 0
@@ -202,15 +203,15 @@ class GLOBE_OVERLAY_ROLE(IntEnum):
     NONE = 5
     """The role of the globe overlay isn't set."""
 
-GLOBE_OVERLAY_ROLE.BASE.__doc__ = "The globe overlay is a base image."
-GLOBE_OVERLAY_ROLE.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
-GLOBE_OVERLAY_ROLE.SPECULAR.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
-GLOBE_OVERLAY_ROLE.NORMAL.__doc__ = "The globe overlay is a normal overlay without a special role."
-GLOBE_OVERLAY_ROLE.NONE.__doc__ = "The role of the globe overlay isn't set."
+OVERLAY_ROLE.BASE.__doc__ = "The globe overlay is a base image."
+OVERLAY_ROLE.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
+OVERLAY_ROLE.SPECULAR.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
+OVERLAY_ROLE.NORMAL.__doc__ = "The globe overlay is a normal overlay without a special role."
+OVERLAY_ROLE.NONE.__doc__ = "The role of the globe overlay isn't set."
 
-agcls.AgTypeNameMap["GLOBE_OVERLAY_ROLE"] = GLOBE_OVERLAY_ROLE
+agcls.AgTypeNameMap["OVERLAY_ROLE"] = OVERLAY_ROLE
 
-class INDICES_ORDER_HINT(IntEnum):
+class PRIMITIVE_INDICES_ORDER_HINT(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
    
     NOT_SORTED = 0
@@ -218,12 +219,12 @@ class INDICES_ORDER_HINT(IntEnum):
     SORTED_ASCENDING = 1
     """The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."""
 
-INDICES_ORDER_HINT.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
-INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
+PRIMITIVE_INDICES_ORDER_HINT.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
+PRIMITIVE_INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
 
-agcls.AgTypeNameMap["INDICES_ORDER_HINT"] = INDICES_ORDER_HINT
+agcls.AgTypeNameMap["PRIMITIVE_INDICES_ORDER_HINT"] = PRIMITIVE_INDICES_ORDER_HINT
 
-class MAINTAIN_ASPECT_RATIO(IntEnum):
+class OVERLAY_ASPECT_RATIO_MODE(IntEnum):
     """Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
    
     NONE = 0
@@ -233,11 +234,11 @@ class MAINTAIN_ASPECT_RATIO(IntEnum):
     HEIGHT = 2
     """The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."""
 
-MAINTAIN_ASPECT_RATIO.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
-MAINTAIN_ASPECT_RATIO.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
-MAINTAIN_ASPECT_RATIO.HEIGHT.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
+OVERLAY_ASPECT_RATIO_MODE.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
+OVERLAY_ASPECT_RATIO_MODE.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
+OVERLAY_ASPECT_RATIO_MODE.HEIGHT.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
 
-agcls.AgTypeNameMap["MAINTAIN_ASPECT_RATIO"] = MAINTAIN_ASPECT_RATIO
+agcls.AgTypeNameMap["OVERLAY_ASPECT_RATIO_MODE"] = OVERLAY_ASPECT_RATIO_MODE
 
 class MAP_PROJECTION(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
@@ -316,7 +317,7 @@ MARKER_BATCH_SORT_ORDER.BY_TEXTURE.__doc__ = "The markers are sorted by texture.
 
 agcls.AgTypeNameMap["MARKER_BATCH_SORT_ORDER"] = MARKER_BATCH_SORT_ORDER
 
-class MARKER_BATCH_UNIT(IntEnum):
+class MARKER_BATCH_SIZE_UNIT(IntEnum):
     """The unit for marker sizes in a marker batch."""
    
     PIXELS = 0
@@ -324,10 +325,10 @@ class MARKER_BATCH_UNIT(IntEnum):
     METERS = 1
     """The size of a marker is defined in meters."""
 
-MARKER_BATCH_UNIT.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
-MARKER_BATCH_UNIT.METERS.__doc__ = "The size of a marker is defined in meters."
+MARKER_BATCH_SIZE_UNIT.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
+MARKER_BATCH_SIZE_UNIT.METERS.__doc__ = "The size of a marker is defined in meters."
 
-agcls.AgTypeNameMap["MARKER_BATCH_UNIT"] = MARKER_BATCH_UNIT
+agcls.AgTypeNameMap["MARKER_BATCH_SIZE_UNIT"] = MARKER_BATCH_SIZE_UNIT
 
 class MODEL_TRANSFORMATION_TYPE(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
@@ -442,13 +443,13 @@ agcls.AgTypeNameMap["ORIGIN"] = ORIGIN
 class PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
     """Represents the location of a point to be removed."""
    
-    REMOVE_LOCATION_FRONT = 0
+    FRONT = 0
     """Remove from the front of the line."""
-    REMOVE_LOCATION_BACK = 1
+    BACK = 1
     """Remove from the back of the line."""
 
-PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_FRONT.__doc__ = "Remove from the front of the line."
-PATH_PRIMITIVE_REMOVE_LOCATION.REMOVE_LOCATION_BACK.__doc__ = "Remove from the back of the line."
+PATH_PRIMITIVE_REMOVE_LOCATION.FRONT.__doc__ = "Remove from the front of the line."
+PATH_PRIMITIVE_REMOVE_LOCATION.BACK.__doc__ = "Remove from the back of the line."
 
 agcls.AgTypeNameMap["PATH_PRIMITIVE_REMOVE_LOCATION"] = PATH_PRIMITIVE_REMOVE_LOCATION
 
@@ -593,13 +594,13 @@ agcls.AgTypeNameMap["SCREEN_OVERLAY_PINNING_ORIGIN"] = SCREEN_OVERLAY_PINNING_OR
 class SCREEN_OVERLAY_UNIT(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
    
-    PIXELS = 0
+    PIXEL = 0
     """The value is specified in pixels."""
-    FRACTION = 1
+    PERCENT = 1
     """The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."""
 
-SCREEN_OVERLAY_UNIT.PIXELS.__doc__ = "The value is specified in pixels."
-SCREEN_OVERLAY_UNIT.FRACTION.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
+SCREEN_OVERLAY_UNIT.PIXEL.__doc__ = "The value is specified in pixels."
+SCREEN_OVERLAY_UNIT.PERCENT.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
 
 agcls.AgTypeNameMap["SCREEN_OVERLAY_UNIT"] = SCREEN_OVERLAY_UNIT
 
@@ -635,7 +636,7 @@ VISIBILITY.ALL.__doc__ = "The object is completely visible."
 
 agcls.AgTypeNameMap["VISIBILITY"] = VISIBILITY
 
-class ANTI_ALIASING(IntEnum):
+class ANTI_ALIASING_METHOD(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
    
     OFF = 0
@@ -655,16 +656,16 @@ class ANTI_ALIASING(IntEnum):
     SIXTY_FOUR_X = 64
     """Anti-aliasing at 64x."""
 
-ANTI_ALIASING.OFF.__doc__ = "No anti-aliasing."
-ANTI_ALIASING.FXAA.__doc__ = "Fast Approximate Anti aliasing."
-ANTI_ALIASING.TWO_X.__doc__ = "Anti-aliasing at 2x."
-ANTI_ALIASING.FOUR_X.__doc__ = "Anti-aliasing at 4x."
-ANTI_ALIASING.EIGHT_X.__doc__ = "Anti-aliasing at 8x."
-ANTI_ALIASING.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x."
-ANTI_ALIASING.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x."
-ANTI_ALIASING.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x."
+ANTI_ALIASING_METHOD.OFF.__doc__ = "No anti-aliasing."
+ANTI_ALIASING_METHOD.FXAA.__doc__ = "Fast Approximate Anti aliasing."
+ANTI_ALIASING_METHOD.TWO_X.__doc__ = "Anti-aliasing at 2x."
+ANTI_ALIASING_METHOD.FOUR_X.__doc__ = "Anti-aliasing at 4x."
+ANTI_ALIASING_METHOD.EIGHT_X.__doc__ = "Anti-aliasing at 8x."
+ANTI_ALIASING_METHOD.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x."
+ANTI_ALIASING_METHOD.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x."
+ANTI_ALIASING_METHOD.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x."
 
-agcls.AgTypeNameMap["ANTI_ALIASING"] = ANTI_ALIASING
+agcls.AgTypeNameMap["ANTI_ALIASING_METHOD"] = ANTI_ALIASING_METHOD
 
 class BINARY_LOGIC_OPERATION(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
@@ -723,7 +724,7 @@ EDGE_DETECT_METHOD.SOBEL_HORIZONTAL.__doc__ = "Detects horizontal edges using th
 
 agcls.AgTypeNameMap["EDGE_DETECT_METHOD"] = EDGE_DETECT_METHOD
 
-class FLIP_AXIS(IntEnum):
+class RASTER_FLIP_AXIS(IntEnum):
     """The axis on which a raster will be flipped."""
    
     HORIZONTAL = 0
@@ -731,10 +732,10 @@ class FLIP_AXIS(IntEnum):
     VERTICAL = 1
     """The vertical axis."""
 
-FLIP_AXIS.HORIZONTAL.__doc__ = "The horizontal axis."
-FLIP_AXIS.VERTICAL.__doc__ = "The vertical axis."
+RASTER_FLIP_AXIS.HORIZONTAL.__doc__ = "The horizontal axis."
+RASTER_FLIP_AXIS.VERTICAL.__doc__ = "The vertical axis."
 
-agcls.AgTypeNameMap["FLIP_AXIS"] = FLIP_AXIS
+agcls.AgTypeNameMap["RASTER_FLIP_AXIS"] = RASTER_FLIP_AXIS
 
 class GRADIENT_DETECT_METHOD(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
@@ -886,7 +887,7 @@ RASTER_TYPE.DOUBLE.__doc__ = "Each value contained within a band can be represen
 
 agcls.AgTypeNameMap["RASTER_TYPE"] = RASTER_TYPE
 
-class SHARPEN_METHOD(IntEnum):
+class RASTER_SHARPEN_METHOD(IntEnum):
     """The method used to sharpen a raster."""
    
     MEAN_REMOVAL = 0
@@ -894,21 +895,21 @@ class SHARPEN_METHOD(IntEnum):
     BASIC = 1
     """Provide basic sharpening."""
 
-SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provide sharpening through mean removal."
-SHARPEN_METHOD.BASIC.__doc__ = "Provide basic sharpening."
+RASTER_SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provide sharpening through mean removal."
+RASTER_SHARPEN_METHOD.BASIC.__doc__ = "Provide basic sharpening."
 
-agcls.AgTypeNameMap["SHARPEN_METHOD"] = SHARPEN_METHOD
+agcls.AgTypeNameMap["RASTER_SHARPEN_METHOD"] = RASTER_SHARPEN_METHOD
 
 class VIDEO_PLAYBACK(IntEnum):
     """Specify how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
    
     REAL_TIME = 0
     """The video will playback in realtime."""
-    TIME_INTERVAL = 1
+    MAPPED = 1
     """The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."""
 
 VIDEO_PLAYBACK.REAL_TIME.__doc__ = "The video will playback in realtime."
-VIDEO_PLAYBACK.TIME_INTERVAL.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
+VIDEO_PLAYBACK.MAPPED.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
 
 agcls.AgTypeNameMap["VIDEO_PLAYBACK"] = VIDEO_PLAYBACK
 
@@ -1004,26 +1005,26 @@ POLYLINE_TYPE.POINTS.__doc__ = "Lines are drawn as points."
 
 agcls.AgTypeNameMap["POLYLINE_TYPE"] = POLYLINE_TYPE
 
-class CULL_FACE(IntEnum):
+class FACE_CULLING_MODE(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
    
-    E_CULL_FACE_FRONT = 0
+    CULL_FACE_FRONT = 0
     """Front-facing triangles are culled."""
-    E_CULL_FACE_BACK = 1
+    CULL_FACE_BACK = 1
     """Back-facing triangles are culled."""
-    E_CULL_FACE_FRONT_AND_BACK = 2
+    CULL_FACE_FRONT_AND_BACK = 2
     """Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."""
-    E_CULL_FACE_NEITHER = 3
+    CULL_FACE_NEITHER = 3
     """No triangles are culled."""
 
-CULL_FACE.E_CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
-CULL_FACE.E_CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
-CULL_FACE.E_CULL_FACE_FRONT_AND_BACK.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
-CULL_FACE.E_CULL_FACE_NEITHER.__doc__ = "No triangles are culled."
+FACE_CULLING_MODE.CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
+FACE_CULLING_MODE.CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
+FACE_CULLING_MODE.CULL_FACE_FRONT_AND_BACK.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
+FACE_CULLING_MODE.CULL_FACE_NEITHER.__doc__ = "No triangles are culled."
 
-agcls.AgTypeNameMap["CULL_FACE"] = CULL_FACE
+agcls.AgTypeNameMap["FACE_CULLING_MODE"] = FACE_CULLING_MODE
 
-class INTERNAL_TEXTURE_FORMAT(IntEnum):
+class TEXTURE_FORMAT(IntEnum):
     """The format of individual texels in a texture."""
    
     ALPHA4 = 0
@@ -1099,44 +1100,44 @@ class INTERNAL_TEXTURE_FORMAT(IntEnum):
     LUMINANCE32_ALPHA32_F = 35
     """Each texel contains an 32-bit luminance and 32-bit alpha floating point component."""
 
-INTERNAL_TEXTURE_FORMAT.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.ALPHA12.__doc__ = "Each texel is an 12-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.ALPHA16.__doc__ = "Each texel is an 16-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.R3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
-INTERNAL_TEXTURE_FORMAT.RGB4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
-INTERNAL_TEXTURE_FORMAT.RGB16_F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
-INTERNAL_TEXTURE_FORMAT.RGB32_F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
-INTERNAL_TEXTURE_FORMAT.RGBA2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
-INTERNAL_TEXTURE_FORMAT.RGBA4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
-INTERNAL_TEXTURE_FORMAT.RGB5_A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.RGBA8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
-INTERNAL_TEXTURE_FORMAT.RGB10_A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.RGBA12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
-INTERNAL_TEXTURE_FORMAT.RGBA16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
-INTERNAL_TEXTURE_FORMAT.RGBA16_F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
-INTERNAL_TEXTURE_FORMAT.RGBA32_F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE16_F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE32_F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE4_ALPHA4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE6_ALPHA2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE8_ALPHA8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE12_ALPHA4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE12_ALPHA12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE16_ALPHA16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE16_ALPHA16_F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
-INTERNAL_TEXTURE_FORMAT.LUMINANCE32_ALPHA32_F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
+TEXTURE_FORMAT.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
+TEXTURE_FORMAT.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
+TEXTURE_FORMAT.ALPHA12.__doc__ = "Each texel is an 12-bit alpha component."
+TEXTURE_FORMAT.ALPHA16.__doc__ = "Each texel is an 16-bit alpha component."
+TEXTURE_FORMAT.R3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
+TEXTURE_FORMAT.RGB4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
+TEXTURE_FORMAT.RGB16_F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
+TEXTURE_FORMAT.RGB32_F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
+TEXTURE_FORMAT.RGBA2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
+TEXTURE_FORMAT.RGBA4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
+TEXTURE_FORMAT.RGB5_A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
+TEXTURE_FORMAT.RGBA8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
+TEXTURE_FORMAT.RGB10_A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
+TEXTURE_FORMAT.RGBA12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
+TEXTURE_FORMAT.RGBA16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
+TEXTURE_FORMAT.RGBA16_F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
+TEXTURE_FORMAT.RGBA32_F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
+TEXTURE_FORMAT.LUMINANCE4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
+TEXTURE_FORMAT.LUMINANCE8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
+TEXTURE_FORMAT.LUMINANCE12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
+TEXTURE_FORMAT.LUMINANCE16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
+TEXTURE_FORMAT.LUMINANCE16_F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
+TEXTURE_FORMAT.LUMINANCE32_F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
+TEXTURE_FORMAT.LUMINANCE4_ALPHA4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE6_ALPHA2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE8_ALPHA8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE12_ALPHA4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE12_ALPHA12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE16_ALPHA16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
+TEXTURE_FORMAT.LUMINANCE16_ALPHA16_F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
+TEXTURE_FORMAT.LUMINANCE32_ALPHA32_F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
 
-agcls.AgTypeNameMap["INTERNAL_TEXTURE_FORMAT"] = INTERNAL_TEXTURE_FORMAT
+agcls.AgTypeNameMap["TEXTURE_FORMAT"] = TEXTURE_FORMAT
 
 class MAGNIFICATION_FILTER(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
@@ -1176,7 +1177,7 @@ MINIFICATION_FILTER.LINEAR_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that mo
 
 agcls.AgTypeNameMap["MINIFICATION_FILTER"] = MINIFICATION_FILTER
 
-class RENDERER_SHADE_MODEL(IntEnum):
+class RENDERER_SHADING_MODEL(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
    
     FLAT = 0
@@ -1184,10 +1185,10 @@ class RENDERER_SHADE_MODEL(IntEnum):
     GOURAUD = 1
     """Gouraud shading renders the primitive by interpolating the color between the vertices."""
 
-RENDERER_SHADE_MODEL.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
-RENDERER_SHADE_MODEL.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
+RENDERER_SHADING_MODEL.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
+RENDERER_SHADING_MODEL.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
 
-agcls.AgTypeNameMap["RENDERER_SHADE_MODEL"] = RENDERER_SHADE_MODEL
+agcls.AgTypeNameMap["RENDERER_SHADING_MODEL"] = RENDERER_SHADING_MODEL
 
 class TEXTURE_WRAP(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
@@ -1494,9 +1495,9 @@ class IGlobeOverlay(object):
 
     _get_role_metadata = { "offset" : _get_role_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GLOBE_OVERLAY_ROLE),) }
+            "marshallers" : (agmarshall.EnumArg(OVERLAY_ROLE),) }
     @property
-    def role(self) -> "GLOBE_OVERLAY_ROLE":
+    def role(self) -> "OVERLAY_ROLE":
         """Get the globe overlay role of the globe overlay."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_role_metadata)
 
@@ -2151,8 +2152,8 @@ class IRaster(object):
 
     _flip_metadata = { "offset" : _flip_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FLIP_AXIS),) }
-    def flip(self, axis:"FLIP_AXIS") -> None:
+            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
+    def flip(self, axis:"RASTER_FLIP_AXIS") -> None:
         """Flips the raster along the given axis."""
         return self._intf.invoke(IRaster._metadata, IRaster._flip_metadata, axis)
 
@@ -4055,9 +4056,9 @@ class RendererTextureTemplate2D(SupportsDeleteCallback):
     
     _get_internal_format_metadata = { "offset" : _get_internal_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERNAL_TEXTURE_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(TEXTURE_FORMAT),) }
     @property
-    def internal_format(self) -> "INTERNAL_TEXTURE_FORMAT":
+    def internal_format(self) -> "TEXTURE_FORMAT":
         """Get an internal format of the texture."""
         return self._intf.get_property(RendererTextureTemplate2D._metadata, RendererTextureTemplate2D._get_internal_format_metadata)
 
@@ -6156,15 +6157,15 @@ class CameraSnapshot(SupportsDeleteCallback):
     
     _save_to_file_metadata = { "offset" : _save_to_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(CAMERA_SNAPSHOT_FILE_FORMAT),) }
-    def save_to_file(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT),) }
+    def save_to_file(self, filename:str, cameraSnapshotFormat:"SNAPSHOT_FILE_FORMAT") -> None:
         """Save a snapshot of the 3D window to the filename with the specified format."""
         return self._intf.invoke(CameraSnapshot._metadata, CameraSnapshot._save_to_file_metadata, filename, cameraSnapshotFormat)
 
     _save_to_file_with_width_and_dpi_metadata = { "offset" : _save_to_file_with_width_and_dpi_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(CAMERA_SNAPSHOT_FILE_FORMAT), agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"CAMERA_SNAPSHOT_FILE_FORMAT", widthInInches:float, dotsPerInch:float) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT), agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def save_to_file_with_width_and_dpi(self, filename:str, cameraSnapshotFormat:"SNAPSHOT_FILE_FORMAT", widthInInches:float, dotsPerInch:float) -> None:
         """Save a snapshot of the 3D window to the filename with the specified format at high resolution..."""
         return self._intf.invoke(CameraSnapshot._metadata, CameraSnapshot._save_to_file_with_width_and_dpi_metadata, filename, cameraSnapshotFormat, widthInInches, dotsPerInch)
 
@@ -6241,8 +6242,8 @@ class CameraVideoRecording(SupportsDeleteCallback):
 
     _start_recording_frame_stack_metadata = { "offset" : _start_recording_frame_stack_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CAMERA_SNAPSHOT_FILE_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
-    def start_recording_frame_stack(self, fileDirectory:str, filePrefix:str, cameraSnapshotFileFormat:"CAMERA_SNAPSHOT_FILE_FORMAT", startingFrameNumber:int, numberOfFrameDigits:int) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
+    def start_recording_frame_stack(self, fileDirectory:str, filePrefix:str, cameraSnapshotFileFormat:"SNAPSHOT_FILE_FORMAT", startingFrameNumber:int, numberOfFrameDigits:int) -> None:
         """Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number."""
         return self._intf.invoke(CameraVideoRecording._metadata, CameraVideoRecording._start_recording_frame_stack_metadata, fileDirectory, filePrefix, cameraSnapshotFileFormat, startingFrameNumber, numberOfFrameDigits)
 
@@ -6255,8 +6256,8 @@ class CameraVideoRecording(SupportsDeleteCallback):
 
     _start_recording_video_metadata = { "offset" : _start_recording_video_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CAMERA_VIDEO_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
-    def start_recording_video(self, fileDirectory:str, filePrefix:str, videoFormat:"CAMERA_VIDEO_FORMAT", videoBitRate:int, videoFrameRate:int) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VIDEO_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
+    def start_recording_video(self, fileDirectory:str, filePrefix:str, videoFormat:"VIDEO_FORMAT", videoBitRate:int, videoFrameRate:int) -> None:
         """Start recording a video file at the specified bit and frame rate."""
         return self._intf.invoke(CameraVideoRecording._metadata, CameraVideoRecording._start_recording_video_metadata, fileDirectory, filePrefix, videoFormat, videoBitRate, videoFrameRate)
 
@@ -10615,17 +10616,17 @@ class FlipFilter(IRasterFilter, SupportsDeleteCallback):
     
     _get_flip_axis_metadata = { "offset" : _get_flip_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FLIP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
     @property
-    def flip_axis(self) -> "FLIP_AXIS":
+    def flip_axis(self) -> "RASTER_FLIP_AXIS":
         """Get or set the flip axis along which the source raster will be flipped."""
         return self._intf.get_property(FlipFilter._metadata, FlipFilter._get_flip_axis_metadata)
 
     _set_flip_axis_metadata = { "offset" : _set_flip_axis_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FLIP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
     @flip_axis.setter
-    def flip_axis(self, flipAxis:"FLIP_AXIS") -> None:
+    def flip_axis(self, flipAxis:"RASTER_FLIP_AXIS") -> None:
         return self._intf.set_property(FlipFilter._metadata, FlipFilter._set_flip_axis_metadata, flipAxis)
 
     _property_names[flip_axis] = "flip_axis"
@@ -11314,17 +11315,17 @@ class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SHARPEN_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD),) }
     @property
-    def method(self) -> "SHARPEN_METHOD":
+    def method(self) -> "RASTER_SHARPEN_METHOD":
         """Get or set the method used to sharpen the source raster."""
         return self._intf.get_property(SharpenFilter._metadata, SharpenFilter._get_method_metadata)
 
     _set_method_metadata = { "offset" : _set_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SHARPEN_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD),) }
     @method.setter
-    def method(self, method:"SHARPEN_METHOD") -> None:
+    def method(self, method:"RASTER_SHARPEN_METHOD") -> None:
         return self._intf.set_property(SharpenFilter._metadata, SharpenFilter._set_method_metadata, method)
 
     _property_names[method] = "method"
@@ -12271,17 +12272,17 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_size_unit_metadata = { "offset" : _get_size_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_UNIT),) }
     @property
-    def size_unit(self) -> "MARKER_BATCH_UNIT":
+    def size_unit(self) -> "MARKER_BATCH_SIZE_UNIT":
         """Get or set the unit that each marker's size is defined in."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_size_unit_metadata)
 
     _set_size_unit_metadata = { "offset" : _set_size_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_UNIT),) }
     @size_unit.setter
-    def size_unit(self, sizeUnit:"MARKER_BATCH_UNIT") -> None:
+    def size_unit(self, sizeUnit:"MARKER_BATCH_SIZE_UNIT") -> None:
         return self._intf.set_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_size_unit_metadata, sizeUnit)
 
     _get_size_metadata = { "offset" : _get_size_method_offset,
@@ -12470,8 +12471,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """Update a subset of marker positions in a marker batch."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
@@ -12484,8 +12485,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optionalParameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """Update a subset of marker positions and/or per-marker parameters in a marker batch."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
@@ -12498,8 +12499,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, indices, indicesOrderHint)
 
@@ -12512,8 +12513,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, optionalParameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, optionalParameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency..."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata, centralBody, positions, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
@@ -13932,8 +13933,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """Update a subset of positions in a point batch."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
@@ -13946,8 +13947,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """Update a subset of positions and/or colors in a point batch."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_with_colors_indices_order_and_render_pass_metadata, positions, colors, indices, indicesOrderHint, renderPassHint)
 
@@ -13960,8 +13961,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, indices, indicesOrderHint)
 
@@ -13974,8 +13975,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, centralBody, positions, colors, indices, indicesOrderHint, renderPassHint)
 
@@ -14340,8 +14341,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """Update a subset of positions in a polyline."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_with_indices_order_metadata, positions, indices, indicesOrderHint)
 
@@ -14354,8 +14355,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_colors_indices_order_and_render_pass_hint_metadata = { "offset" : _set_partial_with_colors_indices_order_and_render_pass_hint_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """Update a subset of positions and/or colors in a polyline."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_with_colors_indices_order_and_render_pass_hint_metadata, positions, colors, indices, indicesOrderHint, renderPassHint)
 
@@ -14368,8 +14369,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, indices, indicesOrderHint)
 
@@ -14382,8 +14383,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody:str, positions:list, colors:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, centralBody, positions, colors, indices, indicesOrderHint, renderPassHint)
 
@@ -14992,17 +14993,17 @@ class Scene(SupportsDeleteCallback):
 
     _get_anti_aliasing_metadata = { "offset" : _get_anti_aliasing_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING),) }
+            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING_METHOD),) }
     @property
-    def anti_aliasing(self) -> "ANTI_ALIASING":
+    def anti_aliasing(self) -> "ANTI_ALIASING_METHOD":
         """Get or set the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
         return self._intf.get_property(Scene._metadata, Scene._get_anti_aliasing_metadata)
 
     _set_anti_aliasing_metadata = { "offset" : _set_anti_aliasing_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING),) }
+            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING_METHOD),) }
     @anti_aliasing.setter
-    def anti_aliasing(self, antiAliasing:"ANTI_ALIASING") -> None:
+    def anti_aliasing(self, antiAliasing:"ANTI_ALIASING_METHOD") -> None:
         return self._intf.set_property(Scene._metadata, Scene._set_anti_aliasing_metadata, antiAliasing)
 
     _get_visual_effects_metadata = { "offset" : _get_visual_effects_method_offset,
@@ -16559,8 +16560,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """Update a subset of positions and/or text in a text batch."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_with_indices_order_metadata, positions, text, indices, indicesOrderHint)
 
@@ -16573,8 +16574,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optionalParameters:"TextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optionalParameters:"TextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """Update a subset of positions, text, and/or optional per-string parameters in a text batch."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, text, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
@@ -16587,8 +16588,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, text:list, indices:list, indicesOrderHint:"INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
+    def set_partial_cartographic_with_indices_order(self, centralBody:str, positions:list, text:list, indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
         """For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, centralBody, positions, text, indices, indicesOrderHint)
 
@@ -16601,8 +16602,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"TextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody:str, positions:list, text:list, optionalParameters:"TextBatchPrimitiveOptionalParameters", indices:list, indicesOrderHint:"PRIMITIVE_INDICES_ORDER_HINT", renderPassHint:"RENDER_PASS_HINT") -> None:
         """For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata, centralBody, positions, text, optionalParameters, indices, indicesOrderHint, renderPassHint)
 
@@ -17133,17 +17134,17 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
 
     _get_maintain_aspect_ratio_metadata = { "offset" : _get_maintain_aspect_ratio_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MAINTAIN_ASPECT_RATIO),) }
+            "marshallers" : (agmarshall.EnumArg(OVERLAY_ASPECT_RATIO_MODE),) }
     @property
-    def maintain_aspect_ratio(self) -> "MAINTAIN_ASPECT_RATIO":
+    def maintain_aspect_ratio(self) -> "OVERLAY_ASPECT_RATIO_MODE":
         """Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not."""
         return self._intf.get_property(TextureScreenOverlay._metadata, TextureScreenOverlay._get_maintain_aspect_ratio_metadata)
 
     _set_maintain_aspect_ratio_metadata = { "offset" : _set_maintain_aspect_ratio_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MAINTAIN_ASPECT_RATIO),) }
+            "marshallers" : (agmarshall.EnumArg(OVERLAY_ASPECT_RATIO_MODE),) }
     @maintain_aspect_ratio.setter
-    def maintain_aspect_ratio(self, maintainAspectRatio:"MAINTAIN_ASPECT_RATIO") -> None:
+    def maintain_aspect_ratio(self, maintainAspectRatio:"OVERLAY_ASPECT_RATIO_MODE") -> None:
         return self._intf.set_property(TextureScreenOverlay._metadata, TextureScreenOverlay._set_maintain_aspect_ratio_metadata, maintainAspectRatio)
 
     _property_names[texture] = "texture"
@@ -17339,32 +17340,32 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_cull_face_metadata = { "offset" : _get_cull_face_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CULL_FACE),) }
+            "marshallers" : (agmarshall.EnumArg(FACE_CULLING_MODE),) }
     @property
-    def cull_face(self) -> "CULL_FACE":
+    def cull_face(self) -> "FACE_CULLING_MODE":
         """Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_cull_face_metadata)
 
     _set_cull_face_metadata = { "offset" : _set_cull_face_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CULL_FACE),) }
+            "marshallers" : (agmarshall.EnumArg(FACE_CULLING_MODE),) }
     @cull_face.setter
-    def cull_face(self, cullFace:"CULL_FACE") -> None:
+    def cull_face(self, cullFace:"FACE_CULLING_MODE") -> None:
         return self._intf.set_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._set_cull_face_metadata, cullFace)
 
     _get_shade_model_metadata = { "offset" : _get_shade_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADE_MODEL),) }
+            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADING_MODEL),) }
     @property
-    def shade_model(self) -> "RENDERER_SHADE_MODEL":
+    def shade_model(self) -> "RENDERER_SHADING_MODEL":
         """Get or set the shading model for the mesh."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_shade_model_metadata)
 
     _set_shade_model_metadata = { "offset" : _set_shade_model_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADE_MODEL),) }
+            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADING_MODEL),) }
     @shade_model.setter
-    def shade_model(self, shadeModel:"RENDERER_SHADE_MODEL") -> None:
+    def shade_model(self, shadeModel:"RENDERER_SHADING_MODEL") -> None:
         return self._intf.set_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._set_shade_model_metadata, shadeModel)
 
     _get_texture_metadata = { "offset" : _get_texture_method_offset,
@@ -17878,8 +17879,8 @@ class CylinderTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.EnumArg(CYLINDER_FILL), agmarshall.InterfaceOutArg,) }
-    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL") -> "SolidTriangulatorResult":
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.EnumArg(CYLINDER_FILL_OPTIONS), agmarshall.InterfaceOutArg,) }
+    def compute(self, length:float, bottomRadius:float, topRadius:float, slices:int, cylinderFill:"CYLINDER_FILL_OPTIONS") -> "SolidTriangulatorResult":
         """Compute the triangulation for a cylinder centered at the origin."""
         return self._intf.invoke(CylinderTriangulatorInitializer._metadata, CylinderTriangulatorInitializer._compute_metadata, length, bottomRadius, topRadius, slices, cylinderFill, OutArg())
 
@@ -19820,8 +19821,8 @@ class FlipFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_flip_axis_metadata = { "offset" : _initialize_with_flip_axis_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(FLIP_AXIS), agmarshall.InterfaceOutArg,) }
-    def initialize_with_flip_axis(self, flipAxis:"FLIP_AXIS") -> "FlipFilter":
+            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS), agmarshall.InterfaceOutArg,) }
+    def initialize_with_flip_axis(self, flipAxis:"RASTER_FLIP_AXIS") -> "FlipFilter":
         """Initialize a new instance with the specified flip axis."""
         return self._intf.invoke(FlipFilterFactory._metadata, FlipFilterFactory._initialize_with_flip_axis_metadata, flipAxis, OutArg())
 
@@ -20350,8 +20351,8 @@ class SharpenFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_method_metadata = { "offset" : _initialize_with_method_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SHARPEN_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_method(self, method:"SHARPEN_METHOD") -> "SharpenFilter":
+            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD), agmarshall.InterfaceOutArg,) }
+    def initialize_with_method(self, method:"RASTER_SHARPEN_METHOD") -> "SharpenFilter":
         """Initialize a new instance with the specified sharpen method."""
         return self._intf.invoke(SharpenFilterFactory._metadata, SharpenFilterFactory._initialize_with_method_metadata, method, OutArg())
 

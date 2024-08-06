@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PIXELS`
+            * - :py:attr:`~PIXEL`
               - The value is specified in pixels.
 
-            * - :py:attr:`~FRACTION`
+            * - :py:attr:`~PERCENT`
               - The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%.
 
 
