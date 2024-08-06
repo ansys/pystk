@@ -10,7 +10,7 @@ FROM ${basePythonImage} as builder
 # Install Python 3.12 and create a symbolic link named "python".
 USER root
 WORKDIR /tmp
-RUN wget https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tar.xz && \
+RUN wget --no-check-certificate https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tar.xz && \
     tar xf Python-3.12.4.tar.xz
 WORKDIR /tmp/Python-3.12.4
 RUN ./configure --with-openssl=/tmp/openssl --enable-optimizations && \
