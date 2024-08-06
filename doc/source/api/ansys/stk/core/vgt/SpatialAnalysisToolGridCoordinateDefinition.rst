@@ -3,8 +3,6 @@ SpatialAnalysisToolGridCoordinateDefinition
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition
 
-   Bases: 
-
    Define a set of coordinate values.
 
 .. py:currentmodule:: SpatialAnalysisToolGridCoordinateDefinition

@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.start_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.stop_time
-    :type: ITimePeriodValue
+    :type: TimePeriodValue
 
     Gets a stop time. Uses DateFormat Dimension.
 

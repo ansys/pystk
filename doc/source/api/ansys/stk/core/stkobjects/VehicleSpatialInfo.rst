@@ -3,8 +3,6 @@ VehicleSpatialInfo
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpatialInfo
 
-   Bases: 
-
    Represents a spatial information of the vehicle.
 
 .. py:currentmodule:: VehicleSpatialInfo

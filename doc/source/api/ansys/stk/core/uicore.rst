@@ -10,8 +10,8 @@ Summary
 -------
 
 .. tab-set::
-        
-    
+
+ 
     .. tab-item:: Classes
 
         .. list-table::

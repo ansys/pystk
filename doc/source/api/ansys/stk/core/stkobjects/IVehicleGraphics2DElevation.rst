@@ -3,8 +3,6 @@ IVehicleGraphics2DElevation
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DElevation
 
-   object
-   
    Base Interface IAgVeGfxElevation. IAgVeGfxElevationGroundElevation, IAgVeGfxElevationsSwathHalfWidth and IAgVeGfxElevationsSwathHalfAngle derive from this.
 
 .. py:currentmodule:: IVehicleGraphics2DElevation

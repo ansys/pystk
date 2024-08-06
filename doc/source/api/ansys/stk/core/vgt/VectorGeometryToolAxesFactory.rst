@@ -3,8 +3,6 @@ VectorGeometryToolAxesFactory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesFactory
 
-   Bases: 
-
    A Factory object to create axes.
 
 .. py:currentmodule:: VectorGeometryToolAxesFactory

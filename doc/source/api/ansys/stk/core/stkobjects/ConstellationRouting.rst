@@ -3,8 +3,6 @@ ConstellationRouting
 
 .. py:class:: ansys.stk.core.stkobjects.ConstellationRouting
 
-   Bases: 
-
    Routing properties of the STK Constellation.
 
 .. py:currentmodule:: ConstellationRouting

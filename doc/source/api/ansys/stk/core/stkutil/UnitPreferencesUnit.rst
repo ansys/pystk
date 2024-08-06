@@ -3,8 +3,6 @@ UnitPreferencesUnit
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesUnit
 
-   Bases: 
-
    Object that contains info on the unit.
 
 .. py:currentmodule:: UnitPreferencesUnit
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: dimension
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.dimension
-    :type: IUnitPreferencesDimension
+    :type: UnitPreferencesDimension
 
     Returns the Dimension for this unit.
 

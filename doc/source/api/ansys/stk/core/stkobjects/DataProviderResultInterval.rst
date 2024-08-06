@@ -3,8 +3,6 @@ DataProviderResultInterval
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultInterval
 
-   Bases: 
-
    Represents a interval in the collection of intervals returned by the data providers.
 
 .. py:currentmodule:: DataProviderResultInterval
@@ -65,7 +63,7 @@ Property detail
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.data_sets
-    :type: IDataProviderResultDataSetCollection
+    :type: DataProviderResultDataSetCollection
 
     Returns a collection of data sets within the interval.
 

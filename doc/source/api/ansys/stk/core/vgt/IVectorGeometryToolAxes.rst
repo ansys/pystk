@@ -3,8 +3,6 @@ IVectorGeometryToolAxes
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxes
 
-   object
-   
    The interface defines methods and properties common to all axes.
 
 .. py:currentmodule:: IVectorGeometryToolAxes
@@ -66,7 +64,7 @@ Property detail
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.labels
-    :type: IVectorGeometryToolAxesLabels
+    :type: VectorGeometryToolAxesLabels
 
     Returns an object that allows modifying the axes labels.
 

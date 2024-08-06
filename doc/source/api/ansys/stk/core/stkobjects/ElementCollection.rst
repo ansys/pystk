@@ -3,8 +3,6 @@ ElementCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ElementCollection
 
-   Bases: 
-
    Class defining a phased array element collection.
 
 .. py:currentmodule:: ElementCollection

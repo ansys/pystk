@@ -32,7 +32,7 @@ Overview
               - Get the interface for the cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.stop_after_level_off`
               - Select to stop the maneuver as soon as the aircraft achieves its goal altitude and levels off, regardless if any basic stopping conditions have been triggered.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the interface for the cruise airspeed options.
 
@@ -84,8 +84,8 @@ Property detail
 
     Select to stop the maneuver as soon as the aircraft achieves its goal altitude and levels off, regardless if any basic stopping conditions have been triggered.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.

@@ -3,8 +3,6 @@ VehicleEllipseDataElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEllipseDataElement
 
-   Bases: 
-
    Ground ellipse data.
 
 .. py:currentmodule:: VehicleEllipseDataElement

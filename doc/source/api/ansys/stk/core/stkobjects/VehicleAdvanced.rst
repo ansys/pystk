@@ -3,8 +3,6 @@ VehicleAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAdvanced
 
-   Bases: 
-
    Class defining advanced atmospheric density options for the LOP propagator.
 
 .. py:currentmodule:: VehicleAdvanced
@@ -72,7 +70,7 @@ Property detail
 
 .. py:property:: exp_dens_model_params
     :canonical: ansys.stk.core.stkobjects.VehicleAdvanced.exp_dens_model_params
-    :type: IVehicleExpDensModelParams
+    :type: VehicleExpDensModelParams
 
     Get the exponential density modeling parameters.
 

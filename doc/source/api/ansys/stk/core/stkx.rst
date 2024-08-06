@@ -104,10 +104,10 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.stkx.LOG_MESSAGE_TYPE`
               - Log message types.
 
-            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_DISP_ID`
+            * - :py:class:`~ansys.stk.core.stkx.LOG_MESSAGE_DISP_ID`
               - Log message destination options.
 
             * - :py:class:`~ansys.stk.core.stkx.LINE_STYLE`
@@ -231,8 +231,8 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-    ≔ LOG_MSG_TYPE<stkx/LOG_MSG_TYPE_enum>
-    ≔ LOG_MSG_DISP_ID<stkx/LOG_MSG_DISP_ID_enum>
+    ≔ LOG_MESSAGE_TYPE<stkx/LOG_MESSAGE_TYPE_enum>
+    ≔ LOG_MESSAGE_DISP_ID<stkx/LOG_MESSAGE_DISP_ID_enum>
     ≔ LINE_STYLE<stkx/LINE_STYLE_enum>
     ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkx/EXEC_MULTI_CMD_RESULT_ACTION_enum>
     ≔ SHIFT_VALUES<stkx/SHIFT_VALUES_enum>

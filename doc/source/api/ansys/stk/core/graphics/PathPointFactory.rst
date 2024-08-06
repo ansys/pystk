@@ -3,8 +3,6 @@ PathPointFactory
 
 .. py:class:: ansys.stk.core.graphics.PathPointFactory
 
-   Bases: 
-
    Factory creates path points.
 
 .. py:currentmodule:: PathPointFactory

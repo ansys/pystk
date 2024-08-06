@@ -53,7 +53,7 @@ Summary
             * - :py:class:`~ansys.stk.core.uiapplication.OPEN_LOG_FILE_MODE`
               - Log file open modes.
 
-            * - :py:class:`~ansys.stk.core.uiapplication.UI_LOG_MSG_TYPE`
+            * - :py:class:`~ansys.stk.core.uiapplication.UI_LOG_MESSAGE_TYPE`
               - Log message types.
 
             * - :py:class:`~ansys.stk.core.uiapplication.APP_CONSTANTS`
@@ -98,7 +98,7 @@ The STK UI Application library is a COM library containing classes, interfaces a
     :hidden:
 
     ≔ OPEN_LOG_FILE_MODE<uiapplication/OPEN_LOG_FILE_MODE_enum>
-    ≔ UI_LOG_MSG_TYPE<uiapplication/UI_LOG_MSG_TYPE_enum>
+    ≔ UI_LOG_MESSAGE_TYPE<uiapplication/UI_LOG_MESSAGE_TYPE_enum>
     ≔ APP_CONSTANTS<uiapplication/APP_CONSTANTS_enum>
     ≔ APP_ERROR_CODES<uiapplication/APP_ERROR_CODES_enum>
 

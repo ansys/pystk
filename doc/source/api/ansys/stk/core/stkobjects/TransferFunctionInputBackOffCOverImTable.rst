@@ -3,8 +3,6 @@ TransferFunctionInputBackOffCOverImTable
 
 .. py:class:: ansys.stk.core.stkobjects.TransferFunctionInputBackOffCOverImTable
 
-   Bases: 
-
    Class defining an input back off vs C/Im table.
 
 .. py:currentmodule:: TransferFunctionInputBackOffCOverImTable

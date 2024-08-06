@@ -3,8 +3,6 @@ AvailableFeatures
 
 .. py:class:: ansys.stk.core.stkobjects.AvailableFeatures
 
-   Bases: 
-
    Class is used to check the availability of the features such as Astrogator, etc.
 
 .. py:currentmodule:: AvailableFeatures

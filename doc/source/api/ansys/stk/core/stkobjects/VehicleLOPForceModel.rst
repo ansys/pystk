@@ -3,8 +3,6 @@ VehicleLOPForceModel
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLOPForceModel
 
-   Bases: 
-
    Class defining the force model for the LOP propagator.
 
 .. py:currentmodule:: VehicleLOPForceModel
@@ -46,31 +44,31 @@ Property detail
 
 .. py:property:: central_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.central_body_gravity
-    :type: IVehicleLOPCentralBodyGravity
+    :type: VehicleLOPCentralBodyGravity
 
     Get the central body gravity parameters.
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity
-    :type: IVehicleThirdBodyGravity
+    :type: VehicleThirdBodyGravity
 
     Get the 3rd body gravity parameters.
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.drag
-    :type: IVehicleLOPForceModelDrag
+    :type: VehicleLOPForceModelDrag
 
     Get the atmospheric drag parameters.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.solar_radiation_pressure
-    :type: IVehicleLOPSolarRadiationPressure
+    :type: VehicleLOPSolarRadiationPressure
 
     Get the solar radiation pressure parameters.
 
 .. py:property:: physical_data
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.physical_data
-    :type: IVehiclePhysicalData
+    :type: VehiclePhysicalData
 
     Get the physical data parameters.
 

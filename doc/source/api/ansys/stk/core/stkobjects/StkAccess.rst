@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.StkAccess.data_providers
-    :type: IDataProviderCollection
+    :type: DataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -91,25 +91,25 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.StkAccess.graphics
-    :type: IStkAccessGraphics
+    :type: StkAccessGraphics
 
     Gets the Graphics properties for the Access computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.StkAccess.advanced
-    :type: IStkAccessAdvanced
+    :type: StkAccessAdvanced
 
     Gets the Advanced properties for the Access computations.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.StkAccess.data_displays
-    :type: IGraphics3DDataDisplayCollection
+    :type: Graphics3DDataDisplayCollection
 
     Gets the VO Data Display Collection.
 
 .. py:property:: computed_access_interval_times
     :canonical: ansys.stk.core.stkobjects.StkAccess.computed_access_interval_times
-    :type: IIntervalCollection
+    :type: IntervalCollection
 
     Returns a list of the computed access interval times.
 

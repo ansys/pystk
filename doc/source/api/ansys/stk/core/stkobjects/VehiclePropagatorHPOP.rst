@@ -63,25 +63,25 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorHPOP.initial_state
-    :type: IVehicleInitialState
+    :type: VehicleInitialState
 
     Get the satellite's initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorHPOP.force_model
-    :type: IVehicleHPOPForceModel
+    :type: VehicleHPOPForceModel
 
     Get the force model parameters.
 
 .. py:property:: integrator
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorHPOP.integrator
-    :type: IVehicleIntegrator
+    :type: VehicleIntegrator
 
     Get the integrator parameters.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorHPOP.covariance
-    :type: IVehicleCovariance
+    :type: VehicleCovariance
 
     Get the covariance parameters.
 

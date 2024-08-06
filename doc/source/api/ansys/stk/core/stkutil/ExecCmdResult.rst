@@ -3,8 +3,6 @@ ExecCmdResult
 
 .. py:class:: ansys.stk.core.stkutil.ExecCmdResult
 
-   Bases: 
-
    Collection of strings returned by the ExecuteCommand.
 
 .. py:currentmodule:: ExecCmdResult

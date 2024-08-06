@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackContinuous.modulator
-    :type: IRadarModulator
+    :type: RadarModulator
 
     Gets the interface for setting the modulator parameters.
 

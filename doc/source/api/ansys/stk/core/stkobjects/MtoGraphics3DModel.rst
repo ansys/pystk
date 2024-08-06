@@ -3,8 +3,6 @@ MtoGraphics3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DModel
 
-   Bases: 
-
    MTO track model options.
 
 .. py:currentmodule:: MtoGraphics3DModel
@@ -80,7 +78,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DModel.articulation
-    :type: IMtoGraphics3DModelArtic
+    :type: MtoGraphics3DModelArtic
 
     Configures the model articulations.
 

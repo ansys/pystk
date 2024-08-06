@@ -3,8 +3,6 @@ PropagatorFunctionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection
 
-   Bases: 
-
    Propagator Function Collection.
 
 .. py:currentmodule:: PropagatorFunctionCollection

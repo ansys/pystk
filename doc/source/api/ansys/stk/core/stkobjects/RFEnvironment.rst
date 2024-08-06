@@ -3,8 +3,6 @@ RFEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.RFEnvironment
 
-   Bases: 
-
    Class defining the RF environment.
 
 .. py:currentmodule:: RFEnvironment
@@ -52,7 +50,7 @@ Property detail
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.RFEnvironment.propagation_channel
-    :type: IPropagationChannel
+    :type: PropagationChannel
 
     Gets the propagation channel.
 

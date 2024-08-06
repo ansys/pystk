@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneTemplate
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate
 
-   Bases: 
-
    An element of IAgVeVOBPlaneTemplatesCollection.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneTemplate
@@ -110,7 +108,7 @@ Property detail
 
 .. py:property:: display_elements
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.display_elements
-    :type: IVehicleGraphics3DBPlaneTemplateDisplayCollection
+    :type: VehicleGraphics3DBPlaneTemplateDisplayCollection
 
     Returns the 3D BPlane template display collection.
 

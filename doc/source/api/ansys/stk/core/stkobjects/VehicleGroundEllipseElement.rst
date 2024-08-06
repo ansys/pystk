@@ -3,8 +3,6 @@ VehicleGroundEllipseElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGroundEllipseElement
 
-   Bases: 
-
    Ground ellipse.
 
 .. py:currentmodule:: VehicleGroundEllipseElement
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: ellipse_data
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipseElement.ellipse_data
-    :type: IVehicleEllipseDataCollection
+    :type: VehicleEllipseDataCollection
 
     Get the ground ellipse data.
 

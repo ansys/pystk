@@ -3,8 +3,6 @@ RadarTransmitter
 
 .. py:class:: ansys.stk.core.stkobjects.RadarTransmitter
 
-   Bases: 
-
    Class defining the radar transmitter.
 
 .. py:currentmodule:: RadarTransmitter
@@ -95,7 +93,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.RadarTransmitter.post_transmit_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 

@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: incoming_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.incoming_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     The reflecting vector.
 
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.normal_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     The vector defines the reflection surface.
 

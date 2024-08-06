@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: trajectory_marker
     :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryGraphics3DModel.trajectory_marker
-    :type: IGraphics3DMarker
+    :type: Graphics3DMarker
 
     Represents the vehicle while traveling along its actual trajectory.
 
 .. py:property:: ground_marker
     :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryGraphics3DModel.ground_marker
-    :type: IGraphics3DMarker
+    :type: Graphics3DMarker
 
     Represents the vehicle's position along its ground track.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryGraphics3DModel.gltf_image_based
-    :type: IGraphics3DModelGltfImageBased
+    :type: Graphics3DModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

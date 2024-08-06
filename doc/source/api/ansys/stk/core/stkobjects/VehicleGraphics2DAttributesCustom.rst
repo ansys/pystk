@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesCustom.intervals
-    :type: IVehicleGraphics2DIntervalsCollection
+    :type: VehicleGraphics2DIntervalsCollection
 
     Get the custom intervals.
 

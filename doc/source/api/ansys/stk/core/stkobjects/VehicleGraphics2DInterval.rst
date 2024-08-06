@@ -3,8 +3,6 @@ VehicleGraphics2DInterval
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DInterval
 
-   Bases: 
-
    2D Graphics display based on custom intervals.
 
 .. py:currentmodule:: VehicleGraphics2DInterval

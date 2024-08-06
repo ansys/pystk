@@ -3,8 +3,6 @@ Quantity
 
 .. py:class:: ansys.stk.core.stkutil.Quantity
 
-   Bases: 
-
    Object that contains a quantity.
 
 .. py:currentmodule:: Quantity

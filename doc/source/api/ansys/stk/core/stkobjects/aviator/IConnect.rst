@@ -3,8 +3,6 @@ IConnect
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IConnect
 
-   object
-   
    Interface used to send connect commands to Aviator objects.
 
 .. py:currentmodule:: IConnect

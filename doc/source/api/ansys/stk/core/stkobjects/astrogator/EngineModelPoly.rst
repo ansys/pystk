@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: thrust_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPoly.thrust_coefficients
-    :type: IEngineModelThrustCoefficients
+    :type: EngineModelThrustCoefficients
 
     Get the thrust Coefficients.
 
 .. py:property:: isp_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPoly.isp_coefficients
-    :type: IEngineModelIspCoefficients
+    :type: EngineModelIspCoefficients
 
     Get the Isp Coefficients.
 

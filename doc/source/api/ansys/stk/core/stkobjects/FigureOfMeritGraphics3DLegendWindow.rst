@@ -3,8 +3,6 @@ FigureOfMeritGraphics3DLegendWindow
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow
 
-   Bases: 
-
    3D graphics contours legend.
 
 .. py:currentmodule:: FigureOfMeritGraphics3DLegendWindow
@@ -48,7 +46,7 @@ Property detail
 
 .. py:property:: position_on_map
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.position_on_map
-    :type: IFigureOfMeritGraphics2DPositionOnMap
+    :type: FigureOfMeritGraphics2DPositionOnMap
 
     Position where the contour legend is displayed.
 

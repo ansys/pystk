@@ -37,12 +37,14 @@ class STKRuntimeApplication(STKXApplication):
     def __del__(self):
         """Destruct the STKRuntimeApplication object when all references to the object are deleted."""
         if self._intf:
-            self._intf.client.TerminateConnection(False)
+            client: GrpcClient = self._intf.client
+            client.terminate_connection(False)
         
     def new_object_root(self) -> StkObjectRoot:
         """May be used to obtain an Object Model Root from a running STK Engine application."""
         if self._intf:
-            root_unk = self._intf.client.NewObjectRoot()
+            client: GrpcClient = self._intf.client
+            root_unk = client.new_object_root()
             root = StkObjectRoot()
             root._private_init(root_unk)
             return root
@@ -51,7 +53,8 @@ class STKRuntimeApplication(STKXApplication):
     def new_object_model_context(self) -> StkObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
         if self._intf:
-            context_unk = self._intf.client.NewObjectModelContext()
+            client: GrpcClient = self._intf.client
+            context_unk = client.new_object_model_context()
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
@@ -69,7 +72,8 @@ class STKRuntimeApplication(STKXApplication):
         sending the entire batch to STK to be released. Default value is 12.
         """
         if self._intf:
-            self._intf.client.set_grpc_options(options)
+            client: GrpcClient = self._intf.client
+            client.set_grpc_options(options)
             
     def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
@@ -86,13 +90,15 @@ class STKRuntimeApplication(STKXApplication):
     def shutdown(self) -> None:
         """Shut down the STKRuntime application."""
         if self._intf:
-            self._intf.client.set_shutdown_stkruntime(True)
+            client: GrpcClient = self._intf.client
+            client.set_shutdown_stkruntime(True)
         self._disconnect()
 
     def _disconnect(self) -> None:
         """Safely disconnect from STKRuntime."""
         if self._intf:
-            self._intf.client.TerminateConnection()
+            client: GrpcClient = self._intf.client
+            client.terminate_connection()
             self.__dict__["_intf"] = InterfaceProxy()
 
 class STKRuntime(object):

@@ -3,8 +3,6 @@ IDrawElem
 
 .. py:class:: ansys.stk.core.stkx.IDrawElem
 
-   object
-   
    Draw element.
 
 .. py:currentmodule:: IDrawElem

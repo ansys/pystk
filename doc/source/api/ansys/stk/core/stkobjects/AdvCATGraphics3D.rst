@@ -3,8 +3,6 @@ AdvCATGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATGraphics3D
 
-   Bases: 
-
    AdvCAT VO properties.
 
 .. py:currentmodule:: AdvCATGraphics3D

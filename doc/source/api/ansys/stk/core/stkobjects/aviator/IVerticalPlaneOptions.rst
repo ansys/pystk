@@ -3,8 +3,6 @@ IVerticalPlaneOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IVerticalPlaneOptions
 
-   object
-   
    Interface used to access the Vertical Plane options for an Aviator procedure.
 
 .. py:currentmodule:: IVerticalPlaneOptions

@@ -3,8 +3,6 @@ ITimeToolEventIntervalCollection
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollection
 
-   object
-   
    A collection of related interval lists.
 
 .. py:currentmodule:: ITimeToolEventIntervalCollection

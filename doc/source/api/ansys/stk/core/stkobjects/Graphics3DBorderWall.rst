@@ -3,8 +3,6 @@ Graphics3DBorderWall
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DBorderWall
 
-   Bases: 
-
    Class defining 3D Graphics border wall properties.
 
 .. py:currentmodule:: Graphics3DBorderWall

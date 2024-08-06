@@ -3,8 +3,6 @@ VehicleHPOPForceModelMoreOptions
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions
 
-   Bases: 
-
    Class defining additional force model options for HPOP.
 
 .. py:currentmodule:: VehicleHPOPForceModelMoreOptions
@@ -50,43 +48,43 @@ Property detail
 
 .. py:property:: drag
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.drag
-    :type: IVehicleHPOPForceModelDragOptions
+    :type: VehicleHPOPForceModelDragOptions
 
     Get the additional atmospheric drag options.
 
 .. py:property:: solar_radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solar_radiation_pressure
-    :type: IVehicleHPOPSolarRadiationPressureOptions
+    :type: VehicleHPOPSolarRadiationPressureOptions
 
     Get the additional solar radiation pressure options.
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static
-    :type: IVehicleStatic
+    :type: VehicleStatic
 
     Get the static force model options concerning satellite mass and relativistic accelerations.
 
 .. py:property:: solid_tides
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides
-    :type: IVehicleSolidTides
+    :type: VehicleSolidTides
 
     Get the solid tides options.
 
 .. py:property:: ocean_tides
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.ocean_tides
-    :type: IVehicleOceanTides
+    :type: VehicleOceanTides
 
     Get the ocean tides options.
 
 .. py:property:: radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.radiation_pressure
-    :type: IVehicleRadiationPressure
+    :type: VehicleRadiationPressure
 
     Get the radiation pressure options.
 
 .. py:property:: plugin_propagator
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.plugin_propagator
-    :type: IVehiclePluginPropagator
+    :type: VehiclePluginPropagator
 
     Get the plugin propagator parameters.
 

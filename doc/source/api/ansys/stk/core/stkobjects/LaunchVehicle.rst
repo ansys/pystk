@@ -131,43 +131,43 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.graphics
-    :type: ILaunchVehicleGraphics
+    :type: LaunchVehicleGraphics
 
     Get the launch vehicle's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.graphics_3d
-    :type: ILaunchVehicleGraphics3D
+    :type: LaunchVehicleGraphics3D
 
     Get the launch vehicle's 3D Graphics properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.ground_ellipses
-    :type: IVehicleGroundEllipsesCollection
+    :type: VehicleGroundEllipsesCollection
 
     Get the launch vehicle's ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the launch vehicle.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.export_tools
-    :type: ILaunchVehicleExportTools
+    :type: LaunchVehicleExportTools
 
     Returns the IAgLvExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.space_environment
-    :type: IVehicleSpaceEnvironment
+    :type: VehicleSpaceEnvironment
 
     Returns the launch vehicle's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.atmosphere
-    :type: IAtmosphere
+    :type: Atmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
@@ -179,13 +179,13 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.radar_cross_section
-    :type: IRadarCrossSectionInheritable
+    :type: RadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.eclipse_bodies
-    :type: IVehicleEclipseBodies
+    :type: VehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -203,7 +203,7 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.laser_environment
-    :type: IPlatformLaserEnvironment
+    :type: PlatformLaserEnvironment
 
     Gets the laser environment.
 

@@ -3,8 +3,6 @@ IVectorGeometryToolAxesTransformResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult
 
-   object
-   
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 
 .. py:currentmodule:: IVectorGeometryToolAxesTransformResult

@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: propagator_functions
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions
-    :type: IPropagatorFunctionCollection
+    :type: PropagatorFunctionCollection
 
     Get the list of propagator functions.
 

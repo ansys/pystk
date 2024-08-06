@@ -3,8 +3,6 @@ ICommSystemLinkSelectionCriteria
 
 .. py:class:: ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria
 
-   object
-   
    Provide access to a link selection criteria.
 
 .. py:currentmodule:: ICommSystemLinkSelectionCriteria

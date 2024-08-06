@@ -3,8 +3,8 @@ IOrientationAzEl
 
 .. py:class:: ansys.stk.core.stkutil.IOrientationAzEl
 
-   IOrientation
-   
+   Bases: IOrientation
+
    Interface for AzEl orientation method.
 
 .. py:currentmodule:: IOrientationAzEl

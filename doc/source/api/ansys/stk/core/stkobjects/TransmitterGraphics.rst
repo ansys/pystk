@@ -3,8 +3,6 @@ TransmitterGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.TransmitterGraphics
 
-   Bases: 
-
    Class defining 2D Graphics properties of a Transmitter.
 
 .. py:currentmodule:: TransmitterGraphics
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.TransmitterGraphics.contour_graphics
-    :type: IAntennaContourGraphics
+    :type: AntennaContourGraphics
 
     Gets the transmitter's antenna contour graphics interface.
 

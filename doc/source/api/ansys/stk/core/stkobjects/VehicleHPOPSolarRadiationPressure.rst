@@ -3,8 +3,6 @@ VehicleHPOPSolarRadiationPressure
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure
 
-   Bases: 
-
    Class defining HPOP solar radiation pressure properties.
 
 .. py:currentmodule:: VehicleHPOPSolarRadiationPressure
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: srp_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure.srp_model
-    :type: IVehicleHPOPSRPModel
+    :type: VehicleHPOPSRPModel
 
     Returns a solar radiation pressure model.
 

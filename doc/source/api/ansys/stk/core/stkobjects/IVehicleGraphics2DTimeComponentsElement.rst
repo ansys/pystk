@@ -3,8 +3,6 @@ IVehicleGraphics2DTimeComponentsElement
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DTimeComponentsElement
 
-   object
-   
    Provide properties to configure the vehicle's appearance in 2D and 3D views.
 
 .. py:currentmodule:: IVehicleGraphics2DTimeComponentsElement

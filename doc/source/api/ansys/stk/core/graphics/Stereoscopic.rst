@@ -3,8 +3,6 @@ Stereoscopic
 
 .. py:class:: ansys.stk.core.graphics.Stereoscopic
 
-   Bases: 
-
    Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
 
 .. py:currentmodule:: Stereoscopic

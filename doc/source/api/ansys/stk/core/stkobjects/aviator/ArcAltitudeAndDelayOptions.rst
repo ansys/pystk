@@ -3,8 +3,6 @@ ArcAltitudeAndDelayOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions
 
-   Bases: 
-
    Class defining the altitude and delay options for an arc procedure.
 
 .. py:currentmodule:: ArcAltitudeAndDelayOptions

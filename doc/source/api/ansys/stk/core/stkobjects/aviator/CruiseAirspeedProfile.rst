@@ -3,8 +3,6 @@ CruiseAirspeedProfile
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.CruiseAirspeedProfile
 
-   Bases: 
-
    Class defining the cruise profile options in a procedure.
 
 .. py:currentmodule:: CruiseAirspeedProfile

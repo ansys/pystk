@@ -3,8 +3,6 @@ AdditionalGainLossCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AdditionalGainLossCollection
 
-   Bases: 
-
    Class defining a collection of additional gains and losses.
 
 .. py:currentmodule:: AdditionalGainLossCollection

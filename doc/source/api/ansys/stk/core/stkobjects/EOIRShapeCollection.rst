@@ -3,8 +3,6 @@ EOIRShapeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShapeCollection
 
-   Bases: 
-
    Collection of shapes.
 
 .. py:currentmodule:: EOIRShapeCollection

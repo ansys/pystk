@@ -3,8 +3,6 @@ OrbitStateCoordinateSystem
 
 .. py:class:: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem
 
-   Bases: 
-
    Selection of coordinate epoch for coordinate systems that do not have pre-established epochs.
 
 .. py:currentmodule:: OrbitStateCoordinateSystem

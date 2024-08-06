@@ -3,8 +3,6 @@ LevelAttribute
 
 .. py:class:: ansys.stk.core.stkobjects.LevelAttribute
 
-   Bases: 
-
    Properties defining display of contour levels.
 
 .. py:currentmodule:: LevelAttribute

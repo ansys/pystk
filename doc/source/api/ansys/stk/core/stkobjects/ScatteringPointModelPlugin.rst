@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.ScatteringPointModelPlugin.plugin_configuration
-    :type: ICRPluginConfiguration
+    :type: CRPluginConfiguration
 
     Gets the plugin configuration interface.
 

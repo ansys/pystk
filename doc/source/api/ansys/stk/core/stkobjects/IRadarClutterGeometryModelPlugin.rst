@@ -3,8 +3,6 @@ IRadarClutterGeometryModelPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin
 
-   object
-   
    Do not use this interface, as it is deprecated. Use IAgScatteringPointProviderPlugin interface instead. Provides access to the properties and methods defining a radar clutter geometry plugin model.
 
 .. py:currentmodule:: IRadarClutterGeometryModelPlugin
@@ -39,7 +37,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometryModelPlugin.plugin_configuration
-    :type: ICRPluginConfiguration
+    :type: CRPluginConfiguration
 
     This property is deprecated. Use PluginConfiguration on IAgScatteringPointProviderPlugin instead. Gets the plugin configuration interface.
 

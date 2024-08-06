@@ -3,8 +3,6 @@ TakeoffNormal
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.TakeoffNormal
 
-   Bases: 
-
    Class defining the normal options for a takeoff procedure.
 
 .. py:currentmodule:: TakeoffNormal

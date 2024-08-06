@@ -3,8 +3,6 @@ AnalysisWorkbenchCentralBody
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBody
 
-   Bases: 
-
    Represents an central body.
 
 .. py:currentmodule:: AnalysisWorkbenchCentralBody

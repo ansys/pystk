@@ -3,8 +3,6 @@ VehicleGraphics2DTimeComponentsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection
 
-   Bases: 
-
    A collection of time components used to configure the object appearance in 2D and 3D views.
 
 .. py:currentmodule:: VehicleGraphics2DTimeComponentsCollection

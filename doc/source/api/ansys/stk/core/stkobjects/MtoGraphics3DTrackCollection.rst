@@ -3,8 +3,6 @@ MtoGraphics3DTrackCollection
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DTrackCollection
 
-   Bases: 
-
    MTO 3D Graphics Track List.
 
 .. py:currentmodule:: MtoGraphics3DTrackCollection

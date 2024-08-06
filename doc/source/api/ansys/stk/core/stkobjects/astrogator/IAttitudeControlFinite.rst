@@ -3,8 +3,8 @@ IAttitudeControlFinite
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlFinite
 
-   IAttitudeControl
-   
+   Bases: IAttitudeControl
+
    The attitude control of a finite maneuver.
 
 .. py:currentmodule:: IAttitudeControlFinite

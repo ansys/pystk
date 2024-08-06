@@ -3,8 +3,6 @@ VehicleThirdBodyGravityElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleThirdBodyGravityElement
 
-   Bases: 
-
    Class defining third-body gravity options for the LOP propagator.
 
 .. py:currentmodule:: VehicleThirdBodyGravityElement

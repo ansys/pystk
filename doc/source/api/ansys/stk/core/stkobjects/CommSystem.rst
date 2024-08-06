@@ -73,19 +73,19 @@ Property detail
 
 .. py:property:: transmitters
     :canonical: ansys.stk.core.stkobjects.CommSystem.transmitters
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the transmitter collection.
 
 .. py:property:: receivers
     :canonical: ansys.stk.core.stkobjects.CommSystem.receivers
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the receiver collection.
 
 .. py:property:: interference_sources
     :canonical: ansys.stk.core.stkobjects.CommSystem.interference_sources
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the interference source collection.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: access_options
     :canonical: ansys.stk.core.stkobjects.CommSystem.access_options
-    :type: ICommSystemAccessOptions
+    :type: CommSystemAccessOptions
 
     Get the access options.
 
@@ -139,13 +139,13 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.CommSystem.graphics
-    :type: ICommSystemGraphics
+    :type: CommSystemGraphics
 
     Get the 2D Graphics properties for the CommSystem.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.CommSystem.graphics_3d
-    :type: ICommSystemGraphics3D
+    :type: CommSystemGraphics3D
 
     Get the 3D Graphics properties for the CommSystem.
 

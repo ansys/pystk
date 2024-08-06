@@ -3,8 +3,6 @@ RadarCrossSectionGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionGraphics
 
-   Bases: 
-
    Class defining graphics properties of radar cross section.
 
 .. py:currentmodule:: RadarCrossSectionGraphics
@@ -161,7 +159,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.levels
-    :type: IRadarCrossSectionContourLevelCollection
+    :type: RadarCrossSectionContourLevelCollection
 
     Gets the collection of contour levels.
 

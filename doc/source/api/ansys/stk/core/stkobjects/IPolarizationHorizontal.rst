@@ -3,8 +3,6 @@ IPolarizationHorizontal
 
 .. py:class:: ansys.stk.core.stkobjects.IPolarizationHorizontal
 
-   object
-   
    Provide the interface for linear polarization.
 
 .. py:currentmodule:: IPolarizationHorizontal

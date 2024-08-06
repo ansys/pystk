@@ -3,8 +3,6 @@ IVehiclePointing
 
 .. py:class:: ansys.stk.core.stkobjects.IVehiclePointing
 
-   object
-   
    Interface for target pointing attitude profiles, which override the basic attitude profile for a satellite and have a selected axis point in the direction of one or more selected targets, subject to applicable access constraints.
 
 .. py:currentmodule:: IVehiclePointing
@@ -47,13 +45,13 @@ Property detail
 
 .. py:property:: targets
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.targets
-    :type: IVehicleTargetPointingCollection
+    :type: VehicleTargetPointingCollection
 
     Get the targets used for the attitude profile.
 
 .. py:property:: target_times
     :canonical: ansys.stk.core.stkobjects.IVehiclePointing.target_times
-    :type: IVehicleTargetTimes
+    :type: VehicleTargetTimes
 
     Get the target times.
 

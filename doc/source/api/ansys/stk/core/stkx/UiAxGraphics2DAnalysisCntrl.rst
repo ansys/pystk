@@ -3,8 +3,6 @@ UiAxGraphics2DAnalysisCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl
 
-   Bases: 
-
    AGI Graphics Analysis Control.
 
 .. py:currentmodule:: UiAxGraphics2DAnalysisCntrl
@@ -93,7 +91,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl.application
-    :type: ISTKXApplication
+    :type: STKXApplication
 
     Reference to the STK X application object.
 

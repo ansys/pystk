@@ -3,8 +3,6 @@ IGreatArcVehicle
 
 .. py:class:: ansys.stk.core.stkobjects.IGreatArcVehicle
 
-   object
-   
    A base interface for all Great Arc Vehicles.
 
 .. py:currentmodule:: IGreatArcVehicle
@@ -108,19 +106,19 @@ Property detail
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses
-    :type: IVehicleGroundEllipsesCollection
+    :type: VehicleGroundEllipsesCollection
 
     Get the  ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the vehicle.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.eclipse_bodies
-    :type: IVehicleEclipseBodies
+    :type: VehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 

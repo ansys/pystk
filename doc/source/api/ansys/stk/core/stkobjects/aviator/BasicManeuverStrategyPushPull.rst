@@ -39,9 +39,9 @@ Overview
               - Gets or sets the option to push over or pull up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull_g`
               - Gets or sets the G force of the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.accel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_mode`
               - Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_deceleration_g`
               - Gets or sets the specific G force rate to accelerate/decelerate at.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed_type`
               - Gets or sets the airspeed type for the maintain airspeed.
@@ -63,7 +63,7 @@ Overview
               - Get the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_airspeed_type`
               - Get the airspeed type for the airspeed stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
@@ -97,14 +97,14 @@ Property detail
 
     Gets or sets the G force of the maneuver.
 
-.. py:property:: accel_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.accel_mode
-    :type: ACCEL_MODE
+.. py:property:: acceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_mode
+    :type: ACCELERATION_MODE
 
     Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
 
-.. py:property:: accel_decel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.accel_decel_g
+.. py:property:: acceleration_deceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_deceleration_g
     :type: float
 
     Gets or sets the specific G force rate to accelerate/decelerate at.
@@ -169,8 +169,8 @@ Property detail
 
     Get the airspeed type for the airspeed stopping condition.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.

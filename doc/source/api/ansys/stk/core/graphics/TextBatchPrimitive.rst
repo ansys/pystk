@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: font
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.font
-    :type: IGraphicsFont
+    :type: GraphicsFont
 
     Gets the font used to render the text batch.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: distance_display_condition_per_string
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.distance_display_condition_per_string
-    :type: IDistanceDisplayCondition
+    :type: DistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per string in the text batch during rendering. This is different than display condition, which is evaluated once for the entire text batch...
 
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.texture_filter
-    :type: ITextureFilter2D
+    :type: TextureFilter2D
 
     Gets or sets the filter used to filter the texture-based font.
 

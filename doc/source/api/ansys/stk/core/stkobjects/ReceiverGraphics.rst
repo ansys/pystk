@@ -3,8 +3,6 @@ ReceiverGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.ReceiverGraphics
 
-   Bases: 
-
    Class defining 2D Graphics properties of a Receiver.
 
 .. py:currentmodule:: ReceiverGraphics
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.ReceiverGraphics.contour_graphics
-    :type: IAntennaContourGraphics
+    :type: AntennaContourGraphics
 
     Gets the receiver's antenna contour graphics interface.
 

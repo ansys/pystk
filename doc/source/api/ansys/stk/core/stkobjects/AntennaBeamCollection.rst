@@ -3,8 +3,6 @@ AntennaBeamCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaBeamCollection
 
-   Bases: 
-
    Class defining an antenna beam collection.
 
 .. py:currentmodule:: AntennaBeamCollection

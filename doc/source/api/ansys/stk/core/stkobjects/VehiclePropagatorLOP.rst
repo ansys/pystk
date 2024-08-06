@@ -59,13 +59,13 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorLOP.initial_state
-    :type: IVehicleInitialState
+    :type: VehicleInitialState
 
     Get the initial state.
 
 .. py:property:: force_model
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorLOP.force_model
-    :type: IVehicleLOPForceModel
+    :type: VehicleLOPForceModel
 
     Get the force model parameters.
 

@@ -3,8 +3,6 @@ TimeToolAxesSamplingResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolAxesSamplingResult
 
-   Bases: 
-
    Contains tabulated orientations and angular velocities of axes created by Sample method.
 
 .. py:currentmodule:: TimeToolAxesSamplingResult
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.TimeToolAxesSamplingResult.intervals
-    :type: ITimeToolAxesSamplingIntervalCollection
+    :type: TimeToolAxesSamplingIntervalCollection
 
     A collection of sampling intervals.
 

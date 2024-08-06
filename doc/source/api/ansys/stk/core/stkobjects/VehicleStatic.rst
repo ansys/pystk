@@ -3,8 +3,6 @@ VehicleStatic
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleStatic
 
-   Bases: 
-
    Class defining static force model options for the HPOP propagator.
 
 .. py:currentmodule:: VehicleStatic

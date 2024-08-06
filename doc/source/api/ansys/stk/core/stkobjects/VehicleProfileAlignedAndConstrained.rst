@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: aligned_vector
     :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.aligned_vector
-    :type: IVehicleVector
+    :type: VehicleVector
 
     Get the aligned vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
 
 .. py:property:: constrained_vector
     :canonical: ansys.stk.core.stkobjects.VehicleProfileAlignedAndConstrained.constrained_vector
-    :type: IVehicleVector
+    :type: VehicleVector
 
     Get the constrained vector pair. Vectors dependent on the satellite's body axes are invalid for this attitude profile; all other vectors are valid choices.
 

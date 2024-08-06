@@ -3,8 +3,6 @@ Camera
 
 .. py:class:: ansys.stk.core.graphics.Camera
 
-   Bases: 
-
    Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.
 
 .. py:currentmodule:: Camera
@@ -213,13 +211,13 @@ Property detail
 
 .. py:property:: snapshot
     :canonical: ansys.stk.core.graphics.Camera.snapshot
-    :type: ICameraSnapshot
+    :type: CameraSnapshot
 
     Gets the camera snapshot settings.
 
 .. py:property:: video_recording
     :canonical: ansys.stk.core.graphics.Camera.video_recording
-    :type: ICameraVideoRecording
+    :type: CameraVideoRecording
 
     Gets the camera video recorder.
 

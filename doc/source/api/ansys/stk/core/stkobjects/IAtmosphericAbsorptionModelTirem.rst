@@ -3,8 +3,6 @@ IAtmosphericAbsorptionModelTirem
 
 .. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelTirem
 
-   object
-   
    Provide access to the properties and methods of the TIREM atmospheric absorption model.
 
 .. py:currentmodule:: IAtmosphericAbsorptionModelTirem

@@ -3,8 +3,6 @@ VehicleLOPSolarRadiationPressure
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLOPSolarRadiationPressure
 
-   Bases: 
-
    Class defining the solar radiation pressure model for the LOP propagator.
 
 .. py:currentmodule:: VehicleLOPSolarRadiationPressure

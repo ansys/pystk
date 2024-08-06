@@ -3,8 +3,6 @@ ICloneable
 
 .. py:class:: ansys.stk.core.stkobjects.ICloneable
 
-   object
-   
    Interface for a component.
 
 .. py:currentmodule:: ICloneable

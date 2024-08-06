@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.post_transmit_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 
@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelComplex.antenna_control
-    :type: IAntennaControl
+    :type: AntennaControl
 
     Gets the receiver antenna control.
 

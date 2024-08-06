@@ -133,43 +133,43 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Missile.graphics
-    :type: IMissileGraphics
+    :type: MissileGraphics
 
     Get the missile's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Missile.graphics_3d
-    :type: IMissileGraphics3D
+    :type: MissileGraphics3D
 
     Get the missile's 3D Graphics properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.Missile.ground_ellipses
-    :type: IVehicleGroundEllipsesCollection
+    :type: VehicleGroundEllipsesCollection
 
     Get the missile's ground ellipses properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Missile.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the missile.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.Missile.export_tools
-    :type: IMissileExportTools
+    :type: MissileExportTools
 
     Returns the IAgMsExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Missile.space_environment
-    :type: IVehicleSpaceEnvironment
+    :type: VehicleSpaceEnvironment
 
     Returns the missile's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Missile.atmosphere
-    :type: IAtmosphere
+    :type: Atmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
@@ -181,13 +181,13 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Missile.radar_cross_section
-    :type: IRadarCrossSectionInheritable
+    :type: RadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.Missile.eclipse_bodies
-    :type: IVehicleEclipseBodies
+    :type: VehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Missile.laser_environment
-    :type: IPlatformLaserEnvironment
+    :type: PlatformLaserEnvironment
 
     Gets the laser environment.
 

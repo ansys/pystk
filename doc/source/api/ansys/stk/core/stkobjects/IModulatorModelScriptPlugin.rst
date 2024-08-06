@@ -3,8 +3,6 @@ IModulatorModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.IModulatorModelScriptPlugin
 
-   object
-   
    Provide access to the properties and methods defining an script plugin modulator model.
 
 .. py:currentmodule:: IModulatorModelScriptPlugin

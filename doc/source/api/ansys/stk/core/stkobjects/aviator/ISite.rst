@@ -3,8 +3,6 @@ ISite
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ISite
 
-   object
-   
    Interface to access Site options.
 
 .. py:currentmodule:: ISite

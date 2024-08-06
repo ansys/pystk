@@ -3,8 +3,6 @@ CalculationToolSamplingMethodFactory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolSamplingMethodFactory
 
-   Bases: 
-
    The factory creates sampling method components.
 
 .. py:currentmodule:: CalculationToolSamplingMethodFactory

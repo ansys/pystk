@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.WaveformRectangular.pulse_definition
-    :type: IWaveformPulseDefinition
+    :type: WaveformPulseDefinition
 
     Gets the pulse definition parameters.
 

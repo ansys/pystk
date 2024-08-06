@@ -3,8 +3,6 @@ StkPreferences
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferences
 
-   Bases: 
-
    Allow configuring STK preferences.
 
 .. py:currentmodule:: StkPreferences
@@ -42,19 +40,19 @@ Property detail
 
 .. py:property:: stk_preferences_vdf
     :canonical: ansys.stk.core.stkobjects.StkPreferences.stk_preferences_vdf
-    :type: IStkPreferencesVDF
+    :type: StkPreferencesVDF
 
     Configures STK VDF preferences.
 
 .. py:property:: stk_preferences_connect
     :canonical: ansys.stk.core.stkobjects.StkPreferences.stk_preferences_connect
-    :type: IStkPreferencesConnect
+    :type: StkPreferencesConnect
 
     Configures STK connect preferences.
 
 .. py:property:: stk_preferences_python_plugins
     :canonical: ansys.stk.core.stkobjects.StkPreferences.stk_preferences_python_plugins
-    :type: IStkPreferencesPythonPlugins
+    :type: StkPreferencesPythonPlugins
 
     Configures STK Python plugin preferences.
 

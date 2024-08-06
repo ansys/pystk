@@ -3,8 +3,6 @@ Element
 
 .. py:class:: ansys.stk.core.stkobjects.Element
 
-   Bases: 
-
    Class defining a phased array element.
 
 .. py:currentmodule:: Element

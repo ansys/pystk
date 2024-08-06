@@ -63,31 +63,31 @@ Property detail
 
 .. py:property:: volume_grid_definition_type
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_grid_definition_type
-    :type: VM_DEFINITION_TYPE
+    :type: VOLUMETRIC_DEFINITION_TYPE
 
     Get Volume Grid definition type. A member of the AgEVmDefinitionType enumeration.
 
 .. py:property:: volume_grid_definition
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_grid_definition
-    :type: IVmGridDefinition
+    :type: IVolumetricGridDefinition
 
     Get Volume Grid definition.
 
 .. py:property:: volume_analysis_interval
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_analysis_interval
-    :type: IVmAnalysisInterval
+    :type: VolumetricAnalysisInterval
 
     Get Volume Analysis Interval.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.Volumetric.advanced
-    :type: IVmAdvanced
+    :type: VolumetricAdvanced
 
     Get Advanced options.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Volumetric.graphics_3d
-    :type: IVmGraphics3D
+    :type: VolumetricGraphics3D
 
     Get the 3D Graphics properties for the volumetric object.
 
@@ -96,14 +96,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_volume_grid_definition_type(self, vmGridCalcType: VM_DEFINITION_TYPE) -> None
+.. py:method:: set_volume_grid_definition_type(self, vmGridCalcType: VOLUMETRIC_DEFINITION_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.Volumetric.set_volume_grid_definition_type
 
     Set volume grid definition type, using the AgEVmDefinitionType enumeration.
 
     :Parameters:
 
-    **vmGridCalcType** : :obj:`~VM_DEFINITION_TYPE`
+    **vmGridCalcType** : :obj:`~VOLUMETRIC_DEFINITION_TYPE`
 
     :Returns:
 
@@ -131,14 +131,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_volumetric_export_tool(self) -> VmExportTool
+.. py:method:: get_volumetric_export_tool(self) -> VolumetricExportTool
     :canonical: ansys.stk.core.stkobjects.Volumetric.get_volumetric_export_tool
 
     Volumetric export tool.
 
     :Returns:
 
-        :obj:`~VmExportTool`
+        :obj:`~VolumetricExportTool`
 
 .. py:method:: compute_in_parallel(self) -> None
     :canonical: ansys.stk.core.stkobjects.Volumetric.compute_in_parallel

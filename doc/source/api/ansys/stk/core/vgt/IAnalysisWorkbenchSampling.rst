@@ -3,8 +3,6 @@ IAnalysisWorkbenchSampling
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchSampling
 
-   object
-   
    Base sampling interface.
 
 .. py:currentmodule:: IAnalysisWorkbenchSampling

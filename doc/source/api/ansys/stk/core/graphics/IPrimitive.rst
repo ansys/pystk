@@ -3,8 +3,6 @@ IPrimitive
 
 .. py:class:: ansys.stk.core.graphics.IPrimitive
 
-   object
-   
    Primitives represent objects rendered in the 3D scene.
 
 .. py:currentmodule:: IPrimitive
@@ -57,7 +55,7 @@ Property detail
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IPrimitive.bounding_sphere
-    :type: IBoundingSphere
+    :type: BoundingSphere
 
     Gets or sets the bounding sphere that encompasses the primitive. The center is defined in the primitive's reference frame.
 

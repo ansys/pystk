@@ -3,8 +3,6 @@ RadarActivityTimeComponentListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection
 
-   Bases: 
-
    Class defining an radar antenna beam collection.
 
 .. py:currentmodule:: RadarActivityTimeComponentListCollection

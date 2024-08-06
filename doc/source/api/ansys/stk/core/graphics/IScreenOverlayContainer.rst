@@ -3,8 +3,6 @@ IScreenOverlayContainer
 
 .. py:class:: ansys.stk.core.graphics.IScreenOverlayContainer
 
-   object
-   
    The interface for screen overlays that contain a collection of other overlays. This interface is implemented by ScreenOverlayManager and ScreenOverlay.
 
 .. py:currentmodule:: IScreenOverlayContainer
@@ -41,7 +39,7 @@ Property detail
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IScreenOverlayContainer.overlays
-    :type: IScreenOverlayCollection
+    :type: ScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this overlay.
 

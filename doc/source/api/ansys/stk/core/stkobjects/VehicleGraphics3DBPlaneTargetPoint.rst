@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneTargetPoint
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint
 
-   Bases: 
-
    3D BPlane TargetPoint.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneTargetPoint

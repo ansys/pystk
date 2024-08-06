@@ -3,8 +3,6 @@ IAntennaBeam
 
 .. py:class:: ansys.stk.core.stkobjects.IAntennaBeam
 
-   object
-   
    Provide access to an antenna beam.
 
 .. py:currentmodule:: IAntennaBeam

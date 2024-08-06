@@ -3,8 +3,6 @@ IPositionInterpolator
 
 .. py:class:: ansys.stk.core.graphics.IPositionInterpolator
 
-   object
-   
    Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines.
 
 .. py:currentmodule:: IPositionInterpolator

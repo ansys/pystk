@@ -3,8 +3,8 @@ IAccessConstraintMinMax
 
 .. py:class:: ansys.stk.core.stkobjects.IAccessConstraintMinMax
 
-   IAccessConstraint
-   
+   Bases: IAccessConstraint
+
    Access Constraint used for min/max constraints.
 
 .. py:currentmodule:: IAccessConstraintMinMax

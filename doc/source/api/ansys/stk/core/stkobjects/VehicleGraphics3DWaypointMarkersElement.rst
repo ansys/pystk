@@ -3,8 +3,6 @@ VehicleGraphics3DWaypointMarkersElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement
 
-   Bases: 
-
    3D waypoint.
 
 .. py:currentmodule:: VehicleGraphics3DWaypointMarkersElement

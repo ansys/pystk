@@ -44,25 +44,25 @@ Property detail
 
 .. py:property:: basic
     :canonical: ansys.stk.core.stkobjects.VehicleOrbitAttitudeStandard.basic
-    :type: IVehicleStandardBasic
+    :type: VehicleStandardBasic
 
     Get the basic attitude properties.
 
 .. py:property:: pointing
     :canonical: ansys.stk.core.stkobjects.VehicleOrbitAttitudeStandard.pointing
-    :type: IVehicleAttitudePointing
+    :type: VehicleAttitudePointing
 
     Get the target pointing attitude properties.
 
 .. py:property:: external
     :canonical: ansys.stk.core.stkobjects.VehicleOrbitAttitudeStandard.external
-    :type: IVehicleAttitudeExternal
+    :type: VehicleAttitudeExternal
 
     Get the precomputed (external) attitude properties.
 
 .. py:property:: integrated_attitude
     :canonical: ansys.stk.core.stkobjects.VehicleOrbitAttitudeStandard.integrated_attitude
-    :type: IVehicleIntegratedAttitude
+    :type: VehicleIntegratedAttitude
 
     Returns a reference to the Integrated Attitude Tool.
 

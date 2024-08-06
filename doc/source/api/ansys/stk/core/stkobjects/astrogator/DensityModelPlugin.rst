@@ -98,7 +98,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 
@@ -236,7 +236,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_plugin
-    :type: IDragModelPlugin
+    :type: DragModelPlugin
 
     Drag model plugin properties.
 

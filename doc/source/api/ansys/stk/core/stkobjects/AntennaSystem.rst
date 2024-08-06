@@ -3,8 +3,6 @@ AntennaSystem
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaSystem
 
-   Bases: 
-
    Class defining an antenna system.
 
 .. py:currentmodule:: AntennaSystem
@@ -49,7 +47,7 @@ Property detail
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.AntennaSystem.antenna_beams
-    :type: IAntennaBeamCollection
+    :type: AntennaBeamCollection
 
     Gets the antenna beam collection.
 

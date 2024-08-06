@@ -3,8 +3,6 @@ BasicAzElMask
 
 .. py:class:: ansys.stk.core.stkobjects.BasicAzElMask
 
-   Bases: 
-
    The Azimuth-Elevation Mask class.
 
 .. py:currentmodule:: BasicAzElMask

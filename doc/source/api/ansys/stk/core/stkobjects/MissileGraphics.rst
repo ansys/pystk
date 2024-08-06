@@ -3,8 +3,6 @@ MissileGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.MissileGraphics
 
-   Bases: 
-
    2D Graphics for missiles.
 
 .. py:currentmodule:: MissileGraphics
@@ -97,49 +95,49 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.pass_data
-    :type: IVehicleGraphics2DTrajectoryPassData
+    :type: VehicleGraphics2DTrajectoryPassData
 
     Get the 2D trajectory graphics.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.resolution
-    :type: IVehicleGraphics2DTrajectoryResolution
+    :type: VehicleGraphics2DTrajectoryResolution
 
     Get the resolution graphics.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.elev_contours
-    :type: IVehicleGraphics2DElevContours
+    :type: VehicleGraphics2DElevContours
 
     Get the elevation contours graphics.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.ground_ellipses
-    :type: IVehicleGraphics2DGroundEllipsesCollection
+    :type: VehicleGraphics2DGroundEllipsesCollection
 
     Get the ground ellipses graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.range_contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     Get the range contour graphics.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.lighting
-    :type: IVehicleGraphics2DLighting
+    :type: VehicleGraphics2DLighting
 
     Get the lighting graphics.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.swath
-    :type: IVehicleGraphics2DSwath
+    :type: VehicleGraphics2DSwath
 
     Get the swath graphics.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -157,7 +155,7 @@ Property detail
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.saa
-    :type: IVehicleGraphics2DSAA
+    :type: VehicleGraphics2DSAA
 
     Get the missile's South Atlantic Anomaly Contour properties.
 
@@ -169,7 +167,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

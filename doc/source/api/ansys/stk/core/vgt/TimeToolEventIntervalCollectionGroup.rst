@@ -3,8 +3,6 @@ TimeToolEventIntervalCollectionGroup
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalCollectionGroup
 
-   Bases: 
-
    Access or create VGT event interval collections associated with an object.
 
 .. py:currentmodule:: TimeToolEventIntervalCollectionGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.TimeToolEventIntervalCollectionGroup.factory
-    :type: ITimeToolEventIntervalCollectionFactory
+    :type: TimeToolEventIntervalCollectionFactory
 
     Returns a factory object used to create calc scalar components.
 

@@ -3,8 +3,6 @@ IReceiverModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.IReceiverModelScriptPlugin
 
-   object
-   
    Provide access to the properties and methods defining a script plugin receiver model.
 
 .. py:currentmodule:: IReceiverModelScriptPlugin
@@ -45,7 +43,7 @@ Property detail
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.IReceiverModelScriptPlugin.link_margin
-    :type: ILinkMargin
+    :type: LinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 

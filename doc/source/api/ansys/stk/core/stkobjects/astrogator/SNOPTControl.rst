@@ -3,8 +3,6 @@ SNOPTControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControl
 
-   Bases: 
-
    Control parameters for SNOPT optimizer profile.
 
 .. py:currentmodule:: SNOPTControl

@@ -44,25 +44,25 @@ Property detail
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.proximity
-    :type: IVehicleGraphics3DRouteProximity
+    :type: VehicleGraphics3DRouteProximity
 
     Get the ship's 3D proximity properties.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.drop_lines
-    :type: IVehicleGraphics3DRouteDropLines
+    :type: VehicleGraphics3DRouteDropLines
 
     Returns an interface allowing to configure vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.vapor_trail
-    :type: IGraphics3DVaporTrail
+    :type: Graphics3DVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.radar_cross_section
-    :type: IRadarCrossSectionGraphics3D
+    :type: RadarCrossSectionGraphics3D
 
     Gets the radar cross section graphics interface.
 

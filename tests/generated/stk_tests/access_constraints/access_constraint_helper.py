@@ -31,10 +31,10 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(oConstraint.excl_intvl)
         oConstraint.excl_intvl = holdExclIntvl
 
-        oConstraint.max_rel_motion = 1
-        Assert.assertEqual(1, oConstraint.max_rel_motion)
-        oConstraint.max_rel_motion = 2
-        Assert.assertEqual(2, oConstraint.max_rel_motion)
+        oConstraint.max_relative_motion = 1
+        Assert.assertEqual(1, oConstraint.max_relative_motion)
+        oConstraint.max_relative_motion = 2
+        Assert.assertEqual(2, oConstraint.max_relative_motion)
 
         oConstraint.max_time_step = 30
         Assert.assertEqual(30, oConstraint.max_time_step)
@@ -92,8 +92,8 @@ class AccessConstraintHelper(object):
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_INTEGRATED_PULSES)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_MLC_FILTER)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_SLC_FILTER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIG_DOPPLER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIG_RANGE)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIGUOUS_DOPPLER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIGUOUS_RANGE)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.TERRAIN_MASK)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.TILES_MASK_3D)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.FOREGROUND)
@@ -201,9 +201,9 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.CLOUDS_FOG_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.FREE_SPACE_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.NOISE_TEMPERATURE)
-        typesNoTest.append(ACCESS_CONSTRAINTS.PROP_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.PROPAGATION_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.RAIN_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINTS.RDR_XMT_TGT_ACCESS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.RDR_XMT_TARGET_ACCESS)
         typesNoTest.append(ACCESS_CONSTRAINTS.TROPO_SCINTILL_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.URBAN_TERRES_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.USER_CUSTOM_A_LOSS)
@@ -227,7 +227,7 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.J_OVER_S)
         typesNoTest.append(ACCESS_CONSTRAINTS.LINK_EIRP)
         typesNoTest.append(ACCESS_CONSTRAINTS.LINK_MARGIN)
-        typesNoTest.append(ACCESS_CONSTRAINTS.POL_REL_ANGLE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.POL_RELATIVE_ANGLE)
         typesNoTest.append(ACCESS_CONSTRAINTS.POWER_AT_RECEIVER_INPUT)
         typesNoTest.append(ACCESS_CONSTRAINTS.POWER_FLUX_DENSITY)
         typesNoTest.append(ACCESS_CONSTRAINTS.RCVD_ISOTROPIC_POWER)
@@ -1525,11 +1525,11 @@ class AccessConstraintHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oGrazingAlt.min = 87.65
 
-        oGrazingAlt.compute_beyond_tgt = True
-        Assert.assertEqual(True, oGrazingAlt.compute_beyond_tgt)
+        oGrazingAlt.compute_beyond_target = True
+        Assert.assertEqual(True, oGrazingAlt.compute_beyond_target)
 
-        oGrazingAlt.compute_beyond_tgt = False
-        Assert.assertEqual(False, oGrazingAlt.compute_beyond_tgt)
+        oGrazingAlt.compute_beyond_target = False
+        Assert.assertEqual(False, oGrazingAlt.compute_beyond_target)
 
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))

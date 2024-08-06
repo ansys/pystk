@@ -103,25 +103,25 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Transmitter.graphics_3d
-    :type: ITransmitterGraphics3D
+    :type: TransmitterGraphics3D
 
     Get the 3D Graphics properties for the transmitter.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Transmitter.graphics
-    :type: ITransmitterGraphics
+    :type: TransmitterGraphics
 
     Get the 2D Graphics properties for the transmitter.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Transmitter.rf_environment
-    :type: IObjectRFEnvironment
+    :type: ObjectRFEnvironment
 
     Gets the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Transmitter.laser_environment
-    :type: IObjectLaserEnvironment
+    :type: ObjectLaserEnvironment
 
     Gets the object laser environment settings.
 

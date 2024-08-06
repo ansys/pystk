@@ -3,8 +3,6 @@ AdvCATAvailableObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATAvailableObjectCollection
 
-   Bases: 
-
    Read-only collection of available objects.
 
 .. py:currentmodule:: AdvCATAvailableObjectCollection

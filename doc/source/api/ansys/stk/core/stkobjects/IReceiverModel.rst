@@ -3,8 +3,6 @@ IReceiverModel
 
 .. py:class:: ansys.stk.core.stkobjects.IReceiverModel
 
-   object
-   
    Provide access to the properties and methods defining a receiver model.
 
 .. py:currentmodule:: IReceiverModel

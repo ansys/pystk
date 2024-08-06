@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: propagator
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator
-    :type: IManeuverFinitePropagator
+    :type: ManeuverFinitePropagator
 
     Get the propagator.
 

@@ -1,0 +1,45 @@
+LOG_MESSAGE_TYPE
+================
+
+.. py:class:: ansys.stk.core.stkutil.LOG_MESSAGE_TYPE
+
+   IntEnum
+
+
+.. py:currentmodule:: LOG_MESSAGE_TYPE
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~DEBUG`
+              - Debugging message.
+
+            * - :py:attr:`~INFO`
+              - Informational message.
+
+            * - :py:attr:`~FORCE_INFO`
+              - Informational message.
+
+            * - :py:attr:`~WARNING`
+              - Warning message.
+
+            * - :py:attr:`~ALARM`
+              - Alarm message.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import LOG_MESSAGE_TYPE
+
+

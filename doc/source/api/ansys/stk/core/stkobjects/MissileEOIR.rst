@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: shapes
     :canonical: ansys.stk.core.stkobjects.MissileEOIR.shapes
-    :type: IEOIRShapeCollection
+    :type: EOIRShapeCollection
 
     Property used to access the shape collection.
 
 .. py:property:: stage
     :canonical: ansys.stk.core.stkobjects.MissileEOIR.stage
-    :type: IEOIRStage
+    :type: EOIRStage
 
     Property used to access missile stage interface.
 

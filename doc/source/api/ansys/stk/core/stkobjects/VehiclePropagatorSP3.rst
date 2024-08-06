@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSP3.files
-    :type: IVehiclePropagatorSP3FileCollection
+    :type: VehiclePropagatorSP3FileCollection
 
     Access and manipulate the collection of SP3 files. You can add multiple files to a single satellite object and - if there are no gaps between the files - the whole ephemeris will be propagated in sequence.
 

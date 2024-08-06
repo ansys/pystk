@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_tgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_target`
               - Determines if positions beyond target object are considered in grazing altitude calculation.
 
 
@@ -36,8 +36,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: compute_beyond_tgt
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_tgt
+.. py:property:: compute_beyond_target
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintGrazingAltitude.compute_beyond_target
     :type: bool
 
     Determines if positions beyond target object are considered in grazing altitude calculation.

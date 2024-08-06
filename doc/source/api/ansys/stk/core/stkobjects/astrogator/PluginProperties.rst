@@ -3,8 +3,6 @@ PluginProperties
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.PluginProperties
 
-   Bases: 
-
    The plugin attitude control type.
 
 .. py:currentmodule:: PluginProperties

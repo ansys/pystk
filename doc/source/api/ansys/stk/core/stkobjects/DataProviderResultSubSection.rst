@@ -3,8 +3,6 @@ DataProviderResultSubSection
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultSubSection
 
-   Bases: 
-
    Represents a subsection in the data returned by the data providers.
 
 .. py:currentmodule:: DataProviderResultSubSection
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSection.intervals
-    :type: IDataProviderResultIntervalCollection
+    :type: DataProviderResultIntervalCollection
 
     Returns a collection of intervals within the sub-section.
 

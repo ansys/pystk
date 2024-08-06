@@ -3,8 +3,6 @@ ILaserPropagationChannel
 
 .. py:class:: ansys.stk.core.stkobjects.ILaserPropagationChannel
 
-   object
-   
    Provide access to laser propagation loss models.
 
 .. py:currentmodule:: ILaserPropagationChannel

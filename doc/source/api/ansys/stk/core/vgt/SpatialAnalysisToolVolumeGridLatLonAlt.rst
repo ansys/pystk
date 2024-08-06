@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: latitude_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatLonAlt.latitude_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns latitude Coordinates parameters for the Theta system.
 
 .. py:property:: longitude_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatLonAlt.longitude_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns longtitude Coordinates parameters for the Radius system.
 
 .. py:property:: altitude_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatLonAlt.altitude_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns altitude parameters for the Height system.
 

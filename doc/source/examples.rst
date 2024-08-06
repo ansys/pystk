@@ -9,6 +9,7 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 .. nbgallery::
 
     examples/facility-to-satellite-access
+    examples/sensor-access
 
 Coverage examples
 =================

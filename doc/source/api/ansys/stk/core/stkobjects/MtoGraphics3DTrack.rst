@@ -3,8 +3,6 @@ MtoGraphics3DTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DTrack
 
-   Bases: 
-
    3D graphics properties for MTO tracks.
 
 .. py:currentmodule:: MtoGraphics3DTrack
@@ -62,43 +60,43 @@ Property detail
 
 .. py:property:: marker
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.marker
-    :type: IMtoGraphics3DMarker
+    :type: MtoGraphics3DMarker
 
     Get the track's 3D marker properties.
 
 .. py:property:: point
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.point
-    :type: IMtoGraphics3DPoint
+    :type: MtoGraphics3DPoint
 
     Get the track's 3D point properties.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.model
-    :type: IMtoGraphics3DModel
+    :type: MtoGraphics3DModel
 
     Get the track's 3D model properties.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.label
-    :type: IGraphics3DOffsetLabel
+    :type: Graphics3DOffsetLabel
 
     Get the track's 3D label properties.
 
 .. py:property:: swap_distances
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.swap_distances
-    :type: IMtoGraphics3DSwapDistances
+    :type: MtoGraphics3DSwapDistances
 
     Get the track's 3D swap distance properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.range_contours
-    :type: IGraphics3DRangeContours
+    :type: Graphics3DRangeContours
 
     Get the MTO's 3D range contour properties.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3DTrack.drop_lines
-    :type: IMtoGraphics3DDropLines
+    :type: MtoGraphics3DDropLines
 
     Returns an interface allowing you to configure the MTO's drop lines.
 

@@ -3,8 +3,6 @@ VehicleGraphics3DTrajectoryPassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryPassData
 
-   Bases: 
-
    3D ground track and trajectory data for a launch vehicle or missile.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectoryPassData
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryPassData.ground_track
-    :type: IVehicleGraphics3DLeadTrailData
+    :type: VehicleGraphics3DLeadTrailData
 
     Get the 3D ground track data.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryPassData.trajectory
-    :type: IVehicleGraphics3DLeadTrailData
+    :type: VehicleGraphics3DLeadTrailData
 
     Get the 3D trajectory data.
 

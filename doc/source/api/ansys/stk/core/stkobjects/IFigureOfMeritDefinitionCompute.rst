@@ -3,8 +3,8 @@ IFigureOfMeritDefinitionCompute
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute
 
-   IFigureOfMeritDefinition
-   
+   Bases: IFigureOfMeritDefinition
+
    Compute options for navigation accuracy.
 
 .. py:currentmodule:: IFigureOfMeritDefinitionCompute

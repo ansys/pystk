@@ -3,8 +3,6 @@ LineTargetPoint
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetPoint
 
-   Bases: 
-
    Line Target Point.
 
 .. py:currentmodule:: LineTargetPoint

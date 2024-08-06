@@ -3,8 +3,6 @@ IVehicleHPOPDragModel
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleHPOPDragModel
 
-   object
-   
    A base interface for drag models.
 
 .. py:currentmodule:: IVehicleHPOPDragModel

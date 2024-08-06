@@ -3,8 +3,6 @@ IRadarStcAttenuation
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuation
 
-   object
-   
    Provide access to the properties and methods defining a radar STC attenuation.
 
 .. py:currentmodule:: IRadarStcAttenuation

@@ -3,8 +3,6 @@ PickInfoData
 
 .. py:class:: ansys.stk.core.stkx.PickInfoData
 
-   Bases: 
-
    Single mouse pick result.
 
 .. py:currentmodule:: PickInfoData

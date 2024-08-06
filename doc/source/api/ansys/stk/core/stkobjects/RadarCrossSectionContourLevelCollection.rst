@@ -3,8 +3,6 @@ RadarCrossSectionContourLevelCollection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionContourLevelCollection
 
-   Bases: 
-
    Class defining a collection of radar cross section contour levels.
 
 .. py:currentmodule:: RadarCrossSectionContourLevelCollection

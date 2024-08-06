@@ -3,8 +3,6 @@ ConversionUtility
 
 .. py:class:: ansys.stk.core.stkutil.ConversionUtility
 
-   Bases: 
-
    Object that contains a unit conversion utility.
 
 .. py:currentmodule:: ConversionUtility

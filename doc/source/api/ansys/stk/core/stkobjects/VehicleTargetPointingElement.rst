@@ -3,8 +3,6 @@ VehicleTargetPointingElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetPointingElement
 
-   Bases: 
-
    Target pointing data for target pointing attitude.
 
 .. py:currentmodule:: VehicleTargetPointingElement
@@ -63,7 +61,7 @@ Property detail
 
 .. py:property:: target
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.target
-    :type: ILinkToObject
+    :type: LinkToObject
 
     Get a reference to the targeted object.
 
@@ -111,7 +109,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals
-    :type: IVehicleTargetPointingIntervalCollection
+    :type: VehicleTargetPointingIntervalCollection
 
     Returns a list of scheduled time intervals for the current target.
 

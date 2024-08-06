@@ -3,8 +3,6 @@ BlurFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.BlurFilterFactory
 
-   Bases: 
-
    Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
 
 .. py:currentmodule:: BlurFilterFactory

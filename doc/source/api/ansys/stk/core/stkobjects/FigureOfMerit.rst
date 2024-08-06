@@ -83,19 +83,19 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.graphics
-    :type: IFigureOfMeritGraphics
+    :type: FigureOfMeritGraphics
 
     2D graphics properties of the FOM.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.graphics_3d
-    :type: IFigureOfMeritGraphics3D
+    :type: FigureOfMeritGraphics3D
 
     3D graphics properties of the FOM.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.grid_inspector
-    :type: IFigureOfMeritGridInspector
+    :type: FigureOfMeritGridInspector
 
     Get the Grid inspector tool.
 

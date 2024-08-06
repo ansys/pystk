@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesSpinning.spin_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a spin vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesSpinning.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

@@ -3,8 +3,6 @@ SensorCommonTasks
 
 .. py:class:: ansys.stk.core.stkobjects.SensorCommonTasks
 
-   Bases: 
-
    Class defining the Sensor Common class.
 
 .. py:currentmodule:: SensorCommonTasks

@@ -3,8 +3,6 @@ RadarJamming
 
 .. py:class:: ansys.stk.core.stkobjects.RadarJamming
 
-   Bases: 
-
    Class defining radar jamming.
 
 .. py:currentmodule:: RadarJamming
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: jammers
     :canonical: ansys.stk.core.stkobjects.RadarJamming.jammers
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the jammers collection.
 

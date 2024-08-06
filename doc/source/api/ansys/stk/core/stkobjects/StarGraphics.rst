@@ -3,8 +3,6 @@ StarGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.StarGraphics
 
-   Bases: 
-
    Class defining 2D Graphics properties of a Star.
 
 .. py:currentmodule:: StarGraphics

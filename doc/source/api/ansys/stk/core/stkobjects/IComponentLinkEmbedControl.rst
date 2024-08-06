@@ -3,8 +3,6 @@ IComponentLinkEmbedControl
 
 .. py:class:: ansys.stk.core.stkobjects.IComponentLinkEmbedControl
 
-   object
-   
    Interface for a control which manages the linking or embedding of a component from the component browser.
 
 .. py:currentmodule:: IComponentLinkEmbedControl

@@ -3,8 +3,6 @@ MtoGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3D
 
-   Bases: 
-
    MTO 3D graphics properties.
 
 .. py:currentmodule:: MtoGraphics3D
@@ -42,19 +40,19 @@ Property detail
 
 .. py:property:: tracks
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3D.tracks
-    :type: IMtoGraphics3DTrackCollection
+    :type: MtoGraphics3DTrackCollection
 
     Get the collection of MTO 3D graphics settings.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3D.default_track
-    :type: IMtoDefaultGraphics3DTrack
+    :type: MtoDefaultGraphics3DTrack
 
     Get the default track 3D graphics settings.
 
 .. py:property:: global_track_options
     :canonical: ansys.stk.core.stkobjects.MtoGraphics3D.global_track_options
-    :type: IMtoGraphics3DGlobalTrackOptions
+    :type: MtoGraphics3DGlobalTrackOptions
 
     Get the MTO global track 3D options.
 

@@ -3,8 +3,6 @@ CoveragePointFileListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoveragePointFileListCollection
 
-   Bases: 
-
    Point file list collection.
 
 .. py:currentmodule:: CoveragePointFileListCollection

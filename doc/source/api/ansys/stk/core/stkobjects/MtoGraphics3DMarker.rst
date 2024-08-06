@@ -3,8 +3,6 @@ MtoGraphics3DMarker
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGraphics3DMarker
 
-   Bases: 
-
    MTO 3D graphics marker options.
 
 .. py:currentmodule:: MtoGraphics3DMarker

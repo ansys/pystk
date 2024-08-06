@@ -3,8 +3,6 @@ UiFileOpenExt
 
 .. py:class:: ansys.stk.core.uiapplication.UiFileOpenExt
 
-   Bases: 
-
    Access to file open dialog that allows multiple file specifications.
 
 .. py:currentmodule:: UiFileOpenExt
@@ -42,7 +40,7 @@ Property detail
 
 .. py:property:: file_name
     :canonical: ansys.stk.core.uiapplication.UiFileOpenExt.file_name
-    :type: IUiFileOpenExtCollection
+    :type: UiFileOpenExtCollection
 
     Gets/sets the multiple file open collection.
 

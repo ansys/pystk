@@ -3,8 +3,6 @@ FactoryAndInitializers
 
 .. py:class:: ansys.stk.core.graphics.FactoryAndInitializers
 
-   Bases: 
-
    Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a...
 
 .. py:currentmodule:: FactoryAndInitializers
@@ -202,499 +200,499 @@ Property detail
 
 .. py:property:: box_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.box_triangulator
-    :type: IBoxTriangulatorInitializer
+    :type: BoxTriangulatorInitializer
 
     Access global methods and properties of BoxTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: cylinder_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.cylinder_triangulator
-    :type: ICylinderTriangulatorInitializer
+    :type: CylinderTriangulatorInitializer
 
     Access global methods and properties of CylinderTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: ellipsoid_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.ellipsoid_triangulator
-    :type: IEllipsoidTriangulatorInitializer
+    :type: EllipsoidTriangulatorInitializer
 
     Access global methods and properties of EllipsoidTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: extruded_polyline_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.extruded_polyline_triangulator
-    :type: IExtrudedPolylineTriangulatorInitializer
+    :type: ExtrudedPolylineTriangulatorInitializer
 
     Access global methods and properties of ExtrudedPolylineTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: surface_extent_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.surface_extent_triangulator
-    :type: ISurfaceExtentTriangulatorInitializer
+    :type: SurfaceExtentTriangulatorInitializer
 
     Access global methods and properties of SurfaceExtentTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: surface_polygon_triangulator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.surface_polygon_triangulator
-    :type: ISurfacePolygonTriangulatorInitializer
+    :type: SurfacePolygonTriangulatorInitializer
 
     Access global methods and properties of SurfacePolygonTriangulator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: surface_shapes
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.surface_shapes
-    :type: ISurfaceShapesInitializer
+    :type: SurfaceShapesInitializer
 
     Access global methods and properties of SurfaceShapes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: agi_processed_image_globe_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.agi_processed_image_globe_overlay
-    :type: IAGIProcessedImageGlobeOverlayFactory
+    :type: AGIProcessedImageGlobeOverlayFactory
 
     Access global methods and properties of AGIProcessedImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: agi_processed_terrain_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.agi_processed_terrain_overlay
-    :type: IAGIProcessedTerrainOverlayFactory
+    :type: AGIProcessedTerrainOverlayFactory
 
     Access global methods and properties of AGIProcessedTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: agi_roam_image_globe_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.agi_roam_image_globe_overlay
-    :type: IAGIRoamImageGlobeOverlayFactory
+    :type: AGIRoamImageGlobeOverlayFactory
 
     Access global methods and properties of AGIRoamImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: custom_image_globe_overlay_plugin_activator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.custom_image_globe_overlay_plugin_activator
-    :type: ICustomImageGlobeOverlayPluginActivatorFactory
+    :type: CustomImageGlobeOverlayPluginActivatorFactory
 
     Access global methods and properties of CustomImageGlobeOverlayPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: geospatial_image_globe_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.geospatial_image_globe_overlay
-    :type: IGeospatialImageGlobeOverlayFactory
+    :type: GeospatialImageGlobeOverlayFactory
 
     Access global methods and properties of GeospatialImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: projected_raster_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.projected_raster_overlay
-    :type: IProjectedRasterOverlayFactory
+    :type: ProjectedRasterOverlayFactory
 
     Access global methods and properties of ProjectedRasterOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.projection
-    :type: IProjectionFactory
+    :type: ProjectionFactory
 
     Access global methods and properties of Projection (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: altitude_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.altitude_display_condition
-    :type: IAltitudeDisplayConditionFactory
+    :type: AltitudeDisplayConditionFactory
 
     Access global methods and properties of AltitudeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: composite_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.composite_display_condition
-    :type: ICompositeDisplayConditionFactory
+    :type: CompositeDisplayConditionFactory
 
     Access global methods and properties of CompositeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: composite_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.composite_primitive
-    :type: ICompositePrimitiveFactory
+    :type: CompositePrimitiveFactory
 
     Access global methods and properties of CompositePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: constant_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.constant_display_condition
-    :type: IConstantDisplayConditionFactory
+    :type: ConstantDisplayConditionFactory
 
     Access global methods and properties of ConstantDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: distance_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.distance_display_condition
-    :type: IDistanceDisplayConditionFactory
+    :type: DistanceDisplayConditionFactory
 
     Access global methods and properties of DistanceDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: distance_to_globe_overlay_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.distance_to_globe_overlay_display_condition
-    :type: IDistanceToGlobeOverlayDisplayConditionFactory
+    :type: DistanceToGlobeOverlayDisplayConditionFactory
 
     Access global methods and properties of DistanceToGlobeOverlayDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: distance_to_position_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.distance_to_position_display_condition
-    :type: IDistanceToPositionDisplayConditionFactory
+    :type: DistanceToPositionDisplayConditionFactory
 
     Access global methods and properties of DistanceToPositionDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: distance_to_primitive_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.distance_to_primitive_display_condition
-    :type: IDistanceToPrimitiveDisplayConditionFactory
+    :type: DistanceToPrimitiveDisplayConditionFactory
 
     Access global methods and properties of DistanceToPrimitiveDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: duration_path_primitive_update_policy
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.duration_path_primitive_update_policy
-    :type: IDurationPathPrimitiveUpdatePolicyFactory
+    :type: DurationPathPrimitiveUpdatePolicyFactory
 
     Access global methods and properties of DurationPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: globe_image_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.globe_image_overlay
-    :type: IGlobeImageOverlayInitializer
+    :type: GlobeImageOverlayInitializer
 
     Access global methods and properties of GlobeImageOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: graphics_font
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.graphics_font
-    :type: IGraphicsFontFactory
+    :type: GraphicsFontFactory
 
     Access global methods and properties of GraphicsFont (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: great_arc_interpolator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.great_arc_interpolator
-    :type: IGreatArcInterpolatorFactory
+    :type: GreatArcInterpolatorFactory
 
     Access global methods and properties of GreatArcInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: alpha_from_luminance_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.alpha_from_luminance_filter
-    :type: IAlphaFromLuminanceFilterFactory
+    :type: AlphaFromLuminanceFilterFactory
 
     Access global methods and properties of AlphaFromLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: alpha_from_pixel_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.alpha_from_pixel_filter
-    :type: IAlphaFromPixelFilterFactory
+    :type: AlphaFromPixelFilterFactory
 
     Access global methods and properties of AlphaFromPixelFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: alpha_from_raster_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.alpha_from_raster_filter
-    :type: IAlphaFromRasterFilterFactory
+    :type: AlphaFromRasterFilterFactory
 
     Access global methods and properties of AlphaFromRasterFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: band_extract_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.band_extract_filter
-    :type: IBandExtractFilterFactory
+    :type: BandExtractFilterFactory
 
     Access global methods and properties of BandExtractFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: band_order_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.band_order_filter
-    :type: IBandOrderFilterFactory
+    :type: BandOrderFilterFactory
 
     Access global methods and properties of BandOrderFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: blur_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.blur_filter
-    :type: IBlurFilterFactory
+    :type: BlurFilterFactory
 
     Access global methods and properties of BlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: brightness_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.brightness_filter
-    :type: IBrightnessFilterFactory
+    :type: BrightnessFilterFactory
 
     Access global methods and properties of BrightnessFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: color_to_luminance_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.color_to_luminance_filter
-    :type: IColorToLuminanceFilterFactory
+    :type: ColorToLuminanceFilterFactory
 
     Access global methods and properties of ColorToLuminanceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: contrast_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.contrast_filter
-    :type: IContrastFilterFactory
+    :type: ContrastFilterFactory
 
     Access global methods and properties of ContrastFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: convolution_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.convolution_filter
-    :type: IConvolutionFilterFactory
+    :type: ConvolutionFilterFactory
 
     Access global methods and properties of ConvolutionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: edge_detect_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.edge_detect_filter
-    :type: IEdgeDetectFilterFactory
+    :type: EdgeDetectFilterFactory
 
     Access global methods and properties of EdgeDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: filtering_raster_stream
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.filtering_raster_stream
-    :type: IFilteringRasterStreamFactory
+    :type: FilteringRasterStreamFactory
 
     Access global methods and properties of FilteringRasterStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: flip_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.flip_filter
-    :type: IFlipFilterFactory
+    :type: FlipFilterFactory
 
     Access global methods and properties of FlipFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: gamma_correction_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.gamma_correction_filter
-    :type: IGammaCorrectionFilterFactory
+    :type: GammaCorrectionFilterFactory
 
     Access global methods and properties of GammaCorrectionFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: gaussian_blur_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.gaussian_blur_filter
-    :type: IGaussianBlurFilterFactory
+    :type: GaussianBlurFilterFactory
 
     Access global methods and properties of GaussianBlurFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: gradient_detect_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.gradient_detect_filter
-    :type: IGradientDetectFilterFactory
+    :type: GradientDetectFilterFactory
 
     Access global methods and properties of GradientDetectFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: jpeg2000_writer
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.jpeg2000_writer
-    :type: IJpeg2000WriterInitializer
+    :type: Jpeg2000WriterInitializer
 
     Access global methods and properties of Jpeg2000Writer (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: levels_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.levels_filter
-    :type: ILevelsFilterFactory
+    :type: LevelsFilterFactory
 
     Access global methods and properties of LevelsFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: projection_raster_stream_plugin_activator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.projection_raster_stream_plugin_activator
-    :type: IProjectionRasterStreamPluginActivatorFactory
+    :type: ProjectionRasterStreamPluginActivatorFactory
 
     Access global methods and properties of ProjectionRasterStreamPluginActivator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: raster
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.raster
-    :type: IRasterFactory
+    :type: RasterFactory
 
     Access global methods and properties of Raster (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: raster_attributes
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.raster_attributes
-    :type: IRasterAttributesFactory
+    :type: RasterAttributesFactory
 
     Access global methods and properties of RasterAttributes (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: rotate_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.rotate_filter
-    :type: IRotateFilterFactory
+    :type: RotateFilterFactory
 
     Access global methods and properties of RotateFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: sequence_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.sequence_filter
-    :type: ISequenceFilterFactory
+    :type: SequenceFilterFactory
 
     Access global methods and properties of SequenceFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: sharpen_filter
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.sharpen_filter
-    :type: ISharpenFilterFactory
+    :type: SharpenFilterFactory
 
     Access global methods and properties of SharpenFilter (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: video_stream
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.video_stream
-    :type: IVideoStreamFactory
+    :type: VideoStreamFactory
 
     Access global methods and properties of VideoStream (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: marker_batch_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.marker_batch_primitive
-    :type: IMarkerBatchPrimitiveFactory
+    :type: MarkerBatchPrimitiveFactory
 
     Access global methods and properties of MarkerBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: marker_batch_primitive_optional_parameters
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.marker_batch_primitive_optional_parameters
-    :type: IMarkerBatchPrimitiveOptionalParametersFactory
+    :type: MarkerBatchPrimitiveOptionalParametersFactory
 
     Access global methods and properties of MarkerBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: maximum_count_path_primitive_update_policy
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.maximum_count_path_primitive_update_policy
-    :type: IMaximumCountPathPrimitiveUpdatePolicyFactory
+    :type: MaximumCountPathPrimitiveUpdatePolicyFactory
 
     Access global methods and properties of MaximumCountPathPrimitiveUpdatePolicy (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: model_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.model_primitive
-    :type: IModelPrimitiveFactory
+    :type: ModelPrimitiveFactory
 
     Access global methods and properties of ModelPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: path_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.path_primitive
-    :type: IPathPrimitiveFactory
+    :type: PathPrimitiveFactory
 
     Access global methods and properties of PathPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: pixel_size_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.pixel_size_display_condition
-    :type: IPixelSizeDisplayConditionFactory
+    :type: PixelSizeDisplayConditionFactory
 
     Access global methods and properties of PixelSizeDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: point_batch_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.point_batch_primitive
-    :type: IPointBatchPrimitiveFactory
+    :type: PointBatchPrimitiveFactory
 
     Access global methods and properties of PointBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: polyline_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.polyline_primitive
-    :type: IPolylinePrimitiveFactory
+    :type: PolylinePrimitiveFactory
 
     Access global methods and properties of PolylinePrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: raster_image_globe_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.raster_image_globe_overlay
-    :type: IRasterImageGlobeOverlayFactory
+    :type: RasterImageGlobeOverlayFactory
 
     Access global methods and properties of RasterImageGlobeOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: rhumb_line_interpolator
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.rhumb_line_interpolator
-    :type: IRhumbLineInterpolatorFactory
+    :type: RhumbLineInterpolatorFactory
 
     Access global methods and properties of RhumbLineInterpolator (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: scene_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.scene_display_condition
-    :type: ISceneDisplayConditionFactory
+    :type: SceneDisplayConditionFactory
 
     Access global methods and properties of SceneDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: scene_manager
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.scene_manager
-    :type: ISceneManagerInitializer
+    :type: SceneManagerInitializer
 
     Access global methods and properties of SceneManager (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: screen_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.screen_overlay
-    :type: IScreenOverlayFactory
+    :type: ScreenOverlayFactory
 
     Access global methods and properties of ScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: solid_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.solid_primitive
-    :type: ISolidPrimitiveFactory
+    :type: SolidPrimitiveFactory
 
     Access global methods and properties of SolidPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: surface_mesh_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.surface_mesh_primitive
-    :type: ISurfaceMeshPrimitiveFactory
+    :type: SurfaceMeshPrimitiveFactory
 
     Access global methods and properties of SurfaceMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: terrain_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.terrain_overlay
-    :type: ITerrainOverlayInitializer
+    :type: TerrainOverlayInitializer
 
     Access global methods and properties of TerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: text_batch_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.text_batch_primitive
-    :type: ITextBatchPrimitiveFactory
+    :type: TextBatchPrimitiveFactory
 
     Access global methods and properties of TextBatchPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: text_batch_primitive_optional_parameters
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.text_batch_primitive_optional_parameters
-    :type: ITextBatchPrimitiveOptionalParametersFactory
+    :type: TextBatchPrimitiveOptionalParametersFactory
 
     Access global methods and properties of TextBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: texture_matrix
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.texture_matrix
-    :type: ITextureMatrixFactory
+    :type: TextureMatrixFactory
 
     Access global methods and properties of TextureMatrix (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: texture_screen_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.texture_screen_overlay
-    :type: ITextureScreenOverlayFactory
+    :type: TextureScreenOverlayFactory
 
     Access global methods and properties of TextureScreenOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: time_interval_display_condition
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.time_interval_display_condition
-    :type: ITimeIntervalDisplayConditionFactory
+    :type: TimeIntervalDisplayConditionFactory
 
     Access global methods and properties of TimeIntervalDisplayCondition (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: triangle_mesh_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.triangle_mesh_primitive
-    :type: ITriangleMeshPrimitiveFactory
+    :type: TriangleMeshPrimitiveFactory
 
     Access global methods and properties of TriangleMeshPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: triangle_mesh_primitive_optional_parameters
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.triangle_mesh_primitive_optional_parameters
-    :type: ITriangleMeshPrimitiveOptionalParametersFactory
+    :type: TriangleMeshPrimitiveOptionalParametersFactory
 
     Access global methods and properties of TriangleMeshPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: texture_filter_2d
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.texture_filter_2d
-    :type: ITextureFilter2DFactory
+    :type: TextureFilter2DFactory
 
     Factory creates texture filters.
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.bounding_sphere
-    :type: IBoundingSphereFactory
+    :type: BoundingSphereFactory
 
     Factory creates bounding spheres.
 
 .. py:property:: path_point
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.path_point
-    :type: IPathPointFactory
+    :type: PathPointFactory
 
     Factory creates path points.
 
 .. py:property:: text_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.text_overlay
-    :type: ITextOverlayFactory
+    :type: TextOverlayFactory
 
     Access global methods and properties of TextOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: agi_custom_terrain_overlay
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.agi_custom_terrain_overlay
-    :type: IAGICustomTerrainOverlayFactory
+    :type: AGICustomTerrainOverlayFactory
 
     Access global methods and properties of AGICustomTerrainOverlay (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: axes_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.axes_primitive
-    :type: IAxesPrimitiveFactory
+    :type: AxesPrimitiveFactory
 
     Access global methods and properties of AxesPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: vector_primitive
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.vector_primitive
-    :type: IVectorPrimitiveFactory
+    :type: VectorPrimitiveFactory
 
     Access global methods and properties of VectorPrimitive (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: polyline_primitive_optional_parameters
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.polyline_primitive_optional_parameters
-    :type: IPolylinePrimitiveOptionalParametersFactory
+    :type: PolylinePrimitiveOptionalParametersFactory
 
     Access global methods and properties of PolylinePrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 
 .. py:property:: point_batch_primitive_optional_parameters
     :canonical: ansys.stk.core.graphics.FactoryAndInitializers.point_batch_primitive_optional_parameters
-    :type: IPointBatchPrimitiveOptionalParametersFactory
+    :type: PointBatchPrimitiveOptionalParametersFactory
 
     Access global methods and properties of PointBatchPrimitiveOptionalParameters (what's known as static properties, static methods and constructors in languages such as C++, C#, etc.).
 

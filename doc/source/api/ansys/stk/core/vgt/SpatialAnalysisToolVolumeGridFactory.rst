@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeGridFactory
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridFactory
 
-   Bases: 
-
    The factory is used to create instances of volume grids.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeGridFactory

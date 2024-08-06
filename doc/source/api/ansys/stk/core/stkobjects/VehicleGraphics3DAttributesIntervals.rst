@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: default_attributes
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesIntervals.default_attributes
-    :type: IVehicleGraphics3DDefaultAttributes
+    :type: VehicleGraphics3DDefaultAttributes
 
     Get the default 3D graphics properties.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesIntervals.intervals
-    :type: IVehicleGraphics3DIntervalsCollection
+    :type: VehicleGraphics3DIntervalsCollection
 
     Get the 3D graphics properties based on intervals.
 
