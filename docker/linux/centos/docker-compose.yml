@@ -55,7 +55,7 @@ services:
       - stk-pybase 
     container_name: stk-python3.12
     build: 
-      context: ./stk-engine-py12
+      context: ./stk-engine-py312
       args:
         baseImage: ansys/stk:dev-centos7
         basePythonImage: ansys/stk:dev-centos7-pybase
