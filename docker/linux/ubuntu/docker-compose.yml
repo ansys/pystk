@@ -55,7 +55,7 @@ services:
       - stk-pybase 
     container_name: stk-python3.12
     build: 
-      context: ./stk-engine-py12
+      context: ./stk-engine-py312
       args:
         baseImage: ansys/stk:dev-ubuntu22.04
         basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
