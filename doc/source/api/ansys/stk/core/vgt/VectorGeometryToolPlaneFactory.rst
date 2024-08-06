@@ -3,8 +3,6 @@ VectorGeometryToolPlaneFactory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneFactory
 
-   Bases: 
-
    A Factory object to create VGT planes.
 
 .. py:currentmodule:: VectorGeometryToolPlaneFactory

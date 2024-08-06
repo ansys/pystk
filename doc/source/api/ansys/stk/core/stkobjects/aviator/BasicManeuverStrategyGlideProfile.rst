@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: powered_cruise_thrust_model
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.powered_cruise_thrust_model
-    :type: IPropulsionThrust
+    :type: PropulsionThrust
 
     Get the powered cruise thrust model.
 

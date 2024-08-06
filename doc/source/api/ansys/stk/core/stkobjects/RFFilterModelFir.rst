@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: numerator_complex_polynomial
     :canonical: ansys.stk.core.stkobjects.RFFilterModelFir.numerator_complex_polynomial
-    :type: ICRComplexCollection
+    :type: CRComplexCollection
 
     Gets the numerator complex polynomial.
 

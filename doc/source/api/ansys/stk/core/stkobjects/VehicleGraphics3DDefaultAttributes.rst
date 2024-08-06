@@ -3,8 +3,6 @@ VehicleGraphics3DDefaultAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes
 
-   Bases: 
-
    Default graphics attributes for covariance pointing contours.
 
 .. py:currentmodule:: VehicleGraphics3DDefaultAttributes

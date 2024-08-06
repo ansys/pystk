@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownEarthSystems
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems
 
-   Bases: 
-
    Well-known Earth's coordinate systems.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownEarthSystems

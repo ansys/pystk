@@ -3,8 +3,6 @@ AdvCATPreFilters
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATPreFilters
 
-   Bases: 
-
    AdvCAT pre-filters properties.
 
 .. py:currentmodule:: AdvCATPreFilters

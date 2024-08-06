@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled.origin_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a point of origin.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

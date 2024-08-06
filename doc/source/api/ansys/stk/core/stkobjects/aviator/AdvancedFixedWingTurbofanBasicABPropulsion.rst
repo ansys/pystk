@@ -3,8 +3,6 @@ AdvancedFixedWingTurbofanBasicABPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion
 
-   Bases: 
-
    Class defining the Turbofan - Basic w/AB (Thermodynamic model) powerplant in the Advanced Fixed Wing Tool.
 
 .. py:currentmodule:: AdvancedFixedWingTurbofanBasicABPropulsion
@@ -132,7 +130,7 @@ Property detail
 
 .. py:property:: efficiencies_and_losses
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion.efficiencies_and_losses
-    :type: IPropulsionEfficiencies
+    :type: PropulsionEfficiencies
 
     Get the jet engine's propulsion efficiencies and losses.
 
@@ -144,13 +142,13 @@ Property detail
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion.fuel_mode_as_afprop
-    :type: IFuelModelKeroseneAFPROP
+    :type: FuelModelKeroseneAFPROP
 
     Get the interface for a Kerosene - AFPROP fuel mode.
 
 .. py:property:: fuel_mode_as_cea
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTurbofanBasicABPropulsion.fuel_mode_as_cea
-    :type: IFuelModelKeroseneCEA
+    :type: FuelModelKeroseneCEA
 
     Get the interface for a Kerosene - CEA fuel mode.
 

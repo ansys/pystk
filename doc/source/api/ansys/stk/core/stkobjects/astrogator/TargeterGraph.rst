@@ -96,13 +96,13 @@ Property detail
 
 .. py:property:: active_controls
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraph.active_controls
-    :type: ITargeterGraphActiveControlCollection
+    :type: TargeterGraphActiveControlCollection
 
     Active Controls.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraph.results
-    :type: ITargeterGraphResultCollection
+    :type: TargeterGraphResultCollection
 
     Results.
 

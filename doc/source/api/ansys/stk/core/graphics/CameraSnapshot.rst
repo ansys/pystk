@@ -3,8 +3,6 @@ CameraSnapshot
 
 .. py:class:: ansys.stk.core.graphics.CameraSnapshot
 
-   Bases: 
-
    Takes snapshots of the 3D window.
 
 .. py:currentmodule:: CameraSnapshot

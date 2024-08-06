@@ -3,8 +3,6 @@ WaveformPulseDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.WaveformPulseDefinition
 
-   Bases: 
-
    Class defining the pulse definition for a rectangular waveform.
 
 .. py:currentmodule:: WaveformPulseDefinition

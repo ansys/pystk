@@ -3,8 +3,6 @@ RotorcraftAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RotorcraftAerodynamic
 
-   Bases: 
-
    Class defining the aerodynamic options for a rotorcraft.
 
 .. py:currentmodule:: RotorcraftAerodynamic

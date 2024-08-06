@@ -3,8 +3,6 @@ IVehicleGraphics2DAttributesDisplayState
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState
 
-   object
-   
    Provide access to non-trivial properties of 2D vehicle attributes.
 
 .. py:currentmodule:: IVehicleGraphics2DAttributesDisplayState

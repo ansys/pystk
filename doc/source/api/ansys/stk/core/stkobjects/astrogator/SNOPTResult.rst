@@ -3,8 +3,6 @@ SNOPTResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTResult
 
-   Bases: 
-
    Properties for objecvtive and constraints of a SNOPT profile.
 
 .. py:currentmodule:: SNOPTResult

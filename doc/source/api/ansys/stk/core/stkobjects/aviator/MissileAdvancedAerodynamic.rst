@@ -3,8 +3,6 @@ MissileAdvancedAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileAdvancedAerodynamic
 
-   Bases: 
-
    Class defining the advanced aerodynamic options for a missile.
 
 .. py:currentmodule:: MissileAdvancedAerodynamic

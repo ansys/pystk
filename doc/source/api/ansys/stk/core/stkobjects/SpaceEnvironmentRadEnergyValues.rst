@@ -3,8 +3,6 @@ SpaceEnvironmentRadEnergyValues
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyValues
 
-   Bases: 
-
    Energy values used by the Radiation Environment model.
 
 .. py:currentmodule:: SpaceEnvironmentRadEnergyValues
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: custom
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadEnergyValues.custom
-    :type: ISpaceEnvironmentRadEnergyMethodSpecify
+    :type: SpaceEnvironmentRadEnergyMethodSpecify
 
     Specify custom energy values that will override the default energy values.
 

@@ -3,8 +3,6 @@ IVehicleAttitudeSlewBase
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeSlewBase
 
-   object
-   
    Represents an attitude slew base type.
 
 .. py:currentmodule:: IVehicleAttitudeSlewBase

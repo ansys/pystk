@@ -3,8 +3,6 @@ ICartesian3Vector
 
 .. py:class:: ansys.stk.core.stkutil.ICartesian3Vector
 
-   object
-   
    Represents a cartesian 3-D vector.
 
 .. py:currentmodule:: ICartesian3Vector

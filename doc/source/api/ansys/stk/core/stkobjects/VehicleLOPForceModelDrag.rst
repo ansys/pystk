@@ -3,8 +3,6 @@ VehicleLOPForceModelDrag
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag
 
-   Bases: 
-
    Class defining the atmospheric drag model for the LOP propagator.
 
 .. py:currentmodule:: VehicleLOPForceModelDrag
@@ -54,7 +52,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.advanced
-    :type: IVehicleAdvanced
+    :type: VehicleAdvanced
 
     Get the advanced drag parameters.
 

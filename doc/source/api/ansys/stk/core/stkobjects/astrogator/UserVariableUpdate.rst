@@ -3,8 +3,6 @@ UserVariableUpdate
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate
 
-   Bases: 
-
    User Variable Update.
 
 .. py:currentmodule:: UserVariableUpdate

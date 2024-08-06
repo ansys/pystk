@@ -3,8 +3,6 @@ Graphics3DDataDisplayCollection
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection
 
-   Bases: 
-
    Collection of 3D Graphics data display text.
 
 .. py:currentmodule:: Graphics3DDataDisplayCollection

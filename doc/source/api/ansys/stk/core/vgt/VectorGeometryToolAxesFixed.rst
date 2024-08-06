@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFixed.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

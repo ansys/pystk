@@ -3,8 +3,8 @@ IAttitudeControlOptimalFinite
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IAttitudeControlOptimalFinite
 
-   IAttitudeControl
-   
+   Bases: IAttitudeControl
+
    The attitude control of a optimal finite maneuver.
 
 .. py:currentmodule:: IAttitudeControlOptimalFinite

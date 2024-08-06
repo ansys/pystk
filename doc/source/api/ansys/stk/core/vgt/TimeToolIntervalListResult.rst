@@ -3,8 +3,6 @@ TimeToolIntervalListResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolIntervalListResult
 
-   Bases: 
-
    Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
 
 .. py:currentmodule:: TimeToolIntervalListResult
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.TimeToolIntervalListResult.intervals
-    :type: ITimeToolIntervalCollection
+    :type: TimeToolIntervalCollection
 
     A list of intervals.
 

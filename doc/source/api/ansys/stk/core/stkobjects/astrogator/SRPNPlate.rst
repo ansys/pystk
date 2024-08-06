@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPNPlate.eclipsing_bodies
-    :type: ICentralBodyCollection
+    :type: CentralBodyCollection
 
     Other eclipsing bodies.
 

@@ -3,8 +3,6 @@ IVectorGeometryToolSystemTransformWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystemTransformWithRateResult
 
-   object
-   
    Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
 
 .. py:currentmodule:: IVectorGeometryToolSystemTransformWithRateResult

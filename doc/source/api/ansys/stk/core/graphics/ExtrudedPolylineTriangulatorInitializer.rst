@@ -3,8 +3,6 @@ ExtrudedPolylineTriangulatorInitializer
 
 .. py:class:: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer
 
-   Bases: 
-
    Triangulates a polyline into an extrusion with bottom and top boundaries.
 
 .. py:currentmodule:: ExtrudedPolylineTriangulatorInitializer

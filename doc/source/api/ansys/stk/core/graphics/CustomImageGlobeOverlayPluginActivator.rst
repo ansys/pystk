@@ -3,8 +3,6 @@ CustomImageGlobeOverlayPluginActivator
 
 .. py:class:: ansys.stk.core.graphics.CustomImageGlobeOverlayPluginActivator
 
-   Bases: 
-
    The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface.
 
 .. py:currentmodule:: CustomImageGlobeOverlayPluginActivator

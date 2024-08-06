@@ -3,8 +3,6 @@ VehiclePluginPropagator
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePluginPropagator
 
-   Bases: 
-
    Class defining a propagator plugin for HPOP for customization of the accelerations used in the propagation of the satellite trajectory.
 
 .. py:currentmodule:: VehiclePluginPropagator
@@ -67,7 +65,7 @@ Property detail
 
 .. py:property:: plugin_settings
     :canonical: ansys.stk.core.stkobjects.VehiclePluginPropagator.plugin_settings
-    :type: IVehiclePluginSettings
+    :type: VehiclePluginSettings
 
     Get the parameters of the selected plugin.
 

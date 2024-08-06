@@ -3,8 +3,6 @@ IOrientationAscNode
 
 .. py:class:: ansys.stk.core.stkobjects.IOrientationAscNode
 
-   object
-   
    Base Interface to IAgOrientationAscNodeLAN and IAgOrientationAscNodeRAAN.
 
 .. py:currentmodule:: IOrientationAscNode

@@ -3,8 +3,6 @@ PctCmpltEventArgs
 
 .. py:class:: ansys.stk.core.stkobjects.PctCmpltEventArgs
 
-   Bases: 
-
    Represents a structure used by the Percent Complete events.
 
 .. py:currentmodule:: PctCmpltEventArgs

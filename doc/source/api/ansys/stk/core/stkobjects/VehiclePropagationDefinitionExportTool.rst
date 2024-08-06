@@ -3,8 +3,6 @@ VehiclePropagationDefinitionExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehiclePropagationDefinitionExportTool
 
-   Bases: 
-
    AgVeExternalFileAttitude Class.
 
 .. py:currentmodule:: VehiclePropagationDefinitionExportTool

@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeGridGroup
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup
 
-   Bases: 
-
    Access or create VGT volume grids associated with an object or a central body.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeGridGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup.factory
-    :type: ISpatialAnalysisToolVolumeGridFactory
+    :type: SpatialAnalysisToolVolumeGridFactory
 
     Returns a factory object used to create volume grid components.
 

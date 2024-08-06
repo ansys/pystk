@@ -3,8 +3,6 @@ ChainOptimalStrandOpts
 
 .. py:class:: ansys.stk.core.stkobjects.ChainOptimalStrandOpts
 
-   Bases: 
-
    Class defining Chain optimal strand options.
 
 .. py:currentmodule:: ChainOptimalStrandOpts

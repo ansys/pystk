@@ -3,8 +3,6 @@ VehicleInitialState
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleInitialState
 
-   Bases: 
-
    Class defining the initial state of the vehicle.
 
 .. py:currentmodule:: VehicleInitialState

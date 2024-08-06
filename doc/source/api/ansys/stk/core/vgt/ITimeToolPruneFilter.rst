@@ -3,8 +3,6 @@ ITimeToolPruneFilter
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolPruneFilter
 
-   object
-   
    A filter used with event interval list pruned class to prune interval lists...
 
 .. py:currentmodule:: ITimeToolPruneFilter

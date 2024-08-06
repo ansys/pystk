@@ -3,8 +3,6 @@ VehicleGPSElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSElement
 
-   Bases: 
-
    An element of the GPS element collection.
 
 .. py:currentmodule:: VehicleGPSElement

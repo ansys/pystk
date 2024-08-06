@@ -107,19 +107,19 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_receive_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demod_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.link_margin
-    :type: ILinkMargin
+    :type: LinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -197,19 +197,19 @@ Property detail
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.system_noise_temperature
-    :type: ISystemNoiseTemperature
+    :type: SystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
 .. py:property:: antenna_system
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.antenna_system
-    :type: IAntennaSystem
+    :type: AntennaSystem
 
     Gets the antenna system.
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.interference
-    :type: IRFInterference
+    :type: RFInterference
 
     Gets the radio frequency interference.
 

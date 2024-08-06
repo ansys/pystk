@@ -3,8 +3,6 @@ VehicleIntegrator
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleIntegrator
 
-   Bases: 
-
    Class defining the HPOP integrator.
 
 .. py:currentmodule:: VehicleIntegrator
@@ -72,19 +70,19 @@ Property detail
 
 .. py:property:: step_size_control
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.step_size_control
-    :type: IVehicleStepSizeControl
+    :type: VehicleStepSizeControl
 
     Get the method of integration step size control.
 
 .. py:property:: time_regularization
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.time_regularization
-    :type: IVehicleTimeRegularization
+    :type: VehicleTimeRegularization
 
     Get the time regularization parameters.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.interpolation
-    :type: IVehicleInterpolation
+    :type: VehicleInterpolation
 
     Get the interpolation parameters.
 

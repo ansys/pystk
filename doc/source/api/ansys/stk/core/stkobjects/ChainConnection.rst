@@ -3,8 +3,6 @@ ChainConnection
 
 .. py:class:: ansys.stk.core.stkobjects.ChainConnection
 
-   Bases: 
-
    Class defining Chain connections.
 
 .. py:currentmodule:: ChainConnection

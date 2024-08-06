@@ -125,13 +125,13 @@ Property detail
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceLaunch.spacecraft_parameters
-    :type: ISpacecraftParameters
+    :type: SpacecraftParameters
 
     Satellite Properties - the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceLaunch.fuel_tank
-    :type: IFuelTank
+    :type: FuelTank
 
     Get the spacecraft's fuel tank properties.
 
@@ -173,7 +173,7 @@ Property detail
 
 .. py:property:: burnout_velocity
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceLaunch.burnout_velocity
-    :type: IBurnoutVelocity
+    :type: BurnoutVelocity
 
     Get the burnout velocity definition.
 
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceLaunch.user_variables
-    :type: IUserVariableCollection
+    :type: UserVariableCollection
 
     Interface used to modify user variables for the launch segment.
 

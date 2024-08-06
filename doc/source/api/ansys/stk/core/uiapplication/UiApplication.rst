@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: mru_list
     :canonical: ansys.stk.core.uiapplication.UiApplication.mru_list
-    :type: IMRUCollection
+    :type: MRUCollection
 
     Returns a collection most recently used files.
 

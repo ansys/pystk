@@ -3,8 +3,6 @@ CommSystemGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.CommSystemGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a CommSystem.
 
 .. py:currentmodule:: CommSystemGraphics3D

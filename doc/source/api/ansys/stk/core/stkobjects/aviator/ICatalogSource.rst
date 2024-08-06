@@ -3,8 +3,6 @@ ICatalogSource
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogSource
 
-   object
-   
    Interface used to access options for a source in the Aviator Catalog. Examples of sources include User Aircraft Models, ARINC424runways, User Runways, etc.
 
 .. py:currentmodule:: ICatalogSource

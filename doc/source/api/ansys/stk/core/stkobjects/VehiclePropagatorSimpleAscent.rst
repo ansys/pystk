@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSimpleAscent.initial_state
-    :type: IVehicleLaunchVehicleInitialState
+    :type: VehicleLaunchVehicleInitialState
 
     Get the initial state.
 

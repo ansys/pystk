@@ -3,8 +3,6 @@ TimeToolAxesSamplingInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolAxesSamplingInterval
 
-   Bases: 
-
    The interface represents an interval with the time, orientation and velocity arrays.
 
 .. py:currentmodule:: TimeToolAxesSamplingInterval

@@ -3,8 +3,6 @@ AntennaContourGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaContourGraphics
 
-   Bases: 
-
    Class defining contour Graphics properties of a Antenna.
 
 .. py:currentmodule:: AntennaContourGraphics

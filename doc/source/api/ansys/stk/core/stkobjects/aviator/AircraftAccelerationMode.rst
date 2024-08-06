@@ -3,8 +3,6 @@ AircraftAccelerationMode
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftAccelerationMode
 
-   Bases: 
-
    Class defining the acceleration mode options for an advanced acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftAccelerationMode

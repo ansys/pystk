@@ -3,8 +3,6 @@ BasicManeuverAirspeedOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions
 
-   Bases: 
-
    Class defining the airspeed options for basic maneuver strategies.
 
 .. py:currentmodule:: BasicManeuverAirspeedOptions
@@ -174,7 +172,7 @@ Property detail
 
 .. py:property:: thrust
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.thrust
-    :type: IPropulsionThrust
+    :type: PropulsionThrust
 
     Get the thrust options for the Specify Thrust mode.
 

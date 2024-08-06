@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.central_body
-    :type: IAnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.source_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a source point.
 
 .. py:property:: observer_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.observer_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify an observer point.
 

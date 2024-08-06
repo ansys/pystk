@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: directions
     :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.directions
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the beam steering list.
 

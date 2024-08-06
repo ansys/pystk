@@ -3,8 +3,6 @@ Scene
 
 .. py:class:: ansys.stk.core.graphics.Scene
 
-   Bases: 
-
    A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property...
 
 .. py:currentmodule:: Scene
@@ -81,13 +79,13 @@ Property detail
 
 .. py:property:: camera
     :canonical: ansys.stk.core.graphics.Scene.camera
-    :type: ICamera
+    :type: Camera
 
     Gets the camera associated with the scene, which affects the view that is rendered by the scene.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.Scene.lighting
-    :type: ILighting
+    :type: Lighting
 
     Gets the lighting associated with the scene.
 
@@ -99,7 +97,7 @@ Property detail
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.graphics.Scene.central_bodies
-    :type: ICentralBodyGraphicsIndexer
+    :type: CentralBodyGraphicsIndexer
 
     Gets the central body graphics for a specified central body.
 
@@ -123,7 +121,7 @@ Property detail
 
 .. py:property:: globe_overlay_settings
     :canonical: ansys.stk.core.graphics.Scene.globe_overlay_settings
-    :type: ISceneGlobeOverlaySettings
+    :type: SceneGlobeOverlaySettings
 
     Gets the scene globe overlay settings for the scene.
 
@@ -147,13 +145,13 @@ Property detail
 
 .. py:property:: visual_effects
     :canonical: ansys.stk.core.graphics.Scene.visual_effects
-    :type: IVisualEffects
+    :type: VisualEffects
 
     Gets the visual  effects associated with the scene.
 
 .. py:property:: clouds
     :canonical: ansys.stk.core.graphics.Scene.clouds
-    :type: IClouds
+    :type: Clouds
 
     Gets the clouds for the scene.
 

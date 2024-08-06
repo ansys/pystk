@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorSPICE.segments
-    :type: IVehicleSegmentsCollection
+    :type: VehicleSegmentsCollection
 
     Get the segment list.
 

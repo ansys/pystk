@@ -3,8 +3,6 @@ AxesPrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.AxesPrimitiveFactory
 
-   Bases: 
-
    Render an axes in the 3D scene.
 
 .. py:currentmodule:: AxesPrimitiveFactory

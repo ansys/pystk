@@ -3,8 +3,6 @@ IVehicleGraphics3DSystemsElementBase
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DSystemsElementBase
 
-   object
-   
    Define methods and properties used to configure the 3D properties of a reference system used for displaying vehicle orbits and trajectories.
 
 .. py:currentmodule:: IVehicleGraphics3DSystemsElementBase

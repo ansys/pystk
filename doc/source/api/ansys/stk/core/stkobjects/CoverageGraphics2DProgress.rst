@@ -3,8 +3,6 @@ CoverageGraphics2DProgress
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DProgress
 
-   Bases: 
-
    Progress graphics for access calculations.
 
 .. py:currentmodule:: CoverageGraphics2DProgress

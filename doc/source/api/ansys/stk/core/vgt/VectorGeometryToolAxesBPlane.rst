@@ -44,19 +44,19 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane.trajectory
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a trajectory point.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane.reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a reference vector.
 
 .. py:property:: target_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane.target_body
-    :type: IAnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyRefTo
 
     Specify a target central body.
 

@@ -3,8 +3,6 @@ SNOPTResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTResultCollection
 
-   Bases: 
-
    SNOPT result collection.
 
 .. py:currentmodule:: SNOPTResultCollection

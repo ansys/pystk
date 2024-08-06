@@ -3,8 +3,6 @@ VolumetricGraphics3DSpatialCalculationLevels
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels
 
-   Bases: 
-
    Class defining Spatial Calculation Levels for Volumetric Object.
 
 .. py:currentmodule:: VolumetricGraphics3DSpatialCalculationLevels
@@ -52,7 +50,7 @@ Property detail
 
 .. py:property:: boundary_levels
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.boundary_levels
-    :type: IVolumetricGraphics3DSpatialCalculationLevelCollection
+    :type: VolumetricGraphics3DSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Boundary Levels for Volumetric object.
 
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: fill_levels
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.fill_levels
-    :type: IVolumetricGraphics3DSpatialCalculationLevelCollection
+    :type: VolumetricGraphics3DSpatialCalculationLevelCollection
 
     Access and manipulate the collection of Spatial Calculation Fill Levels for Volumetric object.
 

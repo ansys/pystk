@@ -3,8 +3,6 @@ OnePointAccessResult
 
 .. py:class:: ansys.stk.core.stkobjects.OnePointAccessResult
 
-   Bases: 
-
    One Point Access Result.
 
 .. py:currentmodule:: OnePointAccessResult
@@ -54,7 +52,7 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.OnePointAccessResult.constraints
-    :type: IOnePointAccessConstraintCollection
+    :type: OnePointAccessConstraintCollection
 
     List of constraints evaluated at this time.
 

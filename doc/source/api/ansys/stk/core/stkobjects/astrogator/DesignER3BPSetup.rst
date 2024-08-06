@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: associated_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.associated_objects
-    :type: IDesignER3BPObjectCollection
+    :type: DesignER3BPObjectCollection
 
     Get the list of associated objects.
 

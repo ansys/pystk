@@ -3,8 +3,6 @@ GoldenSectionResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GoldenSectionResult
 
-   Bases: 
-
    Result parameters for Golden Section profile.
 
 .. py:currentmodule:: GoldenSectionResult

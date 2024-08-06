@@ -3,8 +3,6 @@ StkCentralBodyCollection
 
 .. py:class:: ansys.stk.core.stkobjects.StkCentralBodyCollection
 
-   Bases: 
-
    Central body collection coclass.
 
 .. py:currentmodule:: StkCentralBodyCollection
@@ -61,19 +59,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.stkobjects.StkCentralBodyCollection.earth
-    :type: IStkCentralBody
+    :type: StkCentralBody
 
     Returns the Earth central body.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.stkobjects.StkCentralBodyCollection.sun
-    :type: IStkCentralBody
+    :type: StkCentralBody
 
     Returns the Sun central body.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.stkobjects.StkCentralBodyCollection.moon
-    :type: IStkCentralBody
+    :type: StkCentralBody
 
     Returns the Moon central body.
 

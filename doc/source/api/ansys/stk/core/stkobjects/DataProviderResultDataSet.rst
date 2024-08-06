@@ -3,8 +3,6 @@ DataProviderResultDataSet
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultDataSet
 
-   Bases: 
-
    Represents a dataset in the collection of datasets returned by the data providers.
 
 .. py:currentmodule:: DataProviderResultDataSet
@@ -81,7 +79,7 @@ Property detail
 
 .. py:property:: statistics
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.statistics
-    :type: IDataProviderResultStatistics
+    :type: DataProviderResultStatistics
 
     Returns an interface for computing statistics on the results.
 

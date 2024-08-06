@@ -3,8 +3,6 @@ VolumetricGraphics3DGrid
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DGrid
 
-   Bases: 
-
    Class defining grid properties of 3D graphics for volumetric object.
 
 .. py:currentmodule:: VolumetricGraphics3DGrid

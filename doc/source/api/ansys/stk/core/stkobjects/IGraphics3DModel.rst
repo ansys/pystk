@@ -3,8 +3,6 @@ IGraphics3DModel
 
 .. py:class:: ansys.stk.core.stkobjects.IGraphics3DModel
 
-   object
-   
    AgVOModel used to access the 3D model attributes.
 
 .. py:currentmodule:: IGraphics3DModel
@@ -59,7 +57,7 @@ Property detail
 
 .. py:property:: detail_threshold
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold
-    :type: IGraphics3DDetailThreshold
+    :type: Graphics3DDetailThreshold
 
     Gets the detail threshold attributes.
 
@@ -77,7 +75,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: IGraphics3DModelArtic
+    :type: Graphics3DModelArtic
 
     Articulation property.
 

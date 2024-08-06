@@ -3,8 +3,6 @@ KeyValueCollection
 
 .. py:class:: ansys.stk.core.stkobjects.KeyValueCollection
 
-   Bases: 
-
    A collection of keys and values associated with the keys.
 
 .. py:currentmodule:: KeyValueCollection

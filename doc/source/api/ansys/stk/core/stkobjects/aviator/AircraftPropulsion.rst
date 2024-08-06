@@ -3,8 +3,6 @@ AircraftPropulsion
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftPropulsion
 
-   Bases: 
-
    Class defining the propulsion options for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AircraftPropulsion
@@ -60,19 +58,19 @@ Property detail
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_simple
-    :type: IAircraftSimplePropulsion
+    :type: AircraftSimplePropulsion
 
     Get the interface for a simple propulsion strategy.
 
 .. py:property:: mode_as_basic_fixed_wing
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_basic_fixed_wing
-    :type: IAircraftBasicFixedWingPropulsion
+    :type: AircraftBasicFixedWingPropulsion
 
     Get the interface for a basic fixed wing propulsion strategy.
 
 .. py:property:: mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_external
-    :type: IAircraftExternalPropulsion
+    :type: AircraftExternalPropulsion
 
     Get the interface for an external file propulsion strategy.
 
@@ -90,19 +88,19 @@ Property detail
 
 .. py:property:: mode_as_ramjet
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_ramjet
-    :type: IMissileRamjetPropulsion
+    :type: MissileRamjetPropulsion
 
     Get the interface for a Ramjet propulsion strategy.
 
 .. py:property:: mode_as_turbojet
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_turbojet
-    :type: IMissileTurbojetPropulsion
+    :type: MissileTurbojetPropulsion
 
     Get the interface for a Turbojet propulsion strategy.
 
 .. py:property:: mode_as_rocket
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_rocket
-    :type: IMissileRocketPropulsion
+    :type: MissileRocketPropulsion
 
     Get the interface for a Rocket propulsion strategy.
 

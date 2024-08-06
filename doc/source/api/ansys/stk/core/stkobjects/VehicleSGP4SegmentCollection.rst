@@ -3,8 +3,6 @@ VehicleSGP4SegmentCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4SegmentCollection
 
-   Bases: 
-
    Set of Trajectories.
 
 .. py:currentmodule:: VehicleSGP4SegmentCollection

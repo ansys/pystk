@@ -3,8 +3,6 @@ Graphics3DOffsetAttach
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DOffsetAttach
 
-   Bases: 
-
    Class defining attach points for the attachment of lines to objects.
 
 .. py:currentmodule:: Graphics3DOffsetAttach

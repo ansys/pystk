@@ -3,8 +3,6 @@ IModulatorModel
 
 .. py:class:: ansys.stk.core.stkobjects.IModulatorModel
 
-   object
-   
    Provide access to the properties and methods defining a modulator model.
 
 .. py:currentmodule:: IModulatorModel

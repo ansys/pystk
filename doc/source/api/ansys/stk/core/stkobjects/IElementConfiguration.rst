@@ -3,8 +3,6 @@ IElementConfiguration
 
 .. py:class:: ansys.stk.core.stkobjects.IElementConfiguration
 
-   object
-   
    Provide access to the properties and methods defining an element configuration.
 
 .. py:currentmodule:: IElementConfiguration

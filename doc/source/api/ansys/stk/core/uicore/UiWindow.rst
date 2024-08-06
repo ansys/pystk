@@ -3,8 +3,6 @@ UiWindow
 
 .. py:class:: ansys.stk.core.uicore.UiWindow
 
-   Bases: 
-
    Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
 .. py:currentmodule:: UiWindow
@@ -133,7 +131,7 @@ Property detail
 
 .. py:property:: toolbars
     :canonical: ansys.stk.core.uicore.UiWindow.toolbars
-    :type: IUiToolbarCollection
+    :type: UiToolbarCollection
 
     Returns the window's toolbar collection.
 

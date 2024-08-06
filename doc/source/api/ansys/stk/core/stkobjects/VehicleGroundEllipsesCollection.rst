@@ -3,8 +3,6 @@ VehicleGroundEllipsesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection
 
-   Bases: 
-
    List of Ground Ellipses.
 
 .. py:currentmodule:: VehicleGroundEllipsesCollection

@@ -3,8 +3,6 @@ VehicleGraphics3DPass
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DPass
 
-   Bases: 
-
    3D pass for satellites.
 
 .. py:currentmodule:: VehicleGraphics3DPass
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPass.track_data
-    :type: IVehicleGraphics3DOrbitTrackData
+    :type: VehicleGraphics3DOrbitTrackData
 
     Get the leading/trailing ground and orbit track data.
 
 .. py:property:: tick_marks
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPass.tick_marks
-    :type: IVehicleGraphics3DOrbitTickMarks
+    :type: VehicleGraphics3DOrbitTickMarks
 
     Get the tick mark data.
 

@@ -3,8 +3,6 @@ VolumetricExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricExportTool
 
-   Bases: 
-
    The Volumetric Export Tool.
 
 .. py:currentmodule:: VolumetricExportTool

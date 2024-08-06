@@ -3,8 +3,6 @@ VehicleIntegratedAttitude
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleIntegratedAttitude
 
-   Bases: 
-
    Integrated Attitude generates an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite.
 
 .. py:currentmodule:: VehicleIntegratedAttitude
@@ -105,7 +103,7 @@ Property detail
 
 .. py:property:: torque
     :canonical: ansys.stk.core.stkobjects.VehicleIntegratedAttitude.torque
-    :type: IVehicleTorque
+    :type: VehicleTorque
 
     Get the external torque data.
 

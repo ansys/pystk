@@ -3,8 +3,6 @@ IPolarization
 
 .. py:class:: ansys.stk.core.stkobjects.IPolarization
 
-   object
-   
    Provide the base interface for the a polarization object.
 
 .. py:currentmodule:: IPolarization

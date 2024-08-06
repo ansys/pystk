@@ -3,8 +3,6 @@ IRadarWaveformSearchTrack
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarWaveformSearchTrack
 
-   object
-   
    Interface which is implemented by a search/track waveform.
 
 .. py:currentmodule:: IRadarWaveformSearchTrack

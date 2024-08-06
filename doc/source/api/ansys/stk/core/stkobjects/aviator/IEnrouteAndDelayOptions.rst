@@ -3,8 +3,6 @@ IEnrouteAndDelayOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IEnrouteAndDelayOptions
 
-   object
-   
    Interface used to access the Enroute options for an Aviator procedure.
 
 .. py:currentmodule:: IEnrouteAndDelayOptions

@@ -916,11 +916,9 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self, noGraphics: bool):
-        import ansys.stk.core.stkruntime
+        from ansys.stk.core.stkruntime import STKRuntimeApplication, STKRuntime
 
-        self.stk: agi.stk12.stkruntime.STKRuntimeApplication = ansys.stk.core.stkruntime.STKRuntime.start_application(
-            noGraphics=noGraphics
-        )
+        self.stk: STKRuntimeApplication = STKRuntime.start_application(noGraphics=noGraphics)
         PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":

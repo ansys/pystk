@@ -3,8 +3,6 @@ Graphics3DOffsetTransformation
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DOffsetTransformation
 
-   Bases: 
-
    Class defining model translation in the object body frame's X, Y and Z directions.
 
 .. py:currentmodule:: Graphics3DOffsetTransformation

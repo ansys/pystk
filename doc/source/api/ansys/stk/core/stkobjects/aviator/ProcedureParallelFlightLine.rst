@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.altitude_options
-    :type: IAltitudeOptions
+    :type: AltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

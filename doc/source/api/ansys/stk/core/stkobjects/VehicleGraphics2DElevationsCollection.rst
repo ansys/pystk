@@ -3,8 +3,6 @@ VehicleGraphics2DElevationsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsCollection
 
-   Bases: 
-
    Collection for elevation contours. Used by vehicles.
 
 .. py:currentmodule:: VehicleGraphics2DElevationsCollection

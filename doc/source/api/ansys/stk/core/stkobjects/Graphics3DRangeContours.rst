@@ -3,8 +3,6 @@ Graphics3DRangeContours
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DRangeContours
 
-   Bases: 
-
    Class defining 3D Graphics range contours: circles comprised of points at a given distance from an object and at the same altitude as that object.
 
 .. py:currentmodule:: Graphics3DRangeContours
@@ -64,13 +62,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.border_wall
-    :type: IGraphics3DBorderWall
+    :type: Graphics3DBorderWall
 
     Retrieve the border wall properties of the range contours.
 
 .. py:property:: label_swap_distance
     :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.label_swap_distance
-    :type: IGraphics3DLabelSwapDistance
+    :type: Graphics3DLabelSwapDistance
 
     Interface to control the level of detail in labels and other screen objects at specified distances.
 

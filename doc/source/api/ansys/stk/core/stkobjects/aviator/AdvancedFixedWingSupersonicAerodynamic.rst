@@ -3,8 +3,6 @@ AdvancedFixedWingSupersonicAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSupersonicAerodynamic
 
-   Bases: 
-
    Class defining the supersonic aerodynamic strategy in the Advanced Fixed Wing Tool.
 
 .. py:currentmodule:: AdvancedFixedWingSupersonicAerodynamic
@@ -64,13 +62,13 @@ Property detail
 
 .. py:property:: geometry_mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSupersonicAerodynamic.geometry_mode_as_basic
-    :type: IAdvancedFixedWingGeometryBasic
+    :type: AdvancedFixedWingGeometryBasic
 
     Get the options for a basic geometry wing.
 
 .. py:property:: geometry_mode_as_variable
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSupersonicAerodynamic.geometry_mode_as_variable
-    :type: IAdvancedFixedWingGeometryVariable
+    :type: AdvancedFixedWingGeometryVariable
 
     Get the options for a variable geometry wing.
 

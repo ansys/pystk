@@ -3,8 +3,6 @@ KmlGraphics
 
 .. py:class:: ansys.stk.core.graphics.KmlGraphics
 
-   Bases: 
-
    Provide loading and unloading of kml documents for a particular central body.
 
 .. py:currentmodule:: KmlGraphics
@@ -63,7 +61,7 @@ Property detail
 
 .. py:property:: documents
     :canonical: ansys.stk.core.graphics.KmlGraphics.documents
-    :type: IKmlDocumentCollection
+    :type: KmlDocumentCollection
 
     The collection of kml documents that are currently loaded.
 

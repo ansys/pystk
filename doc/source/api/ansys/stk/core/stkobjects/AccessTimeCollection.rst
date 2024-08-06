@@ -3,8 +3,6 @@ AccessTimeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessTimeCollection
 
-   Bases: 
-
    Collection of access times.
 
 .. py:currentmodule:: AccessTimeCollection

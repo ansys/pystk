@@ -3,8 +3,6 @@ IPolarizationElliptical
 
 .. py:class:: ansys.stk.core.stkobjects.IPolarizationElliptical
 
-   object
-   
    Provide the interface for elliptical polarization.
 
 .. py:currentmodule:: IPolarizationElliptical

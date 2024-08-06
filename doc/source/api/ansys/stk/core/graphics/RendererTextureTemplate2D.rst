@@ -3,8 +3,6 @@ RendererTextureTemplate2D
 
 .. py:class:: ansys.stk.core.graphics.RendererTextureTemplate2D
 
-   Bases: 
-
    Template object containing attributes required to create a 2D texture.
 
 .. py:currentmodule:: RendererTextureTemplate2D

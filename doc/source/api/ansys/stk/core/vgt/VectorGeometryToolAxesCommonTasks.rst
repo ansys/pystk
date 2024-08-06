@@ -3,8 +3,6 @@ VectorGeometryToolAxesCommonTasks
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks
 
-   Bases: 
-
    Provide methods to create non-persistent VGT axes components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
 .. py:currentmodule:: VectorGeometryToolAxesCommonTasks

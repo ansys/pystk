@@ -3,8 +3,6 @@ VehicleGraphics2DElevationsElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement
 
-   Bases: 
-
    2D Graphics settings for elevation contours.
 
 .. py:currentmodule:: VehicleGraphics2DElevationsElement

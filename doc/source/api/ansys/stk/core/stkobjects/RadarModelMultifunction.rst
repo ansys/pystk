@@ -65,37 +65,37 @@ Property detail
 
 .. py:property:: transmitter
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.transmitter
-    :type: IRadarTransmitterMultifunction
+    :type: RadarTransmitterMultifunction
 
     Gets the radar transmitter.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.receiver
-    :type: IRadarReceiver
+    :type: RadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.clutter_geometry
-    :type: IRadarClutterGeometry
+    :type: RadarClutterGeometry
 
     This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.jamming
-    :type: IRadarJamming
+    :type: RadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.location
-    :type: ICRLocation
+    :type: CRLocation
 
     Gets the radar location object.
 
 .. py:property:: detection_processing
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.detection_processing
-    :type: IRadarMultifunctionDetectionProcessing
+    :type: RadarMultifunctionDetectionProcessing
 
     Gets the radar detection processing object.
 
@@ -107,19 +107,19 @@ Property detail
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.antenna_beams
-    :type: IRadarAntennaBeamCollection
+    :type: RadarAntennaBeamCollection
 
     Gets the antenna beams collection.
 
 .. py:property:: waveform_strategy_settings
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.waveform_strategy_settings
-    :type: IRadarMultifunctionWaveformStrategySettings
+    :type: RadarMultifunctionWaveformStrategySettings
 
     Gets the waveform selection strategy settings.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.clutter
-    :type: IRadarClutter
+    :type: RadarClutter
 
     Gets the radar clutter settings.
 

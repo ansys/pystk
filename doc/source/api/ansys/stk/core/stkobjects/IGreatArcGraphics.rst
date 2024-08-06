@@ -3,8 +3,6 @@ IGreatArcGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.IGreatArcGraphics
 
-   object
-   
    2D Graphics common for all Great Arc Vehicles.
 
 .. py:currentmodule:: IGreatArcGraphics
@@ -90,43 +88,43 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data
-    :type: IVehicleGraphics2DRoutePassData
+    :type: VehicleGraphics2DRoutePassData
 
     Get the vehicle's 2D route graphics.
 
 .. py:property:: waypoint_marker
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.waypoint_marker
-    :type: IVehicleGraphics2DWaypointMarker
+    :type: VehicleGraphics2DWaypointMarker
 
     Get the vehicle's 2D waypoint marker graphics.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.resolution
-    :type: IVehicleGraphics2DRouteResolution
+    :type: VehicleGraphics2DRouteResolution
 
     Get the vehicle's 2D resolution graphics.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.range_contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     Get the vehicle's 2D range contour graphics.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.lighting
-    :type: IVehicleGraphics2DLighting
+    :type: VehicleGraphics2DLighting
 
     Get the vehicle's 2D lighting graphics.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.ground_ellipses
-    :type: IVehicleGraphics2DGroundEllipsesCollection
+    :type: VehicleGraphics2DGroundEllipsesCollection
 
     Get the vehicle's 2D ground ellipses graphics.
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 

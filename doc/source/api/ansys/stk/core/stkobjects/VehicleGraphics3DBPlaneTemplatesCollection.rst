@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneTemplatesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplatesCollection
 
-   Bases: 
-
    A list of available b-plane templates.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneTemplatesCollection

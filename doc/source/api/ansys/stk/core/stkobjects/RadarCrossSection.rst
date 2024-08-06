@@ -3,8 +3,6 @@ RadarCrossSection
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSection
 
-   Bases: 
-
    Class defining a radar cross section.
 
 .. py:currentmodule:: RadarCrossSection
@@ -55,7 +53,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSection.model
-    :type: IRadarCrossSectionModel
+    :type: RadarCrossSectionModel
 
     Gets the current RCS model.
 

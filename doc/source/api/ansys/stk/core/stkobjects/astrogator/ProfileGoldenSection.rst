@@ -50,25 +50,25 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.controls
-    :type: IGoldenSectionControlCollection
+    :type: GoldenSectionControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.results
-    :type: IGoldenSectionResultCollection
+    :type: GoldenSectionResultCollection
 
     Get the list of results defined for the profile.
 

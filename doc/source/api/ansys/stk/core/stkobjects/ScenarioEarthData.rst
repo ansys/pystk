@@ -3,8 +3,6 @@ ScenarioEarthData
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioEarthData
 
-   Bases: 
-
    Class defining the Earth Orientation Parameters of a Scenario.
 
 .. py:currentmodule:: ScenarioEarthData

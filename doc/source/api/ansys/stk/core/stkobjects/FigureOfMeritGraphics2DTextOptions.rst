@@ -3,8 +3,6 @@ FigureOfMeritGraphics2DTextOptions
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DTextOptions
 
-   Bases: 
-
    Text display options for contour legend.
 
 .. py:currentmodule:: FigureOfMeritGraphics2DTextOptions

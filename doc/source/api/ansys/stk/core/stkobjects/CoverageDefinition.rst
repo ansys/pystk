@@ -67,49 +67,49 @@ Property detail
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.grid
-    :type: ICoverageGrid
+    :type: CoverageGrid
 
     Definition of the coverage grid.
 
 .. py:property:: point_definition
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.point_definition
-    :type: ICoveragePointDefinition
+    :type: CoveragePointDefinition
 
     Location of points on the coverage grid.
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.asset_list
-    :type: ICoverageAssetListCollection
+    :type: CoverageAssetListCollection
 
     List of assets to use in coverage computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.advanced
-    :type: ICoverageAdvanced
+    :type: CoverageAdvanced
 
     Advanced properties of the coverage definition.
 
 .. py:property:: interval
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.interval
-    :type: ICoverageInterval
+    :type: CoverageInterval
 
     Coverage interval.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.graphics
-    :type: ICoverageGraphics
+    :type: CoverageGraphics
 
     2D Graphics properties of the coverage definition.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.graphics_3d
-    :type: ICoverageGraphics3D
+    :type: CoverageGraphics3D
 
     3D Graphics properties of the coverage definition.
 
 .. py:property:: grid_inspector
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.grid_inspector
-    :type: ICoverageGridInspector
+    :type: CoverageGridInspector
 
     Get the grid inspector tool.
 

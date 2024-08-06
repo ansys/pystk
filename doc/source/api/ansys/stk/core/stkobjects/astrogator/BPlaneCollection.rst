@@ -3,8 +3,6 @@ BPlaneCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BPlaneCollection
 
-   Bases: 
-
    The collection of B-Planes.
 
 .. py:currentmodule:: BPlaneCollection

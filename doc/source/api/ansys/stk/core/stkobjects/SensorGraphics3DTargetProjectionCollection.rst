@@ -3,8 +3,6 @@ SensorGraphics3DTargetProjectionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3DTargetProjectionCollection
 
-   Bases: 
-
    Time Dependent Target Projection List.
 
 .. py:currentmodule:: SensorGraphics3DTargetProjectionCollection

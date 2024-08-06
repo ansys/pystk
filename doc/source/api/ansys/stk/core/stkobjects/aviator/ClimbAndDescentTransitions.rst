@@ -3,8 +3,6 @@ ClimbAndDescentTransitions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions
 
-   Bases: 
-
    Class defining the climb and descent transition options for an Acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: ClimbAndDescentTransitions
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper
-    :type: IAerodynamicPropulsionManeuverModeHelper
+    :type: AerodynamicPropulsionManeuverModeHelper
 
     Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 

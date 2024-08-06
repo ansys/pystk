@@ -3,8 +3,6 @@ VolumetricGraphics3DSpatialCalculationLevel
 
 .. py:class:: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevel
 
-   Bases: 
-
    Class defining Spatial Calculation Boundary/Fill Levels for volumetric grid.
 
 .. py:currentmodule:: VolumetricGraphics3DSpatialCalculationLevel

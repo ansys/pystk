@@ -3,8 +3,6 @@ RadarCrossSectionInheritable
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionInheritable
 
-   Bases: 
-
    Class defining a inheritable radar cross section.
 
 .. py:currentmodule:: RadarCrossSectionInheritable
@@ -63,7 +61,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model
-    :type: IRadarCrossSectionModel
+    :type: RadarCrossSectionModel
 
     Gets the current RCS model.
 

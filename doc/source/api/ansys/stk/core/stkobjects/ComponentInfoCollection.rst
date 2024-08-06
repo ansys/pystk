@@ -3,8 +3,6 @@ ComponentInfoCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ComponentInfoCollection
 
-   Bases: 
-
    The collection of components and component folders.
 
 .. py:currentmodule:: ComponentInfoCollection

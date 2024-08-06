@@ -3,8 +3,6 @@ IAccessAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.IAccessAdvanced
 
-   object
-   
    Interface for configuring advanced targeting access computation properties.
 
 .. py:currentmodule:: IAccessAdvanced
@@ -55,13 +53,13 @@ Property detail
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.event_detection
-    :type: IAccessEventDetection
+    :type: AccessEventDetection
 
     Event detection strategy used in access calculations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.sampling
-    :type: IAccessSampling
+    :type: AccessSampling
 
     Sampling method used in access calculations.
 

@@ -3,8 +3,6 @@ VehicleGraphics2DPasses
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DPasses
 
-   Bases: 
-
    Settings for satellite pass display graphics.
 
 .. py:currentmodule:: VehicleGraphics2DPasses

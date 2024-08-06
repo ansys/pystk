@@ -122,7 +122,9 @@ globe_plotter.show()
 
 # Create a coverage definition object modeling the region of Tropics:
 
-tropics = root.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics")
+tropics = root.current_scenario.children.new(
+    STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics"
+)
 
 # Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of $-23.5^\circ$, a maximum latitude of $23.5^\circ$, and point granularity of $3.0^\circ$ lat/lon:
 
@@ -151,11 +153,11 @@ tropics.graphics.static.is_labels_visible = True
 tropics.graphics.static.is_points_visible = True
 tropics.graphics.static.fill_points = True
 
-# To set the visibility for Progress of Computations, use a ``CoverageGraphics2DProgres``s object, which is available through the ``ICoverageGraphics`` object's ``progress`` property. 
+# To set the visibility for Progress of Computations, use a ``CoverageGraphics2DProgres``s object, which is available through the ``ICoverageGraphics`` object's ``progress`` property.
 
 tropics.graphics.progress.is_visible = True
 
-# To set the satisfaction visibility, use an ``ICoverageGraphics2DAnimation`` object, which is accessible through the ``ICoverageGraphics`` object's ``animation`` property. 
+# To set the satisfaction visibility, use an ``ICoverageGraphics2DAnimation`` object, which is accessible through the ``ICoverageGraphics`` object's ``animation`` property.
 
 tropics.graphics.animation.is_satisfaction_visible = False
 
@@ -207,13 +209,12 @@ latitude_df
 import matplotlib.pyplot as plt
 
 
-
 ax = latitude_df.plot.line(x="latitude", y="percent time covered", color="hotpink")
 
 # Configure the style of the plot
 ax.get_legend().remove()
 ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which='both')
+ax.grid(visible=True, which="both")
 
 # Set title and axes labels
 ax.set_title("Coverage by Latitude")
@@ -267,7 +268,9 @@ from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
 
 coverage.graphics.animation.is_visible = True
-coverage.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
+coverage.graphics.animation.accumulation = (
+    FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
+)
 coverage.graphics.animation.fill_points = False
 coverage.graphics.animation.marker_style = "Star"
 # -
@@ -293,7 +296,9 @@ from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_SATISFACTION_TYPE
 
 
 coverage.definition.satisfaction.enable_satisfaction = True
-coverage.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+coverage.definition.satisfaction.satisfaction_type = (
+    FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+)
 coverage.definition.satisfaction.satisfaction_threshold = 2
 # -
 
@@ -304,13 +309,15 @@ coverage.definition.satisfaction.satisfaction_threshold = 2
 # Set some animation graphics to see when points are covered by neither, one, or both satellites:
 
 # +
-from ansys.stk.core.utilities.colors import Color
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+from ansys.stk.core.utilities.colors import Color
 
 
 coverage.graphics.static.is_visible = False
 coverage.graphics.animation.contours.is_visible = True
-coverage.graphics.animation.contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+coverage.graphics.animation.contours.color_method = (
+    FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+)
 level1 = coverage.graphics.animation.contours.level_attributes.add_level(1)
 level1.color = Color.from_rgb(250, 7, 214)
 level2 = coverage.graphics.animation.contours.level_attributes.add_level(2)
@@ -332,7 +339,9 @@ root.play_forward()
 
 # The Satisfied by Time report summarizes the percentage and true area of the grid that satisfies the Figure Of Merit at each time step:
 
-satisfied_by_time_result = coverage.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60.0)
+satisfied_by_time_result = coverage.data_providers.item("Satisfied by Time").exec(
+    scenario.start_time, scenario.stop_time, 60.0
+)
 satisfied_by_time_df = satisfied_by_time_result.data_sets.to_pandas_dataframe()
 satisfied_by_time_df
 
@@ -343,23 +352,31 @@ import pandas as pd
 
 
 # convert data to correct types
-satisfied_by_time_df['time'] = pd.to_datetime(satisfied_by_time_df["time"])
-satisfied_by_time_df.set_index('time')
-satisfied_by_time_df['percent satisfied'] = pd.to_numeric(satisfied_by_time_df['percent satisfied'])
-satisfied_by_time_df['percent accum coverage'] = pd.to_numeric(satisfied_by_time_df['percent accum coverage'])
+satisfied_by_time_df["time"] = pd.to_datetime(satisfied_by_time_df["time"])
+satisfied_by_time_df.set_index("time")
+satisfied_by_time_df["percent satisfied"] = pd.to_numeric(
+    satisfied_by_time_df["percent satisfied"]
+)
+satisfied_by_time_df["percent accum coverage"] = pd.to_numeric(
+    satisfied_by_time_df["percent accum coverage"]
+)
 
 # Plot data
-ax = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='dodgerblue', label="Satisfied")
-ax = satisfied_by_time_df.plot(x='time', y='percent accum coverage', color='firebrick', ax=ax, label="Accumulated")
+ax = satisfied_by_time_df.plot(
+    x="time", y="percent satisfied", color="dodgerblue", label="Satisfied"
+)
+ax = satisfied_by_time_df.plot(
+    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="Accumulated"
+)
 
 # Set title and axes labels
-ax.set_title('Satisfaction over Time')
+ax.set_title("Satisfaction over Time")
 ax.set_xlabel("Time")
-ax.set_ylabel('Percentage %')
+ax.set_ylabel("Percentage %")
 
 # Configure style
-ax.set_facecolor('whitesmoke')
-ax.grid(visible=True, which='both')
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which="both")
 ax.legend(shadow=True)
 
 plt.show()

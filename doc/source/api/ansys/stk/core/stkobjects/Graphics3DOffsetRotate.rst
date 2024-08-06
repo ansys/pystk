@@ -3,8 +3,6 @@ Graphics3DOffsetRotate
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DOffsetRotate
 
-   Bases: 
-
    Class defining rotation in the object body frame's X, Y and Z directions.
 
 .. py:currentmodule:: Graphics3DOffsetRotate

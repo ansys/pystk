@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: alignment_reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAlignedAndConstrained.alignment_reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify an alignment reference vector.
 
 .. py:property:: constraint_reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAlignedAndConstrained.constraint_reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a constraint reference vector.
 

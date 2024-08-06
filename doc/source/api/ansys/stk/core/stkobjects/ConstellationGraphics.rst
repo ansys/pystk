@@ -3,8 +3,6 @@ ConstellationGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.ConstellationGraphics
 
-   Bases: 
-
    2D Graphics properties of the STK Constellation.
 
 .. py:currentmodule:: ConstellationGraphics

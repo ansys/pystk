@@ -3,8 +3,6 @@ BoundingSphereFactory
 
 .. py:class:: ansys.stk.core.graphics.BoundingSphereFactory
 
-   Bases: 
-
    Create bounding spheres.
 
 .. py:currentmodule:: BoundingSphereFactory
@@ -47,7 +45,7 @@ Property detail
 
 .. py:property:: maximum_radius_bounding_sphere
     :canonical: ansys.stk.core.graphics.BoundingSphereFactory.maximum_radius_bounding_sphere
-    :type: IBoundingSphere
+    :type: BoundingSphere
 
     Gets the bounding sphere of maximum possible radius.
 

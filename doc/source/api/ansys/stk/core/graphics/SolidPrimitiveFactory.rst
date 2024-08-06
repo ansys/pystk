@@ -3,8 +3,6 @@ SolidPrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.SolidPrimitiveFactory
 
-   Bases: 
-
    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
 
 .. py:currentmodule:: SolidPrimitiveFactory

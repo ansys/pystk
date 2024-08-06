@@ -3,8 +3,6 @@ VehicleSpaceEnvironmentVehTemperature
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentVehTemperature
 
-   Bases: 
-
    Vehicle Temperature settings.
 
 .. py:currentmodule:: VehicleSpaceEnvironmentVehTemperature

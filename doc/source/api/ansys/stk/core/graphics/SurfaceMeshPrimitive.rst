@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture
-    :type: IRendererTexture2D
+    :type: RendererTexture2D
 
     Gets or sets the texture applied to this primitive when rendering.
 
@@ -97,13 +97,13 @@ Property detail
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_filter
-    :type: ITextureFilter2D
+    :type: TextureFilter2D
 
     Gets or sets the filter used when a texture is applied to this primitive.
 
 .. py:property:: texture_matrix
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_matrix
-    :type: ITextureMatrix
+    :type: TextureMatrix
 
     Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive.
 

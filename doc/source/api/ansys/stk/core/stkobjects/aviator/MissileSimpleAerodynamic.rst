@@ -3,8 +3,6 @@ MissileSimpleAerodynamic
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic
 
-   Bases: 
-
    Class defining the simple aerodynamic options for a missile.
 
 .. py:currentmodule:: MissileSimpleAerodynamic

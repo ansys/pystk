@@ -3,8 +3,6 @@ RadarAccessGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarAccessGraphics
 
-   Bases: 
-
    Class defining access graphics properties of a Radar.
 
 .. py:currentmodule:: RadarAccessGraphics

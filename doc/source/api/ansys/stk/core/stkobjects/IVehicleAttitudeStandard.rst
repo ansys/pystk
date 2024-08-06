@@ -3,8 +3,8 @@ IVehicleAttitudeStandard
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleAttitudeStandard
 
-   IVehicleAttitude
-   
+   Bases: IVehicleAttitude
+
    Standard attitude profile.
 
 .. py:currentmodule:: IVehicleAttitudeStandard

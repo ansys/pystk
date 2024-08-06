@@ -121,25 +121,25 @@ Property detail
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.Scenario.animation
-    :type: IScenarioAnimation
+    :type: ScenarioAnimation
 
     Scenario animation settings.
 
 .. py:property:: earth_data
     :canonical: ansys.stk.core.stkobjects.Scenario.earth_data
-    :type: IScenarioEarthData
+    :type: ScenarioEarthData
 
     Scenario Earth Data settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Scenario.graphics
-    :type: IScenarioGraphics
+    :type: ScenarioGraphics
 
     Scenario 2D Graphics settings.
 
 .. py:property:: gen_dbs
     :canonical: ansys.stk.core.stkobjects.Scenario.gen_dbs
-    :type: IScenarioGenDatabaseCollection
+    :type: ScenarioGenDatabaseCollection
 
     Scenario database settings.
 
@@ -157,7 +157,7 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Scenario.graphics_3d
-    :type: IScenarioGraphics3D
+    :type: ScenarioGraphics3D
 
     Scenario 3D Graphics settings.
 
@@ -175,13 +175,13 @@ Property detail
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.stkobjects.Scenario.terrain
-    :type: ICentralBodyTerrainCollection
+    :type: CentralBodyTerrainCollection
 
     Returns a list of central bodies and their terrains.
 
 .. py:property:: component_directory
     :canonical: ansys.stk.core.stkobjects.Scenario.component_directory
-    :type: IComponentDirectory
+    :type: ComponentDirectory
 
     Get the component directory interface.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.space_environment
-    :type: IScenSpaceEnvironment
+    :type: ScenSpaceEnvironment
 
     Scenario SpaceEnvironment settings.
 
@@ -235,25 +235,25 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Scenario.radar_cross_section
-    :type: IRadarCrossSection
+    :type: RadarCrossSection
 
     Returns the global radar cross section.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.rf_environment
-    :type: IRFEnvironment
+    :type: RFEnvironment
 
     Returns the RF environment.
 
 .. py:property:: tilesets
     :canonical: ansys.stk.core.stkobjects.Scenario.tilesets
-    :type: ITilesetCollection3D
+    :type: TilesetCollection3D
 
     Returns a list of 3D Tilesets used for Analysis.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.laser_environment
-    :type: ILaserEnvironment
+    :type: LaserEnvironment
 
     Returns the laser environment.
 

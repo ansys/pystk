@@ -3,8 +3,6 @@ VehicleGraphics3DCovariancePointingContour
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour
 
-   Bases: 
-
    Covariance pointing contours.
 
 .. py:currentmodule:: VehicleGraphics3DCovariancePointingContour
@@ -111,13 +109,13 @@ Property detail
 
 .. py:property:: size
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.size
-    :type: IVehicleGraphics3DSize
+    :type: VehicleGraphics3DSize
 
     Get the size of the contour.
 
 .. py:property:: to_object
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.to_object
-    :type: ILinkToObject
+    :type: LinkToObject
 
     Get the 'To object' for covariance pointing.
 

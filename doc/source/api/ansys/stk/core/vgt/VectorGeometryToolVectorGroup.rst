@@ -3,8 +3,6 @@ VectorGeometryToolVectorGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorGroup
 
-   Bases: 
-
    Access or create VGT vectors associated with an object or a central body.
 
 .. py:currentmodule:: VectorGeometryToolVectorGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.factory
-    :type: IVectorGeometryToolVectorFactory
+    :type: VectorGeometryToolVectorFactory
 
     Returns a Factory object used to create custom vectors.
 

@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.origin
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify the vector's origin point.
 
 .. py:property:: destination
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.destination
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify the vector's destination point.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.reference_system
-    :type: IVectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemRefTo
 
     Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false.
 

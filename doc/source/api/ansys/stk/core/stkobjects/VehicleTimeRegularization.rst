@@ -3,8 +3,6 @@ VehicleTimeRegularization
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTimeRegularization
 
-   Bases: 
-
    Class defining time regularization for the HPOP integrator, i.e. integration the orbit with respect to regularized time.
 
 .. py:currentmodule:: VehicleTimeRegularization

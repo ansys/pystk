@@ -3,8 +3,6 @@ GlobeImageOverlayInitializer
 
 .. py:class:: ansys.stk.core.graphics.GlobeImageOverlayInitializer
 
-   Bases: 
-
    A globe overlay that shows an image.
 
 .. py:currentmodule:: GlobeImageOverlayInitializer

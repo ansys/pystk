@@ -3,8 +3,6 @@ ChainConstraints
 
 .. py:class:: ansys.stk.core.stkobjects.ChainConstraints
 
-   Bases: 
-
    Chain constraints.
 
 .. py:currentmodule:: ChainConstraints

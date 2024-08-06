@@ -3,8 +3,6 @@ CoverageGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3D
 
-   Bases: 
-
    AgCvVOStatic Class.
 
 .. py:currentmodule:: CoverageGraphics3D
@@ -48,13 +46,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.static
-    :type: ICoverageGraphics3DAttributes
+    :type: CoverageGraphics3DAttributes
 
     3D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.animation
-    :type: ICoverageGraphics3DAttributes
+    :type: CoverageGraphics3DAttributes
 
     3D animation graphics options.
 

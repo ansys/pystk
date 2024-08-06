@@ -209,7 +209,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_vel_strategies
-    :type: IBasicManeuverTargetPositionVel
+    :type: BasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Station Keeping.
 

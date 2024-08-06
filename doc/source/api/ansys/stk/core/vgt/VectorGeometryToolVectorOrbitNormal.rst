@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitNormal.central_body
-    :type: IAnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitNormal.reference_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 

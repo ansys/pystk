@@ -3,8 +3,6 @@ UnitPreferencesDimension
 
 .. py:class:: ansys.stk.core.stkutil.UnitPreferencesDimension
 
-   Bases: 
-
    Object that contains info on the Dimension.
 
 .. py:currentmodule:: UnitPreferencesDimension
@@ -65,13 +63,13 @@ Property detail
 
 .. py:property:: available_units
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.available_units
-    :type: IUnitPreferencesUnitCollection
+    :type: UnitPreferencesUnitCollection
 
     Returns collection of Units.
 
 .. py:property:: current_unit
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.current_unit
-    :type: IUnitPreferencesUnit
+    :type: UnitPreferencesUnit
 
     Returns the current unit for this dimension.
 

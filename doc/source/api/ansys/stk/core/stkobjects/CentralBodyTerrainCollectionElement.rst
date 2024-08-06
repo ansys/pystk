@@ -3,8 +3,6 @@ CentralBodyTerrainCollectionElement
 
 .. py:class:: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement
 
-   Bases: 
-
    Element of collection of terrain associated with central body.
 
 .. py:currentmodule:: CentralBodyTerrainCollectionElement
@@ -61,7 +59,7 @@ Property detail
 
 .. py:property:: terrain_collection
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.terrain_collection
-    :type: ITerrainCollection
+    :type: TerrainCollection
 
     Terrain collection.
 

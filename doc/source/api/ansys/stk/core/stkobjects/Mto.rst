@@ -48,37 +48,37 @@ Property detail
 
 .. py:property:: tracks
     :canonical: ansys.stk.core.stkobjects.Mto.tracks
-    :type: IMtoTrackCollection
+    :type: MtoTrackCollection
 
     Get the collection of MTO tracks.
 
 .. py:property:: default_track
     :canonical: ansys.stk.core.stkobjects.Mto.default_track
-    :type: IMtoDefaultTrack
+    :type: MtoDefaultTrack
 
     Get the default MTO track.
 
 .. py:property:: global_track_options
     :canonical: ansys.stk.core.stkobjects.Mto.global_track_options
-    :type: IMtoGlobalTrackOptions
+    :type: MtoGlobalTrackOptions
 
     Get the global MTO track options.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Mto.graphics
-    :type: IMtoGraphics
+    :type: MtoGraphics
 
     Get the MTO's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Mto.graphics_3d
-    :type: IMtoGraphics3D
+    :type: MtoGraphics3D
 
     Get the MTO's 3D Graphics properties.
 
 .. py:property:: analysis
     :canonical: ansys.stk.core.stkobjects.Mto.analysis
-    :type: IMtoAnalysis
+    :type: MtoAnalysis
 
     Get the MTO's spatial state.
 

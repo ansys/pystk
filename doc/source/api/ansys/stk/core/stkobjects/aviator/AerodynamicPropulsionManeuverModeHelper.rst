@@ -3,8 +3,6 @@ AerodynamicPropulsionManeuverModeHelper
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper
 
-   Bases: 
-
    Class defining the The calculation mode for the Aero/Prop maneuver mode helper. Helper for a basic acceleration performance model of an Aviator aircraft.
 
 .. py:currentmodule:: AerodynamicPropulsionManeuverModeHelper

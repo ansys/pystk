@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: from_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.from_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify an axes to rotate from.
 
 .. py:property:: to_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.to_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify an axes to rotate to.
 

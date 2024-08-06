@@ -3,8 +3,6 @@ IAnalysisWorkbenchConverge
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchConverge
 
-   object
-   
    Represents a base class for convergence definitions.
 
 .. py:currentmodule:: IAnalysisWorkbenchConverge

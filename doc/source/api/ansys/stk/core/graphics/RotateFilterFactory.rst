@@ -3,8 +3,6 @@ RotateFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.RotateFilterFactory
 
-   Bases: 
-
    Rotate the source raster clockwise by the specified angle.
 
 .. py:currentmodule:: RotateFilterFactory

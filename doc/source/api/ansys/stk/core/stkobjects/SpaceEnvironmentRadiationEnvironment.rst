@@ -3,8 +3,6 @@ SpaceEnvironmentRadiationEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment
 
-   Bases: 
-
    Radiation Environment model settings.
 
 .. py:currentmodule:: SpaceEnvironmentRadiationEnvironment
@@ -71,7 +69,7 @@ Property detail
 
 .. py:property:: nasa_energy_values
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.nasa_energy_values
-    :type: ISpaceEnvironmentRadEnergyValues
+    :type: SpaceEnvironmentRadEnergyValues
 
     Proton and electron energies for the NASA models.
 

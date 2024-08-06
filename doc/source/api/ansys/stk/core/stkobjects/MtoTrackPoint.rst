@@ -3,8 +3,6 @@ MtoTrackPoint
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrackPoint
 
-   Bases: 
-
    The points defined for the selected track.
 
 .. py:currentmodule:: MtoTrackPoint

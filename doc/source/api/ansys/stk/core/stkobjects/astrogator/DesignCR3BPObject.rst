@@ -3,8 +3,6 @@ DesignCR3BPObject
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObject
 
-   Bases: 
-
    CR3BP associated object definition.
 
 .. py:currentmodule:: DesignCR3BPObject

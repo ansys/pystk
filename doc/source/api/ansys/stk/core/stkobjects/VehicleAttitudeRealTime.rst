@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTime.duration
-    :type: IVehicleDuration
+    :type: VehicleDuration
 
     Get look ahead/look behind duration.
 
 .. py:property:: data_reference
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTime.data_reference
-    :type: IVehicleAttitudeRealTimeDataReference
+    :type: VehicleAttitudeRealTimeDataReference
 
     Returns a reference attitude profile for incoming attitude data.
 

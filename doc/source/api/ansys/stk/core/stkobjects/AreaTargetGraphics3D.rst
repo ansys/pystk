@@ -3,8 +3,6 @@ AreaTargetGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.AreaTargetGraphics3D
 
-   Bases: 
-
    Class to define the 3D attributes of an AreaTarget.
 
 .. py:currentmodule:: AreaTargetGraphics3D
@@ -74,13 +72,13 @@ Property detail
 
 .. py:property:: border_wall
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.border_wall
-    :type: IGraphics3DBorderWall
+    :type: Graphics3DBorderWall
 
     Retrieve the border wall properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Gets Vector.
 

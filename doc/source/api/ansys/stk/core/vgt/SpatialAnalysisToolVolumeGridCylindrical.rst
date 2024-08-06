@@ -50,19 +50,19 @@ Property detail
 
 .. py:property:: theta_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCylindrical.theta_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns theta Coordinates parameters for the Theta system.
 
 .. py:property:: radius_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCylindrical.radius_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns radius Coordinates parameters for the Radius system.
 
 .. py:property:: height_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCylindrical.height_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns height Coordinates parameters for the Height system.
 

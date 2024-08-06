@@ -3,8 +3,6 @@ CalculationGraphCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection
 
-   Bases: 
-
    Calculation Graph Collection.
 
 .. py:currentmodule:: CalculationGraphCollection

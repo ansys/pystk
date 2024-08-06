@@ -3,8 +3,6 @@ ManeuverOptimalFiniteInitialBoundaryConditions
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions
 
-   Bases: 
-
    Properties of initial boundary conditions for optimal finite maneuver.
 
 .. py:currentmodule:: ManeuverOptimalFiniteInitialBoundaryConditions
@@ -58,37 +56,37 @@ Property detail
 
 .. py:property:: a
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.a
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element a.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.h
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element h.
 
 .. py:property:: k
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.k
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element k.
 
 .. py:property:: p
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.p
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element p.
 
 .. py:property:: q
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.q
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element q.
 
 .. py:property:: l
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.l
-    :type: IManeuverOptimalFiniteBounds
+    :type: ManeuverOptimalFiniteBounds
 
     Bound limits for element L.
 

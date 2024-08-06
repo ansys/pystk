@@ -3,8 +3,6 @@ VehicleGraphics2DOrbitPassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData
 
-   Bases: 
-
    AgVeGfxPassData Class.
 
 .. py:currentmodule:: VehicleGraphics2DOrbitPassData
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData.ground_track
-    :type: IVehicleGraphics2DLeadTrailData
+    :type: VehicleGraphics2DLeadTrailData
 
     Ground track display properties.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DOrbitPassData.orbit
-    :type: IVehicleGraphics2DLeadTrailData
+    :type: VehicleGraphics2DLeadTrailData
 
     Orbit pass display properties.
 

@@ -3,8 +3,6 @@ PathPointCollection
 
 .. py:class:: ansys.stk.core.graphics.PathPointCollection
 
-   Bases: 
-
    A collection of path points.
 
 .. py:currentmodule:: PathPointCollection
