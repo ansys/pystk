@@ -7,13 +7,13 @@ FROM ${basePythonImage} as builder
 # 1) Build Python into its own builder stage
 ##############################################
 
-# Install Python 3.9 and create a symbolic link named "python".
+# Install Python 3.12 and create a symbolic link named "python".
 # This overrides the default Python 2.7 in CentOS7.
 USER root
 WORKDIR /tmp
-RUN wget https://www.python.org/ftp/python/3.9.16/Python-3.9.16.tar.xz && \
-    tar xf Python-3.9.16.tar.xz
-WORKDIR /tmp/Python-3.9.16
+RUN wget https://www.python.org/ftp/python/3.12.4/Python-3.12.4.tar.xz && \
+    tar xf Python-3.12.4.tar.xz
+WORKDIR /tmp/Python-3.12.4
 RUN ./configure --enable-optimizations && \
     make altinstall
 
@@ -37,12 +37,12 @@ RUN yum -y install xorg-x11-server-Xorg xorg-x11-server-Xvfb xorg-x11-xauth; \
 ENV DISPLAY=:0
 
 # Copy the Python interpreter, the standard library and pip to the final image
-COPY --from=builder /usr/local/bin/python3.9 /usr/local/bin/python3.9 
-COPY --from=builder /usr/local/lib/python3.9 /usr/local/lib/python3.9 
-COPY --from=builder /usr/local/bin/pip3.9 /usr/local/bin/pip3.9 
+COPY --from=builder /usr/local/bin/python3.12 /usr/local/bin/python3.12
+COPY --from=builder /usr/local/lib/python3.12 /usr/local/lib/python3.12
+COPY --from=builder /usr/local/bin/pip3.12 /usr/local/bin/pip3.12
 
-RUN ln -sfn /usr/local/bin/python3.9 /usr/local/bin/python && \
-    ln -sfn /usr/local/bin/pip3.9 /usr/local/bin/pip
+RUN ln -sfn /usr/local/bin/python3.12 /usr/local/bin/python && \
+    ln -sfn /usr/local/bin/pip3.12 /usr/local/bin/pip
 
 COPY docker-entrypoint.sh "${STK_USER_HOME}/bin/docker-entrypoint.sh"
 RUN chmod +x "${STK_USER_HOME}/bin/docker-entrypoint.sh"; \
