@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: thrusters
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSet.thrusters
-    :type: IThrusterSetCollection
+    :type: ThrusterSetCollection
 
     Get the list of thrusters.
 

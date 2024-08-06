@@ -3,8 +3,6 @@ RadarMultifunctionWaveformStrategySettings
 
 .. py:class:: ansys.stk.core.stkobjects.RadarMultifunctionWaveformStrategySettings
 
-   Bases: 
-
    Class defining the waveform selection strategy settings.
 
 .. py:currentmodule:: RadarMultifunctionWaveformStrategySettings

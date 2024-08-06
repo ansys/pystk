@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabAreaVec.eclipsing_bodies
-    :type: ICentralBodyCollection
+    :type: CentralBodyCollection
 
     Other eclipsing bodies.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: interpolation_method
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabAreaVec.interpolation_method
-    :type: TAB_VEC_INTERP_METHOD
+    :type: TAB_VEC_INTERPOLATION_METHOD
 
     Gets or sets the file interpolation method.
 

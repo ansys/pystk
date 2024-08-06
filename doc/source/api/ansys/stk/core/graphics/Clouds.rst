@@ -3,8 +3,6 @@ Clouds
 
 .. py:class:: ansys.stk.core.graphics.Clouds
 
-   Bases: 
-
    Load, show and hide clouds in the scene.
 
 .. py:currentmodule:: Clouds

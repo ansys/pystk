@@ -3,8 +3,6 @@ VehicleWaypointsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleWaypointsCollection
 
-   Bases: 
-
    Collection of waypoints for a Great Arc vehicle.
 
 .. py:currentmodule:: VehicleWaypointsCollection

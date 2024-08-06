@@ -3,8 +3,6 @@ VehicleAttitudeExternal
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeExternal
 
-   Bases: 
-
    External attitude (.a) file.
 
 .. py:currentmodule:: VehicleAttitudeExternal

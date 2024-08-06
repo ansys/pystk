@@ -177,25 +177,25 @@ Property detail
 
 .. py:property:: snopt_optimizer
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.snopt_optimizer
-    :type: IManeuverOptimalFiniteSNOPTOptimizer
+    :type: ManeuverOptimalFiniteSNOPTOptimizer
 
     SNOPT Optimizer Options.
 
 .. py:property:: initial_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.initial_boundary_conditions
-    :type: IManeuverOptimalFiniteInitialBoundaryConditions
+    :type: ManeuverOptimalFiniteInitialBoundaryConditions
 
     Initial Boundary Conditions.
 
 .. py:property:: final_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.final_boundary_conditions
-    :type: IManeuverOptimalFiniteFinalBoundaryConditions
+    :type: ManeuverOptimalFiniteFinalBoundaryConditions
 
     Final Boundary Conditions.
 
 .. py:property:: path_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.path_boundary_conditions
-    :type: IManeuverOptimalFinitePathBoundaryConditions
+    :type: ManeuverOptimalFinitePathBoundaryConditions
 
     Path Boundary Conditions.
 
@@ -213,7 +213,7 @@ Property detail
 
 .. py:property:: steering_nodes
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.steering_nodes
-    :type: IManeuverOptimalFiniteSteeringNodeCollection
+    :type: ManeuverOptimalFiniteSteeringNodeCollection
 
     Get the list of steering nodes.
 

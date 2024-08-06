@@ -58,25 +58,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.control_parameters
-    :type: IIPOPTControlCollection
+    :type: IPOPTControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.results
-    :type: IIPOPTResultCollection
+    :type: IPOPTResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 

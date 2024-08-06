@@ -3,8 +3,6 @@ IVehicleGraphics2DPass
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DPass
 
-   object
-   
    interface IAgVeGfxPass. IAgVeGfxPassShowPasses and IAgVeGfxPassResolution derive from this.
 
 .. py:currentmodule:: IVehicleGraphics2DPass

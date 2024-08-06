@@ -3,8 +3,6 @@ StkAccessGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.StkAccessGraphics
 
-   Bases: 
-
    Class defining 2D Graphics for Access.
 
 .. py:currentmodule:: StkAccessGraphics

@@ -3,8 +3,6 @@ VehicleGraphics3DSystemsCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection
 
-   Bases: 
-
    List of Systems.
 
 .. py:currentmodule:: VehicleGraphics3DSystemsCollection
@@ -83,13 +81,13 @@ Property detail
 
 .. py:property:: inertial_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window
-    :type: IVehicleGraphics3DSystemsSpecialElement
+    :type: VehicleGraphics3DSystemsSpecialElement
 
     Gets the Inertial By Window System.
 
 .. py:property:: fixed_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window
-    :type: IVehicleGraphics3DSystemsSpecialElement
+    :type: VehicleGraphics3DSystemsSpecialElement
 
     Gets the Fixed By Window System.
 

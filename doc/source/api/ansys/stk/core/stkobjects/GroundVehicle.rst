@@ -58,25 +58,25 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.graphics
-    :type: IGroundVehicleGraphics
+    :type: GroundVehicleGraphics
 
     Get the ground vehicle's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.graphics_3d
-    :type: IGroundVehicleGraphics3D
+    :type: GroundVehicleGraphics3D
 
     Get the ground vehicle's 3D Graphics properties.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.export_tools
-    :type: IGroundVehicleExportTools
+    :type: GroundVehicleExportTools
 
     Returns the IAgGvExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.atmosphere
-    :type: IAtmosphere
+    :type: Atmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
@@ -88,13 +88,13 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.radar_cross_section
-    :type: IRadarCrossSectionInheritable
+    :type: RadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.laser_environment
-    :type: IPlatformLaserEnvironment
+    :type: PlatformLaserEnvironment
 
     Gets the laser environment.
 

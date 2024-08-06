@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: method_factory
     :canonical: ansys.stk.core.vgt.CalculationToolSamplingBasic.method_factory
-    :type: ICalculationToolSamplingMethodFactory
+    :type: CalculationToolSamplingMethodFactory
 
     Creates sampling definitions, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
 

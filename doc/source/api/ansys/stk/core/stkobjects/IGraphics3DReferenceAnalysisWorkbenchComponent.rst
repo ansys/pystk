@@ -3,8 +3,6 @@ IGraphics3DReferenceAnalysisWorkbenchComponent
 
 .. py:class:: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent
 
-   object
-   
    IAgVORefCrdn used to access the shared properties of all 3D RefCrdn.
 
 .. py:currentmodule:: IGraphics3DReferenceAnalysisWorkbenchComponent

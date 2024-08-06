@@ -3,8 +3,6 @@ CalcObjectLinkEmbedControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CalcObjectLinkEmbedControlCollection
 
-   Bases: 
-
    The Calculation Object link/embed component folder.
 
 .. py:currentmodule:: CalcObjectLinkEmbedControlCollection

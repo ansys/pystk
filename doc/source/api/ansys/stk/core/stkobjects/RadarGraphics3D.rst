@@ -3,8 +3,6 @@ RadarGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.RadarGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Radar.
 
 .. py:currentmodule:: RadarGraphics3D
@@ -44,7 +42,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.RadarGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the radar's Vector properties.
 
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.RadarGraphics3D.volume
-    :type: IAntennaVolumeGraphics
+    :type: AntennaVolumeGraphics
 
     Gets the radar's antenna volume graphics interface.
 

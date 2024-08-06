@@ -1870,14 +1870,16 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6(
             "\tThe current RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration
         )
-        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_AUTOMATIC
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration)
-        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF
+        Assert.assertEqual(
+            COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration
+        )
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_OFF
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
+        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
         with pytest.raises(Exception):
-            oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_UNKNOWN
+            oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_UNKNOWN
 
         # EnableLightTimeDelay
         TestBase.logger.WriteLine4("\tThe current EnableLightTimeDelay is: {0}", oAdvanced.enable_light_time_delay)

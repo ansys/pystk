@@ -3,8 +3,6 @@ IProfile
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IProfile
 
-   object
-   
    General properties for target sequence profiles.
 
 .. py:currentmodule:: IProfile

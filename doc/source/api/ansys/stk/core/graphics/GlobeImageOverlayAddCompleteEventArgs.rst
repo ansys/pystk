@@ -3,8 +3,6 @@ GlobeImageOverlayAddCompleteEventArgs
 
 .. py:class:: ansys.stk.core.graphics.GlobeImageOverlayAddCompleteEventArgs
 
-   Bases: 
-
    The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync.
 
 .. py:currentmodule:: GlobeImageOverlayAddCompleteEventArgs

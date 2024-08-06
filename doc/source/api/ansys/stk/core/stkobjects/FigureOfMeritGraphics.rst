@@ -3,8 +3,6 @@ FigureOfMeritGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics
 
-   Bases: 
-
    AgFmGfxGraphics Class.
 
 .. py:currentmodule:: FigureOfMeritGraphics
@@ -48,7 +46,7 @@ Property detail
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics.animation
-    :type: IFigureOfMeritGraphics2DAttributesAnimation
+    :type: FigureOfMeritGraphics2DAttributesAnimation
 
     Get the animation graphics.
 

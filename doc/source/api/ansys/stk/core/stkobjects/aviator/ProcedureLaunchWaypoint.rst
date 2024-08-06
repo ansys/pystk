@@ -41,7 +41,7 @@ Overview
               - Gets or sets the launch direction bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.launch_elevation`
               - Gets or sets the launch direction elevation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.acceleration_g`
               - Gets or sets the acceleration of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.airspeed_type`
               - Get the airspeed type.
@@ -95,8 +95,8 @@ Property detail
 
     Gets or sets the launch direction elevation.
 
-.. py:property:: accel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.accel_g
+.. py:property:: acceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.acceleration_g
     :type: float
 
     Gets or sets the acceleration of the aircraft during the launch.

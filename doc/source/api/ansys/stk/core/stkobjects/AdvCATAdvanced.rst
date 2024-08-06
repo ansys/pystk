@@ -3,8 +3,6 @@ AdvCATAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATAdvanced
 
-   Bases: 
-
    AdvCAT advanced properties.
 
 .. py:currentmodule:: AdvCATAdvanced
@@ -40,7 +38,7 @@ Overview
               - Flag to specify Use of SSC Reference File.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvanced.ssc_hard_body_radius_file`
               - SSC Reference File Path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvanced.show_msg_in_msg_viewer`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvanced.show_message_in_message_viewer`
               - Flag to specify whether to write messages to message viewer.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvanced.force_repropagation_on_load`
               - Flag to force repropagation on load.
@@ -72,13 +70,13 @@ Property detail
 
 .. py:property:: advanced_ellipsoid
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.advanced_ellipsoid
-    :type: IAdvCATAdvancedEllipsoid
+    :type: AdvCATAdvancedEllipsoid
 
     Get AdvCAT advanced ellipsoid properties.
 
 .. py:property:: pre_filters
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.pre_filters
-    :type: IAdvCATPreFilters
+    :type: AdvCATPreFilters
 
     Get AdvCAT filter settings.
 
@@ -130,8 +128,8 @@ Property detail
 
     SSC Reference File Path.
 
-.. py:property:: show_msg_in_msg_viewer
-    :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.show_msg_in_msg_viewer
+.. py:property:: show_message_in_message_viewer
+    :canonical: ansys.stk.core.stkobjects.AdvCATAdvanced.show_message_in_message_viewer
     :type: bool
 
     Flag to specify whether to write messages to message viewer.

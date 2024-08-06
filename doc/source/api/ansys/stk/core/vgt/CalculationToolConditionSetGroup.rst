@@ -3,8 +3,6 @@ CalculationToolConditionSetGroup
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetGroup
 
-   Bases: 
-
    Allow accessing and creating condition set components.
 
 .. py:currentmodule:: CalculationToolConditionSetGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.factory
-    :type: ICalculationToolConditionSetFactory
+    :type: CalculationToolConditionSetFactory
 
     Returns a factory object used to create condition set components.
 

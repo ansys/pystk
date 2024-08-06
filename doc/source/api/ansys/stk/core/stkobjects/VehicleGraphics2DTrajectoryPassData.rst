@@ -3,8 +3,6 @@ VehicleGraphics2DTrajectoryPassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData
 
-   Bases: 
-
    2D Graphics ground track and trajectory properties.
 
 .. py:currentmodule:: VehicleGraphics2DTrajectoryPassData
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData.ground_track
-    :type: IVehicleGraphics2DLeadTrailData
+    :type: VehicleGraphics2DLeadTrailData
 
     Ground track display properties.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryPassData.trajectory
-    :type: IVehicleGraphics2DLeadTrailData
+    :type: VehicleGraphics2DLeadTrailData
 
     Trajectory display properties.
 

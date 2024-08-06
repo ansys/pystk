@@ -3,8 +3,6 @@ VehicleTargetTimes
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetTimes
 
-   Bases: 
-
    Target times for target pointing attitude.
 
 .. py:currentmodule:: VehicleTargetTimes
@@ -57,13 +55,13 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.access_times
-    :type: IAccessTimeCollection
+    :type: AccessTimeCollection
 
     Get the access times.
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.schedule_times
-    :type: IVehicleScheduleTimesCollection
+    :type: VehicleScheduleTimesCollection
 
     Get the scheduled times.
 

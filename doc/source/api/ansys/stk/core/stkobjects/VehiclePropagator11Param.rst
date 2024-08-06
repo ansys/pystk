@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: parameter_files
     :canonical: ansys.stk.core.stkobjects.VehiclePropagator11Param.parameter_files
-    :type: IVehiclePropagator11ParamDescriptorCollection
+    :type: VehiclePropagator11ParamDescriptorCollection
 
     Returns a collection of 11-Parameter satellite definitions.
 

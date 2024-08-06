@@ -3,8 +3,6 @@ STKXConControlQuitReceivedEventArgs
 
 .. py:class:: ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs
 
-   Bases: 
-
    Arguments for the OnConControlQuitReceived event.
 
 .. py:currentmodule:: STKXConControlQuitReceivedEventArgs

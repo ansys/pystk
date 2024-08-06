@@ -3,8 +3,6 @@ SatelliteExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.SatelliteExportTools
 
-   Bases: 
-
    The Satellite Export Tools.
 
 .. py:currentmodule:: SatelliteExportTools
@@ -28,7 +26,7 @@ Overview
               - Return an Ephemeris file of the Spice ephemeris type for export.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_code500_export_tool`
               - Return an Ephemeris file of the Code500Ephem ephemeris type for export; AgAsCode500.dll must be copied to your install data's 'Modules' directory.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_prop_definition_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_propagator_definition_export_tool`
               - Return a Propagator (Prop Def) file for export.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_attitude_export_tool`
               - Return an Attitude file for export.
@@ -87,14 +85,14 @@ Method detail
 
         :obj:`~VehicleEphemerisCode500ExportTool`
 
-.. py:method:: get_prop_definition_export_tool(self) -> VehiclePropDefinitionExportTool
-    :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_prop_definition_export_tool
+.. py:method:: get_propagator_definition_export_tool(self) -> VehiclePropagationDefinitionExportTool
+    :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_propagator_definition_export_tool
 
     Return a Propagator (Prop Def) file for export.
 
     :Returns:
 
-        :obj:`~VehiclePropDefinitionExportTool`
+        :obj:`~VehiclePropagationDefinitionExportTool`
 
 .. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_attitude_export_tool

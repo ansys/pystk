@@ -3,8 +3,6 @@ MtoTrack
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrack
 
-   Bases: 
-
    List of MTO tracks with basic information about each.
 
 .. py:currentmodule:: MtoTrack
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: points
     :canonical: ansys.stk.core.stkobjects.MtoTrack.points
-    :type: IMtoTrackPointCollection
+    :type: MtoTrackPointCollection
 
     Get the collection of MTO track points.
 

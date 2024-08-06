@@ -3,8 +3,6 @@ RefuelDumpProperties
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties
 
-   Bases: 
-
    Class defining the refuel/dump properties for the current procedure.
 
 .. py:currentmodule:: RefuelDumpProperties

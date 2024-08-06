@@ -80,7 +80,7 @@ from ansys.stk.core.stkobjects import ORBIT_STATE_TYPE
 orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
 # -
 
-# Use the returned ``IOrbitStateClassical`` object to set the ``size_shape_type`` property. This property designates which pair of elements describe the orbit. Set the ``size_shape_type`` to Semi-major Axis and Eccentricity: 
+# Use the returned ``IOrbitStateClassical`` object to set the ``size_shape_type`` property. This property designates which pair of elements describe the orbit. Set the ``size_shape_type`` to Semi-major Axis and Eccentricity:
 
 # +
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
@@ -150,7 +150,7 @@ sensor.common_tasks.set_pattern_simple_conic(45, 1)
 
 # ## Insert a place
 
-# Insert a place object to represent Point Nemo: 
+# Insert a place object to represent Point Nemo:
 
 point_nemo = scenario.children.new(STK_OBJECT_TYPE.PLACE, "PointNemo")
 
@@ -164,13 +164,17 @@ point_nemo.position.assign_geodetic(-48.87, -123.39, 0)
 
 # First, insert the coverage definition:
 
-sat_grave_coverage = scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "SatelliteGraveyard")
+sat_grave_coverage = scenario.children.new(
+    STK_OBJECT_TYPE.COVERAGE_DEFINITION, "SatelliteGraveyard"
+)
 
 # The coverage definition should represent the satellite graveyard, which consists of an ellipse around Point Nemo, with a semi-major axis of $2688$ km, a semi-minor axis of $2688$ km, a bearing of $45^\circ$. The definition has a latitude/longitude point granularity of $2^\circ$.
 
 # To set the coverage definition's bounds to the elliptical area around Point Nemo, use a Connect command:
 
-root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid AreaOfInterest Custom ObjectCenteredEllipse Place/PointNemo Bearing 45.0 SemiMajorAxis 2688000 SemiMinorAxis 2688000")
+root.execute_command(
+    "Cov */CoverageDefinition/SatelliteGraveyard Grid AreaOfInterest Custom ObjectCenteredEllipse Place/PointNemo Bearing 45.0 SemiMajorAxis 2688000 SemiMinorAxis 2688000"
+)
 
 # Finally, configure the coverage definition's grid point granularity. The grid point granularity presents a trade-off between computational workload and accuracy of results. A higher granularity provides higher accuracy at the cost of a higher workload. For this example, set the resolution to $2^\circ$ latitude/longitude.
 
@@ -208,7 +212,9 @@ sat_grave_coverage.compute_accesses()
 
 # First, insert a Figure of Merit:
 
-figure_of_merit = sat_grave_coverage.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "Coverage")
+figure_of_merit = sat_grave_coverage.children.new(
+    STK_OBJECT_TYPE.FIGURE_OF_MERIT, "Coverage"
+)
 
 # Then, set the Figure of Merit's definition type to simple coverage:
 
@@ -221,11 +227,15 @@ figure_of_merit.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVER
 
 # ## Create a Satisfied by Time report
 
-# Find the overall percent satisfaction of the Figure of Merit using the Satisfied by Time report. The last percent accumulation coverage value corresponds to the overall percent satisfaction. 
+# Find the overall percent satisfaction of the Figure of Merit using the Satisfied by Time report. The last percent accumulation coverage value corresponds to the overall percent satisfaction.
 
 # Select the Figure of Merit's Satisfied by Time report and convert it to a pandas ``dataframe``:
 
-satisfied_by_time_df = figure_of_merit.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+satisfied_by_time_df = (
+    figure_of_merit.data_providers.item("Satisfied by Time")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
 
 satisfied_by_time_df
 
@@ -239,23 +249,31 @@ import pandas as pd
 
 
 # Convert data to correct types
-satisfied_by_time_df['time'] = pd.to_datetime(satisfied_by_time_df["time"])
-satisfied_by_time_df.set_index('time')
-satisfied_by_time_df['percent satisfied'] = pd.to_numeric(satisfied_by_time_df['percent satisfied'])
-satisfied_by_time_df['percent accum coverage'] = pd.to_numeric(satisfied_by_time_df['percent accum coverage'])
+satisfied_by_time_df["time"] = pd.to_datetime(satisfied_by_time_df["time"])
+satisfied_by_time_df.set_index("time")
+satisfied_by_time_df["percent satisfied"] = pd.to_numeric(
+    satisfied_by_time_df["percent satisfied"]
+)
+satisfied_by_time_df["percent accum coverage"] = pd.to_numeric(
+    satisfied_by_time_df["percent accum coverage"]
+)
 
 # Plot data
-ax = satisfied_by_time_df.plot(x='time', y='percent satisfied', color='dodgerblue', label="Satisfied")
-ax = satisfied_by_time_df.plot(x='time', y='percent accum coverage', color='firebrick', ax=ax, label="Accumulated")
+ax = satisfied_by_time_df.plot(
+    x="time", y="percent satisfied", color="dodgerblue", label="Satisfied"
+)
+ax = satisfied_by_time_df.plot(
+    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="Accumulated"
+)
 
 # Set title and axes labels
-ax.set_title('Satisfaction over Time')
+ax.set_title("Satisfaction over Time")
 ax.set_xlabel("Time")
-ax.set_ylabel('Percentage %')
+ax.set_ylabel("Percentage %")
 
 # Configure style
-ax.set_facecolor('whitesmoke')
-ax.grid(visible=True, which='both')
+ax.set_facecolor("whitesmoke")
+ax.grid(visible=True, which="both")
 ax.legend(shadow=True)
 
 plt.show()
@@ -272,7 +290,9 @@ from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
 
 figure_of_merit.graphics.is_object_graphics_visible = True
-figure_of_merit.graphics.animation.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT
+figure_of_merit.graphics.animation.accumulation = (
+    FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT
+)
 figure_of_merit.graphics.animation.is_visible = True
 # -
 
@@ -293,7 +313,9 @@ root.play_forward()
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
 
 
-lighting_constraint = point_nemo.access_constraints.add_constraint(ACCESS_CONSTRAINTS.LIGHTING)
+lighting_constraint = point_nemo.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.LIGHTING
+)
 # -
 
 # Then, constrain the lighting to penumbra or direct sun:
@@ -305,15 +327,36 @@ from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
 lighting_constraint.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
 # -
 
-# Point Nemo now contains the constraint that must be applied to the entire grid. Use a Connect command to set Point Nemo as the grid constraint for the entire coverage definition:
+# Point Nemo now contains the constraint that must be applied to the entire grid. Set the coverage definition's point definition to use place objects as the reference constraint class:
 
-root.execute_command("Cov */CoverageDefinition/SatelliteGraveyard Grid GridConstraint Place UsePointAltitudeType Place/PointNemo")
+# +
+from ansys.stk.core.stkobjects import COVERAGE_GRID_CLASS
+
+
+sat_grave_coverage.point_definition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_PLACE
+# -
+
+# Then, configure the point definition to use an object instance as the grid seed:
+
+sat_grave_coverage.point_definition.use_grid_seed = True
+
+# Set Point Nemo as the point definition's seed object:
+
+sat_grave_coverage.point_definition.seed_instance = point_nemo.path
+
+# Finally, recompute the accesses:
+
+sat_grave_coverage.compute_accesses()
 
 # ## Analyze the results
 
 # Select the Figure of Merit's Satisfied by Time report and convert it to a pandas ``dataframe``:
 
-satisfied_by_time_lighting_df = figure_of_merit.data_providers.item("Satisfied by Time").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+satisfied_by_time_lighting_df = (
+    figure_of_merit.data_providers.item("Satisfied by Time")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
 
 satisfied_by_time_lighting_df
 

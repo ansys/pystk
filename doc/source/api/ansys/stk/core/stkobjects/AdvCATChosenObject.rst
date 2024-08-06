@@ -3,8 +3,6 @@ AdvCATChosenObject
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATChosenObject
 
-   Bases: 
-
    A chosen object.
 
 .. py:currentmodule:: AdvCATChosenObject

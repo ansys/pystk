@@ -39,7 +39,7 @@ Overview
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.altitude_rate`
               - Gets or sets the altitude rate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel`
               - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.scale_fuel_flow_by_non_std_density`
               - Gets or sets whether to scale fuel flow by non std density.
@@ -87,8 +87,8 @@ Property detail
 
     Gets or sets the altitude rate.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicClimbModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Gets or sets whether to use Aero/Propulsion fuel flow.

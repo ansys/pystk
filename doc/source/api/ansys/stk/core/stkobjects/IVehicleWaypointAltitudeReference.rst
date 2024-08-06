@@ -3,8 +3,6 @@ IVehicleWaypointAltitudeReference
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference
 
-   object
-   
    Base interface for the altitude references.
 
 .. py:currentmodule:: IVehicleWaypointAltitudeReference

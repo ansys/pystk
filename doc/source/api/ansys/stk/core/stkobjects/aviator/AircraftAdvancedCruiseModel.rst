@@ -33,7 +33,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.default_cruise_altitude`
               - Gets or sets the aircraft's default cruising altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_performance_airspeed`
               - Gets or sets the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.use_airspeed_limit`
               - Opt to limit the airspeed below a specified altitude.
@@ -65,9 +65,9 @@ Property detail
 
     Gets or sets the aircraft's default cruising altitude.
 
-.. py:property:: max_perf_airspeed
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_perf_airspeed
-    :type: CRUISE_MAX_PERF_SPEED_TYPE
+.. py:property:: max_performance_airspeed
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_performance_airspeed
+    :type: CRUISE_MAX_PERFORMANCE_SPEED_TYPE
 
     Gets or sets the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
 

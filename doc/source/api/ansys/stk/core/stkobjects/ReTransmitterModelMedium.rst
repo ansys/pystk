@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelMedium.post_transmit_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional post transmit gains and losses.
 

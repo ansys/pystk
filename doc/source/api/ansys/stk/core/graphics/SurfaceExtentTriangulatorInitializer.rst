@@ -3,8 +3,6 @@ SurfaceExtentTriangulatorInitializer
 
 .. py:class:: ansys.stk.core.graphics.SurfaceExtentTriangulatorInitializer
 
-   Bases: 
-
    Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive.
 
 .. py:currentmodule:: SurfaceExtentTriangulatorInitializer

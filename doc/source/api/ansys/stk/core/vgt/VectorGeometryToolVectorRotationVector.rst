@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector.axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify the axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

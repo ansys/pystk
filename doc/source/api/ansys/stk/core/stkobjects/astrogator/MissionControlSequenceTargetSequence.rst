@@ -85,13 +85,13 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceTargetSequence.segments
-    :type: IMissionControlSequenceSegmentCollection
+    :type: MissionControlSequenceSegmentCollection
 
     Returns the segments contained within the target sequence.
 
 .. py:property:: profiles
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceTargetSequence.profiles
-    :type: IProfileCollection
+    :type: ProfileCollection
 
     Returns the profiles used within the target sequence.
 

@@ -3,8 +3,6 @@ WaypointCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.WaypointCategory
 
-   Bases: 
-
    Class defining the waypoint category in the Aviator catalog.
 
 .. py:currentmodule:: WaypointCategory
@@ -58,67 +56,67 @@ Property detail
 
 .. py:property:: user_waypoints
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_waypoints
-    :type: IUserWaypointSource
+    :type: UserWaypointSource
 
     Get the User Waypoints.
 
 .. py:property:: user_runways
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_runways
-    :type: IUserRunwaySource
+    :type: UserRunwaySource
 
     Get the User Runways.
 
 .. py:property:: user_vtol_points
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.user_vtol_points
-    :type: IUserVTOLPointSource
+    :type: UserVTOLPointSource
 
     Get the User VTOL Points.
 
 .. py:property:: arinc424_airports
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_airports
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 airports.
 
 .. py:property:: arinc424_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_helipads
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 helipads.
 
 .. py:property:: arinc424_navaids
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_navaids
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 navaids.
 
 .. py:property:: arinc424_runways
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_runways
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 runways.
 
 .. py:property:: arinc424_waypoints
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.arinc424_waypoints
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 waypoints.
 
 .. py:property:: dafif_helipads
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.dafif_helipads
-    :type: IDAFIFSource
+    :type: DAFIFSource
 
     Get the DAFIF helipads.
 
 .. py:property:: dafif_runways
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.dafif_runways
-    :type: IDAFIFSource
+    :type: DAFIFSource
 
     Get the DAFIF runways.
 
 .. py:property:: dafif_waypoints
     :canonical: ansys.stk.core.stkobjects.aviator.WaypointCategory.dafif_waypoints
-    :type: IDAFIFSource
+    :type: DAFIFSource
 
     Get the DAFIF waypoints.
 

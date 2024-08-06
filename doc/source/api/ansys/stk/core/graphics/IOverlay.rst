@@ -3,8 +3,6 @@ IOverlay
 
 .. py:class:: ansys.stk.core.graphics.IOverlay
 
-   object
-   
    A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 
 .. py:currentmodule:: IOverlay
@@ -344,7 +342,7 @@ Property detail
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.IOverlay.overlays
-    :type: IScreenOverlayCollection
+    :type: ScreenOverlayCollection
 
     Gets the collection of overlays that are contained within this overlay.
 

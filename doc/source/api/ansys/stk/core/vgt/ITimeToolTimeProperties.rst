@@ -3,8 +3,6 @@ ITimeToolTimeProperties
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolTimeProperties
 
-   object
-   
    Define methods to compute time properties such as availability and special times.
 
 .. py:currentmodule:: ITimeToolTimeProperties

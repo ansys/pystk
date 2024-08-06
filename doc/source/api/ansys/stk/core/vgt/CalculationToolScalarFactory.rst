@@ -3,8 +3,6 @@ CalculationToolScalarFactory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFactory
 
-   Bases: 
-
    The factory creates scalar calculation components.
 
 .. py:currentmodule:: CalculationToolScalarFactory

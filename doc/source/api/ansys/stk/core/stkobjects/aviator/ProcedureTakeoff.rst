@@ -55,25 +55,25 @@ Property detail
 
 .. py:property:: runway_heading_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.runway_heading_options
-    :type: IRunwayHeadingOptions
+    :type: RunwayHeadingOptions
 
     Get the runway heading options.
 
 .. py:property:: mode_as_normal
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.mode_as_normal
-    :type: ITakeoffNormal
+    :type: TakeoffNormal
 
     Get the interface for a normal takeoff.
 
 .. py:property:: mode_as_departure_point
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.mode_as_departure_point
-    :type: ITakeoffDeparturePoint
+    :type: TakeoffDeparturePoint
 
     Get the interface for a departure point takeoff.
 
 .. py:property:: mode_as_low_transition
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.mode_as_low_transition
-    :type: ITakeoffLowTransition
+    :type: TakeoffLowTransition
 
     Get the interface for a low transition takeoff.
 

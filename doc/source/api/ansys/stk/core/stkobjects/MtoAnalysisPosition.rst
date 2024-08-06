@@ -3,8 +3,6 @@ MtoAnalysisPosition
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisPosition
 
-   Bases: 
-
    MTO Position Computation.
 
 .. py:currentmodule:: MtoAnalysisPosition

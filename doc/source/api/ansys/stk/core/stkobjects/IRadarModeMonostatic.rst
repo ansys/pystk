@@ -3,8 +3,6 @@ IRadarModeMonostatic
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarModeMonostatic
 
-   object
-   
    Provide access to the properties and methods defining a monostatic mode.
 
 .. py:currentmodule:: IRadarModeMonostatic

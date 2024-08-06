@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular.altitude_options
-    :type: IAltitudeMSLOptions
+    :type: AltitudeMSLOptions
 
     Get the altitude options.
 
@@ -143,7 +143,7 @@ Property detail
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular.hold_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the hold cruise airspeed options.
 
@@ -155,13 +155,13 @@ Property detail
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular.enroute_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingCircular.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

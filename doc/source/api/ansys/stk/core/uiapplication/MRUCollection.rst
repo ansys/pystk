@@ -3,8 +3,6 @@ MRUCollection
 
 .. py:class:: ansys.stk.core.uiapplication.MRUCollection
 
-   Bases: 
-
    Provide information about most recently used (MRU) list.
 
 .. py:currentmodule:: MRUCollection

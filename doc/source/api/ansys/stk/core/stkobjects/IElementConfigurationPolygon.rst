@@ -3,8 +3,6 @@ IElementConfigurationPolygon
 
 .. py:class:: ansys.stk.core.stkobjects.IElementConfigurationPolygon
 
-   object
-   
    Provide access to the properties and methods defining a polygon element configuration.
 
 .. py:currentmodule:: IElementConfigurationPolygon

@@ -3,8 +3,6 @@ CoverageGraphics3DAttributes
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics3DAttributes
 
-   Bases: 
-
    3D animation or static graphics options.
 
 .. py:currentmodule:: CoverageGraphics3DAttributes

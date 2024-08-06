@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the interface for the cruise airspeed options.
 

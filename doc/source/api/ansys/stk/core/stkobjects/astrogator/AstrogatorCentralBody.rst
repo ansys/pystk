@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.astrogator.AstrogatorCentralBody.children
-    :type: ICentralBodyCollection
+    :type: CentralBodyCollection
 
     Get the children of this central body.
 
@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: default_gravity_model_data
     :canonical: ansys.stk.core.stkobjects.astrogator.AstrogatorCentralBody.default_gravity_model_data
-    :type: ICentralBodyGravityModel
+    :type: CentralBodyGravityModel
 
     Get the gravity model parameters.
 

@@ -3,8 +3,6 @@ ObjectCollection
 
 .. py:class:: ansys.stk.core.graphics.ObjectCollection
 
-   Bases: 
-
    A collection of objects.
 
 .. py:currentmodule:: ObjectCollection

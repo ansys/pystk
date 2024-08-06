@@ -3,8 +3,6 @@ ChainGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.ChainGraphics
 
-   Bases: 
-
    2D graphics properties of a chain.
 
 .. py:currentmodule:: ChainGraphics
@@ -44,13 +42,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.ChainGraphics.static
-    :type: IChainGraphics2DStatic
+    :type: ChainGraphics2DStatic
 
     Get the chain's 2D static graphics properties.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.ChainGraphics.animation
-    :type: IChainGraphics2DAnimation
+    :type: ChainGraphics2DAnimation
 
     Get the chain's 3D graphics properties.
 

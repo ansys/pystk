@@ -3,8 +3,6 @@ Date
 
 .. py:class:: ansys.stk.core.stkutil.Date
 
-   Bases: 
-
    Object that contains a date.
 
 .. py:currentmodule:: Date

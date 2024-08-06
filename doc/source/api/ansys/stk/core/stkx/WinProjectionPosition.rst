@@ -3,8 +3,6 @@ WinProjectionPosition
 
 .. py:class:: ansys.stk.core.stkx.WinProjectionPosition
 
-   Bases: 
-
    Projected window position result.
 
 .. py:currentmodule:: WinProjectionPosition

@@ -3,8 +3,6 @@ Graphics3DModelPointing
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelPointing
 
-   Bases: 
-
    List of pointable model elements.
 
 .. py:currentmodule:: Graphics3DModelPointing
@@ -51,7 +49,7 @@ Property detail
 
 .. py:property:: pointable_elements
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelPointing.pointable_elements
-    :type: IGraphics3DPointableElementsCollection
+    :type: Graphics3DPointableElementsCollection
 
     Get the list of pointable model elements.
 

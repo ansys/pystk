@@ -3,8 +3,6 @@ MtoAnalysisRange
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisRange
 
-   Bases: 
-
    MTO Range Computation.
 
 .. py:currentmodule:: MtoAnalysisRange

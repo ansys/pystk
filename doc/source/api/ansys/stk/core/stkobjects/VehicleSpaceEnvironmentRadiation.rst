@@ -3,8 +3,6 @@ VehicleSpaceEnvironmentRadiation
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentRadiation
 
-   Bases: 
-
    Radiation model settings.
 
 .. py:currentmodule:: VehicleSpaceEnvironmentRadiation

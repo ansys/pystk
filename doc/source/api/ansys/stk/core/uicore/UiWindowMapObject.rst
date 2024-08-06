@@ -3,8 +3,6 @@ UiWindowMapObject
 
 .. py:class:: ansys.stk.core.uicore.UiWindowMapObject
 
-   Bases: 
-
    Provide methods and properties to manipulate the 2D map.
 
 .. py:currentmodule:: UiWindowMapObject

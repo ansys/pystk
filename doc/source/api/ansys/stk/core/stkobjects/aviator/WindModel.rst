@@ -3,8 +3,6 @@ WindModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.WindModel
 
-   Bases: 
-
    Class defining the wind model for a mission, scenario, or procedure.
 
 .. py:currentmodule:: WindModel
@@ -75,13 +73,13 @@ Property detail
 
 .. py:property:: mode_as_constant
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.mode_as_constant
-    :type: IWindModelConstant
+    :type: WindModelConstant
 
     Get the options for a Constant Bearing/Speed wind model.
 
 .. py:property:: mode_as_adds
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.mode_as_adds
-    :type: IWindModelADDS
+    :type: WindModelADDS
 
     Get the options for a NOAA ADDS Service wind model.
 

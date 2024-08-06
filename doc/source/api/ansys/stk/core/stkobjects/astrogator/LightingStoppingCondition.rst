@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.constraints
-    :type: IConstraintCollection
+    :type: ConstraintCollection
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
 .. py:property:: before_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.before_conditions
-    :type: IStoppingConditionCollection
+    :type: StoppingConditionCollection
 
     A 'before' stopping condition is used to define a stopping condition that depends on two events. Astrogator will ignore a stopping condition until its 'before' conditions are met. Astrogator then interpolates backwards to the normal stopping condition.
 

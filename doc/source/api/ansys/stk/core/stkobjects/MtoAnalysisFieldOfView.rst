@@ -3,8 +3,6 @@ MtoAnalysisFieldOfView
 
 .. py:class:: ansys.stk.core.stkobjects.MtoAnalysisFieldOfView
 
-   Bases: 
-
    MTO Field Of View Computation.
 
 .. py:currentmodule:: MtoAnalysisFieldOfView

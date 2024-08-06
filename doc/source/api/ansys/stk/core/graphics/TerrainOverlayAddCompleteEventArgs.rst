@@ -3,8 +3,6 @@ TerrainOverlayAddCompleteEventArgs
 
 .. py:class:: ansys.stk.core.graphics.TerrainOverlayAddCompleteEventArgs
 
-   Bases: 
-
    The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync.
 
 .. py:currentmodule:: TerrainOverlayAddCompleteEventArgs

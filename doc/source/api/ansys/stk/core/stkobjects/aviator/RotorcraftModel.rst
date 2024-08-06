@@ -223,19 +223,19 @@ Property detail
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.default_configuration
-    :type: IConfiguration
+    :type: Configuration
 
     Get the aircraft's default configuration as saved in the catalog.
 
 .. py:property:: aerodynamics
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.aerodynamics
-    :type: IRotorcraftAero
+    :type: RotorcraftAerodynamic
 
     Get the aerodynamics interface.
 
 .. py:property:: propulsion
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.propulsion
-    :type: IRotorcraftProp
+    :type: RotorcraftPropulsion
 
     Get the propulsion interface.
 

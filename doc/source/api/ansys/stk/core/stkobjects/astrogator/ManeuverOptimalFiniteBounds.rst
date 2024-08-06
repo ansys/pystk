@@ -3,8 +3,6 @@ ManeuverOptimalFiniteBounds
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteBounds
 
-   Bases: 
-
    The elements of the steering node.
 
 .. py:currentmodule:: ManeuverOptimalFiniteBounds

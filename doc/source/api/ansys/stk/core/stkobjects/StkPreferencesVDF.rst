@@ -3,8 +3,6 @@ StkPreferencesVDF
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferencesVDF
 
-   Bases: 
-
    Allow configuring VDF preferences.
 
 .. py:currentmodule:: StkPreferencesVDF

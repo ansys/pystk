@@ -99,19 +99,19 @@ Property detail
 
 .. py:property:: separation_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow.separation_conditions
-    :type: IStoppingConditionCollection
+    :type: StoppingConditionCollection
 
     If separation conditions are specified, the list of separation conditions.
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow.spacecraft_parameters
-    :type: ISpacecraftParameters
+    :type: SpacecraftParameters
 
     Get the spacecraft's physical properties.
 
 .. py:property:: fuel_tank
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow.fuel_tank
-    :type: IFuelTank
+    :type: FuelTank
 
     Get the spacecraft's fuel tank properties.
 
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: joining_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow.joining_conditions
-    :type: IStoppingConditionCollection
+    :type: StoppingConditionCollection
 
     If joining conditions are specified, the list of joining conditions.
 
@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow.user_variables
-    :type: IUserVariableCollection
+    :type: UserVariableCollection
 
     Interface used to modify user variables for the follow segment.
 

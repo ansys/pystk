@@ -3,8 +3,6 @@ LabelNote
 
 .. py:class:: ansys.stk.core.stkobjects.LabelNote
 
-   Bases: 
-
    Class defining label notes.
 
 .. py:currentmodule:: LabelNote
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.LabelNote.intervals
-    :type: IIntervalCollection
+    :type: IntervalCollection
 
     Intervals during which the note is displayed. This property is used if the corresponding value is selected for the NoteVisible property.
 

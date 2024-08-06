@@ -3,8 +3,6 @@ VehicleAttitudeTrendControlAviator
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeTrendControlAviator
 
-   Bases: 
-
    Trending controls for Aviator attitude.
 
 .. py:currentmodule:: VehicleAttitudeTrendControlAviator

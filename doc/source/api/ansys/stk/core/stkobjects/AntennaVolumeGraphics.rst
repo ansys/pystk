@@ -3,8 +3,6 @@ AntennaVolumeGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaVolumeGraphics
 
-   Bases: 
-
    Class defining 3D Volume Graphics properties of a Antenna.
 
 .. py:currentmodule:: AntennaVolumeGraphics
@@ -173,7 +171,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.levels
-    :type: IAntennaVolumeLevelCollection
+    :type: AntennaVolumeLevelCollection
 
     Gets the collection of volume levels.
 

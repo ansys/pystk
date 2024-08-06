@@ -3,8 +3,6 @@ CoverageAssetListCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAssetListCollection
 
-   Bases: 
-
    Asset List.
 
 .. py:currentmodule:: CoverageAssetListCollection

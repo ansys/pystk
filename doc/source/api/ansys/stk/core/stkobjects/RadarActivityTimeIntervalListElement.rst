@@ -3,8 +3,6 @@ RadarActivityTimeIntervalListElement
 
 .. py:class:: ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement
 
-   Bases: 
-
    Class defining an element of the time components activity list.
 
 .. py:currentmodule:: RadarActivityTimeIntervalListElement

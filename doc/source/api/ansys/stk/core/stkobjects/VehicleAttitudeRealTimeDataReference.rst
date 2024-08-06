@@ -3,8 +3,6 @@ VehicleAttitudeRealTimeDataReference
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference
 
-   Bases: 
-
    Reference attitude profile for the incoming attitude data.
 
 .. py:currentmodule:: VehicleAttitudeRealTimeDataReference

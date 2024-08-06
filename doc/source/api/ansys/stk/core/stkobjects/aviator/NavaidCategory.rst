@@ -3,8 +3,6 @@ NavaidCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.NavaidCategory
 
-   Bases: 
-
    Class defining the navaid category in the Aviator catalog.
 
 .. py:currentmodule:: NavaidCategory
@@ -38,7 +36,7 @@ Property detail
 
 .. py:property:: arinc424_navaids
     :canonical: ansys.stk.core.stkobjects.aviator.NavaidCategory.arinc424_navaids
-    :type: IARINC424Source
+    :type: ARINC424Source
 
     Get the ARINC-424 navaids.
 

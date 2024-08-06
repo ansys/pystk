@@ -3,8 +3,6 @@ TimeToolInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInterval
 
-   Bases: 
-
    Represents an interval.
 
 .. py:currentmodule:: TimeToolInterval

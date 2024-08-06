@@ -3,8 +3,6 @@ SensorGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics
 
-   Bases: 
-
    Class defining the 2D Graphics properties of a Sensor.
 
 .. py:currentmodule:: SensorGraphics
@@ -108,7 +106,7 @@ Property detail
 
 .. py:property:: projection
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.projection
-    :type: ISensorProjection
+    :type: SensorProjection
 
     Get the 2D Projection properties of the sensor.
 

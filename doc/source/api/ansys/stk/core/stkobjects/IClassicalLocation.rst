@@ -3,8 +3,6 @@ IClassicalLocation
 
 .. py:class:: ansys.stk.core.stkobjects.IClassicalLocation
 
-   object
-   
    Base Interface of all IAgClassicalLocation* interfaces.
 
 .. py:currentmodule:: IClassicalLocation

@@ -44,25 +44,25 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.stkobjects.Constellation.objects
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Get the collection of objects in the chain.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Constellation.constraints
-    :type: IConstellationConstraints
+    :type: ConstellationConstraints
 
     Get the constellation's constraints.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Constellation.graphics
-    :type: IConstellationGraphics
+    :type: ConstellationGraphics
 
     Constellation's 2D graphics settings.
 
 .. py:property:: routing
     :canonical: ansys.stk.core.stkobjects.Constellation.routing
-    :type: IConstellationRouting
+    :type: ConstellationRouting
 
     Constellation's routing settings.
 

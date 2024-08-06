@@ -3,8 +3,6 @@ RadarMultipathGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarMultipathGraphics
 
-   Bases: 
-
    Class defining multipath graphics properties of a Radar.
 
 .. py:currentmodule:: RadarMultipathGraphics
@@ -20,17 +18,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.show_xmt_to_tgt_grp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.show_xmt_to_target_grp`
               - Opt whether to display graphics for the transmit radar to the target ground reflection point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_tgt_grp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_target_grp_color`
               - Gets or sets the transmit radar to target ground reflection point color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_tgt_grp_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_target_grp_marker_style`
               - Gets or sets the transmit radar to target ground reflection point marker style.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.show_rcv_to_tgt_grp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.show_rcv_to_target_grp`
               - Opt whether to display graphics for the receive radar to the target ground reflection point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_tgt_grp_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_target_grp_color`
               - Gets or sets the receive radar to target ground reflection point color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_tgt_grp_marker_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_target_grp_marker_style`
               - Gets or sets the receive radar to target ground reflection point marker style.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarMultipathGraphics.show_xmt_to_rcv_grp`
               - Opt whether to display graphics for the transmit radar to the receive radar ground reflection point.
@@ -52,38 +50,38 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: show_xmt_to_tgt_grp
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.show_xmt_to_tgt_grp
+.. py:property:: show_xmt_to_target_grp
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.show_xmt_to_target_grp
     :type: bool
 
     Opt whether to display graphics for the transmit radar to the target ground reflection point.
 
-.. py:property:: xmt_to_tgt_grp_color
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_tgt_grp_color
+.. py:property:: xmt_to_target_grp_color
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_target_grp_color
     :type: agcolor.Color
 
     Gets or sets the transmit radar to target ground reflection point color.
 
-.. py:property:: xmt_to_tgt_grp_marker_style
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_tgt_grp_marker_style
+.. py:property:: xmt_to_target_grp_marker_style
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.xmt_to_target_grp_marker_style
     :type: str
 
     Gets or sets the transmit radar to target ground reflection point marker style.
 
-.. py:property:: show_rcv_to_tgt_grp
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.show_rcv_to_tgt_grp
+.. py:property:: show_rcv_to_target_grp
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.show_rcv_to_target_grp
     :type: bool
 
     Opt whether to display graphics for the receive radar to the target ground reflection point.
 
-.. py:property:: rcv_to_tgt_grp_color
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_tgt_grp_color
+.. py:property:: rcv_to_target_grp_color
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_target_grp_color
     :type: agcolor.Color
 
     Gets or sets the receive radar to target ground reflection point color.
 
-.. py:property:: rcv_to_tgt_grp_marker_style
-    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_tgt_grp_marker_style
+.. py:property:: rcv_to_target_grp_marker_style
+    :canonical: ansys.stk.core.stkobjects.RadarMultipathGraphics.rcv_to_target_grp_marker_style
     :type: str
 
     Gets or sets the receive radar to target ground reflection point marker style.

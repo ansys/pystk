@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: objects
     :canonical: ansys.stk.core.stkobjects.Chain.objects
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
@@ -155,31 +155,31 @@ Property detail
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Chain.constraints
-    :type: IChainConstraints
+    :type: ChainConstraints
 
     Get the constraints applicable to the chain.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Chain.graphics
-    :type: IChainGraphics
+    :type: ChainGraphics
 
     Get the 2D graphics properties of the chain.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Chain.graphics_3d
-    :type: IChainGraphics3D
+    :type: ChainGraphics3D
 
     Get the 3D graphics properties of the chain.
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.Chain.event_detection
-    :type: IAccessEventDetection
+    :type: AccessEventDetection
 
     Event detection strategy used for access calculations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.Chain.sampling
-    :type: IAccessSampling
+    :type: AccessSampling
 
     Sampling method used for access calculations.
 
@@ -233,13 +233,13 @@ Property detail
 
 .. py:property:: connections
     :canonical: ansys.stk.core.stkobjects.Chain.connections
-    :type: IChainConnectionCollection
+    :type: ChainConnectionCollection
 
     Get the collection of connections in the chain.
 
 .. py:property:: optimal_strand_opts
     :canonical: ansys.stk.core.stkobjects.Chain.optimal_strand_opts
-    :type: IChainOptimalStrandOpts
+    :type: ChainOptimalStrandOpts
 
     Optimal strands settings for the Chain.
 

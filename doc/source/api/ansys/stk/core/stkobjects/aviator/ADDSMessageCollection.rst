@@ -3,8 +3,6 @@ ADDSMessageCollection
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ADDSMessageCollection
 
-   Bases: 
-
    Class defining a collection of messages from the NOAA ADDS service.
 
 .. py:currentmodule:: ADDSMessageCollection

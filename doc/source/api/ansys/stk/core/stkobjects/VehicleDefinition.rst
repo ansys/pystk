@@ -3,8 +3,6 @@ VehicleDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleDefinition
 
-   Bases: 
-
    Pass break definition properties.
 
 .. py:currentmodule:: VehicleDefinition

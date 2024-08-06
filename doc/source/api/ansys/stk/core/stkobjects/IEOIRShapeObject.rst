@@ -3,8 +3,6 @@ IEOIRShapeObject
 
 .. py:class:: ansys.stk.core.stkobjects.IEOIRShapeObject
 
-   object
-   
    A shape object interface.
 
 .. py:currentmodule:: IEOIRShapeObject

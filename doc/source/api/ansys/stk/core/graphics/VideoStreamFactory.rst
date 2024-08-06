@@ -3,8 +3,6 @@ VideoStreamFactory
 
 .. py:class:: ansys.stk.core.graphics.VideoStreamFactory
 
-   Bases: 
-
    A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
 .. py:currentmodule:: VideoStreamFactory

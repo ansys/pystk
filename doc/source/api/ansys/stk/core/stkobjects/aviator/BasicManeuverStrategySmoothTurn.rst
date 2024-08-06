@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: load_factor_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.load_factor_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the load factor mode for the smooth turn.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.roll_rate_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for the smooth turn.
 
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.airspeed_options
-    :type: IBasicManeuverAirspeedOptions
+    :type: BasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

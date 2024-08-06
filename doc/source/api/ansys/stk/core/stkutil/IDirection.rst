@@ -3,8 +3,6 @@ IDirection
 
 .. py:class:: ansys.stk.core.stkutil.IDirection
 
-   object
-   
    Interface to set and retrieve direction options for aligned and constrained vectors.
 
 .. py:currentmodule:: IDirection

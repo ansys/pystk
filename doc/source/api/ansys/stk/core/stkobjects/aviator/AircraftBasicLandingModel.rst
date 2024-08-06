@@ -37,7 +37,7 @@ Overview
               - Get the landing speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.sea_level_ground_roll`
               - Gets or sets the distance the aircraft travels along the ground while decelerating to a stop at sea level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aerodynamic_propulsion_fuel`
               - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
               - Gets or sets whether to scale fuel flow by non std density.
@@ -75,8 +75,8 @@ Property detail
 
     Gets or sets the distance the aircraft travels along the ground while decelerating to a stop at sea level.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Gets or sets whether to use Aero/Propulsion fuel flow.

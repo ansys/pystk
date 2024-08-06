@@ -3,8 +3,6 @@ VehicleMassProperties
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleMassProperties
 
-   Bases: 
-
    Satellite Mass properties.
 
 .. py:currentmodule:: VehicleMassProperties
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: inertia
     :canonical: ansys.stk.core.stkobjects.VehicleMassProperties.inertia
-    :type: IVehicleInertia
+    :type: VehicleInertia
 
     Get the satellite inertia matrix.
 

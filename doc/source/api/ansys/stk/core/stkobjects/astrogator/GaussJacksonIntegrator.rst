@@ -31,7 +31,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.initial_step`
               - Gets or sets the initial step. Uses time dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.max_corrector_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.max_corrector_relative_err`
               - Gets or sets the maximum relative error between corrector iterations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.corrector_mode`
               - Gets or sets the Predictor Corrector scheme.
@@ -61,8 +61,8 @@ Property detail
 
     Gets or sets the initial step. Uses time dimension.
 
-.. py:property:: max_corrector_rel_err
-    :canonical: ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.max_corrector_rel_err
+.. py:property:: max_corrector_relative_err
+    :canonical: ansys.stk.core.stkobjects.astrogator.GaussJacksonIntegrator.max_corrector_relative_err
     :type: float
 
     Gets or sets the maximum relative error between corrector iterations. Dimensionless.

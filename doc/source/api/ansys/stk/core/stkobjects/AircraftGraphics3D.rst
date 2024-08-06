@@ -48,37 +48,37 @@ Property detail
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.proximity
-    :type: IVehicleGraphics3DRouteProximity
+    :type: VehicleGraphics3DRouteProximity
 
     Get the aircraft's 3D proximity properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.elev_contours
-    :type: IVehicleGraphics3DElevContours
+    :type: VehicleGraphics3DElevContours
 
     Get the aircraft's 3D elevation contour properties.
 
 .. py:property:: covariance_pointing_contour
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.covariance_pointing_contour
-    :type: IVehicleGraphics3DCovariancePointingContour
+    :type: VehicleGraphics3DCovariancePointingContour
 
     Get the aircraft's 3D covariance pointing properties.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.drop_lines
-    :type: IVehicleGraphics3DRouteDropLines
+    :type: VehicleGraphics3DRouteDropLines
 
     Returns an interface allowing to configure vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.vapor_trail
-    :type: IGraphics3DVaporTrail
+    :type: Graphics3DVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.radar_cross_section
-    :type: IRadarCrossSectionGraphics3D
+    :type: RadarCrossSectionGraphics3D
 
     Gets the radar cross section graphics interface.
 

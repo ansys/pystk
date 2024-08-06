@@ -3,8 +3,6 @@ VehicleHPOPCentralBodyGravity
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity
 
-   Bases: 
-
    Class defining Central Body Gravity options for the High Precision Orbit Propagator (HPOP).
 
 .. py:currentmodule:: VehicleHPOPCentralBodyGravity

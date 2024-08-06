@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.coordinate_system
-    :type: IOrbitStateCoordinateSystem
+    :type: OrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 

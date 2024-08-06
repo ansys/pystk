@@ -52,19 +52,19 @@ Property detail
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.controls
-    :type: ISearchPluginControlCollection
+    :type: SearchPluginControlCollection
 
     Get the selected control parameters.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.results
-    :type: ISearchPluginResultCollection
+    :type: SearchPluginResultCollection
 
     Get the selected equality constraints.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 

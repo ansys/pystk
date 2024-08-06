@@ -3,8 +3,6 @@ IOrbitState
 
 .. py:class:: ansys.stk.core.stkutil.IOrbitState
 
-   object
-   
    Interface to set and retrieve the coordinate type used to specify the orbit state.
 
 .. py:currentmodule:: IOrbitState

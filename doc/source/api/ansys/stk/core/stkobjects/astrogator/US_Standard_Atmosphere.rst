@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.US_Standard_Atmosphere.drag_model_plugin
-    :type: IDragModelPlugin
+    :type: DragModelPlugin
 
     Drag model plugin properties.
 

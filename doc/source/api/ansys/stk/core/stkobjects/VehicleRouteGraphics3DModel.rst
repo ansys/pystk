@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: route_marker
     :canonical: ansys.stk.core.stkobjects.VehicleRouteGraphics3DModel.route_marker
-    :type: IGraphics3DMarker
+    :type: Graphics3DMarker
 
     Represents the vehicle while traveling along its route.
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.VehicleRouteGraphics3DModel.gltf_image_based
-    :type: IGraphics3DModelGltfImageBased
+    :type: Graphics3DModelGltfImageBased
 
     Gets the glTF Image Based properties.
 

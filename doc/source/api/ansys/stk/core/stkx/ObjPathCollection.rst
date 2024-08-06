@@ -3,8 +3,6 @@ ObjPathCollection
 
 .. py:class:: ansys.stk.core.stkx.ObjPathCollection
 
-   Bases: 
-
    Collection of object paths.
 
 .. py:currentmodule:: ObjPathCollection

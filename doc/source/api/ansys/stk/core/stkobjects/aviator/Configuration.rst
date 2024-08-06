@@ -3,8 +3,6 @@ Configuration
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Configuration
 
-   Bases: 
-
    Class defining the aircraft configuration for an Aviator mission.
 
 .. py:currentmodule:: Configuration

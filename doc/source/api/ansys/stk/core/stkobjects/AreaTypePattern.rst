@@ -3,8 +3,6 @@ AreaTypePattern
 
 .. py:class:: ansys.stk.core.stkobjects.AreaTypePattern
 
-   Bases: 
-
    Class defining coordinates of the AreaTarget AreaType.
 
 .. py:currentmodule:: AreaTypePattern

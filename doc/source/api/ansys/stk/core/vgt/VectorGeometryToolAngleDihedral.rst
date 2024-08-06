@@ -46,19 +46,19 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.from_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a first vector to measure the angle.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.to_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a second vector to measure the angle.
 
 .. py:property:: pole_about
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.pole_about
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a vector about.
 

@@ -3,8 +3,6 @@ LineTargetGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetGraphics
 
-   Bases: 
-
    The AgLtGraphics class.
 
 .. py:currentmodule:: LineTargetGraphics
@@ -128,7 +126,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Get the label notes collection.
 

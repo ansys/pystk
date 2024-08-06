@@ -3,8 +3,6 @@ ArcAltitudeOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions
 
-   Bases: 
-
    Class defining the altitude options for an arc procedure.
 
 .. py:currentmodule:: ArcAltitudeOptions

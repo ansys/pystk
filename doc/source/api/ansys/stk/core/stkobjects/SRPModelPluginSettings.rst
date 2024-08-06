@@ -3,8 +3,6 @@ SRPModelPluginSettings
 
 .. py:class:: ansys.stk.core.stkobjects.SRPModelPluginSettings
 
-   Bases: 
-
    Plugin Light Reflection Model Settings.
 
 .. py:currentmodule:: SRPModelPluginSettings

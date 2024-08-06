@@ -3,8 +3,6 @@ IOrientation
 
 .. py:class:: ansys.stk.core.stkutil.IOrientation
 
-   object
-   
    Interface to set and retrieve the orientation method.
 
 .. py:currentmodule:: IOrientation

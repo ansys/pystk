@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScaled.reference_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     A vector being scaled.
 

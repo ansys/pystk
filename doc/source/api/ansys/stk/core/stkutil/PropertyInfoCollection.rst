@@ -3,8 +3,6 @@ PropertyInfoCollection
 
 .. py:class:: ansys.stk.core.stkutil.PropertyInfoCollection
 
-   Bases: 
-
    Property Information Collection coclass.
 
 .. py:currentmodule:: PropertyInfoCollection

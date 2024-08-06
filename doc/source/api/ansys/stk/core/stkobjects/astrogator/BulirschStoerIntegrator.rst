@@ -32,7 +32,7 @@ Overview
               - Gets or sets the maximum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.min_step`
               - Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.max_relative_err`
               - Gets or sets the maximum relative error used to control step size. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.max_sequences`
               - Gets or sets the maximum number of sequences. Dimensionless.
@@ -94,8 +94,8 @@ Property detail
 
     Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
 
-.. py:property:: max_rel_err
-    :canonical: ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.max_rel_err
+.. py:property:: max_relative_err
+    :canonical: ansys.stk.core.stkobjects.astrogator.BulirschStoerIntegrator.max_relative_err
     :type: float
 
     Gets or sets the maximum relative error used to control step size. Dimensionless.

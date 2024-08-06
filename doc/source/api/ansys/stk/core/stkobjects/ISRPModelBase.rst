@@ -3,8 +3,6 @@ ISRPModelBase
 
 .. py:class:: ansys.stk.core.stkobjects.ISRPModelBase
 
-   object
-   
    A base interface for solar radiation pressure models.
 
 .. py:currentmodule:: ISRPModelBase

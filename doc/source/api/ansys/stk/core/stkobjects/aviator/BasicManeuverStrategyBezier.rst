@@ -61,7 +61,7 @@ Overview
               - Get the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.stop_airspeed_type`
               - Get the airspeed type for the airspeed stopping condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 
@@ -155,8 +155,8 @@ Property detail
 
     Get the airspeed type for the airspeed stopping condition.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.

@@ -3,8 +3,6 @@ STKXApplication
 
 .. py:class:: ansys.stk.core.stkx.STKXApplication
 
-   Bases: 
-
    STK X Application object.
 
 .. py:currentmodule:: STKXApplication

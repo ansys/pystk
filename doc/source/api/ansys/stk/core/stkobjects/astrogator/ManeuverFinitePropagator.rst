@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.stopping_conditions
-    :type: IStoppingConditionCollection
+    :type: StoppingConditionCollection
 
     Get the stopping conditions list.
 

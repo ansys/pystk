@@ -3,8 +3,6 @@ VehicleCovariance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleCovariance
 
-   Bases: 
-
    Class defining HPOP covariance.
 
 .. py:currentmodule:: VehicleCovariance
@@ -81,13 +79,13 @@ Property detail
 
 .. py:property:: gravity
     :canonical: ansys.stk.core.stkobjects.VehicleCovariance.gravity
-    :type: IVehicleGravity
+    :type: VehicleGravity
 
     Get the gravity parameters for the covariance.
 
 .. py:property:: position_velocity
     :canonical: ansys.stk.core.stkobjects.VehicleCovariance.position_velocity
-    :type: IVehiclePositionVelocityCollection
+    :type: VehiclePositionVelocityCollection
 
     Get the covariance matrix.
 
@@ -99,7 +97,7 @@ Property detail
 
 .. py:property:: consider_analysis_list
     :canonical: ansys.stk.core.stkobjects.VehicleCovariance.consider_analysis_list
-    :type: IVehicleConsiderAnalysisCollection
+    :type: VehicleConsiderAnalysisCollection
 
     Get the Consider Analysis list.
 
@@ -111,7 +109,7 @@ Property detail
 
 .. py:property:: correlation_list
     :canonical: ansys.stk.core.stkobjects.VehicleCovariance.correlation_list
-    :type: IVehicleCorrelationListCollection
+    :type: VehicleCorrelationListCollection
 
     Get the Consider Cross Correlation list.
 

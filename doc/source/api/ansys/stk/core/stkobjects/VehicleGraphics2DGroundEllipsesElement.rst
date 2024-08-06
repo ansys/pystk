@@ -3,8 +3,6 @@ VehicleGraphics2DGroundEllipsesElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement
 
-   Bases: 
-
    Ground ellipse 2D graphics properties.
 
 .. py:currentmodule:: VehicleGraphics2DGroundEllipsesElement

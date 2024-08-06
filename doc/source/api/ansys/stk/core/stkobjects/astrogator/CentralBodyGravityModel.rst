@@ -3,8 +3,6 @@ CentralBodyGravityModel
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CentralBodyGravityModel
 
-   Bases: 
-
    Central Body Gravity Model.
 
 .. py:currentmodule:: CentralBodyGravityModel

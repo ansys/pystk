@@ -3,8 +3,6 @@ BisectionResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionResultCollection
 
-   Bases: 
-
    Bisection result collection.
 
 .. py:currentmodule:: BisectionResultCollection

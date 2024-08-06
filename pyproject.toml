@@ -39,14 +39,14 @@ tests = [
 doc = [
     "ansys-sphinx-theme==0.16.6",
     "jupyterlab==4.2.4",
-    "jupytext==1.16.3",
+    "jupytext==1.16.4",
     "jupyter-server==2.14.2",
-    "myst-parser==3.0.1",
+    "myst-parser==4.0.0",
     "nbsphinx==0.9.4",
     "numpydoc==1.7.0",
     "nbconvert==7.16.4",
     "sphinx==7.4.7",
-    "sphinx-design==0.6.0",
+    "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.2",
@@ -78,7 +78,6 @@ line-length = 120
 extend-exclude = [
     "src/ansys/stk/core/internal/*.py",
     "tests/**/*.py",
-    "examples/*.py"
 ]
 
 [tool.ruff.lint]
@@ -92,14 +91,16 @@ select = [
     "TD",    # flake8-todos, https://docs.astral.sh/ruff/rules/#flake8-todos-td
 ]
 ignore = [
-#    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-    "D212", # Multi-line docstring summary should start at the first line
+#   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "D204",  # One blank line required after class docstring
+    "D212",  # Multi-line docstring summary should start at the first line
+    "D400",  # First line should end with a period
     "TD002", # Missing author in TODOs comment
 ]
 
 [tool.ruff.lint.pydocstyle]
 # Settings: https://docs.astral.sh/ruff/settings/#lintpydocstyle
-convention = "google"
+convention = "numpy"
 
 # [tool.ruff.format]
 # quote-style = "double"

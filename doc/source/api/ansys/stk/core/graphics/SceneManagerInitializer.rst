@@ -3,8 +3,6 @@ SceneManagerInitializer
 
 .. py:class:: ansys.stk.core.graphics.SceneManagerInitializer
 
-   Bases: 
-
    The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
 
 .. py:currentmodule:: SceneManagerInitializer
@@ -57,37 +55,37 @@ Property detail
 
 .. py:property:: primitives
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.primitives
-    :type: IPrimitiveManager
+    :type: PrimitiveManager
 
     Gets the primitive manager, which is used to add primitives to your scenes.
 
 .. py:property:: screen_overlays
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.screen_overlays
-    :type: IScreenOverlayManager
+    :type: ScreenOverlayManager
 
     Gets the screen overlay manager, which is used to add screen overlays to your scenes.
 
 .. py:property:: textures
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.textures
-    :type: ITexture2DFactory
+    :type: Texture2DFactory
 
     Gets the texture 2d factory, which can be used to create textures from various sources.
 
 .. py:property:: globe_overlay_settings
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.globe_overlay_settings
-    :type: IGlobeOverlaySettings
+    :type: GlobeOverlaySettings
 
     Gets the globe overlay settings, which are used to set global settings for all globe overlays.
 
 .. py:property:: scenes
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.scenes
-    :type: ISceneCollection
+    :type: SceneCollection
 
     Gets a read-only collection of scenes that are associated with the scene manager.
 
 .. py:property:: frame_rate
     :canonical: ansys.stk.core.graphics.SceneManagerInitializer.frame_rate
-    :type: IFrameRate
+    :type: FrameRate
 
     Gets the frame rate class, which can be used to keep track of how fast scenes are being <see ref='Render'>rendered</see>.
 

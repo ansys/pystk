@@ -107,13 +107,13 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.texture
-    :type: IRendererTexture2D
+    :type: RendererTexture2D
 
     Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.texture_filter
-    :type: ITextureFilter2D
+    :type: TextureFilter2D
 
     Gets or sets the filter used for the texture associated with this triangle mesh.
 

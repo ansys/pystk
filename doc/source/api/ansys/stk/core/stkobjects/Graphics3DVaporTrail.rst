@@ -3,8 +3,6 @@ Graphics3DVaporTrail
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DVaporTrail
 
-   Bases: 
-
    Vapor trail attributes.
 
 .. py:currentmodule:: Graphics3DVaporTrail

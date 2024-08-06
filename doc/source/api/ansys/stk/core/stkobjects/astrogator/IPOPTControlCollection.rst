@@ -3,8 +3,6 @@ IPOPTControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTControlCollection
 
-   Bases: 
-
    Properties for the list of IPOPT control parameters.
 
 .. py:currentmodule:: IPOPTControlCollection

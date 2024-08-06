@@ -3,8 +3,6 @@ DataProviderResultStatisticResult
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultStatisticResult
 
-   Bases: 
-
    Results returned by statistics computation.
 
 .. py:currentmodule:: DataProviderResultStatisticResult

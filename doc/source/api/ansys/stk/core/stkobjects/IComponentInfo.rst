@@ -3,8 +3,6 @@ IComponentInfo
 
 .. py:class:: ansys.stk.core.stkobjects.IComponentInfo
 
-   object
-   
    Interface for a component.
 
 .. py:currentmodule:: IComponentInfo

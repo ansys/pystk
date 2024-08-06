@@ -3,8 +3,6 @@ ScenarioAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioAnimation
 
-   Bases: 
-
    Class defining the animation properties of a Scenario.
 
 .. py:currentmodule:: ScenarioAnimation
@@ -129,7 +127,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.time_period
-    :type: IScenarioAnimationTimePeriod
+    :type: ScenarioAnimationTimePeriod
 
     Allows the user to configure the scenario's animation time period.
 

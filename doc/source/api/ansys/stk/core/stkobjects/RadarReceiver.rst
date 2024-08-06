@@ -3,8 +3,6 @@ RadarReceiver
 
 .. py:class:: ansys.stk.core.stkobjects.RadarReceiver
 
-   Bases: 
-
    Class defining the radar transmitter.
 
 .. py:currentmodule:: RadarReceiver
@@ -131,7 +129,7 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.pre_receive_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
@@ -179,7 +177,7 @@ Property detail
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.RadarReceiver.system_noise_temperature
-    :type: ISystemNoiseTemperature
+    :type: SystemNoiseTemperature
 
     Gets the system noise temperature interface.
 

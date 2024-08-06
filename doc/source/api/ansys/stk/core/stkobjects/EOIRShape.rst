@@ -3,8 +3,6 @@ EOIRShape
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRShape
 
-   Bases: 
-
    AgEOIRShape class.
 
 .. py:currentmodule:: EOIRShape
@@ -120,7 +118,7 @@ Property detail
 
 .. py:property:: material_elements
     :canonical: ansys.stk.core.stkobjects.EOIRShape.material_elements
-    :type: IEOIRMaterialElementCollection
+    :type: EOIRMaterialElementCollection
 
     Property used to access the material element collection.
 

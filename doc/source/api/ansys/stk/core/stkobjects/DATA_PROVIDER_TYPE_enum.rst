@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~DATA_PROVIDER_RESULT_INTVL_DEFINED`
               - Results depend on evaluation interval(s).
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_DYN_IGNORE`
+            * - :py:attr:`~DATA_PROVIDER_RESULT_DYNAMIC_IGNORE`
               - Make unavailable for dynamic displays and strip charts.
 
 

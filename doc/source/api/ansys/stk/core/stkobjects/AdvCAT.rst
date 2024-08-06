@@ -109,13 +109,13 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.AdvCAT.advanced
-    :type: IAdvCATAdvanced
+    :type: AdvCATAdvanced
 
     Get AdvCAT advanced properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.AdvCAT.graphics_3d
-    :type: IAdvCATGraphics3D
+    :type: AdvCATGraphics3D
 
     Get AdvCAT advanced properties.
 

@@ -3,8 +3,8 @@ IFigureOfMeritDefinitionResponseTime
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime
 
-   IFigureOfMeritDefinitionCompute
-   
+   Bases: IFigureOfMeritDefinitionCompute
+
    Response Time Figure of Merit.
 
 .. py:currentmodule:: IFigureOfMeritDefinitionResponseTime

@@ -3,8 +3,6 @@ AdvCATAdvancedEllipsoid
 
 .. py:class:: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid
 
-   Bases: 
-
    AdvCAT advanced ellipsoid properties.
 
 .. py:currentmodule:: AdvCATAdvancedEllipsoid

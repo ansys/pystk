@@ -3,8 +3,6 @@ VehicleGraphics3DDropLinePositionItemCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItemCollection
 
-   Bases: 
-
    Lines dropped from the vehicle's position.
 
 .. py:currentmodule:: VehicleGraphics3DDropLinePositionItemCollection

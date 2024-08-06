@@ -3,8 +3,6 @@ IMissionControlSequenceSequence
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence
 
-   object
-   
    Properties for a Sequence segment.
 
 .. py:currentmodule:: IMissionControlSequenceSequence
@@ -66,7 +64,7 @@ Property detail
 
 .. py:property:: segments
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.segments
-    :type: IMissionControlSequenceSegmentCollection
+    :type: MissionControlSequenceSegmentCollection
 
     Get the list of segments defined for the sequence.
 
@@ -78,7 +76,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 

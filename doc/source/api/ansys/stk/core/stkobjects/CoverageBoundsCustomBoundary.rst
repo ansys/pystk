@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: region_files
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomBoundary.region_files
-    :type: ICoverageRegionFilesCollection
+    :type: CoverageRegionFilesCollection
 
     File containing user-defined points defining a specific grid region.
 
 .. py:property:: boundary_objects
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomBoundary.boundary_objects
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     A list of STK Objects to be used as part of the coverage area.
 

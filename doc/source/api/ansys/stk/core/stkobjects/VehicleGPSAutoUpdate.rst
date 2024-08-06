@@ -3,8 +3,6 @@ VehicleGPSAutoUpdate
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate
 
-   Bases: 
-
    GPS AutoUpdate.
 
 .. py:currentmodule:: VehicleGPSAutoUpdate
@@ -50,19 +48,19 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.properties
-    :type: IVehicleGPSAutoUpdateProperties
+    :type: VehicleGPSAutoUpdateProperties
 
     Get the Automatic Update selection and method.
 
 .. py:property:: file_source
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.file_source
-    :type: IVehicleGPSAutoUpdateFileSource
+    :type: VehicleGPSAutoUpdateFileSource
 
     A file to be used as the element source.
 
 .. py:property:: online_source
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.online_source
-    :type: IVehicleGPSAutoUpdateOnlineSource
+    :type: VehicleGPSAutoUpdateOnlineSource
 
     AGI server to be used as the element source.
 

@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: distance_display_condition_per_point
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.distance_display_condition_per_point
-    :type: IDistanceDisplayCondition
+    :type: DistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
 
