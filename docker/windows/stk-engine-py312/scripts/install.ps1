@@ -1,4 +1,4 @@
-Write-Host "Installing Python 3.9"
+Write-Host "Installing Python 3.12"
 
 $installer = Get-ChildItem -Path c:/dist -Recurse '*.exe' | Select-Object -ExpandProperty FullName
 Start-Process $installer -Wait -NoNewWindow -ArgumentList @('/Quiet', 'InstallAllUsers=1', 'PrependPath=1')
