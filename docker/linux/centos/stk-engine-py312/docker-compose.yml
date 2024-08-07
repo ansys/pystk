@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  stk-python3.9:
-    image: ansys/stk:dev-centos7-python3.9
-    container_name: stk-python3.9
+  stk-python3.12:
+    image: ansys/stk:dev-centos7-python3.12
+    container_name: stk-python3.12
     build: 
       context: .
       args:
