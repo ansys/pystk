@@ -24,7 +24,7 @@ on:
     - cron: '0 0 * * 6,0'
 
 env:
-  MAIN_PYTHON_VERSION: '3.11'
+  MAIN_PYTHON_VERSION: '3.12'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
@@ -120,14 +120,14 @@ jobs:
     if: inputs.run-tests || github.event_name == 'schedule'
     strategy:
       matrix:
-        python: ["3.9", "3.10", "3.11"]
+        python: ["3.10", "3.11", "3.12"]
         is-weekly-run:
           - ${{ github.event_name == 'schedule' && github.event.schedule == '0 0 * * 1-5' }}
         exclude:
           - is-weekly-run: true
-            python: "3.9"
-          - is-weekly-run: true
             python: "3.10"
+          - is-weekly-run: true
+            python: "3.11"
       fail-fast: false
     steps:
 

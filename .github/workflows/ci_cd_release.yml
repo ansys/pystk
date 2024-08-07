@@ -7,7 +7,7 @@ on:
       - "v*.*.*"
 
 env:
-  MAIN_PYTHON_VERSION: '3.11'
+  MAIN_PYTHON_VERSION: '3.12'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -136,7 +136,7 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        python: ["3.9", "3.10", "3.11"]
+        python: ["3.10", "3.11", "3.12"]
       fail-fast: false
     steps:
 
