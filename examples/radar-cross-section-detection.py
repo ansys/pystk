@@ -67,7 +67,9 @@ root.rewind()
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
 
-aircraft = root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "TargetAircraft")
+aircraft = root.current_scenario.children.new(
+    STK_OBJECT_TYPE.AIRCRAFT, "TargetAircraft"
+)
 # -
 
 # The aircraft's route is designated by a great arc propagator, which uses waypoints to calculate how the aircraft flies. The aircraft flies between two waypoints. The first is located at latitude $37^\circ$ and longitude $139.7^\circ$, and the second is located at latitude $34^\circ$ and longitude $139.1^\circ$. The aircraft flies at an altitude of $25000$ ft ($7.62$ km) and a speed of $330$ nm/hr at both waypoints.
@@ -111,7 +113,7 @@ band1 = aircraft.radar_cross_section.model.frequency_bands.item(0)
 
 # Configure the band to use a constant frequency:
 
-band1.set_compute_strategy('Constant Value')
+band1.set_compute_strategy("Constant Value")
 
 # Set the constant frequency to $19$ dBsm:
 
@@ -177,7 +179,9 @@ antenna_sensor.pointing.targets.add(aircraft.path)
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
 
 
-elevation_constraint = antenna_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.ELEVATION_ANGLE)
+elevation_constraint = antenna_sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.ELEVATION_ANGLE
+)
 # -
 
 # The elevation angle constraint is represented by an `AccessConstraintMinMax` object, through which it is possible to enable a minimum and/or maximum amount on the constraint, and designate what those amounts are. Use the constraint to enable a maximum elevation angle and set the maximum angle to $30^\circ$:
@@ -187,7 +191,9 @@ elevation_constraint.max = 30
 
 # Then, insert a range constraint on the sensor:
 
-range_constraint = antenna_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
+range_constraint = antenna_sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.RANGE
+)
 
 # The range constraint is also represented by an `AccessConstraintMinMax` object. Use this object to set a maximum range of $150$ km:
 
@@ -208,7 +214,12 @@ basic_access.compute_access()
 
 # Generate an azimuth-elevation-range report to see the effect the constraints have on the accesses:
 
-aer_df = basic_access.data_providers.item("AER Data").group.item("Default").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+aer_df = (
+    basic_access.data_providers.item("AER Data")
+    .group.item("Default")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
 aer_df
 
 # Notice that the first access ends and the second access begins at an approximate elevation angle of 30 degrees. There is a break in access when the elevation angle exceeds 30 degrees due to the modeled cone of silence.
@@ -222,26 +233,26 @@ import pandas as pd
 
 
 # Convert columns to correct types
-aer_df['time'] = pd.to_datetime(aer_df["time"])
-aer_df['elevation'] = aer_df['elevation'].apply(pd.to_numeric)
+aer_df["time"] = pd.to_datetime(aer_df["time"])
+aer_df["elevation"] = aer_df["elevation"].apply(pd.to_numeric)
 
 # Create a plot
 fig, ax = plt.subplots(figsize=(8, 8))
 
 # Group by access number, then plot elevation
-aer_df.groupby('access number').plot(x='time', y='elevation', ax=ax, color='dodgerblue')
+aer_df.groupby("access number").plot(x="time", y="elevation", ax=ax, color="dodgerblue")
 
 # Set title and axes labels
 ax.set_title("Access Elevation over Time")
-ax.set_xlabel('Time')
+ax.set_xlabel("Time")
 ax.set_ylabel("Angle (deg)")
 
 # Configure style
 ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which='both', linestyle='--')
+ax.grid(visible=True, which="both", linestyle="--")
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M:%S.%f')
+formatter = md.DateFormatter("%H:%M:%S.%f")
 ax.xaxis.set_major_formatter(formatter)
 # Set major and minor locators
 xlocator_major = md.MicrosecondLocator(interval=100000)
@@ -276,7 +287,9 @@ airport_radar.model.mode.waveform.pulse_definition.pulse_width = 0.000001
 
 # First, set the radar's antenna model to the cosine squared aperture rectangular antenna pattern:
 
-airport_radar.model.antenna_control.set_embedded_model('Cosine Squared Aperture Rectangular')
+airport_radar.model.antenna_control.set_embedded_model(
+    "Cosine Squared Aperture Rectangular"
+)
 
 # Next, configure the antenna model to use beamwidth:
 
@@ -284,7 +297,9 @@ airport_radar.model.antenna_control.set_embedded_model('Cosine Squared Aperture 
 from ansys.stk.core.stkobjects import RECTANGULAR_APERTURE_INPUT_TYPE
 
 
-airport_radar.model.antenna_control.embedded_model.input_type = RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
+airport_radar.model.antenna_control.embedded_model.input_type = (
+    RECTANGULAR_APERTURE_INPUT_TYPE.BEAMWIDTHS
+)
 # -
 
 # Set the X beamwidth to $5^\circ$:
@@ -355,7 +370,9 @@ airport_radar.model.receiver.enable_polarization = True
 from ansys.stk.core.stkobjects import NOISE_TEMP_COMPUTE_TYPE
 
 
-airport_radar.model.receiver.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+airport_radar.model.receiver.system_noise_temperature.compute_type = (
+    NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+)
 # -
 
 # Then, use the receiver's system noise temperature's `antenna_noise_temperature` property to access an `AntennaNoiseTemperature` object, through which it is possible to set the antenna noise temperature parameters. Set the compute type to calculate and then enable the use of Sun and cosmic background in antenna noise temperature calculations:
@@ -377,11 +394,23 @@ large_aircraft_access.compute_access()
 
 # Next, generate a radar SearchTrack report using a step value of $30$ sec:
 
-large_aircraft_df = large_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+large_aircraft_df = (
+    large_aircraft_access.data_providers.item("Radar SearchTrack")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the report's `s/t pdet1` (the Pdet for a single pulse), `s/t integrated pdet` (the Pdet for multiple pulses), `s/t pulses integrated` (the number of pulses integrated), `s/t snr1` (the signal-to-noise ratio (SNR) for a single pulse), and `s/t integrated snr` (the SNR for multiple pulses):
 
-large_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+large_aircraft_df[
+    [
+        "s/t pdet1", 
+        "s/t integrated pdet", 
+        "s/t snr1", 
+        "s/t integrated snr", 
+        "s/t pulses integrated"
+    ]
+]
 
 # As can be seen by the difference between the `s/t pdet1` and `s/t integrated pdet` columns, pulse integration improves the ability of the radar to detect targets by combining the returns from multiple pulses. Pulse integration also improves the signal-to-noise ratio.
 
@@ -398,11 +427,23 @@ medium_aircraft_access.compute_access()
 
 # Generate a radar SearchTrack report using a step value of $30$ sec:
 
-medium_aircraft_df = medium_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+medium_aircraft_df = (
+    medium_aircraft_access.data_providers.item("Radar SearchTrack")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
 
-medium_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+medium_aircraft_df[
+    [
+        "s/t pdet1", 
+        "s/t integrated pdet", 
+        "s/t snr1", 
+        "s/t integrated snr", 
+        "s/t pulses integrated"
+    ]
+]
 
 # The radar's ability to track this aircraft has diminished due to the aircraft's smaller RCS.
 
@@ -419,11 +460,23 @@ small_aircraft_access.compute_access()
 
 # Generate a radar SearchTrack report using a step value of $30$ sec:
 
-small_aircraft_df = small_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+small_aircraft_df = (
+    small_aircraft_access.data_providers.item("Radar SearchTrack")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
 
-small_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+small_aircraft_df[
+    [
+        "s/t pdet1", 
+        "s/t integrated pdet", 
+        "s/t snr1", 
+        "s/t integrated snr", 
+        "s/t pulses integrated"
+    ]
+]
 
 # The radar's ability to track this aircraft has again diminished due to the aircraft's smaller RCS.
 
@@ -440,11 +493,23 @@ bird_aircraft_access.compute_access()
 
 # Generate a radar SearchTrack report using a step value of $30$ sec:
 
-bird_aircraft_df = bird_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+bird_aircraft_df = (
+    bird_aircraft_access.data_providers.item("Radar SearchTrack")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
 
-bird_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+bird_aircraft_df[
+    [
+        "s/t pdet1", 
+        "s/t integrated pdet", 
+        "s/t snr1", 
+        "s/t integrated snr", 
+        "s/t pulses integrated"
+    ]
+]
 
 # The Pdet is very low for an object with this RCS. To track objects like birds, the radar system would need a different frequency or higher power.
 
@@ -454,7 +519,7 @@ bird_aircraft_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrate
 
 # To use an external file, first set the target aircraft's RCS to use an external file in computations:
 
-band1.set_compute_strategy('External File')
+band1.set_compute_strategy("External File")
 
 # Then, upload the `X-47B_Notional_Sample.rcs` file, which is included with the STK install, by using the band's `compute_strategy` property, which now holds a `RadarCrossSectionComputeStrategyExternalFile` object:
 
@@ -463,7 +528,16 @@ import pathlib
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
-band1.compute_strategy.filename = str(pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "samples" / "SeaRangeResources" / "X-47B" / "X-47B_Notional_Sample.rcs")
+band1.compute_strategy.filename = str(
+    pathlib.Path(install_dir) 
+    / "Data" 
+    / "Resources" 
+    / "stktraining" 
+    / "samples" 
+    / "SeaRangeResources" 
+    / "X-47B" 
+    / "X-47B_Notional_Sample.rcs"
+)
 # -
 
 # It is now possible to see the aircraft's aspect dependent RCS pattern in the 3D graphics window:
@@ -478,11 +552,23 @@ aspect_dep_aircraft_access.compute_access()
 
 # Generate a radar SearchTrack report using a step value of $30$ sec:
 
-aspect_dep_df = aspect_dep_aircraft_access.data_providers.item("Radar SearchTrack").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+aspect_dep_df = (
+    aspect_dep_aircraft_access.data_providers.item("Radar SearchTrack")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Select the `s/t pdet1`, `s/t integrated pdet`, `s/t pulses integrated`, `s/t snr1`, and `s/t integrated snr`:
 
-aspect_dep_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated snr', 's/t pulses integrated']]
+aspect_dep_df[
+    [
+        "s/t pdet1",
+        "s/t integrated pdet",
+        "s/t snr1",
+        "s/t integrated snr",
+        "s/t pulses integrated"
+    ]
+]
 
 # Depending on the reflection from the aircraft back to the radar, it is possible for there to be fluctuation in the values. This is noticeable in the S/T Pulses Integrated column.
 
@@ -490,9 +576,13 @@ aspect_dep_df[['s/t pdet1', 's/t integrated pdet', 's/t snr1', 's/t integrated s
 
 # Use the Radar RCS report to get information about how the RCS changes over time:
 
-rcs_df = aspect_dep_aircraft_access.data_providers.item("Radar RCS").exec(scenario.start_time, scenario.stop_time, 1).data_sets.to_pandas_dataframe()
+rcs_df = (
+    aspect_dep_aircraft_access.data_providers.item("Radar RCS")
+    .exec(scenario.start_time, scenario.stop_time, 1)
+    .data_sets.to_pandas_dataframe()
+)
 
-rcs_df['incident el bf']
+rcs_df["incident el bf"]
 
 # Visualize changes to the RCS and the elevation:
 
@@ -504,7 +594,7 @@ import pandas as pd
 
 # Convert columns to correct types
 rcs_df['time'] = pd.to_datetime(aer_df["time"])
-cols = ['rcs', 'incident el bf']
+cols = ["rcs", "incident el bf"]
 rcs_df[cols] = rcs_df[cols].apply(pd.to_numeric)
 
 # Create a plot
@@ -513,18 +603,22 @@ fig, ax = plt.subplots(figsize=(8, 8))
 ax2 = ax.twinx()
 
 # Group by access number, then plot rcs and elevation
-rcs_df.groupby('access number').plot(x='time', y='rcs', ax=ax, color='dodgerblue', label = 'RCS (dBsm)')
-rcs_df.groupby('access number').plot(x='time', y='incident el bf', ax=ax2, color='tomato', label = 'Elevation (deg)')
+rcs_df.groupby("access number").plot(
+    x="time", y="rcs", ax=ax, color="dodgerblue", label = "RCS (dBsm)"
+)
+rcs_df.groupby("access number").plot(
+    x="time", y="incident el bf", ax=ax2, color="tomato", label = "Elevation (deg)"
+)
 
 # Set title and axes labels
 ax.set_title("Accessed Aircraft RCS over Time")
-ax.set_xlabel('Time')
+ax.set_xlabel("Time")
 ax.set_ylabel("RCS (dBsm)")
 ax2.set_ylabel("Incident Elevation BF (deg)")
 
 # Configure style
 ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which='both', linestyle='--')
+ax.grid(visible=True, which="both", linestyle="--")
 
 # Combine legends
 lines = [ax.get_lines()[0], ax2.get_lines()[0]]
@@ -533,7 +627,7 @@ ax.legend(lines, labels, shadow=True)
 ax2.get_legend().remove()
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M:%S.%f')
+formatter = md.DateFormatter("%H:%M:%S.%f")
 ax.xaxis.set_major_formatter(formatter)
 # Set major and minor locators
 xlocator_major = md.MicrosecondLocator(interval=100000)
