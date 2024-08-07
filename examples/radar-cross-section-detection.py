@@ -162,7 +162,7 @@ antenna_sensor.common_tasks.set_pattern_simple_conic(2, 1)
 from ansys.stk.core.stkobjects import SENSOR_POINTING
 
 
-antenna_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED) 
+antenna_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
 # -
 
 # Finally, set the aircraft as the sensor's target:
@@ -227,8 +227,8 @@ aer_df
 # It is also possible to see this cone of silence on a plot of the aircraft's elevation when it is accessed by the sensor:
 
 # +
-import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
@@ -404,11 +404,11 @@ large_aircraft_df = (
 
 large_aircraft_df[
     [
-        "s/t pdet1", 
-        "s/t integrated pdet", 
-        "s/t snr1", 
-        "s/t integrated snr", 
-        "s/t pulses integrated"
+        "s/t pdet1",
+        "s/t integrated pdet",
+        "s/t snr1",
+        "s/t integrated snr",
+        "s/t pulses integrated",
     ]
 ]
 
@@ -437,11 +437,11 @@ medium_aircraft_df = (
 
 medium_aircraft_df[
     [
-        "s/t pdet1", 
-        "s/t integrated pdet", 
-        "s/t snr1", 
-        "s/t integrated snr", 
-        "s/t pulses integrated"
+        "s/t pdet1",
+        "s/t integrated pdet",
+        "s/t snr1",
+        "s/t integrated snr",
+        "s/t pulses integrated",
     ]
 ]
 
@@ -470,11 +470,11 @@ small_aircraft_df = (
 
 small_aircraft_df[
     [
-        "s/t pdet1", 
-        "s/t integrated pdet", 
-        "s/t snr1", 
-        "s/t integrated snr", 
-        "s/t pulses integrated"
+        "s/t pdet1",
+        "s/t integrated pdet",
+        "s/t snr1",
+        "s/t integrated snr",
+        "s/t pulses integrated",
     ]
 ]
 
@@ -503,11 +503,11 @@ bird_aircraft_df = (
 
 bird_aircraft_df[
     [
-        "s/t pdet1", 
-        "s/t integrated pdet", 
-        "s/t snr1", 
-        "s/t integrated snr", 
-        "s/t pulses integrated"
+        "s/t pdet1",
+        "s/t integrated pdet",
+        "s/t snr1",
+        "s/t integrated snr",
+        "s/t pulses integrated",
     ]
 ]
 
@@ -515,7 +515,7 @@ bird_aircraft_df[
 
 # ## Load an external Aspect Dependent RCS file
 
-# Using an Aspect Dependent RCS file built for a specific target aircraft generates much more realistic data. 
+# Using an Aspect Dependent RCS file built for a specific target aircraft generates much more realistic data.
 
 # To use an external file, first set the target aircraft's RCS to use an external file in computations:
 
@@ -529,13 +529,13 @@ import pathlib
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
 band1.compute_strategy.filename = str(
-    pathlib.Path(install_dir) 
-    / "Data" 
-    / "Resources" 
-    / "stktraining" 
-    / "samples" 
-    / "SeaRangeResources" 
-    / "X-47B" 
+    pathlib.Path(install_dir)
+    / "Data"
+    / "Resources"
+    / "stktraining"
+    / "samples"
+    / "SeaRangeResources"
+    / "X-47B"
     / "X-47B_Notional_Sample.rcs"
 )
 # -
@@ -566,7 +566,7 @@ aspect_dep_df[
         "s/t integrated pdet",
         "s/t snr1",
         "s/t integrated snr",
-        "s/t pulses integrated"
+        "s/t pulses integrated",
     ]
 ]
 
@@ -587,13 +587,13 @@ rcs_df["incident el bf"]
 # Visualize changes to the RCS and the elevation:
 
 # +
-import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # Convert columns to correct types
-rcs_df['time'] = pd.to_datetime(aer_df["time"])
+rcs_df["time"] = pd.to_datetime(aer_df["time"])
 cols = ["rcs", "incident el bf"]
 rcs_df[cols] = rcs_df[cols].apply(pd.to_numeric)
 
@@ -604,10 +604,10 @@ ax2 = ax.twinx()
 
 # Group by access number, then plot rcs and elevation
 rcs_df.groupby("access number").plot(
-    x="time", y="rcs", ax=ax, color="dodgerblue", label = "RCS (dBsm)"
+    x="time", y="rcs", ax=ax, color="dodgerblue", label="RCS (dBsm)"
 )
 rcs_df.groupby("access number").plot(
-    x="time", y="incident el bf", ax=ax2, color="tomato", label = "Elevation (deg)"
+    x="time", y="incident el bf", ax=ax2, color="tomato", label="Elevation (deg)"
 )
 
 # Set title and axes labels
