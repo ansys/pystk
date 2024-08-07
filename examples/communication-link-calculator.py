@@ -6,7 +6,7 @@
 
 # Communication links define the ways that a transmitter and a receiver access each other. STK allows the modeling of two kinds of links: basic and multi-hop. A basic communications link is access between just a single transmitter and a single receiver. A multi-hop communications link is defined by a group of communication objects consisting of a transmitter, receiver, re-transmitter, and another receiver. STK also allows setting constraints on communication links, including terrain masking constraints.
 #
-# Communications links in STK can be analyzed using link budget reports, which include all the link parameters associated with the selected receiver or transmitter. Link budget reports take light speed delay into account. They also take computed refraction into account if enabled on the transmitter or receiver objects. Link budget reports include many communications-specific fields, including EIRP (effective isotropic radiated power in the link direction), C/N (Carrier-to-Noise ratio at the receiver input), Eb/No (Signal-to-Noise ratio at the receiver), and BER (Bit Error Rate). Link budget reports can also include access-specific information, such as the loss calculated by different selected models, including atmospheric, rain, cloud/fog, and terrain models. 
+# Communications links in STK can be analyzed using link budget reports, which include all the link parameters associated with the selected receiver or transmitter. Link budget reports take light speed delay into account. They also take computed refraction into account if enabled on the transmitter or receiver objects. Link budget reports include many communications-specific fields, including EIRP (effective isotropic radiated power in the link direction), C/N (Carrier-to-Noise ratio at the receiver input), Eb/No (Signal-to-Noise ratio at the receiver), and BER (Bit Error Rate). Link budget reports can also include access-specific information, such as the loss calculated by different selected models, including atmospheric, rain, cloud/fog, and terrain models.
 
 # ## Problem statement
 
@@ -57,16 +57,26 @@ root.rewind()
 
 # +
 import pathlib
+
 from ansys.stk.core.stkobjects import TERRAIN_FILE_TYPE
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
-terrain_path = str(pathlib.Path(install_dir) / "Data" / "Resources" / "stktraining" / "imagery" / "RaistingStation.pdtt")
+terrain_path = str(
+    pathlib.Path(install_dir)
+    / "Data"
+    / "Resources"
+    / "stktraining"
+    / "imagery"
+    / "RaistingStation.pdtt"
+)
 # -
 
 # Then, add the file to the Earth central body's terrain collection:
 
-terrain = scenario.terrain.item('Earth').terrain_collection.add(terrain_path, TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
+terrain = scenario.terrain.item("Earth").terrain_collection.add(
+    terrain_path, TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE
+)
 
 # This file is used for analysis by default after it is inserted.
 
@@ -80,7 +90,9 @@ terrain = scenario.terrain.item('Earth').terrain_collection.add(terrain_path, TE
 from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, VEHICLE_PROPAGATOR_TYPE
 
 
-satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TerraSarX_31698")
+satellite = root.current_scenario.children.new(
+    STK_OBJECT_TYPE.SATELLITE, "TerraSarX_31698"
+)
 # -
 
 # Then, set the satellite's propagator to the SGP4 propagator:
@@ -151,7 +163,7 @@ sensor.set_pattern_type(SENSOR_PATTERN.HALF_POWER)
 
 # The sensor's `pattern` property now holds a `SensorHalfPowerPattern` object, through which it is possible to configure the half power model. First, set the sensor's frequency to $1.7045$ GHz:
 
-sensor.pattern.frequency = 1.7045 
+sensor.pattern.frequency = 1.7045
 
 # Then, set the sensor's antenna diameter to $1.6$ m:
 
@@ -168,7 +180,7 @@ sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
 
 # The sensor's `pointing` property now holds a `SensorPointingTargeted` object, through which it is possible to set the satellite as the sensor's target:
 
-sensor.pointing.targets.add('Satellite/TerraSarX_31698')
+sensor.pointing.targets.add("Satellite/TerraSarX_31698")
 
 # ## Calculate access
 
@@ -179,7 +191,11 @@ sensor_to_satellite_access.compute_access()
 
 # Then, get the access data during the entire scenario as a dataframe:
 
-sensor_to_satellite_access_df = sensor_to_satellite_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+sensor_to_satellite_access_df = (
+    sensor_to_satellite_access.data_providers.item("Access Data")
+    .exec(scenario.start_time, scenario.stop_time)
+    .data_sets.to_pandas_dataframe()
+)
 sensor_to_satellite_access_df
 
 # The sensor is able to access the satellite six times throughout the duration of the scenario.
@@ -206,13 +222,15 @@ receiver.set_model("Complex Receiver Model")
 
 receiver.model.antenna_control.set_embedded_model("Parabolic")
 
-# The receiver model's antenna control's `embedded_model` property now holds an `AntennaModelParabolic` object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type: 
+# The receiver model's antenna control's `embedded_model` property now holds an `AntennaModelParabolic` object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type:
 
 # +
 from ansys.stk.core.stkobjects import ANTENNA_MODEL_INPUT_TYPE
 
 
-receiver.model.antenna_control.embedded_model.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
+receiver.model.antenna_control.embedded_model.input_type = (
+    ANTENNA_MODEL_INPUT_TYPE.DIAMETER
+)
 # -
 
 # Then, set the diameter to $1.6$ m:
@@ -240,12 +258,36 @@ receiver_basic_access.compute_access()
 
 # Then, get the link information for the access for the entire scenario, using a time step of $30$ s:
 
-receiver_basic_link_df = receiver_basic_access.data_providers.item("Link Information").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+receiver_basic_link_df = (
+    receiver_basic_access.data_providers.item("Link Information")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Get the columns corresponding to time, atmospheric loss (atmos loss), rain loss, EIRP in the link direction (eirp), received isotropic power at the receiver antenna (rcvd. iso. power), power flux density at the receiver antenna (flux density), receiver gain over equivalent noise temperature (g/T), carrier-to-noise density at the receiver input (c/no), bandwidth, carrier-to-noise ratio at the receiver input (c/n), signal-to-noise ratio at the receiver (eb/no), bit error rate (ber), and calculated system noise temperatures (tatmos, train, tsun, tearth, tcosmic, tantenna, tequivalent):
 
-link_budget_columns = ['time', 'atmos loss', 'rain loss','eirp', 'rcvd. frequency', 'rcvd. iso. power', 'flux density', 'g/t', 'c/no', 
-                       'bandwidth', 'c/n', 'eb/no', 'ber', 'tatmos', 'train', 'tsun', 'tearth', 'tcosmic', 'tantenna', 'tequivalent']
+link_budget_columns = [
+    "time",
+    "atmos loss",
+    "rain loss",
+    "eirp",
+    "rcvd. frequency",
+    "rcvd. iso. power",
+    "flux density",
+    "g/t",
+    "c/no",
+    "bandwidth",
+    "c/n",
+    "eb/no",
+    "ber",
+    "tatmos",
+    "train",
+    "tsun",
+    "tearth",
+    "tcosmic",
+    "tantenna",
+    "tequivalent",
+]
 receiver_basic_link_df.head(10)[link_budget_columns]
 
 # The dataframe now shows information corresponding to an STK link budget report. From the data, it is possible to see that as the satellite rises over the horizon of the central body, the site receives transmissions. When the satellite falls below the horizon, the site loses transmissions. Additionally, because the access calculation does not include any environmental factor models or system noise temperature considerations, the columns corresponding to the losses/noise all have values of 0.
@@ -258,18 +300,26 @@ receiver_basic_link_df.head(10)[link_budget_columns]
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
 
 
-terrain_constraint = receiver.access_constraints.add_constraint(ACCESS_CONSTRAINTS.TERRAIN_MASK)
+terrain_constraint = receiver.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.TERRAIN_MASK
+)
 # -
 
 # Recalculate the access between the receiver and transmitter, then get the data corresponding to a link budget report:
 
 receiver_basic_access.compute_access()
-receiver_terrain_link_df = receiver_basic_access.data_providers.item("Link Information").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+receiver_terrain_link_df = (
+    receiver_basic_access.data_providers.item("Link Information")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 receiver_terrain_link_df.head(10)[link_budget_columns]
 
 # Next, get the access data for the updated access:
 
-receiver_basic_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+receiver_basic_access.data_providers.item("Access Data").exec(
+    scenario.start_time, scenario.stop_time
+).data_sets.to_pandas_dataframe()
 
 # Before adding a terrain mask, there were 6 accesses between the receiver and transmitter. By adding a terrain mask, the accesses blocked by terrain have been removed from the report, and there are now only 4 accesses between the receiver and transmitter.
 
@@ -290,7 +340,11 @@ scenario.rf_environment.propagation_channel.enable_atmos_absorption = True
 # Next, recalculate the access between the receiver and transmitter:
 
 receiver_basic_access.compute_access()
-receiver_environmental_link_df = receiver_basic_access.data_providers.item("Link Information").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+receiver_environmental_link_df = (
+    receiver_basic_access.data_providers.item("Link Information")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 receiver_environmental_link_df.head(10)[link_budget_columns]
 
 # After adding environmental factor models, the atmospheric and rain losses are now greater than 0. However, the losses are minimal, so the losses in C/N and Eb/No are also minimal.
@@ -308,7 +362,9 @@ receiver.model.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.C
 
 # Do the same for the model's antenna noise temperature:
 
-receiver.model.system_noise_temperature.antenna_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+receiver.model.system_noise_temperature.antenna_noise_temperature.compute_type = (
+    NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+)
 
 # Then, enable the use of sun, atmosphere, rain, and cosmic background in computations:
 
@@ -320,7 +376,11 @@ receiver.model.system_noise_temperature.antenna_noise_temperature.use_cosmic_bac
 # Finally, recompute the access and get the updated link information:
 
 receiver_basic_access.compute_access()
-receiver_noise_link_df = receiver_basic_access.data_providers.item("Link Information").exec(scenario.start_time, scenario.stop_time, 30).data_sets.to_pandas_dataframe()
+receiver_noise_link_df = (
+    receiver_basic_access.data_providers.item("Link Information")
+    .exec(scenario.start_time, scenario.stop_time, 30)
+    .data_sets.to_pandas_dataframe()
+)
 receiver_noise_link_df.head(10)[link_budget_columns]
 
 # There are now non-zero values in the tatmos, train, tsun, tcosmic, tantenna, and tequivalent columns. Calculating system noise temperature improved the report and extended the time available for downloading data.
@@ -339,17 +399,29 @@ import pandas as pd
 fig, ax = plt.subplots()
 
 # Format data
-receiver_environmental_link_df['time'] = pd.to_datetime(receiver_environmental_link_df['time'])
-receiver_environmental_link_df.sort_values(by='time', inplace=True)
-receiver_terrain_link_df['time'] = pd.to_datetime(receiver_terrain_link_df['time'])
-receiver_terrain_link_df.sort_values(by='time', inplace=True)
-receiver_noise_link_df['time'] = pd.to_datetime(receiver_noise_link_df['time'])
-receiver_noise_link_df.sort_values(by='time', inplace=True)
+receiver_environmental_link_df["time"] = pd.to_datetime(
+    receiver_environmental_link_df["time"]
+)
+receiver_environmental_link_df.sort_values(by="time", inplace=True)
+receiver_terrain_link_df["time"] = pd.to_datetime(receiver_terrain_link_df["time"])
+receiver_terrain_link_df.sort_values(by="time", inplace=True)
+receiver_noise_link_df["time"] = pd.to_datetime(receiver_noise_link_df["time"])
+receiver_noise_link_df.sort_values(by="time", inplace=True)
 
 # Plot dataframes
-receiver_environmental_link_df.plot(x='time', y='c/no', ax=ax, label='terrain, environmental', color='darkblue')
-receiver_terrain_link_df.plot(x='time', y='c/no', ax=ax, label='terrain', color='deeppink')
-receiver_noise_link_df.plot(x='time', y='c/no', ax=ax, label='terrain, environmental, system noise', color='palegreen')
+receiver_environmental_link_df.plot(
+    x="time", y="c/no", ax=ax, label="terrain, environmental", color="darkblue"
+)
+receiver_terrain_link_df.plot(
+    x="time", y="c/no", ax=ax, label="terrain", color="deeppink"
+)
+receiver_noise_link_df.plot(
+    x="time",
+    y="c/no",
+    ax=ax,
+    label="terrain, environmental, system noise",
+    color="palegreen",
+)
 
 # Configure plot style
 ax.set_facecolor("whitesmoke")
