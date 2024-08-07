@@ -1,12 +1,12 @@
-CAMERA_VIDEO_FORMAT
-===================
+VIDEO_FORMAT
+============
 
-.. py:class:: ansys.stk.core.graphics.CAMERA_VIDEO_FORMAT
+.. py:class:: ansys.stk.core.graphics.VIDEO_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: CAMERA_VIDEO_FORMAT
+.. py:currentmodule:: VIDEO_FORMAT
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import CAMERA_VIDEO_FORMAT
+    from ansys.stk.core.graphics import VIDEO_FORMAT
 
 

@@ -1,12 +1,12 @@
-MAINTAIN_ASPECT_RATIO
-=====================
+OVERLAY_ASPECT_RATIO_MODE
+=========================
 
-.. py:class:: ansys.stk.core.graphics.MAINTAIN_ASPECT_RATIO
+.. py:class:: ansys.stk.core.graphics.OVERLAY_ASPECT_RATIO_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: MAINTAIN_ASPECT_RATIO
+.. py:currentmodule:: OVERLAY_ASPECT_RATIO_MODE
 
 Overview
 --------
@@ -34,6 +34,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import MAINTAIN_ASPECT_RATIO
+    from ansys.stk.core.graphics import OVERLAY_ASPECT_RATIO_MODE
 
 

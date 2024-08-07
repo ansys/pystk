@@ -83,14 +83,14 @@ Method detail
 
 
 
-.. py:method:: flip(self, axis: FLIP_AXIS) -> None
+.. py:method:: flip(self, axis: RASTER_FLIP_AXIS) -> None
     :canonical: ansys.stk.core.graphics.IRaster.flip
 
     Flips the raster along the given axis.
 
     :Parameters:
 
-    **axis** : :obj:`~FLIP_AXIS`
+    **axis** : :obj:`~RASTER_FLIP_AXIS`
 
     :Returns:
 
