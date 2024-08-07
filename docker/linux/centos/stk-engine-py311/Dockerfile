@@ -11,7 +11,7 @@ FROM ${basePythonImage} as builder
 # This overrides the default Python 2.7 in CentOS7.
 USER root
 WORKDIR /tmp
-RUN wget https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tar.xz && \
+RUN wget --no-check-certificate https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tar.xz && \
     tar xf Python-3.11.9.tar.xz
 WORKDIR /tmp/Python-3.11.9
 RUN scl enable devtoolset-10 "./configure --enable-optimizations" && \
