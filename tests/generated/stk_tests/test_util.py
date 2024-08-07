@@ -54,10 +54,12 @@ class EngineLifetimeManager:
 
     @staticmethod
     def Initialize(args=None, lock=False) -> "IAgAppProvider":
-        if os.name != "nt" and args.target == "Stk":
-            raise RuntimeError("Stk target not supported on Linux.")
 
         if EngineLifetimeManager.target is None and args is not None:
+
+            if os.name != "nt" and args.target == "Stk":
+                raise RuntimeError("Stk target not supported on Linux.")
+
             if args.target == "Stk":
                 EngineLifetimeManager.target = TestTarget.eStk
             elif args.target == "StkX":
