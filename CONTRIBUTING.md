@@ -92,7 +92,7 @@ Use the following commands to build the images for your target distribution:
 
     REPOSITORY   TAG                             IMAGE ID       CREATED          SIZE
     ansys/stk    dev-ubuntu22.04-python3.12      1ba89ddc684e   10 seconds ago   3.63GB
-    ansys/stk    dev-ubuntu22.04-python3.10      b73373a4f70f   11 seconds ago   3.75GB
+    ansys/stk    dev-ubuntu22.04-python3.11      b73373a4f70f   11 seconds ago   3.75GB
     ansys/stk    dev-ubuntu22.04-python3.10      da1e30388a60   15 seconds ago   3.74GB
     ansys/stk    dev-ubuntu22.04-pybase          e2207493249c   2 minutes ago    4.15GB
     ansys/stk    dev-ubuntu22.04                 4fa0a28358bd   7 minutes ago    3.13GB
