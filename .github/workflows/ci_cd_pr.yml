@@ -50,7 +50,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v6
+      - uses: ansys/actions/branch-name-style@v7
 
   code-style:
     name: "Code style checks"
@@ -60,7 +60,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/code-style@v6
+      - uses: ansys/actions/code-style@v7
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -95,7 +95,7 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v6
+      - uses: ansys/actions/doc-style@v7
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
@@ -396,6 +396,6 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v6
+      - uses: ansys/actions/build-library@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}
