@@ -1,6 +1,6 @@
 # # Multi-aircraft carrier landing with Aviator
 
-# This tutorial demonstrates how to plan a multi-aircraft mission its resource needs using Python, PySTK, and Aviator. It is inspired by a Python example included with the STK install.
+# This tutorial demonstrates how to plan a multi-aircraft mission using Python, PySTK, and Aviator. It is inspired by a Python example included with the STK install.
 
 # ## What is an Aviator basic maneuver?
 
@@ -10,7 +10,7 @@
 
 # ## Problem statement
 
-# 2 fighter jets leave from Oceana Naval Air Station (latitude $36.822744^\circ$, longitude $-76.031892^\circ$) and fly to an aircraft carrier, the USS Abraham Lincoln, which is sailing off of the coast near the station. The ship sails between 3 waypoints, located at ($36.64988281^\circ$, $-75.11230361^\circ$), ($36.63713768^\circ$, $-74.87339587^\circ$), and ($36.65454874^\circ$, $-75.29117133^\circ$), with a constant speed of $0.01543333$ km/sec throughout its route. The lead aircraft flies a mission consisting of 2 phases. During the first phase, it takes off from Oceana Naval Air Station, then flies an enroute procedure to climb to $20000$ ft and arrive at the ship on a course of $135^\circ$, and then flies a second enroute procedure to maintain its bearing while descending to $10000$ ft. The aircraft flies a second stationkeeping phase, consisting of a stationkeeping basic maneuver of $5$ left turns around the ship, a relative course basic maneuver maintaining a course of $0^\circ$ with the ship, another relative course maneuver maintaining a course of $180^\circ$ with the ship, and finally a landing on the ship. The lead aircraft flies in formation with a second wing fighter jet, which flies a mission consisting of a single phase. The wing aircraft begins its involvement in the mission already in flight at a waypoint south of the lead aircraft, located at a latitude of $36.3174^\circ$ and a longitude of $-75.4974^\circ$. The aircraft's first procedure consists of an enroute procedure, starting from the waypoint and flying a course of $340.691^\circ$. The wing aircraft then flies a relative bearing basic maneuver to intercept the leader, then a rendezvous maneuever to meet with the lead aircraft, then a stationkeeping maneuver to maintain formation consisting of $5$ left turns, and finally a stationkeeping maneuver consisting of a single left turn.
+# Two fighter jets leave from Oceana Naval Air Station (latitude $36.822744^\circ$, longitude $-76.031892^\circ$) and fly to an aircraft carrier, the USS Abraham Lincoln, which is sailing off of the coast near the station. The ship sails between 3 waypoints, located at ($36.64988281^\circ$, $-75.11230361^\circ$), ($36.63713768^\circ$, $-74.87339587^\circ$), and ($36.65454874^\circ$, $-75.29117133^\circ$), with a constant speed of $0.01543333$ km/sec throughout its route. The lead aircraft flies a mission consisting of two phases. During the first phase, it takes off from Oceana Naval Air Station, then flies an enroute procedure to climb to $20000$ ft and arrive at the ship on a course of $135^\circ$, and then flies a second enroute procedure to maintain its bearing while descending to $10000$ ft. The aircraft flies a second stationkeeping phase, consisting of a stationkeeping basic maneuver of $5$ left turns around the ship, a relative course basic maneuver maintaining a course of $0^\circ$ with the ship, another relative course maneuver maintaining a course of $180^\circ$ with the ship, and finally a landing on the ship. The lead aircraft flies in formation with a second wing fighter jet, which flies a mission consisting of a single phase. The wing aircraft begins its involvement in the mission already in flight at a waypoint south of the lead aircraft, located at a latitude of $36.3174^\circ$ and a longitude of $-75.4974^\circ$. The aircraft's first procedure consists of an enroute procedure, starting from the waypoint and flying a course of $340.691^\circ$. The wing aircraft then flies a relative bearing basic maneuver to intercept the leader, then a rendezvous maneuever to meet with the lead aircraft, then a stationkeeping maneuver to maintain formation consisting of $5$ left turns, and finally a stationkeeping maneuver consisting of a single left turn.
 #
 # Model the flights of the aircraft to determine at what time the lead aircraft lands on the ship and the wing aircraft's altitude when the lead lands.
 
@@ -129,27 +129,19 @@ carrier.route.altitude_reference.granularity = 1
 
 # Add the first waypoint to the ship's route and assign its location, speed, and altitude:
 
-waypoint1 = carrier.route.waypoints.add()
-waypoint1.latitude = 36.64988281
-waypoint1.longitude = -75.11230361
-waypoint1.speed = 0.01543333
-waypoint1.altitude = 0
+carrier_waypoints = {
+    # name: [latitude, longitude, altitude, speed]
+    "A": [36.64988281, -75.11230361, 0.0, 0.01543333],
+    "B": [36.63713768, -74.87339587, 0.0, 0.01543333],
+    "C": [36.65454874, -75.29117133, 0.0, 0.01543333],
+}
 
-# Add and configure the second waypoint:
-
-waypoint2 = carrier.route.waypoints.add()
-waypoint2.latitude = 36.63713768
-waypoint2.longitude = -74.87339587
-waypoint2.speed = 0.01543333
-waypoint2.altitude = 0
-
-# Finally, add and configure the last waypoint:
-
-waypoint3 = carrier.route.waypoints.add()
-waypoint3.latitude = 36.65454874
-waypoint3.longitude = -75.29117133
-waypoint3.speed = 0.01543333
-waypoint3.altitude = 0
+for lat, lon, alt, spd in carrier_waypoints.values():
+    waypoint = carrier.route.waypoints.add()
+    waypoint.latitude = lat
+    waypoint.longitude = lon
+    waypoint.altitude = alt
+    waypoint.speed = spd
 
 # Now, propagate the ship's route:
 
@@ -1220,7 +1212,7 @@ wing_stationkeeping2.navigation_strategy_type = "Stationkeeping"
 
 wing_stationkeeping2.navigation.target_name = "Ship/USSAbrahamLincoln"
 
-# Then, set the manuever's relative bearing to $-90^\circ$, relative range to $2.7$ nm, desired turn radius to $2.5$, and turn direction to left:
+# Then, set the manuever's relative bearing to $-90^\circ$, relative range to $2.7$ nm, desired turn radius to $2.5$ nm, and turn direction to left:
 
 wing_stationkeeping2.navigation.relative_bearing = -90
 wing_stationkeeping2.navigation.relative_range = 2.7
