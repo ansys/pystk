@@ -4,7 +4,7 @@
 
 # ## What is radar cross section?
 
-# One important property of a potential radar target is its radar cross section (RCS), which measures how easily the object can be detected by a radar, with a higher RCS corresponding to a more easily detected target. How easily an object can be detected has to do with its echo, which is a function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the same echo signal as the target if it were substituted for the target. Through STK, it is possible to either specify the RCS of all targets at the scenario level, or to specify the RCS individually for each target. It is also possible to select different RCS computation methods, including directly using a constant value, using output files from Ansys HFSS, and using aspect dependent RCS files. Finally, STK supports the use of Swerling cases, which account for RCS fluctuations considering a range of fluctuation values and possible correlations between radar scans.
+# One important property of a potential radar target is its radar cross section (RCS), which measures how easily the object can be detected by a radar, with a higher RCS corresponding to a more easily detected target. How easily an object can be detected has to do with its echo, which is a function of its size, shape, and orientation. RCS is the projected area of a metal sphere that would return the same echo signal as the target if it were substituted for the target. Through STK, it is possible to either specify the RCS of all targets at the scenario level, or to specify the RCS individually for each target. It is also possible to select different RCS computation methods, including directly using a constant value, using output files from [Ansys HFSS](https://www.ansys.com/products/electronics/ansys-hfss), and using aspect dependent RCS files. Finally, STK supports the use of Swerling cases, which account for RCS fluctuations considering a range of fluctuation values and possible correlations between radar scans.
 
 # ## Problem statement
 
@@ -109,7 +109,7 @@ aircraft.radar_cross_section.inherit = False
 
 # Get the model's first frequency band:
 
-band1 = aircraft.radar_cross_section.model.frequency_bands.item(0)
+band1 = aircraft.radar_cross_section.model.frequency_bands[0]
 
 # Configure the band to use a constant frequency:
 
@@ -279,7 +279,7 @@ airport_radar = antenna_sensor.children.new(STK_OBJECT_TYPE.RADAR, "Radar")
 
 # Pulse width is the width of the transmitted pulse (the uncompressed RF bandwidth can also be taken as the inverse of the pulse width). Set the pulse width to one microsecond:
 
-airport_radar.model.mode.waveform.pulse_definition.pulse_width = 0.000001
+airport_radar.model.mode.waveform.pulse_definition.pulse_width = 1e-4
 
 # ## Define the antenna model
 
@@ -344,7 +344,7 @@ airport_radar.model.transmitter.frequency = 2.8
 
 airport_radar.model.transmitter.power = 43.01
 
-# Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna's orientation.. An aircraft surveillance radar system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.
+# Polarization is a property of an electromagnetic wave that describes the orientation of the electric field vector with reference to the antenna's orientation. An aircraft surveillance radar system can use linear or circular polarization. In this case, the transmitter uses linear polarization, in which the receiver is linearly polarized with the electrical field aligned with the reference axis.
 
 # Enable the use of polarization on the transmitter:
 
