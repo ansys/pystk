@@ -40,4 +40,4 @@ This series of tutorials explain how to model and simulate aircraft missions usi
 .. nbgallery::
 
     examples/aviator-fuel-calculator
-    examples/aviator-carrier-landing
+    examples/aircraft-carrier-landing
