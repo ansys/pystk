@@ -653,7 +653,7 @@ for report in access_reports:
 
 # Then, graph all the reports together in an event plot:
 
-# +
+# + tags=["nbsphinx-thumbnail"]
 import datetime as dt
 
 
