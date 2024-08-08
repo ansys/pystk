@@ -1,12 +1,12 @@
-FLIP_AXIS
-=========
+RASTER_FLIP_AXIS
+================
 
-.. py:class:: ansys.stk.core.graphics.FLIP_AXIS
+.. py:class:: ansys.stk.core.graphics.RASTER_FLIP_AXIS
 
    IntEnum
 
 
-.. py:currentmodule:: FLIP_AXIS
+.. py:currentmodule:: RASTER_FLIP_AXIS
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import FLIP_AXIS
+    from ansys.stk.core.graphics import RASTER_FLIP_AXIS
 
 

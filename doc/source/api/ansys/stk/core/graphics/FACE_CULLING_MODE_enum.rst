@@ -1,12 +1,12 @@
-CULL_FACE
-=========
+FACE_CULLING_MODE
+=================
 
-.. py:class:: ansys.stk.core.graphics.CULL_FACE
+.. py:class:: ansys.stk.core.graphics.FACE_CULLING_MODE
 
    IntEnum
 
 
-.. py:currentmodule:: CULL_FACE
+.. py:currentmodule:: FACE_CULLING_MODE
 
 Overview
 --------
@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~E_CULL_FACE_FRONT`
+            * - :py:attr:`~CULL_FACE_FRONT`
               - Front-facing triangles are culled.
 
-            * - :py:attr:`~E_CULL_FACE_BACK`
+            * - :py:attr:`~CULL_FACE_BACK`
               - Back-facing triangles are culled.
 
-            * - :py:attr:`~E_CULL_FACE_FRONT_AND_BACK`
+            * - :py:attr:`~CULL_FACE_FRONT_AND_BACK`
               - Both front- and back-facing triangles are culled. Therefore, no triangles are rendered.
 
-            * - :py:attr:`~E_CULL_FACE_NEITHER`
+            * - :py:attr:`~CULL_FACE_NEITHER`
               - No triangles are culled.
 
 
@@ -37,6 +37,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import CULL_FACE
+    from ansys.stk.core.graphics import FACE_CULLING_MODE
 
 
