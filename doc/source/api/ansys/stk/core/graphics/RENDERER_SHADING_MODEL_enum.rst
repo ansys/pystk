@@ -1,12 +1,12 @@
-RENDERER_SHADE_MODEL
-====================
+RENDERER_SHADING_MODEL
+======================
 
-.. py:class:: ansys.stk.core.graphics.RENDERER_SHADE_MODEL
+.. py:class:: ansys.stk.core.graphics.RENDERER_SHADING_MODEL
 
    IntEnum
 
 
-.. py:currentmodule:: RENDERER_SHADE_MODEL
+.. py:currentmodule:: RENDERER_SHADING_MODEL
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import RENDERER_SHADE_MODEL
+    from ansys.stk.core.graphics import RENDERER_SHADING_MODEL
 
 

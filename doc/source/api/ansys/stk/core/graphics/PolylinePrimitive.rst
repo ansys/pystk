@@ -375,7 +375,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_indices_order
 
     Update a subset of positions in a polyline.
@@ -384,7 +384,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -405,7 +405,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_colors_indices_order_and_render_pass_hint
 
     Update a subset of positions and/or colors in a polyline.
@@ -415,7 +415,7 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
@@ -437,7 +437,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -447,7 +447,7 @@ Method detail
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -469,7 +469,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -480,7 +480,7 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:

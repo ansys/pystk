@@ -1,12 +1,12 @@
-MARKER_BATCH_UNIT
-=================
+MARKER_BATCH_SIZE_UNIT
+======================
 
-.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_UNIT
+.. py:class:: ansys.stk.core.graphics.MARKER_BATCH_SIZE_UNIT
 
    IntEnum
 
 
-.. py:currentmodule:: MARKER_BATCH_UNIT
+.. py:currentmodule:: MARKER_BATCH_SIZE_UNIT
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import MARKER_BATCH_UNIT
+    from ansys.stk.core.graphics import MARKER_BATCH_SIZE_UNIT
 
 

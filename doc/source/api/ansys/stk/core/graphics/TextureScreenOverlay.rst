@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: maintain_aspect_ratio
     :canonical: ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio
-    :type: MAINTAIN_ASPECT_RATIO
+    :type: OVERLAY_ASPECT_RATIO_MODE
 
     Gets or sets a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
 

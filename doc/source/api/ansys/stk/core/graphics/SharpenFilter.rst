@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.graphics.SharpenFilter.method
-    :type: SHARPEN_METHOD
+    :type: RASTER_SHARPEN_METHOD
 
     Gets or sets the method used to sharpen the source raster.
 

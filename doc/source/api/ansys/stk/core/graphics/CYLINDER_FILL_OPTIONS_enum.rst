@@ -1,12 +1,12 @@
-CYLINDER_FILL
-=============
+CYLINDER_FILL_OPTIONS
+=====================
 
-.. py:class:: ansys.stk.core.graphics.CYLINDER_FILL
+.. py:class:: ansys.stk.core.graphics.CYLINDER_FILL_OPTIONS
 
    IntFlag
 
 
-.. py:currentmodule:: CYLINDER_FILL
+.. py:currentmodule:: CYLINDER_FILL_OPTIONS
 
 Overview
 --------
@@ -37,6 +37,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import CYLINDER_FILL
+    from ansys.stk.core.graphics import CYLINDER_FILL_OPTIONS
 
 

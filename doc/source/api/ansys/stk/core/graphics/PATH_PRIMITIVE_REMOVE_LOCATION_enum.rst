@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~REMOVE_LOCATION_FRONT`
+            * - :py:attr:`~FRONT`
               - Remove from the front of the line.
 
-            * - :py:attr:`~REMOVE_LOCATION_BACK`
+            * - :py:attr:`~BACK`
               - Remove from the back of the line.
 
 

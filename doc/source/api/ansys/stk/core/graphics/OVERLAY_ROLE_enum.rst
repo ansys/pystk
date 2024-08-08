@@ -1,12 +1,12 @@
-GLOBE_OVERLAY_ROLE
-==================
+OVERLAY_ROLE
+============
 
-.. py:class:: ansys.stk.core.graphics.GLOBE_OVERLAY_ROLE
+.. py:class:: ansys.stk.core.graphics.OVERLAY_ROLE
 
    IntEnum
 
 
-.. py:currentmodule:: GLOBE_OVERLAY_ROLE
+.. py:currentmodule:: OVERLAY_ROLE
 
 Overview
 --------
@@ -40,6 +40,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import GLOBE_OVERLAY_ROLE
+    from ansys.stk.core.graphics import OVERLAY_ROLE
 
 

@@ -95,13 +95,13 @@ Property detail
 
 .. py:property:: cull_face
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
-    :type: CULL_FACE
+    :type: FACE_CULLING_MODE
 
     Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model
-    :type: RENDERER_SHADE_MODEL
+    :type: RENDERER_SHADING_MODEL
 
     Gets or sets the shading model for the mesh.
 
