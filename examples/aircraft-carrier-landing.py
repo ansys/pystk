@@ -217,10 +217,10 @@ runway_catalog.arinc424_runways.master_data_filepath = str(
 )
 # -
 
-# Next, get the runway named "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L" from the Aviator runway catalog:
+# Next, get the runway named "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L" from the Aviator runway catalog:  # codespell:ignore FIEL
 
 oceana_runway = runway_catalog.arinc424_runways.get_arinc424_item(
-    "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L"
+    "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L" # codespell:ignore FIEL
 )
 
 # Next, add a takeoff procedure to the aircraft's first phase. The aircraft takes off from the Oceana runway in this procedure, so the procedure has a site type of runway and a procedure type of takeoff.
@@ -237,7 +237,7 @@ takeoff_procedure = lead_procedures.add(
 # Assign the catalog runway to the takeoff procedure as its takeoff site:
 
 takeoff_procedure.site.copy_from_catalog(oceana_runway)
-takeoff_procedure.site.name = "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L"
+takeoff_procedure.site.name = "OCEANA NAS /APOLLO SOUCEK FIEL 05R 23L" # codespell:ignore FIEL
 
 # Then, set the runway heading, which describes the direction the aircraft points on the runway. Set the heading to low:
 
