@@ -1,12 +1,12 @@
-INDICES_ORDER_HINT
-==================
+PRIMITIVE_INDICES_ORDER_HINT
+============================
 
-.. py:class:: ansys.stk.core.graphics.INDICES_ORDER_HINT
+.. py:class:: ansys.stk.core.graphics.PRIMITIVE_INDICES_ORDER_HINT
 
    IntEnum
 
 
-.. py:currentmodule:: INDICES_ORDER_HINT
+.. py:currentmodule:: PRIMITIVE_INDICES_ORDER_HINT
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import INDICES_ORDER_HINT
+    from ansys.stk.core.graphics import PRIMITIVE_INDICES_ORDER_HINT
 
 

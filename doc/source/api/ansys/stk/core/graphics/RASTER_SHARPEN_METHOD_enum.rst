@@ -1,12 +1,12 @@
-SHARPEN_METHOD
-==============
+RASTER_SHARPEN_METHOD
+=====================
 
-.. py:class:: ansys.stk.core.graphics.SHARPEN_METHOD
+.. py:class:: ansys.stk.core.graphics.RASTER_SHARPEN_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: SHARPEN_METHOD
+.. py:currentmodule:: RASTER_SHARPEN_METHOD
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import SHARPEN_METHOD
+    from ansys.stk.core.graphics import RASTER_SHARPEN_METHOD
 
 

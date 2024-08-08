@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~REAL_TIME`
               - The video will playback in realtime.
 
-            * - :py:attr:`~TIME_INTERVAL`
+            * - :py:attr:`~MAPPED`
               - The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time.
 
 

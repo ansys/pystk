@@ -1,12 +1,12 @@
-INTERNAL_TEXTURE_FORMAT
-=======================
+TEXTURE_FORMAT
+==============
 
-.. py:class:: ansys.stk.core.graphics.INTERNAL_TEXTURE_FORMAT
+.. py:class:: ansys.stk.core.graphics.TEXTURE_FORMAT
 
    IntEnum
 
 
-.. py:currentmodule:: INTERNAL_TEXTURE_FORMAT
+.. py:currentmodule:: TEXTURE_FORMAT
 
 Overview
 --------
@@ -133,6 +133,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import INTERNAL_TEXTURE_FORMAT
+    from ansys.stk.core.graphics import TEXTURE_FORMAT
 
 
