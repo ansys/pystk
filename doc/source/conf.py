@@ -161,10 +161,6 @@ else:
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
-    nbsphinx_thumbnails = {
-        "examples/hohmann-transfer": "_static/thumbnails/hohmann-transfer.png",
-        "examples/lambert-transfer": "_static/thumbnails/lambert-transfer.png",
-    }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
