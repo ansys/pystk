@@ -65,6 +65,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx_design",
     "sphinx_jinja",
+    "sphinx_timeline",
     "numpydoc",
     "nbsphinx",
     "myst_parser",

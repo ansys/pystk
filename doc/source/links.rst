@@ -9,12 +9,15 @@
 .. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
 .. _STK: https://www.ansys.com/products/missions/ansys-stk
 .. _STK distribution artifacts: https://support.agi.com/downloads/5/
+.. _PyAnsys: https://docs.pyansys.com
 
 
 .. Python libraries
 
 .. _Python: https://www.python.org/
 .. _Jupyter Lab: https://jupyter.org/
+.. _pywin32: https://pypi.org/project/pywin32/
+.. _comtypes: https://pypi.org/project/comtypes/
 
 
 .. Docker links

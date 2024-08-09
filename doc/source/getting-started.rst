@@ -25,6 +25,7 @@ To run PySTK, you must have a licensed copy of `STK`_.
    :maxdepth: 3
    :hidden:
 
-   getting-started/building-stk-images 
-   getting-started/installing-pystk
+   getting-started/about
+   getting-started/prerequisites
+   getting-started/install
 
