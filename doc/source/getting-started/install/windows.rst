@@ -7,13 +7,13 @@ instructions on how to install PySTK.
 .. grid:: 2
 
     .. grid-item-card:: :fa:`laptop` Local install
-        :link: install/windows
+        :link: windows/local
         :link-type: doc
 
         Use PySTK with your local STK install
 
     .. grid-item-card:: :fab:`docker` Docker install
-        :link: install/linux
+        :link: windows/docker
         :link-type: doc
 
         Use PySTK with a Windows based container

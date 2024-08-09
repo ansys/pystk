@@ -1,2 +1,2 @@
-Windows local install
-#####################
+Install PySTK locally in Windows
+################################

@@ -1,2 +1,2 @@
-Windows Docker install
-######################
+Install PySTK in a Windows container
+####################################

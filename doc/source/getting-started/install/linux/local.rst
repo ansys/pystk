@@ -1,2 +1,2 @@
-Linux local install
-###################
+Install PySTK locally in Linux
+##############################

@@ -1,2 +1,2 @@
-Linux Docker install
-####################
+Install PySTK in a Linux container
+##################################
