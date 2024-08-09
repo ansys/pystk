@@ -1,4 +1,5 @@
 import pytest
+from argparse import Namespace
 from test_util import EngineLifetimeManager, CategoryManager
 
 
@@ -10,6 +11,34 @@ def pytest_addoption(parser):
         help="target application to run the tests with",
         default="StkXNoGfx",
         choices=["Stk", "StkX", "StkXNoGfx", "StkGrpc", "StkRuntime", "StkRuntimeNoGfx"],
+    )
+
+    parser.addoption(
+        "--attach",
+        action="store_true",
+        dest="attach",
+        help="Attach to a running Stk process (not applicable to StkX targets)",
+        default=False,
+    )
+
+    parser.addoption(
+        "--grpc_port",
+        action="store",
+        type=int,
+        default=40704,
+        dest="grpc_port",
+        help="Specify gRPC port to use.",
+        metavar="<port>",
+    )
+
+    parser.addoption(
+        "--grpc_host",
+        action="store",
+        type=str,
+        default="localhost",
+        dest="grpc_host",
+        help="Specify gRPC host to use.",
+        metavar="<host>",
     )
 
     parser.addoption(
@@ -31,8 +60,14 @@ def pytest_addoption(parser):
 
 def pytest_sessionstart(session):
     target = session.config.getoption("--target")
+    attach = session.config.getoption("--attach")
+    grpc_host = session.config.getoption("--grpc_host")
+    grpc_port = session.config.getoption("--grpc_port")
+
     print(f"\nInitializing STK in {target} mode")
-    EngineLifetimeManager.Initialize(lock=True, target=target)
+    EngineLifetimeManager.Initialize(
+        lock=True, args=Namespace(target=target, attach=attach, grpc_host=grpc_host, grpc_port=grpc_port)
+    )
 
     CategoryManager.SetUsingPyTest(True)
 

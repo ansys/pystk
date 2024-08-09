@@ -38,6 +38,7 @@ tests = [
 ]
 doc = [
     "ansys-sphinx-theme==0.16.6",
+    "build==1.2.1",
     "jupyterlab==4.2.4",
     "jupytext==1.16.4",
     "jupyter-server==2.14.2",
@@ -50,7 +51,7 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.2",
-    "matplotlib==3.9.1"
+    "matplotlib==3.9.1.post1"
 ]
 visualization = [
     "jupyter-rfb==0.4.4",

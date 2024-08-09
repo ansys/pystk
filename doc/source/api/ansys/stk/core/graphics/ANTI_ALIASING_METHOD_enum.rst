@@ -1,12 +1,12 @@
-ANTI_ALIASING
-=============
+ANTI_ALIASING_METHOD
+====================
 
-.. py:class:: ansys.stk.core.graphics.ANTI_ALIASING
+.. py:class:: ansys.stk.core.graphics.ANTI_ALIASING_METHOD
 
    IntEnum
 
 
-.. py:currentmodule:: ANTI_ALIASING
+.. py:currentmodule:: ANTI_ALIASING_METHOD
 
 Overview
 --------
@@ -49,6 +49,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.graphics import ANTI_ALIASING
+    from ansys.stk.core.graphics import ANTI_ALIASING_METHOD
 
 

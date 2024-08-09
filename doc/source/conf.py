@@ -162,10 +162,6 @@ else:
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
-    nbsphinx_thumbnails = {
-        "examples/hohmann-transfer": "_static/thumbnails/hohmann-transfer.png",
-        "examples/lambert-transfer": "_static/thumbnails/lambert-transfer.png",
-    }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
@@ -221,6 +217,11 @@ jinja_contexts = {
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
+    },
+    "artifacts": {
+        "wheels": f"{project.replace('-', '_')}-{version}-py3-none-any.whl",
+        "source": f"{project.replace('-', '_')}-{version}.tar.gz",
+        "platforms": ["Windows", "Linux"],
     },
 }
 

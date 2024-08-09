@@ -277,7 +277,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, text: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, text: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of positions and/or text in a text batch.
@@ -287,7 +287,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -309,7 +309,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, text: list, optionalParameters: TextBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, text: list, optionalParameters: TextBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass
 
     Update a subset of positions, text, and/or optional per-string parameters in a text batch.
@@ -320,7 +320,7 @@ Method detail
     **text** : :obj:`~list`
     **optionalParameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
@@ -343,7 +343,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, text: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, text: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -354,7 +354,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -377,7 +377,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody: str, positions: list, text: list, optionalParameters: TextBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, centralBody: str, positions: list, text: list, optionalParameters: TextBatchPrimitiveOptionalParameters, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -389,7 +389,7 @@ Method detail
     **text** : :obj:`~list`
     **optionalParameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
