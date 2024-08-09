@@ -1,5 +1,5 @@
-Linux install
-#############
+Install PySTK in Linux
+######################
 
 PySTK can be installed in different modes. Select your desired mode for
 instructions on how to install PySTK.

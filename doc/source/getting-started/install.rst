@@ -1,5 +1,5 @@
-Install
-#######
+Install PySTK
+#############
 
 PySTK can be installed in different platforms. Select your platform for
 instructions on how to install PySTK.
@@ -22,6 +22,6 @@ instructions on how to install PySTK.
    :maxdepth: 3
    :hidden:
 
-   install/windows
-   install/linux
+   For Windows users<install/windows>
+   For Linux users<install/linux>
 

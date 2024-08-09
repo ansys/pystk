@@ -1,5 +1,5 @@
-Windows install
-###############
+Install PySTK in Windows
+########################
 
 PySTK can be installed in different modes. Select your desired mode for
 instructions on how to install PySTK.

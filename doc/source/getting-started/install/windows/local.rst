@@ -78,5 +78,5 @@ Verify a successful installation of PySTK by running:
     from ansys.stk.core.stkengine import STKEngine
     
 
-    stk = STKEngine()
+    stk = STKEngine.start_application(no_graphics=True)
     print(f"STK version is {stk.version}")

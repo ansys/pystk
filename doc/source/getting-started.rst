@@ -30,7 +30,7 @@ platform.
    :maxdepth: 3
    :hidden:
 
-   getting-started/about
-   getting-started/prerequisites
-   getting-started/install
+   About<getting-started/about>
+   Prerequisites<getting-started/prerequisites>
+   Install<getting-started/install>
 

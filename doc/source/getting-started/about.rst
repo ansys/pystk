@@ -1,9 +1,10 @@
 About
 #####
 
-PySTK is the next generation Python API for Ansys Systems Toolkit (STK). Its main advantages and features over previous APIs include:
+PySTK is the next generation Python API for Ansys Systems Toolkit (STK). Its
+main advantages and features include:
 
-- **Remotable API using gRPC**: In addition to traditional OLE communication
+- **Remote API using gRPC**: In addition to traditional OLE communication
   with STK, the STK Python API has optional gRPC communication for
   out-of-process or remote interaction with STK.
 
@@ -12,7 +13,7 @@ PySTK is the next generation Python API for Ansys Systems Toolkit (STK). Its mai
   read and to maintain.
 
 - **PyAnsys compliance:** the API integrates with the rest of the `PyAnsys`_,
-  allowing users to interconect Ansys products via their Python APIs.
+  allowing users to connect STK with other Ansys products.
 
 
 Historical background
