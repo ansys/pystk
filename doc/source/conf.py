@@ -13,7 +13,6 @@ from sphinx.util.display import status_iterator
 from ansys_sphinx_theme import (
     ansys_favicon,
     get_version_match,
-    pyansys_logo_black,
 )
 
 from ansys.stk.core import __version__
@@ -26,7 +25,6 @@ release = version = __version__
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
 # Configure the HTML theme
-html_logo = pyansys_logo_black
 html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
@@ -54,6 +52,7 @@ html_theme_options = {
     },
     "check_switcher": False,
     "navigation_with_keys": True,
+    "logo": "pyansys",
 }
 html_static_path = ["_static"]
 html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
