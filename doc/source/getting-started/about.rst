@@ -26,10 +26,8 @@ achieved using the `win32com`_ or `comtypes`_ Python modules. With the release o
 
     - start: 2018
       name: Python API via win32com and comtypes
-
     - start: 202
       name: Python API uses ctypes
-
     - start: 2024
       name: PySTK uses gRPC
 
