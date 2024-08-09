@@ -3,7 +3,7 @@ BisectionControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.BisectionControl
 
-   Control parameters for  Bisection Seacrh Profile.
+   Control parameters for  Bisection Search Profile.
 
 .. py:currentmodule:: BisectionControl
 

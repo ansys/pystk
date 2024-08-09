@@ -217,6 +217,11 @@ jinja_contexts = {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
     },
+    "artifacts": {
+        "wheels": f"{project.replace('-', '_')}-{version}-py3-none-any.whl",
+        "source": f"{project.replace('-', '_')}-{version}.tar.gz",
+        "platforms": ["Windows", "Linux"],
+    },
 }
 
 # -- autodoc configuration ---------------------------------------------------
