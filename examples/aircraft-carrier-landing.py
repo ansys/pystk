@@ -613,7 +613,7 @@ relative_course_basic_maneuver.profile.control_limit_mode = (
     PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
 )
 
-# Then, set the maximum pitch ration to $10^\circ$\s, and the damping ratio to $2$:
+# Then, set the maximum pitch rate to $10^\circ$/s, and the damping ratio to $2$:
 
 relative_course_basic_maneuver.profile.max_pitch_rate = 10
 relative_course_basic_maneuver.profile.damping_ratio = 2
@@ -703,7 +703,7 @@ relative_course_basic_maneuver2.navigation.use_approach_turn_mode = True
 
 relative_course_basic_maneuver2.navigation.maneuver_factor = 1
 
-# Then, set the procedure's control limit to a maximum turn rate of $29.9725^\circ$\s:
+# Then, set the procedure's control limit to a maximum turn rate of $29.9725^\circ$/s:
 
 # +
 from ansys.stk.core.stkobjects.aviator import (
@@ -847,7 +847,7 @@ landing.profile.fpa = -3.5
 
 landing.profile.anchor_altitude_offset = 100
 
-# Next, set the control limit, which constrains the aircraft's performance during the maneuver. Constrain the pitch rate, which represents the maximum rate at which the aircraft can climb or descend. Set the maximum pitch rate to $10^\circ$\s:
+# Next, set the control limit, which constrains the aircraft's performance during the maneuver. Constrain the pitch rate, which represents the maximum rate at which the aircraft can climb or descend. Set the maximum pitch rate to $10^\circ$/s:
 
 # +
 from ansys.stk.core.stkobjects.aviator import PROFILE_CONTROL_LIMIT
@@ -1158,7 +1158,7 @@ wing_stationkeeping.profile.control_altitude_rate_value = 2000
 
 wing_stationkeeping.profile.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
 
-# Then, set the maximum pitch rate to $10^\circ$\s and the damping ratio to 2:
+# Then, set the maximum pitch rate to $10^\circ$/s and the damping ratio to $2$:
 
 wing_stationkeeping.profile.max_pitch_rate = 10
 wing_stationkeeping.profile.damping_ratio = 2
@@ -1248,7 +1248,7 @@ wing_stationkeeping2.profile.altitude_control_mode = (
 )
 wing_stationkeeping2.profile.control_altitude_rate_value = 2000
 
-# Then, override the performance model's control limits, and set a maximum pitch rate of $10^\circ$\s and a damping ratio of 2:
+# Then, override the performance model's control limits, and set a maximum pitch rate of $10^\circ$/s and a damping ratio of $2$:
 
 wing_stationkeeping2.profile.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
 wing_stationkeeping2.profile.max_pitch_rate = 10
