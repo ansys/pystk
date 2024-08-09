@@ -22,6 +22,6 @@ instructions on how to install PySTK.
    :maxdepth: 3
    :hidden:
 
-   Local<linux/local>
-   Docker<linux/docker>
+   Local install<linux/local>
+   Docker install<linux/docker>
 
