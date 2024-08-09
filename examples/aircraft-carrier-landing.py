@@ -746,7 +746,7 @@ relative_course_basic_maneuver2.profile.control_limit_mode = (
     PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
 )
 
-# Then, set the maximum pitch ratio to $10^\circ$\s, and the damping ratio to $2$:
+# Then, set the maximum pitch ratio to $10^\circ$, and the damping ratio to $2$:
 
 relative_course_basic_maneuver2.profile.max_pitch_rate = 10
 relative_course_basic_maneuver2.profile.damping_ratio = 2
