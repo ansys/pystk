@@ -11,39 +11,67 @@ Start by downloading PySTK wheel or source artifacts for Windows:
 
 .. jinja:: artifacts
 
-    .. list-table::
-        :header-rows: 1
-        :widths: auto
+    .. tab-set::
+        :sync-group: artifacts
 
-        * - Wheels (recommended)
-          - Source
-        * - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
-          - `{{ source }} <_static/artifacts/{{ source }}>`_
+        .. tab-item:: **Wheels download**
+            :sync: wheels
+
+            Wheel artifacts are the preferred option for installing PySTK:
+
+            .. list-table::
+                :widths: auto
+
+                * - **Artifact**
+                  - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
+                * - **Size**
+                  - {{ wheels_size }}
+                * - **SHA-256**
+                  - {{ wheels_hash }}
+
+        .. tab-item:: **Source download**
+            :sync: source
+
+            Source distribution for installing PySTK:
+
+            .. list-table::
+                :widths: auto
+        
+                * - **Artifact**
+                  - `{{ source }} <_static/artifacts/{{ source }}>`_
+                * - **Size**
+                  - {{ source_size }}
+                * - **SHA-256**
+                  - {{ source_hash }}
 
 Install Windows artifacts
 =========================
 
-Install the Windows artifacts by using the `pip`_ command:
+Install Windows artifacts by using the `pip`_ command:
 
 .. jinja:: artifacts
 
-    **Wheels (recommended)**
+    .. tab-set::
+        :sync-group: artifacts
 
-    .. code-block:: text
-    
-        python -m pip install {{ wheels }}
+        .. tab-item:: **Wheels install**
+            :sync: wheels
 
-    **Source**
+            .. code-block:: text
+            
+                python -m pip install {{ wheels }}
 
-    .. code-block:: text
-    
-        python -m pip install {{ source }}
+        .. tab-item:: **Source install**
+            :sync: source
 
+            .. code-block:: text
+            
+                python -m pip install {{ source }}
 
 Verify Windows installation
 ===========================
 
-To verify a successful installation of PySTK, run the following code:
+Verify a successful installation of PySTK by running:
 
 .. code-block:: python
     

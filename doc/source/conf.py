@@ -1,6 +1,7 @@
 """Sphinx documentation configuration file."""
 
 from datetime import datetime
+import hashlib
 import os
 import pathlib
 import shutil
@@ -205,6 +206,64 @@ else:
 
 
 # -- Jinja context configuration ---------------------------------------------
+
+
+def get_sha256_from_file(filepath: pathlib.Path):
+    """Compute the SHA-256 for a file.
+
+    Parameters
+    ----------
+    filepath : ~pathlib.Path
+        Desired file.
+
+    Returns
+    -------
+    str
+        String representing the SHA-256 hash.
+
+    """
+    sha256_hash = hashlib.sha256()
+    with open(filepath, "rb") as file:
+        while chunk := file.read(8192):
+            sha256_hash.update(chunk)
+    return sha256_hash.hexdigest()
+
+
+def get_file_size_in_mb(file_path):
+    """
+    Compute the size of a file in megabytes.
+
+    Parameters
+    ----------
+    file_path : str or Path
+        The path to the file whose size is to be computed.
+
+    Returns
+    -------
+    float
+        The size of the file in megabytes.
+
+    Raises
+    ------
+    FileNotFoundError
+        If the file does not exist.
+    OSError
+        If an OS-related error occurs while accessing the file.
+
+    """
+    path = pathlib.Path(file_path)
+
+    if not path.is_file():
+        raise FileNotFoundError(f"The file at {file_path} does not exist.")
+
+    file_size_bytes = path.stat().st_size
+    return file_size_bytes / (1024 * 1024)
+
+
+ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
+ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
+
 jinja_contexts = {
     "docker_images": {
         "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
@@ -218,8 +277,12 @@ jinja_contexts = {
         "build_examples": BUILD_EXAMPLES,
     },
     "artifacts": {
-        "wheels": f"{project.replace('-', '_')}-{version}-py3-none-any.whl",
-        "source": f"{project.replace('-', '_')}-{version}.tar.gz",
+        "wheels": ARTIFACTS_WHEEL.name,
+        "wheels_size": f"{get_file_size_in_mb(ARTIFACTS_WHEEL):.2f} MB",
+        "wheels_hash": get_sha256_from_file(ARTIFACTS_WHEEL),
+        "source": ARTIFACTS_SDIST.name,
+        "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
+        "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
         "platforms": ["Windows", "Linux"],
     },
 }
@@ -344,6 +407,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
 
     Quarto needs to be installed in the system to render the PDF files. See
     https://quarto.org/docs/get-started/.
+    Artifact
 
     Parameters
     ----------
