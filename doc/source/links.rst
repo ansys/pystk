@@ -18,6 +18,7 @@
 .. _Jupyter Lab: https://jupyter.org/
 .. _pywin32: https://pypi.org/project/pywin32/
 .. _comtypes: https://pypi.org/project/comtypes/
+.. _pip: https://pypi.org/project/pip/
 
 
 .. Docker links

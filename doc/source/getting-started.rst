@@ -1,6 +1,10 @@
 Getting started
 ###############
 
+This page helps you quickly get started with PySTK. It lists all the
+prerequisites and guides you step by step to install the library on your
+platform.
+
 .. grid:: 3
 
     .. grid-item-card:: :fa:`info-circle` About PySTK
