@@ -1276,7 +1276,7 @@ Summary
               - Single Parameter Bisection profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.BisectionControl`
-              - Control parameters for  Bisection Seacrh Profile.
+              - Control parameters for  Bisection Search Profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.BisectionControlCollection`
               - Bisection control collection.
