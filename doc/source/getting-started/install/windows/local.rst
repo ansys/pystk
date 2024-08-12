@@ -1,8 +1,7 @@
 Install PySTK locally in Windows
 ################################
 
-PySTK can be installed in Windows by following these steps:
-
+This guideline covers the local installation of PySTK in Windows platforms.
 
 Download Windows artifacts
 ==========================

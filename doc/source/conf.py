@@ -1,11 +1,13 @@
 """Sphinx documentation configuration file."""
 
 from datetime import datetime
+import fnmatch
 import hashlib
 import os
 import pathlib
 import shutil
 import subprocess
+import zipfile
 
 import sphinx
 from sphinx.util import logging
@@ -133,20 +135,6 @@ with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
 
-# Read available Docker images for Windows and Linux
-DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
-WINDOWS_IMAGES, UBUNTU_IMAGES = [DOCKER_DIR / path for path in ["windows", "linux/ubuntu"]]
-
-
-def get_images_directories_from_path(path):
-    """Get all the Docker images present in the retrieved Path."""
-    images = [
-        folder.name for folder in path.glob("**/*") if folder.name != path.name and (folder / "Dockerfile").exists()
-    ] or ["No images available."]
-    images.sort()
-    return images
-
-
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
@@ -208,6 +196,23 @@ else:
 # -- Jinja context configuration ---------------------------------------------
 
 
+def zip_directory(directory_path: Path, zip_filename: Path, ignore_patterns=None):
+    if ignore_patterns is None:
+        ignore_patterns = []
+
+    if not zip_filename.suffix == ".zip":
+        zip_filename = zip_filename.with_suffix(".zip")
+
+    with zipfile.ZipFile(zip_filename, "w", zipfile.ZIP_DEFLATED) as zipf:
+        for file_path in directory_path.rglob("*"):
+            if file_path.is_file():
+                if any(fnmatch.fnmatch(file_path.relative_to(directory_path), pattern) for pattern in ignore_patterns):
+                    continue
+
+                relative_path = file_path.relative_to(directory_path)
+                zipf.write(file_path, relative_path)
+
+
 def get_sha256_from_file(filepath: pathlib.Path):
     """Compute the SHA-256 for a file.
 
@@ -264,10 +269,18 @@ ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
+DOCKER_IMAGES = pathlib.Path().parent / "_static" / "docker"
+DOCKER_IMAGES_WINDOWS = DOCKER_IMAGES / "windows.zip"
+DOCKER_IMAGES_LINUX = DOCKER_IMAGES / "linux.zip"
+
 jinja_contexts = {
     "docker_images": {
-        "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
-        "linux_images": get_images_directories_from_path(UBUNTU_IMAGES),
+        "windows_images": DOCKER_IMAGES_WINDOWS.name,
+        "windows_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_WINDOWS):.2f} MB",
+        "windows_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_WINDOWS)}",
+        "linux_images": DOCKER_IMAGES_LINUX.name,
+        "linux_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_LINUX):.2f} MB",
+        "linux_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_LINUX)}",
     },
     "install_guide": {
         "version": f"v{version}" if not version.endswith("dev0") else "main",
@@ -314,7 +327,7 @@ myst_heading_anchors = 3
 # -- Sphinx application setup ------------------------------------------------
 
 
-def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
+def copy_docker_files_to_static_dir(app: sphinx.application.Sphinx):
     """
     Copy the examples directory to the source directory of the documentation.
 
@@ -324,27 +337,20 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         Sphinx application instance containing the all the doc build configuration.
 
     """
-    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    if not SOURCE_EXAMPLES.exists():
-        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+    SOURCE_DIR = pathlib.Path(app.srcdir)
+    DOCKER_DIR = SOURCE_DIR.parent.parent / "docker"
+    STATIC_DOCKER_DIR = SOURCE_DIR / "_static" / "docker"
+    if not STATIC_DOCKER_DIR.exists():
+        STATIC_DOCKER_DIR.mkdir()
 
-    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    COMPRESSED_DOCKER_WINDOWS_IMAGES = STATIC_DOCKER_DIR / "windows.zip"
+    COMPRESSED_DOCKER_LINUX_IMAGES = STATIC_DOCKER_DIR / "linux.zip"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
-    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+    logger = logging.getLogger(__name__)
 
-    print(f"BUILDER: {app.builder.name}")
-
-    for file in status_iterator(
-        examples,
-        f"Copying example to doc/source/examples/",
-        "green",
-        len(examples),
-        verbosity=1,
-        stringify_func=(lambda file: file.name),
-    ):
-        destination_file = SOURCE_EXAMPLES / file.name
-        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+    logger.info(f"\nCompressing Docker images...")
+    zip_directory(DOCKER_DIR / "windows", COMPRESSED_DOCKER_WINDOWS_IMAGES, ignore_patterns=["*.tgz"])
+    zip_directory(DOCKER_DIR / "linux", COMPRESSED_DOCKER_LINUX_IMAGES, ignore_patterns=["*.tgz"])
 
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
@@ -467,6 +473,7 @@ def setup(app: sphinx.application.Sphinx):
     # However, the examples are desired to be kept in the root directory. Once the
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
+    app.connect("builder-inited", copy_docker_files_to_static_dir)
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
