@@ -103,7 +103,7 @@ map_widget.show()
 
 # Before setting up and constraining a radar system, STK allows the specification of a potential radar target's radar cross section. Use the RCS of a popular four-engined turboprop transport aircraft.
 
-# First, set the radar cross section's `inherit` property to `False`. When the `inherit` property is set to `True`, the RCS is inherited from the scenario. In this case, set the property to `Fals`e to specify the RCS for only the aircraft:
+# First, set the radar cross section's `inherit` property to `False`. When the `inherit` property is set to `True`, the RCS is inherited from the scenario. In this case, set the property to `False` to specify the RCS for only the aircraft:
 
 aircraft.radar_cross_section.inherit = False
 
