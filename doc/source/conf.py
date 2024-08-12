@@ -13,7 +13,6 @@ from sphinx.util.display import status_iterator
 from ansys_sphinx_theme import (
     ansys_favicon,
     get_version_match,
-    pyansys_logo_black,
 )
 
 from ansys.stk.core import __version__
@@ -26,7 +25,6 @@ release = version = __version__
 cname = os.getenv("DOCUMENTATION_CNAME", "stk.docs.pyansys.com")
 
 # Configure the HTML theme
-html_logo = pyansys_logo_black
 html_favicon = ansys_favicon
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "PySTK"
@@ -54,6 +52,7 @@ html_theme_options = {
     },
     "check_switcher": False,
     "navigation_with_keys": True,
+    "logo": "pyansys",
 }
 html_static_path = ["_static"]
 html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
@@ -162,10 +161,6 @@ else:
         ".mystnb": ["jupytext.reads", {"fmt": "mystnb"}],
         ".py": ["jupytext.reads", {"fmt": ""}],
     }
-    nbsphinx_thumbnails = {
-        "examples/hohmann-transfer": "_static/thumbnails/hohmann-transfer.png",
-        "examples/lambert-transfer": "_static/thumbnails/lambert-transfer.png",
-    }
     nbsphinx_prompt_width = ""
     nbsphinx_prolog = """
 
@@ -221,6 +216,11 @@ jinja_contexts = {
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
+    },
+    "artifacts": {
+        "wheels": f"{project.replace('-', '_')}-{version}-py3-none-any.whl",
+        "source": f"{project.replace('-', '_')}-{version}.tar.gz",
+        "platforms": ["Windows", "Linux"],
     },
 }
 

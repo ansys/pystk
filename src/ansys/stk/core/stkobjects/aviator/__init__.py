@@ -1407,14 +1407,14 @@ class ACCELERATION_PERFORMANCE_MODEL_OVERRIDE(IntEnum):
     """The acceleration performance model override mode."""
    
     ACCELERATION_PERFORMANCE_MODEL_VALUE = 0
-    """Use the acceleration performanc model value."""
+    """Use the acceleration performance model value."""
     ACCELERATION_OVERRIDE = 1
-    """Override the performanc model value."""
+    """Override the performance model value."""
     ACCELERATION_NO_LIMIT = 2
     """Set no limit on the acceleration."""
 
-ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_PERFORMANCE_MODEL_VALUE.__doc__ = "Use the acceleration performanc model value."
-ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_OVERRIDE.__doc__ = "Override the performanc model value."
+ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_PERFORMANCE_MODEL_VALUE.__doc__ = "Use the acceleration performance model value."
+ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_OVERRIDE.__doc__ = "Override the performance model value."
 ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_NO_LIMIT.__doc__ = "Set no limit on the acceleration."
 
 agcls.AgTypeNameMap["ACCELERATION_PERFORMANCE_MODEL_OVERRIDE"] = ACCELERATION_PERFORMANCE_MODEL_OVERRIDE

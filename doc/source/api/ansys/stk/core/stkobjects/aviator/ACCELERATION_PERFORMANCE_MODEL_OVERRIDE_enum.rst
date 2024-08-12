@@ -20,10 +20,10 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ACCELERATION_PERFORMANCE_MODEL_VALUE`
-              - Use the acceleration performanc model value.
+              - Use the acceleration performance model value.
 
             * - :py:attr:`~ACCELERATION_OVERRIDE`
-              - Override the performanc model value.
+              - Override the performance model value.
 
             * - :py:attr:`~ACCELERATION_NO_LIMIT`
               - Set no limit on the acceleration.

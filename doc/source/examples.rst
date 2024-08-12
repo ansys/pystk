@@ -39,6 +39,7 @@ This series of tutorials explain how to model and simulate communications and ra
 .. nbgallery::
 
     examples/radar-cross-section-detection
+    examples/communication-link-calculator
 
 Aviator mission planning
 ========================
@@ -48,3 +49,4 @@ This series of tutorials explain how to model and simulate aircraft missions usi
 .. nbgallery::
 
     examples/aviator-fuel-calculator
+    examples/aircraft-carrier-landing
