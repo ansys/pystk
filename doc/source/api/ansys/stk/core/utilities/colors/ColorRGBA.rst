@@ -40,7 +40,7 @@ Method detail
 .. py:method:: alpha(self) -> float
     :canonical: ansys.stk.core.utilities.colors.ColorRGBA.alpha
 
-    Get the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
+    Get or set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
 
     :Returns:
 
@@ -48,8 +48,6 @@ Method detail
 
 .. py:method:: alpha(self, value: int) -> None
     :canonical: ansys.stk.core.utilities.colors.ColorRGBA.alpha
-
-    Set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
 
     :Parameters:
 
