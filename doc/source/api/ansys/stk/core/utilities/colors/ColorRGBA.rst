@@ -22,9 +22,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha`
-              - Get the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
-            * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha`
-              - Set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
+              - Get or set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
             * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.color`
               - The Color value that contains R, G, B values.
 
