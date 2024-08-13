@@ -57,4 +57,29 @@ the image of your choice. Select one of ``docker-engine-py3<minor>`` and run the
 
     docker compose build stk-engine-py3<minor>
 
-where ``<minor>`` is one of the minor versions of Python.
+where ``<minor>`` is one of the minor versions of Python. 
+
+Download PySTK wheels for Windows
+=================================
+
+Download the PySTK wheels for Windows.
+
+.. jinja:: artifacts
+
+    .. list-table::
+        :widths: auto
+
+        * - **Artifact**
+          - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
+        * - **Size**
+          - {{ wheels_size }}
+        * - **SHA-256**
+          - {{ wheels_hash }}
+
+
+
+
+
+
+
+
