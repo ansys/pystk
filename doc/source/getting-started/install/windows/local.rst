@@ -3,8 +3,8 @@ Install PySTK locally in Windows
 
 This guideline covers the local installation of PySTK in Windows platforms.
 
-Download Windows artifacts
-==========================
+Download artifacts
+==================
 
 Start by downloading PySTK wheel or source artifacts for Windows:
 
@@ -43,8 +43,8 @@ Start by downloading PySTK wheel or source artifacts for Windows:
                 * - **SHA-256**
                   - {{ source_hash }}
 
-Install Windows artifacts
-=========================
+Install artifacts
+=================
 
 Install Windows artifacts by using the `pip`_ command:
 
@@ -67,8 +67,8 @@ Install Windows artifacts by using the `pip`_ command:
             
                 python -m pip install {{ source }}
 
-Verify Windows installation
-===========================
+Verify installation
+===================
 
 Verify a successful installation of PySTK by running:
 
