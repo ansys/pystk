@@ -1,7 +1,7 @@
 Install PySTK in a Windows container
 ####################################
 
-This guideline covers the  installation of PySTK inside a Windows-based Docker
+This guideline covers the installation of PySTK inside a Windows-based Docker
 container.
 
 Download Windows Docker images
@@ -79,8 +79,8 @@ Download the PySTK wheels for Windows.
 Create a working directory
 ==========================
 
-Create a working directory in your host machine. This directory will be used a
-shared volume with the Docker container. Place previously downloaded wheels for
+Create a working directory in your host machine. This directory is used as a
+shared volume with a Docker container. Place previously downloaded wheels for
 PySTK in this directory.
 
 .. jinja:: artifacts
@@ -116,9 +116,10 @@ With the artifacts and the license in place, start a Docker container and share
 the working directory as a volume. This allows to write scripts using the tools
 in the host machine while isolating their execution inside the container.
 
-Start a new container by running:
+Syntax
+------
 
-.. code-block:: text
+.. code-block:: dosbatch
 
     docker run \
       --detach --interactive --tty \
@@ -128,7 +129,12 @@ Start a new container by running:
       --entrypoint <entrypoint> \
       <image-name>
 
-Previous options are:
+Command breakdown
+-----------------
+
+The docker run command is utilized to create and run a container from a Docker
+image. Various options are available to customize the container creation
+process.
 
 - ``--detach`` Runs the container in detached mode, enabling it to run in the background.
 - ``--interactive`` Enables interactive mode, providing a TTY session for connecting to the container.
@@ -137,17 +143,50 @@ Previous options are:
 - ``--env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE`` Specifies environment variable(s) to be shared with the container.
 - ``--name <container-name>`` Assigns a name to the container for easy identification and reference.
 - ``--entrypoint <entrypoint>`` Defines the command or script to be executed when the container starts.
+- ``--volume <volume>`` Specifies the binding volume between the host and the container.
 - ``<image-name>`` Specifies the name or ID of the Docker image to be used for creating the container.
 
+Example
+-------
 
-    
+.. code-block:: dosbatch
+
+    docker run \
+      --detach --interactive --tty \
+      --network="host" \
+      --env ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE \
+      --volume working-directory:/home/stk/pystk
+      --name stk-python3.12 \
+      --entrypoint /bin/bash \
+      ansys/stk:dev-ubuntu22.04-python3.12
+
+Install PySTK in the container
+==============================
+
+With a working directory containing the PySTK wheels and shared as a volume
+with the container, it is possible to install the package by running:
+
+.. code-block:: dosbatch
+
+    docker exec \
+      --interactive --tty \
+      stk-python-3.<minor> \
+      cmd /C "python -m venv .venv && cd pystk && chcp 65001 && call C:\Users\STK\.venv\Scripts\activate.bat && python -m pip install --upgrade pip && python -m pip install -e C:\Users\STK\pystk[tests,doc,visualization]"
 
 
+where ``<minor>`` is the minor version of Python selected when building the
+container.
 
+Running scripts in the container
+================================
 
+Save your scripts inside the working directory. Then, execute them by running:
 
+.. code-block:: dosbatch
 
+    docker exec \
+      --interactive --tty \
+      stk-python-3.<minor> \
+      cmd /C "python /home/stk/pystk/<script>"
 
-
-
-
+Where ``<script>`` is the name of the Python script you want to execute.
