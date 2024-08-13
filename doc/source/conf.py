@@ -132,7 +132,7 @@ with open(links_filepath) as links_file:
 
 # Read available Docker images for Windows and Linux
 DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
-WINDOWS_IMAGES, CENTOS_IMAGES, UBUNTU_IMAGES = [DOCKER_DIR / path for path in ["windows", "linux/ubuntu"]]
+WINDOWS_IMAGES, UBUNTU_IMAGES = [DOCKER_DIR / path for path in ["windows", "linux/ubuntu"]]
 
 
 def get_images_directories_from_path(path):
@@ -206,7 +206,7 @@ else:
 jinja_contexts = {
     "docker_images": {
         "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
-        "linux_images": get_images_directories_from_path(CENTOS_IMAGES),
+        "linux_images": get_images_directories_from_path(UBUNTU_IMAGES),
     },
     "install_guide": {
         "version": f"v{version}" if not version.endswith("dev0") else "main",
