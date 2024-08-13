@@ -152,7 +152,6 @@ antenna_sensor = radar_site.children.new(STK_OBJECT_TYPE.SENSOR, "AntennaSensor"
 from ansys.stk.core.stkobjects import SENSOR_PATTERN
 
 
-antenna_sensor.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
 antenna_sensor.common_tasks.set_pattern_simple_conic(2, 1)
 # -
 
@@ -279,7 +278,7 @@ airport_radar = antenna_sensor.children.new(STK_OBJECT_TYPE.RADAR, "Radar")
 
 # Pulse width is the width of the transmitted pulse (the uncompressed RF bandwidth can also be taken as the inverse of the pulse width). Set the pulse width to one microsecond:
 
-airport_radar.model.mode.waveform.pulse_definition.pulse_width = 1e-4
+airport_radar.model.mode.waveform.pulse_definition.pulse_width = 1e-6
 
 # ## Define the antenna model
 
