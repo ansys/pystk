@@ -196,7 +196,19 @@ else:
 # -- Jinja context configuration ---------------------------------------------
 
 
-def zip_directory(directory_path: Path, zip_filename: Path, ignore_patterns=None):
+def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
+    """Compress a directory using ZIP.
+
+    Parameters
+    ----------
+    directory_path : ~pathlib.Path
+        Directory to compress.
+    zip_filename : ~pathlib.Path
+        Output file path.
+    ignore_patterns : list
+        List of Unix-like pattern to ignore.
+
+    """
     if ignore_patterns is None:
         ignore_patterns = []
 
@@ -269,19 +281,7 @@ ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
-DOCKER_IMAGES = pathlib.Path().parent / "_static" / "docker"
-DOCKER_IMAGES_WINDOWS = DOCKER_IMAGES / "windows.zip"
-DOCKER_IMAGES_LINUX = DOCKER_IMAGES / "linux.zip"
-
 jinja_contexts = {
-    "docker_images": {
-        "windows_images": DOCKER_IMAGES_WINDOWS.name,
-        "windows_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_WINDOWS):.2f} MB",
-        "windows_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_WINDOWS)}",
-        "linux_images": DOCKER_IMAGES_LINUX.name,
-        "linux_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_LINUX):.2f} MB",
-        "linux_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_LINUX)}",
-    },
     "install_guide": {
         "version": f"v{version}" if not version.endswith("dev0") else "main",
     },
@@ -351,6 +351,22 @@ def copy_docker_files_to_static_dir(app: sphinx.application.Sphinx):
     logger.info(f"\nCompressing Docker images...")
     zip_directory(DOCKER_DIR / "windows", COMPRESSED_DOCKER_WINDOWS_IMAGES, ignore_patterns=["*.tgz"])
     zip_directory(DOCKER_DIR / "linux", COMPRESSED_DOCKER_LINUX_IMAGES, ignore_patterns=["*.tgz"])
+
+    # Add the new files and their information to the Jinja context. This
+    # operation can not be performed outside of this function since the compressed files do not yet exist.
+
+    DOCKER_IMAGES = SOURCE_DIR / "_static" / "docker"
+    DOCKER_IMAGES_WINDOWS = DOCKER_IMAGES / "windows.zip"
+    DOCKER_IMAGES_LINUX = DOCKER_IMAGES / "linux.zip"
+
+    jinja_contexts["docker_images"] = {
+        "windows_images": DOCKER_IMAGES_WINDOWS.name,
+        "windows_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_WINDOWS):.2f} MB",
+        "windows_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_WINDOWS)}",
+        "linux_images": DOCKER_IMAGES_LINUX.name,
+        "linux_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_LINUX):.2f} MB",
+        "linux_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_LINUX)}",
+    }
 
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
