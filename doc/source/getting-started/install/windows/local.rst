@@ -3,6 +3,11 @@ Install PySTK locally in Windows
 
 This guideline covers the local installation of PySTK in Windows platforms.
 
+.. note::
+
+    This guide assumes that you have a local installation of STK and a valid
+    license in your machine.
+
 Download artifacts
 ==================
 
@@ -72,10 +77,18 @@ Verify installation
 
 Verify a successful installation of PySTK by running:
 
-.. code-block:: python
-    
-    from ansys.stk.core.stkengine import STKEngine
-    
+.. jinja:: install_guide
 
-    stk = STKEngine.start_application(no_graphics=True)
-    print(f"STK version is {stk.version}")
+    .. code-block:: python
+        
+        from ansys.stk.core.stkengine import STKEngine
+        
+
+        stk = STKEngine.start_application(no_graphics=True)
+        print(f"STK version is {stk.version}")
+
+    Output:
+
+    .. code-block:: text
+
+        STK version is {{ stk_version }}

@@ -282,9 +282,7 @@ ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-n
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
 jinja_contexts = {
-    "install_guide": {
-        "version": f"v{version}" if not version.endswith("dev0") else "main",
-    },
+    "install_guide": {"stk_version": "12.9.0"},
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
