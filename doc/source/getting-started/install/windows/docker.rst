@@ -4,8 +4,8 @@ Install PySTK in a Windows container
 This guideline covers the installation of PySTK inside a Windows-based Docker
 container.
 
-Download Windows Docker images
-==============================
+Download Dockerfiles
+====================
 
 Start by downloading the PySTK Docker images for Windows. The images contain
 the latest three stable version of Python.
@@ -16,28 +16,25 @@ the latest three stable version of Python.
         :widths: auto
 
         * - **Artifact**
-          - `Windows Docker Images <../../../_static/docker/{{ windows_images }}>`_
+          - `Windows Dockerfiles <../../../_static/docker/{{ windows_images }}>`_
         * - **Size**
           - {{ windows_images_size }}
         * - **SHA-256**
           - {{ windows_images_hash }}
 
-Download Windows STK Engine artifacts
-=====================================
+Download STK artifacts
+======================
 
 Download the ``STK Engine`` and ``STK Engine Deployment Resources`` artifacts for
 Windows platforms from the `https://support.agi.com/downloads
 <https://support.agi.com/downloads>`_ page.
 
-Use STK artifacts with Docker images
-====================================
-
-Place the AGI STK artifacts inside a directory named `distributions` contained
-inside of the `docker/windows/stk-engine`.
+Place the artifacts inside a directory named ``distributions``. This directory
+must be contained inside of the ``stk-engine`` directory.
 
 .. code-block:: dosbatch
 
-    docker/windows/
+    windows/
     ├── docker-compose.yml
     ├── stk-engine
     │   └── distributions/
@@ -47,11 +44,11 @@ inside of the `docker/windows/stk-engine`.
     ├── stk-engine-py312
     └── stk-engine-pybase
 
-Build Windows Docker images
-===========================
+Build Docker images
+===================
 
-Navigate to the ``docker/windows`` directory and use `Docker Compose`_ to build
-the image of your choice. Select one of ``docker-engine-py3<minor>`` and run the following command:
+Navigate to the ``windows`` directory and use `Docker Compose`_ to build the
+image of your choicby running:
 
 .. code-block:: dosbatch
 
@@ -59,8 +56,8 @@ the image of your choice. Select one of ``docker-engine-py3<minor>`` and run the
 
 where ``<minor>`` is one of the minor versions of Python.
 
-Download PySTK wheels for Windows
-=================================
+Download PySTK wheels
+=====================
 
 Download the PySTK wheels for Windows.
 
@@ -76,12 +73,9 @@ Download the PySTK wheels for Windows.
         * - **SHA-256**
           - {{ wheels_hash }}
 
-Create a working directory
-==========================
-
-Create a working directory in your host machine. This directory is used as a
-shared volume with a Docker container. Place previously downloaded wheels for
-PySTK in this directory.
+Next, create a working directory in your machine. This directory is used as a
+shared volume with future Docker containers. Place the PySTK wheels in this
+directory.
 
 .. jinja:: artifacts
 
