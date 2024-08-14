@@ -56,8 +56,6 @@ html_theme_options = {
     "check_switcher": False,
     "navigation_with_keys": True,
     "logo": "pyansys",
-    "pygments_light_style": "friendly",
-    "pygments_dark_style": "monokai",
 }
 html_static_path = ["_static"]
 html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]

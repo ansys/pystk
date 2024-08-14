@@ -17,7 +17,6 @@
 .. _Python: https://www.python.org/
 .. _Jupyter Lab: https://jupyter.org/
 .. _win32com: https://pypi.org/project/pywin32/
-.. _comtypes: https://pypi.org/project/comtypes/
 .. _ctypes: https://docs.python.org/3/library/ctypes.html
 .. _pip: https://pypi.org/project/pip/
 
