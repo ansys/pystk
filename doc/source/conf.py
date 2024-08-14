@@ -402,6 +402,39 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the examples directory to the source directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    if not SOURCE_EXAMPLES.exists():
+        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+
+    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
+    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+
+    print(f"BUILDER: {app.builder.name}")
+
+    for file in status_iterator(
+        examples,
+        f"Copying example to doc/source/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
     Remove the example files from the documentation source directory.
