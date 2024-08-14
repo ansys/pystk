@@ -315,6 +315,7 @@ linkcheck_ignore = [
     # Requires sign-in
     f"https://github.com/{user_repo}/*",
     "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
 ]
 
 # -- MyST Sphinx configuration -----------------------------------------------
