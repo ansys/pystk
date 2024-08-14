@@ -3,7 +3,7 @@ Install PySTK locally in Linux
 
 This guideline covers the local installation of PySTK in Linux platforms.
 
-.. note::
+.. admonition::
 
     This guide assumes that you have a local installation of STK and a valid
     license in your machine.
