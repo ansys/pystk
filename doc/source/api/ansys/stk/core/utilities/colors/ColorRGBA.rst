@@ -35,7 +35,7 @@ Import detail
 
 
 Property detail
--------------
+---------------
 
 .. py:property:: alpha
     :canonical: ansys.stk.core.utilities.colors.ColorRGBA.alpha
