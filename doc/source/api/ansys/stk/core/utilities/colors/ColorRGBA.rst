@@ -15,14 +15,14 @@ Overview
 
 .. tab-set::
 
-    .. tab-item:: Methods
+    .. tab-item:: Properties
 
         .. list-table::
             :header-rows: 0
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.alpha`
-              - Get or set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
+              - Gets or sets the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
             * - :py:attr:`~ansys.stk.core.utilities.colors.ColorRGBA.color`
               - The Color value that contains R, G, B values.
 
@@ -34,36 +34,19 @@ Import detail
     from ansys.stk.core.utilities.colors import ColorRGBA
 
 
-Method detail
+Property detail
 -------------
 
-.. py:method:: alpha(self) -> float
+.. py:property:: alpha
     :canonical: ansys.stk.core.utilities.colors.ColorRGBA.alpha
+    :type: float
 
-    Get or set the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
+    Gets or sets the ColorRGBA object's value for alpha, which ranges between 0 (fully translucent) and 255 (fully opaque).
 
-    :Returns:
-
-        :obj:`~float`
-
-.. py:method:: alpha(self, value: int) -> None
-    :canonical: ansys.stk.core.utilities.colors.ColorRGBA.alpha
-
-    :Parameters:
-
-    **value** : :obj:`~int`
-
-    :Returns:
-
-        :obj:`~None`
-
-.. py:method:: color(self) -> Color
+.. py:property:: color
     :canonical: ansys.stk.core.utilities.colors.ColorRGBA.color
+    :type: Color
 
     The Color value that contains R, G, B values.
-
-    :Returns:
-
-        :obj:`~Color`
 
 

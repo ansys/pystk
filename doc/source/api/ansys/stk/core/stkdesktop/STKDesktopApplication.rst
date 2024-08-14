@@ -24,8 +24,6 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root`
-              - Get the object model root associated with this instance of STK Desktop application.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context`
               - Create a new object model context for the STK Desktop application.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.SetGrpcOptions`
@@ -47,6 +45,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.shutdown`
               - Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication()).
 
+.. tab-set::
+
+    .. tab-item:: Properties
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root`
+              - Get the object model root associated with this instance of STK Desktop application.
+
 Import detail
 -------------
 
@@ -55,17 +64,18 @@ Import detail
     from ansys.stk.core.stkdesktop import STKDesktopApplication
 
 
-Method detail
+Property detail
 -------------
 
-.. py:method:: root(self) -> StkObjectRoot
+.. py:property:: root
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.root
+    :type: StkObjectRoot
 
     Get the object model root associated with this instance of STK Desktop application.
 
-    :Returns:
 
-        :obj:`~StkObjectRoot`
+Method detail
+-------------
 
 .. py:method:: new_object_model_context(self) -> StkObjectModelContext
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context
