@@ -16,11 +16,11 @@ the latest three stable version of Python.
         :widths: auto
 
         * - **Artifact**
-          - `Linux Dockerfiles <../../../_static/docker/{{ linux_images }}>`_
+          - `Linux Dockerfiles <../../../_static/docker/{{ docker_recipes_linux }}>`_
         * - **Size**
-          - {{ linux_images_size }}
+          - {{ docker_recipes_linux_size }}
         * - **SHA-256**
-          - {{ linux_images_hash }}
+          - {{ docker_recipes_linux_hash }}
 
 Download STK artifacts
 ======================

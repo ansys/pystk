@@ -351,17 +351,17 @@ def copy_docker_files_to_static_dir(app: sphinx.application.Sphinx):
     # Add the new files and their information to the Jinja context. This
     # operation can not be performed outside of this function since the compressed files do not yet exist.
 
-    DOCKER_IMAGES = SOURCE_DIR / "_static" / "docker"
-    DOCKER_IMAGES_WINDOWS = DOCKER_IMAGES / "windows.zip"
-    DOCKER_IMAGES_LINUX = DOCKER_IMAGES / "linux.zip"
+    DOCKER_RECIPES = SOURCE_DIR / "_static" / "docker"
+    DOCKER_RECIPES_WINDOWS = DOCKER_RECIPES / "windows.zip"
+    DOCKER_RECIPES_LINUX = DOCKER_RECIPES / "linux.zip"
 
     jinja_contexts["docker_images"] = {
-        "windows_images": DOCKER_IMAGES_WINDOWS.name,
-        "windows_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_WINDOWS):.2f} MB",
-        "windows_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_WINDOWS)}",
-        "linux_images": DOCKER_IMAGES_LINUX.name,
-        "linux_images_size": f"{get_file_size_in_mb(DOCKER_IMAGES_LINUX):.2f} MB",
-        "linux_images_hash": f"{get_sha256_from_file(DOCKER_IMAGES_LINUX)}",
+        "docker_recipes_windows": DOCKER_RECIPES_WINDOWS.name,
+        "docker_recipes_windows_size": f"{get_file_size_in_mb(DOCKER_RECIPES_WINDOWS):.2f} MB",
+        "docker_recipes_windows_hash": f"{get_sha256_from_file(DOCKER_RECIPES_WINDOWS)}",
+        "docker_recipes_linux": DOCKER_RECIPES_LINUX.name,
+        "docker_recipes_linux_size": f"{get_file_size_in_mb(DOCKER_RECIPES_LINUX):.2f} MB",
+        "docker_recipes_linux_hash": f"{get_sha256_from_file(DOCKER_RECIPES_LINUX)}",
     }
 
 
