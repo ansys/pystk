@@ -65,7 +65,7 @@ Import detail
 
 
 Property detail
--------------
+---------------
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.root
