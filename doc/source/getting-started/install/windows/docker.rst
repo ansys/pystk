@@ -48,7 +48,7 @@ Build Docker images
 ===================
 
 Navigate to the ``windows`` directory and use `Docker Compose`_ to build the
-image of your choicby running:
+image of your choice by running:
 
 .. code-block:: dosbatch
 
