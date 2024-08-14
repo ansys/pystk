@@ -3,7 +3,7 @@ Install PySTK locally in Windows
 
 This guideline covers the local installation of PySTK in Windows platforms.
 
-.. admonition::
+.. note::
 
     This guide assumes that you have a local installation of STK and a valid
     license in your machine.
