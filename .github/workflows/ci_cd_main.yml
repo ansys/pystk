@@ -36,6 +36,8 @@ jobs:
 
       - name: "Include 'API' and 'Examples' sections from nightly build docs"
         run: |
+          # Copy wheelhouse artifacts
+          cp -r gh-pages/version/dev/_static/wheelhouse doc/_build/html/_static/wheelhouse
           # Copy landing pages for 'API' and 'Examples' sections
           cp gh-pages/version/dev/api.html doc/_build/html/api.html
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
