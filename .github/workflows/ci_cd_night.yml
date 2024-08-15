@@ -68,7 +68,7 @@ jobs:
       - name: "Download wheelhouse into static path"
         uses: actions/download-artifact@v4
         with:
-          path: "doc/source/_static/"
+          path: "doc/source/_static/wheelhouse"
           pattern: "*-wheelhouse-*"
 
       - name: "Display the wheelhouse layout"
