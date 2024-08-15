@@ -34,7 +34,7 @@ jobs:
           ref: "gh-pages"
           path: "gh-pages"
 
-      - name: "Include 'API' and 'Examples' sections from nightly build docs"
+      - name: "Reuse heavy content from nightly build"
         run: |
           # Copy wheelhouse artifacts
           cp -r gh-pages/version/dev/_static/wheelhouse doc/_build/html/_static/wheelhouse
