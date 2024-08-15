@@ -150,7 +150,6 @@ jobs:
       - name: "Download wheelhouse into static path"
         uses: actions/download-artifact@v4
         with:
-          name: "wheelhouse"
           path: "doc/source/_static/"
           pattern: "*-wheelhouse-*"
 
