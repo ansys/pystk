@@ -279,8 +279,15 @@ ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
+WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
+
+jinja_globals = {
+    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
+    "SUPPORTED_PLATFORMS": ["windows", "linux"],
+    "STK_VERSION": "12.9.0",
+}
+
 jinja_contexts = {
-    "install_guide": {"stk_version": "12.9.0"},
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
@@ -292,7 +299,19 @@ jinja_contexts = {
         "source": ARTIFACTS_SDIST.name,
         "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
         "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
-        "platforms": ["Windows", "Linux"],
+    },
+    # INFO: wheelhouse artifacts are only available during CI/CD runs
+    "wheelhouse": {
+        "wheelhouse": {
+            platform: {
+                python: {
+                    target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                }
+                for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
+            }
+            for platform in jinja_globals["SUPPORTED_PLATFORMS"]
+            for target in ["visualization"]
+        }
     },
 }
 
