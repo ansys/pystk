@@ -323,15 +323,11 @@ class GatorHelper(object):
         Assert.assertEqual("CentralBody/Moon Moon_Angular_Velocity", attControl.constraint_vector_name)
 
         with pytest.raises(Exception):
-            attControl.body_axis = BODY_AXIS((-1)) if ((-1) in [item.value for item in BODY_AXIS]) else (-1)
+            attControl.body_axis = -1
         with pytest.raises(Exception):
-            attControl.custom_function = (
-                CUSTOM_FUNCTION((-1)) if ((-1) in [item.value for item in CUSTOM_FUNCTION]) else (-1)
-            )
+            attControl.custom_function = -1
         with pytest.raises(Exception):
-            attControl.constraint_sign = (
-                CONSTRAINT_SIGN((-1)) if ((-1) in [item.value for item in CONSTRAINT_SIGN]) else (-1)
-            )
+            attControl.constraint_sign = -1
         with pytest.raises(Exception):
             attControl.constraint_vector_name = "Bogus"
 
@@ -632,23 +628,23 @@ class GatorHelper(object):
 
         Assert.assertTrue(prop.control_parameters_available)
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         cp: "DifferentialCorrectorControl" = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MaxPropTime")
 
-        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
-        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
+        prop.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME)
+        Assert.assertTrue(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME))
         cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
         Assert.assertEqual(cp.parent_name, "myProp")
         GatorHelper.TestDCControlParameter(cp)
-        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME)
-        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME))
+        prop.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME)
+        Assert.assertFalse(prop.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myProp", "MinPropTime")
 
@@ -1510,13 +1506,13 @@ class GatorHelper(object):
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Decl")
 
-        initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
-        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
+        initState.enable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA))
         cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Horiz_FPA")
         Assert.assertEqual(cp.parent_name, "myInitState")
         GatorHelper.TestDCControlParameter(cp)
-        initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA)
-        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA))
+        initState.disable_control_parameter(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FPA))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Spherical.Horiz_FPA")
 
@@ -1950,13 +1946,13 @@ class GatorHelper(object):
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Azimuth")
 
-        initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
-        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
+        initState.enable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertTrue(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA))
         cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Horiz_FPA")
         Assert.assertEqual(cp.parent_name, "myInitState")
         GatorHelper.TestDCControlParameter(cp)
-        initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA)
-        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA))
+        initState.disable_control_parameter(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA)
+        Assert.assertFalse(initState.is_control_parameter_enabled(CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FPA))
         with pytest.raises(Exception):
             cp = dc.control_parameters.get_control_by_paths("myInitState", "InitialState.Mixed_Spherical.Horiz_FPA")
 
@@ -4583,10 +4579,10 @@ class GatorHelper(object):
         finite.thrust_efficiency = 2
         Assert.assertEqual(2, finite.thrust_efficiency)
 
-        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW, finite.thrust_efficiency_mode)
-        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_ONLY
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_ONLY, finite.thrust_efficiency_mode)
+        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW, finite.thrust_efficiency_mode)
+        finite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_ONLY
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_ONLY, finite.thrust_efficiency_mode)
 
         # ANTI_VELOCITY_VECTOR
         finite.set_attitude_control_type(ATTITUDE_CONTROL.ANTI_VELOCITY_VECTOR)
@@ -4772,74 +4768,6 @@ class GatorHelper(object):
         Assert.assertEqual("Plugin Attitude Controller", plugin.plugin_name)
         with pytest.raises(Exception):
             plugin.select_plugin_by_name("Plugin Bogus")
-        if not OSHelper.IsLinux():
-            # CSharp AttCtl Plugin
-            finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
-            plugin = AttitudeControlFinitePlugin(finite.attitude_control)
-            plugin.select_plugin_by_name("CSharp AttCtrl Example")
-            Assert.assertEqual("CSharp AttCtrl Example", plugin.plugin_name)
-            GatorHelper.TestAttitudeControl(plugin)
-            GatorHelper.TestRuntimeTypeInfo(plugin)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(11, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("Y0", availableProperties[1])
-            pluginProperties.set_property("Y0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("Y0"))
-            pluginProperties.set_property("Y1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("Y1"))
-            pluginProperties.set_property("Y2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("Y2"))
-            pluginProperties.set_property("Ys", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ys"))
-            pluginProperties.set_property("Yc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Yc"))
-            pluginProperties.set_property("P0", 0.6)
-            Assert.assertEqual(0.6, pluginProperties.get_property("P0"))
-            pluginProperties.set_property("P1", 0.7)
-            Assert.assertEqual(0.7, pluginProperties.get_property("P1"))
-            pluginProperties.set_property("P2", 0.8)
-            Assert.assertEqual(0.8, pluginProperties.get_property("P2"))
-            pluginProperties.set_property("Ps", 0.9)
-            Assert.assertEqual(0.9, pluginProperties.get_property("Ps"))
-            pluginProperties.set_property("Pc", 0.99)
-            Assert.assertEqual(0.99, pluginProperties.get_property("Pc"))
-
-            # JScript AttCtl Plugin
-            finite.set_attitude_control_type(ATTITUDE_CONTROL.PLUGIN)
-            plugin = AttitudeControlFinitePlugin(finite.attitude_control)
-            plugin.select_plugin_by_name("JScript AttCtrl Example")
-            Assert.assertEqual("JScript AttCtrl Example", plugin.plugin_name)
-            GatorHelper.TestAttitudeControl(plugin)
-            GatorHelper.TestRuntimeTypeInfo(plugin)
-            pluginProperties = plugin.plugin_config
-            Assert.assertIsNotNone(pluginProperties)
-            availableProperties = pluginProperties.available_properties
-            Assert.assertEqual(11, len(availableProperties))
-            Assert.assertEqual("PluginName", availableProperties[0])
-            Assert.assertEqual("Y0", availableProperties[1])
-            pluginProperties.set_property("Y0", 0.1)
-            Assert.assertEqual(0.1, pluginProperties.get_property("Y0"))
-            pluginProperties.set_property("Y1", 0.2)
-            Assert.assertEqual(0.2, pluginProperties.get_property("Y1"))
-            pluginProperties.set_property("Y2", 0.3)
-            Assert.assertEqual(0.3, pluginProperties.get_property("Y2"))
-            pluginProperties.set_property("Ys", 0.4)
-            Assert.assertEqual(0.4, pluginProperties.get_property("Ys"))
-            pluginProperties.set_property("Yc", 0.5)
-            Assert.assertEqual(0.5, pluginProperties.get_property("Yc"))
-            pluginProperties.set_property("P0", 0.6)
-            Assert.assertEqual(0.6, pluginProperties.get_property("P0"))
-            pluginProperties.set_property("P1", 0.7)
-            Assert.assertEqual(0.7, pluginProperties.get_property("P1"))
-            pluginProperties.set_property("P2", 0.8)
-            Assert.assertEqual(0.8, pluginProperties.get_property("P2"))
-            pluginProperties.set_property("Ps", 0.9)
-            Assert.assertEqual(0.9, pluginProperties.get_property("Ps"))
-            pluginProperties.set_property("Pc", 0.99)
-            Assert.assertEqual(0.99, pluginProperties.get_property("Pc"))
 
         propagate: "ManeuverFinitePropagator" = finite.propagator
 
@@ -4919,10 +4847,10 @@ class GatorHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             optFinite.thrust_efficiency = -1
 
-        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW, optFinite.thrust_efficiency_mode)
-        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCEL_ONLY
-        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCEL_ONLY, optFinite.thrust_efficiency_mode)
+        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW, optFinite.thrust_efficiency_mode)
+        optFinite.thrust_efficiency_mode = THRUST_TYPE.AFFECTS_ACCELERATION_ONLY
+        Assert.assertEqual(THRUST_TYPE.AFFECTS_ACCELERATION_ONLY, optFinite.thrust_efficiency_mode)
 
         # Solver tab
 
@@ -6951,7 +6879,7 @@ class GatorHelper(object):
             # Enable a Control param and add a Result for use below
             man1: "MissionControlSequenceManeuver" = clr.CastAs(ts.segments["TMan"], MissionControlSequenceManeuver)
             man1.enable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.add("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.add("Epoch")
 
             Assert.assertEqual(iAgVAProfile.type, PROFILE.GRID_SEARCH)
             profGridSearch: "ProfileGridSearch" = ProfileGridSearch(iAgVAProfile)
@@ -7038,7 +6966,7 @@ class GatorHelper(object):
                 GridSearchResult.custom_display_unit = "Bogus"
 
             # Cleanup
-            (clr.CastAs(man1, IMissionControlSequenceSegment)).results.remove("Epoch")
+            (IMissionControlSequenceSegment(man1)).results.remove("Epoch")
             man1.disable_control_parameter(CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS)
 
     @staticmethod

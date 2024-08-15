@@ -18,6 +18,7 @@ if os.name != "nt":
     from ctypes.util import find_library
 
 class NativeContainerMethods:
+    """Provide support for STK Engine controls (map, globe, graphics analysis)."""
     def __init__(self):
         self.jniCore = CDLL(self._get_jni_core_path())
         self.AgPythonCreateContainer                                         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPCWSTR)(("AgPythonCreateContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "progId")))
@@ -193,6 +194,7 @@ class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GlobeControl."""
+        UiAxGraphics3DCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
@@ -207,6 +209,7 @@ class MapControl(UiAx2DCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type MapControl."""
+        UiAx2DCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
@@ -221,6 +224,7 @@ class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GfxAnalysisControl."""
+        UiAxGraphics2DAnalysisCntrl.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):

@@ -1,0 +1,39 @@
+SAMPLING_METHOD
+===============
+
+.. py:class:: ansys.stk.core.stkobjects.SAMPLING_METHOD
+
+   IntEnum
+
+
+.. py:currentmodule:: SAMPLING_METHOD
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown sampling method.
+
+            * - :py:attr:`~ADAPTIVE`
+              - Adaptive sampling method.
+
+            * - :py:attr:`~FIXED_STEP`
+              - Fixed-step sampling method.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import SAMPLING_METHOD
+
+

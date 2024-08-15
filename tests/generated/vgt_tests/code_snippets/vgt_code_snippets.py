@@ -1812,7 +1812,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAngle(self, angle: "IVectorGeometryToolAngle"):
-        result: "AnalysisWorkbenchMethodCallAngleFindAngleResult" = angle.find_angle(0)
+        result: "IVectorGeometryToolAngleFindAngleResult" = angle.find_angle(0)
         if result.is_valid:
             Console.WriteLine("Angle: {0}", result.angle)
 
@@ -1834,7 +1834,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAngleAndRate(self, angle: "IVectorGeometryToolAngle"):
-        result: "AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult" = angle.find_angle_with_rate(0)
+        result: "IVectorGeometryToolAngleFindAngleWithRateResult" = angle.find_angle_with_rate(0)
         if result.is_valid:
             Console.WriteLine("Angle: {0}, Rate: {1}", result.angle, result.angle_rate)
 
@@ -1856,9 +1856,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAxesInEarthFixed(self, provider: "AnalysisWorkbenchProvider", axes: "IVectorGeometryToolAxes"):
-        result: "AnalysisWorkbenchMethodCallAxesFindInAxesResult" = axes.find_in_axes(
-            0, provider.well_known_axes.earth.fixed
-        )
+        result: "IVectorGeometryToolAxesFindInAxesResult" = axes.find_in_axes(0, provider.well_known_axes.earth.fixed)
         if result.is_valid:
             angles: "IOrientationEulerAngles" = IOrientationEulerAngles(
                 result.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
@@ -1892,7 +1890,7 @@ class VGT(CodeSnippetsTestBase):
 
         # Use the Transform method to transform ICRF to Fixed
         axesFixed: "IVectorGeometryToolAxes" = sat.vgt.well_known_axes.earth.fixed
-        result: "AnalysisWorkbenchMethodCallAxesTransformResult" = axesICRF.transform(numEpSec, axesFixed, vectorICRF)
+        result: "IVectorGeometryToolAxesTransformResult" = axesICRF.transform(numEpSec, axesFixed, vectorICRF)
 
         # Get the Fixed coordinates
         xFixed: float = result.vector.x
@@ -1937,7 +1935,7 @@ class VGT(CodeSnippetsTestBase):
 
         # Use the TransformWithRate method to transform ICRF to Fixed
         axesFixed: "IVectorGeometryToolAxes" = sat.vgt.well_known_axes.earth.fixed
-        result: "AnalysisWorkbenchMethodCallAxesTransformWithRateResult" = axesICRF.transform_with_rate(
+        result: "IVectorGeometryToolAxesTransformWithRateResult" = axesICRF.transform_with_rate(
             numEpSec, axesFixed, vectorICRF, vectorvelICRF
         )
 
@@ -1967,7 +1965,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def PointLocateInEarthFixedSystem(self, provider: "AnalysisWorkbenchProvider", point: "IVectorGeometryToolPoint"):
-        result: "AnalysisWorkbenchMethodCallPointLocateInSystemResult" = point.locate_in_system(
+        result: "IVectorGeometryToolPointLocateInSystemResult" = point.locate_in_system(
             0, provider.well_known_systems.earth.fixed
         )
         if result.is_valid:
@@ -1996,7 +1994,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def VectorFindInEarthFixedAxes(self, provider: "AnalysisWorkbenchProvider", vector: "IVectorGeometryToolVector"):
-        result: "AnalysisWorkbenchMethodCallVectorFindInAxesResult" = vector.find_in_axes(
+        result: "IVectorGeometryToolVectorFindInAxesResult" = vector.find_in_axes(
             0, provider.well_known_axes.earth.fixed
         )
         if result.is_valid:

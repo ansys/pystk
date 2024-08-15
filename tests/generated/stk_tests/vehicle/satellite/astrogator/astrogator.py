@@ -277,8 +277,8 @@ class EarlyBoundTests(TestBase):
         prop1: "MissionControlSequencePropagate" = clr.CastAs(
             ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "prop1", "-"), MissionControlSequencePropagate
         )
-        prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
-        (clr.CastAs(prop1, IMissionControlSequenceSegment)).results.add("Epoch")
+        prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+        (IMissionControlSequenceSegment(prop1)).results.add("Epoch")
         dc: "ProfileDifferentialCorrector" = clr.CastAs(ts.profiles[0], ProfileDifferentialCorrector)
         self.TestTargeterGraphsControlDisabled(dc.targeter_graphs, True)
         dc.control_parameters[0].enable = True
@@ -1336,11 +1336,11 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestStoppingConditionCollection(hold.stopping_conditions)
 
         Assert.assertFalse(hold.control_parameters_available)
-        Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME))
+        Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
         with pytest.raises(Exception):
-            hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
+            hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
         with pytest.raises(Exception):
-            hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME)
+            hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
 
         EarlyBoundTests.AG_VA.main_sequence.remove("Holder1")
 
@@ -1497,7 +1497,7 @@ class EarlyBoundTests(TestBase):
             scene.animation.enable_anim_cycle_time = True
             scene.animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
             scene.animation.anim_cycle_time = "1 Jan 1994 00:00:00.00"
-            (StkObjectRoot(TestBase.Application)).rewind()
+            (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -1917,11 +1917,11 @@ class EarlyBoundTests(TestBase):
         ts2.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
         driver.run_mission_control_sequence()
         if not TestBase.NoGraphicsMode:
-            (StkObjectRoot(TestBase.Application)).rewind()
+            (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                (StkObjectRoot(TestBase.Application)).rewind()
+                (IAnimation(TestBase.Application)).rewind()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])

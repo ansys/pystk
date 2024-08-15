@@ -208,11 +208,11 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
         maxAcceleration: "VehicleAttitudeMaximumSlewAcceleration" = constrainedSlew.maximum_slew_acceleration
         maxAcceleration.magnitude = 10.0  # deg/sec^2
-        maxAcceleration.per_axis_x_accel_enabled = True
-        maxAcceleration.per_axis_x_accel = 5.0  # deg/sec^2
-        maxAcceleration.per_axis_y_accel_enabled = True
-        maxAcceleration.per_axis_y_accel = 5.0  # deg/sec^2
-        maxAcceleration.per_axis_z_accel_enabled = True
-        maxAcceleration.per_axis_z_accel = 5.0  # deg/sec^2
+        maxAcceleration.per_axis_x_acceleration_enabled = True
+        maxAcceleration.per_axis_x_acceleration = 5.0  # deg/sec^2
+        maxAcceleration.per_axis_y_acceleration_enabled = True
+        maxAcceleration.per_axis_y_acceleration = 5.0  # deg/sec^2
+        maxAcceleration.per_axis_z_acceleration_enabled = True
+        maxAcceleration.per_axis_z_acceleration = 5.0  # deg/sec^2
 
     # endregion

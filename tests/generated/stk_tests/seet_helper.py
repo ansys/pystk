@@ -559,9 +559,9 @@ class SEETHelper(object):
         magFieldLine.line_width = LINE_WIDTH.WIDTH3
         Assert.assertEqual(LINE_WIDTH.WIDTH3, magFieldLine.line_width)
         with pytest.raises(Exception):
-            magFieldLine.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            magFieldLine.line_width = -1
         with pytest.raises(Exception):
-            magFieldLine.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            magFieldLine.line_width = 11
 
         magFieldLine.label_visible = False
         Assert.assertFalse(magFieldLine.label_visible)

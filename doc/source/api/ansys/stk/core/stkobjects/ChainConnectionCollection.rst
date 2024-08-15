@@ -1,0 +1,173 @@
+ChainConnectionCollection
+=========================
+
+.. py:class:: ansys.stk.core.stkobjects.ChainConnectionCollection
+
+   Class defining a collection of Chain connections.
+
+.. py:currentmodule:: ChainConnectionCollection
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.item`
+              - Given an index, returns the element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.item_by_from_to_objects`
+              - Given the From and To objects of a connection, returns the element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.remove_at`
+              - Remove the connection with the input index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.remove`
+              - Remove the connection for the input from-to object pair.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.add`
+              - Add and returns a new connection with the corresponding values.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.add_with_parent_restriction`
+              - Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.clear`
+              - Clear all connections values from the collection.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.count`
+              - Returns the number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection._NewEnum`
+              - Returns an enumerator for the collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import ChainConnectionCollection
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.count
+    :type: int
+
+    Returns the number of elements in the collection.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an enumerator for the collection.
+
+
+Method detail
+-------------
+
+
+.. py:method:: item(self, index: int) -> ChainConnection
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.item
+
+    Given an index, returns the element in the collection.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~ChainConnection`
+
+
+.. py:method:: item_by_from_to_objects(self, pFromObject: IStkObject, pToObject: IStkObject) -> ChainConnection
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.item_by_from_to_objects
+
+    Given the From and To objects of a connection, returns the element in the collection.
+
+    :Parameters:
+
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
+
+    :Returns:
+
+        :obj:`~ChainConnection`
+
+.. py:method:: remove_at(self, index: int) -> None
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.remove_at
+
+    Remove the connection with the input index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove(self, pFromObject: IStkObject, pToObject: IStkObject) -> None
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.remove
+
+    Remove the connection for the input from-to object pair.
+
+    :Parameters:
+
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: add(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int) -> ChainConnection
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add
+
+    Add and returns a new connection with the corresponding values.
+
+    :Parameters:
+
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
+    **minNumUses** : :obj:`~int`
+    **maxNumUses** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~ChainConnection`
+
+.. py:method:: add_with_parent_restriction(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int, parentRestriction: CHAIN_PARENT_PLATFORM_RESTRICTION) -> ChainConnection
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add_with_parent_restriction
+
+    Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
+
+    :Parameters:
+
+    **pFromObject** : :obj:`~IStkObject`
+    **pToObject** : :obj:`~IStkObject`
+    **minNumUses** : :obj:`~int`
+    **maxNumUses** : :obj:`~int`
+    **parentRestriction** : :obj:`~CHAIN_PARENT_PLATFORM_RESTRICTION`
+
+    :Returns:
+
+        :obj:`~ChainConnection`
+
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.clear
+
+    Clear all connections values from the collection.
+
+    :Returns:
+
+        :obj:`~None`
+

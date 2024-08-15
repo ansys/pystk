@@ -231,7 +231,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 
     def _on_log_message(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
 
     def _on_anim_update(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -452,7 +452,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._events["OnAnimUpdate"]._callbacks:

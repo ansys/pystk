@@ -1,0 +1,123 @@
+DataProviders
+=============
+
+.. py:class:: ansys.stk.core.stkobjects.DataProviders
+
+   Class defining data providers.
+
+.. py:currentmodule:: DataProviders
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.item`
+              - Given an index, returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.contains`
+              - Determine whether the collection contains a specific data provider.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.get_item_by_index`
+              - Retrieve a data provider from the collection by index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.get_item_by_name`
+              - Retrieve a data provider from the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.count`
+              - Returns an element in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._NewEnum`
+              - Returns an enumerator for the collection.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import DataProviders
+
+
+Property detail
+---------------
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.DataProviders.count
+    :type: int
+
+    Returns an element in the collection.
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.DataProviders._NewEnum
+    :type: EnumeratorProxy
+
+    Returns an enumerator for the collection.
+
+
+Method detail
+-------------
+
+
+.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.DataProviders.item
+
+    Given an index, returns an element in the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~IDataProviderInfo`
+
+
+.. py:method:: contains(self, dataProviderName: str) -> bool
+    :canonical: ansys.stk.core.stkobjects.DataProviders.contains
+
+    Determine whether the collection contains a specific data provider.
+
+    :Parameters:
+
+    **dataProviderName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~bool`
+
+.. py:method:: get_item_by_index(self, index: int) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.DataProviders.get_item_by_index
+
+    Retrieve a data provider from the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~IDataProviderInfo`
+
+.. py:method:: get_item_by_name(self, name: str) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.DataProviders.get_item_by_name
+
+    Retrieve a data provider from the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~IDataProviderInfo`
+

@@ -171,9 +171,7 @@ class TimePeriodTests(TestBase):
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
 
         with pytest.raises(Exception):
-            tp.start_time.type = (
-                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
-            )
+            tp.start_time.type = -1
         with pytest.raises(Exception):
             tp.start_time.value = ""
 
@@ -313,9 +311,7 @@ class TimePeriodTests(TestBase):
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.stop_time.type)
 
         with pytest.raises(Exception):
-            tp.stop_time.type = (
-                TIME_PERIOD_VALUE_TYPE((-1)) if ((-1) in [item.value for item in TIME_PERIOD_VALUE_TYPE]) else (-1)
-            )
+            tp.stop_time.type = -1
         with pytest.raises(Exception):
             tp.stop_time.value = ""
 

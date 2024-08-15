@@ -1,0 +1,69 @@
+StateCalcVectorZ
+================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+
+   VectorZ Calc objects.
+
+.. py:currentmodule:: StateCalcVectorZ
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.coord_axes_name`
+              - Gets or sets the coordinate axes.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.vector_name`
+              - Gets or sets the vector.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.unit_dimension`
+              - Gets or sets the unit dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.normalize`
+              - If true, return the normalized magnitude.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import StateCalcVectorZ
+
+
+Property detail
+---------------
+
+.. py:property:: coord_axes_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.coord_axes_name
+    :type: str
+
+    Gets or sets the coordinate axes.
+
+.. py:property:: vector_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.vector_name
+    :type: str
+
+    Gets or sets the vector.
+
+.. py:property:: unit_dimension
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.unit_dimension
+    :type: str
+
+    Gets or sets the unit dimension.
+
+.. py:property:: normalize
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.normalize
+    :type: bool
+
+    If true, return the normalized magnitude.
+
+

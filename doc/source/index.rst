@@ -68,3 +68,4 @@ PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK).
        {% if build_api %}
        api
        {% endif %}
+       artifacts

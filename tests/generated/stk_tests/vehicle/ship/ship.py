@@ -67,11 +67,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = (
-                VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ATTITUDE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_SH.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -222,11 +218,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_PROPAGATOR_TYPE" = (
-                VEHICLE_PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_PROPAGATOR_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_PROPAGATOR_TYPE" = VEHICLE_PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_SH.is_route_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -337,11 +329,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ATTRIBUTES])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -832,7 +820,7 @@ class EarlyBoundTests(TestBase):
         exportHelper = ExportDataFileHelper(IStkObject(sh), TestBase.Application)
         exportHelper.AttitudeExportTool(sh.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(sh.export_tools.get_ephemeris_stk_export_tool(), False)
-        exportHelper.PropDefExportTool(sh.export_tools.get_prop_definition_export_tool())
+        exportHelper.PropDefExportTool(sh.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(sh.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SHIP, "ExportSh")
