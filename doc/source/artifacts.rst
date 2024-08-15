@@ -18,9 +18,9 @@ are not included.
         :header-rows: 1
         :widths: 16, 42, 42
 
-        * - Platform
-          - Wheels
-          - Source
+        * - :fas:`laptop` Platform
+          - :fas:`cog` Wheels
+          - :fas:`code` Source
         {% for platform in SUPPORTED_PLATFORMS %}
         * - :fab:`{{ platform }}` {{ platform | capitalize }}
           - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
@@ -37,15 +37,18 @@ IPython or performing data-analysis.
 Visualization
 -------------
 
+These extra artifacts include all the dependencies for using interactive
+visualization under IPython environments.
+
 .. jinja:: wheelhouse
 
-    .. csv-table:: Wheelhouse for visualization extras
+    .. csv-table::
        :header-rows: 1
        :widths: 16, 28, 28, 28
     
-       Platform,
+       :fas:`laptop` Platform,
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
-       Python {{ python }}
+       :fab:`python` Python {{ python }}
        {%- if not loop.last -%},{%- endif -%}
        {% endfor %}
        {% for platform in SUPPORTED_PLATFORMS -%}
