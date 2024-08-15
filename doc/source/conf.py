@@ -132,6 +132,15 @@ links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
+# -- Linkcheck configuration -------------------------------------------------
+user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_ignore = [
+    "https://www.ansys.com/*",
+    # Requires sign-in
+    f"https://github.com/{user_repo}/*",
+    "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
+]
 
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
@@ -280,6 +289,8 @@ ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-n
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
 WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
+if not WHEELHOUSE_PATH.exists():
+    linkcheck_ignore.append(r".*/wheelhouse/.*")
 
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
@@ -300,7 +311,7 @@ jinja_contexts = {
         "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
         "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
     },
-    # INFO: wheelhouse artifacts are only available during CI/CD runs
+    # NOTE: wheelhouse artifacts are only available during CI/CD runs
     "wheelhouse": {
         "wheelhouse": {
             platform: {
@@ -326,16 +337,6 @@ autodoc_default_options = {
 }
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
-
-# -- Linkcheck configuration -------------------------------------------------
-user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-linkcheck_ignore = [
-    "https://www.ansys.com/*",
-    # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-]
 
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
