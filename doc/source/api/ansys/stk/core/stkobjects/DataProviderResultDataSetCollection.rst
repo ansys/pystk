@@ -31,13 +31,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_pandas_dataframe`
               - Return a row formatted dataset collection as a pandas DataFrame. This function requires ``pandas``.
 
-                This function optionally maps data provider element types to pandas DataFrame column dtypes and optionally sets the column to be used as the DataFrame index.
-
-                Args:
-                -----
-                indexElementName: Valid data provider element name as the column to be set as the DataFrame index.
-                dataProviderElements: Data provider elements for the corresponding AgDrDataSetCollection to be used to automatically map data provider element types to DataFrame column dtypes.
-
     .. tab-item:: Properties
         
         .. list-table::

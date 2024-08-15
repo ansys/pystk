@@ -1844,6 +1844,9 @@ class ExecCmdResult(SupportsDeleteCallback):
         set_class_attribute(self, attrname, value, ExecCmdResult, [ExecCmdResult, ])
 
 agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecCmdResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}').as_data_pair(), ExecCmdResult)
+# mapping for ExecCmdResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}').as_data_pair(), agcom.GUID.from_registry_format('{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}').as_data_pair())
 agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
 class ExecMultiCmdResult(SupportsDeleteCallback):
@@ -1918,6 +1921,9 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [ExecMultiCmdResult, ])
 
 agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecMultiCmdResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecMultiCmdResult)
+# mapping for ExecMultiCmdResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}').as_data_pair(), agcom.GUID.from_registry_format('{0558BE8E-AF66-4F52-9C6D-76962FC52577}').as_data_pair())
 agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
 class UnitPreferencesUnit(SupportsDeleteCallback):
