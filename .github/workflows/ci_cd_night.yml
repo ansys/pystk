@@ -59,6 +59,7 @@ jobs:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
     timeout-minutes: 90
+    needs: "build-wheelhouse"
     steps:
 
       - name: "Checkout the project"

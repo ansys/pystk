@@ -106,6 +106,7 @@ jobs:
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
+    needs: doc-style
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -139,7 +140,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: doc-style
+    needs: build-wheelhouse
     timeout-minutes: 90
     steps:
 
