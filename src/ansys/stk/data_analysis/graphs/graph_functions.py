@@ -1,3 +1,5 @@
+"""Helper graph functions."""
+
 import pandas as pd
 import matplotlib.dates as md
 import datetime as dt
@@ -6,7 +8,7 @@ import numpy as np
 from math import radians
 
 def line_chart(df, root, numerical_columns, time_columns, axes, x_column, x_label, title, groupby=None):
-    """Creates a line chart from the provided dataframe and axes information."""
+    """Create a line chart from the provided dataframe and axes information."""
     # count number of lines
     num_lines = 0
     for axis in axes:
@@ -109,7 +111,7 @@ def line_chart(df, root, numerical_columns, time_columns, axes, x_column, x_labe
 
 
 def line_chart_time_x(df, root, numerical_columns, time_columns, axes, title, groupby = None):
-    """Creates a line chart from the provided dataframe and axes information, with an x-axis corresponding to time."""
+    """Create a line chart from the provided dataframe and axes information, with an x-axis corresponding to time."""
     # count number of lines
     num_lines = 0
     for axis in axes:
@@ -217,7 +219,6 @@ def line_chart_time_x(df, root, numerical_columns, time_columns, axes, title, gr
 # only supports plotting a single column
 def polar_chart(df, root, numerical_columns, axis, title, origin_0 = False, convert_negative_r = False, groupby=None):
     """Create a polar chart from the provided dataframe and axis information. Only supports plotting one x:y data pair."""
-
     # data conversions
     df = convert_columns(df, numerical_columns, [])
     df.dropna(axis=0, inplace=True)
@@ -299,7 +300,7 @@ def polar_chart(df, root, numerical_columns, axis, title, origin_0 = False, conv
     return fig, ax
 
 def interval_plot(df_list, element_pairs : list, numerical_columns : list, time_columns : list, x_label : str, title : str):
-    """Creates an interval plot from the provided list of dataframes."""
+    """Create an interval plot from the provided list of dataframes."""
     # create plot
     fig, ax = plt.subplots()
 
@@ -364,7 +365,7 @@ def interval_plot(df_list, element_pairs : list, numerical_columns : list, time_
     return fig, ax
 
 def pie_chart(root, df, numerical_columns : list, time_columns : list, column : str, title : str, unit_pref : str, label_col=None):
-    """Creates a pie chart from the provided dataframe and information."""
+    """Create a pie chart from the provided dataframe and information."""
     # create plot
     fig, ax = plt.subplots()
 
@@ -399,7 +400,7 @@ def pie_chart(root, df, numerical_columns : list, time_columns : list, column : 
     return fig, ax
 
 def interval_pie_chart(root, df, numerical_columns : list, time_columns : list, start_col : str, stop_col : str, start_time : str, title:str, unit_pref:str, cumulative=False):
-    """Creates an interval pie chart from the provided dataframe."""
+    """Create an interval pie chart from the provided dataframe."""
     # data conversions
     df = convert_columns(df, numerical_columns, time_columns)
 
@@ -464,7 +465,7 @@ def interval_pie_chart(root, df, numerical_columns : list, time_columns : list, 
     return fig, ax
 
 def convert_columns(dataframe, numerical_column_list, date_column_list):
-    """Converts numerical and time columns in a pandas dataframe."""
+    """Convert numerical and time columns in a pandas dataframe."""
     for column in numerical_column_list:
         dataframe[column] = pd.to_numeric(dataframe[column])
     for column in date_column_list:
@@ -472,7 +473,7 @@ def convert_columns(dataframe, numerical_column_list, date_column_list):
     return dataframe
 
 def format_time_axis(ax, dataframe, time_col_name, time_col_name2=None):
-    """Formats a matplotlib axis to display well with time."""
+    """Format a matplotlib axis to display well with time."""
     dataframe.sort_values(by=time_col_name)
     first_time = dataframe.iloc[0][time_col_name]
     if time_col_name2:
@@ -510,12 +511,12 @@ def format_time_axis(ax, dataframe, time_col_name, time_col_name2=None):
     ax.xaxis.set_minor_locator(xlocator_minor)
 
 def eliminate_negative_r_polar_vals(df, r_var, theta_var):
-    """Converts negative r values in a dataframe that has r and theta values."""
+    """Convert negative r values in a dataframe that has r and theta values."""
     df[theta_var]= np.where(df[r_var] >= 0, df[theta_var], df[theta_var] + np.pi)
     df[r_var] = df[r_var].apply(lambda x: abs(x))
 
 def groupby_legend(axes):
-    """Creates a legend from grouped data."""
+    """Create a legend from grouped data."""
     handles, labels = axes[0].get_legend_handles_labels()
     for i in range(1, len(axes)):
         ax_handles, ax_labels = axes[i].get_legend_handles_labels()
