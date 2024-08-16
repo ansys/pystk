@@ -335,6 +335,7 @@ satisfied_by_time_df
 # Visualize the data with a line chart:
 
 import matplotlib.pyplot as plt
+
 from ansys.stk.data_analysis.graphs import figure_of_merit_graphs
 
 
@@ -362,7 +363,11 @@ satisfied_by_time_df["percent accum coverage"] = pd.to_numeric(
 
 # Plot accumulated data
 satisfied_by_time_df.plot(
-    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="% Accumulated"
+    x="time",
+    y="percent accum coverage",
+    color="firebrick",
+    ax=ax,
+    label="% Accumulated"
 )
 
 # add legend with both lines

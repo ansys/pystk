@@ -224,6 +224,7 @@ aer_df
 
 # +
 import matplotlib.pyplot as plt
+
 from ansys.stk.data_analysis.graphs import access_graphs
 
 

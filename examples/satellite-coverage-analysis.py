@@ -244,6 +244,7 @@ satisfied_by_time_df
 # Visualize the data with a line chart:
 
 import matplotlib.pyplot as plt
+
 from ansys.stk.data_analysis.graphs import figure_of_merit_graphs
 
 
@@ -264,7 +265,11 @@ satisfied_by_time_df["percent accum coverage"] = pd.to_numeric(
 
 # plot data
 satisfied_by_time_df.plot(
-    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="% Accumulated"
+    x="time",
+    y="percent accum coverage",
+    color="firebrick",
+    ax=ax,
+    label="% Accumulated"
 )
 
 # add legend with both lines
@@ -355,5 +360,3 @@ satisfied_by_time_lighting_df = (
 satisfied_by_time_lighting_df
 
 # The percent satisfaction dropped from 85.65% to 14.75% when considering lighting conditions.
-
-
