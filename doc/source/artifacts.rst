@@ -54,7 +54,7 @@ visualization under IPython environments.
        {% for platform in SUPPORTED_PLATFORMS -%}
        :fab:`{{ platform }}` {{ platform | capitalize }},
        {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
-       `Download wheelhouse <_static/wheelhouse/{{ wheelhouse[platform][python]["visualization"] }}/{{ wheelhouse[platform][python]["visualization"].name }}.zip>`__
+       `Download wheelhouse <{{ wheelhouse[platform][python]["visualization"] }}/{{ wheelhouse[platform][python]["visualization"].name }}.zip>`__
        {%- if not loop.last -%},{%- endif -%}
        {% endfor %}
        {% endfor %}
