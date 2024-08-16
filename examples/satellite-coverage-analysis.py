@@ -269,7 +269,7 @@ satisfied_by_time_df.plot(
     y="percent accum coverage",
     color="firebrick",
     ax=ax,
-    label="% Accumulated"
+    label="% Accumulated",
 )
 
 # add legend with both lines
