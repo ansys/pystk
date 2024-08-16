@@ -295,6 +295,14 @@ If your example requires any dependencies that are not already present in the `d
 - Use inline highlights for paths to objects and the names of interfaces, classes, methods, properties, and enumerations.
 - Imports should be sorted in 3 groups: standard library, third party, and local packages. Within those groups, use alphabetical order.
 
+### Code-style check
+
+All examples submitted to the PySTK GitHub must pass a code-style check, which enforces rules like maximum line lengths, double quotes for strings, and avoiding trailing spaces. It is possible to run the code-style check locally by running
+
+`tox -e code-style`
+
+This command formats any files committed so that they follow the code-style rules. It is then possible to stage the formatted files and commit them.
+
 ## Additional documentation
 
 For additional documentation refer to the
