@@ -3,7 +3,7 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def chain_access_aer_time_xy_graph(stk_obj :Chain, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the azimuth, elevation, and range (AER) over time between access pairs in the strands of a Chain. The plot for each pair is shown over intervals that are the intersection of the pair's access intervals with the Chain's complete access intervals. 
+    r"""Create plot of the azimuth, elevation, and range (AER) over time between access pairs in the strands of a Chain. The plot for each pair is shown over intervals that are the intersection of the pair's access intervals with the Chain's complete access intervals.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Chain\Access AER.rsg.
     """
@@ -21,7 +21,7 @@ def chain_access_aer_time_xy_graph(stk_obj :Chain, start_time=None, stop_time=No
     return line_chart_time_x(df, root, ['azimuth','elevation','range'], ['time'], axes, 'Chain Access AER')
 
 def angle_between_data_time_xy_graph(stk_obj :Chain, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the angle and ranges for each three object sub-strand of a Chain, as a function of time, for each strand access interval that overlaps with the requested report time intervals. 
+    r"""Create plot of the angle and ranges for each three object sub-strand of a Chain, as a function of time, for each strand access interval that overlaps with the requested report time intervals.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Chain\Angle Between.rsg.
     """
@@ -39,7 +39,7 @@ def angle_between_data_time_xy_graph(stk_obj :Chain, start_time=None, stop_time=
     return line_chart_time_x(df, root, ['angle','range 1','range 2'], ['time'], axes, 'Angle Between Data')
 
 def bent_pipe_c_no_link_analysis_time_xy_graph(stk_obj :Chain, start_time=None, stop_time=None, step=60):
-    r""" graph shows the carrier-to-noise density ratio for uplink, downlink, and composite link as a function of time for a bent pipe communications system.
+    r"""Graph shows the carrier-to-noise density ratio for uplink, downlink, and composite link as a function of time for a bent pipe communications system.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Chain\BentPipe Link - CNo.rsg.
     """

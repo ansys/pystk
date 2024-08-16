@@ -52,7 +52,7 @@ def point_coverage_intervals_interval_graph(stk_obj :CoverageDefinition, start_t
     return interval_plot([df], elements, [], ['access start','access end'], 'Time', 'Point Coverage Intervals')
 
 def probability_of_coverage_xy_graph(stk_obj : CoverageDefinition):
-    r"""Create plot of the probability of coverage being achieved for the point selected in the grid inspector, as a function of the time past a request for coverage. 
+    r"""Create plot of the probability of coverage being achieved for the point selected in the grid inspector, as a function of the time past a request for coverage.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CoverageDefinition\GI Point Prob Of Coverage.rsg.
     """

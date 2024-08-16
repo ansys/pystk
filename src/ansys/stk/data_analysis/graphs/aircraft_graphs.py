@@ -30,7 +30,7 @@ def eclipse_times_interval_graph(stk_obj :Aircraft, start_time=None, stop_time=N
     return interval_plot([df], elements, [], ['start time','stop time'], 'Time', 'Eclipse Times')
 
 def flight_profile_by_down_range_xy_graph(stk_obj : Aircraft):
-    r"""Create plot of altitude and true air speed as a function of downrange distance. 
+    r"""Create plot of altitude and true air speed as a function of downrange distance.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Aircraft\Flight Profile by DownRange.rsg.
     """
@@ -43,7 +43,7 @@ def flight_profile_by_down_range_xy_graph(stk_obj : Aircraft):
     return line_chart(df, root, ['downrange','altitude-msl','tas'], [], axes, 'downrange','Down Range', 'Flight Profile By Down Range' )
 
 def flight_profile_by_time_time_xy_graph(stk_obj :Aircraft, start_time=None, stop_time=None, step=60):
-    r"""Create plot of altitude and true air speed as a function of time. 
+    r"""Create plot of altitude and true air speed as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Aircraft\Flight Profile by Time.rsg.
     """
@@ -231,7 +231,7 @@ def power_time_xy_graph(stk_obj :Aircraft, start_time=None, stop_time=None, step
     return line_chart_time_x(df, root, ['power'], ['time'], axes, 'Power')
 
 def sun_vector_ecf_time_xy_graph(stk_obj :Aircraft, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time. 
+    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Aircraft\Sun Vector ECF.rsg.
     """

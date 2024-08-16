@@ -263,7 +263,7 @@ def solar_intensity_time_xy_graph(stk_obj :Missile, start_time=None, stop_time=N
     return line_chart_time_x(df, root, ['intensity'], ['time'], axes, 'Solar Intensity')
 
 def sun_vector_fixed_time_xy_graph(stk_obj :Missile, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time. 
+    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Missile\Sun Vector Fixed.rsg.
     """
@@ -293,7 +293,7 @@ def sunlight_intervals_interval_pie_graph(stk_obj :Missile, start_time=None, sto
     return interval_pie_chart(root, df, ['duration'], ['start time','stop time'], 'start time', 'stop time', start_time, 'Sunlight Intervals', 'Time')
 
 def ypr_time_xy_graph(stk_obj :Missile, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the attitude of the vehicle (i.e., the rotation between the vehicle's body axes and the vehicle' central body's inertial frame), expressed using 321 YPR angles, as a function of time. YPR angles use a sequence of three rotations starting from a reference coordinate frame. Unlike Euler angles, the rotations are not made about axes defined by an earlier rotation: each rotation is made about the reference system's axes. The 321 sequence uses Z, then Y, and then finally the X axis. 
+    r"""Create plot of the attitude of the vehicle (i.e., the rotation between the vehicle's body axes and the vehicle' central body's inertial frame), expressed using 321 YPR angles, as a function of time. YPR angles use a sequence of three rotations starting from a reference coordinate frame. Unlike Euler angles, the rotations are not made about axes defined by an earlier rotation: each rotation is made about the reference system's axes. The 321 sequence uses Z, then Y, and then finally the X axis.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Missile\Yaw Pitch Roll.rsg.
     """

@@ -30,7 +30,7 @@ def access_times_interval_graph(stk_obj :StkAccess, start_time=None, stop_time=N
     return interval_plot([df], elements, [], ['start time','stop time'], 'Time', 'Access Times')
 
 def aer_time_xy_graph(stk_obj :StkAccess, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool, as described below. 
+    r"""Create plot of the azimuth, elevation, and range values for the relative position vector between the base object and the target object, during access intervals. The relative position includes the effects of light time delay and aberration as set by the computational settings of the access. Az-El values are computed with respect to the default AER frame of the selected object of the Access Tool, as described below.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\AER.rsg.
     """
@@ -111,7 +111,7 @@ def carrier_to_noise_ratio_time_xy_graph(stk_obj :StkAccess, start_time=None, st
     return line_chart_time_x(df, root, ['c/n'], ['time'], axes, 'Carrier to Noise Ratio')
 
 def cumulative_dwell_cumulative_pie_graph(stk_obj :StkAccess, start_time=None, stop_time=None):
-    r""" graph shows access interval durations as a cumulative pie chart.
+    r"""Graph shows access interval durations as a cumulative pie chart.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\Cumulative Dwell.rsg.
     """
@@ -170,7 +170,7 @@ def access_gap_periods_interval_graph(stk_obj :StkAccess, start_time=None, stop_
     return interval_plot([df], elements, [], ['start time','stop time'], 'Time', 'Access Gap Periods')
 
 def probability_of_detection_time_xy_graph(stk_obj :StkAccess, start_time=None, stop_time=None, step=60):
-    r""" graph shows the probability of a radar pulse search detection versus time.
+    r"""Graph shows the probability of a radar pulse search detection versus time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\Probability_of_Detection.rsg.
     """
@@ -185,7 +185,7 @@ def probability_of_detection_time_xy_graph(stk_obj :StkAccess, start_time=None, 
     return line_chart_time_x(df, root, ['s/t pdet1'], ['time'], axes, 'Probability of Detection')
 
 def radar_antenna_gain_time_xy_graph(stk_obj :StkAccess, start_time=None, stop_time=None, step=60):
-    r""" graph shows the antenna gain (value toward the Az, El direction)for both receiver and transmitter versus time.
+    r"""Graph shows the antenna gain (value toward the Az, El direction)for both receiver and transmitter versus time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\Radar Antenna Gain.rsg.
     """
@@ -201,7 +201,7 @@ def radar_antenna_gain_time_xy_graph(stk_obj :StkAccess, start_time=None, stop_t
     return line_chart_time_x(df, root, ['rcvr ant gain','xmtr ant gain'], ['time'], axes, 'Radar Antenna Gain')
 
 def radar_propagation_loss_time_xy_graph(stk_obj :StkAccess, start_time=None, stop_time=None, step=60):
-    r""" graph shows the receive and transmit total propagation attenuation values for the primary polarization signal channel versus time.
+    r"""Graph shows the receive and transmit total propagation attenuation values for the primary polarization signal channel versus time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Access\Radar Propagation Loss.rsg.
     """

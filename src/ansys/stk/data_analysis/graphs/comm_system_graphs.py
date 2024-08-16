@@ -3,7 +3,7 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def carrier_to_noise_ratio_cdf_chart_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the cumulative percentage of occurrence (CDF) as a function of carrier-to-noise ratio.
+    r"""Graph shows the cumulative percentage of occurrence (CDF) as a function of carrier-to-noise ratio.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Carrier to Noise CDF.rsg.
     """
@@ -14,7 +14,7 @@ def carrier_to_noise_ratio_cdf_chart_xy_graph(stk_obj : CommSystem):
     return line_chart(df, root, ['value','percentage'], [], axes, 'value','Value', 'Carrier to Noise Ratio CDF Chart' )
 
 def carrier_to_noise_interference_ratio_cdf_chart_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the cumulative percentage of occurrence (CDF) as a function of carrier-to-noise-plus-interference ratio.
+    r"""Graph shows the cumulative percentage of occurrence (CDF) as a function of carrier-to-noise-plus-interference ratio.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Carrier to Noise Interference CDF.rsg.
     """
@@ -25,7 +25,7 @@ def carrier_to_noise_interference_ratio_cdf_chart_xy_graph(stk_obj : CommSystem)
     return line_chart(df, root, ['value','percentage'], [], axes, 'value','Value', 'Carrier to (Noise+Interference) Ratio CDF Chart' )
 
 def carrier_to_noise_interference_ratio_pdf_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the percentage of occurrence (PDF) as a function of carrier-to-noise-plus-interference ratio.
+    r"""Graph shows the percentage of occurrence (PDF) as a function of carrier-to-noise-plus-interference ratio.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Carrier to Noise Interference PDF.rsg.
     """
@@ -36,7 +36,7 @@ def carrier_to_noise_interference_ratio_pdf_xy_graph(stk_obj : CommSystem):
     return line_chart(df, root, ['value','percentage'], [], axes, 'value','Value', 'Carrier to (Noise+Interference) Ratio PDF' )
 
 def carrier_to_noise_ratio_pdf_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the percentage of occurrence (PDF) as a function of carrier-to-noise ratio.
+    r"""Graph shows the percentage of occurrence (PDF) as a function of carrier-to-noise ratio.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Carrier to Noise PDF.rsg.
     """
@@ -47,7 +47,7 @@ def carrier_to_noise_ratio_pdf_xy_graph(stk_obj : CommSystem):
     return line_chart(df, root, ['value','percentage'], [], axes, 'value','Value', 'Carrier to Noise Ratio PDF' )
 
 def carrier_to_noise_vs_time_time_xy_graph(stk_obj :CommSystem, start_time=None, stop_time=None, step=60):
-    r""" graph shows the carrier-to-noise ratio and the carrier-to-noise-plus-interference ratio as a function of time.
+    r"""Graph shows the carrier-to-noise ratio and the carrier-to-noise-plus-interference ratio as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Carrier to Noise vs Time.rsg.
     """
@@ -63,7 +63,7 @@ def carrier_to_noise_vs_time_time_xy_graph(stk_obj :CommSystem, start_time=None,
     return line_chart_time_x(df, root, ['c/n','c/(n+i)'], ['time'], axes, 'Carrier to Noise vs Time')
 
 def epfd_cdf_chart_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the cumulative percentage of occurrence (CDF) as a function of power flux density.
+    r"""Graph shows the cumulative percentage of occurrence (CDF) as a function of power flux density.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Power Flux Density CDF.rsg.
     """
@@ -74,7 +74,7 @@ def epfd_cdf_chart_xy_graph(stk_obj : CommSystem):
     return line_chart(df, root, ['value','percentage'], [], axes, 'value','Value', 'EPFD CDF Chart' )
 
 def epfd_xy_graph(stk_obj : CommSystem):
-    r""" graph shows the percentage of occurrence (PDF) as a function of power flux density.
+    r"""Graph shows the percentage of occurrence (PDF) as a function of power flux density.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\CommSystem\Power Flux Density PDF.rsg.
     """

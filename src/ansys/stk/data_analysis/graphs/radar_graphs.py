@@ -3,7 +3,7 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def antenna_gain_xy_graph(stk_obj : Radar):
-    r""" graph provides the detailed information for an antenna gain pattern. Each point on the graph conforms to a direction angle from the center of the antenna (phase center) through the gain pattern, with a user-specified angle step. The graph shows antenna gain value as a function of elevation angle and azimuth angle.
+    r"""Graph provides the detailed information for an antenna gain pattern. Each point on the graph conforms to a direction angle from the center of the antenna (phase center) through the gain pattern, with a user-specified angle step. The graph shows antenna gain value as a function of elevation angle and azimuth angle.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Radar\Antenna Gain.rsg.
     """
@@ -14,7 +14,7 @@ def antenna_gain_xy_graph(stk_obj : Radar):
     return line_chart(df, root, ['elevation','gain'], [], axes, 'elevation','Elevation', 'Antenna Gain' )
 
 def antgain_azi_cut_vs_elevation_xy_graph(stk_obj : Radar):
-    r""" is set of graphs where each individual graph provides the antenna gain for a given azimuth angle across a specified range of elevation angles.
+    r"""Is set of graphs where each individual graph provides the antenna gain for a given azimuth angle across a specified range of elevation angles.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Radar\AntGain Azi Cut Vs Elevation.rsg.
     """
@@ -25,7 +25,7 @@ def antgain_azi_cut_vs_elevation_xy_graph(stk_obj : Radar):
     return line_chart(df, root, ['elevation','gain'], [], axes, 'elevation','Elevation', 'AntGain Azi Cut Vs Elevation' )
 
 def antgain_elev_cut_vs_azimuth_xy_graph(stk_obj : Radar):
-    r""" is set of graphs where each individual graph provides the antenna gain for a given elevation angle across a specified range of azimuth angles.
+    r"""Is set of graphs where each individual graph provides the antenna gain for a given elevation angle across a specified range of azimuth angles.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Radar\AntGain Elev Cut Vs Azimuth.rsg.
     """

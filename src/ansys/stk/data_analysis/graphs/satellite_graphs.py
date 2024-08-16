@@ -243,7 +243,7 @@ def model_area_time_xy_graph(stk_obj :Satellite, start_time=None, stop_time=None
     return line_chart_time_x(df, root, ['area'], ['time'], axes, 'Model Area')
 
 def ric_time_xy_graph(stk_obj :Satellite, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the relative position of the assigned object with respect to the primary object, expressed in Cartesian components of the RIC (Radial, In-Track, Cross-Track) frame defined using the primary's ephemeris, as a function of time. Cross-track refers to the direction perpendicular to the position and inertial velocity (in direction of the cross product of position with velocity); in-track refers to the direction perpendicular to both the radial and cross-track (positive in the direction of motion). 
+    r"""Create plot of the relative position of the assigned object with respect to the primary object, expressed in Cartesian components of the RIC (Radial, In-Track, Cross-Track) frame defined using the primary's ephemeris, as a function of time. Cross-track refers to the direction perpendicular to the position and inertial velocity (in direction of the cross product of position with velocity); in-track refers to the direction perpendicular to both the radial and cross-track (positive in the direction of motion).
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Satellite\RIC.rsg.
     """
@@ -355,7 +355,7 @@ def power_time_xy_graph(stk_obj :Satellite, start_time=None, stop_time=None, ste
     return line_chart_time_x(df, root, ['power'], ['time'], axes, 'Power')
 
 def sun_vector_fixed_time_xy_graph(stk_obj :Satellite, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time. 
+    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Satellite\Sun Vector Fixed.rsg.
     """
@@ -403,7 +403,7 @@ def teme_residuals_for_tle_fit_time_xy_graph(stk_obj :Satellite, start_time=None
     return line_chart_time_x(df, root, ['final x residual','final y residual','final z residual','final range residual'], ['obs time'], axes, 'TEME Residuals for TLE Fit')
 
 def ypr_time_xy_graph(stk_obj :Satellite, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the attitude of the vehicle (i.e., the rotation between the vehicle's body axes and the vehicle' central body's inertial frame), expressed using 321 YPR angles, as a function of time. YPR angles use a sequence of three rotations starting from a reference coordinate frame. Unlike Euler angles, the rotations are not made about axes defined by an earlier rotation: each rotation is made about the reference system's axes. The 321 sequence uses Z, then Y, and then finally the X axis. 
+    r"""Create plot of the attitude of the vehicle (i.e., the rotation between the vehicle's body axes and the vehicle' central body's inertial frame), expressed using 321 YPR angles, as a function of time. YPR angles use a sequence of three rotations starting from a reference coordinate frame. Unlike Euler angles, the rotations are not made about axes defined by an earlier rotation: each rotation is made about the reference system's axes. The 321 sequence uses Z, then Y, and then finally the X axis.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Satellite\Yaw Pitch Roll.rsg.
     """

@@ -58,7 +58,7 @@ def lasercat_potential_victim_interval_graph(stk_obj :GroundVehicle, start_time=
     return interval_plot([df], elements, [], ['time in','time out'], 'Time', 'LaserCAT Potential Victim')
 
 def lat_lon_position_time_xy_graph(stk_obj :GroundVehicle, start_time=None, stop_time=None, step=60):
-    r"""Plot the latitude and longitude of the location of the object, computed with respect to the object's central body shape, as a function of time. 
+    r"""Plot the latitude and longitude of the location of the object, computed with respect to the object's central body shape, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\GroundVehicle\Lat-Lon Position.rsg.
     """
@@ -184,7 +184,7 @@ def power_time_xy_graph(stk_obj :GroundVehicle, start_time=None, stop_time=None,
     return line_chart_time_x(df, root, ['power'], ['time'], axes, 'Power')
 
 def sun_vector_ecf_time_xy_graph(stk_obj :GroundVehicle, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time. 
+    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\GroundVehicle\Sun Vector ECF.rsg.
     """

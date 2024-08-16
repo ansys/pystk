@@ -58,7 +58,7 @@ def lasercat_potential_victim_interval_graph(stk_obj :Ship, start_time=None, sto
     return interval_plot([df], elements, [], ['time in','time out'], 'Time', 'LaserCAT Potential Victim')
 
 def lat_lon_position_time_xy_graph(stk_obj :Ship, start_time=None, stop_time=None, step=60):
-    r"""Plot the latitude and longitude of the location of the object, computed with respect to the object's central body shape, as a function of time. 
+    r"""Plot the latitude and longitude of the location of the object, computed with respect to the object's central body shape, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Ship\Lat-Lon Position.rsg.
     """
@@ -172,7 +172,7 @@ def solar_az_el_polar_center_0_graph(stk_obj :Ship, start_time=None, stop_time=N
     return polar_chart(df, root, ['elevation','azimuth'], axis, 'Solar Az-El', convert_negative_r = True, origin_0 = True )
 
 def sun_vector_time_xy_graph(stk_obj :Ship, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time. 
+    r"""Create plot of the apparent relative position of the Sun to the object, expressed in Cartesian components, using the object's central body's Fixed coordinate system, as a function of time.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Ship\Sun Vector ECF.rsg.
     """

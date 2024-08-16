@@ -3,7 +3,7 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def antgain_azi_cut_vs_elevation_xy_graph(stk_obj : Antenna):
-    r""" is set of graphs where each individual graph provides the antenna gain for a given azimuth angle across a specified range of elevation angles.
+    r"""Is set of graphs where each individual graph provides the antenna gain for a given azimuth angle across a specified range of elevation angles.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Antenna\AntGain Azi Cut Vs Elevation.rsg.
     """
@@ -14,7 +14,7 @@ def antgain_azi_cut_vs_elevation_xy_graph(stk_obj : Antenna):
     return line_chart(df, root, ['elevation','gain'], [], axes, 'elevation','Elevation', 'AntGain Azi Cut Vs Elevation' )
 
 def antgain_elev_cut_vs_azimuth_xy_graph(stk_obj : Antenna):
-    r""" is set of graphs where each individual graph provides the antenna gain for a given elevation angle across a specified range of azimuth angles.
+    r"""Is set of graphs where each individual graph provides the antenna gain for a given elevation angle across a specified range of azimuth angles.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\Antenna\AntGain Elev Cut Vs Azimuth.rsg.
     """

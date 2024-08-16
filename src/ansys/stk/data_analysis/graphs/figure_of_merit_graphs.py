@@ -3,7 +3,7 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def all_dilutions_of_precision_time_xy_graph(stk_obj :FigureOfMerit, start_time=None, stop_time=None, step=60):
-    r"""Create plot of all DOP values, over time, for the point currently selected via the figure of merit grid inspector. 
+    r"""Create plot of all DOP values, over time, for the point currently selected via the figure of merit grid inspector.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\FigureOfMerit\GI All DOP.rsg.
     """
@@ -24,7 +24,7 @@ def all_dilutions_of_precision_time_xy_graph(stk_obj :FigureOfMerit, start_time=
     return line_chart_time_x(df, root, ['gdop','pdop','hdop','vdop','edop','ndop','tdop'], ['time'], axes, 'All Dilutions of Precision')
 
 def point_fom_value_time_xy_graph(stk_obj :FigureOfMerit, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the figure of merit values over time, for the point currently selected via the figure of merit grid inspector. 
+    r"""Create plot of the figure of merit values over time, for the point currently selected via the figure of merit grid inspector.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\FigureOfMerit\GI Point FOM.rsg.
     """
@@ -39,7 +39,7 @@ def point_fom_value_time_xy_graph(stk_obj :FigureOfMerit, start_time=None, stop_
     return line_chart_time_x(df, root, ['fom value'], ['time'], axes, 'Point FOM Value')
 
 def point_satisfaction_intervals_interval_graph(stk_obj :FigureOfMerit, start_time=None, stop_time=None):
-    r"""Createn Interval graph of the satisfaction intervals for the point currently selected via the figure of merit grid inspector. Satisfaction intervals are defined as periods when a grid point achieves the defined satisfaction criteria associated with the FOM. 
+    r"""Createn Interval graph of the satisfaction intervals for the point currently selected via the figure of merit grid inspector. Satisfaction intervals are defined as periods when a grid point achieves the defined satisfaction criteria associated with the FOM.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\FigureOfMerit\GI Point Satisfaction.rsg.
     """
@@ -53,7 +53,7 @@ def point_satisfaction_intervals_interval_graph(stk_obj :FigureOfMerit, start_ti
     return interval_plot([df], elements, [], ['interval start','interval end'], 'Time', 'Point Satisfaction Intervals')
 
 def regional_fom_values_time_xy_graph(stk_obj :FigureOfMerit, start_time=None, stop_time=None, step=60):
-    r"""Create plot of the minimum, maximum, and average figure of merit value, sampled over all grid points within the region currently selected in the figure of merit grid inspector, over time. Grid points for which a value cannot be computed are not included in the reported statistics. 
+    r"""Create plot of the minimum, maximum, and average figure of merit value, sampled over all grid points within the region currently selected in the figure of merit grid inspector, over time. Grid points for which a value cannot be computed are not included in the reported statistics.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\FigureOfMerit\GI Region FOM.rsg.
     """
@@ -70,7 +70,7 @@ def regional_fom_values_time_xy_graph(stk_obj :FigureOfMerit, start_time=None, s
     return line_chart_time_x(df, root, ['minimum','maximum','average'], ['time'], axes, 'Regional FOM Values')
 
 def periods_of_partial_regional_satisfaction_interval_graph(stk_obj :FigureOfMerit, start_time=None, stop_time=None):
-    r"""Createn Interval graph of the intervals of time when the region selected by the grid inspector is partially covered. A region is considered to be covered if at least one point within the region has access to one or more of the assigned assets. 
+    r"""Createn Interval graph of the intervals of time when the region selected by the grid inspector is partially covered. A region is considered to be covered if at least one point within the region has access to one or more of the assigned assets.
 
     This graph wrapper was generated from AGI\STK12\STKData\Styles\FigureOfMerit\GI Region Satisfaction.rsg.
     """
