@@ -320,7 +320,7 @@ jinja_contexts = {
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
-            for platform in jinja_globals["SUPPORTED_PLATFORMS"]
+            for platform in ["windows", "ubuntu"]
             for target in ["visualization"]
         }
     },
