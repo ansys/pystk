@@ -2,7 +2,10 @@ from ansys.stk.data_analysis.graphs.graph_functions import *
 from ansys.stk.core.stkobjects import *
 
 def centroid_solar_az_el_time_xy_graph(stk_obj :AreaTarget, start_time=None, stop_time=None, step=60):
-	"""A plot of the elevation and azimuth over time, describing the relative position vector of the apparent Sun to the area target centroid, with respect to the local horizontal plane. This frame has the Z axis aligned with the inward surface normal direction (minus Z is up) and the X axis constrained toward the local north direction."""
+	"""A plot of the elevation and azimuth over time, describing the relative position vector of the apparent Sun to the area target centroid, with respect to the local horizontal plane. This frame has the Z axis aligned with the inward surface normal direction (minus Z is up) and the X axis constrained toward the local north direction.
+
+	This graph wrapper was generated from AGI\STK12\STKData\Styles\AreaTarget\Centroid Solar Az-El.rsg.
+	"""
 	root = stk_obj.root
 	if start_time is None:
 		start_time = root.current_scenario.start_time
