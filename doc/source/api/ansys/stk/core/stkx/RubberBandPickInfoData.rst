@@ -36,7 +36,7 @@ Property detail
 
 .. py:property:: obj_paths
     :canonical: ansys.stk.core.stkx.RubberBandPickInfoData.obj_paths
-    :type: ObjPathCollection
+    :type: ObjectPathCollection
 
     List of object paths selected.
 

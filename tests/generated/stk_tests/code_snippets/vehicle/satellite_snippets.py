@@ -68,7 +68,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def CreateSatelliteFromDatabase(self, root: "StkObjectRoot"):
         # Get STK database location using Connect
-        result: "ExecCmdResult" = root.execute_command("GetDirectory / Database Satellite")
+        result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Satellite")
         satDataDir: str = result[0]
         filelocation: str = ('"' + Path.Combine(satDataDir, r"stkAllTLE.sd")) + '"'
         commonname: str = '"hst"'

@@ -1169,7 +1169,7 @@ class EarlyBoundTests(TestBase):
             'SetState */Satellite/{0} Cartesian J2Perturbation "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 60 MeanOfEpoch "1 Jul 1999 00:00:00.00" -5465000.513055 4630000.194365 0.0 712.713627 841.292034 7377.687805 "3 Jul 1999 00:00:00.00"',
             (IStkObject(EarlyBoundTests.AG_SAT)).instance_name,
         )
-        res: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        res: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         del res
 
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION, EarlyBoundTests.AG_SAT.propagator_type)
