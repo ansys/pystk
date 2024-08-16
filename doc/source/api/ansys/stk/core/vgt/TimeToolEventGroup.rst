@@ -3,8 +3,6 @@ TimeToolEventGroup
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventGroup
 
-   Bases: 
-
    Access or create VGT events associated with an object.
 
 .. py:currentmodule:: TimeToolEventGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.TimeToolEventGroup.factory
-    :type: ITimeToolEventFactory
+    :type: TimeToolEventFactory
 
     Returns a Factory object used to create custom events.
 

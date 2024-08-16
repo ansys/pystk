@@ -3,8 +3,6 @@ Lighting
 
 .. py:class:: ansys.stk.core.graphics.Lighting
 
-   Bases: 
-
    Lighting in the 3D scene.
 
 .. py:currentmodule:: Lighting

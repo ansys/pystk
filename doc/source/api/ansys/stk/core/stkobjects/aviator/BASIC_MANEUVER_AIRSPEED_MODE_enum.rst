@@ -40,22 +40,22 @@ Overview
             * - :py:attr:`~MAINTAIN_MAX_PERFORMANCE_AIRSPEED`
               - Maintain the maximum performance airspeed for the aircraft.
 
-            * - :py:attr:`~ACCEL_AT_G`
+            * - :py:attr:`~ACCELERATION_AT_G`
               - Accelerate at the specified rate.
 
-            * - :py:attr:`~DECEL_AT_G`
+            * - :py:attr:`~DECELERATION_AT_G`
               - Decelerate at the specified rate.
 
-            * - :py:attr:`~ACCEL_DECEL_UNDER_GRAVITY`
+            * - :py:attr:`~ACCELERATION_DECELERATION_UNDER_GRAVITY`
               - Accel/Decel at the force of gravity (no drag, no thrust).
 
-            * - :py:attr:`~ACCEL_DECEL_AERO_PROP`
+            * - :py:attr:`~ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION`
               - Accel/Decel using Aero/Propulsion with throttle setting.
 
             * - :py:attr:`~THRUST`
               - Specify thrust (using drag from Aerodynamics model).
 
-            * - :py:attr:`~INTERPOLATE_ACCEL_DECEL`
+            * - :py:attr:`~INTERPOLATE_ACCELERATION_DECELERATION`
               - Interpolate Accelerate/Decelerate over interval.
 
 

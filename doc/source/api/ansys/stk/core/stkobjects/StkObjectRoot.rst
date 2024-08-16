@@ -135,13 +135,13 @@ Property detail
 
 .. py:property:: std_military2525_b_symbols
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols
-    :type: IStdMilitary2525bSymbols
+    :type: StdMilitary2525bSymbols
 
     Returns the interface that enables creating 2525b symbols.
 
 .. py:property:: available_features
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.available_features
-    :type: IAvailableFeatures
+    :type: AvailableFeatures
 
     Allows the user to inquiry about the available features.
 
@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
-    :type: IStkCentralBodyCollection
+    :type: StkCentralBodyCollection
 
     Returns a collection of available central bodies.
 
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: stk_preferences
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences
-    :type: IStkPreferences
+    :type: StkPreferences
 
     Configures STK preferences.
 
@@ -173,7 +173,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, connectCommand: str) -> IExecCmdResult
+.. py:method:: execute_command(self, connectCommand: str) -> ExecCmdResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_command
 
     Execute a custom CONNECT action. The method throws an exception if the command has failed.
@@ -184,7 +184,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~IExecCmdResult`
+        :obj:`~ExecCmdResult`
 
 .. py:method:: load_scenario(self, path: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_scenario
@@ -298,7 +298,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXEC_MULTI_CMD_RESULT_ACTION) -> IExecMultiCmdResult
+.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXEC_MULTI_CMD_RESULT_ACTION) -> ExecMultiCmdResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
     Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
@@ -310,7 +310,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~IExecMultiCmdResult`
+        :obj:`~ExecMultiCmdResult`
 
 .. py:method:: isolate(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolate

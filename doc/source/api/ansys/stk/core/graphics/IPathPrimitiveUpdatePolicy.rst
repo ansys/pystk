@@ -3,8 +3,6 @@ IPathPrimitiveUpdatePolicy
 
 .. py:class:: ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy
 
-   object
-   
    A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method.
 
 .. py:currentmodule:: IPathPrimitiveUpdatePolicy

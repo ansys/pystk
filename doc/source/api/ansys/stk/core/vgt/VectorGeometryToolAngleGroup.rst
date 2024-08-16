@@ -3,8 +3,6 @@ VectorGeometryToolAngleGroup
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleGroup
 
-   Bases: 
-
    Access or create VGT angles associated with an object or a central body.
 
 .. py:currentmodule:: VectorGeometryToolAngleGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleGroup.factory
-    :type: IVectorGeometryToolAngleFactory
+    :type: VectorGeometryToolAngleFactory
 
     Returns a Factory object used to create custom angles.
 

@@ -3,8 +3,6 @@ EngineModelIspCoefficients
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.EngineModelIspCoefficients
 
-   Bases: 
-
    Engine Model Isp Coefficients.
 
 .. py:currentmodule:: EngineModelIspCoefficients

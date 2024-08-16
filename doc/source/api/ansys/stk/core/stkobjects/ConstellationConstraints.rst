@@ -3,8 +3,6 @@ ConstellationConstraints
 
 .. py:class:: ansys.stk.core.stkobjects.ConstellationConstraints
 
-   Bases: 
-
    Class related to the constellation constraints.
 
 .. py:currentmodule:: ConstellationConstraints

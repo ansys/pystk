@@ -3,8 +3,6 @@ AntennaGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AntennaGraphics
 
-   Bases: 
-
    Class defining 2D Graphics properties of a Antenna.
 
 .. py:currentmodule:: AntennaGraphics
@@ -70,7 +68,7 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.AntennaGraphics.contour_graphics
-    :type: IAntennaContourGraphics
+    :type: AntennaContourGraphics
 
     Gets the antenna contour graphics interface.
 

@@ -51,7 +51,7 @@ Overview
               - Gets or sets the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.override_fuel_flow_value`
               - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_accel_for_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_acceleration_for_fuel_flow`
               - Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.first_pause`
               - Gets or sets the amount of time that the aircraft will pause at the specified altitude offset.
@@ -87,13 +87,13 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: delay_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the delay cruise airspeed options.
 
@@ -139,8 +139,8 @@ Property detail
 
     Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
 
-.. py:property:: consider_accel_for_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_accel_for_fuel_flow
+.. py:property:: consider_acceleration_for_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_acceleration_for_fuel_flow
     :type: bool
 
     Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.

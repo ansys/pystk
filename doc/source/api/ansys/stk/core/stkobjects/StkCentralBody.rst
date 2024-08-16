@@ -3,8 +3,6 @@ StkCentralBody
 
 .. py:class:: ansys.stk.core.stkobjects.StkCentralBody
 
-   Bases: 
-
    A central body coclass.
 
 .. py:currentmodule:: StkCentralBody
@@ -50,7 +48,7 @@ Property detail
 
 .. py:property:: ellipsoid
     :canonical: ansys.stk.core.stkobjects.StkCentralBody.ellipsoid
-    :type: IStkCentralBodyEllipsoid
+    :type: StkCentralBodyEllipsoid
 
     The central body ellipsoid.
 

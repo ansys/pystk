@@ -3,8 +3,6 @@ IChainTimePeriodBase
 
 .. py:class:: ansys.stk.core.stkobjects.IChainTimePeriodBase
 
-   object
-   
    Chain time period options.
 
 .. py:currentmodule:: IChainTimePeriodBase

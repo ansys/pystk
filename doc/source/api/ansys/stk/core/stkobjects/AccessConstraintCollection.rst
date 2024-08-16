@@ -3,8 +3,6 @@ AccessConstraintCollection
 
 .. py:class:: ansys.stk.core.stkobjects.AccessConstraintCollection
 
-   Bases: 
-
    Collection of access constraints.
 
 .. py:currentmodule:: AccessConstraintCollection
@@ -91,7 +89,7 @@ Property detail
 
 .. py:property:: analysis_workbench_constraints
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.analysis_workbench_constraints
-    :type: IAccessConstraintAnalysisWorkbenchCollection
+    :type: AccessConstraintAnalysisWorkbenchCollection
 
     Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
 

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~TURN_MODE_BANK_ANGLE`
               - Bank angle.
 
-            * - :py:attr:`~TURN_MODE_ACCEL`
+            * - :py:attr:`~TURN_MODE_ACCELERATION`
               - Turn acceleration.
 
             * - :py:attr:`~TURN_MODE_RADIUS`

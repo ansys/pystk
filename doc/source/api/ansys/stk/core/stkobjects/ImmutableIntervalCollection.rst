@@ -3,8 +3,6 @@ ImmutableIntervalCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ImmutableIntervalCollection
 
-   Bases: 
-
    Read-only collection of intervals.
 
 .. py:currentmodule:: ImmutableIntervalCollection

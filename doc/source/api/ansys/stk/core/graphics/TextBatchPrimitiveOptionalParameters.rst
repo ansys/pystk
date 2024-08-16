@@ -3,8 +3,6 @@ TextBatchPrimitiveOptionalParameters
 
 .. py:class:: ansys.stk.core.graphics.TextBatchPrimitiveOptionalParameters
 
-   Bases: 
-
    Optional per-string and per-batch parameters for text batch primitive...
 
 .. py:currentmodule:: TextBatchPrimitiveOptionalParameters

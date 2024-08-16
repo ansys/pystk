@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeCalcFactory
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcFactory
 
-   Bases: 
-
    The factory is used to create instances of volume calcs.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeCalcFactory

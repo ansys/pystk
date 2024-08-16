@@ -3,8 +3,8 @@ IOrientationEulerAngles
 
 .. py:class:: ansys.stk.core.stkutil.IOrientationEulerAngles
 
-   IOrientation
-   
+   Bases: IOrientation
+
    Interface for Euler Angles orientation method.
 
 .. py:currentmodule:: IOrientationEulerAngles

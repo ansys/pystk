@@ -3,8 +3,6 @@ IRefractionModelBase
 
 .. py:class:: ansys.stk.core.stkobjects.IRefractionModelBase
 
-   object
-   
    A base interface for the Refraction Models.
 
 .. py:currentmodule:: IRefractionModelBase

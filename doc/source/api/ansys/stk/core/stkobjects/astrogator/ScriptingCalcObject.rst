@@ -3,8 +3,6 @@ ScriptingCalcObject
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ScriptingCalcObject
 
-   Bases: 
-
    Calc Object.
 
 .. py:currentmodule:: ScriptingCalcObject

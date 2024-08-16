@@ -115,19 +115,19 @@ Property detail
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_receive_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-receive gains and losses.
 
 .. py:property:: pre_demod_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.pre_demod_gains_losses
-    :type: IAdditionalGainLossCollection
+    :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
 
 .. py:property:: link_margin
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.link_margin
-    :type: ILinkMargin
+    :type: LinkMargin
 
     Gets the interface for configuring the link margin computation parameters.
 
@@ -229,13 +229,13 @@ Property detail
 
 .. py:property:: system_noise_temperature
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.system_noise_temperature
-    :type: ISystemNoiseTemperature
+    :type: SystemNoiseTemperature
 
     Gets the system noise temperature interface.
 
 .. py:property:: interference
     :canonical: ansys.stk.core.stkobjects.ReceiverModelMedium.interference
-    :type: IRFInterference
+    :type: RFInterference
 
     Gets the radio frequency interference.
 

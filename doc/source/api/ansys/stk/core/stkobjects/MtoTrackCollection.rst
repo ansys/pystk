@@ -3,8 +3,6 @@ MtoTrackCollection
 
 .. py:class:: ansys.stk.core.stkobjects.MtoTrackCollection
 
-   Bases: 
-
    MTO Track List.
 
 .. py:currentmodule:: MtoTrackCollection

@@ -3,8 +3,6 @@ CalcObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.CalcObjectCollection
 
-   Bases: 
-
    The Calculation Object component folder.
 
 .. py:currentmodule:: CalcObjectCollection

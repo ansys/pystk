@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.control_parameters
-    :type: IDifferentialCorrectorControlCollection
+    :type: DifferentialCorrectorControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.results
-    :type: IDifferentialCorrectorResultCollection
+    :type: DifferentialCorrectorResultCollection
 
     Get the list of results defined for the profile.
 
@@ -182,7 +182,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -200,7 +200,7 @@ Property detail
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 

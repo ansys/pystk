@@ -146,7 +146,7 @@ Property detail
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.Cira72Function.drag_model_plugin
-    :type: IDragModelPlugin
+    :type: DragModelPlugin
 
     Drag model plugin properties.
 

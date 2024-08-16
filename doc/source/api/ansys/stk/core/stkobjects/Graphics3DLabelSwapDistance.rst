@@ -3,8 +3,6 @@ Graphics3DLabelSwapDistance
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance
 
-   Bases: 
-
    Control the level of detail in labels and other screen objects at specified distances.
 
 .. py:currentmodule:: Graphics3DLabelSwapDistance

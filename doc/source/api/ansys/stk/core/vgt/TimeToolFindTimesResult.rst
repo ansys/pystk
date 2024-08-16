@@ -3,8 +3,6 @@ TimeToolFindTimesResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolFindTimesResult
 
-   Bases: 
-
    Return a collection of intervals and an array of times.
 
 .. py:currentmodule:: TimeToolFindTimesResult
@@ -52,7 +50,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.TimeToolFindTimesResult.intervals
-    :type: ITimeToolIntervalCollection
+    :type: TimeToolIntervalCollection
 
     A collection of found intervals.
 

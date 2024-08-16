@@ -48,19 +48,19 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Planet.graphics
-    :type: IPlanetGraphics
+    :type: PlanetGraphics
 
     Get the planet's 2D Graphics properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Planet.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the planet.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Planet.graphics_3d
-    :type: IPlanetGraphics3D
+    :type: PlanetGraphics3D
 
     Get the planet's 3D Graphics properties.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.Planet.common_tasks
-    :type: IPlanetCommonTasks
+    :type: PlanetCommonTasks
 
     Common Tasks associated with the planet.
 

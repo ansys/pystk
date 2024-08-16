@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneTemplateDisplayCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection
 
-   Bases: 
-
    3D DisplayElements collection for BPlane.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneTemplateDisplayCollection

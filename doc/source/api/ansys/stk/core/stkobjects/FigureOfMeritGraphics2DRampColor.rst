@@ -3,8 +3,6 @@ FigureOfMeritGraphics2DRampColor
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRampColor
 
-   Bases: 
-
    Color ramp method for contours: select start and end colors to define spectrum segment.
 
 .. py:currentmodule:: FigureOfMeritGraphics2DRampColor

@@ -3,8 +3,6 @@ Catalog
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Catalog
 
-   Bases: 
-
    Class defining the Aviator Catalog.
 
 .. py:currentmodule:: Catalog
@@ -48,37 +46,37 @@ Property detail
 
 .. py:property:: aircraft_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.aircraft_category
-    :type: IAircraftCategory
+    :type: AircraftCategory
 
     Get the aircraft category.
 
 .. py:property:: runway_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.runway_category
-    :type: IRunwayCategory
+    :type: RunwayCategory
 
     Get the runway category.
 
 .. py:property:: airport_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.airport_category
-    :type: IAirportCategory
+    :type: AirportCategory
 
     Get the airport category.
 
 .. py:property:: navaid_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.navaid_category
-    :type: INavaidCategory
+    :type: NavaidCategory
 
     Get the navaid category.
 
 .. py:property:: vtol_point_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.vtol_point_category
-    :type: IVTOLPointCategory
+    :type: VTOLPointCategory
 
     Get the vtol point category.
 
 .. py:property:: waypoint_category
     :canonical: ansys.stk.core.stkobjects.aviator.Catalog.waypoint_category
-    :type: IWaypointCategory
+    :type: WaypointCategory
 
     Get the waypoint category.
 

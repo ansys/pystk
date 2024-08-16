@@ -3,8 +3,6 @@ ScenarioGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of the Scenario.
 
 .. py:currentmodule:: ScenarioGraphics3D
@@ -87,19 +85,19 @@ Property detail
 
 .. py:property:: small_font
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.small_font
-    :type: IScenario3dFont
+    :type: Scenario3dFont
 
     Retrieves small font metrics.
 
 .. py:property:: medium_font
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.medium_font
-    :type: IScenario3dFont
+    :type: Scenario3dFont
 
     Retrieves medium font metrics.
 
 .. py:property:: large_font
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.large_font
-    :type: IScenario3dFont
+    :type: Scenario3dFont
 
     Retrieves large font metrics.
 

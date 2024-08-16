@@ -3,8 +3,6 @@ TimeToolEventIntervalResult
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalResult
 
-   Bases: 
-
    Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
 
 .. py:currentmodule:: TimeToolEventIntervalResult
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: interval
     :canonical: ansys.stk.core.vgt.TimeToolEventIntervalResult.interval
-    :type: ITimeToolInterval
+    :type: TimeToolInterval
 
     An interval.
 

@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: associated_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.associated_objects
-    :type: IDesignCR3BPObjectCollection
+    :type: DesignCR3BPObjectCollection
 
     Get the list of associated objects.
 

@@ -3,8 +3,6 @@ IAnalysisWorkbenchRefTo
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchRefTo
 
-   object
-   
    A base interface for all VGT component references.
 
 .. py:currentmodule:: IAnalysisWorkbenchRefTo

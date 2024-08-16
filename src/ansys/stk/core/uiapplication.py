@@ -4,7 +4,7 @@
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IUiApplicationPartnerAccess", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MSG_TYPE", 
+__all__ = ["APP_CONSTANTS", "APP_ERROR_CODES", "IUiApplicationPartnerAccess", "MRUCollection", "OPEN_LOG_FILE_MODE", "UI_LOG_MESSAGE_TYPE", 
 "UiApplication", "UiFileOpenExt", "UiFileOpenExtCollection"]
 
 import typing
@@ -41,7 +41,7 @@ OPEN_LOG_FILE_MODE.FOR_APPENDING.__doc__ = "Open log file in append file mode."
 
 agcls.AgTypeNameMap["OPEN_LOG_FILE_MODE"] = OPEN_LOG_FILE_MODE
 
-class UI_LOG_MSG_TYPE(IntEnum):
+class UI_LOG_MESSAGE_TYPE(IntEnum):
     """Log message types."""
    
     DEBUG = 0
@@ -55,13 +55,13 @@ class UI_LOG_MSG_TYPE(IntEnum):
     ALARM = 4
     """Log messages that provide alarm text."""
 
-UI_LOG_MSG_TYPE.DEBUG.__doc__ = "Log messages that provide Debug text."
-UI_LOG_MSG_TYPE.INFO.__doc__ = "Log messages that provide information text."
-UI_LOG_MSG_TYPE.FORCE_INFO.__doc__ = "Log messages that provide forceful information text."
-UI_LOG_MSG_TYPE.WARNING.__doc__ = "Log messages that provide warning text."
-UI_LOG_MSG_TYPE.ALARM.__doc__ = "Log messages that provide alarm text."
+UI_LOG_MESSAGE_TYPE.DEBUG.__doc__ = "Log messages that provide Debug text."
+UI_LOG_MESSAGE_TYPE.INFO.__doc__ = "Log messages that provide information text."
+UI_LOG_MESSAGE_TYPE.FORCE_INFO.__doc__ = "Log messages that provide forceful information text."
+UI_LOG_MESSAGE_TYPE.WARNING.__doc__ = "Log messages that provide warning text."
+UI_LOG_MESSAGE_TYPE.ALARM.__doc__ = "Log messages that provide alarm text."
 
-agcls.AgTypeNameMap["UI_LOG_MSG_TYPE"] = UI_LOG_MSG_TYPE
+agcls.AgTypeNameMap["UI_LOG_MESSAGE_TYPE"] = UI_LOG_MESSAGE_TYPE
 
 class APP_CONSTANTS(IntEnum):
     """APP_CONSTANTS contains base IDs for various structures."""
@@ -171,7 +171,7 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _set_message_pending_delay_method_offset = 29
     _get_personality2_method_offset = 30
     _open_log_file_method_offset = 31
-    _log_msg_method_offset = 32
+    _log_message_method_offset = 32
     _get_log_file_method_offset = 33
     _get_display_alerts_method_offset = 34
     _set_display_alerts_method_offset = 35
@@ -424,12 +424,12 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
         """Specify the current log file to be written to."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, logFileName, logFileMode, OutArg())
 
-    _log_msg_metadata = { "offset" : _log_msg_method_offset,
+    _log_message_metadata = { "offset" : _log_message_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR,),
-            "marshallers" : (agmarshall.EnumArg(UI_LOG_MSG_TYPE), agmarshall.BStrArg,) }
-    def log_msg(self, msgType:"UI_LOG_MSG_TYPE", msg:str) -> None:
+            "marshallers" : (agmarshall.EnumArg(UI_LOG_MESSAGE_TYPE), agmarshall.BStrArg,) }
+    def log_message(self, msgType:"UI_LOG_MESSAGE_TYPE", msg:str) -> None:
         """Log the Message specified."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._log_msg_metadata, msgType, msg)
+        return self._intf.invoke(UiApplication._metadata, UiApplication._log_message_metadata, msgType, msg)
 
     _get_log_file_metadata = { "offset" : _get_log_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),

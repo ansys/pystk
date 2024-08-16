@@ -3,8 +3,6 @@ VehicleEclipsingBodies
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEclipsingBodies
 
-   Bases: 
-
    Eclipsing bodies.
 
 .. py:currentmodule:: VehicleEclipsingBodies

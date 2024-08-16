@@ -3,8 +3,6 @@ SensorEOIRSensitivityCollection
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRSensitivityCollection
 
-   Bases: 
-
    Class defining the Sensitivities collection for an EOIR Sensor.
 
 .. py:currentmodule:: SensorEOIRSensitivityCollection

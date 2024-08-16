@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: pulse_definition
     :canonical: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackFixedPRF.pulse_definition
-    :type: IRadarWaveformSearchTrackPulseDefinition
+    :type: RadarWaveformSearchTrackPulseDefinition
 
     Gets the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackFixedPRF.modulator
-    :type: IRadarModulator
+    :type: RadarModulator
 
     Gets the interface for setting the modulator parameters.
 

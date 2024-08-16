@@ -73,37 +73,37 @@ Property detail
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.receiver
-    :type: IRadarReceiver
+    :type: RadarReceiver
 
     Gets the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter_geometry
-    :type: IRadarClutterGeometry
+    :type: RadarClutterGeometry
 
     This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.jamming
-    :type: IRadarJamming
+    :type: RadarJamming
 
     Gets the radar jamming.
 
 .. py:property:: bistatic_transmitters
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.bistatic_transmitters
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the bistatic transmitter collection.
 
 .. py:property:: antenna_control
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.antenna_control
-    :type: IAntennaControl
+    :type: AntennaControl
 
     Gets the radar antenna control.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticReceiver.clutter
-    :type: IRadarClutter
+    :type: RadarClutter
 
     Gets the radar clutter settings.
 

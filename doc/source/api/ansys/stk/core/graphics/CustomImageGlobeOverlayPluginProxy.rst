@@ -3,8 +3,6 @@ CustomImageGlobeOverlayPluginProxy
 
 .. py:class:: ansys.stk.core.graphics.CustomImageGlobeOverlayPluginProxy
 
-   Bases: 
-
    A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator.
 
 .. py:currentmodule:: CustomImageGlobeOverlayPluginProxy
@@ -42,7 +40,7 @@ Property detail
 
 .. py:property:: custom_image_globe_overlay
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlayPluginProxy.custom_image_globe_overlay
-    :type: ICustomImageGlobeOverlay
+    :type: CustomImageGlobeOverlay
 
     Returns a custom image globe overlay.
 

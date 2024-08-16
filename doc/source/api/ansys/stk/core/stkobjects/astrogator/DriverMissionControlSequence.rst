@@ -71,25 +71,25 @@ Property detail
 
 .. py:property:: main_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence.main_sequence
-    :type: IMissionControlSequenceSegmentCollection
+    :type: MissionControlSequenceSegmentCollection
 
     Get the Mission Control Sequence.
 
 .. py:property:: options
     :canonical: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence.options
-    :type: IMissionControlSequenceOptions
+    :type: MissionControlSequenceOptions
 
     Get the Mission Control Sequence options.
 
 .. py:property:: auto_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence.auto_sequence
-    :type: IAutomaticSequenceCollection
+    :type: AutomaticSequenceCollection
 
     Get the Automatic Sequences.
 
 .. py:property:: calculation_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence.calculation_graphs
-    :type: ICalculationGraphCollection
+    :type: CalculationGraphCollection
 
     Get the calculation graphs.
 

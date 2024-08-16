@@ -3,8 +3,6 @@ ConstraintCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ConstraintCollection
 
-   Bases: 
-
    The Constraint component folder.
 
 .. py:currentmodule:: ConstraintCollection

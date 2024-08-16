@@ -3,8 +3,6 @@ MissionControlSequenceOptions
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceOptions
 
-   Bases: 
-
    The MCS Options.
 
 .. py:currentmodule:: MissionControlSequenceOptions
@@ -176,7 +174,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceOptions.user_variables
-    :type: IUserVariableDefinitionCollection
+    :type: UserVariableDefinitionCollection
 
     Interface used to add/remove user variables.
 

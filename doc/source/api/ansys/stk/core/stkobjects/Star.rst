@@ -102,19 +102,19 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Star.graphics
-    :type: IStarGraphics
+    :type: StarGraphics
 
     Get the star's 2D Graphics properties.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Star.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the star.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Star.graphics_3d
-    :type: IStarGraphics3D
+    :type: StarGraphics3D
 
     Get the star's 3D Graphics properties.
 

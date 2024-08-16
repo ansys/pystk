@@ -3,8 +3,6 @@ Graphics3DArticulationFile
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DArticulationFile
 
-   Bases: 
-
    Class defining the vo articulation file.
 
 .. py:currentmodule:: Graphics3DArticulationFile

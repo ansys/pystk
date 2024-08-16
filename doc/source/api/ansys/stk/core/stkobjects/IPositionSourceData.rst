@@ -3,8 +3,6 @@ IPositionSourceData
 
 .. py:class:: ansys.stk.core.stkobjects.IPositionSourceData
 
-   object
-   
    Base interface to IAgPlPosCentralBody and IAgPlPosFile.
 
 .. py:currentmodule:: IPositionSourceData

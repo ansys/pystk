@@ -3,8 +3,6 @@ PlatformLaserEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.PlatformLaserEnvironment
 
-   Bases: 
-
    Class defining the laser environment for an platform.
 
 .. py:currentmodule:: PlatformLaserEnvironment

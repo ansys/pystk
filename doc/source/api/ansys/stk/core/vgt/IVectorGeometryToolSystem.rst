@@ -3,8 +3,6 @@ IVectorGeometryToolSystem
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolSystem
 
-   object
-   
    The interface contains methods and properties shared by all VGT systems.
 
 .. py:currentmodule:: IVectorGeometryToolSystem

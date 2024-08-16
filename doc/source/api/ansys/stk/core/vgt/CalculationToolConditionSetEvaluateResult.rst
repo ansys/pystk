@@ -3,8 +3,6 @@ CalculationToolConditionSetEvaluateResult
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionSetEvaluateResult
 
-   Bases: 
-
    Represents the results returned by ConditionSet.Evaluate.
 
 .. py:currentmodule:: CalculationToolConditionSetEvaluateResult

@@ -3,8 +3,6 @@ AltitudeOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AltitudeOptions
 
-   Bases: 
-
    Class defining the altitude options in a procedure.
 
 .. py:currentmodule:: AltitudeOptions

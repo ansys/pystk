@@ -3,8 +3,6 @@ VehicleDuration
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleDuration
 
-   Bases: 
-
    Look ahead and look behind duration options.
 
 .. py:currentmodule:: VehicleDuration

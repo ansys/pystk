@@ -53,25 +53,25 @@ Property detail
 
 .. py:property:: level_turns
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.level_turns
-    :type: ILevelTurns
+    :type: LevelTurns
 
     Get the level turns interface.
 
 .. py:property:: attitude_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.attitude_transitions
-    :type: IAttitudeTransitions
+    :type: AttitudeTransitions
 
     Get the attitude transitions interface.
 
 .. py:property:: climb_and_descent_transitions
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.climb_and_descent_transitions
-    :type: IClimbAndDescentTransitions
+    :type: ClimbAndDescentTransitions
 
     Get the climb and descent transitions interface.
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedAccelerationModel.acceleration_mode
-    :type: IAircraftAccelerationMode
+    :type: AircraftAccelerationMode
 
     Get the acceleration mode interface.
 

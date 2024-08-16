@@ -3,8 +3,6 @@ VisualEffects
 
 .. py:class:: ansys.stk.core.graphics.VisualEffects
 
-   Bases: 
-
    Control various post processing effects that can be applied to the scene.
 
 .. py:currentmodule:: VisualEffects

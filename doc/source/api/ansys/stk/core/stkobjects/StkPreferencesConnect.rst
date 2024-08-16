@@ -3,8 +3,6 @@ StkPreferencesConnect
 
 .. py:class:: ansys.stk.core.stkobjects.StkPreferencesConnect
 
-   Bases: 
-
    Allow configuring connect preferences.
 
 .. py:currentmodule:: StkPreferencesConnect

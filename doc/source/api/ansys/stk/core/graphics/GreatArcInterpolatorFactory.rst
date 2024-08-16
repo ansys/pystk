@@ -3,8 +3,6 @@ GreatArcInterpolatorFactory
 
 .. py:class:: ansys.stk.core.graphics.GreatArcInterpolatorFactory
 
-   Bases: 
-
    The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
 
 .. py:currentmodule:: GreatArcInterpolatorFactory

@@ -3,8 +3,6 @@ RefractionModelITURP8344
 
 .. py:class:: ansys.stk.core.stkobjects.RefractionModelITURP8344
 
-   Bases: 
-
    ITU-R P.834-4.
 
 .. py:currentmodule:: RefractionModelITURP8344

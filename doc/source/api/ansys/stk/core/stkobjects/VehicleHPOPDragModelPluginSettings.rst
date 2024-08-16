@@ -3,8 +3,6 @@ VehicleHPOPDragModelPluginSettings
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPDragModelPluginSettings
 
-   Bases: 
-
    Plugin Drag Model Settings.
 
 .. py:currentmodule:: VehicleHPOPDragModelPluginSettings

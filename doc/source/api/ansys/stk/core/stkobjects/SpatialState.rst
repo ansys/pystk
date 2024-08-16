@@ -3,8 +3,6 @@ SpatialState
 
 .. py:class:: ansys.stk.core.stkobjects.SpatialState
 
-   Bases: 
-
    Represents a position and an attitude of an object.
 
 .. py:currentmodule:: SpatialState

@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MissionControlSequenceUpdate.user_variables
-    :type: IUserVariableUpdateCollection
+    :type: UserVariableUpdateCollection
 
     Interface used to modify user variables for the update segment.
 

@@ -3,8 +3,6 @@ ScenarioGenDatabaseCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ScenarioGenDatabaseCollection
 
-   Bases: 
-
    Collection of Scenario database settings.
 
 .. py:currentmodule:: ScenarioGenDatabaseCollection

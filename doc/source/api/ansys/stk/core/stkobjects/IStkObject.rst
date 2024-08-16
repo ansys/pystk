@@ -3,8 +3,6 @@ IStkObject
 
 .. py:class:: ansys.stk.core.stkobjects.IStkObject
 
-   object
-   
    Represents the instance of STK object.
 
 .. py:currentmodule:: IStkObject
@@ -130,13 +128,13 @@ Property detail
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkobjects.IStkObject.root
-    :type: IStkObjectRoot
+    :type: StkObjectRoot
 
     Returns the Root object or null.
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObject.data_providers
-    :type: IDataProviderCollection
+    :type: DataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -160,13 +158,13 @@ Property detail
 
 .. py:property:: object_coverage
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
-    :type: IStkObjectCoverage
+    :type: StkObjectCoverage
 
     Returns an IAgStkObjectCoverage object.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStkObject.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the object.
 
@@ -190,7 +188,7 @@ Property detail
 
 .. py:property:: metadata
     :canonical: ansys.stk.core.stkobjects.IStkObject.metadata
-    :type: IKeyValueCollection
+    :type: KeyValueCollection
 
     Gets the object's metadata. Metadata is a collection of keys and their associated values.
 

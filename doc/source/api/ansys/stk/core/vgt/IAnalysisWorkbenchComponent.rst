@@ -3,8 +3,6 @@ IAnalysisWorkbenchComponent
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchComponent
 
-   object
-   
    A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component.
 
 .. py:currentmodule:: IAnalysisWorkbenchComponent
@@ -120,7 +118,7 @@ Property detail
 
 .. py:property:: type_info
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info
-    :type: IAnalysisWorkbenchTypeInfo
+    :type: AnalysisWorkbenchTypeInfo
 
     Returns the component type information.
 
@@ -150,7 +148,7 @@ Property detail
 
 .. py:property:: embedded_components
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components
-    :type: IAnalysisWorkbenchCollection
+    :type: AnalysisWorkbenchCollection
 
     Returns a collection of embedded components.
 

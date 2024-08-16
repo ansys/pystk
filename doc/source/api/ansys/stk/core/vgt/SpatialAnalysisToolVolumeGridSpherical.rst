@@ -50,19 +50,19 @@ Property detail
 
 .. py:property:: azimuth_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.azimuth_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns azimuth coordinates parameters for the spherical volume grid.
 
 .. py:property:: elevation_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.elevation_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns elevation coordinates parameters for the spherical volume grid.
 
 .. py:property:: range_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.range_coordinates
-    :type: ISpatialAnalysisToolGridCoordinateDefinition
+    :type: SpatialAnalysisToolGridCoordinateDefinition
 
     Returns range coordinates parameters for the spherical volume grid.
 

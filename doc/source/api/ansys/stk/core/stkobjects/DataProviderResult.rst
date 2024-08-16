@@ -3,8 +3,6 @@ DataProviderResult
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResult
 
-   Bases: 
-
    Results returned by the data provider.
 
 .. py:currentmodule:: DataProviderResult
@@ -60,25 +58,25 @@ Property detail
 
 .. py:property:: sections
     :canonical: ansys.stk.core.stkobjects.DataProviderResult.sections
-    :type: IDataProviderResultSubSectionCollection
+    :type: DataProviderResultSubSectionCollection
 
     Returns a collection of sections.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.DataProviderResult.intervals
-    :type: IDataProviderResultIntervalCollection
+    :type: DataProviderResultIntervalCollection
 
     Returns a collection of intervals.
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.DataProviderResult.data_sets
-    :type: IDataProviderResultDataSetCollection
+    :type: DataProviderResultDataSetCollection
 
     Returns a collection of Datasets.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.DataProviderResult.message
-    :type: IDataProviderResultTextMessage
+    :type: DataProviderResultTextMessage
 
     Returns the message returned with the result.
 

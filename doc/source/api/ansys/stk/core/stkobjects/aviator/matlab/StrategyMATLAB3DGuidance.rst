@@ -26,7 +26,7 @@ Overview
               - Set the option to use the stop slant range stopping condition and set the according value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid`
               - Check if the MATLAB function path is valid.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_vel`
               - Cancel the position velocity strategies for MATLAB 3D Guidance.
 
     .. tab-item:: Properties
@@ -243,8 +243,8 @@ Method detail
 
 
 
-.. py:method:: cancel_tgt_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_tgt_position_vel
+.. py:method:: cancel_target_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_vel
 
     Cancel the position velocity strategies for MATLAB 3D Guidance.
 

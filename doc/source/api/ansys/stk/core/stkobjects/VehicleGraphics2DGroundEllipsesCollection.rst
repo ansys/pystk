@@ -3,8 +3,6 @@ VehicleGraphics2DGroundEllipsesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesCollection
 
-   Bases: 
-
    Collection of ground ellipse 2D graphics properties.
 
 .. py:currentmodule:: VehicleGraphics2DGroundEllipsesCollection

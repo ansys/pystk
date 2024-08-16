@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Target.graphics
-    :type: ITargetGraphics
+    :type: TargetGraphics
 
     Get the 2D Graphics properties of the target.
 
@@ -133,13 +133,13 @@ Property detail
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Target.graphics_3d
-    :type: ITargetGraphics3D
+    :type: TargetGraphics3D
 
     Get the 3D Graphics properties of the target.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Target.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the target.
 
@@ -157,7 +157,7 @@ Property detail
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Target.atmosphere
-    :type: IAtmosphere
+    :type: Atmosphere
 
     This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
@@ -169,7 +169,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Target.radar_cross_section
-    :type: IRadarCrossSectionInheritable
+    :type: RadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 
@@ -193,7 +193,7 @@ Property detail
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Target.laser_environment
-    :type: IPlatformLaserEnvironment
+    :type: PlatformLaserEnvironment
 
     Gets the laser environment.
 

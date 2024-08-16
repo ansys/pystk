@@ -3,8 +3,6 @@ ColorToLuminanceFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.ColorToLuminanceFilterFactory
 
-   Bases: 
-
    Extract a luminance band derived from the color bands of the source raster.
 
 .. py:currentmodule:: ColorToLuminanceFilterFactory

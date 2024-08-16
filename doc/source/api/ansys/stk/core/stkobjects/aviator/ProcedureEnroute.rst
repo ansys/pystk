@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: altitude_msl_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.altitude_msl_options
-    :type: IAltitudeMSLAndLevelOffOptions
+    :type: AltitudeMSLAndLevelOffOptions
 
     Get the altitude MSL options.
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.navigation_options
-    :type: INavigationOptions
+    :type: NavigationOptions
 
     Get the navigation options.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureEnroute.enroute_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 

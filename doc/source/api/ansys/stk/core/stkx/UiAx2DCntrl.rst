@@ -3,8 +3,6 @@ UiAx2DCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAx2DCntrl
 
-   Bases: 
-
    AGI Map control.
 
 .. py:currentmodule:: UiAx2DCntrl
@@ -121,7 +119,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.UiAx2DCntrl.application
-    :type: ISTKXApplication
+    :type: STKXApplication
 
     Reference to the STK X application object.
 

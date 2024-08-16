@@ -3,8 +3,6 @@ ITimeToolEvent
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEvent
 
-   object
-   
    Define an event (time instant).
 
 .. py:currentmodule:: ITimeToolEvent

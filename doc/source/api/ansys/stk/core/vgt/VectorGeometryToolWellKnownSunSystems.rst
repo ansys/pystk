@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownSunSystems
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems
 
-   Bases: 
-
    The Sun's well-known coordinate reference systems.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownSunSystems

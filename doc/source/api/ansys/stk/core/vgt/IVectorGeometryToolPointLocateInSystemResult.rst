@@ -3,8 +3,6 @@ IVectorGeometryToolPointLocateInSystemResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult
 
-   object
-   
    Contains the results returned with IAgCrdnPoint.LocateInSystem method.
 
 .. py:currentmodule:: IVectorGeometryToolPointLocateInSystemResult

@@ -3,8 +3,6 @@ ScheduleTime
 
 .. py:class:: ansys.stk.core.stkobjects.ScheduleTime
 
-   Bases: 
-
    Class for defining Sensor target times in terms of a specified schedule.
 
 .. py:currentmodule:: ScheduleTime

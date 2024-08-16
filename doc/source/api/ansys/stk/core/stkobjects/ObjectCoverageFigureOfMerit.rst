@@ -3,8 +3,6 @@ ObjectCoverageFigureOfMerit
 
 .. py:class:: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit
 
-   Bases: 
-
    Class defining the fom on the coverage object tool.
 
 .. py:currentmodule:: ObjectCoverageFigureOfMerit
@@ -77,7 +75,7 @@ Property detail
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.graphics
-    :type: IFigureOfMeritGraphics
+    :type: FigureOfMeritGraphics
 
     2D graphics properties of the FOM.
 

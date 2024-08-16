@@ -3,8 +3,6 @@ CoverageGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics
 
-   Bases: 
-
    2D graphics display options for the coverage grid.
 
 .. py:currentmodule:: CoverageGraphics
@@ -44,19 +42,19 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics.static
-    :type: ICoverageGraphics2DStatic
+    :type: CoverageGraphics2DStatic
 
     2D static graphics options.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics.animation
-    :type: ICoverageGraphics2DAnimation
+    :type: CoverageGraphics2DAnimation
 
     2D animation graphics options.
 
 .. py:property:: progress
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics.progress
-    :type: ICoverageGraphics2DProgress
+    :type: CoverageGraphics2DProgress
 
     Access progress graphics options.
 

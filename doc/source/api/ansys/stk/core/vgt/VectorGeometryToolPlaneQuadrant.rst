@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant.reference_system
-    :type: IVectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemRefTo
 
     Specify a reference system.
 

@@ -3,8 +3,6 @@ GoldenSectionControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GoldenSectionControlCollection
 
-   Bases: 
-
    Properties for the list of Golden Section control parameters.
 
 .. py:currentmodule:: GoldenSectionControlCollection

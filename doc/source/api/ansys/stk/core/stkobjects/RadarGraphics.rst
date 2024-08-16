@@ -3,8 +3,6 @@ RadarGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarGraphics
 
-   Bases: 
-
    Class defining 2D Graphics properties of a Radar.
 
 .. py:currentmodule:: RadarGraphics
@@ -74,19 +72,19 @@ Property detail
 
 .. py:property:: contour_graphics
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.contour_graphics
-    :type: IAntennaContourGraphics
+    :type: AntennaContourGraphics
 
     Gets the radar's antenna contour graphics interface.
 
 .. py:property:: access
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.access
-    :type: IRadarAccessGraphics
+    :type: RadarAccessGraphics
 
     Gets the radar's access graphics interface.
 
 .. py:property:: multipath
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.multipath
-    :type: IRadarMultipathGraphics
+    :type: RadarMultipathGraphics
 
     Gets the radar's multipath graphics interface.
 

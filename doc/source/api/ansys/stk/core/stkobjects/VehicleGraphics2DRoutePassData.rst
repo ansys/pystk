@@ -3,8 +3,6 @@ VehicleGraphics2DRoutePassData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DRoutePassData
 
-   Bases: 
-
    Great arc route pass data.
 
 .. py:currentmodule:: VehicleGraphics2DRoutePassData
@@ -38,7 +36,7 @@ Property detail
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DRoutePassData.route
-    :type: IVehicleGraphics2DLeadTrailData
+    :type: VehicleGraphics2DLeadTrailData
 
     Leading/trailing route pass data.
 

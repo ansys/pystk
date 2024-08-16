@@ -3,8 +3,6 @@ BasicManeuverTargetPositionVel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel
 
-   Bases: 
-
    Class defining the target position and velocity strategies for basic maneuvers.
 
 .. py:currentmodule:: BasicManeuverTargetPositionVel
@@ -35,9 +33,9 @@ Overview
               - Gets or sets the target pos vel type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.target_position_vel_type_string`
               - Gets or sets the target pos vel as a string value. Use this for custom models.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_brg_rng`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_bearing_range`
               - Get the options for a noisy bearing range velocity strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_surf_tgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_surf_target`
               - Get the options for a noisy surface target position velocity strategy.
 
 
@@ -65,15 +63,15 @@ Property detail
 
     Gets or sets the target pos vel as a string value. Use this for custom models.
 
-.. py:property:: mode_as_noisy_brg_rng
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_brg_rng
-    :type: IBasicManeuverTargetPositionVelNoisyBrgRng
+.. py:property:: mode_as_noisy_bearing_range
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_bearing_range
+    :type: BasicManeuverTargetPositionVelNoisyBearingRange
 
     Get the options for a noisy bearing range velocity strategy.
 
-.. py:property:: mode_as_noisy_surf_tgt
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_surf_tgt
-    :type: IBasicManeuverTargetPositionVelNoisySurfTgt
+.. py:property:: mode_as_noisy_surf_target
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.mode_as_noisy_surf_target
+    :type: BasicManeuverTargetPositionVelNoisySurfTarget
 
     Get the options for a noisy surface target position velocity strategy.
 

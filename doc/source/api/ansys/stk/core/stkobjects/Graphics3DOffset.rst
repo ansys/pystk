@@ -3,8 +3,6 @@ Graphics3DOffset
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DOffset
 
-   Bases: 
-
    Class defining 3D offset attributes.
 
 .. py:currentmodule:: Graphics3DOffset
@@ -44,25 +42,25 @@ Property detail
 
 .. py:property:: rotational
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.rotational
-    :type: IGraphics3DOffsetRotate
+    :type: Graphics3DOffsetRotate
 
     Returns the rotational offset attributes.
 
 .. py:property:: translational
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.translational
-    :type: IGraphics3DOffsetTransformation
+    :type: Graphics3DOffsetTransformation
 
     Returns the translational offset attributes.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.label
-    :type: IGraphics3DOffsetLabel
+    :type: Graphics3DOffsetLabel
 
     Returns the label offset attributes.
 
 .. py:property:: attach_point
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.attach_point
-    :type: IGraphics3DOffsetAttach
+    :type: Graphics3DOffsetAttach
 
     Returns the attach point offset attributes.
 

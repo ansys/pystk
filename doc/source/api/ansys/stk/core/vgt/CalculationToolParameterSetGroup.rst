@@ -3,8 +3,6 @@ CalculationToolParameterSetGroup
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetGroup
 
-   Bases: 
-
    Access or create VGT parameter sets associated with an object or a central body.
 
 .. py:currentmodule:: CalculationToolParameterSetGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolParameterSetGroup.factory
-    :type: ICalculationToolParameterSetFactory
+    :type: CalculationToolParameterSetFactory
 
     Returns a factory object used to create calc scalar components.
 

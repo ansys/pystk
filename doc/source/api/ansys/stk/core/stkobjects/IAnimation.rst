@@ -3,8 +3,6 @@ IAnimation
 
 .. py:class:: ansys.stk.core.stkobjects.IAnimation
 
-   object
-   
    Provide methods to control scenario animation.
 
 .. py:currentmodule:: IAnimation

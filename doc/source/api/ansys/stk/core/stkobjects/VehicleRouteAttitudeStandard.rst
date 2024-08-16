@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: basic
     :canonical: ansys.stk.core.stkobjects.VehicleRouteAttitudeStandard.basic
-    :type: IVehicleStandardBasic
+    :type: VehicleStandardBasic
 
     Get the basic attitude properties.
 
 .. py:property:: external
     :canonical: ansys.stk.core.stkobjects.VehicleRouteAttitudeStandard.external
-    :type: IVehicleAttitudeExternal
+    :type: VehicleAttitudeExternal
 
     Get the precomputed (external) attitude properties.
 

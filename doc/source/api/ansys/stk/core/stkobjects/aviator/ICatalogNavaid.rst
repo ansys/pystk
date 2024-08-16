@@ -3,8 +3,6 @@ ICatalogNavaid
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ICatalogNavaid
 
-   object
-   
    Interface used to access a navaid in the Aviator catalog.
 
 .. py:currentmodule:: ICatalogNavaid

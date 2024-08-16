@@ -37,7 +37,7 @@ Overview
               - Gets the earliest time that the object is available as a site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.waypoint_time`
               - Gets or sets the time at which the object's position will be used as a waypoint.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_proc_time_diff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_procedure_time_diff`
               - Gets or sets the mode to minimize the time difference between the procedure and site times.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.max_time`
               - Get the latest time that the object is available as a site.
@@ -89,9 +89,9 @@ Property detail
 
     Gets or sets the time at which the object's position will be used as a waypoint.
 
-.. py:property:: minimize_site_proc_time_diff
-    :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_proc_time_diff
-    :type: MINIMIZE_SITE_PROC_TIME_DIFF
+.. py:property:: minimize_site_procedure_time_diff
+    :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_procedure_time_diff
+    :type: MINIMIZE_SITE_PROCEDURE_TIME_DIFF
 
     Gets or sets the mode to minimize the time difference between the procedure and site times.
 

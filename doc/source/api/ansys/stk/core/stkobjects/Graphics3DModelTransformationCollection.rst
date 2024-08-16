@@ -3,8 +3,6 @@ Graphics3DModelTransformationCollection
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection
 
-   Bases: 
-
    Collection of available transformations in a model.
 
 .. py:currentmodule:: Graphics3DModelTransformationCollection

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~COURSE_MODE_MAGNITUDE`
               - Enumeration AgEAvtrEphemShiftRotateCourseMode:eCourseModeMag.
 
-            * - :py:attr:`~COURSE_MODE_REL`
+            * - :py:attr:`~COURSE_MODE_RELATIVE`
               - Enumeration AgEAvtrEphemShiftRotateCourseMode:eCourseModeRel.
 
 

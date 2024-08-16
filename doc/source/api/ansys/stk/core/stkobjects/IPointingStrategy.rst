@@ -3,8 +3,6 @@ IPointingStrategy
 
 .. py:class:: ansys.stk.core.stkobjects.IPointingStrategy
 
-   object
-   
    Provide the base interface for a pointing strategy.
 
 .. py:currentmodule:: IPointingStrategy

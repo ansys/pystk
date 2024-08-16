@@ -3,8 +3,6 @@ TimeToolEventFactory
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventFactory
 
-   Bases: 
-
    The factory creates events.
 
 .. py:currentmodule:: TimeToolEventFactory

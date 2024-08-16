@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorApoapsis.reference_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a reference point.
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorApoapsis.central_body
-    :type: IAnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyRefTo
 
     Specify a central body.
 

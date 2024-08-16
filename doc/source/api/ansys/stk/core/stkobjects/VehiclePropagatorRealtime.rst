@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorRealtime.duration
-    :type: IVehicleDuration
+    :type: VehicleDuration
 
     Get look ahead/look behind duration values.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: point_builder
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorRealtime.point_builder
-    :type: IVehicleRealtimePointBuilder
+    :type: VehicleRealtimePointBuilder
 
     Gets a object to create ephemeris data for a vehicle by sending it point by point.
 

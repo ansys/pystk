@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.doppler_clutter_filters
-    :type: IRadarDopplerClutterFilters
+    :type: RadarDopplerClutterFilters
 
     Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 

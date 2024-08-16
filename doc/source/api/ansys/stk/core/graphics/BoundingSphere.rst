@@ -3,8 +3,6 @@ BoundingSphere
 
 .. py:class:: ansys.stk.core.graphics.BoundingSphere
 
-   Bases: 
-
    A sphere that encapsulates an object.
 
 .. py:currentmodule:: BoundingSphere

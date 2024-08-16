@@ -3,8 +3,6 @@ ICentralBodyAttitude
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitude
 
-   object
-   
    The central body attitude.
 
 .. py:currentmodule:: ICentralBodyAttitude

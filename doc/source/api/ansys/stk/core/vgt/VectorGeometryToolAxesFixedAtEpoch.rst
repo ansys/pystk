@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: source_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch.source_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a source axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

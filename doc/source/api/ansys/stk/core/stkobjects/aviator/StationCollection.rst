@@ -3,8 +3,6 @@ StationCollection
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.StationCollection
 
-   Bases: 
-
    Class defining a collection of payload stations for an Aviator aircraft.
 
 .. py:currentmodule:: StationCollection

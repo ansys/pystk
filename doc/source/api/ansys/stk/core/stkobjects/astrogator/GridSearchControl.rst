@@ -3,8 +3,6 @@ GridSearchControl
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GridSearchControl
 
-   Bases: 
-
    Control parameters for Grid Search profile.
 
 .. py:currentmodule:: GridSearchControl

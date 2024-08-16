@@ -3,8 +3,6 @@ PhaseCollection
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.PhaseCollection
 
-   Bases: 
-
    Class defining the collection of phases.
 
 .. py:currentmodule:: PhaseCollection

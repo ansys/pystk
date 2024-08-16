@@ -3,8 +3,6 @@ CRPluginConfiguration
 
 .. py:class:: ansys.stk.core.stkobjects.CRPluginConfiguration
 
-   Bases: 
-
    Class defining plugin configuration.
 
 .. py:currentmodule:: CRPluginConfiguration

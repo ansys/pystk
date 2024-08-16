@@ -3,8 +3,6 @@ VehicleGraphics3DTrajectory
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory
 
-   Bases: 
-
    AgLvVOTrajectory Class.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectory
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.track_data
-    :type: IVehicleGraphics3DTrajectoryTrackData
+    :type: VehicleGraphics3DTrajectoryTrackData
 
     Get the leading/trailing ground track and trajectory data.
 
 .. py:property:: tick_marks
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectory.tick_marks
-    :type: IVehicleGraphics3DTrajectoryTickMarks
+    :type: VehicleGraphics3DTrajectoryTickMarks
 
     Get the tick mark data.
 

@@ -3,8 +3,6 @@ CameraVideoRecording
 
 .. py:class:: ansys.stk.core.graphics.CameraVideoRecording
 
-   Bases: 
-
    Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered.
 
 .. py:currentmodule:: CameraVideoRecording
@@ -77,7 +75,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_recording_frame_stack(self, fileDirectory: str, filePrefix: str, cameraSnapshotFileFormat: CAMERA_SNAPSHOT_FILE_FORMAT, startingFrameNumber: int, numberOfFrameDigits: int) -> None
+.. py:method:: start_recording_frame_stack(self, fileDirectory: str, filePrefix: str, cameraSnapshotFileFormat: SNAPSHOT_FILE_FORMAT, startingFrameNumber: int, numberOfFrameDigits: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack
 
     Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
@@ -86,7 +84,7 @@ Method detail
 
     **fileDirectory** : :obj:`~str`
     **filePrefix** : :obj:`~str`
-    **cameraSnapshotFileFormat** : :obj:`~CAMERA_SNAPSHOT_FILE_FORMAT`
+    **cameraSnapshotFileFormat** : :obj:`~SNAPSHOT_FILE_FORMAT`
     **startingFrameNumber** : :obj:`~int`
     **numberOfFrameDigits** : :obj:`~int`
 
@@ -103,7 +101,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_recording_video(self, fileDirectory: str, filePrefix: str, videoFormat: CAMERA_VIDEO_FORMAT, videoBitRate: int, videoFrameRate: int) -> None
+.. py:method:: start_recording_video(self, fileDirectory: str, filePrefix: str, videoFormat: VIDEO_FORMAT, videoBitRate: int, videoFrameRate: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_video
 
     Start recording a video file at the specified bit and frame rate.
@@ -112,7 +110,7 @@ Method detail
 
     **fileDirectory** : :obj:`~str`
     **filePrefix** : :obj:`~str`
-    **videoFormat** : :obj:`~CAMERA_VIDEO_FORMAT`
+    **videoFormat** : :obj:`~VIDEO_FORMAT`
     **videoBitRate** : :obj:`~int`
     **videoFrameRate** : :obj:`~int`
 

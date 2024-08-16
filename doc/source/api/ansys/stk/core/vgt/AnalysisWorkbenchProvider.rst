@@ -3,8 +3,6 @@ AnalysisWorkbenchProvider
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchProvider
 
-   Bases: 
-
    Allow accessing existing Vector Geometry Tool components.
 
 .. py:currentmodule:: AnalysisWorkbenchProvider
@@ -87,121 +85,121 @@ Property detail
 
 .. py:property:: vectors
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.vectors
-    :type: IVectorGeometryToolVectorGroup
+    :type: VectorGeometryToolVectorGroup
 
     Returns a group of vectors.
 
 .. py:property:: points
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.points
-    :type: IVectorGeometryToolPointGroup
+    :type: VectorGeometryToolPointGroup
 
     Returns a group of points.
 
 .. py:property:: angles
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.angles
-    :type: IVectorGeometryToolAngleGroup
+    :type: VectorGeometryToolAngleGroup
 
     Returns a group of angles.
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.axes
-    :type: IVectorGeometryToolAxesGroup
+    :type: VectorGeometryToolAxesGroup
 
     Returns a group of axes.
 
 .. py:property:: planes
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.planes
-    :type: IVectorGeometryToolPlaneGroup
+    :type: VectorGeometryToolPlaneGroup
 
     Returns a group of planes.
 
 .. py:property:: systems
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.systems
-    :type: IVectorGeometryToolSystemGroup
+    :type: VectorGeometryToolSystemGroup
 
     Returns a group of systems.
 
 .. py:property:: well_known_systems
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.well_known_systems
-    :type: IVectorGeometryToolWellKnownSystems
+    :type: VectorGeometryToolWellKnownSystems
 
     Returns well-known systems.
 
 .. py:property:: well_known_axes
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.well_known_axes
-    :type: IVectorGeometryToolWellKnownAxes
+    :type: VectorGeometryToolWellKnownAxes
 
     Returns well-known axes.
 
 .. py:property:: events
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.events
-    :type: ITimeToolEventGroup
+    :type: TimeToolEventGroup
 
     Returns a group of events.
 
 .. py:property:: event_intervals
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.event_intervals
-    :type: ITimeToolEventIntervalGroup
+    :type: TimeToolEventIntervalGroup
 
     Returns a group of event intervals.
 
 .. py:property:: calc_scalars
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.calc_scalars
-    :type: ICalculationToolScalarGroup
+    :type: CalculationToolScalarGroup
 
     Returns a group of calc scalars.
 
 .. py:property:: event_arrays
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.event_arrays
-    :type: ITimeToolEventArrayGroup
+    :type: TimeToolEventArrayGroup
 
     Returns a group of event arrays.
 
 .. py:property:: event_interval_lists
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.event_interval_lists
-    :type: ITimeToolEventIntervalListGroup
+    :type: TimeToolEventIntervalListGroup
 
     Returns a group of event interval lists.
 
 .. py:property:: event_interval_collections
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.event_interval_collections
-    :type: ITimeToolEventIntervalCollectionGroup
+    :type: TimeToolEventIntervalCollectionGroup
 
     Returns a group of event interval collections.
 
 .. py:property:: parameter_sets
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.parameter_sets
-    :type: ICalculationToolParameterSetGroup
+    :type: CalculationToolParameterSetGroup
 
     Access, add new or remove existing parameter set components.
 
 .. py:property:: conditions
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.conditions
-    :type: ICalculationToolConditionGroup
+    :type: CalculationToolConditionGroup
 
     Returns a group of condition objects.
 
 .. py:property:: condition_sets
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.condition_sets
-    :type: ICalculationToolConditionSetGroup
+    :type: CalculationToolConditionSetGroup
 
     Returns a group of condition set objects.
 
 .. py:property:: volume_grids
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.volume_grids
-    :type: ISpatialAnalysisToolVolumeGridGroup
+    :type: SpatialAnalysisToolVolumeGridGroup
 
     Returns a group of volume grid objects.
 
 .. py:property:: volumes
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.volumes
-    :type: ISpatialAnalysisToolVolumeGroup
+    :type: SpatialAnalysisToolVolumeGroup
 
     Returns a group of volume objects.
 
 .. py:property:: volume_calcs
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.volume_calcs
-    :type: ISpatialAnalysisToolVolumeCalcGroup
+    :type: SpatialAnalysisToolVolumeCalcGroup
 
     Returns a group of volume calc objects.
 

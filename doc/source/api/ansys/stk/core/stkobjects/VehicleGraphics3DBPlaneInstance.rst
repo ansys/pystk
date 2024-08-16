@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneInstance
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance
 
-   Bases: 
-
    An element in the IAgVeVOBPlanePointCollection.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneInstance
@@ -96,13 +94,13 @@ Property detail
 
 .. py:property:: event
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.event
-    :type: IVehicleGraphics3DBPlaneEvent
+    :type: VehicleGraphics3DBPlaneEvent
 
     Returns the 3D BPlane Event properties.
 
 .. py:property:: target_point
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.target_point
-    :type: IVehicleGraphics3DBPlaneTargetPoint
+    :type: VehicleGraphics3DBPlaneTargetPoint
 
     Returns the 3D BPlane Target Point properties.
 
@@ -150,7 +148,7 @@ Property detail
 
 .. py:property:: additional_points
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.additional_points
-    :type: IVehicleGraphics3DBPlanePointCollection
+    :type: VehicleGraphics3DBPlanePointCollection
 
     Returns a collection of additional points.
 

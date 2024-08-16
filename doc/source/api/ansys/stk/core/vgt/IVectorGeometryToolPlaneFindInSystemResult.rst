@@ -3,8 +3,6 @@ IVectorGeometryToolPlaneFindInSystemResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult
 
-   object
-   
    Contains the results returned with IAgCrdnPlane.FindInSystem method.
 
 .. py:currentmodule:: IVectorGeometryToolPlaneFindInSystemResult

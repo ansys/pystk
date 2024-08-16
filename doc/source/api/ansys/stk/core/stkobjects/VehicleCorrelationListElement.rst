@@ -3,8 +3,6 @@ VehicleCorrelationListElement
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleCorrelationListElement
 
-   Bases: 
-
    Class representing an element of an HPOP covariance matrix.
 
 .. py:currentmodule:: VehicleCorrelationListElement

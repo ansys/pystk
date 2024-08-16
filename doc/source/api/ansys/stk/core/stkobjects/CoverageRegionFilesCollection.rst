@@ -3,8 +3,6 @@ CoverageRegionFilesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageRegionFilesCollection
 
-   Bases: 
-
    Collection of Region Files.
 
 .. py:currentmodule:: CoverageRegionFilesCollection

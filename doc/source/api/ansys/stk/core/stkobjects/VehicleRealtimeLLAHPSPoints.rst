@@ -3,8 +3,6 @@ VehicleRealtimeLLAHPSPoints
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleRealtimeLLAHPSPoints
 
-   Bases: 
-
    Add one ephemeris point using latitude/longitude/altitude coordinate system.
 
 .. py:currentmodule:: VehicleRealtimeLLAHPSPoints

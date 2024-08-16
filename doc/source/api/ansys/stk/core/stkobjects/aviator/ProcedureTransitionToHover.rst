@@ -97,19 +97,19 @@ Property detail
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.vertical_plane_options
-    :type: IVerticalPlaneAndFlightPathOptions
+    :type: VerticalPlaneAndFlightPathOptions
 
     Get the vertical plane options.
 

@@ -3,8 +3,6 @@ IRFFilterModel
 
 .. py:class:: ansys.stk.core.stkobjects.IRFFilterModel
 
-   object
-   
    Provide access to the properties and methods defining an RF filter model.
 
 .. py:currentmodule:: IRFFilterModel

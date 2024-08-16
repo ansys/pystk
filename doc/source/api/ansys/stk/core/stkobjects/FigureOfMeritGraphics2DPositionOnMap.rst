@@ -3,8 +3,6 @@ FigureOfMeritGraphics2DPositionOnMap
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DPositionOnMap
 
-   Bases: 
-
    Coordinates of contour legend in pixels on 2D map.
 
 .. py:currentmodule:: FigureOfMeritGraphics2DPositionOnMap

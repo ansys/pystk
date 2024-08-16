@@ -3,8 +3,6 @@ IReTransmitterModel
 
 .. py:class:: ansys.stk.core.stkobjects.IReTransmitterModel
 
-   object
-   
    Provide access to the properties and methods defining a re-transmitter model.
 
 .. py:currentmodule:: IReTransmitterModel
@@ -59,7 +57,7 @@ Property detail
 
 .. py:property:: frequency_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.frequency_transfer_function_polynomial
-    :type: ITransferFunctionPolynomialCollection
+    :type: TransferFunctionPolynomialCollection
 
     Gets the frequency transfer function polynomial collection.
 
@@ -77,13 +75,13 @@ Property detail
 
 .. py:property:: power_back_off_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_polynomial
-    :type: ITransferFunctionPolynomialCollection
+    :type: TransferFunctionPolynomialCollection
 
     Gets the power back off transfer function polynomial collection.
 
 .. py:property:: power_back_off_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_table
-    :type: ITransferFunctionInputBackOffOutputBackOffTable
+    :type: TransferFunctionInputBackOffOutputBackOffTable
 
     Gets the power back off transfer function table.
 
@@ -107,13 +105,13 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_polynomial
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_polynomial
-    :type: ITransferFunctionPolynomialCollection
+    :type: TransferFunctionPolynomialCollection
 
     Gets the C/Im transfer function polynomial collection.
 
 .. py:property:: c_over_im_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table
-    :type: ITransferFunctionInputBackOffCOverImTable
+    :type: TransferFunctionInputBackOffCOverImTable
 
     Gets the C/Im transfer function table.
 

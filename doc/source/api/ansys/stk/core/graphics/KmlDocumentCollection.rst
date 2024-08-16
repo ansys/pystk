@@ -3,8 +3,6 @@ KmlDocumentCollection
 
 .. py:class:: ansys.stk.core.graphics.KmlDocumentCollection
 
-   Bases: 
-
    A collection of KML documents.
 
 .. py:currentmodule:: KmlDocumentCollection

@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~REL_TO_RUNWAY_CENTER`
+            * - :py:attr:`~RELATIVE_TO_RUNWAY_CENTER`
               - Runway center.
 
-            * - :py:attr:`~REL_TO_RUNWAY_END`
+            * - :py:attr:`~RELATIVE_TO_RUNWAY_END`
               - Runway end.
 
 

@@ -3,8 +3,6 @@ FrameRate
 
 .. py:class:: ansys.stk.core.graphics.FrameRate
 
-   Bases: 
-
    Keeps track of how many times the scenes are rendered per second.
 
 .. py:currentmodule:: FrameRate

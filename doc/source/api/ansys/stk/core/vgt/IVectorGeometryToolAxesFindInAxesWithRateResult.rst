@@ -3,8 +3,6 @@ IVectorGeometryToolAxesFindInAxesWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult
 
-   object
-   
    Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
 
 .. py:currentmodule:: IVectorGeometryToolAxesFindInAxesWithRateResult

@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.EnginePlugin.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the plugin.
 

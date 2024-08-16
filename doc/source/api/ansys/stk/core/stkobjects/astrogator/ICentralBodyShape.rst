@@ -3,8 +3,6 @@ ICentralBodyShape
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyShape
 
-   object
-   
    The central body shape.
 
 .. py:currentmodule:: ICentralBodyShape

@@ -3,8 +3,6 @@ ICentralBodyEphemeris
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris
 
-   object
-   
    The central body ephemeris source.
 
 .. py:currentmodule:: ICentralBodyEphemeris

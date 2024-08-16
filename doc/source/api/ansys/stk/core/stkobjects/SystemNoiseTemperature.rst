@@ -3,8 +3,6 @@ SystemNoiseTemperature
 
 .. py:class:: ansys.stk.core.stkobjects.SystemNoiseTemperature
 
-   Bases: 
-
    Class defining system noise temperature.
 
 .. py:currentmodule:: SystemNoiseTemperature
@@ -86,7 +84,7 @@ Property detail
 
 .. py:property:: antenna_noise_temperature
     :canonical: ansys.stk.core.stkobjects.SystemNoiseTemperature.antenna_noise_temperature
-    :type: IAntennaNoiseTemperature
+    :type: AntennaNoiseTemperature
 
     Gets the interface for setting the antenna noise temperature parameters.
 

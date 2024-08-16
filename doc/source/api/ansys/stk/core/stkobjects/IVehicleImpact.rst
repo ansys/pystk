@@ -3,8 +3,6 @@ IVehicleImpact
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleImpact
 
-   object
-   
    Base Interface IAgVeImpact. IAgVeImpactLLA and IAgVeImpactLLR derive from this.
 
 .. py:currentmodule:: IVehicleImpact

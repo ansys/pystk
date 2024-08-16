@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeGridResult
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult
 
-   Bases: 
-
    An interface that generates Volume Grid results.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeGridResult

@@ -3,8 +3,6 @@ PlanetCommonTasks
 
 .. py:class:: ansys.stk.core.stkobjects.PlanetCommonTasks
 
-   Bases: 
-
    Class defining the Planet Common class.
 
 .. py:currentmodule:: PlanetCommonTasks

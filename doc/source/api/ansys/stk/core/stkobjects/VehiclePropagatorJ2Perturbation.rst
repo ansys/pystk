@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorJ2Perturbation.initial_state
-    :type: IVehicleJxInitialState
+    :type: VehicleJxInitialState
 
     Get the initial state.
 

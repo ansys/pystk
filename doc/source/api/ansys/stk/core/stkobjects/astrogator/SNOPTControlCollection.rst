@@ -3,8 +3,6 @@ SNOPTControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection
 
-   Bases: 
-
    SNOPT control collection.
 
 .. py:currentmodule:: SNOPTControlCollection

@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.TextureScreenOverlay.texture
-    :type: IRendererTexture2D
+    :type: RendererTexture2D
 
     Gets or sets the texture (image) to be drawn on the overlay. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.TextureScreenOverlay.texture_filter
-    :type: ITextureFilter2D
+    :type: TextureFilter2D
 
     Gets or sets the filter used for the texture associated with this overlay.
 
 .. py:property:: maintain_aspect_ratio
     :canonical: ansys.stk.core.graphics.TextureScreenOverlay.maintain_aspect_ratio
-    :type: MAINTAIN_ASPECT_RATIO
+    :type: OVERLAY_ASPECT_RATIO_MODE
 
     Gets or sets a value indicating whether the aspect ratio of the texture screen overlay is maintained or not.
 

@@ -3,8 +3,6 @@ TransferFunctionInputBackOffOutputBackOffTableRow
 
 .. py:class:: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow
 
-   Bases: 
-
    Class defining a row of an input back off vs output back off table.
 
 .. py:currentmodule:: TransferFunctionInputBackOffOutputBackOffTableRow

@@ -1237,10 +1237,10 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarAccessGraphics_RadarTGTGraphics
     @category("Graphics Tests")
     def test_IAgRadarAccessGraphics_RadarTGTGraphics(self):
-        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
-        EarlyBoundTests.accessGraphics.radar_to_tgt_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.radar_to_tgt_color)
+        EarlyBoundTests.accessGraphics.radar_to_target_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.radar_to_target_color)
+        EarlyBoundTests.accessGraphics.radar_to_target_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.radar_to_target_color)
 
     # endregion
 
@@ -1324,26 +1324,26 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarMultipathGraphics_RcvrTgtReflectionPoint
     @category("Graphics Tests")
     def test_IAgRadarMultipathGraphics_RcvrTgtReflectionPoint(self):
-        EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp = False
-        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp)
+        EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp = False
+        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Red
+            EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style = "Plus"
+            EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Plus"
 
-        EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp = True
-        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_rcv_to_tgt_grp)
+        EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp = True
+        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp)
 
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color)
+        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color)
 
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style = "Plus"
-        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style)
-        EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style = "Square"
-        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.rcv_to_tgt_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Plus"
+        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Square"
+        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style)
 
     # endregion
 
@@ -1376,26 +1376,26 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarMultipathGraphics_XmtrTgtReflectionPoint
     @category("Graphics Tests")
     def test_IAgRadarMultipathGraphics_XmtrTgtReflectionPoint(self):
-        EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp = False
-        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp)
+        EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp = False
+        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Red
+            EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style = "Plus"
+            EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Plus"
 
-        EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp = True
-        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_tgt_grp)
+        EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp = True
+        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color)
+        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style = "Plus"
-        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style)
-        EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style = "Square"
-        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.xmt_to_tgt_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Plus"
+        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Square"
+        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style)
 
     # endregion
 
@@ -1444,8 +1444,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.unambiguous_range = 0.02
 
-        sarPulseDef.prf_mode = RADAR_SAR_PRF_MODE.UNAMBIG_RNG
-        Assert.assertEqual(RADAR_SAR_PRF_MODE.UNAMBIG_RNG, sarPulseDef.prf_mode)
+        sarPulseDef.prf_mode = RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE
+        Assert.assertEqual(RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE, sarPulseDef.prf_mode)
 
         sarPulseDef.unambiguous_range = 9
         Assert.assertEqual(9, sarPulseDef.unambiguous_range)
@@ -1710,8 +1710,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_velocity = 0.02
 
-        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_RNG
-        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_RNG, pulseDef.prf_mode)
+        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE
+        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE, pulseDef.prf_mode)
 
         pulseDef.unambiguous_range = 9
         Assert.assertEqual(9, pulseDef.unambiguous_range)
@@ -1726,8 +1726,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_velocity = 0.02
 
-        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_VEL
-        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_VEL, pulseDef.prf_mode)
+        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL
+        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL, pulseDef.prf_mode)
 
         pulseDef.unambiguous_velocity = 1e-06
         Assert.assertEqual(1e-06, pulseDef.unambiguous_velocity)
@@ -3944,8 +3944,8 @@ class EarlyBoundTests(TestBase):
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.Prf = 1e-13; });
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.Prf = 11; });
 
-        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_RNG;
-        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_RNG, pulseDef.PrfMode);
+        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE;
+        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE, pulseDef.PrfMode);
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.Prf = 1; });
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.UnambiguousVelocity = 1; });
         #    pulseDef.UnambiguousRange = 0.015;
@@ -3955,8 +3955,8 @@ class EarlyBoundTests(TestBase):
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.UnambiguousRange = 0.0148; });
         #    //TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.UnambiguousRange = 11; });   // no max
 
-        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_VEL;
-        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIG_VEL, pulseDef.PrfMode);
+        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL;
+        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL, pulseDef.PrfMode);
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.Prf = 1; });
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.UnambiguousRange = 1; });
         #    pulseDef.UnambiguousVelocity = 1e-09;

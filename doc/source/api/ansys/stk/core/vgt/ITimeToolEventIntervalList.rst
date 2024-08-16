@@ -3,8 +3,6 @@ ITimeToolEventIntervalList
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalList
 
-   object
-   
    An ordered list of time intervals.
 
 .. py:currentmodule:: ITimeToolEventIntervalList

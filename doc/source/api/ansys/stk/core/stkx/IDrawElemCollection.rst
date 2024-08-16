@@ -3,8 +3,6 @@ IDrawElemCollection
 
 .. py:class:: ansys.stk.core.stkx.IDrawElemCollection
 
-   object
-   
    Collection of elements to draw on the control.
 
 .. py:currentmodule:: IDrawElemCollection

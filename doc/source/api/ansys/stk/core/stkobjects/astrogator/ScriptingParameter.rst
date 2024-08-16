@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: enumeration_choices
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameter.enumeration_choices
-    :type: IScriptingParameterEnumerationChoiceCollection
+    :type: ScriptingParameterEnumerationChoiceCollection
 
     Get the collection of enumerations to use when parameter type is eVAScriptingParameterTypeEnumeration.
 

@@ -16,7 +16,7 @@ __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "C
 "DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", 
 "ExecMultiCmdResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", "IOrbitState", 
 "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", 
-"IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MSG_DISP_ID", "LOG_MSG_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", 
+"IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISP_ID", "LOG_MESSAGE_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", 
 "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", "POSITION_TYPE", 
 "PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", 
 "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", 
@@ -325,7 +325,7 @@ COORDINATE_SYSTEM.ECLIPTIC_J2000ICRF.__doc__ = "EclipticJ2000ICRF: An ecliptic s
 
 agcls.AgTypeNameMap["COORDINATE_SYSTEM"] = COORDINATE_SYSTEM
 
-class LOG_MSG_TYPE(IntEnum):
+class LOG_MESSAGE_TYPE(IntEnum):
     """Log message types."""
    
     DEBUG = 0
@@ -339,32 +339,32 @@ class LOG_MSG_TYPE(IntEnum):
     ALARM = 4
     """Alarm message."""
 
-LOG_MSG_TYPE.DEBUG.__doc__ = "Debugging message."
-LOG_MSG_TYPE.INFO.__doc__ = "Informational message."
-LOG_MSG_TYPE.FORCE_INFO.__doc__ = "Informational message."
-LOG_MSG_TYPE.WARNING.__doc__ = "Warning message."
-LOG_MSG_TYPE.ALARM.__doc__ = "Alarm message."
+LOG_MESSAGE_TYPE.DEBUG.__doc__ = "Debugging message."
+LOG_MESSAGE_TYPE.INFO.__doc__ = "Informational message."
+LOG_MESSAGE_TYPE.FORCE_INFO.__doc__ = "Informational message."
+LOG_MESSAGE_TYPE.WARNING.__doc__ = "Warning message."
+LOG_MESSAGE_TYPE.ALARM.__doc__ = "Alarm message."
 
-agcls.AgTypeNameMap["LOG_MSG_TYPE"] = LOG_MSG_TYPE
+agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"] = LOG_MESSAGE_TYPE
 
-class LOG_MSG_DISP_ID(IntEnum):
+class LOG_MESSAGE_DISP_ID(IntEnum):
     """Log message destination options."""
    
     ALL = -1
     """STK displays the message in all the log destination."""
     DEFAULT = 0
     """STK displays the message in the default log destination."""
-    MSG_WIN = 1
+    MESSAGE_WIN = 1
     """STK displays the message in the message window."""
     STATUS_BAR = 2
     """STK displays the message in the status bar."""
 
-LOG_MSG_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
-LOG_MSG_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
-LOG_MSG_DISP_ID.MSG_WIN.__doc__ = "STK displays the message in the message window."
-LOG_MSG_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
+LOG_MESSAGE_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
+LOG_MESSAGE_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
+LOG_MESSAGE_DISP_ID.MESSAGE_WIN.__doc__ = "STK displays the message in the message window."
+LOG_MESSAGE_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
 
-agcls.AgTypeNameMap["LOG_MSG_DISP_ID"] = LOG_MSG_DISP_ID
+agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"] = LOG_MESSAGE_DISP_ID
 
 class LINE_STYLE(IntEnum):
     """Line Style."""
@@ -1844,6 +1844,9 @@ class ExecCmdResult(SupportsDeleteCallback):
         set_class_attribute(self, attrname, value, ExecCmdResult, [ExecCmdResult, ])
 
 agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecCmdResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}').as_data_pair(), ExecCmdResult)
+# mapping for ExecCmdResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}').as_data_pair(), agcom.GUID.from_registry_format('{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}').as_data_pair())
 agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
 
 class ExecMultiCmdResult(SupportsDeleteCallback):
@@ -1918,6 +1921,9 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
         set_class_attribute(self, attrname, value, ExecMultiCmdResult, [ExecMultiCmdResult, ])
 
 agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecMultiCmdResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecMultiCmdResult)
+# mapping for ExecMultiCmdResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}').as_data_pair(), agcom.GUID.from_registry_format('{0558BE8E-AF66-4F52-9C6D-76962FC52577}').as_data_pair())
 agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
 
 class UnitPreferencesUnit(SupportsDeleteCallback):

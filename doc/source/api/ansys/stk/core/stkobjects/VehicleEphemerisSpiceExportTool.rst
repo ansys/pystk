@@ -3,8 +3,6 @@ VehicleEphemerisSpiceExportTool
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleEphemerisSpiceExportTool
 
-   Bases: 
-
    AgVeEphemerisTypeSpice Class.
 
 .. py:currentmodule:: VehicleEphemerisSpiceExportTool
@@ -83,13 +81,13 @@ Property detail
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSpiceExportTool.step_size
-    :type: IExportToolStepSize
+    :type: ExportToolStepSize
 
     If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSpiceExportTool.time_period
-    :type: IExportToolTimePeriod
+    :type: ExportToolTimePeriod
 
     Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 

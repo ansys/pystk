@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: source
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorProjection.source
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a source vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorProjection.reference_plane
-    :type: IVectorGeometryToolPlaneRefTo
+    :type: VectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 

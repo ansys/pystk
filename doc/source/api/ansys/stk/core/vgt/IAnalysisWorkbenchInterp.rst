@@ -3,8 +3,6 @@ IAnalysisWorkbenchInterp
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchInterp
 
-   object
-   
    Represents a base class for interpolation definitions.
 
 .. py:currentmodule:: IAnalysisWorkbenchInterp

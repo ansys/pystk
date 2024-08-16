@@ -3,8 +3,6 @@ VehicleGraphics3DBPlaneInstancesCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstancesCollection
 
-   Bases: 
-
    A list of available b-plane instances.
 
 .. py:currentmodule:: VehicleGraphics3DBPlaneInstancesCollection

@@ -3,8 +3,6 @@ UiAxGraphics3DCntrl
 
 .. py:class:: ansys.stk.core.stkx.UiAxGraphics3DCntrl
 
-   Bases: 
-
    AGI Globe control.
 
 .. py:currentmodule:: UiAxGraphics3DCntrl
@@ -127,7 +125,7 @@ Property detail
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.UiAxGraphics3DCntrl.application
-    :type: ISTKXApplication
+    :type: STKXApplication
 
     Reference to the STK X application object.
 

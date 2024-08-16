@@ -3,8 +3,6 @@ CalculationOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.CalculationOptions
 
-   Bases: 
-
    Class defining the calculation options for a procedure or phase.
 
 .. py:currentmodule:: CalculationOptions
@@ -20,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CalculationOptions.max_rel_motion_factor`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CalculationOptions.max_relative_motion_factor`
               - Gets or sets the maximum motion allowed between sampling points.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.CalculationOptions.state_cache_time_interval`
               - Gets or sets the time interval used to store the state information.
@@ -48,8 +46,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: max_rel_motion_factor
-    :canonical: ansys.stk.core.stkobjects.aviator.CalculationOptions.max_rel_motion_factor
+.. py:property:: max_relative_motion_factor
+    :canonical: ansys.stk.core.stkobjects.aviator.CalculationOptions.max_relative_motion_factor
     :type: float
 
     Gets or sets the maximum motion allowed between sampling points.

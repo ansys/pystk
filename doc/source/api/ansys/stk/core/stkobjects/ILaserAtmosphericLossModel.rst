@@ -3,8 +3,6 @@ ILaserAtmosphericLossModel
 
 .. py:class:: ansys.stk.core.stkobjects.ILaserAtmosphericLossModel
 
-   object
-   
    Provide access to the properties and methods for a laser atmospheric absorption loss model.
 
 .. py:currentmodule:: ILaserAtmosphericLossModel

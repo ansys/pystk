@@ -3,8 +3,6 @@ DataProviders
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviders
 
-   Bases: 
-
    Class defining data providers.
 
 .. py:currentmodule:: DataProviders

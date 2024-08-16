@@ -9,6 +9,7 @@ This series of tutorials explains basic examples involving STK objects using Pyt
 .. nbgallery::
 
     examples/facility-to-satellite-access
+    examples/sensor-access
 
 Coverage examples
 =================
@@ -30,6 +31,15 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
     examples/hohmann-transfer
     examples/lambert-transfer
 
+Communications and radar
+========================
+
+This series of tutorials explain how to model and simulate communications and radar systems using Python and PySTK.
+
+.. nbgallery::
+
+    examples/radar-cross-section-detection
+    examples/communication-link-calculator
 
 Aviator mission planning
 ========================
@@ -39,3 +49,4 @@ This series of tutorials explain how to model and simulate aircraft missions usi
 .. nbgallery::
 
     examples/aviator-fuel-calculator
+    examples/aircraft-carrier-landing

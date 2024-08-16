@@ -3,8 +3,6 @@ VehicleGraphics3DDropLinePathItem
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem
 
-   Bases: 
-
    Drop lines at intervals along the vehicle's path.
 
 .. py:currentmodule:: VehicleGraphics3DDropLinePathItem

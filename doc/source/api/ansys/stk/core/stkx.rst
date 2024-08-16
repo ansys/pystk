@@ -36,12 +36,6 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.ExecCmdResult`
-              - Collection of strings returned by the ExecuteCommand.
-
-            * - :py:class:`~ansys.stk.core.stkx.ExecMultiCmdResult`
-              - Collection of objects returned by the ExecuteMultipleCommands.
-
             * - :py:class:`~ansys.stk.core.stkx.UiAxGraphics3DCntrl`
               - AGI Globe control.
 
@@ -103,18 +97,6 @@ Summary
             :header-rows: 0
             :widths: auto
         
-
-            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_TYPE`
-              - Log message types.
-
-            * - :py:class:`~ansys.stk.core.stkx.LOG_MSG_DISP_ID`
-              - Log message destination options.
-
-            * - :py:class:`~ansys.stk.core.stkx.LINE_STYLE`
-              - Line Style.
-
-            * - :py:class:`~ansys.stk.core.stkx.EXEC_MULTI_CMD_RESULT_ACTION`
-              - Enumeration defines a set of actions when an error occurs while executing a command batch.
 
             * - :py:class:`~ansys.stk.core.stkx.SHIFT_VALUES`
               - State of the Shift/Ctrl/Alt keys.
@@ -205,8 +187,6 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-     ExecCmdResult<stkx/ExecCmdResult>
-     ExecMultiCmdResult<stkx/ExecMultiCmdResult>
      UiAxGraphics3DCntrl<stkx/UiAxGraphics3DCntrl>
      UiAx2DCntrl<stkx/UiAx2DCntrl>
      PickInfoData<stkx/PickInfoData>
@@ -231,10 +211,6 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-    ≔ LOG_MSG_TYPE<stkx/LOG_MSG_TYPE_enum>
-    ≔ LOG_MSG_DISP_ID<stkx/LOG_MSG_DISP_ID_enum>
-    ≔ LINE_STYLE<stkx/LINE_STYLE_enum>
-    ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkx/EXEC_MULTI_CMD_RESULT_ACTION_enum>
     ≔ SHIFT_VALUES<stkx/SHIFT_VALUES_enum>
     ≔ BUTTON_VALUES<stkx/BUTTON_VALUES_enum>
     ≔ OLE_DROP_MODE<stkx/OLE_DROP_MODE_enum>

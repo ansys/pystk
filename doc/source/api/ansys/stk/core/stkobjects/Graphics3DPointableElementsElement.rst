@@ -3,8 +3,6 @@ Graphics3DPointableElementsElement
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement
 
-   Bases: 
-
    Pointable elements for 3D model pointing.
 
 .. py:currentmodule:: Graphics3DPointableElementsElement
@@ -48,13 +46,13 @@ Property detail
 
 .. py:property:: assigned_target_object
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.assigned_target_object
-    :type: ILinkToObject
+    :type: LinkToObject
 
     Get the assigned target for the pointable element.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.intervals
-    :type: IIntervalCollection
+    :type: IntervalCollection
 
     Gets a collection of intervals during which an 3d model part points towards selected targets.
 
