@@ -223,44 +223,13 @@ aer_df
 
 # Notice that the first access ends and the second access begins at an approximate elevation angle of 30 degrees. There is a break in access when the elevation angle exceeds 30 degrees due to the modeled cone of silence.
 
-# It is also possible to see this cone of silence on a plot of the aircraft's elevation when it is accessed by the sensor:
+# It is also possible to see this cone of silence on a plot of the aircraft's azimuth, elevation, and range when it is accessed by the sensor:
 
-# +
-import matplotlib.dates as md
-import matplotlib.pyplot as plt
-import pandas as pd
+from ansys.stk.data_analysis.graphs import access_graphs
 
 
-# Convert columns to correct types
-aer_df["time"] = pd.to_datetime(aer_df["time"])
-aer_df["elevation"] = aer_df["elevation"].apply(pd.to_numeric)
-
-# Create a plot
-fig, ax = plt.subplots(figsize=(8, 8))
-
-# Group by access number, then plot elevation
-aer_df.groupby("access number").plot(x="time", y="elevation", ax=ax, color="dodgerblue")
-
-# Set title and axes labels
-ax.set_title("Access Elevation over Time")
-ax.set_xlabel("Time")
-ax.set_ylabel("Angle (deg)")
-
-# Configure style
-ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which="both", linestyle="--")
-
-# Improve x-axis formatting
-formatter = md.DateFormatter("%H:%M:%S.%f")
-ax.xaxis.set_major_formatter(formatter)
-# Set major and minor locators
-xlocator_major = md.MicrosecondLocator(interval=100000)
-ax.xaxis.set_major_locator(xlocator_major)
-
-# Remove axis
-ax.get_legend().remove()
+fig, ax = access_graphs.aer_time_xy_graph(basic_access)
 plt.show()
-# -
 
 # ## Insert an airport surveillance radar
 

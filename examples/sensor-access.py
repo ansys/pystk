@@ -415,56 +415,10 @@ aer_df = (
 
 # It is now possible to graph the azimuth, elevation, and range data:
 
-# +
-import matplotlib.dates as md
-import matplotlib.pyplot as plt
-import pandas as pd
+from ansys.stk.data_analysis.graphs import access_graphs
 
 
-# Convert columns to correct types
-aer_df["time"] = pd.to_datetime(aer_df["time"])
-aer_df.set_index("time", inplace=True)
-cols = ["azimuth", "elevation", "range"]
-aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
-
-# Create a plot and duplicate the x-axis
-fig, ax1 = plt.subplots(figsize=(8, 8))
-ax2 = ax1.twinx()
-
-# Plot range, azimuth, and elevation
-(line1,) = ax2.plot(aer_df.index, aer_df["range"], color="hotpink", label="Range (km)")
-(line2,) = ax1.plot(
-    aer_df.index, aer_df["azimuth"], color="skyblue", label="Azimuth (deg)"
-)
-(line3,) = ax1.plot(
-    aer_df.index, aer_df["elevation"], color="gold", label="Elevation (deg)"
-)
-
-# Set title and axes labels
-ax1.set_title("Azimuth, Elevation, and Range over Time")
-ax1.set_xlabel("Time")
-ax1.set_ylabel("Angle (deg)")
-ax2.set_ylabel("Distance (km)")
-
-# Combine legends
-lines = [line1, line2, line3]
-labels = [line.get_label() for line in lines]
-ax1.legend(lines, labels, shadow=True)
-
-# Configure style
-ax1.set_facecolor("whitesmoke")
-ax1.grid(visible=True, which="both", linestyle="--")
-
-# Improve x-axis formatting
-formatter = md.DateFormatter("%H:%M")
-ax1.xaxis.set_major_formatter(formatter)
-# Set major and minor locators
-xlocator_major = md.MinuteLocator(interval=10)
-xlocator_minor = md.MinuteLocator(interval=5)
-ax1.xaxis.set_major_locator(xlocator_major)
-ax1.xaxis.set_minor_locator(xlocator_minor)
-plt.show()
-# -
+access_graphs.aer_time_xy_graph(radar_dome_access)
 
 # ## Add a moving sensor to the control site
 

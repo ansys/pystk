@@ -205,24 +205,11 @@ latitude_df
 
 # It is also possible to visualize the data in graph form:
 
-# +
-import matplotlib.pyplot as plt
+from ansys.stk.data_analysis.graphs import coverage_definition_graphs
 
 
-ax = latitude_df.plot.line(x="latitude", y="percent time covered", color="hotpink")
-
-# Configure the style of the plot
-ax.get_legend().remove()
-ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which="both")
-
-# Set title and axes labels
-ax.set_title("Coverage by Latitude")
-ax.set_xlabel("Latitude")
-ax.set_ylabel("Percent time covered")
-
+fig, ax = coverage_definition_graphs.coverage_by_latitude_xy_graph(tropics)
 plt.show()
-# -
 
 # ## Assess the quality of coverage
 
@@ -347,9 +334,21 @@ satisfied_by_time_df
 
 # Visualize the data with a line chart:
 
+import matplotlib.pyplot as plt
+from ansys.stk.data_analysis.graphs import figure_of_merit_graphs
+
+
+fig, ax = figure_of_merit_graphs.satisfied_by_time_time_xy_graph(coverage)
+plt.show()
+
+# Then, using the matplotlib figure and axis returned by the `satisfied_by_time_time_xy_graph` function, add a line to the chart representing accumulated coverage:
+
 # +
 import pandas as pd
 
+
+# create new graph
+fig, ax = figure_of_merit_graphs.satisfied_by_time_time_xy_graph(coverage)
 
 # convert data to correct types
 satisfied_by_time_df["time"] = pd.to_datetime(satisfied_by_time_df["time"])
@@ -361,22 +360,13 @@ satisfied_by_time_df["percent accum coverage"] = pd.to_numeric(
     satisfied_by_time_df["percent accum coverage"]
 )
 
-# Plot data
-ax = satisfied_by_time_df.plot(
-    x="time", y="percent satisfied", color="dodgerblue", label="Satisfied"
-)
-ax = satisfied_by_time_df.plot(
-    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="Accumulated"
+# Plot accumulated data
+satisfied_by_time_df.plot(
+    x="time", y="percent accum coverage", color="firebrick", ax=ax, label="% Accumulated"
 )
 
-# Set title and axes labels
-ax.set_title("Satisfaction over Time")
-ax.set_xlabel("Time")
-ax.set_ylabel("Percentage %")
+# add legend with both lines
+plt.legend(loc="upper left")
 
-# Configure style
-ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which="both")
-ax.legend(shadow=True)
-
+# show plot
 plt.show()
