@@ -19,13 +19,13 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.IDrawElem`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElement`
               - Draw element.
 
-            * - :py:class:`~ansys.stk.core.stkx.IDrawElemRect`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElementRect`
               - Define a rectangle in control coordinates.
 
-            * - :py:class:`~ansys.stk.core.stkx.IDrawElemCollection`
+            * - :py:class:`~ansys.stk.core.stkx.IDrawElementCollection`
               - Collection of elements to draw on the control.
 
     
@@ -36,10 +36,10 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.UiAxGraphics3DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.Graphics3DControlBase`
               - AGI Globe control.
 
-            * - :py:class:`~ansys.stk.core.stkx.UiAx2DCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.Graphics2DControlBase`
               - AGI Map control.
 
             * - :py:class:`~ansys.stk.core.stkx.PickInfoData`
@@ -60,13 +60,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.RubberBandPickInfoData`
               - Rubber-band mouse pick result.
 
-            * - :py:class:`~ansys.stk.core.stkx.ObjPathCollection`
+            * - :py:class:`~ansys.stk.core.stkx.ObjectPathCollection`
               - Collection of object paths.
 
-            * - :py:class:`~ansys.stk.core.stkx.DrawElemRect`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementRect`
               - Define a rectangle in window coordinates.
 
-            * - :py:class:`~ansys.stk.core.stkx.DrawElemCollection`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementCollection`
               - Collection of elements to draw on the control.
 
             * - :py:class:`~ansys.stk.core.stkx.Draw2DElemRect`
@@ -75,13 +75,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.Draw2DElemCollection`
               - Collection of elements to draw on map control.
 
-            * - :py:class:`~ansys.stk.core.stkx.UiAxGraphics2DAnalysisCntrl`
+            * - :py:class:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase`
               - AGI Graphics Analysis Control.
 
-            * - :py:class:`~ansys.stk.core.stkx.WinProjectionPosition`
+            * - :py:class:`~ansys.stk.core.stkx.WindowProjectionPosition`
               - Projected window position result.
 
-            * - :py:class:`~ansys.stk.core.stkx.DrawElemLine`
+            * - :py:class:`~ansys.stk.core.stkx.DrawElementLine`
               - Define a line in window coordinates.
 
             * - :py:class:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs`
@@ -116,7 +116,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_ANALYSIS_MODE`
               - Specify the mode of Gfx Analysis Control.
 
-            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_DRAW_COORDS`
+            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_DRAW_COORDINATES`
               - Specify the draw coordinates for Map Control.
 
             * - :py:class:`~ansys.stk.core.stkx.SHOW_PROGRESS_IMAGE`
@@ -178,31 +178,31 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-     IDrawElem<stkx/IDrawElem>
-     IDrawElemRect<stkx/IDrawElemRect>
-     IDrawElemCollection<stkx/IDrawElemCollection>
+     IDrawElement<stkx/IDrawElement>
+     IDrawElementRect<stkx/IDrawElementRect>
+     IDrawElementCollection<stkx/IDrawElementCollection>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     UiAxGraphics3DCntrl<stkx/UiAxGraphics3DCntrl>
-     UiAx2DCntrl<stkx/UiAx2DCntrl>
+     Graphics3DControlBase<stkx/Graphics3DControlBase>
+     Graphics2DControlBase<stkx/Graphics2DControlBase>
      PickInfoData<stkx/PickInfoData>
      STKXApplication<stkx/STKXApplication>
      STKXApplicationPartnerAccess<stkx/STKXApplicationPartnerAccess>
      DataObject<stkx/DataObject>
      DataObjectFiles<stkx/DataObjectFiles>
      RubberBandPickInfoData<stkx/RubberBandPickInfoData>
-     ObjPathCollection<stkx/ObjPathCollection>
-     DrawElemRect<stkx/DrawElemRect>
-     DrawElemCollection<stkx/DrawElemCollection>
+     ObjectPathCollection<stkx/ObjectPathCollection>
+     DrawElementRect<stkx/DrawElementRect>
+     DrawElementCollection<stkx/DrawElementCollection>
      Draw2DElemRect<stkx/Draw2DElemRect>
      Draw2DElemCollection<stkx/Draw2DElemCollection>
-     UiAxGraphics2DAnalysisCntrl<stkx/UiAxGraphics2DAnalysisCntrl>
-     WinProjectionPosition<stkx/WinProjectionPosition>
-     DrawElemLine<stkx/DrawElemLine>
+     GraphicsAnalysisControlBase<stkx/GraphicsAnalysisControlBase>
+     WindowProjectionPosition<stkx/WindowProjectionPosition>
+     DrawElementLine<stkx/DrawElementLine>
      STKXSSLCertificateErrorEventArgs<stkx/STKXSSLCertificateErrorEventArgs>
      STKXConControlQuitReceivedEventArgs<stkx/STKXConControlQuitReceivedEventArgs>
 
@@ -217,7 +217,7 @@ Solar Panel Tool
     ≔ MOUSE_MODE<stkx/MOUSE_MODE_enum>
     ≔ LOGGING_MODE<stkx/LOGGING_MODE_enum>
     ≔ GRAPHICS_2D_ANALYSIS_MODE<stkx/GRAPHICS_2D_ANALYSIS_MODE_enum>
-    ≔ GRAPHICS_2D_DRAW_COORDS<stkx/GRAPHICS_2D_DRAW_COORDS_enum>
+    ≔ GRAPHICS_2D_DRAW_COORDINATES<stkx/GRAPHICS_2D_DRAW_COORDINATES_enum>
     ≔ SHOW_PROGRESS_IMAGE<stkx/SHOW_PROGRESS_IMAGE_enum>
     ≔ FEATURE_CODES<stkx/FEATURE_CODES_enum>
     ≔ PROGRESS_IMAGE_X_ORIGIN<stkx/PROGRESS_IMAGE_X_ORIGIN_enum>

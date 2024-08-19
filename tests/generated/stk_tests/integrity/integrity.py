@@ -8629,7 +8629,7 @@ class Definition(TestBase):
             "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
 
-        results: "ExecCmdResult" = TestBase.Application.execute_command(
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor"
         )
         isInFOV: bool = fov.is_any_track_in_fov(date.format("UTCG"))
@@ -8778,7 +8778,7 @@ class Definition(TestBase):
     def MTOFOVHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -8891,7 +8891,7 @@ class Definition(TestBase):
             ) and (self.TrackId == other.TrackId)
 
     def Position(self):
-        results: "ExecCmdResult" = TestBase.Application.execute_command("Position_RM */MTO/A_MTO")
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command("Position_RM */MTO/A_MTO")
         date: "Date" = TestBase.Application.conversion_utility.new_date(
             "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
@@ -9064,7 +9064,9 @@ class Definition(TestBase):
         mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["A_MTO"], Mto)
         range: "MtoAnalysisRange" = mto.analysis.range
         range.stk_object_path = "Satellite/Geo1"
-        results: "ExecCmdResult" = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1")
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command(
+            "Range_RM */MTO/A_MTO Object */Satellite/Geo1"
+        )
         date: "Date" = TestBase.Application.conversion_utility.new_date(
             "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
@@ -9217,7 +9219,7 @@ class Definition(TestBase):
     def MTORangeHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -9305,7 +9307,7 @@ class Definition(TestBase):
             visibility.compute_tracks(MTO_VISIBILITY_MODE.VISIBILITY_MODE_EACH, tracksRef, "1 Jul 2007 12:05:00.000"),
         )
 
-        result: "ExecCmdResult" = TestBase.Application.execute_command(
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Any Tracks 500  549  470 550'
         )
         isVis: bool = visibility.are_tracks_visible(MTO_TRACK_EVAL.ANY, tracksRef, "1 Jul 2007 12:05:00")
@@ -9429,7 +9431,7 @@ class Definition(TestBase):
     def MTOVisibilityHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -9451,7 +9453,7 @@ class Definition(TestBase):
         with pytest.raises(Exception):
             visibility.stk_object_path = "Satellite/Bogus_Sat"
 
-        result: "ExecCmdResult" = TestBase.Application.execute_command(
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(
             'Visibility_RM */MTO/VisTest2_MTO Object */Satellite/VisTest2_Sat Time "23 Feb 2009 17:07:00" Terrain No Mode All Tracks 2'
         )
         Assert.assertEqual("1", result[0], "MTOVisibility2 - 1")
@@ -10132,7 +10134,7 @@ class Access(TestBase):
     AG_FAC: "Facility" = None
     # endregion
 
-    def CompareAccessResults(self, execResult: "ExecCmdResult", drResult: "DataProviderResult"):
+    def CompareAccessResults(self, execResult: "ExecuteCommandResult", drResult: "DataProviderResult"):
         result: str = execResult[0]
         token: "List[int]" = [" "]
         connectParsed: "List[str]" = String.Split(result, token)
@@ -10198,7 +10200,9 @@ class Access(TestBase):
         #
         # Use Object Time Periods (OBJECT_ACCESS_TIME)
         #
-        execResult: "ExecCmdResult" = TestBase.Application.execute_command(((("Access " + objPath1) + " ") + objPath2))
+        execResult: "ExecuteCommandResult" = TestBase.Application.execute_command(
+            ((("Access " + objPath1) + " ") + objPath2)
+        )
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access: "StkAccess" = obj1.get_access_to_object(obj2)
@@ -10307,7 +10311,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(cmd)
 
         cmd = 'OnePointAccess */Satellite/Satellite1 */Facility/Facility1 Compute "1 Jul 1999 00:00:00.000" "2 Jul 1999 00:00:00.000" 2400'
-        connectResult: "ExecCmdResult" = TestBase.Application.execute_command(cmd)
+        connectResult: "ExecuteCommandResult" = TestBase.Application.execute_command(cmd)
         # foreach (string s in connectResult)
         # {
         #    logger.WriteLine(s);

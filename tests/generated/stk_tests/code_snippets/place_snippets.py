@@ -89,7 +89,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     def CreatePlaceFromFacilityDatabase(self, root: "StkObjectRoot"):
         # Get STK database location using Connect
-        result: "ExecCmdResult" = root.execute_command("GetDirectory / Database Facility")
+        result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]
         filelocation: str = Path.Combine(facDataDir, "stkFacility.fd")
 

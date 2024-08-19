@@ -3,7 +3,7 @@ GfxAnalysisControl
 
 .. py:class:: ansys.stk.core.stkengine.tkcontrols.GfxAnalysisControl
 
-   UiAxGraphics2DAnalysisCntrl, ControlBase
+   GraphicsAnalysisControlBase, ControlBase
 
    The Graphics Analysis control for Tkinter.
 
