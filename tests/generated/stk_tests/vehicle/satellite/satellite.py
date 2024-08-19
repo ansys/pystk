@@ -1465,13 +1465,13 @@ class EarlyBoundTests(TestBase):
         oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
         Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL, oPasses.pass_type)
-        Assert.assertIsNone(oPasses.pass_method)
+        Assert.assertIsNone(oPasses.satellite_pass)
         # SetPassType
         oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
         Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES, oPasses.pass_type)
         # Pass
-        oShow: "VehicleGraphics2DPassShowPasses" = VehicleGraphics2DPassShowPasses(oPasses.pass_method)
+        oShow: "VehicleGraphics2DPassShowPasses" = VehicleGraphics2DPassShowPasses(oPasses.satellite_pass)
         Assert.assertIsNotNone(oShow)
         # FirstPass
         TestBase.logger.WriteLine3("The current FirstPass is: {0}", oShow.first_pass)
@@ -1727,7 +1727,7 @@ class EarlyBoundTests(TestBase):
     @category("Trail/Lead (3D)")
     def test_VOPass(self):
         oHelper = VOPassHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.pass_method)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.satellite_pass)
 
     # endregion
 

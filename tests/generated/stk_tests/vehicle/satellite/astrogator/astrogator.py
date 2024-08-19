@@ -1533,7 +1533,7 @@ class EarlyBoundTests(TestBase):
             sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
             sat.graphics.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_NONE)
             sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_ALL)
-            sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
+            sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
             sat.graphics_3d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
             markerData: "Graphics3DMarkerShape" = Graphics3DMarkerShape(sat.graphics_3d.model.orbit_marker.marker_data)
             markerData.style = MARKER_SHAPE_3D.SHAPE_POINT
@@ -1546,7 +1546,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
+                sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
 
         #
         driver.main_sequence.remove_all()
