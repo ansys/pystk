@@ -3,7 +3,7 @@ MapControl
 
 .. py:class:: ansys.stk.core.stkengine.tkcontrols.MapControl
 
-   UiAx2DCntrl, ControlBase
+   Graphics2DControlBase, ControlBase
 
    The 2D Map control for Tkinter.
 

@@ -550,7 +550,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
@@ -1676,7 +1676,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~CTRL_PRESSED`
               - The Ctrl key was pressed.
 
-            * - :py:attr:`~ALTITUDE_PRESSED`
+            * - :py:attr:`~ALT_PRESSED`
               - The ALT key was pressed.
 
 

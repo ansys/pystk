@@ -19,8 +19,8 @@ from jupyter_rfb._png import array2png
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
-from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
-    UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
+from ...stkx import Graphics3DControlBase, Graphics2DControlBase, \
+    GraphicsAnalysisControlBase, BUTTON_VALUES, SHIFT_VALUES
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
@@ -307,7 +307,7 @@ class WidgetBase(RemoteFrameBuffer):
         if "Ctrl" in modifiers:
             result = result | SHIFT_VALUES.CTRL_PRESSED
         if "Alt" in modifiers:
-            result = result | SHIFT_VALUES.ALTITUDE_PRESSED
+            result = result | SHIFT_VALUES.ALT_PRESSED
         return result
 
     def __get_position(self, event):
@@ -392,7 +392,7 @@ class WidgetBase(RemoteFrameBuffer):
         else:
             return self
 
-class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
+class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
     # Example:
     #   from ansys.stk.core.stkengine import *
@@ -406,7 +406,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     #   g
 
     _progid = "STKX12.VOControl.1"
-    _interface = UiAxGraphics3DCntrl
+    _interface = Graphics3DControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GlobeWidget."""
@@ -417,10 +417,10 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class MapWidget(UiAx2DCntrl, WidgetBase):
+class MapWidget(Graphics2DControlBase, WidgetBase):
     """The 2D Map widget for jupyter."""
     _progid = "STKX12.2DControl.1"
-    _interface = UiAx2DCntrl
+    _interface = Graphics2DControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type MapWidget."""
@@ -431,10 +431,10 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
+class GfxAnalysisWidget(GraphicsAnalysisControlBase, WidgetBase):
     """The Graphics Analysis widget for jupyter."""
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = UiAxGraphics2DAnalysisCntrl
+    _interface = GraphicsAnalysisControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GfxAnalysisWidget."""

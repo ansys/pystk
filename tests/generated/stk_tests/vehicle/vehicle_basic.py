@@ -3616,7 +3616,7 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oHPOP)
 
         # Select specific GravModel which tests were written for
-        result: "ExecCmdResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
+        result: "ExecuteCommandResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
         fi = FileInfo(TestBase.PathCombine(result[0], "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"))
         if fi.Exists:
             oHPOP.force_model.central_body_gravity.file = fi.FullName
