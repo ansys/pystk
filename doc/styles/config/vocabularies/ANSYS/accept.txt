@@ -8,6 +8,7 @@ ephemerides
 cartodetic
 FOM
 fom
+grpcio
 Hohmann
 IIF
 Install STK 
@@ -25,6 +26,7 @@ periapsis
 prograde
 Precessing
 precessing
+protobuf
 STKEngine
 STK Engine
 Subpackages
