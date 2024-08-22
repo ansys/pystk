@@ -15,28 +15,28 @@ A working Python environment using Python version 3.10 or greater is required. Y
 Additionally, you can install Jupyter Notebooks by downloading an install from
 https://jupyter.org/install.
 
-Install STK Desktop or STK Engine
-=====================================
+Install STK desktop or STK Engine
+=================================
 
-STK Engine or STK Desktop must be installed and licensed on your machine.
+STK Engine or STK desktop must be installed and licensed on your machine.
 
-STK Desktop
+STK desktop
 -----------
 
-STK Desktop provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation
+STK desktop provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation
 instructions <https://help.agi.com/stk/index.htm#install/installingSTK.htm>`_ for details
 on installing STK.
 
 STK Engine
 ----------
 
-STK Engine enables you to build an application that harnesses the analytical power and visual capabilities of STK. Refer to the `STK Engine Installation
+STK Engine enables you to build an app that harnesses the analytical power and visual capabilities of STK. Refer to the `STK Engine Installation
 instructions <https://help.agi.com/stkdevkit/index.htm#stkEngine/Getting_Started.htm#Installing>`_ for details on installing STK Engine.
 
 
 .. note::
 
-    If using the remotable API, modleus grpcio and protobuf are required. They can be obtained from PyPI and installed using pip.
+    If using the remote API, modleus grpcio and protobuf are required. They can be obtained from PyPI and installed using pip.
 
 Create an Ansys account
 =======================

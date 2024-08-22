@@ -10,6 +10,9 @@ FOM
 fom
 Hohmann
 IIF
+Install STK 
+Install STK desktop or STK Engine
+Install Python
 intervisibility
 Keplerian
 LOD
@@ -23,4 +26,5 @@ prograde
 Precessing
 precessing
 STKEngine
+STK Engine
 Subpackages
