@@ -35,5 +35,5 @@ instructions <https://help.agi.com/stkdevkit/index.htm#stkEngine/Getting_Started
 
 .. note::
 
-    If using the remote API, modules grpcio and protobuf are required. They can be obtained from PyPI and installed using pip.
+    If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 

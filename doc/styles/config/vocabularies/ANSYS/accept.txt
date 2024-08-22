@@ -8,7 +8,6 @@ ephemerides
 cartodetic
 FOM
 fom
-grpcio
 Hohmann
 IIF
 Python
@@ -23,7 +22,6 @@ periapsis
 prograde
 Precessing
 precessing
-protobuf
 STK 
 STKEngine
 STK Engine
