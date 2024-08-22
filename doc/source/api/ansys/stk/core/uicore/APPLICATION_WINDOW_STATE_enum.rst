@@ -1,12 +1,12 @@
-WINDOW_STATE
-============
+APPLICATION_WINDOW_STATE
+========================
 
-.. py:class:: ansys.stk.core.uicore.WINDOW_STATE
+.. py:class:: ansys.stk.core.uicore.APPLICATION_WINDOW_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: WINDOW_STATE
+.. py:currentmodule:: APPLICATION_WINDOW_STATE
 
 Overview
 --------
@@ -34,6 +34,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import WINDOW_STATE
+    from ansys.stk.core.uicore import APPLICATION_WINDOW_STATE
 
 

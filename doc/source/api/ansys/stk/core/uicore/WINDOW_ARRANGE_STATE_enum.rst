@@ -1,12 +1,12 @@
-FLOAT_STATE
-===========
+WINDOW_ARRANGE_STATE
+====================
 
-.. py:class:: ansys.stk.core.uicore.FLOAT_STATE
+.. py:class:: ansys.stk.core.uicore.WINDOW_ARRANGE_STATE
 
    IntEnum
 
 
-.. py:currentmodule:: FLOAT_STATE
+.. py:currentmodule:: WINDOW_ARRANGE_STATE
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import FLOAT_STATE
+    from ansys.stk.core.uicore import WINDOW_ARRANGE_STATE
 
 

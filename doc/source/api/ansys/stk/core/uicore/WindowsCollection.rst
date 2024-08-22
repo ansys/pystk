@@ -1,11 +1,11 @@
-UiWindowsCollection
-===================
+WindowsCollection
+=================
 
-.. py:class:: ansys.stk.core.uicore.UiWindowsCollection
+.. py:class:: ansys.stk.core.uicore.WindowsCollection
 
    Provide methods and properties to manage the windows.
 
-.. py:currentmodule:: UiWindowsCollection
+.. py:currentmodule:: WindowsCollection
 
 Overview
 --------
@@ -18,15 +18,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.item`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.item`
               - Retrieve a window object.
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.arrange`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.arrange`
               - Arranges the application windows using the specified style.
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.add`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.add`
               - Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.get_item_by_index`
               - Retrieve a window object by index in collection.
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.get_item_by_name`
               - Retrieve a window object by name of window object.
 
     .. tab-item:: Properties
@@ -35,9 +35,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection.count`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.count`
               - Returns a total number of window objects in the collection.
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowsCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection._NewEnum`
               - Enumerates the windows in the collection.
 
 
@@ -47,20 +47,20 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import UiWindowsCollection
+    from ansys.stk.core.uicore import WindowsCollection
 
 
 Property detail
 ---------------
 
 .. py:property:: count
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.count
+    :canonical: ansys.stk.core.uicore.WindowsCollection.count
     :type: int
 
     Returns a total number of window objects in the collection.
 
 .. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection._NewEnum
+    :canonical: ansys.stk.core.uicore.WindowsCollection._NewEnum
     :type: EnumeratorProxy
 
     Enumerates the windows in the collection.
@@ -69,8 +69,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption: typing.Any) -> UiWindow
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.item
+.. py:method:: item(self, indexOrCaption: typing.Any) -> Window
+    :canonical: ansys.stk.core.uicore.WindowsCollection.item
 
     Retrieve a window object.
 
@@ -80,24 +80,24 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiWindow`
+        :obj:`~Window`
 
 
-.. py:method:: arrange(self, arrangeStyle: ARRANGE_STYLE) -> None
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.arrange
+.. py:method:: arrange(self, arrangeStyle: WINDOW_ARRANGE_STYLE) -> None
+    :canonical: ansys.stk.core.uicore.WindowsCollection.arrange
 
     Arranges the application windows using the specified style.
 
     :Parameters:
 
-    **arrangeStyle** : :obj:`~ARRANGE_STYLE`
+    **arrangeStyle** : :obj:`~WINDOW_ARRANGE_STYLE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, pluginID: str, initData: typing.Any) -> UiWindow
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.add
+.. py:method:: add(self, pluginID: str, initData: typing.Any) -> Window
+    :canonical: ansys.stk.core.uicore.WindowsCollection.add
 
     Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
 
@@ -108,11 +108,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiWindow`
+        :obj:`~Window`
 
 
-.. py:method:: get_item_by_index(self, index: int) -> UiWindow
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.get_item_by_index
+.. py:method:: get_item_by_index(self, index: int) -> Window
+    :canonical: ansys.stk.core.uicore.WindowsCollection.get_item_by_index
 
     Retrieve a window object by index in collection.
 
@@ -122,10 +122,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiWindow`
+        :obj:`~Window`
 
-.. py:method:: get_item_by_name(self, name: str) -> UiWindow
-    :canonical: ansys.stk.core.uicore.UiWindowsCollection.get_item_by_name
+.. py:method:: get_item_by_name(self, name: str) -> Window
+    :canonical: ansys.stk.core.uicore.WindowsCollection.get_item_by_name
 
     Retrieve a window object by name of window object.
 
@@ -135,5 +135,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiWindow`
+        :obj:`~Window`
 

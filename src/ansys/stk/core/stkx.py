@@ -548,8 +548,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _picture_put_reference_method_offset = 4
     _set_picture_method_offset = 5
     _pick_info_method_offset = 6
-    _get_win_id_method_offset = 7
-    _set_win_id_method_offset = 8
+    _get_window_id_method_offset = 7
+    _set_window_id_method_offset = 8
     _get_application_method_offset = 9
     _zoom_in_method_offset = 10
     _get_no_logo_method_offset = 11
@@ -567,7 +567,7 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _set_ppt_preload_mode_method_offset = 23
     _get_advanced_pick_mode_method_offset = 24
     _set_advanced_pick_mode_method_offset = 25
-    _copy_from_win_id_method_offset = 26
+    _copy_from_window_id_method_offset = 26
     _start_object_editing_method_offset = 27
     _apply_object_editing_method_offset = 28
     _stop_object_editing_method_offset = 29
@@ -645,20 +645,20 @@ class Graphics3DControlBase(SupportsDeleteCallback):
         """Get detailed information about a mouse pick."""
         return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._pick_info_metadata, x, y, OutArg())
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_win_id_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, newVal:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_window_id_metadata, newVal)
 
     _get_application_metadata = { "offset" : _get_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -788,12 +788,12 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_advanced_pick_mode_metadata, bAdvancePickMode)
 
-    _copy_from_win_id_metadata = { "offset" : _copy_from_win_id_method_offset,
+    _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_win_id(self, winID:int) -> None:
+    def copy_from_window_id(self, winID:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._copy_from_win_id_metadata, winID)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._copy_from_window_id_metadata, winID)
 
     _start_object_editing_metadata = { "offset" : _start_object_editing_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -961,7 +961,7 @@ class Graphics3DControlBase(SupportsDeleteCallback):
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
@@ -1007,8 +1007,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _get_picture_method_offset = 3
     _picture_put_reference_method_offset = 4
     _set_picture_method_offset = 5
-    _get_win_id_method_offset = 6
-    _set_win_id_method_offset = 7
+    _get_window_id_method_offset = 6
+    _set_window_id_method_offset = 7
     _zoom_in_method_offset = 8
     _zoom_out_method_offset = 9
     _pick_info_method_offset = 10
@@ -1022,7 +1022,7 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _get_mouse_mode_method_offset = 18
     _set_mouse_mode_method_offset = 19
     _get_ready_state_method_offset = 20
-    _copy_from_win_id_method_offset = 21
+    _copy_from_window_id_method_offset = 21
     _rubber_band_pick_info_method_offset = 22
     _get_advanced_pick_mode_method_offset = 23
     _set_advanced_pick_mode_method_offset = 24
@@ -1095,20 +1095,20 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     def picture(self, pPicture:IPictureDisp) -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_metadata, pPicture)
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_win_id_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, newVal:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_window_id_metadata, newVal)
 
     _zoom_in_metadata = { "offset" : _zoom_in_method_offset,
             "arg_types" : (),
@@ -1207,12 +1207,12 @@ class Graphics2DControlBase(SupportsDeleteCallback):
         """Return/sets the background color of the control."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_ready_state_metadata)
 
-    _copy_from_win_id_metadata = { "offset" : _copy_from_win_id_method_offset,
+    _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_win_id(self, winID:int) -> None:
+    def copy_from_window_id(self, winID:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._copy_from_win_id_metadata, winID)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._copy_from_window_id_metadata, winID)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
@@ -1395,7 +1395,7 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
@@ -1434,11 +1434,11 @@ class PickInfoData(SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get_obj_path_method_offset = 1
-    _get_lat_method_offset = 2
-    _get_lon_method_offset = 3
+    _get_object_path_method_offset = 1
+    _get_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
     _get_altitude_method_offset = 4
-    _get_is_obj_path_valid_method_offset = 5
+    _get_is_object_path_valid_method_offset = 5
     _get_is_lat_lon_altitude_valid_method_offset = 6
     _metadata = {
         "iid_data" : (5698141537397851098, 16489903714142238396),
@@ -1448,29 +1448,29 @@ class PickInfoData(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, PickInfoData)
     
-    _get_obj_path_metadata = { "offset" : _get_obj_path_method_offset,
+    _get_object_path_metadata = { "offset" : _get_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def obj_path(self) -> str:
+    def object_path(self) -> str:
         """Path of the STK object picked if any (or empty string)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_obj_path_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_object_path_metadata)
 
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def lat(self) -> float:
+    def latitude(self) -> float:
         """Latitude of point clicked (if available)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_lat_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_latitude_metadata)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def lon(self) -> float:
+    def longitude(self) -> float:
         """Longitude of point clicked (if available)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_lon_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_longitude_metadata)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -1480,13 +1480,13 @@ class PickInfoData(SupportsDeleteCallback):
         """Altitude of point clicked (if available)."""
         return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_altitude_metadata)
 
-    _get_is_obj_path_valid_metadata = { "offset" : _get_is_obj_path_valid_method_offset,
+    _get_is_object_path_valid_metadata = { "offset" : _get_is_object_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def is_obj_path_valid(self) -> bool:
+    def is_object_path_valid(self) -> bool:
         """Indicate if the ObjPath property is valid."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_obj_path_valid_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_object_path_valid_metadata)
 
     _get_is_lat_lon_altitude_valid_metadata = { "offset" : _get_is_lat_lon_altitude_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1496,11 +1496,11 @@ class PickInfoData(SupportsDeleteCallback):
         """Indicate if the Lat/Lon/Alt properties are valid."""
         return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_lat_lon_altitude_valid_metadata)
 
-    _property_names[obj_path] = "obj_path"
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[object_path] = "object_path"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
-    _property_names[is_obj_path_valid] = "is_obj_path_valid"
+    _property_names[is_object_path_valid] = "is_object_path_valid"
     _property_names[is_lat_lon_altitude_valid] = "is_lat_lon_altitude_valid"
 
     def __init__(self, sourceObject=None):
@@ -1966,7 +1966,7 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
 
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get_obj_paths_method_offset = 1
+    _get_object_paths_method_offset = 1
     _metadata = {
         "iid_data" : (5465369937390436249, 5504180940665807527),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -1975,15 +1975,15 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, RubberBandPickInfoData)
     
-    _get_obj_paths_metadata = { "offset" : _get_obj_paths_method_offset,
+    _get_object_paths_metadata = { "offset" : _get_object_paths_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def obj_paths(self) -> "ObjectPathCollection":
+    def object_paths(self) -> "ObjectPathCollection":
         """List of object paths selected."""
-        return self._intf.get_property(RubberBandPickInfoData._metadata, RubberBandPickInfoData._get_obj_paths_metadata)
+        return self._intf.get_property(RubberBandPickInfoData._metadata, RubberBandPickInfoData._get_object_paths_metadata)
 
-    _property_names[obj_paths] = "obj_paths"
+    _property_names[object_paths] = "object_paths"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type RubberBandPickInfoData."""
@@ -2179,8 +2179,8 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _set_control_mode_method_offset = 13
     _get_picture_from_file_method_offset = 14
     _set_picture_from_file_method_offset = 15
-    _get_win_id_method_offset = 16
-    _set_win_id_method_offset = 17
+    _get_window_id_method_offset = 16
+    _set_window_id_method_offset = 17
     _metadata = {
         "iid_data" : (5436709951419699304, 6539416614287221654),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -2303,20 +2303,20 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
         """Get or set the splash logo graphic file to be displayed in the control."""
         return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_from_file_metadata, pictureFile)
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_win_id_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, newVal:int) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_window_id_metadata, newVal)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
@@ -2326,7 +2326,7 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _property_names[application] = "application"
     _property_names[control_mode] = "control_mode"
     _property_names[picture_from_file] = "picture_from_file"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type GraphicsAnalysisControlBase."""
@@ -2351,7 +2351,7 @@ class WindowProjectionPosition(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_x_position_method_offset = 1
     _get_y_position_method_offset = 2
-    _get_is_win_projection_position_valid_method_offset = 3
+    _get_is_window_projection_position_valid_method_offset = 3
     _metadata = {
         "iid_data" : (5662259557636712932, 6540783716662451641),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -2376,17 +2376,17 @@ class WindowProjectionPosition(SupportsDeleteCallback):
         """Projected window Y position."""
         return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_y_position_metadata)
 
-    _get_is_win_projection_position_valid_metadata = { "offset" : _get_is_win_projection_position_valid_method_offset,
+    _get_is_window_projection_position_valid_metadata = { "offset" : _get_is_window_projection_position_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def is_win_projection_position_valid(self) -> bool:
+    def is_window_projection_position_valid(self) -> bool:
         """Indicate if the returned projected position is valid or not."""
-        return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_is_win_projection_position_valid_metadata)
+        return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_is_window_projection_position_valid_metadata)
 
     _property_names[x_position] = "x_position"
     _property_names[y_position] = "y_position"
-    _property_names[is_win_projection_position_valid] = "is_win_projection_position_valid"
+    _property_names[is_window_projection_position_valid] = "is_window_projection_position_valid"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type WindowProjectionPosition."""

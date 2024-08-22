@@ -1,12 +1,12 @@
-APP_ERROR_CODES
-===============
+APPLICATION_ERROR_CODES
+=======================
 
-.. py:class:: ansys.stk.core.uiapplication.APP_ERROR_CODES
+.. py:class:: ansys.stk.core.uiapplication.APPLICATION_ERROR_CODES
 
    IntEnum
 
 
-.. py:currentmodule:: APP_ERROR_CODES
+.. py:currentmodule:: APPLICATION_ERROR_CODES
 
 Overview
 --------
@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PERS_LOAD_FAIL`
+            * - :py:attr:`~PERSONALITY_LOAD_FAILED`
               - Failed to load personality.
 
-            * - :py:attr:`~ALREADY_LOAD_FAIL`
+            * - :py:attr:`~PERSONALITY_ALREADY_LOADED`
               - Personality already loaded.
 
-            * - :py:attr:`~PERS_LOAD_FIRST`
+            * - :py:attr:`~PERSONALITY_NOT_LOADED`
               - No personality is loaded.
 
-            * - :py:attr:`~PERS_LICENSE_ERROR`
+            * - :py:attr:`~PERSONALITY_LICENSE_ERROR`
               - You do not have the required license to connect externally to the application.
 
             * - :py:attr:`~NO_LICENSE_ERROR`
@@ -40,6 +40,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uiapplication import APP_ERROR_CODES
+    from ansys.stk.core.uiapplication import APPLICATION_ERROR_CODES
 
 

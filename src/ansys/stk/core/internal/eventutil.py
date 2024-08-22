@@ -732,7 +732,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         self.__dict__["_events"] = {}
         IAgUiAxStockEventHandler.__init__(self)
         if type(interface)==IUnknown:
-            impl = IUiAxGraphics2DCntrlEventCOMHandler(interface, self._events)
+            impl = IGraphics2DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:
@@ -760,7 +760,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         self._events["_OnObjectEditingCancel"]    = _STKEvent()
         self._events["_OnObjectEditingStop"]      = _STKEvent()
         if type(interface)==IUnknown:
-            impl = IUiAxGraphics3DCntrlEventCOMHandler(interface, self._events)
+            impl = IGraphics3DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:

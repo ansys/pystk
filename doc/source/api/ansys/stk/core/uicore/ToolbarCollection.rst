@@ -1,11 +1,11 @@
-UiToolbarCollection
-===================
+ToolbarCollection
+=================
 
-.. py:class:: ansys.stk.core.uicore.UiToolbarCollection
+.. py:class:: ansys.stk.core.uicore.ToolbarCollection
 
    Provide methods and properties to manage the toolbars.
 
-.. py:currentmodule:: UiToolbarCollection
+.. py:currentmodule:: ToolbarCollection
 
 Overview
 --------
@@ -18,13 +18,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection.item`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.item`
               - Retrieve a toolbar object.
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection.get_toolbar_by_id`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id`
               - Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection.get_item_by_index`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_item_by_index`
               - Retrieve a toolbar object based on the index in the collection.
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection.get_item_by_name`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.get_item_by_name`
               - Retrieve a toolbar object based on the name of the Toolbar in the collection.
 
     .. tab-item:: Properties
@@ -33,9 +33,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection.count`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.count`
               - Returns a total number of toolbars in the collection.
-            * - :py:attr:`~ansys.stk.core.uicore.UiToolbarCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection._NewEnum`
               - Enumerates the toolbars in the collection.
 
 
@@ -45,20 +45,20 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import UiToolbarCollection
+    from ansys.stk.core.uicore import ToolbarCollection
 
 
 Property detail
 ---------------
 
 .. py:property:: count
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection.count
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.count
     :type: int
 
     Returns a total number of toolbars in the collection.
 
 .. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection._NewEnum
+    :canonical: ansys.stk.core.uicore.ToolbarCollection._NewEnum
     :type: EnumeratorProxy
 
     Enumerates the toolbars in the collection.
@@ -67,8 +67,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption: typing.Any) -> UiToolbar
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection.item
+.. py:method:: item(self, indexOrCaption: typing.Any) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.item
 
     Retrieve a toolbar object.
 
@@ -78,12 +78,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiToolbar`
+        :obj:`~Toolbar`
 
 
 
-.. py:method:: get_toolbar_by_id(self, id: int) -> UiToolbar
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection.get_toolbar_by_id
+.. py:method:: get_toolbar_by_id(self, id: int) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.get_toolbar_by_id
 
     Return a toolbar object with the specified toolbar identifier. The identifier is a unique number assigned to a toolbar object.
 
@@ -93,10 +93,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiToolbar`
+        :obj:`~Toolbar`
 
-.. py:method:: get_item_by_index(self, index: int) -> UiToolbar
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection.get_item_by_index
+.. py:method:: get_item_by_index(self, index: int) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.get_item_by_index
 
     Retrieve a toolbar object based on the index in the collection.
 
@@ -106,10 +106,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiToolbar`
+        :obj:`~Toolbar`
 
-.. py:method:: get_item_by_name(self, name: str) -> UiToolbar
-    :canonical: ansys.stk.core.uicore.UiToolbarCollection.get_item_by_name
+.. py:method:: get_item_by_name(self, name: str) -> Toolbar
+    :canonical: ansys.stk.core.uicore.ToolbarCollection.get_item_by_name
 
     Retrieve a toolbar object based on the name of the Toolbar in the collection.
 
@@ -119,5 +119,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiToolbar`
+        :obj:`~Toolbar`
 
