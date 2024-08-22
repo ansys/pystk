@@ -23,7 +23,7 @@ STK Desktop
 -----------
 
 STK desktop provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation
-instructions <https://help.agi.com/stk/index.htm#install/installingSTK.htm>`_ for details
+instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details
 on installing STK.
 
 STK Engine
