@@ -23,6 +23,7 @@ prograde
 Precessing
 precessing
 STK 
+STK Desktop
 STKEngine
 STK Engine
 Subpackages
