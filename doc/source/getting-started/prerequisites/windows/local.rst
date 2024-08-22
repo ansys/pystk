@@ -4,7 +4,7 @@ Windows local prerequisites
 To get started using PySTK, the following is required:
 
 - Python
-- STK Desktop or STK Engine
+- STK desktop or STK Engine
 
 Install Python
 ==============

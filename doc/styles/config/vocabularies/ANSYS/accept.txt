@@ -11,22 +11,20 @@ fom
 grpcio
 Hohmann
 IIF
-Install STK 
-Install STK desktop or STK Engine
-Install Python
+Python
 intervisibility
 Keplerian
 LOD
 lod
 Nemo
 numpy
-STK
 PySTK
 periapsis
 prograde
 Precessing
 precessing
 protobuf
+STK 
 STKEngine
 STK Engine
 Subpackages
