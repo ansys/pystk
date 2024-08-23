@@ -34,10 +34,10 @@ tests = [
     "pytz==2024.1",
     "parameterized==0.9.0",
     "pandas==2.2.2",
-    "numpy==2.0.1"
+    "numpy==2.1.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.0.4",
+    "ansys-sphinx-theme==1.0.7",
     "build==1.2.1",
     "jupyterlab==4.2.4",
     "jupytext==1.16.4",
@@ -55,7 +55,7 @@ doc = [
 ]
 visualization = [
     "jupyter-rfb==0.4.4",
-    "numpy==2.0.1",
+    "numpy==2.1.0",
     "Pillow==10.4.0",
     "simplejpeg==1.7.4",
     "sidecar==0.7.0"
