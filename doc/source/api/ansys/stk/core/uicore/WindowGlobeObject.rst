@@ -1,11 +1,11 @@
-UiWindowGlobeObject
-===================
+WindowGlobeObject
+=================
 
-.. py:class:: ansys.stk.core.uicore.UiWindowGlobeObject
+.. py:class:: ansys.stk.core.uicore.WindowGlobeObject
 
    Provide methods and properties to manipulate the 3D globe.
 
-.. py:currentmodule:: UiWindowGlobeObject
+.. py:currentmodule:: WindowGlobeObject
 
 Overview
 --------
@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.UiWindowGlobeObject.scene_id`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowGlobeObject.scene_id`
               - A unique identifier associated with the window that can be used with Connect to control the 3D globe.
 
 
@@ -28,14 +28,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import UiWindowGlobeObject
+    from ansys.stk.core.uicore import WindowGlobeObject
 
 
 Property detail
 ---------------
 
 .. py:property:: scene_id
-    :canonical: ansys.stk.core.uicore.UiWindowGlobeObject.scene_id
+    :canonical: ansys.stk.core.uicore.WindowGlobeObject.scene_id
     :type: int
 
     A unique identifier associated with the window that can be used with Connect to control the 3D globe.

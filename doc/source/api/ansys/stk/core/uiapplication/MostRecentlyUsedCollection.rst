@@ -1,11 +1,11 @@
-MRUCollection
-=============
+MostRecentlyUsedCollection
+==========================
 
-.. py:class:: ansys.stk.core.uiapplication.MRUCollection
+.. py:class:: ansys.stk.core.uiapplication.MostRecentlyUsedCollection
 
    Provide information about most recently used (MRU) list.
 
-.. py:currentmodule:: MRUCollection
+.. py:currentmodule:: MostRecentlyUsedCollection
 
 Overview
 --------
@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uiapplication.MRUCollection.item`
+            * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection.item`
               - Get the MRU at the specified index.
 
     .. tab-item:: Properties
@@ -27,9 +27,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uiapplication.MRUCollection.count`
+            * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count`
               - Gets the total count of MRUs in the collection.
-            * - :py:attr:`~ansys.stk.core.uiapplication.MRUCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uiapplication.MostRecentlyUsedCollection._NewEnum`
               - Enumerates through the MRU collection.
 
 
@@ -39,20 +39,20 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uiapplication import MRUCollection
+    from ansys.stk.core.uiapplication import MostRecentlyUsedCollection
 
 
 Property detail
 ---------------
 
 .. py:property:: count
-    :canonical: ansys.stk.core.uiapplication.MRUCollection.count
+    :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection.count
     :type: int
 
     Gets the total count of MRUs in the collection.
 
 .. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uiapplication.MRUCollection._NewEnum
+    :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection._NewEnum
     :type: EnumeratorProxy
 
     Enumerates through the MRU collection.
@@ -62,7 +62,7 @@ Method detail
 -------------
 
 .. py:method:: item(self, index: typing.Any) -> str
-    :canonical: ansys.stk.core.uiapplication.MRUCollection.item
+    :canonical: ansys.stk.core.uiapplication.MostRecentlyUsedCollection.item
 
     Get the MRU at the specified index.
 

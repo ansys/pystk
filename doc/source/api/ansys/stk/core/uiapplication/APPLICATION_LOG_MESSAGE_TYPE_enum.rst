@@ -1,12 +1,12 @@
-UI_LOG_MESSAGE_TYPE
-===================
+APPLICATION_LOG_MESSAGE_TYPE
+============================
 
-.. py:class:: ansys.stk.core.uiapplication.UI_LOG_MESSAGE_TYPE
+.. py:class:: ansys.stk.core.uiapplication.APPLICATION_LOG_MESSAGE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: UI_LOG_MESSAGE_TYPE
+.. py:currentmodule:: APPLICATION_LOG_MESSAGE_TYPE
 
 Overview
 --------
@@ -40,6 +40,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uiapplication import UI_LOG_MESSAGE_TYPE
+    from ansys.stk.core.uiapplication import APPLICATION_LOG_MESSAGE_TYPE
 
 

@@ -1,12 +1,12 @@
-ARRANGE_STYLE
-=============
+WINDOW_ARRANGE_STYLE
+====================
 
-.. py:class:: ansys.stk.core.uicore.ARRANGE_STYLE
+.. py:class:: ansys.stk.core.uicore.WINDOW_ARRANGE_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: ARRANGE_STYLE
+.. py:currentmodule:: WINDOW_ARRANGE_STYLE
 
 Overview
 --------
@@ -34,6 +34,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import ARRANGE_STYLE
+    from ansys.stk.core.uicore import WINDOW_ARRANGE_STYLE
 
 

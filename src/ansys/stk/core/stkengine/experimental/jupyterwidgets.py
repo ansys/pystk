@@ -235,7 +235,7 @@ class WidgetBase(RemoteFrameBuffer):
         self.__create_frame_buffer(w, h)
 
         self._rfb = IRemoteFrameBuffer(self)
-        self._rfb.set_to_off_screen_rendering(w, h)
+        self._rfb.set_to_offscreen_rendering(w, h)
 
         self._rfbHostImpl = RemoteFrameBufferHost(self)
 
@@ -249,14 +249,14 @@ class WidgetBase(RemoteFrameBuffer):
 
         self.mouse_callbacks = [
             [
-                self._rfb.notify_l_button_down,
-                self._rfb.notify_r_button_down,
-                self._rfb.notify_m_button_down
+                self._rfb.notify_left_button_down,
+                self._rfb.notify_right_button_down,
+                self._rfb.notify_middle_button_down
             ],
             [
-                self._rfb.notify_l_button_up,
-                self._rfb.notify_r_button_up,
-                self._rfb.notify_m_button_up
+                self._rfb.notify_left_button_up,
+                self._rfb.notify_right_button_up,
+                self._rfb.notify_middle_button_up
             ]
         ]
 

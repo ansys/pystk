@@ -43,7 +43,7 @@ Overview
               - The Graphics control mode.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.picture_from_file`
               - Gets or sets the splash logo graphic file to be displayed in the control.
-            * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.window_id`
               - Window identifier (for Connect commands).
 
 
@@ -107,8 +107,8 @@ Property detail
 
     Gets or sets the splash logo graphic file to be displayed in the control.
 
-.. py:property:: win_id
-    :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.win_id
+.. py:property:: window_id
+    :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.window_id
     :type: int
 
     Window identifier (for Connect commands).

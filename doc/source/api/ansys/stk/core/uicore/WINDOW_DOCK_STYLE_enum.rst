@@ -1,12 +1,12 @@
-DOCK_STYLE
-==========
+WINDOW_DOCK_STYLE
+=================
 
-.. py:class:: ansys.stk.core.uicore.DOCK_STYLE
+.. py:class:: ansys.stk.core.uicore.WINDOW_DOCK_STYLE
 
    IntEnum
 
 
-.. py:currentmodule:: DOCK_STYLE
+.. py:currentmodule:: WINDOW_DOCK_STYLE
 
 Overview
 --------
@@ -43,6 +43,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import DOCK_STYLE
+    from ansys.stk.core.uicore import WINDOW_DOCK_STYLE
 
 

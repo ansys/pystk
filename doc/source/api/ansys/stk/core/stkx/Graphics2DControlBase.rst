@@ -26,7 +26,7 @@ Overview
               - Zoom out to view a larger portion of a previously magnified map.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.pick_info`
               - Get detailed information about a mouse pick.
-            * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.copy_from_win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.copy_from_window_id`
               - Copy an existing Window's scene into this control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.rubber_band_pick_info`
               - Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom).
@@ -51,7 +51,7 @@ Overview
               - The background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.picture`
               - The splash logo graphic to be displayed in the control.
-            * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.win_id`
+            * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.window_id`
               - Window identifier (for Connect commands).
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.application`
               - Reference to the STK X application object.
@@ -111,8 +111,8 @@ Property detail
 
     The splash logo graphic to be displayed in the control.
 
-.. py:property:: win_id
-    :canonical: ansys.stk.core.stkx.Graphics2DControlBase.win_id
+.. py:property:: window_id
+    :canonical: ansys.stk.core.stkx.Graphics2DControlBase.window_id
     :type: int
 
     Window identifier (for Connect commands).
@@ -278,8 +278,8 @@ Method detail
 
 
 
-.. py:method:: copy_from_win_id(self, winID: int) -> None
-    :canonical: ansys.stk.core.stkx.Graphics2DControlBase.copy_from_win_id
+.. py:method:: copy_from_window_id(self, winID: int) -> None
+    :canonical: ansys.stk.core.stkx.Graphics2DControlBase.copy_from_window_id
 
     Copy an existing Window's scene into this control.
 

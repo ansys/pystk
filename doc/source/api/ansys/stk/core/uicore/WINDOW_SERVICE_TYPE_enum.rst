@@ -1,12 +1,12 @@
-WINDOW_SERVICE
-==============
+WINDOW_SERVICE_TYPE
+===================
 
-.. py:class:: ansys.stk.core.uicore.WINDOW_SERVICE
+.. py:class:: ansys.stk.core.uicore.WINDOW_SERVICE_TYPE
 
    IntEnum
 
 
-.. py:currentmodule:: WINDOW_SERVICE
+.. py:currentmodule:: WINDOW_SERVICE_TYPE
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.uicore import WINDOW_SERVICE
+    from ansys.stk.core.uicore import WINDOW_SERVICE_TYPE
 
 
