@@ -3,7 +3,7 @@ ElementConfigurationAsciiFile
 
 .. py:class:: ansys.stk.core.stkobjects.ElementConfigurationAsciiFile
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfigurationAsciiFile`, :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IElementConfiguration`
 
    Class defining a ascii file element configuration.
 
@@ -11,6 +11,18 @@ ElementConfigurationAsciiFile
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationAsciiFile.filename`
+              - Gets or sets the file.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import ElementConfigurationAsciiFile
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationAsciiFile.filename
+    :type: str
+
+    Gets or sets the file.
 
 

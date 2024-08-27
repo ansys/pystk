@@ -3,7 +3,7 @@ StateCalcPressure
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcPressure
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcPressure`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    Pressure Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcPressure
 
 Overview
 --------
+
 
 
 Import detail

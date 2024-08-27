@@ -3,7 +3,7 @@ KmlDocument
 
 .. py:class:: ansys.stk.core.graphics.KmlDocument
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IKmlDocument`, :py:class:`~ansys.stk.core.graphics.IKmlContainer`, :py:class:`~ansys.stk.core.graphics.IKmlFeature`
+   Bases: :py:class:`~ansys.stk.core.graphics.IKmlContainer`, :py:class:`~ansys.stk.core.graphics.IKmlFeature`
 
    A KML document.
 
@@ -11,6 +11,18 @@ KmlDocument
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.graphics.KmlDocument.uri`
+              - Gets the uri of the document.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.graphics import KmlDocument
 
+
+Property detail
+---------------
+
+.. py:property:: uri
+    :canonical: ansys.stk.core.graphics.KmlDocument.uri
+    :type: str
+
+    Gets the uri of the document.
 
 

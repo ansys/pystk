@@ -3,8 +3,6 @@ IFigureOfMeritDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinition
 
-   object
-   
    Figure of Merit definition.
 
 .. py:currentmodule:: IFigureOfMeritDefinition
@@ -37,7 +35,7 @@ Property detail
 
 .. py:property:: satisfaction
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinition.satisfaction
-    :type: IFigureOfMeritSatisfaction
+    :type: FigureOfMeritSatisfaction
 
     Satisfaction criteria for the Figure of Merit.
 

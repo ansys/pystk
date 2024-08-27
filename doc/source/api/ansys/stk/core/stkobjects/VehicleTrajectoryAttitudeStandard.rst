@@ -3,7 +3,7 @@ VehicleTrajectoryAttitudeStandard
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleTrajectoryAttitudeStandard`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitude`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitudeStandard`, :py:class:`~ansys.stk.core.stkobjects.IVehicleAttitude`
 
    Standard attitude profile for launch vehicle or missile.
 
@@ -11,6 +11,22 @@ VehicleTrajectoryAttitudeStandard
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.basic`
+              - Get the basic attitude properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.pointing`
+              - Get the target pointing attitude properties.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.external`
+              - Get the precomputed (external) attitude properties.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.stkobjects import VehicleTrajectoryAttitudeStandard
 
+
+Property detail
+---------------
+
+.. py:property:: basic
+    :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.basic
+    :type: VehicleStandardBasic
+
+    Get the basic attitude properties.
+
+.. py:property:: pointing
+    :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.pointing
+    :type: VehicleAttitudePointing
+
+    Get the target pointing attitude properties.
+
+.. py:property:: external
+    :canonical: ansys.stk.core.stkobjects.VehicleTrajectoryAttitudeStandard.external
+    :type: VehicleAttitudeExternal
+
+    Get the precomputed (external) attitude properties.
 
 

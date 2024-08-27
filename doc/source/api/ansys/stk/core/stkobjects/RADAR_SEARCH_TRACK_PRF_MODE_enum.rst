@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~PRF`
               - PRF.
 
-            * - :py:attr:`~UNAMBIG_RNG`
+            * - :py:attr:`~UNAMBIGUOUS_RANGE`
               - Unambiguous Range.
 
-            * - :py:attr:`~UNAMBIG_VEL`
+            * - :py:attr:`~UNAMBIGUOUS_VEL`
               - Unambiguous Velocity.
 
 

@@ -3,8 +3,6 @@ ITransmitterModelScriptPlugin
 
 .. py:class:: ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin
 
-   object
-   
    Provide access to the properties and methods defining a script plugin transmitter model.
 
 .. py:currentmodule:: ITransmitterModelScriptPlugin

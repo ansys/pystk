@@ -3,8 +3,6 @@ IVehicleLaunchControl
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleLaunchControl
 
-   object
-   
    Base Interface IAgVeLaunchControl. IAgVeLaunchControlFixedApogeeAlt, IAgVeLaunchControlFixedDeltaV, IAgVeLaunchControlDixedDeltaVMinEcc and IAgVeLaunchControlTimeOfFlight derive from this.
 
 .. py:currentmodule:: IVehicleLaunchControl

@@ -3,7 +3,7 @@ BasicManeuverStrategySimpleTurn
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategySimpleTurn`, :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.aviator.IBasicManeuverStrategy`
 
    Class defining the simple turn strategy for a basic maneuver procedure.
 
@@ -11,6 +11,24 @@ BasicManeuverStrategySimpleTurn
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.reference_frame`
+              - Gets or sets the reference frame for the simple turn.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.turn_angle`
+              - Gets or sets the turn angle for the simple turn.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.turn_radius_factor`
+              - Gets or sets the turn radius factor for the simple turn.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.compensate_for_coriolis_acceleration`
+              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+
 
 
 Import detail
@@ -20,5 +38,32 @@ Import detail
 
     from ansys.stk.core.stkobjects.aviator import BasicManeuverStrategySimpleTurn
 
+
+Property detail
+---------------
+
+.. py:property:: reference_frame
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.reference_frame
+    :type: BASIC_MANEUVER_REFERENCE_FRAME
+
+    Gets or sets the reference frame for the simple turn.
+
+.. py:property:: turn_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.turn_angle
+    :type: typing.Any
+
+    Gets or sets the turn angle for the simple turn.
+
+.. py:property:: turn_radius_factor
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.turn_radius_factor
+    :type: float
+
+    Gets or sets the turn radius factor for the simple turn.
+
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.compensate_for_coriolis_acceleration
+    :type: bool
+
+    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
 
 

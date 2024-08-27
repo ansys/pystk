@@ -3,8 +3,6 @@ ITimeToolEventIntervalCollection
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventIntervalCollection
 
-   object
-   
    A collection of related interval lists.
 
 .. py:currentmodule:: ITimeToolEventIntervalCollection
@@ -66,16 +64,16 @@ Method detail
 
 
 
-.. py:method:: find_interval_collection(self) -> ITimeToolIntervalsVectorResult
+.. py:method:: find_interval_collection(self) -> TimeToolIntervalsVectorResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollection.find_interval_collection
 
     Return computed collection of interval lists.
 
     :Returns:
 
-        :obj:`~ITimeToolIntervalsVectorResult`
+        :obj:`~TimeToolIntervalsVectorResult`
 
-.. py:method:: occurred(self, epoch: typing.Any) -> ITimeToolEventIntervalCollectionOccurredResult
+.. py:method:: occurred(self, epoch: typing.Any) -> TimeToolEventIntervalCollectionOccurredResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventIntervalCollection.occurred
 
     Determine if specified time falls within any of the computed interval lists in the collection.
@@ -86,5 +84,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~ITimeToolEventIntervalCollectionOccurredResult`
+        :obj:`~TimeToolEventIntervalCollectionOccurredResult`
 

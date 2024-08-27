@@ -3,8 +3,6 @@ IDataProvider
 
 .. py:class:: ansys.stk.core.stkobjects.IDataProvider
 
-   object
-   
    Represents the Sub Data Provider (i.e. ``Fixed`` in ``Cartesian Position`` group on satellites, or ``Cartesian Position`` on facilities).
 
 .. py:currentmodule:: IDataProvider
@@ -58,7 +56,7 @@ Property detail
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.IDataProvider.elements
-    :type: IDataProviderElements
+    :type: DataProviderElements
 
     Returns a collection of elements associated with a DataProvider or a SubDataProvider.
 

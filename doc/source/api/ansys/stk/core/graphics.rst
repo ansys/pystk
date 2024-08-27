@@ -19,272 +19,35 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.graphics.IPathPoint`
-              - A path point used with the Path Primitive.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPathPointFactory`
-              - Create Path Primitive's path points.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBoundingSphere`
-              - A sphere that encapsulates an object.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBoundingSphereFactory`
-              - Create instances of the bounding sphere type.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureFilter2D`
-              - A texture filter.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureFilter2DFactory`
-              - Create texture filters.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRendererTexture2D`
-              - A 2D Texture. A texture represents an image that is ready for use by objects such as primitives and overlays. Textures typically reside in video memory.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRendererTextureTemplate2D`
-              - Template object containing attributes required to create a 2D texture.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPathPointCollection`
-              - A collection of path points.
-
-            * - :py:class:`~ansys.stk.core.graphics.IObjectCollection`
-              - A collection of objects.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneCollection`
-              - A collection of scenes.
-
             * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayContainer`
               - The interface for screen overlays that contain a collection of other overlays. This interface is implemented by ScreenOverlayManager and ScreenOverlay.
-
-            * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayPickResultCollection`
-              - A collection of pick results.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlayAddCompleteEventArgs`
-              - The event is raised when the globe image overlay is displayed for the first time after being added using AddAsync.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITerrainOverlayAddCompleteEventArgs`
-              - The event is raised when the terrain overlay is displayed for the first time after having been added using AddAsync.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPickResultCollection`
-              - A collection of picked objects.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRenderingEventArgs`
-              - The event is raised when the scene is rendered.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBatchPrimitiveIndex`
-              - Represents an individual item index that is associated with a batch primitive. Provides the Index of the individual item and the Primitive that contains that index...
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlDocumentCollection`
-              - A collection of KML documents.
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlFeatureCollection`
-              - A collection of KML features.
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlDocumentLoadedEventArgs`
-              - The event is raised when a KML document has been loaded.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFactoryAndInitializers`
-              - Methods and properties are used to initialize new primitives, display conditions, screen overlays, textures and many other types; compute and retrieve triangulator results and access global properties (what's known as static properties, static methods a...
-
-            * - :py:class:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorResult`
-              - The result from extruded polyline triangulation: a triangle mesh defined using an indexed triangle list with top and bottom boundary positions. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISolidTriangulatorResult`
-              - The result from a triangulation of a solid: a triangle mesh defined using an indexed triangle list and positions outlining the solid. It is recommended to visualize the solid using a solid primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceShapesResult`
-              - Represents the boundary positions of a shape on the surface computed from by a surface shapes method.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceTriangulatorResult`
-              - The result from a triangulation on the surface of a central body: a triangle mesh defined using an indexed triangle list and boundary positions surrounding the mesh...
 
             * - :py:class:`~ansys.stk.core.graphics.ITriangulatorResult`
               - The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive.
 
-            * - :py:class:`~ansys.stk.core.graphics.IAGICustomTerrainOverlay`
-              - A terrain overlay for handling AGI Cesium Terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlay`
-              - A globe image overlay for handling AGI Processed Image (PDTTX) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIProcessedTerrainOverlay`
-              - A terrain overlay for handling AGI Processed Terrain (PDTT) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIRoamImageGlobeOverlay`
-              - A globe image overlay for handling ROAM (TXM/TXB) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICameraSnapshot`
-              - Takes snapshots of the 3D window.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICameraVideoRecording`
-              - Records the 3D window to either a movie file or to consecutively ordered image files each time the scene is rendered.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICentralBodyGraphicsIndexer`
-              - An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICustomImageGlobeOverlay`
-              - A globe image overlay that allows for a user defined image to be specified.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginActivator`
-              - The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginProxy`
-              - A proxy class provides access to a custom image globe overlay implemented by a plugin. Proxies are instantiated using custom image globe overlay plugin activator.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGeospatialImageGlobeOverlay`
-              - A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection.
-
             * - :py:class:`~ansys.stk.core.graphics.IGlobeOverlay`
               - The base class of all terrain overlay and globe image overlay objects.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGlobeOverlaySettings`
-              - Settings used by globe overlay objects. These setting affect all scenes.
-
-            * - :py:class:`~ansys.stk.core.graphics.ILighting`
-              - Lighting in the 3D scene.
 
             * - :py:class:`~ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy`
               - A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method.
 
-            * - :py:class:`~ansys.stk.core.graphics.IProjectedRasterOverlay`
-              - A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene...
-
             * - :py:class:`~ansys.stk.core.graphics.IProjection`
               - A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectionStream`
-              - A projection that is updated dynamically at the specified update delta. The class can be used to stream projection data to projection clients, like projected raster overlay...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneGlobeOverlaySettings`
-              - Settings used by globe overlay objects. These settings only affect the scene.
 
             * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase`
               - The common base class for collections of overlays held by screen overlay and by screen overlay manager.
 
-            * - :py:class:`~ansys.stk.core.graphics.ITexture2DFactory`
-              - A factory for creating texture 2d objects from various sources.
-
-            * - :py:class:`~ansys.stk.core.graphics.IVisualEffects`
-              - Control various post processing effects that can be applied to the scene.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAltitudeDisplayCondition`
-              - Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAxesPrimitive`
-              - Render an axes in the 3D scene.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICamera`
-              - Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICentralBodyGraphics`
-              - The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property...
-
-            * - :py:class:`~ansys.stk.core.graphics.IClouds`
-              - Load, show and hide clouds in the scene.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICompositeDisplayCondition`
-              - A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
-
-            * - :py:class:`~ansys.stk.core.graphics.ICompositePrimitive`
-              - A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
-
-            * - :py:class:`~ansys.stk.core.graphics.IConstantDisplayCondition`
-              - A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false.
-
             * - :py:class:`~ansys.stk.core.graphics.IDisplayCondition`
               - When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceDisplayCondition`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayCondition`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToPositionDisplayCondition`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayCondition`
-              - Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicy`
-              - path primitive update policy that removes points from remove location after a given duration.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFrameRate`
-              - Keeps track of how many times the scenes are rendered per second.
 
             * - :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlay`
               - A globe overlay that shows an image.
 
-            * - :py:class:`~ansys.stk.core.graphics.IGraphicsFont`
-              - A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGreatArcInterpolator`
-              - The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
-
-            * - :py:class:`~ansys.stk.core.graphics.IImageCollection`
-              - A collection of globe image overlay objects.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromLuminanceFilter`
-              - Add an alpha band to the source raster derived from the luminance of the raster's color bands.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromPixelFilter`
-              - Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromRasterFilter`
-              - Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBandExtractFilter`
-              - Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBandOrderFilter`
-              - Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBlurFilter`
-              - Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBrightnessFilter`
-              - Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright.
-
-            * - :py:class:`~ansys.stk.core.graphics.IColorToLuminanceFilter`
-              - Extract a luminance band derived from the color bands of the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IContrastFilter`
-              - Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast.
-
             * - :py:class:`~ansys.stk.core.graphics.IConvolutionFilter`
               - Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process...
 
-            * - :py:class:`~ansys.stk.core.graphics.IEdgeDetectFilter`
-              - Apply a convolution filter to detect edges in the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFilteringRasterStream`
-              - A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFlipFilter`
-              - Flips the source raster along the given flip axis.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGammaCorrectionFilter`
-              - Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGaussianBlurFilter`
-              - Apply a convolution filter to blur the source raster using the Gaussian function.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGradientDetectFilter`
-              - Apply a convolution filter to detect gradients in the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.ILevelsFilter`
-              - Adjusts the band levels of the source raster linearly.
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginActivator`
-              - The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface.
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginProxy`
-              - A proxy class provides access to the raster and projection streams implemented by a plugin. Proxies are instantiated using projection raster stream plugin activator.
-
             * - :py:class:`~ansys.stk.core.graphics.IRaster`
               - A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
-
-            * - :py:class:`~ansys.stk.core.graphics.IRasterAttributes`
-              - The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format...
 
             * - :py:class:`~ansys.stk.core.graphics.IRasterFilter`
               - A filter for processing raster datasets. RasterFilter is the base class for all raster filters...
@@ -292,80 +55,14 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.IRasterStream`
               - A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients...
 
-            * - :py:class:`~ansys.stk.core.graphics.IRotateFilter`
-              - Rotate the source raster clockwise by the specified angle.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISequenceFilter`
-              - Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISharpenFilter`
-              - Apply a convolution filter to increase the sharpness of the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IVideoStream`
-              - A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
-
             * - :py:class:`~ansys.stk.core.graphics.IKmlContainer`
               - A KmlContainer contains a collection of children kml features.
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlDocument`
-              - A KML document.
 
             * - :py:class:`~ansys.stk.core.graphics.IKmlFeature`
               - A KML feature.
 
-            * - :py:class:`~ansys.stk.core.graphics.IKmlFolder`
-              - A KML folder.
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlGraphics`
-              - Provide loading and unloading of kml documents for a particular central body.
-
-            * - :py:class:`~ansys.stk.core.graphics.IKmlNetworkLink`
-              - A KML network link.
-
-            * - :py:class:`~ansys.stk.core.graphics.IMarkerBatchPrimitive`
-              - Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards...
-
-            * - :py:class:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParameters`
-              - Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
-
-            * - :py:class:`~ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicy`
-              - path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count.
-
-            * - :py:class:`~ansys.stk.core.graphics.IModelArticulation`
-              - A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
-
-            * - :py:class:`~ansys.stk.core.graphics.IModelArticulationCollection`
-              - A collection containing a model primitive's available articulations. A model articulation identifies geometry on the model and is a collection of transformations that can be applied to that geometry.
-
-            * - :py:class:`~ansys.stk.core.graphics.IModelPrimitive`
-              - The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
-
-            * - :py:class:`~ansys.stk.core.graphics.IModelTransformation`
-              - A model transformation defines a transformation that is applied to geometry on a model primitive. That geometry is identified by the model articulation which contains the transformation...
-
             * - :py:class:`~ansys.stk.core.graphics.IOverlay`
               - A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPathPrimitive`
-              - Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPickResult`
-              - A single result from Pick.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPixelSizeDisplayCondition`
-              - Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPointBatchPrimitive`
-              - Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPointBatchPrimitiveOptionalParameters`
-              - Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPolylinePrimitive`
-              - Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParameters`
-              - Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
 
             * - :py:class:`~ansys.stk.core.graphics.IPositionInterpolator`
               - Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines.
@@ -373,317 +70,11 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.IPrimitive`
               - Primitives represent objects rendered in the 3D scene.
 
-            * - :py:class:`~ansys.stk.core.graphics.IPrimitiveManager`
-              - The primitive manager contains spatial data structures used to efficiently render primitives. Once a primitive is constructed, it must be added to the primitive manager before it will be rendered.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRasterImageGlobeOverlay`
-              - A globe image overlay for handling rasters.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRhumbLineInterpolator`
-              - The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation.
-
-            * - :py:class:`~ansys.stk.core.graphics.IScene`
-              - A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneDisplayCondition`
-              - A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneManager`
-              - The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
-
             * - :py:class:`~ansys.stk.core.graphics.IScreenOverlay`
               - A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
 
-            * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayCollection`
-              - A collection of screen overlays.
-
-            * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayManager`
-              - The top-level container for screen overlays. All child screen overlays that are added to this container are specified relative to the overall globe control.
-
-            * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayPickResult`
-              - Describes a picked screen overlay as a result of a call to pick screen overlays.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISolidPrimitive`
-              - Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
-
-            * - :py:class:`~ansys.stk.core.graphics.IStereoscopic`
-              - Get the stereoscopic options for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceMeshPrimitive`
-              - A triangle mesh primitive for meshes on the surface that need to conform to terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITerrainOverlayCollection`
-              - A collection of terrain overlay objects.
-
             * - :py:class:`~ansys.stk.core.graphics.ITerrainOverlay`
               - A globe overlay which shows terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextBatchPrimitive`
-              - Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParameters`
-              - Optional per-string and per-batch parameters for text batch primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextOverlay`
-              - A rectangular overlay that contains text.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureMatrix`
-              - A 4 by 4 matrix applied to a texture coordinate.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureScreenOverlay`
-              - A rectangular overlay that can be assigned a texture.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITimeIntervalDisplayCondition`
-              - Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
-
-            * - :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitive`
-              - Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParameters`
-              - Optional parameters for triangle mesh primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.IVectorPrimitive`
-              - Render a vector in the 3D scene. A vector is defined by a source (given by a reference frame) and a direction (given by a vector). Length is auto-calculated or can be set separately.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBoxTriangulatorInitializer`
-              - Triangulates a box. It is recommended to visualize the box using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used...
-
-            * - :py:class:`~ansys.stk.core.graphics.ICylinderTriangulatorInitializer`
-              - Triangulates a cylinder. It is recommended to visualize the cylinder using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used...
-
-            * - :py:class:`~ansys.stk.core.graphics.IEllipsoidTriangulatorInitializer`
-              - Triangulates an ellipsoid. It is recommended to visualize the ellipsoid using a solid primitive. Although, if only the fill is desired for visualization, a triangle mesh primitive with render back then front faces set to true can be used...
-
-            * - :py:class:`~ansys.stk.core.graphics.IExtrudedPolylineTriangulatorInitializer`
-              - Triangulates a polyline into an extrusion with bottom and top boundaries.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceExtentTriangulatorInitializer`
-              - Triangulates an extent on a central body into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive. The boundary is commonly visualized with the polyline primitive.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfacePolygonTriangulatorInitializer`
-              - Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceShapesInitializer`
-              - Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGICustomTerrainOverlayFactory`
-              - A terrain overlay for handling AGI Cesium Terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIProcessedImageGlobeOverlayFactory`
-              - A globe image overlay for handling AGI Processed Image (PDTTX) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIProcessedTerrainOverlayFactory`
-              - A terrain overlay for handling AGI Processed Terrain (PDTT) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAGIRoamImageGlobeOverlayFactory`
-              - A globe image overlay for handling ROAM (TXM/TXB) files.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICustomImageGlobeOverlayPluginActivatorFactory`
-              - The Activator class provides methods to load COM plugins that implement custom image globe overlays. For more information about custom image globe overlays, see the STK Programming Interface.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGeospatialImageGlobeOverlayFactory`
-              - A globe image overlay for handling `JPEG 2000 <https://jpeg.org/jpeg2000/>`_ (.jp2), ECW (.ecw), ECWP, and MrSid (.sid) image formats in the WGS84 geographic projection.
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectedRasterOverlayFactory`
-              - A globe image overlay which projects a raster onto the terrain or surface of the central body. You can also enable projection onto models by setting projected raster model projection to true for a Scene...
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectionFactory`
-              - A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical...
-
-            * - :py:class:`~ansys.stk.core.graphics.IAltitudeDisplayConditionFactory`
-              - Define an inclusive altitude interval that determines when an object is rendered based on the camera's altitude relative to a central body.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAxesPrimitiveFactory`
-              - Render an axes in the 3D scene.
-
-            * - :py:class:`~ansys.stk.core.graphics.ICompositeDisplayConditionFactory`
-              - A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
-
-            * - :py:class:`~ansys.stk.core.graphics.ICompositePrimitiveFactory`
-              - A primitive that is composed of multiple other primitives. Since composites can contain other composites, they are commonly used to build hierarchies of primitives to efficiently evaluate display conditions...
-
-            * - :py:class:`~ansys.stk.core.graphics.IConstantDisplayConditionFactory`
-              - A display condition that evaluates to a user-defined value. This is commonly used to hide primitives by assigning to a primitive a display condition that always returns false.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceDisplayConditionFactory`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the object.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToGlobeOverlayDisplayConditionFactory`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to the globe overlay...
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToPositionDisplayConditionFactory`
-              - Define an inclusive distance interval that determines when an object, such as a primitive, is rendered based on the distance from the camera to a position defined in the given reference frame.
-
-            * - :py:class:`~ansys.stk.core.graphics.IDistanceToPrimitiveDisplayConditionFactory`
-              - Define an inclusive distance interval that determines when an object, such as a screen overlay, is rendered based on the distance from the camera to the primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.IDurationPathPrimitiveUpdatePolicyFactory`
-              - path primitive update policy that removes points from remove location after a given duration.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGlobeImageOverlayInitializer`
-              - A globe overlay that shows an image.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGraphicsFontFactory`
-              - A font that is suitable for use with the text batch primitive. For best performance, avoid creating duplicate font objects. Instead assign the same font object to several text batch primitives.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGreatArcInterpolatorFactory`
-              - The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromLuminanceFilterFactory`
-              - Add an alpha band to the source raster derived from the luminance of the raster's color bands.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromPixelFilterFactory`
-              - Add an alpha band to the source raster based on the value of its first pixel. All pixels in the source raster that are the same color as the first pixel will be made transparent.
-
-            * - :py:class:`~ansys.stk.core.graphics.IAlphaFromRasterFilterFactory`
-              - Add an alpha band to the source raster derived from the color bands or alpha of another raster. This filter can be used to apply an alpha mask to the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBandExtractFilterFactory`
-              - Extract a band or set of bands from the source raster. The extract format property specifies the bands and the order of the bands that will be extracted.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBandOrderFilterFactory`
-              - Reorders or swizzles the bands of the source raster to match the band order of the raster format specified by the band order property. When maintain raster format is true, the source raster's format is maintained after swizzling.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBlurFilterFactory`
-              - Apply a convolution filter to blur or smooth the source raster. Can be used to reduce noise in the raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IBrightnessFilterFactory`
-              - Adjusts the brightness of the source raster's color bands. The adjustment to brightness is a value between -1 and 1, corresponding to least bright to most bright.
-
-            * - :py:class:`~ansys.stk.core.graphics.IColorToLuminanceFilterFactory`
-              - Extract a luminance band derived from the color bands of the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IContrastFilterFactory`
-              - Adjusts the contrast of the source raster. The adjustment to contrast is a value between -1 and 1, corresponding to least contrast to most contrast.
-
-            * - :py:class:`~ansys.stk.core.graphics.IConvolutionFilterFactory`
-              - Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process...
-
-            * - :py:class:`~ansys.stk.core.graphics.IEdgeDetectFilterFactory`
-              - Apply a convolution filter to detect edges in the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFilteringRasterStreamFactory`
-              - A class decorator for applying a raster filter to each update of a raster stream. Can be used to apply filters to videos and other raster streams as they are updated.
-
-            * - :py:class:`~ansys.stk.core.graphics.IFlipFilterFactory`
-              - Flips the source raster along the given flip axis.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGammaCorrectionFilterFactory`
-              - Apply gamma correction to the source raster. The gamma is a value between .2 and 5. The default gamma value is 2.2.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGaussianBlurFilterFactory`
-              - Apply a convolution filter to blur the source raster using the Gaussian function.
-
-            * - :py:class:`~ansys.stk.core.graphics.IGradientDetectFilterFactory`
-              - Apply a convolution filter to detect gradients in the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IJpeg2000WriterInitializer`
-              - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay.
-
-            * - :py:class:`~ansys.stk.core.graphics.ILevelsFilterFactory`
-              - Adjusts the band levels of the source raster linearly.
-
-            * - :py:class:`~ansys.stk.core.graphics.IProjectionRasterStreamPluginActivatorFactory`
-              - The Activator class provides methods to load COM plugins that implement projection and raster streaming. For more information about the projection and raster plugins, see the STK Programming Interface.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRasterFactory`
-              - A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
-
-            * - :py:class:`~ansys.stk.core.graphics.IRasterAttributesFactory`
-              - The attributes describing a raster dataset. raster attributes define the memory layout of a raster, and includes properties defining the order of each raster band that the raster contains, as specified by the raster format...
-
-            * - :py:class:`~ansys.stk.core.graphics.IRotateFilterFactory`
-              - Rotate the source raster clockwise by the specified angle.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISequenceFilterFactory`
-              - Apply a sequence of filters to the source raster in the order in which they were added. When continue on failure is set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISharpenFilterFactory`
-              - Apply a convolution filter to increase the sharpness of the source raster.
-
-            * - :py:class:`~ansys.stk.core.graphics.IVideoStreamFactory`
-              - A raster stream that streams from a video. The video can be read from a file, or streamed from an HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
-
-            * - :py:class:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveFactory`
-              - Render one or more markers in the 3D scene. Markers are 2D images that always face the viewer which can be sized in pixels or meters. Markers are also referred to as sprites or billboards...
-
-            * - :py:class:`~ansys.stk.core.graphics.IMarkerBatchPrimitiveOptionalParametersFactory`
-              - Optional per-marker parameters for marker batch primitive that overrides the marker batch's per-batch parameters...
-
-            * - :py:class:`~ansys.stk.core.graphics.IMaximumCountPathPrimitiveUpdatePolicyFactory`
-              - path primitive update policy that removes points from remove location when the number of points in the path exceeds maximum count.
-
-            * - :py:class:`~ansys.stk.core.graphics.IModelPrimitiveFactory`
-              - The model primitive loads and renders `COLLADA <https://www.khronos.org/collada/>`_ (DAE) and AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) models.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPathPrimitiveFactory`
-              - Render a line to the 3D scene. Similar to the polyline primitive; however, the PathPrimitive was designed for the efficient addition/removal of points to/from the front or back of the line.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPixelSizeDisplayConditionFactory`
-              - Define an inclusive interval, in pixels, that determines when an object, such as a primitive, is rendered based on the number of pixels the object's bounding sphere (or in the case of screen overlays, bounding rectangle) covers on the screen...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPointBatchPrimitiveFactory`
-              - Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPointBatchPrimitiveOptionalParametersFactory`
-              - Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters...
-
-            * - :py:class:`~ansys.stk.core.graphics.IPolylinePrimitiveFactory`
-              - Render a polyline in the 3D scene. Each line segment may have a different color. A polyline can be constructed with a position interpolator to render great arcs or rhumb lines.
-
-            * - :py:class:`~ansys.stk.core.graphics.IPolylinePrimitiveOptionalParametersFactory`
-              - Optional per-point or per-segment parameters for polyline primitive that overrides the polyline primitive's global parameters...
-
-            * - :py:class:`~ansys.stk.core.graphics.IRasterImageGlobeOverlayFactory`
-              - A globe image overlay for handling rasters.
-
-            * - :py:class:`~ansys.stk.core.graphics.IRhumbLineInterpolatorFactory`
-              - The rhumb line interpolator computes interpolated positions along a rhumb line. Rhumb lines are lines of constant bearing. They appear as straight lines on a Mercator 2D map projection and are well suited to navigation.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneDisplayConditionFactory`
-              - A display condition used to control what scene or scenes an object, such as a primitive, is rendered in. This is used to show an object in some scenes and hide it in others.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISceneManagerInitializer`
-              - The static scene manager class provides global properties and functionality that apply to all scenes and thus affect the rendering of every globe control...
-
-            * - :py:class:`~ansys.stk.core.graphics.IScreenOverlayFactory`
-              - A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window.
-
-            * - :py:class:`~ansys.stk.core.graphics.ISolidPrimitiveFactory`
-              - Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
-
-            * - :py:class:`~ansys.stk.core.graphics.ISurfaceMeshPrimitiveFactory`
-              - A triangle mesh primitive for meshes on the surface that need to conform to terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITerrainOverlayInitializer`
-              - A globe overlay which shows terrain.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextBatchPrimitiveFactory`
-              - Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextBatchPrimitiveOptionalParametersFactory`
-              - Optional per-string and per-batch parameters for text batch primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextOverlayFactory`
-              - A rectangular overlay that contains text.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureMatrixFactory`
-              - A 4 by 4 matrix applied to a texture coordinate.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITextureScreenOverlayFactory`
-              - A rectangular overlay that can be assigned a texture.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITimeIntervalDisplayConditionFactory`
-              - Define an inclusive time interval that determines when an object, such as a primitive, is rendered based on the current animation time .
-
-            * - :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveFactory`
-              - Render a triangle mesh in the 3D scene. Examples of triangle meshes include polygons on the globe (e.g. states or countries), terrain and imagery extents, ellipses, and extrusions.
-
-            * - :py:class:`~ansys.stk.core.graphics.ITriangleMeshPrimitiveOptionalParametersFactory`
-              - Optional parameters for triangle mesh primitive...
-
-            * - :py:class:`~ansys.stk.core.graphics.IVectorPrimitiveFactory`
-              - Render a vector in the 3D scene. A vector is defined by a source (given by a reference frame) and a direction (given by a vector). Length is auto-calculated or can be set separately.
 
     
     .. tab-item:: Classes
@@ -1364,28 +755,28 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.graphics.CYLINDER_FILL`
+            * - :py:class:`~ansys.stk.core.graphics.CYLINDER_FILL_OPTIONS`
               - Cylinder faces that can be filled.
 
             * - :py:class:`~ansys.stk.core.graphics.WINDING_ORDER`
               - Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling.
 
-            * - :py:class:`~ansys.stk.core.graphics.CAMERA_SNAPSHOT_FILE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.SNAPSHOT_FILE_FORMAT`
               - When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format.
 
-            * - :py:class:`~ansys.stk.core.graphics.CAMERA_VIDEO_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.VIDEO_FORMAT`
               - When using camera video recording to record a video, this specifies the file format.
 
             * - :py:class:`~ansys.stk.core.graphics.CONSTRAINED_UP_AXIS`
               - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
-            * - :py:class:`~ansys.stk.core.graphics.GLOBE_OVERLAY_ROLE`
+            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ROLE`
               - The role of a globe overlay.
 
-            * - :py:class:`~ansys.stk.core.graphics.INDICES_ORDER_HINT`
+            * - :py:class:`~ansys.stk.core.graphics.PRIMITIVE_INDICES_ORDER_HINT`
               - An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance.
 
-            * - :py:class:`~ansys.stk.core.graphics.MAINTAIN_ASPECT_RATIO`
+            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ASPECT_RATIO_MODE`
               - Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay.
 
             * - :py:class:`~ansys.stk.core.graphics.MAP_PROJECTION`
@@ -1403,7 +794,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SORT_ORDER`
               - The order in which markers in a marker batch are sorted before rendering.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_UNIT`
+            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SIZE_UNIT`
               - The unit for marker sizes in a marker batch.
 
             * - :py:class:`~ansys.stk.core.graphics.MODEL_TRANSFORMATION_TYPE`
@@ -1442,7 +833,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.VISIBILITY`
               - Result of a visibility test, such as testing if a sphere intersects a frustum.
 
-            * - :py:class:`~ansys.stk.core.graphics.ANTI_ALIASING`
+            * - :py:class:`~ansys.stk.core.graphics.ANTI_ALIASING_METHOD`
               - The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 
             * - :py:class:`~ansys.stk.core.graphics.BINARY_LOGIC_OPERATION`
@@ -1454,7 +845,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.EDGE_DETECT_METHOD`
               - The method used to detect edges in a raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.FLIP_AXIS`
+            * - :py:class:`~ansys.stk.core.graphics.RASTER_FLIP_AXIS`
               - The axis on which a raster will be flipped.
 
             * - :py:class:`~ansys.stk.core.graphics.GRADIENT_DETECT_METHOD`
@@ -1475,7 +866,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.RASTER_TYPE`
               - The type of data contained within each band of a raster dataset.
 
-            * - :py:class:`~ansys.stk.core.graphics.SHARPEN_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.RASTER_SHARPEN_METHOD`
               - The method used to sharpen a raster.
 
             * - :py:class:`~ansys.stk.core.graphics.VIDEO_PLAYBACK`
@@ -1496,10 +887,10 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.POLYLINE_TYPE`
               - Describes how to interpret positions defining a polyline.
 
-            * - :py:class:`~ansys.stk.core.graphics.CULL_FACE`
+            * - :py:class:`~ansys.stk.core.graphics.FACE_CULLING_MODE`
               - Identifies whether front- and/or back-facing triangles are culled.
 
-            * - :py:class:`~ansys.stk.core.graphics.INTERNAL_TEXTURE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.TEXTURE_FORMAT`
               - The format of individual texels in a texture.
 
             * - :py:class:`~ansys.stk.core.graphics.MAGNIFICATION_FILTER`
@@ -1508,7 +899,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.MINIFICATION_FILTER`
               - The filter used when the pixel being textured maps to an area greater than one texel.
 
-            * - :py:class:`~ansys.stk.core.graphics.RENDERER_SHADE_MODEL`
+            * - :py:class:`~ansys.stk.core.graphics.RENDERER_SHADING_MODEL`
               - Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors.
 
             * - :py:class:`~ansys.stk.core.graphics.TEXTURE_WRAP`
@@ -1550,228 +941,25 @@ well as in STK Engine custom applications.
     :maxdepth: 1
     :hidden:
 
-     IPathPoint<graphics/IPathPoint>
-     IPathPointFactory<graphics/IPathPointFactory>
-     IBoundingSphere<graphics/IBoundingSphere>
-     IBoundingSphereFactory<graphics/IBoundingSphereFactory>
-     ITextureFilter2D<graphics/ITextureFilter2D>
-     ITextureFilter2DFactory<graphics/ITextureFilter2DFactory>
-     IRendererTexture2D<graphics/IRendererTexture2D>
-     IRendererTextureTemplate2D<graphics/IRendererTextureTemplate2D>
-     IPathPointCollection<graphics/IPathPointCollection>
-     IObjectCollection<graphics/IObjectCollection>
-     ISceneCollection<graphics/ISceneCollection>
      IScreenOverlayContainer<graphics/IScreenOverlayContainer>
-     IScreenOverlayPickResultCollection<graphics/IScreenOverlayPickResultCollection>
-     IGlobeImageOverlayAddCompleteEventArgs<graphics/IGlobeImageOverlayAddCompleteEventArgs>
-     ITerrainOverlayAddCompleteEventArgs<graphics/ITerrainOverlayAddCompleteEventArgs>
-     IPickResultCollection<graphics/IPickResultCollection>
-     IRenderingEventArgs<graphics/IRenderingEventArgs>
-     IBatchPrimitiveIndex<graphics/IBatchPrimitiveIndex>
-     IKmlDocumentCollection<graphics/IKmlDocumentCollection>
-     IKmlFeatureCollection<graphics/IKmlFeatureCollection>
-     IKmlDocumentLoadedEventArgs<graphics/IKmlDocumentLoadedEventArgs>
-     IFactoryAndInitializers<graphics/IFactoryAndInitializers>
-     IExtrudedPolylineTriangulatorResult<graphics/IExtrudedPolylineTriangulatorResult>
-     ISolidTriangulatorResult<graphics/ISolidTriangulatorResult>
-     ISurfaceShapesResult<graphics/ISurfaceShapesResult>
-     ISurfaceTriangulatorResult<graphics/ISurfaceTriangulatorResult>
      ITriangulatorResult<graphics/ITriangulatorResult>
-     IAGICustomTerrainOverlay<graphics/IAGICustomTerrainOverlay>
-     IAGIProcessedImageGlobeOverlay<graphics/IAGIProcessedImageGlobeOverlay>
-     IAGIProcessedTerrainOverlay<graphics/IAGIProcessedTerrainOverlay>
-     IAGIRoamImageGlobeOverlay<graphics/IAGIRoamImageGlobeOverlay>
-     ICameraSnapshot<graphics/ICameraSnapshot>
-     ICameraVideoRecording<graphics/ICameraVideoRecording>
-     ICentralBodyGraphicsIndexer<graphics/ICentralBodyGraphicsIndexer>
-     ICustomImageGlobeOverlay<graphics/ICustomImageGlobeOverlay>
-     ICustomImageGlobeOverlayPluginActivator<graphics/ICustomImageGlobeOverlayPluginActivator>
-     ICustomImageGlobeOverlayPluginProxy<graphics/ICustomImageGlobeOverlayPluginProxy>
-     IGeospatialImageGlobeOverlay<graphics/IGeospatialImageGlobeOverlay>
      IGlobeOverlay<graphics/IGlobeOverlay>
-     IGlobeOverlaySettings<graphics/IGlobeOverlaySettings>
-     ILighting<graphics/ILighting>
      IPathPrimitiveUpdatePolicy<graphics/IPathPrimitiveUpdatePolicy>
-     IProjectedRasterOverlay<graphics/IProjectedRasterOverlay>
      IProjection<graphics/IProjection>
-     IProjectionStream<graphics/IProjectionStream>
-     ISceneGlobeOverlaySettings<graphics/ISceneGlobeOverlaySettings>
      IScreenOverlayCollectionBase<graphics/IScreenOverlayCollectionBase>
-     ITexture2DFactory<graphics/ITexture2DFactory>
-     IVisualEffects<graphics/IVisualEffects>
-     IAltitudeDisplayCondition<graphics/IAltitudeDisplayCondition>
-     IAxesPrimitive<graphics/IAxesPrimitive>
-     ICamera<graphics/ICamera>
-     ICentralBodyGraphics<graphics/ICentralBodyGraphics>
-     IClouds<graphics/IClouds>
-     ICompositeDisplayCondition<graphics/ICompositeDisplayCondition>
-     ICompositePrimitive<graphics/ICompositePrimitive>
-     IConstantDisplayCondition<graphics/IConstantDisplayCondition>
      IDisplayCondition<graphics/IDisplayCondition>
-     IDistanceDisplayCondition<graphics/IDistanceDisplayCondition>
-     IDistanceToGlobeOverlayDisplayCondition<graphics/IDistanceToGlobeOverlayDisplayCondition>
-     IDistanceToPositionDisplayCondition<graphics/IDistanceToPositionDisplayCondition>
-     IDistanceToPrimitiveDisplayCondition<graphics/IDistanceToPrimitiveDisplayCondition>
-     IDurationPathPrimitiveUpdatePolicy<graphics/IDurationPathPrimitiveUpdatePolicy>
-     IFrameRate<graphics/IFrameRate>
      IGlobeImageOverlay<graphics/IGlobeImageOverlay>
-     IGraphicsFont<graphics/IGraphicsFont>
-     IGreatArcInterpolator<graphics/IGreatArcInterpolator>
-     IImageCollection<graphics/IImageCollection>
-     IAlphaFromLuminanceFilter<graphics/IAlphaFromLuminanceFilter>
-     IAlphaFromPixelFilter<graphics/IAlphaFromPixelFilter>
-     IAlphaFromRasterFilter<graphics/IAlphaFromRasterFilter>
-     IBandExtractFilter<graphics/IBandExtractFilter>
-     IBandOrderFilter<graphics/IBandOrderFilter>
-     IBlurFilter<graphics/IBlurFilter>
-     IBrightnessFilter<graphics/IBrightnessFilter>
-     IColorToLuminanceFilter<graphics/IColorToLuminanceFilter>
-     IContrastFilter<graphics/IContrastFilter>
      IConvolutionFilter<graphics/IConvolutionFilter>
-     IEdgeDetectFilter<graphics/IEdgeDetectFilter>
-     IFilteringRasterStream<graphics/IFilteringRasterStream>
-     IFlipFilter<graphics/IFlipFilter>
-     IGammaCorrectionFilter<graphics/IGammaCorrectionFilter>
-     IGaussianBlurFilter<graphics/IGaussianBlurFilter>
-     IGradientDetectFilter<graphics/IGradientDetectFilter>
-     ILevelsFilter<graphics/ILevelsFilter>
-     IProjectionRasterStreamPluginActivator<graphics/IProjectionRasterStreamPluginActivator>
-     IProjectionRasterStreamPluginProxy<graphics/IProjectionRasterStreamPluginProxy>
      IRaster<graphics/IRaster>
-     IRasterAttributes<graphics/IRasterAttributes>
      IRasterFilter<graphics/IRasterFilter>
      IRasterStream<graphics/IRasterStream>
-     IRotateFilter<graphics/IRotateFilter>
-     ISequenceFilter<graphics/ISequenceFilter>
-     ISharpenFilter<graphics/ISharpenFilter>
-     IVideoStream<graphics/IVideoStream>
      IKmlContainer<graphics/IKmlContainer>
-     IKmlDocument<graphics/IKmlDocument>
      IKmlFeature<graphics/IKmlFeature>
-     IKmlFolder<graphics/IKmlFolder>
-     IKmlGraphics<graphics/IKmlGraphics>
-     IKmlNetworkLink<graphics/IKmlNetworkLink>
-     IMarkerBatchPrimitive<graphics/IMarkerBatchPrimitive>
-     IMarkerBatchPrimitiveOptionalParameters<graphics/IMarkerBatchPrimitiveOptionalParameters>
-     IMaximumCountPathPrimitiveUpdatePolicy<graphics/IMaximumCountPathPrimitiveUpdatePolicy>
-     IModelArticulation<graphics/IModelArticulation>
-     IModelArticulationCollection<graphics/IModelArticulationCollection>
-     IModelPrimitive<graphics/IModelPrimitive>
-     IModelTransformation<graphics/IModelTransformation>
      IOverlay<graphics/IOverlay>
-     IPathPrimitive<graphics/IPathPrimitive>
-     IPickResult<graphics/IPickResult>
-     IPixelSizeDisplayCondition<graphics/IPixelSizeDisplayCondition>
-     IPointBatchPrimitive<graphics/IPointBatchPrimitive>
-     IPointBatchPrimitiveOptionalParameters<graphics/IPointBatchPrimitiveOptionalParameters>
-     IPolylinePrimitive<graphics/IPolylinePrimitive>
-     IPolylinePrimitiveOptionalParameters<graphics/IPolylinePrimitiveOptionalParameters>
      IPositionInterpolator<graphics/IPositionInterpolator>
      IPrimitive<graphics/IPrimitive>
-     IPrimitiveManager<graphics/IPrimitiveManager>
-     IRasterImageGlobeOverlay<graphics/IRasterImageGlobeOverlay>
-     IRhumbLineInterpolator<graphics/IRhumbLineInterpolator>
-     IScene<graphics/IScene>
-     ISceneDisplayCondition<graphics/ISceneDisplayCondition>
-     ISceneManager<graphics/ISceneManager>
      IScreenOverlay<graphics/IScreenOverlay>
-     IScreenOverlayCollection<graphics/IScreenOverlayCollection>
-     IScreenOverlayManager<graphics/IScreenOverlayManager>
-     IScreenOverlayPickResult<graphics/IScreenOverlayPickResult>
-     ISolidPrimitive<graphics/ISolidPrimitive>
-     IStereoscopic<graphics/IStereoscopic>
-     ISurfaceMeshPrimitive<graphics/ISurfaceMeshPrimitive>
-     ITerrainOverlayCollection<graphics/ITerrainOverlayCollection>
      ITerrainOverlay<graphics/ITerrainOverlay>
-     ITextBatchPrimitive<graphics/ITextBatchPrimitive>
-     ITextBatchPrimitiveOptionalParameters<graphics/ITextBatchPrimitiveOptionalParameters>
-     ITextOverlay<graphics/ITextOverlay>
-     ITextureMatrix<graphics/ITextureMatrix>
-     ITextureScreenOverlay<graphics/ITextureScreenOverlay>
-     ITimeIntervalDisplayCondition<graphics/ITimeIntervalDisplayCondition>
-     ITriangleMeshPrimitive<graphics/ITriangleMeshPrimitive>
-     ITriangleMeshPrimitiveOptionalParameters<graphics/ITriangleMeshPrimitiveOptionalParameters>
-     IVectorPrimitive<graphics/IVectorPrimitive>
-     IBoxTriangulatorInitializer<graphics/IBoxTriangulatorInitializer>
-     ICylinderTriangulatorInitializer<graphics/ICylinderTriangulatorInitializer>
-     IEllipsoidTriangulatorInitializer<graphics/IEllipsoidTriangulatorInitializer>
-     IExtrudedPolylineTriangulatorInitializer<graphics/IExtrudedPolylineTriangulatorInitializer>
-     ISurfaceExtentTriangulatorInitializer<graphics/ISurfaceExtentTriangulatorInitializer>
-     ISurfacePolygonTriangulatorInitializer<graphics/ISurfacePolygonTriangulatorInitializer>
-     ISurfaceShapesInitializer<graphics/ISurfaceShapesInitializer>
-     IAGICustomTerrainOverlayFactory<graphics/IAGICustomTerrainOverlayFactory>
-     IAGIProcessedImageGlobeOverlayFactory<graphics/IAGIProcessedImageGlobeOverlayFactory>
-     IAGIProcessedTerrainOverlayFactory<graphics/IAGIProcessedTerrainOverlayFactory>
-     IAGIRoamImageGlobeOverlayFactory<graphics/IAGIRoamImageGlobeOverlayFactory>
-     ICustomImageGlobeOverlayPluginActivatorFactory<graphics/ICustomImageGlobeOverlayPluginActivatorFactory>
-     IGeospatialImageGlobeOverlayFactory<graphics/IGeospatialImageGlobeOverlayFactory>
-     IProjectedRasterOverlayFactory<graphics/IProjectedRasterOverlayFactory>
-     IProjectionFactory<graphics/IProjectionFactory>
-     IAltitudeDisplayConditionFactory<graphics/IAltitudeDisplayConditionFactory>
-     IAxesPrimitiveFactory<graphics/IAxesPrimitiveFactory>
-     ICompositeDisplayConditionFactory<graphics/ICompositeDisplayConditionFactory>
-     ICompositePrimitiveFactory<graphics/ICompositePrimitiveFactory>
-     IConstantDisplayConditionFactory<graphics/IConstantDisplayConditionFactory>
-     IDistanceDisplayConditionFactory<graphics/IDistanceDisplayConditionFactory>
-     IDistanceToGlobeOverlayDisplayConditionFactory<graphics/IDistanceToGlobeOverlayDisplayConditionFactory>
-     IDistanceToPositionDisplayConditionFactory<graphics/IDistanceToPositionDisplayConditionFactory>
-     IDistanceToPrimitiveDisplayConditionFactory<graphics/IDistanceToPrimitiveDisplayConditionFactory>
-     IDurationPathPrimitiveUpdatePolicyFactory<graphics/IDurationPathPrimitiveUpdatePolicyFactory>
-     IGlobeImageOverlayInitializer<graphics/IGlobeImageOverlayInitializer>
-     IGraphicsFontFactory<graphics/IGraphicsFontFactory>
-     IGreatArcInterpolatorFactory<graphics/IGreatArcInterpolatorFactory>
-     IAlphaFromLuminanceFilterFactory<graphics/IAlphaFromLuminanceFilterFactory>
-     IAlphaFromPixelFilterFactory<graphics/IAlphaFromPixelFilterFactory>
-     IAlphaFromRasterFilterFactory<graphics/IAlphaFromRasterFilterFactory>
-     IBandExtractFilterFactory<graphics/IBandExtractFilterFactory>
-     IBandOrderFilterFactory<graphics/IBandOrderFilterFactory>
-     IBlurFilterFactory<graphics/IBlurFilterFactory>
-     IBrightnessFilterFactory<graphics/IBrightnessFilterFactory>
-     IColorToLuminanceFilterFactory<graphics/IColorToLuminanceFilterFactory>
-     IContrastFilterFactory<graphics/IContrastFilterFactory>
-     IConvolutionFilterFactory<graphics/IConvolutionFilterFactory>
-     IEdgeDetectFilterFactory<graphics/IEdgeDetectFilterFactory>
-     IFilteringRasterStreamFactory<graphics/IFilteringRasterStreamFactory>
-     IFlipFilterFactory<graphics/IFlipFilterFactory>
-     IGammaCorrectionFilterFactory<graphics/IGammaCorrectionFilterFactory>
-     IGaussianBlurFilterFactory<graphics/IGaussianBlurFilterFactory>
-     IGradientDetectFilterFactory<graphics/IGradientDetectFilterFactory>
-     IJpeg2000WriterInitializer<graphics/IJpeg2000WriterInitializer>
-     ILevelsFilterFactory<graphics/ILevelsFilterFactory>
-     IProjectionRasterStreamPluginActivatorFactory<graphics/IProjectionRasterStreamPluginActivatorFactory>
-     IRasterFactory<graphics/IRasterFactory>
-     IRasterAttributesFactory<graphics/IRasterAttributesFactory>
-     IRotateFilterFactory<graphics/IRotateFilterFactory>
-     ISequenceFilterFactory<graphics/ISequenceFilterFactory>
-     ISharpenFilterFactory<graphics/ISharpenFilterFactory>
-     IVideoStreamFactory<graphics/IVideoStreamFactory>
-     IMarkerBatchPrimitiveFactory<graphics/IMarkerBatchPrimitiveFactory>
-     IMarkerBatchPrimitiveOptionalParametersFactory<graphics/IMarkerBatchPrimitiveOptionalParametersFactory>
-     IMaximumCountPathPrimitiveUpdatePolicyFactory<graphics/IMaximumCountPathPrimitiveUpdatePolicyFactory>
-     IModelPrimitiveFactory<graphics/IModelPrimitiveFactory>
-     IPathPrimitiveFactory<graphics/IPathPrimitiveFactory>
-     IPixelSizeDisplayConditionFactory<graphics/IPixelSizeDisplayConditionFactory>
-     IPointBatchPrimitiveFactory<graphics/IPointBatchPrimitiveFactory>
-     IPointBatchPrimitiveOptionalParametersFactory<graphics/IPointBatchPrimitiveOptionalParametersFactory>
-     IPolylinePrimitiveFactory<graphics/IPolylinePrimitiveFactory>
-     IPolylinePrimitiveOptionalParametersFactory<graphics/IPolylinePrimitiveOptionalParametersFactory>
-     IRasterImageGlobeOverlayFactory<graphics/IRasterImageGlobeOverlayFactory>
-     IRhumbLineInterpolatorFactory<graphics/IRhumbLineInterpolatorFactory>
-     ISceneDisplayConditionFactory<graphics/ISceneDisplayConditionFactory>
-     ISceneManagerInitializer<graphics/ISceneManagerInitializer>
-     IScreenOverlayFactory<graphics/IScreenOverlayFactory>
-     ISolidPrimitiveFactory<graphics/ISolidPrimitiveFactory>
-     ISurfaceMeshPrimitiveFactory<graphics/ISurfaceMeshPrimitiveFactory>
-     ITerrainOverlayInitializer<graphics/ITerrainOverlayInitializer>
-     ITextBatchPrimitiveFactory<graphics/ITextBatchPrimitiveFactory>
-     ITextBatchPrimitiveOptionalParametersFactory<graphics/ITextBatchPrimitiveOptionalParametersFactory>
-     ITextOverlayFactory<graphics/ITextOverlayFactory>
-     ITextureMatrixFactory<graphics/ITextureMatrixFactory>
-     ITextureScreenOverlayFactory<graphics/ITextureScreenOverlayFactory>
-     ITimeIntervalDisplayConditionFactory<graphics/ITimeIntervalDisplayConditionFactory>
-     ITriangleMeshPrimitiveFactory<graphics/ITriangleMeshPrimitiveFactory>
-     ITriangleMeshPrimitiveOptionalParametersFactory<graphics/ITriangleMeshPrimitiveOptionalParametersFactory>
-     IVectorPrimitiveFactory<graphics/IVectorPrimitiveFactory>
 
 .. toctree::
     :titlesonly:
@@ -2005,20 +1193,20 @@ well as in STK Engine custom applications.
     :maxdepth: 1
     :hidden:
 
-    ≔ CYLINDER_FILL<graphics/CYLINDER_FILL_enum>
+    ≔ CYLINDER_FILL_OPTIONS<graphics/CYLINDER_FILL_OPTIONS_enum>
     ≔ WINDING_ORDER<graphics/WINDING_ORDER_enum>
-    ≔ CAMERA_SNAPSHOT_FILE_FORMAT<graphics/CAMERA_SNAPSHOT_FILE_FORMAT_enum>
-    ≔ CAMERA_VIDEO_FORMAT<graphics/CAMERA_VIDEO_FORMAT_enum>
+    ≔ SNAPSHOT_FILE_FORMAT<graphics/SNAPSHOT_FILE_FORMAT_enum>
+    ≔ VIDEO_FORMAT<graphics/VIDEO_FORMAT_enum>
     ≔ CONSTRAINED_UP_AXIS<graphics/CONSTRAINED_UP_AXIS_enum>
-    ≔ GLOBE_OVERLAY_ROLE<graphics/GLOBE_OVERLAY_ROLE_enum>
-    ≔ INDICES_ORDER_HINT<graphics/INDICES_ORDER_HINT_enum>
-    ≔ MAINTAIN_ASPECT_RATIO<graphics/MAINTAIN_ASPECT_RATIO_enum>
+    ≔ OVERLAY_ROLE<graphics/OVERLAY_ROLE_enum>
+    ≔ PRIMITIVE_INDICES_ORDER_HINT<graphics/PRIMITIVE_INDICES_ORDER_HINT_enum>
+    ≔ OVERLAY_ASPECT_RATIO_MODE<graphics/OVERLAY_ASPECT_RATIO_MODE_enum>
     ≔ MAP_PROJECTION<graphics/MAP_PROJECTION_enum>
     ≔ MARKER_BATCH_RENDERING_METHOD<graphics/MARKER_BATCH_RENDERING_METHOD_enum>
     ≔ MARKER_BATCH_RENDER_PASS<graphics/MARKER_BATCH_RENDER_PASS_enum>
     ≔ MARKER_BATCH_SIZE_SOURCE<graphics/MARKER_BATCH_SIZE_SOURCE_enum>
     ≔ MARKER_BATCH_SORT_ORDER<graphics/MARKER_BATCH_SORT_ORDER_enum>
-    ≔ MARKER_BATCH_UNIT<graphics/MARKER_BATCH_UNIT_enum>
+    ≔ MARKER_BATCH_SIZE_UNIT<graphics/MARKER_BATCH_SIZE_UNIT_enum>
     ≔ MODEL_TRANSFORMATION_TYPE<graphics/MODEL_TRANSFORMATION_TYPE_enum>
     ≔ ORIGIN<graphics/ORIGIN_enum>
     ≔ PATH_PRIMITIVE_REMOVE_LOCATION<graphics/PATH_PRIMITIVE_REMOVE_LOCATION_enum>
@@ -2031,29 +1219,29 @@ well as in STK Engine custom applications.
     ≔ SCREEN_OVERLAY_UNIT<graphics/SCREEN_OVERLAY_UNIT_enum>
     ≔ SURFACE_MESH_RENDERING_METHOD<graphics/SURFACE_MESH_RENDERING_METHOD_enum>
     ≔ VISIBILITY<graphics/VISIBILITY_enum>
-    ≔ ANTI_ALIASING<graphics/ANTI_ALIASING_enum>
+    ≔ ANTI_ALIASING_METHOD<graphics/ANTI_ALIASING_METHOD_enum>
     ≔ BINARY_LOGIC_OPERATION<graphics/BINARY_LOGIC_OPERATION_enum>
     ≔ BLUR_METHOD<graphics/BLUR_METHOD_enum>
     ≔ EDGE_DETECT_METHOD<graphics/EDGE_DETECT_METHOD_enum>
-    ≔ FLIP_AXIS<graphics/FLIP_AXIS_enum>
+    ≔ RASTER_FLIP_AXIS<graphics/RASTER_FLIP_AXIS_enum>
     ≔ GRADIENT_DETECT_METHOD<graphics/GRADIENT_DETECT_METHOD_enum>
     ≔ JPEG2000_COMPRESSION_PROFILE<graphics/JPEG2000_COMPRESSION_PROFILE_enum>
     ≔ RASTER_BAND<graphics/RASTER_BAND_enum>
     ≔ RASTER_FORMAT<graphics/RASTER_FORMAT_enum>
     ≔ RASTER_ORIENTATION<graphics/RASTER_ORIENTATION_enum>
     ≔ RASTER_TYPE<graphics/RASTER_TYPE_enum>
-    ≔ SHARPEN_METHOD<graphics/SHARPEN_METHOD_enum>
+    ≔ RASTER_SHARPEN_METHOD<graphics/RASTER_SHARPEN_METHOD_enum>
     ≔ VIDEO_PLAYBACK<graphics/VIDEO_PLAYBACK_enum>
     ≔ KML_NETWORK_LINK_REFRESH_MODE<graphics/KML_NETWORK_LINK_REFRESH_MODE_enum>
     ≔ KML_NETWORK_LINK_VIEW_REFRESH_MODE<graphics/KML_NETWORK_LINK_VIEW_REFRESH_MODE_enum>
     ≔ MODEL_UP_AXIS<graphics/MODEL_UP_AXIS_enum>
     ≔ OUTLINE_APPEARANCE<graphics/OUTLINE_APPEARANCE_enum>
     ≔ POLYLINE_TYPE<graphics/POLYLINE_TYPE_enum>
-    ≔ CULL_FACE<graphics/CULL_FACE_enum>
-    ≔ INTERNAL_TEXTURE_FORMAT<graphics/INTERNAL_TEXTURE_FORMAT_enum>
+    ≔ FACE_CULLING_MODE<graphics/FACE_CULLING_MODE_enum>
+    ≔ TEXTURE_FORMAT<graphics/TEXTURE_FORMAT_enum>
     ≔ MAGNIFICATION_FILTER<graphics/MAGNIFICATION_FILTER_enum>
     ≔ MINIFICATION_FILTER<graphics/MINIFICATION_FILTER_enum>
-    ≔ RENDERER_SHADE_MODEL<graphics/RENDERER_SHADE_MODEL_enum>
+    ≔ RENDERER_SHADING_MODEL<graphics/RENDERER_SHADING_MODEL_enum>
     ≔ TEXTURE_WRAP<graphics/TEXTURE_WRAP_enum>
     ≔ SET_HINT<graphics/SET_HINT_enum>
     ≔ STEREO_PROJECTION_MODE<graphics/STEREO_PROJECTION_MODE_enum>

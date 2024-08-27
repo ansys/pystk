@@ -12,26 +12,6 @@ Summary
 .. tab-set::
 
  
-    .. tab-item:: Interfaces
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-        
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABNav`
-              - Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABProfile`
-              - Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLABFull3D`
-              - Interface used to access options for a MATLAB - Full 3D Strategy of a Basic Maneuver Procedure.
-
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.IStrategyMATLAB3DGuidance`
-              - Interface used to access options for a MATLAB - 3D Guidance Strategy of a Basic Maneuver Procedure.
-
-    
     .. tab-item:: Classes
 
         .. list-table::
@@ -39,7 +19,7 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNav`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABNavigation`
               - Class defining the MATLAB - Horizontal Plane strategy for a basic maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABProfile`
@@ -75,17 +55,7 @@ Aerospace Toolbox functions to define the force modeling of the aircraft.
     :maxdepth: 1
     :hidden:
 
-     IStrategyMATLABNav<matlab/IStrategyMATLABNav>
-     IStrategyMATLABProfile<matlab/IStrategyMATLABProfile>
-     IStrategyMATLABFull3D<matlab/IStrategyMATLABFull3D>
-     IStrategyMATLAB3DGuidance<matlab/IStrategyMATLAB3DGuidance>
-
-.. toctree::
-    :titlesonly:
-    :maxdepth: 1
-    :hidden:
-
-     StrategyMATLABNav<matlab/StrategyMATLABNav>
+     StrategyMATLABNavigation<matlab/StrategyMATLABNavigation>
      StrategyMATLABProfile<matlab/StrategyMATLABProfile>
      StrategyMATLABFull3D<matlab/StrategyMATLABFull3D>
      StrategyMATLAB3DGuidance<matlab/StrategyMATLAB3DGuidance>

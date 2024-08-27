@@ -70,7 +70,7 @@ Overview
             * - :py:attr:`~SITE_WAYPOINT_FROM_CATALOG`
               - Waypoint from Catalog site.
 
-            * - :py:attr:`~SITE_DYN_STATE`
+            * - :py:attr:`~SITE_DYNAMIC_STATE`
               - DynState site.
 
 

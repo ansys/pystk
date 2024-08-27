@@ -94,7 +94,7 @@ Overview
             * - :py:attr:`~SPHERICAL_DEC`
               - Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
 
-            * - :py:attr:`~SPHERICAL_HORIZ_FPA`
+            * - :py:attr:`~SPHERICAL_HORIZONTAL_FPA`
               - Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle).
 
             * - :py:attr:`~SPHERICAL_RA`
@@ -211,7 +211,7 @@ Overview
             * - :py:attr:`~MIXED_SPHERICAL_AZIMUTH`
               - Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
 
-            * - :py:attr:`~MIXED_SPHERICAL_HORIZ_FPA`
+            * - :py:attr:`~MIXED_SPHERICAL_HORIZONTAL_FPA`
               - Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector.
 
             * - :py:attr:`~MIXED_SPHERICAL_LATITUDE`

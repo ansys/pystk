@@ -3,8 +3,6 @@ ITimeToolEventArray
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventArray
 
-   object
-   
    An ordered array of times, which may or may not be evenly spaced.
 
 .. py:currentmodule:: ITimeToolEventArray
@@ -55,12 +53,12 @@ Method detail
 -------------
 
 
-.. py:method:: find_times(self) -> ITimeToolFindTimesResult
+.. py:method:: find_times(self) -> TimeToolFindTimesResult
     :canonical: ansys.stk.core.vgt.ITimeToolEventArray.find_times
 
     Return computed array of times.
 
     :Returns:
 
-        :obj:`~ITimeToolFindTimesResult`
+        :obj:`~TimeToolFindTimesResult`
 

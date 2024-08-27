@@ -3,7 +3,7 @@ RadarCrossSectionComputeStrategyAnsysCsvFile
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategyAnsysCsvFile`, :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy`
 
    Class defining a inheritable radar cross section compute strategy.
 
@@ -11,6 +11,20 @@ RadarCrossSectionComputeStrategyAnsysCsvFile
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile.filename`
+              - Gets or sets the Ansys HFSS exported primary polarization RCS data CSV formatted filename.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile.file2_name`
+              - Gets or sets the Ansys HFSS exported orthogonal polarization RCS data CSV formatted filename.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import RadarCrossSectionComputeStrategyAnsysCsvFile
 
+
+Property detail
+---------------
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile.filename
+    :type: str
+
+    Gets or sets the Ansys HFSS exported primary polarization RCS data CSV formatted filename.
+
+.. py:property:: file2_name
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyAnsysCsvFile.file2_name
+    :type: str
+
+    Gets or sets the Ansys HFSS exported orthogonal polarization RCS data CSV formatted filename.
 
 

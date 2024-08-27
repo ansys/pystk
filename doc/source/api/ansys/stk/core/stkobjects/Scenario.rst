@@ -3,7 +3,7 @@ Scenario
 
 .. py:class:: ansys.stk.core.stkobjects.Scenario
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IScenario`, :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IStkObject`, :py:class:`~ansys.stk.core.stkobjects.ILifetimeInformation`
 
    Class defining the Scenario object.
 
@@ -12,6 +12,83 @@ Scenario
 Overview
 --------
 
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.set_time_period`
+              - Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.set_dirty`
+              - Set the flag indicating the scenario has been modified.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_existing_accesses`
+              - Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path`
+              - Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.start_time`
+              - Scenario start time. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.stop_time`
+              - Scenario stop time. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.epoch`
+              - Scenario epoch. Uses DateFormat Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.animation`
+              - Scenario animation settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.earth_data`
+              - Scenario Earth Data settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.graphics`
+              - Scenario 2D Graphics settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.gen_dbs`
+              - Scenario database settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.sat_no_orbit_warning`
+              - Specify whether to display a warning when a satellite orbit intersects the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.msl_no_orbit_warning`
+              - Specify whether to display a warning when a missile trajectory does not impact the central body.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.graphics_3d`
+              - Scenario 3D Graphics settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.aircraft_wgs84_warning`
+              - Specify when to display the aircraft mission modeler WGS84 warning.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.msl_stop_time_warning`
+              - Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.terrain`
+              - Returns a list of central bodies and their terrains.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.component_directory`
+              - Get the component directory interface.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.scenario_files`
+              - Returns list of scenario files.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.is_dirty`
+              - Specify whether scenario needs to be saved.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_analysis_start_time_for_epoch`
+              - Whether the scenario Epoch is the same as the scenario's StartTime.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.space_environment`
+              - Scenario SpaceEnvironment settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.scene_manager`
+              - A scene manager.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.analysis_interval`
+              - Allows the user to configure the scenario's analysis time period.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.analysis_epoch`
+              - Allows the user to configure the scenario's analysis epoch.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_clutter_map`
+              - Returns the global radar clutter map.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_cross_section`
+              - Returns the global radar cross section.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.rf_environment`
+              - Returns the RF environment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.tilesets`
+              - Returns a list of 3D Tilesets used for Analysis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.laser_environment`
+              - Returns the laser environment.
+
+
 
 Import detail
 -------------
@@ -19,6 +96,248 @@ Import detail
 .. code-block:: python
 
     from ansys.stk.core.stkobjects import Scenario
+
+
+Property detail
+---------------
+
+.. py:property:: start_time
+    :canonical: ansys.stk.core.stkobjects.Scenario.start_time
+    :type: typing.Any
+
+    Scenario start time. Uses DateFormat Dimension.
+
+.. py:property:: stop_time
+    :canonical: ansys.stk.core.stkobjects.Scenario.stop_time
+    :type: typing.Any
+
+    Scenario stop time. Uses DateFormat Dimension.
+
+.. py:property:: epoch
+    :canonical: ansys.stk.core.stkobjects.Scenario.epoch
+    :type: typing.Any
+
+    Scenario epoch. Uses DateFormat Dimension.
+
+.. py:property:: animation
+    :canonical: ansys.stk.core.stkobjects.Scenario.animation
+    :type: ScenarioAnimation
+
+    Scenario animation settings.
+
+.. py:property:: earth_data
+    :canonical: ansys.stk.core.stkobjects.Scenario.earth_data
+    :type: ScenarioEarthData
+
+    Scenario Earth Data settings.
+
+.. py:property:: graphics
+    :canonical: ansys.stk.core.stkobjects.Scenario.graphics
+    :type: ScenarioGraphics
+
+    Scenario 2D Graphics settings.
+
+.. py:property:: gen_dbs
+    :canonical: ansys.stk.core.stkobjects.Scenario.gen_dbs
+    :type: ScenarioGenDatabaseCollection
+
+    Scenario database settings.
+
+.. py:property:: sat_no_orbit_warning
+    :canonical: ansys.stk.core.stkobjects.Scenario.sat_no_orbit_warning
+    :type: bool
+
+    Specify whether to display a warning when a satellite orbit intersects the central body.
+
+.. py:property:: msl_no_orbit_warning
+    :canonical: ansys.stk.core.stkobjects.Scenario.msl_no_orbit_warning
+    :type: bool
+
+    Specify whether to display a warning when a missile trajectory does not impact the central body.
+
+.. py:property:: graphics_3d
+    :canonical: ansys.stk.core.stkobjects.Scenario.graphics_3d
+    :type: ScenarioGraphics3D
+
+    Scenario 3D Graphics settings.
+
+.. py:property:: aircraft_wgs84_warning
+    :canonical: ansys.stk.core.stkobjects.Scenario.aircraft_wgs84_warning
+    :type: AIRCRAFT_WGS84_WARNING_TYPE
+
+    Specify when to display the aircraft mission modeler WGS84 warning.
+
+.. py:property:: msl_stop_time_warning
+    :canonical: ansys.stk.core.stkobjects.Scenario.msl_stop_time_warning
+    :type: bool
+
+    Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
+
+.. py:property:: terrain
+    :canonical: ansys.stk.core.stkobjects.Scenario.terrain
+    :type: CentralBodyTerrainCollection
+
+    Returns a list of central bodies and their terrains.
+
+.. py:property:: component_directory
+    :canonical: ansys.stk.core.stkobjects.Scenario.component_directory
+    :type: ComponentDirectory
+
+    Get the component directory interface.
+
+.. py:property:: scenario_files
+    :canonical: ansys.stk.core.stkobjects.Scenario.scenario_files
+    :type: list
+
+    Returns list of scenario files.
+
+.. py:property:: is_dirty
+    :canonical: ansys.stk.core.stkobjects.Scenario.is_dirty
+    :type: bool
+
+    Specify whether scenario needs to be saved.
+
+.. py:property:: use_analysis_start_time_for_epoch
+    :canonical: ansys.stk.core.stkobjects.Scenario.use_analysis_start_time_for_epoch
+    :type: bool
+
+    Whether the scenario Epoch is the same as the scenario's StartTime.
+
+.. py:property:: space_environment
+    :canonical: ansys.stk.core.stkobjects.Scenario.space_environment
+    :type: ScenSpaceEnvironment
+
+    Scenario SpaceEnvironment settings.
+
+.. py:property:: scene_manager
+    :canonical: ansys.stk.core.stkobjects.Scenario.scene_manager
+    :type: ISceneManager
+
+    A scene manager.
+
+.. py:property:: analysis_interval
+    :canonical: ansys.stk.core.stkobjects.Scenario.analysis_interval
+    :type: ITimeToolEventIntervalSmartInterval
+
+    Allows the user to configure the scenario's analysis time period.
+
+.. py:property:: analysis_epoch
+    :canonical: ansys.stk.core.stkobjects.Scenario.analysis_epoch
+    :type: ITimeToolEventSmartEpoch
+
+    Allows the user to configure the scenario's analysis epoch.
+
+.. py:property:: radar_clutter_map
+    :canonical: ansys.stk.core.stkobjects.Scenario.radar_clutter_map
+    :type: IRadarClutterMap
+
+    Returns the global radar clutter map.
+
+.. py:property:: radar_cross_section
+    :canonical: ansys.stk.core.stkobjects.Scenario.radar_cross_section
+    :type: RadarCrossSection
+
+    Returns the global radar cross section.
+
+.. py:property:: rf_environment
+    :canonical: ansys.stk.core.stkobjects.Scenario.rf_environment
+    :type: RFEnvironment
+
+    Returns the RF environment.
+
+.. py:property:: tilesets
+    :canonical: ansys.stk.core.stkobjects.Scenario.tilesets
+    :type: TilesetCollection3D
+
+    Returns a list of 3D Tilesets used for Analysis.
+
+.. py:property:: laser_environment
+    :canonical: ansys.stk.core.stkobjects.Scenario.laser_environment
+    :type: LaserEnvironment
+
+    Returns the laser environment.
+
+
+Method detail
+-------------
+
+
+
+
+
+.. py:method:: set_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.Scenario.set_time_period
+
+    Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
+
+    :Parameters:
+
+    **startTime** : :obj:`~typing.Any`
+    **stopTime** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:method:: set_dirty(self) -> None
+    :canonical: ansys.stk.core.stkobjects.Scenario.set_dirty
+
+    Set the flag indicating the scenario has been modified.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+
+
+.. py:method:: get_existing_accesses(self) -> list
+    :canonical: ansys.stk.core.stkobjects.Scenario.get_existing_accesses
+
+    Return an array of existing accesses in the current scenario. The result is a two-dimensional array of triplets where each triplet contains the paths of two objects participating in the access and a flag indicating whether the access is computed.
+
+    :Returns:
+
+        :obj:`~list`
+
+.. py:method:: get_access_between_objects_by_path(self, objectPath1: str, objectPath2: str) -> StkAccess
+    :canonical: ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path
+
+    Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
+
+    :Parameters:
+
+    **objectPath1** : :obj:`~str`
+    **objectPath2** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~StkAccess`
+
+
+
 
 
 

@@ -10,7 +10,7 @@ import os
 from tkinter                    import Frame
 from ctypes                     import *
 
-from ..stkx             import UiAxGraphics3DCntrl, UiAx2DCntrl, UiAxGraphics2DAnalysisCntrl
+from ..stkx             import Graphics3DControlBase, Graphics2DControlBase, GraphicsAnalysisControlBase
 from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
 from ..stkengine        import *
 
@@ -18,7 +18,7 @@ if os.name != "nt":
     from ctypes.util import find_library
 
 class NativeContainerMethods:
-    """Provide support for STK Engine controls (map, globe, gfx analysis)."""
+    """Provide support for STK Engine controls (map, globe, graphics analysis)."""
     def __init__(self):
         self.jniCore = CDLL(self._get_jni_core_path())
         self.AgPythonCreateContainer                                         = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPCWSTR)(("AgPythonCreateContainer", self.jniCore), ((1, "env"), (1, "_this"), (1, "progId")))
@@ -186,45 +186,45 @@ class ControlBase(Frame):
             """Occurs when key is released."""
             self._nativeContainerMethods.key_released(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
 
-class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
+class GlobeControl(Graphics3DControlBase, ControlBase):
     """The 3D Globe control for Tkinter."""
     
     _progid = "STKX12.VOControl.1"
-    _interface = UiAxGraphics3DCntrl
+    _interface = Graphics3DControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GlobeControl."""
-        UiAxGraphics3DCntrl.__init__(self)
+        Graphics3DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
-class MapControl(UiAx2DCntrl, ControlBase):
+class MapControl(Graphics2DControlBase, ControlBase):
     """The 2D Map control for Tkinter."""
     
     _progid = "STKX12.2DControl.1"
-    _interface = UiAx2DCntrl
+    _interface = Graphics2DControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type MapControl."""
-        UiAx2DCntrl.__init__(self)
+        Graphics2DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
-class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
+class GfxAnalysisControl(GraphicsAnalysisControlBase, ControlBase):
     """The Graphics Analysis control for Tkinter."""
     
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = UiAxGraphics2DAnalysisCntrl
+    _interface = GraphicsAnalysisControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GfxAnalysisControl."""
-        UiAxGraphics2DAnalysisCntrl.__init__(self)
+        GraphicsAnalysisControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):

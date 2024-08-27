@@ -3,8 +3,6 @@ IDisplayTime
 
 .. py:class:: ansys.stk.core.stkobjects.IDisplayTime
 
-   object
-   
    The display time interface.
 
 .. py:currentmodule:: IDisplayTime

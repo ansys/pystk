@@ -3,7 +3,7 @@ BeamformerHamming
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerHamming
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerHamming`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a Hamming tapered beamformer.
 
@@ -11,6 +11,7 @@ BeamformerHamming
 
 Overview
 --------
+
 
 
 Import detail

@@ -3,8 +3,6 @@ IStkObject
 
 .. py:class:: ansys.stk.core.stkobjects.IStkObject
 
-   object
-   
    Represents the instance of STK object.
 
 .. py:currentmodule:: IStkObject
@@ -130,13 +128,13 @@ Property detail
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkobjects.IStkObject.root
-    :type: IStkObjectRoot
+    :type: StkObjectRoot
 
     Returns the Root object or null.
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObject.data_providers
-    :type: IDataProviderCollection
+    :type: DataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -160,13 +158,13 @@ Property detail
 
 .. py:property:: object_coverage
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
-    :type: IStkObjectCoverage
+    :type: StkObjectCoverage
 
     Returns an IAgStkObjectCoverage object.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStkObject.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the object.
 
@@ -190,7 +188,7 @@ Property detail
 
 .. py:property:: metadata
     :canonical: ansys.stk.core.stkobjects.IStkObject.metadata
-    :type: IKeyValueCollection
+    :type: KeyValueCollection
 
     Gets the object's metadata. Metadata is a collection of keys and their associated values.
 
@@ -244,7 +242,7 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_access(self, objectPath: str) -> IStkAccess
+.. py:method:: get_access(self, objectPath: str) -> StkAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access
 
     Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
@@ -255,9 +253,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IStkAccess`
+        :obj:`~StkAccess`
 
-.. py:method:: get_access_to_object(self, pObject: IStkObject) -> IStkAccess
+.. py:method:: get_access_to_object(self, pObject: IStkObject) -> StkAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access_to_object
 
     Return an IAgStkAccess object associated with this STK object and another STK object.
@@ -268,10 +266,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~IStkAccess`
+        :obj:`~StkAccess`
 
 
-.. py:method:: create_one_point_access(self, pathToObject: str) -> IOnePointAccess
+.. py:method:: create_one_point_access(self, pathToObject: str) -> OnePointAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.create_one_point_access
 
     Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
@@ -282,7 +280,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~IOnePointAccess`
+        :obj:`~OnePointAccess`
 
 
 .. py:method:: unload(self) -> None

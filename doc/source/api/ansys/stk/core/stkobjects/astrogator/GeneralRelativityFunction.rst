@@ -3,7 +3,7 @@ GeneralRelativityFunction
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GeneralRelativityFunction
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IGeneralRelativityFunction`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    General Relativity Propagator Function.
 
@@ -11,6 +11,7 @@ GeneralRelativityFunction
 
 Overview
 --------
+
 
 
 Import detail

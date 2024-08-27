@@ -127,7 +127,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
             try:
-                callback(message, AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
             except:
                 pass
     
@@ -361,7 +361,7 @@ class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
             try:
-                callback(message, AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
             except:
                 pass
     

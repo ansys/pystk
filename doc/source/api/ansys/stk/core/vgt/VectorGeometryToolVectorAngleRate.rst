@@ -3,7 +3,7 @@ VectorGeometryToolVectorAngleRate
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorAngleRate`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Angle rate vector perpendicular to the plane in which the angle is defined.
 
@@ -11,6 +11,20 @@ VectorGeometryToolVectorAngleRate
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate.angle`
+              - Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate.differencing_time_step`
+              - Time step used in numerical evaluation of derivatives using central differencing.
+
 
 
 Import detail
@@ -20,5 +34,20 @@ Import detail
 
     from ansys.stk.core.vgt import VectorGeometryToolVectorAngleRate
 
+
+Property detail
+---------------
+
+.. py:property:: angle
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate.angle
+    :type: VectorGeometryToolAngleRefTo
+
+    Specify an angle. The angle vector will be perpendicular to the plane in which the angle is defined.
+
+.. py:property:: differencing_time_step
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorAngleRate.differencing_time_step
+    :type: float
+
+    Time step used in numerical evaluation of derivatives using central differencing.
 
 

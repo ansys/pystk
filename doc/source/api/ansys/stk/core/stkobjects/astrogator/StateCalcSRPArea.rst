@@ -3,7 +3,7 @@ StateCalcSRPArea
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSRPArea
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`, :py:class:`~ansys.stk.core.stkobjects.astrogator.IStateCalcSRPArea`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    SRPArea Calc objects.
 
@@ -11,6 +11,7 @@ StateCalcSRPArea
 
 Overview
 --------
+
 
 
 Import detail

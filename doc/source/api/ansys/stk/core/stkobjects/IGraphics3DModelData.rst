@@ -3,8 +3,6 @@ IGraphics3DModelData
 
 .. py:class:: ansys.stk.core.stkobjects.IGraphics3DModelData
 
-   object
-   
    IAgVOModelData base interface. IAgVOModelFile and IAgVOModelCollection derive from this.
 
 .. py:currentmodule:: IGraphics3DModelData

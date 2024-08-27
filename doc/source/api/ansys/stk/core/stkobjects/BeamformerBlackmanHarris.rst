@@ -3,7 +3,7 @@ BeamformerBlackmanHarris
 
 .. py:class:: ansys.stk.core.stkobjects.BeamformerBlackmanHarris
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`, :py:class:`~ansys.stk.core.stkobjects.IBeamformerBlackmanHarris`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a Blackman-Harris tapered beamformer.
 
@@ -11,6 +11,7 @@ BeamformerBlackmanHarris
 
 Overview
 --------
+
 
 
 Import detail

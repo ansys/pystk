@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~PRF`
               - PRF.
 
-            * - :py:attr:`~UNAMBIG_RNG`
+            * - :py:attr:`~UNAMBIGUOUS_RANGE`
               - Unambiguous Range.
 
 

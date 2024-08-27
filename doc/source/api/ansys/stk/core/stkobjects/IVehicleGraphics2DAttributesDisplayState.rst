@@ -3,8 +3,6 @@ IVehicleGraphics2DAttributesDisplayState
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState
 
-   object
-   
    Provide access to non-trivial properties of 2D vehicle attributes.
 
 .. py:currentmodule:: IVehicleGraphics2DAttributesDisplayState
@@ -36,12 +34,12 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_display_intervals(self) -> IVehicleGraphics2DIntervalsCollection
+.. py:method:: get_display_intervals(self) -> VehicleGraphics2DIntervalsCollection
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState.get_display_intervals
 
     Get a read-only collection of computed display intervals.
 
     :Returns:
 
-        :obj:`~IVehicleGraphics2DIntervalsCollection`
+        :obj:`~VehicleGraphics2DIntervalsCollection`
 

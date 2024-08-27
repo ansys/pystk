@@ -3,8 +3,6 @@ IKmlContainer
 
 .. py:class:: ansys.stk.core.graphics.IKmlContainer
 
-   object
-   
    A KmlContainer contains a collection of children kml features.
 
 .. py:currentmodule:: IKmlContainer
@@ -37,7 +35,7 @@ Property detail
 
 .. py:property:: children
     :canonical: ansys.stk.core.graphics.IKmlContainer.children
-    :type: IKmlFeatureCollection
+    :type: KmlFeatureCollection
 
     The collection of kml features that are children of this container.
 

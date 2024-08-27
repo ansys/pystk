@@ -3,8 +3,6 @@ IVehicleGraphics3DProximityAreaObject
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject
 
-   object
-   
    A base class that defines methods and properties common to all proximity area objects.
 
 .. py:currentmodule:: IVehicleGraphics3DProximityAreaObject

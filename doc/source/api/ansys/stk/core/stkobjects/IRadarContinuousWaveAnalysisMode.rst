@@ -3,8 +3,6 @@ IRadarContinuousWaveAnalysisMode
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode
 
-   object
-   
    Interface which defines an continuous wave analysis.
 
 .. py:currentmodule:: IRadarContinuousWaveAnalysisMode

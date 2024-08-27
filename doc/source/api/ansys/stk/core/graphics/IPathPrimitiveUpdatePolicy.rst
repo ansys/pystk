@@ -3,8 +3,6 @@ IPathPrimitiveUpdatePolicy
 
 .. py:class:: ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy
 
-   object
-   
    A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method.
 
 .. py:currentmodule:: IPathPrimitiveUpdatePolicy
@@ -36,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: update(self, pathPrimitive: IPathPrimitive, date: IDate) -> None
+.. py:method:: update(self, pathPrimitive: PathPrimitive, date: IDate) -> None
     :canonical: ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy.update
 
     Update the pathPrimitive at the specified date.
 
     :Parameters:
 
-    **pathPrimitive** : :obj:`~IPathPrimitive`
+    **pathPrimitive** : :obj:`~PathPrimitive`
     **date** : :obj:`~IDate`
 
     :Returns:

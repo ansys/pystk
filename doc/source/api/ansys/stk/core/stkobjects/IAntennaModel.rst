@@ -3,8 +3,6 @@ IAntennaModel
 
 .. py:class:: ansys.stk.core.stkobjects.IAntennaModel
 
-   object
-   
    Provide access to the properties and methods defining an antenna model.
 
 .. py:currentmodule:: IAntennaModel

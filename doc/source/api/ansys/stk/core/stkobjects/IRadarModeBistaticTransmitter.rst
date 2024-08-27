@@ -3,8 +3,6 @@ IRadarModeBistaticTransmitter
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter
 
-   object
-   
    Provide access to the properties and methods defining a bistatic transmitter mode.
 
 .. py:currentmodule:: IRadarModeBistaticTransmitter

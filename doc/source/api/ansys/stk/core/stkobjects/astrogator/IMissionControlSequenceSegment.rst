@@ -3,8 +3,6 @@ IMissionControlSequenceSegment
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment
 
-   object
-   
    General properties for segments.
 
 .. py:currentmodule:: IMissionControlSequenceSegment
@@ -64,25 +62,25 @@ Property detail
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.properties
-    :type: IMissionControlSequenceSegmentProperties
+    :type: MissionControlSequenceSegmentProperties
 
     Returns the properties of the segment.
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.initial_state
-    :type: IState
+    :type: State
 
     Get the initial state of the segment.
 
 .. py:property:: final_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.final_state
-    :type: IState
+    :type: State
 
     Get the final state of the segment.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.results
-    :type: ICalcObjectCollection
+    :type: CalcObjectCollection
 
     Get the results of the segment.
 
@@ -113,14 +111,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: run(self) -> IState
+.. py:method:: run(self) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment.run
 
     Run the segment in individual segment mode.  See IAgVADriverMCS.
 
     :Returns:
 
-        :obj:`~IState`
+        :obj:`~State`
 
 
 

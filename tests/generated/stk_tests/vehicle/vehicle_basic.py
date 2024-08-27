@@ -214,7 +214,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region PropDefExportTool
-    def PropDefExportTool(self, dataFile: "VehiclePropDefinitionExportTool"):
+    def PropDefExportTool(self, dataFile: "VehiclePropagationDefinitionExportTool"):
         dataFile.export(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
         self._root.execute_command(
             (
@@ -277,10 +277,10 @@ class ExportDataFileHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 stkEphem.central_body_name = "Europa"
 
-        stkEphem.include_interp = False
-        Assert.assertFalse(stkEphem.include_interp)
-        stkEphem.include_interp = True
-        Assert.assertTrue(stkEphem.include_interp)
+        stkEphem.include_interpolation = False
+        Assert.assertFalse(stkEphem.include_interpolation)
+        stkEphem.include_interpolation = True
+        Assert.assertTrue(stkEphem.include_interpolation)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
@@ -1152,10 +1152,10 @@ class ExportDataFileHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 binary.central_body_name = "Europa"
 
-        binary.include_interp = False
-        Assert.assertFalse(binary.include_interp)
-        binary.include_interp = True
-        Assert.assertTrue(binary.include_interp)
+        binary.include_interpolation = False
+        Assert.assertFalse(binary.include_interpolation)
+        binary.include_interpolation = True
+        Assert.assertTrue(binary.include_interpolation)
 
         binary.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, binary.version_format)
@@ -1657,14 +1657,18 @@ class PropagatorGreatArcHelper(object):
                 with pytest.raises(Exception):
                     oTerrain.granularity = -65.4321
                 # InterpMethod (WAYPOINT_ELLIPSOID_HEIGHT)
-                self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interp_method)
-                oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
-                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
-                Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT, oTerrain.interp_method)
+                self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interpolation_method)
+                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
+                Assert.assertEqual(
+                    VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT, oTerrain.interpolation_method
+                )
                 # InterpMethod (WAYPOINT_TERRAIN_HEIGHT)
-                oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT
-                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
-                Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT, oTerrain.interp_method)
+                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_TERRAIN_HEIGHT
+                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
+                Assert.assertEqual(
+                    VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_TERRAIN_HEIGHT, oTerrain.interpolation_method
+                )
             else:
                 Assert.fail("Invalid Altitude Ref Type: {0}!", eRefType)
             # Propagate
@@ -3612,7 +3616,7 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oHPOP)
 
         # Select specific GravModel which tests were written for
-        result: "ExecCmdResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
+        result: "ExecuteCommandResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
         fi = FileInfo(TestBase.PathCombine(result[0], "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"))
         if fi.Exists:
             oHPOP.force_model.central_body_gravity.file = fi.FullName
@@ -3869,10 +3873,13 @@ class PropagatorHPOPHelper(object):
             elif (
                 (
                     (
-                        (((eModel == SRP_MODEL.GPS_BLKIIA_AERO_T20)) or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A)))
+                        (
+                            ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T20))
+                            or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A))
+                        )
                         or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_AE))
                     )
-                    or ((eModel == SRP_MODEL.GPS_BLKIIR_AERO_T30))
+                    or ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T30))
                 )
                 or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_A))
             ) or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_AE)):
@@ -8293,10 +8300,10 @@ class AccessEventDetectionHelper(object):
                 Assert.assertIsNotNone(oSubSampling)
                 # AbsValueConvergence (readonly)
                 with pytest.raises(Exception):
-                    oSubSampling.abs_value_convergence = 0.1
+                    oSubSampling.absolute_value_convergence = 0.1
                 # RelValueConvergence (readonly)
                 with pytest.raises(Exception):
-                    oSubSampling.rel_value_convergence = 0.1
+                    oSubSampling.relative_value_convergence = 0.1
                 # TimeConvergence (readonly)
                 with pytest.raises(Exception):
                     oSubSampling.time_convergence = 0.01
@@ -8343,26 +8350,26 @@ class AccessEventDetectionHelper(object):
                         oSubSampling.time_convergence = -0.5
                     # AbsValueConvergence
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
+                        "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.absolute_value_convergence
                     )
-                    oSubSampling.abs_value_convergence = 0.5
+                    oSubSampling.absolute_value_convergence = 0.5
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe new AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
+                        "\t\t\tThe new AbsValueConvergence is: {0}", oSubSampling.absolute_value_convergence
                     )
-                    Assert.assertEqual(0.5, oSubSampling.abs_value_convergence)
+                    Assert.assertEqual(0.5, oSubSampling.absolute_value_convergence)
                     with pytest.raises(Exception):
-                        oSubSampling.abs_value_convergence = -0.5
+                        oSubSampling.absolute_value_convergence = -0.5
                     # RelValueConvergence
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
+                        "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.relative_value_convergence
                     )
-                    oSubSampling.rel_value_convergence = 0.5
+                    oSubSampling.relative_value_convergence = 0.5
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe new RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
+                        "\t\t\tThe new RelValueConvergence is: {0}", oSubSampling.relative_value_convergence
                     )
-                    Assert.assertEqual(0.5, oSubSampling.rel_value_convergence)
+                    Assert.assertEqual(0.5, oSubSampling.relative_value_convergence)
                     with pytest.raises(Exception):
-                        oSubSampling.rel_value_convergence = -0.5
+                        oSubSampling.relative_value_convergence = -0.5
                 else:
                     Assert.fail("Invalid type!")
 
@@ -8920,7 +8927,7 @@ class EclipsingBodiesHelper(object):
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9008,7 +9015,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9078,7 +9085,7 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -9135,7 +9142,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
 # region PlatformRF_Environment_EnvironmentalDataHelper
 class PlatformRF_Environment_EnvironmentalDataHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_itu_618_section2_p5 = False
@@ -9150,7 +9157,7 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 # region PlatformRF_Environment_RainCloudFog_RainModelHelper
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9314,7 +9321,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
         root.unit_preferences.set_current_unit("MassUnit", "g")
@@ -9558,7 +9565,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9584,7 +9591,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -9634,7 +9641,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -9751,7 +9758,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere", IsVehicle: bool):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", IsVehicle: bool):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9924,7 +9931,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -10061,7 +10068,7 @@ class PlatformRF_Environment_CustomModelsHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         self.Test_IAgCustomPropagationModel(propChan.custom_a)

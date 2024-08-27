@@ -12,32 +12,6 @@ Summary
 .. tab-set::
 
  
-    .. tab-item:: Interfaces
-
-        .. list-table::
-            :header-rows: 0
-            :widths: auto
-        
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiToolbar`
-              - Provide methods and properties to control a toolbar.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiToolbarCollection`
-              - Provide methods and properties to obtain a window's toolbars.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindow`
-              - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowsCollection`
-              - Provide methods and properties to manage the application's windows.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowMapObject`
-              - Represents a 2D (Map) window. Provides methods and properties to access the 2D window properties.
-
-            * - :py:class:`~ansys.stk.core.uicore.IUiWindowGlobeObject`
-              - Represents a 3D (Globe) window. Provides methods and properties to access the 3D window properties.
-
-    
     .. tab-item:: Classes
 
         .. list-table::
@@ -45,22 +19,22 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.uicore.UiWindowsCollection`
+            * - :py:class:`~ansys.stk.core.uicore.WindowsCollection`
               - Provide methods and properties to manage the windows.
 
-            * - :py:class:`~ansys.stk.core.uicore.UiWindow`
+            * - :py:class:`~ansys.stk.core.uicore.Window`
               - Represents a window abstraction. Provides methods and properties to manipulate the position and the state of the window.
 
-            * - :py:class:`~ansys.stk.core.uicore.UiToolbar`
+            * - :py:class:`~ansys.stk.core.uicore.Toolbar`
               - Represents a toolbar abstraction. Provides methods and properties to manipulate the position and the state of the toolbar.
 
-            * - :py:class:`~ansys.stk.core.uicore.UiToolbarCollection`
+            * - :py:class:`~ansys.stk.core.uicore.ToolbarCollection`
               - Provide methods and properties to manage the toolbars.
 
-            * - :py:class:`~ansys.stk.core.uicore.UiWindowMapObject`
+            * - :py:class:`~ansys.stk.core.uicore.WindowMapObject`
               - Provide methods and properties to manipulate the 2D map.
 
-            * - :py:class:`~ansys.stk.core.uicore.UiWindowGlobeObject`
+            * - :py:class:`~ansys.stk.core.uicore.WindowGlobeObject`
               - Provide methods and properties to manipulate the 3D globe.
 
 
@@ -71,19 +45,19 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_SERVICE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_SERVICE_TYPE`
               - Well-known types of services.
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.APPLICATION_WINDOW_STATE`
               - Window states.
 
-            * - :py:class:`~ansys.stk.core.uicore.ARRANGE_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_ARRANGE_STYLE`
               - Window layout styles.
 
-            * - :py:class:`~ansys.stk.core.uicore.DOCK_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_DOCK_STYLE`
               - Window docking styles.
 
-            * - :py:class:`~ansys.stk.core.uicore.FLOAT_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.WINDOW_ARRANGE_STATE`
               - Floating state.
 
 
@@ -104,33 +78,21 @@ The STK UI Core library is a COM library containing classes, interfaces and enum
     :maxdepth: 1
     :hidden:
 
-     IUiToolbar<uicore/IUiToolbar>
-     IUiToolbarCollection<uicore/IUiToolbarCollection>
-     IUiWindow<uicore/IUiWindow>
-     IUiWindowsCollection<uicore/IUiWindowsCollection>
-     IUiWindowMapObject<uicore/IUiWindowMapObject>
-     IUiWindowGlobeObject<uicore/IUiWindowGlobeObject>
+     WindowsCollection<uicore/WindowsCollection>
+     Window<uicore/Window>
+     Toolbar<uicore/Toolbar>
+     ToolbarCollection<uicore/ToolbarCollection>
+     WindowMapObject<uicore/WindowMapObject>
+     WindowGlobeObject<uicore/WindowGlobeObject>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     UiWindowsCollection<uicore/UiWindowsCollection>
-     UiWindow<uicore/UiWindow>
-     UiToolbar<uicore/UiToolbar>
-     UiToolbarCollection<uicore/UiToolbarCollection>
-     UiWindowMapObject<uicore/UiWindowMapObject>
-     UiWindowGlobeObject<uicore/UiWindowGlobeObject>
-
-.. toctree::
-    :titlesonly:
-    :maxdepth: 1
-    :hidden:
-
-    ≔ WINDOW_SERVICE<uicore/WINDOW_SERVICE_enum>
-    ≔ WINDOW_STATE<uicore/WINDOW_STATE_enum>
-    ≔ ARRANGE_STYLE<uicore/ARRANGE_STYLE_enum>
-    ≔ DOCK_STYLE<uicore/DOCK_STYLE_enum>
-    ≔ FLOAT_STATE<uicore/FLOAT_STATE_enum>
+    ≔ WINDOW_SERVICE_TYPE<uicore/WINDOW_SERVICE_TYPE_enum>
+    ≔ APPLICATION_WINDOW_STATE<uicore/APPLICATION_WINDOW_STATE_enum>
+    ≔ WINDOW_ARRANGE_STYLE<uicore/WINDOW_ARRANGE_STYLE_enum>
+    ≔ WINDOW_DOCK_STYLE<uicore/WINDOW_DOCK_STYLE_enum>
+    ≔ WINDOW_ARRANGE_STATE<uicore/WINDOW_ARRANGE_STATE_enum>
 

@@ -3,8 +3,6 @@ IDataProviderInfo
 
 .. py:class:: ansys.stk.core.stkobjects.IDataProviderInfo
 
-   object
-   
    Provide methods for retrieving the information about data providers.
 
 .. py:currentmodule:: IDataProviderInfo

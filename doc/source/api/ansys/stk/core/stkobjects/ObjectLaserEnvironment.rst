@@ -3,14 +3,24 @@ ObjectLaserEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.ObjectLaserEnvironment
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IObjectLaserEnvironment`
-
    Class defining the laser environment for an object.
 
 .. py:currentmodule:: ObjectLaserEnvironment
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLaserEnvironment.propagation_channel`
+              - Gets the propagation channel.
+
 
 
 Import detail
@@ -20,5 +30,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import ObjectLaserEnvironment
 
+
+Property detail
+---------------
+
+.. py:property:: propagation_channel
+    :canonical: ansys.stk.core.stkobjects.ObjectLaserEnvironment.propagation_channel
+    :type: ILaserPropagationChannel
+
+    Gets the propagation channel.
 
 

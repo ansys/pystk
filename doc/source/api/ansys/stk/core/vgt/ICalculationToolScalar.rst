@@ -3,8 +3,6 @@ ICalculationToolScalar
 
 .. py:class:: ansys.stk.core.vgt.ICalculationToolScalar
 
-   object
-   
    Any scalar calculation that is not constant by construction.
 
 .. py:currentmodule:: ICalculationToolScalar
@@ -79,7 +77,7 @@ Method detail
 -------------
 
 
-.. py:method:: evaluate(self, epoch: typing.Any) -> ICalculationToolEvaluateResult
+.. py:method:: evaluate(self, epoch: typing.Any) -> CalculationToolEvaluateResult
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.evaluate
 
     Evaluate the scalar calculation at the specified time instant.
@@ -90,7 +88,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ICalculationToolEvaluateResult`
+        :obj:`~CalculationToolEvaluateResult`
 
 .. py:method:: quick_evaluate(self, epoch: typing.Any) -> list
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate
@@ -105,7 +103,7 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> ICalculationToolEvaluateWithRateResult
+.. py:method:: evaluate_with_rate(self, epoch: typing.Any) -> CalculationToolEvaluateWithRateResult
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.evaluate_with_rate
 
     Evaluate the scalar calculation at the specified time instant. The result is a scalar value and its rate of change.
@@ -116,7 +114,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ICalculationToolEvaluateWithRateResult`
+        :obj:`~CalculationToolEvaluateWithRateResult`
 
 .. py:method:: quick_evaluate_with_rate(self, epoch: typing.Any) -> list
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate
@@ -131,14 +129,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_availability(self) -> ITimeToolIntervalCollection
+.. py:method:: get_availability(self) -> TimeToolIntervalCollection
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.get_availability
 
     Return a list of availability intervals.
 
     :Returns:
 
-        :obj:`~ITimeToolIntervalCollection`
+        :obj:`~TimeToolIntervalCollection`
 
 
 .. py:method:: quick_evaluate_array(self, times: list) -> list

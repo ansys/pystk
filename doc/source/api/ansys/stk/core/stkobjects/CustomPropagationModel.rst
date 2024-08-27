@@ -3,14 +3,26 @@ CustomPropagationModel
 
 .. py:class:: ansys.stk.core.stkobjects.CustomPropagationModel
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.ICustomPropagationModel`
-
    Class defining a custom propatation model.
 
 .. py:currentmodule:: CustomPropagationModel
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.CustomPropagationModel.enable`
+              - Gets or sets the option to use the custom model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CustomPropagationModel.filename`
+              - Gets or sets the custom model filename.
+
 
 
 Import detail
@@ -20,5 +32,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import CustomPropagationModel
 
+
+Property detail
+---------------
+
+.. py:property:: enable
+    :canonical: ansys.stk.core.stkobjects.CustomPropagationModel.enable
+    :type: bool
+
+    Gets or sets the option to use the custom model.
+
+.. py:property:: filename
+    :canonical: ansys.stk.core.stkobjects.CustomPropagationModel.filename
+    :type: str
+
+    Gets or sets the custom model filename.
 
 

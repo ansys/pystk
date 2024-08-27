@@ -3,14 +3,26 @@ RadarCrossSectionGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarCrossSectionGraphics3D`
-
    Class defining 3D Graphics properties of radar cross section.
 
 .. py:currentmodule:: RadarCrossSectionGraphics3D
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D.show_contours`
+              - Option for displaying radar cross section contour graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D.volume_graphics`
+              - Gets the radar cross section volume graphics interface.
+
 
 
 Import detail
@@ -20,5 +32,20 @@ Import detail
 
     from ansys.stk.core.stkobjects import RadarCrossSectionGraphics3D
 
+
+Property detail
+---------------
+
+.. py:property:: show_contours
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D.show_contours
+    :type: bool
+
+    Option for displaying radar cross section contour graphics.
+
+.. py:property:: volume_graphics
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics3D.volume_graphics
+    :type: RadarCrossSectionVolumeGraphics
+
+    Gets the radar cross section volume graphics interface.
 
 

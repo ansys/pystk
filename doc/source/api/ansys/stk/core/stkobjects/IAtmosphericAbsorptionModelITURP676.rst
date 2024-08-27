@@ -3,8 +3,6 @@ IAtmosphericAbsorptionModelITURP676
 
 .. py:class:: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676
 
-   object
-   
    Provide access to the properties and methods of the ITU-R P676 atmospheric absorption model.
 
 .. py:currentmodule:: IAtmosphericAbsorptionModelITURP676

@@ -3,8 +3,6 @@ IStkObjectCollection
 
 .. py:class:: ansys.stk.core.stkobjects.IStkObjectCollection
 
-   object
-   
    Represents a collection of STK objects.
 
 .. py:currentmodule:: IStkObjectCollection

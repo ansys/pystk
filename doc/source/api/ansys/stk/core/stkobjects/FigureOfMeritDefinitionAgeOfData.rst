@@ -3,7 +3,7 @@ FigureOfMeritDefinitionAgeOfData
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionAgeOfData`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute`, :py:class:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinition`
 
    Age of Data Figure of Merit.
 
@@ -11,6 +11,18 @@ FigureOfMeritDefinitionAgeOfData
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.min_assets`
+              - Minimum number of assets for computing time between the end of a coverage interval and the current time Figure of Merit.
+
 
 
 Import detail
@@ -20,5 +32,14 @@ Import detail
 
     from ansys.stk.core.stkobjects import FigureOfMeritDefinitionAgeOfData
 
+
+Property detail
+---------------
+
+.. py:property:: min_assets
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.min_assets
+    :type: int
+
+    Minimum number of assets for computing time between the end of a coverage interval and the current time Figure of Merit.
 
 

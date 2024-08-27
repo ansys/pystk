@@ -554,6 +554,13 @@ class IUnknown(object):
         vptr = cast(self.p, POINTER(c_void_p))
         vtbl = cast(vptr.contents, POINTER(c_void_p))
         return vtbl[index]
+    def _query_backwards_compatability_interface(self, iid):
+        from .coclassutil import AgBackwardsCompatabilityMapping
+        iid_tuple = iid.as_data_pair()
+        if AgBackwardsCompatabilityMapping.check_guid_available(iid_tuple):
+            old_iid = GUID.from_data_pair(AgBackwardsCompatabilityMapping.get_old_guid(iid_tuple))
+            return self.query_interface(old_iid)
+        return None
     def query_interface(self, arg:typing.Union[GUID, dict]) -> "IUnknown":
         if type(arg) == dict:
             iid = GUID.from_data_pair(arg["iid_data"])
@@ -562,7 +569,7 @@ class IUnknown(object):
         pIntf = IUnknown()
         hr = IUnknown._QueryInterface(self._get_vtbl_entry(IUnknown._QIIndex))(self.p, byref(iid), byref(pIntf.p))
         if not Succeeded(hr):
-            return None
+            return self._query_backwards_compatability_interface(iid)
         pIntf.take_ownership()
         return pIntf
     def create_ownership(self):

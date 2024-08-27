@@ -3,14 +3,45 @@ UserVariableDefinitionCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IUserVariableDefinitionCollection`
-
    User Variable Definition Collection.
 
 .. py:currentmodule:: UserVariableDefinitionCollection
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.add`
+              - Add a user variable to the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.remove`
+              - Remove a user variable.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.remove_all`
+              - Remove all user variables.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.get_item_by_index`
+              - Retrieve a user variable definition in the collection by index.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.get_item_by_name`
+              - Retrieve a user variable definition in the collection by name.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.count`
+              - Returns the size of the collection.
+
 
 
 Import detail
@@ -21,4 +52,98 @@ Import detail
     from ansys.stk.core.stkobjects.astrogator import UserVariableDefinitionCollection
 
 
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, indexOrName: typing.Any) -> UserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~UserVariableDefinition`
+
+.. py:method:: add(self, parameterName: str) -> UserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.add
+
+    Add a user variable to the collection.
+
+    :Parameters:
+
+    **parameterName** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~UserVariableDefinition`
+
+.. py:method:: remove(self, indexOrName: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.remove
+
+    Remove a user variable.
+
+    :Parameters:
+
+    **indexOrName** : :obj:`~typing.Any`
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: remove_all(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.remove_all
+
+    Remove all user variables.
+
+    :Returns:
+
+        :obj:`~None`
+
+
+
+.. py:method:: get_item_by_index(self, index: int) -> UserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.get_item_by_index
+
+    Retrieve a user variable definition in the collection by index.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~UserVariableDefinition`
+
+.. py:method:: get_item_by_name(self, name: str) -> UserVariableDefinition
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.get_item_by_name
+
+    Retrieve a user variable definition in the collection by name.
+
+    :Parameters:
+
+    **name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~UserVariableDefinition`
 

@@ -3,7 +3,7 @@ Spherical
 
 .. py:class:: ansys.stk.core.stkutil.Spherical
 
-   Bases: :py:class:`~ansys.stk.core.stkutil.ISpherical`, :py:class:`~ansys.stk.core.stkutil.IPosition`
+   Bases: :py:class:`~ansys.stk.core.stkutil.IPosition`
 
    Class defining spherical position.
 
@@ -11,6 +11,22 @@ Spherical
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.lat`
+              - Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.lon`
+              - Uses Longitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.radius`
+              - Dimension depends on context.
+
 
 
 Import detail
@@ -20,5 +36,26 @@ Import detail
 
     from ansys.stk.core.stkutil import Spherical
 
+
+Property detail
+---------------
+
+.. py:property:: lat
+    :canonical: ansys.stk.core.stkutil.Spherical.lat
+    :type: typing.Any
+
+    Uses Latitude Dimension.
+
+.. py:property:: lon
+    :canonical: ansys.stk.core.stkutil.Spherical.lon
+    :type: typing.Any
+
+    Uses Longitude Dimension.
+
+.. py:property:: radius
+    :canonical: ansys.stk.core.stkutil.Spherical.radius
+    :type: float
+
+    Dimension depends on context.
 
 

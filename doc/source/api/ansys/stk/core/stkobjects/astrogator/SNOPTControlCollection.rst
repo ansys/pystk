@@ -3,14 +3,37 @@ SNOPTControlCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.ISNOPTControlCollection`
-
    SNOPT control collection.
 
 .. py:currentmodule:: SNOPTControlCollection
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.item`
+              - Allow you to iterate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.get_control_by_paths`
+              - Return the control specified by the object/control path.
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection._NewEnum`
+              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.count`
+              - Returns the size of the collection.
+
 
 
 Import detail
@@ -21,4 +44,51 @@ Import detail
     from ansys.stk.core.stkobjects.astrogator import SNOPTControlCollection
 
 
+Property detail
+---------------
+
+.. py:property:: _NewEnum
+    :canonical: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection._NewEnum
+    :type: EnumeratorProxy
+
+    Allows you to enumerate through the collection.
+
+.. py:property:: count
+    :canonical: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.count
+    :type: int
+
+    Returns the size of the collection.
+
+
+Method detail
+-------------
+
+.. py:method:: item(self, index: int) -> SNOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.item
+
+    Allow you to iterate through the collection.
+
+    :Parameters:
+
+    **index** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~SNOPTControl`
+
+
+
+.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> SNOPTControl
+    :canonical: ansys.stk.core.stkobjects.astrogator.SNOPTControlCollection.get_control_by_paths
+
+    Return the control specified by the object/control path.
+
+    :Parameters:
+
+    **objectPath** : :obj:`~str`
+    **controlPath** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~SNOPTControl`
 

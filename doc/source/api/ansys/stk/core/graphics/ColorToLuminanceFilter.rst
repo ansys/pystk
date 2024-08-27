@@ -3,7 +3,7 @@ ColorToLuminanceFilter
 
 .. py:class:: ansys.stk.core.graphics.ColorToLuminanceFilter
 
-   Bases: :py:class:`~ansys.stk.core.graphics.IColorToLuminanceFilter`, :py:class:`~ansys.stk.core.graphics.IRasterFilter`
+   Bases: :py:class:`~ansys.stk.core.graphics.IRasterFilter`
 
    Extract a luminance band derived from the color bands of the source raster.
 
@@ -11,6 +11,7 @@ ColorToLuminanceFilter
 
 Overview
 --------
+
 
 
 Import detail

@@ -26,10 +26,10 @@ Overview
               - No restriction on parent platform relationship.
 
             * - :py:attr:`~SAME`
-              - The From and To objects must have a common parent platorm.
+              - The From and To objects must have a common parent platform.
 
             * - :py:attr:`~DIFFERENT`
-              - The From and To objects must have different parent platorm.
+              - The From and To objects must have different parent platform.
 
 
 Import detail

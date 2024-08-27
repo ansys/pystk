@@ -3,8 +3,6 @@ ITransmitterModel
 
 .. py:class:: ansys.stk.core.stkobjects.ITransmitterModel
 
-   object
-   
    Provide access to the properties and methods defining a transmitter model.
 
 .. py:currentmodule:: ITransmitterModel
