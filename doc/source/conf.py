@@ -310,6 +310,7 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.2420.81"
 linkcheck_ignore = [
     "https://www.ansys.com/*",
     # Requires sign-in
