@@ -198,12 +198,10 @@ class GrpcInterfacePimpl(object):
 
     @property
     def obj(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.obj
 
     @property
     def client(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.client
     
     def deactivate(self):
