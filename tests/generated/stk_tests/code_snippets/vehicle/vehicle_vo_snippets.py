@@ -41,7 +41,7 @@ class VehicleVOSnippets(CodeSnippetsTestBase):
         sat: "Satellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
         )
-        self.ConfigureVeVOPass(sat.graphics_3d.pass_method)
+        self.ConfigureVeVOPass(sat.graphics_3d.satellite_pass)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
 
     def ConfigureVeVOPass(self, veVoPass: "VehicleGraphics3DPass"):

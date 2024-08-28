@@ -173,7 +173,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, connectCommand: str) -> ExecCmdResult
+.. py:method:: execute_command(self, connectCommand: str) -> ExecuteCommandResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_command
 
     Execute a custom CONNECT action. The method throws an exception if the command has failed.
@@ -184,7 +184,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ExecCmdResult`
+        :obj:`~ExecuteCommandResult`
 
 .. py:method:: load_scenario(self, path: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_scenario
@@ -298,7 +298,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXEC_MULTI_CMD_RESULT_ACTION) -> ExecMultiCmdResult
+.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
     Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
@@ -306,11 +306,11 @@ Method detail
     :Parameters:
 
     **connectCommands** : :obj:`~list`
-    **action** : :obj:`~EXEC_MULTI_CMD_RESULT_ACTION`
+    **action** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
 
     :Returns:
 
-        :obj:`~ExecMultiCmdResult`
+        :obj:`~ExecuteMultipleCommandResult`
 
 .. py:method:: isolate(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolate

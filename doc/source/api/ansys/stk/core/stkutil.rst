@@ -63,10 +63,10 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkutil.ExecCmdResult`
+            * - :py:class:`~ansys.stk.core.stkutil.ExecuteCommandResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :py:class:`~ansys.stk.core.stkutil.ExecMultiCmdResult`
+            * - :py:class:`~ansys.stk.core.stkutil.ExecuteMultipleCommandResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
             * - :py:class:`~ansys.stk.core.stkutil.UnitPreferencesUnit`
@@ -218,13 +218,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_TYPE`
               - Log message types.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_DISP_ID`
+            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_DISPLAY_ID`
               - Log message destination options.
 
             * - :py:class:`~ansys.stk.core.stkutil.LINE_STYLE`
               - Line Style.
 
-            * - :py:class:`~ansys.stk.core.stkutil.EXEC_MULTI_CMD_RESULT_ACTION`
+            * - :py:class:`~ansys.stk.core.stkutil.EXECUTE_MULTIPLE_COMMANDS_MODE`
               - Enumeration defines a set of actions when an error occurs while executing a command batch.
 
             * - :py:class:`~ansys.stk.core.stkutil.FILL_STYLE`
@@ -273,8 +273,8 @@ in the STK X and STK Objects libraries.
     :maxdepth: 1
     :hidden:
 
-     ExecCmdResult<stkutil/ExecCmdResult>
-     ExecMultiCmdResult<stkutil/ExecMultiCmdResult>
+     ExecuteCommandResult<stkutil/ExecuteCommandResult>
+     ExecuteMultipleCommandResult<stkutil/ExecuteMultipleCommandResult>
      UnitPreferencesUnit<stkutil/UnitPreferencesUnit>
      UnitPreferencesUnitCollection<stkutil/UnitPreferencesUnitCollection>
      UnitPreferencesDimension<stkutil/UnitPreferencesDimension>
@@ -328,9 +328,9 @@ in the STK X and STK Objects libraries.
     ≔ ORBIT_STATE_TYPE<stkutil/ORBIT_STATE_TYPE_enum>
     ≔ COORDINATE_SYSTEM<stkutil/COORDINATE_SYSTEM_enum>
     ≔ LOG_MESSAGE_TYPE<stkutil/LOG_MESSAGE_TYPE_enum>
-    ≔ LOG_MESSAGE_DISP_ID<stkutil/LOG_MESSAGE_DISP_ID_enum>
+    ≔ LOG_MESSAGE_DISPLAY_ID<stkutil/LOG_MESSAGE_DISPLAY_ID_enum>
     ≔ LINE_STYLE<stkutil/LINE_STYLE_enum>
-    ≔ EXEC_MULTI_CMD_RESULT_ACTION<stkutil/EXEC_MULTI_CMD_RESULT_ACTION_enum>
+    ≔ EXECUTE_MULTIPLE_COMMANDS_MODE<stkutil/EXECUTE_MULTIPLE_COMMANDS_MODE_enum>
     ≔ FILL_STYLE<stkutil/FILL_STYLE_enum>
     ≔ PROPERTY_INFO_VALUE_TYPE<stkutil/PROPERTY_INFO_VALUE_TYPE_enum>
 

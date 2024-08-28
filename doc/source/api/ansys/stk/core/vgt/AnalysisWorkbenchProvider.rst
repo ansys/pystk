@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchProvider.supports`
               - Test whether the specified VGT feature is supported.
-            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchProvider.import_method`
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchProvider.import_components`
               - Import Analysis Workbench components from a file.
 
     .. tab-item:: Properties
@@ -237,8 +237,8 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: import_method(self, filename: str) -> AnalysisWorkbenchCollection
-    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.import_method
+.. py:method:: import_components(self, filename: str) -> AnalysisWorkbenchCollection
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchProvider.import_components
 
     Import Analysis Workbench components from a file.
 

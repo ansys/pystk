@@ -10,6 +10,7 @@ FOM
 fom
 Hohmann
 IIF
+Python
 intervisibility
 IPython
 Keplerian
@@ -17,11 +18,13 @@ LOD
 lod
 Nemo
 numpy
-STK
 PySTK
 periapsis
 prograde
 Precessing
 precessing
+STK 
+STK Desktop
 STKEngine
+STK Engine
 Subpackages
