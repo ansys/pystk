@@ -142,8 +142,8 @@ class STKDesktopApplication(UiApplication):
     def shutdown(self) -> None:
         """Close this STK Desktop instance (or detach if the instance was obtained through STKDesktop.AttachToApplication())."""
         if self._root is not None:
-            assert(isinstance(self._root, StkObjectRoot))
-            self._root.close_scenario()
+            root : StkObjectRoot = self._root
+            root.close_scenario()
             self.__dict__["_root"] = None
         if hasattr(self._intf, "client"):
             self.user_control = False
