@@ -8,7 +8,7 @@ import unittest
 import sys
 
 import typing
-from typing import List
+from typing import List, TypeVar
 
 from datetime import datetime, timedelta
 
@@ -53,38 +53,40 @@ class EngineLifetimeManager:
     app_provider: "IAgAppProvider" = None
 
     @staticmethod
-    def Initialize(lock=False, target="StkXNoGfx") -> "IAgAppProvider":
-        if os.name != "nt" and target == "Stk":
-            raise RuntimeError("Stk target not supported on Linux.")
+    def Initialize(args=None, lock=False) -> "IAgAppProvider":
 
-        if EngineLifetimeManager.target is None:
-            if target.upper() == "STK":
+        if EngineLifetimeManager.target is None and args is not None:
+
+            if os.name != "nt" and args.target == "Stk":
+                raise RuntimeError("Stk target not supported on Linux.")
+
+            if args.target == "Stk":
                 EngineLifetimeManager.target = TestTarget.eStk
-            elif target.upper() == "STKX":
+            elif args.target == "StkX":
                 EngineLifetimeManager.target = TestTarget.eStkX
-            elif target.upper() == "STKXNOGFX":
+            elif args.target == "StkXNoGfx":
                 EngineLifetimeManager.target = TestTarget.eStkNoGfx
-            elif target.upper() == "STKGRPC":
+            elif args.target == "StkGrpc":
                 EngineLifetimeManager.target = TestTarget.eStkGrpc
-            elif target.upper() == "STKRUNTIME":
+            elif args.target == "StkRuntime":
                 EngineLifetimeManager.target = TestTarget.eStkRuntime
-            elif target.upper() == "STKRUNTIMENOGFX":
+            elif args.target == "StkRuntimeNoGfx":
                 EngineLifetimeManager.target = TestTarget.eStkRuntimeNoGfx
 
-        if EngineLifetimeManager.stk is None:
+        if EngineLifetimeManager.stk is None and args is not None:
             if EngineLifetimeManager.target == TestTarget.eStk:
-                EngineLifetimeManager.app_provider = PythonStkApplicationProvider()
+                EngineLifetimeManager.app_provider = PythonStkApplicationProvider(args=args)
             elif EngineLifetimeManager.target == TestTarget.eStkX:
                 EngineLifetimeManager.app_provider = PythonStkXApplicationProvider()
                 EngineLifetimeManager.ctrlWindow = frmStkX()
             elif EngineLifetimeManager.target == TestTarget.eStkNoGfx:
                 EngineLifetimeManager.app_provider = PythonStkXNoGfxApplicationProvider()
             elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
-                EngineLifetimeManager.app_provider = PythonStkApplicationProvider(use_grpc=True)
+                EngineLifetimeManager.app_provider = PythonStkApplicationProvider(args=args, use_grpc=True)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
-                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=False)
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=False, args=args)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
-                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=True)
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=True, args=args)
 
             if EngineLifetimeManager.app_provider != None:
                 EngineLifetimeManager.stk = EngineLifetimeManager.app_provider.stk
@@ -156,9 +158,12 @@ class ClrTypeOfResult:
         return isinstance(inst, self.typeinfo)
 
 
+T = TypeVar("T")
+
+
 class clr:
     @staticmethod
-    def CastAs(a, b):
+    def CastAs(a, b: T) -> T:
         if isinstance(a, b):
             return a
         else:
@@ -492,11 +497,20 @@ class ConfigurationManager:
 
 
 class Guid:
+    def __init__(self, guid):
+        self._guid = guid
+
+    def __str__(self) -> str:
+        return str(self._guid)
+
+    def ToString(self) -> str:
+        return str(self)
+
     @staticmethod
-    def NewGuid():
+    def NewGuid() -> "Guid":
         import uuid
 
-        return str(uuid.uuid4())
+        return Guid(uuid.uuid4())
 
 
 class IDisposable:
@@ -893,11 +907,16 @@ class PythonStkApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, use_grpc=False):
+    def __init__(self, args, use_grpc: bool = False):
         options = "/Automation" if use_grpc else ""
-        self.stk: "STKDesktopApplication" = STKDesktop.start_application(
-            userControl=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
-        )
+        if args.attach:
+            self.stk: "STKDesktopApplication" = STKDesktop.attach_to_application(
+                grpc_server=use_grpc, grpc_port=args.grpc_port, grpc_host=args.grpc_host
+            )
+        else:
+            self.stk: "STKDesktopApplication" = STKDesktop.start_application(
+                userControl=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
+            )
         PythonStkApplicationProvider.Application = self.stk.root
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -912,12 +931,17 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, noGraphics: bool):
-        import ansys.stk.core.stkruntime
+    def __init__(self, noGraphics: bool, args):
+        from ansys.stk.core.stkruntime import STKRuntimeApplication, STKRuntime
 
-        self.stk: agi.stk12.stkruntime.STKRuntimeApplication = ansys.stk.core.stkruntime.STKRuntime.start_application(
-            noGraphics=noGraphics
-        )
+        if args.attach:
+            self.stk: "STKRuntimeApplication" = STKRuntime.attach_to_application(
+                grpc_port=args.grpc_port, grpc_host=args.grpc_host
+            )
+        else:
+            self.stk: "STKRuntimeApplication" = STKRuntime.start_application(
+                noGraphics=noGraphics, grpc_port=args.grpc_port, grpc_host=args.grpc_host
+            )
         PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -936,7 +960,7 @@ class PythonStkXApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=False)
+        self.stk: "STKEngineApplication" = STKEngine.start_application(noGraphics=False)
         PythonStkXApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -955,7 +979,7 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk: STKEngineApplication = STKEngine.start_application(noGraphics=True)
+        self.stk: "STKEngineApplication" = STKEngine.start_application(noGraphics=True)
         PythonStkXNoGfxApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -1017,6 +1041,24 @@ class TestBase(unittest.TestCase):
         TestBase.NonSupportedDirectory = Path.Combine(TestBase.ScenarioDirectory, "NonSupportedScen")
         TestBase.DataProvidersDirectory = Path.Combine(TestBase.ScenarioDirectory, "DataProvidersTests")
         TestBase.ModelDirectory = Path.Combine(TestBase.CurrentDirectory, "data", "VO", "Models")
+
+        # Insure consistency of access results independent of _Default.ap settings for Access
+        # NOTE: We report times to millisecondss but only compute accurately to 5 ms.
+        # SO.. anyone with a tighter tolerance in a _Default.ap file would produce different
+        # results if we didn't set the values here explicitly
+        TestBase.root.execute_command("AccessConfig / MaxSamplingStepSize 360.0")
+        TestBase.root.execute_command("AccessConfig / MinSamplingStepSize 0.01")
+        TestBase.root.execute_command("AccessConfig / TimeConvergence 5.0e-03")
+        TestBase.root.execute_command("AccessConfig / AbsValueConvergence 1.0e-14")
+        TestBase.root.execute_command("AccessConfig / RelValueConvergence 1.0e-08")
+        TestBase.root.execute_command("AccessConfig / LightTimeDelayConvergence 5.0e-05")
+        TestBase.root.execute_command("AccessConfig / UseLightTimeDelay Yes")
+        TestBase.root.execute_command("AccessConfig / PreferredTimeSense Transmit")
+        TestBase.root.execute_command("AccessConfig / AberrationType Annual")
+        TestBase.root.execute_command("AccessConfig / EventsBasedOnSamples No")
+        TestBase.root.execute_command("AccessConfig / SaveComputedData Yes")
+        # this controls whether we recompute a saved access containing results
+        TestBase.root.execute_command("AccessConfig / ForceRecomputeOnLoad No")
 
         TestBase.CheckICRFDataFilesVersion()
 

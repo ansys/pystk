@@ -1,0 +1,50 @@
+IRadarCrossSectionComputeStrategy
+=================================
+
+.. py:class:: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy
+
+   Provide access to the properties and methods defining a radar cross section compute Strategy.
+
+.. py:currentmodule:: IRadarCrossSectionComputeStrategy
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.name`
+              - Gets the radar cross section compute strategy name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.type`
+              - Gets the radar cross section compute strategy enumeration.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import IRadarCrossSectionComputeStrategy
+
+
+Property detail
+---------------
+
+.. py:property:: name
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.name
+    :type: str
+
+    Gets the radar cross section compute strategy name.
+
+.. py:property:: type
+    :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.type
+    :type: RCS_COMPUTE_STRATEGY
+
+    Gets the radar cross section compute strategy enumeration.
+
+

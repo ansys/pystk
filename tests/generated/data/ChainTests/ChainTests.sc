@@ -1,5 +1,5 @@
 stk.v.12.0
-WrittenBy    STK_v12.8.0
+WrittenBy    STK_v12.9.0
 BEGIN Scenario
     Name		 ChainTests
 
@@ -63,6 +63,7 @@ BEGIN Scenario
 
             BEGIN StreamingTerrain
                 UseCurrentStreamingTerrainServer		 No
+                CurrentStreamingTerrainServerName		 https://gcs.agi.com/
                 StreamingTerrainServerName		 assets.agi.com/stk-terrain/
                 StreamingTerrainAzimuthElevationMaskEnabled		 Yes
                 StreamingTerrainObscurationEnabled		 Yes
@@ -84,6 +85,7 @@ BEGIN Scenario
         Module		 stk_mission_level2
         Module		 stk_mission_level3
         Module		 stk_mission_space
+        Module		 stk_rfchannel_ent
         Module		 stk_snopt
     END ScenarioLicenses
 
@@ -211,6 +213,7 @@ BEGIN Scenario
             AviatorPSFCUnit		 PSFCLbmHrHp
             AviatorForceUnit		 Pounds
             AviatorPowerUnit		 Horsepower
+            MicroDistanceUnit		 Microns
             SpectralBandwidthUnit		 Hertz
             AviatorAltTimeUnit		 Minutes
             AviatorSmallTimeUnit		 Seconds
@@ -219,11 +222,8 @@ BEGIN Scenario
             PowerLinearUnit		 Watts
             RatioLinearUnit		 Units
             RcsLinearUnit		 SquareMeters
-            RadiationDose		 Rads
             MagneticFieldUnit		 nanoTesla
             VoltageUnit		 Volts
-            RadiationShieldThickness		 Mils
-            ParticleEnergy		 MeV
         END Units
 
         BEGIN ReportUnits
@@ -265,6 +265,7 @@ BEGIN Scenario
             AviatorPSFCUnit		 PSFCLbmHrHp
             AviatorForceUnit		 Pounds
             AviatorPowerUnit		 Horsepower
+            MicroDistanceUnit		 Microns
             SpectralBandwidthUnit		 Hertz
             AviatorAltTimeUnit		 Minutes
             AviatorSmallTimeUnit		 Seconds
@@ -273,11 +274,8 @@ BEGIN Scenario
             PowerLinearUnit		 Watts
             RatioLinearUnit		 Units
             RcsLinearUnit		 SquareMeters
-            RadiationDose		 Rads
             MagneticFieldUnit		 nanoTesla
             VoltageUnit		 Volts
-            RadiationShieldThickness		 Mils
-            ParticleEnergy		 MeV
         END ReportUnits
 
         BEGIN ConnectReportUnits
@@ -319,6 +317,7 @@ BEGIN Scenario
             AviatorPSFCUnit		 PSFCLbmHrHp
             AviatorForceUnit		 Pounds
             AviatorPowerUnit		 Horsepower
+            MicroDistanceUnit		 Microns
             SpectralBandwidthUnit		 Hertz
             AviatorAltTimeUnit		 Minutes
             AviatorSmallTimeUnit		 Seconds
@@ -327,11 +326,8 @@ BEGIN Scenario
             PowerLinearUnit		 Watts
             RatioLinearUnit		 Units
             RcsLinearUnit		 SquareMeters
-            RadiationDose		 Rads
             MagneticFieldUnit		 nanoTesla
             VoltageUnit		 Volts
-            RadiationShieldThickness		 Mils
-            ParticleEnergy		 MeV
         END ConnectReportUnits
 
         BEGIN ReportFavorites
@@ -1481,188 +1477,6 @@ BEGIN Scenario
         END Gator
 
         BEGIN Crdn
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Fixed
-                Description		 Ceres Centered Fixed Coordinate System
-                AbsolutePath		 CentralBody/Ceres
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Ceres
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Inertial
-                Description		 Ceres Centered Inertial Coordinate System
-                AbsolutePath		 CentralBody/Ceres
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Ceres
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Mean_of_Date
-                Description		 Ceres Centered Mean of Date Coordinate System
-                AbsolutePath		 CentralBody/Ceres
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Ceres
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 MOD
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_True_of_Date
-                Description		 Ceres Centered True of Date Coordinate System
-                AbsolutePath		 CentralBody/Ceres
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Ceres
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 TOD
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-            END SYSTEM
-            BEGIN VECTOR
-                Type		 VECTOR_AXESDERIVATIVE
-                Name		 Ceres_Angular_Velocity
-                Description		 Ceres Angular Velocity
-                AbsolutePath		 CentralBody/Ceres
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-                ReferenceAxes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Ceres
-                END AXES
-                DifferentiationTimeStep		  1.0000000000000001e-01
-            END VECTOR
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Fixed
-                Description		 Deimos Centered Fixed Coordinate System
-                AbsolutePath		 CentralBody/Deimos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Deimos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Inertial
-                Description		 Deimos Centered Inertial Coordinate System
-                AbsolutePath		 CentralBody/Deimos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Deimos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Mean_of_Date
-                Description		 Deimos Centered Mean of Date Coordinate System
-                AbsolutePath		 CentralBody/Deimos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Deimos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 MOD
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_True_of_Date
-                Description		 Deimos Centered True of Date Coordinate System
-                AbsolutePath		 CentralBody/Deimos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Deimos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 TOD
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-            END SYSTEM
-            BEGIN VECTOR
-                Type		 VECTOR_AXESDERIVATIVE
-                Name		 Deimos_Angular_Velocity
-                Description		 Deimos Angular Velocity
-                AbsolutePath		 CentralBody/Deimos
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-                ReferenceAxes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Deimos
-                END AXES
-                DifferentiationTimeStep		  1.0000000000000001e-01
-            END VECTOR
             BEGIN AXES
                 Type		 AXES_TRAJECTORY
                 Name		 BBR_Axes
@@ -1860,7 +1674,7 @@ BEGIN Scenario
             BEGIN SYSTEM
                 Type		 SYSTEM_ASSEMBLED
                 Name		 Centered_Fixed
-                Description		 Triton Centered Fixed Coordinate System
+                Description		 Phobos Centered Fixed Coordinate System
                 AbsolutePath		 CentralBody/Earth
                 Origin		
                 BEGIN POINT
@@ -1878,7 +1692,7 @@ BEGIN Scenario
             BEGIN SYSTEM
                 Type		 SYSTEM_ASSEMBLED
                 Name		 Centered_Inertial
-                Description		 Triton Centered Inertial Coordinate System
+                Description		 Phobos Centered Inertial Coordinate System
                 AbsolutePath		 CentralBody/Earth
                 Origin		
                 BEGIN POINT
@@ -1896,7 +1710,7 @@ BEGIN Scenario
             BEGIN SYSTEM
                 Type		 SYSTEM_ASSEMBLED
                 Name		 Centered_Mean_of_Date
-                Description		 Triton Centered Mean of Date Coordinate System
+                Description		 Phobos Centered Mean of Date Coordinate System
                 AbsolutePath		 CentralBody/Earth
                 Origin		
                 BEGIN POINT
@@ -1914,7 +1728,7 @@ BEGIN Scenario
             BEGIN SYSTEM
                 Type		 SYSTEM_ASSEMBLED
                 Name		 Centered_True_of_Date
-                Description		 Triton Centered True of Date Coordinate System
+                Description		 Phobos Centered True of Date Coordinate System
                 AbsolutePath		 CentralBody/Earth
                 Origin		
                 BEGIN POINT
@@ -2202,8 +2016,46 @@ BEGIN Scenario
             END VECTOR
             BEGIN VECTOR
                 Type		 VECTOR_AXESDERIVATIVE
+                Name		 Ceres_Angular_Velocity
+                Description		 Ceres Angular Velocity
+                AbsolutePath		 CentralBody/Earth
+                Axes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Fixed
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                ReferenceAxes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Inertial
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                DifferentiationTimeStep		  1.0000000000000001e-01
+            END VECTOR
+            BEGIN VECTOR
+                Type		 VECTOR_AXESDERIVATIVE
                 Name		 Charon_Angular_Velocity
                 Description		 Charon Angular Velocity
+                AbsolutePath		 CentralBody/Earth
+                Axes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Fixed
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                ReferenceAxes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Inertial
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                DifferentiationTimeStep		  1.0000000000000001e-01
+            END VECTOR
+            BEGIN VECTOR
+                Type		 VECTOR_AXESDERIVATIVE
+                Name		 Deimos_Angular_Velocity
+                Description		 Deimos Angular Velocity
                 AbsolutePath		 CentralBody/Earth
                 Axes		
                 BEGIN AXES
@@ -2280,6 +2132,25 @@ BEGIN Scenario
                 Type		 VECTOR_AXESDERIVATIVE
                 Name		 Io_Angular_Velocity
                 Description		 Io Angular Velocity
+                AbsolutePath		 CentralBody/Earth
+                Axes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Fixed
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                ReferenceAxes		
+                BEGIN AXES
+                    Type		 AXES_LINKTO
+                    Name		 Inertial
+                    AbsolutePath		 CentralBody/Earth
+                END AXES
+                DifferentiationTimeStep		  1.0000000000000001e-01
+            END VECTOR
+            BEGIN VECTOR
+                Type		 VECTOR_AXESDERIVATIVE
+                Name		 Phobos_Angular_Velocity
+                Description		 Phobos Angular Velocity
                 AbsolutePath		 CentralBody/Earth
                 Axes		
                 BEGIN AXES
@@ -2841,97 +2712,6 @@ BEGIN Scenario
                     Type		 AXES_LINKTO
                     Name		 Inertial
                     AbsolutePath		 CentralBody/Neptune
-                END AXES
-                DifferentiationTimeStep		  1.0000000000000001e-01
-            END VECTOR
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Fixed
-                Description		 Phobos Centered Fixed Coordinate System
-                AbsolutePath		 CentralBody/Phobos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Phobos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Phobos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Inertial
-                Description		 Phobos Centered Inertial Coordinate System
-                AbsolutePath		 CentralBody/Phobos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Phobos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Phobos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_Mean_of_Date
-                Description		 Phobos Centered Mean of Date Coordinate System
-                AbsolutePath		 CentralBody/Phobos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Phobos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 MOD
-                    AbsolutePath		 CentralBody/Phobos
-                END AXES
-            END SYSTEM
-            BEGIN SYSTEM
-                Type		 SYSTEM_ASSEMBLED
-                Name		 Centered_True_of_Date
-                Description		 Phobos Centered True of Date Coordinate System
-                AbsolutePath		 CentralBody/Phobos
-                Origin		
-                BEGIN POINT
-                    Type		 POINT_LINKTO
-                    Name		 Center
-                    AbsolutePath		 CentralBody/Phobos
-                END POINT
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 TOD
-                    AbsolutePath		 CentralBody/Phobos
-                END AXES
-            END SYSTEM
-            BEGIN VECTOR
-                Type		 VECTOR_AXESDERIVATIVE
-                Name		 Phobos_Angular_Velocity
-                Description		 Phobos Angular Velocity
-                AbsolutePath		 CentralBody/Phobos
-                Axes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Fixed
-                    AbsolutePath		 CentralBody/Phobos
-                END AXES
-                ReferenceAxes		
-                BEGIN AXES
-                    Type		 AXES_LINKTO
-                    Name		 Inertial
-                    AbsolutePath		 CentralBody/Phobos
                 END AXES
                 DifferentiationTimeStep		  1.0000000000000001e-01
             END VECTOR
@@ -4529,35 +4309,6 @@ BEGIN Scenario
         BEGIN VO
         END VO
 
-        BEGIN ScenSpaceEnvironmentGfx
-
-            BEGIN Gfx
-
-                BEGIN MagFieldGfx
-                    Show		 No
-                    ColorBy		 Magnitude
-                    ColorScale		 Log
-                    ColorRampStart		 #0000ff
-                    ColorRampStart		 #0000ff
-                    ColorRampStop		 #ff0000
-                    MaxTranslucency		 0.7
-                    LineStyle		 0
-                    LineWidth		 2
-                    FieldLineRefresh		 300
-                    NumLats		 8
-                    NumLongs		 6
-                    StartLat		 15
-                    StopLat		 85
-                    RefLongitude		 3.141592653589793
-                    MainField		 IGRF
-                    ExternalField		 None
-                    IGRF_UpdateRate		 86400
-                END MagFieldGfx
-
-            END Gfx
-
-        END ScenSpaceEnvironmentGfx
-
     END Extensions
 
     BEGIN SubObjects
@@ -4574,15 +4325,39 @@ BEGIN Scenario
 
         END Class
 
+        Class Constellation
+
+            SatRcvrs		
+            SatXmtrs		
+
+        END Class
+
         Class Facility
 
             Facility1		
 
         END Class
 
+        Class Place
+
+            Place1		
+            Place2		
+
+        END Class
+
         Class Satellite
 
             Satellite1		
+            Satellite2		
+            Satellite3		
+            Satellite4		
+            TemplateSatellite1		
+
+        END Class
+
+        Class SatelliteCollection
+
+            SatelliteCollection1		
 
         END Class
 
@@ -4592,6 +4367,8 @@ BEGIN Scenario
         Instance *
             *		
             Chain/Chain1		
+            Constellation/SatRcvrs		
+            Constellation/SatXmtrs		
         END Instance
         Instance AreaTarget/AreaTarget1
             AreaTarget/AreaTarget1		
@@ -4599,11 +4376,117 @@ BEGIN Scenario
         Instance Chain/Chain1
             Chain/Chain1		
         END Instance
+        Instance Constellation/SatRcvrs
+        END Instance
+        Instance Constellation/SatXmtrs
+        END Instance
         Instance Facility/Facility1
             Facility/Facility1		
+            Facility/Facility1/Sensor/Sensor1		
+        END Instance
+        Instance Facility/Facility1/Sensor/Sensor1
+            Facility/Facility1/Sensor/Sensor1		
+        END Instance
+        Instance Place/Place1
+            Place/Place1		
+            Place/Place1/Transmitter/Transmitter1		
+        END Instance
+        Instance Place/Place1/Transmitter/Transmitter1
+            Place/Place1/Transmitter/Transmitter1		
+        END Instance
+        Instance Place/Place2
+            Place/Place2		
+            Place/Place2/Receiver/Receiver1		
+        END Instance
+        Instance Place/Place2/Receiver/Receiver1
+            Place/Place2/Receiver/Receiver1		
         END Instance
         Instance Satellite/Satellite1
             Satellite/Satellite1		
+            Satellite/Satellite1/Sensor/Sensor2		
+        END Instance
+        Instance Satellite/Satellite1/Sensor/Sensor2
+            Satellite/Satellite1/Sensor/Sensor2		
+        END Instance
+        Instance Satellite/Satellite2
+            Satellite/Satellite2		
+            Satellite/Satellite2/Receiver/Receiver2		
+            Satellite/Satellite2/Transmitter/Transmitter2		
+        END Instance
+        Instance Satellite/Satellite2/Receiver/Receiver2
+            Constellation/SatRcvrs		
+            Satellite/Satellite2/Receiver/Receiver2		
+        END Instance
+        Instance Satellite/Satellite2/Transmitter/Transmitter2
+            Constellation/SatXmtrs		
+            Satellite/Satellite2/Transmitter/Transmitter2		
+        END Instance
+        Instance Satellite/Satellite3
+            Satellite/Satellite3		
+            Satellite/Satellite3/Receiver/Receiver3		
+            Satellite/Satellite3/Transmitter/Transmitter3		
+        END Instance
+        Instance Satellite/Satellite3/Receiver/Receiver3
+            Constellation/SatRcvrs		
+            Satellite/Satellite3/Receiver/Receiver3		
+        END Instance
+        Instance Satellite/Satellite3/Transmitter/Transmitter3
+            Constellation/SatXmtrs		
+            Satellite/Satellite3/Transmitter/Transmitter3		
+        END Instance
+        Instance Satellite/Satellite4
+            Satellite/Satellite4		
+            Satellite/Satellite4/Receiver/Receiver4		
+            Satellite/Satellite4/Transmitter/Transmitter4		
+        END Instance
+        Instance Satellite/Satellite4/Receiver/Receiver4
+            Constellation/SatRcvrs		
+            Satellite/Satellite4/Receiver/Receiver4		
+        END Instance
+        Instance Satellite/Satellite4/Transmitter/Transmitter4
+            Constellation/SatXmtrs		
+            Satellite/Satellite4/Transmitter/Transmitter4		
+        END Instance
+        Instance Satellite/TemplateSatellite1
+            Satellite/TemplateSatellite1		
+            Satellite/TemplateSatellite1/Receiver/TemplateReceiver		
+            Satellite/TemplateSatellite1/Transmitter/TemplateTransmitter		
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance Satellite/TemplateSatellite1/Receiver/TemplateReceiver
+            Satellite/TemplateSatellite1/Receiver/TemplateReceiver		
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance Satellite/TemplateSatellite1/Transmitter/TemplateTransmitter
+            Satellite/TemplateSatellite1/Transmitter/TemplateTransmitter		
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1
+            SatelliteCollection/SatelliteCollection1		
+            SatelliteCollection/SatelliteCollection1/Subset/AllReceivers		
+            SatelliteCollection/SatelliteCollection1/Subset/AllSatellites		
+            SatelliteCollection/SatelliteCollection1/Subset/AllTransmitters		
+            SatelliteCollection/SatelliteCollection1/Subset/Plane_1		
+            SatelliteCollection/SatelliteCollection1/Subset/Plane_2		
+            SatelliteCollection/SatelliteCollection1/Subset/Shell_1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/AllReceivers
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/AllSatellites
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/AllTransmitters
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/Plane_1
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/Plane_2
+            SatelliteCollection/SatelliteCollection1		
+        END Instance
+        Instance SatelliteCollection/SatelliteCollection1/Subset/Shell_1
+            SatelliteCollection/SatelliteCollection1		
         END Instance
     END References
 

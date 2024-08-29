@@ -31,10 +31,10 @@ class AccessConstraintHelper(object):
         Assert.assertFalse(oConstraint.excl_intvl)
         oConstraint.excl_intvl = holdExclIntvl
 
-        oConstraint.max_rel_motion = 1
-        Assert.assertEqual(1, oConstraint.max_rel_motion)
-        oConstraint.max_rel_motion = 2
-        Assert.assertEqual(2, oConstraint.max_rel_motion)
+        oConstraint.max_relative_motion = 1
+        Assert.assertEqual(1, oConstraint.max_relative_motion)
+        oConstraint.max_relative_motion = 2
+        Assert.assertEqual(2, oConstraint.max_relative_motion)
 
         oConstraint.max_time_step = 30
         Assert.assertEqual(30, oConstraint.max_time_step)
@@ -92,8 +92,8 @@ class AccessConstraintHelper(object):
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_INTEGRATED_PULSES)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_MLC_FILTER)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_SLC_FILTER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIG_DOPPLER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIG_RANGE)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIGUOUS_DOPPLER)
+        typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.SRCH_TRK_UNAMBIGUOUS_RANGE)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.TERRAIN_MASK)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.TILES_MASK_3D)
         typesNoFieldsToTest.append(ACCESS_CONSTRAINTS.FOREGROUND)
@@ -201,9 +201,9 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.CLOUDS_FOG_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.FREE_SPACE_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.NOISE_TEMPERATURE)
-        typesNoTest.append(ACCESS_CONSTRAINTS.PROP_LOSS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.PROPAGATION_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.RAIN_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINTS.RDR_XMT_TGT_ACCESS)
+        typesNoTest.append(ACCESS_CONSTRAINTS.RDR_XMT_TARGET_ACCESS)
         typesNoTest.append(ACCESS_CONSTRAINTS.TROPO_SCINTILL_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.URBAN_TERRES_LOSS)
         typesNoTest.append(ACCESS_CONSTRAINTS.USER_CUSTOM_A_LOSS)
@@ -227,7 +227,7 @@ class AccessConstraintHelper(object):
         typesNoTest.append(ACCESS_CONSTRAINTS.J_OVER_S)
         typesNoTest.append(ACCESS_CONSTRAINTS.LINK_EIRP)
         typesNoTest.append(ACCESS_CONSTRAINTS.LINK_MARGIN)
-        typesNoTest.append(ACCESS_CONSTRAINTS.POL_REL_ANGLE)
+        typesNoTest.append(ACCESS_CONSTRAINTS.POL_RELATIVE_ANGLE)
         typesNoTest.append(ACCESS_CONSTRAINTS.POWER_AT_RECEIVER_INPUT)
         typesNoTest.append(ACCESS_CONSTRAINTS.POWER_FLUX_DENSITY)
         typesNoTest.append(ACCESS_CONSTRAINTS.RCVD_ISOTROPIC_POWER)
@@ -590,11 +590,7 @@ class AccessConstraintHelper(object):
         iIndex: int = 0
         while iIndex < len(arAvailable):
             constraintName: str = str(arAvailable[iIndex][0])
-            eType: "ACCESS_CONSTRAINTS" = (
-                ACCESS_CONSTRAINTS(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in ACCESS_CONSTRAINTS])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "ACCESS_CONSTRAINTS" = ACCESS_CONSTRAINTS(int(arAvailable[iIndex][1]))
             if not oCollection.is_constraint_supported(eType):
                 if ACCESS_CONSTRAINTS.NONE == eType:
                     iIndex += 1
@@ -1529,11 +1525,11 @@ class AccessConstraintHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot set min greater than max")):
             oGrazingAlt.min = 87.65
 
-        oGrazingAlt.compute_beyond_tgt = True
-        Assert.assertEqual(True, oGrazingAlt.compute_beyond_tgt)
+        oGrazingAlt.compute_beyond_target = True
+        Assert.assertEqual(True, oGrazingAlt.compute_beyond_target)
 
-        oGrazingAlt.compute_beyond_tgt = False
-        Assert.assertEqual(False, oGrazingAlt.compute_beyond_tgt)
+        oGrazingAlt.compute_beyond_target = False
+        Assert.assertEqual(False, oGrazingAlt.compute_beyond_target)
 
         self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
@@ -1874,96 +1870,44 @@ class AccessConstraintHelper(object):
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAWBCollection(self, awbCol: "AccessConstraintAnalysisWorkbenchCollection", eType: int):
-        arReferences = awbCol.get_available_references(
-            (
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                else eType
-            )
-        )
+        arReferences = awbCol.get_available_references(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
         origCount: int = awbCol.count
         reference: str = str(arReferences[1])
 
         accConstraint: "IAccessConstraint" = awbCol.add_constraint(
-            (
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                else eType
-            ),
-            reference,
+            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), reference
         )
 
         Assert.assertIsNotNone(accConstraint)
         Assert.assertEqual((origCount + 1), awbCol.count)
-        if (
-            ACCESS_CONSTRAINTS(eType) if (eType in [item.value for item in ACCESS_CONSTRAINTS]) else eType
-        ) == ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE:
+        if ACCESS_CONSTRAINTS(eType) == ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE:
             self.TestAWBConstraintMinMaxUnitLess(AccessConstraintAnalysisWorkbench(accConstraint), 0.0, 2000.0)
 
-        elif (
-            ACCESS_CONSTRAINTS(eType) if (eType in [item.value for item in ACCESS_CONSTRAINTS]) else eType
-        ) == ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_ANGLE:
+        elif ACCESS_CONSTRAINTS(eType) == ACCESS_CONSTRAINTS.VECTOR_GEOMETRY_TOOL_ANGLE:
             self.TestAWBConstraintMinMaxAngle(AccessConstraintAnalysisWorkbench(accConstraint))
 
-        elif (
-            ACCESS_CONSTRAINTS(eType) if (eType in [item.value for item in ACCESS_CONSTRAINTS]) else eType
-        ) == ACCESS_CONSTRAINTS.CRDN_CALC_SCALAR:
+        elif ACCESS_CONSTRAINTS(eType) == ACCESS_CONSTRAINTS.CRDN_CALC_SCALAR:
             self.TestAWBConstraintMinMaxUnitLess(AccessConstraintAnalysisWorkbench(accConstraint), -2000.0, 2000.0)
 
         Assert.assertEqual(reference, (AccessConstraintAnalysisWorkbench(accConstraint)).reference)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Specified reference cannot be found")):
-            awbCol.add_constraint(
-                (
-                    ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                    if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                    else eType
-                ),
-                "Bogus",
-            )
+            awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), "Bogus")
 
-        awbCol.remove_constraint(
-            (
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                else eType
-            ),
-            reference,
-        )
+        awbCol.remove_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), reference)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(
-            (
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                else eType
-            ),
-            reference,
-        )
+        awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), reference)
         Assert.assertEqual((origCount + 1), awbCol.count)
 
         awbCol.remove_index(origCount)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(
-            (
-                ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                else eType
-            ),
-            reference,
-        )
+        awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), reference)
         with pytest.raises(Exception, match=RegexSubstringMatch("Constraint already active")):
-            awbCol.add_constraint(
-                (
-                    ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType)
-                    if (eType in [item.value for item in ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS])
-                    else eType
-                ),
-                reference,
-            )
+            awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINTS(eType), reference)
 
         found: bool = False
         awbConstraint: "AccessConstraintAnalysisWorkbench"
@@ -2327,9 +2271,7 @@ class AccessConstraintHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("already active")):
             collection.add_constraint(ACCESS_CONSTRAINTS.ALTITUDE)
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            collection.add_constraint(
-                (ACCESS_CONSTRAINTS((-1)) if ((-1) in [item.value for item in ACCESS_CONSTRAINTS]) else (-1))
-            )
+            collection.add_constraint(-1)
 
         activeConstraint: "IAccessConstraint" = collection.get_active_constraint(ACCESS_CONSTRAINTS.ALTITUDE)
         Assert.assertEqual(ACCESS_CONSTRAINTS.ALTITUDE, activeConstraint.constraint_type)
@@ -2349,11 +2291,7 @@ class AccessConstraintHelper(object):
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
-            eAccessConstraint: "ACCESS_CONSTRAINTS" = (
-                ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
-                if (int(arAvailable[i][1]) in [item.value for item in ACCESS_CONSTRAINTS])
-                else int(arAvailable[i][1])
-            )
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
 
             i += 1
 

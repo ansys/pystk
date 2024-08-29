@@ -411,14 +411,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -516,14 +509,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -564,7 +550,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
@@ -1337,14 +1323,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -1657,14 +1636,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -1704,7 +1676,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
@@ -1950,14 +1922,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -2220,14 +2185,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -2444,14 +2402,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1

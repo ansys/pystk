@@ -155,7 +155,7 @@ class EarlyBoundTests(TestBase):
         calcObjLECColl.add("MultiBody/Delta Declination", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.LINKED)
         Assert.assertEqual((origCount + 2), calcObjLECColl.count)
 
-        clec: "ComponentAttrLinkEmbedControl"
+        clec: "IComponentLinkEmbedControl"
 
         for clec in calcObjLECColl:
             clec.reference_type = COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
@@ -169,16 +169,16 @@ class EarlyBoundTests(TestBase):
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
-            clec: "ComponentAttrLinkEmbedControl" = calcObjLECColl[calcObjLECColl.count]
+            clec: "IComponentLinkEmbedControl" = calcObjLECColl[calcObjLECColl.count]
         with pytest.raises(Exception, match=RegexSubstringMatch("Index Out of Range")):
-            clecA: "ComponentAttrLinkEmbedControl" = calcObjLECColl.get_item_by_index(calcObjLECColl.count)
+            clecA: "IComponentLinkEmbedControl" = calcObjLECColl.get_item_by_index(calcObjLECColl.count)
         with pytest.raises(Exception, match=RegexSubstringMatch("Item specified by ItemOrName could not be found")):
-            clecA: "ComponentAttrLinkEmbedControl" = calcObjLECColl.get_item_by_name("bogus")
+            clecA: "IComponentLinkEmbedControl" = calcObjLECColl.get_item_by_name("bogus")
 
-        clec2: "ComponentAttrLinkEmbedControl" = calcObjLECColl["BMagnitude"]
+        clec2: "IComponentLinkEmbedControl" = calcObjLECColl["BMagnitude"]
         Assert.assertIsNotNone(clec2)
         with pytest.raises(Exception, match=RegexSubstringMatch("could not be found")):
-            clecX: "ComponentAttrLinkEmbedControl" = calcObjLECColl["Item3"]
+            clecX: "IComponentLinkEmbedControl" = calcObjLECColl["Item3"]
         Assert.assertEqual(3, calcObjLECColl.count)
 
         calcObjLECColl.cut(1)  # BMagnitude
@@ -189,7 +189,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, calcObjLECColl.count)
         Assert.assertEqual("BMagnitude", calcObjLECColl[2].component.name)  # new index 2
 
-        clec3: "ComponentAttrLinkEmbedControl" = calcObjLECColl["BMagnitude"]
+        clec3: "IComponentLinkEmbedControl" = calcObjLECColl["BMagnitude"]
         calcObjLECColl.insert_copy(clec3)
         Assert.assertEqual(4, calcObjLECColl.count)
         Assert.assertEqual("BMagnitude", calcObjLECColl[3].component.name)
@@ -928,8 +928,8 @@ class EarlyBoundTests(TestBase):
         elemName: str
 
         for elemName in arCurvilinearRelMotionNames:
-            curvRelMotion: "StateCalcCurvilinearRelMotion" = clr.CastAs(
-                (ICloneable(curvilinearRelMotionElems[elemName])).clone_object(), StateCalcCurvilinearRelMotion
+            curvRelMotion: "StateCalcCurvilinearRelativeMotion" = clr.CastAs(
+                (ICloneable(curvilinearRelMotionElems[elemName])).clone_object(), StateCalcCurvilinearRelativeMotion
             )
             Assert.assertIsNotNone(curvRelMotion)
 
@@ -1154,8 +1154,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Satellite/Satellite1", cacb.reference.name)
         formationElems.remove((clr.CastAs(cacb, IComponentInfo)).name)
 
-        gte: "StateCalcRelGroundTrackError" = clr.CastAs(
-            (ICloneable(formationElems["RelGroundTrackError"])).clone_object(), StateCalcRelGroundTrackError
+        gte: "StateCalcRelativeGroundTrackError" = clr.CastAs(
+            (ICloneable(formationElems["RelGroundTrackError"])).clone_object(), StateCalcRelativeGroundTrackError
         )
         Assert.assertIsNotNone(gte)
         gte.central_body_name = "Phobos"
@@ -1190,8 +1190,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Satellite/Satellite1", deltaMaster.reference.name)
         formationElems.remove((clr.CastAs(deltaMaster, IComponentInfo)).name)
 
-        aolMaster: "StateCalcRelAtAOLMaster" = clr.CastAs(
-            (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelAtAOLMaster
+        aolMaster: "StateCalcRelativeAtAOLMaster" = clr.CastAs(
+            (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelativeAtAOLMaster
         )
         Assert.assertIsNotNone(aolMaster)
         aolMaster.calc_object_name = "Relative Motion/CrossTrack"
@@ -1918,9 +1918,35 @@ class EarlyBoundTests(TestBase):
 
         jacobiConstant: "StateCalcJacobiConstant" = clr.CastAs(
             (ICloneable(multiBodyElems["JacobiConstant"])).clone_object(), StateCalcJacobiConstant
-        )
+        )  # GATOR-3373 (backward compatible)
         Assert.assertIsNotNone(jacobiConstant)
         multiBodyElems.remove((clr.CastAs(jacobiConstant, IComponentInfo)).name)
+
+        jacobiIntegral: "StateCalcJacobiConstant" = clr.CastAs(
+            (ICloneable(multiBodyElems["Jacobi Integral"])).clone_object(), StateCalcJacobiConstant
+        )
+        Assert.assertIsNotNone(jacobiIntegral)
+        multiBodyElems.remove((clr.CastAs(jacobiIntegral, IComponentInfo)).name)
+
+        osculatingJacobiIntegral: "StateCalcJacobiOsculating" = clr.CastAs(
+            (ICloneable(multiBodyElems["Osculating Jacobi Integral"])).clone_object(), StateCalcJacobiOsculating
+        )
+        Assert.assertIsNotNone(osculatingJacobiIntegral)
+
+        Assert.assertEqual("Earth", osculatingJacobiIntegral.central_body_name)
+        Assert.assertEqual("Moon", osculatingJacobiIntegral.secondary_name)
+
+        osculatingJacobiIntegral.central_body_name = "Jupiter"
+        Assert.assertEqual("Jupiter", osculatingJacobiIntegral.central_body_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            osculatingJacobiIntegral.central_body_name = "Bogus"
+
+        osculatingJacobiIntegral.secondary_name = "Europa"
+        Assert.assertEqual("Europa", osculatingJacobiIntegral.secondary_name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            osculatingJacobiIntegral.secondary_name = "Bogus"
+
+        multiBodyElems.remove((clr.CastAs(osculatingJacobiIntegral, IComponentInfo)).name)
 
         # Other Orbit
 
@@ -2070,8 +2096,8 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems: "ComponentInfoCollection" = components.get_folder("Relative Motion")
 
-        crossTrack: "StateCalcRelMotion" = clr.CastAs(
-            (ICloneable(relMotionElems["CrossTrack"])).clone_object(), StateCalcRelMotion
+        crossTrack: "StateCalcRelativeMotion" = clr.CastAs(
+            (ICloneable(relMotionElems["CrossTrack"])).clone_object(), StateCalcRelativeMotion
         )
         Assert.assertIsNotNone(crossTrack)
 
@@ -2185,9 +2211,9 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems.remove((clr.CastAs(solarInPlanlaneAngle, IComponentInfo)).name)
 
-        relPosDecAngle: "StateCalcRelPositionDecAngle" = clr.CastAs(
+        relPosDecAngle: "StateCalcRelativePositionDecAngle" = clr.CastAs(
             (ICloneable(relMotionElems["Relative Position Declination Angle"])).clone_object(),
-            StateCalcRelPositionDecAngle,
+            StateCalcRelativePositionDecAngle,
         )
         Assert.assertIsNotNone(relPosDecAngle)
 
@@ -2224,9 +2250,9 @@ class EarlyBoundTests(TestBase):
 
         relMotionElems.remove((clr.CastAs(relPosDecAngle, IComponentInfo)).name)
 
-        relPosInPlaneAngle: "StateCalcRelPositionInPlaneAngle" = clr.CastAs(
+        relPosInPlaneAngle: "StateCalcRelativePositionInPlaneAngle" = clr.CastAs(
             (ICloneable(relMotionElems["Relative Position InPlane Angle"])).clone_object(),
-            StateCalcRelPositionInPlaneAngle,
+            StateCalcRelativePositionInPlaneAngle,
         )
         Assert.assertIsNotNone(relPosInPlaneAngle)
 
@@ -2520,7 +2546,7 @@ class EarlyBoundTests(TestBase):
 
         mScript: "StateCalcScript" = clr.CastAs((ICloneable(scripts["Matlab"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(mScript)
-        objLinkEmbedControl: "ComponentAttrLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
+        objLinkEmbedControl: "IComponentLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
             "Epoch", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         )
         Assert.assertEqual("Epoch", objLinkEmbedControl.component.name)
@@ -3746,21 +3772,14 @@ class EarlyBoundTests(TestBase):
 
         lighting.eclipsing_bodies_list_source = ECLIPSING_BODIES_SOURCE.USER_DEFINED
         Assert.assertEqual(ECLIPSING_BODIES_SOURCE.USER_DEFINED, lighting.eclipsing_bodies_list_source)
-        if (str(lighting.available_eclipsing_bodies[20]) == "MyMoon1") and (
-            str(lighting.available_eclipsing_bodies[13]) == "Iapetus1"
-        ):
-            Assert.assertEqual(35, len(lighting.available_eclipsing_bodies))
 
-        elif (str(lighting.available_eclipsing_bodies[19]) == "MyMoon1") or (
-            str(lighting.available_eclipsing_bodies[13]) == "Iapetus1"
-        ):
-            # The case of both present is handled in first 'if' clause. If "MyMoon1" is present but "Iapetus1" is not,
-            # the first part of this 'else if' will catch. The 'or' will catch the case if "MyMoon1" is not present
-            # but "Iapetus1" is.
-            Assert.assertEqual(34, len(lighting.available_eclipsing_bodies))
+        count: int = len(lighting.available_eclipsing_bodies)
+        eclipsingBody: str
+        for eclipsingBody in lighting.available_eclipsing_bodies:
+            if ((eclipsingBody == "MyMoon1") or (eclipsingBody == "MyMoon2")) or (eclipsingBody == "Iapetus1"):
+                count -= 1
 
-        else:
-            Assert.assertEqual(33, len(lighting.available_eclipsing_bodies))
+        Assert.assertEqual(33, count)  # 33
 
         Assert.assertEqual(0, len(lighting.eclipsing_bodies))
         lighting.add_eclipsing_body("Sun")
@@ -4228,12 +4247,12 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "AeroT20 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT20(clr.CastAs(comp, SRPAeroT20))
+                    self.TestAeroT20(clr.CastAs(comp, SRPAerospaceT20))
 
                 elif comp.name == "AeroT30 SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestAeroT30(clr.CastAs(comp, SRPAeroT30))
+                    self.TestAeroT30(clr.CastAs(comp, SRPAerospaceT30))
 
                 elif comp.name == "Earth":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -6620,7 +6639,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestAeroT20(self, t20: "SRPAeroT20"):
+    def TestAeroT20(self, t20: "SRPAerospaceT20"):
         t20.atmos_altitude = 1
         Assert.assertEqual(1, t20.atmos_altitude)
 
@@ -6657,7 +6676,7 @@ class EarlyBoundTests(TestBase):
             695700.0, t20.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
-    def TestAeroT30(self, t30: "SRPAeroT30"):
+    def TestAeroT30(self, t30: "SRPAerospaceT30"):
         t30.atmos_altitude = 1
         Assert.assertEqual(1, t30.atmos_altitude)
 
@@ -7285,10 +7304,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             tabareavec.tab_area_vector_definition_file = "Bogus"
 
-        tabareavec.interpolation_method = TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION
-        Assert.assertEqual(TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION, tabareavec.interpolation_method)
-        tabareavec.interpolation_method = TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION
-        Assert.assertEqual(TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION, tabareavec.interpolation_method)
+        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION
+        Assert.assertEqual(
+            TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION, tabareavec.interpolation_method
+        )
+        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION
+        Assert.assertEqual(TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION, tabareavec.interpolation_method)
 
         tabareavec.use_sun_central_body_file_values = True
         Assert.assertTrue(tabareavec.use_sun_central_body_file_values)
@@ -7680,16 +7701,20 @@ class EarlyBoundTests(TestBase):
         components: "ComponentInfoCollection" = EarlyBoundTests.AG_COM.get_components(COMPONENT.ASTROGATOR).get_folder(
             "Design Tools"
         )
+
+        # CR3BP Setup Tool
+
         designCR3BPSetup: "DesignCR3BPSetup" = clr.CastAs(
             (ICloneable(components["CR3BP Setup Tool"])).clone_object(), DesignCR3BPSetup
         )
         designCR3BPSetupInfo: "IComponentInfo" = clr.CastAs(designCR3BPSetup, IComponentInfo)
+        self.TestComponent(designCR3BPSetupInfo, False)
 
         # Initial properties
         Assert.assertEqual("Earth", designCR3BPSetup.central_body_name)
         Assert.assertEqual("Set Secondary Body", designCR3BPSetup.secondary_body_name)
         Assert.assertEqual("1 Jul 1999 00:00:00.000", designCR3BPSetup.initial_epoch)
-        Assert.assertEqual(IDEAL_ORBIT_RADIUS.EPOCH_CENTERED_AVG_SOURCE_RADIUS, designCR3BPSetup.ideal_orbit_radius)
+        Assert.assertEqual(IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE, designCR3BPSetup.ideal_orbit_radius)
         Assert.assertEqual("Type a valid name then Tab to continue", designCR3BPSetup.ideal_secondary_name)
         Assert.assertEqual(1, designCR3BPSetup.mass_parameter)
         Assert.assertEqual(1, designCR3BPSetup.characteristic_distance)
@@ -7750,7 +7775,6 @@ class EarlyBoundTests(TestBase):
         designCR3BPSetup.ideal_secondary_name = "MyMoon1"
         Assert.assertEqual("MyMoon1", designCR3BPSetup.ideal_secondary_name)
         designCR3BPSetup.reset_ideal_secondary_cb()
-        designCR3BPSetup.ideal_secondary_name = "MyMoon"
         Assert.assertEqual("MyMoon", designCR3BPSetup.ideal_secondary_name)
         Assert.assertEqual(1, objColl.count)
 
@@ -7816,6 +7840,28 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(17, count)
 
+        # IncludeSTM
+        designCR3BPSetup.include_stm = False
+        Assert.assertFalse(designCR3BPSetup.include_stm)
+        designCR3BPSetup.include_stm = True
+        Assert.assertTrue(designCR3BPSetup.include_stm)
+
+        # CreatePropagator
+        designCR3BPSetup.create_propagator()
+        Assert.assertEqual(18, objColl.count)
+        obj = objColl[17]
+        Assert.assertEqual("EarthMyMoon1CR3BP", obj.object_name)
+        Assert.assertEqual("Propagator", obj.object_type)
+        Assert.assertEqual("MyMoon1", obj.object_depends_on)
+
+        # DeletePropagator
+        designCR3BPSetup.delete_propagator()
+        Assert.assertEqual(17, objColl.count)
+        obj = objColl[16]
+        Assert.assertEqual("SecondaryEarthMyMoon1Vz", obj.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj.object_type)
+        Assert.assertEqual("EarthMyMoon1SecondaryCenteredRotating", obj.object_depends_on)
+
         # DeleteCalculationObjects
         designCR3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
         Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designCR3BPSetup.rotating_system_choice)
@@ -7834,7 +7880,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Analysis Workbench System", obj.object_type)
         Assert.assertEqual("MyMoon1", obj.object_depends_on)
 
-        # DeleteCalculationObjects
+        # DeleteRotatingCoordinateSystem
         designCR3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
         Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designCR3BPSetup.rotating_system_choice)
         designCR3BPSetup.delete_rotating_coordinate_system()
@@ -7853,6 +7899,206 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CR3BP_Setup_Tool1", obj.object_depends_on)
 
         components.remove(designCR3BPSetupInfo.name)
+
+        # ER3BP Setup Tool
+
+        designER3BPSetup: "DesignER3BPSetup" = clr.CastAs(
+            (ICloneable(components["ER3BP Setup Tool"])).clone_object(), DesignER3BPSetup
+        )
+        designER3BPSetupInfo: "IComponentInfo" = clr.CastAs(designER3BPSetup, IComponentInfo)
+        self.TestComponent(designER3BPSetupInfo, False)
+
+        # Initial properties
+        Assert.assertEqual("Earth", designER3BPSetup.central_body_name)
+        Assert.assertEqual("Set Secondary Body", designER3BPSetup.secondary_body_name)
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", designER3BPSetup.initial_epoch)
+        Assert.assertEqual(0.0, designER3BPSetup.true_anomaly)
+        Assert.assertEqual("Type a valid name then Tab to continue", designER3BPSetup.ideal_secondary_name)
+        Assert.assertEqual(1, designER3BPSetup.mass_parameter)
+        Assert.assertEqual(0, designER3BPSetup.eccentricity)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_distance)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_time)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_velocity)
+        Assert.assertEqual(1, designER3BPSetup.characteristic_acceleration)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
+            designER3BPSetup.central_body_name = "Bogus"
+        designER3BPSetup.central_body_name = "Mars"
+        Assert.assertEqual("Mars", designER3BPSetup.central_body_name)
+        designER3BPSetup.central_body_name = "Earth"
+        Assert.assertEqual("Earth", designER3BPSetup.central_body_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid object specified")):
+            designER3BPSetup.secondary_body_name = "Bogus"
+        designER3BPSetup.secondary_body_name = "Moon"
+        Assert.assertEqual("Moon", designER3BPSetup.secondary_body_name)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            designER3BPSetup.initial_epoch = "Bogus"
+        designER3BPSetup.initial_epoch = "1 Jul 1999 10:00:00.000"
+        Assert.assertEqual("1 Jul 1999 10:00:00.000", designER3BPSetup.initial_epoch)
+        designER3BPSetup.initial_epoch = "1 Jul 1999 00:00:00.000"
+        Assert.assertEqual("1 Jul 1999 00:00:00.000", designER3BPSetup.initial_epoch)
+
+        Assert.assertAlmostEqual(245.848, float(designER3BPSetup.true_anomaly), delta=0.001)
+        Assert.assertAlmostEqual(0.0121506, designER3BPSetup.mass_parameter, delta=1e-07)
+        Assert.assertAlmostEqual(0.0391124, designER3BPSetup.eccentricity, delta=1e-07)
+        Assert.assertAlmostEqual(396204000, designER3BPSetup.characteristic_distance, delta=10000)
+        Assert.assertAlmostEqual(392604, designER3BPSetup.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1009.17, designER3BPSetup.characteristic_velocity, delta=0.01)
+        Assert.assertAlmostEqual(0.00257, designER3BPSetup.characteristic_acceleration, delta=1e-05)
+
+        designER3BPSetup.true_anomaly = 300
+        Assert.assertEqual(300, designER3BPSetup.true_anomaly)
+
+        Assert.assertAlmostEqual(300, float(designER3BPSetup.true_anomaly), delta=0.001)
+        Assert.assertAlmostEqual(0.0121506, designER3BPSetup.mass_parameter, delta=1e-07)
+        Assert.assertAlmostEqual(0.0553664, designER3BPSetup.eccentricity, delta=1e-07)
+        Assert.assertAlmostEqual(373714000, designER3BPSetup.characteristic_distance, delta=10000)
+        Assert.assertAlmostEqual(359654, designER3BPSetup.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1039.09, designER3BPSetup.characteristic_velocity, delta=0.01)
+        Assert.assertAlmostEqual(0.00288914, designER3BPSetup.characteristic_acceleration, delta=1e-05)
+
+        designER3BPSetup.ideal_secondary_name = "MyMoon"
+        Assert.assertEqual("MyMoon", designER3BPSetup.ideal_secondary_name)
+
+        # CreateIdealSecondaryCB
+        designER3BPSetup.create_ideal_secondary_cb()
+        objColl2: "DesignER3BPObjectCollection" = designER3BPSetup.associated_objects
+        Assert.assertEqual(1, objColl2.count)
+        obj2: "DesignER3BPObject" = objColl2[0]
+        Assert.assertEqual("MyMoon", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        # ResetIdealSecondaryCB
+        designER3BPSetup.ideal_secondary_name = "MyMoon1"
+        Assert.assertEqual("MyMoon1", designER3BPSetup.ideal_secondary_name)
+        designER3BPSetup.reset_ideal_secondary_cb()
+        Assert.assertEqual("MyMoon", designER3BPSetup.ideal_secondary_name)
+        Assert.assertEqual(1, objColl2.count)
+
+        # UpdateIdealSecondaryCB
+        designER3BPSetup.ideal_secondary_name = "MyMoon2"
+        Assert.assertEqual("MyMoon2", designER3BPSetup.ideal_secondary_name)
+        designER3BPSetup.update_ideal_secondary_cb()
+        Assert.assertEqual(1, objColl2.count)
+        obj2 = objColl2[0]
+        Assert.assertEqual("MyMoon2", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        # CreateRotatingCoordinateSystem
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_rotating_coordinate_system()
+        Assert.assertEqual(4, objColl2.count)
+        obj2 = objColl2[3]
+        Assert.assertEqual("EarthMyMoon2L1CenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_rotating_coordinate_system()
+        Assert.assertEqual(5, objColl2.count)
+        obj2 = objColl2[4]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # CreateCalculationObjects
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_calculation_objects()
+        Assert.assertEqual(11, objColl2.count)
+        obj2 = objColl2[10]
+        Assert.assertEqual("L1EarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2L1CenteredRotating", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.create_calculation_objects()
+        Assert.assertEqual(17, objColl2.count)
+        obj2 = objColl2[16]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+
+        # Misc collection tests
+        objByIndex2: "DesignER3BPObject" = objColl2.get_item_by_index(0)
+        Assert.assertEqual("MyMoon2", objByIndex2.object_name)
+
+        objByName2: "DesignER3BPObject" = objColl2.get_item_by_name("MyMoon2")
+        Assert.assertEqual("MyMoon2", objByName2.object_name)
+
+        count = 0
+        objByEnum: "DesignER3BPObject"
+        for objByEnum in objColl2:
+            count += 1
+            if count == 0:
+                Assert.assertEqual("MyMoon2", objByEnum.object_name)
+
+        Assert.assertEqual(17, count)
+
+        # IncludeSTM
+        designER3BPSetup.include_stm = False
+        Assert.assertFalse(designER3BPSetup.include_stm)
+        designER3BPSetup.include_stm = True
+        Assert.assertTrue(designER3BPSetup.include_stm)
+
+        # CreatePropagator
+        designER3BPSetup.create_propagator()
+        Assert.assertEqual(18, objColl2.count)
+        obj2 = objColl2[17]
+        Assert.assertEqual("EarthMyMoon2ER3BP", obj2.object_name)
+        Assert.assertEqual("Propagator", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # DeletePropagator
+        designER3BPSetup.delete_propagator()
+        Assert.assertEqual(17, objColl2.count)
+        obj2 = objColl2[16]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+
+        # DeleteCalculationObjects
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_calculation_objects()
+        Assert.assertEqual(11, objColl2.count)
+        obj2 = objColl2[10]
+        Assert.assertEqual("SecondaryEarthMyMoon2Vz", obj2.object_name)
+        Assert.assertEqual("Cartesian Calculation Object", obj2.object_type)
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_calculation_objects()
+        Assert.assertEqual(5, objColl2.count)
+        obj2 = objColl2[4]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+
+        # DeleteRotatingCoordinateSystem
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.L1_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.L1_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_rotating_coordinate_system()
+        Assert.assertEqual(3, objColl2.count)
+        obj2 = objColl2[2]
+        Assert.assertEqual("EarthMyMoon2SecondaryCenteredRotating", obj2.object_name)
+        Assert.assertEqual("Analysis Workbench System", obj2.object_type)
+        Assert.assertEqual("MyMoon2", obj2.object_depends_on)
+        designER3BPSetup.rotating_system_choice = ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED
+        Assert.assertEqual(ROTATING_COORDINATE_SYSTEM.SECONDARY_CENTERED, designER3BPSetup.rotating_system_choice)
+        designER3BPSetup.delete_rotating_coordinate_system()
+        Assert.assertEqual(1, objColl2.count)
+        obj2 = objColl2[0]
+        Assert.assertEqual("MyMoon2", obj2.object_name)
+        Assert.assertEqual("Central Body", obj2.object_type)
+        Assert.assertEqual("ER3BP_Setup_Tool1", obj2.object_depends_on)
+
+        components.remove(designER3BPSetupInfo.name)
 
     def test_EngineModels(self):
         components: "ComponentInfoCollection" = EarlyBoundTests.AG_COM.get_components(COMPONENT.ASTROGATOR).get_folder(
@@ -9068,7 +9314,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(98, twoBodyFunc.min_radius_percent)
         Assert.assertEqual(4, wrapper.propagator_functions.count)
 
-        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAeroT20))
+        self.TestAeroT20(clr.CastAs(wrapper.propagator_functions.add("SRP Models/AeroT20 SRP"), SRPAerospaceT20))
         Assert.assertEqual(5, wrapper.propagator_functions.count)
 
         wrapper.propagator_functions.remove("AeroT20 SRP")
@@ -9110,6 +9356,103 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH, wrapper.numerical_integrator_type)
         self.TestRK8th9th(clr.CastAs(wrapper.numerical_integrator, RungeKuttaV8th9th))
 
+        # Three Body
+
+        # Create "CR3BP Force1" propagator function to add to the Three Body propagator
+        PFcomponents: "ComponentInfoCollection" = EarlyBoundTests.AG_COM.get_components(
+            COMPONENT.ASTROGATOR
+        ).get_folder("Propagator Functions")
+        compInfoCR3BP: "IComponentInfo" = PFcomponents["CR3BP Force"]
+        compInfoCR3BPclone: "IComponentInfo" = clr.CastAs(
+            (clr.CastAs(compInfoCR3BP, ICloneable)).clone_object(), IComponentInfo
+        )
+        self.TestComponent(compInfoCR3BPclone, False)
+
+        # Create a Three Body propagator
+        wrapperCR3BP: "NumericalPropagatorWrapperCR3BP" = clr.CastAs(
+            (ICloneable(components["Three Body"])).clone_object(), NumericalPropagatorWrapperCR3BP
+        )
+        propFuncs: "PropagatorFunctionCollection" = wrapperCR3BP.propagator_functions
+
+        # Add the propagator function to the propagator
+        propFuncs.remove("CR3BP Force")  # Remove the existing CR3BP, so a different one can be added
+        CR3BPFuncGravModel: "CR3BPFunc" = clr.CastAs(propFuncs.add("Gravity Models/CR3BP Force1"), CR3BPFunc)
+
+        # Test the CR3BPFunc interface
+
+        Assert.assertEqual("Set Secondary Body", CR3BPFuncGravModel.secondary_name)  # Initial State
+        Assert.assertEqual("1 Jan 2000 11:58:55.816", CR3BPFuncGravModel.ephemeris_epoch)
+        Assert.assertEqual(0, CR3BPFuncGravModel.eccentricity)
+        Assert.assertEqual(1, CR3BPFuncGravModel.mass_parameter)
+        Assert.assertEqual(1, CR3BPFuncGravModel.characteristic_distance)
+        Assert.assertEqual(1, CR3BPFuncGravModel.characteristic_time)
+        Assert.assertEqual(1, CR3BPFuncGravModel.characteristic_velocity)
+        Assert.assertEqual(1, CR3BPFuncGravModel.characteristic_acceleration)
+
+        CR3BPFuncGravModel.secondary_name = "Moon"
+        Assert.assertEqual("Moon", CR3BPFuncGravModel.secondary_name)
+        Assert.assertEqual("13 Dec 1949 23:59:17.816", CR3BPFuncGravModel.ephemeris_epoch)
+        Assert.assertAlmostEqual(0.051369, CR3BPFuncGravModel.eccentricity, delta=1e-06)
+        Assert.assertAlmostEqual(0.01215, CR3BPFuncGravModel.mass_parameter, delta=1e-06)
+        Assert.assertAlmostEqual(370128182, CR3BPFuncGravModel.characteristic_distance, delta=1)  # meters.  GUI is km
+        Assert.assertAlmostEqual(354490, CR3BPFuncGravModel.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1044.1, CR3BPFuncGravModel.characteristic_velocity, delta=0.1)
+        Assert.assertAlmostEqual(0.0029453, CR3BPFuncGravModel.characteristic_acceleration, delta=1e-07)
+
+        # Unit Pref - debug
+        # Application.UnitPreferences.SetCurrentUnit("DistanceUnit", "m");
+        # MessageBox.Show(CR3BPFuncGravModel.CharacteristicDistance.ToString());
+        # Application.UnitPreferences.SetCurrentUnit("DistanceUnit", "km");
+        # MessageBox.Show(CR3BPFuncGravModel.CharacteristicDistance.ToString());
+
+        components.remove("Three Body1")
+        PFcomponents.remove("CR3BP Force1")
+
+        # /////////////////////////////
+
+        # Create "ER3BP Force1" propagator function to add to the Three Body propagator
+        compInfoER3BP: "IComponentInfo" = PFcomponents["ER3BP Force"]
+        compInfoER3BPclone: "IComponentInfo" = clr.CastAs(
+            (clr.CastAs(compInfoER3BP, ICloneable)).clone_object(), IComponentInfo
+        )
+        self.TestComponent(compInfoER3BPclone, False)
+
+        # Create a Three Body propagator
+        wrapperER3BP: "NumericalPropagatorWrapperCR3BP" = clr.CastAs(
+            (ICloneable(components["Three Body"])).clone_object(), NumericalPropagatorWrapperCR3BP
+        )
+        propFuncs = wrapperER3BP.propagator_functions
+
+        # Add the propagator function to the propagator
+        propFuncs.remove("CR3BP Force")  # Remove the existing CR3BP, so ER3BP can be added
+        ER3BPFuncGravModel: "ER3BPFunc" = clr.CastAs(propFuncs.add("Gravity Models/ER3BP Force1"), ER3BPFunc)
+
+        # Test the ER3BPFunc interface
+
+        Assert.assertEqual("Set Secondary Body", ER3BPFuncGravModel.secondary_name)  # Initial State
+        Assert.assertEqual("1 Jan 2000 11:58:55.816", ER3BPFuncGravModel.ephemeris_epoch)
+        Assert.assertEqual(0, ER3BPFuncGravModel.true_anomaly)
+        Assert.assertEqual(0, ER3BPFuncGravModel.eccentricity)
+        Assert.assertEqual(1, ER3BPFuncGravModel.mass_parameter)
+        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_distance)
+        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_time)
+        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_velocity)
+        Assert.assertEqual(1, ER3BPFuncGravModel.characteristic_acceleration)
+
+        ER3BPFuncGravModel.secondary_name = "Moon"
+        Assert.assertEqual("Moon", ER3BPFuncGravModel.secondary_name)
+        Assert.assertEqual("13 Dec 1949 23:59:17.816", ER3BPFuncGravModel.ephemeris_epoch)
+        Assert.assertAlmostEqual(318.347, float(ER3BPFuncGravModel.true_anomaly), delta=0.001)
+        Assert.assertAlmostEqual(0.051369, ER3BPFuncGravModel.eccentricity, delta=1e-06)
+        Assert.assertAlmostEqual(0.01215, ER3BPFuncGravModel.mass_parameter, delta=1e-06)
+        Assert.assertAlmostEqual(370128182, ER3BPFuncGravModel.characteristic_distance, delta=1)  # meters.  GUI is km
+        Assert.assertAlmostEqual(354490, ER3BPFuncGravModel.characteristic_time, delta=1)
+        Assert.assertAlmostEqual(1044.1, ER3BPFuncGravModel.characteristic_velocity, delta=0.1)
+        Assert.assertAlmostEqual(0.0029453, ER3BPFuncGravModel.characteristic_acceleration, delta=1e-07)
+
+        components.remove("Three Body1")
+        PFcomponents.remove("ER3BP Force1")
+
     def TestRK8th9th(self, fa: "RungeKuttaV8th9th"):
         fa.initial_step = 6
         Assert.assertEqual(6, fa.initial_step)
@@ -9134,10 +9477,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9176,10 +9519,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9213,10 +9556,10 @@ class EarlyBoundTests(TestBase):
         fa.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fa.error_control)
 
-        fa.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fa.max_abs_err)
-        fa.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fa.max_rel_err)
+        fa.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fa.max_absolute_err)
+        fa.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fa.max_relative_err)
 
         fa.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fa.low_safety_coefficient)
@@ -9254,10 +9597,10 @@ class EarlyBoundTests(TestBase):
         st.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, st.error_control)
 
-        st.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, st.max_abs_err)
-        st.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, st.max_rel_err)
+        st.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, st.max_absolute_err)
+        st.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, st.max_relative_err)
 
         st.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, st.low_safety_coefficient)
@@ -9276,8 +9619,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(59, gji.initial_step)
         gji.max_corrector_iterations = 100
         Assert.assertEqual(100, gji.max_corrector_iterations)
-        gji.max_corrector_rel_err = 1e-10
-        Assert.assertEqual(1e-10, gji.max_corrector_rel_err)
+        gji.max_corrector_relative_err = 1e-10
+        Assert.assertEqual(1e-10, gji.max_corrector_relative_err)
 
         gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.BULIRSCH_STOER)
         Assert.assertEqual(NUMERICAL_INTEGRATOR.BULIRSCH_STOER, gji.single_step_integrator_type)
@@ -9331,8 +9674,8 @@ class EarlyBoundTests(TestBase):
         bsi.min_step = 2
         Assert.assertEqual(2, bsi.min_step)
 
-        bsi.max_rel_err = 1e-11
-        Assert.assertEqual(1e-11, bsi.max_rel_err)
+        bsi.max_relative_err = 1e-11
+        Assert.assertEqual(1e-11, bsi.max_relative_err)
 
         bsi.max_sequences = 2
         Assert.assertEqual(2, bsi.max_sequences)
@@ -9375,10 +9718,10 @@ class EarlyBoundTests(TestBase):
         fourthFifth.error_control = ERROR_CONTROL.RELATIVE_TO_STEP
         Assert.assertEqual(ERROR_CONTROL.RELATIVE_TO_STEP, fourthFifth.error_control)
 
-        fourthFifth.max_abs_err = 1e-10
-        Assert.assertEqual(1e-10, fourthFifth.max_abs_err)
-        fourthFifth.max_rel_err = 1e-12
-        Assert.assertEqual(1e-12, fourthFifth.max_rel_err)
+        fourthFifth.max_absolute_err = 1e-10
+        Assert.assertEqual(1e-10, fourthFifth.max_absolute_err)
+        fourthFifth.max_relative_err = 1e-12
+        Assert.assertEqual(1e-12, fourthFifth.max_relative_err)
 
         fourthFifth.low_safety_coefficient = 0.8
         Assert.assertEqual(0.8, fourthFifth.low_safety_coefficient)

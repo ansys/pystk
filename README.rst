@@ -122,7 +122,7 @@ resources and troubleshooting guides.
 License
 =======
 
-You can find the full text of the license in the `LICENSE` file.
+You can find the full text of the license in the `LICENSE`_ file.
 
 Changelog
 =========
@@ -148,4 +148,5 @@ categorized by version, along with brief descriptions of each change.
 .. _api reference: https://stk.docs.pyansys.com/version/dev/api.html
 .. _examples: https://stk.docs.pyansys.com/version/dev/examples.html
 
+.. _LICENSE: https://github.com/ansys-internal/pystk/blob/main/LICENSE.md
 .. _CHANGELOG: https://github.com/ansys-internal/pystk/blob/main/CHANGELOG.md

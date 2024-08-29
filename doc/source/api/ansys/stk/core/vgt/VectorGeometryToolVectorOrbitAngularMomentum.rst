@@ -1,0 +1,61 @@
+VectorGeometryToolVectorOrbitAngularMomentum
+============================================
+
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum
+
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+
+   Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body.
+
+.. py:currentmodule:: VectorGeometryToolVectorOrbitAngularMomentum
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.central_body`
+              - Specify a central body.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.reference_point`
+              - Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.mean_element_type`
+              - Specify the mean element theory type for approximating motion.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import VectorGeometryToolVectorOrbitAngularMomentum
+
+
+Property detail
+---------------
+
+.. py:property:: central_body
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.central_body
+    :type: AnalysisWorkbenchCentralBodyRefTo
+
+    Specify a central body.
+
+.. py:property:: reference_point
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.reference_point
+    :type: VectorGeometryToolPointRefTo
+
+    Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
+
+.. py:property:: mean_element_type
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.mean_element_type
+    :type: CRDN_MEAN_ELEMENT_THEORY
+
+    Specify the mean element theory type for approximating motion.
+
+
