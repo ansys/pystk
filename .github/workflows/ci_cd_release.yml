@@ -68,10 +68,27 @@ jobs:
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  build-wheelhouse:
+    name: "Build wheelhouse for latest Python versions"
+    runs-on: ${{ matrix.os }}
+    strategy:
+       matrix:
+           os: [ubuntu-latest, windows-latest]
+           python-version: ['3.10', '3.11', '3.12']
+           target: ['visualization']
+    steps:
+      - name: "Build a wheelhouse of the Python library"
+        uses: ansys/actions/build-wheelhouse@v7.0
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          target: ${{ matrix.target }}
+
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
-    needs: [doc-style]
+    needs: build-wheelhouse
     timeout-minutes: 90
     steps:
 
