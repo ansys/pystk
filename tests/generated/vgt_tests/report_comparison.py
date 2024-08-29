@@ -169,7 +169,7 @@ class ReportComparison(object):
         def Execute(self, oRoot: "StkObjectRoot"):
             Assert.assertIsNotNone(oRoot)
             self._report.clear()
-            res: "ExecCmdResult" = oRoot.execute_command(self._name)
+            res: "ExecuteCommandResult" = oRoot.execute_command(self._name)
             row: str
             for row in res:
                 s: "List[str]" = String.Split(row.replace('"', " "), ",")

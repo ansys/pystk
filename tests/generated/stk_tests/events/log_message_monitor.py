@@ -27,7 +27,7 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         ErrorCode: int,
         Filename: str,
         LineNo: int,
-        DispID: "LOG_MESSAGE_DISP_ID",
+        DispID: "LOG_MESSAGE_DISPLAY_ID",
     ):
         if self._filterEcho:
             if Message.startswith("STK/CON:"):

@@ -99,7 +99,8 @@ class GrpcCallBatcher(object):
     def start_batching(self) -> None:
         """Explicitly start batching until stop_batching() is called."""
         if not self._disable_batching and not self._batching:
-            assert self._initialized, "The GrpcCallBatcher should be obtained from the STK application rather than constructed directly."
+            if not self._initialized:
+                raise RuntimeError("The GrpcCallBatcher should be obtained from the STK application rather than constructed directly.")
             GrpcClient.register_call_batcher(self)
             self._batching = True
 

@@ -139,10 +139,28 @@ class GrpcInterface(object):
         else:
             return None
 
+    def _query_backwards_compatability_interface(self, intf_metadata:dict, method_offset, *args):
+        from .coclassutil import AgBackwardsCompatabilityMapping
+        iid_tuple = (intf_metadata['iid_data'][0], intf_metadata['iid_data'][1])
+        if AgBackwardsCompatabilityMapping.check_guid_available(iid_tuple):
+            old_iid = AgBackwardsCompatabilityMapping.get_old_guid(iid_tuple)
+            old_grpc_guid = _grpc_guid({"iid_data":[old_iid[0], old_iid[1]]}) 
+            return self.client.invoke(self.obj, old_grpc_guid, method_offset, False, *args)
+        return None
+
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         guid = _grpc_guid(intf_metadata)
         method_offset = method_metadata["offset"]
-        return _grpc_post_process_return_vals(self.client.invoke(self.obj, guid, method_offset, False, *args), method_metadata["marshallers"], *args)
+        try:
+            invoke_return = self.client.invoke(self.obj, guid, method_offset, False, *args)
+        except grpc.RpcError as rpc_error:
+            if rpc_error.details() == "Interface not implemented.":
+                invoke_return = self._query_backwards_compatability_interface(intf_metadata, method_offset, *args)
+                if invoke_return is None:
+                    raise rpc_error
+            else:
+                raise rpc_error
+        return _grpc_post_process_return_vals(invoke_return, method_metadata["marshallers"], *args)
 
     def get_property(self, intf_metadata:dict, method_metadata:dict):
         guid = _grpc_guid(intf_metadata)
@@ -180,12 +198,10 @@ class GrpcInterfacePimpl(object):
 
     @property
     def obj(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.obj
 
     @property
     def client(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.client
     
     def deactivate(self):

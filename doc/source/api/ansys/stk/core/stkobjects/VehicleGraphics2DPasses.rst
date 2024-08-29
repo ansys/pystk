@@ -33,7 +33,7 @@ Overview
               - Pass display option: show all or those in a user-specified range.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.pass_supported_types`
               - Returns an array of valid choices.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.pass_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.satellite_pass`
               - Get the pass property.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.visible_sides`
               - Gets or sets the visible sides option for the pass: ascending, descending, both or none.
@@ -67,8 +67,8 @@ Property detail
 
     Returns an array of valid choices.
 
-.. py:property:: pass_method
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.pass_method
+.. py:property:: satellite_pass
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.satellite_pass
     :type: IVehicleGraphics2DPass
 
     Get the pass property.

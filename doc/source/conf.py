@@ -1,10 +1,13 @@
 """Sphinx documentation configuration file."""
 
 from datetime import datetime
+import fnmatch
+import hashlib
 import os
 import pathlib
 import shutil
 import subprocess
+import zipfile
 
 import sphinx
 from sphinx.util import logging
@@ -130,20 +133,6 @@ with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
 
-# Read available Docker images for Windows and Linux
-DOCKER_DIR = pathlib.Path(__file__).parent.parent.parent.absolute() / "docker"
-WINDOWS_IMAGES, UBUNTU_IMAGES = [DOCKER_DIR / path for path in ["windows", "linux/ubuntu"]]
-
-
-def get_images_directories_from_path(path):
-    """Get all the Docker images present in the retrieved Path."""
-    images = [
-        folder.name for folder in path.glob("**/*") if folder.name != path.name and (folder / "Dockerfile").exists()
-    ] or ["No images available."]
-    images.sort()
-    return images
-
-
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
@@ -203,21 +192,106 @@ else:
 
 
 # -- Jinja context configuration ---------------------------------------------
+
+
+def zip_directory(directory_path: pathlib.Path, zip_filename: pathlib.Path, ignore_patterns=None):
+    """Compress a directory using ZIP.
+
+    Parameters
+    ----------
+    directory_path : ~pathlib.Path
+        Directory to compress.
+    zip_filename : ~pathlib.Path
+        Output file path.
+    ignore_patterns : list
+        List of Unix-like pattern to ignore.
+
+    """
+    if ignore_patterns is None:
+        ignore_patterns = []
+
+    if not zip_filename.suffix == ".zip":
+        zip_filename = zip_filename.with_suffix(".zip")
+
+    with zipfile.ZipFile(zip_filename, "w", zipfile.ZIP_DEFLATED) as zipf:
+        for file_path in directory_path.rglob("*"):
+            if file_path.is_file():
+                if any(fnmatch.fnmatch(file_path.relative_to(directory_path), pattern) for pattern in ignore_patterns):
+                    continue
+
+                relative_path = file_path.relative_to(directory_path)
+                zipf.write(file_path, relative_path)
+
+
+def get_sha256_from_file(filepath: pathlib.Path):
+    """Compute the SHA-256 for a file.
+
+    Parameters
+    ----------
+    filepath : ~pathlib.Path
+        Desired file.
+
+    Returns
+    -------
+    str
+        String representing the SHA-256 hash.
+
+    """
+    sha256_hash = hashlib.sha256()
+    with open(filepath, "rb") as file:
+        while chunk := file.read(8192):
+            sha256_hash.update(chunk)
+    return sha256_hash.hexdigest()
+
+
+def get_file_size_in_mb(file_path):
+    """
+    Compute the size of a file in megabytes.
+
+    Parameters
+    ----------
+    file_path : str or Path
+        The path to the file whose size is to be computed.
+
+    Returns
+    -------
+    float
+        The size of the file in megabytes.
+
+    Raises
+    ------
+    FileNotFoundError
+        If the file does not exist.
+    OSError
+        If an OS-related error occurs while accessing the file.
+
+    """
+    path = pathlib.Path(file_path)
+
+    if not path.is_file():
+        raise FileNotFoundError(f"The file at {file_path} does not exist.")
+
+    file_size_bytes = path.stat().st_size
+    return file_size_bytes / (1024 * 1024)
+
+
+ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
+ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
+
 jinja_contexts = {
-    "docker_images": {
-        "windows_images": get_images_directories_from_path(WINDOWS_IMAGES),
-        "linux_images": get_images_directories_from_path(UBUNTU_IMAGES),
-    },
-    "install_guide": {
-        "version": f"v{version}" if not version.endswith("dev0") else "main",
-    },
+    "install_guide": {"stk_version": "12.9.0"},
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
     },
     "artifacts": {
-        "wheels": f"{project.replace('-', '_')}-{version}-py3-none-any.whl",
-        "source": f"{project.replace('-', '_')}-{version}.tar.gz",
+        "wheels": ARTIFACTS_WHEEL.name,
+        "wheels_size": f"{get_file_size_in_mb(ARTIFACTS_WHEEL):.2f} MB",
+        "wheels_hash": get_sha256_from_file(ARTIFACTS_WHEEL),
+        "source": ARTIFACTS_SDIST.name,
+        "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
+        "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
         "platforms": ["Windows", "Linux"],
     },
 }
@@ -236,11 +310,13 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.2420.81"
 linkcheck_ignore = [
     "https://www.ansys.com/*",
     # Requires sign-in
     f"https://github.com/{user_repo}/*",
     "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
 ]
 
 # -- MyST Sphinx configuration -----------------------------------------------
@@ -249,7 +325,7 @@ myst_heading_anchors = 3
 # -- Sphinx application setup ------------------------------------------------
 
 
-def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
+def copy_docker_files_to_static_dir(app: sphinx.application.Sphinx):
     """
     Copy the examples directory to the source directory of the documentation.
 
@@ -259,27 +335,36 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         Sphinx application instance containing the all the doc build configuration.
 
     """
-    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    if not SOURCE_EXAMPLES.exists():
-        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+    SOURCE_DIR = pathlib.Path(app.srcdir)
+    DOCKER_DIR = SOURCE_DIR.parent.parent / "docker"
+    STATIC_DOCKER_DIR = SOURCE_DIR / "_static" / "docker"
+    if not STATIC_DOCKER_DIR.exists():
+        STATIC_DOCKER_DIR.mkdir()
 
-    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    COMPRESSED_DOCKER_WINDOWS_IMAGES = STATIC_DOCKER_DIR / "windows.zip"
+    COMPRESSED_DOCKER_LINUX_IMAGES = STATIC_DOCKER_DIR / "linux.zip"
 
-    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
-    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+    logger = logging.getLogger(__name__)
 
-    print(f"BUILDER: {app.builder.name}")
+    logger.info(f"\nCompressing Docker images...")
+    zip_directory(DOCKER_DIR / "windows", COMPRESSED_DOCKER_WINDOWS_IMAGES, ignore_patterns=["*.tgz"])
+    zip_directory(DOCKER_DIR / "linux", COMPRESSED_DOCKER_LINUX_IMAGES, ignore_patterns=["*.tgz"])
 
-    for file in status_iterator(
-        examples,
-        f"Copying example to doc/source/examples/",
-        "green",
-        len(examples),
-        verbosity=1,
-        stringify_func=(lambda file: file.name),
-    ):
-        destination_file = SOURCE_EXAMPLES / file.name
-        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+    # Add the new files and their information to the Jinja context. This
+    # operation can not be performed outside of this function since the compressed files do not yet exist.
+
+    DOCKER_RECIPES = SOURCE_DIR / "_static" / "docker"
+    DOCKER_RECIPES_WINDOWS = DOCKER_RECIPES / "windows.zip"
+    DOCKER_RECIPES_LINUX = DOCKER_RECIPES / "linux.zip"
+
+    jinja_contexts["docker_images"] = {
+        "docker_recipes_windows": DOCKER_RECIPES_WINDOWS.name,
+        "docker_recipes_windows_size": f"{get_file_size_in_mb(DOCKER_RECIPES_WINDOWS):.2f} MB",
+        "docker_recipes_windows_hash": f"{get_sha256_from_file(DOCKER_RECIPES_WINDOWS)}",
+        "docker_recipes_linux": DOCKER_RECIPES_LINUX.name,
+        "docker_recipes_linux_size": f"{get_file_size_in_mb(DOCKER_RECIPES_LINUX):.2f} MB",
+        "docker_recipes_linux_hash": f"{get_sha256_from_file(DOCKER_RECIPES_LINUX)}",
+    }
 
 
 def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Exception):
@@ -318,6 +403,39 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
 
 
+def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
+    """
+    Copy the examples directory to the source directory of the documentation.
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
+    if not SOURCE_EXAMPLES.exists():
+        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+
+    EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+
+    all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
+    examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
+
+    print(f"BUILDER: {app.builder.name}")
+
+    for file in status_iterator(
+        examples,
+        f"Copying example to doc/source/examples/",
+        "green",
+        len(examples),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_EXAMPLES / file.name
+        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
     """
     Remove the example files from the documentation source directory.
@@ -342,6 +460,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
 
     Quarto needs to be installed in the system to render the PDF files. See
     https://quarto.org/docs/get-started/.
+    Artifact
 
     Parameters
     ----------
@@ -401,6 +520,7 @@ def setup(app: sphinx.application.Sphinx):
     # However, the examples are desired to be kept in the root directory. Once the
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
+    app.connect("builder-inited", copy_docker_files_to_static_dir)
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)

@@ -13,14 +13,14 @@ in the STK X and STK Objects libraries.
 __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
 "CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
 "Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
-"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXEC_MULTI_CMD_RESULT_ACTION", "ExecCmdResult", 
-"ExecMultiCmdResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", "IOrbitState", 
-"IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", "IOrientationYPRAngles", 
-"IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISP_ID", "LOG_MESSAGE_TYPE", "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", 
-"Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationYPRAngles", "POSITION_TYPE", 
-"PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", "PropertyInfo", "PropertyInfoCollection", 
-"Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", "UnitPreferencesUnit", 
-"UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
+"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXECUTE_MULTIPLE_COMMANDS_MODE", "ExecuteCommandResult", 
+"ExecuteMultipleCommandResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
+"IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
+"IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISPLAY_ID", "LOG_MESSAGE_TYPE", 
+"ORBIT_STATE_TYPE", "ORIENTATION_TYPE", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", 
+"OrientationYPRAngles", "POSITION_TYPE", "PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", 
+"PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
+"UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
 
 import typing
 
@@ -347,24 +347,24 @@ LOG_MESSAGE_TYPE.ALARM.__doc__ = "Alarm message."
 
 agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"] = LOG_MESSAGE_TYPE
 
-class LOG_MESSAGE_DISP_ID(IntEnum):
+class LOG_MESSAGE_DISPLAY_ID(IntEnum):
     """Log message destination options."""
    
     ALL = -1
     """STK displays the message in all the log destination."""
     DEFAULT = 0
     """STK displays the message in the default log destination."""
-    MESSAGE_WIN = 1
+    MESSAGE_WINDOW = 1
     """STK displays the message in the message window."""
     STATUS_BAR = 2
     """STK displays the message in the status bar."""
 
-LOG_MESSAGE_DISP_ID.ALL.__doc__ = "STK displays the message in all the log destination."
-LOG_MESSAGE_DISP_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
-LOG_MESSAGE_DISP_ID.MESSAGE_WIN.__doc__ = "STK displays the message in the message window."
-LOG_MESSAGE_DISP_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
+LOG_MESSAGE_DISPLAY_ID.ALL.__doc__ = "STK displays the message in all the log destination."
+LOG_MESSAGE_DISPLAY_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
+LOG_MESSAGE_DISPLAY_ID.MESSAGE_WINDOW.__doc__ = "STK displays the message in the message window."
+LOG_MESSAGE_DISPLAY_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
 
-agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"] = LOG_MESSAGE_DISP_ID
+agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"] = LOG_MESSAGE_DISPLAY_ID
 
 class LINE_STYLE(IntEnum):
     """Line Style."""
@@ -427,7 +427,7 @@ LINE_STYLE.S_DASH.__doc__ = "Specify an alternating dash-dot line."
 
 agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
 
-class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
+class EXECUTE_MULTIPLE_COMMANDS_MODE(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
    
     CONTINUE_ON_ERROR = 0
@@ -436,15 +436,15 @@ class EXEC_MULTI_CMD_RESULT_ACTION(IntFlag):
     """Terminate the execution of the command batch but do not throw an exception."""
     EXCEPTION_ON_ERROR = 2
     """Terminate the execution of the command batch and throw an exception."""
-    IGNORE_EXEC_CMD_RESULT = 0x8000
+    DISCARD_RESULTS = 0x8000
     """Ignore results returned by individual commands. The option must be used in combination with other flags."""
 
-EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
-EXEC_MULTI_CMD_RESULT_ACTION.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
-EXEC_MULTI_CMD_RESULT_ACTION.EXCEPTION_ON_ERROR.__doc__ = "Terminate the execution of the command batch and throw an exception."
-EXEC_MULTI_CMD_RESULT_ACTION.IGNORE_EXEC_CMD_RESULT.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
+EXECUTE_MULTIPLE_COMMANDS_MODE.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
+EXECUTE_MULTIPLE_COMMANDS_MODE.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
+EXECUTE_MULTIPLE_COMMANDS_MODE.EXCEPTION_ON_ERROR.__doc__ = "Terminate the execution of the command batch and throw an exception."
+EXECUTE_MULTIPLE_COMMANDS_MODE.DISCARD_RESULTS.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
 
-agcls.AgTypeNameMap["EXEC_MULTI_CMD_RESULT_ACTION"] = EXEC_MULTI_CMD_RESULT_ACTION
+agcls.AgTypeNameMap["EXECUTE_MULTIPLE_COMMANDS_MODE"] = EXECUTE_MULTIPLE_COMMANDS_MODE
 
 class FILL_STYLE(IntEnum):
     """Fill Style."""
@@ -1754,7 +1754,7 @@ agcls.AgTypeNameMap["IRuntimeTypeInfoProvider"] = IRuntimeTypeInfoProvider
 
 
 
-class ExecCmdResult(SupportsDeleteCallback):
+class ExecuteCommandResult(SupportsDeleteCallback):
     """Collection of strings returned by the ExecuteCommand."""
 
     _num_methods = 5
@@ -1770,9 +1770,9 @@ class ExecCmdResult(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ExecCmdResult)
+        return get_interface_property(attrname, ExecuteCommandResult)
     def __iter__(self):
-        """Create an iterator for the ExecCmdResult object."""
+        """Create an iterator for the ExecuteCommandResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
@@ -1791,14 +1791,14 @@ class ExecCmdResult(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
-        return self._intf.get_property(ExecCmdResult._metadata, ExecCmdResult._get_count_metadata)
+        return self._intf.get_property(ExecuteCommandResult._metadata, ExecuteCommandResult._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(ExecCmdResult._metadata, ExecCmdResult._item_metadata, index, OutArg())
+        return self._intf.invoke(ExecuteCommandResult._metadata, ExecuteCommandResult._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1806,14 +1806,14 @@ class ExecCmdResult(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
-        return self._intf.get_property(ExecCmdResult._metadata, ExecCmdResult._get__NewEnum_metadata)
+        return self._intf.get_property(ExecuteCommandResult._metadata, ExecuteCommandResult._get__NewEnum_metadata)
 
     _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
     def range(self, startIndex:int, stopIndex:int) -> list:
         """Return the elements within the specified range."""
-        return self._intf.invoke(ExecCmdResult._metadata, ExecCmdResult._range_metadata, startIndex, stopIndex, OutArg())
+        return self._intf.invoke(ExecuteCommandResult._metadata, ExecuteCommandResult._range_metadata, startIndex, stopIndex, OutArg())
 
     _get_is_succeeded_metadata = { "offset" : _get_is_succeeded_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1821,7 +1821,7 @@ class ExecCmdResult(SupportsDeleteCallback):
     @property
     def is_succeeded(self) -> bool:
         """Indicate whether the object contains valid results."""
-        return self._intf.get_property(ExecCmdResult._metadata, ExecCmdResult._get_is_succeeded_metadata)
+        return self._intf.get_property(ExecuteCommandResult._metadata, ExecuteCommandResult._get_is_succeeded_metadata)
 
     __getitem__ = item
 
@@ -1831,9 +1831,9 @@ class ExecCmdResult(SupportsDeleteCallback):
     _property_names[is_succeeded] = "is_succeeded"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ExecCmdResult."""
+        """Construct an object of type ExecuteCommandResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExecCmdResult)
+        initialize_from_source_object(self, sourceObject, ExecuteCommandResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1841,12 +1841,15 @@ class ExecCmdResult(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ExecCmdResult, [ExecCmdResult, ])
+        set_class_attribute(self, attrname, value, ExecuteCommandResult, [ExecuteCommandResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecCmdResult)
-agcls.AgTypeNameMap["ExecCmdResult"] = ExecCmdResult
+agcls.AgClassCatalog.add_catalog_entry((5578266293439448088, 16187374167037800079), ExecuteCommandResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{97E6F619-31E5-4AF7-B3AF-0E927F2134D4}').as_data_pair(), ExecuteCommandResult)
+# mapping for ExecuteCommandResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}').as_data_pair(), agcom.GUID.from_registry_format('{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}').as_data_pair())
+agcls.AgTypeNameMap["ExecuteCommandResult"] = ExecuteCommandResult
 
-class ExecMultiCmdResult(SupportsDeleteCallback):
+class ExecuteMultipleCommandResult(SupportsDeleteCallback):
     """Collection of objects returned by the ExecuteMultipleCommands."""
 
     _num_methods = 3
@@ -1860,13 +1863,13 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ExecMultiCmdResult)
+        return get_interface_property(attrname, ExecuteMultipleCommandResult)
     def __iter__(self):
-        """Create an iterator for the ExecMultiCmdResult object."""
+        """Create an iterator for the ExecuteMultipleCommandResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "ExecCmdResult":
+    def __next__(self) -> "ExecuteCommandResult":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -1881,14 +1884,14 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
-        return self._intf.get_property(ExecMultiCmdResult._metadata, ExecMultiCmdResult._get_count_metadata)
+        return self._intf.get_property(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
-    def item(self, index:int) -> "ExecCmdResult":
+    def item(self, index:int) -> "ExecuteCommandResult":
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(ExecMultiCmdResult._metadata, ExecMultiCmdResult._item_metadata, index, OutArg())
+        return self._intf.invoke(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1896,7 +1899,7 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the objects in the collection."""
-        return self._intf.get_property(ExecMultiCmdResult._metadata, ExecMultiCmdResult._get__NewEnum_metadata)
+        return self._intf.get_property(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._get__NewEnum_metadata)
 
     __getitem__ = item
 
@@ -1905,9 +1908,9 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
     _property_names[_NewEnum] = "_NewEnum"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ExecMultiCmdResult."""
+        """Construct an object of type ExecuteMultipleCommandResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExecMultiCmdResult)
+        initialize_from_source_object(self, sourceObject, ExecuteMultipleCommandResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1915,10 +1918,13 @@ class ExecMultiCmdResult(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ExecMultiCmdResult, [ExecMultiCmdResult, ])
+        set_class_attribute(self, attrname, value, ExecuteMultipleCommandResult, [ExecuteMultipleCommandResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecMultiCmdResult)
-agcls.AgTypeNameMap["ExecMultiCmdResult"] = ExecMultiCmdResult
+agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecuteMultipleCommandResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecuteMultipleCommandResult)
+# mapping for ExecuteMultipleCommandResult
+agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}').as_data_pair(), agcom.GUID.from_registry_format('{0558BE8E-AF66-4F52-9C6D-76962FC52577}').as_data_pair())
+agcls.AgTypeNameMap["ExecuteMultipleCommandResult"] = ExecuteMultipleCommandResult
 
 class UnitPreferencesUnit(SupportsDeleteCallback):
     """Provide info about a unit."""

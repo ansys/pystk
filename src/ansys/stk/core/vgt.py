@@ -24703,8 +24703,8 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, ITimeToolTimeProp
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_from_method_method_offset = 1
-    _get_to_method_offset = 2
+    _get_from_vector_method_offset = 1
+    _get_to_vector_method_offset = 2
     _get_is_normalized_method_offset = 3
     _set_is_normalized_method_offset = 4
     _get_dimension_method_offset = 5
@@ -24717,21 +24717,21 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, ITimeToolTimeProp
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorCross)
     
-    _get_from_method_metadata = { "offset" : _get_from_method_method_offset,
+    _get_from_vector_metadata = { "offset" : _get_from_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_method(self) -> "VectorGeometryToolVectorRefTo":
+    def from_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify one of the two vectors which define the vector cross product."""
-        return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_from_method_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_from_vector_metadata)
 
-    _get_to_metadata = { "offset" : _get_to_method_offset,
+    _get_to_vector_metadata = { "offset" : _get_to_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to(self) -> "VectorGeometryToolVectorRefTo":
+    def to_vector(self) -> "VectorGeometryToolVectorRefTo":
         """Specify the second of the two vectors which define the vector cross product."""
-        return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_to_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_to_vector_metadata)
 
     _get_is_normalized_metadata = { "offset" : _get_is_normalized_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24763,8 +24763,8 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, ITimeToolTimeProp
     def dimension(self, dimension:str) -> None:
         return self._intf.set_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._set_dimension_metadata, dimension)
 
-    _property_names[from_method] = "from_method"
-    _property_names[to] = "to"
+    _property_names[from_vector] = "from_vector"
+    _property_names[to_vector] = "to_vector"
     _property_names[is_normalized] = "is_normalized"
     _property_names[dimension] = "dimension"
 
@@ -28167,7 +28167,7 @@ class AnalysisWorkbenchProvider(SupportsDeleteCallback):
     _get_conditions_method_offset = 16
     _supports_method_offset = 17
     _get_condition_sets_method_offset = 18
-    _import_method_method_offset = 19
+    _import_components_method_offset = 19
     _get_volume_grids_method_offset = 20
     _get_volumes_method_offset = 21
     _get_volume_calcs_method_offset = 22
@@ -28322,12 +28322,12 @@ class AnalysisWorkbenchProvider(SupportsDeleteCallback):
         """Return a group of condition set objects."""
         return self._intf.get_property(AnalysisWorkbenchProvider._metadata, AnalysisWorkbenchProvider._get_condition_sets_metadata)
 
-    _import_method_metadata = { "offset" : _import_method_method_offset,
+    _import_components_metadata = { "offset" : _import_components_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def import_method(self, filename:str) -> "AnalysisWorkbenchCollection":
+    def import_components(self, filename:str) -> "AnalysisWorkbenchCollection":
         """Import Analysis Workbench components from a file."""
-        return self._intf.invoke(AnalysisWorkbenchProvider._metadata, AnalysisWorkbenchProvider._import_method_metadata, filename, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchProvider._metadata, AnalysisWorkbenchProvider._import_components_metadata, filename, OutArg())
 
     _get_volume_grids_metadata = { "offset" : _get_volume_grids_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
