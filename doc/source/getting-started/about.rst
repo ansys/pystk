@@ -25,7 +25,7 @@ Package
 
 The STK Python API is packaged as a Python wheel file:
 
-   **ansys_stk_core-0.1.dev0-py3-none-any.whl**
+``ansys_stk_core-0.1.dev0-py3-none-any.whl``
 
 Modules
 -------
@@ -56,8 +56,8 @@ Limitations
 The STK Python API currently has the following limitations:
 
 -  UI plugins are not currently supported.
--  Enabling socket connection by setting the IAgSTKXApplication.EnableConnect to True is not currently supported. Connect commands may be used through the object model root
+-  Enabling socket connection by setting the ``IAgSTKXApplication.EnableConnect`` to True is not currently supported. Connect commands may be used through the object model root
    ExecuteCommand method.
--  When using gRPC, GetRawPluginObject (available on IAgAccessCnstrPluginMinMax and IAgVePluginPropagator) and RawPluginObject (available on IAgScatteringPointProviderPlugin, IAgScatterPointModelPlugin, IAgRadarClutterGeometryModelPlugin, IAgRadarProbabilityOfDetectionPlugin, IAgRadarClutterMapModelPlugin, IAgRadarCrossSectionComputeStrategyPlugin, and IAgRadarStcAttenuationPlugin) are not available and always return None.
+-  When using gRPC, GetRawPluginObject (available on ``IAgAccessCnstrPluginMinMax`` and ``IAgVePluginPropagator``) and RawPluginObject (available on ``IAgScatteringPointProviderPlugin``, ``IAgScatterPointModelPlugin``, ``IAgRadarClutterGeometryModelPlugin``, ``IAgRadarProbabilityOfDetectionPlugin``, ``IAgRadarClutterMapModelPlugin``, ``IAgRadarCrossSectionComputeStrategyPlugin``, and ``IAgRadarStcAttenuationPlugin``) are not available and always return None.
 
 
