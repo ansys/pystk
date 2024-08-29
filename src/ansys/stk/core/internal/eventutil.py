@@ -37,13 +37,11 @@ class _EventSubscriptionManagerImpl(object):
     def subscribe(self, handler: STKEventSubscriber) -> int:
         self._next_id = self._next_id + 1
         self._handlers[self._next_id] = handler
-        assert(isinstance(handler, STKEventSubscriber))
         handler._subscribe_impl()
         return self._next_id
         
     def unsubscribe(self, id:int):
         if id in self._handlers:
-            assert(isinstance(self._handlers[id], STKEventSubscriber))
             self._handlers[id]._unsubscribe_impl()
             del(self._handlers[id])
         
@@ -71,8 +69,8 @@ class STKEventSubscriber(object):
             
     def _subscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
-        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.subscribe()
+        impl : COMEventHandlerImpl | GrpcEventHandlerImpl = self._impl
+        impl.subscribe()
         
     def unsubscribe(self):
         """Unsubscribe from events."""
@@ -82,8 +80,8 @@ class STKEventSubscriber(object):
             
     def _unsubscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
-        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.unsubscribe()
+        impl : COMEventHandlerImpl | GrpcEventHandlerImpl = self._impl
+        impl.unsubscribe()
         
 class _STKEvent(object):
     def __init__(self):
