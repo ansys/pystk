@@ -1,13 +1,13 @@
-StateCalcSemiMajorAxis
+StateCalcSemimajorAxis
 ======================
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
    SemiMajorAxis Calc objects.
 
-.. py:currentmodule:: StateCalcSemiMajorAxis
+.. py:currentmodule:: StateCalcSemimajorAxis
 
 Overview
 --------
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis.central_body_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis.central_body_name`
               - Gets or sets the central body of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis.element_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis.element_type`
               - Gets or sets the element type.
 
 
@@ -32,21 +32,21 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import StateCalcSemiMajorAxis
+    from ansys.stk.core.stkobjects.astrogator import StateCalcSemimajorAxis
 
 
 Property detail
 ---------------
 
 .. py:property:: central_body_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis.central_body_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis.central_body_name
     :type: str
 
     Gets or sets the central body of the component.
 
 .. py:property:: element_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis.element_type
-    :type: CALC_OBJECT_ELEM
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis.element_type
+    :type: CALCULATION_OBJECT_ELEMENT
 
     Gets or sets the element type.
 

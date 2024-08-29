@@ -75,14 +75,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, mCSSegment: IMissionControlSequenceSegment) -> None
+.. py:method:: set_segment(self, mCSSegment: IMCSSegment) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.set_segment
 
     Set the targeted segment.
 
     :Parameters:
 
-    **mCSSegment** : :obj:`~IMissionControlSequenceSegment`
+    **mCSSegment** : :obj:`~IMCSSegment`
 
     :Returns:
 

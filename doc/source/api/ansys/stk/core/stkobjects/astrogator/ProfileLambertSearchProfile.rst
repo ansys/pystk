@@ -31,7 +31,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.coord_system_name`
               - Gets or sets the coordinate system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.target_coord_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.target_coordinate_type`
               - Get the target coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.enable_second_maneuver`
               - Enable to calculate second maneuver at destination.
@@ -113,9 +113,9 @@ Property detail
 
     Gets or sets the coordinate system.
 
-.. py:property:: target_coord_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.target_coord_type
-    :type: LAMBERT_TARGET_COORD_TYPE
+.. py:property:: target_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.target_coordinate_type
+    :type: LAMBERT_TARGET_COORDINATE_TYPE
 
     Get the target coordinate type.
 
@@ -306,14 +306,14 @@ Method detail
 
 
 
-.. py:method:: set_target_coord_type(self, elementType: LAMBERT_TARGET_COORD_TYPE) -> None
+.. py:method:: set_target_coord_type(self, elementType: LAMBERT_TARGET_COORDINATE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.set_target_coord_type
 
     Select a target coordinate type.
 
     :Parameters:
 
-    **elementType** : :obj:`~LAMBERT_TARGET_COORD_TYPE`
+    **elementType** : :obj:`~LAMBERT_TARGET_COORDINATE_TYPE`
 
     :Returns:
 

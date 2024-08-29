@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~GEODETIC`
               - Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body).
 
-            * - :py:attr:`~LAUNCH_AZ_RAD`
+            * - :py:attr:`~LAUNCH_AZIMUTH_RADIUS`
               - Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body.
 
-            * - :py:attr:`~LAUNCH_AZ_ALTITUDE`
+            * - :py:attr:`~LAUNCH_AZIMUTH_ALTITUDE`
               - Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body.
 
             * - :py:attr:`~CBF_CARTESIAN`

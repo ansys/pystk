@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameter.name`
               - Gets or sets the parameter name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameter.param_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameter.parameter_value`
               - Gets or sets the parameter value.  Set in Object Model unit preference for selected dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameter.unit`
               - Gets or sets the parameter's unit that is used to represent ParamValue during the scripting tool script execution. ParamValue is set in Object Model unit preference for selected dimension and not this unit. As with other units configurable in the desktop environment for STK, this unit is separate (and may differ) from the Object Model unit preference.
@@ -64,8 +64,8 @@ Property detail
 
     Gets or sets the parameter name.
 
-.. py:property:: param_value
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameter.param_value
+.. py:property:: parameter_value
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameter.parameter_value
     :type: typing.Any
 
     Gets or sets the parameter value.  Set in Object Model unit preference for selected dimension.

@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~SUM_OF_SQUARES`
               - Designates the calculation to be the sum of the squares.
 
-            * - :py:attr:`~OF_SUM`
+            * - :py:attr:`~SQUARE_OF_SUM`
               - Designates the calculation to be the square of the sum.
 
 

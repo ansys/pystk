@@ -2581,19 +2581,19 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial`
               - Equinoctial coordinate type, which uses the center of the Earth as the origin and the plane of the satellite's orbit as the reference plane.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFlightPathAngleHorizontal`
               - Horizontal Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFlightPathAngleVertical`
               - Vertical Flight Path Angle, an element of the Mixed Spherical coordinate type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical`
               - Mixed Spherical coordinate type, using a variation of the spherical elements that combines Earth-fixed position parameters with inertial velocity parameters.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFPAHorizontal`
+            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFlightPathAngleHorizontal`
               - Horizontal Flight Path Angle, an element of the Spherical coordinate type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFPAVertical`
+            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFlightPathAngleVertical`
               - Vertical Flight Path Angle, an element of the Spherical coordinate type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.OrbitStateSpherical`
@@ -4824,10 +4824,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.EQUINOCTIAL_SIZE_SHAPE`
               - Opt whether to use Mean Motion or Semimajor Axis to specify the orbit size (Equinoctial coordinate type).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MIXED_SPHERICAL_FPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.MIXED_SPHERICAL_FLIGHT_PATH_ANGLE`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPHERICAL_FPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.SPHERICAL_FLIGHT_PATH_ANGLE`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
             * - :py:class:`~ansys.stk.core.stkobjects.CLASSICAL_SIZE_SHAPE`
@@ -6023,11 +6023,11 @@ The following is an overview of the classes, interfaces and enumerations of the 
      EquinoctialSizeShapeMeanMotion<stkobjects/EquinoctialSizeShapeMeanMotion>
      EquinoctialSizeShapeSemimajorAxis<stkobjects/EquinoctialSizeShapeSemimajorAxis>
      OrbitStateEquinoctial<stkobjects/OrbitStateEquinoctial>
-     MixedSphericalFPAHorizontal<stkobjects/MixedSphericalFPAHorizontal>
-     MixedSphericalFPAVertical<stkobjects/MixedSphericalFPAVertical>
+     MixedSphericalFlightPathAngleHorizontal<stkobjects/MixedSphericalFlightPathAngleHorizontal>
+     MixedSphericalFlightPathAngleVertical<stkobjects/MixedSphericalFlightPathAngleVertical>
      OrbitStateMixedSpherical<stkobjects/OrbitStateMixedSpherical>
-     SphericalFPAHorizontal<stkobjects/SphericalFPAHorizontal>
-     SphericalFPAVertical<stkobjects/SphericalFPAVertical>
+     SphericalFlightPathAngleHorizontal<stkobjects/SphericalFlightPathAngleHorizontal>
+     SphericalFlightPathAngleVertical<stkobjects/SphericalFlightPathAngleVertical>
      OrbitStateSpherical<stkobjects/OrbitStateSpherical>
      VehicleGraphics2DTimeComponentsEventElement<stkobjects/VehicleGraphics2DTimeComponentsEventElement>
      VehicleGraphics2DTimeComponentsEventCollectionElement<stkobjects/VehicleGraphics2DTimeComponentsEventCollectionElement>
@@ -6774,8 +6774,8 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ DELAUNAY_H_TYPE<stkobjects/DELAUNAY_H_TYPE_enum>
     ≔ DELAUNAY_G_TYPE<stkobjects/DELAUNAY_G_TYPE_enum>
     ≔ EQUINOCTIAL_SIZE_SHAPE<stkobjects/EQUINOCTIAL_SIZE_SHAPE_enum>
-    ≔ MIXED_SPHERICAL_FPA<stkobjects/MIXED_SPHERICAL_FPA_enum>
-    ≔ SPHERICAL_FPA<stkobjects/SPHERICAL_FPA_enum>
+    ≔ MIXED_SPHERICAL_FLIGHT_PATH_ANGLE<stkobjects/MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_enum>
+    ≔ SPHERICAL_FLIGHT_PATH_ANGLE<stkobjects/SPHERICAL_FLIGHT_PATH_ANGLE_enum>
     ≔ CLASSICAL_SIZE_SHAPE<stkobjects/CLASSICAL_SIZE_SHAPE_enum>
     ≔ EQUINOCTIAL_FORMULATION<stkobjects/EQUINOCTIAL_FORMULATION_enum>
     ≔ SCATTERING_POINT_PROVIDER_TYPE<stkobjects/SCATTERING_POINT_PROVIDER_TYPE_enum>

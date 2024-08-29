@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcInclination.element_type
-    :type: CALC_OBJECT_ELEM
+    :type: CALCULATION_OBJECT_ELEMENT
 
     Gets or sets the element type.
 

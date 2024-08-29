@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments`
               - Get the arguments to be applied to the function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.inline_func`
               - Gets or sets the expression to be applied as a function.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.unit_dimension`
               - Gets or sets the unit dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments_link_embed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed`
               - Get the arguments to be applied to the function.
 
 
@@ -42,9 +42,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_arguments
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments
-    :type: CalcObjectCollection
+.. py:property:: calculation_object_arguments
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments
+    :type: CalculationObjectCollection
 
     Get the arguments to be applied to the function.
 
@@ -60,9 +60,9 @@ Property detail
 
     Gets or sets the unit dimension.
 
-.. py:property:: calc_arguments_link_embed
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calc_arguments_link_embed
-    :type: CalcObjectLinkEmbedControlCollection
+.. py:property:: calculation_object_arguments_link_embed
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScript.calculation_object_arguments_link_embed
+    :type: CalculationObjectLinkEmbedControlCollection
 
     Get the arguments to be applied to the function.
 

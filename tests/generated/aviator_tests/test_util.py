@@ -54,9 +54,7 @@ class EngineLifetimeManager:
 
     @staticmethod
     def Initialize(args=None, lock=False) -> "IAgAppProvider":
-
         if EngineLifetimeManager.target is None and args is not None:
-
             if os.name != "nt" and args.target == "Stk":
                 raise RuntimeError("Stk target not supported on Linux.")
 
@@ -1233,9 +1231,9 @@ class TestBase(unittest.TestCase):
     @property
     def EarthGravModel(self):
         sc = Scenario(TestBase.Application.current_scenario)
-        cbEarth: AstrogatorCentralBody = clr.CastAs(
+        cbEarth: CentralBodyComponent = clr.CastAs(
             sc.component_directory.get_components(COMPONENT.ASTROGATOR).get_folder("Central Bodies")["Earth"],
-            AstrogatorCentralBody,
+            CentralBodyComponent,
         )
         if cbEarth.default_gravity_model_name == "EGM2008":
             return TestBase.GravModel.EGM2008

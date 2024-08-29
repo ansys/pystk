@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: coord_type
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveThrustVector.coord_type
-    :type: IMP_DELTA_V_REP
+    :type: IMPULSIVE_DELTA_V_REPRESENTATION
 
     Gets or sets the coordinate representation for the DeltaV.
 

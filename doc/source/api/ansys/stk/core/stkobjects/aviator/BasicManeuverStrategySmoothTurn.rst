@@ -38,7 +38,7 @@ Overview
               - Gets or sets the max roll rate override value for the smooth turn. The roll rate mode must be set to override to access this property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.airspeed_options`
               - Get the airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.fpa_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.flight_path_angle_mode`
               - Gets or sets the flight path angle mode.
 
 
@@ -108,9 +108,9 @@ Property detail
 
     Get the airspeed options.
 
-.. py:property:: fpa_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.fpa_mode
-    :type: SMOOTH_TURN_FPA_MODE
+.. py:property:: flight_path_angle_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.flight_path_angle_mode
+    :type: SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE
 
     Gets or sets the flight path angle mode.
 

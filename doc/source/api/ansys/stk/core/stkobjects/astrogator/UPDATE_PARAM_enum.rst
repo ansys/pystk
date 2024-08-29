@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~TANK_PRESSURE`
               - The fuel tank pressure.
 
-            * - :py:attr:`~TANK_TEMP`
+            * - :py:attr:`~TANK_TEMPERATURE`
               - The temperature of the fuel tank.
 
             * - :py:attr:`~CR`

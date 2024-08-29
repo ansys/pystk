@@ -24,9 +24,9 @@ Overview
               - Radius of Periapsis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.c3_energy`
               - C3Energy (Rate squared).
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.ra_incoming_asymptote`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.right_ascension_of_incoming_asymptote`
               - Right Ascension of Incoming Asymptote. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.declination_incoming_asymptote`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.declination_of_incoming_asymptote`
               - Declination of Incoming Asymptote. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.velocity_azimuth_periapsis`
               - Velocity Azimuth at Periapsis. Uses Angle Dimension.
@@ -58,14 +58,14 @@ Property detail
 
     C3Energy (Rate squared).
 
-.. py:property:: ra_incoming_asymptote
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.ra_incoming_asymptote
+.. py:property:: right_ascension_of_incoming_asymptote
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.right_ascension_of_incoming_asymptote
     :type: typing.Any
 
     Right Ascension of Incoming Asymptote. Uses Angle Dimension.
 
-.. py:property:: declination_incoming_asymptote
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.declination_incoming_asymptote
+.. py:property:: declination_of_incoming_asymptote
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementTargetVectorIncomingAsymptote.declination_of_incoming_asymptote
     :type: typing.Any
 
     Declination of Incoming Asymptote. Uses Angle Dimension.
