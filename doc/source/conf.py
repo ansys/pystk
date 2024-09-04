@@ -322,6 +322,9 @@ linkcheck_ignore = [
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
 
+# -- LaTeX configuration
+sd_fontawesome_latex = True
+
 # -- Sphinx application setup ------------------------------------------------
 
 
