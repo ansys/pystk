@@ -132,19 +132,13 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html,doc-pdf"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
-      - name: "Upload HTML documentation artifacts"
+      - name: "Upload combined artifacts"
         uses: actions/upload-artifact@v4
         with:
           path: doc/_build/html
           name: documentation-html
-
-      - name: "Upload PDF documentation artifacts"
-        uses: actions/upload-artifact@v4
-        with:
-          path: doc/_build/latex/${{ env.LIBRARY_NAME }}.pdf
-          name: documentation-pdf
 
       - name: "Stop the container"
         if: always()
