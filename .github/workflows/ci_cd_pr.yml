@@ -124,6 +124,7 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ${{ matrix.runner }}
+    environment: needs-pystk-approvers
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -309,7 +310,7 @@ jobs:
   tests:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
-    environment: self-hosted-runner
+    environment: needs-pystk-approvers
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -429,3 +430,12 @@ jobs:
       - uses: ansys/actions/build-library@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}
+
+  merge:
+    name: "Merge pull-request"
+    runs-on: ubuntu-latest
+    needs: build-library
+    environment: needs-pystk-approvers
+    steps:
+      - name: "Only PySTK Approvers team can authorize this job"
+        run: "Merge is authorized"
