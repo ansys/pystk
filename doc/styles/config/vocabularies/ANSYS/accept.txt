@@ -12,6 +12,7 @@ Hohmann
 IIF
 Python
 intervisibility
+IPython
 Keplerian
 LOD
 lod

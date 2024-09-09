@@ -77,7 +77,7 @@ Verify installation
 
 Verify a successful installation of PySTK by running:
 
-.. jinja:: install_guide
+.. jinja::
 
     .. code-block:: python
         
@@ -91,6 +91,6 @@ Verify a successful installation of PySTK by running:
 
     .. code-block:: text
 
-        STK version is {{ stk_version }}
+        STK version is {{ STK_VERSION }}
 
         

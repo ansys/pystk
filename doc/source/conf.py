@@ -58,7 +58,7 @@ html_theme_options = {
     "logo": "pyansys",
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
+html_css_files = ["css/highlight.css"]
 
 # Sphinx extensions
 extensions = [
@@ -114,6 +114,9 @@ suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
     # https://github.com/ansys-internal/pystk/issues/414
     "ref.python",
+    # Sphinx-design downloads some font-awesome icons that conflict with the
+    # ones in pydata-sphinx-theme.
+    "design.fa-build",
 ]
 
 # The suffix(es) of source filenames
@@ -132,6 +135,15 @@ links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
+# -- Linkcheck configuration -------------------------------------------------
+user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_ignore = [
+    "https://www.ansys.com/*",
+    # Requires sign-in
+    f"https://github.com/{user_repo}/*",
+    "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
+]
 
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
@@ -279,8 +291,17 @@ ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
+WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
+if not WHEELHOUSE_PATH.exists():
+    linkcheck_ignore.append(r".*/wheelhouse/.*")
+
+jinja_globals = {
+    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
+    "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
+    "STK_VERSION": "12.9.0",
+}
+
 jinja_contexts = {
-    "install_guide": {"stk_version": "12.9.0"},
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
@@ -292,7 +313,19 @@ jinja_contexts = {
         "source": ARTIFACTS_SDIST.name,
         "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
         "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
-        "platforms": ["Windows", "Linux"],
+    },
+    # NOTE: wheelhouse artifacts are only available during CI/CD runs
+    "wheelhouse": {
+        "wheelhouse": {
+            platform: {
+                python: {
+                    target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                }
+                for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
+            }
+            for platform in ["windows", "ubuntu"]
+            for target in ["visualization"]
+        }
     },
 }
 
@@ -308,19 +341,13 @@ autodoc_default_options = {
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
 
-# -- Linkcheck configuration -------------------------------------------------
-user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.2420.81"
-linkcheck_ignore = [
-    "https://www.ansys.com/*",
-    # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-]
-
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- LaTeX configuration
+latex_elements = {
+    "extraclassoptions": "openany,oneside",
+}
 
 # -- Sphinx application setup ------------------------------------------------
 
