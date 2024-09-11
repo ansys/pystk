@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~EQUIV_ON_TIME`
+            * - :py:attr:`~EQUIVALENT_ON_TIME_PERCENT`
               - The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced.
 
             * - :py:attr:`~THRUST_EFFICIENCY`

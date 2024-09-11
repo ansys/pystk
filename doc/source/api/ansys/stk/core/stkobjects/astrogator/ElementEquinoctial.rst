@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.semimajor_axis`
               - Half the length of the major axis of the orbital ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.mean_motion`
               - Gets or sets the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
@@ -50,8 +50,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: semi_major_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.semi_major_axis
+.. py:property:: semimajor_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.semimajor_axis
     :type: float
 
     Half the length of the major axis of the orbital ellipse. Uses Distance Dimension.

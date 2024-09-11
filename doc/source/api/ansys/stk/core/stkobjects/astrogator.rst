@@ -46,23 +46,26 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IElement`
               - The elements of the selected coordinate type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSegment`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment`
               - General properties for segments.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMissionControlSequenceSequence`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence`
               - Properties for a Sequence segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IProfile`
               - General properties for target sequence profiles.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyEphemeris`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentEphemeris`
               - The central body ephemeris source.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyShape`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentShape`
               - The central body shape.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyAttitude`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentAttitude`
               - The central body attitude.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides`
+              - Properties for the JPL DE ephemeris source.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.INumericalIntegrator`
               - The type of numerical integrator to be used by the propagator.
@@ -75,16 +78,16 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DriverMissionControlSequence`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSDriver`
               - Basic properties of an Astrogator satellite.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection`
               - The Mission Control Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceEnd`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSEnd`
               - The End segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceInitialState`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState`
               - The Initial State segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SpacecraftParameters`
@@ -126,7 +129,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ElementSphericalRangeRate`
               - Spherical Range Rate elements.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequencePropagate`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate`
               - The Propagate segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.State`
@@ -147,13 +150,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement`
               - A stopping condition.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSequence`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSSequence`
               - The Sequence segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceBackwardSequence`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSBackwardSequence`
               - The Backward Sequence segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceLaunch`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch`
               - The Launch segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic`
@@ -180,10 +183,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity`
               - The burnout velocity.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceFollow`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSFollow`
               - The Follow segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceManeuver`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSManeuver`
               - The Maneuver segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite`
@@ -234,28 +237,28 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator`
               - Propagation for a finite maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceHold`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSHold`
               - The Hold segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceUpdate`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSUpdate`
               - The Update segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceReturn`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSReturn`
               - The Return segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceStop`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSStop`
               - The Stop segment.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceTargetSequence`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence`
               - The Target Sequence segment.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection`
               - The Profiles of a Target Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceOptions`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSOptions`
               - The MCS Options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CalcObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection`
               - The Calculation Object component folder.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection`
@@ -345,10 +348,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDamageMassFlux`
               - CoClass StateCalcDamageMassFlux.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMagnitudeFieldDipoleL`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMagneticFieldDipoleL`
               - CoClass StateCalcMagFieldDipoleL.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSEETMagnitudeFieldFieldLineSepAngle`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSEETMagneticFieldLineSeparationAngle`
               - SEETMagFieldFieldLineSepAngle Calc object.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcImpactFlux`
@@ -396,7 +399,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitDelaunayL`
               - CoClass AsStateCalcOrbitDelaunayL.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitSemiLatusRectum`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitSemilatusRectum`
               - CoClass AsStateCalcOrbitSemiLatusRectum.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcEquinoctialElem`
@@ -495,10 +498,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcAltitudeOfPeriapsis`
               - AltitudeOfPeriapsis Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcArgOfLat`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcArgumentOfLatitude`
               - Argument of Latitude Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcArgOfPeriapsis`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcArgumentOfPeriapsis`
               - Argument of Periapsis Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcEccentricityAnomaly`
@@ -522,7 +525,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRadOfPeriapsis`
               - RadiusOfPeriapsis Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemiMajorAxis`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSemimajorAxis`
               - SemiMajorAxis Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcTimePastAscNode`
@@ -540,10 +543,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaVSquared`
               - DeltaV Squared Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMissionControlSequenceDeltaV`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMCSDeltaV`
               - MCS DeltaV Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMissionControlSequenceDeltaVSquared`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcMCSDeltaVSquared`
               - MCS DeltaV Squared Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSequenceDeltaV`
@@ -726,13 +729,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcSRPArea`
               - SRPArea Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCosOfVerticalFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcCosOfVerticalFlightPathAngle`
               - CosineOfVerticalFPA Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDec`
               - Dec Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcFlightPathAngle`
               - FPA Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcRMagnitude`
@@ -798,7 +801,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess`
               - Access Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceAcrossSegmentsOtherSat`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceAcrossSegmentsOtherSatellite`
               - DifferenceAcrossSegmentsOtherSat Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat`
@@ -837,7 +840,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanSolarTime`
               - EarthMeanSolarTime Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanLocTimeAN`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanLocalTimeOfAscendingNode`
               - EarthMeanLocTimeAN Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection`
@@ -846,46 +849,46 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequence`
               - Automatic Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection`
               - Central Body Collection.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AstrogatorCentralBody`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent`
               - Central Body.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyGravityModel`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel`
               - Central Body Gravity Model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyShapeSphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeSphere`
               - Central Body Shape - Sphere.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyShapeOblateSpheroid`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid`
               - Central Body Shape - Spheroid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyShapeTriaxialEllipsoid`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid`
               - Central Body Shape - Triaxial Ellipsoid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyAttitudeRotationCoefficientsFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentAttitudeRotationCoefficientsFile`
               - Central Body Attitude - Rotation Coefficients File.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyAttitudeIAU1994`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentAttitudeIAU1994`
               - Central Body Attitude - IAU1994.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisAnalyticOrbit`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentEphemerisAnalyticOrbit`
               - Central Body Ephemeris - Analytic Orbit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisJPLSpice`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentEphemerisJPLSpice`
               - Central Body Ephemeris - JPLSpice.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisFile`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentEphemerisFile`
               - Central Body Ephemeris - File.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisJPLDesignExplorerOptimizer`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentEphemerisJPLDesignExplorerOptimizer`
               - Central Body Ephemeris - JPL DE.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyEphemerisPlanetary`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentEphemerisPlanetary`
               - Central Body Ephemeris - Planetary.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MissionControlSequenceSegmentProperties`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties`
               - Segment Properties.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.PowerInternal`
@@ -903,7 +906,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateTransformationFunction`
               - State Transition Propagator Function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CR3BPFunc`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CR3BPFunction`
               - CR3BP Function.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ER3BPFunc`
@@ -1020,7 +1023,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPNPlate`
               - NPlate SRP propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPTabAreaVec`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPTabulatedAreaVector`
               - Tabulated area vector SRP propagator function.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPVariableArea`
@@ -1035,7 +1038,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin`
               - SRP Reflection Plugin.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineConstAcc`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration`
               - Constant Acceleration engine model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineConstant`
@@ -1053,7 +1056,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EnginePlugin`
               - Plugin engine model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineModelPoly`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial`
               - Polynomial Thrust and Isp engine model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EngineModelThrustCoefficients`
@@ -1146,10 +1149,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameter`
               - Scripting Parameter.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalcObject`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject`
               - Calc Object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalcObjectCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection`
               - Calc Object Collection.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinition`
@@ -1269,7 +1272,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GridSearchResult`
               - Result parameters for Grid Search profile.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CalcObjectLinkEmbedControlCollection`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection`
               - The Calculation Object link/embed component folder.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ProfileBisection`
@@ -1319,13 +1322,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CRITERION`
               - The stopping condition criterion types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_REFERENCE`
               - The calculation object Reference Selection types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_CENTRAL_BODY_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE`
               - The calculation object Central Body Reference Selection types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ELEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_ELEMENT`
               - The calculation object Element Types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.PROFILE_MODE`
@@ -1343,7 +1346,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DRAW_PERTURBATION`
               - The Draw Perturbation types for a Differential Corrector profile.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DERIVE_CALC_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.DERIVATIVE_CALCULATION_METHOD`
               - The Derivative Calculation method types for a Differential Corrector profile.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONVERGENCE_CRITERIA`
@@ -1370,7 +1373,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ADVANCED`
               - Propagate segment properties that can be selected as control parameters for a Target Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.TARGET_SEQ_ACTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.TARGET_SEQUENCE_ACTION`
               - Action options for Target Sequence profiles.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.PROFILES_FINISH`
@@ -1493,10 +1496,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.OPTIMAL_FINITE_GUESS_METHOD`
               - Guess interpolation method.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMP_DELTA_V_REP`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.IMPULSIVE_DELTA_V_REPRESENTATION`
               - Vector representations for impulsive DeltaV specification.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.LAMBERT_TARGET_COORD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.LAMBERT_TARGET_COORDINATE_TYPE`
               - Lambert Target CoordType.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.LAMBERT_SOLUTION_OPTION_TYPE`
@@ -1535,28 +1538,28 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_REPEATING_GROUND_TRACK_ERR`
               - Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_DIRECTION`
               - The direction to search for a desired value.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ORBIT_PLANE_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_ORBIT_PLANE_SOURCE`
               - The calculation object orbit plane source Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_SUN_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_SUN_POSITION`
               - The calculation object sun location Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_ANGLE_SIGN`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_ANGLE_SIGN`
               - The sign of the angle when the relative position has a component along the orbit normal.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_REFERENCE_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_REFERENCE_DIRECTION`
               - Direction that establishes the zero value when projected into the orbit plane.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_RELATIVE_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_RELATIVE_POSITION`
               - The calculation object relative position Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_REFERENCE_ELLIPSE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_REFERENCE_ELLIPSE`
               - The calculation object reference ellipse Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALC_OBJECT_LOCATION_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CALCULATION_OBJECT_LOCATION_SOURCE`
               - The calculation object location source Types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAVITATIONAL_PARAMETER_SOURCE`
@@ -1565,13 +1568,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.REFERENCE_RADIUS_SOURCE`
               - The source of the reference radius for a CAgVAStateCalcReferenceRadius calculation object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAV_COEFF_NORMALIZATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAVITY_COEFFICIENT_NORMALIZATION_TYPE`
               - The normalization type for the CAgVAStateCalcGravCoeff calculation object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAV_COEFF_COEFFICIENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAVITY_COEFFICIENT_TYPE`
               - The coefficient type for the CAgVAStateCalcGravCoeff calculation object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.STM_PERT_VARIABLES`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.STM_PERTURBATION_VARIABLES`
               - The initial and final Cartesian variational variables that describe an STM element.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.STM_EIGEN_NUMBER`
@@ -1616,7 +1619,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GRAV_PARAM_SOURCE`
               - The gravity parameter source.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EPHEM_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.EPHEMERIS_SOURCE`
               - The ephemeris source type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SOLAR_FORCE_METHOD`
@@ -1649,7 +1652,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.TAB_VEC_INTERPOLATION_METHOD`
               - The interpolation method for tabulated area vector file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CONST_ACC`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CONSTANT_ACCELERATION`
               - Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_CONSTANT`
@@ -1664,7 +1667,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_ION`
               - Ion engine model properties that can be selected as control parameters for a Target Sequence.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_MODEL_POLY`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.CONTROL_ENGINE_MODEL_POLYNOMIAL`
               - Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.ENGINE_MODEL_FUNCTION`
@@ -1727,12 +1730,13 @@ Object Model components specifically designed to support STK Astrogator.
      IDisplaySystem<astrogator/IDisplaySystem>
      IBurnout<astrogator/IBurnout>
      IElement<astrogator/IElement>
-     IMissionControlSequenceSegment<astrogator/IMissionControlSequenceSegment>
-     IMissionControlSequenceSequence<astrogator/IMissionControlSequenceSequence>
+     IMCSSegment<astrogator/IMCSSegment>
+     IMCSSequence<astrogator/IMCSSequence>
      IProfile<astrogator/IProfile>
-     ICentralBodyEphemeris<astrogator/ICentralBodyEphemeris>
-     ICentralBodyShape<astrogator/ICentralBodyShape>
-     ICentralBodyAttitude<astrogator/ICentralBodyAttitude>
+     ICentralBodyComponentEphemeris<astrogator/ICentralBodyComponentEphemeris>
+     ICentralBodyComponentShape<astrogator/ICentralBodyComponentShape>
+     ICentralBodyComponentAttitude<astrogator/ICentralBodyComponentAttitude>
+     ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides<astrogator/ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides>
      INumericalIntegrator<astrogator/INumericalIntegrator>
 
 .. toctree::
@@ -1740,10 +1744,10 @@ Object Model components specifically designed to support STK Astrogator.
     :maxdepth: 1
     :hidden:
 
-     DriverMissionControlSequence<astrogator/DriverMissionControlSequence>
-     MissionControlSequenceSegmentCollection<astrogator/MissionControlSequenceSegmentCollection>
-     MissionControlSequenceEnd<astrogator/MissionControlSequenceEnd>
-     MissionControlSequenceInitialState<astrogator/MissionControlSequenceInitialState>
+     MCSDriver<astrogator/MCSDriver>
+     MCSSegmentCollection<astrogator/MCSSegmentCollection>
+     MCSEnd<astrogator/MCSEnd>
+     MCSInitialState<astrogator/MCSInitialState>
      SpacecraftParameters<astrogator/SpacecraftParameters>
      FuelTank<astrogator/FuelTank>
      ElementCartesian<astrogator/ElementCartesian>
@@ -1757,16 +1761,16 @@ Object Model components specifically designed to support STK Astrogator.
      ElementGeodetic<astrogator/ElementGeodetic>
      ElementBPlane<astrogator/ElementBPlane>
      ElementSphericalRangeRate<astrogator/ElementSphericalRangeRate>
-     MissionControlSequencePropagate<astrogator/MissionControlSequencePropagate>
+     MCSPropagate<astrogator/MCSPropagate>
      State<astrogator/State>
      StoppingConditionCollection<astrogator/StoppingConditionCollection>
      AccessStoppingCondition<astrogator/AccessStoppingCondition>
      LightingStoppingCondition<astrogator/LightingStoppingCondition>
      StoppingCondition<astrogator/StoppingCondition>
      StoppingConditionElement<astrogator/StoppingConditionElement>
-     MissionControlSequenceSequence<astrogator/MissionControlSequenceSequence>
-     MissionControlSequenceBackwardSequence<astrogator/MissionControlSequenceBackwardSequence>
-     MissionControlSequenceLaunch<astrogator/MissionControlSequenceLaunch>
+     MCSSequence<astrogator/MCSSequence>
+     MCSBackwardSequence<astrogator/MCSBackwardSequence>
+     MCSLaunch<astrogator/MCSLaunch>
      DisplaySystemGeodetic<astrogator/DisplaySystemGeodetic>
      DisplaySystemGeocentric<astrogator/DisplaySystemGeocentric>
      BurnoutGeodetic<astrogator/BurnoutGeodetic>
@@ -1775,8 +1779,8 @@ Object Model components specifically designed to support STK Astrogator.
      BurnoutLaunchAzAltitude<astrogator/BurnoutLaunchAzAltitude>
      BurnoutLaunchAzRadius<astrogator/BurnoutLaunchAzRadius>
      BurnoutVelocity<astrogator/BurnoutVelocity>
-     MissionControlSequenceFollow<astrogator/MissionControlSequenceFollow>
-     MissionControlSequenceManeuver<astrogator/MissionControlSequenceManeuver>
+     MCSFollow<astrogator/MCSFollow>
+     MCSManeuver<astrogator/MCSManeuver>
      ManeuverFinite<astrogator/ManeuverFinite>
      ManeuverImpulsive<astrogator/ManeuverImpulsive>
      AttitudeControlImpulsiveVelocityVector<astrogator/AttitudeControlImpulsiveVelocityVector>
@@ -1793,14 +1797,14 @@ Object Model components specifically designed to support STK Astrogator.
      AttitudeControlFinitePlugin<astrogator/AttitudeControlFinitePlugin>
      AttitudeControlOptimalFiniteLagrange<astrogator/AttitudeControlOptimalFiniteLagrange>
      ManeuverFinitePropagator<astrogator/ManeuverFinitePropagator>
-     MissionControlSequenceHold<astrogator/MissionControlSequenceHold>
-     MissionControlSequenceUpdate<astrogator/MissionControlSequenceUpdate>
-     MissionControlSequenceReturn<astrogator/MissionControlSequenceReturn>
-     MissionControlSequenceStop<astrogator/MissionControlSequenceStop>
-     MissionControlSequenceTargetSequence<astrogator/MissionControlSequenceTargetSequence>
+     MCSHold<astrogator/MCSHold>
+     MCSUpdate<astrogator/MCSUpdate>
+     MCSReturn<astrogator/MCSReturn>
+     MCSStop<astrogator/MCSStop>
+     MCSTargetSequence<astrogator/MCSTargetSequence>
      ProfileCollection<astrogator/ProfileCollection>
-     MissionControlSequenceOptions<astrogator/MissionControlSequenceOptions>
-     CalcObjectCollection<astrogator/CalcObjectCollection>
+     MCSOptions<astrogator/MCSOptions>
+     CalculationObjectCollection<astrogator/CalculationObjectCollection>
      ConstraintCollection<astrogator/ConstraintCollection>
      PluginProperties<astrogator/PluginProperties>
      ProfileSearchPlugin<astrogator/ProfileSearchPlugin>
@@ -1830,8 +1834,8 @@ Object Model components specifically designed to support STK Astrogator.
      BPlaneCollection<astrogator/BPlaneCollection>
      StateCalcDamageFlux<astrogator/StateCalcDamageFlux>
      StateCalcDamageMassFlux<astrogator/StateCalcDamageMassFlux>
-     StateCalcMagnitudeFieldDipoleL<astrogator/StateCalcMagnitudeFieldDipoleL>
-     StateCalcSEETMagnitudeFieldFieldLineSepAngle<astrogator/StateCalcSEETMagnitudeFieldFieldLineSepAngle>
+     StateCalcMagneticFieldDipoleL<astrogator/StateCalcMagneticFieldDipoleL>
+     StateCalcSEETMagneticFieldLineSeparationAngle<astrogator/StateCalcSEETMagneticFieldLineSeparationAngle>
      StateCalcImpactFlux<astrogator/StateCalcImpactFlux>
      StateCalcImpactMassFlux<astrogator/StateCalcImpactMassFlux>
      StateCalcSEETSAAFlux<astrogator/StateCalcSEETSAAFlux>
@@ -1847,7 +1851,7 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcOrbitDelaunayG<astrogator/StateCalcOrbitDelaunayG>
      StateCalcOrbitDelaunayH<astrogator/StateCalcOrbitDelaunayH>
      StateCalcOrbitDelaunayL<astrogator/StateCalcOrbitDelaunayL>
-     StateCalcOrbitSemiLatusRectum<astrogator/StateCalcOrbitSemiLatusRectum>
+     StateCalcOrbitSemilatusRectum<astrogator/StateCalcOrbitSemilatusRectum>
      StateCalcEquinoctialElem<astrogator/StateCalcEquinoctialElem>
      StateCalcCloseApproachBearing<astrogator/StateCalcCloseApproachBearing>
      StateCalcCloseApproachMagnitude<astrogator/StateCalcCloseApproachMagnitude>
@@ -1880,8 +1884,8 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcRepeatingGroundTrackErr<astrogator/StateCalcRepeatingGroundTrackErr>
      StateCalcAltitudeOfApoapsis<astrogator/StateCalcAltitudeOfApoapsis>
      StateCalcAltitudeOfPeriapsis<astrogator/StateCalcAltitudeOfPeriapsis>
-     StateCalcArgOfLat<astrogator/StateCalcArgOfLat>
-     StateCalcArgOfPeriapsis<astrogator/StateCalcArgOfPeriapsis>
+     StateCalcArgumentOfLatitude<astrogator/StateCalcArgumentOfLatitude>
+     StateCalcArgumentOfPeriapsis<astrogator/StateCalcArgumentOfPeriapsis>
      StateCalcEccentricityAnomaly<astrogator/StateCalcEccentricityAnomaly>
      StateCalcLonOfAscNode<astrogator/StateCalcLonOfAscNode>
      StateCalcMeanMotion<astrogator/StateCalcMeanMotion>
@@ -1889,14 +1893,14 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcNumRevs<astrogator/StateCalcNumRevs>
      StateCalcRadOfApoapsis<astrogator/StateCalcRadOfApoapsis>
      StateCalcRadOfPeriapsis<astrogator/StateCalcRadOfPeriapsis>
-     StateCalcSemiMajorAxis<astrogator/StateCalcSemiMajorAxis>
+     StateCalcSemimajorAxis<astrogator/StateCalcSemimajorAxis>
      StateCalcTimePastAscNode<astrogator/StateCalcTimePastAscNode>
      StateCalcTimePastPeriapsis<astrogator/StateCalcTimePastPeriapsis>
      StateCalcTrueAnomaly<astrogator/StateCalcTrueAnomaly>
      StateCalcDeltaV<astrogator/StateCalcDeltaV>
      StateCalcDeltaVSquared<astrogator/StateCalcDeltaVSquared>
-     StateCalcMissionControlSequenceDeltaV<astrogator/StateCalcMissionControlSequenceDeltaV>
-     StateCalcMissionControlSequenceDeltaVSquared<astrogator/StateCalcMissionControlSequenceDeltaVSquared>
+     StateCalcMCSDeltaV<astrogator/StateCalcMCSDeltaV>
+     StateCalcMCSDeltaVSquared<astrogator/StateCalcMCSDeltaVSquared>
      StateCalcSequenceDeltaV<astrogator/StateCalcSequenceDeltaV>
      StateCalcSequenceDeltaVSquared<astrogator/StateCalcSequenceDeltaVSquared>
      StateCalcFuelMass<astrogator/StateCalcFuelMass>
@@ -1957,9 +1961,9 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcRadiationPressureArea<astrogator/StateCalcRadiationPressureArea>
      StateCalcRadiationPressureCoefficient<astrogator/StateCalcRadiationPressureCoefficient>
      StateCalcSRPArea<astrogator/StateCalcSRPArea>
-     StateCalcCosOfVerticalFPA<astrogator/StateCalcCosOfVerticalFPA>
+     StateCalcCosOfVerticalFlightPathAngle<astrogator/StateCalcCosOfVerticalFlightPathAngle>
      StateCalcDec<astrogator/StateCalcDec>
-     StateCalcFPA<astrogator/StateCalcFPA>
+     StateCalcFlightPathAngle<astrogator/StateCalcFlightPathAngle>
      StateCalcRMagnitude<astrogator/StateCalcRMagnitude>
      StateCalcRA<astrogator/StateCalcRA>
      StateCalcVMagnitude<astrogator/StateCalcVMagnitude>
@@ -1981,7 +1985,7 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcVectorRA<astrogator/StateCalcVectorRA>
      StateCalcVectorX<astrogator/StateCalcVectorX>
      StateCalcOnePointAccess<astrogator/StateCalcOnePointAccess>
-     StateCalcDifferenceAcrossSegmentsOtherSat<astrogator/StateCalcDifferenceAcrossSegmentsOtherSat>
+     StateCalcDifferenceAcrossSegmentsOtherSatellite<astrogator/StateCalcDifferenceAcrossSegmentsOtherSatellite>
      StateCalcValueAtSegmentOtherSat<astrogator/StateCalcValueAtSegmentOtherSat>
      StateCalcRARate<astrogator/StateCalcRARate>
      StateCalcDecRate<astrogator/StateCalcDecRate>
@@ -1994,29 +1998,29 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcScalar<astrogator/StateCalcScalar>
      StateCalcApparentSolarTime<astrogator/StateCalcApparentSolarTime>
      StateCalcEarthMeanSolarTime<astrogator/StateCalcEarthMeanSolarTime>
-     StateCalcEarthMeanLocTimeAN<astrogator/StateCalcEarthMeanLocTimeAN>
+     StateCalcEarthMeanLocalTimeOfAscendingNode<astrogator/StateCalcEarthMeanLocalTimeOfAscendingNode>
      AutomaticSequenceCollection<astrogator/AutomaticSequenceCollection>
      AutomaticSequence<astrogator/AutomaticSequence>
-     CentralBodyCollection<astrogator/CentralBodyCollection>
-     AstrogatorCentralBody<astrogator/AstrogatorCentralBody>
-     CentralBodyGravityModel<astrogator/CentralBodyGravityModel>
-     CentralBodyShapeSphere<astrogator/CentralBodyShapeSphere>
-     CentralBodyShapeOblateSpheroid<astrogator/CentralBodyShapeOblateSpheroid>
-     CentralBodyShapeTriaxialEllipsoid<astrogator/CentralBodyShapeTriaxialEllipsoid>
-     CentralBodyAttitudeRotationCoefficientsFile<astrogator/CentralBodyAttitudeRotationCoefficientsFile>
-     CentralBodyAttitudeIAU1994<astrogator/CentralBodyAttitudeIAU1994>
-     CentralBodyEphemerisAnalyticOrbit<astrogator/CentralBodyEphemerisAnalyticOrbit>
-     CentralBodyEphemerisJPLSpice<astrogator/CentralBodyEphemerisJPLSpice>
-     CentralBodyEphemerisFile<astrogator/CentralBodyEphemerisFile>
-     CentralBodyEphemerisJPLDesignExplorerOptimizer<astrogator/CentralBodyEphemerisJPLDesignExplorerOptimizer>
-     CentralBodyEphemerisPlanetary<astrogator/CentralBodyEphemerisPlanetary>
-     MissionControlSequenceSegmentProperties<astrogator/MissionControlSequenceSegmentProperties>
+     CentralBodyComponentCollection<astrogator/CentralBodyComponentCollection>
+     CentralBodyComponent<astrogator/CentralBodyComponent>
+     CentralBodyComponentGravityModel<astrogator/CentralBodyComponentGravityModel>
+     CentralBodyComponentShapeSphere<astrogator/CentralBodyComponentShapeSphere>
+     CentralBodyComponentShapeOblateSpheroid<astrogator/CentralBodyComponentShapeOblateSpheroid>
+     CentralBodyComponentShapeTriaxialEllipsoid<astrogator/CentralBodyComponentShapeTriaxialEllipsoid>
+     CentralBodyComponentAttitudeRotationCoefficientsFile<astrogator/CentralBodyComponentAttitudeRotationCoefficientsFile>
+     CentralBodyComponentAttitudeIAU1994<astrogator/CentralBodyComponentAttitudeIAU1994>
+     CentralBodyComponentEphemerisAnalyticOrbit<astrogator/CentralBodyComponentEphemerisAnalyticOrbit>
+     CentralBodyComponentEphemerisJPLSpice<astrogator/CentralBodyComponentEphemerisJPLSpice>
+     CentralBodyComponentEphemerisFile<astrogator/CentralBodyComponentEphemerisFile>
+     CentralBodyComponentEphemerisJPLDesignExplorerOptimizer<astrogator/CentralBodyComponentEphemerisJPLDesignExplorerOptimizer>
+     CentralBodyComponentEphemerisPlanetary<astrogator/CentralBodyComponentEphemerisPlanetary>
+     MCSSegmentProperties<astrogator/MCSSegmentProperties>
      PowerInternal<astrogator/PowerInternal>
      PowerProcessed<astrogator/PowerProcessed>
      PowerSolarArray<astrogator/PowerSolarArray>
      GeneralRelativityFunction<astrogator/GeneralRelativityFunction>
      StateTransformationFunction<astrogator/StateTransformationFunction>
-     CR3BPFunc<astrogator/CR3BPFunc>
+     CR3BPFunction<astrogator/CR3BPFunction>
      ER3BPFunc<astrogator/ER3BPFunc>
      RadiationPressureFunction<astrogator/RadiationPressureFunction>
      YarkovskyFunc<astrogator/YarkovskyFunc>
@@ -2055,18 +2059,18 @@ Object Model components specifically designed to support STK Astrogator.
      SRPGSPM04aeIIR<astrogator/SRPGSPM04aeIIR>
      SRPSpherical<astrogator/SRPSpherical>
      SRPNPlate<astrogator/SRPNPlate>
-     SRPTabAreaVec<astrogator/SRPTabAreaVec>
+     SRPTabulatedAreaVector<astrogator/SRPTabulatedAreaVector>
      SRPVariableArea<astrogator/SRPVariableArea>
      ThirdBodyFunction<astrogator/ThirdBodyFunction>
      DragModelPlugin<astrogator/DragModelPlugin>
      SRPReflectionPlugin<astrogator/SRPReflectionPlugin>
-     EngineConstAcc<astrogator/EngineConstAcc>
+     EngineConstantAcceleration<astrogator/EngineConstantAcceleration>
      EngineConstant<astrogator/EngineConstant>
      EngineIon<astrogator/EngineIon>
      EngineThrottleTable<astrogator/EngineThrottleTable>
      EngineCustom<astrogator/EngineCustom>
      EnginePlugin<astrogator/EnginePlugin>
-     EngineModelPoly<astrogator/EngineModelPoly>
+     EngineModelPolynomial<astrogator/EngineModelPolynomial>
      EngineModelThrustCoefficients<astrogator/EngineModelThrustCoefficients>
      EngineModelIspCoefficients<astrogator/EngineModelIspCoefficients>
      EngineDefinition<astrogator/EngineDefinition>
@@ -2097,8 +2101,8 @@ Object Model components specifically designed to support STK Astrogator.
      ScriptingSegment<astrogator/ScriptingSegment>
      ScriptingParameterCollection<astrogator/ScriptingParameterCollection>
      ScriptingParameter<astrogator/ScriptingParameter>
-     ScriptingCalcObject<astrogator/ScriptingCalcObject>
-     ScriptingCalcObjectCollection<astrogator/ScriptingCalcObjectCollection>
+     ScriptingCalculationObject<astrogator/ScriptingCalculationObject>
+     ScriptingCalculationObjectCollection<astrogator/ScriptingCalculationObjectCollection>
      UserVariableDefinition<astrogator/UserVariableDefinition>
      UserVariable<astrogator/UserVariable>
      UserVariableUpdate<astrogator/UserVariableUpdate>
@@ -2138,7 +2142,7 @@ Object Model components specifically designed to support STK Astrogator.
      GridSearchControl<astrogator/GridSearchControl>
      GridSearchResultCollection<astrogator/GridSearchResultCollection>
      GridSearchResult<astrogator/GridSearchResult>
-     CalcObjectLinkEmbedControlCollection<astrogator/CalcObjectLinkEmbedControlCollection>
+     CalculationObjectLinkEmbedControlCollection<astrogator/CalculationObjectLinkEmbedControlCollection>
      ProfileBisection<astrogator/ProfileBisection>
      BisectionControl<astrogator/BisectionControl>
      BisectionControlCollection<astrogator/BisectionControlCollection>
@@ -2158,15 +2162,15 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ ACCESS_CRITERION<astrogator/ACCESS_CRITERION_enum>
     ≔ ECLIPSING_BODIES_SOURCE<astrogator/ECLIPSING_BODIES_SOURCE_enum>
     ≔ CRITERION<astrogator/CRITERION_enum>
-    ≔ CALC_OBJECT_REFERENCE<astrogator/CALC_OBJECT_REFERENCE_enum>
-    ≔ CALC_OBJECT_CENTRAL_BODY_REFERENCE<astrogator/CALC_OBJECT_CENTRAL_BODY_REFERENCE_enum>
-    ≔ CALC_OBJECT_ELEM<astrogator/CALC_OBJECT_ELEM_enum>
+    ≔ CALCULATION_OBJECT_REFERENCE<astrogator/CALCULATION_OBJECT_REFERENCE_enum>
+    ≔ CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE<astrogator/CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE_enum>
+    ≔ CALCULATION_OBJECT_ELEMENT<astrogator/CALCULATION_OBJECT_ELEMENT_enum>
     ≔ PROFILE_MODE<astrogator/PROFILE_MODE_enum>
     ≔ CONTROL_STOPPING_CONDITION<astrogator/CONTROL_STOPPING_CONDITION_enum>
     ≔ STATE<astrogator/STATE_enum>
     ≔ RETURN_CONTROL<astrogator/RETURN_CONTROL_enum>
     ≔ DRAW_PERTURBATION<astrogator/DRAW_PERTURBATION_enum>
-    ≔ DERIVE_CALC_METHOD<astrogator/DERIVE_CALC_METHOD_enum>
+    ≔ DERIVATIVE_CALCULATION_METHOD<astrogator/DERIVATIVE_CALCULATION_METHOD_enum>
     ≔ CONVERGENCE_CRITERIA<astrogator/CONVERGENCE_CRITERIA_enum>
     ≔ DIFFERENTIAL_CORRECTOR_SCALING_METHOD<astrogator/DIFFERENTIAL_CORRECTOR_SCALING_METHOD_enum>
     ≔ CONTROL_UPDATE<astrogator/CONTROL_UPDATE_enum>
@@ -2175,7 +2179,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ CONTROL_MANEUVER<astrogator/CONTROL_MANEUVER_enum>
     ≔ CONTROL_LAUNCH<astrogator/CONTROL_LAUNCH_enum>
     ≔ CONTROL_ADVANCED<astrogator/CONTROL_ADVANCED_enum>
-    ≔ TARGET_SEQ_ACTION<astrogator/TARGET_SEQ_ACTION_enum>
+    ≔ TARGET_SEQUENCE_ACTION<astrogator/TARGET_SEQUENCE_ACTION_enum>
     ≔ PROFILES_FINISH<astrogator/PROFILES_FINISH_enum>
     ≔ UPDATE_PARAM<astrogator/UPDATE_PARAM_enum>
     ≔ UPDATE_ACTION<astrogator/UPDATE_ACTION_enum>
@@ -2216,8 +2220,8 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ OPTIMAL_FINITE_SNOPT_SCALING<astrogator/OPTIMAL_FINITE_SNOPT_SCALING_enum>
     ≔ OPTIMAL_FINITE_EXPORT_NODES_FORMAT<astrogator/OPTIMAL_FINITE_EXPORT_NODES_FORMAT_enum>
     ≔ OPTIMAL_FINITE_GUESS_METHOD<astrogator/OPTIMAL_FINITE_GUESS_METHOD_enum>
-    ≔ IMP_DELTA_V_REP<astrogator/IMP_DELTA_V_REP_enum>
-    ≔ LAMBERT_TARGET_COORD_TYPE<astrogator/LAMBERT_TARGET_COORD_TYPE_enum>
+    ≔ IMPULSIVE_DELTA_V_REPRESENTATION<astrogator/IMPULSIVE_DELTA_V_REPRESENTATION_enum>
+    ≔ LAMBERT_TARGET_COORDINATE_TYPE<astrogator/LAMBERT_TARGET_COORDINATE_TYPE_enum>
     ≔ LAMBERT_SOLUTION_OPTION_TYPE<astrogator/LAMBERT_SOLUTION_OPTION_TYPE_enum>
     ≔ LAMBERT_ORBITAL_ENERGY_TYPE<astrogator/LAMBERT_ORBITAL_ENERGY_TYPE_enum>
     ≔ LAMBERT_DIRECTION_OF_MOTION_TYPE<astrogator/LAMBERT_DIRECTION_OF_MOTION_TYPE_enum>
@@ -2230,19 +2234,19 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ DIFFERENCE_ORDER<astrogator/DIFFERENCE_ORDER_enum>
     ≔ SEGMENT_DIFFERENCE_ORDER<astrogator/SEGMENT_DIFFERENCE_ORDER_enum>
     ≔ CONTROL_REPEATING_GROUND_TRACK_ERR<astrogator/CONTROL_REPEATING_GROUND_TRACK_ERR_enum>
-    ≔ CALC_OBJECT_DIRECTION<astrogator/CALC_OBJECT_DIRECTION_enum>
-    ≔ CALC_OBJECT_ORBIT_PLANE_SOURCE<astrogator/CALC_OBJECT_ORBIT_PLANE_SOURCE_enum>
-    ≔ CALC_OBJECT_SUN_POSITION<astrogator/CALC_OBJECT_SUN_POSITION_enum>
-    ≔ CALC_OBJECT_ANGLE_SIGN<astrogator/CALC_OBJECT_ANGLE_SIGN_enum>
-    ≔ CALC_OBJECT_REFERENCE_DIRECTION<astrogator/CALC_OBJECT_REFERENCE_DIRECTION_enum>
-    ≔ CALC_OBJECT_RELATIVE_POSITION<astrogator/CALC_OBJECT_RELATIVE_POSITION_enum>
-    ≔ CALC_OBJECT_REFERENCE_ELLIPSE<astrogator/CALC_OBJECT_REFERENCE_ELLIPSE_enum>
-    ≔ CALC_OBJECT_LOCATION_SOURCE<astrogator/CALC_OBJECT_LOCATION_SOURCE_enum>
+    ≔ CALCULATION_OBJECT_DIRECTION<astrogator/CALCULATION_OBJECT_DIRECTION_enum>
+    ≔ CALCULATION_OBJECT_ORBIT_PLANE_SOURCE<astrogator/CALCULATION_OBJECT_ORBIT_PLANE_SOURCE_enum>
+    ≔ CALCULATION_OBJECT_SUN_POSITION<astrogator/CALCULATION_OBJECT_SUN_POSITION_enum>
+    ≔ CALCULATION_OBJECT_ANGLE_SIGN<astrogator/CALCULATION_OBJECT_ANGLE_SIGN_enum>
+    ≔ CALCULATION_OBJECT_REFERENCE_DIRECTION<astrogator/CALCULATION_OBJECT_REFERENCE_DIRECTION_enum>
+    ≔ CALCULATION_OBJECT_RELATIVE_POSITION<astrogator/CALCULATION_OBJECT_RELATIVE_POSITION_enum>
+    ≔ CALCULATION_OBJECT_REFERENCE_ELLIPSE<astrogator/CALCULATION_OBJECT_REFERENCE_ELLIPSE_enum>
+    ≔ CALCULATION_OBJECT_LOCATION_SOURCE<astrogator/CALCULATION_OBJECT_LOCATION_SOURCE_enum>
     ≔ GRAVITATIONAL_PARAMETER_SOURCE<astrogator/GRAVITATIONAL_PARAMETER_SOURCE_enum>
     ≔ REFERENCE_RADIUS_SOURCE<astrogator/REFERENCE_RADIUS_SOURCE_enum>
-    ≔ GRAV_COEFF_NORMALIZATION_TYPE<astrogator/GRAV_COEFF_NORMALIZATION_TYPE_enum>
-    ≔ GRAV_COEFF_COEFFICIENT_TYPE<astrogator/GRAV_COEFF_COEFFICIENT_TYPE_enum>
-    ≔ STM_PERT_VARIABLES<astrogator/STM_PERT_VARIABLES_enum>
+    ≔ GRAVITY_COEFFICIENT_NORMALIZATION_TYPE<astrogator/GRAVITY_COEFFICIENT_NORMALIZATION_TYPE_enum>
+    ≔ GRAVITY_COEFFICIENT_TYPE<astrogator/GRAVITY_COEFFICIENT_TYPE_enum>
+    ≔ STM_PERTURBATION_VARIABLES<astrogator/STM_PERTURBATION_VARIABLES_enum>
     ≔ STM_EIGEN_NUMBER<astrogator/STM_EIGEN_NUMBER_enum>
     ≔ COMPLEX_NUMBER<astrogator/COMPLEX_NUMBER_enum>
     ≔ SQUARED_TYPE<astrogator/SQUARED_TYPE_enum>
@@ -2257,7 +2261,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ CONTROL_POWER_SOLAR_ARRAY<astrogator/CONTROL_POWER_SOLAR_ARRAY_enum>
     ≔ THIRD_BODY_MODE<astrogator/THIRD_BODY_MODE_enum>
     ≔ GRAV_PARAM_SOURCE<astrogator/GRAV_PARAM_SOURCE_enum>
-    ≔ EPHEM_SOURCE<astrogator/EPHEM_SOURCE_enum>
+    ≔ EPHEMERIS_SOURCE<astrogator/EPHEMERIS_SOURCE_enum>
     ≔ SOLAR_FORCE_METHOD<astrogator/SOLAR_FORCE_METHOD_enum>
     ≔ SHADOW_MODEL<astrogator/SHADOW_MODEL_enum>
     ≔ SUN_POSITION<astrogator/SUN_POSITION_enum>
@@ -2268,12 +2272,12 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ MARS_GRAM_DENSITY_TYPE<astrogator/MARS_GRAM_DENSITY_TYPE_enum>
     ≔ VENUS_GRAM_DENSITY_TYPE<astrogator/VENUS_GRAM_DENSITY_TYPE_enum>
     ≔ TAB_VEC_INTERPOLATION_METHOD<astrogator/TAB_VEC_INTERPOLATION_METHOD_enum>
-    ≔ CONTROL_ENGINE_CONST_ACC<astrogator/CONTROL_ENGINE_CONST_ACC_enum>
+    ≔ CONTROL_ENGINE_CONSTANT_ACCELERATION<astrogator/CONTROL_ENGINE_CONSTANT_ACCELERATION_enum>
     ≔ CONTROL_ENGINE_CONSTANT<astrogator/CONTROL_ENGINE_CONSTANT_enum>
     ≔ CONTROL_ENGINE_CUSTOM<astrogator/CONTROL_ENGINE_CUSTOM_enum>
     ≔ CONTROL_ENGINE_THROTTLE_TABLE<astrogator/CONTROL_ENGINE_THROTTLE_TABLE_enum>
     ≔ CONTROL_ENGINE_ION<astrogator/CONTROL_ENGINE_ION_enum>
-    ≔ CONTROL_ENGINE_MODEL_POLY<astrogator/CONTROL_ENGINE_MODEL_POLY_enum>
+    ≔ CONTROL_ENGINE_MODEL_POLYNOMIAL<astrogator/CONTROL_ENGINE_MODEL_POLYNOMIAL_enum>
     ≔ ENGINE_MODEL_FUNCTION<astrogator/ENGINE_MODEL_FUNCTION_enum>
     ≔ THROTTLE_TABLE_OPERATION_MODE<astrogator/THROTTLE_TABLE_OPERATION_MODE_enum>
     ≔ IDEAL_ORBIT_RADIUS<astrogator/IDEAL_ORBIT_RADIUS_enum>

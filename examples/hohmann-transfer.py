@@ -263,13 +263,13 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 # Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION
+from ansys.stk.core.stkobjects.astrogator import TARGET_SEQUENCE_ACTION
 
 
-hohmann_start.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-hohmann_end.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+hohmann_start.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
+hohmann_end.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
 
-satellite.propagator.run_mission_control_sequence()
+satellite.propagator.run_mcs()
 # -
 
 # ## Retrieve the results

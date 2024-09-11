@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: state_variable
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.state_variable
-    :type: STM_PERT_VARIABLES
+    :type: STM_PERTURBATION_VARIABLES
 
     Gets or sets the variable identifying the component within an Eigenvector.
 

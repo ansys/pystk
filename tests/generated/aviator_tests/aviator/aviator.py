@@ -3284,22 +3284,22 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             testVal: float = autopilot.altitude_rate
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            testVal: typing.Any = autopilot.fpa
+            testVal: typing.Any = autopilot.flight_path_angle
 
         autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
         autopilot.control_altitude_rate_value = 2001
         Assert.assertEqual(2001, autopilot.control_altitude_rate_value)
 
-        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA
-        autopilot.control_fpa_value = 11
-        controlFPA: typing.Any = autopilot.control_fpa_value
+        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE
+        autopilot.control_flight_path_angle_value = 11
+        controlFPA: typing.Any = autopilot.control_flight_path_angle_value
         Assert.assertEqual(11, controlFPA)
 
         autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERFORMANCE_MODELS
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             testVal: float = autopilot.control_altitude_rate_value
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            testVal: typing.Any = autopilot.control_fpa_value
+            testVal: typing.Any = autopilot.control_flight_path_angle_value
 
         autopilot.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         autopilot.max_pitch_rate = 11
@@ -3324,14 +3324,14 @@ class EarlyBoundTests(TestBase):
         autopilot.altitude_rate = 1
         Assert.assertEqual(1, autopilot.altitude_rate)
 
-        autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA
-        autopilot.fpa = 1
-        fpa: typing.Any = autopilot.fpa
+        autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE
+        autopilot.flight_path_angle = 1
+        fpa: typing.Any = autopilot.flight_path_angle
         Assert.assertEqual(1, fpa)
 
         autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA
+            autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             autopilot.damping_ratio = 1.5
 
@@ -4089,16 +4089,16 @@ class EarlyBoundTests(TestBase):
         pitch3D.control_mode = PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE
         Assert.assertEqual(PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE, pitch3D.control_mode)
 
-        pitch3D.command_fpa = 59
-        fpa: typing.Any = pitch3D.command_fpa
+        pitch3D.command_flight_path_angle = 59
+        fpa: typing.Any = pitch3D.command_flight_path_angle
         Assert.assertAlmostEqual(59, float(fpa), delta=tolerance)
 
-        pitch3D.control_fpa_dot = 2
-        fpaDot: typing.Any = pitch3D.control_fpa_dot
+        pitch3D.control_flight_path_angle_dot = 2
+        fpaDot: typing.Any = pitch3D.control_flight_path_angle_dot
         Assert.assertEqual(2, float(fpaDot))
 
-        pitch3D.stop_when_fpa_achieved = False
-        Assert.assertEqual(False, pitch3D.stop_when_fpa_achieved)
+        pitch3D.stop_when_flight_path_angle_achieved = False
+        Assert.assertEqual(False, pitch3D.stop_when_flight_path_angle_achieved)
 
         self.BasicManeuverAirspeedOptions(pitch3D.airspeed_options)
 
@@ -4404,12 +4404,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.target_name)
 
         basicManeuver.profile_strategy_type = "Relative Flight Path Angle"
-        relativeFPA: "BasicManeuverStrategyRelativeFPA" = clr.CastAs(
-            basicManeuver.profile, BasicManeuverStrategyRelativeFPA
+        relativeFPA: "BasicManeuverStrategyRelativeFlightPathAngle" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRelativeFlightPathAngle
         )
 
-        relativeFPA.fpa = 5
-        fpa: typing.Any = relativeFPA.fpa
+        relativeFPA.flight_path_angle = 5
+        fpa: typing.Any = relativeFPA.flight_path_angle
         Assert.assertEqual(5, float(fpa))
         relativeFPA.anchor_altitude_offset = 100
         Assert.assertEqual(100, relativeFPA.anchor_altitude_offset)
@@ -4844,8 +4844,10 @@ class EarlyBoundTests(TestBase):
         overrideRollRate: typing.Any = turn.override_roll_rate
         Assert.assertEqual(1, float(overrideRollRate))
 
-        turn.fpa_mode = SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF
-        Assert.assertEqual(SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF, turn.fpa_mode)
+        turn.flight_path_angle_mode = SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF
+        Assert.assertEqual(
+            SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF, turn.flight_path_angle_mode
+        )
 
         airspeedOpts: "BasicManeuverAirspeedOptions" = turn.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
@@ -7590,8 +7592,8 @@ class EarlyBoundTests(TestBase):
 
         self.AttitudeTransitionOptions(missile.attitude_transitions)
 
-        missile.ignore_fpa_for_climb_descent_transitions = True
-        Assert.assertTrue(missile.ignore_fpa_for_climb_descent_transitions)
+        missile.ignore_flight_path_angle_for_climb_descent_transitions = True
+        Assert.assertTrue(missile.ignore_flight_path_angle_for_climb_descent_transitions)
 
         missile.set_climb_airspeed(AIRSPEED_TYPE.MACH, 2.1)
         Assert.assertEqual(AIRSPEED_TYPE.MACH, missile.climb_airspeed_type)
@@ -7618,21 +7620,21 @@ class EarlyBoundTests(TestBase):
         missile.descent_fail_on_insufficient_performance = False
         Assert.assertEqual(False, missile.descent_fail_on_insufficient_performance)
 
-        missile.climb_min_fpa = 3.1
-        climbMinFPA: typing.Any = missile.climb_min_fpa
+        missile.climb_min_flight_path_angle = 3.1
+        climbMinFPA: typing.Any = missile.climb_min_flight_path_angle
         Assert.assertEqual(3.1, float(climbMinFPA))
-        missile.climb_max_fpa = 60.1
-        climbMaxFPA: typing.Any = missile.climb_max_fpa
+        missile.climb_max_flight_path_angle = 60.1
+        climbMaxFPA: typing.Any = missile.climb_max_flight_path_angle
         Assert.assertAlmostEqual(60.1, float(climbMaxFPA), delta=tolerance)
 
         missile.cruise_default_altitude = 15000
         Assert.assertEqual(15000, missile.cruise_default_altitude)
 
-        missile.descent_min_fpa = -60.2
-        descentMinFPA: typing.Any = missile.descent_min_fpa
+        missile.descent_min_flight_path_angle = -60.2
+        descentMinFPA: typing.Any = missile.descent_min_flight_path_angle
         Assert.assertAlmostEqual(-60.2, float(descentMinFPA), delta=tolerance)
-        missile.descent_max_fpa = -3.2
-        descentMaxFPA: typing.Any = missile.descent_max_fpa
+        missile.descent_max_flight_path_angle = -3.2
+        descentMaxFPA: typing.Any = missile.descent_max_flight_path_angle
         Assert.assertEqual(-3.2, float(descentMaxFPA))
 
         missile.use_total_temp_limit = False
@@ -8071,8 +8073,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AIRSPEED_TYPE.TAS, rotorcraft.max_safe_translation_speed_type)
         Assert.assertAlmostEqual(211, rotorcraft.max_safe_translation_speed, delta=tolerance)
 
-        rotorcraft.ignore_fpa_for_climb_descent_transitions = True
-        Assert.assertTrue(rotorcraft.ignore_fpa_for_climb_descent_transitions)
+        rotorcraft.ignore_flight_path_angle_for_climb_descent_transitions = True
+        Assert.assertTrue(rotorcraft.ignore_flight_path_angle_for_climb_descent_transitions)
 
         self.ConfigurationOptions(rotorcraft.default_configuration)
 
