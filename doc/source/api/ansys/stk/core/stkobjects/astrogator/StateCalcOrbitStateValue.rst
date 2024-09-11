@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name`
               - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name`
               - Gets or sets the coordinate system of the input state.
@@ -65,8 +65,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name
     :type: str
 
     Gets or sets the calculation object.

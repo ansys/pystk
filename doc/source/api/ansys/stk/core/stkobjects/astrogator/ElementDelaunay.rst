@@ -28,7 +28,7 @@ Overview
               - Gets or sets the angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane (h). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementDelaunay.delaunay_l`
               - Related to the two-body orbital energy. Defined as sqrt(GM * a).   Uses AreaRate Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementDelaunay.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementDelaunay.semimajor_axis`
               - One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementDelaunay.delaunay_g`
               - Gets or sets the magnitude of the orbital angular momentum. Defined as sqrt(GM * p). Uses AreaRate Dimension.
@@ -76,8 +76,8 @@ Property detail
 
     Related to the two-body orbital energy. Defined as sqrt(GM * a).   Uses AreaRate Dimension.
 
-.. py:property:: semi_major_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementDelaunay.semi_major_axis
+.. py:property:: semimajor_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementDelaunay.semimajor_axis
     :type: float
 
     One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.

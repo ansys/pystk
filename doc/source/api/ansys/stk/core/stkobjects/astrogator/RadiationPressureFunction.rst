@@ -30,9 +30,9 @@ Overview
               - Name of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.override_segment_settings`
               - True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.rad_pressure_coeff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.radiation_pressure_coefficient`
               - Coefficient, Ck, for use with radiation pressure computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.rad_pressure_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.radiation_pressure_area`
               - Area to be used for radiation pressure computations. Small area dimension.
 
 
@@ -78,14 +78,14 @@ Property detail
 
     True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments.
 
-.. py:property:: rad_pressure_coeff
-    :canonical: ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.rad_pressure_coeff
+.. py:property:: radiation_pressure_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.radiation_pressure_coefficient
     :type: float
 
     Coefficient, Ck, for use with radiation pressure computation.
 
-.. py:property:: rad_pressure_area
-    :canonical: ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.rad_pressure_area
+.. py:property:: radiation_pressure_area
+    :canonical: ansys.stk.core.stkobjects.astrogator.RadiationPressureFunction.radiation_pressure_area
     :type: float
 
     Area to be used for radiation pressure computations. Small area dimension.

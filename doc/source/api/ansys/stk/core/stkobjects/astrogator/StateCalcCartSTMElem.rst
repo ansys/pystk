@@ -22,9 +22,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.coord_system_name`
               - Gets or sets the coordinate system within which the element is defined.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.final_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.final_state_component`
               - Gets or sets the final variation variable.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.init_var`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.initial_state_component`
               - Gets or sets the initial variation variable.
 
 
@@ -46,15 +46,15 @@ Property detail
 
     Gets or sets the coordinate system within which the element is defined.
 
-.. py:property:: final_var
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.final_var
-    :type: STM_PERT_VARIABLES
+.. py:property:: final_state_component
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.final_state_component
+    :type: STM_PERTURBATION_VARIABLES
 
     Gets or sets the final variation variable.
 
-.. py:property:: init_var
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.init_var
-    :type: STM_PERT_VARIABLES
+.. py:property:: initial_state_component
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.initial_state_component
+    :type: STM_PERTURBATION_VARIABLES
 
     Gets or sets the initial variation variable.
 

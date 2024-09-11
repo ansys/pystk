@@ -37,10 +37,10 @@ Overview
             * - :py:attr:`~FINITE_EULER_ANGLES3`
               - The Euler C (Psi) component of the rotation from the reference axes to the body frame.
 
-            * - :py:attr:`~FINITE_SPHERICAL_AZ`
+            * - :py:attr:`~FINITE_SPHERICAL_AZIMUTH`
               - The spherical azimuth component of the thrust vector.
 
-            * - :py:attr:`~FINITE_SPHERICAL_ELEV`
+            * - :py:attr:`~FINITE_SPHERICAL_ELEVATION`
               - The spherical elevation component of the thrust vector.
 
             * - :py:attr:`~IMPULSIVE_CARTESIAN_X`
@@ -61,10 +61,10 @@ Overview
             * - :py:attr:`~IMPULSIVE_EULER_ANGLES3`
               - The Euler C (Psi) component of the rotation from the reference axes to the body frame.
 
-            * - :py:attr:`~IMPULSIVE_SPHERICAL_AZ`
+            * - :py:attr:`~IMPULSIVE_SPHERICAL_AZIMUTH`
               - The spherical azimuth component of the thrust vector.
 
-            * - :py:attr:`~IMPULSIVE_SPHERICAL_ELEV`
+            * - :py:attr:`~IMPULSIVE_SPHERICAL_ELEVATION`
               - The spherical elevation component of the thrust vector.
 
             * - :py:attr:`~IMPULSIVE_SPHERICAL_MAGNITUDE`
@@ -76,52 +76,52 @@ Overview
             * - :py:attr:`~FINITE_THRUST_EFFICIENCY`
               - The thrust efficiency value.
 
-            * - :py:attr:`~FINITE_AZ0`
+            * - :py:attr:`~FINITE_AZIMUTH_CONSTANT_TERM`
               - The time varying azimuth polynomial constant term.
 
-            * - :py:attr:`~FINITE_AZ1`
+            * - :py:attr:`~FINITE_AZIMUTH_LINEAR_TERM`
               - The time varying azimuth polynomial linear term.
 
-            * - :py:attr:`~FINITE_AZ2`
+            * - :py:attr:`~FINITE_AZIMUTH_QUADRATIC_TERM`
               - The time varying azimuth polynomial quadratic term.
 
-            * - :py:attr:`~FINITE_AZ3`
+            * - :py:attr:`~FINITE_AZIMUTH_CUBIC_TERM`
               - The time varying azimuth polynomial cubic term.
 
-            * - :py:attr:`~FINITE_AZ4`
+            * - :py:attr:`~FINITE_AZIMUTH_QUARTIC_TERM`
               - The time varying azimuth polynomial quartic term.
 
-            * - :py:attr:`~FINITE_AZ_A`
+            * - :py:attr:`~FINITE_AZIMUTH_SINUSOIDAL_AMPLITUDE`
               - The time varying azimuth sine amplitude term.
 
-            * - :py:attr:`~FINITE_AZ_F`
+            * - :py:attr:`~FINITE_AZIMUTH_SINUSOIDAL_FREQUENCY`
               - The time varying azimuth sine frequency term.
 
-            * - :py:attr:`~FINITE_AZ_P`
+            * - :py:attr:`~FINITE_AZIMUTH_SINUSOIDAL_PHASE`
               - The time varying azimuth sine phase term.
 
-            * - :py:attr:`~FINITE_EL0`
+            * - :py:attr:`~FINITE_ELEVATION_CONSTANT_TERM`
               - The time varying elevation polynomial constant term.
 
-            * - :py:attr:`~FINITE_EL1`
+            * - :py:attr:`~FINITE_ELEVATION_LINEAR_TERM`
               - The time varying elevation polynomial linear term.
 
-            * - :py:attr:`~FINITE_EL2`
+            * - :py:attr:`~FINITE_ELEVATION_QUADRATIC_TERM`
               - The time varying elevation polynomial quadratic term.
 
-            * - :py:attr:`~FINITE_EL3`
+            * - :py:attr:`~FINITE_ELEVATION_CUBIC_TERM`
               - The time varying elevation polynomial cubic term.
 
-            * - :py:attr:`~FINITE_EL4`
+            * - :py:attr:`~FINITE_ELEVATION_QUARTIC_TERM`
               - The time varying elevation polynomial quartic term.
 
-            * - :py:attr:`~FINITE_EL_A`
+            * - :py:attr:`~FINITE_ELEVATION_SINUSOIDAL_AMPLITUDE`
               - The time varying elevation sine amplitude term.
 
-            * - :py:attr:`~FINITE_EL_F`
+            * - :py:attr:`~FINITE_ELEVATION_SINUSOIDAL_FREQUENCY`
               - The time varying elevation sine frequency term.
 
-            * - :py:attr:`~FINITE_EL_P`
+            * - :py:attr:`~FINITE_ELEVATION_SINUSOIDAL_PHASE`
               - The time varying elevation sine phase term.
 
 

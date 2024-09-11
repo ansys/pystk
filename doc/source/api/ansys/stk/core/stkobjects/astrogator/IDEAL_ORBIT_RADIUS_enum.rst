@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~EPOCH_CENTERED_AVG_SOURCE_RADIUS`
               - Epoch centered average source radius.
 
-            * - :py:attr:`~INSTANT_CHAR_DISTANCE`
+            * - :py:attr:`~INSTANTANEOUS_CHARACTERISTIC_DISTANCE`
               - Instantanous characteristic distance.
 
 

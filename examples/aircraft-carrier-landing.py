@@ -841,7 +841,7 @@ landing.profile_strategy_type = "Relative Flight Path Angle"
 
 # Set the flight path angle to $-3.5^\circ$:
 
-landing.profile.fpa = -3.5
+landing.profile.flight_path_angle = -3.5
 
 # Set the anchor altitude offset, which is the height above or below the target that the aircraft attempts to achieve. Set the offset to $100$ ft:
 
