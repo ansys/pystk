@@ -324,7 +324,7 @@ jinja_contexts = {
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
             for platform in ["windows", "ubuntu"]
-            for target in ["visualization"]
+            for target in ["all", "grpc", "visualization"]
         }
     },
 }
