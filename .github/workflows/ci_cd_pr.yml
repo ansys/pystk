@@ -102,7 +102,6 @@ jobs:
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
-  # Only for debugging
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
