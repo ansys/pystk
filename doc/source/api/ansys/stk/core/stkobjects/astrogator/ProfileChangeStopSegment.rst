@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSStop: MissionControlSequenceStop) -> None
+.. py:method:: set_segment(self, pVAMCSStop: MCSStop) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.set_segment
 
     Set the stop segment to target.
 
     :Parameters:
 
-    **pVAMCSStop** : :obj:`~MissionControlSequenceStop`
+    **pVAMCSStop** : :obj:`~MCSStop`
 
     :Returns:
 

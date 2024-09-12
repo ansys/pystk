@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~CARTESIAN_INTERPOLATION`
               - Bilinear interpolation on the Cartesian grid.
 
-            * - :py:attr:`~MAGNITUDE_DIRECTION_INTERPOLATION`
+            * - :py:attr:`~MAGNITUDE_AND_DIRECTION_INTERPOLATION`
               - Bilinear interpolation in magnitude and direction space.
 
 

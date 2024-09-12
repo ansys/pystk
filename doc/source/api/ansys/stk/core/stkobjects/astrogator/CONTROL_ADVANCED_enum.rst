@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PROPAGATE_MAX_PROPAGATION_TIME`
+            * - :py:attr:`~PROPAGATE_MAX_PROPATION_TIME`
               - The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied.
 
             * - :py:attr:`~PROPAGATE_MIN_PROPAGATION_TIME`

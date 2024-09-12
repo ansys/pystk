@@ -55,7 +55,7 @@ Overview
             * - :py:attr:`~TANK_PRESSURE`
               - Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa).
 
-            * - :py:attr:`~TANK_TEMP`
+            * - :py:attr:`~TANK_TEMPERATURE`
               - Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit.
 
             * - :py:attr:`~MAX_FUEL_MASS`

@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence
-    :type: MissionControlSequenceSegmentCollection
+    :type: MCSSegmentCollection
 
     Returns the segment collection of the sequence.
 

@@ -9,7 +9,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         super(AstrogatorSnippets, self).__init__(*args, **kwargs)
 
     m_Satellite: "Satellite" = None
-    m_Object: "DriverMissionControlSequence" = None
+    m_Object: "MCSDriver" = None
     m_DefaultName: str = "MyAstrogator"
 
     # region OneTimeSetUp
@@ -34,9 +34,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
             )
         )
         AstrogatorSnippets.m_Satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        AstrogatorSnippets.m_Object = clr.CastAs(
-            AstrogatorSnippets.m_Satellite.propagator, DriverMissionControlSequence
-        )
+        AstrogatorSnippets.m_Object = clr.CastAs(AstrogatorSnippets.m_Satellite.propagator, MCSDriver)
         CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
 
     # endregion
@@ -55,7 +53,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def ConfigureAstrogratorPropagator(self, satellite: "Satellite"):
         satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
 
-        driver: "DriverMissionControlSequence" = clr.CastAs(satellite.propagator, DriverMissionControlSequence)
+        driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
 
         # Remove if necessary
         driver.main_sequence.remove_all()
@@ -73,12 +71,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureInitialStateSegment(self):
         self.ConfigureInitialStateSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigureInitialStateSegment(self, driver: "DriverMissionControlSequence"):
-        # Add a new segment and cast the segment to the MissionControlSequenceInitialState interface
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            SEGMENT_TYPE.INITIAL_STATE, "Inner Orbit", "-"
-        )
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(segment, MissionControlSequenceInitialState)
+    def ConfigureInitialStateSegment(self, driver: "MCSDriver"):
+        # Add a new segment and cast the segment to the MCSInitialState interface
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Inner Orbit", "-")
+        initState: "MCSInitialState" = clr.CastAs(segment, MCSInitialState)
 
         initState.coord_system_name = "CentralBody/Earth Fixed"
         initState.orbit_epoch = "1 Jan 2012 12:00:00.000"
@@ -117,12 +113,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigurePropagateSegment(self):
         self.ConfigurePropagateSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigurePropagateSegment(self, driver: "DriverMissionControlSequence"):
+    def ConfigurePropagateSegment(self, driver: "MCSDriver"):
         # Add a propagate segment to our sequence
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            SEGMENT_TYPE.PROPAGATE, "Propagate", "-"
-        )
-        propagate: "MissionControlSequencePropagate" = clr.CastAs(segment, MissionControlSequencePropagate)
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
+        propagate: "MCSPropagate" = clr.CastAs(segment, MCSPropagate)
         propagate.propagator_name = "Earth Point Mass"
 
         # Configure propagtor advanced properties
@@ -147,26 +141,18 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureTargetSequenceSegment(self):
         self.ConfigureTargetSequenceSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigureTargetSequenceSegment(self, driver: "DriverMissionControlSequence"):
+    def ConfigureTargetSequenceSegment(self, driver: "MCSDriver"):
         # First add a sequence target
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-"
-        )
-        targetSequence: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            segment, MissionControlSequenceTargetSequence
-        )
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
+        targetSequence: "MCSTargetSequence" = clr.CastAs(segment, MCSTargetSequence)
 
-        targetSequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targetSequence.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
         targetSequence.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
         targetSequence.continue_on_failure = False
 
         # Add as many child segments to target
-        dv1: "MissionControlSequenceManeuver" = clr.CastAs(
-            targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "DV1", "-"), MissionControlSequenceManeuver
-        )
-        dv2: "MissionControlSequenceManeuver" = clr.CastAs(
-            targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "DV2", "-"), MissionControlSequenceManeuver
-        )
+        dv1: "MCSManeuver" = clr.CastAs(targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "DV1", "-"), MCSManeuver)
+        dv2: "MCSManeuver" = clr.CastAs(targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "DV2", "-"), MCSManeuver)
 
         # Add more profiles if necessary
         profileName: str = "Change Maneuver Type"
@@ -185,7 +171,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         controlParam.max_step = 0.3
 
         # Enable results
-        (IMissionControlSequenceSegment(dv1)).results.add("Epoch")
+        (IMCSSegment(dv1)).results.add("Epoch")
         roaResult: "DifferentialCorrectorResult" = dc.results.get_result_by_paths("DV1", "Epoch")
         roaResult.enable = True
 
@@ -193,7 +179,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         dc.max_iterations = 50
         dc.enable_display_status = True
         dc.mode = PROFILE_MODE.ITERATE
-        targetSequence.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targetSequence.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
 
     # endregion
 
@@ -201,10 +187,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureLaunchSegment(self):
         self.ConfigureLaunchSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigureLaunchSegment(self, driver: "DriverMissionControlSequence"):
+    def ConfigureLaunchSegment(self, driver: "MCSDriver"):
         # Add launch sequence and retrieve the
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "MyLaunch", "-")
-        launch: "MissionControlSequenceLaunch" = clr.CastAs(segment, MissionControlSequenceLaunch)
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "MyLaunch", "-")
+        launch: "MCSLaunch" = clr.CastAs(segment, MCSLaunch)
 
         # Configure launch properties
         launch.central_body_name = "Mars"
@@ -232,7 +218,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         velocity: "BurnoutVelocity" = launch.burnout_velocity
         velocity.burnout_option = BURNOUT_OPTIONS.INERTIAL_VELOCITY
         velocity.inertial_velocity = 20.0
-        velocity.inertial_horizontal_fpa = 22
+        velocity.inertial_horizontal_flight_path_angle = 22
         velocity.inertial_velocity_azimuth = 55
         velocity.burnout_option = BURNOUT_OPTIONS.FIXED_VELOCITY
         velocity.fixed_velocity = 20
@@ -243,10 +229,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureUpdateSegment(self):
         self.ConfigureUpdateSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigureUpdateSegment(self, driver: "DriverMissionControlSequence"):
+    def ConfigureUpdateSegment(self, driver: "MCSDriver"):
         # Add launch sequence and retrieve the
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(SEGMENT_TYPE.UPDATE, "MyUpdate", "-")
-        update: "MissionControlSequenceUpdate" = clr.CastAs(segment, MissionControlSequenceUpdate)
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.UPDATE, "MyUpdate", "-")
+        update: "MCSUpdate" = clr.CastAs(segment, MCSUpdate)
 
         # Specify the element to be changed, the action, and the value
 
@@ -256,7 +242,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
         # Set to new value
         update.set_action_and_value(UPDATE_PARAM.TANK_PRESSURE, UPDATE_ACTION.SET_TO_NEW_VALUE, 6000)
-        update.set_action_and_value(UPDATE_PARAM.TANK_TEMP, UPDATE_ACTION.SET_TO_NEW_VALUE, 5)
+        update.set_action_and_value(UPDATE_PARAM.TANK_TEMPERATURE, UPDATE_ACTION.SET_TO_NEW_VALUE, 5)
 
         # Subtract values
         update.set_action_and_value(UPDATE_PARAM.SRP_AREA, UPDATE_ACTION.SUBTRACT_VALUE, 10)
@@ -268,12 +254,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureManeuverSegment(self):
         self.ConfigureManeuverSegment(AstrogatorSnippets.m_Object)
 
-    def ConfigureManeuverSegment(self, driver: "DriverMissionControlSequence"):
-        # Add launch sequence and retrieve the MissionControlSequenceManeuver interface
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            SEGMENT_TYPE.MANEUVER, "MyManeuver", "-"
-        )
-        maneuver: "MissionControlSequenceManeuver" = clr.CastAs(segment, MissionControlSequenceManeuver)
+    def ConfigureManeuverSegment(self, driver: "MCSDriver"):
+        # Add launch sequence and retrieve the MCSManeuver interface
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "MyManeuver", "-")
+        maneuver: "MCSManeuver" = clr.CastAs(segment, MCSManeuver)
 
         # Set Maneuver to Impulsive
         maneuver.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
@@ -295,12 +279,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
     def test_ConfigureSequenceSegmentWithScriptingTool(self):
         self.ConfigureSequenceSegmentWithScriptingTool(AstrogatorSnippets.m_Object)
 
-    def ConfigureSequenceSegmentWithScriptingTool(self, driver: "DriverMissionControlSequence"):
+    def ConfigureSequenceSegmentWithScriptingTool(self, driver: "MCSDriver"):
         # Add launch sequence and retrieve the
-        segment: "IMissionControlSequenceSegment" = driver.main_sequence.insert(
-            SEGMENT_TYPE.SEQUENCE, "MySequence", "-"
-        )
-        sequence: "IMissionControlSequenceSequence" = clr.CastAs(segment, IMissionControlSequenceSequence)
+        segment: "IMCSSegment" = driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "MySequence", "-")
+        sequence: "IMCSSequence" = clr.CastAs(segment, IMCSSequence)
 
         scriptTool: "ScriptingTool" = sequence.scripting_tool
         scriptTool.enable = True
@@ -357,10 +339,10 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
             burn1X.attribute = "ImpulsiveMnvr.Cartesian.X"
             burn1X.unit = "km/sec"
 
-        period0: "ScriptingCalcObject" = scriptTool.calc_objects.add("Period_0")
-        period0.calc_object_name = "Segments/Value At Segment"
-        valAtSeg: "StateCalcValueAtSegment" = clr.CastAs(period0.calc_object, StateCalcValueAtSegment)
-        valAtSeg.calc_object_name = "Keplerian Elems/Orbit Period"
+        period0: "ScriptingCalculationObject" = scriptTool.calculation_objects.add("Period_0")
+        period0.calculation_object_name = "Segments/Value At Segment"
+        valAtSeg: "StateCalcValueAtSegment" = clr.CastAs(period0.calculation_object, StateCalcValueAtSegment)
+        valAtSeg.calculation_object_name = "Keplerian Elems/Orbit Period"
 
     # endregion
 
@@ -369,10 +351,8 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         AstrogatorSnippets.m_Object.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Start Transfer", "-")
         self.ConfigureTargetSequenceWithDC(AstrogatorSnippets.m_Object)
 
-    def ConfigureTargetSequenceWithDC(self, driver: "DriverMissionControlSequence"):
-        startTransfer: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence["Start Transfer"], MissionControlSequenceTargetSequence
-        )
+    def ConfigureTargetSequenceWithDC(self, driver: "MCSDriver"):
+        startTransfer: "MCSTargetSequence" = clr.CastAs(driver.main_sequence["Start Transfer"], MCSTargetSequence)
 
         dcString: str = "Differential Corrector"
         if Array.IndexOf(startTransfer.profiles.available_profiles, dcString) != -1:
@@ -417,7 +397,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         )
         newMoon.set_mode_type(THIRD_BODY_MODE.POINT_MASS)
         pointMass: "PointMassFunction" = clr.CastAs(newMoon.mode, PointMassFunction)
-        pointMass.grav_source = GRAV_PARAM_SOURCE.USER
+        pointMass.gravitational_parameter_source = GRAV_PARAM_SOURCE.USER
         pointMass.mu = 390000.0
 
     # endregion
@@ -437,7 +417,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         moon: "ThirdBodyFunction" = clr.CastAs(myEathHPOP.propagator_functions["Moon"], ThirdBodyFunction)
         moon.set_mode_type(THIRD_BODY_MODE.POINT_MASS)
         pointMass: "PointMassFunction" = clr.CastAs(moon.mode, PointMassFunction)
-        pointMass.grav_source = GRAV_PARAM_SOURCE.USER
+        pointMass.gravitational_parameter_source = GRAV_PARAM_SOURCE.USER
         pointMass.mu = 390000.0
 
     # endregion

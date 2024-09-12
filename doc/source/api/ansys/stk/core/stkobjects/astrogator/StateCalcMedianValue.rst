@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcMedianValue.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcMedianValue.calculation_object_name`
               - Gets or sets the calculation  object.
 
 
@@ -36,8 +36,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcMedianValue.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcMedianValue.calculation_object_name
     :type: str
 
     Gets or sets the calculation  object.

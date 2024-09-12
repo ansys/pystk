@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSManeuver: MissionControlSequenceManeuver) -> None
+.. py:method:: set_segment(self, pVAMCSManeuver: MCSManeuver) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.set_segment
 
     Set the maneuver segment to target.
 
     :Parameters:
 
-    **pVAMCSManeuver** : :obj:`~MissionControlSequenceManeuver`
+    **pVAMCSManeuver** : :obj:`~MCSManeuver`
 
     :Returns:
 

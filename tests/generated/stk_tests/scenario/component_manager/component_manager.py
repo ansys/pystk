@@ -26,14 +26,12 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_COM = scene.component_directory
         sat: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         EarlyBoundTests._targetSequence = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Targeter1", "-"),
-            MissionControlSequenceTargetSequence,
+            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Targeter1", "-"), MCSTargetSequence
         )
         EarlyBoundTests._propagator = clr.CastAs(
-            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"),
-            MissionControlSequencePropagate,
+            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"), MCSPropagate
         )
 
     # endregion
@@ -48,8 +46,8 @@ class EarlyBoundTests(TestBase):
 
     # region Static DataMembers
     AG_COM: "ComponentDirectory" = None
-    _targetSequence: "MissionControlSequenceTargetSequence" = None
-    _propagator: "MissionControlSequencePropagate" = None
+    _targetSequence: "MCSTargetSequence" = None
+    _propagator: "MCSPropagate" = None
     # endregion
 
     def TestComponent(self, comp: "IComponentInfo", isReadOnly: bool):
@@ -78,7 +76,7 @@ class EarlyBoundTests(TestBase):
             comp.user_comment = oldUserComment
 
     # region TestCalcObjectCollection
-    def TestCalcObjectCollection(self, calcObjColl: "CalcObjectCollection"):
+    def TestCalcObjectCollection(self, calcObjColl: "CalculationObjectCollection"):
         origCount: int = calcObjColl.count
         calcObjColl.add("MultiBody/BMagnitude")
         Assert.assertEqual((origCount + 1), calcObjColl.count)
@@ -148,7 +146,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region TestCalcObjectLinkEmbedControlCollection
-    def TestCalcObjectLinkEmbedControlCollection(self, calcObjLECColl: "CalcObjectLinkEmbedControlCollection"):
+    def TestCalcObjectLinkEmbedControlCollection(self, calcObjLECColl: "CalculationObjectLinkEmbedControlCollection"):
         origCount: int = calcObjLECColl.count
         calcObjLECColl.add("MultiBody/BMagnitude", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED)
         Assert.assertEqual((origCount + 1), calcObjLECColl.count)
@@ -210,9 +208,9 @@ class EarlyBoundTests(TestBase):
 
     def TestConstraint(self, condition: "AsTriggerCondition", isReadOnly: bool):
         if isReadOnly:
-            TestBase.logger.WriteLine(condition.calc_object_name)
+            TestBase.logger.WriteLine(condition.calculation_object_name)
             with pytest.raises(Exception):
-                condition.calc_object_name = "Cartesian Elems/Vx"
+                condition.calculation_object_name = "Cartesian Elems/Vx"
             Assert.assertIsNotNone(condition.criteria)
             TestBase.logger.WriteLine2(condition.criteria)
             with pytest.raises(Exception):
@@ -241,12 +239,12 @@ class EarlyBoundTests(TestBase):
             Assert.assertTrue(condition.use_absolute_value)
             condition.use_absolute_value = False
             Assert.assertFalse(condition.use_absolute_value)
-            condition.calc_object_name = "MultiBody/BDotR"
-            Assert.assertEqual("BDotR", condition.calc_object_name)
+            condition.calculation_object_name = "MultiBody/BDotR"
+            Assert.assertEqual("BDotR", condition.calculation_object_name)
 
-            calcObject: "IComponentInfo" = condition.calc_object
+            calcObject: "IComponentInfo" = condition.calculation_object
             Assert.assertEqual("BDotR", calcObject.name)
-            calc: "BDotRCalc" = clr.CastAs(condition.calc_object, BDotRCalc)
+            calc: "BDotRCalc" = clr.CastAs(condition.calculation_object, BDotRCalc)
             Assert.assertEqual("CentralBody/Moon Orbit_Normal", calc.reference_vector_name)
             Assert.assertEqual("Moon", calc.target_body_name)
             calc.reference_vector_name = "CentralBody/Mars Angular Velocity"
@@ -281,8 +279,8 @@ class EarlyBoundTests(TestBase):
             self.TestComponent(clr.CastAs(aolElement, IComponentInfo), False)
 
             aolStoppingCondition: "StoppingCondition" = clr.CastAs(aolElement.properties, StoppingCondition)
-            aolStoppingCondition.user_calc_object = calcObjectInfo
-            calcObjectInfo2: "IComponentInfo" = aolStoppingCondition.user_calc_object
+            aolStoppingCondition.user_calculation_object = calcObjectInfo
+            calcObjectInfo2: "IComponentInfo" = aolStoppingCondition.user_calculation_object
             Assert.assertEqual(calcObjectInfo.name, calcObjectInfo2.name)
 
     def Test_IAgComponentInfoCollection(self, compInfoColl: "ComponentInfoCollection"):
@@ -783,31 +781,31 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("failed")):
                 cartStmElem.coord_system_name = "CentralBody/Bogus"
 
-            cartStmElem.init_var = STM_PERT_VARIABLES.POSITION_X
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_X, cartStmElem.init_var)
-            cartStmElem.init_var = STM_PERT_VARIABLES.POSITION_Y
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_Y, cartStmElem.init_var)
-            cartStmElem.init_var = STM_PERT_VARIABLES.POSITION_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_Z, cartStmElem.init_var)
-            cartStmElem.init_var = STM_PERT_VARIABLES.VEL_X
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_X, cartStmElem.init_var)
-            cartStmElem.init_var = STM_PERT_VARIABLES.VEL_Y
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_Y, cartStmElem.init_var)
-            cartStmElem.init_var = STM_PERT_VARIABLES.VEL_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_Z, cartStmElem.init_var)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.POSITION_X
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_X, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.POSITION_Y
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_Y, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.POSITION_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_Z, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.VEL_X
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_X, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.VEL_Y
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_Y, cartStmElem.initial_state_component)
+            cartStmElem.initial_state_component = STM_PERTURBATION_VARIABLES.VEL_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_Z, cartStmElem.initial_state_component)
 
-            cartStmElem.final_var = STM_PERT_VARIABLES.POSITION_X
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_X, cartStmElem.final_var)
-            cartStmElem.final_var = STM_PERT_VARIABLES.POSITION_Y
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_Y, cartStmElem.final_var)
-            cartStmElem.final_var = STM_PERT_VARIABLES.POSITION_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_Z, cartStmElem.final_var)
-            cartStmElem.final_var = STM_PERT_VARIABLES.VEL_X
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_X, cartStmElem.final_var)
-            cartStmElem.final_var = STM_PERT_VARIABLES.VEL_Y
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_Y, cartStmElem.final_var)
-            cartStmElem.final_var = STM_PERT_VARIABLES.VEL_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_Z, cartStmElem.final_var)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.POSITION_X
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_X, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.POSITION_Y
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_Y, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.POSITION_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_Z, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.VEL_X
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_X, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.VEL_Y
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_Y, cartStmElem.final_state_component)
+            cartStmElem.final_state_component = STM_PERTURBATION_VARIABLES.VEL_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_Z, cartStmElem.final_state_component)
 
             cartSTMs.remove((clr.CastAs(cartStmElem, IComponentInfo)).name)
 
@@ -821,20 +819,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(mu)
         mu.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", mu.central_body_name)
-        mu.grav_source = GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE
-        Assert.assertEqual(GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE, mu.grav_source)
+        mu.gravitational_parameter_source = GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE
+        Assert.assertEqual(GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE, mu.gravitational_parameter_source)
         gravFilePath: str = "STKData\\CentralBodies\\Jupiter\\ZonalsToJ4.grv"
         with pytest.raises(Exception):
             mu.gravity_filename = gravFilePath
-        mu.grav_source = GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE_SYSTEM
-        Assert.assertEqual(GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE_SYSTEM, mu.grav_source)
+        mu.gravitational_parameter_source = GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE_SYSTEM
+        Assert.assertEqual(GRAVITATIONAL_PARAMETER_SOURCE.CENTRAL_BODY_FILE_SYSTEM, mu.gravitational_parameter_source)
         with pytest.raises(Exception):
             mu.gravity_filename = gravFilePath
-        mu.grav_source = GRAVITATIONAL_PARAMETER_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(GRAVITATIONAL_PARAMETER_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, mu.grav_source)
+        mu.gravitational_parameter_source = GRAVITATIONAL_PARAMETER_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(
+            GRAVITATIONAL_PARAMETER_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, mu.gravitational_parameter_source
+        )
         with pytest.raises(Exception):
             mu.gravity_filename = gravFilePath
-        mu.grav_source = GRAVITATIONAL_PARAMETER_SOURCE.GRAVITY_FILE
+        mu.gravitational_parameter_source = GRAVITATIONAL_PARAMETER_SOURCE.GRAVITY_FILE
         mu.gravity_filename = gravFilePath
         Assert.assertEqual(gravFilePath, mu.gravity_filename)
         constantElems.remove((clr.CastAs(mu, IComponentInfo)).name)
@@ -862,16 +862,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Jupiter", gravCoeff.central_body_name)
         gravCoeff.gravity_filename = gravFilePath
         Assert.assertEqual(gravFilePath, gravCoeff.gravity_filename)
-        gravCoeff.normalization_type = GRAV_COEFF_NORMALIZATION_TYPE.NORMALIZED
-        Assert.assertEqual(GRAV_COEFF_NORMALIZATION_TYPE.NORMALIZED, gravCoeff.normalization_type)
-        gravCoeff.normalization_type = GRAV_COEFF_NORMALIZATION_TYPE.UNNORMALIZED
-        Assert.assertEqual(GRAV_COEFF_NORMALIZATION_TYPE.UNNORMALIZED, gravCoeff.normalization_type)
-        gravCoeff.coefficient_type = GRAV_COEFF_COEFFICIENT_TYPE.COSINE
-        Assert.assertEqual(GRAV_COEFF_COEFFICIENT_TYPE.COSINE, gravCoeff.coefficient_type)
-        gravCoeff.coefficient_type = GRAV_COEFF_COEFFICIENT_TYPE.ZONAL
-        Assert.assertEqual(GRAV_COEFF_COEFFICIENT_TYPE.ZONAL, gravCoeff.coefficient_type)
-        gravCoeff.coefficient_type = GRAV_COEFF_COEFFICIENT_TYPE.SINE
-        Assert.assertEqual(GRAV_COEFF_COEFFICIENT_TYPE.SINE, gravCoeff.coefficient_type)
+        gravCoeff.normalization_type = GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.NORMALIZED
+        Assert.assertEqual(GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.NORMALIZED, gravCoeff.normalization_type)
+        gravCoeff.normalization_type = GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.UNNORMALIZED
+        Assert.assertEqual(GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.UNNORMALIZED, gravCoeff.normalization_type)
+        gravCoeff.coefficient_type = GRAVITY_COEFFICIENT_TYPE.COSINE
+        Assert.assertEqual(GRAVITY_COEFFICIENT_TYPE.COSINE, gravCoeff.coefficient_type)
+        gravCoeff.coefficient_type = GRAVITY_COEFFICIENT_TYPE.ZONAL
+        Assert.assertEqual(GRAVITY_COEFFICIENT_TYPE.ZONAL, gravCoeff.coefficient_type)
+        gravCoeff.coefficient_type = GRAVITY_COEFFICIENT_TYPE.SINE
+        Assert.assertEqual(GRAVITY_COEFFICIENT_TYPE.SINE, gravCoeff.coefficient_type)
         gravCoeff.central_body_name = "Earth"
         gravCoeff.gravity_filename = (
             "STKData\\CentralBodies\\Earth\\EGM96.grv"  # switch to a model that has degree and order
@@ -886,10 +886,10 @@ class EarlyBoundTests(TestBase):
             gravCoeff.degree = 71
         gravCoeff.degree = 2
         Assert.assertEqual(2, gravCoeff.order)  # make sure setting degree updates order
-        gravCoeff.coefficient_type = GRAV_COEFF_COEFFICIENT_TYPE.ZONAL
+        gravCoeff.coefficient_type = GRAVITY_COEFFICIENT_TYPE.ZONAL
         with pytest.raises(Exception):
             gravCoeff.order = 1
-        gravCoeff.coefficient_type = GRAV_COEFF_COEFFICIENT_TYPE.COSINE
+        gravCoeff.coefficient_type = GRAVITY_COEFFICIENT_TYPE.COSINE
         gravCoeff.degree = 70
         gravCoeff.order = 70
         gravCoeff.gravity_filename = "STKData\\CentralBodies\\Earth\\WGS72_ZonalsToJ4.grv"
@@ -936,14 +936,14 @@ class EarlyBoundTests(TestBase):
             curvRelMotion.central_body_name = "Moon"
             Assert.assertEqual("Moon", curvRelMotion.central_body_name)
 
-            curvRelMotion.reference_ellipse = CALC_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT
-            Assert.assertEqual(CALC_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT, curvRelMotion.reference_ellipse)
+            curvRelMotion.reference_ellipse = CALCULATION_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT
+            Assert.assertEqual(CALCULATION_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT, curvRelMotion.reference_ellipse)
 
-            curvRelMotion.location_source = CALC_OBJECT_LOCATION_SOURCE.REFERENCE_SAT
-            Assert.assertEqual(CALC_OBJECT_LOCATION_SOURCE.REFERENCE_SAT, curvRelMotion.location_source)
+            curvRelMotion.location_source = CALCULATION_OBJECT_LOCATION_SOURCE.REFERENCE_SATELLITE
+            Assert.assertEqual(CALCULATION_OBJECT_LOCATION_SOURCE.REFERENCE_SATELLITE, curvRelMotion.location_source)
 
-            curvRelMotion.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-            Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, curvRelMotion.reference_selection)
+            curvRelMotion.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+            Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, curvRelMotion.reference_selection)
             with pytest.raises(
                 Exception,
                 match=RegexSubstringMatch(
@@ -952,16 +952,16 @@ class EarlyBoundTests(TestBase):
             ):
                 curvRelMotion.reference.bind_to("Satellite/Satellite1")
 
-            curvRelMotion.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-            Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, curvRelMotion.reference_selection)
+            curvRelMotion.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+            Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, curvRelMotion.reference_selection)
 
             curvRelMotion.reference.bind_to("Satellite/Satellite1")
             Assert.assertEqual("Satellite1", curvRelMotion.reference.linked_object.instance_name)
             with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
                 curvRelMotion.reference.bind_to("Satellite/Bogus1")
 
-            curvRelMotion.sign_convention = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-            Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, curvRelMotion.sign_convention)
+            curvRelMotion.sign_convention = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+            Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, curvRelMotion.sign_convention)
 
             curvilinearRelMotionElems.remove((clr.CastAs(curvRelMotion, IComponentInfo)).name)
 
@@ -1011,8 +1011,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(ELEMENT.OSCULATING, delL.element_type)
         delaunayElems.remove((clr.CastAs(delL, IComponentInfo)).name)
 
-        slr: "StateCalcOrbitSemiLatusRectum" = clr.CastAs(
-            (ICloneable(delaunayElems["Semi-latus Rectum"])).clone_object(), StateCalcOrbitSemiLatusRectum
+        slr: "StateCalcOrbitSemilatusRectum" = clr.CastAs(
+            (ICloneable(delaunayElems["Semi-latus Rectum"])).clone_object(), StateCalcOrbitSemilatusRectum
         )
         Assert.assertIsNotNone(slr)
         slr.central_body_name = "Mars"
@@ -1055,28 +1055,28 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(equinElem)
         equinElem.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", equinElem.coord_system_name)
-        equinElem.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, equinElem.element_type)
         equinElems.remove((clr.CastAs(equinElem, IComponentInfo)).name)
 
         equinElem = clr.CastAs((ICloneable(equinElems["Mean Longitude"])).clone_object(), StateCalcEquinoctialElem)
         Assert.assertIsNotNone(equinElem)
         equinElem.coord_system_name = "CentralBody/Earth Mean Ecliptic of Date"
         Assert.assertEqual("CentralBody/Earth Mean_Ecliptic_of_Date", equinElem.coord_system_name)
-        equinElem.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, equinElem.element_type)
-        equinElem.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, equinElem.element_type)
+        equinElem.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, equinElem.element_type)
         equinElems.remove((clr.CastAs(equinElem, IComponentInfo)).name)
 
         # Formation
@@ -1089,10 +1089,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(cab)
         cab.central_body_name = "Charon"
         Assert.assertEqual("Charon", cab.central_body_name)
-        cab.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, cab.reference_selection)
-        cab.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, cab.reference_selection)
+        cab.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, cab.reference_selection)
+        cab.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, cab.reference_selection)
         cab.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", cab.reference.name)
         formationElems.remove((clr.CastAs(cab, IComponentInfo)).name)
@@ -1103,10 +1103,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(closeApproachTheta)
         closeApproachTheta.central_body_name = "Charon"
         Assert.assertEqual("Charon", closeApproachTheta.central_body_name)
-        closeApproachTheta.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, closeApproachTheta.reference_selection)
-        closeApproachTheta.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, closeApproachTheta.reference_selection)
+        closeApproachTheta.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachTheta.reference_selection)
+        closeApproachTheta.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachTheta.reference_selection)
         closeApproachTheta.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachTheta.reference.name)
         formationElems.remove((clr.CastAs(closeApproachTheta, IComponentInfo)).name)
@@ -1117,10 +1117,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(closeApproachX)
         closeApproachX.central_body_name = "Charon"
         Assert.assertEqual("Charon", closeApproachX.central_body_name)
-        closeApproachX.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, closeApproachX.reference_selection)
-        closeApproachX.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, closeApproachX.reference_selection)
+        closeApproachX.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachX.reference_selection)
+        closeApproachX.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachX.reference_selection)
         closeApproachX.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachX.reference.name)
         formationElems.remove((clr.CastAs(closeApproachX, IComponentInfo)).name)
@@ -1131,10 +1131,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(closeApproachY)
         closeApproachY.central_body_name = "Charon"
         Assert.assertEqual("Charon", closeApproachY.central_body_name)
-        closeApproachY.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, closeApproachY.reference_selection)
-        closeApproachY.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, closeApproachY.reference_selection)
+        closeApproachY.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachY.reference_selection)
+        closeApproachY.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachY.reference_selection)
         closeApproachY.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachY.reference.name)
         formationElems.remove((clr.CastAs(closeApproachY, IComponentInfo)).name)
@@ -1146,10 +1146,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(cacb)
         cacb.central_body_name = "Charon"
         Assert.assertEqual("Charon", cacb.central_body_name)
-        cacb.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, cacb.reference_selection)
-        cacb.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, cacb.reference_selection)
+        cacb.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, cacb.reference_selection)
+        cacb.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, cacb.reference_selection)
         cacb.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", cacb.reference.name)
         formationElems.remove((clr.CastAs(cacb, IComponentInfo)).name)
@@ -1160,18 +1160,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(gte)
         gte.central_body_name = "Phobos"
         Assert.assertEqual("Phobos", gte.central_body_name)
-        gte.direction = CALC_OBJECT_DIRECTION.NEXT
-        Assert.assertEqual(CALC_OBJECT_DIRECTION.NEXT, gte.direction)
-        gte.direction = CALC_OBJECT_DIRECTION.PREVIOUS
-        Assert.assertEqual(CALC_OBJECT_DIRECTION.PREVIOUS, gte.direction)
+        gte.direction = CALCULATION_OBJECT_DIRECTION.NEXT
+        Assert.assertEqual(CALCULATION_OBJECT_DIRECTION.NEXT, gte.direction)
+        gte.direction = CALCULATION_OBJECT_DIRECTION.PREVIOUS
+        Assert.assertEqual(CALCULATION_OBJECT_DIRECTION.PREVIOUS, gte.direction)
         gte.signed = False
         Assert.assertFalse(gte.signed)
         gte.signed = True
         Assert.assertTrue(gte.signed)
-        gte.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, gte.reference_selection)
-        gte.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, gte.reference_selection)
+        gte.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, gte.reference_selection)
+        gte.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, gte.reference_selection)
         gte.reference.bind_to("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", gte.reference.name)
         formationElems.remove((clr.CastAs(gte, IComponentInfo)).name)
@@ -1180,12 +1180,12 @@ class EarlyBoundTests(TestBase):
             (ICloneable(formationElems["Rel Mean Arg of Lat"])).clone_object(), StateCalcDeltaFromMaster
         )
         Assert.assertIsNotNone(deltaMaster)
-        deltaMaster.calc_object_name = "Ground Track/RepeatingGroundTrackEquatorError"
-        Assert.assertEqual("RepeatingGroundTrackEquatorError", deltaMaster.calc_object_name)
-        deltaMaster.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, deltaMaster.reference_selection)
-        deltaMaster.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, deltaMaster.reference_selection)
+        deltaMaster.calculation_object_name = "Ground Track/RepeatingGroundTrackEquatorError"
+        Assert.assertEqual("RepeatingGroundTrackEquatorError", deltaMaster.calculation_object_name)
+        deltaMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, deltaMaster.reference_selection)
+        deltaMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, deltaMaster.reference_selection)
         deltaMaster.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", deltaMaster.reference.name)
         formationElems.remove((clr.CastAs(deltaMaster, IComponentInfo)).name)
@@ -1194,18 +1194,18 @@ class EarlyBoundTests(TestBase):
             (ICloneable(formationElems["RelativeAtAOL"])).clone_object(), StateCalcRelativeAtAOLMaster
         )
         Assert.assertIsNotNone(aolMaster)
-        aolMaster.calc_object_name = "Relative Motion/CrossTrack"
-        Assert.assertEqual("CrossTrack", aolMaster.calc_object_name)
+        aolMaster.calculation_object_name = "Relative Motion/CrossTrack"
+        Assert.assertEqual("CrossTrack", aolMaster.calculation_object_name)
         aolMaster.central_body_name = "Uranus"
         Assert.assertEqual("Uranus", aolMaster.central_body_name)
-        aolMaster.direction = CALC_OBJECT_DIRECTION.NEXT
-        Assert.assertEqual(CALC_OBJECT_DIRECTION.NEXT, aolMaster.direction)
-        aolMaster.direction = CALC_OBJECT_DIRECTION.PREVIOUS
-        Assert.assertEqual(CALC_OBJECT_DIRECTION.PREVIOUS, aolMaster.direction)
-        aolMaster.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, aolMaster.reference_selection)
-        aolMaster.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, aolMaster.reference_selection)
+        aolMaster.direction = CALCULATION_OBJECT_DIRECTION.NEXT
+        Assert.assertEqual(CALCULATION_OBJECT_DIRECTION.NEXT, aolMaster.direction)
+        aolMaster.direction = CALCULATION_OBJECT_DIRECTION.PREVIOUS
+        Assert.assertEqual(CALCULATION_OBJECT_DIRECTION.PREVIOUS, aolMaster.direction)
+        aolMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, aolMaster.reference_selection)
+        aolMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, aolMaster.reference_selection)
         aolMaster.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", aolMaster.reference.name)
         formationElems.remove((clr.CastAs(aolMaster, IComponentInfo)).name)
@@ -1216,8 +1216,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(closeApproachMag)
         closeApproachMag.central_body_name = "Earth"
         Assert.assertEqual("Earth", closeApproachMag.central_body_name)
-        closeApproachMag.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, closeApproachMag.reference_selection)
+        closeApproachMag.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachMag.reference_selection)
         link: "LinkToObject" = closeApproachMag.reference
         formationElems.remove((clr.CastAs(closeApproachMag, IComponentInfo)).name)
 
@@ -1231,14 +1231,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(driftRate)
         driftRate.central_body_name = "Venus"
         Assert.assertEqual("Venus", driftRate.central_body_name)
-        driftRate.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, driftRate.element_type)
-        driftRate.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, driftRate.element_type)
-        driftRate.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, driftRate.element_type)
-        driftRate.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, driftRate.element_type)
+        driftRate.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, driftRate.element_type)
+        driftRate.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, driftRate.element_type)
+        driftRate.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, driftRate.element_type)
+        driftRate.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, driftRate.element_type)
         geoStationaryElems.remove((clr.CastAs(driftRate, IComponentInfo)).name)
 
         meanEarthLon: "StateCalcMeanEarthLon" = clr.CastAs(
@@ -1452,12 +1452,18 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertTrue(grTrackErr.control_parameters_available)
 
-        grTrackErr.enable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON)
-        Assert.assertTrue(grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON))
-        grTrackErr.disable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON)
-        Assert.assertFalse(grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON))
-        grTrackErr.enable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON)
-        Assert.assertTrue(grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON))
+        grTrackErr.enable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        Assert.assertTrue(
+            grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        )
+        grTrackErr.disable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        Assert.assertFalse(
+            grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        )
+        grTrackErr.enable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        Assert.assertTrue(
+            grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE)
+        )
 
         grTrackErr.enable_control_parameter(CONTROL_REPEATING_GROUND_TRACK_ERR.REPEAT_COUNT)
         Assert.assertTrue(grTrackErr.is_control_parameter_enabled(CONTROL_REPEATING_GROUND_TRACK_ERR.REPEAT_COUNT))
@@ -1477,14 +1483,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(aoa)
         aoa.central_body_name = "Pluto"
         Assert.assertEqual("Pluto", aoa.central_body_name)
-        aoa.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, aoa.element_type)
-        aoa.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, aoa.element_type)
-        aoa.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, aoa.element_type)
-        aoa.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, aoa.element_type)
+        aoa.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, aoa.element_type)
+        aoa.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, aoa.element_type)
+        aoa.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, aoa.element_type)
+        aoa.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, aoa.element_type)
         kepElems.remove((clr.CastAs(aoa, IComponentInfo)).name)
 
         aop: "StateCalcAltitudeOfPeriapsis" = clr.CastAs(
@@ -1493,40 +1499,40 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(aop)
         aop.central_body_name = "Pluto"
         Assert.assertEqual("Pluto", aop.central_body_name)
-        aop.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, aop.element_type)
-        aop.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, aop.element_type)
-        aop.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, aop.element_type)
-        aop.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, aop.element_type)
+        aop.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, aop.element_type)
+        aop.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, aop.element_type)
+        aop.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, aop.element_type)
+        aop.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, aop.element_type)
         kepElems.remove((clr.CastAs(aop, IComponentInfo)).name)
 
-        argPeriapsis: "StateCalcArgOfPeriapsis" = clr.CastAs(
-            (ICloneable(kepElems["Argument of Periapsis"])).clone_object(), StateCalcArgOfPeriapsis
+        argPeriapsis: "StateCalcArgumentOfPeriapsis" = clr.CastAs(
+            (ICloneable(kepElems["Argument of Periapsis"])).clone_object(), StateCalcArgumentOfPeriapsis
         )
         Assert.assertIsNotNone(argPeriapsis)
         argPeriapsis.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", argPeriapsis.coord_system_name)
-        argPeriapsis.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, argPeriapsis.element_type)
+        argPeriapsis.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, argPeriapsis.element_type)
         kepElems.remove((clr.CastAs(argPeriapsis, IComponentInfo)).name)
 
-        aol: "StateCalcArgOfLat" = clr.CastAs(
-            (ICloneable(kepElems["Argument of Latitude"])).clone_object(), StateCalcArgOfLat
+        aol: "StateCalcArgumentOfLatitude" = clr.CastAs(
+            (ICloneable(kepElems["Argument of Latitude"])).clone_object(), StateCalcArgumentOfLatitude
         )
         Assert.assertIsNotNone(aol)
         aol.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", aol.coord_system_name)
-        aol.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, aol.element_type)
         kepElems.remove((clr.CastAs(aol, IComponentInfo)).name)
 
         eccAnomaly: "StateCalcEccentricityAnomaly" = clr.CastAs(
@@ -1535,8 +1541,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(eccAnomaly)
         eccAnomaly.central_body_name = "Earth"
         Assert.assertEqual("Earth", eccAnomaly.central_body_name)
-        eccAnomaly.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, eccAnomaly.element_type)
+        eccAnomaly.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, eccAnomaly.element_type)
         kepElems.remove((clr.CastAs(eccAnomaly, IComponentInfo)).name)
 
         eccentricity: "StateCalcEccentricity" = clr.CastAs(
@@ -1545,8 +1551,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(eccentricity)
         eccentricity.central_body_name = "Earth"
         Assert.assertEqual("Earth", eccentricity.central_body_name)
-        eccentricity.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, eccentricity.element_type)
+        eccentricity.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, eccentricity.element_type)
         kepElems.remove((clr.CastAs(eccentricity, IComponentInfo)).name)
 
         inclination: "StateCalcInclination" = clr.CastAs(
@@ -1555,8 +1561,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(inclination)
         inclination.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", inclination.coord_system_name)
-        inclination.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, inclination.element_type)
+        inclination.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, inclination.element_type)
         kepElems.remove((clr.CastAs(inclination, IComponentInfo)).name)
 
         loan: "StateCalcLonOfAscNode" = clr.CastAs(
@@ -1565,8 +1571,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(loan)
         loan.central_body_name = "Earth"
         Assert.assertEqual("Earth", loan.central_body_name)
-        loan.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, loan.element_type)
+        loan.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, loan.element_type)
         kepElems.remove((clr.CastAs(loan, IComponentInfo)).name)
 
         meanAnomaly: "StateCalcMeanAnomaly" = clr.CastAs(
@@ -1575,8 +1581,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(meanAnomaly)
         meanAnomaly.central_body_name = "Earth"
         Assert.assertEqual("Earth", meanAnomaly.central_body_name)
-        meanAnomaly.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, meanAnomaly.element_type)
+        meanAnomaly.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, meanAnomaly.element_type)
         kepElems.remove((clr.CastAs(meanAnomaly, IComponentInfo)).name)
 
         meanMotion: "StateCalcMeanMotion" = clr.CastAs(
@@ -1585,8 +1591,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(meanMotion)
         meanMotion.central_body_name = "Earth"
         Assert.assertEqual("Earth", meanMotion.central_body_name)
-        meanMotion.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, meanMotion.element_type)
+        meanMotion.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, meanMotion.element_type)
         kepElems.remove((clr.CastAs(meanMotion, IComponentInfo)).name)
 
         orbitPeriod: "StateCalcOrbitPeriod" = clr.CastAs(
@@ -1595,16 +1601,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(orbitPeriod)
         orbitPeriod.central_body_name = "Earth"
         Assert.assertEqual("Earth", orbitPeriod.central_body_name)
-        orbitPeriod.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, orbitPeriod.element_type)
+        orbitPeriod.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, orbitPeriod.element_type)
         kepElems.remove((clr.CastAs(orbitPeriod, IComponentInfo)).name)
 
         raan: "StateCalcRAAN" = clr.CastAs((ICloneable(kepElems["RAAN"])).clone_object(), StateCalcRAAN)
         Assert.assertIsNotNone(raan)
         raan.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", raan.coord_system_name)
-        raan.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, raan.element_type)
+        raan.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, raan.element_type)
         kepElems.remove((clr.CastAs(raan, IComponentInfo)).name)
 
         roa: "StateCalcRadOfApoapsis" = clr.CastAs(
@@ -1613,8 +1619,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(roa)
         roa.central_body_name = "Earth"
         Assert.assertEqual("Earth", roa.central_body_name)
-        roa.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, roa.element_type)
+        roa.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, roa.element_type)
         kepElems.remove((clr.CastAs(roa, IComponentInfo)).name)
 
         radiusOfPeriapsis: "StateCalcRadOfPeriapsis" = clr.CastAs(
@@ -1623,18 +1629,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(radiusOfPeriapsis)
         radiusOfPeriapsis.central_body_name = "Earth"
         Assert.assertEqual("Earth", radiusOfPeriapsis.central_body_name)
-        radiusOfPeriapsis.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, radiusOfPeriapsis.element_type)
+        radiusOfPeriapsis.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, radiusOfPeriapsis.element_type)
         kepElems.remove((clr.CastAs(radiusOfPeriapsis, IComponentInfo)).name)
 
-        semiMajorAxis: "StateCalcSemiMajorAxis" = clr.CastAs(
-            (ICloneable(kepElems["Semimajor Axis"])).clone_object(), StateCalcSemiMajorAxis
+        semiMajorAxis: "StateCalcSemimajorAxis" = clr.CastAs(
+            (ICloneable(kepElems["Semimajor Axis"])).clone_object(), StateCalcSemimajorAxis
         )
         Assert.assertIsNotNone(semiMajorAxis)
         semiMajorAxis.central_body_name = "Earth"
         Assert.assertEqual("Earth", semiMajorAxis.central_body_name)
-        semiMajorAxis.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, semiMajorAxis.element_type)
+        semiMajorAxis.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, semiMajorAxis.element_type)
         kepElems.remove((clr.CastAs(semiMajorAxis, IComponentInfo)).name)
 
         tpan: "StateCalcTimePastAscNode" = clr.CastAs(
@@ -1643,8 +1649,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(tpan)
         tpan.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", tpan.coord_system_name)
-        tpan.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, tpan.element_type)
+        tpan.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, tpan.element_type)
         kepElems.remove((clr.CastAs(tpan, IComponentInfo)).name)
 
         timePastPeriapsis: "StateCalcTimePastPeriapsis" = clr.CastAs(
@@ -1653,8 +1659,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(timePastPeriapsis)
         timePastPeriapsis.central_body_name = "Earth"
         Assert.assertEqual("Earth", timePastPeriapsis.central_body_name)
-        timePastPeriapsis.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, timePastPeriapsis.element_type)
+        timePastPeriapsis.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, timePastPeriapsis.element_type)
         kepElems.remove((clr.CastAs(timePastPeriapsis, IComponentInfo)).name)
 
         trueAnomaly: "StateCalcTrueAnomaly" = clr.CastAs(
@@ -1663,8 +1669,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(trueAnomaly)
         trueAnomaly.central_body_name = "Earth"
         Assert.assertEqual("Earth", trueAnomaly.central_body_name)
-        trueAnomaly.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, trueAnomaly.element_type)
+        trueAnomaly.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, trueAnomaly.element_type)
         kepElems.remove((clr.CastAs(trueAnomaly, IComponentInfo)).name)
 
         # Maneuver
@@ -1675,8 +1681,8 @@ class EarlyBoundTests(TestBase):
             (ICloneable(maneuverElems["Fuel Used"])).clone_object(), StateCalcDifference
         )
         Assert.assertIsNotNone(difference)
-        difference.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", difference.calc_object_name)
+        difference.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", difference.calculation_object_name)
         difference.difference_order = DIFFERENCE_ORDER.CURRENT_MINUS_INITIAL
         Assert.assertEqual(DIFFERENCE_ORDER.CURRENT_MINUS_INITIAL, difference.difference_order)
         difference.difference_order = DIFFERENCE_ORDER.INITIAL_MINUS_CURRENT
@@ -1729,19 +1735,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(deltaVSquared)
         maneuverElems.remove("DeltaV Squared1")
 
-        MCSdeltaV: "StateCalcMissionControlSequenceDeltaV" = clr.CastAs(
-            (ICloneable(maneuverElems["MCS DeltaV"])).clone_object(), StateCalcMissionControlSequenceDeltaV
+        MCSdeltaV: "StateCalcMCSDeltaV" = clr.CastAs(
+            (ICloneable(maneuverElems["MCS DeltaV"])).clone_object(), StateCalcMCSDeltaV
         )
         Assert.assertIsNotNone(MCSdeltaV)
         maneuverElems.remove("MCS DeltaV1")
 
-        MCSdeltaVSquared: "StateCalcMissionControlSequenceDeltaVSquared" = clr.CastAs(
-            (ICloneable(maneuverElems["MCS DeltaV Squared"])).clone_object(),
-            StateCalcMissionControlSequenceDeltaVSquared,
+        MCSdeltaVSquared: "StateCalcMCSDeltaVSquared" = clr.CastAs(
+            (ICloneable(maneuverElems["MCS DeltaV Squared"])).clone_object(), StateCalcMCSDeltaVSquared
         )
         Assert.assertIsNotNone(MCSdeltaVSquared)
-        MCSdeltaVSquared.squared_type = SQUARED_TYPE.OF_SUM
-        Assert.assertEqual(SQUARED_TYPE.OF_SUM, MCSdeltaVSquared.squared_type)
+        MCSdeltaVSquared.squared_type = SQUARED_TYPE.SQUARE_OF_SUM
+        Assert.assertEqual(SQUARED_TYPE.SQUARE_OF_SUM, MCSdeltaVSquared.squared_type)
         MCSdeltaVSquared.squared_type = SQUARED_TYPE.SUM_OF_SQUARES
         Assert.assertEqual(SQUARED_TYPE.SUM_OF_SQUARES, MCSdeltaVSquared.squared_type)
         maneuverElems.remove("MCS DeltaV Squared1")
@@ -1754,72 +1759,74 @@ class EarlyBoundTests(TestBase):
             (ICloneable(math["Absolute Value"])).clone_object(), StateCalcAbsoluteValue
         )
         Assert.assertIsNotNone(absValue)
-        absValue.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", absValue.calc_object_name)
+        absValue.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", absValue.calculation_object_name)
         math.remove((clr.CastAs(absValue, IComponentInfo)).name)
 
         maxvalue: "StateCalcMaxValue" = clr.CastAs(
             (ICloneable(math["Maximum Value"])).clone_object(), StateCalcMaxValue
         )
         Assert.assertIsNotNone(maxvalue)
-        maxvalue.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", maxvalue.calc_object_name)
+        maxvalue.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", maxvalue.calculation_object_name)
         math.remove((clr.CastAs(maxvalue, IComponentInfo)).name)
 
         minvalue: "StateCalcMinValue" = clr.CastAs(
             (ICloneable(math["Minimum Value"])).clone_object(), StateCalcMinValue
         )
         Assert.assertIsNotNone(minvalue)
-        minvalue.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", minvalue.calc_object_name)
+        minvalue.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", minvalue.calculation_object_name)
         math.remove((clr.CastAs(minvalue, IComponentInfo)).name)
 
         negative: "StateCalcNegative" = clr.CastAs((ICloneable(math["Negative"])).clone_object(), StateCalcNegative)
         Assert.assertIsNotNone(negative)
-        negative.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", negative.calc_object_name)
+        negative.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", negative.calculation_object_name)
         math.remove((clr.CastAs(negative, IComponentInfo)).name)
 
         meanValue: "StateCalcMeanValue" = clr.CastAs(
             (ICloneable(math["Mean Value"])).clone_object(), StateCalcMeanValue
         )
         Assert.assertIsNotNone(meanValue)
-        meanValue.calc_object_name = "Cartesian Elems/X"
-        Assert.assertEqual("X", meanValue.calc_object_name)
+        meanValue.calculation_object_name = "Cartesian Elems/X"
+        Assert.assertEqual("X", meanValue.calculation_object_name)
         math.remove((clr.CastAs(meanValue, IComponentInfo)).name)
 
         medianValue: "StateCalcMedianValue" = clr.CastAs(
             (ICloneable(math["Median Value"])).clone_object(), StateCalcMedianValue
         )
         Assert.assertIsNotNone(medianValue)
-        medianValue.calc_object_name = "Cartesian Elems/X"
-        Assert.assertEqual("X", medianValue.calc_object_name)
+        medianValue.calculation_object_name = "Cartesian Elems/X"
+        Assert.assertEqual("X", medianValue.calculation_object_name)
         math.remove((clr.CastAs(medianValue, IComponentInfo)).name)
 
         stdDev: "StateCalcStandardDeviation" = clr.CastAs(
             (ICloneable(math["Standard Deviation"])).clone_object(), StateCalcStandardDeviation
         )
         Assert.assertIsNotNone(stdDev)
-        stdDev.calc_object_name = "Cartesian Elems/X"
-        Assert.assertEqual("X", stdDev.calc_object_name)
+        stdDev.calculation_object_name = "Cartesian Elems/X"
+        Assert.assertEqual("X", stdDev.calculation_object_name)
         math.remove((clr.CastAs(stdDev, IComponentInfo)).name)
 
         # Mean Elems
 
         meanElems: "ComponentInfoCollection" = components.get_folder("Mean Elems")
 
-        aol = clr.CastAs((ICloneable(meanElems["Mean Argument of Latitude"])).clone_object(), StateCalcArgOfLat)
+        aol = clr.CastAs(
+            (ICloneable(meanElems["Mean Argument of Latitude"])).clone_object(), StateCalcArgumentOfLatitude
+        )
         Assert.assertIsNotNone(aol)
         aol.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", aol.coord_system_name)
-        aol.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT, aol.element_type)
-        aol.element_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT, aol.element_type)
+        aol.element_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, aol.element_type)
         meanElems.remove((clr.CastAs(aol, IComponentInfo)).name)
 
         # MultiBody
@@ -1862,24 +1869,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(deltaDec)
         deltaDec.central_body_name = "Sun"
         Assert.assertEqual("Sun", deltaDec.central_body_name)
-        # deltaDec.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaDec.reference_type)
+        # deltaDec.ReferenceType = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaDec.reference_type)
         deltaDec.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaDec.reference_body)
         deltaDec.reference_body = "Earth"
         Assert.assertEqual("Earth", deltaDec.reference_body)
         with pytest.raises(Exception):
-            deltaDec.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
+            deltaDec.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
         deltaDec.central_body_name = "Earth"
         Assert.assertEqual("Earth", deltaDec.central_body_name)
-        deltaDec.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT, deltaDec.reference_type)
+        deltaDec.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT, deltaDec.reference_type)
 
         with pytest.raises(Exception):
             deltaDec.reference_body = "Moon"
 
-        deltaDec.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaDec.reference_type)
+        deltaDec.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaDec.reference_type)
         deltaDec.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaDec.reference_body)
         deltaDec.reference_body = "Earth"
@@ -1892,24 +1899,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(deltaRA)
         deltaRA.central_body_name = "Sun"
         Assert.assertEqual("Sun", deltaRA.central_body_name)
-        # deltaRA.ReferenceType = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaRA.reference_type)
+        # deltaRA.ReferenceType = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED;
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaRA.reference_type)
         deltaRA.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaRA.reference_body)
         deltaRA.reference_body = "Earth"
         Assert.assertEqual("Earth", deltaRA.reference_body)
         with pytest.raises(Exception):
-            deltaRA.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
+            deltaRA.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
         deltaRA.central_body_name = "Earth"
         Assert.assertEqual("Earth", deltaRA.central_body_name)
-        deltaRA.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT, deltaRA.reference_type)
+        deltaRA.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT, deltaRA.reference_type)
 
         with pytest.raises(Exception):
             deltaRA.reference_body = "Moon"
 
-        deltaRA.reference_type = CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaRA.reference_type)
+        deltaRA.reference_type = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED, deltaRA.reference_type)
         deltaRA.reference_body = "Moon"
         Assert.assertEqual("Moon", deltaRA.reference_body)
         deltaRA.reference_body = "Earth"
@@ -1982,9 +1989,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Earth", mest.central_body_name)
         otherOrbitElems.remove((clr.CastAs(mest, IComponentInfo)).name)
 
-        emltan: "StateCalcEarthMeanLocTimeAN" = clr.CastAs(
+        emltan: "StateCalcEarthMeanLocalTimeOfAscendingNode" = clr.CastAs(
             (ICloneable(otherOrbitElems["Earth Mean Local Time of Ascending Node"])).clone_object(),
-            StateCalcEarthMeanLocTimeAN,
+            StateCalcEarthMeanLocalTimeOfAscendingNode,
         )
         Assert.assertIsNotNone(emltan)
         emltan.central_body_name = "Earth"
@@ -2006,16 +2013,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(longPeriapsis)
         longPeriapsis.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", longPeriapsis.coord_system_name)
-        longPeriapsis.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, longPeriapsis.element_type)
+        longPeriapsis.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, longPeriapsis.element_type)
         otherOrbitElems.remove((clr.CastAs(longPeriapsis, IComponentInfo)).name)
 
         osv: "StateCalcOrbitStateValue" = clr.CastAs(
             (ICloneable(otherOrbitElems["Orbit State Value"])).clone_object(), StateCalcOrbitStateValue
         )
         Assert.assertIsNotNone(osv)
-        osv.calc_object_name = "Epoch"
-        Assert.assertEqual("Epoch", osv.calc_object_name)
+        osv.calculation_object_name = "Epoch"
+        Assert.assertEqual("Epoch", osv.calculation_object_name)
         osv.input_coord_system_name = "CentralBody/Callisto Fixed"
         Assert.assertEqual("CentralBody/Callisto Fixed", osv.input_coord_system_name)
         osv.vx = 1
@@ -2058,8 +2065,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(se)
         se.central_body_name = "Earth"
         Assert.assertEqual("Earth", se.central_body_name)
-        se.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, se.element_type)
+        se.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, se.element_type)
         otherOrbitElems.remove((clr.CastAs(se, IComponentInfo)).name)
 
         trueLong: "StateCalcTrueLon" = clr.CastAs(
@@ -2068,18 +2075,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(trueLong)
         trueLong.coord_system_name = "CentralBody/Earth Aligned with Fixed at Epoch"
         Assert.assertEqual("CentralBody/Earth Aligned_with_Fixed_at_Epoch", trueLong.coord_system_name)
-        trueLong.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, trueLong.element_type)
+        trueLong.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, trueLong.element_type)
         otherOrbitElems.remove((clr.CastAs(trueLong, IComponentInfo)).name)
 
         #
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            EarlyBoundTests._targetSequence.segments["Propagate1"], MissionControlSequencePropagate
-        )
+        prop: "MCSPropagate" = clr.CastAs(EarlyBoundTests._targetSequence.segments["Propagate1"], MCSPropagate)
         sc: "StoppingCondition" = clr.CastAs(
             prop.stopping_conditions.add("Argument of Latitude").properties, StoppingCondition
         )
-        sc.user_calc_object_name = "Other Orbit/Orbit State Value"
+        sc.user_calculation_object_name = "Other Orbit/Orbit State Value"
         prop.stopping_conditions.remove("Argument of Latitude")
 
         # Power
@@ -2104,14 +2109,14 @@ class EarlyBoundTests(TestBase):
         crossTrack.central_body_name = "Moon"
         Assert.assertEqual("Moon", crossTrack.central_body_name)
 
-        crossTrack.origin_at_master = True
-        Assert.assertTrue(crossTrack.origin_at_master)
+        crossTrack.origin_at_chief = True
+        Assert.assertTrue(crossTrack.origin_at_chief)
 
-        crossTrack.origin_at_master = False
-        Assert.assertFalse(crossTrack.origin_at_master)
+        crossTrack.origin_at_chief = False
+        Assert.assertFalse(crossTrack.origin_at_chief)
 
-        crossTrack.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, crossTrack.reference_selection)
+        crossTrack.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, crossTrack.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2120,8 +2125,8 @@ class EarlyBoundTests(TestBase):
         ):
             crossTrack.reference.bind_to("Satellite/Satellite1")
 
-        crossTrack.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, crossTrack.reference_selection)
+        crossTrack.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, crossTrack.reference_selection)
 
         crossTrack.reference.bind_to("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", crossTrack.reference.name)
@@ -2136,14 +2141,14 @@ class EarlyBoundTests(TestBase):
         solarBetaAngle.central_body_name = "Moon"
         Assert.assertEqual("Moon", solarBetaAngle.central_body_name)
 
-        solarBetaAngle.orbit_plane_source = CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, solarBetaAngle.orbit_plane_source)
+        solarBetaAngle.orbit_plane_source = CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
+        Assert.assertEqual(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, solarBetaAngle.orbit_plane_source)
 
-        solarBetaAngle.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, solarBetaAngle.element_type)
+        solarBetaAngle.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, solarBetaAngle.element_type)
 
-        solarBetaAngle.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, solarBetaAngle.reference_selection)
+        solarBetaAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, solarBetaAngle.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2152,19 +2157,19 @@ class EarlyBoundTests(TestBase):
         ):
             solarBetaAngle.reference.bind_to("Satellite/Satellite1")
 
-        solarBetaAngle.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, solarBetaAngle.reference_selection)
+        solarBetaAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, solarBetaAngle.reference_selection)
 
         solarBetaAngle.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", solarBetaAngle.reference.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
             solarBetaAngle.reference.bind_to("Satellite/Bogus1")
 
-        solarBetaAngle.sun_position = CALC_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE, solarBetaAngle.sun_position)
+        solarBetaAngle.sun_position = CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE
+        Assert.assertEqual(CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE, solarBetaAngle.sun_position)
 
-        solarBetaAngle.sign_convention = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-        Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, solarBetaAngle.sign_convention)
+        solarBetaAngle.sign_convention = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+        Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, solarBetaAngle.sign_convention)
 
         relMotionElems.remove((clr.CastAs(solarBetaAngle, IComponentInfo)).name)
 
@@ -2176,14 +2181,16 @@ class EarlyBoundTests(TestBase):
         solarInPlanlaneAngle.central_body_name = "Moon"
         Assert.assertEqual("Moon", solarInPlanlaneAngle.central_body_name)
 
-        solarInPlanlaneAngle.orbit_plane_source = CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, solarInPlanlaneAngle.orbit_plane_source)
+        solarInPlanlaneAngle.orbit_plane_source = CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
+        Assert.assertEqual(
+            CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, solarInPlanlaneAngle.orbit_plane_source
+        )
 
-        solarInPlanlaneAngle.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, solarInPlanlaneAngle.element_type)
+        solarInPlanlaneAngle.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, solarInPlanlaneAngle.element_type)
 
-        solarInPlanlaneAngle.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, solarInPlanlaneAngle.reference_selection)
+        solarInPlanlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, solarInPlanlaneAngle.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2192,22 +2199,26 @@ class EarlyBoundTests(TestBase):
         ):
             solarInPlanlaneAngle.reference.bind_to("Satellite/Satellite1")
 
-        solarInPlanlaneAngle.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, solarInPlanlaneAngle.reference_selection)
+        solarInPlanlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, solarInPlanlaneAngle.reference_selection)
 
         solarInPlanlaneAngle.reference.bind_to("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", solarInPlanlaneAngle.reference.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
             solarInPlanlaneAngle.reference.bind_to("Satellite/Bogus1")
 
-        solarInPlanlaneAngle.sun_position = CALC_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE, solarInPlanlaneAngle.sun_position)
+        solarInPlanlaneAngle.sun_position = CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE
+        Assert.assertEqual(
+            CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE, solarInPlanlaneAngle.sun_position
+        )
 
-        solarInPlanlaneAngle.counter_clockwise_rotation = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-        Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, solarInPlanlaneAngle.counter_clockwise_rotation)
+        solarInPlanlaneAngle.counter_clockwise_rotation = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+        Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, solarInPlanlaneAngle.counter_clockwise_rotation)
 
-        solarInPlanlaneAngle.reference_direction = CALC_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR
-        Assert.assertEqual(CALC_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR, solarInPlanlaneAngle.reference_direction)
+        solarInPlanlaneAngle.reference_direction = CALCULATION_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR
+        Assert.assertEqual(
+            CALCULATION_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR, solarInPlanlaneAngle.reference_direction
+        )
 
         relMotionElems.remove((clr.CastAs(solarInPlanlaneAngle, IComponentInfo)).name)
 
@@ -2220,14 +2231,14 @@ class EarlyBoundTests(TestBase):
         relPosDecAngle.central_body_name = "Moon"
         Assert.assertEqual("Moon", relPosDecAngle.central_body_name)
 
-        relPosDecAngle.orbit_plane_source = CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, relPosDecAngle.orbit_plane_source)
+        relPosDecAngle.orbit_plane_source = CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
+        Assert.assertEqual(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, relPosDecAngle.orbit_plane_source)
 
-        relPosDecAngle.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, relPosDecAngle.element_type)
+        relPosDecAngle.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, relPosDecAngle.element_type)
 
-        relPosDecAngle.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, relPosDecAngle.reference_selection)
+        relPosDecAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, relPosDecAngle.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2236,17 +2247,17 @@ class EarlyBoundTests(TestBase):
         ):
             relPosDecAngle.reference.bind_to("Satellite/Satellite1")
 
-        relPosDecAngle.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, relPosDecAngle.reference_selection)
+        relPosDecAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relPosDecAngle.reference_selection)
 
         relPosDecAngle.reference.bind_to("Satellite/Satellite1")
-        relPosDecAngle.relative_position_type = CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE
+        relPosDecAngle.relative_position_type = CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE
         Assert.assertEqual(
-            CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE, relPosDecAngle.relative_position_type
+            CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE, relPosDecAngle.relative_position_type
         )
 
-        relPosDecAngle.sign_convention = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-        Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, relPosDecAngle.sign_convention)
+        relPosDecAngle.sign_convention = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+        Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, relPosDecAngle.sign_convention)
 
         relMotionElems.remove((clr.CastAs(relPosDecAngle, IComponentInfo)).name)
 
@@ -2259,14 +2270,16 @@ class EarlyBoundTests(TestBase):
         relPosInPlaneAngle.central_body_name = "Moon"
         Assert.assertEqual("Moon", relPosInPlaneAngle.central_body_name)
 
-        relPosInPlaneAngle.orbit_plane_source = CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
-        Assert.assertEqual(CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, relPosInPlaneAngle.orbit_plane_source)
+        relPosInPlaneAngle.orbit_plane_source = CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE
+        Assert.assertEqual(
+            CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE, relPosInPlaneAngle.orbit_plane_source
+        )
 
-        relPosInPlaneAngle.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, relPosInPlaneAngle.element_type)
+        relPosInPlaneAngle.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, relPosInPlaneAngle.element_type)
 
-        relPosInPlaneAngle.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, relPosInPlaneAngle.reference_selection)
+        relPosInPlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, relPosInPlaneAngle.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2275,24 +2288,27 @@ class EarlyBoundTests(TestBase):
         ):
             relPosInPlaneAngle.reference.bind_to("Satellite/Satellite1")
 
-        relPosInPlaneAngle.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, relPosInPlaneAngle.reference_selection)
+        relPosInPlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relPosInPlaneAngle.reference_selection)
 
         relPosInPlaneAngle.reference.bind_to("Satellite/Satellite1")
-        relPosInPlaneAngle.counter_clockwise_rotation = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-        Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, relPosInPlaneAngle.counter_clockwise_rotation)
+        relPosInPlaneAngle.counter_clockwise_rotation = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+        Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, relPosInPlaneAngle.counter_clockwise_rotation)
 
-        relPosInPlaneAngle.relative_position_type = CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE
+        relPosInPlaneAngle.relative_position_type = (
+            CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE
+        )
         Assert.assertEqual(
-            CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE, relPosInPlaneAngle.relative_position_type
+            CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE,
+            relPosInPlaneAngle.relative_position_type,
         )
 
-        relPosInPlaneAngle.counter_clockwise_rotation = CALC_OBJECT_ANGLE_SIGN.NEGATIVE
-        Assert.assertEqual(CALC_OBJECT_ANGLE_SIGN.NEGATIVE, relPosInPlaneAngle.counter_clockwise_rotation)
+        relPosInPlaneAngle.counter_clockwise_rotation = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
+        Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, relPosInPlaneAngle.counter_clockwise_rotation)
 
-        relPosInPlaneAngle.reference_direction = CALC_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION
+        relPosInPlaneAngle.reference_direction = CALCULATION_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION
         Assert.assertEqual(
-            CALC_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION, relPosInPlaneAngle.reference_direction
+            CALCULATION_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION, relPosInPlaneAngle.reference_direction
         )
 
         relMotionElems.remove((clr.CastAs(relPosInPlaneAngle, IComponentInfo)).name)
@@ -2305,14 +2321,18 @@ class EarlyBoundTests(TestBase):
         relativeInclination.central_body_name = "Moon"
         Assert.assertEqual("Moon", relativeInclination.central_body_name)
 
-        relativeInclination.satellite_orbit_normal_type = CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG
-        Assert.assertEqual(CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG, relativeInclination.satellite_orbit_normal_type)
+        relativeInclination.satellite_orbit_normal_type = CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG
+        Assert.assertEqual(
+            CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG, relativeInclination.satellite_orbit_normal_type
+        )
 
-        relativeInclination.reference_satellite_orbit_normal_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, relativeInclination.reference_satellite_orbit_normal_type)
+        relativeInclination.reference_satellite_orbit_normal_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(
+            CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, relativeInclination.reference_satellite_orbit_normal_type
+        )
 
-        relativeInclination.reference_selection = CALC_OBJECT_REFERENCE.BASIC
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.BASIC, relativeInclination.reference_selection)
+        relativeInclination.reference_selection = CALCULATION_OBJECT_REFERENCE.BASIC
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, relativeInclination.reference_selection)
         with pytest.raises(
             Exception,
             match=RegexSubstringMatch(
@@ -2321,8 +2341,8 @@ class EarlyBoundTests(TestBase):
         ):
             relativeInclination.reference.bind_to("Satellite/Satellite1")
 
-        relativeInclination.reference_selection = CALC_OBJECT_REFERENCE.SPECIFIED
-        Assert.assertEqual(CALC_OBJECT_REFERENCE.SPECIFIED, relativeInclination.reference_selection)
+        relativeInclination.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
+        Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relativeInclination.reference_selection)
 
         relativeInclination.reference.bind_to("Satellite/Satellite1")
 
@@ -2457,10 +2477,10 @@ class EarlyBoundTests(TestBase):
             eigvec.eigenvector_number = STM_EIGEN_NUMBER.NUMBER6
             Assert.assertEqual(STM_EIGEN_NUMBER.NUMBER6, eigvec.eigenvector_number)
 
-            eigvec.state_variable = STM_PERT_VARIABLES.POSITION_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.POSITION_Z, eigvec.state_variable)
-            eigvec.state_variable = STM_PERT_VARIABLES.VEL_Z
-            Assert.assertEqual(STM_PERT_VARIABLES.VEL_Z, eigvec.state_variable)
+            eigvec.state_variable = STM_PERTURBATION_VARIABLES.POSITION_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.POSITION_Z, eigvec.state_variable)
+            eigvec.state_variable = STM_PERTURBATION_VARIABLES.VEL_Z
+            Assert.assertEqual(STM_PERTURBATION_VARIABLES.VEL_Z, eigvec.state_variable)
 
             eigvec.eigenvector_complex_part = COMPLEX_NUMBER.IMAGINARY
             Assert.assertEqual(COMPLEX_NUMBER.IMAGINARY, eigvec.eigenvector_complex_part)
@@ -2473,9 +2493,9 @@ class EarlyBoundTests(TestBase):
 
         seetElems: "ComponentInfoCollection" = components.get_folder("SEET")
 
-        fieldfieldLineSepAngle: "StateCalcSEETMagnitudeFieldFieldLineSepAngle" = clr.CastAs(
+        fieldfieldLineSepAngle: "StateCalcSEETMagneticFieldLineSeparationAngle" = clr.CastAs(
             (ICloneable(seetElems["GeoMagFieldFieldLineSeparation"])).clone_object(),
-            StateCalcSEETMagnitudeFieldFieldLineSepAngle,
+            StateCalcSEETMagneticFieldLineSeparationAngle,
         )
         fieldfieldLineSepAngle.target_object.bind_to("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", fieldfieldLineSepAngle.target_object.name)
@@ -2520,7 +2540,7 @@ class EarlyBoundTests(TestBase):
         script: "StateCalcScript" = clr.CastAs((ICloneable(scripts["JScript"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(script)
 
-        calcObjectCollection: "CalcObjectCollection" = script.calc_arguments
+        calcObjectCollection: "CalculationObjectCollection" = script.calculation_object_arguments
         calcObjectCollection.add("MultiBody/BTheta")
 
         compinfo: "IComponentInfo" = calcObjectCollection[0]
@@ -2538,7 +2558,7 @@ class EarlyBoundTests(TestBase):
         script.unit_dimension = "AngleUnit"
         Assert.assertEqual("AngleUnit", script.unit_dimension)
 
-        self.TestCalcObjectLinkEmbedControlCollection(script.calc_arguments_link_embed)
+        self.TestCalcObjectLinkEmbedControlCollection(script.calculation_object_arguments_link_embed)
 
         scripts.remove((clr.CastAs(script, IComponentInfo)).name)
 
@@ -2546,12 +2566,12 @@ class EarlyBoundTests(TestBase):
 
         mScript: "StateCalcScript" = clr.CastAs((ICloneable(scripts["Matlab"])).clone_object(), StateCalcScript)
         Assert.assertIsNotNone(mScript)
-        objLinkEmbedControl: "IComponentLinkEmbedControl" = mScript.calc_arguments_link_embed.add(
+        objLinkEmbedControl: "IComponentLinkEmbedControl" = mScript.calculation_object_arguments_link_embed.add(
             "Epoch", COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED
         )
         Assert.assertEqual("Epoch", objLinkEmbedControl.component.name)
         Assert.assertEqual(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE.UNLINKED, objLinkEmbedControl.reference_type)
-        Assert.assertEqual(1, mScript.calc_arguments_link_embed.count)
+        Assert.assertEqual(1, mScript.calculation_object_arguments_link_embed.count)
         mScript.inline_func = "Test"
         Assert.assertEqual("Test", mScript.inline_func)
         mScript.unit_dimension = "AngleUnit"
@@ -2564,16 +2584,14 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SegmentSat"), Satellite
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        mcs: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        propagate: "MissionControlSequencePropagate" = clr.CastAs(
-            mcs.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        mcs: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        propagate: "MCSPropagate" = clr.CastAs(mcs.main_sequence["Propagate"], MCSPropagate)
         stopCondElem: "StoppingConditionElement" = propagate.stopping_conditions.add("UserSelect")
         stopCond: "StoppingCondition" = clr.CastAs(stopCondElem.properties, StoppingCondition)
 
-        stopCond.user_calc_object_name = "Segments/Position Difference Across Segments"
+        stopCond.user_calculation_object_name = "Segments/Position Difference Across Segments"
         posDiffOtherSeg: "StateCalcPositionDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcPositionDifferenceOtherSegment
+            stopCond.user_calculation_object, StateCalcPositionDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", posDiffOtherSeg.other_segment_name)
         posDiffOtherSeg.other_segment_name = "Initial State"
@@ -2585,9 +2603,9 @@ class EarlyBoundTests(TestBase):
         posDiffOtherSeg.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, posDiffOtherSeg.segment_state_to_use)
 
-        stopCond.user_calc_object_name = "Segments/Velocity Difference Across Segments"
+        stopCond.user_calculation_object_name = "Segments/Velocity Difference Across Segments"
         velDiffOtherSeg: "StateCalcVelDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcVelDifferenceOtherSegment
+            stopCond.user_calculation_object, StateCalcVelDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", velDiffOtherSeg.other_segment_name)
         velDiffOtherSeg.other_segment_name = "Initial State"
@@ -2599,9 +2617,9 @@ class EarlyBoundTests(TestBase):
         velDiffOtherSeg.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, velDiffOtherSeg.segment_state_to_use)
 
-        stopCond.user_calc_object_name = "Segments/Position Velocity Difference Across Segments"
+        stopCond.user_calculation_object_name = "Segments/Position Velocity Difference Across Segments"
         posvelDiffOtherSeg: "StateCalcPositionVelDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcPositionVelDifferenceOtherSegment
+            stopCond.user_calculation_object, StateCalcPositionVelDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", posvelDiffOtherSeg.other_segment_name)
         posvelDiffOtherSeg.other_segment_name = "Initial State"
@@ -2613,8 +2631,8 @@ class EarlyBoundTests(TestBase):
         posvelDiffOtherSeg.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, posvelDiffOtherSeg.segment_state_to_use)
 
-        stopCond.user_calc_object_name = "Segments/Value At Segment"
-        valAtSeg: "StateCalcValueAtSegment" = clr.CastAs(stopCond.user_calc_object, StateCalcValueAtSegment)
+        stopCond.user_calculation_object_name = "Segments/Value At Segment"
+        valAtSeg: "StateCalcValueAtSegment" = clr.CastAs(stopCond.user_calculation_object, StateCalcValueAtSegment)
         Assert.assertEqual("-Not Set-", valAtSeg.other_segment_name)
         valAtSeg.other_segment_name = "Initial State"
         Assert.assertEqual("Initial State", valAtSeg.other_segment_name)
@@ -2624,13 +2642,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SEGMENT_STATE.INITIAL, valAtSeg.segment_state_to_use)
         valAtSeg.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, valAtSeg.segment_state_to_use)
-        Assert.assertEqual("Epoch", valAtSeg.calc_object_name)
-        valAtSeg.calc_object_name = "Maneuver/DeltaV"
-        Assert.assertEqual("DeltaV", valAtSeg.calc_object_name)
+        Assert.assertEqual("Epoch", valAtSeg.calculation_object_name)
+        valAtSeg.calculation_object_name = "Maneuver/DeltaV"
+        Assert.assertEqual("DeltaV", valAtSeg.calculation_object_name)
 
-        stopCond.user_calc_object_name = "Segments/Difference Across Segments"
+        stopCond.user_calculation_object_name = "Segments/Difference Across Segments"
         diffOtherSeg: "StateCalcDifferenceOtherSegment" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcDifferenceOtherSegment
+            stopCond.user_calculation_object, StateCalcDifferenceOtherSegment
         )
         Assert.assertEqual("-Not Set-", diffOtherSeg.other_segment_name)
         diffOtherSeg.other_segment_name = "Initial State"
@@ -2641,22 +2659,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SEGMENT_STATE.INITIAL, diffOtherSeg.segment_state_to_use)
         diffOtherSeg.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, diffOtherSeg.segment_state_to_use)
-        Assert.assertEqual("Epoch", diffOtherSeg.calc_object_name)
-        diffOtherSeg.calc_object_name = "Maneuver/DeltaV"
-        Assert.assertEqual("DeltaV", diffOtherSeg.calc_object_name)
+        Assert.assertEqual("Epoch", diffOtherSeg.calculation_object_name)
+        diffOtherSeg.calculation_object_name = "Maneuver/DeltaV"
+        Assert.assertEqual("DeltaV", diffOtherSeg.calculation_object_name)
         diffOtherSeg.difference_order = SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT
         Assert.assertEqual(SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT, diffOtherSeg.difference_order)
         diffOtherSeg.difference_order = SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT
         Assert.assertEqual(SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT, diffOtherSeg.difference_order)
 
-        stopCond.user_calc_object_name = "Segments/Value At Segment Other Satellite"
+        stopCond.user_calculation_object_name = "Segments/Value At Segment Other Satellite"
         ValAtSegOtherSat: "StateCalcValueAtSegmentOtherSat" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcValueAtSegmentOtherSat
+            stopCond.user_calculation_object, StateCalcValueAtSegmentOtherSat
         )
-        ValAtSegOtherSat.reference_sat.bind_to("Satellite/Satellite1")
-        Assert.assertEqual("Satellite/Satellite1", ValAtSegOtherSat.reference_sat.name)
+        ValAtSegOtherSat.reference_satellite.bind_to("Satellite/Satellite1")
+        Assert.assertEqual("Satellite/Satellite1", ValAtSegOtherSat.reference_satellite.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("is not a valid choice")):
-            ValAtSegOtherSat.reference_sat.bind_to("Satellite/Bogus")
+            ValAtSegOtherSat.reference_satellite.bind_to("Satellite/Bogus")
         Assert.assertEqual("-Not Set-", ValAtSegOtherSat.other_segment_name)
         ValAtSegOtherSat.other_segment_name = "Initial State"
         Assert.assertEqual("Initial State", ValAtSegOtherSat.other_segment_name)
@@ -2666,18 +2684,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SEGMENT_STATE.INITIAL, ValAtSegOtherSat.segment_state_to_use)
         ValAtSegOtherSat.segment_state_to_use = SEGMENT_STATE.FINAL
         Assert.assertEqual(SEGMENT_STATE.FINAL, ValAtSegOtherSat.segment_state_to_use)
-        Assert.assertEqual("Epoch", ValAtSegOtherSat.calc_object_name)
-        ValAtSegOtherSat.calc_object_name = "Maneuver/DeltaV"
-        Assert.assertEqual("DeltaV", ValAtSegOtherSat.calc_object_name)
+        Assert.assertEqual("Epoch", ValAtSegOtherSat.calculation_object_name)
+        ValAtSegOtherSat.calculation_object_name = "Maneuver/DeltaV"
+        Assert.assertEqual("DeltaV", ValAtSegOtherSat.calculation_object_name)
 
-        stopCond.user_calc_object_name = "Segments/Difference Across Segments Across Satellites"
-        diffAcrossSegOtherSat: "StateCalcDifferenceAcrossSegmentsOtherSat" = clr.CastAs(
-            stopCond.user_calc_object, StateCalcDifferenceAcrossSegmentsOtherSat
+        stopCond.user_calculation_object_name = "Segments/Difference Across Segments Across Satellites"
+        diffAcrossSegOtherSat: "StateCalcDifferenceAcrossSegmentsOtherSatellite" = clr.CastAs(
+            stopCond.user_calculation_object, StateCalcDifferenceAcrossSegmentsOtherSatellite
         )
         Assert.assertIsNotNone(diffAcrossSegOtherSat)
-        diffAcrossSegOtherSat.calc_object_name = "Formation/CloseApproachBearing"
-        Assert.assertEqual("CloseApproachBearing", diffAcrossSegOtherSat.calc_object_name)
-        Assert.assertEqual("CloseApproachBearing", diffAcrossSegOtherSat.calc_object_name)
+        diffAcrossSegOtherSat.calculation_object_name = "Formation/CloseApproachBearing"
+        Assert.assertEqual("CloseApproachBearing", diffAcrossSegOtherSat.calculation_object_name)
+        Assert.assertEqual("CloseApproachBearing", diffAcrossSegOtherSat.calculation_object_name)
         diffAcrossSegOtherSat.difference_order = SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT
         Assert.assertEqual(SEGMENT_DIFFERENCE_ORDER.CURRENT_MINUS_SEGMENT, diffAcrossSegOtherSat.difference_order)
         diffAcrossSegOtherSat.difference_order = SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT
@@ -2686,10 +2704,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SEGMENT_STATE.FINAL, diffAcrossSegOtherSat.segment_state_to_use)
         diffAcrossSegOtherSat.segment_state_to_use = SEGMENT_STATE.INITIAL
         Assert.assertEqual(SEGMENT_STATE.INITIAL, diffAcrossSegOtherSat.segment_state_to_use)
-        diffAcrossSegOtherSat.reference_sat.bind_to("Satellite/Satellite1")
-        Assert.assertEqual("Satellite/Satellite1", diffAcrossSegOtherSat.reference_sat.name)
+        diffAcrossSegOtherSat.reference_satellite.bind_to("Satellite/Satellite1")
+        Assert.assertEqual("Satellite/Satellite1", diffAcrossSegOtherSat.reference_satellite.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("is not a valid choice")):
-            diffAcrossSegOtherSat.reference_sat.bind_to("Satellite/Bogus")
+            diffAcrossSegOtherSat.reference_satellite.bind_to("Satellite/Bogus")
         Assert.assertEqual("-Not Set-", diffAcrossSegOtherSat.other_segment_name)
         diffAcrossSegOtherSat.other_segment_name = "Initial State"
         Assert.assertEqual("Initial State", diffAcrossSegOtherSat.other_segment_name)
@@ -2710,8 +2728,8 @@ class EarlyBoundTests(TestBase):
             (ICloneable(segments["Sequence DeltaV Squared"])).clone_object(), StateCalcSequenceDeltaVSquared
         )
         Assert.assertIsNotNone(SequenceDeltaVSquared)
-        SequenceDeltaVSquared.squared_type = SQUARED_TYPE.OF_SUM
-        Assert.assertEqual(SQUARED_TYPE.OF_SUM, SequenceDeltaVSquared.squared_type)
+        SequenceDeltaVSquared.squared_type = SQUARED_TYPE.SQUARE_OF_SUM
+        Assert.assertEqual(SQUARED_TYPE.SQUARE_OF_SUM, SequenceDeltaVSquared.squared_type)
         SequenceDeltaVSquared.squared_type = SQUARED_TYPE.SUM_OF_SQUARES
         Assert.assertEqual(SQUARED_TYPE.SUM_OF_SQUARES, SequenceDeltaVSquared.squared_type)
         segments.remove("Sequence DeltaV Squared1")
@@ -2722,8 +2740,8 @@ class EarlyBoundTests(TestBase):
 
         sphericalElems: "ComponentInfoCollection" = components.get_folder("Spherical Elems")
 
-        stateCosineVFPA: "StateCalcCosOfVerticalFPA" = clr.CastAs(
-            (ICloneable(sphericalElems["Cosine of Vertical FPA"])).clone_object(), StateCalcCosOfVerticalFPA
+        stateCosineVFPA: "StateCalcCosOfVerticalFlightPathAngle" = clr.CastAs(
+            (ICloneable(sphericalElems["Cosine of Vertical FPA"])).clone_object(), StateCalcCosOfVerticalFlightPathAngle
         )
         Assert.assertIsNotNone(stateCosineVFPA)
         stateCosineVFPA.central_body_name = "Earth"
@@ -2736,7 +2754,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("CentralBody/Earth Inertial", dec.coord_system_name)
         sphericalElems.remove((clr.CastAs(dec, IComponentInfo)).name)
 
-        fpa: "StateCalcFPA" = clr.CastAs((ICloneable(sphericalElems["Flight Path Angle"])).clone_object(), StateCalcFPA)
+        fpa: "StateCalcFlightPathAngle" = clr.CastAs(
+            (ICloneable(sphericalElems["Flight Path Angle"])).clone_object(), StateCalcFlightPathAngle
+        )
         Assert.assertIsNotNone(fpa)
         fpa.coord_system_name = "CentralBody/Earth Inertial"
         Assert.assertEqual("CentralBody/Earth Inertial", fpa.coord_system_name)
@@ -2806,8 +2826,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(c3Energy)
         c3Energy.central_body_name = "Earth"
         Assert.assertEqual("Earth", c3Energy.central_body_name)
-        c3Energy.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, c3Energy.element_type)
+        c3Energy.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, c3Energy.element_type)
         targetElems.remove((clr.CastAs(c3Energy, IComponentInfo)).name)
 
         InAsympDec: "StateCalcInAsympDec" = clr.CastAs(
@@ -2875,10 +2895,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Earth", numRevs.central_body_name)
         numRevs.central_body_name = "Sun"
         Assert.assertEqual("Sun", numRevs.central_body_name)
-        numRevs.element_type = CALC_OBJECT_ELEM.OSCULATING
-        Assert.assertEqual(CALC_OBJECT_ELEM.OSCULATING, numRevs.element_type)
-        numRevs.element_type = CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN
-        Assert.assertEqual(CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN, numRevs.element_type)
+        numRevs.element_type = CALCULATION_OBJECT_ELEMENT.OSCULATING
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.OSCULATING, numRevs.element_type)
+        numRevs.element_type = CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN
+        Assert.assertEqual(CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN, numRevs.element_type)
         timeElems.remove((clr.CastAs(numRevs, IComponentInfo)).name)
 
         # User Values
@@ -3092,14 +3112,14 @@ class EarlyBoundTests(TestBase):
         )
         compSaturn: "IComponentInfo" = components["Saturn"]
 
-        cbSaturn: "AstrogatorCentralBody" = clr.CastAs(compSaturn, AstrogatorCentralBody)
-        MoonsOfSaturn: "CentralBodyCollection" = cbSaturn.children
+        cbSaturn: "CentralBodyComponent" = clr.CastAs(compSaturn, CentralBodyComponent)
+        MoonsOfSaturn: "CentralBodyComponentCollection" = cbSaturn.children
 
         i: int = 0
         while i < MoonsOfSaturn.count:
             # Console.WriteLine("     Trying: " + i.ToString());
             try:
-                moon: "AstrogatorCentralBody" = MoonsOfSaturn[i]
+                moon: "CentralBodyComponent" = MoonsOfSaturn[i]
                 compInfo: "IComponentInfo" = clr.CastAs(moon, IComponentInfo)
 
             except Exception as ex:
@@ -3131,14 +3151,14 @@ class EarlyBoundTests(TestBase):
             # Console.WriteLine(component.Description);
             # Console.WriteLine(component.IsReadOnly());
 
-            cb2: "AstrogatorCentralBody" = clr.CastAs(component, AstrogatorCentralBody)
+            cb2: "CentralBodyComponent" = clr.CastAs(component, CentralBodyComponent)
             if cb2 != None:
-                cbCollection: "CentralBodyCollection" = cb2.children
+                cbCollection: "CentralBodyComponentCollection" = cb2.children
 
                 i: int = 0
                 while i < cbCollection.count:
                     # Console.WriteLine("     Trying: " + i.ToString());
-                    cb3: "AstrogatorCentralBody" = cbCollection[i]
+                    cb3: "CentralBodyComponent" = cbCollection[i]
                     Assert.assertIsNotNone(cb3)
                     compInfo: "IComponentInfo" = clr.CastAs(cb3, IComponentInfo)
 
@@ -3146,7 +3166,7 @@ class EarlyBoundTests(TestBase):
 
                 # Console.WriteLine();
 
-                cbEnum: "AstrogatorCentralBody"
+                cbEnum: "CentralBodyComponent"
                 # Console.WriteLine();
 
                 for cbEnum in cbCollection:
@@ -3159,9 +3179,9 @@ class EarlyBoundTests(TestBase):
         comp = components["Callisto"]
         self.TestComponent(comp, comp.is_read_only())
 
-        cb: "AstrogatorCentralBody" = clr.CastAs(comp, AstrogatorCentralBody)
+        cb: "CentralBodyComponent" = clr.CastAs(comp, CentralBodyComponent)
         with pytest.raises(Exception):
-            cb.gravitational_param = 71
+            cb.gravitational_parameter = 71
 
         with pytest.raises(Exception):
             cb.parent_name = "Deimos"
@@ -3173,9 +3193,9 @@ class EarlyBoundTests(TestBase):
             cb.set_default_gravity_model_by_name("Earth Simple")
 
         comp = components["Iapetus"]
-        gm: "CentralBodyGravityModel" = cb.default_gravity_model_data
+        gm: "CentralBodyComponentGravityModel" = cb.default_gravity_model_data
         with pytest.raises(Exception):
-            gm.gravitational_param = 71
+            gm.gravitational_parameter = 71
 
         with pytest.raises(Exception):
             gm.j2 = 1
@@ -3192,7 +3212,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             cb.add_shape(CENTRAL_BODY_SHAPE.SPHERE, "Unique")
 
-        os: "CentralBodyShapeOblateSpheroid" = clr.CastAs(cb.default_shape_data, CentralBodyShapeOblateSpheroid)
+        os: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
+            cb.default_shape_data, CentralBodyComponentShapeOblateSpheroid
+        )
         with pytest.raises(Exception):
             os.min_radius = 477
 
@@ -3202,8 +3224,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             cb.add_attitude(CENTRAL_BODY_ATTITUDE.IAU1994, "UniqueName")
 
-        file: "CentralBodyAttitudeRotationCoefficientsFile" = clr.CastAs(
-            cb.default_attitude_data, CentralBodyAttitudeRotationCoefficientsFile
+        file: "CentralBodyComponentAttitudeRotationCoefficientsFile" = clr.CastAs(
+            cb.default_attitude_data, CentralBodyComponentAttitudeRotationCoefficientsFile
         )
         with pytest.raises(Exception):
             file.filename = r"CentralBodies\Ceres\CeresAttitude2000.rot"
@@ -3211,17 +3233,17 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.JPLDE, "UniqueName")
 
-        ao: "CentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
-            cb.default_ephemeris_data, CentralBodyEphemerisAnalyticOrbit
+        ao: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
+            cb.default_ephemeris_data, CentralBodyComponentEphemerisAnalyticOrbit
         )
         with pytest.raises(Exception):
             ao.epoch = 2451200
 
         with pytest.raises(Exception):
-            ao.semi_major_axis = 413739000
+            ao.semimajor_axis = 413739000
 
         with pytest.raises(Exception):
-            ao.semi_major_axis_rate = 1
+            ao.semimajor_axis_rate = 1
 
         with pytest.raises(Exception):
             ao.eccentricity = 0.08
@@ -3260,11 +3282,11 @@ class EarlyBoundTests(TestBase):
         comp = clr.CastAs(oComp, IComponentInfo)
         self.TestComponent(comp, False)
 
-        cb = clr.CastAs(comp, AstrogatorCentralBody)
-        cb.gravitational_param = 71
-        Assert.assertEqual(71, cb.gravitational_param)
+        cb = clr.CastAs(comp, CentralBodyComponent)
+        cb.gravitational_parameter = 71
+        Assert.assertEqual(71, cb.gravitational_parameter)
 
-        earthCb: "AstrogatorCentralBody" = clr.CastAs(components["Earth"], AstrogatorCentralBody)
+        earthCb: "CentralBodyComponent" = clr.CastAs(components["Earth"], CentralBodyComponent)
         initialChildrenCount: int = earthCb.children.count
         cb.parent_name = "Earth"
         Assert.assertEqual("Earth", cb.parent_name)
@@ -3273,8 +3295,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, cb.children.count)
 
         gm = cb.add_gravity_model(CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE, "UniqueName")
-        gm.gravitational_param = 71
-        Assert.assertEqual(71, gm.gravitational_param)
+        gm.gravitational_parameter = 71
+        Assert.assertEqual(71, gm.gravitational_parameter)
         gm.j2 = 1
         Assert.assertEqual(1, gm.j2)
         gm.j3 = 2
@@ -3296,48 +3318,49 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             cb.remove_gravity_model_by_name("ZonalsToJ4")
 
-        os = clr.CastAs(cb.default_shape_data, CentralBodyShapeOblateSpheroid)
+        os = clr.CastAs(cb.default_shape_data, CentralBodyComponentShapeOblateSpheroid)
         os.min_radius = 0.4
         Assert.assertEqual(0.4, os.min_radius)
         os.max_radius = 0.5
         Assert.assertEqual(0.5, os.max_radius)
         Assert.assertAlmostEqual(float(0.029166), float(os.flattening_coefficient), delta=float(6))
 
-        sphere: "CentralBodyShapeSphere" = clr.CastAs(
-            cb.add_shape(CENTRAL_BODY_SHAPE.SPHERE, "UniqueSphere"), CentralBodyShapeSphere
+        sphere: "CentralBodyComponentShapeSphere" = clr.CastAs(
+            cb.add_shape(CENTRAL_BODY_SHAPE.SPHERE, "UniqueSphere"), CentralBodyComponentShapeSphere
         )
         sphere.radius = 6400
         Assert.assertEqual(6400, sphere.radius)
 
         cb.set_default_shape_by_name("UniqueSphere")
         Assert.assertEqual(cb.default_shape_name, "UniqueSphere")
-        sphere = clr.CastAs(cb.default_shape_data, CentralBodyShapeSphere)
+        sphere = clr.CastAs(cb.default_shape_data, CentralBodyComponentShapeSphere)
         Assert.assertIsNotNone(sphere)
 
-        te: "CentralBodyShapeTriaxialEllipsoid" = clr.CastAs(
-            cb.add_shape(CENTRAL_BODY_SHAPE.TRIAXIAL_ELLIPSOID, "UniqueEllipsoid"), CentralBodyShapeTriaxialEllipsoid
+        te: "CentralBodyComponentShapeTriaxialEllipsoid" = clr.CastAs(
+            cb.add_shape(CENTRAL_BODY_SHAPE.TRIAXIAL_ELLIPSOID, "UniqueEllipsoid"),
+            CentralBodyComponentShapeTriaxialEllipsoid,
         )
-        te.semi_major_axis = 6380
-        Assert.assertEqual(6380, te.semi_major_axis)
-        te.semi_mid_axis = 6381
-        Assert.assertEqual(6381, te.semi_mid_axis)
-        te.semi_minor_axis = 6360
-        Assert.assertEqual(6360, te.semi_minor_axis)
+        te.semimajor_axis = 6380
+        Assert.assertEqual(6380, te.semimajor_axis)
+        te.semimid_axis = 6381
+        Assert.assertEqual(6381, te.semimid_axis)
+        te.semiminor_axis = 6360
+        Assert.assertEqual(6360, te.semiminor_axis)
         cb.set_default_shape_by_name("UniqueEllipsoid")
         Assert.assertEqual("UniqueEllipsoid", cb.default_shape_name)
-        te = clr.CastAs(cb.default_shape_data, CentralBodyShapeTriaxialEllipsoid)
+        te = clr.CastAs(cb.default_shape_data, CentralBodyComponentShapeTriaxialEllipsoid)
         Assert.assertIsNotNone(te)
 
         cb.remove_shape_by_name("UniqueSphere")
         cb.remove_shape_by_name("UniqueEllipsoid")
         Assert.assertEqual("Oblate Spheroid", cb.default_shape_name)
 
-        file = clr.CastAs(cb.default_attitude_data, CentralBodyAttitudeRotationCoefficientsFile)
+        file = clr.CastAs(cb.default_attitude_data, CentralBodyComponentAttitudeRotationCoefficientsFile)
         file.filename = r"CentralBodies\Iapetus\IapetusAttitude2009.rot"
         Assert.assertEqual(TestBase.PathCombine("CentralBodies", "Iapetus", "IapetusAttitude2009.rot"), file.filename)
 
-        u1994: "CentralBodyAttitudeIAU1994" = clr.CastAs(
-            cb.add_attitude(CENTRAL_BODY_ATTITUDE.IAU1994, "U1994"), CentralBodyAttitudeIAU1994
+        u1994: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.add_attitude(CENTRAL_BODY_ATTITUDE.IAU1994, "U1994"), CentralBodyComponentAttitudeIAU1994
         )
         u1994.declination = 89
         Assert.assertEqual(89, u1994.declination)
@@ -3354,21 +3377,22 @@ class EarlyBoundTests(TestBase):
 
         cb.set_default_attitude_by_name("U1994")
         Assert.assertEqual("U1994", cb.default_attitude_name)
-        u1994 = clr.CastAs(cb.default_attitude_data, CentralBodyAttitudeIAU1994)
+        u1994 = clr.CastAs(cb.default_attitude_data, CentralBodyComponentAttitudeIAU1994)
         Assert.assertIsNotNone(u1994)
 
         cb.remove_attitude_by_name("U1994")
         Assert.assertEqual("RotationCoefficientsFile", cb.default_attitude_name)
 
         ao = clr.CastAs(
-            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.ANALYTIC_ORBIT, "UniqueAO"), CentralBodyEphemerisAnalyticOrbit
+            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.ANALYTIC_ORBIT, "UniqueAO"),
+            CentralBodyComponentEphemerisAnalyticOrbit,
         )
         ao.epoch = 2451200
         Assert.assertEqual(2451200, ao.epoch)
-        ao.semi_major_axis = 413739000
-        Assert.assertEqual(413739000, ao.semi_major_axis)
-        ao.semi_major_axis_rate = 1
-        Assert.assertEqual(1, ao.semi_major_axis_rate)
+        ao.semimajor_axis = 413739000
+        Assert.assertEqual(413739000, ao.semimajor_axis)
+        ao.semimajor_axis_rate = 1
+        Assert.assertEqual(1, ao.semimajor_axis_rate)
         ao.eccentricity = 0.08
         Assert.assertEqual(0.08, ao.eccentricity)
         ao.eccentricity_rate = 1
@@ -3390,45 +3414,45 @@ class EarlyBoundTests(TestBase):
         ao.mean_longitude_rate = 1
         Assert.assertEqual(1, ao.mean_longitude_rate)
 
-        eFile: "CentralBodyEphemerisFile" = clr.CastAs(
-            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.FILE, "UniqueF"), CentralBodyEphemerisFile
+        eFile: "CentralBodyComponentEphemerisFile" = clr.CastAs(
+            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.FILE, "UniqueF"), CentralBodyComponentEphemerisFile
         )
         eFile.filename = TestBase.GetScenarioFile("TestEph.e")
         Assert.assertEqual(TestBase.GetScenarioFile("TestEph.e"), eFile.filename)
         cb.set_default_ephemeris_by_name("UniqueF")
         Assert.assertEqual("UniqueF", cb.default_ephemeris_name)
-        eFile = clr.CastAs(cb.default_ephemeris_data, CentralBodyEphemerisFile)
+        eFile = clr.CastAs(cb.default_ephemeris_data, CentralBodyComponentEphemerisFile)
         Assert.assertIsNotNone(eFile)
 
-        jplde: "CentralBodyEphemerisJPLDesignExplorerOptimizer" = clr.CastAs(
+        jplde: "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides" = clr.CastAs(
             cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.JPLDE, "UniqueJPLDE"),
-            CentralBodyEphemerisJPLDesignExplorerOptimizer,
+            ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides,
         )
         jpldeFile: str = jplde.jplde_filename
         with pytest.raises(Exception):
             jplde.jplde_filename = "TestFile.e"
         cb.set_default_ephemeris_by_name("UniqueJPLDE")
         Assert.assertEqual("UniqueJPLDE", cb.default_ephemeris_name)
-        jplde = clr.CastAs(cb.default_ephemeris_data, CentralBodyEphemerisJPLDesignExplorerOptimizer)
+        jplde = clr.CastAs(cb.default_ephemeris_data, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
         Assert.assertIsNotNone(jplde)
 
-        spice: "CentralBodyEphemerisJPLSpice" = clr.CastAs(
-            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.JPLSPICE, "UniqueSpice"), CentralBodyEphemerisJPLSpice
+        spice: "CentralBodyComponentEphemerisJPLSpice" = clr.CastAs(
+            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.JPLSPICE, "UniqueSpice"), CentralBodyComponentEphemerisJPLSpice
         )
         spice.jpl_spice_id = "2000002"
         Assert.assertEqual("2000002", spice.jpl_spice_id)
         cb.set_default_ephemeris_by_name("UniqueJPLDE")
         Assert.assertEqual("UniqueJPLDE", cb.default_ephemeris_name)
-        spice = clr.CastAs(cb.default_ephemeris_data, CentralBodyEphemerisJPLSpice)
+        spice = clr.CastAs(cb.default_ephemeris_data, CentralBodyComponentEphemerisJPLSpice)
 
-        planetary: "CentralBodyEphemerisPlanetary" = clr.CastAs(
-            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.PLANETARY, "UniquePlanet"), CentralBodyEphemerisPlanetary
+        planetary: "CentralBodyComponentEphemerisPlanetary" = clr.CastAs(
+            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.PLANETARY, "UniquePlanet"), CentralBodyComponentEphemerisPlanetary
         )
         planetary.planetary_filename = TestBase.GetScenarioFile("Venus.pe")
         Assert.assertEqual(TestBase.GetScenarioFile("Venus.pe"), planetary.planetary_filename)
         cb.set_default_ephemeris_by_name("UniquePlanet")
         Assert.assertEqual("UniquePlanet", cb.default_ephemeris_name)
-        planetary = clr.CastAs(cb.default_ephemeris_data, CentralBodyEphemerisPlanetary)
+        planetary = clr.CastAs(cb.default_ephemeris_data, CentralBodyComponentEphemerisPlanetary)
         Assert.assertIsNotNone(planetary)
 
         cb.remove_ephemeris_by_name("UniquePlanet")
@@ -3587,17 +3611,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.CARTESIAN_Y))
         thruster.enable_control_parameter(CONTROL_THRUSTERS.CARTESIAN_Z)
         Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.CARTESIAN_Z))
-        thruster.enable_control_parameter(CONTROL_THRUSTERS.EQUIV_ON_TIME)
-        Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.EQUIV_ON_TIME))
+        thruster.enable_control_parameter(CONTROL_THRUSTERS.EQUIVALENT_ON_TIME_PERCENT)
+        Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.EQUIVALENT_ON_TIME_PERCENT))
         thruster.enable_control_parameter(CONTROL_THRUSTERS.SPHERICAL_AZIMUTH)
         Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.SPHERICAL_AZIMUTH))
         thruster.enable_control_parameter(CONTROL_THRUSTERS.SPHERICAL_ELEVATION)
         Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.SPHERICAL_ELEVATION))
         thruster.enable_control_parameter(CONTROL_THRUSTERS.THRUST_EFFICIENCY)
         Assert.assertTrue(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.THRUST_EFFICIENCY))
-        man1: "MissionControlSequenceManeuver" = clr.CastAs(
-            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-"),
-            MissionControlSequenceManeuver,
+        man1: "MCSManeuver" = clr.CastAs(
+            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-"), MCSManeuver
         )
         man1.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
         impulsive: "ManeuverImpulsive" = clr.CastAs(man1.maneuver, ManeuverImpulsive)
@@ -3624,8 +3647,8 @@ class EarlyBoundTests(TestBase):
         thruster.disable_control_parameter(CONTROL_THRUSTERS.CARTESIAN_Z)
         Assert.assertFalse(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.CARTESIAN_Z))
         Assert.assertEqual(4, dc.control_parameters.count)
-        thruster.disable_control_parameter(CONTROL_THRUSTERS.EQUIV_ON_TIME)
-        Assert.assertFalse(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.EQUIV_ON_TIME))
+        thruster.disable_control_parameter(CONTROL_THRUSTERS.EQUIVALENT_ON_TIME_PERCENT)
+        Assert.assertFalse(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.EQUIVALENT_ON_TIME_PERCENT))
         Assert.assertEqual(3, dc.control_parameters.count)
         thruster.disable_control_parameter(CONTROL_THRUSTERS.SPHERICAL_AZIMUTH)
         Assert.assertFalse(thruster.is_control_parameter_enabled(CONTROL_THRUSTERS.SPHERICAL_AZIMUTH))
@@ -3741,8 +3764,8 @@ class EarlyBoundTests(TestBase):
                     .get_folder("Calculation Objects")
                     .get_folder("Keplerian Elems")["Argument of Periapsis"]
                 )
-                stopCond.user_calc_object = calcObjectArgOfPer
-                Assert.assertEqual("Argument of Periapsis", stopCond.user_calc_object.name)
+                stopCond.user_calculation_object = calcObjectArgOfPer
+                Assert.assertEqual("Argument of Periapsis", stopCond.user_calculation_object.name)
 
             elif "R Magnitude" == component.name:
                 stopCond: "StoppingCondition" = clr.CastAs(compInfoClone, StoppingCondition)
@@ -3914,7 +3937,7 @@ class EarlyBoundTests(TestBase):
 
         x1: "AsTriggerCondition" = cc.get_item_by_index(0)
         x2: "AsTriggerCondition" = cc.get_item_by_name("UserDefined")
-        Assert.assertEqual(x1.calc_object.name, x2.calc_object.name)
+        Assert.assertEqual(x1.calculation_object.name, x2.calculation_object.name)
 
         i: int = 0
         while i < cc.count:
@@ -3954,7 +3977,7 @@ class EarlyBoundTests(TestBase):
         comp: "IComponentInfo" = None
 
         comp = components["Initial State"]
-        seg: "IMissionControlSequenceSegment" = clr.CastAs(comp, IMissionControlSequenceSegment)
+        seg: "IMCSSegment" = clr.CastAs(comp, IMCSSegment)
         Assert.assertIsNotNone(seg)
         # Expect an exception to be thrown because the segment
         # is not a part of a sequence.
@@ -3977,10 +4000,9 @@ class EarlyBoundTests(TestBase):
         comp: "IComponentInfo" = None
         comp = components["Launch"]
         comp = clr.CastAs(
-            EarlyBoundTests._targetSequence.segments.insert_copy(clr.CastAs(comp, IMissionControlSequenceSegment), "-"),
-            IComponentInfo,
+            EarlyBoundTests._targetSequence.segments.insert_copy(clr.CastAs(comp, IMCSSegment), "-"), IComponentInfo
         )
-        GatorHelper.TestLaunch(clr.CastAs(comp, MissionControlSequenceLaunch), False)
+        GatorHelper.TestLaunch(clr.CastAs(comp, MCSLaunch), False)
         count: int = EarlyBoundTests._targetSequence.segments.count
         EarlyBoundTests._targetSequence.segments.remove(comp.name)
         Assert.assertEqual((count - 1), EarlyBoundTests._targetSequence.segments.count)
@@ -4002,32 +4024,30 @@ class EarlyBoundTests(TestBase):
 
         comp = components["Backward Sequence"]
         self.TestComponent(comp, True)
-        backwardSequence: "MissionControlSequenceBackwardSequence" = clr.CastAs(
-            comp, MissionControlSequenceBackwardSequence
-        )
-        Assert.assertEqual(SEGMENT_TYPE.BACKWARD_SEQUENCE, (IMissionControlSequenceSegment(backwardSequence)).type)
+        backwardSequence: "MCSBackwardSequence" = clr.CastAs(comp, MCSBackwardSequence)
+        Assert.assertEqual(SEGMENT_TYPE.BACKWARD_SEQUENCE, (IMCSSegment(backwardSequence)).type)
         with pytest.raises(Exception):
             backwardSequence.repeat_count = 2
         with pytest.raises(Exception):
             (backwardSequence).sequence_state_to_pass = SEQUENCE_STATE_TO_PASS.INITIAL
         with pytest.raises(Exception):
             backwardSequence.generate_ephemeris = False
-        self.TestSegmentProperties((IMissionControlSequenceSegment(backwardSequence)), True)
+        self.TestSegmentProperties((IMCSSegment(backwardSequence)), True)
 
         oComp: typing.Any = (ICloneable(comp)).clone_object()
-        backwardSequence = clr.CastAs(oComp, MissionControlSequenceBackwardSequence)
-        self.TestSegmentProperties((IMissionControlSequenceSegment(backwardSequence)), False)
+        backwardSequence = clr.CastAs(oComp, MCSBackwardSequence)
+        self.TestSegmentProperties((IMCSSegment(backwardSequence)), False)
 
         comp = components["Follow"]
         self.TestComponent(comp, True)
-        follow: "MissionControlSequenceFollow" = clr.CastAs(comp, MissionControlSequenceFollow)
+        follow: "MCSFollow" = clr.CastAs(comp, MCSFollow)
         Assert.assertFalse(follow.control_parameters_available)
         GatorHelper.TestFuelTank(follow.fuel_tank, True, True)
         with pytest.raises(Exception):
             follow.joining_type = FOLLOW_JOIN.SPECIFY
         with pytest.raises(Exception):
             follow.leader.bind_to("Aircraft/Boing737")
-        self.TestSegmentProperties((IMissionControlSequenceSegment(follow)), True)
+        self.TestSegmentProperties((IMCSSegment(follow)), True)
         with pytest.raises(Exception):
             follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY
         GatorHelper.TestSpaceCraftParameters(follow.spacecraft_parameters, True)
@@ -4038,7 +4058,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             follow.z_offset = 1
 
-        follow = clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceFollow)
+        follow = clr.CastAs((ICloneable(comp)).clone_object(), MCSFollow)
 
         with pytest.raises(Exception):
             follow.leader.bind_to("Aircraft/Boing737")
@@ -4064,8 +4084,8 @@ class EarlyBoundTests(TestBase):
         follow.joining_type = FOLLOW_JOIN.SPECIFY
         Assert.assertEqual(FOLLOW_JOIN.SPECIFY, follow.joining_type)
 
-        follow.separation_type = FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM
-        Assert.assertEqual(FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM, follow.separation_type)
+        follow.separation_type = FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEMERIS
+        Assert.assertEqual(FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEMERIS, follow.separation_type)
         follow.separation_type = FOLLOW_SEPARATION.SPECIFY
         Assert.assertEqual(FOLLOW_SEPARATION.SPECIFY, follow.separation_type)
 
@@ -4076,7 +4096,7 @@ class EarlyBoundTests(TestBase):
 
         comp = components["Hold"]
         self.TestComponent(comp, True)
-        hold: "MissionControlSequenceHold" = clr.CastAs(comp, MissionControlSequenceHold)
+        hold: "MCSHold" = clr.CastAs(comp, MCSHold)
         with pytest.raises(Exception):
             hold.enable_hold_attitude = False
         with pytest.raises(Exception):
@@ -4089,14 +4109,14 @@ class EarlyBoundTests(TestBase):
             hold.max_propagation_time = 8640000
         with pytest.raises(Exception):
             hold.min_propagation_time = 60
-        self.TestSegmentProperties((IMissionControlSequenceSegment(hold)), True)
+        self.TestSegmentProperties((IMCSSegment(hold)), True)
         with pytest.raises(Exception):
             hold.step_size = 60
         GatorHelper.TestStoppingConditionCollection2(hold.stopping_conditions, True)
 
         comp = clr.CastAs((ICloneable(comp)).clone_object(), IComponentInfo)
         self.TestComponent(comp, False)
-        hold = clr.CastAs(comp, MissionControlSequenceHold)
+        hold = clr.CastAs(comp, MCSHold)
         hold.min_propagation_time = 0
         Assert.assertEqual(0, hold.min_propagation_time)
         hold.max_propagation_time = 2
@@ -4118,54 +4138,48 @@ class EarlyBoundTests(TestBase):
         comp = components["Initial State"]
         self.TestComponent(comp, True)
         GatorHelper.TestInitialState(
-            clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceInitialState),
-            True,
-            TestBase.Application,
+            clr.CastAs((ICloneable(comp)).clone_object(), MCSInitialState), True, TestBase.Application
         )
 
         comp = components["Launch"]
         self.TestComponent(comp, True)
-        GatorHelper.TestLaunch(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceLaunch), True)
+        GatorHelper.TestLaunch(clr.CastAs((ICloneable(comp)).clone_object(), MCSLaunch), True)
 
         comp = components["Maneuver"]
         self.TestComponent(comp, True)
-        GatorHelper.TestManeuver(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceManeuver), True)
+        GatorHelper.TestManeuver(clr.CastAs((ICloneable(comp)).clone_object(), MCSManeuver), True)
 
         comp = components["Propagate"]
         self.TestComponent(comp, True)
-        GatorHelper.TestPropagate(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequencePropagate), True)
+        GatorHelper.TestPropagate(clr.CastAs((ICloneable(comp)).clone_object(), MCSPropagate), True)
 
         comp = components["STOP"]
         self.TestComponent(comp, True)
-        stop: "MissionControlSequenceStop" = clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceStop)
+        stop: "MCSStop" = clr.CastAs((ICloneable(comp)).clone_object(), MCSStop)
         stop.enabled = False
         Assert.assertEqual(False, stop.enabled)
-        self.TestSegmentProperties((IMissionControlSequenceSegment(stop)), False)
-        Assert.assertEqual(SEGMENT_TYPE.STOP, (IMissionControlSequenceSegment(stop)).type)
+        self.TestSegmentProperties((IMCSSegment(stop)), False)
+        Assert.assertEqual(SEGMENT_TYPE.STOP, (IMCSSegment(stop)).type)
 
         comp = components["Sequence"]
         self.TestComponent(comp, True)
         GatorHelper.TestSequence(
-            clr.CastAs((ICloneable(comp)).clone_object(), IMissionControlSequenceSequence), SEGMENT_TYPE.SEQUENCE, True
+            clr.CastAs((ICloneable(comp)).clone_object(), IMCSSequence), SEGMENT_TYPE.SEQUENCE, True
         )
 
         comp = components["Target Sequence"]
         self.TestComponent(comp, True)
-        GatorHelper.TestTargetSequence(
-            clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceTargetSequence), True, None
-        )
+        GatorHelper.TestTargetSequence(clr.CastAs((ICloneable(comp)).clone_object(), MCSTargetSequence), True, None)
 
         comp = components["Update"]
         self.TestComponent(comp, True)
-        GatorHelper.TestUpdate(clr.CastAs((ICloneable(comp)).clone_object(), MissionControlSequenceUpdate), True)
+        GatorHelper.TestUpdate(clr.CastAs((ICloneable(comp)).clone_object(), MCSUpdate), True)
 
         comp = components["return"]
         self.TestComponent(comp, True)
-        ret: "MissionControlSequenceReturn" = clr.CastAs(
-            (ICloneable(comp)).clone_object(), MissionControlSequenceReturn
-        )
-        Assert.assertEqual(SEGMENT_TYPE.RETURN, (IMissionControlSequenceSegment(ret)).type)
-        self.TestSegmentProperties((IMissionControlSequenceSegment(ret)), False)
+        ret: "MCSReturn" = clr.CastAs((ICloneable(comp)).clone_object(), MCSReturn)
+        Assert.assertEqual(SEGMENT_TYPE.RETURN, (IMCSSegment(ret)).type)
+        self.TestSegmentProperties((IMCSSegment(ret)), False)
 
         ret.return_control_to_parent_sequence = RETURN_CONTROL.DISABLE
         Assert.assertEqual(RETURN_CONTROL.DISABLE, ret.return_control_to_parent_sequence)
@@ -4267,7 +4281,7 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "TabAreaVector SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestIAgVASRPTabAreaVec(clr.CastAs(comp, SRPTabAreaVec))
+                    self.TestIAgVASRPTabAreaVec(clr.CastAs(comp, SRPTabulatedAreaVector))
 
                 elif comp.name == "NPlate SRP":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -6861,35 +6875,35 @@ class EarlyBoundTests(TestBase):
             695700.0, i04aeIIR.solar_radius, delta=1e-08
         )  # default value, update whenever Sun.cb file changes
 
-    def TestCentralBodyCollection(self, cbc: "CentralBodyCollection"):
+    def TestCentralBodyCollection(self, cbc: "CentralBodyComponentCollection"):
         cbc.add("Sun")
         cbc.add("Pluto")
         Assert.assertEqual(2, cbc.count)
 
-        x: "AstrogatorCentralBody" = cbc["Sun"]
-        y: "AstrogatorCentralBody" = cbc.get_item_by_index(0)
-        z: "AstrogatorCentralBody" = cbc.get_item_by_name("Sun")
-        Assert.assertEqual(x.gravitational_param, y.gravitational_param)
-        Assert.assertEqual(x.gravitational_param, z.gravitational_param)
+        x: "CentralBodyComponent" = cbc["Sun"]
+        y: "CentralBodyComponent" = cbc.get_item_by_index(0)
+        z: "CentralBodyComponent" = cbc.get_item_by_name("Sun")
+        Assert.assertEqual(x.gravitational_parameter, y.gravitational_parameter)
+        Assert.assertEqual(x.gravitational_parameter, z.gravitational_parameter)
 
         i: int = 0
         while i < cbc.count:
-            cb: "AstrogatorCentralBody" = cbc[i]
+            cb: "CentralBodyComponent" = cbc[i]
 
             i += 1
 
-        cb2: "AstrogatorCentralBody" = cbc["Sun"]
+        cb2: "CentralBodyComponent" = cbc["Sun"]
 
         with pytest.raises(Exception):
-            cb3: "AstrogatorCentralBody" = cbc[5]
+            cb3: "CentralBodyComponent" = cbc[5]
 
         with pytest.raises(Exception):
-            cb4: "AstrogatorCentralBody" = cbc["Bogus"]
+            cb4: "CentralBodyComponent" = cbc["Bogus"]
 
         cbc.remove(0)
         Assert.assertEqual(1, cbc.count)
 
-        cb: "AstrogatorCentralBody"
+        cb: "CentralBodyComponent"
 
         for cb in cbc:
             parentName: str = cb.parent_name
@@ -6933,22 +6947,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(rpf.override_segment_settings)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            rpf.rad_pressure_coeff = 1
+            rpf.radiation_pressure_coefficient = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            rpf.rad_pressure_area = 20
+            rpf.radiation_pressure_area = 20
 
         rpf.override_segment_settings = True
         Assert.assertTrue(rpf.override_segment_settings)
 
-        rpf.rad_pressure_coeff = 10
-        Assert.assertEqual(10, rpf.rad_pressure_coeff)
-        rpf.rad_pressure_coeff = 20
-        Assert.assertEqual(20, rpf.rad_pressure_coeff)
+        rpf.radiation_pressure_coefficient = 10
+        Assert.assertEqual(10, rpf.radiation_pressure_coefficient)
+        rpf.radiation_pressure_coefficient = 20
+        Assert.assertEqual(20, rpf.radiation_pressure_coefficient)
 
-        rpf.rad_pressure_area = 30
-        Assert.assertEqual(30, rpf.rad_pressure_area)
-        rpf.rad_pressure_area = 40
-        Assert.assertEqual(40, rpf.rad_pressure_area)
+        rpf.radiation_pressure_area = 30
+        Assert.assertEqual(30, rpf.radiation_pressure_area)
+        rpf.radiation_pressure_area = 40
+        Assert.assertEqual(40, rpf.radiation_pressure_area)
 
     def TestYarkovskyFunc(self, yark: "YarkovskyFunc"):
         Assert.assertIsNotNone(yark)
@@ -7118,8 +7132,8 @@ class EarlyBoundTests(TestBase):
         gff.ocean_tide_max_order = 5
         Assert.assertEqual(5, gff.ocean_tide_max_order)
 
-        gff.ocean_tide_min_amp = 1
-        Assert.assertEqual(1, gff.ocean_tide_min_amp)
+        gff.ocean_tide_min_amplitude = 1
+        Assert.assertEqual(1, gff.ocean_tide_min_amplitude)
 
         gff.min_radius_percent = 99.0
         Assert.assertEqual(99.0, gff.min_radius_percent)
@@ -7133,26 +7147,26 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(gff.use_secular_variations)
 
     def TestTwoBodyFunc(self, tbf: "TwoBodyFunction"):
-        tbf.grav_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
-        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, tbf.grav_source)
+        tbf.gravitational_parameter_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
+        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, tbf.gravitational_parameter_source)
         with pytest.raises(Exception):
-            tbf.grav_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        tbf.grav_source = GRAV_PARAM_SOURCE.USER
-        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, tbf.grav_source)
+            tbf.gravitational_parameter_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        tbf.gravitational_parameter_source = GRAV_PARAM_SOURCE.USER
+        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, tbf.gravitational_parameter_source)
         tbf.mu = 398601
         Assert.assertEqual(398601, tbf.mu)
         tbf.min_radius_percent = 98
         Assert.assertEqual(98, tbf.min_radius_percent)
 
     def TestThirdBodyFunc(self, tbf: "ThirdBodyFunction"):
-        tbf.ephem_source = EPHEM_SOURCE.CENTRAL_BODY_FILE
-        Assert.assertEqual(EPHEM_SOURCE.CENTRAL_BODY_FILE, tbf.ephem_source)
-        tbf.ephem_source = EPHEM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(EPHEM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, tbf.ephem_source)
-        tbf.ephem_source = EPHEM_SOURCE.SPICE_BARY
-        Assert.assertEqual(EPHEM_SOURCE.SPICE_BARY, tbf.ephem_source)
-        tbf.ephem_source = EPHEM_SOURCE.SPICE_BODY
-        Assert.assertEqual(EPHEM_SOURCE.SPICE_BODY, tbf.ephem_source)
+        tbf.ephemeris_source = EPHEMERIS_SOURCE.CENTRAL_BODY_FILE
+        Assert.assertEqual(EPHEMERIS_SOURCE.CENTRAL_BODY_FILE, tbf.ephemeris_source)
+        tbf.ephemeris_source = EPHEMERIS_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(EPHEMERIS_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, tbf.ephemeris_source)
+        tbf.ephemeris_source = EPHEMERIS_SOURCE.SPICE_BARY
+        Assert.assertEqual(EPHEMERIS_SOURCE.SPICE_BARY, tbf.ephemeris_source)
+        tbf.ephemeris_source = EPHEMERIS_SOURCE.SPICE_BODY
+        Assert.assertEqual(EPHEMERIS_SOURCE.SPICE_BODY, tbf.ephemeris_source)
         tbf.set_mode_type(THIRD_BODY_MODE.GRAVITY_FIELD)
         Assert.assertEqual(THIRD_BODY_MODE.GRAVITY_FIELD, tbf.mode_type)
         self.TestGravityFieldFunc(clr.CastAs(tbf.mode, GravityFieldFunction))
@@ -7162,22 +7176,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Earth", tbf.third_body_name)
 
         pmf: "PointMassFunction" = clr.CastAs(tbf.mode, PointMassFunction)
-        pmf.grav_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
-        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, pmf.grav_source)
+        pmf.gravitational_parameter_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
+        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, pmf.gravitational_parameter_source)
         with pytest.raises(Exception):
             pmf.mu = 390000.0
-        pmf.grav_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM
-        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM, pmf.grav_source)
-        pmf.grav_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, pmf.grav_source)
-        pmf.grav_source = GRAV_PARAM_SOURCE.USER
-        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, pmf.grav_source)
+        pmf.gravitational_parameter_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM
+        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, pmf.gravitational_parameter_source)
+        pmf.gravitational_parameter_source = GRAV_PARAM_SOURCE.USER
+        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, pmf.gravitational_parameter_source)
         pmf.mu = 390000.0
         Assert.assertEqual(390000.0, pmf.mu)
         pmf.mu = 398600.4418
         Assert.assertEqual(398600.4418, pmf.mu)
-        tbf.ephem_source = EPHEM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        pmf.grav_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM
+        tbf.ephemeris_source = EPHEMERIS_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        pmf.gravitational_parameter_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM
         Assert.assertNotEqual("", tbf.ephemeris_source_warning)
         TestBase.logger.WriteLine(tbf.ephemeris_source_warning)
 
@@ -7258,7 +7272,7 @@ class EarlyBoundTests(TestBase):
         sphere.mean_flux = 1360
         Assert.assertEqual(1360, sphere.mean_flux)
 
-    def TestIAgVASRPTabAreaVec(self, tabareavec: "SRPTabAreaVec"):
+    def TestIAgVASRPTabAreaVec(self, tabareavec: "SRPTabulatedAreaVector"):
         Assert.assertEqual(SHADOW_MODEL.DUAL_CONE, tabareavec.shadow_model)
         tabareavec.shadow_model = SHADOW_MODEL.CYLINDRICAL
         Assert.assertEqual(SHADOW_MODEL.CYLINDRICAL, tabareavec.shadow_model)
@@ -7304,9 +7318,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
             tabareavec.tab_area_vector_definition_file = "Bogus"
 
-        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION
+        tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_AND_DIRECTION_INTERPOLATION
         Assert.assertEqual(
-            TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION, tabareavec.interpolation_method
+            TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_AND_DIRECTION_INTERPOLATION, tabareavec.interpolation_method
         )
         tabareavec.interpolation_method = TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION
         Assert.assertEqual(TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION, tabareavec.interpolation_method)
@@ -7471,9 +7485,8 @@ class EarlyBoundTests(TestBase):
         compIon: "IComponentInfo" = clr.CastAs(ion, IComponentInfo)
         self.TestComponent(compIon, False)
 
-        man: "MissionControlSequenceManeuver" = clr.CastAs(
-            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "TestPowerSource", "-"),
-            MissionControlSequenceManeuver,
+        man: "MCSManeuver" = clr.CastAs(
+            EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "TestPowerSource", "-"), MCSManeuver
         )
         man.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 
@@ -7714,7 +7727,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Earth", designCR3BPSetup.central_body_name)
         Assert.assertEqual("Set Secondary Body", designCR3BPSetup.secondary_body_name)
         Assert.assertEqual("1 Jul 1999 00:00:00.000", designCR3BPSetup.initial_epoch)
-        Assert.assertEqual(IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE, designCR3BPSetup.ideal_orbit_radius)
+        Assert.assertEqual(
+            IDEAL_ORBIT_RADIUS.INSTANTANEOUS_CHARACTERISTIC_DISTANCE, designCR3BPSetup.ideal_orbit_radius
+        )
         Assert.assertEqual("Type a valid name then Tab to continue", designCR3BPSetup.ideal_secondary_name)
         Assert.assertEqual(1, designCR3BPSetup.mass_parameter)
         Assert.assertEqual(1, designCR3BPSetup.characteristic_distance)
@@ -7750,8 +7765,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(1023.41, designCR3BPSetup.characteristic_velocity, delta=0.01)
         Assert.assertAlmostEqual(0.002719, designCR3BPSetup.characteristic_acceleration, delta=1e-06)
 
-        designCR3BPSetup.ideal_orbit_radius = IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE
-        Assert.assertEqual(IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE, designCR3BPSetup.ideal_orbit_radius)
+        designCR3BPSetup.ideal_orbit_radius = IDEAL_ORBIT_RADIUS.INSTANTANEOUS_CHARACTERISTIC_DISTANCE
+        Assert.assertEqual(
+            IDEAL_ORBIT_RADIUS.INSTANTANEOUS_CHARACTERISTIC_DISTANCE, designCR3BPSetup.ideal_orbit_radius
+        )
 
         Assert.assertAlmostEqual(0.0121506, designCR3BPSetup.mass_parameter, delta=1e-07)
         Assert.assertAlmostEqual(396204000, designCR3BPSetup.characteristic_distance, delta=10000)
@@ -7763,7 +7780,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("MyMoon", designCR3BPSetup.ideal_secondary_name)
 
         # CreateIdealSecondaryCB
-        designCR3BPSetup.create_ideal_secondary_cb()
+        designCR3BPSetup.create_ideal_secondary_body()
         objColl: "DesignCR3BPObjectCollection" = designCR3BPSetup.associated_objects
         Assert.assertEqual(1, objColl.count)
         obj: "DesignCR3BPObject" = objColl[0]
@@ -7774,7 +7791,7 @@ class EarlyBoundTests(TestBase):
         # ResetIdealSecondaryCB
         designCR3BPSetup.ideal_secondary_name = "MyMoon1"
         Assert.assertEqual("MyMoon1", designCR3BPSetup.ideal_secondary_name)
-        designCR3BPSetup.reset_ideal_secondary_cb()
+        designCR3BPSetup.reset_ideal_secondary_body()
         Assert.assertEqual("MyMoon", designCR3BPSetup.ideal_secondary_name)
         Assert.assertEqual(1, objColl.count)
 
@@ -8112,17 +8129,17 @@ class EarlyBoundTests(TestBase):
 
         param: "DifferentialCorrectorControl" = None
 
-        man: "MissionControlSequenceManeuver" = clr.CastAs(
+        man: "MCSManeuver" = clr.CastAs(
             EarlyBoundTests._targetSequence.segments.insert(SEGMENT_TYPE.MANEUVER, "TestEngineModelPoly", "-"),
-            MissionControlSequenceManeuver,
+            MCSManeuver,
         )
         man.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
         impulse: "ManeuverImpulsive" = clr.CastAs(man.maneuver, ManeuverImpulsive)
 
         # /////////////////////////////////////////
 
-        constaccel: "EngineConstAcc" = clr.CastAs(
-            (ICloneable(components["Constant Acceleration and Isp"])).clone_object(), EngineConstAcc
+        constaccel: "EngineConstantAcceleration" = clr.CastAs(
+            (ICloneable(components["Constant Acceleration and Isp"])).clone_object(), EngineConstantAcceleration
         )
 
         constaccel.g = 1e-13
@@ -8149,25 +8166,25 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(constaccel.control_parameters_available)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Param could not be found")):
-            constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.ACCELERATION)
-        constaccel.enable_control_parameter(CONTROL_ENGINE_CONST_ACC.ACCELERATION)
-        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.ACCELERATION))
-        constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.ACCELERATION)
-        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.ACCELERATION))
+            constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION)
+        constaccel.enable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION)
+        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION))
+        constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION)
+        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Param could not be found")):
-            constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.GRAV)
-        constaccel.enable_control_parameter(CONTROL_ENGINE_CONST_ACC.GRAV)
-        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.GRAV))
-        constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.GRAV)
-        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.GRAV))
+            constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV)
+        constaccel.enable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV)
+        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV))
+        constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV)
+        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Param could not be found")):
-            constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.ISP)
-        constaccel.enable_control_parameter(CONTROL_ENGINE_CONST_ACC.ISP)
-        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.ISP))
-        constaccel.disable_control_parameter(CONTROL_ENGINE_CONST_ACC.ISP)
-        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONST_ACC.ISP))
+            constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP)
+        constaccel.enable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP)
+        Assert.assertTrue(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP))
+        constaccel.disable_control_parameter(CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP)
+        Assert.assertFalse(constaccel.is_control_parameter_enabled(CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP))
 
         # /////////////////////////////////////////
 
@@ -8281,8 +8298,8 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////////////////////////////
 
-        poly: "EngineModelPoly" = clr.CastAs(
-            (ICloneable(components["Polynomial Thrust and Isp"])).clone_object(), EngineModelPoly
+        poly: "EngineModelPolynomial" = clr.CastAs(
+            (ICloneable(components["Polynomial Thrust and Isp"])).clone_object(), EngineModelPolynomial
         )
 
         poly.g = 0.0097
@@ -8356,72 +8373,74 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(291, thrust.reference_temp)
 
         Assert.assertTrue(poly.control_parameters_available)
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.GRAV)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.GRAV))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_B7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_B7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C0)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C0))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C1)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C1))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C2)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C2))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C3)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C3))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C4)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C4))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C5)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C5))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C6)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C6))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E4)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E4))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E5)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E5))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E6)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E6))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_K0)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_K0))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_K1)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_K1))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_B7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_B7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C0)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C0))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C1)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C1))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C2)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C2))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C3)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C3))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C4)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C4))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C5)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C5))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C6)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C6))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E4)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E4))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E5)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E5))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E6)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E6))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E7)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E7))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_K0)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_K0))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_K1)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_K1))
-        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP)
-        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.GRAV)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.GRAV))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_B7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_B7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C0)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C0))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C1)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C1))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C2)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C2))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C3)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C3))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C4)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C4))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C5)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C5))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C6)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C6))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E4)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E4))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E5)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E5))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E6)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E6))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K0)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K0))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K1)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K1))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_REFERENCE_TEMP)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_REFERENCE_TEMP))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_B7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_B7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C0)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C0))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C1)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C1))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C2)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C2))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C3)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C3))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C4)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C4))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C5)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C5))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C6)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C6))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E4)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E4))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E5)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E5))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E6)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E6))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E7)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E7))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K0)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K0))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K1)
+        Assert.assertTrue(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K1))
+        poly.enable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_REFERENCE_TEMPERATURE)
+        Assert.assertTrue(
+            poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_REFERENCE_TEMPERATURE)
+        )
 
         impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(poly)).name)
 
@@ -8594,200 +8613,202 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Component Browser.Polynomial Thrust and Isp1", param.parent_name)
         Assert.assertEqual("Thrust.ReferenceTemp", param.name)
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.GRAV)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.GRAV))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.GRAV)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.GRAV))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "g")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_B7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_B7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_B7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_B7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.B7")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C0)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C0))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C0)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C0))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C0")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C1)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C1))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C1)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C1))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C1")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C2)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C2))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C2)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C2))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C2")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C3)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C3))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C3)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C3))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C3")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C4)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C4))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C4)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C4))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C4")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C5)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C5))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C5)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C5))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C5")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C6)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C6))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C6)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C6))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C6")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_C7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_C7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.C7")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E4)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E4))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E4)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E4))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.E4")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E5)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E5))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E5)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E5))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.E5")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E6)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E6))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E6)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E6))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.E6")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_E7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_E7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.E7")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_K0)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_K0))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K0)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K0))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.K0")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_K1)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_K1))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K1)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K1))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Polynomial Thrust and Isp1", "Isp.K1")
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_REFERENCE_TEMP)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_REFERENCE_TEMP))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Isp.ReferenceTemp"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_B7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_B7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_B7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_B7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.B7"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C0)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C0))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C0)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C0))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C0"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C1)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C1))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C1)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C1))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C1"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C2)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C2))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C2)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C2))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C2"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C3)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C3))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C3)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C3))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C3"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C4)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C4))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C4)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C4))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C4"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C5)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C5))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C5)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C5))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C5"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C6)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C6))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C6)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C6))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C6"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_C7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_C7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.C7"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E4)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E4))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E4)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E4))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.E4"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E5)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E5))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E5)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E5))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.E5"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E6)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E6))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E6)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E6))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.E6"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_E7)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_E7))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E7)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E7))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.E7"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_K0)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_K0))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K0)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K0))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.K0"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_K1)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_K1))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K1)
+        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K1))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.K1"
             )
 
-        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP)
-        Assert.assertFalse(poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP))
+        poly.disable_control_parameter(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_REFERENCE_TEMPERATURE)
+        Assert.assertFalse(
+            poly.is_control_parameter_enabled(CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_REFERENCE_TEMPERATURE)
+        )
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Polynomial Thrust and Isp1", "Thrust.ReferenceTemp"
@@ -8879,32 +8900,32 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("C0 + C1*pwr + C2*pwr^2 + C3*pwr^3  (pwr in Watts)", pee)
 
         Assert.assertTrue(ion.control_parameters_available)
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C0)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C0))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C1)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C1))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C2)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C2))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C3)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C3))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_CONSTANT_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_CONSTANT_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_LINEAR_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_LINEAR_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_QUADRATIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_QUADRATIC_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_CUBIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_CUBIC_TERM))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.GRAV)
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.GRAV))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_C0)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C0))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_C1)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C1))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_C2)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C2))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_C3)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C3))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_CONSTANT_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_CONSTANT_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_LINEAR_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_LINEAR_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_QUADRATIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_QUADRATIC_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.ISP_CUBIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_CUBIC_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CONSTANT_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CONSTANT_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_LINEAR_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_LINEAR_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_QUADRATIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_QUADRATIC_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CUBIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CUBIC_TERM))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.MAX_INPUT_POWER)
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MAX_INPUT_POWER))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.MIN_REQUIRED_POWER)
@@ -8913,14 +8934,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.PERCENT_DEGRADATION_PER_YEAR))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.PERCENT_THROTTLE)
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.PERCENT_THROTTLE))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2))
-        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3)
-        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CONSTANT_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CONSTANT_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_LINEAR_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_LINEAR_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_QUADRATIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_QUADRATIC_TERM))
+        ion.enable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CUBIC_TERM)
+        Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CUBIC_TERM))
         ion.enable_control_parameter(CONTROL_ENGINE_ION.REFERENCE_EPOCH)
         Assert.assertTrue(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.REFERENCE_EPOCH))
         impulse.set_propulsion_method(PROPULSION_METHOD.ENGINE_MODEL, (IComponentInfo(ion)).name)
@@ -8977,23 +8998,23 @@ class EarlyBoundTests(TestBase):
         param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "ReferenceEpoch")
         Assert.assertIsNotNone(param)
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C0)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C0))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_CONSTANT_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_CONSTANT_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C0")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C1)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C1))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_LINEAR_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_LINEAR_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C1")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C2)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C2))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_QUADRATIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_QUADRATIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C2")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_C3)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_C3))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.FLOW_RATE_CUBIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.FLOW_RATE_CUBIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "FlowRateModel.C3")
 
@@ -9002,49 +9023,49 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "g")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_C0)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C0))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_CONSTANT_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_CONSTANT_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "IspModel.C0")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_C1)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C1))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_LINEAR_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_LINEAR_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "IspModel.C1")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_C2)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C2))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_QUADRATIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_QUADRATIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "IspModel.C2")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_C3)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_C3))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.ISP_CUBIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.ISP_CUBIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "IspModel.C3")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CONSTANT_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CONSTANT_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "MassFlowEfficiencyModel.C0"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_LINEAR_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_LINEAR_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "MassFlowEfficiencyModel.C1"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_QUADRATIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_QUADRATIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "MassFlowEfficiencyModel.C2"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CUBIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CUBIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "MassFlowEfficiencyModel.C3"
@@ -9072,29 +9093,29 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths("Component Browser.Ion Engine1", "PercentThrottle")
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CONSTANT_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CONSTANT_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "PowerEfficiencyModel.C0"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_LINEAR_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_LINEAR_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "PowerEfficiencyModel.C1"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_QUADRATIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_QUADRATIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "PowerEfficiencyModel.C2"
             )
 
-        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3)
-        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3))
+        ion.disable_control_parameter(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CUBIC_TERM)
+        Assert.assertFalse(ion.is_control_parameter_enabled(CONTROL_ENGINE_ION.POWER_EFFICIENCY_CUBIC_TERM))
         with pytest.raises(Exception):
             param = dc.control_parameters.get_control_by_paths(
                 "Component Browser.Ion Engine1", "PowerEfficiencyModel.C3"
@@ -9302,12 +9323,12 @@ class EarlyBoundTests(TestBase):
         twoBodyFunc: "TwoBodyFunction" = clr.CastAs(
             wrapper.propagator_functions.add("Gravity Models/TwoBody Force"), TwoBodyFunction
         )
-        twoBodyFunc.grav_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
-        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, twoBodyFunc.grav_source)
-        twoBodyFunc.grav_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
-        Assert.assertEqual(GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, twoBodyFunc.grav_source)
-        twoBodyFunc.grav_source = GRAV_PARAM_SOURCE.USER
-        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, twoBodyFunc.grav_source)
+        twoBodyFunc.gravitational_parameter_source = GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE
+        Assert.assertEqual(GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE, twoBodyFunc.gravitational_parameter_source)
+        twoBodyFunc.gravitational_parameter_source = GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE
+        Assert.assertEqual(GRAV_PARAM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE, twoBodyFunc.gravitational_parameter_source)
+        twoBodyFunc.gravitational_parameter_source = GRAV_PARAM_SOURCE.USER
+        Assert.assertEqual(GRAV_PARAM_SOURCE.USER, twoBodyFunc.gravitational_parameter_source)
         twoBodyFunc.mu = 398601
         Assert.assertEqual(398601, twoBodyFunc.mu)
         twoBodyFunc.min_radius_percent = 98
@@ -9324,8 +9345,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             wrapper.propagator_functions.add("Third Bodies/Earth")
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH5_TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH5_TH, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_5TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_5TH, wrapper.numerical_integrator_type)
         self.TestRK4th5th(clr.CastAs(wrapper.numerical_integrator, RungeKutta4th5th))
 
         wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.BULIRSCH_STOER)
@@ -9336,24 +9357,24 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(NUMERICAL_INTEGRATOR.GAUSS_JACKSON, wrapper.numerical_integrator_type)
         self.TestGaussJackson(clr.CastAs(wrapper.numerical_integrator, GaussJacksonIntegrator))
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_2ND_3RD)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_2ND_3RD, wrapper.numerical_integrator_type)
         self.TestRK2nd3rd(clr.CastAs(wrapper.numerical_integrator, RungeKutta2nd3rd))
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH, wrapper.numerical_integrator_type)
         self.TestRK4th(clr.CastAs(wrapper.numerical_integrator, RungeKutta4th))
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_ADAPT)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_ADAPT, wrapper.numerical_integrator_type)
         self.TestRK4thAdapt(clr.CastAs(wrapper.numerical_integrator, RungeKutta4thAdapt))
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_FEHLBERG_7TH_8TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_FEHLBERG_7TH_8TH, wrapper.numerical_integrator_type)
         self.TestRK7th8th(clr.CastAs(wrapper.numerical_integrator, RungeKuttaF7th8th))
 
-        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH, wrapper.numerical_integrator_type)
+        wrapper.set_numerical_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_VERNER_8TH_9TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_VERNER_8TH_9TH, wrapper.numerical_integrator_type)
         self.TestRK8th9th(clr.CastAs(wrapper.numerical_integrator, RungeKuttaV8th9th))
 
         # Three Body
@@ -9376,9 +9397,9 @@ class EarlyBoundTests(TestBase):
 
         # Add the propagator function to the propagator
         propFuncs.remove("CR3BP Force")  # Remove the existing CR3BP, so a different one can be added
-        CR3BPFuncGravModel: "CR3BPFunc" = clr.CastAs(propFuncs.add("Gravity Models/CR3BP Force1"), CR3BPFunc)
+        CR3BPFuncGravModel: "CR3BPFunction" = clr.CastAs(propFuncs.add("Gravity Models/CR3BP Force1"), CR3BPFunction)
 
-        # Test the CR3BPFunc interface
+        # Test the CR3BPFunction interface
 
         Assert.assertEqual("Set Secondary Body", CR3BPFuncGravModel.secondary_name)  # Initial State
         Assert.assertEqual("1 Jan 2000 11:58:55.816", CR3BPFuncGravModel.ephemeris_epoch)
@@ -9490,10 +9511,10 @@ class EarlyBoundTests(TestBase):
         fa.max_iterations = 99
         Assert.assertEqual(99, fa.max_iterations)
 
-        fa.coeff_type = COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFF_1978
-        Assert.assertEqual(COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFF_1978, fa.coeff_type)
-        fa.coeff_type = COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT
-        Assert.assertEqual(COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT, fa.coeff_type)
+        fa.coefficient_type = COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFFICIENT_1978
+        Assert.assertEqual(COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFFICIENT_1978, fa.coefficient_type)
+        fa.coefficient_type = COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT
+        Assert.assertEqual(COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT, fa.coefficient_type)
 
     def TestRK7th8th(self, fa: "RungeKuttaF7th8th"):
         fa.initial_step = 6
@@ -9629,28 +9650,28 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.GAUSS_JACKSON)
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_2ND_3RD)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_2ND_3RD, gji.single_step_integrator_type)
         self.TestRK2nd3rd(clr.CastAs(gji.single_step_integrator, RungeKutta2nd3rd))
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH, gji.single_step_integrator_type)
         self.TestRK4th(clr.CastAs(gji.single_step_integrator, RungeKutta4th))
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH5_TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH5_TH, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_5TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_5TH, gji.single_step_integrator_type)
         self.TestRK4th5th(clr.CastAs(gji.single_step_integrator, RungeKutta4th5th))
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_ADAPT)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_ADAPT, gji.single_step_integrator_type)
         self.TestRK4thAdapt(clr.CastAs(gji.single_step_integrator, RungeKutta4thAdapt))
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_FEHLBERG_7TH_8TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_FEHLBERG_7TH_8TH, gji.single_step_integrator_type)
         self.TestRK7th8th(clr.CastAs(gji.single_step_integrator, RungeKuttaF7th8th))
 
-        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH)
-        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH, gji.single_step_integrator_type)
+        gji.set_single_step_integrator(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_VERNER_8TH_9TH)
+        Assert.assertEqual(NUMERICAL_INTEGRATOR.RUNGE_KUTTA_VERNER_8TH_9TH, gji.single_step_integrator_type)
         self.TestRK8th9th(clr.CastAs(gji.single_step_integrator, RungeKuttaV8th9th))
 
     def TestBulirshStoer(self, bsi: "BulirschStoerIntegrator"):
@@ -9731,8 +9752,8 @@ class EarlyBoundTests(TestBase):
         fourthFifth.max_iterations = 99
         Assert.assertEqual(99, fourthFifth.max_iterations)
 
-    def TestSegmentProperties(self, segment: "IMissionControlSequenceSegment", isReadOnly: bool):
-        props: "MissionControlSequenceSegmentProperties" = segment.properties
+    def TestSegmentProperties(self, segment: "IMCSSegment", isReadOnly: bool):
+        props: "MCSSegmentProperties" = segment.properties
         GatorHelper.TestRuntimeTypeInfo(props)
         if isReadOnly:
             with pytest.raises(Exception):

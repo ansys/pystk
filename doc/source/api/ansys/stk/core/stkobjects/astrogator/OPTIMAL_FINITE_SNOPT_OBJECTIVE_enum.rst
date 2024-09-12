@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MINIMIZE_TOF`
+            * - :py:attr:`~MINIMIZE_TIME_OF_FLIGHT`
               - Minimize the total TOF along the collocation arc.
 
             * - :py:attr:`~MAXIMIZE_FINAL_RAD`
