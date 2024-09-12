@@ -320,14 +320,16 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                    for target in ["all", "grpc", "visualization"]
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
             for platform in ["windows", "ubuntu"]
-            for target in ["visualization"]
         }
     },
 }
+
+print(jinja_contexts["wheelhouse"]["wheelhouse"])
 
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
