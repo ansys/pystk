@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ENTIRE_MISSION_CONTROL_SEQUENCE`
+            * - :py:attr:`~ENTIRE_MCS`
               - Run Entire Mission Control Sequence.
 
             * - :py:attr:`~ONLY_CHANGED`

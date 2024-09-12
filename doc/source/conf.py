@@ -58,7 +58,7 @@ html_theme_options = {
     "logo": "pyansys",
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
+html_css_files = ["css/highlight.css"]
 
 # Sphinx extensions
 extensions = [
@@ -114,6 +114,9 @@ suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
     # https://github.com/ansys-internal/pystk/issues/414
     "ref.python",
+    # Sphinx-design downloads some font-awesome icons that conflict with the
+    # ones in pydata-sphinx-theme.
+    "design.fa-build",
 ]
 
 # The suffix(es) of source filenames
@@ -317,14 +320,16 @@ jinja_contexts = {
             platform: {
                 python: {
                     target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                    for target in ["all", "grpc", "visualization"]
                 }
                 for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
             }
             for platform in ["windows", "ubuntu"]
-            for target in ["visualization"]
         }
     },
 }
+
+print(jinja_contexts["wheelhouse"]["wheelhouse"])
 
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
@@ -340,6 +345,11 @@ autodoc_mock_imports = ["tkinter"]
 
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- LaTeX configuration
+latex_elements = {
+    "extraclassoptions": "openany,oneside",
+}
 
 # -- Sphinx application setup ------------------------------------------------
 

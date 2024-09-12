@@ -548,7 +548,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping`
               - Class defining the Stationkeeping strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle`
               - Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude`
@@ -1213,7 +1213,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.ALTITUDE_REFERENCE`
               - The altitude reference.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_FPA_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE`
               - The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.PITCH_3D_CONTROL_MODE`
@@ -1436,7 +1436,7 @@ Object Model components specifically designed to support STK Aviator.
      BasicManeuverStrategyRelativeCourse<aviator/BasicManeuverStrategyRelativeCourse>
      BasicManeuverStrategyRendezvous<aviator/BasicManeuverStrategyRendezvous>
      BasicManeuverStrategyStationkeeping<aviator/BasicManeuverStrategyStationkeeping>
-     BasicManeuverStrategyRelativeFPA<aviator/BasicManeuverStrategyRelativeFPA>
+     BasicManeuverStrategyRelativeFlightPathAngle<aviator/BasicManeuverStrategyRelativeFlightPathAngle>
      BasicManeuverStrategyRelativeSpeedAltitude<aviator/BasicManeuverStrategyRelativeSpeedAltitude>
      BasicManeuverStrategyBezier<aviator/BasicManeuverStrategyBezier>
      BasicManeuverStrategyPushPull<aviator/BasicManeuverStrategyPushPull>
@@ -1661,7 +1661,7 @@ Object Model components specifically designed to support STK Aviator.
     ≔ LAUNCH_DYNAMIC_STATE_COORD_FRAME<aviator/LAUNCH_DYNAMIC_STATE_COORD_FRAME_enum>
     ≔ LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE<aviator/LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_enum>
     ≔ ALTITUDE_REFERENCE<aviator/ALTITUDE_REFERENCE_enum>
-    ≔ SMOOTH_TURN_FPA_MODE<aviator/SMOOTH_TURN_FPA_MODE_enum>
+    ≔ SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE<aviator/SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE_enum>
     ≔ PITCH_3D_CONTROL_MODE<aviator/PITCH_3D_CONTROL_MODE_enum>
     ≔ REFUEL_DUMP_MODE<aviator/REFUEL_DUMP_MODE_enum>
     ≔ BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE<aviator/BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE_enum>
