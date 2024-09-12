@@ -74,7 +74,7 @@ Current limitations
 The PySTK API currently has the following limitations:
 
 -  UI plugins are not currently supported.
--  Enabling socket connection by setting the ``IAgSTKXApplication.EnableConnect`` to True is not currently supported. Connect commands may be used through the object model root
+-  Enabling socket connection by setting ``STKXApplication.enable_connect`` to True is not currently supported. Connect commands may be used through the object model root.
    `execute_command <https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/StkObjectRoot.html>`_ method.
 -  When using gRPC, ``get_raw_plugin_object`` (available on ``AccessConstraintPluginMinMax`` and ``VehiclePluginPropagator``) and ``raw_plugin_object`` (available on ``ScatteringPointProviderPlugin``, ``ScatteringPointModelPlugin``, ``IRadarClutterGeometryModelPlugin``, ``RadarProbabilityOfDetectionPlugin``, ``IRadarClutterMapModelPlugin``, ``RadarCrossSectionComputeStrategyPlugin``, and ``RadarStcAttenuationPlugin``) are not available and always return None.
 - Engine plugins are not currently supported.

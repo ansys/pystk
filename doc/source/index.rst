@@ -2,16 +2,7 @@
     :align: center
     :width: 600px 
    
-PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK). STK provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. With STK, you can:
-
-- Model complex systems inside a realistic and time-dynamic three-dimensional simulation that includes high-resolution terrain, imagery, RF environments, and more
-
-- Select, build, or import precise models of ground, sea, air, and space assets and combine them to represent existing or proposed systems.
-
-- Simulate the entire system-of-systems in action, at any location and at any time, to gain a clear understanding of its behavior and mission performance.
-
-Documentation
-=============
+PySTK provides a Python API to interact with `Ansys Systems Tool Kit`_ (STK). STK provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. 
 
 .. grid:: 2
 
