@@ -26,6 +26,7 @@ platform.
         Guidelines on how to install PySTK in your system
 
 
+
 .. toctree::
    :maxdepth: 3
    :hidden:
@@ -33,4 +34,5 @@ platform.
    About<getting-started/about>
    Prerequisites<getting-started/prerequisites>
    Install<getting-started/install>
+   
 
