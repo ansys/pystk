@@ -75,7 +75,7 @@ jobs:
        matrix:
            os: [ubuntu-latest, windows-latest]
            python-version: ['3.10', '3.11', '3.12']
-           target: ['visualization']
+           target: ['all', 'grpc', 'visualization']
     steps:
       - name: "Build a wheelhouse of the Python library"
         uses: ansys/actions/build-wheelhouse@v7.0

@@ -30,9 +30,57 @@ are not included.
 Extra artifacts
 ===============
 
-These artifacts include additional dependencies required for visualization in
-IPython or performing data-analysis.
+These artifacts include additional dependencies required for using some
+features, like gRPC connections, IPython visualization, and data-analysis.
 
+All extra artifacts
+-------------------
+
+These extra artifacts include all the dependencies for using any additional
+features:
+
+.. jinja:: wheelhouse
+
+    .. csv-table::
+       :header-rows: 1
+       :widths: 16, 28, 28, 28
+    
+       :fas:`laptop` Platform,
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       :fab:`python` Python {{ python }}
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% for platform in SUPPORTED_PLATFORMS -%}
+       :fab:`{{ platform }}` {{ platform | capitalize }},
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       `Download wheelhouse <{{ wheelhouse[platform][python]["all"] }}/{{ wheelhouse[platform][python]["all"].name }}.zip>`__
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% endfor %}
+
+gRPC
+----
+
+These extra artifacts include all the dependencies for using gRPC connections.
+
+.. jinja:: wheelhouse
+
+    .. csv-table::
+       :header-rows: 1
+       :widths: 16, 28, 28, 28
+    
+       :fas:`laptop` Platform,
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       :fab:`python` Python {{ python }}
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% for platform in SUPPORTED_PLATFORMS -%}
+       :fab:`{{ platform }}` {{ platform | capitalize }},
+       {%- for python in SUPPORTED_PYTHON_VERSIONS -%}
+       `Download wheelhouse <{{ wheelhouse[platform][python]["grpc"] }}/{{ wheelhouse[platform][python]["grpc"].name }}.zip>`__
+       {%- if not loop.last -%},{%- endif -%}
+       {% endfor %}
+       {% endfor %}
 
 Visualization
 -------------
