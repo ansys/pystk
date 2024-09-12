@@ -42,7 +42,7 @@ The PySTK API offers a variety of options to automate and customize STK and to i
 Available configurations and environments
 -----------------------------------------
 
-Multiple configurations and environments are supported, requiring specific instructions to get setup. Refer to the table below to access prerequisites and installation instructions for your desired environment(s).
+Multiple configurations and environments are supported, requiring specific instructions to get setup. Refer to the table below to access prerequisites and installation instructions for your desired environment.
 
 .. jinja::
 
