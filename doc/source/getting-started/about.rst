@@ -66,7 +66,7 @@ Multiple configurations and environments are supported, requiring specific instr
             - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/docker.html>`_ 
          
 
-Once your environment is setup you can follow the `user guide <https://stk.docs.pyansys.com/version/dev/user-guide.html>`_ to get acquainted with the API, or browse `examples <https://stk.docs.pyansys.com/version/dev/examples.html>`_. Additionally, the `API reference <https://stk.docs.pyansys.com/version/dev/api.html>`_ describes all the types available through the API.
+Once your environment is setup, you can review the `user guide <https://stk.docs.pyansys.com/version/dev/user-guide.html>`_ to get acquainted with the API, or browse `examples <https://stk.docs.pyansys.com/version/dev/examples.html>`_. Additionally, the `API reference <https://stk.docs.pyansys.com/version/dev/api.html>`_ describes all types that are available through the API.
 
 Current limitations
 ===================
@@ -76,7 +76,7 @@ The PySTK API currently has the following limitations:
 -  UI plugins are not currently supported.
 -  Enabling socket connection by setting the ``IAgSTKXApplication.EnableConnect`` to True is not currently supported. Connect commands may be used through the object model root
    `execute_command <https://stk.docs.pyansys.com/version/dev/api/ansys/stk/core/stkobjects/StkObjectRoot.html>`_ method.
--  When using gRPC, GetRawPluginObject (available on ``IAgAccessCnstrPluginMinMax`` and ``IAgVePluginPropagator``) and RawPluginObject (available on ``IAgScatteringPointProviderPlugin``, ``IAgScatterPointModelPlugin``, ``IAgRadarClutterGeometryModelPlugin``, ``IAgRadarProbabilityOfDetectionPlugin``, ``IAgRadarClutterMapModelPlugin``, ``IAgRadarCrossSectionComputeStrategyPlugin``, and ``IAgRadarStcAttenuationPlugin``) are not available and always return None.
+-  When using gRPC, ``get_raw_plugin_object`` (available on ``AccessConstraintPluginMinMax`` and ``VehiclePluginPropagator``) and ``raw_plugin_object`` (available on ``ScatteringPointProviderPlugin``, ``ScatteringPointModelPlugin``, ``IRadarClutterGeometryModelPlugin``, ``RadarProbabilityOfDetectionPlugin``, ``IRadarClutterMapModelPlugin``, ``RadarCrossSectionComputeStrategyPlugin``, and ``RadarStcAttenuationPlugin``) are not available and always return None.
 - Engine plugins are not currently supported.
 
 
