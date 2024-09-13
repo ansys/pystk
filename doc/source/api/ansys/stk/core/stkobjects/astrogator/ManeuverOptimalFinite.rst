@@ -47,7 +47,7 @@ Overview
               - A message that indicates what nodes are currently held by the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.run_mode`
               - Run mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_for_nonconvergence`
               - Halt MCS and discard result if optimization is unsuccessful.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.discretization_strategy`
               - Discretization Strategy.
@@ -139,8 +139,8 @@ Property detail
 
     Run mode.
 
-.. py:property:: halt_mission_control_sequence_when_no_convergence
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence
+.. py:property:: halt_mission_control_sequence_for_nonconvergence
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_for_nonconvergence
     :type: bool
 
     Halt MCS and discard result if optimization is unsuccessful.

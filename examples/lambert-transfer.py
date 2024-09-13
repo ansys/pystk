@@ -266,7 +266,7 @@ initial_state.element.vz = initial_velocity[2]
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, TARGET_SEQ_ACTION
+from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE
 
 
 lambert_transfer = satellite.propagator.main_sequence.insert(
@@ -317,11 +317,11 @@ lambert = lambert_transfer.profiles.add("Lambert Profile")
 # It is also important to enable the second maneuver property. This allows to specify the target velocity.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE
+from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORDINATE_TYPE
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
-lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
+lambert.set_target_coord_type(LAMBERT_TARGET_COORDINATE_TYPE.CARTESIAN)
 
 lambert.enable_second_maneuver = True
 
@@ -386,12 +386,16 @@ lambert.second_maneuver_segment = last_impulse.name
 # Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, PROFILES_FINISH
+from ansys.stk.core.stkobjects.astrogator import (
+    PROFILE_MODE,
+    PROFILES_FINISH,
+    TARGET_SEQUENCE_ACTION,
+)
 
 
 lambert.mode = PROFILE_MODE.ACTIVE
 
-lambert_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+lambert_transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
 lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
 
 lambert_transfer.continue_on_failure = False
@@ -400,7 +404,7 @@ lambert_transfer.reset_inner_targeters = False
 
 # Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
 
-satellite.propagator.run_mission_control_sequence()
+satellite.propagator.run_mcs()
 satellite.propagator.apply_all_profile_changes()
 
 # ## Retrieve the results

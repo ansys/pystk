@@ -73,7 +73,7 @@ Overview
               - Get the maximum translation speed of the rotorcraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_translation_speed_type`
               - Get the maximum safe translation speed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_fpa_for_climb_descent_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_flight_path_angle_for_climb_descent_transitions`
               - Opt to ignore load factor limits when pushing over or pulling up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.default_configuration`
               - Get the aircraft's default configuration as saved in the catalog.
@@ -215,8 +215,8 @@ Property detail
 
     Get the maximum safe translation speed type.
 
-.. py:property:: ignore_fpa_for_climb_descent_transitions
-    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_fpa_for_climb_descent_transitions
+.. py:property:: ignore_flight_path_angle_for_climb_descent_transitions
+    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_flight_path_angle_for_climb_descent_transitions
     :type: bool
 
     Opt to ignore load factor limits when pushing over or pulling up.

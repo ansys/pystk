@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~REFERENCE_LON`
+            * - :py:attr:`~REFERENCE_LONGITUDE`
               - The reference longitude.
 
             * - :py:attr:`~REPEAT_COUNT`

@@ -30,9 +30,9 @@ Overview
               - Gets or sets the angle between the satellite position vector and the inertial equatorial plane measured as positive toward the positive inertial Z axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.radius`
               - Gets or sets the magnitude of the satellite position vector. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.fpa_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.flight_path_angle_type`
               - Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.flight_path_angle`
               - Get the value of the Vertical or Horizontal Flight Path Angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateSpherical.azimuth`
               - Gets or sets the angle in the satellite local horizontal plane between the projection of the velocity vector onto this plane and the local north direction measured as positive in the clockwise direction. Uses Angle Dimension.
@@ -86,14 +86,14 @@ Property detail
 
     Gets or sets the magnitude of the satellite position vector. Uses Distance Dimension.
 
-.. py:property:: fpa_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateSpherical.fpa_type
-    :type: SPHERICAL_FPA
+.. py:property:: flight_path_angle_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateSpherical.flight_path_angle_type
+    :type: SPHERICAL_FLIGHT_PATH_ANGLE
 
     Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
 
-.. py:property:: fpa
-    :canonical: ansys.stk.core.stkobjects.OrbitStateSpherical.fpa
+.. py:property:: flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.OrbitStateSpherical.flight_path_angle
     :type: IFlightPathAngle
 
     Get the value of the Vertical or Horizontal Flight Path Angle.

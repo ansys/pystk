@@ -22,61 +22,61 @@ Overview
             * - :py:attr:`~EPOCH`
               - The date and time of the launch.
 
-            * - :py:attr:`~GEODETIC_LAT`
+            * - :py:attr:`~GEODETIC_LATITUDE`
               - The geodetic latitude of the launch location.
 
-            * - :py:attr:`~GEODETIC_LON`
+            * - :py:attr:`~GEODETIC_LONGITUDE`
               - The geodetic longitude of the launch location.
 
             * - :py:attr:`~GEODETIC_ALTITUDE`
               - The geodetic altitude of the launch location.
 
-            * - :py:attr:`~GEOCENTRIC_LAT`
+            * - :py:attr:`~GEOCENTRIC_LATITUDE`
               - The geocentric latitude of the launch location.
 
-            * - :py:attr:`~GEOCENTRIC_LON`
+            * - :py:attr:`~GEOCENTRIC_LONGITUDE`
               - The geocentric longitude of the launch location.
 
-            * - :py:attr:`~GEOCENTRIC_RAD`
+            * - :py:attr:`~GEOCENTRIC_RADIUS`
               - The geocentric radius of the launch location.
 
             * - :py:attr:`~TIME_OF_FLIGHT`
               - The time of flight, from launch until burnout.
 
-            * - :py:attr:`~BURNOUT_GEOCENTRIC_LAT`
+            * - :py:attr:`~BURNOUT_GEOCENTRIC_LATITUDE`
               - The geocentric latitude of the burnout point.
 
-            * - :py:attr:`~BURNOUT_GEOCENTRIC_LON`
+            * - :py:attr:`~BURNOUT_GEOCENTRIC_LONGITUDE`
               - The geocentric longitude of the burnout point.
 
-            * - :py:attr:`~BURNOUT_GEOCENTRIC_RAD`
+            * - :py:attr:`~BURNOUT_GEOCENTRIC_RADIUS`
               - The geocentric radius of the burnout point.
 
-            * - :py:attr:`~BURNOUT_GEODETIC_LAT`
+            * - :py:attr:`~BURNOUT_GEODETIC_LATITUDE`
               - The geodetic latitude of the burnout point.
 
-            * - :py:attr:`~BURNOUT_GEODETIC_LON`
+            * - :py:attr:`~BURNOUT_GEODETIC_LONGITUDE`
               - The geodetic longitude of the burnout point.
 
             * - :py:attr:`~BURNOUT_GEODETIC_ALTITUDE`
               - The geodetic altitude of the burnout point.
 
-            * - :py:attr:`~BURNOUT_AZ_ALTITUDE_AZ`
+            * - :py:attr:`~BURNOUT_AZIMUTH_ALTITUDE_AZIMUTH`
               - The geodetic azimuth of the launch trajectory.
 
-            * - :py:attr:`~BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST`
+            * - :py:attr:`~BURNOUT_AZIMUTH_ALTITUDE_DOWNRANGE_DIST`
               - The geodetic downrange distance of the burnout point.
 
-            * - :py:attr:`~BURNOUT_AZ_ALTITUDE_ALTITUDE`
+            * - :py:attr:`~BURNOUT_AZIMUTH_ALTITUDE_ALTITUDE`
               - The geodetic altitude of the burnout point.
 
-            * - :py:attr:`~BURNOUT_AZ_RAD_AZ`
+            * - :py:attr:`~BURNOUT_AZIMUTH_RADIUS_AZIMUTH`
               - The geocentric azimuth of the launch trajectory.
 
-            * - :py:attr:`~BURNOUT_AZ_RAD_DOWNRANGE_DIST`
+            * - :py:attr:`~BURNOUT_AZIMUTH_RADIUS_DOWNRANGE_DIST`
               - The geocentric downrange distance of the burnout point.
 
-            * - :py:attr:`~BURNOUT_AZ_RAD_RAD`
+            * - :py:attr:`~BURNOUT_AZIMUTH_RADIUS_RADIUS`
               - The geocentric radius of the burnout point.
 
             * - :py:attr:`~BURNOUT_FIXED_VELOCITY`
@@ -88,7 +88,7 @@ Overview
             * - :py:attr:`~BURNOUT_INERTIAL_VELOCITY_AZIMUTH`
               - Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed.
 
-            * - :py:attr:`~BURNOUT_INERTIAL_HORIZONTAL_FPA`
+            * - :py:attr:`~BURNOUT_INERTIAL_HORIZONTAL_FLIGHT_PATH_ANGLE`
               - Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle.
 
             * - :py:attr:`~DRY_MASS`

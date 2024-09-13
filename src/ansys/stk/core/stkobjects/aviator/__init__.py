@@ -33,7 +33,7 @@ __all__ = ["ACCELERATION_ADVANCED_ACCELERATION_MODE", "ACCELERATION_MANEUVER_AER
 "BasicManeuverStrategyBarrelRoll", "BasicManeuverStrategyBezier", "BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", 
 "BasicManeuverStrategyGlideProfile", "BasicManeuverStrategyIntercept", "BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", 
 "BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelativeBearing", 
-"BasicManeuverStrategyRelativeCourse", "BasicManeuverStrategyRelativeFPA", "BasicManeuverStrategyRelativeSpeedAltitude", 
+"BasicManeuverStrategyRelativeCourse", "BasicManeuverStrategyRelativeFlightPathAngle", "BasicManeuverStrategyRelativeSpeedAltitude", 
 "BasicManeuverStrategyRendezvous", "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", "BasicManeuverStrategySmoothAcceleration", 
 "BasicManeuverStrategySmoothTurn", "BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", 
 "BasicManeuverTargetPositionVel", "BasicManeuverTargetPositionVelNoisyBearingRange", "BasicManeuverTargetPositionVelNoisySurfTarget", 
@@ -72,17 +72,17 @@ __all__ = ["ACCELERATION_ADVANCED_ACCELERATION_MODE", "ACCELERATION_MANEUVER_AER
 "RUNWAY_HIGH_LOW_END", "ReferenceStateForwardFlightOptions", "ReferenceStateHoverOptions", "ReferenceStateTakeoffLandingOptions", 
 "ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAerodynamic", "RotorcraftModel", "RotorcraftModels", 
 "RotorcraftPropulsion", "RunwayCategory", "RunwayHeadingOptions", "SCRAMJET_MODE", "SEARCH_PATTERN_COURSE_MODE", "SITE_TYPE", 
-"SMOOTH_ACCELERATION_LEFT_RIGHT", "SMOOTH_ACCELERATION_STOP_CONDITIONS", "SMOOTH_TURN_FPA_MODE", "SMOOTH_TURN_MODE", "STATIONKEEPING_STOP_CONDITION", 
-"STK_OBJECT_WAYPOINT_OFFSET_MODE", "STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", "SiteDynamicState", 
-"SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelativeToPrevProcedure", "SiteRelativeToSTKObject", 
-"SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", 
-"SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", "StationCollection", 
-"TAKEOFF_LANDING_SPEED_MODE", "TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", "TRAJECTORY_BLEND_MODE", "TRANSITION_TO_HOVER_MODE", 
-"TURBINE_MODE", "TURN_DIRECTION", "TURN_MODE", "TakeoffDeparturePoint", "TakeoffLowTransition", "TakeoffNormal", "UserRunway", 
-"UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", "VERT_LANDING_MODE", "VTOLPointCategory", 
-"VTOL_FINAL_HEADING_MODE", "VTOL_HEADING_MODE", "VTOL_RATE_MODE", "VTOL_TRANSITION_MODE", "VTOL_TRANSLATION_FINAL_COURSE_MODE", 
-"VTOL_TRANSLATION_MODE", "VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", "WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", 
-"WaypointCategory", "WindModel", "WindModelADDS", "WindModelConstant"]
+"SMOOTH_ACCELERATION_LEFT_RIGHT", "SMOOTH_ACCELERATION_STOP_CONDITIONS", "SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE", "SMOOTH_TURN_MODE", 
+"STATIONKEEPING_STOP_CONDITION", "STK_OBJECT_WAYPOINT_OFFSET_MODE", "STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", 
+"SiteDynamicState", "SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelativeToPrevProcedure", 
+"SiteRelativeToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", 
+"SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", 
+"StationCollection", "TAKEOFF_LANDING_SPEED_MODE", "TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", "TRAJECTORY_BLEND_MODE", 
+"TRANSITION_TO_HOVER_MODE", "TURBINE_MODE", "TURN_DIRECTION", "TURN_MODE", "TakeoffDeparturePoint", "TakeoffLowTransition", 
+"TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", 
+"VERT_LANDING_MODE", "VTOLPointCategory", "VTOL_FINAL_HEADING_MODE", "VTOL_HEADING_MODE", "VTOL_RATE_MODE", "VTOL_TRANSITION_MODE", 
+"VTOL_TRANSLATION_FINAL_COURSE_MODE", "VTOL_TRANSLATION_MODE", "VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", 
+"WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", "WindModel", "WindModelADDS", "WindModelConstant"]
 
 import typing
 
@@ -1256,9 +1256,9 @@ class AUTOPILOT_ALTITUDE_MODE(IntEnum):
     """The specify altitude rate mode."""
     AUTOPILOT_HOLD_INIT_ALTITUDE_RATE = 4
     """The hold initial altitude rate mode."""
-    AUTOPILOT_SPECIFY_FPA = 5
+    AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE = 5
     """The specify wind frame flight path angle mode."""
-    AUTOPILOT_HOLD_INIT_FPA = 6
+    AUTOPILOT_HOLD_INIT_FLIGHT_PATH_ANGLE = 6
     """The hold initial wind frame flight path angle mode."""
     AUTOPILOT_BALLISTIC = 7
     """The ballistic flight path mode."""
@@ -1268,8 +1268,8 @@ AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitu
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode."
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA.__doc__ = "The specify wind frame flight path angle mode."
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FPA.__doc__ = "The hold initial wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE.__doc__ = "The specify wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FLIGHT_PATH_ANGLE.__doc__ = "The hold initial wind frame flight path angle mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC.__doc__ = "The ballistic flight path mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_MODE"] = AUTOPILOT_ALTITUDE_MODE
@@ -1279,13 +1279,13 @@ class AUTOPILOT_ALTITUDE_CONTROL_MODE(IntEnum):
    
     AUTOPILOT_ALTITUDE_RATE = 0
     """The control altitude rate mode."""
-    AUTOPILOT_FPA = 1
+    AUTOPILOT_FLIGHT_PATH_ANGLE = 1
     """The control flight path angle mode."""
     AUTOPILOT_PERFORMANCE_MODELS = 2
     """The climb/descent performance models mode."""
 
 AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode."
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode."
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE.__doc__ = "The control flight path angle mode."
 AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERFORMANCE_MODELS.__doc__ = "The climb/descent performance models mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_CONTROL_MODE"] = AUTOPILOT_ALTITUDE_CONTROL_MODE
@@ -2534,18 +2534,18 @@ ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_TERRAIN.__doc__ = "ALtitude above terrain.
 
 agcls.AgTypeNameMap["ALTITUDE_REFERENCE"] = ALTITUDE_REFERENCE
 
-class SMOOTH_TURN_FPA_MODE(IntEnum):
+class SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
    
-    SMOOTH_TURN_FPA_HOLD_INITIAL = 0
+    SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL = 0
     """Hold the initial flight path angle."""
-    SMOOTH_TURN_FPA_LEVEL_OFF = 1
+    SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF = 1
     """Levell off the flight path angle."""
 
-SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
-SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
+SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
+SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
 
-agcls.AgTypeNameMap["SMOOTH_TURN_FPA_MODE"] = SMOOTH_TURN_FPA_MODE
+agcls.AgTypeNameMap["SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE"] = SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE
 
 class PITCH_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
@@ -8307,15 +8307,15 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _set_maneuver_mode_method_offset = 4
     _get_maneuver_mode_helper_method_offset = 5
     _get_attitude_transitions_method_offset = 6
-    _get_ignore_fpa_for_climb_descent_transitions_method_offset = 7
-    _set_ignore_fpa_for_climb_descent_transitions_method_offset = 8
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 7
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 8
     _get_climb_airspeed_method_offset = 9
     _get_climb_airspeed_type_method_offset = 10
     _set_climb_airspeed_method_offset = 11
-    _get_climb_max_fpa_method_offset = 12
-    _set_climb_max_fpa_method_offset = 13
-    _get_climb_min_fpa_method_offset = 14
-    _set_climb_min_fpa_method_offset = 15
+    _get_climb_max_flight_path_angle_method_offset = 12
+    _set_climb_max_flight_path_angle_method_offset = 13
+    _get_climb_min_flight_path_angle_method_offset = 14
+    _set_climb_min_flight_path_angle_method_offset = 15
     _get_climb_fail_on_insufficient_performance_method_offset = 16
     _set_climb_fail_on_insufficient_performance_method_offset = 17
     _get_cruise_max_airspeed_method_offset = 18
@@ -8326,10 +8326,10 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_descent_airspeed_method_offset = 23
     _get_descent_airspeed_type_method_offset = 24
     _set_descent_airspeed_method_offset = 25
-    _get_descent_max_fpa_method_offset = 26
-    _set_descent_max_fpa_method_offset = 27
-    _get_descent_min_fpa_method_offset = 28
-    _set_descent_min_fpa_method_offset = 29
+    _get_descent_max_flight_path_angle_method_offset = 26
+    _set_descent_max_flight_path_angle_method_offset = 27
+    _get_descent_min_flight_path_angle_method_offset = 28
+    _set_descent_min_flight_path_angle_method_offset = 29
     _get_descent_fail_on_insufficient_performance_method_offset = 30
     _set_descent_fail_on_insufficient_performance_method_offset = 31
     _get_use_total_temp_limit_method_offset = 32
@@ -8404,21 +8404,21 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Get the attitude transitions interface."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_attitude_transitions_metadata)
 
-    _get_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa_for_climb_descent_transitions(self) -> bool:
+    def ignore_flight_path_angle_for_climb_descent_transitions(self) -> bool:
         """Opt whether to ignore the flight path angle limits for climb and descent transitions."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_ignore_fpa_for_climb_descent_transitions_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_ignore_flight_path_angle_for_climb_descent_transitions_metadata)
 
-    _set_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa_for_climb_descent_transitions.setter
-    def ignore_fpa_for_climb_descent_transitions(self, pVal:bool) -> None:
+    @ignore_flight_path_angle_for_climb_descent_transitions.setter
+    def ignore_flight_path_angle_for_climb_descent_transitions(self, pVal:bool) -> None:
         """Opt whether to ignore the flight path angle limits for climb and descent transitions."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_ignore_fpa_for_climb_descent_transitions_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_ignore_flight_path_angle_for_climb_descent_transitions_metadata, pVal)
 
     _get_climb_airspeed_metadata = { "offset" : _get_climb_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8443,37 +8443,37 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the missile's climb airspeed and airspeed type."""
         return self._intf.invoke(MissileModel._metadata, MissileModel._set_climb_airspeed_metadata, airspeedType, aispeed)
 
-    _get_climb_max_fpa_metadata = { "offset" : _get_climb_max_fpa_method_offset,
+    _get_climb_max_flight_path_angle_metadata = { "offset" : _get_climb_max_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def climb_max_fpa(self) -> typing.Any:
+    def climb_max_flight_path_angle(self) -> typing.Any:
         """Get or set the maximum flight path angle of the missile's flight path while climbing."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_max_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_max_flight_path_angle_metadata)
 
-    _set_climb_max_fpa_metadata = { "offset" : _set_climb_max_fpa_method_offset,
+    _set_climb_max_flight_path_angle_metadata = { "offset" : _set_climb_max_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @climb_max_fpa.setter
-    def climb_max_fpa(self, pVal:typing.Any) -> None:
+    @climb_max_flight_path_angle.setter
+    def climb_max_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the maximum flight path angle of the missile's flight path while climbing."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_max_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_max_flight_path_angle_metadata, pVal)
 
-    _get_climb_min_fpa_metadata = { "offset" : _get_climb_min_fpa_method_offset,
+    _get_climb_min_flight_path_angle_metadata = { "offset" : _get_climb_min_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def climb_min_fpa(self) -> typing.Any:
+    def climb_min_flight_path_angle(self) -> typing.Any:
         """Get or set the minimum flight path angle of the missile's flight path while climbing."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_min_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_min_flight_path_angle_metadata)
 
-    _set_climb_min_fpa_metadata = { "offset" : _set_climb_min_fpa_method_offset,
+    _set_climb_min_flight_path_angle_metadata = { "offset" : _set_climb_min_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @climb_min_fpa.setter
-    def climb_min_fpa(self, pVal:typing.Any) -> None:
+    @climb_min_flight_path_angle.setter
+    def climb_min_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the minimum flight path angle of the missile's flight path while climbing."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_min_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_min_flight_path_angle_metadata, pVal)
 
     _get_climb_fail_on_insufficient_performance_metadata = { "offset" : _get_climb_fail_on_insufficient_performance_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8553,37 +8553,37 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the missile's descent airspeed and airspeed type."""
         return self._intf.invoke(MissileModel._metadata, MissileModel._set_descent_airspeed_metadata, airspeedType, aispeed)
 
-    _get_descent_max_fpa_metadata = { "offset" : _get_descent_max_fpa_method_offset,
+    _get_descent_max_flight_path_angle_metadata = { "offset" : _get_descent_max_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def descent_max_fpa(self) -> typing.Any:
+    def descent_max_flight_path_angle(self) -> typing.Any:
         """Get or set the maximum flight path angle of the missile's flight path while descending."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_max_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_max_flight_path_angle_metadata)
 
-    _set_descent_max_fpa_metadata = { "offset" : _set_descent_max_fpa_method_offset,
+    _set_descent_max_flight_path_angle_metadata = { "offset" : _set_descent_max_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @descent_max_fpa.setter
-    def descent_max_fpa(self, pVal:typing.Any) -> None:
+    @descent_max_flight_path_angle.setter
+    def descent_max_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the maximum flight path angle of the missile's flight path while descending."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_max_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_max_flight_path_angle_metadata, pVal)
 
-    _get_descent_min_fpa_metadata = { "offset" : _get_descent_min_fpa_method_offset,
+    _get_descent_min_flight_path_angle_metadata = { "offset" : _get_descent_min_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def descent_min_fpa(self) -> typing.Any:
+    def descent_min_flight_path_angle(self) -> typing.Any:
         """Get or set the minimum flight path angle of the missile's flight path while descending."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_min_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_min_flight_path_angle_metadata)
 
-    _set_descent_min_fpa_metadata = { "offset" : _set_descent_min_fpa_method_offset,
+    _set_descent_min_flight_path_angle_metadata = { "offset" : _set_descent_min_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @descent_min_fpa.setter
-    def descent_min_fpa(self, pVal:typing.Any) -> None:
+    @descent_min_flight_path_angle.setter
+    def descent_min_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the minimum flight path angle of the missile's flight path while descending."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_min_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_min_flight_path_angle_metadata, pVal)
 
     _get_descent_fail_on_insufficient_performance_metadata = { "offset" : _get_descent_fail_on_insufficient_performance_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8732,19 +8732,19 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[maneuver_mode] = "maneuver_mode"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
     _property_names[attitude_transitions] = "attitude_transitions"
-    _property_names[ignore_fpa_for_climb_descent_transitions] = "ignore_fpa_for_climb_descent_transitions"
+    _property_names[ignore_flight_path_angle_for_climb_descent_transitions] = "ignore_flight_path_angle_for_climb_descent_transitions"
     _property_names[climb_airspeed] = "climb_airspeed"
     _property_names[climb_airspeed_type] = "climb_airspeed_type"
-    _property_names[climb_max_fpa] = "climb_max_fpa"
-    _property_names[climb_min_fpa] = "climb_min_fpa"
+    _property_names[climb_max_flight_path_angle] = "climb_max_flight_path_angle"
+    _property_names[climb_min_flight_path_angle] = "climb_min_flight_path_angle"
     _property_names[climb_fail_on_insufficient_performance] = "climb_fail_on_insufficient_performance"
     _property_names[cruise_max_airspeed] = "cruise_max_airspeed"
     _property_names[cruise_max_airspeed_type] = "cruise_max_airspeed_type"
     _property_names[cruise_default_altitude] = "cruise_default_altitude"
     _property_names[descent_airspeed] = "descent_airspeed"
     _property_names[descent_airspeed_type] = "descent_airspeed_type"
-    _property_names[descent_max_fpa] = "descent_max_fpa"
-    _property_names[descent_min_fpa] = "descent_min_fpa"
+    _property_names[descent_max_flight_path_angle] = "descent_max_flight_path_angle"
+    _property_names[descent_min_flight_path_angle] = "descent_min_flight_path_angle"
     _property_names[descent_fail_on_insufficient_performance] = "descent_fail_on_insufficient_performance"
     _property_names[use_total_temp_limit] = "use_total_temp_limit"
     _property_names[total_temp_limit] = "total_temp_limit"
@@ -8819,8 +8819,8 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_max_safe_translation_speed_method_offset = 36
     _get_max_safe_translation_speed_type_method_offset = 37
     _set_max_safe_translation_speed_method_offset = 38
-    _get_ignore_fpa_for_climb_descent_transitions_method_offset = 39
-    _set_ignore_fpa_for_climb_descent_transitions_method_offset = 40
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 39
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 40
     _get_default_configuration_method_offset = 41
     _get_aerodynamics_method_offset = 42
     _get_propulsion_method_offset = 43
@@ -9135,21 +9135,21 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the maximum safe translation airspeed and airspeed type."""
         return self._intf.invoke(RotorcraftModel._metadata, RotorcraftModel._set_max_safe_translation_speed_metadata, airspeedType, airspeed)
 
-    _get_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa_for_climb_descent_transitions(self) -> bool:
+    def ignore_flight_path_angle_for_climb_descent_transitions(self) -> bool:
         """Opt to ignore load factor limits when pushing over or pulling up."""
-        return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_ignore_fpa_for_climb_descent_transitions_metadata)
+        return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_ignore_flight_path_angle_for_climb_descent_transitions_metadata)
 
-    _set_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa_for_climb_descent_transitions.setter
-    def ignore_fpa_for_climb_descent_transitions(self, newVal:bool) -> None:
+    @ignore_flight_path_angle_for_climb_descent_transitions.setter
+    def ignore_flight_path_angle_for_climb_descent_transitions(self, newVal:bool) -> None:
         """Opt to ignore load factor limits when pushing over or pulling up."""
-        return self._intf.set_property(RotorcraftModel._metadata, RotorcraftModel._set_ignore_fpa_for_climb_descent_transitions_metadata, newVal)
+        return self._intf.set_property(RotorcraftModel._metadata, RotorcraftModel._set_ignore_flight_path_angle_for_climb_descent_transitions_metadata, newVal)
 
     _get_default_configuration_metadata = { "offset" : _get_default_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9202,7 +9202,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[max_safe_airspeed_type] = "max_safe_airspeed_type"
     _property_names[max_safe_translation_speed] = "max_safe_translation_speed"
     _property_names[max_safe_translation_speed_type] = "max_safe_translation_speed_type"
-    _property_names[ignore_fpa_for_climb_descent_transitions] = "ignore_fpa_for_climb_descent_transitions"
+    _property_names[ignore_flight_path_angle_for_climb_descent_transitions] = "ignore_flight_path_angle_for_climb_descent_transitions"
     _property_names[default_configuration] = "default_configuration"
     _property_names[aerodynamics] = "aerodynamics"
     _property_names[propulsion] = "propulsion"
@@ -15051,8 +15051,8 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     _set_max_push_over_g_method_offset = 4
     _get_maneuver_mode_method_offset = 5
     _set_maneuver_mode_method_offset = 6
-    _get_ignore_fpa_method_offset = 7
-    _set_ignore_fpa_method_offset = 8
+    _get_ignore_flight_path_angle_method_offset = 7
+    _set_ignore_flight_path_angle_method_offset = 8
     _get_maneuver_mode_helper_method_offset = 9
     _metadata = {
         "iid_data" : (4787497693753872718, 5667952407318575531),
@@ -15110,21 +15110,21 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
         """Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_maneuver_mode_metadata, newVal)
 
-    _get_ignore_fpa_metadata = { "offset" : _get_ignore_fpa_method_offset,
+    _get_ignore_flight_path_angle_metadata = { "offset" : _get_ignore_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa(self) -> bool:
+    def ignore_flight_path_angle(self) -> bool:
         """Opt whether to ignore the flight path angle."""
-        return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_ignore_fpa_metadata)
+        return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_ignore_flight_path_angle_metadata)
 
-    _set_ignore_fpa_metadata = { "offset" : _set_ignore_fpa_method_offset,
+    _set_ignore_flight_path_angle_metadata = { "offset" : _set_ignore_flight_path_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa.setter
-    def ignore_fpa(self, newVal:bool) -> None:
+    @ignore_flight_path_angle.setter
+    def ignore_flight_path_angle(self, newVal:bool) -> None:
         """Opt whether to ignore the flight path angle."""
-        return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_ignore_fpa_metadata, newVal)
+        return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_ignore_flight_path_angle_metadata, newVal)
 
     _get_maneuver_mode_helper_metadata = { "offset" : _get_maneuver_mode_helper_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15137,7 +15137,7 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     _property_names[max_pull_up_g] = "max_pull_up_g"
     _property_names[max_push_over_g] = "max_push_over_g"
     _property_names[maneuver_mode] = "maneuver_mode"
-    _property_names[ignore_fpa] = "ignore_fpa"
+    _property_names[ignore_flight_path_angle] = "ignore_flight_path_angle"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
 
     def __init__(self, sourceObject=None):
@@ -20409,8 +20409,8 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _get_override_roll_rate_method_offset = 15
     _set_override_roll_rate_method_offset = 16
     _get_airspeed_options_method_offset = 17
-    _get_fpa_mode_method_offset = 18
-    _set_fpa_mode_method_offset = 19
+    _get_flight_path_angle_mode_method_offset = 18
+    _set_flight_path_angle_mode_method_offset = 19
     _metadata = {
         "iid_data" : (5493265518926974794, 14820752937463885992),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -20555,21 +20555,21 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
         """Get the airspeed options."""
         return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_airspeed_options_metadata)
 
-    _get_fpa_mode_metadata = { "offset" : _get_fpa_mode_method_offset,
+    _get_flight_path_angle_mode_metadata = { "offset" : _get_flight_path_angle_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FPA_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE),) }
     @property
-    def fpa_mode(self) -> "SMOOTH_TURN_FPA_MODE":
+    def flight_path_angle_mode(self) -> "SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE":
         """Get or set the flight path angle mode."""
-        return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_fpa_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_flight_path_angle_mode_metadata)
 
-    _set_fpa_mode_metadata = { "offset" : _set_fpa_mode_method_offset,
+    _set_flight_path_angle_mode_metadata = { "offset" : _set_flight_path_angle_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FPA_MODE),) }
-    @fpa_mode.setter
-    def fpa_mode(self, newVal:"SMOOTH_TURN_FPA_MODE") -> None:
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE),) }
+    @flight_path_angle_mode.setter
+    def flight_path_angle_mode(self, newVal:"SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE") -> None:
         """Get or set the flight path angle mode."""
-        return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_fpa_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_flight_path_angle_mode_metadata, newVal)
 
     _property_names[heading_change] = "heading_change"
     _property_names[turn_mode] = "turn_mode"
@@ -20580,7 +20580,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[roll_angle] = "roll_angle"
     _property_names[override_roll_rate] = "override_roll_rate"
     _property_names[airspeed_options] = "airspeed_options"
-    _property_names[fpa_mode] = "fpa_mode"
+    _property_names[flight_path_angle_mode] = "flight_path_angle_mode"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategySmoothTurn."""
@@ -21350,14 +21350,14 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _set_relative_altitude_change_method_offset = 6
     _get_altitude_rate_method_offset = 7
     _set_altitude_rate_method_offset = 8
-    _get_fpa_method_offset = 9
-    _set_fpa_method_offset = 10
+    _get_flight_path_angle_method_offset = 9
+    _set_flight_path_angle_method_offset = 10
     _get_altitude_control_mode_method_offset = 11
     _set_altitude_control_mode_method_offset = 12
     _get_control_altitude_rate_value_method_offset = 13
     _set_control_altitude_rate_value_method_offset = 14
-    _get_control_fpa_value_method_offset = 15
-    _set_control_fpa_value_method_offset = 16
+    _get_control_flight_path_angle_value_method_offset = 15
+    _set_control_flight_path_angle_value_method_offset = 16
     _get_control_limit_mode_method_offset = 17
     _set_control_limit_mode_method_offset = 18
     _get_max_pitch_rate_method_offset = 19
@@ -21443,21 +21443,21 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Get or set the altitude rate for the specify altitude rate mode."""
         return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_altitude_rate_metadata, newVal)
 
-    _get_fpa_metadata = { "offset" : _get_fpa_method_offset,
+    _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def fpa(self) -> typing.Any:
+    def flight_path_angle(self) -> typing.Any:
         """Get or set the flight path angle for the specify wind frame flight path angle mode."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_flight_path_angle_metadata)
 
-    _set_fpa_metadata = { "offset" : _set_fpa_method_offset,
+    _set_flight_path_angle_metadata = { "offset" : _set_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @fpa.setter
-    def fpa(self, newVal:typing.Any) -> None:
+    @flight_path_angle.setter
+    def flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle for the specify wind frame flight path angle mode."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_flight_path_angle_metadata, newVal)
 
     _get_altitude_control_mode_metadata = { "offset" : _get_altitude_control_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21491,21 +21491,21 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Get or set the altitude rate control value for the hold initial altitude, specify altitude, and specify altitude change modes."""
         return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_altitude_rate_value_metadata, newVal)
 
-    _get_control_fpa_value_metadata = { "offset" : _get_control_fpa_value_method_offset,
+    _get_control_flight_path_angle_value_metadata = { "offset" : _get_control_flight_path_angle_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def control_fpa_value(self) -> typing.Any:
+    def control_flight_path_angle_value(self) -> typing.Any:
         """Get or set the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_control_fpa_value_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_control_flight_path_angle_value_metadata)
 
-    _set_control_fpa_value_metadata = { "offset" : _set_control_fpa_value_method_offset,
+    _set_control_flight_path_angle_value_metadata = { "offset" : _set_control_flight_path_angle_value_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @control_fpa_value.setter
-    def control_fpa_value(self, newVal:typing.Any) -> None:
+    @control_flight_path_angle_value.setter
+    def control_flight_path_angle_value(self, newVal:typing.Any) -> None:
         """Get or set the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_fpa_value_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_flight_path_angle_value_metadata, newVal)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21614,10 +21614,10 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[absolute_altitude] = "absolute_altitude"
     _property_names[relative_altitude_change] = "relative_altitude_change"
     _property_names[altitude_rate] = "altitude_rate"
-    _property_names[fpa] = "fpa"
+    _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[altitude_control_mode] = "altitude_control_mode"
     _property_names[control_altitude_rate_value] = "control_altitude_rate_value"
-    _property_names[control_fpa_value] = "control_fpa_value"
+    _property_names[control_flight_path_angle_value] = "control_flight_path_angle_value"
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[max_pitch_rate] = "max_pitch_rate"
     _property_names[fly_ballistic] = "fly_ballistic"
@@ -23955,13 +23955,13 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
 agcls.AgClassCatalog.add_catalog_entry((5702255453772112199, 1626181488337625527), BasicManeuverStrategyStationkeeping)
 agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrategyStationkeeping
 
-class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCallback):
+class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for the Relative Flight Path Angle Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_fpa_method_offset = 1
-    _set_fpa_method_offset = 2
+    _get_flight_path_angle_method_offset = 1
+    _set_flight_path_angle_method_offset = 2
     _get_anchor_altitude_offset_method_offset = 3
     _set_anchor_altitude_offset_method_offset = 4
     _get_maneuver_factor_method_offset = 5
@@ -23990,23 +23990,23 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverStrategyRelativeFPA)
+        return get_interface_property(attrname, BasicManeuverStrategyRelativeFlightPathAngle)
     
-    _get_fpa_metadata = { "offset" : _get_fpa_method_offset,
+    _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def fpa(self) -> typing.Any:
+    def flight_path_angle(self) -> typing.Any:
         """Get or set the flight path angle for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_flight_path_angle_metadata)
 
-    _set_fpa_metadata = { "offset" : _set_fpa_method_offset,
+    _set_flight_path_angle_metadata = { "offset" : _set_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @fpa.setter
-    def fpa(self, newVal:typing.Any) -> None:
+    @flight_path_angle.setter
+    def flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_flight_path_angle_metadata, newVal)
 
     _get_anchor_altitude_offset_metadata = { "offset" : _get_anchor_altitude_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24014,7 +24014,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def anchor_altitude_offset(self) -> float:
         """Get or set the goal height above or below the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_anchor_altitude_offset_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_anchor_altitude_offset_metadata)
 
     _set_anchor_altitude_offset_metadata = { "offset" : _set_anchor_altitude_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24022,7 +24022,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @anchor_altitude_offset.setter
     def anchor_altitude_offset(self, newVal:float) -> None:
         """Get or set the goal height above or below the target."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_anchor_altitude_offset_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_anchor_altitude_offset_metadata, newVal)
 
     _get_maneuver_factor_metadata = { "offset" : _get_maneuver_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24030,7 +24030,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def maneuver_factor(self) -> float:
         """Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_maneuver_factor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_maneuver_factor_metadata)
 
     _set_maneuver_factor_metadata = { "offset" : _set_maneuver_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24038,7 +24038,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @maneuver_factor.setter
     def maneuver_factor(self, newVal:float) -> None:
         """Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_maneuver_factor_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_maneuver_factor_metadata, newVal)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24046,7 +24046,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_limit_mode(self) -> "PROFILE_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_control_limit_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_control_limit_mode_metadata)
 
     _get_control_limit_pitch_rate_metadata = { "offset" : _get_control_limit_pitch_rate_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -24054,14 +24054,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_limit_pitch_rate(self) -> typing.Any:
         """Get the specified pitch rate for a control limit mode of specify max pitch rate."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_control_limit_pitch_rate_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_control_limit_pitch_rate_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(PROFILE_CONTROL_LIMIT), agmarshall.VariantArg,) }
     def set_control_limit(self, controlLimitMode:"PROFILE_CONTROL_LIMIT", controlLimitValue:typing.Any) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_control_limit_metadata, controlLimitMode, controlLimitValue)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
     _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24069,7 +24069,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_airspeed_options_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_airspeed_options_metadata)
 
     _get_min_absolute_altitude_metadata = { "offset" : _get_min_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24077,7 +24077,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def min_absolute_altitude(self) -> float:
         """Get the minimum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_min_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_min_absolute_altitude_metadata)
 
     _get_use_min_absolute_altitude_metadata = { "offset" : _get_use_min_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24085,14 +24085,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_min_absolute_altitude(self) -> bool:
         """Get the option to specify a minimum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_min_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_min_absolute_altitude_metadata)
 
     _set_min_absolute_altitude_metadata = { "offset" : _set_min_absolute_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_min_absolute_altitude(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the minimum absolute altitude."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_min_absolute_altitude_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_min_absolute_altitude_metadata, enable, altitude)
 
     _get_max_absolute_altitude_metadata = { "offset" : _get_max_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24100,7 +24100,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def max_absolute_altitude(self) -> float:
         """Get the maximum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_max_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_max_absolute_altitude_metadata)
 
     _get_use_max_absolute_altitude_metadata = { "offset" : _get_use_max_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24108,14 +24108,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_max_absolute_altitude(self) -> bool:
         """Get the option to specify a maximum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_max_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_max_absolute_altitude_metadata)
 
     _set_max_absolute_altitude_metadata = { "offset" : _set_max_absolute_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_max_absolute_altitude(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the maximum absolute altitude."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_max_absolute_altitude_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_max_absolute_altitude_metadata, enable, altitude)
 
     _get_min_altitude_relative_anchor_metadata = { "offset" : _get_min_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24123,7 +24123,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def min_altitude_relative_anchor(self) -> float:
         """Get the minimum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_min_altitude_relative_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_min_altitude_relative_anchor_metadata)
 
     _get_use_min_altitude_relative_anchor_metadata = { "offset" : _get_use_min_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24131,14 +24131,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_min_altitude_relative_anchor(self) -> bool:
         """Get the option to specify a minimum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_min_altitude_relative_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_min_altitude_relative_anchor_metadata)
 
     _set_min_altitude_relative_anchor_metadata = { "offset" : _set_min_altitude_relative_anchor_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_min_altitude_relative_anchor(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the minimum altitude offset from the target."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_min_altitude_relative_anchor_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_min_altitude_relative_anchor_metadata, enable, altitude)
 
     _get_max_altitude_relative_anchor_metadata = { "offset" : _get_max_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24146,7 +24146,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def max_altitude_relative_anchor(self) -> float:
         """Get the maximum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_max_altitude_relative_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_max_altitude_relative_anchor_metadata)
 
     _get_use_max_altitude_relative_anchor_metadata = { "offset" : _get_use_max_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24154,14 +24154,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_max_altitude_relative_anchor(self) -> bool:
         """Get the option to specify a maximum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_max_altitude_relative_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_max_altitude_relative_anchor_metadata)
 
     _set_max_altitude_relative_anchor_metadata = { "offset" : _set_max_altitude_relative_anchor_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_max_altitude_relative_anchor(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the maximum altitude offset from the target."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_max_altitude_relative_anchor_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_max_altitude_relative_anchor_metadata, enable, altitude)
 
     _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24169,16 +24169,16 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_compensate_for_coriolis_acceleration_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_compensate_for_coriolis_acceleration_metadata)
 
     _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @compensate_for_coriolis_acceleration.setter
     def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_compensate_for_coriolis_acceleration_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
-    _property_names[fpa] = "fpa"
+    _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[anchor_altitude_offset] = "anchor_altitude_offset"
     _property_names[maneuver_factor] = "maneuver_factor"
     _property_names[control_limit_mode] = "control_limit_mode"
@@ -24195,9 +24195,9 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverStrategyRelativeFPA."""
+        """Construct an object of type BasicManeuverStrategyRelativeFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeFPA)
+        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeFlightPathAngle)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24207,10 +24207,10 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFPA, [BasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFlightPathAngle, [BasicManeuverStrategyRelativeFlightPathAngle, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5235810298562675973, 15451148610208858280), BasicManeuverStrategyRelativeFPA)
-agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFPA"] = BasicManeuverStrategyRelativeFPA
+agcls.AgClassCatalog.add_catalog_entry((5235810298562675973, 15451148610208858280), BasicManeuverStrategyRelativeFlightPathAngle)
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFlightPathAngle"] = BasicManeuverStrategyRelativeFlightPathAngle
 
 class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure."""
@@ -38132,12 +38132,12 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_control_mode_method_offset = 1
     _set_control_mode_method_offset = 2
-    _get_command_fpa_method_offset = 3
-    _set_command_fpa_method_offset = 4
-    _get_control_fpa_dot_method_offset = 5
-    _set_control_fpa_dot_method_offset = 6
-    _get_stop_when_fpa_achieved_method_offset = 7
-    _set_stop_when_fpa_achieved_method_offset = 8
+    _get_command_flight_path_angle_method_offset = 3
+    _set_command_flight_path_angle_method_offset = 4
+    _get_control_flight_path_angle_dot_method_offset = 5
+    _set_control_flight_path_angle_dot_method_offset = 6
+    _get_stop_when_flight_path_angle_achieved_method_offset = 7
+    _set_stop_when_flight_path_angle_achieved_method_offset = 8
     _get_airspeed_options_method_offset = 9
     _get_wind_force_effective_area_method_offset = 10
     _set_wind_force_effective_area_method_offset = 11
@@ -38165,53 +38165,53 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
         """Get or set the control mode for the pitch 3D strategy."""
         return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_mode_metadata, newVal)
 
-    _get_command_fpa_metadata = { "offset" : _get_command_fpa_method_offset,
+    _get_command_flight_path_angle_metadata = { "offset" : _get_command_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def command_fpa(self) -> typing.Any:
+    def command_flight_path_angle(self) -> typing.Any:
         """Get or set the commanded flight path angle."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_command_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_command_flight_path_angle_metadata)
 
-    _set_command_fpa_metadata = { "offset" : _set_command_fpa_method_offset,
+    _set_command_flight_path_angle_metadata = { "offset" : _set_command_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @command_fpa.setter
-    def command_fpa(self, newVal:typing.Any) -> None:
+    @command_flight_path_angle.setter
+    def command_flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the commanded flight path angle."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_command_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_command_flight_path_angle_metadata, newVal)
 
-    _get_control_fpa_dot_metadata = { "offset" : _get_control_fpa_dot_method_offset,
+    _get_control_flight_path_angle_dot_metadata = { "offset" : _get_control_flight_path_angle_dot_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def control_fpa_dot(self) -> typing.Any:
+    def control_flight_path_angle_dot(self) -> typing.Any:
         """Get or set the flight path angle rate."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_control_fpa_dot_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_control_flight_path_angle_dot_metadata)
 
-    _set_control_fpa_dot_metadata = { "offset" : _set_control_fpa_dot_method_offset,
+    _set_control_flight_path_angle_dot_metadata = { "offset" : _set_control_flight_path_angle_dot_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @control_fpa_dot.setter
-    def control_fpa_dot(self, newVal:typing.Any) -> None:
+    @control_flight_path_angle_dot.setter
+    def control_flight_path_angle_dot(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle rate."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_fpa_dot_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_flight_path_angle_dot_metadata, newVal)
 
-    _get_stop_when_fpa_achieved_metadata = { "offset" : _get_stop_when_fpa_achieved_method_offset,
+    _get_stop_when_flight_path_angle_achieved_metadata = { "offset" : _get_stop_when_flight_path_angle_achieved_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def stop_when_fpa_achieved(self) -> bool:
+    def stop_when_flight_path_angle_achieved(self) -> bool:
         """Stop when the commanded flight path angle is achieved."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_stop_when_fpa_achieved_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_stop_when_flight_path_angle_achieved_metadata)
 
-    _set_stop_when_fpa_achieved_metadata = { "offset" : _set_stop_when_fpa_achieved_method_offset,
+    _set_stop_when_flight_path_angle_achieved_metadata = { "offset" : _set_stop_when_flight_path_angle_achieved_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @stop_when_fpa_achieved.setter
-    def stop_when_fpa_achieved(self, newVal:bool) -> None:
+    @stop_when_flight_path_angle_achieved.setter
+    def stop_when_flight_path_angle_achieved(self, newVal:bool) -> None:
         """Stop when the commanded flight path angle is achieved."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_stop_when_fpa_achieved_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_stop_when_flight_path_angle_achieved_metadata, newVal)
 
     _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -38238,9 +38238,9 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
         return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_wind_force_effective_area_metadata, newVal)
 
     _property_names[control_mode] = "control_mode"
-    _property_names[command_fpa] = "command_fpa"
-    _property_names[control_fpa_dot] = "control_fpa_dot"
-    _property_names[stop_when_fpa_achieved] = "stop_when_fpa_achieved"
+    _property_names[command_flight_path_angle] = "command_flight_path_angle"
+    _property_names[control_flight_path_angle_dot] = "control_flight_path_angle_dot"
+    _property_names[stop_when_flight_path_angle_achieved] = "stop_when_flight_path_angle_achieved"
     _property_names[airspeed_options] = "airspeed_options"
     _property_names[wind_force_effective_area] = "wind_force_effective_area"
 
