@@ -4,7 +4,7 @@ About PySTK
 PySTK is the next generation Python API for Ansys Systems Toolkit (STK). The API is an evolution of the existing STK Python API with the following goals:
 
 - PyAnsys compliance:
-   - The API integrates with the rest of `PyAnsys <https://docs.pyansys.com/>`_, enabling you to connect STK with other Ansys products.
+   - The API integrates with the rest of `PyAnsys`_, enabling you to connect STK with other Ansys products.
 
    - The API adopts the PyAnsys guidelines, including similar packaging, naming conventions, and documentation.
 
@@ -53,17 +53,17 @@ Multiple configurations and environments are supported, requiring specific instr
         * - **Environment**
           - **Details**
         * - Locally on Windows
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/local.html>`_
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/local.html>`_
+          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/local.html>`__
+            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/local.html>`__
         * - Locally on Linux
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/local.html>`_
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/local.html>`_
+          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/local.html>`__
+            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/local.html>`__
         * - Windows Docker container
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/docker.html>`_
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/docker.html>`_
+          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/docker.html>`__
+            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/docker.html>`__
         * - Linux Docker container
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/docker.html>`_
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/docker.html>`_ 
+          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/docker.html>`__
+            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/docker.html>`__
          
 
 Once your environment is setup, you can review the `user guide <https://stk.docs.pyansys.com/version/dev/user-guide.html>`_ to get acquainted with the API, or browse `examples <https://stk.docs.pyansys.com/version/dev/examples.html>`_. Additionally, the `API reference <https://stk.docs.pyansys.com/version/dev/api.html>`_ describes all types that are available through the API.

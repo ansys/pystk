@@ -64,6 +64,7 @@ html_css_files = ["css/highlight.css"]
 extensions = [
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx_design",
@@ -72,6 +73,8 @@ extensions = [
     "nbsphinx",
     "myst_parser",
 ]
+
+# Autosection label configuration
 
 # Intersphinx mapping
 intersphinx_mapping = {
