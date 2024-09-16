@@ -437,13 +437,3 @@ jobs:
       - uses: ansys/actions/build-library@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}
-
-  merge:
-    name: "Merge is approved"
-    runs-on: ubuntu-latest
-    needs: build-library
-    environment: needs-pystk-approvers
-    steps:
-      - name: "Only PySTK Approvers team can authorize this job"
-        run: |
-          echo "Merge is authorized"
