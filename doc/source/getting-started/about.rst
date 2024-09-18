@@ -44,29 +44,31 @@ Available configurations and environments
 
 Multiple configurations and environments are supported, requiring specific instructions to get setup. Refer to the table below to access prerequisites and installation instructions for your desired environment.
 
-.. jinja::
+.. list-table::
+    :widths: auto
+    :header-rows: 1
 
-    .. list-table::
-        :widths: 10 20 
-        :header-rows: 1
+    * - **Environment**
+      - **Prerequisites**
+      - **Installation**
+    * - Locally on Windows
+      - :ref:`Prerequisites <Windows local prerequisites>`
+      - :ref:`Installation <Install PySTK locally in Windows>`
+    * - Locally on Linux
+      - :ref:`Prerequisites <Linux local prerequisites>`
+      - :ref:`Installation <Install PySTK locally in Linux>`
+    * - Windows Docker container
+      - :ref:`Prerequisites <Windows Docker prerequisites>`
+      - :ref:`Installation <Install PySTK in a Windows container>`
+    * - Linux Docker container
+      - :ref:`Prerequisites <Linux Docker prerequisites>`
+      - :ref:`Installation <Install PySTK in a Linux container>`
+     
 
-        * - **Environment**
-          - **Details**
-        * - Locally on Windows
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/local.html>`__
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/local.html>`__
-        * - Locally on Linux
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/local.html>`__
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/local.html>`__
-        * - Windows Docker container
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/windows/docker.html>`__
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/windows/docker.html>`__
-        * - Linux Docker container
-          - - `Prerequisites <https://stk.docs.pyansys.com/version/dev/getting-started/prerequisites/linux/docker.html>`__
-            - `Installation instructions <https://stk.docs.pyansys.com/version/dev/getting-started/install/linux/docker.html>`__
-         
-
-Once your environment is setup, you can review the `user guide <https://stk.docs.pyansys.com/version/dev/user-guide.html>`_ to get acquainted with the API, or browse `examples <https://stk.docs.pyansys.com/version/dev/examples.html>`_. Additionally, the `API reference <https://stk.docs.pyansys.com/version/dev/api.html>`_ describes all types that are available through the API.
+Once your environment is setup, you can review the :ref:`user guide <User
+guide>` to get acquainted with the API, or browse :ref:`examples <Examples>`.
+Additionally, the :ref:`API reference` describes all types that are available
+through the API.
 
 Current limitations
 ===================
