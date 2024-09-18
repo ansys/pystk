@@ -49,8 +49,8 @@ Multiple configurations and environments are supported, requiring specific instr
     :header-rows: 1
 
     * - **Environment**
-      - **Prerequisites**
-      - **Installation**
+      - **Prerequisites guide**
+      - **Installation guide**
     * - Locally on Windows
       - :ref:`Prerequisites <Windows local prerequisites>`
       - :ref:`Installation <Install PySTK locally in Windows>`
