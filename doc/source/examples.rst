@@ -7,6 +7,7 @@ Basic examples
 This series of tutorials explains basic examples involving STK objects using Python and PySTK.
 
 .. nbgallery::
+    :caption: Basic examples
 
     examples/facility-to-satellite-access
     examples/sensor-access
@@ -17,6 +18,7 @@ Coverage examples
 This series of tutorials explains different ways to calculate satellite coverage using Python and PySTK.
 
 .. nbgallery::
+    :caption: Coverage examples
 
     examples/satellite-coverage-calculator
     examples/satellite-coverage-analysis
