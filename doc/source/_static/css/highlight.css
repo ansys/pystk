@@ -17,5 +17,10 @@
     display: none;
 }
 
+/* Remove the caption created by nbgallery within the gallery itself */
+.toctree-wrapper > p.caption {
+    display: none;
+}
+
 /* Ensure that text in the code blocks has the desired font-size */
 .highlight { font-size: 1rem; background: #f0f0f0 !important; }
