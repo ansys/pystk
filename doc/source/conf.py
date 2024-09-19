@@ -118,6 +118,11 @@ suppress_warnings = [
     # Sphinx-design downloads some font-awesome icons that conflict with the
     # ones in pydata-sphinx-theme.
     "design.fa-build",
+    # Some pages, like the API reference, follow a template. This template
+    # contains some sections for every object. Because multiple objects are
+    # documented, the same sections repeat across the documentation, fooling
+    # `autosectionlabel` into thinking that the same section is being repeated.
+    "autosectionlabel.*",
 ]
 
 # The suffix(es) of source filenames
