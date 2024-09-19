@@ -100,14 +100,13 @@ Current limitations
 
 The PySTK API currently has the following limitations:
 
--  UI plugins are not currently supported.
+- UI plugins are not currently supported.
 
--  Enabling socket connection by setting
-  :py:attr:`STKXApplication.enable_connect` to ``True`` is not currently
-  supported. Connect commands may be used through the
-  :py:meth:`StkObjectRoot.execute_command` method.
+- Enabling socket connection by setting :py:attr:`STKXApplication.enable_connect`
+  to ``True`` is not currently supported. Connect commands may be used 
+  through the :py:meth:`StkObjectRoot.execute_command` method.
 
--  When using gRPC, the following methods and properties
+- When using gRPC, the following methods and properties
   :py:meth:`AccessConstraintPluginMinMax.get_raw_plugin_object`,
   :py:meth:`VehiclePluginPropagator.get_raw_plugin_object`,
   :py:attr:`ScatteringPointProviderPlugin.raw_plugin_object`,
