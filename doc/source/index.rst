@@ -36,9 +36,8 @@ and payloads in a realistic mission context. You are viewing version |version|.
         :link-type: doc
         :padding: 2 2 2 2
 
-        A detailed guide describing the PySTK API. This guide documents all the
-        methods and properties for each interface, class, and
-        enumerations of each PySTK module.
+        A detailed guide describing the PySTK modules, classes, and enums.
+
     {% endif %}
 
     {% if build_examples %}
