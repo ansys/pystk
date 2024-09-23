@@ -28,27 +28,27 @@ and payloads in a realistic mission context. You are viewing version |version|.
 
         Understand key concepts and the main objects of PySTK.
 
-    .. jinja:: main_toctree
- 
-        {% if build_api %}
-            .. grid-item-card:: API reference :fa:`wrench`
-                :link: api
-                :link-type: doc
-                :padding: 2 2 2 2
- 
-                A detailed guide describing the PySTK API. This guide documents all the
-                methods and properties for each interface, class, and
-                enumerations of each PySTK module.
-        {% endif %}
- 
-        {% if build_examples %}
-            .. grid-item-card:: :fa:`clone` Examples
-                :link: examples
-                :link-type: doc
-                :padding: 2 2 2 2
- 
-                Learn how to use PySTK with examples that demonstrate its capabilities.
-        {% endif %}
+.. jinja:: main_toctree
+
+    {% if build_api %}
+    .. grid-item-card:: API reference :fa:`wrench`
+        :link: api
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        A detailed guide describing the PySTK API. This guide documents all the
+        methods and properties for each interface, class, and
+        enumerations of each PySTK module.
+    {% endif %}
+
+    {% if build_examples %}
+    .. grid-item-card:: :fa:`clone` Examples
+        :link: examples
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Learn how to use PySTK with examples that demonstrate its capabilities.
+    {% endif %}
 
     .. grid-item-card:: :fa:`user-group` Contribute
         :link: contributing
