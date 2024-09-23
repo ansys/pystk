@@ -28,7 +28,7 @@ and payloads in a realistic mission context. You are viewing version |version|.
 
         Understand key concepts and the main objects of PySTK.
 
-.. jinja:: main_toctree
+    .. jinja:: main_toctree
 
     {% if build_api %}
     .. grid-item-card:: API reference :fa:`wrench`
