@@ -30,7 +30,7 @@ and payloads in a realistic mission context. You are viewing version |version|.
 
     .. jinja:: main_toctree
 
-    {% if build_api %}
+        {% if build_api %}
     .. grid-item-card:: API reference :fa:`wrench`
         :link: api
         :link-type: doc
@@ -38,16 +38,16 @@ and payloads in a realistic mission context. You are viewing version |version|.
 
         A detailed guide describing the PySTK modules, classes, and enums.
 
-    {% endif %}
+        {% endif %}
 
-    {% if build_examples %}
+        {% if build_examples %}
     .. grid-item-card:: :fa:`clone` Examples
         :link: examples
         :link-type: doc
         :padding: 2 2 2 2
 
         Learn how to use PySTK with examples that demonstrate its capabilities.
-    {% endif %}
+        {% endif %}
 
     .. grid-item-card:: :fa:`user-group` Contribute
         :link: contributing
