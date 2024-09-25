@@ -6,35 +6,35 @@ API is an evolution of the existing STK Python API with the following goals:
 
 - PyAnsys compliance:
 
-   - The API integrates with the rest of `PyAnsys`_ , enabling you to connect
-     STK with other Ansys products.
+  - The API integrates with the rest of `PyAnsys`_ , enabling you to connect
+    STK with other Ansys products.
 
-   - The API adopts the PyAnsys guidelines, including similar packaging, naming
-     conventions, and documentation.
+  - The API adopts the PyAnsys guidelines, including similar packaging, naming
+    conventions, and documentation.
 
-   - The API integrates better with the Python ecosystem by following the best
-     practices in the `Python Enhancement Proposals (PEP8) Style Guide`_ .
+  - The API integrates better with the Python ecosystem by following the best
+    practices in the `Python Enhancement Proposals (PEP8) Style Guide`_ .
 
 - Usability improvements:
 
-   - The interface, class, method and property names have been updated to
-     remove cryptic abbreviations, making your code easier to read and
-     maintain, and facilitates discovering and locating API features.
+  - The interface, class, method and property names have been updated to
+    remove cryptic abbreviations, making your code easier to read and
+    maintain, and facilitates discovering and locating API features.
 
-   - Better code completion is now available in IDEs (Visual Studio Code,
-     PyCharm) or Jupyter Lab.
+  - Better code completion is now available in IDEs (Visual Studio Code,
+    PyCharm) or Jupyter Lab.
 
-   - The number of types included in the API has been greatly reduced by
-     merging redundant interfaces and classes.
+  - The number of types included in the API has been greatly reduced by
+    merging redundant interfaces and classes.
 
 - Documentation improvements:
 
-   - The documentation has been reorganized and features an :ref:`API reference`
-     that is specific to Python, whereas the `STK Programming Help`_ covers
-     multiple languages, including C#, Java and Python.
+  - The documentation has been reorganized and features an :ref:`API reference`
+    that is specific to Python, whereas the `STK Programming Help`_ covers
+    multiple languages, including C#, Java and Python.
 
-   - :ref:`Examples <Examples>` provided to demonstrate how to use the API for
-     specific aerospace applications.
+  - :ref:`Examples <Examples>` provided to demonstrate how to use the API for
+    specific aerospace applications.
 
 As a result of this evolution, existing code must be migrated to the PySTK API.
 For details on migrating your code, refer to the Migrate to PySTK topic.
