@@ -103,7 +103,7 @@ The PySTK API currently has the following limitations:
 - UI plugins are not currently supported.
 
 - Enabling socket connection by setting :py:attr:`STKXApplication.enable_connect`
-  to ``True`` is not currently supported. Connect commands may be used 
+  to :obj:`True` is not currently supported. Connect commands may be used 
   through the :py:meth:`StkObjectRoot.execute_command` method.
 
 - When using gRPC, the following methods and properties
@@ -116,6 +116,6 @@ The PySTK API currently has the following limitations:
   :py:attr:`IRadarClutterMapModelPlugin.raw_plugin_object`,
   :py:attr:`RadarCrossSectionComputeStrategyPlugin.raw_plugin_object`,
   :py:attr:`RadarStcAttenuationPlugi.raw_plugin_objectn` are not available and
-  always return :py:class:`None`.
+  always return :obj:`None`.
 
 - Engine plugins are not currently supported.
