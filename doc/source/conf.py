@@ -64,6 +64,7 @@ html_css_files = ["css/highlight.css"]
 extensions = [
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx_design",
@@ -117,6 +118,14 @@ suppress_warnings = [
     # Sphinx-design downloads some font-awesome icons that conflict with the
     # ones in pydata-sphinx-theme.
     "design.fa-build",
+    # If Jinja is used to skip the rendering of the examples and the API reference,
+    # Sphinx design complains about the indentation of these cards.
+    "design.grid",
+    # Some pages, like the API reference, follow a template. This template
+    # contains some sections for every object. Because multiple objects are
+    # documented, the same sections repeat across the documentation, fooling
+    # `autosectionlabel` into thinking that the same section is being repeated.
+    "autosectionlabel.*",
 ]
 
 # The suffix(es) of source filenames

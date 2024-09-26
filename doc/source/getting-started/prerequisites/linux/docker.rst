@@ -1,2 +1,2 @@
-Windows Docker prerequisites
-############################
+Linux Docker prerequisites
+##########################
