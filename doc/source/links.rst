@@ -3,7 +3,6 @@
 .. _PySTK repository: https://github.com/ansys-internal/pystk
 .. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
 
-
 .. Ansys products
 
 .. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
@@ -16,7 +15,6 @@
 
 .. _Python Enhancement Proposals (PEP8) Style Guide: https://peps.python.org/pep-0008/
 
-
 .. Python libraries
 
 .. _Python: https://www.python.org/
@@ -24,7 +22,6 @@
 .. _win32com: https://pypi.org/project/pywin32/
 .. _ctypes: https://docs.python.org/3/library/ctypes.html
 .. _pip: https://pypi.org/project/pip/
-
 
 .. Docker links
 
@@ -35,3 +32,7 @@
 .. _docker-compose.yml: https://docs.docker.com/compose/compose-file/
 .. _Docker Engine: https://docs.docker.com/engine/ 
 .. _Docker Compose: https://docs.docker.com/compose/
+
+.. Other links
+
+.. _Contributor Covenant Code of Conduct: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
