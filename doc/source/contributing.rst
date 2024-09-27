@@ -38,7 +38,8 @@ Start by selecting your role in the project:
 .. toctree::
     :hidden:
     :maxdepth: 3
+    :caption: Contributing
 
-    contributing/user
-    contributing/documentarian
-    contributing/developer
+    User<contributing/user>
+    Documentarian<contributing/documentarian>
+    Developer<contributing/developer>

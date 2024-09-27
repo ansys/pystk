@@ -144,6 +144,10 @@ links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
+# -- Autosectionlabel configuration ------------------------------------------
+autosectionlabel_maxdepth = 6
+
+
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
 linkcheck_ignore = [
@@ -307,6 +311,7 @@ if not WHEELHOUSE_PATH.exists():
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
+    "PYSTK_VERSION": version,
     "STK_VERSION": "12.9.0",
 }
 

@@ -1,6 +1,8 @@
 .. PySTK repository links
 
 .. _PySTK repository: https://github.com/ansys-internal/pystk
+.. _PySTK issues: https://github.com/ansys-internal/pystk/issues
+.. _PySTK discussions: https://github.com/ansys-internal/pystk/discussions
 .. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
 
 .. Ansys products
@@ -22,6 +24,7 @@
 .. _win32com: https://pypi.org/project/pywin32/
 .. _ctypes: https://docs.python.org/3/library/ctypes.html
 .. _pip: https://pypi.org/project/pip/
+.. _Tox: https://tox.wiki/en/stable/
 
 .. Docker links
 
@@ -33,6 +36,11 @@
 .. _Docker Engine: https://docs.docker.com/engine/ 
 .. _Docker Compose: https://docs.docker.com/compose/
 
+.. GitHub documentation
+
+.. _Connection to GitHub with SSH: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
 .. Other links
 
 .. _Contributor Covenant Code of Conduct: https://www.contributor-covenant.org/version/2/1/code_of_conduct/
+.. _git: https://git-scm.com/
