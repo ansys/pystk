@@ -24,6 +24,28 @@ Contributing as a developer
 
         Install the project in editable mode.
 
+    .. grid-item-card:: :fab:`docker` Build Docker containers
+        :padding: 2 2 2 2
+        :link: build-docker-containers
+        :link-type: ref
+
+        Build Docker containers for testing.
+
+    .. grid-item-card:: :fa:`vial-circle-check` Run the tests
+        :padding: 2 2 2 2
+        :link: run-tests
+        :link-type: ref
+
+        Verify your changes by testing the project.
+
+    .. grid-item-card:: :fa:`arrows-spin` Run the CI/CD pipelines
+        :padding: 2 2 2 2
+        :link: run-pipelines
+        :link-type: ref
+
+        Understand the different CI/CD pipelines.
+
+
 .. _fork-the-repository:
 
 Fork the repository
@@ -171,3 +193,47 @@ Finally, verify the installation by listing all the different environments
             * - {{ name }}
               - {{ description }}
             {% endfor %}
+
+.. _build-docker-containers:
+
+Build Docker containers
+=======================
+
+STK is containerized using Docker. This allows you to deploy the project in
+multiple environments without having to worry about dependencies.
+
+.. _run-tests:
+
+Run tests
+=========
+
+Once you have made your changes, you can run the tests to verify that your
+modifications did not break the project. PySTK tests support different markers
+to avoid running the whole suite of tests. These markers are associated to a
+dedicated `Tox`_ environment.
+
+.. jinja:: toxenvs
+
+    .. dropdown:: Testing environments
+        :animate: fade-in
+        :icon: three-bars
+
+        .. list-table::
+            :header-rows: 1
+            :widths: auto
+
+            * - Environment
+              - Command
+            {% for environment in envs %}
+            {% set name, description  = environment.split("->") %}
+            {% if name.startswith("tests-")%}
+            * - {{ name }}
+              - python -m tox -e {{ name }}
+            {% endif %}
+            {% endfor %}
+
+
+.. _run-pipelines:
+
+Run CI/CD pipelines
+===================
