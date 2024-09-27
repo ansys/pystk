@@ -33,7 +33,7 @@ and payloads in a realistic mission context. You are viewing version |version|.
     
         {% if build_api %}
     
-        .. grid-item-card:: API reference :fa:`wrench`
+        .. grid-item-card:: :fa:`wrench` API reference
             :link: api
             :link-type: doc
             :padding: 2 2 2 2
