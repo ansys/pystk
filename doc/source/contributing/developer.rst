@@ -154,5 +154,20 @@ Finally, verify the installation by listing all the different environments
 
     python -m tox list
 
+.. jinja:: toxenvs
 
+    .. dropdown:: Default Tox environments
+        :animate: fade-in
+        :icon: three-bars
 
+        .. list-table::
+            :header-rows: 1
+            :widths: auto
+
+            * - Environment
+              - Description
+            {% for environment in envs %}
+            {% set name, description  = environment.split("->") %}
+            * - {{ name }}
+              - {{ description }}
+            {% endfor %}
