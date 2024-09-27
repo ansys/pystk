@@ -3,8 +3,6 @@ IVehicleGraphics3DTickData
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGraphics3DTickData
 
-   object
-   
    Base interface IAgVeVOTickData. IAgVeVOTickDataLine and IAgVeVOTickDataPoint derive from this.
 
 .. py:currentmodule:: IVehicleGraphics3DTickData

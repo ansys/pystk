@@ -3,8 +3,6 @@ ILLAPosition
 
 .. py:class:: ansys.stk.core.stkobjects.ILLAPosition
 
-   object
-   
    Interface to set and retrieve the LLA position type.
 
 .. py:currentmodule:: ILLAPosition

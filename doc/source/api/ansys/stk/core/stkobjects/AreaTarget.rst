@@ -84,19 +84,19 @@ Property detail
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.AreaTarget.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the area target. Basic constraints for area targets apply to all points within or along the area target. If the constraint is satisfied for at least one point, access to the area target is considered valid.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics
-    :type: IAreaTargetGraphics
+    :type: AreaTargetGraphics
 
     Get the area target's 2D Graphics properties.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.AreaTarget.graphics_3d
-    :type: IAreaTargetGraphics3D
+    :type: AreaTargetGraphics3D
 
     Get the area target's 3D Graphics properties.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.AreaTarget.common_tasks
-    :type: IAreaTargetCommonTasks
+    :type: AreaTargetCommonTasks
 
     Common tasks associated with AreaTargets.
 

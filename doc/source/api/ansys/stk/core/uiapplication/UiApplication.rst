@@ -32,13 +32,13 @@ Overview
               - Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.quit`
               - Shuts down the application.
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.file_open_dialog_ext`
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.file_open_dialog_extension`
               - Brings up a standard File Open Dialog and returns an object representing the selected file.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.directory_picker_dialog`
               - Brings up the Directory Picker Dialog and returns a selected directory name.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.open_log_file`
               - Specify the current log file to be written to.
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.log_msg`
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.log_message`
               - Log the Message specified.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.create_application`
               - Create a new instance of the application model root object.
@@ -67,7 +67,7 @@ Overview
               - Gets/sets a horizontal coordinate of the main window.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.window_state`
               - Gets/sets the state of the main window.
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.mru_list`
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.most_recently_used_list`
               - Returns a collection most recently used files.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiApplication.path`
               - Returns the complete path to the application, excluding the final separator and name of the application. Read-only String.
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: windows
     :canonical: ansys.stk.core.uiapplication.UiApplication.windows
-    :type: IUiWindowsCollection
+    :type: IWindowsCollection
 
     Returns a collection of windows.
 
@@ -147,13 +147,13 @@ Property detail
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uiapplication.UiApplication.window_state
-    :type: WINDOW_STATE
+    :type: APPLICATION_WINDOW_STATE
 
     Gets/sets the state of the main window.
 
-.. py:property:: mru_list
-    :canonical: ansys.stk.core.uiapplication.UiApplication.mru_list
-    :type: IMRUCollection
+.. py:property:: most_recently_used_list
+    :canonical: ansys.stk.core.uiapplication.UiApplication.most_recently_used_list
+    :type: MostRecentlyUsedCollection
 
     Returns a collection most recently used files.
 
@@ -296,8 +296,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: file_open_dialog_ext(self, allowMultiSelect: bool, defaultExt: str, filter: str, initialDir: str) -> UiFileOpenExt
-    :canonical: ansys.stk.core.uiapplication.UiApplication.file_open_dialog_ext
+.. py:method:: file_open_dialog_extension(self, allowMultiSelect: bool, defaultExt: str, filter: str, initialDir: str) -> UiFileOpenDialogExtension
+    :canonical: ansys.stk.core.uiapplication.UiApplication.file_open_dialog_extension
 
     Brings up a standard File Open Dialog and returns an object representing the selected file.
 
@@ -310,7 +310,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~UiFileOpenExt`
+        :obj:`~UiFileOpenDialogExtension`
 
 
 .. py:method:: directory_picker_dialog(self, title: str, initialDir: str) -> str
@@ -330,7 +330,7 @@ Method detail
 
 
 
-.. py:method:: open_log_file(self, logFileName: str, logFileMode: OPEN_LOG_FILE_MODE) -> bool
+.. py:method:: open_log_file(self, logFileName: str, logFileMode: APPLICATION_OPEN_LOG_FILE_MODE) -> bool
     :canonical: ansys.stk.core.uiapplication.UiApplication.open_log_file
 
     Specify the current log file to be written to.
@@ -338,20 +338,20 @@ Method detail
     :Parameters:
 
     **logFileName** : :obj:`~str`
-    **logFileMode** : :obj:`~OPEN_LOG_FILE_MODE`
+    **logFileMode** : :obj:`~APPLICATION_OPEN_LOG_FILE_MODE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: log_msg(self, msgType: UI_LOG_MSG_TYPE, msg: str) -> None
-    :canonical: ansys.stk.core.uiapplication.UiApplication.log_msg
+.. py:method:: log_message(self, msgType: APPLICATION_LOG_MESSAGE_TYPE, msg: str) -> None
+    :canonical: ansys.stk.core.uiapplication.UiApplication.log_message
 
     Log the Message specified.
 
     :Parameters:
 
-    **msgType** : :obj:`~UI_LOG_MSG_TYPE`
+    **msgType** : :obj:`~APPLICATION_LOG_MESSAGE_TYPE`
     **msg** : :obj:`~str`
 
     :Returns:

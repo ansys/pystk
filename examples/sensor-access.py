@@ -63,7 +63,7 @@ root.rewind()
 
 # ## Add the air traffic control center
 
-# The air traffic control center's site is modeled with a place object. The radar site is located at  a latitude of $38.8006^\circ$ and a longitude of $-104.6784^\circ$. The radar's antenna is $50$ ft ($0.01524$ km) above the ground. 
+# The air traffic control center's site is modeled with a place object. The radar site is located at  a latitude of $38.8006^\circ$ and a longitude of $-104.6784^\circ$. The radar's antenna is $50$ ft ($0.01524$ km) above the ground.
 
 # First, insert a place object to represent the airport's radar site:
 
@@ -80,7 +80,7 @@ radar_site.position.assign_geodetic(38.8006, -104.6784, 0.01524)
 
 # ## Add relevant locations
 
-# Two places of interest in the vicinity of the radar site are Cheyenne, Wyoming and Raton, New Mexico. 
+# Two places of interest in the vicinity of the radar site are Cheyenne, Wyoming and Raton, New Mexico.
 
 # First, add a place object to represent Cheyenne:
 
@@ -171,7 +171,7 @@ from ansys.stk.core.stkobjects import ORBIT_STATE_TYPE
 orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
 # -
 
-# Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semimajor Axis and Eccentricity: 
+# Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semimajor Axis and Eccentricity:
 
 # +
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
@@ -233,7 +233,9 @@ globe_plotter.show()
 
 # First, insert a sensor on the satellite. By default, the sensor's type is fixed.
 
-fixed_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "FixedSatelliteSensor")
+fixed_sat_sensor = satellite.children.new(
+    STK_OBJECT_TYPE.SENSOR, "FixedSatelliteSensor"
+)
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $45^\circ$ and an angular resolution of $1^\circ$:
 
@@ -264,7 +266,9 @@ fixed_sat_access.compute_access()
 
 # Then, use the access object's data providers to get an Access Data report for the time period between the scenario's start and end times. Convert the report to a pandas data frame for easier viewing:
 
-fixed_sat_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+fixed_sat_access.data_providers.item("Access Data").exec(
+    scenario.start_time, scenario.stop_time
+).data_sets.to_pandas_dataframe()
 
 # There are two rows in the dataframe, each corresponding to an access. The access durations were approximately 222 and 156 seconds.
 
@@ -274,15 +278,17 @@ fixed_sat_access.data_providers.item("Access Data").exec(scenario.start_time, sc
 
 # First, insert a sensor on the satellite:
 
-moving_sat_sensor = satellite.children.new(STK_OBJECT_TYPE.SENSOR, "MovingSatelliteSensor")
+moving_sat_sensor = satellite.children.new(
+    STK_OBJECT_TYPE.SENSOR, "MovingSatelliteSensor"
+)
 
-# The sensor is inserted as a fixed sensor by default, so set the sensor's pointing type to targeted: 
+# The sensor is inserted as a fixed sensor by default, so set the sensor's pointing type to targeted:
 
 # +
 from ansys.stk.core.stkobjects import SENSOR_POINTING
 
 
-moving_sat_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED) 
+moving_sat_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
 # -
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $5^\circ$ and an angular resolution of $1^\circ$:
@@ -308,7 +314,9 @@ moving_sat_access.compute_access()
 
 # Then, use the access object's data providers to get an Access Data report for the time period between the scenario's start and end times and convert the report to a pandas data frame:
 
-moving_sat_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+moving_sat_access.data_providers.item("Access Data").exec(
+    scenario.start_time, scenario.stop_time
+).data_sets.to_pandas_dataframe()
 
 # The targeted sensor is able to access Raton 8 times, as opposed to the fixed sensor's 2 accesses. The targeted sensor's accesses are also longer, ranging between approximately 549 and 946 seconds. The increased access is because the targeted sensor locks onto the assigned target using the sensor's boresight. This represents point-to-point access. Because the access is only constrained by the line-of-site, the targeted sensor can access Raton from horizon to horizon. The field of view of the fixed sensor has to pass over Raton to be able to access it, so the access time for the targeted sensor is much higher.
 
@@ -337,7 +345,9 @@ radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
 
 
-dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
+dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.RANGE
+)
 # -
 
 # Then, set the constraint to have a maximum range of $150$ km:
@@ -357,7 +367,9 @@ dome_range_constraint.max = 150
 from ansys.stk.core.stkobjects import SENSOR_PROJECTION_DISTANCE_TYPE
 
 
-radar_dome_sensor.graphics.projection.distance_type = SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+radar_dome_sensor.graphics.projection.distance_type = (
+    SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+)
 radar_dome_sensor.graphics.projection.use_constraints = True
 radar_dome_sensor.graphics.projection.show_on_2d_map = True
 # -
@@ -380,7 +392,11 @@ radar_dome_access.compute_access()
 
 # View the Access Data report for the scenario's duration as a pandas dataframe:
 
-radar_dome_access_df = radar_dome_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+radar_dome_access_df = (
+    radar_dome_access.data_providers.item("Access Data")
+    .exec(scenario.start_time, scenario.stop_time)
+    .data_sets.to_pandas_dataframe()
+)
 
 radar_dome_access_df
 
@@ -390,20 +406,25 @@ radar_dome_access_df
 
 # An AER (azimuth, elevation, and range) report describes the location of the aircraft when it is within the sensor's view. This data can be useful for many purposes, including air traffic control. To get the AER report, first select the AER Data report from the access's data providers. Then, select the Default report from the `IDataProviders` object stored in the `IDataProviderGroup`'s `group` property. Finally, convert the report to a pandas dataframe:
 
-aer_df = radar_dome_access.data_providers.item("AER Data").group.item("Default").exec(scenario.start_time, scenario.stop_time, 60).data_sets.to_pandas_dataframe()
+aer_df = (
+    radar_dome_access.data_providers.item("AER Data")
+    .group.item("Default")
+    .exec(scenario.start_time, scenario.stop_time, 60)
+    .data_sets.to_pandas_dataframe()
+)
 
 # It is now possible to graph the azimuth, elevation, and range data:
 
 # +
-import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # Convert columns to correct types
-aer_df['time'] = pd.to_datetime(aer_df["time"])
-aer_df.set_index('time', inplace=True)
-cols = ['azimuth', 'elevation', 'range']
+aer_df["time"] = pd.to_datetime(aer_df["time"])
+aer_df.set_index("time", inplace=True)
+cols = ["azimuth", "elevation", "range"]
 aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
 
 # Create a plot and duplicate the x-axis
@@ -411,15 +432,19 @@ fig, ax1 = plt.subplots(figsize=(8, 8))
 ax2 = ax1.twinx()
 
 # Plot range, azimuth, and elevation
-line1, = ax2.plot(aer_df.index, aer_df['range'], color='hotpink', label='Range (km)')
-line2, = ax1.plot(aer_df.index, aer_df['azimuth'], color='skyblue', label='Azimuth (deg)')
-line3, = ax1.plot(aer_df.index, aer_df['elevation'], color='gold', label='Elevation (deg)')
+(line1,) = ax2.plot(aer_df.index, aer_df["range"], color="hotpink", label="Range (km)")
+(line2,) = ax1.plot(
+    aer_df.index, aer_df["azimuth"], color="skyblue", label="Azimuth (deg)"
+)
+(line3,) = ax1.plot(
+    aer_df.index, aer_df["elevation"], color="gold", label="Elevation (deg)"
+)
 
 # Set title and axes labels
 ax1.set_title("Azimuth, Elevation, and Range over Time")
-ax1.set_xlabel('Time')
+ax1.set_xlabel("Time")
 ax1.set_ylabel("Angle (deg)")
-ax2.set_ylabel('Distance (km)')
+ax2.set_ylabel("Distance (km)")
 
 # Combine legends
 lines = [line1, line2, line3]
@@ -428,10 +453,10 @@ ax1.legend(lines, labels, shadow=True)
 
 # Configure style
 ax1.set_facecolor("whitesmoke")
-ax1.grid(visible=True, which='both', linestyle='--')
+ax1.grid(visible=True, which="both", linestyle="--")
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M')
+formatter = md.DateFormatter("%H:%M")
 ax1.xaxis.set_major_formatter(formatter)
 # Set major and minor locators
 xlocator_major = md.MinuteLocator(interval=10)
@@ -476,7 +501,9 @@ radar_sweep_sensor.pointing.spin_axis_cone_angle = 55
 
 # First, add a range constraint to the sweeping sensor:
 
-sweep_range_constraint =  radar_sweep_sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
+sweep_range_constraint = radar_sweep_sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.RANGE
+)
 
 # Then, configure the constraint to a maximum range of $150$ km:
 
@@ -491,7 +518,9 @@ sweep_range_constraint.max = 150
 from ansys.stk.core.utilities.colors import Color
 
 
-radar_sweep_sensor.graphics.projection.distance_type = SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+radar_sweep_sensor.graphics.projection.distance_type = (
+    SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+)
 radar_sweep_sensor.graphics.projection.use_constraints = True
 radar_sweep_sensor.graphics.projection.show_on_2d_map = True
 radar_sweep_sensor.graphics.color = Color.from_rgb(247, 57, 57)
@@ -514,7 +543,11 @@ sweeping_access.compute_access()
 
 # View the Access Data report as a pandas dataframe:
 
-sweeping_access_df = sweeping_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+sweeping_access_df = (
+    sweeping_access.data_providers.item("Access Data")
+    .exec(scenario.start_time, scenario.stop_time)
+    .data_sets.to_pandas_dataframe()
+)
 
 sweeping_access_df
 
@@ -540,24 +573,26 @@ sweeping_access_df.mean(numeric_only=True)["duration"]
 import matplotlib.dates as md
 
 
-#Convert data to correct type
-sweeping_access_df['start time'] = pd.to_datetime(sweeping_access_df["start time"])
+# Convert data to correct type
+sweeping_access_df["start time"] = pd.to_datetime(sweeping_access_df["start time"])
 
 # Plot data
-ax = sweeping_access_df.plot(x='start time', y='duration', color='deepskyblue', linewidth=0.5)
+ax = sweeping_access_df.plot(
+    x="start time", y="duration", color="deepskyblue", linewidth=0.5
+)
 
 # Set title and axes labels
-ax.set_title('Access Duration over Time')
+ax.set_title("Access Duration over Time")
 ax.set_xlabel("Start Time")
-ax.set_ylabel('Duration (seconds)')
+ax.set_ylabel("Duration (seconds)")
 
 # Configure the style of the plot
 ax.get_legend().remove()
 ax.set_facecolor("whitesmoke")
-ax.grid(visible=True, which='both')
+ax.grid(visible=True, which="both")
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M:%S')
+formatter = md.DateFormatter("%H:%M:%S")
 ax.xaxis.set_major_formatter(formatter)
 
 plt.show()
@@ -577,7 +612,11 @@ fixed_aircraft_access.compute_access()
 
 # Convert the "Access Duration" report to a pandas dataframe:
 
-fixed_aircraft_access_df = fixed_aircraft_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+fixed_aircraft_access_df = (
+    fixed_aircraft_access.data_providers.item("Access Data")
+    .exec(scenario.start_time, scenario.stop_time)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Then, create an access between the satellite's moving sensor and the aircraft:
 
@@ -589,35 +628,73 @@ moving_aircraft_access.compute_access()
 
 # Finally, convert the "Access Duration" report to a pandas dataframe:
 
-moving_aircraft_access_df = moving_aircraft_access.data_providers.item("Access Data").exec(scenario.start_time, scenario.stop_time).data_sets.to_pandas_dataframe()
+moving_aircraft_access_df = (
+    moving_aircraft_access.data_providers.item("Access Data")
+    .exec(scenario.start_time, scenario.stop_time)
+    .data_sets.to_pandas_dataframe()
+)
 
 # Now, there are access duration reports for the accesses between all four sensors in the scenario and the aircraft. Group these reports into a list:
 
-access_reports = [fixed_aircraft_access_df, moving_aircraft_access_df, sweeping_access_df, radar_dome_access_df]
+access_reports = [
+    fixed_aircraft_access_df,
+    moving_aircraft_access_df,
+    sweeping_access_df,
+    radar_dome_access_df,
+]
 
 # Convert the start and stop times for each report to a time format, and the duration columns to a time delta format:
 
 for report in access_reports:
-    report['start time'] = pd.to_datetime(report["start time"])
-    report['stop time'] = pd.to_datetime(report["stop time"])
-    report['duration'] = pd.to_numeric(report['duration'])
-    report['duration'] = pd.to_timedelta(report['duration'], unit='seconds')
+    report["start time"] = pd.to_datetime(report["start time"])
+    report["stop time"] = pd.to_datetime(report["stop time"])
+    report["duration"] = pd.to_numeric(report["duration"])
+    report["duration"] = pd.to_timedelta(report["duration"], unit="seconds")
 
 # Then, graph all the reports together in an event plot:
 
-# +
+# + tags=["nbsphinx-thumbnail"]
 import datetime as dt
 
 
 # Create plot
 fig, ax = plt.subplots()
-ax.broken_barh(list(zip(fixed_aircraft_access_df['start time'], fixed_aircraft_access_df['duration'])), (10,9), facecolors='cornflowerblue', label='Fixed sensor on satellite')
-ax.broken_barh(list(zip(moving_aircraft_access_df['start time'], moving_aircraft_access_df['duration'])), (20,9), facecolors='aquamarine', label='Moving sensor on satellite')
-ax.broken_barh(list(zip(sweeping_access_df['start time'], sweeping_access_df['duration'])), (30,9), facecolors='mediumslateblue', label='Sweeping radar')
-ax.broken_barh(list(zip(radar_dome_access_df['start time'], radar_dome_access_df['duration'])), (40,9), facecolors='lightpink', label='Fixed radar dome')
+ax.broken_barh(
+    list(
+        zip(
+            fixed_aircraft_access_df["start time"], fixed_aircraft_access_df["duration"]
+        )
+    ),
+    (10, 9),
+    facecolors="cornflowerblue",
+    label="Fixed sensor on satellite",
+)
+ax.broken_barh(
+    list(
+        zip(
+            moving_aircraft_access_df["start time"],
+            moving_aircraft_access_df["duration"],
+        )
+    ),
+    (20, 9),
+    facecolors="aquamarine",
+    label="Moving sensor on satellite",
+)
+ax.broken_barh(
+    list(zip(sweeping_access_df["start time"], sweeping_access_df["duration"])),
+    (30, 9),
+    facecolors="mediumslateblue",
+    label="Sweeping radar",
+)
+ax.broken_barh(
+    list(zip(radar_dome_access_df["start time"], radar_dome_access_df["duration"])),
+    (40, 9),
+    facecolors="lightpink",
+    label="Fixed radar dome",
+)
 
 # Set title and axes labels
-ax.set_title('Access To Aircraft by Sensor')
+ax.set_title("Access To Aircraft by Sensor")
 ax.set_xlabel("Time")
 ax.get_yaxis().set_visible(False)
 
@@ -629,7 +706,7 @@ ax.set_facecolor("whitesmoke")
 fig.set_size_inches(16, 5)
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M:%S')
+formatter = md.DateFormatter("%H:%M:%S")
 ax.xaxis.set_major_formatter(formatter)
 ax.minorticks_on()
 
@@ -641,10 +718,15 @@ plt.show()
 # +
 # Create plot
 fig, ax = plt.subplots()
-ax.broken_barh(list(zip(sweeping_access_df['start time'], sweeping_access_df['duration'])), (30,9), facecolors='mediumslateblue', label='Sweeping radar')
+ax.broken_barh(
+    list(zip(sweeping_access_df["start time"], sweeping_access_df["duration"])),
+    (30, 9),
+    facecolors="mediumslateblue",
+    label="Sweeping radar",
+)
 
 # Set title and axes labels
-ax.set_title('Access To Aircraft by Sweeping Radar')
+ax.set_title("Access To Aircraft by Sweeping Radar")
 ax.set_xlabel("Time")
 ax.get_yaxis().set_visible(False)
 
@@ -655,10 +737,12 @@ ax.set_facecolor("whitesmoke")
 fig.set_size_inches(16, 5)
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M:%S')
+formatter = md.DateFormatter("%H:%M:%S")
 ax.xaxis.set_major_formatter(formatter)
 ax.minorticks_on()
-ax.set_xlim(left=dt.datetime(2016, 7, 1, 16, 54, 0), right=dt.datetime(2016, 7, 1, 16, 56, 0))
+ax.set_xlim(
+    left=dt.datetime(2016, 7, 1, 16, 54, 0), right=dt.datetime(2016, 7, 1, 16, 56, 0)
+)
 
 plt.show()
 # -

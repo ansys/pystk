@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: min_ex
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex
-    :type: IQuantity
+    :type: Quantity
 
     Minimum coordinate value as IAgQuantity.
 
 .. py:property:: max_ex
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex
-    :type: IQuantity
+    :type: Quantity
 
     Maximum coordinate value as IAgQuantity.
 

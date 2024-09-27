@@ -3,8 +3,6 @@ LinkToObject
 
 .. py:class:: ansys.stk.core.stkobjects.LinkToObject
 
-   Bases: 
-
    Class defining a link to an STK object.
 
 .. py:currentmodule:: LinkToObject

@@ -3,8 +3,6 @@ AnalysisWorkbenchLLAPosition
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchLLAPosition
 
-   Bases: 
-
    A position represented by the Latitude, longtitude and Latitude.
 
 .. py:currentmodule:: AnalysisWorkbenchLLAPosition

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: members
     :canonical: ansys.stk.core.stkobjects.DirectionProviderScript.members
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Gets the members list.
 

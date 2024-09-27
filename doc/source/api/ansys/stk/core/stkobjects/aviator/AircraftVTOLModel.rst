@@ -3,8 +3,6 @@ AircraftVTOLModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel
 
-   Bases: 
-
    Class defining the VTOL performance model of an aircraft.
 
 .. py:currentmodule:: AircraftVTOLModel
@@ -31,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.max_hover_altitude`
               - Gets or sets the maximum altitude at which the aircraft is capable of hovering.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aerodynamic_propulsion_fuel`
               - Gets or sets whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.scale_fuel_flow_by_non_std_density`
               - Gets or sets whether to scale fuel flow by non std density.
@@ -75,8 +73,8 @@ Property detail
 
     Gets or sets the maximum altitude at which the aircraft is capable of hovering.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Gets or sets whether to use Aero/Propulsion fuel flow.

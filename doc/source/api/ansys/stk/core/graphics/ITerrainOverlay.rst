@@ -3,8 +3,6 @@ ITerrainOverlay
 
 .. py:class:: ansys.stk.core.graphics.ITerrainOverlay
 
-   object
-   
    A globe overlay which shows terrain.
 
 .. py:currentmodule:: ITerrainOverlay

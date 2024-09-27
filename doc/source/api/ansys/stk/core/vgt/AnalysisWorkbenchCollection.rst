@@ -3,8 +3,6 @@ AnalysisWorkbenchCollection
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCollection
 
-   Bases: 
-
    A collection of VGT objects.
 
 .. py:currentmodule:: AnalysisWorkbenchCollection

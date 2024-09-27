@@ -3,8 +3,6 @@ CentralBodyGraphicsIndexer
 
 .. py:class:: ansys.stk.core.graphics.CentralBodyGraphicsIndexer
 
-   Bases: 
-
    An indexer into the central body graphics for a particular central body, which provides graphical properties such as showing or hiding the central body in the scene, and working with terrain and imagery for the specified central body.
 
 .. py:currentmodule:: CentralBodyGraphicsIndexer
@@ -53,19 +51,19 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.earth
-    :type: ICentralBodyGraphics
+    :type: CentralBodyGraphics
 
     Gets the central body graphics for the planet Earth. This is equivalent to passing a central body equal to an instance of earth central body to the indexer.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.moon
-    :type: ICentralBodyGraphics
+    :type: CentralBodyGraphics
 
     Gets the central body graphics for the Moon.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.sun
-    :type: ICentralBodyGraphics
+    :type: CentralBodyGraphics
 
     Gets the central body graphics for the Sun.
 

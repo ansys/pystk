@@ -3,8 +3,6 @@ IFigureOfMeritNavigationAccuracyMethod
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritNavigationAccuracyMethod
 
-   object
-   
    Navigation Accuracy Figure of Merit type.
 
 .. py:currentmodule:: IFigureOfMeritNavigationAccuracyMethod

@@ -33,7 +33,7 @@ Overview
               - Gets or sets the maximum altitude above mean sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.default_cruise_altitude`
               - Gets or sets the aircraft's default cruise altitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.use_aero_prop_fuel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.use_aerodynamic_propulsion_fuel`
               - Opt to use the fuel flow calculated by the acceleration performance model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.scale_fuel_flow_by_non_std_density`
               - Opt to scale the fuel flow by the aircraft's actual altitude.
@@ -47,7 +47,7 @@ Overview
               - Gets or sets the maximum range cruising airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_airspeed`
               - Gets or sets the maximum cruisng airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_perf_airspeed`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_performance_airspeed`
               - Gets or sets the custom performance airspeed that can be used to model specific flight conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.min_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the minimum cruising airspeed.
@@ -57,7 +57,7 @@ Overview
               - Gets or sets the fuel flow for the maximum range cruising airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the maximum cruising airspeed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_perf_airspeed_fuel_flow`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_performance_airspeed_fuel_flow`
               - Gets or sets the fuel flow for the maximum performance cruising airspeed.
 
 
@@ -85,8 +85,8 @@ Property detail
 
     Gets or sets the aircraft's default cruise altitude.
 
-.. py:property:: use_aero_prop_fuel
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.use_aero_prop_fuel
+.. py:property:: use_aerodynamic_propulsion_fuel
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
     Opt to use the fuel flow calculated by the acceleration performance model.
@@ -127,8 +127,8 @@ Property detail
 
     Gets or sets the maximum cruisng airspeed.
 
-.. py:property:: max_perf_airspeed
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_perf_airspeed
+.. py:property:: max_performance_airspeed
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_performance_airspeed
     :type: float
 
     Gets or sets the custom performance airspeed that can be used to model specific flight conditions.
@@ -157,8 +157,8 @@ Property detail
 
     Gets or sets the fuel flow for the maximum cruising airspeed.
 
-.. py:property:: max_perf_airspeed_fuel_flow
-    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_perf_airspeed_fuel_flow
+.. py:property:: max_performance_airspeed_fuel_flow
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicCruiseModel.max_performance_airspeed_fuel_flow
     :type: float
 
     Gets or sets the fuel flow for the maximum performance cruising airspeed.

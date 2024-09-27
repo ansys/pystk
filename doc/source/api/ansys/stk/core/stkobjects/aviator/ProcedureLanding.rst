@@ -63,25 +63,25 @@ Property detail
 
 .. py:property:: mode_as_standard_instrument_approach
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.mode_as_standard_instrument_approach
-    :type: ILandingStandardInstrumentApproach
+    :type: LandingStandardInstrumentApproach
 
     Get the interface for a standard instrument approach landing.
 
 .. py:property:: mode_as_intercept_glideslope
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.mode_as_intercept_glideslope
-    :type: ILandingInterceptGlideslope
+    :type: LandingInterceptGlideslope
 
     Get the interface for an intercept glideslope landing.
 
 .. py:property:: mode_as_enter_downwind_pattern
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.mode_as_enter_downwind_pattern
-    :type: ILandingEnterDownwindPattern
+    :type: LandingEnterDownwindPattern
 
     Get the interface for a downwind pattern landing.
 
 .. py:property:: runway_heading_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.runway_heading_options
-    :type: IRunwayHeadingOptions
+    :type: RunwayHeadingOptions
 
     Get the runway heading options.
 
@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 

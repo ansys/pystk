@@ -3,8 +3,6 @@ CelestialBodyCollection
 
 .. py:class:: ansys.stk.core.stkobjects.CelestialBodyCollection
 
-   Bases: 
-
    Represents a collection of stars.
 
 .. py:currentmodule:: CelestialBodyCollection

@@ -3,8 +3,6 @@ VehicleGraphics2DLighting
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DLighting
 
-   Bases: 
-
    Lighting.
 
 .. py:currentmodule:: VehicleGraphics2DLighting
@@ -48,19 +46,19 @@ Property detail
 
 .. py:property:: sunlight
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.sunlight
-    :type: IVehicleGraphics2DLightingElement
+    :type: VehicleGraphics2DLightingElement
 
     Get the display options for regions of sunlight.
 
 .. py:property:: penumbra
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.penumbra
-    :type: IVehicleGraphics2DLightingElement
+    :type: VehicleGraphics2DLightingElement
 
     Get the display options for regions of penumbra.
 
 .. py:property:: umbra
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.umbra
-    :type: IVehicleGraphics2DLightingElement
+    :type: VehicleGraphics2DLightingElement
 
     Get the display options for regions of umbra.
 

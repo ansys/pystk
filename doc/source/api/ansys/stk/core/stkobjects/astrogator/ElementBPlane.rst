@@ -34,7 +34,7 @@ Overview
               - Orbital C3 Energy.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementBPlane.hyperbolic_v_infinity`
               - Hyperbolic V infinity.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementBPlane.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementBPlane.semimajor_axis`
               - Semi-major axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementBPlane.b_dot_t_first_b_vector`
               - B vector dotted with T vector used as the first quantity to define the B vector.
@@ -102,8 +102,8 @@ Property detail
 
     Hyperbolic V infinity.
 
-.. py:property:: semi_major_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementBPlane.semi_major_axis
+.. py:property:: semimajor_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementBPlane.semimajor_axis
     :type: float
 
     Semi-major axis.

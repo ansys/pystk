@@ -3,8 +3,6 @@ VehicleGraphics3DTrajectoryTrackData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTrackData
 
-   Bases: 
-
    3D leading/trailing track data for launch vehicles and missiles.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectoryTrackData
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryTrackData.pass_data
-    :type: IVehicleGraphics3DTrajectoryPassData
+    :type: VehicleGraphics3DTrajectoryPassData
 
     Get the 3D leading/trailing track data.
 

@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~BASIC_MANEUVER_FUEL_FLOW_VTOL`
               - Fuel flow defined for the current VTOL performance model.
 
-            * - :py:attr:`~BASIC_MANEUVER_FUEL_FLOW_AERO_PROP`
+            * - :py:attr:`~BASIC_MANEUVER_FUEL_FLOW_AERODYNAMIC_PROPULSION`
               - Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model.
 
             * - :py:attr:`~BASIC_MANEUVER_FUEL_FLOW_OVERRIDE`

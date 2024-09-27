@@ -58,7 +58,7 @@ Overview
               - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.root_finding_algorithm`
               - Gets or sets the root-finding algorithm to use.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.num_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.number_of_iterations`
               - Get the number of iterations of the last run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.targeter_graphs`
               - Graphs.
@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.control_parameters
-    :type: IDifferentialCorrectorControlCollection
+    :type: DifferentialCorrectorControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.results
-    :type: IDifferentialCorrectorResultCollection
+    :type: DifferentialCorrectorResultCollection
 
     Get the list of results defined for the profile.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: derivative_calc_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.derivative_calc_method
-    :type: DERIVE_CALC_METHOD
+    :type: DERIVATIVE_CALCULATION_METHOD
 
     Gets or sets the derivative calculation method.
 
@@ -182,7 +182,7 @@ Property detail
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 
@@ -192,15 +192,15 @@ Property detail
 
     Gets or sets the root-finding algorithm to use.
 
-.. py:property:: num_iterations
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.num_iterations
+.. py:property:: number_of_iterations
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.number_of_iterations
     :type: int
 
     Get the number of iterations of the last run.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 

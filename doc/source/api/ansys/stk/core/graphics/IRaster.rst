@@ -3,8 +3,6 @@ IRaster
 
 .. py:class:: ansys.stk.core.graphics.IRaster
 
-   object
-   
    A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image...
 
 .. py:currentmodule:: IRaster
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.graphics.IRaster.attributes
-    :type: IRasterAttributes
+    :type: RasterAttributes
 
     Gets the raster attributes that define the raster data.
 
@@ -85,14 +83,14 @@ Method detail
 
 
 
-.. py:method:: flip(self, axis: FLIP_AXIS) -> None
+.. py:method:: flip(self, axis: RASTER_FLIP_AXIS) -> None
     :canonical: ansys.stk.core.graphics.IRaster.flip
 
     Flips the raster along the given axis.
 
     :Parameters:
 
-    **axis** : :obj:`~FLIP_AXIS`
+    **axis** : :obj:`~RASTER_FLIP_AXIS`
 
     :Returns:
 

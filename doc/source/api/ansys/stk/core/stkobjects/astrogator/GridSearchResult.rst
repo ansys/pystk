@@ -3,8 +3,6 @@ GridSearchResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.GridSearchResult
 
-   Bases: 
-
    Result parameters for Grid Search profile.
 
 .. py:currentmodule:: GridSearchResult

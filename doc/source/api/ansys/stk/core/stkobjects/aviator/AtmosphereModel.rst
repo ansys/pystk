@@ -3,8 +3,6 @@ AtmosphereModel
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AtmosphereModel
 
-   Bases: 
-
    Class defining the atmosphere model for a mission, scenario, or procedure.
 
 .. py:currentmodule:: AtmosphereModel
@@ -65,7 +63,7 @@ Property detail
 
 .. py:property:: mode_as_basic
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.mode_as_basic
-    :type: IAtmosphereModelBasic
+    :type: AtmosphereModelBasic
 
     Get the options for a Basic Atmosphere model.
 

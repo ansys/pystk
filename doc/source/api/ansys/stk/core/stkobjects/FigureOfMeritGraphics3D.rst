@@ -3,8 +3,6 @@ FigureOfMeritGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D
 
-   Bases: 
-
    Figure of Merit 3D graphics.
 
 .. py:currentmodule:: FigureOfMeritGraphics3D
@@ -44,13 +42,13 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.static
-    :type: IFigureOfMeritGraphics3DAttributes
+    :type: FigureOfMeritGraphics3DAttributes
 
     Get the static graphics.
 
 .. py:property:: animation
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.animation
-    :type: IFigureOfMeritGraphics3DAttributes
+    :type: FigureOfMeritGraphics3DAttributes
 
     Get the animation graphics:.
 

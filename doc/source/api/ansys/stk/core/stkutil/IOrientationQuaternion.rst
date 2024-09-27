@@ -3,8 +3,8 @@ IOrientationQuaternion
 
 .. py:class:: ansys.stk.core.stkutil.IOrientationQuaternion
 
-   IOrientation
-   
+   Bases: IOrientation
+
    Quaternion representing orientation between two sets of axes.
 
 .. py:currentmodule:: IOrientationQuaternion

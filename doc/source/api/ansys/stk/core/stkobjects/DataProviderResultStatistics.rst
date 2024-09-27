@@ -3,8 +3,6 @@ DataProviderResultStatistics
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultStatistics
 
-   Bases: 
-
    Class used to compute statistics and time varying extremum on data provider result data sets.
 
 .. py:currentmodule:: DataProviderResultStatistics

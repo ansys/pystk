@@ -3,8 +3,6 @@ IAnalysisWorkbenchDerivative
 
 .. py:class:: ansys.stk.core.vgt.IAnalysisWorkbenchDerivative
 
-   object
-   
    Represents a base class for derivative definitions.
 
 .. py:currentmodule:: IAnalysisWorkbenchDerivative

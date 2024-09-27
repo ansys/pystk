@@ -3,8 +3,6 @@ RadarAntennaBeam
 
 .. py:class:: ansys.stk.core.stkobjects.RadarAntennaBeam
 
-   Bases: 
-
    Class defining a radar antenna beam.
 
 .. py:currentmodule:: RadarAntennaBeam

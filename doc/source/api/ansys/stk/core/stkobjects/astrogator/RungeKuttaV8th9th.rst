@@ -32,9 +32,9 @@ Overview
               - Gets or sets the maximum step size to allow (absolute value). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.min_step`
               - Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_rel_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_relative_err`
               - Gets or sets the maximum relative error used to control step size. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_abs_err`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_absolute_err`
               - Gets or sets the maximum absolute error; Also used if relative scale is too small. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.high_safety_coefficient`
               - Gets or sets the 'safety' coefficient used to decrease step size if the error is too high. Dimensionless.
@@ -44,7 +44,7 @@ Overview
               - Gets or sets the error control method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_iterations`
               - Gets or sets the maximum iterations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coeff_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coefficient_type`
               - Gets or sets the set of coefficients to use.
 
 
@@ -96,14 +96,14 @@ Property detail
 
     Gets or sets the minimum step size to allow (absolute value). Uses Time Dimension.
 
-.. py:property:: max_rel_err
-    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_rel_err
+.. py:property:: max_relative_err
+    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_relative_err
     :type: float
 
     Gets or sets the maximum relative error used to control step size. Dimensionless.
 
-.. py:property:: max_abs_err
-    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_abs_err
+.. py:property:: max_absolute_err
+    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_absolute_err
     :type: float
 
     Gets or sets the maximum absolute error; Also used if relative scale is too small. Dimensionless.
@@ -132,8 +132,8 @@ Property detail
 
     Gets or sets the maximum iterations. Dimensionless.
 
-.. py:property:: coeff_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coeff_type
+.. py:property:: coefficient_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coefficient_type
     :type: COEFF_RUNGE_KUTTA_V_8TH_9TH
 
     Gets or sets the set of coefficients to use.

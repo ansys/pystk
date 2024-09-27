@@ -206,10 +206,8 @@ class EarlyBoundTests(TestBase):
         )
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
 
-        mcs: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        propagate: "MissionControlSequencePropagate" = clr.CastAs(
-            mcs.main_sequence.get_item_by_name("Propagate"), MissionControlSequencePropagate
-        )
+        mcs: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        propagate: "MCSPropagate" = clr.CastAs(mcs.main_sequence.get_item_by_name("Propagate"), MCSPropagate)
 
         stopCond: "StoppingCondition" = clr.CastAs(
             propagate.stopping_conditions["Duration"].properties, StoppingCondition

@@ -3,8 +3,6 @@ DataProviderCollection
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderCollection
 
-   Bases: 
-
    Collection of data providers attached to the current STK object.
 
 .. py:currentmodule:: DataProviderCollection

@@ -3,8 +3,6 @@ SpatialAnalysisToolVolumeGroup
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGroup
 
-   Bases: 
-
    Access or create spatial conditions associated with a volume grid.
 
 .. py:currentmodule:: SpatialAnalysisToolVolumeGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGroup.factory
-    :type: ISpatialAnalysisToolVolumeFactory
+    :type: SpatialAnalysisToolVolumeFactory
 
     Returns a factory object used to create spatial condition components.
 

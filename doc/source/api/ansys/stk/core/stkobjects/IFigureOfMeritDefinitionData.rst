@@ -3,8 +3,6 @@ IFigureOfMeritDefinitionData
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionData
 
-   object
-   
    IAgFmDefinitionData.
 
 .. py:currentmodule:: IFigureOfMeritDefinitionData

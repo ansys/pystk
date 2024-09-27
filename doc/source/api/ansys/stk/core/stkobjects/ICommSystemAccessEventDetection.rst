@@ -3,8 +3,6 @@ ICommSystemAccessEventDetection
 
 .. py:class:: ansys.stk.core.stkobjects.ICommSystemAccessEventDetection
 
-   object
-   
    Provide access to the properties an access event detection algorithm.
 
 .. py:currentmodule:: ICommSystemAccessEventDetection

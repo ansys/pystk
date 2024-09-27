@@ -3,8 +3,6 @@ LineTargetPointCollection
 
 .. py:class:: ansys.stk.core.stkobjects.LineTargetPointCollection
 
-   Bases: 
-
    The collection of points for the line target.
 
 .. py:currentmodule:: LineTargetPointCollection

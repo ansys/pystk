@@ -3,8 +3,6 @@ VehicleSGP4PropagatorSettings
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSGP4PropagatorSettings
 
-   Bases: 
-
    Encapsulates the SGP4 propagator settings.
 
 .. py:currentmodule:: VehicleSGP4PropagatorSettings

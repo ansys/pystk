@@ -3,8 +3,6 @@ IStoppingConditionComponent
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IStoppingConditionComponent
 
-   object
-   
    Properties for a stopping condition.
 
 .. py:currentmodule:: IStoppingConditionComponent

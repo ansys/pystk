@@ -3,8 +3,6 @@ CalculationToolEvaluateWithRateResult
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult
 
-   Bases: 
-
    Represents the results of evaluating a scalar component.
 
 .. py:currentmodule:: CalculationToolEvaluateWithRateResult

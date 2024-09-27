@@ -3,8 +3,6 @@ TimePeriodValue
 
 .. py:class:: ansys.stk.core.stkobjects.TimePeriodValue
 
-   Bases: 
-
    Provide methods and properties to configure a time value.
 
 .. py:currentmodule:: TimePeriodValue

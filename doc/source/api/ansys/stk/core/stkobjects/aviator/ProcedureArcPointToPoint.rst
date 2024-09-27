@@ -61,37 +61,37 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.altitude_options
-    :type: IArcAltitudeOptions
+    :type: ArcAltitudeOptions
 
     Get the altitude options.
 
 .. py:property:: arc_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.arc_options
-    :type: IArcOptions
+    :type: ArcOptions
 
     Get the arc options.
 
 .. py:property:: arc_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.arc_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the arc cruise airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.enroute_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: vertical_plane_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureArcPointToPoint.vertical_plane_options
-    :type: IArcVerticalPlaneOptions
+    :type: ArcVerticalPlaneOptions
 
     Get the vertical plane options.
 

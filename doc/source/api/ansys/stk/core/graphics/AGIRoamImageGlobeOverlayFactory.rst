@@ -3,8 +3,6 @@ AGIRoamImageGlobeOverlayFactory
 
 .. py:class:: ansys.stk.core.graphics.AGIRoamImageGlobeOverlayFactory
 
-   Bases: 
-
    A globe image overlay for handling ROAM (TXM/TXB) files.
 
 .. py:currentmodule:: AGIRoamImageGlobeOverlayFactory

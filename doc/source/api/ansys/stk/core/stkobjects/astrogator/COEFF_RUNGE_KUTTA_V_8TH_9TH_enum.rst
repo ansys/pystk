@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~COEFF_1978`
+            * - :py:attr:`~COEFFICIENT_1978`
               - SIAM 1978.
 
             * - :py:attr:`~EFFICIENT`

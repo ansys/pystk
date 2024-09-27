@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.create_ideal_secondary_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.create_ideal_secondary_body`
               - Construct the idealized secondary for the three-body system.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.reset_ideal_secondary_cb`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.reset_ideal_secondary_body`
               - Reset the idealized secondary for the three-body system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.update_ideal_secondary_cb`
               - Update the idealized secondary for the three-body system.
@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: associated_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.associated_objects
-    :type: IDesignCR3BPObjectCollection
+    :type: DesignCR3BPObjectCollection
 
     Get the list of associated objects.
 
@@ -184,8 +184,8 @@ Method detail
 
 
 
-.. py:method:: create_ideal_secondary_cb(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.create_ideal_secondary_cb
+.. py:method:: create_ideal_secondary_body(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.create_ideal_secondary_body
 
     Construct the idealized secondary for the three-body system.
 
@@ -193,8 +193,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: reset_ideal_secondary_cb(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.reset_ideal_secondary_cb
+.. py:method:: reset_ideal_secondary_body(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.reset_ideal_secondary_body
 
     Reset the idealized secondary for the three-body system.
 

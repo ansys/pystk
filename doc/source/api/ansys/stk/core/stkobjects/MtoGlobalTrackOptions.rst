@@ -3,8 +3,6 @@ MtoGlobalTrackOptions
 
 .. py:class:: ansys.stk.core.stkobjects.MtoGlobalTrackOptions
 
-   Bases: 
-
    Global MTO track options.
 
 .. py:currentmodule:: MtoGlobalTrackOptions

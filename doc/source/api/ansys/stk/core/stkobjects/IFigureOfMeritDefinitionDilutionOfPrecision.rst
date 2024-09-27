@@ -3,8 +3,8 @@ IFigureOfMeritDefinitionDilutionOfPrecision
 
 .. py:class:: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision
 
-   IFigureOfMeritDefinitionCompute
-   
+   Bases: IFigureOfMeritDefinitionCompute
+
    Dilution Of Precision Figure of Merit.
 
 .. py:currentmodule:: IFigureOfMeritDefinitionDilutionOfPrecision

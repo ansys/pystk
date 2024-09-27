@@ -3,8 +3,6 @@ VehicleGraphics3DOrbitTickMarks
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTickMarks
 
-   Bases: 
-
    Tick mark for satellites.
 
 .. py:currentmodule:: VehicleGraphics3DOrbitTickMarks
@@ -48,13 +46,13 @@ Property detail
 
 .. py:property:: ground_track
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTickMarks.ground_track
-    :type: IVehicleGraphics3DPathTickMarks
+    :type: VehicleGraphics3DPathTickMarks
 
     Get the ground track tick marks.
 
 .. py:property:: orbit
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTickMarks.orbit
-    :type: IVehicleGraphics3DPathTickMarks
+    :type: VehicleGraphics3DPathTickMarks
 
     Get the orbit track tick marks.
 

@@ -37,7 +37,7 @@ Overview
               - If true, the scripting tool is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.segment_properties`
               - Returns the collection of the segment properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.calc_objects`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.calculation_objects`
               - Returns the collection of the calculation objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.parameters`
               - Returns the collection of parameters.
@@ -67,19 +67,19 @@ Property detail
 
 .. py:property:: segment_properties
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.segment_properties
-    :type: IScriptingSegmentCollection
+    :type: ScriptingSegmentCollection
 
     Returns the collection of the segment properties.
 
-.. py:property:: calc_objects
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.calc_objects
-    :type: IScriptingCalcObjectCollection
+.. py:property:: calculation_objects
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.calculation_objects
+    :type: ScriptingCalculationObjectCollection
 
     Returns the collection of the calculation objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.parameters
-    :type: IScriptingParameterCollection
+    :type: ScriptingParameterCollection
 
     Returns the collection of parameters.
 

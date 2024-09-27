@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semi_major_axis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis`
               - One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.eccentricity`
               - Describes the shape of the ellipse (a real number >= 0 and <1, where 0 = a circular orbit). Dimensionless.
@@ -52,7 +52,7 @@ Overview
               - Angle measured with origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.mean_anomaly`
               - Gets or sets the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_asc_node`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_ascending_node`
               - Gets or sets the elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_periapsis`
               - Gets or sets the elapsed time since the last perigee passage based on assumed two-body motion. Uses Time Dimension.
@@ -80,8 +80,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: semi_major_axis
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semi_major_axis
+.. py:property:: semimajor_axis
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.semimajor_axis
     :type: float
 
     One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension.
@@ -176,8 +176,8 @@ Property detail
 
     Gets or sets the angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate. Uses Angle Dimension.
 
-.. py:property:: time_past_asc_node
-    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_asc_node
+.. py:property:: time_past_ascending_node
+    :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.time_past_ascending_node
     :type: float
 
     Gets or sets the elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension.

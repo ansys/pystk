@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: distance_display_condition_per_point
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.distance_display_condition_per_point
-    :type: IDistanceDisplayCondition
+    :type: DistanceDisplayCondition
 
     Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
 
@@ -281,7 +281,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of positions in a point batch.
@@ -290,7 +290,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -311,7 +311,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_indices_order_and_render_pass(self, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_colors_indices_order_and_render_pass(self, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.set_partial_with_colors_indices_order_and_render_pass
 
     Update a subset of positions and/or colors in a point batch.
@@ -321,7 +321,7 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:
@@ -343,7 +343,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -353,7 +353,7 @@ Method detail
     **centralBody** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
 
     :Returns:
 
@@ -375,7 +375,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -386,7 +386,7 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~INDICES_ORDER_HINT`
+    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
     **renderPassHint** : :obj:`~RENDER_PASS_HINT`
 
     :Returns:

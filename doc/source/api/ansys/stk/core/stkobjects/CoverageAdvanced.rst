@@ -3,8 +3,6 @@ CoverageAdvanced
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageAdvanced
 
-   Bases: 
-
    Advanced Properties.
 
 .. py:currentmodule:: CoverageAdvanced
@@ -72,7 +70,7 @@ Property detail
 
 .. py:property:: region_access_acceleration
     :canonical: ansys.stk.core.stkobjects.CoverageAdvanced.region_access_acceleration
-    :type: COVERAGE_REGION_ACCESS_ACCEL
+    :type: COVERAGE_REGION_ACCESS_ACCELERATION
 
     Controls the use of region access computations to speedup overall coverage computations.
 
@@ -84,13 +82,13 @@ Property detail
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.CoverageAdvanced.event_detection
-    :type: IAccessEventDetection
+    :type: AccessEventDetection
 
     Get the event detection strategy used in access computations.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.stkobjects.CoverageAdvanced.sampling
-    :type: IAccessSampling
+    :type: AccessSampling
 
     Get the sampling strategy used in access computations.
 

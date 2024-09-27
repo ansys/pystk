@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: font
     :canonical: ansys.stk.core.graphics.TextOverlay.font
-    :type: IGraphicsFont
+    :type: GraphicsFont
 
     Get the graphics font used to style the text.
 

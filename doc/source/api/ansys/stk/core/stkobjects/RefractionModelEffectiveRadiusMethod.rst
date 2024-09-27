@@ -3,8 +3,6 @@ RefractionModelEffectiveRadiusMethod
 
 .. py:class:: ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod
 
-   Bases: 
-
    Effective Radius Method.
 
 .. py:currentmodule:: RefractionModelEffectiveRadiusMethod

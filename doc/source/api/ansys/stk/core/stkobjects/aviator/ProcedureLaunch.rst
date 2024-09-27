@@ -41,7 +41,7 @@ Overview
               - Gets or sets the attitude mode during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.specify_launch_airspeed`
               - Opt to specify a minimum launch speed the aircraft will accelerate to.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.acceleration_g`
               - Gets or sets the acceleration of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.airspeed_type`
               - Get the airspeed type.
@@ -97,8 +97,8 @@ Property detail
 
     Opt to specify a minimum launch speed the aircraft will accelerate to.
 
-.. py:property:: accel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.accel_g
+.. py:property:: acceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.acceleration_g
     :type: float
 
     Gets or sets the acceleration of the aircraft during the launch.

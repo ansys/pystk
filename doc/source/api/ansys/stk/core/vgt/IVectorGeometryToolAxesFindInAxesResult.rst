@@ -3,8 +3,6 @@ IVectorGeometryToolAxesFindInAxesResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult
 
-   object
-   
    Contains the results returned with IAgCrdnAxes.FindInAxes method.
 
 .. py:currentmodule:: IVectorGeometryToolAxesFindInAxesResult

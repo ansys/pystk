@@ -31,15 +31,15 @@ class EarlyBoundTests(TestBase):
         # Get the aircrafts route (still on the STKObjects side)
         aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
         # Get the Aviator propagator
-        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, AviatorPropagator)
+        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
         # Get the Aviator mission
-        EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.avtr_mission
+        EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.aviator_mission
         # Get the phases
         EarlyBoundTests.AG_Phases = EarlyBoundTests.AG_Mission.phases
         # Get the procedures
         EarlyBoundTests.AG_Procedures = EarlyBoundTests.AG_Phases[0].procedures
         # Get the Aviator Catalog
-        EarlyBoundTests.AG_AvtrCatalog = EarlyBoundTests.AG_AvtrProp.avtr_catalog
+        EarlyBoundTests.AG_AvtrCatalog = EarlyBoundTests.AG_AvtrProp.aviator_catalog
         # Get the User Aircraft Models
         EarlyBoundTests.AG_AvtrAircraftModels = EarlyBoundTests.AG_AvtrCatalog.aircraft_category.aircraft_models
         # Get the Aviator Aircraft
@@ -249,7 +249,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertAlmostEqual(0, constWind.wind_speed, delta=tolerance)
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         procWind: "WindModel" = proc1.wind_model
         procWind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         procConstWind: "WindModelConstant" = procWind.mode_as_constant
@@ -310,12 +310,12 @@ class EarlyBoundTests(TestBase):
         ADDSWind.name = "ADDS Name Test"
         Assert.assertEqual("ADDS Name Test", ADDSWind.name)
 
-        ADDSWind.interp_blend_time = 1
-        Assert.assertEqual(1, ADDSWind.interp_blend_time)
+        ADDSWind.interpolation_blend_time = 1
+        Assert.assertEqual(1, ADDSWind.interpolation_blend_time)
 
         wind.wind_model_type = WIND_MODEL_TYPE.DISABLED
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            ADDSWind.interp_blend_time = 1
+            ADDSWind.interpolation_blend_time = 1
 
         wind.wind_model_source = WIND_ATMOS_MODEL_SOURCE.SCENARIO_MODEL
         wind.copy()
@@ -346,7 +346,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(288.15, basicAtmos.temperature)
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         procAtmos: "AtmosphereModel" = proc1.atmosphere_model
         procAtmos.atmosphere_model_source = WIND_ATMOS_MODEL_SOURCE.MISSION_MODEL
         procAtmosBasic: "AtmosphereModelBasic" = procAtmos.mode_as_basic
@@ -490,16 +490,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(vtol.is_linked_to_catalog)
         unknownModel: "IPerformanceModel" = vtol.properties
 
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
         Assert.assertEqual("Built-In Model", acc.name)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("No copy")):
             currentPhase.paste_performance_models()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         phase2: "Phase" = EarlyBoundTests.AG_Phases.add()
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
 
         acc.create_new("Advanced Acceleration Model")
@@ -540,7 +540,7 @@ class EarlyBoundTests(TestBase):
             "Rotorcraft Perf Model Test"
         )
         Assert.assertEqual(0, currentPhase.procedures.count)
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
 
     # endregion
 
@@ -549,17 +549,17 @@ class EarlyBoundTests(TestBase):
     def test_ProcedureCollection(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc1.name = "Procedure 1"
         Assert.assertEqual(1, EarlyBoundTests.AG_Procedures.count)
 
         proc3: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         proc3.name = "Procedure 3"
 
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add_at_index(
-            1, SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+            1, SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         proc2.name = "Procedure 2"
 
@@ -572,13 +572,13 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid index")):
             EarlyBoundTests.AG_Procedures.add_at_index(
-                -1, SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+                -1, SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
             )
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid index")):
             EarlyBoundTests.AG_Procedures.add_at_index(
                 (EarlyBoundTests.AG_Procedures.count + 1),
                 SITE_TYPE.SITE_END_OF_PREV_PROCEDURE,
-                PROCEDURE_TYPE.PROC_ENROUTE,
+                PROCEDURE_TYPE.PROCEDURE_ENROUTE,
             )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid index")):
@@ -611,14 +611,14 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         proc3: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT
         )
-        proc4: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_LANDING)
+        proc4: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_LANDING)
 
         # //////// TESTING TAKEOFF TIME OPTIONS /////////////
         timeOpts: "ProcedureTimeOptions" = proc1.time_options
@@ -720,12 +720,12 @@ class EarlyBoundTests(TestBase):
     def test_CalculationOptions(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
 
         calcOpts: "CalculationOptions" = proc1.calculation_options
 
-        calcOpts.max_rel_motion_factor = 1.1
-        Assert.assertEqual(1.1, calcOpts.max_rel_motion_factor)
+        calcOpts.max_relative_motion_factor = 1.1
+        Assert.assertEqual(1.1, calcOpts.max_relative_motion_factor)
         calcOpts.state_cache_time_interval = 0.002
         Assert.assertEqual(0.002, calcOpts.state_cache_time_interval)
 
@@ -755,7 +755,7 @@ class EarlyBoundTests(TestBase):
 
         # Procedure where Refuel/Dump is not supported
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         Assert.assertFalse(proc1.refuel_dump_is_supported)
         rdp: "RefuelDumpProperties" = proc1.refuel_dump_properties
 
@@ -776,7 +776,9 @@ class EarlyBoundTests(TestBase):
 
         # Procedure where Refuel/Dump is supported
 
-        proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_ARC_ENROUTE)
+        proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_ARC_ENROUTE
+        )
         Assert.assertTrue(proc2.refuel_dump_is_supported)
         rdp = proc2.refuel_dump_properties
 
@@ -832,7 +834,7 @@ class EarlyBoundTests(TestBase):
         # Procedure where CanUseEndOfEnrouteSegmentAsEpoch
 
         proc3: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_HOLDING_CIRCULAR
         )
         Assert.assertTrue(proc3.refuel_dump_is_supported)
         rdp = proc3.refuel_dump_properties
@@ -855,9 +857,13 @@ class EarlyBoundTests(TestBase):
     def test_ArcEnroute(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         arcProc: "ProcedureArcEnroute" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ARC_ENROUTE),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ARC_ENROUTE
+            ),
             ProcedureArcEnroute,
         )
 
@@ -889,10 +895,12 @@ class EarlyBoundTests(TestBase):
     def test_ArcPointToPoint(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         arcProc: "ProcedureArcPointToPoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ARC_POINT_TO_POINT
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ARC_POINT_TO_POINT
             ),
             ProcedureArcPointToPoint,
         )
@@ -935,7 +943,9 @@ class EarlyBoundTests(TestBase):
             STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget"
         )
         areaTargetProc: "ProcedureAreaTargetSearch" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROCEDURE_AREA_TARGET_SEARCH
+            ),
             ProcedureAreaTargetSearch,
         )
 
@@ -944,8 +954,10 @@ class EarlyBoundTests(TestBase):
         self.EnrouteOptions(areaTargetProc.enroute_options)
         self.EnrouteCruiseAirspeed(areaTargetProc.enroute_cruise_airspeed_options)
 
-        areaTargetProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT
-        Assert.assertEqual(FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT, areaTargetProc.procedure_type)
+        areaTargetProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_BASIC_POINT_TO_POINT
+        Assert.assertEqual(
+            FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_BASIC_POINT_TO_POINT, areaTargetProc.procedure_type
+        )
         areaTargetProc.max_separation = 0.2
         Assert.assertEqual(0.2, areaTargetProc.max_separation)
         areaTargetProc.course_mode = SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_LOW
@@ -961,16 +973,16 @@ class EarlyBoundTests(TestBase):
 
         areaTargetProc.fly_cruise_airspeed_profile = False
         Assert.assertEqual(False, areaTargetProc.fly_cruise_airspeed_profile)
-        areaTargetProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE
+        areaTargetProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             areaTargetProc.fly_cruise_airspeed_profile = False
 
-        areaTargetProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT
+        areaTargetProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_BASIC_POINT_TO_POINT
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             areaTargetProc.must_level_off = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             areaTargetProc.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_AUTOMATIC_MANEUVER
-        areaTargetProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE
+        areaTargetProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE
         areaTargetProc.must_level_off = True
         Assert.assertTrue(areaTargetProc.must_level_off)
         areaTargetProc.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER
@@ -979,7 +991,7 @@ class EarlyBoundTests(TestBase):
         )
 
         takeoffProc: "IProcedure" = EarlyBoundTests.AG_Procedures.add_at_index(
-            0, SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF
+            0, SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
         )
         areaTargetProc.course_mode = SEARCH_PATTERN_COURSE_MODE.COURSE_MODE_HIGH
         EarlyBoundTests.AG_AvtrProp.propagate()
@@ -997,10 +1009,12 @@ class EarlyBoundTests(TestBase):
     def test_BasicPointToPoint(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         p2p: "ProcedureBasicPointToPoint" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT
             ),
             ProcedureBasicPointToPoint,
         )
@@ -1030,9 +1044,11 @@ class EarlyBoundTests(TestBase):
     def test_Delay(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         delay: "ProcedureDelay" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_DELAY),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_DELAY),
             ProcedureDelay,
         )
 
@@ -1062,9 +1078,11 @@ class EarlyBoundTests(TestBase):
     def test_Enroute(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         enroute: "ProcedureEnroute" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE),
             ProcedureEnroute,
         )
 
@@ -1091,7 +1109,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         extEphem: "ProcedureExtEphem" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_EXT_EPHEM),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROCEDURE_EXT_EPHEM),
             ProcedureExtEphem,
         )
 
@@ -1220,15 +1238,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL, extEphem.altitude_mode)
         extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_WGS
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_WGS, extEphem.altitude_mode)
-        extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_REL
-        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_REL, extEphem.altitude_mode)
+        extEphem.altitude_mode = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_RELATIVE
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_RELATIVE, extEphem.altitude_mode)
 
         extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE, extEphem.course_mode)
         extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_MAGNITUDE
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_MAGNITUDE, extEphem.course_mode)
-        extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL
-        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL, extEphem.course_mode)
+        extEphem.course_mode = EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_RELATIVE
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_RELATIVE, extEphem.course_mode)
 
         extEphem.shift_rotate_set()  # Does what the "Set..." button does on the GUI.
 
@@ -1238,7 +1256,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(2303, extEphem.altitude, delta=0.001)
         Assert.assertEqual(50, extEphem.course)
         Assert.assertEqual(EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL, extEphem.altitude_mode)
-        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL, extEphem.course_mode)
+        Assert.assertEqual(EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_RELATIVE, extEphem.course_mode)
 
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(extEphem, IProcedure))
 
@@ -1249,9 +1267,13 @@ class EarlyBoundTests(TestBase):
     def test_FlightLine(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         flightLine: "ProcedureFlightLine" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FLIGHT_LINE),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_FLIGHT_LINE
+            ),
             ProcedureFlightLine,
         )
 
@@ -1270,7 +1292,7 @@ class EarlyBoundTests(TestBase):
         airspeed: "CruiseAirspeedOptions" = flightLine.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeed(airspeed)
 
-        flightLine.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW
+        flightLine.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_TERRAIN_FOLLOW
         flightLine.outbound_course = 5
         course: typing.Any = flightLine.outbound_course
         Assert.assertEqual(5, float(course))
@@ -1279,7 +1301,7 @@ class EarlyBoundTests(TestBase):
         flightLine.leg_length = 11
         Assert.assertEqual(11, flightLine.leg_length)
 
-        flightLine.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW
+        flightLine.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_TERRAIN_FOLLOW
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             flightLine.fly_cruise_airspeed_profile = False
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -1287,11 +1309,11 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             flightLine.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_AUTOMATIC_MANEUVER
 
-        flightLine.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT
+        flightLine.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_BASIC_POINT_TO_POINT
         flightLine.fly_cruise_airspeed_profile = False
         Assert.assertEqual(False, flightLine.fly_cruise_airspeed_profile)
 
-        flightLine.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE
+        flightLine.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE
         flightLine.must_level_off = True
         Assert.assertTrue(flightLine.must_level_off)
         flightLine.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER
@@ -1309,8 +1331,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
         EarlyBoundTests.AG_AC = Aircraft((EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")))
         aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
-        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.avtr_propagator, AviatorPropagator)
-        EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.avtr_mission
+        EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
+        EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.aviator_mission
         EarlyBoundTests.AG_Phases = EarlyBoundTests.AG_Mission.phases
         EarlyBoundTests.AG_Procedures = EarlyBoundTests.AG_Phases[0].procedures
 
@@ -1318,7 +1340,7 @@ class EarlyBoundTests(TestBase):
 
         formationFlyer: "ProcedureFormationFlyer" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FORMATION_FLYER
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_FORMATION_FLYER
             ),
             ProcedureFormationFlyer,
         )
@@ -1410,25 +1432,25 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         EarlyBoundTests.AG_AvtrProp.propagate()
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
-        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
-        mission2: "Mission" = prop2.avtr_mission
+        prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.aviator_mission
         phases2: "PhaseCollection" = mission2.phases
         procedures2: "ProcedureCollection" = phases2[0].procedures
 
         proc2: "IProcedure" = procedures2.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOLDING_CIRCULAR
         )
         prop2.propagate()
 
         formRecov: "ProcedureFormationRecover" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_FORMATION_RECOVER),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROCEDURE_FORMATION_RECOVER),
             ProcedureFormationRecover,
         )
 
@@ -1458,14 +1480,14 @@ class EarlyBoundTests(TestBase):
         formRecov.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             formRecov.override_fuel_flow_value = 123
-        formRecov.consider_accel_for_fuel_flow = True
-        Assert.assertTrue(formRecov.consider_accel_for_fuel_flow)
+        formRecov.consider_acceleration_for_fuel_flow = True
+        Assert.assertTrue(formRecov.consider_acceleration_for_fuel_flow)
 
         formRecov.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_OVERRIDE
         formRecov.override_fuel_flow_value = 123
         Assert.assertAlmostEqual(123, formRecov.override_fuel_flow_value, delta=tolerance)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            formRecov.consider_accel_for_fuel_flow = True
+            formRecov.consider_acceleration_for_fuel_flow = True
 
         formRecov.first_pause = 1
         Assert.assertEqual(1, formRecov.first_pause)
@@ -1530,7 +1552,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("VTOL")):
             formRecov.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
         TestBase.Application.unit_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(formRecov, IProcedure))
         ac2Obj.unload()
@@ -1542,10 +1564,12 @@ class EarlyBoundTests(TestBase):
     def test_HoldingCircular(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         holdingProc: "ProcedureHoldingCircular" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOLDING_CIRCULAR
             ),
             ProcedureHoldingCircular,
         )
@@ -1604,10 +1628,12 @@ class EarlyBoundTests(TestBase):
     def test_HoldingFigure8(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         holdingProc: "ProcedureHoldingFigure8" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_FIGURE8
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOLDING_FIGURE8
             ),
             ProcedureHoldingFigure8,
         )
@@ -1672,10 +1698,12 @@ class EarlyBoundTests(TestBase):
     def test_HoldingRacetrack(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         holdingProc: "ProcedureHoldingRacetrack" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_RACETRACK
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOLDING_RACETRACK
             ),
             ProcedureHoldingRacetrack,
         )
@@ -1736,12 +1764,12 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_HOVER
         )
         hoverProc: "ProcedureHover" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOVER),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOVER),
             ProcedureHover,
         )
 
@@ -1861,12 +1889,12 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_HOVER
         )
         hoverProc: "ProcedureHoverTranslate" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_HOVER_TRANSLATE),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_HOVER_TRANSLATE),
             ProcedureHoverTranslate,
         )
 
@@ -1925,28 +1953,30 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         EarlyBoundTests.AG_AvtrProp.propagate()
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
-        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
-        mission2: "Mission" = prop2.avtr_mission
+        prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.aviator_mission
         phases2: "PhaseCollection" = mission2.phases
         procedures2: "ProcedureCollection" = phases2[0].procedures
 
         proc2: "IProcedure" = procedures2.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_HOLDING_CIRCULAR
         )
         prop2.propagate()
 
         formRecov: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_FORMATION_RECOVER
+            SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROCEDURE_FORMATION_RECOVER
         )
         inFormation: "ProcedureInFormation" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_IN_FORMATION),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_IN_FORMATION
+            ),
             ProcedureInFormation,
         )
 
@@ -1980,14 +2010,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF, inFormation.fuel_flow_type)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             inFormation.override_fuel_flow_value = 123
-        inFormation.consider_accel_for_fuel_flow = True
-        Assert.assertTrue(inFormation.consider_accel_for_fuel_flow)
+        inFormation.consider_acceleration_for_fuel_flow = True
+        Assert.assertTrue(inFormation.consider_acceleration_for_fuel_flow)
 
         inFormation.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_OVERRIDE
         inFormation.override_fuel_flow_value = 123
         Assert.assertAlmostEqual(123, inFormation.override_fuel_flow_value, delta=tolerance)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            inFormation.consider_accel_for_fuel_flow = True
+            inFormation.consider_acceleration_for_fuel_flow = True
 
         currentPhase: "Phase" = EarlyBoundTests.AG_Phases[0]
         vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
@@ -1997,7 +2027,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("VTOL")):
             inFormation.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
         TestBase.Application.unit_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(formRecov, IProcedure))
@@ -2011,9 +2041,11 @@ class EarlyBoundTests(TestBase):
     def test_Landing(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         landing: "ProcedureLanding" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_LANDING), ProcedureLanding
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_LANDING), ProcedureLanding
         )
 
         headingOptions: "RunwayHeadingOptions" = landing.runway_heading_options
@@ -2094,7 +2126,8 @@ class EarlyBoundTests(TestBase):
         traj2.propagate()
 
         launchProc: "ProcedureLaunch" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_LAUNCH), ProcedureLaunch
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROCEDURE_LAUNCH),
+            ProcedureLaunch,
         )
 
         launchProc.launch_time = "1 Jul 1999 00:00:01.000"
@@ -2123,7 +2156,7 @@ class EarlyBoundTests(TestBase):
 
         launchProc.specify_launch_airspeed = False
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
-            launchProc.accel_g = 2
+            launchProc.acceleration_g = 2
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             launchProc.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
@@ -2134,8 +2167,8 @@ class EarlyBoundTests(TestBase):
         launchProc.specify_launch_airspeed = True
         Assert.assertTrue(launchProc.specify_launch_airspeed)
 
-        launchProc.accel_g = 2
-        Assert.assertEqual(2, launchProc.accel_g)
+        launchProc.acceleration_g = 2
+        Assert.assertEqual(2, launchProc.acceleration_g)
 
         launchProc.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, launchProc.airspeed_type)
@@ -2189,23 +2222,28 @@ class EarlyBoundTests(TestBase):
         impact2.lon = -20
         traj2.propagate()
 
-        launchProc: "ProcedureLaunchDynState" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_DYN_STATE, PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE),
-            ProcedureLaunchDynState,
+        launchProc: "ProcedureLaunchDynamicState" = clr.CastAs(
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_DYNAMIC_STATE, PROCEDURE_TYPE.PROCEDURE_LAUNCH_DYNAMIC_STATE
+            ),
+            ProcedureLaunchDynamicState,
         )
 
         launchProc.launch_time = "1 Jul 1999 00:00:01.000"
         time: typing.Any = launchProc.launch_time
         Assert.assertTrue(("1 Jul 1999 00:00:01.000" == str(time)))
 
-        launchProc.coord_frame = LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL
+        launchProc.coord_frame = LAUNCH_DYNAMIC_STATE_COORD_FRAME.LAUNCH_DYNAMIC_STATE_COORD_FRAME_LOCAL_HORIZONTAL
         Assert.assertEqual(
-            LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL, launchProc.coord_frame
+            LAUNCH_DYNAMIC_STATE_COORD_FRAME.LAUNCH_DYNAMIC_STATE_COORD_FRAME_LOCAL_HORIZONTAL, launchProc.coord_frame
         )
 
-        launchProc.bearing_reference = LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY
+        launchProc.bearing_reference = (
+            LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY
+        )
         Assert.assertEqual(
-            LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY, launchProc.bearing_reference
+            LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY,
+            launchProc.bearing_reference,
         )
 
         launchProc.launch_bearing = 1
@@ -2228,7 +2266,7 @@ class EarlyBoundTests(TestBase):
 
         launchProc.specify_launch_airspeed = False
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
-            launchProc.accel_g = 2
+            launchProc.acceleration_g = 2
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             launchProc.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
@@ -2239,8 +2277,8 @@ class EarlyBoundTests(TestBase):
         launchProc.specify_launch_airspeed = True
         Assert.assertTrue(launchProc.specify_launch_airspeed)
 
-        launchProc.accel_g = 2
-        Assert.assertEqual(2, launchProc.accel_g)
+        launchProc.acceleration_g = 2
+        Assert.assertEqual(2, launchProc.acceleration_g)
 
         launchProc.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, launchProc.airspeed_type)
@@ -2275,7 +2313,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         launchProc: "ProcedureLaunchWaypoint" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_LAUNCH_WAYPOINT),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_LAUNCH_WAYPOINT),
             ProcedureLaunchWaypoint,
         )
 
@@ -2297,8 +2335,8 @@ class EarlyBoundTests(TestBase):
         launchElevation: typing.Any = launchProc.launch_elevation
         Assert.assertAlmostEqual(30, float(launchElevation), delta=tolerance)
 
-        launchProc.accel_g = 2
-        Assert.assertEqual(2, launchProc.accel_g)
+        launchProc.acceleration_g = 2
+        Assert.assertEqual(2, launchProc.acceleration_g)
 
         launchProc.set_airspeed(AIRSPEED_TYPE.TAS, 251)
         Assert.assertEqual(AIRSPEED_TYPE.TAS, launchProc.airspeed_type)
@@ -2326,13 +2364,13 @@ class EarlyBoundTests(TestBase):
     def test_ParallelFlightLine(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_FLIGHT_LINE
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_FLIGHT_LINE
         )
         parallelProc: "ProcedureParallelFlightLine" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_PARALLEL_FLIGHT_LINE
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_PARALLEL_FLIGHT_LINE
             ),
             ProcedureParallelFlightLine,
         )
@@ -2351,7 +2389,7 @@ class EarlyBoundTests(TestBase):
         airspeed: "ICruiseAirspeedAndProfileOptions" = parallelProc.enroute_cruise_airspeed_options
         self.EnrouteCruiseAirspeedAndProfile(airspeed)
 
-        parallelProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE
+        parallelProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE
         parallelProc.orientation = LINE_ORIENTATION.FLIGHT_LINE_TO_RIGHT
         Assert.assertEqual(LINE_ORIENTATION.FLIGHT_LINE_TO_RIGHT, parallelProc.orientation)
         parallelProc.separation = 11
@@ -2361,14 +2399,14 @@ class EarlyBoundTests(TestBase):
         parallelProc.leg_length = 13
         Assert.assertEqual(13, parallelProc.leg_length)
 
-        parallelProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW
+        parallelProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_TERRAIN_FOLLOW
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             parallelProc.must_level_off = False
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             parallelProc.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_AUTOMATIC_MANEUVER
 
-        parallelProc.procedure_type = FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE
-        Assert.assertEqual(FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE, parallelProc.procedure_type)
+        parallelProc.procedure_type = FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE
+        Assert.assertEqual(FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE, parallelProc.procedure_type)
         parallelProc.must_level_off = True
         Assert.assertTrue(parallelProc.must_level_off)
         parallelProc.level_off_mode = ALTITUDE_CONSTRAINT_MANEUVER_MODE.LEVEL_OFF_LEFT_TURN_MANEUVER
@@ -2388,7 +2426,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         refState: "ProcedureReferenceState" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_REFERENCE_STATE),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROCEDURE_REFERENCE_STATE),
             ProcedureReferenceState,
         )
 
@@ -2411,8 +2449,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             refState.msl_altitude = 10000
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
-        Assert.assertEqual(REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB, refState.performance_mode)
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
+        Assert.assertEqual(REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB, refState.performance_mode)
 
         refState.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
         Assert.assertEqual(BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME, refState.reference_frame)
@@ -2422,11 +2460,11 @@ class EarlyBoundTests(TestBase):
 
         # ////////////// TEST FORWARD FLIGHT OPTIONS ///////////////////////
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_LANDING
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             ffTest: "ReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         ff: "ReferenceStateForwardFlightOptions" = refState.mode_as_forward_flight
 
         ff.set_airspeed(AIRSPEED_TYPE.TAS, 251)
@@ -2474,18 +2512,22 @@ class EarlyBoundTests(TestBase):
         heading: typing.Any = ff.heading
         Assert.assertEqual(7, float(heading))
 
-        ff.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, ff.longitudinal_accel_type)
+        ff.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, ff.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.5, ff.groundspeed_dot)
-        ff.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, 0.6)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, ff.longitudinal_accel_type)
+        ff.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, 0.6)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, ff.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.6, ff.tas_dot)
 
-        ff.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, 1.3)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, ff.lateral_accel_type)
+        ff.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, 1.3)
+        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, ff.lateral_acceleration_type)
         Assert.assertEqual(1.3, ff.course_dot)
-        ff.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, 1.4)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, ff.lateral_accel_type)
+        ff.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, 1.4)
+        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, ff.lateral_acceleration_type)
         Assert.assertEqual(1.4, ff.heading_dot)
 
         ff.set_attitude_rate(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PITCH_RATE, 1.5)
@@ -2495,18 +2537,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PUSH_PULL_G, ff.attitude_rate_type)
         Assert.assertEqual(1.6, ff.push_pull_g)
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_LANDING
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             airspeedTest: float = ff.airspeed
 
         # ////////////// TEST TAKEOFF LANDING OPTIONS ///////////////////////
         # Note: Should be same as forward flight options except on different interface
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             tlTest: "ReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_LANDING
         tl: "ReferenceStateTakeoffLandingOptions" = refState.mode_as_takeoff_landing
         refState.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
 
@@ -2555,18 +2597,22 @@ class EarlyBoundTests(TestBase):
         heading = tl.heading
         Assert.assertEqual(7, float(heading))
 
-        tl.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, tl.longitudinal_accel_type)
+        tl.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, tl.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.5, tl.groundspeed_dot)
-        tl.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, 0.6)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, tl.longitudinal_accel_type)
+        tl.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, 0.6)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, tl.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.6, tl.tas_dot)
 
-        tl.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, 1.3)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, tl.lateral_accel_type)
+        tl.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, 1.3)
+        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, tl.lateral_acceleration_type)
         Assert.assertEqual(1.3, tl.course_dot)
-        tl.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, 1.4)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, tl.lateral_accel_type)
+        tl.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, 1.4)
+        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, tl.lateral_acceleration_type)
         Assert.assertEqual(1.4, tl.heading_dot)
 
         tl.set_attitude_rate(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PITCH_RATE, 1.5)
@@ -2576,13 +2622,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PUSH_PULL_G, tl.attitude_rate_type)
         Assert.assertEqual(1.6, tl.push_pull_g)
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             airspeedTest: float = tl.airspeed
 
         # ////////////// TEST HOVER OPTIONS ///////////////////////
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             hoverTest: "ReferenceStateHoverOptions" = refState.mode_as_hover
 
@@ -2590,10 +2636,10 @@ class EarlyBoundTests(TestBase):
         vtol: "PerformanceModelOptions" = currentPhase.get_performance_model_by_type("VTOL")
         vtol.delete()
         with pytest.raises(Exception, match=RegexSubstringMatch("VTOL")):
-            refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_HOVER
-        currentPhase.set_default_perf_models()
+            refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_HOVER
+        currentPhase.set_default_performance_models()
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_HOVER
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_HOVER
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             refState.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
 
@@ -2627,13 +2673,18 @@ class EarlyBoundTests(TestBase):
         aoa = hoverOpts.aoa
         Assert.assertEqual(12, float(aoa))
 
-        hoverOpts.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
+        hoverOpts.set_longitudinal_acceleration(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5
+        )
         Assert.assertEqual(
-            REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, hoverOpts.longitudinal_accel_type
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT,
+            hoverOpts.longitudinal_acceleration_type,
         )
         Assert.assertEqual(0.5, hoverOpts.groundspeed_dot)
-        hoverOpts.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, 0.6)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, hoverOpts.longitudinal_accel_type)
+        hoverOpts.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, 0.6)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, hoverOpts.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.6, hoverOpts.tas_dot)
 
         hoverOpts.set_attitude_rate(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PITCH_RATE, 1.5)
@@ -2643,17 +2694,17 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(REFERENCE_STATE_ATTITUDE_MODE.SPECIFY_PUSH_PULL_G, hoverOpts.attitude_rate_type)
         Assert.assertEqual(1.6, hoverOpts.push_pull_g)
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             groundspeedTest: float = hoverOpts.groundspeed
 
         # ////////////// TEST WEIGHT ON WHEELS OPTIONS ///////////////////////
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             wowTest: "ReferenceStateWeightOnWheelsOptions" = refState.mode_as_weight_on_wheels
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF_RUN
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_TAKEOFF_RUN
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             refState.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
 
@@ -2666,23 +2717,32 @@ class EarlyBoundTests(TestBase):
         heading = wowOpts.heading
         Assert.assertEqual(7, float(heading))
 
-        wowOpts.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5)
+        wowOpts.set_longitudinal_acceleration(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT, 0.5
+        )
         Assert.assertEqual(
-            REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT, wowOpts.longitudinal_accel_type
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT,
+            wowOpts.longitudinal_acceleration_type,
         )
         Assert.assertEqual(0.5, wowOpts.groundspeed_dot)
-        wowOpts.set_longitudinal_accel(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, 0.6)
-        Assert.assertEqual(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT, wowOpts.longitudinal_accel_type)
+        wowOpts.set_longitudinal_acceleration(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, 0.6)
+        Assert.assertEqual(
+            REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT, wowOpts.longitudinal_acceleration_type
+        )
         Assert.assertEqual(0.6, wowOpts.tas_dot)
 
-        wowOpts.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, 1.3)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT, wowOpts.lateral_accel_type)
+        wowOpts.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, 1.3)
+        Assert.assertEqual(
+            REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT, wowOpts.lateral_acceleration_type
+        )
         Assert.assertEqual(1.3, wowOpts.course_dot)
-        wowOpts.set_lateral_accel(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, 1.4)
-        Assert.assertEqual(REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT, wowOpts.lateral_accel_type)
+        wowOpts.set_lateral_acceleration(REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, 1.4)
+        Assert.assertEqual(
+            REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT, wowOpts.lateral_acceleration_type
+        )
         Assert.assertEqual(1.4, wowOpts.heading_dot)
 
-        refState.performance_mode = REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB
+        refState.performance_mode = REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             groundspeedTest: float = wowOpts.groundspeed
 
@@ -2697,7 +2757,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         takeoff: "ProcedureTakeoff" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF), ProcedureTakeoff
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF), ProcedureTakeoff
         )
 
         headingOptions: "RunwayHeadingOptions" = takeoff.runway_heading_options
@@ -2735,10 +2795,12 @@ class EarlyBoundTests(TestBase):
     def test_TerrainFollowing(self):
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         terrainFollow: "ProcedureTerrainFollow" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TERRAIN_FOLLOWING
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TERRAIN_FOLLOWING
             ),
             ProcedureTerrainFollow,
         )
@@ -2769,16 +2831,18 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         toHover: "ProcedureTransitionToHover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_HOVER
             ),
             ProcedureTransitionToHover,
         )
         toFlight: "ProcedureTransitionToForwardFlight" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_FORWARD_FLIGHT
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_FORWARD_FLIGHT
             ),
             ProcedureTransitionToForwardFlight,
         )
@@ -2814,10 +2878,12 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        takeoff: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+        )
         toHover: "ProcedureTransitionToHover" = clr.CastAs(
             EarlyBoundTests.AG_Procedures.add(
-                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_HOVER
             ),
             ProcedureTransitionToHover,
         )
@@ -2860,10 +2926,10 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF
+            SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROCEDURE_VERTICAL_TAKEOFF
         )
         vertLanding: "ProcedureVerticalLanding" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_LANDING),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROCEDURE_VERTICAL_LANDING),
             ProcedureVerticalLanding,
         )
 
@@ -2910,7 +2976,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         vertTakeoff: "ProcedureVerticalTakeoff" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROCEDURE_VERTICAL_TAKEOFF),
             ProcedureVerticalTakeoff,
         )
 
@@ -2945,9 +3011,9 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER
+            SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
         )
         EarlyBoundTests.AG_AvtrProp.propagate()
 
@@ -2955,14 +3021,14 @@ class EarlyBoundTests(TestBase):
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
         route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
-        prop2: "AviatorPropagator" = clr.CastAs(route2.avtr_propagator, AviatorPropagator)
-        mission2: "Mission" = prop2.avtr_mission
+        prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
+        mission2: "Mission" = prop2.aviator_mission
         prop2.propagate()
 
         EarlyBoundTests.AG_Procedures.remove_at_index(1)
         EarlyBoundTests.AG_Procedures.remove_at_index(0)
         vgtProc: "ProcedureVGTPoint" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_VGT_POINT),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROCEDURE_VGT_POINT),
             ProcedureVGTPoint,
         )
 
@@ -2992,14 +3058,14 @@ class EarlyBoundTests(TestBase):
         vgtProc.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             vgtProc.override_fuel_flow_value = 123
-        vgtProc.consider_accel_for_fuel_flow = True
-        Assert.assertTrue(vgtProc.consider_accel_for_fuel_flow)
+        vgtProc.consider_acceleration_for_fuel_flow = True
+        Assert.assertTrue(vgtProc.consider_acceleration_for_fuel_flow)
 
         vgtProc.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_OVERRIDE
         vgtProc.override_fuel_flow_value = 123
         Assert.assertAlmostEqual(123, vgtProc.override_fuel_flow_value, delta=tolerance)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            vgtProc.consider_accel_for_fuel_flow = True
+            vgtProc.consider_acceleration_for_fuel_flow = True
 
         vgtProc.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF
         Assert.assertEqual(PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF, vgtProc.flight_mode)
@@ -3018,7 +3084,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("VTOL")):
             vgtProc.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
         TestBase.Application.unit_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(vgtProc, IProcedure))
         ac2Obj.unload()
@@ -3030,9 +3096,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuver(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3082,7 +3150,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("VTOL")):
             basicManeuver.fuel_flow_type = BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL
 
-        currentPhase.set_default_perf_models()
+        currentPhase.set_default_performance_models()
         TestBase.Application.unit_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3094,9 +3162,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverAileronRoll(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3122,10 +3192,10 @@ class EarlyBoundTests(TestBase):
         roll.roll_orientation = ROLL_UPRIGHT_INVERTED.ROLL_INVERTED
         Assert.assertEqual(ROLL_UPRIGHT_INVERTED.ROLL_INVERTED, roll.roll_orientation)
 
-        roll.roll_rate_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        roll.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             angle: typing.Any = roll.override_roll_rate
-        roll.roll_rate_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        roll.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         roll.override_roll_rate = 20
         overrideRollRate: typing.Any = roll.override_roll_rate
         Assert.assertEqual(20, float(overrideRollRate))
@@ -3143,20 +3213,22 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverAutopilotNav(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Autopilot - Horizontal Plane"
-        autopilot: "BasicManeuverStrategyAutopilotNav" = clr.CastAs(
-            basicManeuver.navigation, BasicManeuverStrategyAutopilotNav
+        autopilot: "BasicManeuverStrategyAutopilotNavigation" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategyAutopilotNavigation
         )
 
-        mode: "AUTOPILOT_HORIZ_PLANE_MODE"
+        mode: "AUTOPILOT_HORIZONTAL_PLANE_MODE"
 
-        for mode in Enum.GetValues(clr.TypeOf(AUTOPILOT_HORIZ_PLANE_MODE)):
+        for mode in Enum.GetValues(clr.TypeOf(AUTOPILOT_HORIZONTAL_PLANE_MODE)):
             autopilot.active_mode = mode
             autopilot.stop_when_conditions_met = False
             Assert.assertFalse(autopilot.stop_when_conditions_met)
@@ -3167,16 +3239,20 @@ class EarlyBoundTests(TestBase):
             autopilot.active_heading_course_value = 10
             Assert.assertEqual(10, autopilot.active_heading_course_value)
 
-        autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE
+        autopilot.active_mode = AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_COURSE_RATE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            autopilot.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 1000)
+            autopilot.set_control_limit(
+                BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 1000
+            )
 
-        autopilot.active_mode = AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE
+        autopilot.active_mode = AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_HEADING_RATE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            autopilot.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 1000)
+            autopilot.set_control_limit(
+                BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 1000
+            )
 
-        autopilot.compensate_for_coriolis_accel = True
-        Assert.assertTrue(autopilot.compensate_for_coriolis_accel)
+        autopilot.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(autopilot.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3188,9 +3264,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverAutopilotProfile(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3206,28 +3284,28 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             testVal: float = autopilot.altitude_rate
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            testVal: typing.Any = autopilot.fpa
+            testVal: typing.Any = autopilot.flight_path_angle
 
         autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
         autopilot.control_altitude_rate_value = 2001
         Assert.assertEqual(2001, autopilot.control_altitude_rate_value)
 
-        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA
-        autopilot.control_fpa_value = 11
-        controlFPA: typing.Any = autopilot.control_fpa_value
+        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE
+        autopilot.control_flight_path_angle_value = 11
+        controlFPA: typing.Any = autopilot.control_flight_path_angle_value
         Assert.assertEqual(11, controlFPA)
 
-        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERF_MODELS
+        autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERFORMANCE_MODELS
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             testVal: float = autopilot.control_altitude_rate_value
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            testVal: typing.Any = autopilot.control_fpa_value
+            testVal: typing.Any = autopilot.control_flight_path_angle_value
 
-        autopilot.control_limit_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        autopilot.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         autopilot.max_pitch_rate = 11
         pitchRate: typing.Any = autopilot.max_pitch_rate
         Assert.assertEqual(11, pitchRate)
-        autopilot.control_limit_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        autopilot.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             autopilot.max_pitch_rate = 11
 
@@ -3246,22 +3324,22 @@ class EarlyBoundTests(TestBase):
         autopilot.altitude_rate = 1
         Assert.assertEqual(1, autopilot.altitude_rate)
 
-        autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA
-        autopilot.fpa = 1
-        fpa: typing.Any = autopilot.fpa
+        autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE
+        autopilot.flight_path_angle = 1
+        fpa: typing.Any = autopilot.flight_path_angle
         Assert.assertEqual(1, fpa)
 
         autopilot.altitude_mode = AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA
+            autopilot.altitude_control_mode = AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             autopilot.damping_ratio = 1.5
 
         airspeedOpts: "BasicManeuverAirspeedOptions" = autopilot.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
-        autopilot.compensate_for_coriolis_accel = True
-        Assert.assertTrue(autopilot.compensate_for_coriolis_accel)
+        autopilot.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(autopilot.compensate_for_coriolis_acceleration)
 
         mode: "AUTOPILOT_ALTITUDE_MODE"
 
@@ -3283,9 +3361,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverBallistic3D(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3343,9 +3423,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverBarrelRoll(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3390,9 +3472,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3430,8 +3514,8 @@ class EarlyBoundTests(TestBase):
         bezier.set_stop_altitude_rate(True, 5)
         Assert.assertEqual(5, bezier.stop_altitude_rate)
 
-        bezier.compensate_for_coriolis_accel = True
-        Assert.assertTrue(bezier.compensate_for_coriolis_accel)
+        bezier.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(bezier.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3443,9 +3527,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverCruise(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3474,8 +3560,8 @@ class EarlyBoundTests(TestBase):
 
         self.EnrouteCruiseAirspeed(cruise.cruise_airspeed_options)
 
-        cruise.compensate_for_coriolis_accel = True
-        Assert.assertTrue(cruise.compensate_for_coriolis_accel)
+        cruise.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(cruise.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -3489,9 +3575,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3509,10 +3597,10 @@ class EarlyBoundTests(TestBase):
 
         flyAOA.turn_direction = FLY_AOA_LEFT_RIGHT.FLY_AOA_LEFT
         flyAOA.control_roll_angle = False
-        flyAOA.roll_rate_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        flyAOA.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             value: typing.Any = flyAOA.override_roll_rate
-        flyAOA.roll_rate_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        flyAOA.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         flyAOA.override_roll_rate = 29
         rate: typing.Any = flyAOA.override_roll_rate
         Assert.assertAlmostEqual(29, float(rate), delta=tolerance)
@@ -3532,7 +3620,7 @@ class EarlyBoundTests(TestBase):
         flyAOA.stop_on_roll_angle = False
         Assert.assertFalse(flyAOA.stop_on_roll_angle)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            flyAOA.roll_rate_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+            flyAOA.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             flyAOA.override_roll_rate = 29
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -3553,9 +3641,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverGlide(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3616,19 +3706,25 @@ class EarlyBoundTests(TestBase):
         glide.max_g = 1.6
         Assert.assertEqual(1.6, glide.max_g)
 
-        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED
-        Assert.assertEqual(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED, glide.max_speed_limits)
-        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED
-        Assert.assertEqual(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED, glide.max_speed_limits)
-        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED
-        Assert.assertEqual(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED, glide.max_speed_limits)
-        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED
-        Assert.assertEqual(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED, glide.max_speed_limits)
+        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+        Assert.assertEqual(
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED, glide.max_speed_limits
+        )
+        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED
+        Assert.assertEqual(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED, glide.max_speed_limits)
+        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED
+        Assert.assertEqual(
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED, glide.max_speed_limits
+        )
+        glide.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED
+        Assert.assertEqual(
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED, glide.max_speed_limits
+        )
 
-        glide.compensate_for_coriolis_accel = False
-        Assert.assertFalse(glide.compensate_for_coriolis_accel)
-        glide.compensate_for_coriolis_accel = True
-        Assert.assertTrue(glide.compensate_for_coriolis_accel)
+        glide.compensate_for_coriolis_acceleration = False
+        Assert.assertFalse(glide.compensate_for_coriolis_acceleration)
+        glide.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(glide.compensate_for_coriolis_acceleration)
 
         glide.powered_cruise_mode = BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE.GLIDE_SPECIFY_UN_POWERED_CRUISE
         Assert.assertEqual(
@@ -3722,9 +3818,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3774,18 +3872,30 @@ class EarlyBoundTests(TestBase):
         intercept.maneuver_factor = 0.6
         Assert.assertEqual(0.6, intercept.maneuver_factor)
 
-        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL, 0)
-        Assert.assertEqual(
-            intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL
+        intercept.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL, 0
         )
-        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL, 0.1)
-        Assert.assertEqual(intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL)
-        Assert.assertAlmostEqual(0.1, intercept.control_limit_horiz_accel, delta=tolerance)
-        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE, 0.2)
-        Assert.assertEqual(intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE)
+        Assert.assertEqual(
+            intercept.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+        )
+        intercept.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION, 0.1
+        )
+        Assert.assertEqual(
+            intercept.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION,
+        )
+        Assert.assertAlmostEqual(0.1, intercept.control_limit_horizontal_acceleration, delta=tolerance)
+        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 0.2)
+        Assert.assertEqual(
+            intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE
+        )
         Assert.assertAlmostEqual(0.2, float(intercept.control_limit_turn_rate), delta=tolerance)
-        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 700)
-        Assert.assertEqual(intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
+        intercept.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 700)
+        Assert.assertEqual(
+            intercept.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS
+        )
         Assert.assertEqual(700, intercept.control_limit_turn_radius)
 
         intercept.closure_mode = CLOSURE_MODE.CLOSURE_NOT_SET
@@ -3802,8 +3912,8 @@ class EarlyBoundTests(TestBase):
         maxAngle: typing.Any = intercept.hobs_max_angle
         Assert.assertEqual(5, float(maxAngle))
 
-        intercept.compensate_for_coriolis_accel = True
-        Assert.assertTrue(intercept.compensate_for_coriolis_accel)
+        intercept.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(intercept.compensate_for_coriolis_acceleration)
 
         self.Test_IAgAvtrBasicManeuverTargetPosVel(intercept.position_vel_strategies)
 
@@ -3819,9 +3929,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverLoop(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3862,9 +3974,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverLTAHover(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3961,9 +4075,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -3973,16 +4089,16 @@ class EarlyBoundTests(TestBase):
         pitch3D.control_mode = PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE
         Assert.assertEqual(PITCH_3D_CONTROL_MODE.PITCH_3D_WIND_PUSHES_VEHICLE, pitch3D.control_mode)
 
-        pitch3D.command_fpa = 59
-        fpa: typing.Any = pitch3D.command_fpa
+        pitch3D.command_flight_path_angle = 59
+        fpa: typing.Any = pitch3D.command_flight_path_angle
         Assert.assertAlmostEqual(59, float(fpa), delta=tolerance)
 
-        pitch3D.control_fpa_dot = 2
-        fpaDot: typing.Any = pitch3D.control_fpa_dot
+        pitch3D.control_flight_path_angle_dot = 2
+        fpaDot: typing.Any = pitch3D.control_flight_path_angle_dot
         Assert.assertEqual(2, float(fpaDot))
 
-        pitch3D.stop_when_fpa_achieved = False
-        Assert.assertEqual(False, pitch3D.stop_when_fpa_achieved)
+        pitch3D.stop_when_flight_path_angle_achieved = False
+        Assert.assertEqual(False, pitch3D.stop_when_flight_path_angle_achieved)
 
         self.BasicManeuverAirspeedOptions(pitch3D.airspeed_options)
 
@@ -4007,9 +4123,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4026,10 +4144,10 @@ class EarlyBoundTests(TestBase):
         angleProfile: typing.Any = pullProfile.active_angle
         Assert.assertAlmostEqual(59, float(angleProfile), delta=tolerance)
 
-        pull.pull_g_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        pull.pull_g_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             pull.override_pull_g = 2
-        pull.pull_g_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        pull.pull_g_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         pull.override_pull_g = 2
         Assert.assertEqual(2, pull.override_pull_g)
 
@@ -4048,9 +4166,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4064,9 +4184,9 @@ class EarlyBoundTests(TestBase):
         pushPull.push_pull_g = 0.99
         Assert.assertEqual(0.99, pushPull.push_pull_g)
 
-        pushPull.accel_mode = ACCEL_MODE.ACCEL
-        pushPull.accel_decel_g = 0.98
-        Assert.assertEqual(0.98, pushPull.accel_decel_g)
+        pushPull.acceleration_mode = ACCELERATION_MODE.ACCELERATION
+        pushPull.acceleration_deceleration_g = 0.98
+        Assert.assertEqual(0.98, pushPull.acceleration_deceleration_g)
 
         pushPull.stop_flight_path_angle = 5
         fpa: typing.Any = pushPull.stop_flight_path_angle
@@ -4088,8 +4208,8 @@ class EarlyBoundTests(TestBase):
         pushPull.set_stop_altitude_rate(True, 0.1)
         Assert.assertAlmostEqual(0.1, pushPull.stop_altitude_rate, delta=tolerance)
 
-        pushPull.compensate_for_coriolis_accel = True
-        Assert.assertTrue(pushPull.compensate_for_coriolis_accel)
+        pushPull.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(pushPull.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4103,9 +4223,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4123,28 +4245,40 @@ class EarlyBoundTests(TestBase):
         relBearing.target_resolution = 0.7
         Assert.assertEqual(0.7, relBearing.target_resolution)
 
-        relBearing.rel_bearing = 1
-        bearing: typing.Any = relBearing.rel_bearing
+        relBearing.relative_bearing = 1
+        bearing: typing.Any = relBearing.relative_bearing
         Assert.assertEqual(1, float(bearing))
         relBearing.min_range = 0.5
         Assert.assertEqual(0.5, relBearing.min_range)
 
-        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL, 0)
-        Assert.assertEqual(
-            relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL
+        relBearing.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL, 0
         )
-        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL, 0.1)
-        Assert.assertEqual(relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL)
-        Assert.assertAlmostEqual(0.1, relBearing.control_limit_horiz_accel, delta=tolerance)
-        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE, 0.2)
-        Assert.assertEqual(relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE)
+        Assert.assertEqual(
+            relBearing.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+        )
+        relBearing.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION, 0.1
+        )
+        Assert.assertEqual(
+            relBearing.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION,
+        )
+        Assert.assertAlmostEqual(0.1, relBearing.control_limit_horizontal_acceleration, delta=tolerance)
+        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 0.2)
+        Assert.assertEqual(
+            relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE
+        )
         Assert.assertAlmostEqual(0.2, float(relBearing.control_limit_turn_rate), delta=tolerance)
-        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 700)
-        Assert.assertEqual(relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
+        relBearing.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 700)
+        Assert.assertEqual(
+            relBearing.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS
+        )
         Assert.assertEqual(700, relBearing.control_limit_turn_radius)
 
-        relBearing.compensate_for_coriolis_accel = True
-        Assert.assertTrue(relBearing.compensate_for_coriolis_accel)
+        relBearing.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(relBearing.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4158,9 +4292,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4189,18 +4325,30 @@ class EarlyBoundTests(TestBase):
         relCourse.cross_track = 2
         Assert.assertEqual(2, relCourse.cross_track)
 
-        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL, 0)
-        Assert.assertEqual(
-            relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL
+        relCourse.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL, 0
         )
-        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL, 0.1)
-        Assert.assertEqual(relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL)
-        Assert.assertAlmostEqual(0.1, relCourse.control_limit_horiz_accel, delta=tolerance)
-        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE, 0.2)
-        Assert.assertEqual(relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE)
+        Assert.assertEqual(
+            relCourse.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+        )
+        relCourse.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION, 0.1
+        )
+        Assert.assertEqual(
+            relCourse.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION,
+        )
+        Assert.assertAlmostEqual(0.1, relCourse.control_limit_horizontal_acceleration, delta=tolerance)
+        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 0.2)
+        Assert.assertEqual(
+            relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE
+        )
         Assert.assertAlmostEqual(0.2, float(relCourse.control_limit_turn_rate), delta=tolerance)
-        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 700)
-        Assert.assertEqual(relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
+        relCourse.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 700)
+        Assert.assertEqual(
+            relCourse.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS
+        )
         Assert.assertEqual(700, relCourse.control_limit_turn_radius)
 
         relCourse.closure_mode = CLOSURE_MODE.CLOSURE_NOT_SET
@@ -4223,8 +4371,8 @@ class EarlyBoundTests(TestBase):
         angleTol: typing.Any = relCourse.hobs_angle_tol
         Assert.assertEqual(4, float(angleTol))
 
-        relCourse.compensate_for_coriolis_accel = True
-        Assert.assertTrue(relCourse.compensate_for_coriolis_accel)
+        relCourse.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(relCourse.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4236,9 +4384,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverRelativeFPA(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4254,12 +4404,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.target_name)
 
         basicManeuver.profile_strategy_type = "Relative Flight Path Angle"
-        relativeFPA: "BasicManeuverStrategyRelativeFPA" = clr.CastAs(
-            basicManeuver.profile, BasicManeuverStrategyRelativeFPA
+        relativeFPA: "BasicManeuverStrategyRelativeFlightPathAngle" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRelativeFlightPathAngle
         )
 
-        relativeFPA.fpa = 5
-        fpa: typing.Any = relativeFPA.fpa
+        relativeFPA.flight_path_angle = 5
+        fpa: typing.Any = relativeFPA.flight_path_angle
         Assert.assertEqual(5, float(fpa))
         relativeFPA.anchor_altitude_offset = 100
         Assert.assertEqual(100, relativeFPA.anchor_altitude_offset)
@@ -4277,17 +4427,17 @@ class EarlyBoundTests(TestBase):
         relativeFPA.set_max_absolute_altitude(True, 10000)
         Assert.assertEqual(10000, relativeFPA.max_absolute_altitude)
 
-        relativeFPA.set_min_altitude_rel_anchor(True, 3)
-        Assert.assertEqual(3, relativeFPA.min_altitude_rel_anchor)
+        relativeFPA.set_min_altitude_relative_anchor(True, 3)
+        Assert.assertEqual(3, relativeFPA.min_altitude_relative_anchor)
 
-        relativeFPA.set_max_altitude_rel_anchor(True, 100)
-        Assert.assertEqual(100, relativeFPA.max_altitude_rel_anchor)
+        relativeFPA.set_max_altitude_relative_anchor(True, 100)
+        Assert.assertEqual(100, relativeFPA.max_altitude_relative_anchor)
 
         airspeedOpts: "BasicManeuverAirspeedOptions" = relativeFPA.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
 
-        relativeFPA.compensate_for_coriolis_accel = True
-        Assert.assertTrue(relativeFPA.compensate_for_coriolis_accel)
+        relativeFPA.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(relativeFPA.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4299,9 +4449,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverRelSpeedAlt(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4317,8 +4469,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(targetName, relCourse.target_name)
 
         basicManeuver.profile_strategy_type = "Relative Speed/Altitude"
-        relSpeedAlt: "BasicManeuverStrategyRelSpeedAltitude" = clr.CastAs(
-            basicManeuver.profile, BasicManeuverStrategyRelSpeedAltitude
+        relSpeedAlt: "BasicManeuverStrategyRelativeSpeedAltitude" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategyRelativeSpeedAltitude
         )
 
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
@@ -4343,10 +4495,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             relSpeedAlt.altitude_offset = 2
 
-        relSpeedAlt.use_perf_model_limits = True
-        Assert.assertTrue(relSpeedAlt.use_perf_model_limits)
-        relSpeedAlt.use_tgt_aspect_for_airspeed = True
-        Assert.assertTrue(relSpeedAlt.use_tgt_aspect_for_airspeed)
+        relSpeedAlt.use_performance_model_limits = True
+        Assert.assertTrue(relSpeedAlt.use_performance_model_limits)
+        relSpeedAlt.use_target_aspect_for_airspeed = True
+        Assert.assertTrue(relSpeedAlt.use_target_aspect_for_airspeed)
 
         relSpeedAlt.range_for_equal_speed = 2
         Assert.assertEqual(2, relSpeedAlt.range_for_equal_speed)
@@ -4374,15 +4526,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.2, relSpeedAlt.max_airspeed)
 
         relSpeedAlt.stop_condition = (
-            REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE
+            RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE
         )
         Assert.assertEqual(
-            REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE,
+            RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE,
             relSpeedAlt.stop_condition,
         )
 
-        relSpeedAlt.compensate_for_coriolis_accel = True
-        Assert.assertTrue(relSpeedAlt.compensate_for_coriolis_accel)
+        relSpeedAlt.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(relSpeedAlt.compensate_for_coriolis_acceleration)
 
         testAC.unload()
         EarlyBoundTests.AG_Procedures.remove(proc1)
@@ -4397,9 +4549,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4429,7 +4583,7 @@ class EarlyBoundTests(TestBase):
         formation.altitude_split = 200
         Assert.assertEqual(200, formation.altitude_split)
 
-        formation.use_perf_model_limits = True
+        formation.use_performance_model_limits = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             formation.altitude_rate_control = 1000
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -4437,7 +4591,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             formation.max_load_factor_g = 3
 
-        formation.use_perf_model_limits = False
+        formation.use_performance_model_limits = False
         formation.altitude_rate_control = 1000
         Assert.assertAlmostEqual(1000, formation.altitude_rate_control, delta=tolerance)
         formation.min_load_factor_g = -3
@@ -4455,14 +4609,14 @@ class EarlyBoundTests(TestBase):
         formation.max_speed_advantage = 51
         Assert.assertEqual(51, formation.max_speed_advantage)
 
-        formation.airspeed_control_mode = ACCEL_PERF_MODEL_OVERRIDE.ACCEL_PERF_MODEL_VALUE
+        formation.airspeed_control_mode = ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            testVal: float = formation.accel_decel_g
+            testVal: float = formation.acceleration_deceleration_g
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            formation.accel_decel_g = 0.1
-        formation.airspeed_control_mode = ACCEL_PERF_MODEL_OVERRIDE.ACCEL_OVERRIDE
-        formation.accel_decel_g = 0.1
-        Assert.assertEqual(0.1, formation.accel_decel_g)
+            formation.acceleration_deceleration_g = 0.1
+        formation.airspeed_control_mode = ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_OVERRIDE
+        formation.acceleration_deceleration_g = 0.1
+        Assert.assertEqual(0.1, formation.acceleration_deceleration_g)
 
         formation.set_airspeed_factor(True, 0.2)
         Assert.assertAlmostEqual(0.2, formation.airspeed_factor, delta=tolerance)
@@ -4481,9 +4635,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4509,18 +4665,18 @@ class EarlyBoundTests(TestBase):
         pull.roll_orientation = ROLL_UPRIGHT_INVERTED.ROLL_INVERTED
         Assert.assertEqual(ROLL_UPRIGHT_INVERTED.ROLL_INVERTED, pull.roll_orientation)
 
-        pull.roll_rate_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        pull.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             testRate: typing.Any = pull.override_roll_rate
-        pull.roll_rate_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        pull.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         pull.override_roll_rate = 20
         overrideRollRate: typing.Any = pull.override_roll_rate
         Assert.assertEqual(20, float(overrideRollRate))
 
-        pull.pull_g_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        pull.pull_g_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             pull.override_pull_g = 2
-        pull.pull_g_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        pull.pull_g_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         pull.override_pull_g = 2
         Assert.assertEqual(2, pull.override_pull_g)
 
@@ -4537,9 +4693,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverSimpleTurn(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4558,8 +4716,8 @@ class EarlyBoundTests(TestBase):
         simpleTurn.turn_radius_factor = 1.1
         Assert.assertEqual(1.1, simpleTurn.turn_radius_factor)
 
-        simpleTurn.compensate_for_coriolis_accel = True
-        Assert.assertTrue(simpleTurn.compensate_for_coriolis_accel)
+        simpleTurn.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(simpleTurn.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4573,28 +4731,30 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
         basicManeuver.navigation_strategy_type = "Smooth Accel"
-        accel: "BasicManeuverStrategySmoothAccel" = clr.CastAs(
-            basicManeuver.navigation, BasicManeuverStrategySmoothAccel
+        accel: "BasicManeuverStrategySmoothAcceleration" = clr.CastAs(
+            basicManeuver.navigation, BasicManeuverStrategySmoothAcceleration
         )
         accel.roll_rate_dot = 29
         rateDot: typing.Any = accel.roll_rate_dot
         Assert.assertAlmostEqual(29, float(rateDot), delta=tolerance)
 
         Assert.assertEqual("Smooth Accel", basicManeuver.profile_strategy_type)
-        accelProfile: "BasicManeuverStrategySmoothAccel" = clr.CastAs(
-            basicManeuver.profile, BasicManeuverStrategySmoothAccel
+        accelProfile: "BasicManeuverStrategySmoothAcceleration" = clr.CastAs(
+            basicManeuver.profile, BasicManeuverStrategySmoothAcceleration
         )
         rateDotProfile: typing.Any = accelProfile.roll_rate_dot
         Assert.assertAlmostEqual(29, float(rateDotProfile), delta=tolerance)
 
-        accel.turn_direction = SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT
+        accel.turn_direction = SMOOTH_ACCELERATION_LEFT_RIGHT.SMOOTH_ACCELERATION_LEFT
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             accel.pitch_angle = 89
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -4618,7 +4778,7 @@ class EarlyBoundTests(TestBase):
 
         accel.stop_on_roll_angle = False
         accel.control_roll_angle = False
-        accel.turn_direction = SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_NO_ROLL
+        accel.turn_direction = SMOOTH_ACCELERATION_LEFT_RIGHT.SMOOTH_ACCELERATION_NO_ROLL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             accel.roll_angle = 89
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -4641,9 +4801,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4664,26 +4826,28 @@ class EarlyBoundTests(TestBase):
         turn.turn_mode = SMOOTH_TURN_MODE.SMOOTH_TURN_LOAD_FACTOR
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             turn.roll_angle = 5
-        turn.load_factor_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+        turn.load_factor_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             turn.override_load_factor = 1
-        turn.load_factor_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        turn.load_factor_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         turn.override_load_factor = 1
         Assert.assertEqual(1, turn.override_load_factor)
 
         turn.turn_mode = SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            turn.load_factor_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
-        turn.roll_rate_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
+            turn.load_factor_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
+        turn.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             turn.override_roll_rate = 1
-        turn.roll_rate_mode = PERF_MODEL_OVERRIDE.OVERRIDE
+        turn.roll_rate_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
         turn.override_roll_rate = 1
         overrideRollRate: typing.Any = turn.override_roll_rate
         Assert.assertEqual(1, float(overrideRollRate))
 
-        turn.fpa_mode = SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF
-        Assert.assertEqual(SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF, turn.fpa_mode)
+        turn.flight_path_angle_mode = SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF
+        Assert.assertEqual(
+            SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF, turn.flight_path_angle_mode
+        )
 
         airspeedOpts: "BasicManeuverAirspeedOptions" = turn.airspeed_options
         self.BasicManeuverAirspeedOptions(airspeedOpts)
@@ -4700,9 +4864,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4721,28 +4887,40 @@ class EarlyBoundTests(TestBase):
         stationNav.max_target_speed_fraction = 40
         Assert.assertEqual(40, stationNav.max_target_speed_fraction)
 
-        stationNav.rel_bearing = 89
-        bearing: typing.Any = stationNav.rel_bearing
+        stationNav.relative_bearing = 89
+        bearing: typing.Any = stationNav.relative_bearing
         Assert.assertEqual(89, float(bearing))
-        stationNav.rel_range = 2
-        Assert.assertEqual(2, stationNav.rel_range)
+        stationNav.relative_range = 2
+        Assert.assertEqual(2, stationNav.relative_range)
         stationNav.desired_radius = 4
         Assert.assertEqual(4, stationNav.desired_radius)
         stationNav.maneuver_factor = 6
         Assert.assertEqual(6, stationNav.maneuver_factor)
 
-        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL, 0)
-        Assert.assertEqual(
-            stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL
+        stationNav.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL, 0
         )
-        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL, 0.1)
-        Assert.assertEqual(stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL)
-        Assert.assertAlmostEqual(0.1, stationNav.control_limit_horiz_accel, delta=tolerance)
-        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE, 0.2)
-        Assert.assertEqual(stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE)
+        Assert.assertEqual(
+            stationNav.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+        )
+        stationNav.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION, 0.1
+        )
+        Assert.assertEqual(
+            stationNav.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION,
+        )
+        Assert.assertAlmostEqual(0.1, stationNav.control_limit_horizontal_acceleration, delta=tolerance)
+        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 0.2)
+        Assert.assertEqual(
+            stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE
+        )
         Assert.assertAlmostEqual(0.2, float(stationNav.control_limit_turn_rate), delta=tolerance)
-        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 700)
-        Assert.assertEqual(stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
+        stationNav.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 700)
+        Assert.assertEqual(
+            stationNav.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS
+        )
         Assert.assertEqual(700, stationNav.control_limit_turn_radius)
 
         scenario: "Scenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, Scenario)
@@ -4786,8 +4964,8 @@ class EarlyBoundTests(TestBase):
         stationNav.stop_after_duration = 2
         Assert.assertEqual(2, stationNav.stop_after_duration)
 
-        stationNav.compensate_for_coriolis_accel = True
-        Assert.assertTrue(stationNav.compensate_for_coriolis_accel)
+        stationNav.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(stationNav.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4799,9 +4977,11 @@ class EarlyBoundTests(TestBase):
     def test_BasicManeuverStraightAhead(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4813,8 +4993,8 @@ class EarlyBoundTests(TestBase):
         straightAhead.reference_frame = STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_COURSE
         Assert.assertEqual(STRAIGHT_AHEAD_REFERENCE_FRAME.MAINTAIN_COURSE, straightAhead.reference_frame)
 
-        straightAhead.compensate_for_coriolis_accel = True
-        Assert.assertTrue(straightAhead.compensate_for_coriolis_accel)
+        straightAhead.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(straightAhead.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4828,9 +5008,11 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         basicManeuver: "ProcedureBasicManeuver" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_BASIC_MANEUVER),
+            EarlyBoundTests.AG_Procedures.add(
+                SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+            ),
             ProcedureBasicManeuver,
         )
 
@@ -4845,20 +5027,34 @@ class EarlyBoundTests(TestBase):
         weave.max_distance = 11
         Assert.assertEqual(11, weave.max_distance)
 
-        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL, 0)
-        Assert.assertEqual(weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL)
-        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL, 0.1)
-        Assert.assertEqual(weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL)
-        Assert.assertAlmostEqual(0.1, weave.control_limit_horiz_accel, delta=tolerance)
-        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE, 0.2)
-        Assert.assertEqual(weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE)
+        weave.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL, 0
+        )
+        Assert.assertEqual(
+            weave.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+        )
+        weave.set_control_limit(
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION, 0.1
+        )
+        Assert.assertEqual(
+            weave.control_limit_mode,
+            BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION,
+        )
+        Assert.assertAlmostEqual(0.1, weave.control_limit_horizontal_acceleration, delta=tolerance)
+        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 0.2)
+        Assert.assertEqual(
+            weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE
+        )
         Assert.assertAlmostEqual(0.2, float(weave.control_limit_turn_rate), delta=tolerance)
-        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS, 700)
-        Assert.assertEqual(weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS)
+        weave.set_control_limit(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS, 700)
+        Assert.assertEqual(
+            weave.control_limit_mode, BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS
+        )
         Assert.assertEqual(700, weave.control_limit_turn_radius)
 
-        weave.compensate_for_coriolis_accel = True
-        Assert.assertTrue(weave.compensate_for_coriolis_accel)
+        weave.compensate_for_coriolis_acceleration = True
+        Assert.assertTrue(weave.compensate_for_coriolis_acceleration)
 
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
@@ -4873,16 +5069,16 @@ class EarlyBoundTests(TestBase):
         areaTarget: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget")
         place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.PLACE, "Place")
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_RELATIVE_TO_PREV_PROCEDURE, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_RELATIVE_TO_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
-        relToPrevProc: "SiteRelToPrevProcedure" = clr.CastAs(proc2.site, SiteRelToPrevProcedure)
+        relToPrevProc: "SiteRelativeToPrevProcedure" = clr.CastAs(proc2.site, SiteRelativeToPrevProcedure)
 
         self.TestSiteName(relToPrevProc.get_as_site(), "Relative to Previous Procedure")
 
-        relToPrevProc.bearing_mode = REL_ABS_BEARING.TRUE_BEARING
-        Assert.assertEqual(REL_ABS_BEARING.TRUE_BEARING, relToPrevProc.bearing_mode)
+        relToPrevProc.bearing_mode = RELATIVE_ABSOLUTE_BEARING.TRUE_BEARING
+        Assert.assertEqual(RELATIVE_ABSOLUTE_BEARING.TRUE_BEARING, relToPrevProc.bearing_mode)
         relToPrevProc.bearing = 3
         bearing: typing.Any = relToPrevProc.bearing
         Assert.assertEqual(3, float(bearing))
@@ -4905,9 +5101,9 @@ class EarlyBoundTests(TestBase):
         place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_RELATIVE_TO_STATIONARY_STK_OBJECT, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_RELATIVE_TO_STATIONARY_STK_OBJECT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
-        relToSTKObject: "SiteRelToSTKObject" = clr.CastAs(proc1.site, SiteRelToSTKObject)
+        relToSTKObject: "SiteRelativeToSTKObject" = clr.CastAs(proc1.site, SiteRelativeToSTKObject)
 
         self.TestSiteName(relToSTKObject.get_as_site(), "Relative to stationary STK Object Site")
 
@@ -4940,7 +5136,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_AIRPORT_FROM_CATALOG, PROCEDURE_TYPE.PROC_TAKEOFF
+            SITE_TYPE.SITE_AIRPORT_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
         )
         catAirport: "SiteAirportFromCatalog" = clr.CastAs(proc1.site, SiteAirportFromCatalog)
 
@@ -4965,7 +5161,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_NAVAID_FROM_CATALOG, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         catNavaid: "SiteNavaidFromCatalog" = clr.CastAs(proc1.site, SiteNavaidFromCatalog)
 
@@ -4990,7 +5186,7 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         runway: "SiteRunway" = clr.CastAs(proc1.site, SiteRunway)
 
         self.TestSiteName(runway.get_as_site(), "Runway")
@@ -5052,7 +5248,9 @@ class EarlyBoundTests(TestBase):
     def test_SiteWaypoint(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROC_ENROUTE)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
+        )
         waypoint: "SiteWaypoint" = clr.CastAs(proc1.site, SiteWaypoint)
 
         self.TestSiteName(waypoint.get_as_site(), "Waypoint")
@@ -5074,7 +5272,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROC_REFERENCE_STATE
+            SITE_TYPE.SITE_REFERENCE_STATE, PROCEDURE_TYPE.PROCEDURE_REFERENCE_STATE
         )
         refStateSite: "SiteReferenceState" = clr.CastAs(proc1.site, SiteReferenceState)
 
@@ -5093,7 +5291,7 @@ class EarlyBoundTests(TestBase):
         areaTarget2: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget2")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH
+            SITE_TYPE.SITE_STK_AREA_TARGET, PROCEDURE_TYPE.PROCEDURE_AREA_TARGET_SEARCH
         )
         atSite: "SiteSTKAreaTarget" = clr.CastAs(proc1.site, SiteSTKAreaTarget)
 
@@ -5136,9 +5334,9 @@ class EarlyBoundTests(TestBase):
         traj2.propagate()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_DYN_STATE, PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE
+            SITE_TYPE.SITE_DYNAMIC_STATE, PROCEDURE_TYPE.PROCEDURE_LAUNCH_DYNAMIC_STATE
         )
-        dynState: "SiteDynState" = clr.CastAs(proc1.site, SiteDynState)
+        dynState: "SiteDynamicState" = clr.CastAs(proc1.site, SiteDynamicState)
 
         dynState.object_name = "Missile/Missile2"
         name: typing.Any = dynState.object_name
@@ -5164,7 +5362,7 @@ class EarlyBoundTests(TestBase):
         place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_STK_OBJECT_WAYPOINT, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_STK_OBJECT_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         objectWaypointSite: "SiteSTKObjectWaypoint" = clr.CastAs(proc1.site, SiteSTKObjectWaypoint)
 
@@ -5180,9 +5378,12 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
         scenario: "Scenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, Scenario)
 
-        objectWaypointSite.minimize_site_proc_time_diff = MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF
+        objectWaypointSite.minimize_site_procedure_time_diff = (
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF
+        )
         Assert.assertEqual(
-            MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF, objectWaypointSite.minimize_site_proc_time_diff
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF,
+            objectWaypointSite.minimize_site_procedure_time_diff,
         )
 
         minTime: typing.Any = objectWaypointSite.min_time
@@ -5193,17 +5394,19 @@ class EarlyBoundTests(TestBase):
         objectWaypointSite.waypoint_time = 30
         Assert.assertEqual(30, objectWaypointSite.waypoint_time)
 
-        objectWaypointSite.minimize_site_proc_time_diff = (
-            MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE
+        objectWaypointSite.minimize_site_procedure_time_diff = (
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE
         )
         Assert.assertEqual(
-            MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE,
-            objectWaypointSite.minimize_site_proc_time_diff,
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE,
+            objectWaypointSite.minimize_site_procedure_time_diff,
         )
-        objectWaypointSite.minimize_site_proc_time_diff = MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS
+        objectWaypointSite.minimize_site_procedure_time_diff = (
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS
+        )
         Assert.assertEqual(
-            MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS,
-            objectWaypointSite.minimize_site_proc_time_diff,
+            MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS,
+            objectWaypointSite.minimize_site_procedure_time_diff,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             objectWaypointSite.waypoint_time = 5
@@ -5259,7 +5462,7 @@ class EarlyBoundTests(TestBase):
         place: "IStkObject" = EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.PLACE, "Place")
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_STK_STATIC_OBJECT, PROCEDURE_TYPE.PROC_ENROUTE
+            SITE_TYPE.SITE_STK_STATIC_OBJECT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
         )
         staticObjectSite: "SiteSTKStaticObject" = clr.CastAs(proc1.site, SiteSTKStaticObject)
 
@@ -5303,7 +5506,9 @@ class EarlyBoundTests(TestBase):
         impact2.lon = -20
         traj2.propagate()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROC_LAUNCH)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
+            SITE_TYPE.SITE_STK_VEHICLE, PROCEDURE_TYPE.PROCEDURE_LAUNCH
+        )
         stkVehicleSite: "SiteSTKVehicle" = clr.CastAs(proc1.site, SiteSTKVehicle)
 
         stkVehicleSite.object_name = "Missile/Missile2"
@@ -5326,9 +5531,9 @@ class EarlyBoundTests(TestBase):
     def test_SuperProcedure(self):
         self.EmptyProcedures()
 
-        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+        proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         superProc: "ProcedureSuperProcedure" = clr.CastAs(
-            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROC_SUPER_PROCEDURE),
+            EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_SUPER_PROCEDURE),
             ProcedureSuperProcedure,
         )
 
@@ -5355,7 +5560,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROC_SUPER_PROCEDURE
+            SITE_TYPE.SITE_SUPER_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_SUPER_PROCEDURE
         )
         superProcSite: "SiteSuperProcedure" = clr.CastAs(proc1.site, SiteSuperProcedure)
 
@@ -5371,7 +5576,7 @@ class EarlyBoundTests(TestBase):
         self.EmptyProcedures()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
-            SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF
+            SITE_TYPE.SITE_VTOL_POINT, PROCEDURE_TYPE.PROCEDURE_VERTICAL_TAKEOFF
         )
         vtolSite: "SiteVTOLPoint" = clr.CastAs(proc1.site, SiteVTOLPoint)
 
@@ -5476,12 +5681,12 @@ class EarlyBoundTests(TestBase):
         advFWT.max_temperature = 900
         Assert.assertEqual(900, advFWT.max_temperature)
 
-        advFWT.cache_aero_data = False
-        Assert.assertEqual(False, advFWT.cache_aero_data)
+        advFWT.cache_aerodynamic_data = False
+        Assert.assertEqual(False, advFWT.cache_aerodynamic_data)
         advFWT.cache_fuel_flow = False
         Assert.assertEqual(False, advFWT.cache_fuel_flow)
 
-        advFWT.create_all_perf_models("CreateAllPerfModelsTest", True, False)
+        advFWT.create_all_performance_models("CreateAllPerfModelsTest", True, False)
         tempAC.acceleration.get_advanced_acceleration_by_name("CreateAllPerfModelsTest")
         tempAC.climb.get_advanced_climb_by_name("CreateAllPerfModelsTest")
         tempAC.cruise.get_advanced_cruise_by_name("CreateAllPerfModelsTest")
@@ -5490,7 +5695,7 @@ class EarlyBoundTests(TestBase):
         tempAC.landing.get_advanced_landing_by_name("CreateAllPerfModelsTest")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("already exist")):
-            advFWT.create_all_perf_models("CreateAllPerfModelsTest", False, False)
+            advFWT.create_all_performance_models("CreateAllPerfModelsTest", False, False)
 
         tempAC.get_as_catalog_item().remove()
 
@@ -5504,12 +5709,12 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvancedFixedWingExternalAero" = advFWT.aero_mode_as_external
+            aeroTest: "AdvancedFixedWingExternalAerodynamic" = advFWT.aerodynamic_mode_as_external
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE
-        aero: "AdvancedFixedWingExternalAero" = advFWT.aero_mode_as_external
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.EXTERNAL_AERODYNAMIC_FILE
+        aero: "AdvancedFixedWingExternalAerodynamic" = advFWT.aerodynamic_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.aero")
         with pytest.raises(Exception, match=RegexSubstringMatch("Failed to load the file.")):
@@ -5532,13 +5737,15 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvancedFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+            aeroTest: "AdvancedFixedWingSubSuperHypersonicAerodynamic" = advFWT.aerodynamic_mode_as_sub_super_hypersonic
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO
-        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO, advFWT.aero_strategy)
-        aero: "AdvancedFixedWingSubSuperHypersonicAero" = advFWT.aero_mode_as_sub_super_hypersonic
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUB_SUPER_HYPER_AERODYNAMIC
+        Assert.assertEqual(
+            ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUB_SUPER_HYPER_AERODYNAMIC, advFWT.aerodynamic_strategy
+        )
+        aero: "AdvancedFixedWingSubSuperHypersonicAerodynamic" = advFWT.aerodynamic_mode_as_sub_super_hypersonic
 
         aero.transonic_min_mach = 0.81
         Assert.assertEqual(0.81, aero.transonic_min_mach)
@@ -5569,13 +5776,13 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUPERSONIC_AERODYNAMIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvancedFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+            aeroTest: "AdvancedFixedWingSubsonicAerodynamic" = advFWT.aerodynamic_mode_as_subsonic
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
-        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO, advFWT.aero_strategy)
-        aero: "AdvancedFixedWingSubsonicAero" = advFWT.aero_mode_as_subsonic
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC
+        Assert.assertEqual(ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC, advFWT.aerodynamic_strategy)
+        aero: "AdvancedFixedWingSubsonicAerodynamic" = advFWT.aerodynamic_mode_as_subsonic
 
         aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -5628,13 +5835,13 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            aeroTest: "AdvancedFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+            aeroTest: "AdvancedFixedWingSupersonicAerodynamic" = advFWT.aerodynamic_mode_as_supersonic
 
-        advFWT.aero_strategy = ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO
-        Assert.assertEqual(ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO, advFWT.aero_strategy)
-        aero: "AdvancedFixedWingSupersonicAero" = advFWT.aero_mode_as_supersonic
+        advFWT.aerodynamic_strategy = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUPERSONIC_AERODYNAMIC
+        Assert.assertEqual(ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUPERSONIC_AERODYNAMIC, advFWT.aerodynamic_strategy)
+        aero: "AdvancedFixedWingSupersonicAerodynamic" = advFWT.aerodynamic_mode_as_supersonic
 
         aero.geometry_type = ADVANCED_FIXED_WING_GEOMETRY.VARIABLE_GEOMETRY
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -5695,7 +5902,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingElectricPowerplant" = advFWT.powerplant_mode_as_electric
 
@@ -5724,11 +5931,11 @@ class EarlyBoundTests(TestBase):
 
         advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvancedFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+            propTest: "AdvancedFixedWingExternalPropulsion" = advFWT.powerplant_mode_as_external
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
-        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE, advFWT.powerplant_strategy)
-        prop: "AdvancedFixedWingExternalProp" = advFWT.powerplant_mode_as_external
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
+        Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE, advFWT.powerplant_strategy)
+        prop: "AdvancedFixedWingExternalPropulsion" = advFWT.powerplant_mode_as_external
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.prop")
         with pytest.raises(Exception, match=RegexSubstringMatch("Failed to load the file.")):
@@ -5753,7 +5960,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingPistonPowerplant" = advFWT.powerplant_mode_as_piston
 
@@ -5790,7 +5997,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingTurbopropPowerplant" = advFWT.powerplant_mode_as_turboprop
 
@@ -5820,7 +6027,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
@@ -5842,7 +6049,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
@@ -5864,7 +6071,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
@@ -5888,7 +6095,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
@@ -5910,7 +6117,7 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             propTest: "AdvancedFixedWingEmpiricalJetEngine" = advFWT.powerplant_mode_as_empirical_jet_engine
 
@@ -5932,9 +6139,9 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvancedFixedWingTurbojetBasicABProp" = advFWT.powerplant_mode_as_basic_turbojet
+            propTest: "AdvancedFixedWingTurbojetBasicABPropulsion" = advFWT.powerplant_mode_as_basic_turbojet
 
         advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB
         Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOJET_BASIC_AB, advFWT.powerplant_strategy)
@@ -5952,9 +6159,9 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvancedFixedWingTurbofanBasicABProp" = advFWT.powerplant_mode_as_basic_turbofan
+            propTest: "AdvancedFixedWingTurbofanBasicABPropulsion" = advFWT.powerplant_mode_as_basic_turbofan
 
         advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB
         Assert.assertEqual(ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB, advFWT.powerplant_strategy)
@@ -5972,15 +6179,15 @@ class EarlyBoundTests(TestBase):
         )
         advFWT: "AdvancedFixedWingTool" = tempAC.advanced_fixed_wing_tool
 
-        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE
+        advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            propTest: "AdvancedFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+            propTest: "AdvancedFixedWingSubSuperHypersonicPropulsion" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
         advFWT.powerplant_strategy = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT
         Assert.assertEqual(
             ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT, advFWT.powerplant_strategy
         )
-        prop: "AdvancedFixedWingSubSuperHypersonicProp" = advFWT.powerplant_mode_as_sub_super_hypersonic
+        prop: "AdvancedFixedWingSubSuperHypersonicPropulsion" = advFWT.powerplant_mode_as_sub_super_hypersonic
 
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, prop.max_turbine_compression_temp)
@@ -5998,7 +6205,7 @@ class EarlyBoundTests(TestBase):
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_DISABLED
         Assert.assertEqual(TURBINE_MODE.TURBINE_MODE_DISABLED, prop.turbine_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            fanTest: "AdvancedFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+            fanTest: "AdvancedFixedWingTurbofanBasicABPropulsion" = prop.turbine_mode_as_turbofan
         prop.ramjet_mode = RAMJET_MODE.RAMJET_MODE_DISABLED
         Assert.assertEqual(RAMJET_MODE.RAMJET_MODE_DISABLED, prop.ramjet_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -6010,7 +6217,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the turbojet turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOJET_BASIC_AB
-        turbojet: "AdvancedFixedWingTurbojetBasicABProp" = prop.turbine_mode_as_turbojet
+        turbojet: "AdvancedFixedWingTurbojetBasicABPropulsion" = prop.turbine_mode_as_turbojet
         self.TestTurbojetBasicAB(turbojet)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbojet.max_compression_temp)
@@ -6019,7 +6226,7 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////// Now test the turbofan turbine ////////////
         prop.turbine_mode = TURBINE_MODE.TURBINE_MODE_TURBOFAN_BASIC_AB
-        turbofan: "AdvancedFixedWingTurbofanBasicABProp" = prop.turbine_mode_as_turbofan
+        turbofan: "AdvancedFixedWingTurbofanBasicABPropulsion" = prop.turbine_mode_as_turbofan
         self.TestTurbofanBasicAB(turbofan)
         prop.max_turbine_compression_temp = 901
         Assert.assertEqual(901, turbofan.max_compression_temp)
@@ -6146,20 +6353,20 @@ class EarlyBoundTests(TestBase):
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
         levelTurns: "LevelTurns" = basicAcc.level_turns
-        levelTurns.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL
+        levelTurns.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_NORMAL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            testVal: "AeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
-        levelTurns.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
+            testVal: "AerodynamicPropulsionManeuverModeHelper" = levelTurns.maneuver_mode_helper
+        levelTurns.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            testVal: "AeroPropManeuverModeHelper" = levelTurns.maneuver_mode_helper
+            testVal: "AerodynamicPropulsionManeuverModeHelper" = levelTurns.maneuver_mode_helper
 
         climbDescent: "ClimbAndDescentTransitions" = basicAcc.climb_and_descent_transitions
-        climbDescent.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL
+        climbDescent.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_NORMAL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            testVal: "AeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
-        climbDescent.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
+            testVal: "AerodynamicPropulsionManeuverModeHelper" = climbDescent.maneuver_mode_helper
+        climbDescent.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            testVal: "AeroPropManeuverModeHelper" = climbDescent.maneuver_mode_helper
+            testVal: "AerodynamicPropulsionManeuverModeHelper" = climbDescent.maneuver_mode_helper
 
     # endregion
 
@@ -6172,9 +6379,9 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "AircraftAero" = basicAcc.aerodynamics
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE
-        Assert.assertEqual(AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE, aero.aero_strategy)
+        aero: "AircraftAerodynamic" = basicAcc.aerodynamics
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_SIMPLE
+        Assert.assertEqual(AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_SIMPLE, aero.aerodynamic_strategy)
 
         aero.lift_factor = 1.2
         Assert.assertEqual(1.2, aero.lift_factor)
@@ -6182,7 +6389,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1.3, aero.drag_factor)
         Assert.assertEqual(1.2, aero.lift_factor)
 
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE
         with pytest.raises(Exception):
             aero.lift_factor = 1.2
         with pytest.raises(Exception):
@@ -6201,12 +6408,12 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "AircraftAero" = basicAcc.aerodynamics
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE
+        aero: "AircraftAerodynamic" = basicAcc.aerodynamics
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_SIMPLE
 
-        simpleAero: "AircraftSimpleAero" = aero.mode_as_simple
-        simpleAero.operating_mode = AERO_PROP_SIMPLE_MODE.HELICOPTER
-        Assert.assertEqual(AERO_PROP_SIMPLE_MODE.HELICOPTER, simpleAero.operating_mode)
+        simpleAero: "AircraftSimpleAerodynamic" = aero.mode_as_simple
+        simpleAero.operating_mode = AERODYNAMIC_PROPULSION_SIMPLE_MODE.HELICOPTER
+        Assert.assertEqual(AERODYNAMIC_PROPULSION_SIMPLE_MODE.HELICOPTER, simpleAero.operating_mode)
 
         simpleAero.s_reference = 5
         Assert.assertEqual(5, simpleAero.s_reference)
@@ -6230,10 +6437,10 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "AircraftAero" = basicAcc.aerodynamics
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_BASIC_FIXED_WING
+        aero: "AircraftAerodynamic" = basicAcc.aerodynamics
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING
 
-        bfwAero: "AircraftBasicFixedWingAero" = aero.mode_as_basic_fixed_wing
+        bfwAero: "AircraftBasicFixedWingAerodynamic" = aero.mode_as_basic_fixed_wing
 
         bfwAero.forward_flight_reference_area = 0.05
         Assert.assertEqual(0.05, bfwAero.forward_flight_reference_area)
@@ -6286,10 +6493,10 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "AircraftAero" = basicAcc.aerodynamics
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_EXTERNAL_FILE
+        aero: "AircraftAerodynamic" = basicAcc.aerodynamics
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE
 
-        externalAero: "AircraftExternalAero" = aero.mode_as_external
+        externalAero: "AircraftExternalAerodynamic" = aero.mode_as_external
         Assert.assertIs(None, externalAero.forward_flight_filepath)
         Assert.assertIs(None, externalAero.takeoff_landing_filepath)
         with pytest.raises(Exception):
@@ -6342,8 +6549,8 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        aero: "AircraftAero" = basicAcc.aerodynamics
-        aero.aero_strategy = AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE
+        aero: "AircraftAerodynamic" = basicAcc.aerodynamics
+        aero.aerodynamic_strategy = AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE
         self.AdvancedMissileAero(aero.mode_as_advanced_missile)
 
         newAC.get_as_catalog_item().remove()
@@ -6359,16 +6566,16 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
-        Assert.assertEqual(AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE, prop.prop_strategy)
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_SIMPLE
+        Assert.assertEqual(AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_SIMPLE, prop.propulsion_strategy)
         with pytest.raises(Exception):
             prop.lift_factor = 1.2
         with pytest.raises(Exception):
             prop.drag_factor = 1.3
 
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING
-        Assert.assertEqual(AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING, prop.prop_strategy)
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING
+        Assert.assertEqual(AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING, prop.propulsion_strategy)
 
         prop.lift_factor = 1.2
         Assert.assertEqual(1.2, prop.lift_factor)
@@ -6389,14 +6596,14 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE
-        simpleProp: "AircraftSimpleProp" = prop.mode_as_simple
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_SIMPLE
+        simpleProp: "AircraftSimplePropulsion" = prop.mode_as_simple
 
-        simpleProp.max_thrust_accel = 0.6
-        Assert.assertEqual(0.6, simpleProp.max_thrust_accel)
-        simpleProp.min_thrust_decel = 0.4
-        Assert.assertEqual(0.4, simpleProp.min_thrust_decel)
+        simpleProp.max_thrust_acceleration = 0.6
+        Assert.assertEqual(0.6, simpleProp.max_thrust_acceleration)
+        simpleProp.min_thrust_deceleration = 0.4
+        Assert.assertEqual(0.4, simpleProp.min_thrust_deceleration)
 
         Assert.assertEqual(False, simpleProp.use_density_scaling)
         simpleProp.set_density_scaling(True, 0.02)
@@ -6416,33 +6623,33 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_EXTERNAL_FILE
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_EXTERNAL_FILE
 
-        externalProp: "AircraftExternalProp" = prop.mode_as_external
-        Assert.assertIs(None, externalProp.prop_filepath)
+        externalProp: "AircraftExternalPropulsion" = prop.mode_as_external
+        Assert.assertIs(None, externalProp.propulsion_filepath)
         with pytest.raises(Exception):
-            externalProp.set_prop_filepath("")
+            externalProp.set_propulsion_filepath("")
         with pytest.raises(Exception):
-            externalProp.reload_prop_file()
+            externalProp.reload_propulsion_file()
         Assert.assertEqual(False, externalProp.is_valid)
 
-        Assert.assertTrue(externalProp.can_set_accel_decel)
-        externalProp.max_thrust_accel = 0.6
-        Assert.assertEqual(0.6, externalProp.max_thrust_accel)
-        externalProp.min_thrust_decel = 0.4
-        Assert.assertEqual(0.4, externalProp.min_thrust_decel)
+        Assert.assertTrue(externalProp.can_set_acceleration_deceleration)
+        externalProp.max_thrust_acceleration = 0.6
+        Assert.assertEqual(0.6, externalProp.max_thrust_acceleration)
+        externalProp.min_thrust_deceleration = 0.4
+        Assert.assertEqual(0.4, externalProp.min_thrust_deceleration)
 
         nonexistingfilepath: str = TestBase.GetScenarioFile("DoesNotExist.prop")
         with pytest.raises(Exception, match=RegexSubstringMatch("Failed to load the file.")):
-            externalProp.set_prop_filepath(nonexistingfilepath)
+            externalProp.set_propulsion_filepath(nonexistingfilepath)
 
         propFilepath: str = TestBase.GetScenarioFile("simpleProp.prop")
-        returnMsg: str = externalProp.set_prop_filepath(propFilepath)
+        returnMsg: str = externalProp.set_propulsion_filepath(propFilepath)
         Assert.assertTrue(("processed" in returnMsg))
-        Assert.assertEqual(False, externalProp.can_set_accel_decel)
+        Assert.assertEqual(False, externalProp.can_set_acceleration_deceleration)
         with pytest.raises(Exception):
-            externalProp.max_thrust_accel = 0.6
+            externalProp.max_thrust_acceleration = 0.6
         Assert.assertTrue(externalProp.is_valid)
 
         newAC.get_as_catalog_item().remove()
@@ -6460,12 +6667,12 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING
 
-        bfwProp: "AircraftBasicFixedWingProp" = prop.mode_as_basic_fixed_wing
-        bfwProp.propulsion_mode = BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST
-        Assert.assertEqual(BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST, bfwProp.propulsion_mode)
+        bfwProp: "AircraftBasicFixedWingPropulsion" = prop.mode_as_basic_fixed_wing
+        bfwProp.propulsion_mode = BASIC_FIXED_WING_PROPULSION_MODE.SPECIFY_THRUST
+        Assert.assertEqual(BASIC_FIXED_WING_PROPULSION_MODE.SPECIFY_THRUST, bfwProp.propulsion_mode)
         with pytest.raises(Exception):
             bfwProp.propeller_count = 1
         with pytest.raises(Exception):
@@ -6478,7 +6685,7 @@ class EarlyBoundTests(TestBase):
         bfwProp.max_power_thrust = 100000
         Assert.assertEqual(100000, bfwProp.max_power_thrust)
 
-        bfwProp.propulsion_mode = BASIC_FIXED_WING_PROP_MODE.SPECIFY_POWER
+        bfwProp.propulsion_mode = BASIC_FIXED_WING_PROPULSION_MODE.SPECIFY_POWER
         bfwProp.propeller_count = 2
         Assert.assertEqual(2, bfwProp.propeller_count)
         bfwProp.propeller_diameter = 4
@@ -6495,10 +6702,10 @@ class EarlyBoundTests(TestBase):
         bfwProp.max_fuel_flow = 12345
         Assert.assertAlmostEqual(12345, bfwProp.max_fuel_flow, delta=tolerance)
 
-        bfwProp.max_thrust_accel = 0.6
-        Assert.assertEqual(0.6, bfwProp.max_thrust_accel)
-        bfwProp.min_thrust_decel = 0.4
-        Assert.assertEqual(0.4, bfwProp.min_thrust_decel)
+        bfwProp.max_thrust_acceleration = 0.6
+        Assert.assertEqual(0.6, bfwProp.max_thrust_acceleration)
+        bfwProp.min_thrust_deceleration = 0.4
+        Assert.assertEqual(0.4, bfwProp.min_thrust_deceleration)
 
         Assert.assertEqual(False, bfwProp.use_density_scaling)
         bfwProp.set_density_scaling(True, 0.02)
@@ -6520,9 +6727,9 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_ROCKET
-        rocketProp: "MissileRocketProp" = prop.mode_as_rocket
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_ROCKET
+        rocketProp: "MissileRocketPropulsion" = prop.mode_as_rocket
 
         rocketProp.nozzle_expansion_ratio = 7.1
         Assert.assertEqual(7.1, rocketProp.nozzle_expansion_ratio)
@@ -6563,9 +6770,9 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_RAMJET
-        ramjetProp: "MissileRamjetProp" = prop.mode_as_ramjet
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_RAMJET
+        ramjetProp: "MissileRamjetPropulsion" = prop.mode_as_ramjet
 
         ramjetProp.design_altitude = 5000
         Assert.assertEqual(5000, ramjetProp.design_altitude)
@@ -6605,9 +6812,9 @@ class EarlyBoundTests(TestBase):
         acc: "AircraftAcceleration" = newAC.acceleration
         basicAcc: "AircraftBasicAccelerationModel" = acc.get_built_in_model()
 
-        prop: "AircraftProp" = basicAcc.propulsion
-        prop.prop_strategy = AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_TURBOJET
-        turboProp: "MissileTurbojetProp" = prop.mode_as_turbojet
+        prop: "AircraftPropulsion" = basicAcc.propulsion
+        prop.propulsion_strategy = AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_TURBOJET
+        turboProp: "MissileTurbojetPropulsion" = prop.mode_as_turbojet
 
         turboProp.design_altitude = 5000
         Assert.assertEqual(5000, turboProp.design_altitude)
@@ -6664,9 +6871,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("AdvAcceleration Model Name", accModelNames[0])
 
         accMode: "AircraftAccelerationMode" = advAcc.acceleration_mode
-        accMode.accel_mode = ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL
+        accMode.acceleration_mode = ACCELERATION_ADVANCED_ACCELERATION_MODE.ACCELERATION_MODE_MAX_ACCELERATION
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            accMode.accel_g = 1
+            accMode.acceleration_g = 1
 
         advAcc.get_as_catalog_item().remove()
         accModelNames = accAsCatalogItem.child_names
@@ -6699,8 +6906,8 @@ class EarlyBoundTests(TestBase):
         basicClimb.altitude_rate = 4001
         Assert.assertAlmostEqual(4001, basicClimb.altitude_rate, delta=tolerance)
 
-        basicClimb.use_aero_prop_fuel = True
-        Assert.assertTrue(basicClimb.use_aero_prop_fuel)
+        basicClimb.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(basicClimb.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             testVal: bool = basicClimb.scale_fuel_flow_by_non_std_density
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
@@ -6710,7 +6917,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicClimb.fuel_flow = 1
 
-        basicClimb.use_aero_prop_fuel = False
+        basicClimb.use_aerodynamic_propulsion_fuel = False
         basicClimb.fuel_flow = 9000
         Assert.assertAlmostEqual(9000, basicClimb.fuel_flow, delta=tolerance)
 
@@ -6806,8 +7013,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10000, basicCruise.default_cruise_altitude)
         basicCruise.airspeed_type = AIRSPEED_TYPE.CAS
         Assert.assertEqual(AIRSPEED_TYPE.CAS, basicCruise.airspeed_type)
-        basicCruise.use_aero_prop_fuel = False
-        Assert.assertEqual(False, basicCruise.use_aero_prop_fuel)
+        basicCruise.use_aerodynamic_propulsion_fuel = False
+        Assert.assertEqual(False, basicCruise.use_aerodynamic_propulsion_fuel)
         basicCruise.scale_fuel_flow_by_non_std_density = True
         Assert.assertTrue(basicCruise.scale_fuel_flow_by_non_std_density)
 
@@ -6819,8 +7026,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(553, basicCruise.max_airspeed, delta=tolerance)
         basicCruise.max_range_airspeed = 104
         Assert.assertEqual(104, basicCruise.max_range_airspeed)
-        basicCruise.max_perf_airspeed = 105
-        Assert.assertEqual(105, basicCruise.max_perf_airspeed)
+        basicCruise.max_performance_airspeed = 105
+        Assert.assertEqual(105, basicCruise.max_performance_airspeed)
 
         basicCruise.airspeed_type = AIRSPEED_TYPE.MACH
         Assert.assertEqual(AIRSPEED_TYPE.MACH, basicCruise.airspeed_type)
@@ -6836,8 +7043,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.96, basicCruise.max_airspeed)
         basicCruise.max_range_airspeed = 0.14
         Assert.assertEqual(0.14, basicCruise.max_range_airspeed)
-        basicCruise.max_perf_airspeed = 0.15
-        Assert.assertEqual(0.15, basicCruise.max_perf_airspeed)
+        basicCruise.max_performance_airspeed = 0.15
+        Assert.assertEqual(0.15, basicCruise.max_performance_airspeed)
 
         basicCruise.min_airspeed_fuel_flow = 101.5
         Assert.assertEqual(101.5, basicCruise.min_airspeed_fuel_flow)
@@ -6847,11 +7054,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(553.5, basicCruise.max_airspeed_fuel_flow, delta=tolerance)
         basicCruise.max_range_fuel_flow = 104.5
         Assert.assertEqual(104.5, basicCruise.max_range_fuel_flow)
-        basicCruise.max_perf_airspeed_fuel_flow = 105.5
-        Assert.assertEqual(105.5, basicCruise.max_perf_airspeed_fuel_flow)
+        basicCruise.max_performance_airspeed_fuel_flow = 105.5
+        Assert.assertEqual(105.5, basicCruise.max_performance_airspeed_fuel_flow)
 
-        basicCruise.use_aero_prop_fuel = True
-        Assert.assertTrue(basicCruise.use_aero_prop_fuel)
+        basicCruise.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(basicCruise.use_aerodynamic_propulsion_fuel)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             basicCruise.scale_fuel_flow_by_non_std_density = True
@@ -6864,7 +7071,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             basicCruise.max_range_fuel_flow = 100
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            basicCruise.max_perf_airspeed_fuel_flow = 100
+            basicCruise.max_performance_airspeed_fuel_flow = 100
 
         newAC.get_as_catalog_item().remove()
 
@@ -6884,8 +7091,8 @@ class EarlyBoundTests(TestBase):
 
         advCruise.default_cruise_altitude = 10001
         Assert.assertEqual(10001, advCruise.default_cruise_altitude)
-        advCruise.max_perf_airspeed = CRUISE_MAX_PERF_SPEED_TYPE.MAX_SPEED_DRY_THRUST
-        Assert.assertEqual(CRUISE_MAX_PERF_SPEED_TYPE.MAX_SPEED_DRY_THRUST, advCruise.max_perf_airspeed)
+        advCruise.max_performance_airspeed = CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_SPEED_DRY_THRUST
+        Assert.assertEqual(CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_SPEED_DRY_THRUST, advCruise.max_performance_airspeed)
 
         advCruise.use_airspeed_limit = False
         Assert.assertEqual(False, advCruise.use_airspeed_limit)
@@ -6935,8 +7142,8 @@ class EarlyBoundTests(TestBase):
         basicDescent.altitude_rate = -4001
         Assert.assertAlmostEqual(-4001, basicDescent.altitude_rate, delta=tolerance)
 
-        basicDescent.use_aero_prop_fuel = True
-        Assert.assertTrue(basicDescent.use_aero_prop_fuel)
+        basicDescent.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(basicDescent.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             testVal: bool = basicDescent.scale_fuel_flow_by_non_std_density
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
@@ -6946,7 +7153,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicDescent.fuel_flow = 1
 
-        basicDescent.use_aero_prop_fuel = False
+        basicDescent.use_aerodynamic_propulsion_fuel = False
         basicDescent.fuel_flow = 9000
         Assert.assertAlmostEqual(9000, basicDescent.fuel_flow, delta=tolerance)
 
@@ -7044,14 +7251,14 @@ class EarlyBoundTests(TestBase):
         basicLanding.sea_level_ground_roll = 6
         Assert.assertAlmostEqual(6, basicLanding.sea_level_ground_roll, delta=tolerance)
 
-        basicLanding.use_aero_prop_fuel = True
-        Assert.assertTrue(basicLanding.use_aero_prop_fuel)
+        basicLanding.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(basicLanding.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicLanding.scale_fuel_flow_by_non_std_density = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicLanding.fuel_flow = 9000
 
-        basicLanding.use_aero_prop_fuel = False
+        basicLanding.use_aerodynamic_propulsion_fuel = False
 
         basicLanding.scale_fuel_flow_by_non_std_density = True
         Assert.assertTrue(basicLanding.scale_fuel_flow_by_non_std_density)
@@ -7090,8 +7297,8 @@ class EarlyBoundTests(TestBase):
         advLanding.speedbrakes = 98
         Assert.assertEqual(98, advLanding.speedbrakes)
 
-        advLanding.braking_decel_g = 0.4
-        Assert.assertEqual(0.4, advLanding.braking_decel_g)
+        advLanding.braking_deceleration_g = 0.4
+        Assert.assertEqual(0.4, advLanding.braking_deceleration_g)
 
         newAC.get_as_catalog_item().remove()
 
@@ -7125,22 +7332,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AIRSPEED_TYPE.MACH, basicTakeoff.departure_speed_type)
         Assert.assertEqual(0.4, basicTakeoff.departure_speed)
 
-        basicTakeoff.use_aero_prop_fuel = True
-        Assert.assertTrue(basicTakeoff.use_aero_prop_fuel)
+        basicTakeoff.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(basicTakeoff.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicTakeoff.scale_fuel_flow_by_non_std_density = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
-            basicTakeoff.accel_fuel_flow = 8000
+            basicTakeoff.acceleration_fuel_flow = 8000
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             basicTakeoff.departure_fuel_flow = 9000
 
-        basicTakeoff.use_aero_prop_fuel = False
+        basicTakeoff.use_aerodynamic_propulsion_fuel = False
 
         basicTakeoff.scale_fuel_flow_by_non_std_density = True
         Assert.assertTrue(basicTakeoff.scale_fuel_flow_by_non_std_density)
 
-        basicTakeoff.accel_fuel_flow = 8000
-        Assert.assertAlmostEqual(8000, basicTakeoff.accel_fuel_flow, delta=tolerance)
+        basicTakeoff.acceleration_fuel_flow = 8000
+        Assert.assertAlmostEqual(8000, basicTakeoff.acceleration_fuel_flow, delta=tolerance)
         basicTakeoff.departure_fuel_flow = 9000
         Assert.assertAlmostEqual(9000, basicTakeoff.departure_fuel_flow, delta=tolerance)
 
@@ -7207,8 +7414,8 @@ class EarlyBoundTests(TestBase):
             "Test TerrainFollow Model"
         )
 
-        terrainFollow.use_aero_prop_fuel = True
-        Assert.assertTrue(terrainFollow.use_aero_prop_fuel)
+        terrainFollow.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(terrainFollow.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             terrainFollow.scale_fuel_flow_by_non_std_density = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -7220,10 +7427,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             terrainFollow.max_range_fuel_flow = 100
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
-            terrainFollow.max_perf_airspeed_fuel_flow = 100
+            terrainFollow.max_performance_airspeed_fuel_flow = 100
 
-        terrainFollow.use_aero_prop_fuel = False
-        Assert.assertEqual(False, terrainFollow.use_aero_prop_fuel)
+        terrainFollow.use_aerodynamic_propulsion_fuel = False
+        Assert.assertEqual(False, terrainFollow.use_aerodynamic_propulsion_fuel)
         terrainFollow.scale_fuel_flow_by_non_std_density = True
         Assert.assertTrue(terrainFollow.scale_fuel_flow_by_non_std_density)
 
@@ -7238,8 +7445,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(553, terrainFollow.max_airspeed, delta=tolerance)
         terrainFollow.max_range_airspeed = 104
         Assert.assertEqual(104, terrainFollow.max_range_airspeed)
-        terrainFollow.max_perf_airspeed = 105
-        Assert.assertEqual(105, terrainFollow.max_perf_airspeed)
+        terrainFollow.max_performance_airspeed = 105
+        Assert.assertEqual(105, terrainFollow.max_performance_airspeed)
 
         terrainFollow.airspeed_type = AIRSPEED_TYPE.MACH
         Assert.assertEqual(AIRSPEED_TYPE.MACH, terrainFollow.airspeed_type)
@@ -7252,8 +7459,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0.96, terrainFollow.max_airspeed)
         terrainFollow.max_range_airspeed = 0.14
         Assert.assertEqual(0.14, terrainFollow.max_range_airspeed)
-        terrainFollow.max_perf_airspeed = 0.15
-        Assert.assertEqual(0.15, terrainFollow.max_perf_airspeed)
+        terrainFollow.max_performance_airspeed = 0.15
+        Assert.assertEqual(0.15, terrainFollow.max_performance_airspeed)
 
         terrainFollow.min_airspeed_fuel_flow = 101.5
         Assert.assertEqual(101.5, terrainFollow.min_airspeed_fuel_flow)
@@ -7263,8 +7470,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(553.5, terrainFollow.max_airspeed_fuel_flow, delta=tolerance)
         terrainFollow.max_range_fuel_flow = 104.5
         Assert.assertEqual(104.5, terrainFollow.max_range_fuel_flow)
-        terrainFollow.max_perf_airspeed_fuel_flow = 105.5
-        Assert.assertEqual(105.5, terrainFollow.max_perf_airspeed_fuel_flow)
+        terrainFollow.max_performance_airspeed_fuel_flow = 105.5
+        Assert.assertEqual(105.5, terrainFollow.max_performance_airspeed_fuel_flow)
 
         terrainFollow.max_pitch_angle = 11
         maxPitchAngle: typing.Any = terrainFollow.max_pitch_angle
@@ -7294,14 +7501,14 @@ class EarlyBoundTests(TestBase):
         vtol.max_hover_altitude = 20000
         Assert.assertEqual(20000, vtol.max_hover_altitude)
 
-        vtol.use_aero_prop_fuel = True
-        Assert.assertTrue(vtol.use_aero_prop_fuel)
+        vtol.use_aerodynamic_propulsion_fuel = True
+        Assert.assertTrue(vtol.use_aerodynamic_propulsion_fuel)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             vtol.scale_fuel_flow_by_non_std_density = True
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             vtol.hover_fuel = 0.25
 
-        vtol.use_aero_prop_fuel = False
+        vtol.use_aerodynamic_propulsion_fuel = False
         vtol.scale_fuel_flow_by_non_std_density = True
         Assert.assertTrue(vtol.scale_fuel_flow_by_non_std_density)
         vtol.hover_fuel = 0.25
@@ -7375,18 +7582,18 @@ class EarlyBoundTests(TestBase):
 
         missile.max_load_factor = 11
         Assert.assertEqual(11, missile.max_load_factor)
-        missile.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE
-        Assert.assertEqual(ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE, missile.maneuver_mode)
+        missile.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE
+        Assert.assertEqual(ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE, missile.maneuver_mode)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            testVal: "AeroPropManeuverModeHelper" = missile.maneuver_mode_helper
+            testVal: "AerodynamicPropulsionManeuverModeHelper" = missile.maneuver_mode_helper
 
-        missile.maneuver_mode = ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_AERO_PROP
+        missile.maneuver_mode = ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_AERODYNAMIC_PROPULSION
         self.ManeuverModeHelperOptions(missile.maneuver_mode_helper)
 
         self.AttitudeTransitionOptions(missile.attitude_transitions)
 
-        missile.ignore_fpa_for_climb_descent_transitions = True
-        Assert.assertTrue(missile.ignore_fpa_for_climb_descent_transitions)
+        missile.ignore_flight_path_angle_for_climb_descent_transitions = True
+        Assert.assertTrue(missile.ignore_flight_path_angle_for_climb_descent_transitions)
 
         missile.set_climb_airspeed(AIRSPEED_TYPE.MACH, 2.1)
         Assert.assertEqual(AIRSPEED_TYPE.MACH, missile.climb_airspeed_type)
@@ -7413,21 +7620,21 @@ class EarlyBoundTests(TestBase):
         missile.descent_fail_on_insufficient_performance = False
         Assert.assertEqual(False, missile.descent_fail_on_insufficient_performance)
 
-        missile.climb_min_fpa = 3.1
-        climbMinFPA: typing.Any = missile.climb_min_fpa
+        missile.climb_min_flight_path_angle = 3.1
+        climbMinFPA: typing.Any = missile.climb_min_flight_path_angle
         Assert.assertEqual(3.1, float(climbMinFPA))
-        missile.climb_max_fpa = 60.1
-        climbMaxFPA: typing.Any = missile.climb_max_fpa
+        missile.climb_max_flight_path_angle = 60.1
+        climbMaxFPA: typing.Any = missile.climb_max_flight_path_angle
         Assert.assertAlmostEqual(60.1, float(climbMaxFPA), delta=tolerance)
 
         missile.cruise_default_altitude = 15000
         Assert.assertEqual(15000, missile.cruise_default_altitude)
 
-        missile.descent_min_fpa = -60.2
-        descentMinFPA: typing.Any = missile.descent_min_fpa
+        missile.descent_min_flight_path_angle = -60.2
+        descentMinFPA: typing.Any = missile.descent_min_flight_path_angle
         Assert.assertAlmostEqual(-60.2, float(descentMinFPA), delta=tolerance)
-        missile.descent_max_fpa = -3.2
-        descentMaxFPA: typing.Any = missile.descent_max_fpa
+        missile.descent_max_flight_path_angle = -3.2
+        descentMaxFPA: typing.Any = missile.descent_max_flight_path_angle
         Assert.assertEqual(-3.2, float(descentMaxFPA))
 
         missile.use_total_temp_limit = False
@@ -7472,10 +7679,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileAero: "MissileAero" = missile.aerodynamics
-        missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE
-        Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE, missileAero.aero_strategy)
-        simple: "MissileSimpleAero" = missileAero.mode_as_simple
+        missileAero: "MissileAerodynamic" = missile.aerodynamics
+        missileAero.aerodynamic_strategy = MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_SIMPLE
+        Assert.assertEqual(MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_SIMPLE, missileAero.aerodynamic_strategy)
+        simple: "MissileSimpleAerodynamic" = missileAero.mode_as_simple
 
         simple.s_reference = 5
         Assert.assertEqual(5, simple.s_reference)
@@ -7506,10 +7713,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileAero: "MissileAero" = missile.aerodynamics
-        missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE
-        Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE, missileAero.aero_strategy)
-        externalAero: "MissileExternalAero" = missileAero.mode_as_external
+        missileAero: "MissileAerodynamic" = missile.aerodynamics
+        missileAero.aerodynamic_strategy = MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_EXTERNAL_FILE
+        Assert.assertEqual(
+            MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_EXTERNAL_FILE, missileAero.aerodynamic_strategy
+        )
+        externalAero: "MissileExternalAerodynamic" = missileAero.mode_as_external
 
         externalAero.reference_area = 3
         Assert.assertEqual(3, externalAero.reference_area)
@@ -7543,10 +7752,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileAero: "MissileAero" = missile.aerodynamics
-        missileAero.aero_strategy = MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED
-        Assert.assertEqual(MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED, missileAero.aero_strategy)
-        advancedAero: "MissileAdvancedAero" = missileAero.mode_as_advanced
+        missileAero: "MissileAerodynamic" = missile.aerodynamics
+        missileAero.aerodynamic_strategy = MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_ADVANCED
+        Assert.assertEqual(MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_ADVANCED, missileAero.aerodynamic_strategy)
+        advancedAero: "MissileAdvancedAerodynamic" = missileAero.mode_as_advanced
 
         self.AdvancedMissileAero(advancedAero)
 
@@ -7568,10 +7777,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileProp: "MissileProp" = missile.propulsion
-        missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE
-        Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE, missileProp.prop_strategy)
-        simpleProp: "MissileSimpleProp" = missileProp.mode_as_simple
+        missileProp: "MissilePropulsion" = missile.propulsion
+        missileProp.propulsion_strategy = MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_SIMPLE
+        Assert.assertEqual(MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_SIMPLE, missileProp.propulsion_strategy)
+        simpleProp: "MissileSimplePropulsion" = missileProp.mode_as_simple
 
         simpleProp.max_thrust = 2000
         Assert.assertEqual(2000, simpleProp.max_thrust)
@@ -7596,10 +7805,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileProp: "MissileProp" = missile.propulsion
-        missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE
-        Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE, missileProp.prop_strategy)
-        externalProp: "MissileExternalProp" = missileProp.mode_as_external
+        missileProp: "MissilePropulsion" = missile.propulsion
+        missileProp.propulsion_strategy = MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_EXTERNAL_FILE
+        Assert.assertEqual(
+            MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_EXTERNAL_FILE, missileProp.propulsion_strategy
+        )
+        externalProp: "MissileExternalPropulsion" = missileProp.mode_as_external
 
         Assert.assertEqual(False, externalProp.is_valid)
 
@@ -7634,10 +7845,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileProp: "MissileProp" = missile.propulsion
-        missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET
-        Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET, missileProp.prop_strategy)
-        ramjetProp: "MissileRamjetProp" = missileProp.mode_as_ramjet
+        missileProp: "MissilePropulsion" = missile.propulsion
+        missileProp.propulsion_strategy = MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_RAMJET
+        Assert.assertEqual(MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_RAMJET, missileProp.propulsion_strategy)
+        ramjetProp: "MissileRamjetPropulsion" = missileProp.mode_as_ramjet
 
         ramjetProp.design_altitude = 5000
         Assert.assertEqual(5000, ramjetProp.design_altitude)
@@ -7680,10 +7891,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileProp: "MissileProp" = missile.propulsion
-        missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET
-        Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET, missileProp.prop_strategy)
-        turboProp: "MissileTurbojetProp" = missileProp.mode_as_turbojet
+        missileProp: "MissilePropulsion" = missile.propulsion
+        missileProp.propulsion_strategy = MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_TURBOJET
+        Assert.assertEqual(MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_TURBOJET, missileProp.propulsion_strategy)
+        turboProp: "MissileTurbojetPropulsion" = missileProp.mode_as_turbojet
 
         turboProp.design_altitude = 5000
         Assert.assertEqual(5000, turboProp.design_altitude)
@@ -7736,10 +7947,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Missile", missile.get_as_catalog_item().name)
         Assert.assertTrue(missileModels.get_as_catalog_source().contains("Test_Missile"))
 
-        missileProp: "MissileProp" = missile.propulsion
-        missileProp.prop_strategy = MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET
-        Assert.assertEqual(MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET, missileProp.prop_strategy)
-        rocketProp: "MissileRocketProp" = missileProp.mode_as_rocket
+        missileProp: "MissilePropulsion" = missile.propulsion
+        missileProp.propulsion_strategy = MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_ROCKET
+        Assert.assertEqual(MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_ROCKET, missileProp.propulsion_strategy)
+        rocketProp: "MissileRocketPropulsion" = missileProp.mode_as_rocket
 
         rocketProp.nozzle_expansion_ratio = 7.1
         Assert.assertEqual(7.1, rocketProp.nozzle_expansion_ratio)
@@ -7862,8 +8073,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AIRSPEED_TYPE.TAS, rotorcraft.max_safe_translation_speed_type)
         Assert.assertAlmostEqual(211, rotorcraft.max_safe_translation_speed, delta=tolerance)
 
-        rotorcraft.ignore_fpa_for_climb_descent_transitions = True
-        Assert.assertTrue(rotorcraft.ignore_fpa_for_climb_descent_transitions)
+        rotorcraft.ignore_flight_path_angle_for_climb_descent_transitions = True
+        Assert.assertTrue(rotorcraft.ignore_flight_path_angle_for_climb_descent_transitions)
 
         self.ConfigurationOptions(rotorcraft.default_configuration)
 
@@ -7883,7 +8094,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
-        aero: "RotorcraftAero" = rotorcraft.aerodynamics
+        aero: "RotorcraftAerodynamic" = rotorcraft.aerodynamics
 
         aero.rotor_count = 5
         Assert.assertEqual(5, aero.rotor_count)
@@ -7932,7 +8143,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Test_Rotorcraft", rotorcraft.get_as_catalog_item().name)
         Assert.assertTrue(rotorcraftModels.get_as_catalog_source().contains("Test_Rotorcraft"))
 
-        prop: "RotorcraftProp" = rotorcraft.propulsion
+        prop: "RotorcraftPropulsion" = rotorcraft.propulsion
 
         prop.powerplant_type = ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC
         Assert.assertEqual(ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_ELECTRIC, prop.powerplant_type)
@@ -8425,7 +8636,7 @@ class EarlyBoundTests(TestBase):
 
     # region PrivateCatalogMethods
 
-    def AdvancedMissileAero(self, advancedAero: "MissileAdvancedAero"):
+    def AdvancedMissileAero(self, advancedAero: "MissileAdvancedAerodynamic"):
         advancedAero.body_width = 0.2
         Assert.assertEqual(0.2, advancedAero.body_width)
         advancedAero.body_height = 0.3
@@ -8459,8 +8670,8 @@ class EarlyBoundTests(TestBase):
         advancedAero.wing_leading_edge_section_angle = 6
         section: typing.Any = advancedAero.wing_leading_edge_section_angle
         Assert.assertEqual(6, float(section))
-        advancedAero.wing_mean_aero_chord_length = 0.07
-        Assert.assertEqual(0.07, advancedAero.wing_mean_aero_chord_length)
+        advancedAero.wing_mean_aerodynamic_chord_length = 0.07
+        Assert.assertEqual(0.07, advancedAero.wing_mean_aerodynamic_chord_length)
         advancedAero.wing_max_thickness_along_mac = 0.008
         Assert.assertEqual(0.008, advancedAero.wing_max_thickness_along_mac)
 
@@ -8478,8 +8689,8 @@ class EarlyBoundTests(TestBase):
         advancedAero.tail_leading_edge_section_angle = 6
         tailSection: typing.Any = advancedAero.tail_leading_edge_section_angle
         Assert.assertEqual(6, float(tailSection))
-        advancedAero.tail_mean_aero_chord_length = 0.07
-        Assert.assertEqual(0.07, advancedAero.tail_mean_aero_chord_length)
+        advancedAero.tail_mean_aerodynamic_chord_length = 0.07
+        Assert.assertEqual(0.07, advancedAero.tail_mean_aerodynamic_chord_length)
         advancedAero.tail_max_thickness_along_mac = 0.008
         Assert.assertEqual(0.008, advancedAero.tail_max_thickness_along_mac)
 
@@ -8511,14 +8722,14 @@ class EarlyBoundTests(TestBase):
         rollRate: typing.Any = att.roll_rate
         Assert.assertAlmostEqual(30, float(rollRate), delta=tolerance)
 
-    def ManeuverModeHelperOptions(self, helper: "AeroPropManeuverModeHelper"):
+    def ManeuverModeHelperOptions(self, helper: "AerodynamicPropulsionManeuverModeHelper"):
         tolerance: float = 1e-09
 
-        helper.mode = ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY
-        Assert.assertEqual(ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY, helper.mode)
+        helper.mode = ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE.USE_LIFT_COEFFICIENT_ONLY
+        Assert.assertEqual(ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE.USE_LIFT_COEFFICIENT_ONLY, helper.mode)
 
-        helper.flight_mode = AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_TAKEOFF
-        Assert.assertEqual(AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_TAKEOFF, helper.flight_mode)
+        helper.flight_mode = AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_TAKEOFF
+        Assert.assertEqual(AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_TAKEOFF, helper.flight_mode)
 
         helper.use_afterburner = True
         Assert.assertTrue(helper.use_afterburner)
@@ -8615,7 +8826,7 @@ class EarlyBoundTests(TestBase):
         cea.specific_energy = 43.21
         Assert.assertEqual(43.21, cea.specific_energy)
 
-    def TestTurbofanBasicAB(self, prop: "AdvancedFixedWingTurbofanBasicABProp"):
+    def TestTurbofanBasicAB(self, prop: "AdvancedFixedWingTurbofanBasicABPropulsion"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -8660,7 +8871,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestPropulsionEfficiencies(prop.efficiencies_and_losses)
 
-    def TestTurbojetBasicAB(self, prop: "AdvancedFixedWingTurbojetBasicABProp"):
+    def TestTurbojetBasicAB(self, prop: "AdvancedFixedWingTurbojetBasicABPropulsion"):
         prop.can_use_afterburner = False
         Assert.assertEqual(False, prop.can_use_afterburner)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
@@ -8814,13 +9025,13 @@ class EarlyBoundTests(TestBase):
     def NavigationOptions(self, navOpts: "NavigationOptions"):
         tolerance: float = 1e-09
 
-        navOpts.nav_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT
+        navOpts.navigation_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             navOpts.arrive_on_course = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("must be ")):
             navOpts.use_magnetic_heading = True
 
-        navOpts.nav_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE
+        navOpts.navigation_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE
         navOpts.arrive_on_course = 1
         navOpts.use_magnetic_heading = True
         course: typing.Any = navOpts.arrive_on_course
@@ -8952,17 +9163,24 @@ class EarlyBoundTests(TestBase):
                 airspeedOptions.specified_airspeed_type = AIRSPEED_TYPE.TAS
                 Assert.assertEqual(AIRSPEED_TYPE.TAS, airspeedOptions.specified_airspeed_type)
 
-                airspeedOptions.specified_accel_decel_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE, airspeedOptions.specified_accel_decel_mode)
+                airspeedOptions.specified_acceleration_deceleration_mode = (
+                    PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
+                )
+                Assert.assertEqual(
+                    PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE,
+                    airspeedOptions.specified_acceleration_deceleration_mode,
+                )
 
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to override")):
-                    airspeedOptions.specified_accel_decel_g = 200
+                    airspeedOptions.specified_acceleration_deceleration_g = 200
 
-                airspeedOptions.specified_accel_decel_mode = PERF_MODEL_OVERRIDE.OVERRIDE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.specified_accel_decel_mode)
+                airspeedOptions.specified_acceleration_deceleration_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+                Assert.assertEqual(
+                    PERFORMANCE_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.specified_acceleration_deceleration_mode
+                )
 
-                airspeedOptions.specified_accel_decel_g = 200
-                Assert.assertEqual(200, airspeedOptions.specified_accel_decel_g)
+                airspeedOptions.specified_acceleration_deceleration_g = 200
+                Assert.assertEqual(200, airspeedOptions.specified_acceleration_deceleration_g)
 
             if (
                 (
@@ -8975,13 +9193,13 @@ class EarlyBoundTests(TestBase):
                 or (airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_AIRSPEED)
             ) or (airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_PERFORMANCE_AIRSPEED):
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: float = airspeedOptions.accel_g
+                    value: float = airspeedOptions.acceleration_g
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: "PERF_MODEL_OVERRIDE" = airspeedOptions.accel_mode
+                    value: "PERFORMANCE_MODEL_OVERRIDE" = airspeedOptions.acceleration_mode
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: float = airspeedOptions.decel_g
+                    value: float = airspeedOptions.deceleration_g
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: "PERF_MODEL_OVERRIDE" = airspeedOptions.decel_mode
+                    value: "PERFORMANCE_MODEL_OVERRIDE" = airspeedOptions.deceleration_mode
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
                     value: float = airspeedOptions.interpolate_end_g
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
@@ -8993,9 +9211,9 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
                     value: "AIRSPEED_TYPE" = airspeedOptions.maintain_airspeed_type
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: float = airspeedOptions.specified_accel_decel_g
+                    value: float = airspeedOptions.specified_acceleration_deceleration_g
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
-                    value: "PERF_MODEL_OVERRIDE" = airspeedOptions.specified_accel_decel_mode
+                    value: "PERFORMANCE_MODEL_OVERRIDE" = airspeedOptions.specified_acceleration_deceleration_mode
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
                     value: float = airspeedOptions.specified_airspeed
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
@@ -9005,43 +9223,47 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to the corresponding mode")):
                     value: "PropulsionThrust" = airspeedOptions.thrust
 
-            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_AT_G:
-                airspeedOptions.accel_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE, airspeedOptions.accel_mode)
+            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_AT_G:
+                airspeedOptions.acceleration_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
+                Assert.assertEqual(
+                    PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE, airspeedOptions.acceleration_mode
+                )
 
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to override")):
-                    airspeedOptions.accel_g = 300
+                    airspeedOptions.acceleration_g = 300
 
-                airspeedOptions.accel_mode = PERF_MODEL_OVERRIDE.OVERRIDE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.accel_mode)
+                airspeedOptions.acceleration_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+                Assert.assertEqual(PERFORMANCE_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.acceleration_mode)
 
-                airspeedOptions.accel_g = 300
-                Assert.assertEqual(300, airspeedOptions.accel_g)
+                airspeedOptions.acceleration_g = 300
+                Assert.assertEqual(300, airspeedOptions.acceleration_g)
 
-            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.DECEL_AT_G:
-                airspeedOptions.decel_mode = PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE, airspeedOptions.decel_mode)
+            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.DECELERATION_AT_G:
+                airspeedOptions.deceleration_mode = PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE
+                Assert.assertEqual(
+                    PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE, airspeedOptions.deceleration_mode
+                )
 
                 with pytest.raises(Exception, match=RegexSubstringMatch("must be set to override")):
-                    airspeedOptions.decel_g = 400
+                    airspeedOptions.deceleration_g = 400
 
-                airspeedOptions.decel_mode = PERF_MODEL_OVERRIDE.OVERRIDE
-                Assert.assertEqual(PERF_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.decel_mode)
+                airspeedOptions.deceleration_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+                Assert.assertEqual(PERFORMANCE_MODEL_OVERRIDE.OVERRIDE, airspeedOptions.deceleration_mode)
 
-                airspeedOptions.decel_g = 400
-                Assert.assertEqual(400, airspeedOptions.decel_g)
+                airspeedOptions.deceleration_g = 400
+                Assert.assertEqual(400, airspeedOptions.deceleration_g)
 
-            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_UNDER_GRAVITY:
+            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_DECELERATION_UNDER_GRAVITY:
                 pass
 
-            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_AERO_PROP:
+            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION:
                 airspeedOptions.throttle = 55
                 Assert.assertEqual(55, airspeedOptions.throttle)
 
             if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.THRUST:
                 self.Test_IAgAvtrPropulsionThrust(airspeedOptions.thrust)
 
-            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCEL_DECEL:
+            if airspeedMode == BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCELERATION_DECELERATION:
                 airspeedOptions.interpolate_init_g = 5
                 Assert.assertEqual(5, airspeedOptions.interpolate_init_g)
                 airspeedOptions.interpolate_end_g = 6
@@ -9054,38 +9276,38 @@ class EarlyBoundTests(TestBase):
                 airspeedOptions.interpolate_stop_at_end_time = True
                 Assert.assertTrue(airspeedOptions.interpolate_stop_at_end_time)
 
-        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED
+        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED, airspeedOptions.min_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED, airspeedOptions.min_speed_limits
         )
-        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED
+        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED, airspeedOptions.min_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED, airspeedOptions.min_speed_limits
         )
-        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED
+        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED, airspeedOptions.min_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED, airspeedOptions.min_speed_limits
         )
-        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED
+        airspeedOptions.min_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED, airspeedOptions.min_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED, airspeedOptions.min_speed_limits
         )
 
-        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED
+        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED, airspeedOptions.max_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED, airspeedOptions.max_speed_limits
         )
-        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED
+        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED, airspeedOptions.max_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED, airspeedOptions.max_speed_limits
         )
-        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED
+        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED, airspeedOptions.max_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED, airspeedOptions.max_speed_limits
         )
-        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED
+        airspeedOptions.max_speed_limits = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED
         Assert.assertEqual(
-            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED, airspeedOptions.max_speed_limits
+            BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED, airspeedOptions.max_speed_limits
         )
 
     # endregion
@@ -9157,31 +9379,31 @@ class EarlyBoundTests(TestBase):
 
         targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.DISABLED_POSITION_VEL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
-            nbr1: "BasicManeuverTargetPositionVelNoisyBrgRng" = targetPosVel.mode_as_noisy_brg_rng
+            nbr1: "BasicManeuverTargetPositionVelNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
-            nst1: "BasicManeuverTargetPositionVelNoisySurfTgt" = targetPosVel.mode_as_noisy_surf_tgt
+            nst1: "BasicManeuverTargetPositionVelNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
 
         targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.SURFACE_TARGET_POSITION_VEL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy bearing range")):
-            nbr1: "BasicManeuverTargetPositionVelNoisyBrgRng" = targetPosVel.mode_as_noisy_brg_rng
-        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(targetPosVel.mode_as_noisy_surf_tgt)
+            nbr1: "BasicManeuverTargetPositionVelNoisyBearingRange" = targetPosVel.mode_as_noisy_bearing_range
+        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(targetPosVel.mode_as_noisy_surf_target)
 
         targetPosVel.target_position_vel_type = TARGET_POSITION_VEL_TYPE.BEARING_RANGE_TARGET_POSITION_VEL
         with pytest.raises(Exception, match=RegexSubstringMatch("must be set to noisy surface target")):
-            nst1: "BasicManeuverTargetPositionVelNoisySurfTgt" = targetPosVel.mode_as_noisy_surf_tgt
-        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(targetPosVel.mode_as_noisy_brg_rng)
+            nst1: "BasicManeuverTargetPositionVelNoisySurfTarget" = targetPosVel.mode_as_noisy_surf_target
+        self.Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(targetPosVel.mode_as_noisy_bearing_range)
 
     # endregion
 
     # region Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisyBrnRng(
-        self, noisyBrgRng: "BasicManeuverTargetPositionVelNoisyBrgRng"
+        self, noisyBrgRng: "BasicManeuverTargetPositionVelNoisyBearingRange"
     ):
         noisyBrgRng.new_random_engine_seed()
 
-        noisyBrgRng.set_base_dyn_state_link_name("Aircraft/LateBoundTest_Aircraft")
+        noisyBrgRng.set_base_dynamic_state_link_name("Aircraft/LateBoundTest_Aircraft")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            noisyBrgRng.set_base_dyn_state_link_name("Bogus")
+            noisyBrgRng.set_base_dynamic_state_link_name("Bogus")
 
         noisyBrgRng.smoothing_constant = 0.1
         Assert.assertEqual(0.1, noisyBrgRng.smoothing_constant)
@@ -9222,13 +9444,13 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt
     def Test_IAgAvtrBasicManeuverTargetPosVelNoisySurfTgt(
-        self, noisySurfTgt: "BasicManeuverTargetPositionVelNoisySurfTgt"
+        self, noisySurfTgt: "BasicManeuverTargetPositionVelNoisySurfTarget"
     ):
         noisySurfTgt.new_random_engine_seed()
 
-        noisySurfTgt.set_base_dyn_state_link_name("Aircraft/EarlyBoundTest_Aircraft")
+        noisySurfTgt.set_base_dynamic_state_link_name("Aircraft/EarlyBoundTest_Aircraft")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            noisySurfTgt.set_base_dyn_state_link_name("Bogus")
+            noisySurfTgt.set_base_dynamic_state_link_name("Bogus")
 
         noisySurfTgt.measurement_time_step = 0.001
         Assert.assertEqual(0.001, noisySurfTgt.measurement_time_step)

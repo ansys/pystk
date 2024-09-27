@@ -3,8 +3,6 @@ LaunchVehicleExportTools
 
 .. py:class:: ansys.stk.core.stkobjects.LaunchVehicleExportTools
 
-   Bases: 
-
    The LaunchVehicle Export Tools.
 
 .. py:currentmodule:: LaunchVehicleExportTools
@@ -22,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_ephemeris_stk_export_tool`
               - Return the ephemeris export tool.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_prop_definition_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_propagator_definition_export_tool`
               - Return the Prop Def export tool.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_attitude_export_tool`
               - Return the attitude export tool.
@@ -52,14 +50,14 @@ Method detail
 
         :obj:`~VehicleEphemerisStkExportTool`
 
-.. py:method:: get_prop_definition_export_tool(self) -> VehiclePropDefinitionExportTool
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_prop_definition_export_tool
+.. py:method:: get_propagator_definition_export_tool(self) -> VehiclePropagationDefinitionExportTool
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_propagator_definition_export_tool
 
     Return the Prop Def export tool.
 
     :Returns:
 
-        :obj:`~VehiclePropDefinitionExportTool`
+        :obj:`~VehiclePropagationDefinitionExportTool`
 
 .. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleExportTools.get_attitude_export_tool

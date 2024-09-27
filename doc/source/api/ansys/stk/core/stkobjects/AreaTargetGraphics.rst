@@ -3,8 +3,6 @@ AreaTargetGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.AreaTargetGraphics
 
-   Bases: 
-
    Class to define the 2D attributes of an AreaTarget.
 
 .. py:currentmodule:: AreaTargetGraphics
@@ -152,7 +150,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 

@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~HOURLY_3`
               - 3-Hourly: updates using the eight values measured at three-hour intervals.
 
-            * - :py:attr:`~HOURLY_INTERP_3`
+            * - :py:attr:`~HOURLY_INTERPOLATION_3`
               - 3-Hourly Interpolated: updates by interpolating the three-hour values.
 
             * - :py:attr:`~DAILY`

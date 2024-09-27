@@ -62,25 +62,25 @@ Property detail
 
 .. py:property:: control_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.control_parameters
-    :type: ISNOPTControlCollection
+    :type: SNOPTControlCollection
 
     Get the list of control parameters defined for the profile.
 
 .. py:property:: results
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.results
-    :type: ISNOPTResultCollection
+    :type: SNOPTResultCollection
 
     Get the list of results defined for the profile.
 
 .. py:property:: targeter_graphs
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.targeter_graphs
-    :type: ITargeterGraphCollection
+    :type: TargeterGraphCollection
 
     Graphs.
 
 .. py:property:: scripting_tool
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.scripting_tool
-    :type: IScriptingTool
+    :type: ScriptingTool
 
     Returns the Scripting tool for the sequence.
 

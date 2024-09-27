@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.altitude_options
-    :type: IAltitudeOptions
+    :type: AltitudeOptions
 
     Get the altitude options.
 
@@ -81,31 +81,31 @@ Property detail
 
 .. py:property:: flight_line_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.flight_line_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the flight line airspeed options.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_options
-    :type: IEnrouteOptions
+    :type: EnrouteOptions
 
     Get the enroute options.
 
 .. py:property:: enroute_turn_direction_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_turn_direction_options
-    :type: IEnrouteTurnDirectionOptions
+    :type: EnrouteTurnDirectionOptions
 
     Get the enroute turn direction options.
 
 .. py:property:: enroute_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the enroute cruise airspeed options.
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type
-    :type: FLIGHT_LINE_PROC_TYPE
+    :type: FLIGHT_LINE_PROCEDURE_TYPE
 
     Gets or sets the procedure methodology used to calculate the flight line.
 

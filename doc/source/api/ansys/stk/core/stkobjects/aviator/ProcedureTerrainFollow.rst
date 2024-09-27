@@ -61,13 +61,13 @@ Property detail
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.navigation_options
-    :type: INavigationOptions
+    :type: NavigationOptions
 
     Get the navigation options.
 
 .. py:property:: terrain_following_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.terrain_following_airspeed_options
-    :type: ICruiseAirspeedOptions
+    :type: CruiseAirspeedOptions
 
     Get the terrain following airspeed options.
 

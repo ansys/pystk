@@ -3,8 +3,6 @@ EOIRStage
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRStage
 
-   Bases: 
-
    Stage base class.
 
 .. py:currentmodule:: EOIRStage
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: plume
     :canonical: ansys.stk.core.stkobjects.EOIRStage.plume
-    :type: IEOIRStagePlume
+    :type: EOIRStagePlume
 
     Property used to access the stage plume.
 

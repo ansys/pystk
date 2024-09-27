@@ -3,8 +3,6 @@ TimeToolEventIntervalListGroup
 
 .. py:class:: ansys.stk.core.vgt.TimeToolEventIntervalListGroup
 
-   Bases: 
-
    Access or create VGT event interval lists associated with an object.
 
 .. py:currentmodule:: TimeToolEventIntervalListGroup
@@ -73,7 +71,7 @@ Property detail
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.TimeToolEventIntervalListGroup.factory
-    :type: ITimeToolEventIntervalListFactory
+    :type: TimeToolEventIntervalListFactory
 
     Returns a factory object used to create custom event interval lists.
 

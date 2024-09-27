@@ -3,8 +3,6 @@ CentralBodyGraphics
 
 .. py:class:: ansys.stk.core.graphics.CentralBodyGraphics
 
-   Bases: 
-
    The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property...
 
 .. py:currentmodule:: CentralBodyGraphics
@@ -122,19 +120,19 @@ Property detail
 
 .. py:property:: terrain
     :canonical: ansys.stk.core.graphics.CentralBodyGraphics.terrain
-    :type: ITerrainOverlayCollection
+    :type: TerrainOverlayCollection
 
     Gets the collection of terrain overlay associated with the central body in the scene.
 
 .. py:property:: imagery
     :canonical: ansys.stk.core.graphics.CentralBodyGraphics.imagery
-    :type: IImageCollection
+    :type: ImageCollection
 
     Gets the collection of imagery associated with the central body in the scene.
 
 .. py:property:: kml
     :canonical: ansys.stk.core.graphics.CentralBodyGraphics.kml
-    :type: IKmlGraphics
+    :type: KmlGraphics
 
     Gets the kml graphics associated with the central body in the scene.
 

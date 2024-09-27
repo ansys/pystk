@@ -3,8 +3,6 @@ IManeuver
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IManeuver
 
-   object
-   
    Properties of an Impulsive Maneuver Segment.
 
 .. py:currentmodule:: IManeuver

@@ -3,8 +3,6 @@ SearchPluginResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.SearchPluginResult
 
-   Bases: 
-
    Equality constraints for a plugin search profile.
 
 .. py:currentmodule:: SearchPluginResult
@@ -78,7 +76,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginResult.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 

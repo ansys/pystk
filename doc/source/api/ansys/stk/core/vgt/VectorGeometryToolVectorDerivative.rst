@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDerivative.vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a base vector.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDerivative.reference_axes
-    :type: IVectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesRefTo
 
     Specify a reference axes.
 

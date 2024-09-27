@@ -3,8 +3,6 @@ IDemodulatorModel
 
 .. py:class:: ansys.stk.core.stkobjects.IDemodulatorModel
 
-   object
-   
    Provide access to the properties and methods defining a demodulator model.
 
 .. py:currentmodule:: IDemodulatorModel

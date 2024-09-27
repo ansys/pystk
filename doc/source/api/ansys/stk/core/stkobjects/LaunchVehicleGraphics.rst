@@ -3,8 +3,6 @@ LaunchVehicleGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.LaunchVehicleGraphics
 
-   Bases: 
-
    2D Graphics for a launch vehicle.
 
 .. py:currentmodule:: LaunchVehicleGraphics
@@ -99,43 +97,43 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.pass_data
-    :type: IVehicleGraphics2DTrajectoryPassData
+    :type: VehicleGraphics2DTrajectoryPassData
 
     Get the launch vehicle's 2D trajectory properties.
 
 .. py:property:: resolution
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.resolution
-    :type: IVehicleGraphics2DTrajectoryResolution
+    :type: VehicleGraphics2DTrajectoryResolution
 
     Get the launch vehicle's 2D resolution properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.elev_contours
-    :type: IVehicleGraphics2DElevContours
+    :type: VehicleGraphics2DElevContours
 
     Get the launch vehicle's 2D elevation contour properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.range_contours
-    :type: IGraphics2DRangeContours
+    :type: Graphics2DRangeContours
 
     Get the launch vehicle's 2D range contour properties.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.lighting
-    :type: IVehicleGraphics2DLighting
+    :type: VehicleGraphics2DLighting
 
     Get the launch vehicle's 2D lighting properties.
 
 .. py:property:: swath
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.swath
-    :type: IVehicleGraphics2DSwath
+    :type: VehicleGraphics2DSwath
 
     Get the launch vehicle's 2D swath properties.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.ground_ellipses
-    :type: IVehicleGraphics2DGroundEllipsesCollection
+    :type: VehicleGraphics2DGroundEllipsesCollection
 
     Get the launch vehicle's 2D ground ellipses properties.
 
@@ -147,7 +145,7 @@ Property detail
 
 .. py:property:: label_notes
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.label_notes
-    :type: ILabelNoteCollection
+    :type: LabelNoteCollection
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
@@ -165,7 +163,7 @@ Property detail
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.saa
-    :type: IVehicleGraphics2DSAA
+    :type: VehicleGraphics2DSAA
 
     Get the vehicle's South Atlantic Anomaly Contour properties.
 
@@ -177,7 +175,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.radar_cross_section
-    :type: IRadarCrossSectionGraphics
+    :type: RadarCrossSectionGraphics
 
     Gets the radar cross section graphics interface.
 

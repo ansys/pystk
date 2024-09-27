@@ -3,8 +3,6 @@ AccessTime
 
 .. py:class:: ansys.stk.core.stkobjects.AccessTime
 
-   Bases: 
-
    Class for defining Sensor target times in terms of access.
 
 .. py:currentmodule:: AccessTime

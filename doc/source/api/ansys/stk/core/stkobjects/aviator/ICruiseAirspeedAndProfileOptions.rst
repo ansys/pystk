@@ -3,8 +3,6 @@ ICruiseAirspeedAndProfileOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions
 
-   object
-   
    Interface used to access the cruise airspeed options that also include a profile field.
 
 .. py:currentmodule:: ICruiseAirspeedAndProfileOptions

@@ -3,8 +3,6 @@ DataProviderElements
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderElements
 
-   Bases: 
-
    Elements returned by the data provider (e.g. ``x``, ``y``, ``z``).
 
 .. py:currentmodule:: DataProviderElements

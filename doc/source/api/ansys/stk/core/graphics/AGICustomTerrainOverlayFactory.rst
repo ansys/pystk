@@ -3,8 +3,6 @@ AGICustomTerrainOverlayFactory
 
 .. py:class:: ansys.stk.core.graphics.AGICustomTerrainOverlayFactory
 
-   Bases: 
-
    A terrain overlay for handling AGI Cesium Terrain.
 
 .. py:currentmodule:: AGICustomTerrainOverlayFactory

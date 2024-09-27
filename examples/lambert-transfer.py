@@ -5,7 +5,7 @@
 
 # ## What is a Lambert transfer?
 #
-# A Lambert transfer, named after Johann Heinrich Lambert, is a type of orbit transfer used in orbital mechanics. It allows to calculate the trajectory between two orbits under the influence of gravity from a central body, such as a planet or a star. 
+# A Lambert transfer, named after Johann Heinrich Lambert, is a type of orbit transfer used in orbital mechanics. It allows to calculate the trajectory between two orbits under the influence of gravity from a central body, such as a planet or a star.
 #
 # From the mathematical point of view, a Lambert transfer is the solution of the two-body boundary value problem in the framework of orbital mechanics. This problem is also known as the Lambert’s problem.
 #
@@ -40,7 +40,9 @@ from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
 
 
 root = stk.new_object_root()
-scenario = root.children.new_on_central_body(STK_OBJECT_TYPE.SCENARIO, "LambertTransfer", "Sun")
+scenario = root.children.new_on_central_body(
+    STK_OBJECT_TYPE.SCENARIO, "LambertTransfer", "Sun"
+)
 # -
 
 # Set the time period for the scenario:
@@ -59,7 +61,7 @@ from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
 
 
 plotter = GlobeWidget(root, 640, 480)
-plotter.camera.far_plane = 1E12
+plotter.camera.far_plane = 1e12
 plotter.show()
 # -
 
@@ -68,7 +70,11 @@ plotter.show()
 # Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EPHEM_SOURCE_TYPE`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_TYPE
+from ansys.stk.core.stkobjects import (
+    EPHEM_SOURCE_TYPE,
+    PLANET_POSITION_SOURCE_TYPE,
+    STK_OBJECT_TYPE,
+)
 from ansys.stk.core.utilities.colors import Colors
 
 
@@ -78,8 +84,12 @@ planet_names_and_colors = {
 }
 
 for planet_name, color in planet_names_and_colors.items():
-    planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, planet_name, "Sun")
-    planet.common_tasks.set_position_source_central_body(planet_name, EPHEM_SOURCE_TYPE.DEFAULT)
+    planet = scenario.children.new_on_central_body(
+        STK_OBJECT_TYPE.PLANET, planet_name, "Sun"
+    )
+    planet.common_tasks.set_position_source_central_body(
+        planet_name, EPHEM_SOURCE_TYPE.DEFAULT
+    )
     planet.graphics.color = color
 # -
 
@@ -118,6 +128,7 @@ plotter.show()
 
 # First, a utility function for converting a ``DataProviderResult`` instance into a Python dictionary is implemented. This allows to easily structure and manipulate the computed values.
 
+
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
     """Convert a data provider result to a dictionary.
 
@@ -133,14 +144,17 @@ def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
 
     """
     return {
-        key: data_result.data_sets.item(key_id).get_values() 
+        key: data_result.data_sets.item(key_id).get_values()
         for key_id, key in enumerate(data_result.data_sets.element_names)
     }
 
 
 # Next, a second utility function is declared. Its goal is to ease the retrieval of the state vector (position and velocity) for an object in the scenario at a given epoch and in the desired reference frame.
 
-def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name: str) -> tuple:
+
+def get_object_pos_vel_at_epoch(
+    stk_object: "StkObject", epoch: str, frame_name: str
+) -> tuple:
     """Compute the position and velocity vectors of an object in the desired reference frame.
 
     Parameters
@@ -160,8 +174,14 @@ def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name:
     """
     state = {"Position": None, "Velocity": None}
     for path in state:
-        data_provider = stk_object.data_providers.get_data_provider_time_varying_from_path(f"Cartesian {path}/{frame_name}")
-        data = from_data_result_to_dict(data_provider.exec_single_elements(epoch, ["x", "y", "z"]))
+        data_provider = (
+            stk_object.data_providers.get_data_provider_time_varying_from_path(
+                f"Cartesian {path}/{frame_name}"
+            )
+        )
+        data = from_data_result_to_dict(
+            data_provider.exec_single_elements(epoch, ["x", "y", "z"])
+        )
         state[path] = [coord[0] for coord in data.values()]
     return tuple(state.values())
 
@@ -169,7 +189,9 @@ def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: str, frame_name:
 # Now, it is possible to solve for the initial state:
 
 # +
-initial_position, initial_velocity = get_object_pos_vel_at_epoch(earth, START_TIME, "ICRF")
+initial_position, initial_velocity = get_object_pos_vel_at_epoch(
+    earth, START_TIME, "ICRF"
+)
 
 print(f"Earth position at launch: {initial_position} km")
 print(f"Earth position at launch: {initial_velocity} km/s\n")
@@ -190,7 +212,9 @@ print(f"Mars velocity at arrival: {initial_velocity} km/s")
 #
 # The central body for the satellite must be the Sun to be compliant with the Keplerian assumption of the Lambert transfer. Remember that the gravity for Earth and Mars are ignored in this example.
 
-satellite = root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun")
+satellite = root.current_scenario.children.new_on_central_body(
+    STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun"
+)
 
 # Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
 
@@ -213,7 +237,9 @@ satellite.propagator.main_sequence.remove_all()
 from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
 
 
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
+initial_state = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+)
 # -
 
 # Use an inertial reference frame when declaring the initial state. Also, ensure that the epoch matches the launch date.
@@ -240,14 +266,20 @@ initial_state.element.vz = initial_velocity[2]
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION, MANEUVER_TYPE
+from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE
 
 
-lambert_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-")
+lambert_transfer = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-"
+)
 
-first_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
+first_impulse = lambert_transfer.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "First Impulse", "-"
+)
 propagate = lambert_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-last_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
+last_impulse = lambert_transfer.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "Last Impulse", "-"
+)
 # -
 
 # Next, configure the maneuvers to be impulsive and ensure the propagation models the Sun as a point mass.
@@ -285,17 +317,16 @@ lambert = lambert_transfer.profiles.add("Lambert Profile")
 # It is also important to enable the second maneuver property. This allows to specify the target velocity.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE
+from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORDINATE_TYPE
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
-lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
+lambert.set_target_coord_type(LAMBERT_TARGET_COORDINATE_TYPE.CARTESIAN)
 
 lambert.enable_second_maneuver = True
 
-# FIXME: the Lambert Profile does not respect user defined units.
-#        forcing conversion to meters here by multiplying by a 
-#        factor of 1e3.
+# TODO: the Lambert Profile does not respect user defined units.
+# https://github.com/ansys-internal/pystk/issues/439
 lambert.target_position_x = final_position[0] * 1000
 lambert.target_position_y = final_position[1] * 1000
 lambert.target_position_z = final_position[2] * 1000
@@ -321,16 +352,18 @@ print(f"Time of flight: {tof} seconds")
 # **Since planets are modeled as points, see the problem statement, the value for the altitude padding for the central body collision is 0 km.**
 
 # +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_SOLUTION_OPTION_TYPE, LAMBERT_DIRECTION_OF_MOTION_TYPE
+from ansys.stk.core.stkobjects.astrogator import (
+    LAMBERT_DIRECTION_OF_MOTION_TYPE,
+    LAMBERT_SOLUTION_OPTION_TYPE,
+)
 
 
 lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
 lambert.revolutions = 0
 lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
 
-# FIXME: the Lambert Profile does not respect user defined units.
-#        forcing conversion to meters here by multiplying by a 
-#        factor of 1e3.
+# TODO: the Lambert Profile does not respect user defined units.
+# https://github.com/ansys-internal/pystk/issues/439
 lambert.central_body_collision_altitude_padding = 0
 # -
 
@@ -353,11 +386,16 @@ lambert.second_maneuver_segment = last_impulse.name
 # Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, PROFILES_FINISH
+from ansys.stk.core.stkobjects.astrogator import (
+    PROFILE_MODE,
+    PROFILES_FINISH,
+    TARGET_SEQUENCE_ACTION,
+)
+
 
 lambert.mode = PROFILE_MODE.ACTIVE
 
-lambert_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+lambert_transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
 lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
 
 lambert_transfer.continue_on_failure = False
@@ -366,7 +404,7 @@ lambert_transfer.reset_inner_targeters = False
 
 # Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
 
-satellite.propagator.run_mission_control_sequence()
+satellite.propagator.run_mcs()
 satellite.propagator.apply_all_profile_changes()
 
 # ## Retrieve the results
@@ -374,21 +412,19 @@ satellite.propagator.apply_all_profile_changes()
 # Now, the results can be retrieved. The value of the increment in velocity magnitude for the first and last impulse are computed. Also, the $C_{3}$ values for the characteristic departure and arrival energy are solved.
 
 # +
-# FIXME: the Lambert Profile does not respect user defined units.
-#        forcing conversion to meters here by multiplying by a 
-#        factor of 1e3.
+# TODO: the Lambert Profile does not respect user defined units.
+# https://github.com/ansys-internal/pystk/issues/439
 delta_v1 = first_impulse.maneuver.attitude_control.magnitude / 1000
-c3_launch = delta_v1 ** 2
+c3_launch = delta_v1**2
 
 print(f"First impulse: {delta_v1:.2f} km/s")
 print(f"C3 at launch: {c3_launch:.2f} km2/s2")
 
 # +
-# FIXME: the Lambert Profile does not respect user defined units.
-#        forcing conversion to meters here by multiplying by a 
-#        factor of 1e3.
+# TODO: the Lambert Profile does not respect user defined units.
+# https://github.com/ansys-internal/pystk/issues/439
 delta_v2 = last_impulse.maneuver.attitude_control.magnitude / 1000
-c3_arrival = delta_v2 ** 2
+c3_arrival = delta_v2**2
 
 print(f"Last impulse:  {delta_v2:.2f} km/s")
 print(f"C3 at arrival: {c3_arrival:.2f} km2/s2")
@@ -400,7 +436,7 @@ print(f"C3 at arrival: {c3_arrival:.2f} km2/s2")
 
 # +
 satellite.propagator.options.draw_trajectory_in_3d = True
-satellite.graphics_3d.model.detail_threshold.all = 1E12
+satellite.graphics_3d.model.detail_threshold.all = 1e12
 
 plotter.animate(time_step=14000)
 plotter.show()

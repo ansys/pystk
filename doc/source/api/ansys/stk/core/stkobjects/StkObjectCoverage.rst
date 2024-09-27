@@ -3,8 +3,6 @@ StkObjectCoverage
 
 .. py:class:: ansys.stk.core.stkobjects.StkObjectCoverage
 
-   Bases: 
-
    Class defining object coverage.
 
 .. py:currentmodule:: StkObjectCoverage
@@ -65,7 +63,7 @@ Property detail
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.StkObjectCoverage.data_providers
-    :type: IDataProviderCollection
+    :type: DataProviderCollection
 
     Returns the object representing a list of available data providers for the object.
 
@@ -83,13 +81,13 @@ Property detail
 
 .. py:property:: assets
     :canonical: ansys.stk.core.stkobjects.StkObjectCoverage.assets
-    :type: ICoverageAssetListCollection
+    :type: CoverageAssetListCollection
 
     Get the asset list collection.
 
 .. py:property:: figure_of_merit
     :canonical: ansys.stk.core.stkobjects.StkObjectCoverage.figure_of_merit
-    :type: IObjectCoverageFigureOfMerit
+    :type: ObjectCoverageFigureOfMerit
 
     Get the figure of merit on the object coverage.
 

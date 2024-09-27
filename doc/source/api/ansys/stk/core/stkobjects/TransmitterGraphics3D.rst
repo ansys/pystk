@@ -3,8 +3,6 @@ TransmitterGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.TransmitterGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Transmitter.
 
 .. py:currentmodule:: TransmitterGraphics3D
@@ -44,7 +42,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.TransmitterGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the transmitter's Vector properties.
 
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.TransmitterGraphics3D.volume
-    :type: IAntennaVolumeGraphics
+    :type: AntennaVolumeGraphics
 
     Gets the transmitter's antenna volume graphics interface.
 

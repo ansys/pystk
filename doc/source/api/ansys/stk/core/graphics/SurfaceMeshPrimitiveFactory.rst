@@ -3,8 +3,6 @@ SurfaceMeshPrimitiveFactory
 
 .. py:class:: ansys.stk.core.graphics.SurfaceMeshPrimitiveFactory
 
-   Bases: 
-
    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
 
 .. py:currentmodule:: SurfaceMeshPrimitiveFactory

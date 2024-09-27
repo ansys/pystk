@@ -3,8 +3,6 @@ ICalculationToolScalar
 
 .. py:class:: ansys.stk.core.vgt.ICalculationToolScalar
 
-   object
-   
    Any scalar calculation that is not constant by construction.
 
 .. py:currentmodule:: ICalculationToolScalar

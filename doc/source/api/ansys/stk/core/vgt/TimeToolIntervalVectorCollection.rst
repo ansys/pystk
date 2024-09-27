@@ -3,8 +3,6 @@ TimeToolIntervalVectorCollection
 
 .. py:class:: ansys.stk.core.vgt.TimeToolIntervalVectorCollection
 
-   Bases: 
-
    A collection of interval collections.
 
 .. py:currentmodule:: TimeToolIntervalVectorCollection

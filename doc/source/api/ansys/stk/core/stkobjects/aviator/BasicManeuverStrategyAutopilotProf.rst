@@ -28,13 +28,13 @@ Overview
               - Gets or sets the relative altitude change for the specify altitude change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.altitude_rate`
               - Gets or sets the altitude rate for the specify altitude rate mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.flight_path_angle`
               - Gets or sets the flight path angle for the specify wind frame flight path angle mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.altitude_control_mode`
               - Gets or sets the altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_altitude_rate_value`
               - Gets or sets the altitude rate control value for the hold initial altitude, specify altitude, and specify altitude change modes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_fpa_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_flight_path_angle_value`
               - Gets or sets the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_limit_mode`
               - Gets or sets the control limits mode.
@@ -46,7 +46,7 @@ Overview
               - Gets or sets the damping ratio of the control law.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.airspeed_options`
               - Get the airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_acceleration`
               - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.stop_when_conditions_met`
               - Stop when conditions are met.
@@ -88,8 +88,8 @@ Property detail
 
     Gets or sets the altitude rate for the specify altitude rate mode.
 
-.. py:property:: fpa
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.fpa
+.. py:property:: flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.flight_path_angle
     :type: typing.Any
 
     Gets or sets the flight path angle for the specify wind frame flight path angle mode.
@@ -106,15 +106,15 @@ Property detail
 
     Gets or sets the altitude rate control value for the hold initial altitude, specify altitude, and specify altitude change modes.
 
-.. py:property:: control_fpa_value
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_fpa_value
+.. py:property:: control_flight_path_angle_value
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_flight_path_angle_value
     :type: typing.Any
 
     Gets or sets the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_limit_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the control limits mode.
 
@@ -138,12 +138,12 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.airspeed_options
-    :type: IBasicManeuverAirspeedOptions
+    :type: BasicManeuverAirspeedOptions
 
     Get the airspeed options.
 
-.. py:property:: compensate_for_coriolis_accel
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_accel
+.. py:property:: compensate_for_coriolis_acceleration
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.compensate_for_coriolis_acceleration
     :type: bool
 
     Gets or sets the option to compensate for the acceleration due to the Coriolis effect.

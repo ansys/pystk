@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atm_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model`
               - Embeds a nominal atmosphere model from the component browser.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atm_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model`
               - Embeds a low altitude atmosphere model from the component browser.
 
     .. tab-item:: Properties
@@ -33,13 +33,13 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range`
               - Gets or sets the blending range (distance dimension), begins at lower bound of upper model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atm_density_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name`
               - Returns the name of the embedded nominal atmospheric model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atm_density_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name`
               - Returns the name of the embedded low altitude atmospheric model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude`
               - True if using approximate altitude formula (enforced on embedded models).
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atm_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atmosphere_model`
               - Get the lowest valid altitude of the upper atmospheric density model.
 
 
@@ -61,14 +61,14 @@ Property detail
 
     Gets or sets the blending range (distance dimension), begins at lower bound of upper model.
 
-.. py:property:: atm_density_model_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atm_density_model_name
+.. py:property:: atmos_density_model_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name
     :type: str
 
     Returns the name of the embedded nominal atmospheric model.
 
-.. py:property:: low_altitude_atm_density_model_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atm_density_model_name
+.. py:property:: low_altitude_atmosphere_density_model_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name
     :type: str
 
     Returns the name of the embedded low altitude atmospheric model.
@@ -79,8 +79,8 @@ Property detail
 
     True if using approximate altitude formula (enforced on embedded models).
 
-.. py:property:: lower_bound_upper_atm_model
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atm_model
+.. py:property:: lower_bound_upper_atmosphere_model
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atmosphere_model
     :type: float
 
     Get the lowest valid altitude of the upper atmospheric density model.
@@ -89,8 +89,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: atm_density_model(self, pInVal: IComponentInfo) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atm_density_model
+.. py:method:: atmos_density_model(self, pInVal: IComponentInfo) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model
 
     Embeds a nominal atmosphere model from the component browser.
 
@@ -102,8 +102,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: low_altitude_atm_density_model(self, pInVal: IComponentInfo) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atm_density_model
+.. py:method:: low_altitude_atmosphere_density_model(self, pInVal: IComponentInfo) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model
 
     Embeds a low altitude atmosphere model from the component browser.
 

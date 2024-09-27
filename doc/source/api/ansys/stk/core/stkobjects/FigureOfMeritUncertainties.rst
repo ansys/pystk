@@ -3,8 +3,6 @@ FigureOfMeritUncertainties
 
 .. py:class:: ansys.stk.core.stkobjects.FigureOfMeritUncertainties
 
-   Bases: 
-
    Receiver range uncertainty (for Navigation Accuracy FOM).
 
 .. py:currentmodule:: FigureOfMeritUncertainties
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: asset_list
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritUncertainties.asset_list
-    :type: IFigureOfMeritAssetListCollection
+    :type: FigureOfMeritAssetListCollection
 
     Get list of assets for specifying range uncertainty.
 

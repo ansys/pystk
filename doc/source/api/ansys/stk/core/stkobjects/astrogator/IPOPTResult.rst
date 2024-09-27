@@ -3,8 +3,6 @@ IPOPTResult
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTResult
 
-   Bases: 
-
    Properties for objecvtive and constraints of a IPOPT profile.
 
 .. py:currentmodule:: IPOPTResult

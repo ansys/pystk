@@ -127,43 +127,43 @@ Property detail
 
 .. py:property:: mass_properties
     :canonical: ansys.stk.core.stkobjects.Satellite.mass_properties
-    :type: IVehicleMassProperties
+    :type: VehicleMassProperties
 
     Get the Mass properties of the satellite.
 
 .. py:property:: pass_break
     :canonical: ansys.stk.core.stkobjects.Satellite.pass_break
-    :type: IVehiclePassBreak
+    :type: VehiclePassBreak
 
     Get the Pass Break properties of the satellite.
 
 .. py:property:: ground_ellipses
     :canonical: ansys.stk.core.stkobjects.Satellite.ground_ellipses
-    :type: IVehicleGroundEllipsesCollection
+    :type: VehicleGroundEllipsesCollection
 
     Get the Ground Ellipses properties of the satellite.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Satellite.graphics
-    :type: ISatelliteGraphics
+    :type: SatelliteGraphics
 
     Get the 2D Graphics properties of the satellite.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.Satellite.graphics_3d
-    :type: ISatelliteGraphics3D
+    :type: SatelliteGraphics3D
 
     Get the 3D Graphics properties of the satellite.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.Satellite.access_constraints
-    :type: IAccessConstraintCollection
+    :type: AccessConstraintCollection
 
     Get the constraints imposed on the satellite.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.Satellite.eclipse_bodies
-    :type: IVehicleEclipseBodies
+    :type: VehicleEclipseBodies
 
     Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
 
@@ -175,19 +175,19 @@ Property detail
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.Satellite.export_tools
-    :type: ISatelliteExportTools
+    :type: SatelliteExportTools
 
     Returns the IAgSaExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Satellite.space_environment
-    :type: IVehicleSpaceEnvironment
+    :type: VehicleSpaceEnvironment
 
     Get the SpaceEnvironment properties of the satellite.
 
 .. py:property:: reference_vehicle
     :canonical: ansys.stk.core.stkobjects.Satellite.reference_vehicle
-    :type: ILinkToObject
+    :type: LinkToObject
 
     Get the reference vehicle of the satellite.
 
@@ -199,7 +199,7 @@ Property detail
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Satellite.radar_cross_section
-    :type: IRadarCrossSectionInheritable
+    :type: RadarCrossSectionInheritable
 
     Returns the radar cross sectoin.
 

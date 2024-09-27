@@ -3,8 +3,6 @@ DataProviderResultIntervalCollection
 
 .. py:class:: ansys.stk.core.stkobjects.DataProviderResultIntervalCollection
 
-   Bases: 
-
    Represents a collection of intervals returned by the data providers.
 
 .. py:currentmodule:: DataProviderResultIntervalCollection

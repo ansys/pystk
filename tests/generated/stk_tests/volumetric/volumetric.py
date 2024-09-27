@@ -48,16 +48,16 @@ class EarlyBoundTests(TestBase):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - START")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.GRID_UNKNOWN)
+            EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_UNKNOWN)
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to GRID_SPATIAL_CALCULATION")
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
         Assert.assertEqual(
-            VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
+            VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
         )
 
-        vmGridSpatialCalculation: "VmGridSpatialCalculation" = clr.CastAs(
-            EarlyBoundTests.AG_VOL.volume_grid_definition, VmGridSpatialCalculation
+        vmGridSpatialCalculation: "VolumetricGridSpatialCalculation" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricGridSpatialCalculation
         )
 
         Console.WriteLine(
@@ -85,11 +85,13 @@ class EarlyBoundTests(TestBase):
             vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Bogus"
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to EXTERNAL_FILE")
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.EXTERNAL_FILE)
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.EXTERNAL_FILE)
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - After setting to EXTERNAL_FILE")
-        Assert.assertEqual(VM_DEFINITION_TYPE.EXTERNAL_FILE, EarlyBoundTests.AG_VOL.volume_grid_definition_type)
+        Assert.assertEqual(VOLUMETRIC_DEFINITION_TYPE.EXTERNAL_FILE, EarlyBoundTests.AG_VOL.volume_grid_definition_type)
 
-        vmExternalFile: "VmExternalFile" = clr.CastAs(EarlyBoundTests.AG_VOL.volume_grid_definition, VmExternalFile)
+        vmExternalFile: "VolumetricExternalFile" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricExternalFile
+        )
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting vmExternalFile properties")
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid file name")):
@@ -124,16 +126,16 @@ class EarlyBoundTests(TestBase):
 
         # Return setting to original to avoid other tests failing
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to GRID_SPATIAL_CALCULATION")
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
         Assert.assertEqual(
-            VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
+            VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
         )
 
         Console.WriteLine(
             "XXX Volumetric.EarlyBoundTests.Definition - Before setting vmGridSpatialCalculation2 properties"
         )
-        vmGridSpatialCalculation2: "VmGridSpatialCalculation" = clr.CastAs(
-            EarlyBoundTests.AG_VOL.volume_grid_definition, VmGridSpatialCalculation
+        vmGridSpatialCalculation2: "VolumetricGridSpatialCalculation" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricGridSpatialCalculation
         )
 
         vmGridSpatialCalculation2.volume_grid = "CentralBody/Earth GlobalCartographicUpTo1000km"
@@ -153,7 +155,7 @@ class EarlyBoundTests(TestBase):
     def test_Interval_AnalysisInterval(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Interval_AnalysisInterval - START")
 
-        vmAnalysisInterval: "VmAnalysisInterval" = EarlyBoundTests.AG_VOL.volume_analysis_interval
+        vmAnalysisInterval: "VolumetricAnalysisInterval" = EarlyBoundTests.AG_VOL.volume_analysis_interval
 
         vmAnalysisInterval.analysis_interval = "Satellite/Satellite1 AvailabilityTimeSpan Interval"
         Assert.assertEqual("Satellite/Satellite1 AvailabilityTimeSpan Interval", vmAnalysisInterval.analysis_interval)
@@ -171,14 +173,14 @@ class EarlyBoundTests(TestBase):
     def test_Interval_Evaluation(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Interval_Evaluation - START")
 
-        vmAnalysisInterval: "VmAnalysisInterval" = EarlyBoundTests.AG_VOL.volume_analysis_interval
+        vmAnalysisInterval: "VolumetricAnalysisInterval" = EarlyBoundTests.AG_VOL.volume_analysis_interval
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VM_SPATIAL_CALC_EVAL_TYPE.EVAL_UNKNOWN)
+            vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.EVAL_UNKNOWN)
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VM_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME)
+        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME)
         Assert.assertEqual(
-            VM_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME, vmAnalysisInterval.evaluation_of_spatial_calc_type
+            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME, vmAnalysisInterval.evaluation_of_spatial_calc_type
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -186,9 +188,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmAnalysisInterval.step_size = 60
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VM_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY)
+        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(
+            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY
+        )
         Assert.assertEqual(
-            VM_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY, vmAnalysisInterval.evaluation_of_spatial_calc_type
+            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY,
+            vmAnalysisInterval.evaluation_of_spatial_calc_type,
         )
 
         vmAnalysisInterval.time_array = "Satellite/Satellite1 EphemerisTimes"
@@ -199,9 +204,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmAnalysisInterval.step_size = 60
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VM_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE)
+        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE)
         Assert.assertEqual(
-            VM_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE, vmAnalysisInterval.evaluation_of_spatial_calc_type
+            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE, vmAnalysisInterval.evaluation_of_spatial_calc_type
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -224,7 +229,7 @@ class EarlyBoundTests(TestBase):
     def test_Advanced(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Advanced - START")
 
-        vmAdvanced: "VmAdvanced" = EarlyBoundTests.AG_VOL.advanced
+        vmAdvanced: "VolumetricAdvanced" = EarlyBoundTests.AG_VOL.advanced
 
         vmAdvanced.automatic_recompute = True
         Assert.assertTrue(vmAdvanced.automatic_recompute)
@@ -232,13 +237,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(vmAdvanced.automatic_recompute)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            vmAdvanced.save_computed_data_type = VM_SAVE_COMPUTED_DATA_TYPE.UNKNOWN
-        vmAdvanced.save_computed_data_type = VM_SAVE_COMPUTED_DATA_TYPE.NO_SAVE
-        Assert.assertEqual(VM_SAVE_COMPUTED_DATA_TYPE.NO_SAVE, vmAdvanced.save_computed_data_type)
-        vmAdvanced.save_computed_data_type = VM_SAVE_COMPUTED_DATA_TYPE.NO_SAVE_COMPUTE_ON_LOAD
-        Assert.assertEqual(VM_SAVE_COMPUTED_DATA_TYPE.NO_SAVE_COMPUTE_ON_LOAD, vmAdvanced.save_computed_data_type)
-        vmAdvanced.save_computed_data_type = VM_SAVE_COMPUTED_DATA_TYPE.SAVE
-        Assert.assertEqual(VM_SAVE_COMPUTED_DATA_TYPE.SAVE, vmAdvanced.save_computed_data_type)
+            vmAdvanced.save_computed_data_type = VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.UNKNOWN
+        vmAdvanced.save_computed_data_type = VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.NO_SAVE
+        Assert.assertEqual(VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.NO_SAVE, vmAdvanced.save_computed_data_type)
+        vmAdvanced.save_computed_data_type = VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.NO_SAVE_COMPUTE_ON_LOAD
+        Assert.assertEqual(
+            VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.NO_SAVE_COMPUTE_ON_LOAD, vmAdvanced.save_computed_data_type
+        )
+        vmAdvanced.save_computed_data_type = VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.SAVE
+        Assert.assertEqual(VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.SAVE, vmAdvanced.save_computed_data_type)
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Advanced - END")
 
@@ -281,15 +288,19 @@ class EarlyBoundTests(TestBase):
     def test_Export(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Export - START")
 
-        exportTool: "VmExportTool" = EarlyBoundTests.AG_VOL.get_volumetric_export_tool()
+        exportTool: "VolumetricExportTool" = EarlyBoundTests.AG_VOL.get_volumetric_export_tool()
 
-        exportTool.export_data_format_type = VM_DATA_EXPORT_FORMAT_TYPE.HDF5
-        Assert.assertEqual(VM_DATA_EXPORT_FORMAT_TYPE.HDF5, exportTool.export_data_format_type)
+        exportTool.export_data_format_type = VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE.HDF5
+        Assert.assertEqual(VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE.HDF5, exportTool.export_data_format_type)
 
-        exportTool.volume_grid_export_type = VM_VOLUME_GRID_EXPORT_TYPE.INCLUDE_LINK_TO_VOLUME_GRID
-        Assert.assertEqual(VM_VOLUME_GRID_EXPORT_TYPE.INCLUDE_LINK_TO_VOLUME_GRID, exportTool.volume_grid_export_type)
-        exportTool.volume_grid_export_type = VM_VOLUME_GRID_EXPORT_TYPE.EMBED_VOLUME_GRID_DEFINITION
-        Assert.assertEqual(VM_VOLUME_GRID_EXPORT_TYPE.EMBED_VOLUME_GRID_DEFINITION, exportTool.volume_grid_export_type)
+        exportTool.volume_grid_export_type = VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE.INCLUDE_LINK_TO_VOLUME_GRID
+        Assert.assertEqual(
+            VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE.INCLUDE_LINK_TO_VOLUME_GRID, exportTool.volume_grid_export_type
+        )
+        exportTool.volume_grid_export_type = VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE.EMBED_VOLUME_GRID_DEFINITION
+        Assert.assertEqual(
+            VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE.EMBED_VOLUME_GRID_DEFINITION, exportTool.volume_grid_export_type
+        )
 
         exportTool.include_grid_point_cartesian = False
         Assert.assertFalse(exportTool.include_grid_point_cartesian)
@@ -308,9 +319,9 @@ class EarlyBoundTests(TestBase):
 
         filename: str = Path.Combine(TestBase.TemporaryDirectory, "VolumetricTest.h5")
 
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
-        vmGridSpatialCalculation: "VmGridSpatialCalculation" = clr.CastAs(
-            EarlyBoundTests.AG_VOL.volume_grid_definition, VmGridSpatialCalculation
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
+        vmGridSpatialCalculation: "VolumetricGridSpatialCalculation" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricGridSpatialCalculation
         )
         vmGridSpatialCalculation.use_spatial_calculation = True
         vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Altitude"
@@ -335,7 +346,7 @@ class EarlyBoundTests(TestBase):
     def test_VO_Attributes(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Attributes - START")
 
-        vmVO: "VmGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
+        vmVO: "VolumetricGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
 
         vmVO.visible = True
         Assert.assertTrue(vmVO.visible)
@@ -352,42 +363,42 @@ class EarlyBoundTests(TestBase):
         vmVO.shading = False
         Assert.assertFalse(vmVO.shading)
 
-        vmVO.quality = VM_DISPLAY_QUALITY_TYPE.QUALITY_LOW
-        Assert.assertEqual(VM_DISPLAY_QUALITY_TYPE.QUALITY_LOW, vmVO.quality)
-        vmVO.quality = VM_DISPLAY_QUALITY_TYPE.QUALITY_MEDIUM
-        Assert.assertEqual(VM_DISPLAY_QUALITY_TYPE.QUALITY_MEDIUM, vmVO.quality)
-        vmVO.quality = VM_DISPLAY_QUALITY_TYPE.QUALITY_HIGH
-        Assert.assertEqual(VM_DISPLAY_QUALITY_TYPE.QUALITY_HIGH, vmVO.quality)
-        vmVO.quality = VM_DISPLAY_QUALITY_TYPE.QUALITY_VERY_HIGH
-        Assert.assertEqual(VM_DISPLAY_QUALITY_TYPE.QUALITY_VERY_HIGH, vmVO.quality)
+        vmVO.quality = VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_LOW
+        Assert.assertEqual(VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_LOW, vmVO.quality)
+        vmVO.quality = VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_MEDIUM
+        Assert.assertEqual(VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_MEDIUM, vmVO.quality)
+        vmVO.quality = VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_HIGH
+        Assert.assertEqual(VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_HIGH, vmVO.quality)
+        vmVO.quality = VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_VERY_HIGH
+        Assert.assertEqual(VOLUMETRIC_DISPLAY_QUALITY_TYPE.QUALITY_VERY_HIGH, vmVO.quality)
 
         #
         # Test VolumeType property
         #
         # Save previous value to restore when done
-        vType: "VM_DISPLAY_VOLUME_TYPE" = vmVO.volume_type
+        vType: "VOLUMETRIC_DISPLAY_VOLUME_TYPE" = vmVO.volume_type
 
         # Test Spatial Calculation Levels volume type when valid
         # spatial calc component is set.
-        vmGridSpatialCalculation: "VmGridSpatialCalculation" = clr.CastAs(
-            EarlyBoundTests.AG_VOL.volume_grid_definition, VmGridSpatialCalculation
+        vmGridSpatialCalculation: "VolumetricGridSpatialCalculation" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricGridSpatialCalculation
         )
         vmGridSpatialCalculation.use_spatial_calculation = True
         vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Altitude"
-        vmVO.volume_type = VM_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
-        Assert.assertTrue((vmVO.volume_type == VM_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS))
+        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS))
 
         # Test Active Grid Points volume type
-        vmVO.volume_type = VM_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS
-        Assert.assertTrue((vmVO.volume_type == VM_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
+        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
 
         # Test Spatial Calculation Levels volume type when invalid
         # spatial calc component is set.  An exception should be thrown
         # when this occurs.
         vmGridSpatialCalculation.use_spatial_calculation = False
         with pytest.raises(Exception, match=RegexSubstringMatch("Spatial calculation is unavailable")):
-            vmVO.volume_type = VM_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
-        Assert.assertTrue((vmVO.volume_type == VM_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
+            vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
 
         # Restore inital state
         vmVO.volume_type = vType
@@ -401,7 +412,7 @@ class EarlyBoundTests(TestBase):
     def test_VO_Grid(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Grid - START")
 
-        vmVOGrid: "VmGraphics3DGrid" = EarlyBoundTests.AG_VOL.graphics_3d.grid
+        vmVOGrid: "VolumetricGraphics3DGrid" = EarlyBoundTests.AG_VOL.graphics_3d.grid
 
         vmVOGrid.show_grid = False
         Assert.assertFalse(vmVOGrid.show_grid)
@@ -468,8 +479,8 @@ class EarlyBoundTests(TestBase):
     def test_VO_Volume_ActiveGridPoints(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Volume_ActiveGridPoints - START")
 
-        vmVOVolume: "VmGraphics3DVolume" = EarlyBoundTests.AG_VOL.graphics_3d.volume
-        vmVOActiveGridPoints: "VmGraphics3DActiveGridPoints" = vmVOVolume.active_grid_points
+        vmVOVolume: "VolumetricGraphics3DVolume" = EarlyBoundTests.AG_VOL.graphics_3d.volume
+        vmVOActiveGridPoints: "VolumetricGraphics3DActiveGridPoints" = vmVOVolume.active_grid_points
 
         # Active/Inactive Boundary
 
@@ -553,13 +564,13 @@ class EarlyBoundTests(TestBase):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Volume_SpatialCalculationLevels - START")
 
         # Setup
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
         Assert.assertEqual(
-            VM_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
+            VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION, EarlyBoundTests.AG_VOL.volume_grid_definition_type
         )
 
-        vmGridSpatialCalculation: "VmGridSpatialCalculation" = clr.CastAs(
-            EarlyBoundTests.AG_VOL.volume_grid_definition, VmGridSpatialCalculation
+        vmGridSpatialCalculation: "VolumetricGridSpatialCalculation" = clr.CastAs(
+            EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricGridSpatialCalculation
         )
 
         vmGridSpatialCalculation.volume_grid = "CentralBody/Earth GlobalCartographicUpTo1000km"
@@ -571,8 +582,10 @@ class EarlyBoundTests(TestBase):
         vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Altitude"
         Assert.assertEqual("Satellite/Satellite1 Altitude", vmGridSpatialCalculation.spatial_calculation)
 
-        vmVOVolume: "VmGraphics3DVolume" = EarlyBoundTests.AG_VOL.graphics_3d.volume
-        vmVOSpatialCalculationLevels: "VmGraphics3DSpatialCalculationLevels" = vmVOVolume.spatial_calculation_levels
+        vmVOVolume: "VolumetricGraphics3DVolume" = EarlyBoundTests.AG_VOL.graphics_3d.volume
+        vmVOSpatialCalculationLevels: "VolumetricGraphics3DSpatialCalculationLevels" = (
+            vmVOVolume.spatial_calculation_levels
+        )
 
         # Boundary Levels
 
@@ -609,7 +622,9 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    def Test_IAgVmVOSpatialCalculationLevelCollection(self, levelColl: "VmGraphics3DSpatialCalculationLevelCollection"):
+    def Test_IAgVmVOSpatialCalculationLevelCollection(
+        self, levelColl: "VolumetricGraphics3DSpatialCalculationLevelCollection"
+    ):
         Assert.assertEqual(0, levelColl.count)
 
         # Add some
@@ -643,18 +658,18 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Colors.Black, levelColl[1].color)
         Assert.assertAlmostEqual(50, levelColl[1].translucency, delta=0.0001)
 
-        level0: "VmGraphics3DSpatialCalculationLevel" = levelColl[0]
+        level0: "VolumetricGraphics3DSpatialCalculationLevel" = levelColl[0]
         Assert.assertEqual(1, level0.value)
         Assert.assertEqual(Colors.Yellow, level0.color)
         Assert.assertAlmostEqual(40, level0.translucency, delta=0.001)
 
-        level1: "VmGraphics3DSpatialCalculationLevel" = levelColl[1]
+        level1: "VolumetricGraphics3DSpatialCalculationLevel" = levelColl[1]
         Assert.assertEqual(2, level1.value)
         Assert.assertEqual(Colors.Black, level1.color)
         Assert.assertAlmostEqual(50, level1.translucency, delta=0.001)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
-            level3: "VmGraphics3DSpatialCalculationLevel" = levelColl[3]
+            level3: "VolumetricGraphics3DSpatialCalculationLevel" = levelColl[3]
 
         i: int = 0
         while i < levelColl.count:
@@ -662,7 +677,7 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        level: "VmGraphics3DSpatialCalculationLevel"
+        level: "VolumetricGraphics3DSpatialCalculationLevel"
 
         for level in levelColl:
             Assert.assertTrue((level.translucency > 5))
@@ -684,13 +699,13 @@ class EarlyBoundTests(TestBase):
     def test_VO_Legends_FillLegend(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Legends_FillLegend - START")
 
-        vmVO: "VmGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
+        vmVO: "VolumetricGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
 
         vmVO.show_fill_legend = False
         Assert.assertFalse(vmVO.show_fill_legend)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not enabled")):
-            legend: "VmGraphics3DLegend" = vmVO.fill_legend
+            legend: "VolumetricGraphics3DLegend" = vmVO.fill_legend
 
         vmVO.show_fill_legend = True
         Assert.assertTrue(vmVO.show_fill_legend)
@@ -706,13 +721,13 @@ class EarlyBoundTests(TestBase):
     def test_VO_Legends_BoundaryLegend(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.VO_Legends_BoundaryLegend - START")
 
-        vmVO: "VmGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
+        vmVO: "VolumetricGraphics3D" = EarlyBoundTests.AG_VOL.graphics_3d
 
         vmVO.show_boundary_legend = False
         Assert.assertFalse(vmVO.show_boundary_legend)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not enabled")):
-            legend: "VmGraphics3DLegend" = vmVO.boundary_legend
+            legend: "VolumetricGraphics3DLegend" = vmVO.boundary_legend
 
         vmVO.show_boundary_legend = True
         Assert.assertTrue(vmVO.show_boundary_legend)
@@ -723,7 +738,7 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    def Test_IAgVmVOLegend(self, legend: "VmGraphics3DLegend"):
+    def Test_IAgVmVOLegend(self, legend: "VolumetricGraphics3DLegend"):
         legend.position_x = 0
         Assert.assertEqual(0, legend.position_x)
         legend.position_x = 5000
@@ -768,20 +783,20 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.decimal_digits = 100
 
-        legend.notation = VM_LEGEND_NUMERIC_NOTATION.FLOATING_POINT
-        Assert.assertEqual(VM_LEGEND_NUMERIC_NOTATION.FLOATING_POINT, legend.notation)
-        legend.notation = VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E
-        Assert.assertEqual(VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E, legend.notation)
-        legend.notation = VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E
-        Assert.assertEqual(VM_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.FLOATING_POINT
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.FLOATING_POINT, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E, legend.notation)
 
         legend.text_color = Colors.Red
         Assert.assertEqual(Colors.Red, legend.text_color)
         legend.text_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, legend.text_color)
 
-        legend.level_order = VM_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX
-        Assert.assertEqual(VM_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX, legend.level_order)
 
         legend.max_color_squares = 1
         Assert.assertEqual(1, legend.max_color_squares)
@@ -792,8 +807,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.max_color_squares = 1001
 
-        legend.level_order = VM_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN
-        Assert.assertEqual(VM_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN, legend.level_order)
 
         legend.max_color_squares = 1
         Assert.assertEqual(1, legend.max_color_squares)
@@ -804,8 +819,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.max_color_squares = 1001
 
-        legend.level_order = VM_LEVEL_ORDER.VERTICAL_MIN_TO_MAX
-        Assert.assertEqual(VM_LEVEL_ORDER.VERTICAL_MIN_TO_MAX, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MIN_TO_MAX
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MIN_TO_MAX, legend.level_order)
 
         legend.max_color_squares = 1
         Assert.assertEqual(1, legend.max_color_squares)
@@ -816,8 +831,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.max_color_squares = 1001
 
-        legend.level_order = VM_LEVEL_ORDER.VERTICAL_MAX_TO_MIN
-        Assert.assertEqual(VM_LEVEL_ORDER.VERTICAL_MAX_TO_MIN, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAX_TO_MIN
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAX_TO_MIN, legend.level_order)
 
         legend.max_color_squares = 1
         Assert.assertEqual(1, legend.max_color_squares)

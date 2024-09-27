@@ -3,8 +3,6 @@ ITimeToolEventArray
 
 .. py:class:: ansys.stk.core.vgt.ITimeToolEventArray
 
-   object
-   
    An ordered array of times, which may or may not be evenly spaced.
 
 .. py:currentmodule:: ITimeToolEventArray

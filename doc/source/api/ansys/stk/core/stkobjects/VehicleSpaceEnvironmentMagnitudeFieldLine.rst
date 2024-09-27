@@ -3,8 +3,6 @@ VehicleSpaceEnvironmentMagnitudeFieldLine
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMagnitudeFieldLine
 
-   Bases: 
-
    Graphics settings for displaying magnetic field lines.
 
 .. py:currentmodule:: VehicleSpaceEnvironmentMagnitudeFieldLine

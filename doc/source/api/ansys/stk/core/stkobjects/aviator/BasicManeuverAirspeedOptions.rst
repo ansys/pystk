@@ -3,8 +3,6 @@ BasicManeuverAirspeedOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions
 
-   Bases: 
-
    Class defining the airspeed options for basic maneuver strategies.
 
 .. py:currentmodule:: BasicManeuverAirspeedOptions
@@ -30,19 +28,19 @@ Overview
               - Gets or sets the airspeed type option in the Maintain Current Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_airspeed_type`
               - Gets or sets the airspeed type option in the Maintain Specified Airspeed mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_accel_decel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_acceleration_deceleration_mode`
               - Gets or sets the accel/decel mode for the Maintain Specified Airspeed mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_airspeed`
               - Gets or sets the airspeed for the Maintain Specified Airspeed mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_acceleration_deceleration_g`
               - Gets or sets the accel/decel G for the Maintain Specified Airspeed mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.accel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.acceleration_g`
               - Gets or sets the accel G for the Accelerate at mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.deceleration_g`
               - Gets or sets the decel G for the Decelerate at mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.accel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.acceleration_mode`
               - Gets or sets the accel mode for the Accelerate at mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.decel_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.deceleration_mode`
               - Gets or sets the accel mode for the Decelerate at mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.throttle`
               - Gets or sets the throttle setting for the Accel/Decel using Aero/Propulsion at mode.
@@ -78,13 +76,13 @@ Property detail
 
 .. py:property:: min_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.min_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
 
     Gets or sets the minimum speed limit type to enforce.
 
 .. py:property:: max_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.max_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
 
     Gets or sets the maximum speed limit type to enforce.
 
@@ -100,9 +98,9 @@ Property detail
 
     Gets or sets the airspeed type option in the Maintain Specified Airspeed mode.
 
-.. py:property:: specified_accel_decel_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_accel_decel_mode
-    :type: PERF_MODEL_OVERRIDE
+.. py:property:: specified_acceleration_deceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_acceleration_deceleration_mode
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the accel/decel mode for the Maintain Specified Airspeed mode.
 
@@ -112,33 +110,33 @@ Property detail
 
     Gets or sets the airspeed for the Maintain Specified Airspeed mode.
 
-.. py:property:: specified_accel_decel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_accel_decel_g
+.. py:property:: specified_acceleration_deceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_acceleration_deceleration_g
     :type: float
 
     Gets or sets the accel/decel G for the Maintain Specified Airspeed mode.
 
-.. py:property:: accel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.accel_g
+.. py:property:: acceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.acceleration_g
     :type: float
 
     Gets or sets the accel G for the Accelerate at mode.
 
-.. py:property:: decel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.decel_g
+.. py:property:: deceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.deceleration_g
     :type: float
 
     Gets or sets the decel G for the Decelerate at mode.
 
-.. py:property:: accel_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.accel_mode
-    :type: PERF_MODEL_OVERRIDE
+.. py:property:: acceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.acceleration_mode
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the accel mode for the Accelerate at mode.
 
-.. py:property:: decel_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.decel_mode
-    :type: PERF_MODEL_OVERRIDE
+.. py:property:: deceleration_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.deceleration_mode
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the accel mode for the Decelerate at mode.
 
@@ -174,7 +172,7 @@ Property detail
 
 .. py:property:: thrust
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.thrust
-    :type: IPropulsionThrust
+    :type: PropulsionThrust
 
     Get the thrust options for the Specify Thrust mode.
 

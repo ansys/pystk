@@ -3,8 +3,6 @@ SensorGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.SensorGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Sensor.
 
 .. py:currentmodule:: SensorGraphics3D
@@ -136,25 +134,25 @@ Property detail
 
 .. py:property:: pulse
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.pulse
-    :type: ISensorGraphics3DPulse
+    :type: SensorGraphics3DPulse
 
     Get the sensor's Pulse properties.
 
 .. py:property:: vertex_offset
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.vertex_offset
-    :type: ISensorGraphics3DOffset
+    :type: SensorGraphics3DOffset
 
     Get the sensor's Vertex Offset properties.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.data_displays
-    :type: IGraphics3DDataDisplayCollection
+    :type: Graphics3DDataDisplayCollection
 
     Get the sensor's Data Display properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the sensor's Vector properties.
 
@@ -184,13 +182,13 @@ Property detail
 
 .. py:property:: space_projection_intervals
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals
-    :type: ISensorGraphics3DSpaceProjectionCollection
+    :type: SensorGraphics3DSpaceProjectionCollection
 
     Returns time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals
-    :type: ISensorGraphics3DTargetProjectionCollection
+    :type: SensorGraphics3DTargetProjectionCollection
 
     Returns time dependent target projection list.
 

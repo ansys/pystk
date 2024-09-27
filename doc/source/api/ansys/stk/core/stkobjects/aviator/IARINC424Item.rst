@@ -3,8 +3,6 @@ IARINC424Item
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.IARINC424Item
 
-   object
-   
    Interface used to access the options for an ARINC424 Item found in the Aviator catalog.
 
 .. py:currentmodule:: IARINC424Item

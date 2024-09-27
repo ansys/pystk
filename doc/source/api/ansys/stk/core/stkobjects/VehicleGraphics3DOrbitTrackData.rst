@@ -3,8 +3,6 @@ VehicleGraphics3DOrbitTrackData
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTrackData
 
-   Bases: 
-
    3D leading/trailing track data for satellites.
 
 .. py:currentmodule:: VehicleGraphics3DOrbitTrackData
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: pass_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitTrackData.pass_data
-    :type: IVehicleGraphics3DOrbitPassData
+    :type: VehicleGraphics3DOrbitPassData
 
     Get the 3D leading/trailing track data.
 

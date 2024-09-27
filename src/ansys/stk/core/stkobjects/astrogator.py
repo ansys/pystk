@@ -5,60 +5,60 @@
 """Object Model components specifically designed to support STK Astrogator."""
 
 __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CONTROL", "ATTITUDE_UPDATE", "AccessStoppingCondition", 
-"AsTriggerCondition", "AstrogatorCentralBody", "AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", 
-"AttitudeControlFiniteFile", "AttitudeControlFinitePlugin", "AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", 
-"AttitudeControlFiniteVelocityVector", "AttitudeControlImpulsiveAntiVelocityVector", "AttitudeControlImpulsiveAttitude", 
-"AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", "AttitudeControlImpulsiveVelocityVector", "AttitudeControlOptimalFiniteLagrange", 
-"AutomaticSequence", "AutomaticSequenceCollection", "BASE_SELECTION", "BDotRCalc", "BDotTCalc", "BMagnitudeCalc", "BODY_AXIS", 
-"BPlaneCollection", "BThetaCalc", "BURNOUT_OPTIONS", "BURNOUT_TYPE", "BisectionControl", "BisectionControlCollection", "BisectionResult", 
-"BisectionResultCollection", "BlendedDensity", "BulirschStoerIntegrator", "BurnoutCBFCartesian", "BurnoutGeocentric", "BurnoutGeodetic", 
-"BurnoutLaunchAzAltitude", "BurnoutLaunchAzRadius", "BurnoutVelocity", "CALC_OBJECT_ANGLE_SIGN", "CALC_OBJECT_CENTRAL_BODY_REFERENCE", 
-"CALC_OBJECT_DIRECTION", "CALC_OBJECT_ELEM", "CALC_OBJECT_LOCATION_SOURCE", "CALC_OBJECT_ORBIT_PLANE_SOURCE", "CALC_OBJECT_REFERENCE", 
-"CALC_OBJECT_REFERENCE_DIRECTION", "CALC_OBJECT_REFERENCE_ELLIPSE", "CALC_OBJECT_RELATIVE_POSITION", "CALC_OBJECT_SUN_POSITION", 
-"CENTRAL_BODY_ATTITUDE", "CENTRAL_BODY_EPHEMERIS", "CENTRAL_BODY_GRAVITY_MODEL", "CENTRAL_BODY_SHAPE", "CLEAR_EPHEMERIS_DIRECTION", 
-"COEFF_RUNGE_KUTTA_V_8TH_9TH", "COMPLEX_NUMBER", "CONSTRAINT_SIGN", "CONTROL_ADVANCED", "CONTROL_ENGINE_CONSTANT", "CONTROL_ENGINE_CONST_ACC", 
-"CONTROL_ENGINE_CUSTOM", "CONTROL_ENGINE_ION", "CONTROL_ENGINE_MODEL_POLY", "CONTROL_ENGINE_THROTTLE_TABLE", "CONTROL_FOLLOW", 
-"CONTROL_INIT_STATE", "CONTROL_LAUNCH", "CONTROL_MANEUVER", "CONTROL_ORBIT_STATE_VALUE", "CONTROL_POWER_INTERNAL", "CONTROL_POWER_PROCESSED", 
-"CONTROL_POWER_SOLAR_ARRAY", "CONTROL_REPEATING_GROUND_TRACK_ERR", "CONTROL_STOPPING_CONDITION", "CONTROL_THRUSTERS", "CONTROL_UPDATE", 
-"CONVERGENCE_CRITERIA", "CR3BPFunc", "CRITERIA", "CRITERION", "CUSTOM_FUNCTION", "CalcObjectCollection", "CalcObjectLinkEmbedControlCollection", 
-"CalculationGraphCollection", "CentralBodyAttitudeIAU1994", "CentralBodyAttitudeRotationCoefficientsFile", "CentralBodyCollection", 
-"CentralBodyEphemerisAnalyticOrbit", "CentralBodyEphemerisFile", "CentralBodyEphemerisJPLDesignExplorerOptimizer", "CentralBodyEphemerisJPLSpice", 
-"CentralBodyEphemerisPlanetary", "CentralBodyGravityModel", "CentralBodyShapeOblateSpheroid", "CentralBodyShapeSphere", 
-"CentralBodyShapeTriaxialEllipsoid", "Cira72Function", "ConstraintCollection", "CustomFunctionScriptEngine", "DERIVE_CALC_METHOD", 
-"DIFFERENCE_ORDER", "DIFFERENTIAL_CORRECTOR_SCALING_METHOD", "DRAG_MODEL_TYPE", "DRAW_PERTURBATION", "DTM2012", "DTM2020", 
-"DensityModelPlugin", "DesignCR3BPObject", "DesignCR3BPObjectCollection", "DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection", 
-"DesignER3BPSetup", "DifferentialCorrectorControl", "DifferentialCorrectorControlCollection", "DifferentialCorrectorResult", 
-"DifferentialCorrectorResultCollection", "DisplaySystemGeocentric", "DisplaySystemGeodetic", "DragModelPlugin", "DriverMissionControlSequence", 
-"ECLIPSING_BODIES_SOURCE", "ELEMENT", "ELEMENT_TYPE", "ENGINE_MODEL_FUNCTION", "EOMFuncPluginFunction", "EPHEM_SOURCE", 
-"ER3BPFunc", "ERROR_CONTROL", "ElementBPlane", "ElementCartesian", "ElementDelaunay", "ElementEquinoctial", "ElementGeodetic", 
-"ElementKeplerian", "ElementMixedSpherical", "ElementSpherical", "ElementSphericalRangeRate", "ElementTargetVectorIncomingAsymptote", 
-"ElementTargetVectorOutgoingAsymptote", "EngineConstAcc", "EngineConstant", "EngineCustom", "EngineDefinition", "EngineIon", 
-"EngineModelIspCoefficients", "EngineModelPoly", "EngineModelThrustCoefficients", "EnginePlugin", "EngineThrottleTable", 
-"Exponential", "FOLLOW_JOIN", "FOLLOW_SEPARATION", "FOLLOW_SPACECRAFT_AND_FUEL_TANK", "FORMULATION", "FuelTank", "GEO_MAGNETIC_FLUX_SOURCE", 
-"GEO_MAGNETIC_FLUX_UPDATE_RATE", "GEO_STATIONARY_DRIFT_RATE_MODEL", "GEO_STATIONARY_INCLINATION_MAGNITUDE", "GOLDEN_SECTION_DESIRED_OPERATION", 
-"GRAPH_OPTION", "GRAVITATIONAL_PARAMETER_SOURCE", "GRAV_COEFF_COEFFICIENT_TYPE", "GRAV_COEFF_NORMALIZATION_TYPE", "GRAV_PARAM_SOURCE", 
-"GRID_SEARCH_DESIRED_OPERATION", "GaussJacksonIntegrator", "GeneralRelativityFunction", "GoldenSectionControl", "GoldenSectionControlCollection", 
-"GoldenSectionResult", "GoldenSectionResultCollection", "GravityFieldFunction", "GridSearchControl", "GridSearchControlCollection", 
-"GridSearchResult", "GridSearchResultCollection", "HPOPPluginFunction", "HarrisPriester", "IAttitudeControl", "IAttitudeControlFinite", 
-"IAttitudeControlImpulsive", "IAttitudeControlOptimalFinite", "IBurnout", "ICentralBodyAttitude", "ICentralBodyEphemeris", 
-"ICentralBodyShape", "IDEAL_ORBIT_RADIUS", "IDisplaySystem", "IElement", "IMP_DELTA_V_REP", "IManeuver", "IMissionControlSequenceSegment", 
-"IMissionControlSequenceSequence", "INumericalIntegrator", "IPOPTControl", "IPOPTControlCollection", "IPOPTResult", "IPOPTResultCollection", 
-"IPOPT_GOAL", "IProfile", "IStoppingConditionComponent", "JacchiaBowman2008", "JacchiaRoberts", "Jacchia_1960", "Jacchia_1970", 
-"Jacchia_1971", "LAMBERT_DIRECTION_OF_MOTION_TYPE", "LAMBERT_ORBITAL_ENERGY_TYPE", "LAMBERT_SOLUTION_OPTION_TYPE", "LAMBERT_TARGET_COORD_TYPE", 
+"AsTriggerCondition", "AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", "AttitudeControlFiniteFile", 
+"AttitudeControlFinitePlugin", "AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", "AttitudeControlFiniteVelocityVector", 
+"AttitudeControlImpulsiveAntiVelocityVector", "AttitudeControlImpulsiveAttitude", "AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", 
+"AttitudeControlImpulsiveVelocityVector", "AttitudeControlOptimalFiniteLagrange", "AutomaticSequence", "AutomaticSequenceCollection", 
+"BASE_SELECTION", "BDotRCalc", "BDotTCalc", "BMagnitudeCalc", "BODY_AXIS", "BPlaneCollection", "BThetaCalc", "BURNOUT_OPTIONS", 
+"BURNOUT_TYPE", "BisectionControl", "BisectionControlCollection", "BisectionResult", "BisectionResultCollection", "BlendedDensity", 
+"BulirschStoerIntegrator", "BurnoutCBFCartesian", "BurnoutGeocentric", "BurnoutGeodetic", "BurnoutLaunchAzAltitude", "BurnoutLaunchAzRadius", 
+"BurnoutVelocity", "CALCULATION_OBJECT_ANGLE_SIGN", "CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE", "CALCULATION_OBJECT_DIRECTION", 
+"CALCULATION_OBJECT_ELEMENT", "CALCULATION_OBJECT_LOCATION_SOURCE", "CALCULATION_OBJECT_ORBIT_PLANE_SOURCE", "CALCULATION_OBJECT_REFERENCE", 
+"CALCULATION_OBJECT_REFERENCE_DIRECTION", "CALCULATION_OBJECT_REFERENCE_ELLIPSE", "CALCULATION_OBJECT_RELATIVE_POSITION", 
+"CALCULATION_OBJECT_SUN_POSITION", "CENTRAL_BODY_ATTITUDE", "CENTRAL_BODY_EPHEMERIS", "CENTRAL_BODY_GRAVITY_MODEL", "CENTRAL_BODY_SHAPE", 
+"CLEAR_EPHEMERIS_DIRECTION", "COEFF_RUNGE_KUTTA_V_8TH_9TH", "COMPLEX_NUMBER", "CONSTRAINT_SIGN", "CONTROL_ADVANCED", "CONTROL_ENGINE_CONSTANT", 
+"CONTROL_ENGINE_CONSTANT_ACCELERATION", "CONTROL_ENGINE_CUSTOM", "CONTROL_ENGINE_ION", "CONTROL_ENGINE_MODEL_POLYNOMIAL", 
+"CONTROL_ENGINE_THROTTLE_TABLE", "CONTROL_FOLLOW", "CONTROL_INIT_STATE", "CONTROL_LAUNCH", "CONTROL_MANEUVER", "CONTROL_ORBIT_STATE_VALUE", 
+"CONTROL_POWER_INTERNAL", "CONTROL_POWER_PROCESSED", "CONTROL_POWER_SOLAR_ARRAY", "CONTROL_REPEATING_GROUND_TRACK_ERR", 
+"CONTROL_STOPPING_CONDITION", "CONTROL_THRUSTERS", "CONTROL_UPDATE", "CONVERGENCE_CRITERIA", "CR3BPFunction", "CRITERIA", 
+"CRITERION", "CUSTOM_FUNCTION", "CalculationGraphCollection", "CalculationObjectCollection", "CalculationObjectLinkEmbedControlCollection", 
+"CentralBodyComponent", "CentralBodyComponentAttitudeIAU1994", "CentralBodyComponentAttitudeRotationCoefficientsFile", "CentralBodyComponentCollection", 
+"CentralBodyComponentEphemerisAnalyticOrbit", "CentralBodyComponentEphemerisFile", "CentralBodyComponentEphemerisJPLDesignExplorerOptimizer", 
+"CentralBodyComponentEphemerisJPLSpice", "CentralBodyComponentEphemerisPlanetary", "CentralBodyComponentGravityModel", "CentralBodyComponentShapeOblateSpheroid", 
+"CentralBodyComponentShapeSphere", "CentralBodyComponentShapeTriaxialEllipsoid", "Cira72Function", "ConstraintCollection", 
+"CustomFunctionScriptEngine", "DERIVATIVE_CALCULATION_METHOD", "DIFFERENCE_ORDER", "DIFFERENTIAL_CORRECTOR_SCALING_METHOD", 
+"DRAG_MODEL_TYPE", "DRAW_PERTURBATION", "DTM2012", "DTM2020", "DensityModelPlugin", "DesignCR3BPObject", "DesignCR3BPObjectCollection", 
+"DesignCR3BPSetup", "DesignER3BPObject", "DesignER3BPObjectCollection", "DesignER3BPSetup", "DifferentialCorrectorControl", 
+"DifferentialCorrectorControlCollection", "DifferentialCorrectorResult", "DifferentialCorrectorResultCollection", "DisplaySystemGeocentric", 
+"DisplaySystemGeodetic", "DragModelPlugin", "ECLIPSING_BODIES_SOURCE", "ELEMENT", "ELEMENT_TYPE", "ENGINE_MODEL_FUNCTION", 
+"EOMFuncPluginFunction", "EPHEMERIS_SOURCE", "ER3BPFunc", "ERROR_CONTROL", "ElementBPlane", "ElementCartesian", "ElementDelaunay", 
+"ElementEquinoctial", "ElementGeodetic", "ElementKeplerian", "ElementMixedSpherical", "ElementSpherical", "ElementSphericalRangeRate", 
+"ElementTargetVectorIncomingAsymptote", "ElementTargetVectorOutgoingAsymptote", "EngineConstant", "EngineConstantAcceleration", 
+"EngineCustom", "EngineDefinition", "EngineIon", "EngineModelIspCoefficients", "EngineModelPolynomial", "EngineModelThrustCoefficients", 
+"EnginePlugin", "EngineThrottleTable", "Exponential", "FOLLOW_JOIN", "FOLLOW_SEPARATION", "FOLLOW_SPACECRAFT_AND_FUEL_TANK", 
+"FORMULATION", "FuelTank", "GEO_MAGNETIC_FLUX_SOURCE", "GEO_MAGNETIC_FLUX_UPDATE_RATE", "GEO_STATIONARY_DRIFT_RATE_MODEL", 
+"GEO_STATIONARY_INCLINATION_MAGNITUDE", "GOLDEN_SECTION_DESIRED_OPERATION", "GRAPH_OPTION", "GRAVITATIONAL_PARAMETER_SOURCE", 
+"GRAVITY_COEFFICIENT_NORMALIZATION_TYPE", "GRAVITY_COEFFICIENT_TYPE", "GRAV_PARAM_SOURCE", "GRID_SEARCH_DESIRED_OPERATION", 
+"GaussJacksonIntegrator", "GeneralRelativityFunction", "GoldenSectionControl", "GoldenSectionControlCollection", "GoldenSectionResult", 
+"GoldenSectionResultCollection", "GravityFieldFunction", "GridSearchControl", "GridSearchControlCollection", "GridSearchResult", 
+"GridSearchResultCollection", "HPOPPluginFunction", "HarrisPriester", "IAttitudeControl", "IAttitudeControlFinite", "IAttitudeControlImpulsive", 
+"IAttitudeControlOptimalFinite", "IBurnout", "ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris", "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides", 
+"ICentralBodyComponentShape", "IDEAL_ORBIT_RADIUS", "IDisplaySystem", "IElement", "IMCSSegment", "IMCSSequence", "IMPULSIVE_DELTA_V_REPRESENTATION", 
+"IManeuver", "INumericalIntegrator", "IPOPTControl", "IPOPTControlCollection", "IPOPTResult", "IPOPTResultCollection", "IPOPT_GOAL", 
+"IProfile", "IStoppingConditionComponent", "JacchiaBowman2008", "JacchiaRoberts", "Jacchia_1960", "Jacchia_1970", "Jacchia_1971", 
+"LAMBERT_DIRECTION_OF_MOTION_TYPE", "LAMBERT_ORBITAL_ENERGY_TYPE", "LAMBERT_SOLUTION_OPTION_TYPE", "LAMBERT_TARGET_COORDINATE_TYPE", 
 "LANGUAGE", "LAUNCH_DISPLAY_SYSTEM", "LIGHTING_CONDITION", "LightingStoppingCondition", "MANEUVER_TYPE", "MARS_GRAM_DENSITY_TYPE", 
-"MSISE_1990", "MSIS_1986", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", 
-"ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions", 
-"ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", "ManeuverOptimalFiniteSteeringNodeElement", 
-"MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MissionControlSequenceBackwardSequence", 
-"MissionControlSequenceEnd", "MissionControlSequenceFollow", "MissionControlSequenceHold", "MissionControlSequenceInitialState", 
-"MissionControlSequenceLaunch", "MissionControlSequenceManeuver", "MissionControlSequenceOptions", "MissionControlSequencePropagate", 
-"MissionControlSequenceReturn", "MissionControlSequenceSegmentCollection", "MissionControlSequenceSegmentProperties", "MissionControlSequenceSequence", 
-"MissionControlSequenceStop", "MissionControlSequenceTargetSequence", "MissionControlSequenceUpdate", "NRLMSISE_2000", "NUMERICAL_INTEGRATOR", 
-"NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OPTIMAL_FINITE_DISCRETIZATION_STRATEGY", "OPTIMAL_FINITE_EXPORT_NODES_FORMAT", 
-"OPTIMAL_FINITE_GUESS_METHOD", "OPTIMAL_FINITE_RUN_MODE", "OPTIMAL_FINITE_SCALING_OPTIONS", "OPTIMAL_FINITE_SEED_METHOD", 
-"OPTIMAL_FINITE_SNOPT_OBJECTIVE", "OPTIMAL_FINITE_SNOPT_SCALING", "OPTIMAL_FINITE_WORKING_VARIABLES", "PREDICTOR_CORRECTOR", 
-"PRESSURE_MODE", "PROFILE", "PROFILES_FINISH", "PROFILE_INSERT_DIRECTION", "PROFILE_MODE", "PROPULSION_METHOD", "PluginProperties", 
-"PointMassFunction", "PowerInternal", "PowerProcessed", "PowerSolarArray", "ProfileBisection", "ProfileChangeManeuverType", 
+"MCSBackwardSequence", "MCSDriver", "MCSEnd", "MCSFollow", "MCSHold", "MCSInitialState", "MCSLaunch", "MCSManeuver", "MCSOptions", 
+"MCSPropagate", "MCSReturn", "MCSSegmentCollection", "MCSSegmentProperties", "MCSSequence", "MCSStop", "MCSTargetSequence", 
+"MCSUpdate", "MSISE_1990", "MSIS_1986", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", 
+"ManeuverOptimalFiniteBounds", "ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", 
+"ManeuverOptimalFinitePathBoundaryConditions", "ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", 
+"ManeuverOptimalFiniteSteeringNodeElement", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", 
+"NRLMSISE_2000", "NUMERICAL_INTEGRATOR", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OPTIMAL_FINITE_DISCRETIZATION_STRATEGY", 
+"OPTIMAL_FINITE_EXPORT_NODES_FORMAT", "OPTIMAL_FINITE_GUESS_METHOD", "OPTIMAL_FINITE_RUN_MODE", "OPTIMAL_FINITE_SCALING_OPTIONS", 
+"OPTIMAL_FINITE_SEED_METHOD", "OPTIMAL_FINITE_SNOPT_OBJECTIVE", "OPTIMAL_FINITE_SNOPT_SCALING", "OPTIMAL_FINITE_WORKING_VARIABLES", 
+"PREDICTOR_CORRECTOR", "PRESSURE_MODE", "PROFILE", "PROFILES_FINISH", "PROFILE_INSERT_DIRECTION", "PROFILE_MODE", "PROPULSION_METHOD", 
+"PluginProperties", "PointMassFunction", "PowerInternal", "PowerProcessed", "PowerSolarArray", "ProfileBisection", "ProfileChangeManeuverType", 
 "ProfileChangePropagator", "ProfileChangeReturnSegment", "ProfileChangeStopSegment", "ProfileChangeStoppingConditionState", 
 "ProfileCollection", "ProfileDifferentialCorrector", "ProfileGoldenSection", "ProfileGridSearch", "ProfileIPOPTOptimizer", 
 "ProfileLambertProfile", "ProfileLambertSearchProfile", "ProfileRunOnce", "ProfileSNOPTOptimizer", "ProfileScriptingTool", 
@@ -66,46 +66,47 @@ __all__ = ["ACCESS_CRITERION", "ASCENT_TYPE", "ATMOS_DATA_SOURCE", "ATTITUDE_CON
 "ROOT_FINDING_ALGORITHM", "ROTATING_COORDINATE_SYSTEM", "RUN_CODE", "RadiationPressureFunction", "RungeKutta2nd3rd", "RungeKutta4th", 
 "RungeKutta4th5th", "RungeKutta4thAdapt", "RungeKuttaF7th8th", "RungeKuttaV8th9th", "SCRIPTING_PARAMETER_TYPE", "SEGMENT_DIFFERENCE_ORDER", 
 "SEGMENT_STATE", "SEGMENT_TYPE", "SEQUENCE_STATE_TO_PASS", "SHADOW_MODEL", "SMART_RUN_MODE", "SNOPTControl", "SNOPTControlCollection", 
-"SNOPTResult", "SNOPTResultCollection", "SNOPT_GOAL", "SOLAR_FORCE_METHOD", "SQUARED_TYPE", "SRPAeroT20", "SRPAeroT30", 
+"SNOPTResult", "SNOPTResultCollection", "SNOPT_GOAL", "SOLAR_FORCE_METHOD", "SQUARED_TYPE", "SRPAerospaceT20", "SRPAerospaceT30", 
 "SRPGSPM04aIIA", "SRPGSPM04aIIR", "SRPGSPM04aeIIA", "SRPGSPM04aeIIR", "SRPNPlate", "SRPReflectionPlugin", "SRPSpherical", 
-"SRPTabAreaVec", "SRPVariableArea", "STATE", "STM_EIGEN_NUMBER", "STM_PERT_VARIABLES", "STOPPING_CONDITION", "SUN_POSITION", 
-"ScriptingCalcObject", "ScriptingCalcObjectCollection", "ScriptingParameter", "ScriptingParameterCollection", "ScriptingParameterEnumerationChoice", 
-"ScriptingParameterEnumerationChoiceCollection", "ScriptingSegment", "ScriptingSegmentCollection", "ScriptingTool", "SearchPluginControl", 
-"SearchPluginControlCollection", "SearchPluginResult", "SearchPluginResultCollection", "SpacecraftParameters", "State", 
-"StateCalcAbsoluteValue", "StateCalcAltitudeOfApoapsis", "StateCalcAltitudeOfPeriapsis", "StateCalcAngle", "StateCalcApparentSolarTime", 
-"StateCalcArgOfLat", "StateCalcArgOfPeriapsis", "StateCalcBetaAngle", "StateCalcC3Energy", "StateCalcCartSTMElem", "StateCalcCartesianElem", 
-"StateCalcCd", "StateCalcCloseApproachBearing", "StateCalcCloseApproachCosBearing", "StateCalcCloseApproachMagnitude", "StateCalcCloseApproachTheta", 
-"StateCalcCloseApproachX", "StateCalcCloseApproachY", "StateCalcCosOfVerticalFPA", "StateCalcCr", "StateCalcCurvilinearRelMotion", 
-"StateCalcCustomFunction", "StateCalcDamageFlux", "StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", 
-"StateCalcDeltaFromMaster", "StateCalcDeltaRA", "StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", 
-"StateCalcDifferenceAcrossSegmentsOtherSat", "StateCalcDifferenceOtherSegment", "StateCalcDotProduct", "StateCalcDragArea", 
-"StateCalcDriftRateFactor", "StateCalcDuration", "StateCalcEarthMeanLocTimeAN", "StateCalcEarthMeanSolarTime", "StateCalcEccentricity", 
-"StateCalcEccentricityAnomaly", "StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment", "StateCalcEpoch", 
-"StateCalcEquinoctialElem", "StateCalcFPA", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGeodeticMeanRightAscension", 
-"StateCalcGeodeticTrueLongitude", "StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", 
-"StateCalcHeightAboveTerrain", "StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", 
-"StateCalcInVelAzAtPeriapsis", "StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", 
-"StateCalcInertialDeltaVx", "StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", 
-"StateCalcLocalApparentSolarLon", "StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMagnitudeFieldDipoleL", 
-"StateCalcManeuverSpecificImpulse", "StateCalcManeuverTotalMassFlowRate", "StateCalcMass", "StateCalcMaxValue", "StateCalcMeanAnomaly", 
-"StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension", "StateCalcMeanValue", "StateCalcMedianValue", 
-"StateCalcMinValue", "StateCalcMissionControlSequenceDeltaV", "StateCalcMissionControlSequenceDeltaVSquared", "StateCalcNegative", 
-"StateCalcNumRevs", "StateCalcOnePointAccess", "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", 
-"StateCalcOrbitPeriod", "StateCalcOrbitSemiLatusRectum", "StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", 
-"StateCalcOutVelAzAtPeriapsis", "StateCalcPi", "StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelDifferenceOtherSegment", 
-"StateCalcPower", "StateCalcPressure", "StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", 
-"StateCalcRadOfPeriapsis", "StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", 
-"StateCalcRectifiedLon", "StateCalcReferenceRadius", "StateCalcRelAtAOLMaster", "StateCalcRelGroundTrackError", "StateCalcRelMotion", 
-"StateCalcRelPositionDecAngle", "StateCalcRelPositionInPlaneAngle", "StateCalcRelativeInclination", "StateCalcRepeatingGroundTrackErr", 
-"StateCalcSEETMagnitudeFieldFieldLineSepAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea", "StateCalcSTMEigenval", 
-"StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemiMajorAxis", "StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", 
+"SRPTabulatedAreaVector", "SRPVariableArea", "STATE", "STM_EIGEN_NUMBER", "STM_PERTURBATION_VARIABLES", "STOPPING_CONDITION", 
+"SUN_POSITION", "ScriptingCalculationObject", "ScriptingCalculationObjectCollection", "ScriptingParameter", "ScriptingParameterCollection", 
+"ScriptingParameterEnumerationChoice", "ScriptingParameterEnumerationChoiceCollection", "ScriptingSegment", "ScriptingSegmentCollection", 
+"ScriptingTool", "SearchPluginControl", "SearchPluginControlCollection", "SearchPluginResult", "SearchPluginResultCollection", 
+"SpacecraftParameters", "State", "StateCalcAbsoluteValue", "StateCalcAltitudeOfApoapsis", "StateCalcAltitudeOfPeriapsis", 
+"StateCalcAngle", "StateCalcApparentSolarTime", "StateCalcArgumentOfLatitude", "StateCalcArgumentOfPeriapsis", "StateCalcBetaAngle", 
+"StateCalcC3Energy", "StateCalcCartSTMElem", "StateCalcCartesianElem", "StateCalcCd", "StateCalcCloseApproachBearing", "StateCalcCloseApproachCosBearing", 
+"StateCalcCloseApproachMagnitude", "StateCalcCloseApproachTheta", "StateCalcCloseApproachX", "StateCalcCloseApproachY", 
+"StateCalcCosOfVerticalFlightPathAngle", "StateCalcCr", "StateCalcCurvilinearRelativeMotion", "StateCalcCustomFunction", 
+"StateCalcDamageFlux", "StateCalcDamageMassFlux", "StateCalcDec", "StateCalcDecRate", "StateCalcDeltaDec", "StateCalcDeltaFromMaster", 
+"StateCalcDeltaRA", "StateCalcDeltaV", "StateCalcDeltaVSquared", "StateCalcDensity", "StateCalcDifference", "StateCalcDifferenceAcrossSegmentsOtherSatellite", 
+"StateCalcDifferenceOtherSegment", "StateCalcDotProduct", "StateCalcDragArea", "StateCalcDriftRateFactor", "StateCalcDuration", 
+"StateCalcEarthMeanLocalTimeOfAscendingNode", "StateCalcEarthMeanSolarTime", "StateCalcEccentricity", "StateCalcEccentricityAnomaly", 
+"StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment", "StateCalcEpoch", "StateCalcEquinoctialElem", 
+"StateCalcFlightPathAngle", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGeodeticMeanRightAscension", "StateCalcGeodeticTrueLongitude", 
+"StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", "StateCalcHeightAboveTerrain", 
+"StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", "StateCalcInVelAzAtPeriapsis", 
+"StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", "StateCalcInertialDeltaVx", 
+"StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", "StateCalcLocalApparentSolarLon", 
+"StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMCSDeltaV", "StateCalcMCSDeltaVSquared", 
+"StateCalcMagneticFieldDipoleL", "StateCalcManeuverSpecificImpulse", "StateCalcManeuverTotalMassFlowRate", "StateCalcMass", 
+"StateCalcMaxValue", "StateCalcMeanAnomaly", "StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension", 
+"StateCalcMeanValue", "StateCalcMedianValue", "StateCalcMinValue", "StateCalcNegative", "StateCalcNumRevs", "StateCalcOnePointAccess", 
+"StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod", "StateCalcOrbitSemilatusRectum", 
+"StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelAzAtPeriapsis", "StateCalcPi", 
+"StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", 
+"StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis", 
+"StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", "StateCalcRectifiedLon", 
+"StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster", "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination", 
+"StateCalcRelativeMotion", "StateCalcRelativePositionDecAngle", "StateCalcRelativePositionInPlaneAngle", "StateCalcRepeatingGroundTrackErr", 
+"StateCalcSEETMagneticFieldLineSeparationAngle", "StateCalcSEETSAAFlux", "StateCalcSEETVehTemp", "StateCalcSRPArea", "StateCalcSTMEigenval", 
+"StateCalcSTMEigenvecElem", "StateCalcScalar", "StateCalcScript", "StateCalcSemimajorAxis", "StateCalcSequenceDeltaV", "StateCalcSequenceDeltaVSquared", 
 "StateCalcSignedEccentricity", "StateCalcSolarBetaAngle", "StateCalcSolarInPlaneAngle", "StateCalcSpeedOfLight", "StateCalcStandardDeviation", 
 "StateCalcTemperature", "StateCalcTimePastAscNode", "StateCalcTimePastPeriapsis", "StateCalcTrueAnomaly", "StateCalcTrueLon", 
 "StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY", 
 "StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", 
 "StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX", 
 "StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelAz", "StateCalcVelDifferenceOtherSegment", "StateTransformationFunction", 
-"StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "TAB_VEC_INTERP_METHOD", "TARGET_SEQ_ACTION", 
+"StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "TAB_VEC_INTERPOLATION_METHOD", "TARGET_SEQUENCE_ACTION", 
 "THIRD_BODY_MODE", "THROTTLE_TABLE_OPERATION_MODE", "THRUSTER_DIRECTION", "THRUST_TYPE", "TargeterGraph", "TargeterGraphActiveControl", 
 "TargeterGraphActiveControlCollection", "TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", 
 "ThirdBodyFunction", "Thruster", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", "UPDATE_ACTION", "UPDATE_PARAM", 
@@ -154,12 +155,12 @@ agcls.AgTypeNameMap["GRAPH_OPTION"] = GRAPH_OPTION
 class SMART_RUN_MODE(IntEnum):
     """Mode that the mcs will run in."""
    
-    ENTIRE_MISSION_CONTROL_SEQUENCE = 0
+    ENTIRE_MCS = 0
     """Run Entire Mission Control Sequence."""
     ONLY_CHANGED = 1
     """Run Only Changed Segments."""
 
-SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE.__doc__ = "Run Entire Mission Control Sequence."
+SMART_RUN_MODE.ENTIRE_MCS.__doc__ = "Run Entire Mission Control Sequence."
 SMART_RUN_MODE.ONLY_CHANGED.__doc__ = "Run Only Changed Segments."
 
 agcls.AgTypeNameMap["SMART_RUN_MODE"] = SMART_RUN_MODE
@@ -305,7 +306,7 @@ CRITERION.CROSS_INCREASING.__doc__ = "The Cross Increasing criterion - the stopp
 
 agcls.AgTypeNameMap["CRITERION"] = CRITERION
 
-class CALC_OBJECT_REFERENCE(IntEnum):
+class CALCULATION_OBJECT_REFERENCE(IntEnum):
     """The calculation object Reference Selection types."""
    
     BASIC = 0
@@ -313,12 +314,12 @@ class CALC_OBJECT_REFERENCE(IntEnum):
     SPECIFIED = 1
     """The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."""
 
-CALC_OBJECT_REFERENCE.BASIC.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
-CALC_OBJECT_REFERENCE.SPECIFIED.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
+CALCULATION_OBJECT_REFERENCE.BASIC.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+CALCULATION_OBJECT_REFERENCE.SPECIFIED.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
 
-agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE"] = CALC_OBJECT_REFERENCE
+agcls.AgTypeNameMap["CALCULATION_OBJECT_REFERENCE"] = CALCULATION_OBJECT_REFERENCE
 
-class CALC_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
+class CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
     """The calculation object Central Body Reference Selection types."""
    
     SPECIFIED = 0
@@ -326,12 +327,12 @@ class CALC_OBJECT_CENTRAL_BODY_REFERENCE(IntEnum):
     PARENT = 1
     """The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."""
 
-CALC_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
-CALC_OBJECT_CENTRAL_BODY_REFERENCE.PARENT.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
+CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.SPECIFIED.__doc__ = "The Use Basic Reference type - uses the current satellite as the reference vehicle."
+CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE.PARENT.__doc__ = "The UserSpecifiedReference type - uses a user specified vehicle object as the reference vehicle."
 
-agcls.AgTypeNameMap["CALC_OBJECT_CENTRAL_BODY_REFERENCE"] = CALC_OBJECT_CENTRAL_BODY_REFERENCE
+agcls.AgTypeNameMap["CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE"] = CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE
 
-class CALC_OBJECT_ELEM(IntEnum):
+class CALCULATION_OBJECT_ELEMENT(IntEnum):
     """The calculation object Element Types."""
    
     BROUWER_LYDDANE_MEAN_LONG = 0
@@ -343,12 +344,12 @@ class CALC_OBJECT_ELEM(IntEnum):
     OSCULATING = 3
     """Osculating."""
 
-CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_LONG.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
-CALC_OBJECT_ELEM.BROUWER_LYDDANE_MEAN_SHORT.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
-CALC_OBJECT_ELEM.KOZAI_IZSAK_MEAN.__doc__ = "Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."
-CALC_OBJECT_ELEM.OSCULATING.__doc__ = "Osculating."
+CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_LONG.__doc__ = "Brouwer-Lyddane mean elements considering both the short and long period terms (i.e. resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+CALCULATION_OBJECT_ELEMENT.BROUWER_LYDDANE_MEAN_SHORT.__doc__ = "Brouwer-Lyddane Mean Short - Brouwer-Lyddane mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+CALCULATION_OBJECT_ELEMENT.KOZAI_IZSAK_MEAN.__doc__ = "Kozai-Izsak Mean - Kozai-Izsak mean elements for which only the short period terms (i.e. those involving averaging over the period of the orbit) are considered. The only perturbation force considered is the oblateness arising from the J2 gravity term."
+CALCULATION_OBJECT_ELEMENT.OSCULATING.__doc__ = "Osculating."
 
-agcls.AgTypeNameMap["CALC_OBJECT_ELEM"] = CALC_OBJECT_ELEM
+agcls.AgTypeNameMap["CALCULATION_OBJECT_ELEMENT"] = CALCULATION_OBJECT_ELEMENT
 
 class PROFILE_MODE(IntEnum):
     """The Target Sequence profile modes."""
@@ -424,7 +425,7 @@ DRAW_PERTURBATION.TARGETER_COLOR.__doc__ = "Targeter Color - perturbations will 
 
 agcls.AgTypeNameMap["DRAW_PERTURBATION"] = DRAW_PERTURBATION
 
-class DERIVE_CALC_METHOD(IntEnum):
+class DERIVATIVE_CALCULATION_METHOD(IntEnum):
     """The Derivative Calculation method types for a Differential Corrector profile."""
    
     FORWARD = 0
@@ -434,11 +435,11 @@ class DERIVE_CALC_METHOD(IntEnum):
     SIGNED = 2
     """Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."""
 
-DERIVE_CALC_METHOD.FORWARD.__doc__ = "Forward Difference - ((f(x + delta) - f(x))/ delta)."
-DERIVE_CALC_METHOD.CENTRAL.__doc__ = "Central Difference - ((f(x + delta) - f(x - delta)) / 2delta)."
-DERIVE_CALC_METHOD.SIGNED.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
+DERIVATIVE_CALCULATION_METHOD.FORWARD.__doc__ = "Forward Difference - ((f(x + delta) - f(x))/ delta)."
+DERIVATIVE_CALCULATION_METHOD.CENTRAL.__doc__ = "Central Difference - ((f(x + delta) - f(x - delta)) / 2delta)."
+DERIVATIVE_CALCULATION_METHOD.SIGNED.__doc__ = "Signed Difference - if x is positive, use the forward difference; if x is negative, use the backward difference."
 
-agcls.AgTypeNameMap["DERIVE_CALC_METHOD"] = DERIVE_CALC_METHOD
+agcls.AgTypeNameMap["DERIVATIVE_CALCULATION_METHOD"] = DERIVATIVE_CALCULATION_METHOD
 
 class CONVERGENCE_CRITERIA(IntEnum):
     """The Convergence Criteria types for a Differential Corrector profile."""
@@ -475,40 +476,40 @@ agcls.AgTypeNameMap["DIFFERENTIAL_CORRECTOR_SCALING_METHOD"] = DIFFERENTIAL_CORR
 class CONTROL_UPDATE(IntEnum):
     """Update segment properties that can be selected as control parameters for a Target Sequence."""
    
-    CD_VAL = 100
+    CD = 100
     """Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."""
-    CR_VAL = 101
+    CR = 101
     """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
-    DRAG_AREA_VAL = 102
+    DRAG_AREA = 102
     """Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."""
-    DRY_MASS_VAL = 103
+    DRY_MASS = 103
     """Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."""
-    FUEL_DENSITY_VAL = 104
+    FUEL_DENSITY = 104
     """Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."""
-    FUEL_MASS_VAL = 105
+    FUEL_MASS = 105
     """Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."""
-    RADIATION_PRESSURE_AREA_VAL = 106
+    RADIATION_PRESSURE_AREA = 106
     """The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."""
-    RADIATION_PRESSURE_COEFFICIENT_VAL = 107
+    RADIATION_PRESSURE_COEFFICIENT = 107
     """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
-    SRP_AREA_VAL = 108
+    SRP_AREA = 108
     """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."""
-    TANK_PRESSURE_VAL = 109
+    TANK_PRESSURE = 109
     """Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."""
-    TANK_TEMP_VAL = 110
+    TANK_TEMPERATURE = 110
     """Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."""
 
-CONTROL_UPDATE.CD_VAL.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
-CONTROL_UPDATE.CR_VAL.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-CONTROL_UPDATE.DRAG_AREA_VAL.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
-CONTROL_UPDATE.DRY_MASS_VAL.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
-CONTROL_UPDATE.FUEL_DENSITY_VAL.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
-CONTROL_UPDATE.FUEL_MASS_VAL.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
-CONTROL_UPDATE.RADIATION_PRESSURE_AREA_VAL.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
-CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT_VAL.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-CONTROL_UPDATE.SRP_AREA_VAL.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
-CONTROL_UPDATE.TANK_PRESSURE_VAL.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
-CONTROL_UPDATE.TANK_TEMP_VAL.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
+CONTROL_UPDATE.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
+CONTROL_UPDATE.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+CONTROL_UPDATE.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations. Enter a value in the selected distance unit squared."
+CONTROL_UPDATE.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant. Enter a value in the selected mass unit (e.g. kg)."
+CONTROL_UPDATE.FUEL_DENSITY.__doc__ = "Fuel Density - the density of the fuel tank. Enter a value in the selected mass unit per the selected distance unit cubed (e.g. kg/m^3)."
+CONTROL_UPDATE.FUEL_MASS.__doc__ = "Fuel Mass - the mass of the spacecraft propellant. Enter a value in the selected mass unit (e.g. kg)."
+CONTROL_UPDATE.RADIATION_PRESSURE_AREA.__doc__ = "The cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Enter a value in the selected distance unit squared."
+CONTROL_UPDATE.RADIATION_PRESSURE_COEFFICIENT.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
+CONTROL_UPDATE.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
+CONTROL_UPDATE.TANK_PRESSURE.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
+CONTROL_UPDATE.TANK_TEMPERATURE.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
 
 agcls.AgTypeNameMap["CONTROL_UPDATE"] = CONTROL_UPDATE
 
@@ -539,7 +540,7 @@ class CONTROL_FOLLOW(IntEnum):
     """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."""
     TANK_PRESSURE = 211
     """Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."""
-    TANK_TEMP = 212
+    TANK_TEMPERATURE = 212
     """Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."""
     MAX_FUEL_MASS = 213
     """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."""
@@ -564,7 +565,7 @@ CONTROL_FOLLOW.RADIATION_PRESSURE_AREA.__doc__ = "The cross-sectional area of th
 CONTROL_FOLLOW.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
 CONTROL_FOLLOW.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations. Enter a value in the selected distance unit squared."
 CONTROL_FOLLOW.TANK_PRESSURE.__doc__ = "Tank Pressure - the fuel tank pressure. Enter a value in the selected pressure unit (e.g. Pa)."
-CONTROL_FOLLOW.TANK_TEMP.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
+CONTROL_FOLLOW.TANK_TEMPERATURE.__doc__ = "Tank Temperature - the temperature of the fuel tank. Enter a value in the selected temperature unit."
 CONTROL_FOLLOW.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences. Enter a value in the selected mass unit (e.g. kg)."
 CONTROL_FOLLOW.TANK_VOLUME.__doc__ = "Tank Volume - the volume of the fuel tank. Enter a value in the selected distance unit cubed (e.g. m^3). The minimum value is 1e-019 m^3."
 CONTROL_FOLLOW.X_OFFSET.__doc__ = "X Offset - the distance that the spacecraft will be offset from the leader's body frame along the X axis."
@@ -608,13 +609,13 @@ class CONTROL_INIT_STATE(IntEnum):
     """GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."""
     KEPLERIAN_ECCENTRICITY = 315
     """Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."""
-    KEPLERIAN_INC = 316
+    KEPLERIAN_INCLINATION = 316
     """Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."""
     KEPLERIAN_RAAN = 317
     """Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."""
-    KEPLERIAN_SMA = 318
+    KEPLERIAN_SEMIMAJOR_AXIS = 318
     """Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."""
-    KEPLERIAN_TA = 319
+    KEPLERIAN_TRUE_ANOMALY = 319
     """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
     KEPLERIAN_W = 320
     """Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."""
@@ -622,47 +623,47 @@ class CONTROL_INIT_STATE(IntEnum):
     """Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."""
     CK = 328
     """Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
-    SPHERICAL_AZ = 329
+    SPHERICAL_AZIMUTH = 329
     """Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."""
-    SPHERICAL_DEC = 330
+    SPHERICAL_DECLINATION = 330
     """Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."""
-    SPHERICAL_HORIZ_FPA = 331
+    SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE = 331
     """Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."""
-    SPHERICAL_RA = 332
+    SPHERICAL_RIGHT_ASCENSION = 332
     """Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."""
-    SPHERICAL_R_MAGNITUDE = 333
+    SPHERICAL_RADIUS_MAGNITUDE = 333
     """Radius Magnitude - the magnitude of the spacecraft position vector."""
-    SPHERICAL_V_MAGNITUDE = 334
+    SPHERICAL_VELOCITY_MAGNITUDE = 334
     """Velocity Magnitude - the magnitude of the spacecraft velocity vector."""
     SRP_AREA = 335
     """Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."""
     TANK_PRESSURE = 336
     """Tank Pressure - the fuel tank pressure."""
-    TANK_TEMP = 337
+    TANK_TEMPERATURE = 337
     """Tank Temperature - the temperature of the fuel tank."""
-    TARGET_VEC_IN_ASYMP_DEC = 338
+    TARGET_VECTOR_INCOMING_ASYMPTOTE_DECLINATION = 338
     """Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."""
-    TARGET_VEC_IN_ASYMP_RA = 339
+    TARGET_VECTOR_INCOMING_ASYMPTOTE_RIGHT_ASCENSION = 339
     """Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."""
-    TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS = 340
+    TARGET_VECTOR_INCOMING_VELOCITY_AZIMUTH_AT_PERIAPSIS = 340
     """Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."""
-    TARGET_VEC_IN_C3 = 341
+    TARGET_VECTOR_INCOMING_C3 = 341
     """C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."""
-    TARGET_VEC_IN_RAD_OF_PERIAPSIS = 342
+    TARGET_VECTOR_INCOMING_RADIUS_OF_PERIAPSIS = 342
     """Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."""
-    TARGET_VEC_IN_TRUE_ANOMALY = 343
+    TARGET_VECTOR_INCOMING_TRUE_ANOMALY = 343
     """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
-    TARGET_VEC_OUT_ASYMP_DEC = 344
+    TARGET_VECTOR_OUTGOING_ASYMPTOTE_DECLINATION = 344
     """Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."""
-    TARGET_VEC_OUT_ASYMP_RA = 345
+    TARGET_VECTOR_OUTGOING_ASYMPTOTE_RIGHT_ASCENSION = 345
     """Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."""
-    TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS = 346
+    TARGET_VECTOR_OUTGOING_VELOCITY_AZIMUTH_AT_PERIAPSIS = 346
     """Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."""
-    TARGET_VEC_OUT_C3 = 347
+    TARGET_VECTOR_OUTGOING_C3 = 347
     """C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."""
-    TARGET_VEC_OUT_RAD_OF_PERIAPSIS = 348
+    TARGET_VECTOR_OUTGOING_RADIUS_OF_PERIAPSIS = 348
     """Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."""
-    TARGET_VEC_OUT_TRUE_ANOMALY = 349
+    TARGET_VECTOR_OUTGOING_TRUE_ANOMALY = 349
     """True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."""
     MAX_FUEL_MASS = 350
     """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."""
@@ -672,7 +673,7 @@ class CONTROL_INIT_STATE(IntEnum):
     """G - Magnitude of orbital angular momentum, (G: sqrt(GM * p))."""
     DELAUNAY_H = 353
     """H - Z component of orbital angular momentum, (H: G cos(inc))."""
-    DELAUNAY_INC = 354
+    DELAUNAY_INCLINATION = 354
     """Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."""
     DELAUNAY_L = 355
     """L - Related to two-body orbital energy, (L: sqrt(GM * a))."""
@@ -680,9 +681,9 @@ class CONTROL_INIT_STATE(IntEnum):
     """Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."""
     DELAUNAY_RAAN = 357
     """Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."""
-    DELAUNAY_SEMI_LATUS_RECTUM = 358
+    DELAUNAY_SEMILATUS_RECTUM = 358
     """Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees."""
-    DELAUNAY_SMA = 359
+    DELAUNAY_SEMIMAJOR_AXIS = 359
     """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     DELAUNAY_W = 360
     """Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."""
@@ -698,37 +699,37 @@ class CONTROL_INIT_STATE(IntEnum):
     """P - With Q, describes the orientation of the orbit plane, (P: tan(inc/2) * sin(RAAN))."""
     EQUINOCTIAL_Q = 366
     """Q - With P, describes the orientation of the orbit plane, (Q: tan(inc/2) * cos(RAAN))."""
-    EQUINOCTIAL_SMA = 367
+    EQUINOCTIAL_SEMIMAJOR_AXIS = 367
     """Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."""
     MIXED_SPHERICAL_ALTITUDE = 368
     """Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."""
     MIXED_SPHERICAL_AZIMUTH = 369
     """Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."""
-    MIXED_SPHERICAL_HORIZ_FPA = 370
+    MIXED_SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE = 370
     """Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."""
     MIXED_SPHERICAL_LATITUDE = 371
     """Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."""
     MIXED_SPHERICAL_LONGITUDE = 372
     """Longitude."""
-    MIXED_SPHERICAL_VERTICAL_FPA = 373
+    MIXED_SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE = 373
     """Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."""
     MIXED_SPHERICAL_V_MAGNITUDE = 374
     """Velocity Magnitude - The magnitude of the inertial velocity vector."""
-    SPHERICAL_VERTICAL_FPA = 375
+    SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE = 375
     """Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."""
     KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE = 376
     """Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."""
     KEPLERIAN_APOAPSIS_ALTITUDE_SIZE = 377
     """Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."""
-    KEPLERIAN_APOAPSIS_RAD_SHAPE = 378
+    KEPLERIAN_APOAPSIS_RADIUS_SHAPE = 378
     """Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."""
-    KEPLERIAN_APOAPSIS_RAD_SIZE = 379
+    KEPLERIAN_APOAPSIS_RADIUS_SIZE = 379
     """Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."""
-    KEPLERIAN_ARG_LAT = 380
+    KEPLERIAN_ARGUMENT_LATITUDE = 380
     """Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."""
-    KEPLERIAN_ECCENTRICITY_ANOMALY = 381
+    KEPLERIAN_ECCENTRIC_ANOMALY = 381
     """Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."""
-    KEPLERIAN_LAN = 382
+    KEPLERIAN_LONGITUDE_OF_ASCENDING_NODE = 382
     """Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."""
     KEPLERIAN_MEAN_ANOMALY = 383
     """Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."""
@@ -738,25 +739,25 @@ class CONTROL_INIT_STATE(IntEnum):
     """Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE = 386
     """Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
-    KEPLERIAN_PERIAPSIS_RAD_SHAPE = 387
+    KEPLERIAN_PERIAPSIS_RADIUS_SHAPE = 387
     """Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."""
-    KEPLERIAN_PERIAPSIS_RAD_SIZE = 388
+    KEPLERIAN_PERIAPSIS_RADIUS_SIZE = 388
     """Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."""
     KEPLERIAN_PERIOD = 389
     """Period - The duration of one orbit, based on assumed two-body motion."""
-    KEPLERIAN_TIME_PAST_AN = 390
+    KEPLERIAN_TIME_PAST_ASCENDING_NODE = 390
     """Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."""
     KEPLERIAN_TIME_PAST_PERIAPSIS = 391
     """Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."""
-    SPHERICAL_RANGE_RATE_DEC = 392
+    SPHERICAL_RANGE_RATE_DECLINATION = 392
     """Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."""
-    SPHERICAL_RANGE_RATE_RA = 393
+    SPHERICAL_RANGE_RATE_RIGHT_ASCENSION = 393
     """Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."""
     SPHERICAL_RANGE_RATE_RANGE = 394
     """Range - distance of an object from the center point of the coordinate system."""
-    SPHERICAL_RANGE_RATE_DEC_RATE = 395
+    SPHERICAL_RANGE_RATE_DECLINATION_RATE = 395
     """Declination Rate - the change of the declination angle over time."""
-    SPHERICAL_RANGE_RATE_RA_RATE = 396
+    SPHERICAL_RANGE_RATE_RIGHT_ASCENSION_RATE = 396
     """Right Ascension Rate - the change of the right ascension angle over time."""
     SPHERICAL_RANGE_RATE_RANGE_RATE = 397
     """Range Rate - the change in the range over time."""
@@ -777,44 +778,44 @@ CONTROL_INIT_STATE.FUEL_DENSITY.__doc__ = "Fuel Density - the density of the fue
 CONTROL_INIT_STATE.K1.__doc__ = "GPS Solar Radiation Pressure K1 - if you are using a non-spherical SRP model, this field defines the model's K1 (scale) value."
 CONTROL_INIT_STATE.K2.__doc__ = "GPS Solar Radiation Pressure K2 - if you are using a non-spherical SRP model, this field defines the model's K2 (Y bias) value."
 CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY.__doc__ = "Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless."
-CONTROL_INIT_STATE.KEPLERIAN_INC.__doc__ = "Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."
+CONTROL_INIT_STATE.KEPLERIAN_INCLINATION.__doc__ = "Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit."
 CONTROL_INIT_STATE.KEPLERIAN_RAAN.__doc__ = "Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction."
-CONTROL_INIT_STATE.KEPLERIAN_SMA.__doc__ = "Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."
-CONTROL_INIT_STATE.KEPLERIAN_TA.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+CONTROL_INIT_STATE.KEPLERIAN_SEMIMAJOR_AXIS.__doc__ = "Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse."
+CONTROL_INIT_STATE.KEPLERIAN_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
 CONTROL_INIT_STATE.KEPLERIAN_W.__doc__ = "Argument of Periapsis - the angle measured in the direction of spacecraft motion, in the orbit plane, from the ascending node to the periapsis of the orbit."
 CONTROL_INIT_STATE.RADIATION_PRESSURE_AREA.__doc__ = "Radiation Pressure (Albedo/Thermal) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations."
 CONTROL_INIT_STATE.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
-CONTROL_INIT_STATE.SPHERICAL_AZ.__doc__ = "Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."
-CONTROL_INIT_STATE.SPHERICAL_DEC.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
-CONTROL_INIT_STATE.SPHERICAL_HORIZ_FPA.__doc__ = "Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."
-CONTROL_INIT_STATE.SPHERICAL_RA.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
-CONTROL_INIT_STATE.SPHERICAL_R_MAGNITUDE.__doc__ = "Radius Magnitude - the magnitude of the spacecraft position vector."
-CONTROL_INIT_STATE.SPHERICAL_V_MAGNITUDE.__doc__ = "Velocity Magnitude - the magnitude of the spacecraft velocity vector."
+CONTROL_INIT_STATE.SPHERICAL_AZIMUTH.__doc__ = "Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north."
+CONTROL_INIT_STATE.SPHERICAL_DECLINATION.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
+CONTROL_INIT_STATE.SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE.__doc__ = "Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle)."
+CONTROL_INIT_STATE.SPHERICAL_RIGHT_ASCENSION.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
+CONTROL_INIT_STATE.SPHERICAL_RADIUS_MAGNITUDE.__doc__ = "Radius Magnitude - the magnitude of the spacecraft position vector."
+CONTROL_INIT_STATE.SPHERICAL_VELOCITY_MAGNITUDE.__doc__ = "Velocity Magnitude - the magnitude of the spacecraft velocity vector."
 CONTROL_INIT_STATE.SRP_AREA.__doc__ = "Solar Radiation Pressure (Spherical) Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of solar radiation, used for solar radiation calculations."
 CONTROL_INIT_STATE.TANK_PRESSURE.__doc__ = "Tank Pressure - the fuel tank pressure."
-CONTROL_INIT_STATE.TANK_TEMP.__doc__ = "Tank Temperature - the temperature of the fuel tank."
-CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_DEC.__doc__ = "Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."
-CONTROL_INIT_STATE.TARGET_VEC_IN_ASYMP_RA.__doc__ = "Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."
-CONTROL_INIT_STATE.TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
-CONTROL_INIT_STATE.TARGET_VEC_IN_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
-CONTROL_INIT_STATE.TARGET_VEC_IN_RAD_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
-CONTROL_INIT_STATE.TARGET_VEC_IN_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_DEC.__doc__ = "Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_ASYMP_RA.__doc__ = "Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_RAD_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
-CONTROL_INIT_STATE.TARGET_VEC_OUT_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+CONTROL_INIT_STATE.TANK_TEMPERATURE.__doc__ = "Tank Temperature - the temperature of the fuel tank."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_ASYMPTOTE_DECLINATION.__doc__ = "Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_ASYMPTOTE_RIGHT_ASCENSION.__doc__ = "Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_VELOCITY_AZIMUTH_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_RADIUS_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+CONTROL_INIT_STATE.TARGET_VECTOR_INCOMING_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_ASYMPTOTE_DECLINATION.__doc__ = "Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_ASYMPTOTE_RIGHT_ASCENSION.__doc__ = "Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_VELOCITY_AZIMUTH_AT_PERIAPSIS.__doc__ = "Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_C3.__doc__ = "C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_RADIUS_OF_PERIAPSIS.__doc__ = "Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit."
+CONTROL_INIT_STATE.TARGET_VECTOR_OUTGOING_TRUE_ANOMALY.__doc__ = "True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion."
 CONTROL_INIT_STATE.MAX_FUEL_MASS.__doc__ = "Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."
 CONTROL_INIT_STATE.TANK_VOLUME.__doc__ = "Tank Volume - the volume of the fuel tank."
 CONTROL_INIT_STATE.DELAUNAY_G.__doc__ = "G - Magnitude of orbital angular momentum, (G: sqrt(GM * p))."
 CONTROL_INIT_STATE.DELAUNAY_H.__doc__ = "H - Z component of orbital angular momentum, (H: G cos(inc))."
-CONTROL_INIT_STATE.DELAUNAY_INC.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
+CONTROL_INIT_STATE.DELAUNAY_INCLINATION.__doc__ = "Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis."
 CONTROL_INIT_STATE.DELAUNAY_L.__doc__ = "L - Related to two-body orbital energy, (L: sqrt(GM * a))."
 CONTROL_INIT_STATE.DELAUNAY_MEAN_ANOMALY.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
 CONTROL_INIT_STATE.DELAUNAY_RAAN.__doc__ = "Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane."
-CONTROL_INIT_STATE.DELAUNAY_SEMI_LATUS_RECTUM.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees."
-CONTROL_INIT_STATE.DELAUNAY_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+CONTROL_INIT_STATE.DELAUNAY_SEMILATUS_RECTUM.__doc__ = "Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees."
+CONTROL_INIT_STATE.DELAUNAY_SEMIMAJOR_AXIS.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
 CONTROL_INIT_STATE.DELAUNAY_W.__doc__ = "Argument of Periapsis - The angle from the ascending node to the eccentricity vector measured in the direction of the satellite's motion and in the orbit plane."
 CONTROL_INIT_STATE.EQUINOCTIAL_H.__doc__ = "H - With K, describe the shape and position of periapsis of the orbit, (H: ecc * sin(RAAN + w))."
 CONTROL_INIT_STATE.EQUINOCTIAL_K.__doc__ = "K - With H, describe the shape and position of periapsis of the orbit, (K: ecc * cos(RAAN + w))."
@@ -822,36 +823,36 @@ CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_LONGITUDE.__doc__ = "Mean Longitude - (RAAN 
 CONTROL_INIT_STATE.EQUINOCTIAL_MEAN_MOTION.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
 CONTROL_INIT_STATE.EQUINOCTIAL_P.__doc__ = "P - With Q, describes the orientation of the orbit plane, (P: tan(inc/2) * sin(RAAN))."
 CONTROL_INIT_STATE.EQUINOCTIAL_Q.__doc__ = "Q - With P, describes the orientation of the orbit plane, (Q: tan(inc/2) * cos(RAAN))."
-CONTROL_INIT_STATE.EQUINOCTIAL_SMA.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
+CONTROL_INIT_STATE.EQUINOCTIAL_SEMIMAJOR_AXIS.__doc__ = "Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_ALTITUDE.__doc__ = "Altitude - The object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_AZIMUTH.__doc__ = "Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction."
-CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZ_FPA.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
+CONTROL_INIT_STATE.MIXED_SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE.__doc__ = "Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_LATITUDE.__doc__ = "Latitude - The geodetic latitude of a point is the angle between the normal to the reference ellipsoid that passes through the satellite position and the equatorial plane."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_LONGITUDE.__doc__ = "Longitude."
-CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+CONTROL_INIT_STATE.MIXED_SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
 CONTROL_INIT_STATE.MIXED_SPHERICAL_V_MAGNITUDE.__doc__ = "Velocity Magnitude - The magnitude of the inertial velocity vector."
-CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FPA.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
+CONTROL_INIT_STATE.SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE.__doc__ = "Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector."
 CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE.__doc__ = "Apoapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
 CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_ALTITUDE_SIZE.__doc__ = "Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit."
-CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SHAPE.__doc__ = "Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
-CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RAD_SIZE.__doc__ = "Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
-CONTROL_INIT_STATE.KEPLERIAN_ARG_LAT.__doc__ = "Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."
-CONTROL_INIT_STATE.KEPLERIAN_ECCENTRICITY_ANOMALY.__doc__ = "Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."
-CONTROL_INIT_STATE.KEPLERIAN_LAN.__doc__ = "Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."
+CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RADIUS_SHAPE.__doc__ = "Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+CONTROL_INIT_STATE.KEPLERIAN_APOAPSIS_RADIUS_SIZE.__doc__ = "Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit."
+CONTROL_INIT_STATE.KEPLERIAN_ARGUMENT_LATITUDE.__doc__ = "Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee."
+CONTROL_INIT_STATE.KEPLERIAN_ECCENTRIC_ANOMALY.__doc__ = "Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse."
+CONTROL_INIT_STATE.KEPLERIAN_LONGITUDE_OF_ASCENDING_NODE.__doc__ = "Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion."
 CONTROL_INIT_STATE.KEPLERIAN_MEAN_ANOMALY.__doc__ = "Mean Anomaly - The angle from the eccentricity vector to a position vector where the satellite would be if it were always moving at its average angular rate."
 CONTROL_INIT_STATE.KEPLERIAN_MEAN_MOTION.__doc__ = "Mean Motion - The number of orbits per day (86400 sec/period), based on assumed two-body motion."
 CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SHAPE.__doc__ = "Periapsis Altitude - Shape Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
 CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE.__doc__ = "Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
-CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SHAPE.__doc__ = "Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."
-CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RAD_SIZE.__doc__ = "Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
+CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RADIUS_SHAPE.__doc__ = "Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit."
+CONTROL_INIT_STATE.KEPLERIAN_PERIAPSIS_RADIUS_SIZE.__doc__ = "Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit."
 CONTROL_INIT_STATE.KEPLERIAN_PERIOD.__doc__ = "Period - The duration of one orbit, based on assumed two-body motion."
-CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_AN.__doc__ = "Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."
+CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_ASCENDING_NODE.__doc__ = "Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion."
 CONTROL_INIT_STATE.KEPLERIAN_TIME_PAST_PERIAPSIS.__doc__ = "Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion."
-CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_DEC.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
-CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RA.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
+CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_DECLINATION.__doc__ = "Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector."
+CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RIGHT_ASCENSION.__doc__ = "Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector."
 CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RANGE.__doc__ = "Range - distance of an object from the center point of the coordinate system."
-CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_DEC_RATE.__doc__ = "Declination Rate - the change of the declination angle over time."
-CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RA_RATE.__doc__ = "Right Ascension Rate - the change of the right ascension angle over time."
+CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_DECLINATION_RATE.__doc__ = "Declination Rate - the change of the declination angle over time."
+CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RIGHT_ASCENSION_RATE.__doc__ = "Right Ascension Rate - the change of the right ascension angle over time."
 CONTROL_INIT_STATE.SPHERICAL_RANGE_RATE_RANGE_RATE.__doc__ = "Range Rate - the change in the range over time."
 
 agcls.AgTypeNameMap["CONTROL_INIT_STATE"] = CONTROL_INIT_STATE
@@ -871,9 +872,9 @@ class CONTROL_MANEUVER(IntEnum):
     """The Euler B (Theta) component of the rotation from the reference axes to the body frame."""
     FINITE_EULER_ANGLES3 = 405
     """The Euler C (Psi) component of the rotation from the reference axes to the body frame."""
-    FINITE_SPHERICAL_AZ = 406
+    FINITE_SPHERICAL_AZIMUTH = 406
     """The spherical azimuth component of the thrust vector."""
-    FINITE_SPHERICAL_ELEV = 407
+    FINITE_SPHERICAL_ELEVATION = 407
     """The spherical elevation component of the thrust vector."""
     IMPULSIVE_CARTESIAN_X = 408
     """The Cartesian X component of the thrust vector."""
@@ -887,9 +888,9 @@ class CONTROL_MANEUVER(IntEnum):
     """The Euler B (Theta) component of the rotation from the reference axes to the body frame."""
     IMPULSIVE_EULER_ANGLES3 = 413
     """The Euler C (Psi) component of the rotation from the reference axes to the body frame."""
-    IMPULSIVE_SPHERICAL_AZ = 414
+    IMPULSIVE_SPHERICAL_AZIMUTH = 414
     """The spherical azimuth component of the thrust vector."""
-    IMPULSIVE_SPHERICAL_ELEV = 415
+    IMPULSIVE_SPHERICAL_ELEVATION = 415
     """The spherical elevation component of the thrust vector."""
     IMPULSIVE_SPHERICAL_MAGNITUDE = 416
     """The spherical magnitude component of the thrust vector."""
@@ -897,37 +898,37 @@ class CONTROL_MANEUVER(IntEnum):
     """The burn center bias of the thrust."""
     FINITE_THRUST_EFFICIENCY = 418
     """The thrust efficiency value."""
-    FINITE_AZ0 = 419
+    FINITE_AZIMUTH_CONSTANT_TERM = 419
     """The time varying azimuth polynomial constant term."""
-    FINITE_AZ1 = 420
+    FINITE_AZIMUTH_LINEAR_TERM = 420
     """The time varying azimuth polynomial linear term."""
-    FINITE_AZ2 = 421
+    FINITE_AZIMUTH_QUADRATIC_TERM = 421
     """The time varying azimuth polynomial quadratic term."""
-    FINITE_AZ3 = 422
+    FINITE_AZIMUTH_CUBIC_TERM = 422
     """The time varying azimuth polynomial cubic term."""
-    FINITE_AZ4 = 423
+    FINITE_AZIMUTH_QUARTIC_TERM = 423
     """The time varying azimuth polynomial quartic term."""
-    FINITE_AZ_A = 424
+    FINITE_AZIMUTH_SINUSOIDAL_AMPLITUDE = 424
     """The time varying azimuth sine amplitude term."""
-    FINITE_AZ_F = 425
+    FINITE_AZIMUTH_SINUSOIDAL_FREQUENCY = 425
     """The time varying azimuth sine frequency term."""
-    FINITE_AZ_P = 426
+    FINITE_AZIMUTH_SINUSOIDAL_PHASE = 426
     """The time varying azimuth sine phase term."""
-    FINITE_EL0 = 427
+    FINITE_ELEVATION_CONSTANT_TERM = 427
     """The time varying elevation polynomial constant term."""
-    FINITE_EL1 = 428
+    FINITE_ELEVATION_LINEAR_TERM = 428
     """The time varying elevation polynomial linear term."""
-    FINITE_EL2 = 429
+    FINITE_ELEVATION_QUADRATIC_TERM = 429
     """The time varying elevation polynomial quadratic term."""
-    FINITE_EL3 = 430
+    FINITE_ELEVATION_CUBIC_TERM = 430
     """The time varying elevation polynomial cubic term."""
-    FINITE_EL4 = 431
+    FINITE_ELEVATION_QUARTIC_TERM = 431
     """The time varying elevation polynomial quartic term."""
-    FINITE_EL_A = 432
+    FINITE_ELEVATION_SINUSOIDAL_AMPLITUDE = 432
     """The time varying elevation sine amplitude term."""
-    FINITE_EL_F = 433
+    FINITE_ELEVATION_SINUSOIDAL_FREQUENCY = 433
     """The time varying elevation sine frequency term."""
-    FINITE_EL_P = 434
+    FINITE_ELEVATION_SINUSOIDAL_PHASE = 434
     """The time varying elevation sine phase term."""
 
 CONTROL_MANEUVER.FINITE_CARTESIAN_X.__doc__ = "The Cartesian X component of the thrust vector."
@@ -936,35 +937,35 @@ CONTROL_MANEUVER.FINITE_CARTESIAN_Z.__doc__ = "The Cartesian Z component of the 
 CONTROL_MANEUVER.FINITE_EULER_ANGLES1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
 CONTROL_MANEUVER.FINITE_EULER_ANGLES2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
 CONTROL_MANEUVER.FINITE_EULER_ANGLES3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
-CONTROL_MANEUVER.FINITE_SPHERICAL_AZ.__doc__ = "The spherical azimuth component of the thrust vector."
-CONTROL_MANEUVER.FINITE_SPHERICAL_ELEV.__doc__ = "The spherical elevation component of the thrust vector."
+CONTROL_MANEUVER.FINITE_SPHERICAL_AZIMUTH.__doc__ = "The spherical azimuth component of the thrust vector."
+CONTROL_MANEUVER.FINITE_SPHERICAL_ELEVATION.__doc__ = "The spherical elevation component of the thrust vector."
 CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X.__doc__ = "The Cartesian X component of the thrust vector."
 CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Y.__doc__ = "The Cartesian Y component of the thrust vector."
 CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_Z.__doc__ = "The Cartesian Z component of the thrust vector."
 CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES1.__doc__ = "The Euler A (Phi) component of the rotation from the reference axes to the body frame."
 CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES2.__doc__ = "The Euler B (Theta) component of the rotation from the reference axes to the body frame."
 CONTROL_MANEUVER.IMPULSIVE_EULER_ANGLES3.__doc__ = "The Euler C (Psi) component of the rotation from the reference axes to the body frame."
-CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_AZ.__doc__ = "The spherical azimuth component of the thrust vector."
-CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_ELEV.__doc__ = "The spherical elevation component of the thrust vector."
+CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_AZIMUTH.__doc__ = "The spherical azimuth component of the thrust vector."
+CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_ELEVATION.__doc__ = "The spherical elevation component of the thrust vector."
 CONTROL_MANEUVER.IMPULSIVE_SPHERICAL_MAGNITUDE.__doc__ = "The spherical magnitude component of the thrust vector."
 CONTROL_MANEUVER.FINITE_BURN_CENTER_BIAS.__doc__ = "The burn center bias of the thrust."
 CONTROL_MANEUVER.FINITE_THRUST_EFFICIENCY.__doc__ = "The thrust efficiency value."
-CONTROL_MANEUVER.FINITE_AZ0.__doc__ = "The time varying azimuth polynomial constant term."
-CONTROL_MANEUVER.FINITE_AZ1.__doc__ = "The time varying azimuth polynomial linear term."
-CONTROL_MANEUVER.FINITE_AZ2.__doc__ = "The time varying azimuth polynomial quadratic term."
-CONTROL_MANEUVER.FINITE_AZ3.__doc__ = "The time varying azimuth polynomial cubic term."
-CONTROL_MANEUVER.FINITE_AZ4.__doc__ = "The time varying azimuth polynomial quartic term."
-CONTROL_MANEUVER.FINITE_AZ_A.__doc__ = "The time varying azimuth sine amplitude term."
-CONTROL_MANEUVER.FINITE_AZ_F.__doc__ = "The time varying azimuth sine frequency term."
-CONTROL_MANEUVER.FINITE_AZ_P.__doc__ = "The time varying azimuth sine phase term."
-CONTROL_MANEUVER.FINITE_EL0.__doc__ = "The time varying elevation polynomial constant term."
-CONTROL_MANEUVER.FINITE_EL1.__doc__ = "The time varying elevation polynomial linear term."
-CONTROL_MANEUVER.FINITE_EL2.__doc__ = "The time varying elevation polynomial quadratic term."
-CONTROL_MANEUVER.FINITE_EL3.__doc__ = "The time varying elevation polynomial cubic term."
-CONTROL_MANEUVER.FINITE_EL4.__doc__ = "The time varying elevation polynomial quartic term."
-CONTROL_MANEUVER.FINITE_EL_A.__doc__ = "The time varying elevation sine amplitude term."
-CONTROL_MANEUVER.FINITE_EL_F.__doc__ = "The time varying elevation sine frequency term."
-CONTROL_MANEUVER.FINITE_EL_P.__doc__ = "The time varying elevation sine phase term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_CONSTANT_TERM.__doc__ = "The time varying azimuth polynomial constant term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_LINEAR_TERM.__doc__ = "The time varying azimuth polynomial linear term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_QUADRATIC_TERM.__doc__ = "The time varying azimuth polynomial quadratic term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_CUBIC_TERM.__doc__ = "The time varying azimuth polynomial cubic term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_QUARTIC_TERM.__doc__ = "The time varying azimuth polynomial quartic term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_SINUSOIDAL_AMPLITUDE.__doc__ = "The time varying azimuth sine amplitude term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_SINUSOIDAL_FREQUENCY.__doc__ = "The time varying azimuth sine frequency term."
+CONTROL_MANEUVER.FINITE_AZIMUTH_SINUSOIDAL_PHASE.__doc__ = "The time varying azimuth sine phase term."
+CONTROL_MANEUVER.FINITE_ELEVATION_CONSTANT_TERM.__doc__ = "The time varying elevation polynomial constant term."
+CONTROL_MANEUVER.FINITE_ELEVATION_LINEAR_TERM.__doc__ = "The time varying elevation polynomial linear term."
+CONTROL_MANEUVER.FINITE_ELEVATION_QUADRATIC_TERM.__doc__ = "The time varying elevation polynomial quadratic term."
+CONTROL_MANEUVER.FINITE_ELEVATION_CUBIC_TERM.__doc__ = "The time varying elevation polynomial cubic term."
+CONTROL_MANEUVER.FINITE_ELEVATION_QUARTIC_TERM.__doc__ = "The time varying elevation polynomial quartic term."
+CONTROL_MANEUVER.FINITE_ELEVATION_SINUSOIDAL_AMPLITUDE.__doc__ = "The time varying elevation sine amplitude term."
+CONTROL_MANEUVER.FINITE_ELEVATION_SINUSOIDAL_FREQUENCY.__doc__ = "The time varying elevation sine frequency term."
+CONTROL_MANEUVER.FINITE_ELEVATION_SINUSOIDAL_PHASE.__doc__ = "The time varying elevation sine phase term."
 
 agcls.AgTypeNameMap["CONTROL_MANEUVER"] = CONTROL_MANEUVER
 
@@ -973,43 +974,43 @@ class CONTROL_LAUNCH(IntEnum):
    
     EPOCH = 500
     """The date and time of the launch."""
-    GEODETIC_LAT = 501
+    GEODETIC_LATITUDE = 501
     """The geodetic latitude of the launch location."""
-    GEODETIC_LON = 502
+    GEODETIC_LONGITUDE = 502
     """The geodetic longitude of the launch location."""
     GEODETIC_ALTITUDE = 503
     """The geodetic altitude of the launch location."""
-    GEOCENTRIC_LAT = 504
+    GEOCENTRIC_LATITUDE = 504
     """The geocentric latitude of the launch location."""
-    GEOCENTRIC_LON = 505
+    GEOCENTRIC_LONGITUDE = 505
     """The geocentric longitude of the launch location."""
-    GEOCENTRIC_RAD = 506
+    GEOCENTRIC_RADIUS = 506
     """The geocentric radius of the launch location."""
     TIME_OF_FLIGHT = 507
     """The time of flight, from launch until burnout."""
-    BURNOUT_GEOCENTRIC_LAT = 508
+    BURNOUT_GEOCENTRIC_LATITUDE = 508
     """The geocentric latitude of the burnout point."""
-    BURNOUT_GEOCENTRIC_LON = 509
+    BURNOUT_GEOCENTRIC_LONGITUDE = 509
     """The geocentric longitude of the burnout point."""
-    BURNOUT_GEOCENTRIC_RAD = 510
+    BURNOUT_GEOCENTRIC_RADIUS = 510
     """The geocentric radius of the burnout point."""
-    BURNOUT_GEODETIC_LAT = 511
+    BURNOUT_GEODETIC_LATITUDE = 511
     """The geodetic latitude of the burnout point."""
-    BURNOUT_GEODETIC_LON = 512
+    BURNOUT_GEODETIC_LONGITUDE = 512
     """The geodetic longitude of the burnout point."""
     BURNOUT_GEODETIC_ALTITUDE = 513
     """The geodetic altitude of the burnout point."""
-    BURNOUT_AZ_ALTITUDE_AZ = 514
+    BURNOUT_AZIMUTH_ALTITUDE_AZIMUTH = 514
     """The geodetic azimuth of the launch trajectory."""
-    BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST = 515
+    BURNOUT_AZIMUTH_ALTITUDE_DOWNRANGE_DIST = 515
     """The geodetic downrange distance of the burnout point."""
-    BURNOUT_AZ_ALTITUDE_ALTITUDE = 516
+    BURNOUT_AZIMUTH_ALTITUDE_ALTITUDE = 516
     """The geodetic altitude of the burnout point."""
-    BURNOUT_AZ_RAD_AZ = 517
+    BURNOUT_AZIMUTH_RADIUS_AZIMUTH = 517
     """The geocentric azimuth of the launch trajectory."""
-    BURNOUT_AZ_RAD_DOWNRANGE_DIST = 518
+    BURNOUT_AZIMUTH_RADIUS_DOWNRANGE_DIST = 518
     """The geocentric downrange distance of the burnout point."""
-    BURNOUT_AZ_RAD_RAD = 519
+    BURNOUT_AZIMUTH_RADIUS_RADIUS = 519
     """The geocentric radius of the burnout point."""
     BURNOUT_FIXED_VELOCITY = 520
     """The burnout velocity in the fixed frame."""
@@ -1017,7 +1018,7 @@ class CONTROL_LAUNCH(IntEnum):
     """The burnout velocity in the inertial frame."""
     BURNOUT_INERTIAL_VELOCITY_AZIMUTH = 522
     """Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."""
-    BURNOUT_INERTIAL_HORIZONTAL_FPA = 523
+    BURNOUT_INERTIAL_HORIZONTAL_FLIGHT_PATH_ANGLE = 523
     """Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."""
     DRY_MASS = 524
     """Dry Mass - the mass of the spacecraft exclusive of propellant."""
@@ -1051,29 +1052,29 @@ class CONTROL_LAUNCH(IntEnum):
     """Maximum Fuel Mass - the maximum fuel mass of the spacecraft; this parameter specifically applies to Finite Maneuver segments that are being executed in Backward Sequences."""
 
 CONTROL_LAUNCH.EPOCH.__doc__ = "The date and time of the launch."
-CONTROL_LAUNCH.GEODETIC_LAT.__doc__ = "The geodetic latitude of the launch location."
-CONTROL_LAUNCH.GEODETIC_LON.__doc__ = "The geodetic longitude of the launch location."
+CONTROL_LAUNCH.GEODETIC_LATITUDE.__doc__ = "The geodetic latitude of the launch location."
+CONTROL_LAUNCH.GEODETIC_LONGITUDE.__doc__ = "The geodetic longitude of the launch location."
 CONTROL_LAUNCH.GEODETIC_ALTITUDE.__doc__ = "The geodetic altitude of the launch location."
-CONTROL_LAUNCH.GEOCENTRIC_LAT.__doc__ = "The geocentric latitude of the launch location."
-CONTROL_LAUNCH.GEOCENTRIC_LON.__doc__ = "The geocentric longitude of the launch location."
-CONTROL_LAUNCH.GEOCENTRIC_RAD.__doc__ = "The geocentric radius of the launch location."
+CONTROL_LAUNCH.GEOCENTRIC_LATITUDE.__doc__ = "The geocentric latitude of the launch location."
+CONTROL_LAUNCH.GEOCENTRIC_LONGITUDE.__doc__ = "The geocentric longitude of the launch location."
+CONTROL_LAUNCH.GEOCENTRIC_RADIUS.__doc__ = "The geocentric radius of the launch location."
 CONTROL_LAUNCH.TIME_OF_FLIGHT.__doc__ = "The time of flight, from launch until burnout."
-CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LAT.__doc__ = "The geocentric latitude of the burnout point."
-CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LON.__doc__ = "The geocentric longitude of the burnout point."
-CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RAD.__doc__ = "The geocentric radius of the burnout point."
-CONTROL_LAUNCH.BURNOUT_GEODETIC_LAT.__doc__ = "The geodetic latitude of the burnout point."
-CONTROL_LAUNCH.BURNOUT_GEODETIC_LON.__doc__ = "The geodetic longitude of the burnout point."
+CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LATITUDE.__doc__ = "The geocentric latitude of the burnout point."
+CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_LONGITUDE.__doc__ = "The geocentric longitude of the burnout point."
+CONTROL_LAUNCH.BURNOUT_GEOCENTRIC_RADIUS.__doc__ = "The geocentric radius of the burnout point."
+CONTROL_LAUNCH.BURNOUT_GEODETIC_LATITUDE.__doc__ = "The geodetic latitude of the burnout point."
+CONTROL_LAUNCH.BURNOUT_GEODETIC_LONGITUDE.__doc__ = "The geodetic longitude of the burnout point."
 CONTROL_LAUNCH.BURNOUT_GEODETIC_ALTITUDE.__doc__ = "The geodetic altitude of the burnout point."
-CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_AZ.__doc__ = "The geodetic azimuth of the launch trajectory."
-CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_DOWNRANGE_DIST.__doc__ = "The geodetic downrange distance of the burnout point."
-CONTROL_LAUNCH.BURNOUT_AZ_ALTITUDE_ALTITUDE.__doc__ = "The geodetic altitude of the burnout point."
-CONTROL_LAUNCH.BURNOUT_AZ_RAD_AZ.__doc__ = "The geocentric azimuth of the launch trajectory."
-CONTROL_LAUNCH.BURNOUT_AZ_RAD_DOWNRANGE_DIST.__doc__ = "The geocentric downrange distance of the burnout point."
-CONTROL_LAUNCH.BURNOUT_AZ_RAD_RAD.__doc__ = "The geocentric radius of the burnout point."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_ALTITUDE_AZIMUTH.__doc__ = "The geodetic azimuth of the launch trajectory."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_ALTITUDE_DOWNRANGE_DIST.__doc__ = "The geodetic downrange distance of the burnout point."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_ALTITUDE_ALTITUDE.__doc__ = "The geodetic altitude of the burnout point."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_RADIUS_AZIMUTH.__doc__ = "The geocentric azimuth of the launch trajectory."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_RADIUS_DOWNRANGE_DIST.__doc__ = "The geocentric downrange distance of the burnout point."
+CONTROL_LAUNCH.BURNOUT_AZIMUTH_RADIUS_RADIUS.__doc__ = "The geocentric radius of the burnout point."
 CONTROL_LAUNCH.BURNOUT_FIXED_VELOCITY.__doc__ = "The burnout velocity in the fixed frame."
 CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY.__doc__ = "The burnout velocity in the inertial frame."
 CONTROL_LAUNCH.BURNOUT_INERTIAL_VELOCITY_AZIMUTH.__doc__ = "Inertial Velocity Azimuth - the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed."
-CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FPA.__doc__ = "Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."
+CONTROL_LAUNCH.BURNOUT_INERTIAL_HORIZONTAL_FLIGHT_PATH_ANGLE.__doc__ = "Inertial Horizontal FPA - the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle."
 CONTROL_LAUNCH.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive of propellant."
 CONTROL_LAUNCH.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
 CONTROL_LAUNCH.DRAG_AREA.__doc__ = "Drag Area - the cross-sectional area of the spacecraft assumed perpendicular to the direction of motion, used for atmospheric drag calculations."
@@ -1095,31 +1096,31 @@ agcls.AgTypeNameMap["CONTROL_LAUNCH"] = CONTROL_LAUNCH
 class CONTROL_ADVANCED(IntEnum):
     """Propagate segment properties that can be selected as control parameters for a Target Sequence."""
    
-    PROPAGATE_MAX_PROP_TIME = 600
+    PROPAGATE_MAX_PROPATION_TIME = 600
     """The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."""
-    PROPAGATE_MIN_PROP_TIME = 601
+    PROPAGATE_MIN_PROPAGATION_TIME = 601
     """The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."""
 
-CONTROL_ADVANCED.PROPAGATE_MAX_PROP_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
-CONTROL_ADVANCED.PROPAGATE_MIN_PROP_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
+CONTROL_ADVANCED.PROPAGATE_MAX_PROPATION_TIME.__doc__ = "The maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied."
+CONTROL_ADVANCED.PROPAGATE_MIN_PROPAGATION_TIME.__doc__ = "The minimum propagation time - minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction."
 
 agcls.AgTypeNameMap["CONTROL_ADVANCED"] = CONTROL_ADVANCED
 
-class TARGET_SEQ_ACTION(IntEnum):
+class TARGET_SEQUENCE_ACTION(IntEnum):
     """Action options for Target Sequence profiles."""
    
-    RUN_NOMINAL_SEQ = 0
+    RUN_NOMINAL_SEQUENCE = 0
     """Run Nominal Sequence - runs the mission control sequence."""
     RUN_ACTIVE_PROFILES = 1
     """Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."""
     RUN_ACTIVE_PROFILES_ONCE = 2
     """Run Active Profiles Once - runs the profile with corrections applied to control parameters."""
 
-TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
-TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
-TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES_ONCE.__doc__ = "Run Active Profiles Once - runs the profile with corrections applied to control parameters."
+TARGET_SEQUENCE_ACTION.RUN_NOMINAL_SEQUENCE.__doc__ = "Run Nominal Sequence - runs the mission control sequence."
+TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES.__doc__ = "Run Active Profiles - runs the mission control sequence allowing the active profiles to operate."
+TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES_ONCE.__doc__ = "Run Active Profiles Once - runs the profile with corrections applied to control parameters."
 
-agcls.AgTypeNameMap["TARGET_SEQ_ACTION"] = TARGET_SEQ_ACTION
+agcls.AgTypeNameMap["TARGET_SEQUENCE_ACTION"] = TARGET_SEQUENCE_ACTION
 
 class PROFILES_FINISH(IntEnum):
     """Action options for Target Sequence profiles convergence."""
@@ -1152,7 +1153,7 @@ class UPDATE_PARAM(IntEnum):
     """The density of the fuel tank."""
     TANK_PRESSURE = 5
     """The fuel tank pressure."""
-    TANK_TEMP = 6
+    TANK_TEMPERATURE = 6
     """The temperature of the fuel tank."""
     CR = 7
     """Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."""
@@ -1169,7 +1170,7 @@ UPDATE_PARAM.DRY_MASS.__doc__ = "Dry Mass - the mass of the spacecraft exclusive
 UPDATE_PARAM.FUEL_MASS.__doc__ = "The mass of the spacecraft propellant."
 UPDATE_PARAM.FUEL_DENSITY.__doc__ = "The density of the fuel tank."
 UPDATE_PARAM.TANK_PRESSURE.__doc__ = "The fuel tank pressure."
-UPDATE_PARAM.TANK_TEMP.__doc__ = "The temperature of the fuel tank."
+UPDATE_PARAM.TANK_TEMPERATURE.__doc__ = "The temperature of the fuel tank."
 UPDATE_PARAM.CR.__doc__ = "Solar Radiation Pressure (Spherical) Coefficient (Cr) - the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
 UPDATE_PARAM.CD.__doc__ = "Drag Coefficient (Cd) - the dimensionless drag coefficient associated with the drag area."
 UPDATE_PARAM.CK.__doc__ = "Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all."
@@ -1212,13 +1213,13 @@ agcls.AgTypeNameMap["PRESSURE_MODE"] = PRESSURE_MODE
 class THRUST_TYPE(IntEnum):
     """Thrust options."""
    
-    AFFECTS_ACCEL_AND_MASS_FLOW = 0
+    AFFECTS_ACCELERATION_AND_MASS_FLOW = 0
     """Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."""
-    AFFECTS_ACCEL_ONLY = 1
+    AFFECTS_ACCELERATION_ONLY = 1
     """Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."""
 
-THRUST_TYPE.AFFECTS_ACCEL_AND_MASS_FLOW.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
-THRUST_TYPE.AFFECTS_ACCEL_ONLY.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
+THRUST_TYPE.AFFECTS_ACCELERATION_AND_MASS_FLOW.__doc__ = "Affects Acceleration and Mass Flow Calculations - may represent an inefficiency in the propulsion tanks and feed lines."
+THRUST_TYPE.AFFECTS_ACCELERATION_ONLY.__doc__ = "Affects Acceleration Only - an efficiency of 0.98 means that only 98% of the fuel will be spent to get 98% thrust. For example, a thrust efficiency affecting acceleration only may represent some problem in the combustion chamber."
 
 agcls.AgTypeNameMap["THRUST_TYPE"] = THRUST_TYPE
 
@@ -1357,11 +1358,11 @@ class FOLLOW_SEPARATION(IntEnum):
    
     SPECIFY = 0
     """Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."""
-    AT_END_OF_LEADERS_EPHEM = 1
+    AT_END_OF_LEADERS_EPHEMERIS = 1
     """Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."""
 
 FOLLOW_SEPARATION.SPECIFY.__doc__ = "Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation."
-FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
+FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEMERIS.__doc__ = "Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate."
 
 agcls.AgTypeNameMap["FOLLOW_SEPARATION"] = FOLLOW_SEPARATION
 
@@ -1401,17 +1402,17 @@ class BURNOUT_TYPE(IntEnum):
     """Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."""
     GEODETIC = 1
     """Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."""
-    LAUNCH_AZ_RAD = 2
+    LAUNCH_AZIMUTH_RADIUS = 2
     """Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."""
-    LAUNCH_AZ_ALTITUDE = 3
+    LAUNCH_AZIMUTH_ALTITUDE = 3
     """Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."""
     CBF_CARTESIAN = 4
     """Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."""
 
 BURNOUT_TYPE.GEOCENTRIC.__doc__ = "Geocentric (Planetocentric) - the burnout point is measured from the center of mass of the Earth or other central body."
 BURNOUT_TYPE.GEODETIC.__doc__ = "Geodetic (Planetodetic) - the burnout point is measured along the normal to the surface of an ellipsoid defined with reference to the Earth (or other central body)."
-BURNOUT_TYPE.LAUNCH_AZ_RAD.__doc__ = "Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."
-BURNOUT_TYPE.LAUNCH_AZ_ALTITUDE.__doc__ = "Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."
+BURNOUT_TYPE.LAUNCH_AZIMUTH_RADIUS.__doc__ = "Launch Az / Radius - the burnout point is defined in reference to distance downrange along an azimuth, measured from the center of mass of the Earth or other central body."
+BURNOUT_TYPE.LAUNCH_AZIMUTH_ALTITUDE.__doc__ = "Launch Az / Alt - the burnout point is defined in reference to distance downrange along an azimuth, measured from the surface of the Earth or other central body."
 BURNOUT_TYPE.CBF_CARTESIAN.__doc__ = "Central Body Fixed Cartesian - the burnout state is specified in the central-body-fixed Cartesian coordinate system."
 
 agcls.AgTypeNameMap["BURNOUT_TYPE"] = BURNOUT_TYPE
@@ -1787,14 +1788,14 @@ agcls.AgTypeNameMap["OPTIMAL_FINITE_SCALING_OPTIONS"] = OPTIMAL_FINITE_SCALING_O
 class OPTIMAL_FINITE_SNOPT_OBJECTIVE(IntEnum):
     """Optimal Finite SNOPT objective."""
    
-    MINIMIZE_TOF = 0
+    MINIMIZE_TIME_OF_FLIGHT = 0
     """Minimize the total TOF along the collocation arc."""
     MAXIMIZE_FINAL_RAD = 1
     """Minimize the total calculated DeltaV along the collocation arc."""
     MINIMIZE_PROPELLANT_USE = 2
     """Maximize the final mass after the collocation arc."""
 
-OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_TOF.__doc__ = "Minimize the total TOF along the collocation arc."
+OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_TIME_OF_FLIGHT.__doc__ = "Minimize the total TOF along the collocation arc."
 OPTIMAL_FINITE_SNOPT_OBJECTIVE.MAXIMIZE_FINAL_RAD.__doc__ = "Minimize the total calculated DeltaV along the collocation arc."
 OPTIMAL_FINITE_SNOPT_OBJECTIVE.MINIMIZE_PROPELLANT_USE.__doc__ = "Maximize the final mass after the collocation arc."
 
@@ -1842,20 +1843,20 @@ OPTIMAL_FINITE_GUESS_METHOD.PIECEWISE_LINEAR.__doc__ = "Piecewise linear method.
 
 agcls.AgTypeNameMap["OPTIMAL_FINITE_GUESS_METHOD"] = OPTIMAL_FINITE_GUESS_METHOD
 
-class IMP_DELTA_V_REP(IntEnum):
+class IMPULSIVE_DELTA_V_REPRESENTATION(IntEnum):
     """Vector representations for impulsive DeltaV specification."""
    
-    CARTESIAN_IMP_DELTA_V = 0
+    CARTESIAN_IMPULSIVE_DELTA_V = 0
     """Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."""
-    SPHERICAL_IMP_DELTA_V = 1
+    SPHERICAL_IMPULSIVE_DELTA_V = 1
     """Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."""
 
-IMP_DELTA_V_REP.CARTESIAN_IMP_DELTA_V.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
-IMP_DELTA_V_REP.SPHERICAL_IMP_DELTA_V.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
+IMPULSIVE_DELTA_V_REPRESENTATION.CARTESIAN_IMPULSIVE_DELTA_V.__doc__ = "Cartesian - specify the impulsive DeltaV in Cartesian coordinates (X, Y, Z)."
+IMPULSIVE_DELTA_V_REPRESENTATION.SPHERICAL_IMPULSIVE_DELTA_V.__doc__ = "Spherical - specify the impulsive DeltaV in spherical coordinates (Azimuth, Elevation, Magnitude)."
 
-agcls.AgTypeNameMap["IMP_DELTA_V_REP"] = IMP_DELTA_V_REP
+agcls.AgTypeNameMap["IMPULSIVE_DELTA_V_REPRESENTATION"] = IMPULSIVE_DELTA_V_REPRESENTATION
 
-class LAMBERT_TARGET_COORD_TYPE(IntEnum):
+class LAMBERT_TARGET_COORDINATE_TYPE(IntEnum):
     """Lambert Target CoordType."""
    
     CARTESIAN = 0
@@ -1863,10 +1864,10 @@ class LAMBERT_TARGET_COORD_TYPE(IntEnum):
     KEPLERIAN = 1
     """Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."""
 
-LAMBERT_TARGET_COORD_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
-LAMBERT_TARGET_COORD_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
+LAMBERT_TARGET_COORDINATE_TYPE.CARTESIAN.__doc__ = "Cartesian - specifying an orbit by three position elements and three velocity elements in a rectangular coordinate system."
+LAMBERT_TARGET_COORDINATE_TYPE.KEPLERIAN.__doc__ = "Keplerian - the classical system, specifying an orbit by six elements describing its size, shape and three-dimensional orientation in space."
 
-agcls.AgTypeNameMap["LAMBERT_TARGET_COORD_TYPE"] = LAMBERT_TARGET_COORD_TYPE
+agcls.AgTypeNameMap["LAMBERT_TARGET_COORDINATE_TYPE"] = LAMBERT_TARGET_COORDINATE_TYPE
 
 class LAMBERT_SOLUTION_OPTION_TYPE(IntEnum):
     """Lambert Solution Option Type."""
@@ -2035,17 +2036,17 @@ agcls.AgTypeNameMap["SEGMENT_DIFFERENCE_ORDER"] = SEGMENT_DIFFERENCE_ORDER
 class CONTROL_REPEATING_GROUND_TRACK_ERR(IntEnum):
     """Repeating Ground Track Equator Error properties that can be selected as control parameters for a Target Sequence."""
    
-    REFERENCE_LON = 0
+    REFERENCE_LONGITUDE = 0
     """The reference longitude."""
     REPEAT_COUNT = 1
     """The repeat count."""
 
-CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LON.__doc__ = "The reference longitude."
+CONTROL_REPEATING_GROUND_TRACK_ERR.REFERENCE_LONGITUDE.__doc__ = "The reference longitude."
 CONTROL_REPEATING_GROUND_TRACK_ERR.REPEAT_COUNT.__doc__ = "The repeat count."
 
 agcls.AgTypeNameMap["CONTROL_REPEATING_GROUND_TRACK_ERR"] = CONTROL_REPEATING_GROUND_TRACK_ERR
 
-class CALC_OBJECT_DIRECTION(IntEnum):
+class CALCULATION_OBJECT_DIRECTION(IntEnum):
     """The direction to search for a desired value."""
    
     NEXT = 0
@@ -2053,12 +2054,12 @@ class CALC_OBJECT_DIRECTION(IntEnum):
     PREVIOUS = 1
     """Search in the direction of the previous calculation object."""
 
-CALC_OBJECT_DIRECTION.NEXT.__doc__ = "Search in the direction of the next calculation object."
-CALC_OBJECT_DIRECTION.PREVIOUS.__doc__ = "Search in the direction of the previous calculation object."
+CALCULATION_OBJECT_DIRECTION.NEXT.__doc__ = "Search in the direction of the next calculation object."
+CALCULATION_OBJECT_DIRECTION.PREVIOUS.__doc__ = "Search in the direction of the previous calculation object."
 
-agcls.AgTypeNameMap["CALC_OBJECT_DIRECTION"] = CALC_OBJECT_DIRECTION
+agcls.AgTypeNameMap["CALCULATION_OBJECT_DIRECTION"] = CALCULATION_OBJECT_DIRECTION
 
-class CALC_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
+class CALCULATION_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
     """The calculation object orbit plane source Types."""
    
     REFERENCE_SATELLITE = 0
@@ -2066,12 +2067,12 @@ class CALC_OBJECT_ORBIT_PLANE_SOURCE(IntEnum):
     SATELLITE = 1
     """Use the satellite to generate the orbit plane."""
 
-CALC_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE.__doc__ = "Use the reference satellite to generate the orbit plane."
-CALC_OBJECT_ORBIT_PLANE_SOURCE.SATELLITE.__doc__ = "Use the satellite to generate the orbit plane."
+CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.REFERENCE_SATELLITE.__doc__ = "Use the reference satellite to generate the orbit plane."
+CALCULATION_OBJECT_ORBIT_PLANE_SOURCE.SATELLITE.__doc__ = "Use the satellite to generate the orbit plane."
 
-agcls.AgTypeNameMap["CALC_OBJECT_ORBIT_PLANE_SOURCE"] = CALC_OBJECT_ORBIT_PLANE_SOURCE
+agcls.AgTypeNameMap["CALCULATION_OBJECT_ORBIT_PLANE_SOURCE"] = CALCULATION_OBJECT_ORBIT_PLANE_SOURCE
 
-class CALC_OBJECT_SUN_POSITION(IntEnum):
+class CALCULATION_OBJECT_SUN_POSITION(IntEnum):
     """The calculation object sun location Types."""
    
     APPARENT_FROM_SATELLITE = 0
@@ -2083,14 +2084,14 @@ class CALC_OBJECT_SUN_POSITION(IntEnum):
     TRUE_FROM_REFERENCE_SATELLITE = 3
     """Use the sun location true from reference satellite."""
 
-CALC_OBJECT_SUN_POSITION.APPARENT_FROM_SATELLITE.__doc__ = "Use the sun location apparent from satellite."
-CALC_OBJECT_SUN_POSITION.APPARENT_FROM_REFERENCE_SATELLITE.__doc__ = "Use the sun location apparent from reference satellite."
-CALC_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE.__doc__ = "Use the sun location true from satellite."
-CALC_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE.__doc__ = "Use the sun location true from reference satellite."
+CALCULATION_OBJECT_SUN_POSITION.APPARENT_FROM_SATELLITE.__doc__ = "Use the sun location apparent from satellite."
+CALCULATION_OBJECT_SUN_POSITION.APPARENT_FROM_REFERENCE_SATELLITE.__doc__ = "Use the sun location apparent from reference satellite."
+CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE.__doc__ = "Use the sun location true from satellite."
+CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE.__doc__ = "Use the sun location true from reference satellite."
 
-agcls.AgTypeNameMap["CALC_OBJECT_SUN_POSITION"] = CALC_OBJECT_SUN_POSITION
+agcls.AgTypeNameMap["CALCULATION_OBJECT_SUN_POSITION"] = CALCULATION_OBJECT_SUN_POSITION
 
-class CALC_OBJECT_ANGLE_SIGN(IntEnum):
+class CALCULATION_OBJECT_ANGLE_SIGN(IntEnum):
     """The sign of the angle when the relative position has a component along the orbit normal."""
    
     POSITIVE = 0
@@ -2098,12 +2099,12 @@ class CALC_OBJECT_ANGLE_SIGN(IntEnum):
     NEGATIVE = 1
     """Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."""
 
-CALC_OBJECT_ANGLE_SIGN.POSITIVE.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
-CALC_OBJECT_ANGLE_SIGN.NEGATIVE.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
+CALCULATION_OBJECT_ANGLE_SIGN.POSITIVE.__doc__ = "Use the positive sign for the angle when the relative position has a positive component along the orbit normal."
+CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE.__doc__ = "Use the negative sign for the angle when the relative position does not have a positive component along the orbit normal."
 
-agcls.AgTypeNameMap["CALC_OBJECT_ANGLE_SIGN"] = CALC_OBJECT_ANGLE_SIGN
+agcls.AgTypeNameMap["CALCULATION_OBJECT_ANGLE_SIGN"] = CALCULATION_OBJECT_ANGLE_SIGN
 
-class CALC_OBJECT_REFERENCE_DIRECTION(IntEnum):
+class CALCULATION_OBJECT_REFERENCE_DIRECTION(IntEnum):
     """Direction that establishes the zero value when projected into the orbit plane."""
    
     REFERENCE_SATELLITE_POSITION = 0
@@ -2115,14 +2116,14 @@ class CALC_OBJECT_REFERENCE_DIRECTION(IntEnum):
     SATELLITE_NADIR = 3
     """Use the satellite nadir (centric) position when projected into the orbit plane."""
 
-CALC_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION.__doc__ = "Use the reference satellite position when projected into the orbit plane."
-CALC_OBJECT_REFERENCE_DIRECTION.SATELLITE_POSITION.__doc__ = "Use the satellite position when projected into the orbit plane."
-CALC_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_NADIR.__doc__ = "Use the reference satellite nadir (centric) when projected into the orbit plane."
-CALC_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR.__doc__ = "Use the satellite nadir (centric) position when projected into the orbit plane."
+CALCULATION_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_POSITION.__doc__ = "Use the reference satellite position when projected into the orbit plane."
+CALCULATION_OBJECT_REFERENCE_DIRECTION.SATELLITE_POSITION.__doc__ = "Use the satellite position when projected into the orbit plane."
+CALCULATION_OBJECT_REFERENCE_DIRECTION.REFERENCE_SATELLITE_NADIR.__doc__ = "Use the reference satellite nadir (centric) when projected into the orbit plane."
+CALCULATION_OBJECT_REFERENCE_DIRECTION.SATELLITE_NADIR.__doc__ = "Use the satellite nadir (centric) position when projected into the orbit plane."
 
-agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_DIRECTION"] = CALC_OBJECT_REFERENCE_DIRECTION
+agcls.AgTypeNameMap["CALCULATION_OBJECT_REFERENCE_DIRECTION"] = CALCULATION_OBJECT_REFERENCE_DIRECTION
 
-class CALC_OBJECT_RELATIVE_POSITION(IntEnum):
+class CALCULATION_OBJECT_RELATIVE_POSITION(IntEnum):
     """The calculation object relative position Types."""
    
     SATELLITE_TO_REFERENCE_SATELLITE = 0
@@ -2130,36 +2131,36 @@ class CALC_OBJECT_RELATIVE_POSITION(IntEnum):
     REFERENCE_SATELLITE_TO_SATELLITE = 1
     """Use the relative position reference satellite to satellite."""
 
-CALC_OBJECT_RELATIVE_POSITION.SATELLITE_TO_REFERENCE_SATELLITE.__doc__ = "Use the relative position satellite to reference satellite."
-CALC_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE.__doc__ = "Use the relative position reference satellite to satellite."
+CALCULATION_OBJECT_RELATIVE_POSITION.SATELLITE_TO_REFERENCE_SATELLITE.__doc__ = "Use the relative position satellite to reference satellite."
+CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE.__doc__ = "Use the relative position reference satellite to satellite."
 
-agcls.AgTypeNameMap["CALC_OBJECT_RELATIVE_POSITION"] = CALC_OBJECT_RELATIVE_POSITION
+agcls.AgTypeNameMap["CALCULATION_OBJECT_RELATIVE_POSITION"] = CALCULATION_OBJECT_RELATIVE_POSITION
 
-class CALC_OBJECT_REFERENCE_ELLIPSE(IntEnum):
+class CALCULATION_OBJECT_REFERENCE_ELLIPSE(IntEnum):
     """The calculation object reference ellipse Types."""
    
-    REFERENCE_SAT_ORBIT = 0
+    REFERENCE_SATELLITE_ORBIT = 0
     """Use the reference satellite orbit."""
     SATELLITE_ORBIT = 1
     """Use the satellite orbit."""
 
-CALC_OBJECT_REFERENCE_ELLIPSE.REFERENCE_SAT_ORBIT.__doc__ = "Use the reference satellite orbit."
-CALC_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT.__doc__ = "Use the satellite orbit."
+CALCULATION_OBJECT_REFERENCE_ELLIPSE.REFERENCE_SATELLITE_ORBIT.__doc__ = "Use the reference satellite orbit."
+CALCULATION_OBJECT_REFERENCE_ELLIPSE.SATELLITE_ORBIT.__doc__ = "Use the satellite orbit."
 
-agcls.AgTypeNameMap["CALC_OBJECT_REFERENCE_ELLIPSE"] = CALC_OBJECT_REFERENCE_ELLIPSE
+agcls.AgTypeNameMap["CALCULATION_OBJECT_REFERENCE_ELLIPSE"] = CALCULATION_OBJECT_REFERENCE_ELLIPSE
 
-class CALC_OBJECT_LOCATION_SOURCE(IntEnum):
+class CALCULATION_OBJECT_LOCATION_SOURCE(IntEnum):
     """The calculation object location source Types."""
    
-    REFERENCE_SAT = 0
+    REFERENCE_SATELLITE = 0
     """Use the reference satellite."""
     SATELLITE = 1
     """Use the satellite."""
 
-CALC_OBJECT_LOCATION_SOURCE.REFERENCE_SAT.__doc__ = "Use the reference satellite."
-CALC_OBJECT_LOCATION_SOURCE.SATELLITE.__doc__ = "Use the satellite."
+CALCULATION_OBJECT_LOCATION_SOURCE.REFERENCE_SATELLITE.__doc__ = "Use the reference satellite."
+CALCULATION_OBJECT_LOCATION_SOURCE.SATELLITE.__doc__ = "Use the satellite."
 
-agcls.AgTypeNameMap["CALC_OBJECT_LOCATION_SOURCE"] = CALC_OBJECT_LOCATION_SOURCE
+agcls.AgTypeNameMap["CALCULATION_OBJECT_LOCATION_SOURCE"] = CALCULATION_OBJECT_LOCATION_SOURCE
 
 class GRAVITATIONAL_PARAMETER_SOURCE(IntEnum):
     """The source of the gravitational parameter for a CStateCalcGravitationalParameter calculation object."""
@@ -2193,7 +2194,7 @@ REFERENCE_RADIUS_SOURCE.GRAVITY_FILE.__doc__ = "Gravity File."
 
 agcls.AgTypeNameMap["REFERENCE_RADIUS_SOURCE"] = REFERENCE_RADIUS_SOURCE
 
-class GRAV_COEFF_NORMALIZATION_TYPE(IntEnum):
+class GRAVITY_COEFFICIENT_NORMALIZATION_TYPE(IntEnum):
     """The normalization type for the CStateCalcGravCoeff calculation object."""
    
     NORMALIZED = 0
@@ -2201,12 +2202,12 @@ class GRAV_COEFF_NORMALIZATION_TYPE(IntEnum):
     UNNORMALIZED = 1
     """Unnormalized."""
 
-GRAV_COEFF_NORMALIZATION_TYPE.NORMALIZED.__doc__ = "Normalized."
-GRAV_COEFF_NORMALIZATION_TYPE.UNNORMALIZED.__doc__ = "Unnormalized."
+GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.NORMALIZED.__doc__ = "Normalized."
+GRAVITY_COEFFICIENT_NORMALIZATION_TYPE.UNNORMALIZED.__doc__ = "Unnormalized."
 
-agcls.AgTypeNameMap["GRAV_COEFF_NORMALIZATION_TYPE"] = GRAV_COEFF_NORMALIZATION_TYPE
+agcls.AgTypeNameMap["GRAVITY_COEFFICIENT_NORMALIZATION_TYPE"] = GRAVITY_COEFFICIENT_NORMALIZATION_TYPE
 
-class GRAV_COEFF_COEFFICIENT_TYPE(IntEnum):
+class GRAVITY_COEFFICIENT_TYPE(IntEnum):
     """The coefficient type for the CStateCalcGravCoeff calculation object."""
    
     ZONAL = 0
@@ -2216,13 +2217,13 @@ class GRAV_COEFF_COEFFICIENT_TYPE(IntEnum):
     SINE = 2
     """Sine."""
 
-GRAV_COEFF_COEFFICIENT_TYPE.ZONAL.__doc__ = "Zonal."
-GRAV_COEFF_COEFFICIENT_TYPE.COSINE.__doc__ = "Cosine."
-GRAV_COEFF_COEFFICIENT_TYPE.SINE.__doc__ = "Sine."
+GRAVITY_COEFFICIENT_TYPE.ZONAL.__doc__ = "Zonal."
+GRAVITY_COEFFICIENT_TYPE.COSINE.__doc__ = "Cosine."
+GRAVITY_COEFFICIENT_TYPE.SINE.__doc__ = "Sine."
 
-agcls.AgTypeNameMap["GRAV_COEFF_COEFFICIENT_TYPE"] = GRAV_COEFF_COEFFICIENT_TYPE
+agcls.AgTypeNameMap["GRAVITY_COEFFICIENT_TYPE"] = GRAVITY_COEFFICIENT_TYPE
 
-class STM_PERT_VARIABLES(IntEnum):
+class STM_PERTURBATION_VARIABLES(IntEnum):
     """The initial and final Cartesian variational variables that describe an STM element."""
    
     POSITION_X = 0
@@ -2238,14 +2239,14 @@ class STM_PERT_VARIABLES(IntEnum):
     VEL_Z = 5
     """Designates the initial or final variation in the 'z' component of velocity."""
 
-STM_PERT_VARIABLES.POSITION_X.__doc__ = "Designates the initial or final variation in the 'x' component of position."
-STM_PERT_VARIABLES.POSITION_Y.__doc__ = "Designates the initial or final variation in the 'y' component of position."
-STM_PERT_VARIABLES.POSITION_Z.__doc__ = "Designates the initial or final variation in the 'z' component of position."
-STM_PERT_VARIABLES.VEL_X.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
-STM_PERT_VARIABLES.VEL_Y.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
-STM_PERT_VARIABLES.VEL_Z.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
+STM_PERTURBATION_VARIABLES.POSITION_X.__doc__ = "Designates the initial or final variation in the 'x' component of position."
+STM_PERTURBATION_VARIABLES.POSITION_Y.__doc__ = "Designates the initial or final variation in the 'y' component of position."
+STM_PERTURBATION_VARIABLES.POSITION_Z.__doc__ = "Designates the initial or final variation in the 'z' component of position."
+STM_PERTURBATION_VARIABLES.VEL_X.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
+STM_PERTURBATION_VARIABLES.VEL_Y.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
+STM_PERTURBATION_VARIABLES.VEL_Z.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
 
-agcls.AgTypeNameMap["STM_PERT_VARIABLES"] = STM_PERT_VARIABLES
+agcls.AgTypeNameMap["STM_PERTURBATION_VARIABLES"] = STM_PERTURBATION_VARIABLES
 
 class STM_EIGEN_NUMBER(IntEnum):
     """The number that describes one of the 6 STM Eigenvalues or Eigenvectors."""
@@ -2290,11 +2291,11 @@ class SQUARED_TYPE(IntEnum):
    
     SUM_OF_SQUARES = 0
     """Designates the calculation to be the sum of the squares."""
-    OF_SUM = 1
+    SQUARE_OF_SUM = 1
     """Designates the calculation to be the square of the sum."""
 
 SQUARED_TYPE.SUM_OF_SQUARES.__doc__ = "Designates the calculation to be the sum of the squares."
-SQUARED_TYPE.OF_SUM.__doc__ = "Designates the calculation to be the square of the sum."
+SQUARED_TYPE.SQUARE_OF_SUM.__doc__ = "Designates the calculation to be the square of the sum."
 
 agcls.AgTypeNameMap["SQUARED_TYPE"] = SQUARED_TYPE
 
@@ -2588,7 +2589,7 @@ GRAV_PARAM_SOURCE.CENTRAL_BODY_FILE_SYSTEM.__doc__ = "The Cb file provided with 
 
 agcls.AgTypeNameMap["GRAV_PARAM_SOURCE"] = GRAV_PARAM_SOURCE
 
-class EPHEM_SOURCE(IntEnum):
+class EPHEMERIS_SOURCE(IntEnum):
     """The ephemeris source type."""
    
     CENTRAL_BODY_FILE = 0
@@ -2600,12 +2601,12 @@ class EPHEM_SOURCE(IntEnum):
     SPICE_BODY = 3
     """A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."""
 
-EPHEM_SOURCE.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
-EPHEM_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
-EPHEM_SOURCE.SPICE_BARY.__doc__ = "A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."
-EPHEM_SOURCE.SPICE_BODY.__doc__ = "A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."
+EPHEMERIS_SOURCE.CENTRAL_BODY_FILE.__doc__ = "The Cb file provided with STK; uses the default ephemeris source for that central body."
+EPHEMERIS_SOURCE.DESIGN_EXPLORER_OPTIMIZER_FILE.__doc__ = "A DE file; body centered for the inner planets and barycentered for the outer planets."
+EPHEMERIS_SOURCE.SPICE_BARY.__doc__ = "A SPICE file, barycentered; uses the entire planetary system as a single effect, with the system center as the point mass."
+EPHEMERIS_SOURCE.SPICE_BODY.__doc__ = "A SPICE file, body centered; uses only the planet as the effect, with the planet's center as the point mass."
 
-agcls.AgTypeNameMap["EPHEM_SOURCE"] = EPHEM_SOURCE
+agcls.AgTypeNameMap["EPHEMERIS_SOURCE"] = EPHEMERIS_SOURCE
 
 class SOLAR_FORCE_METHOD(IntEnum):
     """The solar force method type for a spherical or N-plate SRP model."""
@@ -2754,20 +2755,20 @@ VENUS_GRAM_DENSITY_TYPE.RANDOMLY_PERTURBED.__doc__ = "Randomly perturbed density
 
 agcls.AgTypeNameMap["VENUS_GRAM_DENSITY_TYPE"] = VENUS_GRAM_DENSITY_TYPE
 
-class TAB_VEC_INTERP_METHOD(IntEnum):
+class TAB_VEC_INTERPOLATION_METHOD(IntEnum):
     """The interpolation method for tabulated area vector file."""
    
     CARTESIAN_INTERPOLATION = 0
     """Bilinear interpolation on the Cartesian grid."""
-    MAGNITUDE_DIRECTION_INTERPOLATION = 1
+    MAGNITUDE_AND_DIRECTION_INTERPOLATION = 1
     """Bilinear interpolation in magnitude and direction space."""
 
-TAB_VEC_INTERP_METHOD.CARTESIAN_INTERPOLATION.__doc__ = "Bilinear interpolation on the Cartesian grid."
-TAB_VEC_INTERP_METHOD.MAGNITUDE_DIRECTION_INTERPOLATION.__doc__ = "Bilinear interpolation in magnitude and direction space."
+TAB_VEC_INTERPOLATION_METHOD.CARTESIAN_INTERPOLATION.__doc__ = "Bilinear interpolation on the Cartesian grid."
+TAB_VEC_INTERPOLATION_METHOD.MAGNITUDE_AND_DIRECTION_INTERPOLATION.__doc__ = "Bilinear interpolation in magnitude and direction space."
 
-agcls.AgTypeNameMap["TAB_VEC_INTERP_METHOD"] = TAB_VEC_INTERP_METHOD
+agcls.AgTypeNameMap["TAB_VEC_INTERPOLATION_METHOD"] = TAB_VEC_INTERPOLATION_METHOD
 
-class CONTROL_ENGINE_CONST_ACC(IntEnum):
+class CONTROL_ENGINE_CONSTANT_ACCELERATION(IntEnum):
     """Constant Acceleration and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
    
     GRAV = 0
@@ -2777,11 +2778,11 @@ class CONTROL_ENGINE_CONST_ACC(IntEnum):
     ISP = 2
     """The specific impulse for the engine."""
 
-CONTROL_ENGINE_CONST_ACC.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
-CONTROL_ENGINE_CONST_ACC.ACCELERATION.__doc__ = "The acceleration for the engine."
-CONTROL_ENGINE_CONST_ACC.ISP.__doc__ = "The specific impulse for the engine."
+CONTROL_ENGINE_CONSTANT_ACCELERATION.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+CONTROL_ENGINE_CONSTANT_ACCELERATION.ACCELERATION.__doc__ = "The acceleration for the engine."
+CONTROL_ENGINE_CONSTANT_ACCELERATION.ISP.__doc__ = "The specific impulse for the engine."
 
-agcls.AgTypeNameMap["CONTROL_ENGINE_CONST_ACC"] = CONTROL_ENGINE_CONST_ACC
+agcls.AgTypeNameMap["CONTROL_ENGINE_CONSTANT_ACCELERATION"] = CONTROL_ENGINE_CONSTANT_ACCELERATION
 
 class CONTROL_ENGINE_CONSTANT(IntEnum):
     """Constant Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
@@ -2828,31 +2829,31 @@ agcls.AgTypeNameMap["CONTROL_ENGINE_THROTTLE_TABLE"] = CONTROL_ENGINE_THROTTLE_T
 class CONTROL_ENGINE_ION(IntEnum):
     """Ion engine model properties that can be selected as control parameters for a Target Sequence."""
    
-    FLOW_RATE_C0 = 0
+    FLOW_RATE_CONSTANT_TERM = 0
     """FlowRateModel.C0 - the constant coefficient."""
-    FLOW_RATE_C1 = 1
+    FLOW_RATE_LINEAR_TERM = 1
     """FlowRateModel.C1 - the linear coefficient."""
-    FLOW_RATE_C2 = 2
+    FLOW_RATE_QUADRATIC_TERM = 2
     """FlowRateModel.C2 - the quadratic coefficient."""
-    FLOW_RATE_C3 = 3
+    FLOW_RATE_CUBIC_TERM = 3
     """FlowRateModel.C3 - the cubic coefficient."""
     GRAV = 4
     """Gravitational acceleration constant at sea level on the Earth."""
-    ISP_C0 = 5
+    ISP_CONSTANT_TERM = 5
     """IspModel.C0 - the constant coefficient."""
-    ISP_C1 = 6
+    ISP_LINEAR_TERM = 6
     """IspModel.C1 - the linear coefficient."""
-    ISP_C2 = 7
+    ISP_QUADRATIC_TERM = 7
     """IspModel.C2 - the quadratic coefficient."""
-    ISP_C3 = 8
+    ISP_CUBIC_TERM = 8
     """IspModel.C3 - the cubic coefficient."""
-    MASS_FLOW_EFFICIENCY_C0 = 9
+    MASS_FLOW_EFFICIENCY_CONSTANT_TERM = 9
     """MassFlowEfficiencyModel.C0 - the constant coefficient."""
-    MASS_FLOW_EFFICIENCY_C1 = 10
+    MASS_FLOW_EFFICIENCY_LINEAR_TERM = 10
     """MassFlowEfficiencyModel.C1 - the linear coefficient."""
-    MASS_FLOW_EFFICIENCY_C2 = 11
+    MASS_FLOW_EFFICIENCY_QUADRATIC_TERM = 11
     """MassFlowEfficiencyModel.C2 - the quadratic coefficient."""
-    MASS_FLOW_EFFICIENCY_C3 = 12
+    MASS_FLOW_EFFICIENCY_CUBIC_TERM = 12
     """MassFlowEfficiencyModel.C3 - the cubic coefficient."""
     MAX_INPUT_POWER = 13
     """Minimum power required for the engine to produce thrust."""
@@ -2862,43 +2863,43 @@ class CONTROL_ENGINE_ION(IntEnum):
     """The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."""
     PERCENT_THROTTLE = 16
     """Percentage of available thrust to use (100 is full on, 0 is off)."""
-    POWER_EFFICIENCY_C0 = 17
+    POWER_EFFICIENCY_CONSTANT_TERM = 17
     """PowerEfficiencyModel.C0 - the constant coefficient."""
-    POWER_EFFICIENCY_C1 = 18
+    POWER_EFFICIENCY_LINEAR_TERM = 18
     """PowerEfficiencyModel.C1 - the linear coefficient."""
-    POWER_EFFICIENCY_C2 = 19
+    POWER_EFFICIENCY_QUADRATIC_TERM = 19
     """PowerEfficiencyModel.C2 - the quadratic coefficient."""
-    POWER_EFFICIENCY_C3 = 20
+    POWER_EFFICIENCY_CUBIC_TERM = 20
     """PowerEfficiencyModel.C3 - the cubic coefficient."""
     REFERENCE_EPOCH = 21
     """The date and time used as a reference epoch for degradation."""
 
-CONTROL_ENGINE_ION.FLOW_RATE_C0.__doc__ = "FlowRateModel.C0 - the constant coefficient."
-CONTROL_ENGINE_ION.FLOW_RATE_C1.__doc__ = "FlowRateModel.C1 - the linear coefficient."
-CONTROL_ENGINE_ION.FLOW_RATE_C2.__doc__ = "FlowRateModel.C2 - the quadratic coefficient."
-CONTROL_ENGINE_ION.FLOW_RATE_C3.__doc__ = "FlowRateModel.C3 - the cubic coefficient."
+CONTROL_ENGINE_ION.FLOW_RATE_CONSTANT_TERM.__doc__ = "FlowRateModel.C0 - the constant coefficient."
+CONTROL_ENGINE_ION.FLOW_RATE_LINEAR_TERM.__doc__ = "FlowRateModel.C1 - the linear coefficient."
+CONTROL_ENGINE_ION.FLOW_RATE_QUADRATIC_TERM.__doc__ = "FlowRateModel.C2 - the quadratic coefficient."
+CONTROL_ENGINE_ION.FLOW_RATE_CUBIC_TERM.__doc__ = "FlowRateModel.C3 - the cubic coefficient."
 CONTROL_ENGINE_ION.GRAV.__doc__ = "Gravitational acceleration constant at sea level on the Earth."
-CONTROL_ENGINE_ION.ISP_C0.__doc__ = "IspModel.C0 - the constant coefficient."
-CONTROL_ENGINE_ION.ISP_C1.__doc__ = "IspModel.C1 - the linear coefficient."
-CONTROL_ENGINE_ION.ISP_C2.__doc__ = "IspModel.C2 - the quadratic coefficient."
-CONTROL_ENGINE_ION.ISP_C3.__doc__ = "IspModel.C3 - the cubic coefficient."
-CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C0.__doc__ = "MassFlowEfficiencyModel.C0 - the constant coefficient."
-CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C1.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
-CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C2.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
-CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_C3.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
+CONTROL_ENGINE_ION.ISP_CONSTANT_TERM.__doc__ = "IspModel.C0 - the constant coefficient."
+CONTROL_ENGINE_ION.ISP_LINEAR_TERM.__doc__ = "IspModel.C1 - the linear coefficient."
+CONTROL_ENGINE_ION.ISP_QUADRATIC_TERM.__doc__ = "IspModel.C2 - the quadratic coefficient."
+CONTROL_ENGINE_ION.ISP_CUBIC_TERM.__doc__ = "IspModel.C3 - the cubic coefficient."
+CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CONSTANT_TERM.__doc__ = "MassFlowEfficiencyModel.C0 - the constant coefficient."
+CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_LINEAR_TERM.__doc__ = "MassFlowEfficiencyModel.C1 - the linear coefficient."
+CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_QUADRATIC_TERM.__doc__ = "MassFlowEfficiencyModel.C2 - the quadratic coefficient."
+CONTROL_ENGINE_ION.MASS_FLOW_EFFICIENCY_CUBIC_TERM.__doc__ = "MassFlowEfficiencyModel.C3 - the cubic coefficient."
 CONTROL_ENGINE_ION.MAX_INPUT_POWER.__doc__ = "Minimum power required for the engine to produce thrust."
 CONTROL_ENGINE_ION.MIN_REQUIRED_POWER.__doc__ = "Maximum power that can be used by the engine to produce thrust."
 CONTROL_ENGINE_ION.PERCENT_DEGRADATION_PER_YEAR.__doc__ = "The degradation factor is (1 - x)n, where n is the time since epoch in years, and x is the percent degradation per year."
 CONTROL_ENGINE_ION.PERCENT_THROTTLE.__doc__ = "Percentage of available thrust to use (100 is full on, 0 is off)."
-CONTROL_ENGINE_ION.POWER_EFFICIENCY_C0.__doc__ = "PowerEfficiencyModel.C0 - the constant coefficient."
-CONTROL_ENGINE_ION.POWER_EFFICIENCY_C1.__doc__ = "PowerEfficiencyModel.C1 - the linear coefficient."
-CONTROL_ENGINE_ION.POWER_EFFICIENCY_C2.__doc__ = "PowerEfficiencyModel.C2 - the quadratic coefficient."
-CONTROL_ENGINE_ION.POWER_EFFICIENCY_C3.__doc__ = "PowerEfficiencyModel.C3 - the cubic coefficient."
+CONTROL_ENGINE_ION.POWER_EFFICIENCY_CONSTANT_TERM.__doc__ = "PowerEfficiencyModel.C0 - the constant coefficient."
+CONTROL_ENGINE_ION.POWER_EFFICIENCY_LINEAR_TERM.__doc__ = "PowerEfficiencyModel.C1 - the linear coefficient."
+CONTROL_ENGINE_ION.POWER_EFFICIENCY_QUADRATIC_TERM.__doc__ = "PowerEfficiencyModel.C2 - the quadratic coefficient."
+CONTROL_ENGINE_ION.POWER_EFFICIENCY_CUBIC_TERM.__doc__ = "PowerEfficiencyModel.C3 - the cubic coefficient."
 CONTROL_ENGINE_ION.REFERENCE_EPOCH.__doc__ = "The date and time used as a reference epoch for degradation."
 
 agcls.AgTypeNameMap["CONTROL_ENGINE_ION"] = CONTROL_ENGINE_ION
 
-class CONTROL_ENGINE_MODEL_POLY(IntEnum):
+class CONTROL_ENGINE_MODEL_POLYNOMIAL(IntEnum):
     """Polynomial Thrust and Isp engine model properties that can be selected as control parameters for a Target Sequence."""
    
     THRUST_C0 = 0
@@ -2931,7 +2932,7 @@ class CONTROL_ENGINE_MODEL_POLY(IntEnum):
     """The thrust K0 coefficient."""
     THRUST_K1 = 14
     """The thrust K1 coefficient."""
-    THRUST_REFERENCE_TEMP = 15
+    THRUST_REFERENCE_TEMPERATURE = 15
     """The thrust reference temperature, Tr."""
     ISP_C0 = 16
     """The specific impulse C0 coefficient."""
@@ -2968,41 +2969,41 @@ class CONTROL_ENGINE_MODEL_POLY(IntEnum):
     GRAV = 32
     """The gravitational acceleration constant at sea level on the Earth."""
 
-CONTROL_ENGINE_MODEL_POLY.THRUST_C0.__doc__ = "The thrust C0 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C1.__doc__ = "The thrust C1 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C2.__doc__ = "The thrust C2 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C3.__doc__ = "The thrust C3 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C4.__doc__ = "The thrust C4 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C5.__doc__ = "The thrust C5 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C6.__doc__ = "The thrust C6 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_C7.__doc__ = "The thrust C7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_B7.__doc__ = "The thrust B7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_E4.__doc__ = "The thrust E4 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_E5.__doc__ = "The thrust E5 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_E6.__doc__ = "The thrust E6 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_E7.__doc__ = "The thrust E7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_K0.__doc__ = "The thrust K0 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_K1.__doc__ = "The thrust K1 coefficient."
-CONTROL_ENGINE_MODEL_POLY.THRUST_REFERENCE_TEMP.__doc__ = "The thrust reference temperature, Tr."
-CONTROL_ENGINE_MODEL_POLY.ISP_C0.__doc__ = "The specific impulse C0 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C1.__doc__ = "The specific impulse C1 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C2.__doc__ = "The specific impulse C2 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C3.__doc__ = "The specific impulse C3 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C4.__doc__ = "The specific impulse C4 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C5.__doc__ = "The specific impulse C5 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C6.__doc__ = "The specific impulse C6 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_C7.__doc__ = "The specific impulse C7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_B7.__doc__ = "The specific impulse B7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_E4.__doc__ = "The specific impulse E4 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_E5.__doc__ = "The specific impulse E5 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_E6.__doc__ = "The specific impulse E6 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_E7.__doc__ = "The specific impulse E7 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_K0.__doc__ = "The specific impulse K0 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_K1.__doc__ = "The specific impulse K1 coefficient."
-CONTROL_ENGINE_MODEL_POLY.ISP_REFERENCE_TEMP.__doc__ = "The specific impulse reference temperature, Tr."
-CONTROL_ENGINE_MODEL_POLY.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C0.__doc__ = "The thrust C0 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C1.__doc__ = "The thrust C1 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C2.__doc__ = "The thrust C2 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C3.__doc__ = "The thrust C3 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C4.__doc__ = "The thrust C4 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C5.__doc__ = "The thrust C5 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C6.__doc__ = "The thrust C6 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_C7.__doc__ = "The thrust C7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_B7.__doc__ = "The thrust B7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E4.__doc__ = "The thrust E4 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E5.__doc__ = "The thrust E5 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E6.__doc__ = "The thrust E6 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_E7.__doc__ = "The thrust E7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K0.__doc__ = "The thrust K0 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_K1.__doc__ = "The thrust K1 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.THRUST_REFERENCE_TEMPERATURE.__doc__ = "The thrust reference temperature, Tr."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C0.__doc__ = "The specific impulse C0 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C1.__doc__ = "The specific impulse C1 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C2.__doc__ = "The specific impulse C2 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C3.__doc__ = "The specific impulse C3 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C4.__doc__ = "The specific impulse C4 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C5.__doc__ = "The specific impulse C5 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C6.__doc__ = "The specific impulse C6 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_C7.__doc__ = "The specific impulse C7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_B7.__doc__ = "The specific impulse B7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E4.__doc__ = "The specific impulse E4 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E5.__doc__ = "The specific impulse E5 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E6.__doc__ = "The specific impulse E6 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_E7.__doc__ = "The specific impulse E7 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K0.__doc__ = "The specific impulse K0 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_K1.__doc__ = "The specific impulse K1 coefficient."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.ISP_REFERENCE_TEMP.__doc__ = "The specific impulse reference temperature, Tr."
+CONTROL_ENGINE_MODEL_POLYNOMIAL.GRAV.__doc__ = "The gravitational acceleration constant at sea level on the Earth."
 
-agcls.AgTypeNameMap["CONTROL_ENGINE_MODEL_POLY"] = CONTROL_ENGINE_MODEL_POLY
+agcls.AgTypeNameMap["CONTROL_ENGINE_MODEL_POLYNOMIAL"] = CONTROL_ENGINE_MODEL_POLYNOMIAL
 
 class ENGINE_MODEL_FUNCTION(IntEnum):
     """The engine model function types."""
@@ -3041,11 +3042,11 @@ class IDEAL_ORBIT_RADIUS(IntEnum):
    
     EPOCH_CENTERED_AVG_SOURCE_RADIUS = 0
     """Epoch centered average source radius."""
-    INSTANT_CHAR_DISTANCE = 1
+    INSTANTANEOUS_CHARACTERISTIC_DISTANCE = 1
     """Instantanous characteristic distance."""
 
 IDEAL_ORBIT_RADIUS.EPOCH_CENTERED_AVG_SOURCE_RADIUS.__doc__ = "Epoch centered average source radius."
-IDEAL_ORBIT_RADIUS.INSTANT_CHAR_DISTANCE.__doc__ = "Instantanous characteristic distance."
+IDEAL_ORBIT_RADIUS.INSTANTANEOUS_CHARACTERISTIC_DISTANCE.__doc__ = "Instantanous characteristic distance."
 
 agcls.AgTypeNameMap["IDEAL_ORBIT_RADIUS"] = IDEAL_ORBIT_RADIUS
 
@@ -3083,7 +3084,7 @@ agcls.AgTypeNameMap["ROTATING_COORDINATE_SYSTEM"] = ROTATING_COORDINATE_SYSTEM
 class CONTROL_THRUSTERS(IntEnum):
     """Thruster properties that can be selected as control parameters for a Target Sequence."""
    
-    EQUIV_ON_TIME = 0
+    EQUIVALENT_ON_TIME_PERCENT = 0
     """The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."""
     THRUST_EFFICIENCY = 1
     """The thruster efficiency."""
@@ -3098,7 +3099,7 @@ class CONTROL_THRUSTERS(IntEnum):
     CARTESIAN_Z = 6
     """Thruster direction defined as a vector in the body frame. Cartesian Z value."""
 
-CONTROL_THRUSTERS.EQUIV_ON_TIME.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
+CONTROL_THRUSTERS.EQUIVALENT_ON_TIME_PERCENT.__doc__ = "The equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced."
 CONTROL_THRUSTERS.THRUST_EFFICIENCY.__doc__ = "The thruster efficiency."
 CONTROL_THRUSTERS.SPHERICAL_AZIMUTH.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical azimuth value."
 CONTROL_THRUSTERS.SPHERICAL_ELEVATION.__doc__ = "Thruster direction defined as a vector in the body frame. Spherical elevation value."
@@ -3181,43 +3182,43 @@ agcls.AgTypeNameMap["PREDICTOR_CORRECTOR"] = PREDICTOR_CORRECTOR
 class NUMERICAL_INTEGRATOR(IntEnum):
     """Numerical integrator type."""
    
-    RUNGE_KUTTA4_TH_ADAPT = 0
+    RUNGE_KUTTA_4TH_ADAPT = 0
     """A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."""
-    RUNGE_KUTTA_F_7TH_8TH = 1
+    RUNGE_KUTTA_FEHLBERG_7TH_8TH = 1
     """A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."""
-    RUNGE_KUTTA_V_8TH_9TH = 2
+    RUNGE_KUTTA_VERNER_8TH_9TH = 2
     """A 9th order Runge-Kutta-Verner integrator with 8th order error control."""
     BULIRSCH_STOER = 3
     """An integrator based on Richardson extrapolation with automatic step size control."""
     GAUSS_JACKSON = 4
     """A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."""
-    RUNGE_KUTTA2_ND3_RD = 5
+    RUNGE_KUTTA_2ND_3RD = 5
     """A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."""
-    RUNGE_KUTTA4_TH5_TH = 6
+    RUNGE_KUTTA_4TH_5TH = 6
     """A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."""
-    RUNGE_KUTTA4_TH = 7
+    RUNGE_KUTTA_4TH = 7
     """A 4th order Runge-Kutta integrator that does not employ error control."""
 
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA_F_7TH_8TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA_V_8TH_9TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_ADAPT.__doc__ = "A 4th order Runge-Kutta integrator, adapting step size by comparing one full step to two half steps. Although this technique can be quite slow compared to the other algorithms, it is very common and can be used for comparison."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_FEHLBERG_7TH_8TH.__doc__ = "A 7th order Runge-Kutta-Fehlberg integrator with 8th order error control. This is the default integrator used in the HPOP propagator."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_VERNER_8TH_9TH.__doc__ = "A 9th order Runge-Kutta-Verner integrator with 8th order error control."
 NUMERICAL_INTEGRATOR.BULIRSCH_STOER.__doc__ = "An integrator based on Richardson extrapolation with automatic step size control."
 NUMERICAL_INTEGRATOR.GAUSS_JACKSON.__doc__ = "A 12th order Gauss-Jackson integrator for second order ODEs. There is currently no error control implemented for this method, meaning that a fixed step size is used."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA2_ND3_RD.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH5_TH.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
-NUMERICAL_INTEGRATOR.RUNGE_KUTTA4_TH.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_2ND_3RD.__doc__ = "A 2nd order Runge-Kutta integrator with 3rd order error control, using Bogacki and Shampine coefficients."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH_5TH.__doc__ = "A 4th order Runge-Kutta integrator with 5th order error control, using Cash-Karp coefficients."
+NUMERICAL_INTEGRATOR.RUNGE_KUTTA_4TH.__doc__ = "A 4th order Runge-Kutta integrator that does not employ error control."
 
 agcls.AgTypeNameMap["NUMERICAL_INTEGRATOR"] = NUMERICAL_INTEGRATOR
 
 class COEFF_RUNGE_KUTTA_V_8TH_9TH(IntEnum):
     """Coefficient sets for RKV8th(9th) integrator."""
    
-    COEFF_1978 = 0
+    COEFFICIENT_1978 = 0
     """SIAM 1978."""
     EFFICIENT = 1
     """Efficient."""
 
-COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFF_1978.__doc__ = "SIAM 1978."
+COEFF_RUNGE_KUTTA_V_8TH_9TH.COEFFICIENT_1978.__doc__ = "SIAM 1978."
 COEFF_RUNGE_KUTTA_V_8TH_9TH.EFFICIENT.__doc__ = "Efficient."
 
 agcls.AgTypeNameMap["COEFF_RUNGE_KUTTA_V_8TH_9TH"] = COEFF_RUNGE_KUTTA_V_8TH_9TH
@@ -3661,7 +3662,7 @@ class IElement(object):
 agcls.AgClassCatalog.add_catalog_entry((5488204777371386664, 9539562261869440956), IElement)
 agcls.AgTypeNameMap["IElement"] = IElement
 
-class IMissionControlSequenceSegment(object):
+class IMCSSegment(object):
     """General properties for segments."""
 
     _num_methods = 8
@@ -3673,25 +3674,25 @@ class IMissionControlSequenceSegment(object):
     _get_result_value_method_offset = 5
     _run_method_offset = 6
     _get_results_method_offset = 7
-    _get_exec_summary_method_offset = 8
+    _get_segment_summary_method_offset = 8
     _metadata = {
         "iid_data" : (5363594983371740097, 13023539001208839335),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IMissionControlSequenceSegment."""
-        initialize_from_source_object(self, sourceObject, IMissionControlSequenceSegment)
+        """Construct an object of type IMCSSegment."""
+        initialize_from_source_object(self, sourceObject, IMCSSegment)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IMissionControlSequenceSegment)
+        return get_interface_property(attrname, IMCSSegment)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IMissionControlSequenceSegment, None)
+        set_interface_attribute(self, attrname, value, IMCSSegment, None)
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -3699,15 +3700,15 @@ class IMissionControlSequenceSegment(object):
     @property
     def type(self) -> "SEGMENT_TYPE":
         """Return the type of segment."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_type_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_type_metadata)
 
     _get_properties_metadata = { "offset" : _get_properties_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def properties(self) -> "MissionControlSequenceSegmentProperties":
+    def properties(self) -> "MCSSegmentProperties":
         """Return the properties of the segment."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_properties_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_properties_metadata)
 
     _get_initial_state_metadata = { "offset" : _get_initial_state_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3715,7 +3716,7 @@ class IMissionControlSequenceSegment(object):
     @property
     def initial_state(self) -> "State":
         """Get the initial state of the segment."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_initial_state_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_initial_state_metadata)
 
     _get_final_state_metadata = { "offset" : _get_final_state_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3723,50 +3724,50 @@ class IMissionControlSequenceSegment(object):
     @property
     def final_state(self) -> "State":
         """Get the final state of the segment."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_final_state_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_final_state_metadata)
 
     _get_result_value_metadata = { "offset" : _get_result_value_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg,) }
     def get_result_value(self, resultName:str) -> typing.Any:
         """Return a result value."""
-        return self._intf.invoke(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_result_value_metadata, resultName, OutArg())
+        return self._intf.invoke(IMCSSegment._metadata, IMCSSegment._get_result_value_metadata, resultName, OutArg())
 
     _run_metadata = { "offset" : _run_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def run(self) -> "State":
-        """Run the segment in individual segment mode.  See DriverMissionControlSequence."""
-        return self._intf.invoke(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._run_metadata, OutArg())
+        """Run the segment in individual segment mode.  See MCSDriver."""
+        return self._intf.invoke(IMCSSegment._metadata, IMCSSegment._run_metadata, OutArg())
 
     _get_results_metadata = { "offset" : _get_results_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def results(self) -> "CalcObjectCollection":
+    def results(self) -> "CalculationObjectCollection":
         """Get the results of the segment."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_results_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_results_metadata)
 
-    _get_exec_summary_metadata = { "offset" : _get_exec_summary_method_offset,
+    _get_segment_summary_metadata = { "offset" : _get_segment_summary_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def exec_summary(self) -> "IDataProviderResult":
+    def segment_summary(self) -> "IDataProviderResult":
         """Get the segment summary report."""
-        return self._intf.get_property(IMissionControlSequenceSegment._metadata, IMissionControlSequenceSegment._get_exec_summary_metadata)
+        return self._intf.get_property(IMCSSegment._metadata, IMCSSegment._get_segment_summary_metadata)
 
     _property_names[type] = "type"
     _property_names[properties] = "properties"
     _property_names[initial_state] = "initial_state"
     _property_names[final_state] = "final_state"
     _property_names[results] = "results"
-    _property_names[exec_summary] = "exec_summary"
+    _property_names[segment_summary] = "segment_summary"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5363594983371740097, 13023539001208839335), IMissionControlSequenceSegment)
-agcls.AgTypeNameMap["IMissionControlSequenceSegment"] = IMissionControlSequenceSegment
+agcls.AgClassCatalog.add_catalog_entry((5363594983371740097, 13023539001208839335), IMCSSegment)
+agcls.AgTypeNameMap["IMCSSegment"] = IMCSSegment
 
-class IMissionControlSequenceSequence(object):
+class IMCSSequence(object):
     """Properties for a Sequence segment."""
 
     _num_methods = 9
@@ -3786,18 +3787,18 @@ class IMissionControlSequenceSequence(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IMissionControlSequenceSequence."""
-        initialize_from_source_object(self, sourceObject, IMissionControlSequenceSequence)
+        """Construct an object of type IMCSSequence."""
+        initialize_from_source_object(self, sourceObject, IMCSSequence)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IMissionControlSequenceSequence)
+        return get_interface_property(attrname, IMCSSequence)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IMissionControlSequenceSequence, None)
+        set_interface_attribute(self, attrname, value, IMCSSequence, None)
     
     _get_repeat_count_metadata = { "offset" : _get_repeat_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -3805,14 +3806,14 @@ class IMissionControlSequenceSequence(object):
     @property
     def repeat_count(self) -> int:
         """Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless."""
-        return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_repeat_count_metadata)
+        return self._intf.get_property(IMCSSequence._metadata, IMCSSequence._get_repeat_count_metadata)
 
     _set_repeat_count_metadata = { "offset" : _set_repeat_count_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @repeat_count.setter
     def repeat_count(self, newVal:int) -> None:
-        return self._intf.set_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._set_repeat_count_metadata, newVal)
+        return self._intf.set_property(IMCSSequence._metadata, IMCSSequence._set_repeat_count_metadata, newVal)
 
     _get_generate_ephemeris_metadata = { "offset" : _get_generate_ephemeris_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -3820,22 +3821,22 @@ class IMissionControlSequenceSequence(object):
     @property
     def generate_ephemeris(self) -> bool:
         """If true, the sequence generates ephemeris and displays it in the 2D and 3D Graphics windows."""
-        return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_generate_ephemeris_metadata)
+        return self._intf.get_property(IMCSSequence._metadata, IMCSSequence._get_generate_ephemeris_metadata)
 
     _set_generate_ephemeris_metadata = { "offset" : _set_generate_ephemeris_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @generate_ephemeris.setter
     def generate_ephemeris(self, newVal:bool) -> None:
-        return self._intf.set_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._set_generate_ephemeris_metadata, newVal)
+        return self._intf.set_property(IMCSSequence._metadata, IMCSSequence._set_generate_ephemeris_metadata, newVal)
 
     _get_segments_metadata = { "offset" : _get_segments_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def segments(self) -> "MissionControlSequenceSegmentCollection":
+    def segments(self) -> "MCSSegmentCollection":
         """Get the list of segments defined for the sequence."""
-        return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_segments_metadata)
+        return self._intf.get_property(IMCSSequence._metadata, IMCSSequence._get_segments_metadata)
 
     _get_sequence_state_to_pass_metadata = { "offset" : _get_sequence_state_to_pass_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -3843,14 +3844,14 @@ class IMissionControlSequenceSequence(object):
     @property
     def sequence_state_to_pass(self) -> "SEQUENCE_STATE_TO_PASS":
         """State To Pass To Next Segment - the state of the sequence to pass."""
-        return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_sequence_state_to_pass_metadata)
+        return self._intf.get_property(IMCSSequence._metadata, IMCSSequence._get_sequence_state_to_pass_metadata)
 
     _set_sequence_state_to_pass_metadata = { "offset" : _set_sequence_state_to_pass_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SEQUENCE_STATE_TO_PASS),) }
     @sequence_state_to_pass.setter
     def sequence_state_to_pass(self, inVal:"SEQUENCE_STATE_TO_PASS") -> None:
-        return self._intf.set_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._set_sequence_state_to_pass_metadata, inVal)
+        return self._intf.set_property(IMCSSequence._metadata, IMCSSequence._set_sequence_state_to_pass_metadata, inVal)
 
     _get_scripting_tool_metadata = { "offset" : _get_scripting_tool_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -3858,14 +3859,14 @@ class IMissionControlSequenceSequence(object):
     @property
     def scripting_tool(self) -> "ScriptingTool":
         """Return the Scripting tool for the sequence."""
-        return self._intf.get_property(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._get_scripting_tool_metadata)
+        return self._intf.get_property(IMCSSequence._metadata, IMCSSequence._get_scripting_tool_metadata)
 
     _apply_script_metadata = { "offset" : _apply_script_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_script(self) -> None:
         """Apply the script."""
-        return self._intf.invoke(IMissionControlSequenceSequence._metadata, IMissionControlSequenceSequence._apply_script_metadata, )
+        return self._intf.invoke(IMCSSequence._metadata, IMCSSequence._apply_script_metadata, )
 
     _property_names[repeat_count] = "repeat_count"
     _property_names[generate_ephemeris] = "generate_ephemeris"
@@ -3874,8 +3875,8 @@ class IMissionControlSequenceSequence(object):
     _property_names[scripting_tool] = "scripting_tool"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5582283013374644007, 10842020077807962011), IMissionControlSequenceSequence)
-agcls.AgTypeNameMap["IMissionControlSequenceSequence"] = IMissionControlSequenceSequence
+agcls.AgClassCatalog.add_catalog_entry((5582283013374644007, 10842020077807962011), IMCSSequence)
+agcls.AgTypeNameMap["IMCSSequence"] = IMCSSequence
 
 class IProfile(object):
     """General properties for target sequence profiles."""
@@ -3988,7 +3989,7 @@ class IProfile(object):
 agcls.AgClassCatalog.add_catalog_entry((4686877490284796494, 11687945607961083032), IProfile)
 agcls.AgTypeNameMap["IProfile"] = IProfile
 
-class ICentralBodyEphemeris(object):
+class ICentralBodyComponentEphemeris(object):
     """The central body ephemeris source."""
 
     _num_methods = 0
@@ -3999,25 +4000,25 @@ class ICentralBodyEphemeris(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type ICentralBodyEphemeris."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyEphemeris)
+        """Construct an object of type ICentralBodyComponentEphemeris."""
+        initialize_from_source_object(self, sourceObject, ICentralBodyComponentEphemeris)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ICentralBodyEphemeris)
+        return get_interface_property(attrname, ICentralBodyComponentEphemeris)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ICentralBodyEphemeris, None)
+        set_interface_attribute(self, attrname, value, ICentralBodyComponentEphemeris, None)
     
 
 
-agcls.AgClassCatalog.add_catalog_entry((5592778241070953614, 10499311837320329628), ICentralBodyEphemeris)
-agcls.AgTypeNameMap["ICentralBodyEphemeris"] = ICentralBodyEphemeris
+agcls.AgClassCatalog.add_catalog_entry((5592778241070953614, 10499311837320329628), ICentralBodyComponentEphemeris)
+agcls.AgTypeNameMap["ICentralBodyComponentEphemeris"] = ICentralBodyComponentEphemeris
 
-class ICentralBodyShape(object):
+class ICentralBodyComponentShape(object):
     """The central body shape."""
 
     _num_methods = 0
@@ -4028,25 +4029,25 @@ class ICentralBodyShape(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type ICentralBodyShape."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyShape)
+        """Construct an object of type ICentralBodyComponentShape."""
+        initialize_from_source_object(self, sourceObject, ICentralBodyComponentShape)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ICentralBodyShape)
+        return get_interface_property(attrname, ICentralBodyComponentShape)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ICentralBodyShape, None)
+        set_interface_attribute(self, attrname, value, ICentralBodyComponentShape, None)
     
 
 
-agcls.AgClassCatalog.add_catalog_entry((4933547587540680255, 5573209392764395165), ICentralBodyShape)
-agcls.AgTypeNameMap["ICentralBodyShape"] = ICentralBodyShape
+agcls.AgClassCatalog.add_catalog_entry((4933547587540680255, 5573209392764395165), ICentralBodyComponentShape)
+agcls.AgTypeNameMap["ICentralBodyComponentShape"] = ICentralBodyComponentShape
 
-class ICentralBodyAttitude(object):
+class ICentralBodyComponentAttitude(object):
     """The central body attitude."""
 
     _num_methods = 0
@@ -4057,23 +4058,71 @@ class ICentralBodyAttitude(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type ICentralBodyAttitude."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyAttitude)
+        """Construct an object of type ICentralBodyComponentAttitude."""
+        initialize_from_source_object(self, sourceObject, ICentralBodyComponentAttitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ICentralBodyAttitude)
+        return get_interface_property(attrname, ICentralBodyComponentAttitude)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ICentralBodyAttitude, None)
+        set_interface_attribute(self, attrname, value, ICentralBodyComponentAttitude, None)
     
 
 
-agcls.AgClassCatalog.add_catalog_entry((5344723028474245754, 5582255056768029873), ICentralBodyAttitude)
-agcls.AgTypeNameMap["ICentralBodyAttitude"] = ICentralBodyAttitude
+agcls.AgClassCatalog.add_catalog_entry((5344723028474245754, 5582255056768029873), ICentralBodyComponentAttitude)
+agcls.AgTypeNameMap["ICentralBodyComponentAttitude"] = ICentralBodyComponentAttitude
+
+class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComponentEphemeris):
+    """Properties for the JPL DE ephemeris source."""
+
+    _num_methods = 2
+    _vtable_offset = ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods
+    _get_jplde_filename_method_offset = 1
+    _set_jplde_filename_method_offset = 2
+    _metadata = {
+        "iid_data" : (5096958885497432761, 15383033303903279551),
+        "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
+    }
+    _property_names = {}
+    def __init__(self, sourceObject=None):
+        """Construct an object of type ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides."""
+        initialize_from_source_object(self, sourceObject, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        ICentralBodyComponentEphemeris._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_interface_attribute(self, attrname, value, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris)
+    
+    _get_jplde_filename_metadata = { "offset" : _get_jplde_filename_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def jplde_filename(self) -> str:
+        """Get or set the DE file name."""
+        return self._intf.get_property(ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._metadata, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._get_jplde_filename_metadata)
+
+    _set_jplde_filename_metadata = { "offset" : _set_jplde_filename_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @jplde_filename.setter
+    def jplde_filename(self, newVal:str) -> None:
+        return self._intf.set_property(ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._metadata, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._set_jplde_filename_metadata, newVal)
+
+    _property_names[jplde_filename] = "jplde_filename"
+
+
+agcls.AgClassCatalog.add_catalog_entry((5096958885497432761, 15383033303903279551), ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
+agcls.AgTypeNameMap["ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides"] = ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides
 
 class INumericalIntegrator(object):
     """The type of numerical integrator to be used by the propagator."""
@@ -4106,7 +4155,7 @@ agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 
 
-class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
+class MCSDriver(IVehiclePropagator, SupportsDeleteCallback):
     """Properties for the Mission Control Sequence."""
 
     _num_methods = 14
@@ -4114,16 +4163,16 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
     _get_main_sequence_method_offset = 1
     _get_options_method_offset = 2
     _get_auto_sequence_method_offset = 3
-    _run_mission_control_sequence_method_offset = 4
+    _run_mcs_method_offset = 4
     _begin_run_method_offset = 5
     _end_run_method_offset = 6
-    _clear_dwc_graphics_method_offset = 7
+    _clear_draw_while_calculating_graphics_method_offset = 7
     _reset_all_profiles_method_offset = 8
     _apply_all_profile_changes_method_offset = 9
     _append_run_method_offset = 10
     _append_run_from_time_method_offset = 11
     _append_run_from_state_method_offset = 12
-    _run_mission_control_sequence2_method_offset = 13
+    _run_mcs2_method_offset = 13
     _get_calculation_graphs_method_offset = 14
     _metadata = {
         "iid_data" : (5434593673786300345, 9884445645793902248),
@@ -4131,23 +4180,23 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, DriverMissionControlSequence)
+        return get_interface_property(attrname, MCSDriver)
     
     _get_main_sequence_metadata = { "offset" : _get_main_sequence_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def main_sequence(self) -> "MissionControlSequenceSegmentCollection":
+    def main_sequence(self) -> "MCSSegmentCollection":
         """Get the Mission Control Sequence."""
-        return self._intf.get_property(DriverMissionControlSequence._metadata, DriverMissionControlSequence._get_main_sequence_metadata)
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_main_sequence_metadata)
 
     _get_options_metadata = { "offset" : _get_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def options(self) -> "MissionControlSequenceOptions":
+    def options(self) -> "MCSOptions":
         """Get the Mission Control Sequence options."""
-        return self._intf.get_property(DriverMissionControlSequence._metadata, DriverMissionControlSequence._get_options_metadata)
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_options_metadata)
 
     _get_auto_sequence_metadata = { "offset" : _get_auto_sequence_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4155,77 +4204,77 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
     @property
     def auto_sequence(self) -> "AutomaticSequenceCollection":
         """Get the Automatic Sequences."""
-        return self._intf.get_property(DriverMissionControlSequence._metadata, DriverMissionControlSequence._get_auto_sequence_metadata)
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_auto_sequence_metadata)
 
-    _run_mission_control_sequence_metadata = { "offset" : _run_mission_control_sequence_method_offset,
+    _run_mcs_metadata = { "offset" : _run_mcs_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def run_mission_control_sequence(self) -> None:
+    def run_mcs(self) -> None:
         """Run the current MCS."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._run_mission_control_sequence_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs_metadata, )
 
     _begin_run_metadata = { "offset" : _begin_run_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def begin_run(self) -> None:
         """Begins an individual segment mode run."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._begin_run_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._begin_run_metadata, )
 
     _end_run_metadata = { "offset" : _end_run_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def end_run(self) -> None:
         """End an individual segment mode run."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._end_run_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._end_run_metadata, )
 
-    _clear_dwc_graphics_metadata = { "offset" : _clear_dwc_graphics_method_offset,
+    _clear_draw_while_calculating_graphics_metadata = { "offset" : _clear_draw_while_calculating_graphics_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def clear_dwc_graphics(self) -> None:
+    def clear_draw_while_calculating_graphics(self) -> None:
         """Clear the draw while calculating graphics."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._clear_dwc_graphics_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._clear_draw_while_calculating_graphics_metadata, )
 
     _reset_all_profiles_metadata = { "offset" : _reset_all_profiles_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def reset_all_profiles(self) -> None:
         """Reset all active profiles in all target sequences."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._reset_all_profiles_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._reset_all_profiles_metadata, )
 
     _apply_all_profile_changes_metadata = { "offset" : _apply_all_profile_changes_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_all_profile_changes(self) -> None:
         """Apply all active profile changes in all target sequences."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._apply_all_profile_changes_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._apply_all_profile_changes_metadata, )
 
     _append_run_metadata = { "offset" : _append_run_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def append_run(self) -> None:
         """Append the existing ephemeris with another individual segment mode run."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._append_run_metadata, )
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._append_run_metadata, )
 
     _append_run_from_time_metadata = { "offset" : _append_run_from_time_method_offset,
             "arg_types" : (agcom.Variant, agcom.LONG,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.EnumArg(CLEAR_EPHEMERIS_DIRECTION),) }
     def append_run_from_time(self, epoch:typing.Any, clearEphemerisDirection:"CLEAR_EPHEMERIS_DIRECTION") -> None:
         """Append the existing ephemeris with another individual segment mode run, starting at a specified time. Ephemeris is cleared from time based on clear direction."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._append_run_from_time_metadata, epoch, clearEphemerisDirection)
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._append_run_from_time_metadata, epoch, clearEphemerisDirection)
 
     _append_run_from_state_metadata = { "offset" : _append_run_from_state_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG,),
             "marshallers" : (agmarshall.InterfaceInArg("State"), agmarshall.EnumArg(CLEAR_EPHEMERIS_DIRECTION),) }
     def append_run_from_state(self, appendState:"State", clearEphemerisDirection:"CLEAR_EPHEMERIS_DIRECTION") -> None:
         """Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._append_run_from_state_metadata, appendState, clearEphemerisDirection)
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._append_run_from_state_metadata, appendState, clearEphemerisDirection)
 
-    _run_mission_control_sequence2_metadata = { "offset" : _run_mission_control_sequence2_method_offset,
+    _run_mcs2_metadata = { "offset" : _run_mcs2_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(RUN_CODE),) }
-    def run_mission_control_sequence2(self) -> "RUN_CODE":
+    def run_mcs2(self) -> "RUN_CODE":
         """Run the current MCS and returns an error code."""
-        return self._intf.invoke(DriverMissionControlSequence._metadata, DriverMissionControlSequence._run_mission_control_sequence2_metadata, OutArg())
+        return self._intf.invoke(MCSDriver._metadata, MCSDriver._run_mcs2_metadata, OutArg())
 
     _get_calculation_graphs_metadata = { "offset" : _get_calculation_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4233,7 +4282,7 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
     @property
     def calculation_graphs(self) -> "CalculationGraphCollection":
         """Get the calculation graphs."""
-        return self._intf.get_property(DriverMissionControlSequence._metadata, DriverMissionControlSequence._get_calculation_graphs_metadata)
+        return self._intf.get_property(MCSDriver._metadata, MCSDriver._get_calculation_graphs_metadata)
 
     _property_names[main_sequence] = "main_sequence"
     _property_names[options] = "options"
@@ -4241,9 +4290,9 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
     _property_names[calculation_graphs] = "calculation_graphs"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type DriverMissionControlSequence."""
+        """Construct an object of type MCSDriver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DriverMissionControlSequence)
+        initialize_from_source_object(self, sourceObject, MCSDriver)
         IVehiclePropagator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4253,12 +4302,12 @@ class DriverMissionControlSequence(IVehiclePropagator, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, DriverMissionControlSequence, [DriverMissionControlSequence, IVehiclePropagator])
+        set_class_attribute(self, attrname, value, MCSDriver, [MCSDriver, IVehiclePropagator])
 
-agcls.AgClassCatalog.add_catalog_entry((5389292584719371376, 5476973722651125132), DriverMissionControlSequence)
-agcls.AgTypeNameMap["DriverMissionControlSequence"] = DriverMissionControlSequence
+agcls.AgClassCatalog.add_catalog_entry((5389292584719371376, 5476973722651125132), MCSDriver)
+agcls.AgTypeNameMap["MCSDriver"] = MCSDriver
 
-class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
+class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties for a collection of segments."""
 
     _num_methods = 13
@@ -4282,13 +4331,13 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceSegmentCollection)
+        return get_interface_property(attrname, MCSSegmentCollection)
     def __iter__(self):
-        """Create an iterator for the MissionControlSequenceSegmentCollection object."""
+        """Create an iterator for the MCSSegmentCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "IMissionControlSequenceSegment":
+    def __next__(self) -> "IMCSSegment":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -4300,30 +4349,30 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IMissionControlSequenceSegment":
+    def item(self, indexOrName:typing.Any) -> "IMCSSegment":
         """Return the specified segment(using segment name or index number)."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._item_metadata, indexOrName, OutArg())
 
     _insert_metadata = { "offset" : _insert_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(SEGMENT_TYPE), agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def insert(self, segmentType:"SEGMENT_TYPE", segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
+    def insert(self, segmentType:"SEGMENT_TYPE", segmentName:str, segmentToInsertBefore:str) -> "IMCSSegment":
         """Add a segment to the segment collection."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._insert_metadata, segmentType, segmentName, segmentToInsertBefore, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._insert_metadata, segmentType, segmentName, segmentToInsertBefore, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def remove(self, segmentNameToRemove:str) -> None:
         """Remove a segment; the End segment cannot be deleted."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._remove_metadata, segmentNameToRemove)
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._remove_metadata, segmentNameToRemove)
 
     _remove_all_metadata = { "offset" : _remove_all_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
         """Remove all segments; the End segment cannot be deleted."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._remove_all_metadata, )
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4331,7 +4380,7 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -4339,35 +4388,35 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     @property
     def count(self) -> int:
         """Return the size of the collection."""
-        return self._intf.get_property(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._get_count_metadata)
+        return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get_count_metadata)
 
     _cut_metadata = { "offset" : _cut_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def cut(self, segmentNameToCut:str) -> None:
         """Copy the segment into the clipboard and removes the segment from the sequence."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._cut_metadata, segmentNameToCut)
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._cut_metadata, segmentNameToCut)
 
     _paste_metadata = { "offset" : _paste_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def paste(self, segmentToPasteBefore:str) -> "IMissionControlSequenceSegment":
+    def paste(self, segmentToPasteBefore:str) -> "IMCSSegment":
         """Pastes the segment from the clipboard and inserts in before the given segment name."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._paste_metadata, segmentToPasteBefore, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._paste_metadata, segmentToPasteBefore, OutArg())
 
     _insert_copy_metadata = { "offset" : _insert_copy_method_offset,
             "arg_types" : (agcom.PVOID, agcom.BSTR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IMissionControlSequenceSegment"), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def insert_copy(self, segment:"IMissionControlSequenceSegment", segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
+            "marshallers" : (agmarshall.InterfaceInArg("IMCSSegment"), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def insert_copy(self, segment:"IMCSSegment", segmentToInsertBefore:str) -> "IMCSSegment":
         """Copy the segment pointer and inserts the copy before the given segment name."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._insert_copy_metadata, segment, segmentToInsertBefore, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._insert_copy_metadata, segment, segmentToInsertBefore, OutArg())
 
     _insert_by_name_metadata = { "offset" : _insert_by_name_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def insert_by_name(self, segmentName:str, segmentToInsertBefore:str) -> "IMissionControlSequenceSegment":
+    def insert_by_name(self, segmentName:str, segmentToInsertBefore:str) -> "IMCSSegment":
         """Insert a segment by name to the segment collection."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._insert_by_name_metadata, segmentName, segmentToInsertBefore, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._insert_by_name_metadata, segmentName, segmentToInsertBefore, OutArg())
 
     _get_provide_runtime_type_info_metadata = { "offset" : _get_provide_runtime_type_info_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4375,21 +4424,21 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     @property
     def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
-        return self._intf.get_property(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._get_provide_runtime_type_info_metadata)
+        return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get_provide_runtime_type_info_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "IMissionControlSequenceSegment":
+    def get_item_by_index(self, index:int) -> "IMCSSegment":
         """Retrieve the specified segment(using segment index number)."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, name:str) -> "IMissionControlSequenceSegment":
+    def get_item_by_name(self, name:str) -> "IMCSSegment":
         """Retrieve the specified segment(using segment name)."""
-        return self._intf.invoke(MissionControlSequenceSegmentCollection._metadata, MissionControlSequenceSegmentCollection._get_item_by_name_metadata, name, OutArg())
+        return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._get_item_by_name_metadata, name, OutArg())
 
     __getitem__ = item
 
@@ -4399,9 +4448,9 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceSegmentCollection."""
+        """Construct an object of type MCSSegmentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceSegmentCollection)
+        initialize_from_source_object(self, sourceObject, MCSSegmentCollection)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4411,12 +4460,12 @@ class MissionControlSequenceSegmentCollection(IRuntimeTypeInfoProvider, Supports
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceSegmentCollection, [MissionControlSequenceSegmentCollection, IRuntimeTypeInfoProvider])
+        set_class_attribute(self, attrname, value, MCSSegmentCollection, [MCSSegmentCollection, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4909520030354968962, 14065348172908224678), MissionControlSequenceSegmentCollection)
-agcls.AgTypeNameMap["MissionControlSequenceSegmentCollection"] = MissionControlSequenceSegmentCollection
+agcls.AgClassCatalog.add_catalog_entry((4909520030354968962, 14065348172908224678), MCSSegmentCollection)
+agcls.AgTypeNameMap["MCSSegmentCollection"] = MCSSegmentCollection
 
-class MissionControlSequenceEnd(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDeleteCallback):
+class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDeleteCallback):
     """Properties for an End segment."""
 
     _num_methods = 0
@@ -4427,19 +4476,19 @@ class MissionControlSequenceEnd(IMissionControlSequenceSegment, IRuntimeTypeInfo
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceEnd)
+        return get_interface_property(attrname, MCSEnd)
     
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceEnd."""
+        """Construct an object of type MCSEnd."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceEnd)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSEnd)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
     def __eq__(self, other):
@@ -4447,12 +4496,12 @@ class MissionControlSequenceEnd(IMissionControlSequenceSegment, IRuntimeTypeInfo
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceEnd, [MissionControlSequenceEnd, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo])
+        set_class_attribute(self, attrname, value, MCSEnd, [MCSEnd, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo])
 
-agcls.AgClassCatalog.add_catalog_entry((4611836544222750290, 3791847305781604787), MissionControlSequenceEnd)
-agcls.AgTypeNameMap["MissionControlSequenceEnd"] = MissionControlSequenceEnd
+agcls.AgClassCatalog.add_catalog_entry((4611836544222750290, 3791847305781604787), MCSEnd)
+agcls.AgTypeNameMap["MCSEnd"] = MCSEnd
 
-class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Initial State segment."""
 
     _num_methods = 14
@@ -4477,7 +4526,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceInitialState)
+        return get_interface_property(attrname, MCSInitialState)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -4485,14 +4534,14 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_coord_system_name_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, newVal:str) -> None:
-        return self._intf.set_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._set_coord_system_name_metadata, newVal)
+        return self._intf.set_property(MCSInitialState._metadata, MCSInitialState._set_coord_system_name_metadata, newVal)
 
     _get_orbit_epoch_metadata = { "offset" : _get_orbit_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -4500,14 +4549,14 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def orbit_epoch(self) -> typing.Any:
         """Get or set the orbit epoch. Uses DateFormat Dimension."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_orbit_epoch_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_orbit_epoch_metadata)
 
     _set_orbit_epoch_metadata = { "offset" : _set_orbit_epoch_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @orbit_epoch.setter
     def orbit_epoch(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._set_orbit_epoch_metadata, newVal)
+        return self._intf.set_property(MCSInitialState._metadata, MCSInitialState._set_orbit_epoch_metadata, newVal)
 
     _get_spacecraft_parameters_metadata = { "offset" : _get_spacecraft_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4515,7 +4564,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def spacecraft_parameters(self) -> "SpacecraftParameters":
         """Get the spacecraft  parameters."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_spacecraft_parameters_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_spacecraft_parameters_metadata)
 
     _get_fuel_tank_metadata = { "offset" : _get_fuel_tank_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4523,7 +4572,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def fuel_tank(self) -> "FuelTank":
         """Get the fuel tank parameters."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_fuel_tank_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_fuel_tank_metadata)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -4531,14 +4580,14 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def element_type(self) -> "ELEMENT_TYPE":
         """Get the coordinate type."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_element_type_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(ELEMENT_TYPE),) }
     def set_element_type(self, elementType:"ELEMENT_TYPE") -> None:
         """Select an coordinate type."""
-        return self._intf.invoke(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._set_element_type_metadata, elementType)
+        return self._intf.invoke(MCSInitialState._metadata, MCSInitialState._set_element_type_metadata, elementType)
 
     _get_element_metadata = { "offset" : _get_element_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4546,28 +4595,28 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def element(self) -> "IElement":
         """Get the elements of the selected coordinate type."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_element_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_element_metadata)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_INIT_STATE),) }
     def enable_control_parameter(self, param:"CONTROL_INIT_STATE") -> None:
         """Enable a control parameter."""
-        return self._intf.invoke(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSInitialState._metadata, MCSInitialState._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_INIT_STATE),) }
     def disable_control_parameter(self, param:"CONTROL_INIT_STATE") -> None:
         """Disables a control parameter."""
-        return self._intf.invoke(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSInitialState._metadata, MCSInitialState._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_INIT_STATE), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_INIT_STATE") -> bool:
         """Sees if a control is enabled."""
-        return self._intf.invoke(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSInitialState._metadata, MCSInitialState._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -4575,7 +4624,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "offset" : _get_user_variables_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4583,7 +4632,7 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     @property
     def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the initial state segment."""
-        return self._intf.get_property(MissionControlSequenceInitialState._metadata, MissionControlSequenceInitialState._get_user_variables_metadata)
+        return self._intf.get_property(MCSInitialState._metadata, MCSInitialState._get_user_variables_metadata)
 
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[orbit_epoch] = "orbit_epoch"
@@ -4595,16 +4644,16 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
     _property_names[user_variables] = "user_variables"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceInitialState."""
+        """Construct an object of type MCSInitialState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceInitialState)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSInitialState)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -4613,10 +4662,10 @@ class MissionControlSequenceInitialState(IMissionControlSequenceSegment, IRuntim
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceInitialState, [MissionControlSequenceInitialState, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSInitialState, [MCSInitialState, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5119690725327440606, 12426330438899630259), MissionControlSequenceInitialState)
-agcls.AgTypeNameMap["MissionControlSequenceInitialState"] = MissionControlSequenceInitialState
+agcls.AgClassCatalog.add_catalog_entry((5119690725327440606, 12426330438899630259), MCSInitialState)
+agcls.AgTypeNameMap["MCSInitialState"] = MCSInitialState
 
 class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties for spacecraft configuration."""
@@ -5099,8 +5148,8 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
 
     _num_methods = 46
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
-    _get_semi_major_axis_method_offset = 1
-    _set_semi_major_axis_method_offset = 2
+    _get_semimajor_axis_method_offset = 1
+    _set_semimajor_axis_method_offset = 2
     _get_eccentricity_method_offset = 3
     _set_eccentricity_method_offset = 4
     _get_inclination_method_offset = 5
@@ -5131,8 +5180,8 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     _set_eccentric_anomaly_method_offset = 30
     _get_mean_anomaly_method_offset = 31
     _set_mean_anomaly_method_offset = 32
-    _get_time_past_asc_node_method_offset = 33
-    _set_time_past_asc_node_method_offset = 34
+    _get_time_past_ascending_node_method_offset = 33
+    _set_time_past_ascending_node_method_offset = 34
     _get_time_past_periapsis_method_offset = 35
     _set_time_past_periapsis_method_offset = 36
     _get_element_type_method_offset = 37
@@ -5153,20 +5202,20 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementKeplerian)
     
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension."""
-        return self._intf.get_property(ElementKeplerian._metadata, ElementKeplerian._get_semi_major_axis_metadata)
+        return self._intf.get_property(ElementKeplerian._metadata, ElementKeplerian._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_semimajor_axis_metadata, newVal)
 
     _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5393,20 +5442,20 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     def mean_anomaly(self, newVal:typing.Any) -> None:
         return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_mean_anomaly_metadata, newVal)
 
-    _get_time_past_asc_node_metadata = { "offset" : _get_time_past_asc_node_method_offset,
+    _get_time_past_ascending_node_metadata = { "offset" : _get_time_past_ascending_node_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def time_past_asc_node(self) -> float:
+    def time_past_ascending_node(self) -> float:
         """Get or set the elapsed time since the last ascending node crossing based on assumed two-body motion. Uses Time Dimension."""
-        return self._intf.get_property(ElementKeplerian._metadata, ElementKeplerian._get_time_past_asc_node_metadata)
+        return self._intf.get_property(ElementKeplerian._metadata, ElementKeplerian._get_time_past_ascending_node_metadata)
 
-    _set_time_past_asc_node_metadata = { "offset" : _set_time_past_asc_node_method_offset,
+    _set_time_past_ascending_node_metadata = { "offset" : _set_time_past_ascending_node_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @time_past_asc_node.setter
-    def time_past_asc_node(self, newVal:float) -> None:
-        return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_time_past_asc_node_metadata, newVal)
+    @time_past_ascending_node.setter
+    def time_past_ascending_node(self, newVal:float) -> None:
+        return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_time_past_ascending_node_metadata, newVal)
 
     _get_time_past_periapsis_metadata = { "offset" : _get_time_past_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5498,7 +5547,7 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     def periapsis_radius_shape(self, inVal:float) -> None:
         return self._intf.set_property(ElementKeplerian._metadata, ElementKeplerian._set_periapsis_radius_shape_metadata, inVal)
 
-    _property_names[semi_major_axis] = "semi_major_axis"
+    _property_names[semimajor_axis] = "semimajor_axis"
     _property_names[eccentricity] = "eccentricity"
     _property_names[inclination] = "inclination"
     _property_names[raan] = "raan"
@@ -5514,7 +5563,7 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     _property_names[arg_of_latitude] = "arg_of_latitude"
     _property_names[eccentric_anomaly] = "eccentric_anomaly"
     _property_names[mean_anomaly] = "mean_anomaly"
-    _property_names[time_past_asc_node] = "time_past_asc_node"
+    _property_names[time_past_ascending_node] = "time_past_ascending_node"
     _property_names[time_past_periapsis] = "time_past_periapsis"
     _property_names[element_type] = "element_type"
     _property_names[apoapsis_altitude_shape] = "apoapsis_altitude_shape"
@@ -5545,8 +5594,8 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
 
     _num_methods = 16
     _vtable_offset = IElement._vtable_offset + IElement._num_methods
-    _get_semi_major_axis_method_offset = 1
-    _set_semi_major_axis_method_offset = 2
+    _get_semimajor_axis_method_offset = 1
+    _set_semimajor_axis_method_offset = 2
     _get_mean_motion_method_offset = 3
     _set_mean_motion_method_offset = 4
     _get_h_method_offset = 5
@@ -5569,20 +5618,20 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, ElementEquinoctial)
     
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """Half the length of the major axis of the orbital ellipse. Uses Distance Dimension."""
-        return self._intf.get_property(ElementEquinoctial._metadata, ElementEquinoctial._get_semi_major_axis_metadata)
+        return self._intf.get_property(ElementEquinoctial._metadata, ElementEquinoctial._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(ElementEquinoctial._metadata, ElementEquinoctial._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(ElementEquinoctial._metadata, ElementEquinoctial._set_semimajor_axis_metadata, newVal)
 
     _get_mean_motion_metadata = { "offset" : _get_mean_motion_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5689,7 +5738,7 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
     def formulation(self, inVal:"FORMULATION") -> None:
         return self._intf.set_property(ElementEquinoctial._metadata, ElementEquinoctial._set_formulation_metadata, inVal)
 
-    _property_names[semi_major_axis] = "semi_major_axis"
+    _property_names[semimajor_axis] = "semimajor_axis"
     _property_names[mean_motion] = "mean_motion"
     _property_names[h] = "h"
     _property_names[k] = "k"
@@ -5729,8 +5778,8 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     _set_raan_method_offset = 6
     _get_delaunay_l_method_offset = 7
     _set_delaunay_l_method_offset = 8
-    _get_semi_major_axis_method_offset = 9
-    _set_semi_major_axis_method_offset = 10
+    _get_semimajor_axis_method_offset = 9
+    _set_semimajor_axis_method_offset = 10
     _get_delaunay_g_method_offset = 11
     _set_delaunay_g_method_offset = 12
     _get_semilatus_rectum_method_offset = 13
@@ -5807,20 +5856,20 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     def delaunay_l(self, newVal:float) -> None:
         return self._intf.set_property(ElementDelaunay._metadata, ElementDelaunay._set_delaunay_l_metadata, newVal)
 
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """One-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension."""
-        return self._intf.get_property(ElementDelaunay._metadata, ElementDelaunay._get_semi_major_axis_metadata)
+        return self._intf.get_property(ElementDelaunay._metadata, ElementDelaunay._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(ElementDelaunay._metadata, ElementDelaunay._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(ElementDelaunay._metadata, ElementDelaunay._set_semimajor_axis_metadata, newVal)
 
     _get_delaunay_g_metadata = { "offset" : _get_delaunay_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -5886,7 +5935,7 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     _property_names[arg_of_periapsis] = "arg_of_periapsis"
     _property_names[raan] = "raan"
     _property_names[delaunay_l] = "delaunay_l"
-    _property_names[semi_major_axis] = "semi_major_axis"
+    _property_names[semimajor_axis] = "semimajor_axis"
     _property_names[delaunay_g] = "delaunay_g"
     _property_names[semilatus_rectum] = "semilatus_rectum"
     _property_names[delaunay_h] = "delaunay_h"
@@ -6235,10 +6284,10 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
     _set_radius_of_periapsis_method_offset = 2
     _get_c3_energy_method_offset = 3
     _set_c3_energy_method_offset = 4
-    _get_ra_incoming_asymptote_method_offset = 5
-    _set_ra_incoming_asymptote_method_offset = 6
-    _get_declination_incoming_asymptote_method_offset = 7
-    _set_declination_incoming_asymptote_method_offset = 8
+    _get_right_ascension_of_incoming_asymptote_method_offset = 5
+    _set_right_ascension_of_incoming_asymptote_method_offset = 6
+    _get_declination_of_incoming_asymptote_method_offset = 7
+    _set_declination_of_incoming_asymptote_method_offset = 8
     _get_velocity_azimuth_periapsis_method_offset = 9
     _set_velocity_azimuth_periapsis_method_offset = 10
     _get_true_anomaly_method_offset = 11
@@ -6281,35 +6330,35 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
     def c3_energy(self, newVal:float) -> None:
         return self._intf.set_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._set_c3_energy_metadata, newVal)
 
-    _get_ra_incoming_asymptote_metadata = { "offset" : _get_ra_incoming_asymptote_method_offset,
+    _get_right_ascension_of_incoming_asymptote_metadata = { "offset" : _get_right_ascension_of_incoming_asymptote_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def ra_incoming_asymptote(self) -> typing.Any:
+    def right_ascension_of_incoming_asymptote(self) -> typing.Any:
         """Right Ascension of Incoming Asymptote. Uses Angle Dimension."""
-        return self._intf.get_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._get_ra_incoming_asymptote_metadata)
+        return self._intf.get_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._get_right_ascension_of_incoming_asymptote_metadata)
 
-    _set_ra_incoming_asymptote_metadata = { "offset" : _set_ra_incoming_asymptote_method_offset,
+    _set_right_ascension_of_incoming_asymptote_metadata = { "offset" : _set_right_ascension_of_incoming_asymptote_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @ra_incoming_asymptote.setter
-    def ra_incoming_asymptote(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._set_ra_incoming_asymptote_metadata, newVal)
+    @right_ascension_of_incoming_asymptote.setter
+    def right_ascension_of_incoming_asymptote(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._set_right_ascension_of_incoming_asymptote_metadata, newVal)
 
-    _get_declination_incoming_asymptote_metadata = { "offset" : _get_declination_incoming_asymptote_method_offset,
+    _get_declination_of_incoming_asymptote_metadata = { "offset" : _get_declination_of_incoming_asymptote_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def declination_incoming_asymptote(self) -> typing.Any:
+    def declination_of_incoming_asymptote(self) -> typing.Any:
         """Declination of Incoming Asymptote. Uses Angle Dimension."""
-        return self._intf.get_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._get_declination_incoming_asymptote_metadata)
+        return self._intf.get_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._get_declination_of_incoming_asymptote_metadata)
 
-    _set_declination_incoming_asymptote_metadata = { "offset" : _set_declination_incoming_asymptote_method_offset,
+    _set_declination_of_incoming_asymptote_metadata = { "offset" : _set_declination_of_incoming_asymptote_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @declination_incoming_asymptote.setter
-    def declination_incoming_asymptote(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._set_declination_incoming_asymptote_metadata, newVal)
+    @declination_of_incoming_asymptote.setter
+    def declination_of_incoming_asymptote(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(ElementTargetVectorIncomingAsymptote._metadata, ElementTargetVectorIncomingAsymptote._set_declination_of_incoming_asymptote_metadata, newVal)
 
     _get_velocity_azimuth_periapsis_metadata = { "offset" : _get_velocity_azimuth_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -6343,8 +6392,8 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
 
     _property_names[radius_of_periapsis] = "radius_of_periapsis"
     _property_names[c3_energy] = "c3_energy"
-    _property_names[ra_incoming_asymptote] = "ra_incoming_asymptote"
-    _property_names[declination_incoming_asymptote] = "declination_incoming_asymptote"
+    _property_names[right_ascension_of_incoming_asymptote] = "right_ascension_of_incoming_asymptote"
+    _property_names[declination_of_incoming_asymptote] = "declination_of_incoming_asymptote"
     _property_names[velocity_azimuth_periapsis] = "velocity_azimuth_periapsis"
     _property_names[true_anomaly] = "true_anomaly"
 
@@ -6375,10 +6424,10 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
     _set_radius_of_periapsis_method_offset = 2
     _get_c3_energy_method_offset = 3
     _set_c3_energy_method_offset = 4
-    _get_ra_outgoing_asymptote_method_offset = 5
-    _set_ra_outgoing_asymptote_method_offset = 6
-    _get_declination_outgoing_asymptote_method_offset = 7
-    _set_declination_outgoing_asymptote_method_offset = 8
+    _get_right_ascension_of_outgoing_asymptote_method_offset = 5
+    _set_right_ascension_of_outgoing_asymptote_method_offset = 6
+    _get_declination_of_outgoing_asymptote_method_offset = 7
+    _set_declination_of_outgoing_asymptote_method_offset = 8
     _get_velocity_azimuth_periapsis_method_offset = 9
     _set_velocity_azimuth_periapsis_method_offset = 10
     _get_true_anomaly_method_offset = 11
@@ -6421,35 +6470,35 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
     def c3_energy(self, newVal:float) -> None:
         return self._intf.set_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._set_c3_energy_metadata, newVal)
 
-    _get_ra_outgoing_asymptote_metadata = { "offset" : _get_ra_outgoing_asymptote_method_offset,
+    _get_right_ascension_of_outgoing_asymptote_metadata = { "offset" : _get_right_ascension_of_outgoing_asymptote_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def ra_outgoing_asymptote(self) -> typing.Any:
+    def right_ascension_of_outgoing_asymptote(self) -> typing.Any:
         """Right Ascension of Incoming Asymptote. Uses Angle Dimension."""
-        return self._intf.get_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._get_ra_outgoing_asymptote_metadata)
+        return self._intf.get_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._get_right_ascension_of_outgoing_asymptote_metadata)
 
-    _set_ra_outgoing_asymptote_metadata = { "offset" : _set_ra_outgoing_asymptote_method_offset,
+    _set_right_ascension_of_outgoing_asymptote_metadata = { "offset" : _set_right_ascension_of_outgoing_asymptote_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @ra_outgoing_asymptote.setter
-    def ra_outgoing_asymptote(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._set_ra_outgoing_asymptote_metadata, newVal)
+    @right_ascension_of_outgoing_asymptote.setter
+    def right_ascension_of_outgoing_asymptote(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._set_right_ascension_of_outgoing_asymptote_metadata, newVal)
 
-    _get_declination_outgoing_asymptote_metadata = { "offset" : _get_declination_outgoing_asymptote_method_offset,
+    _get_declination_of_outgoing_asymptote_metadata = { "offset" : _get_declination_of_outgoing_asymptote_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def declination_outgoing_asymptote(self) -> typing.Any:
+    def declination_of_outgoing_asymptote(self) -> typing.Any:
         """Declination of Incoming Asymptote. Uses Angle Dimension."""
-        return self._intf.get_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._get_declination_outgoing_asymptote_metadata)
+        return self._intf.get_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._get_declination_of_outgoing_asymptote_metadata)
 
-    _set_declination_outgoing_asymptote_metadata = { "offset" : _set_declination_outgoing_asymptote_method_offset,
+    _set_declination_of_outgoing_asymptote_metadata = { "offset" : _set_declination_of_outgoing_asymptote_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @declination_outgoing_asymptote.setter
-    def declination_outgoing_asymptote(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._set_declination_outgoing_asymptote_metadata, newVal)
+    @declination_of_outgoing_asymptote.setter
+    def declination_of_outgoing_asymptote(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(ElementTargetVectorOutgoingAsymptote._metadata, ElementTargetVectorOutgoingAsymptote._set_declination_of_outgoing_asymptote_metadata, newVal)
 
     _get_velocity_azimuth_periapsis_metadata = { "offset" : _get_velocity_azimuth_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -6483,8 +6532,8 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
 
     _property_names[radius_of_periapsis] = "radius_of_periapsis"
     _property_names[c3_energy] = "c3_energy"
-    _property_names[ra_outgoing_asymptote] = "ra_outgoing_asymptote"
-    _property_names[declination_outgoing_asymptote] = "declination_outgoing_asymptote"
+    _property_names[right_ascension_of_outgoing_asymptote] = "right_ascension_of_outgoing_asymptote"
+    _property_names[declination_of_outgoing_asymptote] = "declination_of_outgoing_asymptote"
     _property_names[velocity_azimuth_periapsis] = "velocity_azimuth_periapsis"
     _property_names[true_anomaly] = "true_anomaly"
 
@@ -6701,8 +6750,8 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     _set_orbital_c3_energy_method_offset = 12
     _get_hyperbolic_v_infinity_method_offset = 13
     _set_hyperbolic_v_infinity_method_offset = 14
-    _get_semi_major_axis_method_offset = 15
-    _set_semi_major_axis_method_offset = 16
+    _get_semimajor_axis_method_offset = 15
+    _set_semimajor_axis_method_offset = 16
     _get_b_dot_t_first_b_vector_method_offset = 17
     _set_b_dot_t_first_b_vector_method_offset = 18
     _get_b_theta_first_b_vector_method_offset = 19
@@ -6826,20 +6875,20 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     def hyperbolic_v_infinity(self, newVal:float) -> None:
         return self._intf.set_property(ElementBPlane._metadata, ElementBPlane._set_hyperbolic_v_infinity_metadata, newVal)
 
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """Semi-major axis."""
-        return self._intf.get_property(ElementBPlane._metadata, ElementBPlane._get_semi_major_axis_metadata)
+        return self._intf.get_property(ElementBPlane._metadata, ElementBPlane._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(ElementBPlane._metadata, ElementBPlane._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(ElementBPlane._metadata, ElementBPlane._set_semimajor_axis_metadata, newVal)
 
     _get_b_dot_t_first_b_vector_metadata = { "offset" : _get_b_dot_t_first_b_vector_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6923,7 +6972,7 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     _property_names[hyperbolic_turning_angle] = "hyperbolic_turning_angle"
     _property_names[orbital_c3_energy] = "orbital_c3_energy"
     _property_names[hyperbolic_v_infinity] = "hyperbolic_v_infinity"
-    _property_names[semi_major_axis] = "semi_major_axis"
+    _property_names[semimajor_axis] = "semimajor_axis"
     _property_names[b_dot_t_first_b_vector] = "b_dot_t_first_b_vector"
     _property_names[b_theta_first_b_vector] = "b_theta_first_b_vector"
     _property_names[b_dot_r_second_b_vector] = "b_dot_r_second_b_vector"
@@ -7088,7 +7137,7 @@ class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4959039473664888368, 13118382122406988682), ElementSphericalRangeRate)
 agcls.AgTypeNameMap["ElementSphericalRangeRate"] = ElementSphericalRangeRate
 
-class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
+class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties for a Propagate segment."""
 
     _num_methods = 21
@@ -7120,7 +7169,7 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequencePropagate)
+        return get_interface_property(attrname, MCSPropagate)
     
     _get_propagator_name_metadata = { "offset" : _get_propagator_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7128,14 +7177,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def propagator_name(self) -> str:
         """Get or set the propagator."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_propagator_name_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_propagator_name_metadata)
 
     _set_propagator_name_metadata = { "offset" : _set_propagator_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @propagator_name.setter
     def propagator_name(self, newVal:str) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_propagator_name_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_propagator_name_metadata, newVal)
 
     _get_stopping_conditions_metadata = { "offset" : _get_stopping_conditions_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7143,7 +7192,7 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def stopping_conditions(self) -> "StoppingConditionCollection":
         """Get the list of stopping conditions defined for the segment."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_stopping_conditions_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_stopping_conditions_metadata)
 
     _get_min_propagation_time_metadata = { "offset" : _get_min_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7151,14 +7200,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def min_propagation_time(self) -> float:
         """Get or set the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_min_propagation_time_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_min_propagation_time_metadata)
 
     _set_min_propagation_time_metadata = { "offset" : _set_min_propagation_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @min_propagation_time.setter
     def min_propagation_time(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_min_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_min_propagation_time_metadata, newVal)
 
     _get_max_propagation_time_metadata = { "offset" : _get_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7166,14 +7215,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def max_propagation_time(self) -> float:
         """Get or set the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_max_propagation_time_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_max_propagation_time_metadata)
 
     _set_max_propagation_time_metadata = { "offset" : _set_max_propagation_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @max_propagation_time.setter
     def max_propagation_time(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_max_propagation_time_metadata, newVal)
 
     _get_enable_max_propagation_time_metadata = { "offset" : _get_enable_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7181,14 +7230,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def enable_max_propagation_time(self) -> bool:
         """If true, the maximum propagation time is enforced."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_enable_max_propagation_time_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_enable_max_propagation_time_metadata)
 
     _set_enable_max_propagation_time_metadata = { "offset" : _set_enable_max_propagation_time_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_max_propagation_time.setter
     def enable_max_propagation_time(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_enable_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_enable_max_propagation_time_metadata, newVal)
 
     _get_enable_warning_message_metadata = { "offset" : _get_enable_warning_message_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7196,35 +7245,35 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def enable_warning_message(self) -> bool:
         """If true, Astrogator will issue a warning message if propagation is stopped by the Maximum Propagation Time parameter."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_enable_warning_message_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_enable_warning_message_metadata)
 
     _set_enable_warning_message_metadata = { "offset" : _set_enable_warning_message_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_warning_message.setter
     def enable_warning_message(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_enable_warning_message_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_enable_warning_message_metadata, newVal)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED),) }
     def enable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
         """Enable or disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSPropagate._metadata, MCSPropagate._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED),) }
     def disable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSPropagate._metadata, MCSPropagate._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_ADVANCED") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSPropagate._metadata, MCSPropagate._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7232,7 +7281,7 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_control_parameters_available_metadata)
 
     _get_override_max_propagation_time_metadata = { "offset" : _get_override_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7240,14 +7289,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def override_max_propagation_time(self) -> bool:
         """Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_override_max_propagation_time_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_override_max_propagation_time_metadata)
 
     _set_override_max_propagation_time_metadata = { "offset" : _set_override_max_propagation_time_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @override_max_propagation_time.setter
     def override_max_propagation_time(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_override_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_override_max_propagation_time_metadata, newVal)
 
     _get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata = { "offset" : _get_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7255,14 +7304,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def should_stop_for_initially_surpassed_epoch_stopping_conditions(self) -> bool:
         """Stop immediately if propagation begins beyond an active epoch stopping condition."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata)
 
     _set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata = { "offset" : _set_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @should_stop_for_initially_surpassed_epoch_stopping_conditions.setter
     def should_stop_for_initially_surpassed_epoch_stopping_conditions(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata, newVal)
 
     _get_should_reinitialize_stm_at_start_of_segment_propagation_metadata = { "offset" : _get_should_reinitialize_stm_at_start_of_segment_propagation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7270,14 +7319,14 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     @property
     def should_reinitialize_stm_at_start_of_segment_propagation(self) -> bool:
         """If this segment is propagating the state transition matrix, reset it to the identity matrix at the start of the segment."""
-        return self._intf.get_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._get_should_reinitialize_stm_at_start_of_segment_propagation_metadata)
+        return self._intf.get_property(MCSPropagate._metadata, MCSPropagate._get_should_reinitialize_stm_at_start_of_segment_propagation_metadata)
 
     _set_should_reinitialize_stm_at_start_of_segment_propagation_metadata = { "offset" : _set_should_reinitialize_stm_at_start_of_segment_propagation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @should_reinitialize_stm_at_start_of_segment_propagation.setter
     def should_reinitialize_stm_at_start_of_segment_propagation(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequencePropagate._metadata, MissionControlSequencePropagate._set_should_reinitialize_stm_at_start_of_segment_propagation_metadata, newVal)
+        return self._intf.set_property(MCSPropagate._metadata, MCSPropagate._set_should_reinitialize_stm_at_start_of_segment_propagation_metadata, newVal)
 
     _property_names[propagator_name] = "propagator_name"
     _property_names[stopping_conditions] = "stopping_conditions"
@@ -7291,16 +7340,16 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
     _property_names[should_reinitialize_stm_at_start_of_segment_propagation] = "should_reinitialize_stm_at_start_of_segment_propagation"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequencePropagate."""
+        """Construct an object of type MCSPropagate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequencePropagate)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSPropagate)
+        IMCSSegment.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -7309,10 +7358,10 @@ class MissionControlSequencePropagate(IMissionControlSequenceSegment, IComponent
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequencePropagate, [MissionControlSequencePropagate, IMissionControlSequenceSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider])
+        set_class_attribute(self, attrname, value, MCSPropagate, [MCSPropagate, IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((5194969086151067853, 10177006802175344288), MissionControlSequencePropagate)
-agcls.AgTypeNameMap["MissionControlSequencePropagate"] = MissionControlSequencePropagate
+agcls.AgClassCatalog.add_catalog_entry((5194969086151067853, 10177006802175344288), MCSPropagate)
+agcls.AgTypeNameMap["MCSPropagate"] = MCSPropagate
 
 class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Spacecraft Parameters properties for the spacecraft configuration."""
@@ -7343,8 +7392,8 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _set_cr_method_offset = 22
     _get_cd_method_offset = 23
     _set_cd_method_offset = 24
-    _get_radiation_pressure_coeff_method_offset = 25
-    _set_radiation_pressure_coeff_method_offset = 26
+    _get_radiation_pressure_coefficient_method_offset = 25
+    _set_radiation_pressure_coefficient_method_offset = 26
     _get_radiation_pressure_area_method_offset = 27
     _set_radiation_pressure_area_method_offset = 28
     _get_k1_method_offset = 29
@@ -7541,20 +7590,20 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     def cd(self, cd:float) -> None:
         return self._intf.set_property(State._metadata, State._set_cd_metadata, cd)
 
-    _get_radiation_pressure_coeff_metadata = { "offset" : _get_radiation_pressure_coeff_method_offset,
+    _get_radiation_pressure_coefficient_metadata = { "offset" : _get_radiation_pressure_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def radiation_pressure_coeff(self) -> float:
+    def radiation_pressure_coefficient(self) -> float:
         """Get or set the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless."""
-        return self._intf.get_property(State._metadata, State._get_radiation_pressure_coeff_metadata)
+        return self._intf.get_property(State._metadata, State._get_radiation_pressure_coefficient_metadata)
 
-    _set_radiation_pressure_coeff_metadata = { "offset" : _set_radiation_pressure_coeff_method_offset,
+    _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @radiation_pressure_coeff.setter
-    def radiation_pressure_coeff(self, radiationPressureCoeff:float) -> None:
-        return self._intf.set_property(State._metadata, State._set_radiation_pressure_coeff_metadata, radiationPressureCoeff)
+    @radiation_pressure_coefficient.setter
+    def radiation_pressure_coefficient(self, radiationPressureCoeff:float) -> None:
+        return self._intf.set_property(State._metadata, State._set_radiation_pressure_coefficient_metadata, radiationPressureCoeff)
 
     _get_radiation_pressure_area_metadata = { "offset" : _get_radiation_pressure_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7621,7 +7670,7 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[fuel_density] = "fuel_density"
     _property_names[cr] = "cr"
     _property_names[cd] = "cd"
-    _property_names[radiation_pressure_coeff] = "radiation_pressure_coeff"
+    _property_names[radiation_pressure_coefficient] = "radiation_pressure_coefficient"
     _property_names[radiation_pressure_area] = "radiation_pressure_area"
     _property_names[k1] = "k1"
     _property_names[k2] = "k2"
@@ -8292,10 +8341,10 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _get_sequence_method_offset = 13
     _set_sequence_method_offset = 14
     _get_constraints_method_offset = 15
-    _get_user_calc_object_name_method_offset = 16
-    _set_user_calc_object_name_method_offset = 17
-    _get_user_calc_object_method_offset = 18
-    _set_user_calc_object_method_offset = 19
+    _get_user_calculation_object_name_method_offset = 16
+    _set_user_calculation_object_name_method_offset = 17
+    _get_user_calculation_object_method_offset = 18
+    _set_user_calculation_object_method_offset = 19
     _get_central_body_name_method_offset = 20
     _set_central_body_name_method_offset = 21
     _get_criterion_method_offset = 22
@@ -8304,9 +8353,9 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _get_dimension_method_offset = 25
     _get_reference_point_method_offset = 26
     _set_reference_point_method_offset = 27
-    _copy_user_calc_object_to_clipboard_method_offset = 28
-    _paste_user_calc_object_from_clipboard_method_offset = 29
-    _get_user_calc_object_link_embed_control_method_offset = 30
+    _copy_user_calculation_object_to_clipboard_method_offset = 28
+    _paste_user_calculation_object_from_clipboard_method_offset = 29
+    _get_user_calculation_object_link_embed_control_method_offset = 30
     _metadata = {
         "iid_data" : (4986301151178184009, 6721367927442663319),
         "vtable_reference" : IStoppingConditionComponent._vtable_offset + IStoppingConditionComponent._num_methods - 1,
@@ -8428,35 +8477,35 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
         """Further conditions that must be met in order for the stopping condition to be deemed satisfied."""
         return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_constraints_metadata)
 
-    _get_user_calc_object_name_metadata = { "offset" : _get_user_calc_object_name_method_offset,
+    _get_user_calculation_object_name_metadata = { "offset" : _get_user_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def user_calc_object_name(self) -> str:
+    def user_calculation_object_name(self) -> str:
         """User Calc Object - a User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on."""
-        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calc_object_name_metadata)
+        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calculation_object_name_metadata)
 
-    _set_user_calc_object_name_metadata = { "offset" : _set_user_calc_object_name_method_offset,
+    _set_user_calculation_object_name_metadata = { "offset" : _set_user_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @user_calc_object_name.setter
-    def user_calc_object_name(self, newVal:str) -> None:
-        return self._intf.set_property(StoppingCondition._metadata, StoppingCondition._set_user_calc_object_name_metadata, newVal)
+    @user_calculation_object_name.setter
+    def user_calculation_object_name(self, newVal:str) -> None:
+        return self._intf.set_property(StoppingCondition._metadata, StoppingCondition._set_user_calculation_object_name_metadata, newVal)
 
-    _get_user_calc_object_metadata = { "offset" : _get_user_calc_object_method_offset,
+    _get_user_calculation_object_metadata = { "offset" : _get_user_calculation_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def user_calc_object(self) -> "IComponentInfo":
+    def user_calculation_object(self) -> "IComponentInfo":
         """A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on."""
-        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calc_object_metadata)
+        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calculation_object_metadata)
 
-    _set_user_calc_object_metadata = { "offset" : _set_user_calc_object_method_offset,
+    _set_user_calculation_object_metadata = { "offset" : _set_user_calculation_object_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
-    @user_calc_object.setter
-    def user_calc_object(self, newVal:"IComponentInfo") -> None:
-        return self._intf.set_property(StoppingCondition._metadata, StoppingCondition._set_user_calc_object_metadata, newVal)
+    @user_calculation_object.setter
+    def user_calculation_object(self, newVal:"IComponentInfo") -> None:
+        return self._intf.set_property(StoppingCondition._metadata, StoppingCondition._set_user_calculation_object_metadata, newVal)
 
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8520,27 +8569,27 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
         """Get or set the reference point used for calculation."""
         return self._intf.set_property(StoppingCondition._metadata, StoppingCondition._set_reference_point_metadata, inVal)
 
-    _copy_user_calc_object_to_clipboard_metadata = { "offset" : _copy_user_calc_object_to_clipboard_method_offset,
+    _copy_user_calculation_object_to_clipboard_metadata = { "offset" : _copy_user_calculation_object_to_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def copy_user_calc_object_to_clipboard(self) -> None:
+    def copy_user_calculation_object_to_clipboard(self) -> None:
         """Copy the user-defined stopping condition calc object to the clipboard."""
-        return self._intf.invoke(StoppingCondition._metadata, StoppingCondition._copy_user_calc_object_to_clipboard_metadata, )
+        return self._intf.invoke(StoppingCondition._metadata, StoppingCondition._copy_user_calculation_object_to_clipboard_metadata, )
 
-    _paste_user_calc_object_from_clipboard_metadata = { "offset" : _paste_user_calc_object_from_clipboard_method_offset,
+    _paste_user_calculation_object_from_clipboard_metadata = { "offset" : _paste_user_calculation_object_from_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def paste_user_calc_object_from_clipboard(self) -> None:
+    def paste_user_calculation_object_from_clipboard(self) -> None:
         """Replace the user-defined stopping condition calc object with the calc object in the clipboard."""
-        return self._intf.invoke(StoppingCondition._metadata, StoppingCondition._paste_user_calc_object_from_clipboard_metadata, )
+        return self._intf.invoke(StoppingCondition._metadata, StoppingCondition._paste_user_calculation_object_from_clipboard_metadata, )
 
-    _get_user_calc_object_link_embed_control_metadata = { "offset" : _get_user_calc_object_link_embed_control_method_offset,
+    _get_user_calculation_object_link_embed_control_metadata = { "offset" : _get_user_calculation_object_link_embed_control_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def user_calc_object_link_embed_control(self) -> "IComponentLinkEmbedControl":
+    def user_calculation_object_link_embed_control(self) -> "IComponentLinkEmbedControl":
         """Get the link / embed controller for managing the user calc. object."""
-        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calc_object_link_embed_control_metadata)
+        return self._intf.get_property(StoppingCondition._metadata, StoppingCondition._get_user_calculation_object_link_embed_control_metadata)
 
     _property_names[trip] = "trip"
     _property_names[tolerance] = "tolerance"
@@ -8550,14 +8599,14 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _property_names[coord_system] = "coord_system"
     _property_names[sequence] = "sequence"
     _property_names[constraints] = "constraints"
-    _property_names[user_calc_object_name] = "user_calc_object_name"
-    _property_names[user_calc_object] = "user_calc_object"
+    _property_names[user_calculation_object_name] = "user_calculation_object_name"
+    _property_names[user_calculation_object] = "user_calculation_object"
     _property_names[central_body_name] = "central_body_name"
     _property_names[criterion] = "criterion"
     _property_names[before_conditions] = "before_conditions"
     _property_names[dimension] = "dimension"
     _property_names[reference_point] = "reference_point"
-    _property_names[user_calc_object_link_embed_control] = "user_calc_object_link_embed_control"
+    _property_names[user_calculation_object_link_embed_control] = "user_calculation_object_link_embed_control"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StoppingCondition."""
@@ -8679,21 +8728,21 @@ class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, Support
 agcls.AgClassCatalog.add_catalog_entry((5056737663241954080, 13082724610818700691), StoppingConditionElement)
 agcls.AgTypeNameMap["StoppingConditionElement"] = StoppingConditionElement
 
-class MissionControlSequenceSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """The Sequence segment."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceSequence."""
+        """Construct an object of type MCSSequence."""
         SupportsDeleteCallback.__init__(self)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IMissionControlSequenceSequence.__init__(self, sourceObject)
+        IMCSSequence.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
-        IMissionControlSequenceSequence._private_init(self, intf)
+        IMCSSequence._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
     def __eq__(self, other):
@@ -8701,39 +8750,39 @@ class MissionControlSequenceSequence(IMissionControlSequenceSegment, IRuntimeTyp
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceSequence, [IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSSequence, [IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4728221592052087246, 17245365907217799322), MissionControlSequenceSequence)
-agcls.AgTypeNameMap["MissionControlSequenceSequence"] = MissionControlSequenceSequence
+agcls.AgClassCatalog.add_catalog_entry((4728221592052087246, 17245365907217799322), MCSSequence)
+agcls.AgTypeNameMap["MCSSequence"] = MCSSequence
 
-class MissionControlSequenceBackwardSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Backward Sequence segment."""
 
     _num_methods = 0
-    _vtable_offset = IMissionControlSequenceSequence._vtable_offset + IMissionControlSequenceSequence._num_methods
+    _vtable_offset = IMCSSequence._vtable_offset + IMCSSequence._num_methods
     _metadata = {
         "iid_data" : (5647154259170389577, 17278564796132019345),
-        "vtable_reference" : IMissionControlSequenceSequence._vtable_offset + IMissionControlSequenceSequence._num_methods - 1,
+        "vtable_reference" : IMCSSequence._vtable_offset + IMCSSequence._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceBackwardSequence)
+        return get_interface_property(attrname, MCSBackwardSequence)
     
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceBackwardSequence."""
+        """Construct an object of type MCSBackwardSequence."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceBackwardSequence)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSBackwardSequence)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IMissionControlSequenceSequence.__init__(self, sourceObject)
+        IMCSSequence.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
-        IMissionControlSequenceSequence._private_init(self, intf)
+        IMCSSequence._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
     def __eq__(self, other):
@@ -8741,12 +8790,12 @@ class MissionControlSequenceBackwardSequence(IMissionControlSequenceSegment, IRu
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceBackwardSequence, [MissionControlSequenceBackwardSequence, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IMissionControlSequenceSequence, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSBackwardSequence, [MCSBackwardSequence, IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5483461179733130724, 18354047637942609031), MissionControlSequenceBackwardSequence)
-agcls.AgTypeNameMap["MissionControlSequenceBackwardSequence"] = MissionControlSequenceBackwardSequence
+agcls.AgClassCatalog.add_catalog_entry((5483461179733130724, 18354047637942609031), MCSBackwardSequence)
+agcls.AgTypeNameMap["MCSBackwardSequence"] = MCSBackwardSequence
 
-class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Launch segment."""
 
     _num_methods = 32
@@ -8780,8 +8829,8 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     _get_burnout_velocity_method_offset = 27
     _get_use_previous_segment_state_method_offset = 28
     _set_use_previous_segment_state_method_offset = 29
-    _get_set_met_epoch_method_offset = 30
-    _set_set_met_epoch_method_offset = 31
+    _get_set_mission_elapsed_time_epoch_method_offset = 30
+    _set_set_mission_elapsed_time_epoch_method_offset = 31
     _get_user_variables_method_offset = 32
     _metadata = {
         "iid_data" : (5629359826497880460, 7376461998916133763),
@@ -8789,7 +8838,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceLaunch)
+        return get_interface_property(attrname, MCSLaunch)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8797,14 +8846,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def central_body_name(self) -> str:
         """Get or set the central body."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_central_body_name_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, newVal:str) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_central_body_name_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_central_body_name_metadata, newVal)
 
     _get_step_size_metadata = { "offset" : _get_step_size_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8812,14 +8861,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def step_size(self) -> float:
         """Get or set the time interval between calculated ephemeris output points. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_step_size_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_step_size_metadata)
 
     _set_step_size_metadata = { "offset" : _set_step_size_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @step_size.setter
     def step_size(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_step_size_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_step_size_metadata, newVal)
 
     _get_pre_launch_time_metadata = { "offset" : _get_pre_launch_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8827,14 +8876,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def pre_launch_time(self) -> float:
         """Get or set the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_pre_launch_time_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_pre_launch_time_metadata)
 
     _set_pre_launch_time_metadata = { "offset" : _set_pre_launch_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @pre_launch_time.setter
     def pre_launch_time(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_pre_launch_time_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_pre_launch_time_metadata, newVal)
 
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -8842,35 +8891,35 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def epoch(self) -> typing.Any:
         """Get or set the date and time of the launch. Uses DateFormat Dimension."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_epoch_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_epoch_metadata)
 
     _set_epoch_metadata = { "offset" : _set_epoch_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @epoch.setter
     def epoch(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_epoch_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_epoch_metadata, newVal)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_LAUNCH),) }
     def enable_control_parameter(self, param:"CONTROL_LAUNCH") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSLaunch._metadata, MCSLaunch._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_LAUNCH),) }
     def disable_control_parameter(self, param:"CONTROL_LAUNCH") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSLaunch._metadata, MCSLaunch._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_LAUNCH), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_LAUNCH") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSLaunch._metadata, MCSLaunch._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8878,7 +8927,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_control_parameters_available_metadata)
 
     _get_initial_acceleration_metadata = { "offset" : _get_initial_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8886,14 +8935,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def initial_acceleration(self) -> float:
         """Get or set the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_initial_acceleration_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_initial_acceleration_metadata)
 
     _set_initial_acceleration_metadata = { "offset" : _set_initial_acceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @initial_acceleration.setter
     def initial_acceleration(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_initial_acceleration_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_initial_acceleration_metadata, newVal)
 
     _get_spacecraft_parameters_metadata = { "offset" : _get_spacecraft_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8901,7 +8950,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def spacecraft_parameters(self) -> "SpacecraftParameters":
         """Satellite Properties - the spacecraft's physical properties."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_spacecraft_parameters_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_spacecraft_parameters_metadata)
 
     _get_fuel_tank_metadata = { "offset" : _get_fuel_tank_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8909,7 +8958,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def fuel_tank(self) -> "FuelTank":
         """Get the spacecraft's fuel tank properties."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_fuel_tank_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_fuel_tank_metadata)
 
     _get_display_system_type_metadata = { "offset" : _get_display_system_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8917,14 +8966,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def display_system_type(self) -> "LAUNCH_DISPLAY_SYSTEM":
         """Get the launch coordinate type."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_display_system_type_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_display_system_type_metadata)
 
     _set_display_system_type_metadata = { "offset" : _set_display_system_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LAUNCH_DISPLAY_SYSTEM),) }
     def set_display_system_type(self, displaySystemType:"LAUNCH_DISPLAY_SYSTEM") -> None:
         """Set the display system type."""
-        return self._intf.invoke(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_display_system_type_metadata, displaySystemType)
+        return self._intf.invoke(MCSLaunch._metadata, MCSLaunch._set_display_system_type_metadata, displaySystemType)
 
     _get_display_system_metadata = { "offset" : _get_display_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8932,7 +8981,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def display_system(self) -> "IDisplaySystem":
         """Get the current Display System."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_display_system_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_display_system_metadata)
 
     _get_ascent_type_metadata = { "offset" : _get_ascent_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8940,14 +8989,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def ascent_type(self) -> "ASCENT_TYPE":
         """Get or set the order of the spline used to generate the motion along the ellipse."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_ascent_type_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_ascent_type_metadata)
 
     _set_ascent_type_metadata = { "offset" : _set_ascent_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(ASCENT_TYPE),) }
     @ascent_type.setter
     def ascent_type(self, newVal:"ASCENT_TYPE") -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_ascent_type_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_ascent_type_metadata, newVal)
 
     _get_time_of_flight_metadata = { "offset" : _get_time_of_flight_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8955,14 +9004,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def time_of_flight(self) -> float:
         """Get or set the time of flight (the time from launch to burnout). Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_time_of_flight_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_time_of_flight_metadata)
 
     _set_time_of_flight_metadata = { "offset" : _set_time_of_flight_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_of_flight.setter
     def time_of_flight(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_time_of_flight_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_time_of_flight_metadata, newVal)
 
     _get_burnout_type_metadata = { "offset" : _get_burnout_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8970,14 +9019,14 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def burnout_type(self) -> "BURNOUT_TYPE":
         """Get the burnout type."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_burnout_type_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_burnout_type_metadata)
 
     _set_burnout_type_metadata = { "offset" : _set_burnout_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(BURNOUT_TYPE),) }
     def set_burnout_type(self, burnoutType:"BURNOUT_TYPE") -> None:
         """Set the burnout type."""
-        return self._intf.invoke(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_burnout_type_metadata, burnoutType)
+        return self._intf.invoke(MCSLaunch._metadata, MCSLaunch._set_burnout_type_metadata, burnoutType)
 
     _get_burnout_metadata = { "offset" : _get_burnout_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8985,7 +9034,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def burnout(self) -> "IBurnout":
         """Get the burnout point definition."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_burnout_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_burnout_metadata)
 
     _get_burnout_velocity_metadata = { "offset" : _get_burnout_velocity_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8993,7 +9042,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def burnout_velocity(self) -> "BurnoutVelocity":
         """Get the burnout velocity definition."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_burnout_velocity_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_burnout_velocity_metadata)
 
     _get_use_previous_segment_state_metadata = { "offset" : _get_use_previous_segment_state_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9001,29 +9050,29 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def use_previous_segment_state(self) -> bool:
         """If true, the previous segment state is used to define the launch location parameters."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_use_previous_segment_state_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_use_previous_segment_state_metadata)
 
     _set_use_previous_segment_state_metadata = { "offset" : _set_use_previous_segment_state_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_previous_segment_state.setter
     def use_previous_segment_state(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_use_previous_segment_state_metadata, newVal)
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_use_previous_segment_state_metadata, newVal)
 
-    _get_set_met_epoch_metadata = { "offset" : _get_set_met_epoch_method_offset,
+    _get_set_mission_elapsed_time_epoch_metadata = { "offset" : _get_set_mission_elapsed_time_epoch_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def set_met_epoch(self) -> bool:
+    def set_mission_elapsed_time_epoch(self) -> bool:
         """If true, the Mission Elapsed Time epoch will be set to the launch epoch."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_set_met_epoch_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_set_mission_elapsed_time_epoch_metadata)
 
-    _set_set_met_epoch_metadata = { "offset" : _set_set_met_epoch_method_offset,
+    _set_set_mission_elapsed_time_epoch_metadata = { "offset" : _set_set_mission_elapsed_time_epoch_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @set_met_epoch.setter
-    def set_met_epoch(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._set_set_met_epoch_metadata, newVal)
+    @set_mission_elapsed_time_epoch.setter
+    def set_mission_elapsed_time_epoch(self, newVal:bool) -> None:
+        return self._intf.set_property(MCSLaunch._metadata, MCSLaunch._set_set_mission_elapsed_time_epoch_metadata, newVal)
 
     _get_user_variables_metadata = { "offset" : _get_user_variables_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9031,7 +9080,7 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the launch segment."""
-        return self._intf.get_property(MissionControlSequenceLaunch._metadata, MissionControlSequenceLaunch._get_user_variables_metadata)
+        return self._intf.get_property(MCSLaunch._metadata, MCSLaunch._get_user_variables_metadata)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[step_size] = "step_size"
@@ -9049,20 +9098,20 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
     _property_names[burnout] = "burnout"
     _property_names[burnout_velocity] = "burnout_velocity"
     _property_names[use_previous_segment_state] = "use_previous_segment_state"
-    _property_names[set_met_epoch] = "set_met_epoch"
+    _property_names[set_mission_elapsed_time_epoch] = "set_mission_elapsed_time_epoch"
     _property_names[user_variables] = "user_variables"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceLaunch."""
+        """Construct an object of type MCSLaunch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceLaunch)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSLaunch)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -9071,10 +9120,10 @@ class MissionControlSequenceLaunch(IMissionControlSequenceSegment, IRuntimeTypeI
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceLaunch, [MissionControlSequenceLaunch, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSLaunch, [MCSLaunch, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4943627088855875894, 16294750130809619880), MissionControlSequenceLaunch)
-agcls.AgTypeNameMap["MissionControlSequenceLaunch"] = MissionControlSequenceLaunch
+agcls.AgClassCatalog.add_catalog_entry((4943627088855875894, 16294750130809619880), MCSLaunch)
+agcls.AgTypeNameMap["MCSLaunch"] = MCSLaunch
 
 class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
     """Properties for a geodetic launch coordinate system."""
@@ -9745,8 +9794,8 @@ class BurnoutVelocity(SupportsDeleteCallback):
     _set_inertial_velocity_method_offset = 6
     _get_inertial_velocity_azimuth_method_offset = 7
     _set_inertial_velocity_azimuth_method_offset = 8
-    _get_inertial_horizontal_fpa_method_offset = 9
-    _set_inertial_horizontal_fpa_method_offset = 10
+    _get_inertial_horizontal_flight_path_angle_method_offset = 9
+    _set_inertial_horizontal_flight_path_angle_method_offset = 10
     _metadata = {
         "iid_data" : (4907025633322372581, 16846539782637522584),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -9815,26 +9864,26 @@ class BurnoutVelocity(SupportsDeleteCallback):
     def inertial_velocity_azimuth(self, newVal:typing.Any) -> None:
         return self._intf.set_property(BurnoutVelocity._metadata, BurnoutVelocity._set_inertial_velocity_azimuth_metadata, newVal)
 
-    _get_inertial_horizontal_fpa_metadata = { "offset" : _get_inertial_horizontal_fpa_method_offset,
+    _get_inertial_horizontal_flight_path_angle_metadata = { "offset" : _get_inertial_horizontal_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def inertial_horizontal_fpa(self) -> typing.Any:
+    def inertial_horizontal_flight_path_angle(self) -> typing.Any:
         """Inertial horizontal flight path angle is the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle. Uses Angle Dimension."""
-        return self._intf.get_property(BurnoutVelocity._metadata, BurnoutVelocity._get_inertial_horizontal_fpa_metadata)
+        return self._intf.get_property(BurnoutVelocity._metadata, BurnoutVelocity._get_inertial_horizontal_flight_path_angle_metadata)
 
-    _set_inertial_horizontal_fpa_metadata = { "offset" : _set_inertial_horizontal_fpa_method_offset,
+    _set_inertial_horizontal_flight_path_angle_metadata = { "offset" : _set_inertial_horizontal_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @inertial_horizontal_fpa.setter
-    def inertial_horizontal_fpa(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(BurnoutVelocity._metadata, BurnoutVelocity._set_inertial_horizontal_fpa_metadata, newVal)
+    @inertial_horizontal_flight_path_angle.setter
+    def inertial_horizontal_flight_path_angle(self, newVal:typing.Any) -> None:
+        return self._intf.set_property(BurnoutVelocity._metadata, BurnoutVelocity._set_inertial_horizontal_flight_path_angle_metadata, newVal)
 
     _property_names[burnout_option] = "burnout_option"
     _property_names[fixed_velocity] = "fixed_velocity"
     _property_names[inertial_velocity] = "inertial_velocity"
     _property_names[inertial_velocity_azimuth] = "inertial_velocity_azimuth"
-    _property_names[inertial_horizontal_fpa] = "inertial_horizontal_fpa"
+    _property_names[inertial_horizontal_flight_path_angle] = "inertial_horizontal_flight_path_angle"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BurnoutVelocity."""
@@ -9852,7 +9901,7 @@ class BurnoutVelocity(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5357386615005395369, 9502758749122036118), BurnoutVelocity)
 agcls.AgTypeNameMap["BurnoutVelocity"] = BurnoutVelocity
 
-class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Follow segment."""
 
     _num_methods = 22
@@ -9885,7 +9934,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceFollow)
+        return get_interface_property(attrname, MCSFollow)
     
     _get_leader_metadata = { "offset" : _get_leader_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9893,7 +9942,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def leader(self) -> "ILinkToObject":
         """Get the leader object."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_leader_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_leader_metadata)
 
     _get_x_offset_metadata = { "offset" : _get_x_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9901,14 +9950,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def x_offset(self) -> float:
         """Get or set the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_x_offset_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_x_offset_metadata)
 
     _set_x_offset_metadata = { "offset" : _set_x_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @x_offset.setter
     def x_offset(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_x_offset_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_x_offset_metadata, newVal)
 
     _get_y_offset_metadata = { "offset" : _get_y_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9916,14 +9965,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def y_offset(self) -> float:
         """Get or set the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_y_offset_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_y_offset_metadata)
 
     _set_y_offset_metadata = { "offset" : _set_y_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @y_offset.setter
     def y_offset(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_y_offset_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_y_offset_metadata, newVal)
 
     _get_z_offset_metadata = { "offset" : _get_z_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9931,14 +9980,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def z_offset(self) -> float:
         """Get or set the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_z_offset_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_z_offset_metadata)
 
     _set_z_offset_metadata = { "offset" : _set_z_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @z_offset.setter
     def z_offset(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_z_offset_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_z_offset_metadata, newVal)
 
     _get_separation_conditions_metadata = { "offset" : _get_separation_conditions_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9946,7 +9995,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def separation_conditions(self) -> "StoppingConditionCollection":
         """If separation conditions are specified, the list of separation conditions."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_separation_conditions_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_separation_conditions_metadata)
 
     _get_spacecraft_parameters_metadata = { "offset" : _get_spacecraft_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9954,7 +10003,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def spacecraft_parameters(self) -> "SpacecraftParameters":
         """Get the spacecraft's physical properties."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_spacecraft_parameters_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_spacecraft_parameters_metadata)
 
     _get_fuel_tank_metadata = { "offset" : _get_fuel_tank_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9962,7 +10011,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def fuel_tank(self) -> "FuelTank":
         """Get the spacecraft's fuel tank properties."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_fuel_tank_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_fuel_tank_metadata)
 
     _get_joining_type_metadata = { "offset" : _get_joining_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9970,14 +10019,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def joining_type(self) -> "FOLLOW_JOIN":
         """Get or set the joining type."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_joining_type_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_joining_type_metadata)
 
     _set_joining_type_metadata = { "offset" : _set_joining_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(FOLLOW_JOIN),) }
     @joining_type.setter
     def joining_type(self, newVal:"FOLLOW_JOIN") -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_joining_type_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_joining_type_metadata, newVal)
 
     _get_separation_type_metadata = { "offset" : _get_separation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9985,14 +10034,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def separation_type(self) -> "FOLLOW_SEPARATION":
         """Get or set the separation type."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_separation_type_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_separation_type_metadata)
 
     _set_separation_type_metadata = { "offset" : _set_separation_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(FOLLOW_SEPARATION),) }
     @separation_type.setter
     def separation_type(self, newVal:"FOLLOW_SEPARATION") -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_separation_type_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_separation_type_metadata, newVal)
 
     _get_spacecraft_and_fuel_tank_type_metadata = { "offset" : _get_spacecraft_and_fuel_tank_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10000,14 +10049,14 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def spacecraft_and_fuel_tank_type(self) -> "FOLLOW_SPACECRAFT_AND_FUEL_TANK":
         """Get or set the spacecraft snd fuel tank configuration type."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_spacecraft_and_fuel_tank_type_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_spacecraft_and_fuel_tank_type_metadata)
 
     _set_spacecraft_and_fuel_tank_type_metadata = { "offset" : _set_spacecraft_and_fuel_tank_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(FOLLOW_SPACECRAFT_AND_FUEL_TANK),) }
     @spacecraft_and_fuel_tank_type.setter
     def spacecraft_and_fuel_tank_type(self, newVal:"FOLLOW_SPACECRAFT_AND_FUEL_TANK") -> None:
-        return self._intf.set_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._set_spacecraft_and_fuel_tank_type_metadata, newVal)
+        return self._intf.set_property(MCSFollow._metadata, MCSFollow._set_spacecraft_and_fuel_tank_type_metadata, newVal)
 
     _get_joining_conditions_metadata = { "offset" : _get_joining_conditions_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10015,28 +10064,28 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def joining_conditions(self) -> "StoppingConditionCollection":
         """If joining conditions are specified, the list of joining conditions."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_joining_conditions_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_joining_conditions_metadata)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_FOLLOW),) }
     def enable_control_parameter(self, param:"CONTROL_FOLLOW") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSFollow._metadata, MCSFollow._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_FOLLOW),) }
     def disable_control_parameter(self, param:"CONTROL_FOLLOW") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSFollow._metadata, MCSFollow._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_FOLLOW), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_FOLLOW") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSFollow._metadata, MCSFollow._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10044,7 +10093,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "offset" : _get_user_variables_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10052,7 +10101,7 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def user_variables(self) -> "UserVariableCollection":
         """Interface used to modify user variables for the follow segment."""
-        return self._intf.get_property(MissionControlSequenceFollow._metadata, MissionControlSequenceFollow._get_user_variables_metadata)
+        return self._intf.get_property(MCSFollow._metadata, MCSFollow._get_user_variables_metadata)
 
     _property_names[leader] = "leader"
     _property_names[x_offset] = "x_offset"
@@ -10069,16 +10118,16 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
     _property_names[user_variables] = "user_variables"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceFollow."""
+        """Construct an object of type MCSFollow."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceFollow)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSFollow)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -10087,12 +10136,12 @@ class MissionControlSequenceFollow(IMissionControlSequenceSegment, IRuntimeTypeI
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceFollow, [MissionControlSequenceFollow, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSFollow, [MCSFollow, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4651089075740067830, 16957833940556717219), MissionControlSequenceFollow)
-agcls.AgTypeNameMap["MissionControlSequenceFollow"] = MissionControlSequenceFollow
+agcls.AgClassCatalog.add_catalog_entry((4651089075740067830, 16957833940556717219), MCSFollow)
+agcls.AgTypeNameMap["MCSFollow"] = MCSFollow
 
-class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """General properties for a Maneuver segment."""
 
     _num_methods = 7
@@ -10110,7 +10159,7 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceManeuver)
+        return get_interface_property(attrname, MCSManeuver)
     
     _get_maneuver_type_metadata = { "offset" : _get_maneuver_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10118,14 +10167,14 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
     @property
     def maneuver_type(self) -> "MANEUVER_TYPE":
         """Get the maneuver type."""
-        return self._intf.get_property(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._get_maneuver_type_metadata)
+        return self._intf.get_property(MCSManeuver._metadata, MCSManeuver._get_maneuver_type_metadata)
 
     _set_maneuver_type_metadata = { "offset" : _set_maneuver_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MANEUVER_TYPE),) }
     def set_maneuver_type(self, maneuverType:"MANEUVER_TYPE") -> None:
         """Set the maneuver type."""
-        return self._intf.invoke(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._set_maneuver_type_metadata, maneuverType)
+        return self._intf.invoke(MCSManeuver._metadata, MCSManeuver._set_maneuver_type_metadata, maneuverType)
 
     _get_maneuver_metadata = { "offset" : _get_maneuver_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10133,28 +10182,28 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
     @property
     def maneuver(self) -> "IManeuver":
         """Get the Maneuver properties."""
-        return self._intf.get_property(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._get_maneuver_metadata)
+        return self._intf.get_property(MCSManeuver._metadata, MCSManeuver._get_maneuver_metadata)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_MANEUVER),) }
     def enable_control_parameter(self, param:"CONTROL_MANEUVER") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSManeuver._metadata, MCSManeuver._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_MANEUVER),) }
     def disable_control_parameter(self, param:"CONTROL_MANEUVER") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSManeuver._metadata, MCSManeuver._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_MANEUVER), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_MANEUVER") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSManeuver._metadata, MCSManeuver._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10162,23 +10211,23 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceManeuver._metadata, MissionControlSequenceManeuver._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSManeuver._metadata, MCSManeuver._get_control_parameters_available_metadata)
 
     _property_names[maneuver_type] = "maneuver_type"
     _property_names[maneuver] = "maneuver"
     _property_names[control_parameters_available] = "control_parameters_available"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceManeuver."""
+        """Construct an object of type MCSManeuver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceManeuver)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSManeuver)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -10187,10 +10236,10 @@ class MissionControlSequenceManeuver(IMissionControlSequenceSegment, IRuntimeTyp
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceManeuver, [MissionControlSequenceManeuver, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSManeuver, [MCSManeuver, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5197336180196135168, 17213101951654587804), MissionControlSequenceManeuver)
-agcls.AgTypeNameMap["MissionControlSequenceManeuver"] = MissionControlSequenceManeuver
+agcls.AgClassCatalog.add_catalog_entry((5197336180196135168, 17213101951654587804), MCSManeuver)
+agcls.AgTypeNameMap["MCSManeuver"] = MCSManeuver
 
 class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Engine properties for a Finite Maneuver."""
@@ -10728,17 +10777,17 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeC
 
     _get_coord_type_metadata = { "offset" : _get_coord_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(IMP_DELTA_V_REP),) }
+            "marshallers" : (agmarshall.EnumArg(IMPULSIVE_DELTA_V_REPRESENTATION),) }
     @property
-    def coord_type(self) -> "IMP_DELTA_V_REP":
+    def coord_type(self) -> "IMPULSIVE_DELTA_V_REPRESENTATION":
         """Get or set the coordinate representation for the DeltaV."""
         return self._intf.get_property(AttitudeControlImpulsiveThrustVector._metadata, AttitudeControlImpulsiveThrustVector._get_coord_type_metadata)
 
     _set_coord_type_metadata = { "offset" : _set_coord_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(IMP_DELTA_V_REP),) }
+            "marshallers" : (agmarshall.EnumArg(IMPULSIVE_DELTA_V_REPRESENTATION),) }
     @coord_type.setter
-    def coord_type(self, newVal:"IMP_DELTA_V_REP") -> None:
+    def coord_type(self, newVal:"IMPULSIVE_DELTA_V_REPRESENTATION") -> None:
         return self._intf.set_property(AttitudeControlImpulsiveThrustVector._metadata, AttitudeControlImpulsiveThrustVector._set_coord_type_metadata, newVal)
 
     _get_x_metadata = { "offset" : _get_x_method_offset,
@@ -11220,38 +11269,38 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
     _get_thrust_axes_name_method_offset = 1
     _set_thrust_axes_name_method_offset = 2
     _get_body_constraint_vector_method_offset = 3
-    _get_az0_method_offset = 4
-    _set_az0_method_offset = 5
-    _get_az1_method_offset = 6
-    _set_az1_method_offset = 7
-    _get_az2_method_offset = 8
-    _set_az2_method_offset = 9
-    _get_az3_method_offset = 10
-    _set_az3_method_offset = 11
-    _get_az4_method_offset = 12
-    _set_az4_method_offset = 13
-    _get_az_a_method_offset = 14
-    _set_az_a_method_offset = 15
-    _get_az_f_method_offset = 16
-    _set_az_f_method_offset = 17
-    _get_az_p_method_offset = 18
-    _set_az_p_method_offset = 19
-    _get_el0_method_offset = 20
-    _set_el0_method_offset = 21
-    _get_el1_method_offset = 22
-    _set_el1_method_offset = 23
-    _get_el2_method_offset = 24
-    _set_el2_method_offset = 25
-    _get_el3_method_offset = 26
-    _set_el3_method_offset = 27
-    _get_el4_method_offset = 28
-    _set_el4_method_offset = 29
-    _get_el_a_method_offset = 30
-    _set_el_a_method_offset = 31
-    _get_el_f_method_offset = 32
-    _set_el_f_method_offset = 33
-    _get_el_p_method_offset = 34
-    _set_el_p_method_offset = 35
+    _get_azimuth_polynomial_constant_term_method_offset = 4
+    _set_azimuth_polynomial_constant_term_method_offset = 5
+    _get_azimuth_polynomial_linear_term_method_offset = 6
+    _set_azimuth_polynomial_linear_term_method_offset = 7
+    _get_azimuth_polynomial_quadratic_term_method_offset = 8
+    _set_azimuth_polynomial_quadratic_term_method_offset = 9
+    _get_azimuth_polynomial_cubic_term_method_offset = 10
+    _set_azimuth_polynomial_cubic_term_method_offset = 11
+    _get_azimuth_polynomial_quartic_term_method_offset = 12
+    _set_azimuth_polynomial_quartic_term_method_offset = 13
+    _get_azimuth_sinusoidal_amplitude_method_offset = 14
+    _set_azimuth_sinusoidal_amplitude_method_offset = 15
+    _get_azimuth_sinusoidal_frequency_method_offset = 16
+    _set_azimuth_sinusoidal_frequency_method_offset = 17
+    _get_azimuth_sinusoidal_phase_method_offset = 18
+    _set_azimuth_sinusoidal_phase_method_offset = 19
+    _get_elevation_polynomial_constant_term_method_offset = 20
+    _set_elevation_polynomial_constant_term_method_offset = 21
+    _get_elevation_polynomial_linear_term_method_offset = 22
+    _set_elevation_polynomial_linear_term_method_offset = 23
+    _get_elevation_polynomial_quadratic_term_method_offset = 24
+    _set_elevation_polynomial_quadratic_term_method_offset = 25
+    _get_elevation_polynomial_cubic_term_method_offset = 26
+    _set_elevation_polynomial_cubic_term_method_offset = 27
+    _get_elevation_polynomial_quartic_term_method_offset = 28
+    _set_elevation_polynomial_quartic_term_method_offset = 29
+    _get_elevation_sinusoidal_amplitude_method_offset = 30
+    _set_elevation_sinusoidal_amplitude_method_offset = 31
+    _get_elevation_sinusoidal_frequency_method_offset = 32
+    _set_elevation_sinusoidal_frequency_method_offset = 33
+    _get_elevation_sinusoidal_phase_method_offset = 34
+    _set_elevation_sinusoidal_phase_method_offset = 35
     _metadata = {
         "iid_data" : (5634020525553782637, 14867654061630199955),
         "vtable_reference" : IAttitudeControlFinite._vtable_offset + IAttitudeControlFinite._num_methods - 1,
@@ -11283,264 +11332,264 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
         """Define a constraint vector in spacecraft body coordinates to complete the attitude definition."""
         return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_body_constraint_vector_metadata)
 
-    _get_az0_metadata = { "offset" : _get_az0_method_offset,
+    _get_azimuth_polynomial_constant_term_metadata = { "offset" : _get_azimuth_polynomial_constant_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az0(self) -> float:
+    def azimuth_polynomial_constant_term(self) -> float:
         """Azimuth constant term (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az0_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_polynomial_constant_term_metadata)
 
-    _set_az0_metadata = { "offset" : _set_az0_method_offset,
+    _set_azimuth_polynomial_constant_term_metadata = { "offset" : _set_azimuth_polynomial_constant_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az0.setter
-    def az0(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az0_metadata, pVal)
+    @azimuth_polynomial_constant_term.setter
+    def azimuth_polynomial_constant_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_polynomial_constant_term_metadata, pVal)
 
-    _get_az1_metadata = { "offset" : _get_az1_method_offset,
+    _get_azimuth_polynomial_linear_term_metadata = { "offset" : _get_azimuth_polynomial_linear_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az1(self) -> float:
+    def azimuth_polynomial_linear_term(self) -> float:
         """Azimuth linear term (dimension: angle/time)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az1_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_polynomial_linear_term_metadata)
 
-    _set_az1_metadata = { "offset" : _set_az1_method_offset,
+    _set_azimuth_polynomial_linear_term_metadata = { "offset" : _set_azimuth_polynomial_linear_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az1.setter
-    def az1(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az1_metadata, pVal)
+    @azimuth_polynomial_linear_term.setter
+    def azimuth_polynomial_linear_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_polynomial_linear_term_metadata, pVal)
 
-    _get_az2_metadata = { "offset" : _get_az2_method_offset,
+    _get_azimuth_polynomial_quadratic_term_metadata = { "offset" : _get_azimuth_polynomial_quadratic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az2(self) -> float:
+    def azimuth_polynomial_quadratic_term(self) -> float:
         """Azimuth quadratic term (dimension: angle/time^2)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az2_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_polynomial_quadratic_term_metadata)
 
-    _set_az2_metadata = { "offset" : _set_az2_method_offset,
+    _set_azimuth_polynomial_quadratic_term_metadata = { "offset" : _set_azimuth_polynomial_quadratic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az2.setter
-    def az2(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az2_metadata, pVal)
+    @azimuth_polynomial_quadratic_term.setter
+    def azimuth_polynomial_quadratic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_polynomial_quadratic_term_metadata, pVal)
 
-    _get_az3_metadata = { "offset" : _get_az3_method_offset,
+    _get_azimuth_polynomial_cubic_term_metadata = { "offset" : _get_azimuth_polynomial_cubic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az3(self) -> float:
+    def azimuth_polynomial_cubic_term(self) -> float:
         """Azimuth cubic term (dimension: angle/time^3)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az3_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_polynomial_cubic_term_metadata)
 
-    _set_az3_metadata = { "offset" : _set_az3_method_offset,
+    _set_azimuth_polynomial_cubic_term_metadata = { "offset" : _set_azimuth_polynomial_cubic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az3.setter
-    def az3(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az3_metadata, pVal)
+    @azimuth_polynomial_cubic_term.setter
+    def azimuth_polynomial_cubic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_polynomial_cubic_term_metadata, pVal)
 
-    _get_az4_metadata = { "offset" : _get_az4_method_offset,
+    _get_azimuth_polynomial_quartic_term_metadata = { "offset" : _get_azimuth_polynomial_quartic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az4(self) -> float:
+    def azimuth_polynomial_quartic_term(self) -> float:
         """Azimuth quartic term (dimension: angle/time^4)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az4_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_polynomial_quartic_term_metadata)
 
-    _set_az4_metadata = { "offset" : _set_az4_method_offset,
+    _set_azimuth_polynomial_quartic_term_metadata = { "offset" : _set_azimuth_polynomial_quartic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az4.setter
-    def az4(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az4_metadata, pVal)
+    @azimuth_polynomial_quartic_term.setter
+    def azimuth_polynomial_quartic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_polynomial_quartic_term_metadata, pVal)
 
-    _get_az_a_metadata = { "offset" : _get_az_a_method_offset,
+    _get_azimuth_sinusoidal_amplitude_metadata = { "offset" : _get_azimuth_sinusoidal_amplitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az_a(self) -> float:
+    def azimuth_sinusoidal_amplitude(self) -> float:
         """Azimuth sine term amplitude (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az_a_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_sinusoidal_amplitude_metadata)
 
-    _set_az_a_metadata = { "offset" : _set_az_a_method_offset,
+    _set_azimuth_sinusoidal_amplitude_metadata = { "offset" : _set_azimuth_sinusoidal_amplitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az_a.setter
-    def az_a(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az_a_metadata, pVal)
+    @azimuth_sinusoidal_amplitude.setter
+    def azimuth_sinusoidal_amplitude(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_sinusoidal_amplitude_metadata, pVal)
 
-    _get_az_f_metadata = { "offset" : _get_az_f_method_offset,
+    _get_azimuth_sinusoidal_frequency_metadata = { "offset" : _get_azimuth_sinusoidal_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az_f(self) -> float:
+    def azimuth_sinusoidal_frequency(self) -> float:
         """Azimuth sine term frequency (dimension: angle/time)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az_f_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_sinusoidal_frequency_metadata)
 
-    _set_az_f_metadata = { "offset" : _set_az_f_method_offset,
+    _set_azimuth_sinusoidal_frequency_metadata = { "offset" : _set_azimuth_sinusoidal_frequency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az_f.setter
-    def az_f(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az_f_metadata, pVal)
+    @azimuth_sinusoidal_frequency.setter
+    def azimuth_sinusoidal_frequency(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_sinusoidal_frequency_metadata, pVal)
 
-    _get_az_p_metadata = { "offset" : _get_az_p_method_offset,
+    _get_azimuth_sinusoidal_phase_metadata = { "offset" : _get_azimuth_sinusoidal_phase_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def az_p(self) -> float:
+    def azimuth_sinusoidal_phase(self) -> float:
         """Azimuth sine term phase (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_az_p_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_azimuth_sinusoidal_phase_metadata)
 
-    _set_az_p_metadata = { "offset" : _set_az_p_method_offset,
+    _set_azimuth_sinusoidal_phase_metadata = { "offset" : _set_azimuth_sinusoidal_phase_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @az_p.setter
-    def az_p(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_az_p_metadata, pVal)
+    @azimuth_sinusoidal_phase.setter
+    def azimuth_sinusoidal_phase(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_azimuth_sinusoidal_phase_metadata, pVal)
 
-    _get_el0_metadata = { "offset" : _get_el0_method_offset,
+    _get_elevation_polynomial_constant_term_metadata = { "offset" : _get_elevation_polynomial_constant_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el0(self) -> float:
+    def elevation_polynomial_constant_term(self) -> float:
         """Elevation constant term (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el0_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_polynomial_constant_term_metadata)
 
-    _set_el0_metadata = { "offset" : _set_el0_method_offset,
+    _set_elevation_polynomial_constant_term_metadata = { "offset" : _set_elevation_polynomial_constant_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el0.setter
-    def el0(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el0_metadata, pVal)
+    @elevation_polynomial_constant_term.setter
+    def elevation_polynomial_constant_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_polynomial_constant_term_metadata, pVal)
 
-    _get_el1_metadata = { "offset" : _get_el1_method_offset,
+    _get_elevation_polynomial_linear_term_metadata = { "offset" : _get_elevation_polynomial_linear_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el1(self) -> float:
+    def elevation_polynomial_linear_term(self) -> float:
         """Elevation linear term (dimension: angle/time)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el1_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_polynomial_linear_term_metadata)
 
-    _set_el1_metadata = { "offset" : _set_el1_method_offset,
+    _set_elevation_polynomial_linear_term_metadata = { "offset" : _set_elevation_polynomial_linear_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el1.setter
-    def el1(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el1_metadata, pVal)
+    @elevation_polynomial_linear_term.setter
+    def elevation_polynomial_linear_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_polynomial_linear_term_metadata, pVal)
 
-    _get_el2_metadata = { "offset" : _get_el2_method_offset,
+    _get_elevation_polynomial_quadratic_term_metadata = { "offset" : _get_elevation_polynomial_quadratic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el2(self) -> float:
+    def elevation_polynomial_quadratic_term(self) -> float:
         """Elevation quadratic term (dimension: angle/time^2)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el2_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_polynomial_quadratic_term_metadata)
 
-    _set_el2_metadata = { "offset" : _set_el2_method_offset,
+    _set_elevation_polynomial_quadratic_term_metadata = { "offset" : _set_elevation_polynomial_quadratic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el2.setter
-    def el2(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el2_metadata, pVal)
+    @elevation_polynomial_quadratic_term.setter
+    def elevation_polynomial_quadratic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_polynomial_quadratic_term_metadata, pVal)
 
-    _get_el3_metadata = { "offset" : _get_el3_method_offset,
+    _get_elevation_polynomial_cubic_term_metadata = { "offset" : _get_elevation_polynomial_cubic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el3(self) -> float:
+    def elevation_polynomial_cubic_term(self) -> float:
         """Elevation cubic term (dimension: angle/time^3)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el3_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_polynomial_cubic_term_metadata)
 
-    _set_el3_metadata = { "offset" : _set_el3_method_offset,
+    _set_elevation_polynomial_cubic_term_metadata = { "offset" : _set_elevation_polynomial_cubic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el3.setter
-    def el3(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el3_metadata, pVal)
+    @elevation_polynomial_cubic_term.setter
+    def elevation_polynomial_cubic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_polynomial_cubic_term_metadata, pVal)
 
-    _get_el4_metadata = { "offset" : _get_el4_method_offset,
+    _get_elevation_polynomial_quartic_term_metadata = { "offset" : _get_elevation_polynomial_quartic_term_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el4(self) -> float:
+    def elevation_polynomial_quartic_term(self) -> float:
         """Elevation quartic term (dimension: angle/time^4)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el4_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_polynomial_quartic_term_metadata)
 
-    _set_el4_metadata = { "offset" : _set_el4_method_offset,
+    _set_elevation_polynomial_quartic_term_metadata = { "offset" : _set_elevation_polynomial_quartic_term_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el4.setter
-    def el4(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el4_metadata, pVal)
+    @elevation_polynomial_quartic_term.setter
+    def elevation_polynomial_quartic_term(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_polynomial_quartic_term_metadata, pVal)
 
-    _get_el_a_metadata = { "offset" : _get_el_a_method_offset,
+    _get_elevation_sinusoidal_amplitude_metadata = { "offset" : _get_elevation_sinusoidal_amplitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el_a(self) -> float:
+    def elevation_sinusoidal_amplitude(self) -> float:
         """Elevation sine term amplitude (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el_a_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_sinusoidal_amplitude_metadata)
 
-    _set_el_a_metadata = { "offset" : _set_el_a_method_offset,
+    _set_elevation_sinusoidal_amplitude_metadata = { "offset" : _set_elevation_sinusoidal_amplitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el_a.setter
-    def el_a(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el_a_metadata, pVal)
+    @elevation_sinusoidal_amplitude.setter
+    def elevation_sinusoidal_amplitude(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_sinusoidal_amplitude_metadata, pVal)
 
-    _get_el_f_metadata = { "offset" : _get_el_f_method_offset,
+    _get_elevation_sinusoidal_frequency_metadata = { "offset" : _get_elevation_sinusoidal_frequency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el_f(self) -> float:
+    def elevation_sinusoidal_frequency(self) -> float:
         """Elevation sine term frequency (dimension: angle/time)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el_f_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_sinusoidal_frequency_metadata)
 
-    _set_el_f_metadata = { "offset" : _set_el_f_method_offset,
+    _set_elevation_sinusoidal_frequency_metadata = { "offset" : _set_elevation_sinusoidal_frequency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el_f.setter
-    def el_f(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el_f_metadata, pVal)
+    @elevation_sinusoidal_frequency.setter
+    def elevation_sinusoidal_frequency(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_sinusoidal_frequency_metadata, pVal)
 
-    _get_el_p_metadata = { "offset" : _get_el_p_method_offset,
+    _get_elevation_sinusoidal_phase_metadata = { "offset" : _get_elevation_sinusoidal_phase_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def el_p(self) -> float:
+    def elevation_sinusoidal_phase(self) -> float:
         """Elevation sine term phase (dimension: angle)."""
-        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_el_p_metadata)
+        return self._intf.get_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._get_elevation_sinusoidal_phase_metadata)
 
-    _set_el_p_metadata = { "offset" : _set_el_p_method_offset,
+    _set_elevation_sinusoidal_phase_metadata = { "offset" : _set_elevation_sinusoidal_phase_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @el_p.setter
-    def el_p(self, pVal:float) -> None:
-        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_el_p_metadata, pVal)
+    @elevation_sinusoidal_phase.setter
+    def elevation_sinusoidal_phase(self, pVal:float) -> None:
+        return self._intf.set_property(AttitudeControlFiniteTimeVarying._metadata, AttitudeControlFiniteTimeVarying._set_elevation_sinusoidal_phase_metadata, pVal)
 
     _property_names[thrust_axes_name] = "thrust_axes_name"
     _property_names[body_constraint_vector] = "body_constraint_vector"
-    _property_names[az0] = "az0"
-    _property_names[az1] = "az1"
-    _property_names[az2] = "az2"
-    _property_names[az3] = "az3"
-    _property_names[az4] = "az4"
-    _property_names[az_a] = "az_a"
-    _property_names[az_f] = "az_f"
-    _property_names[az_p] = "az_p"
-    _property_names[el0] = "el0"
-    _property_names[el1] = "el1"
-    _property_names[el2] = "el2"
-    _property_names[el3] = "el3"
-    _property_names[el4] = "el4"
-    _property_names[el_a] = "el_a"
-    _property_names[el_f] = "el_f"
-    _property_names[el_p] = "el_p"
+    _property_names[azimuth_polynomial_constant_term] = "azimuth_polynomial_constant_term"
+    _property_names[azimuth_polynomial_linear_term] = "azimuth_polynomial_linear_term"
+    _property_names[azimuth_polynomial_quadratic_term] = "azimuth_polynomial_quadratic_term"
+    _property_names[azimuth_polynomial_cubic_term] = "azimuth_polynomial_cubic_term"
+    _property_names[azimuth_polynomial_quartic_term] = "azimuth_polynomial_quartic_term"
+    _property_names[azimuth_sinusoidal_amplitude] = "azimuth_sinusoidal_amplitude"
+    _property_names[azimuth_sinusoidal_frequency] = "azimuth_sinusoidal_frequency"
+    _property_names[azimuth_sinusoidal_phase] = "azimuth_sinusoidal_phase"
+    _property_names[elevation_polynomial_constant_term] = "elevation_polynomial_constant_term"
+    _property_names[elevation_polynomial_linear_term] = "elevation_polynomial_linear_term"
+    _property_names[elevation_polynomial_quadratic_term] = "elevation_polynomial_quadratic_term"
+    _property_names[elevation_polynomial_cubic_term] = "elevation_polynomial_cubic_term"
+    _property_names[elevation_polynomial_quartic_term] = "elevation_polynomial_quartic_term"
+    _property_names[elevation_sinusoidal_amplitude] = "elevation_sinusoidal_amplitude"
+    _property_names[elevation_sinusoidal_frequency] = "elevation_sinusoidal_frequency"
+    _property_names[elevation_sinusoidal_phase] = "elevation_sinusoidal_phase"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type AttitudeControlFiniteTimeVarying."""
@@ -11960,7 +12009,7 @@ class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback)
 agcls.AgClassCatalog.add_catalog_entry((5539664440505171113, 10732172948923783042), ManeuverFinitePropagator)
 agcls.AgTypeNameMap["ManeuverFinitePropagator"] = ManeuverFinitePropagator
 
-class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Hold segment."""
 
     _num_methods = 23
@@ -11994,7 +12043,7 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceHold)
+        return get_interface_property(attrname, MCSHold)
     
     _get_step_size_metadata = { "offset" : _get_step_size_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12002,14 +12051,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def step_size(self) -> float:
         """Get or set the time interval between calculated ephemeris output points. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_step_size_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_step_size_metadata)
 
     _set_step_size_metadata = { "offset" : _set_step_size_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @step_size.setter
     def step_size(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_step_size_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_step_size_metadata, newVal)
 
     _get_hold_frame_name_metadata = { "offset" : _get_hold_frame_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -12017,14 +12066,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def hold_frame_name(self) -> str:
         """Hold Frame - the reference frame of the Hold segment."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_hold_frame_name_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_hold_frame_name_metadata)
 
     _set_hold_frame_name_metadata = { "offset" : _set_hold_frame_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @hold_frame_name.setter
     def hold_frame_name(self, newVal:str) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_hold_frame_name_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_hold_frame_name_metadata, newVal)
 
     _get_enable_hold_attitude_metadata = { "offset" : _get_enable_hold_attitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12032,14 +12081,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def enable_hold_attitude(self) -> bool:
         """Enable Hold Altitude - if true, the spacecraft's attitude is fixed within the hold frame."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_enable_hold_attitude_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_enable_hold_attitude_metadata)
 
     _set_enable_hold_attitude_metadata = { "offset" : _set_enable_hold_attitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_hold_attitude.setter
     def enable_hold_attitude(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_enable_hold_attitude_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_enable_hold_attitude_metadata, newVal)
 
     _get_stopping_conditions_metadata = { "offset" : _get_stopping_conditions_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12047,7 +12096,7 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def stopping_conditions(self) -> "StoppingConditionCollection":
         """Get the stopping conditions defined for the segment."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_stopping_conditions_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_stopping_conditions_metadata)
 
     _get_min_propagation_time_metadata = { "offset" : _get_min_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12055,14 +12104,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def min_propagation_time(self) -> float:
         """Minimum Propagation Time - the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_min_propagation_time_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_min_propagation_time_metadata)
 
     _set_min_propagation_time_metadata = { "offset" : _set_min_propagation_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @min_propagation_time.setter
     def min_propagation_time(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_min_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_min_propagation_time_metadata, newVal)
 
     _get_max_propagation_time_metadata = { "offset" : _get_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12070,14 +12119,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def max_propagation_time(self) -> float:
         """Maximum Propagation Time - the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_max_propagation_time_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_max_propagation_time_metadata)
 
     _set_max_propagation_time_metadata = { "offset" : _set_max_propagation_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @max_propagation_time.setter
     def max_propagation_time(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_max_propagation_time_metadata, newVal)
 
     _get_enable_max_propagation_time_metadata = { "offset" : _get_enable_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12085,14 +12134,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def enable_max_propagation_time(self) -> bool:
         """Enable Maximum Propagation Time - if true, the maximum propagation time will be enforced."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_enable_max_propagation_time_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_enable_max_propagation_time_metadata)
 
     _set_enable_max_propagation_time_metadata = { "offset" : _set_enable_max_propagation_time_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_max_propagation_time.setter
     def enable_max_propagation_time(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_enable_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_enable_max_propagation_time_metadata, newVal)
 
     _get_enable_warning_message_metadata = { "offset" : _get_enable_warning_message_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12100,35 +12149,35 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def enable_warning_message(self) -> bool:
         """If true, Astrogator will issue a warning message if propagation is stopped by the Maximum Propagation Time parameter."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_enable_warning_message_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_enable_warning_message_metadata)
 
     _set_enable_warning_message_metadata = { "offset" : _set_enable_warning_message_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_warning_message.setter
     def enable_warning_message(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_enable_warning_message_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_enable_warning_message_metadata, newVal)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED),) }
     def enable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
         """Enable or disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceHold._metadata, MissionControlSequenceHold._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSHold._metadata, MCSHold._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED),) }
     def disable_control_parameter(self, param:"CONTROL_ADVANCED") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceHold._metadata, MissionControlSequenceHold._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSHold._metadata, MCSHold._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_ADVANCED), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_ADVANCED") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequenceHold._metadata, MissionControlSequenceHold._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSHold._metadata, MCSHold._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12136,7 +12185,7 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_control_parameters_available_metadata)
 
     _get_override_max_propagation_time_metadata = { "offset" : _get_override_max_propagation_time_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12144,14 +12193,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def override_max_propagation_time(self) -> bool:
         """Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_override_max_propagation_time_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_override_max_propagation_time_metadata)
 
     _set_override_max_propagation_time_metadata = { "offset" : _set_override_max_propagation_time_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @override_max_propagation_time.setter
     def override_max_propagation_time(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_override_max_propagation_time_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_override_max_propagation_time_metadata, newVal)
 
     _get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata = { "offset" : _get_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12159,14 +12208,14 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def should_stop_for_initially_surpassed_epoch_stopping_conditions(self) -> bool:
         """Stop immediately if propagation begins beyond an active epoch stopping condition."""
-        return self._intf.get_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata)
+        return self._intf.get_property(MCSHold._metadata, MCSHold._get_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata)
 
     _set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata = { "offset" : _set_should_stop_for_initially_surpassed_epoch_stopping_conditions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @should_stop_for_initially_surpassed_epoch_stopping_conditions.setter
     def should_stop_for_initially_surpassed_epoch_stopping_conditions(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceHold._metadata, MissionControlSequenceHold._set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata, newVal)
+        return self._intf.set_property(MCSHold._metadata, MCSHold._set_should_stop_for_initially_surpassed_epoch_stopping_conditions_metadata, newVal)
 
     _property_names[step_size] = "step_size"
     _property_names[hold_frame_name] = "hold_frame_name"
@@ -12181,16 +12230,16 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
     _property_names[should_stop_for_initially_surpassed_epoch_stopping_conditions] = "should_stop_for_initially_surpassed_epoch_stopping_conditions"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceHold."""
+        """Construct an object of type MCSHold."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceHold)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSHold)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -12199,12 +12248,12 @@ class MissionControlSequenceHold(IMissionControlSequenceSegment, IRuntimeTypeInf
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceHold, [MissionControlSequenceHold, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSHold, [MCSHold, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5036634056898744919, 16511560869260231339), MissionControlSequenceHold)
-agcls.AgTypeNameMap["MissionControlSequenceHold"] = MissionControlSequenceHold
+agcls.AgClassCatalog.add_catalog_entry((5036634056898744919, 16511560869260231339), MCSHold)
+agcls.AgTypeNameMap["MCSHold"] = MCSHold
 
-class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Update segment."""
 
     _num_methods = 10
@@ -12225,63 +12274,63 @@ class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeI
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceUpdate)
+        return get_interface_property(attrname, MCSUpdate)
     
     _set_action_and_value_metadata = { "offset" : _set_action_and_value_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(UPDATE_PARAM), agmarshall.EnumArg(UPDATE_ACTION), agmarshall.DoubleArg,) }
     def set_action_and_value(self, parameterType:"UPDATE_PARAM", actionType:"UPDATE_ACTION", value:float) -> None:
         """Set an action and the new value."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._set_action_and_value_metadata, parameterType, actionType, value)
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_action_and_value_metadata, parameterType, actionType, value)
 
     _get_action_metadata = { "offset" : _get_action_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(UPDATE_PARAM), agmarshall.EnumArg(UPDATE_ACTION),) }
     def get_action(self, parameterType:"UPDATE_PARAM") -> "UPDATE_ACTION":
         """Get the action type for a parameter."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._get_action_metadata, parameterType, OutArg())
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._get_action_metadata, parameterType, OutArg())
 
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.EnumArg(UPDATE_PARAM), agmarshall.DoubleArg,) }
     def get_value(self, parameterType:"UPDATE_PARAM") -> float:
         """Get the value type for a parameter."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._get_value_metadata, parameterType, OutArg())
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._get_value_metadata, parameterType, OutArg())
 
     _set_action_metadata = { "offset" : _set_action_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(UPDATE_PARAM), agmarshall.EnumArg(UPDATE_ACTION),) }
     def set_action(self, parameterName:"UPDATE_PARAM", actionType:"UPDATE_ACTION") -> None:
         """Set the update action type."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._set_action_metadata, parameterName, actionType)
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_action_metadata, parameterName, actionType)
 
     _set_value_metadata = { "offset" : _set_value_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(UPDATE_PARAM), agmarshall.DoubleArg,) }
     def set_value(self, parameterName:"UPDATE_PARAM", value:float) -> None:
         """Set the update value."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._set_value_metadata, parameterName, value)
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._set_value_metadata, parameterName, value)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_UPDATE),) }
     def disable_control_parameter(self, param:"CONTROL_UPDATE") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._disable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._disable_control_parameter_metadata, param)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONTROL_UPDATE),) }
     def enable_control_parameter(self, param:"CONTROL_UPDATE") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._enable_control_parameter_metadata, param)
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._enable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONTROL_UPDATE), agmarshall.VariantBoolArg,) }
     def is_control_parameter_enabled(self, param:"CONTROL_UPDATE") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(MCSUpdate._metadata, MCSUpdate._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12289,7 +12338,7 @@ class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._get_control_parameters_available_metadata)
+        return self._intf.get_property(MCSUpdate._metadata, MCSUpdate._get_control_parameters_available_metadata)
 
     _get_user_variables_metadata = { "offset" : _get_user_variables_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12297,22 +12346,22 @@ class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def user_variables(self) -> "UserVariableUpdateCollection":
         """Interface used to modify user variables for the update segment."""
-        return self._intf.get_property(MissionControlSequenceUpdate._metadata, MissionControlSequenceUpdate._get_user_variables_metadata)
+        return self._intf.get_property(MCSUpdate._metadata, MCSUpdate._get_user_variables_metadata)
 
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[user_variables] = "user_variables"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceUpdate."""
+        """Construct an object of type MCSUpdate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceUpdate)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSUpdate)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -12321,12 +12370,12 @@ class MissionControlSequenceUpdate(IMissionControlSequenceSegment, IRuntimeTypeI
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceUpdate, [MissionControlSequenceUpdate, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSUpdate, [MCSUpdate, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4769851952476936711, 12743095332754810808), MissionControlSequenceUpdate)
-agcls.AgTypeNameMap["MissionControlSequenceUpdate"] = MissionControlSequenceUpdate
+agcls.AgClassCatalog.add_catalog_entry((4769851952476936711, 12743095332754810808), MCSUpdate)
+agcls.AgTypeNameMap["MCSUpdate"] = MCSUpdate
 
-class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Return segment."""
 
     _num_methods = 2
@@ -12339,7 +12388,7 @@ class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeI
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceReturn)
+        return get_interface_property(attrname, MCSReturn)
     
     _get_return_control_to_parent_sequence_metadata = { "offset" : _get_return_control_to_parent_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12347,28 +12396,28 @@ class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeI
     @property
     def return_control_to_parent_sequence(self) -> "RETURN_CONTROL":
         """Get or set the state of the segment."""
-        return self._intf.get_property(MissionControlSequenceReturn._metadata, MissionControlSequenceReturn._get_return_control_to_parent_sequence_metadata)
+        return self._intf.get_property(MCSReturn._metadata, MCSReturn._get_return_control_to_parent_sequence_metadata)
 
     _set_return_control_to_parent_sequence_metadata = { "offset" : _set_return_control_to_parent_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(RETURN_CONTROL),) }
     @return_control_to_parent_sequence.setter
     def return_control_to_parent_sequence(self, newVal:"RETURN_CONTROL") -> None:
-        return self._intf.set_property(MissionControlSequenceReturn._metadata, MissionControlSequenceReturn._set_return_control_to_parent_sequence_metadata, newVal)
+        return self._intf.set_property(MCSReturn._metadata, MCSReturn._set_return_control_to_parent_sequence_metadata, newVal)
 
     _property_names[return_control_to_parent_sequence] = "return_control_to_parent_sequence"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceReturn."""
+        """Construct an object of type MCSReturn."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceReturn)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSReturn)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -12377,12 +12426,12 @@ class MissionControlSequenceReturn(IMissionControlSequenceSegment, IRuntimeTypeI
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceReturn, [MissionControlSequenceReturn, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSReturn, [MCSReturn, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5338959801614235290, 674960884198980233), MissionControlSequenceReturn)
-agcls.AgTypeNameMap["MissionControlSequenceReturn"] = MissionControlSequenceReturn
+agcls.AgClassCatalog.add_catalog_entry((5338959801614235290, 674960884198980233), MCSReturn)
+agcls.AgTypeNameMap["MCSReturn"] = MCSReturn
 
-class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Stop segment."""
 
     _num_methods = 2
@@ -12395,7 +12444,7 @@ class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInf
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceStop)
+        return get_interface_property(attrname, MCSStop)
     
     _get_enabled_metadata = { "offset" : _get_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12403,28 +12452,28 @@ class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInf
     @property
     def enabled(self) -> bool:
         """If true, the segment will stop the execution of the MCS."""
-        return self._intf.get_property(MissionControlSequenceStop._metadata, MissionControlSequenceStop._get_enabled_metadata)
+        return self._intf.get_property(MCSStop._metadata, MCSStop._get_enabled_metadata)
 
     _set_enabled_metadata = { "offset" : _set_enabled_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enabled.setter
     def enabled(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceStop._metadata, MissionControlSequenceStop._set_enabled_metadata, newVal)
+        return self._intf.set_property(MCSStop._metadata, MCSStop._set_enabled_metadata, newVal)
 
     _property_names[enabled] = "enabled"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceStop."""
+        """Construct an object of type MCSStop."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceStop)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSStop)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -12433,12 +12482,12 @@ class MissionControlSequenceStop(IMissionControlSequenceSegment, IRuntimeTypeInf
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceStop, [MissionControlSequenceStop, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSStop, [MCSStop, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5575190769478601305, 3572350491614611646), MissionControlSequenceStop)
-agcls.AgTypeNameMap["MissionControlSequenceStop"] = MissionControlSequenceStop
+agcls.AgClassCatalog.add_catalog_entry((5575190769478601305, 3572350491614611646), MCSStop)
+agcls.AgTypeNameMap["MCSStop"] = MCSStop
 
-class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """General properties of a TargetSequence segment."""
 
     _num_methods = 16
@@ -12465,22 +12514,22 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceTargetSequence)
+        return get_interface_property(attrname, MCSTargetSequence)
     
     _get_action_metadata = { "offset" : _get_action_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TARGET_SEQ_ACTION),) }
+            "marshallers" : (agmarshall.EnumArg(TARGET_SEQUENCE_ACTION),) }
     @property
-    def action(self) -> "TARGET_SEQ_ACTION":
+    def action(self) -> "TARGET_SEQUENCE_ACTION":
         """Whether to run the sequence nominally or using profiles."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_action_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_action_metadata)
 
     _set_action_metadata = { "offset" : _set_action_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(TARGET_SEQ_ACTION),) }
+            "marshallers" : (agmarshall.EnumArg(TARGET_SEQUENCE_ACTION),) }
     @action.setter
-    def action(self, newVal:"TARGET_SEQ_ACTION") -> None:
-        return self._intf.set_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._set_action_metadata, newVal)
+    def action(self, newVal:"TARGET_SEQUENCE_ACTION") -> None:
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_action_metadata, newVal)
 
     _get_when_profiles_finish_metadata = { "offset" : _get_when_profiles_finish_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12488,14 +12537,14 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     @property
     def when_profiles_finish(self) -> "PROFILES_FINISH":
         """When Profiles Converge - the action to be carried out if targeting has converged."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_when_profiles_finish_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_when_profiles_finish_metadata)
 
     _set_when_profiles_finish_metadata = { "offset" : _set_when_profiles_finish_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PROFILES_FINISH),) }
     @when_profiles_finish.setter
     def when_profiles_finish(self, newVal:"PROFILES_FINISH") -> None:
-        return self._intf.set_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._set_when_profiles_finish_metadata, newVal)
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_when_profiles_finish_metadata, newVal)
 
     _get_continue_on_failure_metadata = { "offset" : _get_continue_on_failure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12503,22 +12552,22 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     @property
     def continue_on_failure(self) -> bool:
         """Continue if profiles don't converge - if true, the target sequence continues if a profile fails to converge; otherwise, the MCS will stop upon the failure of a search profile."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_continue_on_failure_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_continue_on_failure_metadata)
 
     _set_continue_on_failure_metadata = { "offset" : _set_continue_on_failure_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @continue_on_failure.setter
     def continue_on_failure(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._set_continue_on_failure_metadata, newVal)
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_continue_on_failure_metadata, newVal)
 
     _get_segments_metadata = { "offset" : _get_segments_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def segments(self) -> "MissionControlSequenceSegmentCollection":
+    def segments(self) -> "MCSSegmentCollection":
         """Return the segments contained within the target sequence."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_segments_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_segments_metadata)
 
     _get_profiles_metadata = { "offset" : _get_profiles_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12526,49 +12575,49 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     @property
     def profiles(self) -> "ProfileCollection":
         """Return the profiles used within the target sequence."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_profiles_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_profiles_metadata)
 
     _apply_profiles_metadata = { "offset" : _apply_profiles_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_profiles(self) -> None:
         """Apply Changes - applies the current values of search profiles' controls and the changes specified by the segment configuration profiles to the segments within the target sequence."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._apply_profiles_metadata, )
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._apply_profiles_metadata, )
 
     _reset_profiles_metadata = { "offset" : _reset_profiles_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def reset_profiles(self) -> None:
         """Reset - resets the controls of the search profiles to the segments' values."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._reset_profiles_metadata, )
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._reset_profiles_metadata, )
 
     _apply_profile_metadata = { "offset" : _apply_profile_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IProfile"),) }
     def apply_profile(self, profile:"IProfile") -> None:
         """Apply Changes - applies the current values of specified profile to the segments within the target sequence."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._apply_profile_metadata, profile)
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._apply_profile_metadata, profile)
 
     _reset_profile_metadata = { "offset" : _reset_profile_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IProfile"),) }
     def reset_profile(self, profile:"IProfile") -> None:
         """Reset - resets the current values of specified profile."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._reset_profile_metadata, profile)
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._reset_profile_metadata, profile)
 
     _apply_profile_by_name_metadata = { "offset" : _apply_profile_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def apply_profile_by_name(self, profile:str) -> None:
         """Apply Changes - applies the current values of specified profile to the segments within the target sequence."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._apply_profile_by_name_metadata, profile)
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._apply_profile_by_name_metadata, profile)
 
     _reset_profile_by_name_metadata = { "offset" : _reset_profile_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def reset_profile_by_name(self, profile:str) -> None:
         """Reset - resets the current values of specified profile."""
-        return self._intf.invoke(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._reset_profile_by_name_metadata, profile)
+        return self._intf.invoke(MCSTargetSequence._metadata, MCSTargetSequence._reset_profile_by_name_metadata, profile)
 
     _get_reset_inner_targeters_metadata = { "offset" : _get_reset_inner_targeters_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12576,14 +12625,14 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     @property
     def reset_inner_targeters(self) -> bool:
         """If true, inner target sequences will have their profiles reset before each run."""
-        return self._intf.get_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._get_reset_inner_targeters_metadata)
+        return self._intf.get_property(MCSTargetSequence._metadata, MCSTargetSequence._get_reset_inner_targeters_metadata)
 
     _set_reset_inner_targeters_metadata = { "offset" : _set_reset_inner_targeters_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @reset_inner_targeters.setter
     def reset_inner_targeters(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceTargetSequence._metadata, MissionControlSequenceTargetSequence._set_reset_inner_targeters_metadata, newVal)
+        return self._intf.set_property(MCSTargetSequence._metadata, MCSTargetSequence._set_reset_inner_targeters_metadata, newVal)
 
     _property_names[action] = "action"
     _property_names[when_profiles_finish] = "when_profiles_finish"
@@ -12593,16 +12642,16 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
     _property_names[reset_inner_targeters] = "reset_inner_targeters"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceTargetSequence."""
+        """Construct an object of type MCSTargetSequence."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceTargetSequence)
-        IMissionControlSequenceSegment.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, MCSTargetSequence)
+        IMCSSegment.__init__(self, sourceObject)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IMissionControlSequenceSegment._private_init(self, intf)
+        IMCSSegment._private_init(self, intf)
         IRuntimeTypeInfoProvider._private_init(self, intf)
         IComponentInfo._private_init(self, intf)
         ICloneable._private_init(self, intf)
@@ -12611,10 +12660,10 @@ class MissionControlSequenceTargetSequence(IMissionControlSequenceSegment, IRunt
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceTargetSequence, [MissionControlSequenceTargetSequence, IMissionControlSequenceSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MCSTargetSequence, [MCSTargetSequence, IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5275189599605526062, 2875478924429173914), MissionControlSequenceTargetSequence)
-agcls.AgTypeNameMap["MissionControlSequenceTargetSequence"] = MissionControlSequenceTargetSequence
+agcls.AgClassCatalog.add_catalog_entry((5275189599605526062, 2875478924429173914), MCSTargetSequence)
+agcls.AgTypeNameMap["MCSTargetSequence"] = MCSTargetSequence
 
 class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties for a list of target sequence profiles."""
@@ -12784,7 +12833,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5143990449118478455, 3349457320014041742), ProfileCollection)
 agcls.AgTypeNameMap["ProfileCollection"] = ProfileCollection
 
-class MissionControlSequenceOptions(SupportsDeleteCallback):
+class MCSOptions(SupportsDeleteCallback):
     """Properties for the MCS Options."""
 
     _num_methods = 37
@@ -12795,8 +12844,8 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     _set_draw_trajectory_in_3d_method_offset = 4
     _get_update_animation_time_for_all_objects_method_offset = 5
     _set_update_animation_time_for_all_objects_method_offset = 6
-    _get_clear_dwc_graphics_before_each_run_method_offset = 7
-    _set_clear_dwc_graphics_before_each_run_method_offset = 8
+    _get_clear_draw_while_calculating_graphics_before_each_run_method_offset = 7
+    _set_clear_draw_while_calculating_graphics_before_each_run_method_offset = 8
     _get_clear_additional_b_plane_points_method_offset = 9
     _set_clear_additional_b_plane_points_method_offset = 10
     _get_propagate_on_apply_method_offset = 11
@@ -12832,7 +12881,7 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceOptions)
+        return get_interface_property(attrname, MCSOptions)
     
     _get_draw_trajectory_in_2d_metadata = { "offset" : _get_draw_trajectory_in_2d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12840,14 +12889,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def draw_trajectory_in_2d(self) -> bool:
         """If true, Astrogator will draw the trajectory in the 2D Graphics windows as the ephemeris is calculated during the current run."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_draw_trajectory_in_2d_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_draw_trajectory_in_2d_metadata)
 
     _set_draw_trajectory_in_2d_metadata = { "offset" : _set_draw_trajectory_in_2d_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @draw_trajectory_in_2d.setter
     def draw_trajectory_in_2d(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_draw_trajectory_in_2d_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_draw_trajectory_in_2d_metadata, newVal)
 
     _get_draw_trajectory_in_3d_metadata = { "offset" : _get_draw_trajectory_in_3d_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12855,14 +12904,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def draw_trajectory_in_3d(self) -> bool:
         """If true, Astrogator will draw the trajectory in the 3D Graphics windows as the ephemeris is calculated during the current run."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_draw_trajectory_in_3d_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_draw_trajectory_in_3d_metadata)
 
     _set_draw_trajectory_in_3d_metadata = { "offset" : _set_draw_trajectory_in_3d_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @draw_trajectory_in_3d.setter
     def draw_trajectory_in_3d(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_draw_trajectory_in_3d_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_draw_trajectory_in_3d_metadata, newVal)
 
     _get_update_animation_time_for_all_objects_metadata = { "offset" : _get_update_animation_time_for_all_objects_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12870,29 +12919,29 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def update_animation_time_for_all_objects(self) -> bool:
         """If true, all other objects will be animated so that they appear at the proper position for the time being computed as the trajectory is calculated."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_update_animation_time_for_all_objects_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_update_animation_time_for_all_objects_metadata)
 
     _set_update_animation_time_for_all_objects_metadata = { "offset" : _set_update_animation_time_for_all_objects_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @update_animation_time_for_all_objects.setter
     def update_animation_time_for_all_objects(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_update_animation_time_for_all_objects_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_update_animation_time_for_all_objects_metadata, newVal)
 
-    _get_clear_dwc_graphics_before_each_run_metadata = { "offset" : _get_clear_dwc_graphics_before_each_run_method_offset,
+    _get_clear_draw_while_calculating_graphics_before_each_run_metadata = { "offset" : _get_clear_draw_while_calculating_graphics_before_each_run_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def clear_dwc_graphics_before_each_run(self) -> bool:
+    def clear_draw_while_calculating_graphics_before_each_run(self) -> bool:
         """If true, Astrogator will automatically clear all target iteration graphics of the previous run - in all graphics windows - before the current run draws new calculations."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_clear_dwc_graphics_before_each_run_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_clear_draw_while_calculating_graphics_before_each_run_metadata)
 
-    _set_clear_dwc_graphics_before_each_run_metadata = { "offset" : _set_clear_dwc_graphics_before_each_run_method_offset,
+    _set_clear_draw_while_calculating_graphics_before_each_run_metadata = { "offset" : _set_clear_draw_while_calculating_graphics_before_each_run_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @clear_dwc_graphics_before_each_run.setter
-    def clear_dwc_graphics_before_each_run(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_clear_dwc_graphics_before_each_run_metadata, newVal)
+    @clear_draw_while_calculating_graphics_before_each_run.setter
+    def clear_draw_while_calculating_graphics_before_each_run(self, newVal:bool) -> None:
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_clear_draw_while_calculating_graphics_before_each_run_metadata, newVal)
 
     _get_clear_additional_b_plane_points_metadata = { "offset" : _get_clear_additional_b_plane_points_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12900,14 +12949,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def clear_additional_b_plane_points(self) -> bool:
         """If true, Astrogator will clear all additional B-Plane points from any previous run - in all graphics windows - before the current run."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_clear_additional_b_plane_points_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_clear_additional_b_plane_points_metadata)
 
     _set_clear_additional_b_plane_points_metadata = { "offset" : _set_clear_additional_b_plane_points_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @clear_additional_b_plane_points.setter
     def clear_additional_b_plane_points(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_clear_additional_b_plane_points_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_clear_additional_b_plane_points_metadata, newVal)
 
     _get_propagate_on_apply_metadata = { "offset" : _get_propagate_on_apply_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12915,14 +12964,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def propagate_on_apply(self) -> bool:
         """If true, Astrogator will propagate trajectories whenever you click OK or Apply on the Orbit page. If you want to close the Properties Browser for the satellite without running the MCS, make certain this option is disabled."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_propagate_on_apply_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_propagate_on_apply_metadata)
 
     _set_propagate_on_apply_metadata = { "offset" : _set_propagate_on_apply_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @propagate_on_apply.setter
     def propagate_on_apply(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_propagate_on_apply_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_propagate_on_apply_metadata, newVal)
 
     _get_enable_trajectory_segment_colors_metadata = { "offset" : _get_enable_trajectory_segment_colors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12930,14 +12979,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def enable_trajectory_segment_colors(self) -> bool:
         """If true, trajectory segments are displayed in the 2D Graphics window in the colors selected for the respective segments; otherwise the color of the trajectory is defined by the 2D Graphics Attributes page."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_enable_trajectory_segment_colors_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_enable_trajectory_segment_colors_metadata)
 
     _set_enable_trajectory_segment_colors_metadata = { "offset" : _set_enable_trajectory_segment_colors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_trajectory_segment_colors.setter
     def enable_trajectory_segment_colors(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_enable_trajectory_segment_colors_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_enable_trajectory_segment_colors_metadata, newVal)
 
     _get_save_numbers_in_raw_format_metadata = { "offset" : _get_save_numbers_in_raw_format_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12945,14 +12994,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def save_numbers_in_raw_format(self) -> bool:
         """If true, Astrogator will store satellite information in binary format - to preserve the maximum amount of precision."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_save_numbers_in_raw_format_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_save_numbers_in_raw_format_metadata)
 
     _set_save_numbers_in_raw_format_metadata = { "offset" : _set_save_numbers_in_raw_format_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @save_numbers_in_raw_format.setter
     def save_numbers_in_raw_format(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_save_numbers_in_raw_format_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_save_numbers_in_raw_format_metadata, newVal)
 
     _get_stopping_condition_time_tolerance_metadata = { "offset" : _get_stopping_condition_time_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12960,14 +13009,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def stopping_condition_time_tolerance(self) -> float:
         """Get or set the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_stopping_condition_time_tolerance_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_stopping_condition_time_tolerance_metadata)
 
     _set_stopping_condition_time_tolerance_metadata = { "offset" : _set_stopping_condition_time_tolerance_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stopping_condition_time_tolerance.setter
     def stopping_condition_time_tolerance(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_stopping_condition_time_tolerance_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_stopping_condition_time_tolerance_metadata, newVal)
 
     _get_enable_segment_controls_metadata = { "offset" : _get_enable_segment_controls_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12975,14 +13024,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def enable_segment_controls(self) -> bool:
         """If true, Astrogator will automatically add independent variables to differential correctors."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_enable_segment_controls_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_enable_segment_controls_metadata)
 
     _set_enable_segment_controls_metadata = { "offset" : _set_enable_segment_controls_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_segment_controls.setter
     def enable_segment_controls(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_enable_segment_controls_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_enable_segment_controls_metadata, newVal)
 
     _get_enable_segment_results_metadata = { "offset" : _get_enable_segment_results_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12990,14 +13039,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def enable_segment_results(self) -> bool:
         """If true, Astrogator will automatically add dependent variables to differential correctors."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_enable_segment_results_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_enable_segment_results_metadata)
 
     _set_enable_segment_results_metadata = { "offset" : _set_enable_segment_results_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_segment_results.setter
     def enable_segment_results(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_enable_segment_results_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_enable_segment_results_metadata, newVal)
 
     _get_enable_logging_metadata = { "offset" : _get_enable_logging_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -13005,14 +13054,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def enable_logging(self) -> bool:
         """If true, target sequences can be set to produce 'run history' log files for differential corrector profiles. By default, a target sequence does not produce a log file."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_enable_logging_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_enable_logging_metadata)
 
     _set_enable_logging_metadata = { "offset" : _set_enable_logging_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_logging.setter
     def enable_logging(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_enable_logging_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_enable_logging_metadata, newVal)
 
     _get_graphics_update_rate_metadata = { "offset" : _get_graphics_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13020,14 +13069,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def graphics_update_rate(self) -> float:
         """Get or set the rate (between 0 and 1) at which to update graphics. Dimensionless."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_graphics_update_rate_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_graphics_update_rate_metadata)
 
     _set_graphics_update_rate_metadata = { "offset" : _set_graphics_update_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @graphics_update_rate.setter
     def graphics_update_rate(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_graphics_update_rate_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_graphics_update_rate_metadata, newVal)
 
     _get_promote_controls_metadata = { "offset" : _get_promote_controls_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -13035,14 +13084,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def promote_controls(self) -> bool:
         """If true, a target sequence will be able to affect controls and results within a nested target sequence in addition to its own."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_promote_controls_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_promote_controls_metadata)
 
     _set_promote_controls_metadata = { "offset" : _set_promote_controls_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @promote_controls.setter
     def promote_controls(self, inVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_promote_controls_metadata, inVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_promote_controls_metadata, inVal)
 
     _get_use_nominal_settings_metadata = { "offset" : _get_use_nominal_settings_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -13050,14 +13099,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def use_nominal_settings(self) -> bool:
         """If true, components or segments that are modified by a target sequence will be restored to their nominal values as soon as the target sequence completes its run."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_use_nominal_settings_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_use_nominal_settings_metadata)
 
     _set_use_nominal_settings_metadata = { "offset" : _set_use_nominal_settings_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_nominal_settings.setter
     def use_nominal_settings(self, inVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_use_nominal_settings_metadata, inVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_use_nominal_settings_metadata, inVal)
 
     _get_min_ephem_step_metadata = { "offset" : _get_min_ephem_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13065,14 +13114,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def min_ephem_step(self) -> float:
         """Get or set the minimum step size for saving ephemeris. Uses Time Dimension."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_min_ephem_step_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_min_ephem_step_metadata)
 
     _set_min_ephem_step_metadata = { "offset" : _set_min_ephem_step_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @min_ephem_step.setter
     def min_ephem_step(self, newVal:float) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_min_ephem_step_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_min_ephem_step_metadata, newVal)
 
     _get_generate_ephemeris_metadata = { "offset" : _get_generate_ephemeris_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -13080,14 +13129,14 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def generate_ephemeris(self) -> bool:
         """If true, Astrogator will generate ephemeris."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_generate_ephemeris_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_generate_ephemeris_metadata)
 
     _set_generate_ephemeris_metadata = { "offset" : _set_generate_ephemeris_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @generate_ephemeris.setter
     def generate_ephemeris(self, newVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_generate_ephemeris_metadata, newVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_generate_ephemeris_metadata, newVal)
 
     _get_user_variables_metadata = { "offset" : _get_user_variables_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13095,7 +13144,7 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def user_variables(self) -> "UserVariableDefinitionCollection":
         """Interface used to add/remove user variables."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_user_variables_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_user_variables_metadata)
 
     _get_smart_run_mode_metadata = { "offset" : _get_smart_run_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13103,7 +13152,7 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @property
     def smart_run_mode(self) -> "SMART_RUN_MODE":
         """Control whether the run will attempt to only run changed segments."""
-        return self._intf.get_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._get_smart_run_mode_metadata)
+        return self._intf.get_property(MCSOptions._metadata, MCSOptions._get_smart_run_mode_metadata)
 
     _set_smart_run_mode_metadata = { "offset" : _set_smart_run_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -13111,12 +13160,12 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     @smart_run_mode.setter
     def smart_run_mode(self, inVal:"SMART_RUN_MODE") -> None:
         """Control whether the run will attempt to only run changed segments."""
-        return self._intf.set_property(MissionControlSequenceOptions._metadata, MissionControlSequenceOptions._set_smart_run_mode_metadata, inVal)
+        return self._intf.set_property(MCSOptions._metadata, MCSOptions._set_smart_run_mode_metadata, inVal)
 
     _property_names[draw_trajectory_in_2d] = "draw_trajectory_in_2d"
     _property_names[draw_trajectory_in_3d] = "draw_trajectory_in_3d"
     _property_names[update_animation_time_for_all_objects] = "update_animation_time_for_all_objects"
-    _property_names[clear_dwc_graphics_before_each_run] = "clear_dwc_graphics_before_each_run"
+    _property_names[clear_draw_while_calculating_graphics_before_each_run] = "clear_draw_while_calculating_graphics_before_each_run"
     _property_names[clear_additional_b_plane_points] = "clear_additional_b_plane_points"
     _property_names[propagate_on_apply] = "propagate_on_apply"
     _property_names[enable_trajectory_segment_colors] = "enable_trajectory_segment_colors"
@@ -13134,9 +13183,9 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
     _property_names[smart_run_mode] = "smart_run_mode"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceOptions."""
+        """Construct an object of type MCSOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceOptions)
+        initialize_from_source_object(self, sourceObject, MCSOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13144,12 +13193,12 @@ class MissionControlSequenceOptions(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceOptions, [MissionControlSequenceOptions, ])
+        set_class_attribute(self, attrname, value, MCSOptions, [MCSOptions, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5252079360558931739, 420969178435848603), MissionControlSequenceOptions)
-agcls.AgTypeNameMap["MissionControlSequenceOptions"] = MissionControlSequenceOptions
+agcls.AgClassCatalog.add_catalog_entry((5252079360558931739, 420969178435848603), MCSOptions)
+agcls.AgTypeNameMap["MCSOptions"] = MCSOptions
 
-class CalcObjectCollection(SupportsDeleteCallback):
+class CalculationObjectCollection(SupportsDeleteCallback):
     """Collection of calculation objects."""
 
     _num_methods = 10
@@ -13170,9 +13219,9 @@ class CalcObjectCollection(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CalcObjectCollection)
+        return get_interface_property(attrname, CalculationObjectCollection)
     def __iter__(self):
-        """Create an iterator for the CalcObjectCollection object."""
+        """Create an iterator for the CalculationObjectCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
@@ -13190,21 +13239,21 @@ class CalcObjectCollection(SupportsDeleteCallback):
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def add(self, name:str) -> "IComponentInfo":
         """Add a calc object to the collection."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._add_metadata, name, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._add_metadata, name, OutArg())
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "IComponentInfo":
         """Return a calc object."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._item_metadata, indexOrName, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def remove(self, indexOrName:typing.Any) -> None:
         """Remove a calc object from the collection."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._remove_metadata, indexOrName)
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13212,7 +13261,7 @@ class CalcObjectCollection(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(CalcObjectCollection._metadata, CalcObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationObjectCollection._metadata, CalculationObjectCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13220,42 +13269,42 @@ class CalcObjectCollection(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Return the size of the collection."""
-        return self._intf.get_property(CalcObjectCollection._metadata, CalcObjectCollection._get_count_metadata)
+        return self._intf.get_property(CalculationObjectCollection._metadata, CalculationObjectCollection._get_count_metadata)
 
     _cut_metadata = { "offset" : _cut_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def cut(self, indexOrName:typing.Any) -> None:
         """Copy a calc object to the clipboard and removes the calc object from the list."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._cut_metadata, indexOrName)
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "offset" : _paste_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def paste(self) -> "IComponentInfo":
         """Pastes a calc object from the clipboard into the list."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._paste_metadata, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._paste_metadata, OutArg())
 
     _insert_copy_metadata = { "offset" : _insert_copy_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"), agmarshall.InterfaceOutArg,) }
     def insert_copy(self, calcObj:"IComponentInfo") -> "IComponentInfo":
         """Copy a calc object and inserts the copy into the list."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._insert_copy_metadata, calcObj, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._insert_copy_metadata, calcObj, OutArg())
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "IComponentInfo":
         """Retrieve a calc object found by the index."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "IComponentInfo":
         """Retrieve a calc object found by the name."""
-        return self._intf.invoke(CalcObjectCollection._metadata, CalcObjectCollection._get_item_by_name_metadata, name, OutArg())
+        return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._get_item_by_name_metadata, name, OutArg())
 
     __getitem__ = item
 
@@ -13264,9 +13313,9 @@ class CalcObjectCollection(SupportsDeleteCallback):
     _property_names[count] = "count"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CalcObjectCollection."""
+        """Construct an object of type CalculationObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalcObjectCollection)
+        initialize_from_source_object(self, sourceObject, CalculationObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13274,10 +13323,10 @@ class CalcObjectCollection(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalcObjectCollection, [CalcObjectCollection, ])
+        set_class_attribute(self, attrname, value, CalculationObjectCollection, [CalculationObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5427828449804903932, 12224863713293115564), CalcObjectCollection)
-agcls.AgTypeNameMap["CalcObjectCollection"] = CalcObjectCollection
+agcls.AgClassCatalog.add_catalog_entry((5427828449804903932, 12224863713293115564), CalculationObjectCollection)
+agcls.AgTypeNameMap["CalculationObjectCollection"] = CalculationObjectCollection
 
 class ConstraintCollection(SupportsDeleteCallback):
     """The list of constraints assigned to a stopping condition."""
@@ -14420,7 +14469,7 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     _get_scripting_tool_method_offset = 33
     _get_root_finding_algorithm_method_offset = 34
     _set_root_finding_algorithm_method_offset = 35
-    _get_num_iterations_method_offset = 36
+    _get_number_of_iterations_method_offset = 36
     _get_targeter_graphs_method_offset = 37
     _get_stop_on_limit_cycle_detection_method_offset = 38
     _set_stop_on_limit_cycle_detection_method_offset = 39
@@ -14600,17 +14649,17 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
 
     _get_derivative_calc_method_metadata = { "offset" : _get_derivative_calc_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(DERIVE_CALC_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(DERIVATIVE_CALCULATION_METHOD),) }
     @property
-    def derivative_calc_method(self) -> "DERIVE_CALC_METHOD":
+    def derivative_calc_method(self) -> "DERIVATIVE_CALCULATION_METHOD":
         """Get or set the derivative calculation method."""
         return self._intf.get_property(ProfileDifferentialCorrector._metadata, ProfileDifferentialCorrector._get_derivative_calc_method_metadata)
 
     _set_derivative_calc_method_metadata = { "offset" : _set_derivative_calc_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(DERIVE_CALC_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(DERIVATIVE_CALCULATION_METHOD),) }
     @derivative_calc_method.setter
-    def derivative_calc_method(self, newVal:"DERIVE_CALC_METHOD") -> None:
+    def derivative_calc_method(self, newVal:"DERIVATIVE_CALCULATION_METHOD") -> None:
         return self._intf.set_property(ProfileDifferentialCorrector._metadata, ProfileDifferentialCorrector._set_derivative_calc_method_metadata, newVal)
 
     _get_clear_corrections_before_run_metadata = { "offset" : _get_clear_corrections_before_run_method_offset,
@@ -14696,13 +14745,13 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     def root_finding_algorithm(self, pVal:"ROOT_FINDING_ALGORITHM") -> None:
         return self._intf.set_property(ProfileDifferentialCorrector._metadata, ProfileDifferentialCorrector._set_root_finding_algorithm_metadata, pVal)
 
-    _get_num_iterations_metadata = { "offset" : _get_num_iterations_method_offset,
+    _get_number_of_iterations_metadata = { "offset" : _get_number_of_iterations_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def num_iterations(self) -> int:
+    def number_of_iterations(self) -> int:
         """Get the number of iterations of the last run."""
-        return self._intf.get_property(ProfileDifferentialCorrector._metadata, ProfileDifferentialCorrector._get_num_iterations_metadata)
+        return self._intf.get_property(ProfileDifferentialCorrector._metadata, ProfileDifferentialCorrector._get_number_of_iterations_metadata)
 
     _get_targeter_graphs_metadata = { "offset" : _get_targeter_graphs_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -14746,7 +14795,7 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     _property_names[draw_perturbation] = "draw_perturbation"
     _property_names[scripting_tool] = "scripting_tool"
     _property_names[root_finding_algorithm] = "root_finding_algorithm"
-    _property_names[num_iterations] = "num_iterations"
+    _property_names[number_of_iterations] = "number_of_iterations"
     _property_names[targeter_graphs] = "targeter_graphs"
     _property_names[stop_on_limit_cycle_detection] = "stop_on_limit_cycle_detection"
 
@@ -14778,7 +14827,7 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _get_enable_method_offset = 1
     _set_enable_method_offset = 2
     _get_segment_properties_method_offset = 3
-    _get_calc_objects_method_offset = 4
+    _get_calculation_objects_method_offset = 4
     _get_parameters_method_offset = 5
     _get_language_type_method_offset = 6
     _set_language_type_method_offset = 7
@@ -14816,13 +14865,13 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
         """Return the collection of the segment properties."""
         return self._intf.get_property(ProfileScriptingTool._metadata, ProfileScriptingTool._get_segment_properties_metadata)
 
-    _get_calc_objects_metadata = { "offset" : _get_calc_objects_method_offset,
+    _get_calculation_objects_metadata = { "offset" : _get_calculation_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_objects(self) -> "ScriptingCalcObjectCollection":
+    def calculation_objects(self) -> "ScriptingCalculationObjectCollection":
         """Return the collection of the calc objects."""
-        return self._intf.get_property(ProfileScriptingTool._metadata, ProfileScriptingTool._get_calc_objects_metadata)
+        return self._intf.get_property(ProfileScriptingTool._metadata, ProfileScriptingTool._get_calculation_objects_metadata)
 
     _get_parameters_metadata = { "offset" : _get_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -14870,7 +14919,7 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
 
     _property_names[enable] = "enable"
     _property_names[segment_properties] = "segment_properties"
-    _property_names[calc_objects] = "calc_objects"
+    _property_names[calculation_objects] = "calculation_objects"
     _property_names[parameters] = "parameters"
     _property_names[language_type] = "language_type"
 
@@ -16057,15 +16106,15 @@ class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDele
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def segment(self) -> "MissionControlSequenceManeuver":
+    def segment(self) -> "MCSManeuver":
         """Get or set the targeted maneuver segment."""
         return self._intf.get_property(ProfileChangeManeuverType._metadata, ProfileChangeManeuverType._get_segment_metadata)
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("MissionControlSequenceManeuver"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("MCSManeuver"),) }
     @segment.setter
-    def segment(self, pSegment:"MissionControlSequenceManeuver") -> None:
+    def segment(self, pSegment:"MCSManeuver") -> None:
         return self._intf.set_property(ProfileChangeManeuverType._metadata, ProfileChangeManeuverType._set_segment_metadata, pSegment)
 
     _get_maneuver_type_metadata = { "offset" : _get_maneuver_type_method_offset,
@@ -16141,8 +16190,8 @@ class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDel
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("MissionControlSequenceReturn"),) }
-    def set_segment(self, pVAMCSReturn:"MissionControlSequenceReturn") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("MCSReturn"),) }
+    def set_segment(self, pVAMCSReturn:"MCSReturn") -> None:
         """Set the return segment to target."""
         return self._intf.invoke(ProfileChangeReturnSegment._metadata, ProfileChangeReturnSegment._set_segment_metadata, pVAMCSReturn)
 
@@ -16219,8 +16268,8 @@ class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDelete
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IMissionControlSequenceSegment"),) }
-    def set_segment(self, pVAMCSSegment:"IMissionControlSequenceSegment") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("IMCSSegment"),) }
+    def set_segment(self, pVAMCSSegment:"IMCSSegment") -> None:
         """Set the targeted segment."""
         return self._intf.invoke(ProfileChangePropagator._metadata, ProfileChangePropagator._set_segment_metadata, pVAMCSSegment)
 
@@ -16297,8 +16346,8 @@ class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDelet
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("MissionControlSequenceStop"),) }
-    def set_segment(self, pVAMCSStop:"MissionControlSequenceStop") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("MCSStop"),) }
+    def set_segment(self, pVAMCSStop:"MCSStop") -> None:
         """Set the stop segment to target."""
         return self._intf.invoke(ProfileChangeStopSegment._metadata, ProfileChangeStopSegment._set_segment_metadata, pVAMCSStop)
 
@@ -16378,8 +16427,8 @@ class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, Su
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IMissionControlSequenceSegment"),) }
-    def set_segment(self, mCSSegment:"IMissionControlSequenceSegment") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("IMCSSegment"),) }
+    def set_segment(self, mCSSegment:"IMCSSegment") -> None:
         """Set the targeted segment."""
         return self._intf.invoke(ProfileChangeStoppingConditionState._metadata, ProfileChangeStoppingConditionState._set_segment_metadata, mCSSegment)
 
@@ -16479,8 +16528,8 @@ class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDele
 
     _set_segment_metadata = { "offset" : _set_segment_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("MissionControlSequenceManeuver"),) }
-    def set_segment(self, pVAMCSManeuver:"MissionControlSequenceManeuver") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("MCSManeuver"),) }
+    def set_segment(self, pVAMCSManeuver:"MCSManeuver") -> None:
         """Set the maneuver segment to target."""
         return self._intf.invoke(ProfileSeedFiniteManeuver._metadata, ProfileSeedFiniteManeuver._set_segment_metadata, pVAMCSManeuver)
 
@@ -16722,7 +16771,7 @@ class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
 agcls.AgClassCatalog.add_catalog_entry((4973428904588242653, 6958212153847005885), StateCalcDamageMassFlux)
 agcls.AgTypeNameMap["StateCalcDamageMassFlux"] = StateCalcDamageMassFlux
 
-class StateCalcMagnitudeFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Interface for AgAsStateCalcMagFieldDipoleL."""
 
     _num_methods = 0
@@ -16733,13 +16782,13 @@ class StateCalcMagnitudeFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteC
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcMagnitudeFieldDipoleL)
+        return get_interface_property(attrname, StateCalcMagneticFieldDipoleL)
     
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcMagnitudeFieldDipoleL."""
+        """Construct an object of type StateCalcMagneticFieldDipoleL."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMagnitudeFieldDipoleL)
+        initialize_from_source_object(self, sourceObject, StateCalcMagneticFieldDipoleL)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -16751,12 +16800,12 @@ class StateCalcMagnitudeFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteC
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcMagnitudeFieldDipoleL, [StateCalcMagnitudeFieldDipoleL, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcMagneticFieldDipoleL, [StateCalcMagneticFieldDipoleL, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4679876560310607257, 8310578291428709278), StateCalcMagnitudeFieldDipoleL)
-agcls.AgTypeNameMap["StateCalcMagnitudeFieldDipoleL"] = StateCalcMagnitudeFieldDipoleL
+agcls.AgClassCatalog.add_catalog_entry((4679876560310607257, 8310578291428709278), StateCalcMagneticFieldDipoleL)
+agcls.AgTypeNameMap["StateCalcMagneticFieldDipoleL"] = StateCalcMagneticFieldDipoleL
 
-class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a SEETMagFieldFieldLineSepAngle calculation object."""
 
     _num_methods = 1
@@ -16768,7 +16817,7 @@ class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, S
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcSEETMagnitudeFieldFieldLineSepAngle)
+        return get_interface_property(attrname, StateCalcSEETMagneticFieldLineSeparationAngle)
     
     _get_target_object_metadata = { "offset" : _get_target_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16776,14 +16825,14 @@ class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, S
     @property
     def target_object(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcSEETMagnitudeFieldFieldLineSepAngle._metadata, StateCalcSEETMagnitudeFieldFieldLineSepAngle._get_target_object_metadata)
+        return self._intf.get_property(StateCalcSEETMagneticFieldLineSeparationAngle._metadata, StateCalcSEETMagneticFieldLineSeparationAngle._get_target_object_metadata)
 
     _property_names[target_object] = "target_object"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcSEETMagnitudeFieldFieldLineSepAngle."""
+        """Construct an object of type StateCalcSEETMagneticFieldLineSeparationAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSEETMagnitudeFieldFieldLineSepAngle)
+        initialize_from_source_object(self, sourceObject, StateCalcSEETMagneticFieldLineSeparationAngle)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -16795,10 +16844,10 @@ class StateCalcSEETMagnitudeFieldFieldLineSepAngle(IComponentInfo, ICloneable, S
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcSEETMagnitudeFieldFieldLineSepAngle, [StateCalcSEETMagnitudeFieldFieldLineSepAngle, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcSEETMagneticFieldLineSeparationAngle, [StateCalcSEETMagneticFieldLineSeparationAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5587815812935971298, 7525019620982063505), StateCalcSEETMagnitudeFieldFieldLineSepAngle)
-agcls.AgTypeNameMap["StateCalcSEETMagnitudeFieldFieldLineSepAngle"] = StateCalcSEETMagnitudeFieldFieldLineSepAngle
+agcls.AgClassCatalog.add_catalog_entry((5587815812935971298, 7525019620982063505), StateCalcSEETMagneticFieldLineSeparationAngle)
+agcls.AgTypeNameMap["StateCalcSEETMagneticFieldLineSeparationAngle"] = StateCalcSEETMagneticFieldLineSeparationAngle
 
 class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Interface for AgAsStateCalcImpactFlux."""
@@ -17133,10 +17182,10 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
-    _get_final_var_method_offset = 3
-    _set_final_var_method_offset = 4
-    _get_init_var_method_offset = 5
-    _set_init_var_method_offset = 6
+    _get_final_state_component_method_offset = 3
+    _set_final_state_component_method_offset = 4
+    _get_initial_state_component_method_offset = 5
+    _set_initial_state_component_method_offset = 6
     _metadata = {
         "iid_data" : (4663303186423105219, 10757831706775060869),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -17160,39 +17209,39 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def coord_system_name(self, inVal:str) -> None:
         return self._intf.set_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._set_coord_system_name_metadata, inVal)
 
-    _get_final_var_metadata = { "offset" : _get_final_var_method_offset,
+    _get_final_state_component_metadata = { "offset" : _get_final_state_component_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
     @property
-    def final_var(self) -> "STM_PERT_VARIABLES":
+    def final_state_component(self) -> "STM_PERTURBATION_VARIABLES":
         """Get or set the final variation variable."""
-        return self._intf.get_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._get_final_var_metadata)
+        return self._intf.get_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._get_final_state_component_metadata)
 
-    _set_final_var_metadata = { "offset" : _set_final_var_method_offset,
+    _set_final_state_component_metadata = { "offset" : _set_final_state_component_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
-    @final_var.setter
-    def final_var(self, inVal:"STM_PERT_VARIABLES") -> None:
-        return self._intf.set_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._set_final_var_metadata, inVal)
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
+    @final_state_component.setter
+    def final_state_component(self, inVal:"STM_PERTURBATION_VARIABLES") -> None:
+        return self._intf.set_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._set_final_state_component_metadata, inVal)
 
-    _get_init_var_metadata = { "offset" : _get_init_var_method_offset,
+    _get_initial_state_component_metadata = { "offset" : _get_initial_state_component_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
     @property
-    def init_var(self) -> "STM_PERT_VARIABLES":
+    def initial_state_component(self) -> "STM_PERTURBATION_VARIABLES":
         """Get or set the initial variation variable."""
-        return self._intf.get_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._get_init_var_metadata)
+        return self._intf.get_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._get_initial_state_component_metadata)
 
-    _set_init_var_metadata = { "offset" : _set_init_var_method_offset,
+    _set_initial_state_component_metadata = { "offset" : _set_initial_state_component_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
-    @init_var.setter
-    def init_var(self, inVal:"STM_PERT_VARIABLES") -> None:
-        return self._intf.set_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._set_init_var_metadata, inVal)
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
+    @initial_state_component.setter
+    def initial_state_component(self, inVal:"STM_PERTURBATION_VARIABLES") -> None:
+        return self._intf.set_property(StateCalcCartSTMElem._metadata, StateCalcCartSTMElem._set_initial_state_component_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
-    _property_names[final_var] = "final_var"
-    _property_names[init_var] = "init_var"
+    _property_names[final_state_component] = "final_state_component"
+    _property_names[initial_state_component] = "initial_state_component"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcCartSTMElem."""
@@ -17355,17 +17404,17 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _get_state_variable_metadata = { "offset" : _get_state_variable_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
     @property
-    def state_variable(self) -> "STM_PERT_VARIABLES":
+    def state_variable(self) -> "STM_PERTURBATION_VARIABLES":
         """Get or set the variable identifying the component within an Eigenvector."""
         return self._intf.get_property(StateCalcSTMEigenvecElem._metadata, StateCalcSTMEigenvecElem._get_state_variable_metadata)
 
     _set_state_variable_metadata = { "offset" : _set_state_variable_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(STM_PERT_VARIABLES),) }
+            "marshallers" : (agmarshall.EnumArg(STM_PERTURBATION_VARIABLES),) }
     @state_variable.setter
-    def state_variable(self, inVal:"STM_PERT_VARIABLES") -> None:
+    def state_variable(self, inVal:"STM_PERTURBATION_VARIABLES") -> None:
         return self._intf.set_property(StateCalcSTMEigenvecElem._metadata, StateCalcSTMEigenvecElem._set_state_variable_metadata, inVal)
 
     _get_eigenvector_complex_part_metadata = { "offset" : _get_eigenvector_complex_part_method_offset,
@@ -17694,7 +17743,7 @@ class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback
 agcls.AgClassCatalog.add_catalog_entry((5342683362640941046, 3476677555251016876), StateCalcOrbitDelaunayL)
 agcls.AgTypeNameMap["StateCalcOrbitDelaunayL"] = StateCalcOrbitDelaunayL
 
-class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Interface for AsStateCalcOrbitSemiLatusRectum."""
 
     _num_methods = 4
@@ -17709,7 +17758,7 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcOrbitSemiLatusRectum)
+        return get_interface_property(attrname, StateCalcOrbitSemilatusRectum)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -17717,7 +17766,7 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     @property
     def central_body_name(self) -> str:
         """Central Body used for calculation."""
-        return self._intf.get_property(StateCalcOrbitSemiLatusRectum._metadata, StateCalcOrbitSemiLatusRectum._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcOrbitSemilatusRectum._metadata, StateCalcOrbitSemilatusRectum._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -17725,7 +17774,7 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
         """Central Body used for calculation."""
-        return self._intf.set_property(StateCalcOrbitSemiLatusRectum._metadata, StateCalcOrbitSemiLatusRectum._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcOrbitSemilatusRectum._metadata, StateCalcOrbitSemilatusRectum._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -17733,7 +17782,7 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     @property
     def element_type(self) -> "ELEMENT":
         """Choice of osculating or mean elements."""
-        return self._intf.get_property(StateCalcOrbitSemiLatusRectum._metadata, StateCalcOrbitSemiLatusRectum._get_element_type_metadata)
+        return self._intf.get_property(StateCalcOrbitSemilatusRectum._metadata, StateCalcOrbitSemilatusRectum._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -17741,15 +17790,15 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     @element_type.setter
     def element_type(self, inVal:"ELEMENT") -> None:
         """Choice of osculating or mean elements."""
-        return self._intf.set_property(StateCalcOrbitSemiLatusRectum._metadata, StateCalcOrbitSemiLatusRectum._set_element_type_metadata, inVal)
+        return self._intf.set_property(StateCalcOrbitSemilatusRectum._metadata, StateCalcOrbitSemilatusRectum._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcOrbitSemiLatusRectum."""
+        """Construct an object of type StateCalcOrbitSemilatusRectum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitSemiLatusRectum)
+        initialize_from_source_object(self, sourceObject, StateCalcOrbitSemilatusRectum)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -17761,10 +17810,10 @@ class StateCalcOrbitSemiLatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcOrbitSemiLatusRectum, [StateCalcOrbitSemiLatusRectum, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcOrbitSemilatusRectum, [StateCalcOrbitSemilatusRectum, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5167808672944813185, 3570909631788799361), StateCalcOrbitSemiLatusRectum)
-agcls.AgTypeNameMap["StateCalcOrbitSemiLatusRectum"] = StateCalcOrbitSemiLatusRectum
+agcls.AgClassCatalog.add_catalog_entry((5167808672944813185, 3570909631788799361), StateCalcOrbitSemilatusRectum)
+agcls.AgTypeNameMap["StateCalcOrbitSemilatusRectum"] = StateCalcOrbitSemilatusRectum
 
 class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Equinoctial Element calculation object."""
@@ -17800,17 +17849,17 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcEquinoctialElem._metadata, StateCalcEquinoctialElem._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcEquinoctialElem._metadata, StateCalcEquinoctialElem._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -17871,17 +17920,17 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCa
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachBearing._metadata, StateCalcCloseApproachBearing._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachBearing._metadata, StateCalcCloseApproachBearing._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -17951,17 +18000,17 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDelete
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachMagnitude._metadata, StateCalcCloseApproachMagnitude._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachMagnitude._metadata, StateCalcCloseApproachMagnitude._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18031,17 +18080,17 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachTheta._metadata, StateCalcCloseApproachTheta._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachTheta._metadata, StateCalcCloseApproachTheta._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18111,17 +18160,17 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachX._metadata, StateCalcCloseApproachX._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachX._metadata, StateCalcCloseApproachX._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18191,17 +18240,17 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachY._metadata, StateCalcCloseApproachY._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachY._metadata, StateCalcCloseApproachY._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18271,17 +18320,17 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcCloseApproachCosBearing._metadata, StateCalcCloseApproachCosBearing._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcCloseApproachCosBearing._metadata, StateCalcCloseApproachCosBearing._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18316,7 +18365,7 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
 agcls.AgClassCatalog.add_catalog_entry((5505780054597041956, 16274471926901001118), StateCalcCloseApproachCosBearing)
 agcls.AgTypeNameMap["StateCalcCloseApproachCosBearing"] = StateCalcCloseApproachCosBearing
 
-class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a RelGroundTrackError calculation object."""
 
     _num_methods = 9
@@ -18336,7 +18385,7 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcRelGroundTrackError)
+        return get_interface_property(attrname, StateCalcRelativeGroundTrackError)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18344,29 +18393,29 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._set_central_body_name_metadata, inVal)
 
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_DIRECTION),) }
     @property
-    def direction(self) -> "CALC_OBJECT_DIRECTION":
+    def direction(self) -> "CALCULATION_OBJECT_DIRECTION":
         """Get or set the direction to search for the desired value."""
-        return self._intf.get_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._get_direction_metadata)
+        return self._intf.get_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._get_direction_metadata)
 
     _set_direction_metadata = { "offset" : _set_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_DIRECTION),) }
     @direction.setter
-    def direction(self, inVal:"CALC_OBJECT_DIRECTION") -> None:
-        return self._intf.set_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._set_direction_metadata, inVal)
+    def direction(self, inVal:"CALCULATION_OBJECT_DIRECTION") -> None:
+        return self._intf.set_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._set_direction_metadata, inVal)
 
     _get_signed_metadata = { "offset" : _get_signed_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18374,29 +18423,29 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def signed(self) -> bool:
         """True if signed based on RxV."""
-        return self._intf.get_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._get_signed_metadata)
+        return self._intf.get_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._get_signed_metadata)
 
     _set_signed_metadata = { "offset" : _set_signed_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @signed.setter
     def signed(self, inVal:bool) -> None:
-        return self._intf.set_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._set_signed_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._set_signed_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18404,7 +18453,7 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcRelGroundTrackError._metadata, StateCalcRelGroundTrackError._get_reference_metadata)
+        return self._intf.get_property(StateCalcRelativeGroundTrackError._metadata, StateCalcRelativeGroundTrackError._get_reference_metadata)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[direction] = "direction"
@@ -18413,9 +18462,9 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[reference] = "reference"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcRelGroundTrackError."""
+        """Construct an object of type StateCalcRelativeGroundTrackError."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelGroundTrackError)
+        initialize_from_source_object(self, sourceObject, StateCalcRelativeGroundTrackError)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -18427,20 +18476,20 @@ class StateCalcRelGroundTrackError(IComponentInfo, ICloneable, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcRelGroundTrackError, [StateCalcRelGroundTrackError, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcRelativeGroundTrackError, [StateCalcRelativeGroundTrackError, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4720669564841700935, 1002250866014191547), StateCalcRelGroundTrackError)
-agcls.AgTypeNameMap["StateCalcRelGroundTrackError"] = StateCalcRelGroundTrackError
+agcls.AgClassCatalog.add_catalog_entry((4720669564841700935, 1002250866014191547), StateCalcRelativeGroundTrackError)
+agcls.AgTypeNameMap["StateCalcRelativeGroundTrackError"] = StateCalcRelativeGroundTrackError
 
-class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a RelativeAtAOL calculation object."""
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
-    _get_calc_object_name_method_offset = 3
-    _set_calc_object_name_method_offset = 4
+    _get_calculation_object_name_method_offset = 3
+    _set_calculation_object_name_method_offset = 4
     _get_direction_method_offset = 5
     _set_direction_method_offset = 6
     _get_reference_selection_method_offset = 7
@@ -18452,7 +18501,7 @@ class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcRelAtAOLMaster)
+        return get_interface_property(attrname, StateCalcRelativeAtAOLMaster)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18460,59 +18509,59 @@ class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._set_central_body_name_metadata, inVal)
 
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object of interest."""
-        return self._intf.get_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._set_calculation_object_name_metadata, inVal)
 
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_DIRECTION),) }
     @property
-    def direction(self) -> "CALC_OBJECT_DIRECTION":
+    def direction(self) -> "CALCULATION_OBJECT_DIRECTION":
         """Get or set the direction to search for the desired value."""
-        return self._intf.get_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._get_direction_metadata)
+        return self._intf.get_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._get_direction_metadata)
 
     _set_direction_metadata = { "offset" : _set_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_DIRECTION),) }
     @direction.setter
-    def direction(self, inVal:"CALC_OBJECT_DIRECTION") -> None:
-        return self._intf.set_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._set_direction_metadata, inVal)
+    def direction(self, inVal:"CALCULATION_OBJECT_DIRECTION") -> None:
+        return self._intf.set_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._set_direction_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18520,18 +18569,18 @@ class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcRelAtAOLMaster._metadata, StateCalcRelAtAOLMaster._get_reference_metadata)
+        return self._intf.get_property(StateCalcRelativeAtAOLMaster._metadata, StateCalcRelativeAtAOLMaster._get_reference_metadata)
 
     _property_names[central_body_name] = "central_body_name"
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[direction] = "direction"
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcRelAtAOLMaster."""
+        """Construct an object of type StateCalcRelativeAtAOLMaster."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelAtAOLMaster)
+        initialize_from_source_object(self, sourceObject, StateCalcRelativeAtAOLMaster)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -18543,18 +18592,18 @@ class StateCalcRelAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCallback
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcRelAtAOLMaster, [StateCalcRelAtAOLMaster, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcRelativeAtAOLMaster, [StateCalcRelativeAtAOLMaster, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4849229807442923025, 3055985504414007725), StateCalcRelAtAOLMaster)
-agcls.AgTypeNameMap["StateCalcRelAtAOLMaster"] = StateCalcRelAtAOLMaster
+agcls.AgClassCatalog.add_catalog_entry((4849229807442923025, 3055985504414007725), StateCalcRelativeAtAOLMaster)
+agcls.AgTypeNameMap["StateCalcRelativeAtAOLMaster"] = StateCalcRelativeAtAOLMaster
 
 class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Rel Mean Mean Anomaly calculation object."""
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_reference_selection_method_offset = 3
     _set_reference_selection_method_offset = 4
     _get_reference_method_offset = 5
@@ -18566,34 +18615,34 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDeltaFromMaster)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object of interest."""
-        return self._intf.get_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._set_calculation_object_name_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -18604,7 +18653,7 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Get the reference object."""
         return self._intf.get_property(StateCalcDeltaFromMaster._metadata, StateCalcDeltaFromMaster._get_reference_metadata)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
@@ -18662,17 +18711,17 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcLonDriftRate._metadata, StateCalcLonDriftRate._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcLonDriftRate._metadata, StateCalcLonDriftRate._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -19845,17 +19894,17 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcAltitudeOfApoapsis._metadata, StateCalcAltitudeOfApoapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcAltitudeOfApoapsis._metadata, StateCalcAltitudeOfApoapsis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -19915,17 +19964,17 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcAltitudeOfPeriapsis._metadata, StateCalcAltitudeOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcAltitudeOfPeriapsis._metadata, StateCalcAltitudeOfPeriapsis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -19951,7 +20000,7 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
 agcls.AgClassCatalog.add_catalog_entry((5711549813926167011, 172247784438999984), StateCalcAltitudeOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcAltitudeOfPeriapsis"] = StateCalcAltitudeOfPeriapsis
 
-class StateCalcArgOfLat(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Argument of Latitude calculation object."""
 
     _num_methods = 4
@@ -19966,7 +20015,7 @@ class StateCalcArgOfLat(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcArgOfLat)
+        return get_interface_property(attrname, StateCalcArgumentOfLatitude)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -19974,37 +20023,37 @@ class StateCalcArgOfLat(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcArgOfLat._metadata, StateCalcArgOfLat._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcArgumentOfLatitude._metadata, StateCalcArgumentOfLatitude._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcArgOfLat._metadata, StateCalcArgOfLat._set_coord_system_name_metadata, inVal)
+        return self._intf.set_property(StateCalcArgumentOfLatitude._metadata, StateCalcArgumentOfLatitude._set_coord_system_name_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
-        return self._intf.get_property(StateCalcArgOfLat._metadata, StateCalcArgOfLat._get_element_type_metadata)
+        return self._intf.get_property(StateCalcArgumentOfLatitude._metadata, StateCalcArgumentOfLatitude._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcArgOfLat._metadata, StateCalcArgOfLat._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcArgumentOfLatitude._metadata, StateCalcArgumentOfLatitude._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcArgOfLat."""
+        """Construct an object of type StateCalcArgumentOfLatitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcArgOfLat)
+        initialize_from_source_object(self, sourceObject, StateCalcArgumentOfLatitude)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20016,12 +20065,12 @@ class StateCalcArgOfLat(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcArgOfLat, [StateCalcArgOfLat, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcArgumentOfLatitude, [StateCalcArgumentOfLatitude, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5721561101168071631, 8215502116176583064), StateCalcArgOfLat)
-agcls.AgTypeNameMap["StateCalcArgOfLat"] = StateCalcArgOfLat
+agcls.AgClassCatalog.add_catalog_entry((5721561101168071631, 8215502116176583064), StateCalcArgumentOfLatitude)
+agcls.AgTypeNameMap["StateCalcArgumentOfLatitude"] = StateCalcArgumentOfLatitude
 
-class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Argument of Periapsis calculation object."""
 
     _num_methods = 4
@@ -20036,7 +20085,7 @@ class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcArgOfPeriapsis)
+        return get_interface_property(attrname, StateCalcArgumentOfPeriapsis)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20044,37 +20093,37 @@ class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcArgOfPeriapsis._metadata, StateCalcArgOfPeriapsis._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcArgumentOfPeriapsis._metadata, StateCalcArgumentOfPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcArgOfPeriapsis._metadata, StateCalcArgOfPeriapsis._set_coord_system_name_metadata, inVal)
+        return self._intf.set_property(StateCalcArgumentOfPeriapsis._metadata, StateCalcArgumentOfPeriapsis._set_coord_system_name_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
-        return self._intf.get_property(StateCalcArgOfPeriapsis._metadata, StateCalcArgOfPeriapsis._get_element_type_metadata)
+        return self._intf.get_property(StateCalcArgumentOfPeriapsis._metadata, StateCalcArgumentOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcArgOfPeriapsis._metadata, StateCalcArgOfPeriapsis._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcArgumentOfPeriapsis._metadata, StateCalcArgumentOfPeriapsis._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcArgOfPeriapsis."""
+        """Construct an object of type StateCalcArgumentOfPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcArgOfPeriapsis)
+        initialize_from_source_object(self, sourceObject, StateCalcArgumentOfPeriapsis)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20086,10 +20135,10 @@ class StateCalcArgOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcArgOfPeriapsis, [StateCalcArgOfPeriapsis, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcArgumentOfPeriapsis, [StateCalcArgumentOfPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5684255884981629138, 3677058005489362621), StateCalcArgOfPeriapsis)
-agcls.AgTypeNameMap["StateCalcArgOfPeriapsis"] = StateCalcArgOfPeriapsis
+agcls.AgClassCatalog.add_catalog_entry((5684255884981629138, 3677058005489362621), StateCalcArgumentOfPeriapsis)
+agcls.AgTypeNameMap["StateCalcArgumentOfPeriapsis"] = StateCalcArgumentOfPeriapsis
 
 class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Eccentric Anomaly calculation object."""
@@ -20125,17 +20174,17 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCal
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcEccentricityAnomaly._metadata, StateCalcEccentricityAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcEccentricityAnomaly._metadata, StateCalcEccentricityAnomaly._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20195,17 +20244,17 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcLonOfAscNode._metadata, StateCalcLonOfAscNode._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcLonOfAscNode._metadata, StateCalcLonOfAscNode._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20265,17 +20314,17 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcMeanMotion._metadata, StateCalcMeanMotion._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcMeanMotion._metadata, StateCalcMeanMotion._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20335,17 +20384,17 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcOrbitPeriod._metadata, StateCalcOrbitPeriod._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcOrbitPeriod._metadata, StateCalcOrbitPeriod._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20405,17 +20454,17 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcNumRevs._metadata, StateCalcNumRevs._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcNumRevs._metadata, StateCalcNumRevs._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20475,17 +20524,17 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcRadOfApoapsis._metadata, StateCalcRadOfApoapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcRadOfApoapsis._metadata, StateCalcRadOfApoapsis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20545,17 +20594,17 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcRadOfPeriapsis._metadata, StateCalcRadOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcRadOfPeriapsis._metadata, StateCalcRadOfPeriapsis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20581,7 +20630,7 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
 agcls.AgClassCatalog.add_catalog_entry((4913547247352946746, 6032480820430129067), StateCalcRadOfPeriapsis)
 agcls.AgTypeNameMap["StateCalcRadOfPeriapsis"] = StateCalcRadOfPeriapsis
 
-class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Semimajor Axis calculation object."""
 
     _num_methods = 4
@@ -20596,7 +20645,7 @@ class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcSemiMajorAxis)
+        return get_interface_property(attrname, StateCalcSemimajorAxis)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20604,37 +20653,37 @@ class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcSemiMajorAxis._metadata, StateCalcSemiMajorAxis._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcSemimajorAxis._metadata, StateCalcSemimajorAxis._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcSemiMajorAxis._metadata, StateCalcSemiMajorAxis._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcSemimajorAxis._metadata, StateCalcSemimajorAxis._set_central_body_name_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
-        return self._intf.get_property(StateCalcSemiMajorAxis._metadata, StateCalcSemiMajorAxis._get_element_type_metadata)
+        return self._intf.get_property(StateCalcSemimajorAxis._metadata, StateCalcSemimajorAxis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcSemiMajorAxis._metadata, StateCalcSemiMajorAxis._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcSemimajorAxis._metadata, StateCalcSemimajorAxis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcSemiMajorAxis."""
+        """Construct an object of type StateCalcSemimajorAxis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSemiMajorAxis)
+        initialize_from_source_object(self, sourceObject, StateCalcSemimajorAxis)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20646,10 +20695,10 @@ class StateCalcSemiMajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcSemiMajorAxis, [StateCalcSemiMajorAxis, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcSemimajorAxis, [StateCalcSemimajorAxis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5118541904447365438, 10801378442445865622), StateCalcSemiMajorAxis)
-agcls.AgTypeNameMap["StateCalcSemiMajorAxis"] = StateCalcSemiMajorAxis
+agcls.AgClassCatalog.add_catalog_entry((5118541904447365438, 10801378442445865622), StateCalcSemimajorAxis)
+agcls.AgTypeNameMap["StateCalcSemimajorAxis"] = StateCalcSemimajorAxis
 
 class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Time Past Ascending Node calculation object."""
@@ -20685,17 +20734,17 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcTimePastAscNode._metadata, StateCalcTimePastAscNode._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcTimePastAscNode._metadata, StateCalcTimePastAscNode._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -20755,17 +20804,17 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcTimePastPeriapsis._metadata, StateCalcTimePastPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcTimePastPeriapsis._metadata, StateCalcTimePastPeriapsis._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20825,17 +20874,17 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcTrueAnomaly._metadata, StateCalcTrueAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcTrueAnomaly._metadata, StateCalcTrueAnomaly._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -20929,7 +20978,7 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback)
 agcls.AgClassCatalog.add_catalog_entry((5018999258309169900, 18294161584335658669), StateCalcDeltaVSquared)
 agcls.AgTypeNameMap["StateCalcDeltaVSquared"] = StateCalcDeltaVSquared
 
-class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a MCS DeltaV calculation object."""
 
     _num_methods = 0
@@ -20940,13 +20989,13 @@ class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, Supports
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcMissionControlSequenceDeltaV)
+        return get_interface_property(attrname, StateCalcMCSDeltaV)
     
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcMissionControlSequenceDeltaV."""
+        """Construct an object of type StateCalcMCSDeltaV."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMissionControlSequenceDeltaV)
+        initialize_from_source_object(self, sourceObject, StateCalcMCSDeltaV)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -20958,12 +21007,12 @@ class StateCalcMissionControlSequenceDeltaV(IComponentInfo, ICloneable, Supports
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcMissionControlSequenceDeltaV, [StateCalcMissionControlSequenceDeltaV, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcMCSDeltaV, [StateCalcMCSDeltaV, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5376311996187022567, 10704423917084038577), StateCalcMissionControlSequenceDeltaV)
-agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaV"] = StateCalcMissionControlSequenceDeltaV
+agcls.AgClassCatalog.add_catalog_entry((5376311996187022567, 10704423917084038577), StateCalcMCSDeltaV)
+agcls.AgTypeNameMap["StateCalcMCSDeltaV"] = StateCalcMCSDeltaV
 
-class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a MCS DeltaV Squared calculation object."""
 
     _num_methods = 2
@@ -20976,7 +21025,7 @@ class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, S
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcMissionControlSequenceDeltaVSquared)
+        return get_interface_property(attrname, StateCalcMCSDeltaVSquared)
     
     _get_squared_type_metadata = { "offset" : _get_squared_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -20984,7 +21033,7 @@ class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, S
     @property
     def squared_type(self) -> "SQUARED_TYPE":
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        return self._intf.get_property(StateCalcMissionControlSequenceDeltaVSquared._metadata, StateCalcMissionControlSequenceDeltaVSquared._get_squared_type_metadata)
+        return self._intf.get_property(StateCalcMCSDeltaVSquared._metadata, StateCalcMCSDeltaVSquared._get_squared_type_metadata)
 
     _set_squared_type_metadata = { "offset" : _set_squared_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -20992,14 +21041,14 @@ class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, S
     @squared_type.setter
     def squared_type(self, inVal:"SQUARED_TYPE") -> None:
         """Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs."""
-        return self._intf.set_property(StateCalcMissionControlSequenceDeltaVSquared._metadata, StateCalcMissionControlSequenceDeltaVSquared._set_squared_type_metadata, inVal)
+        return self._intf.set_property(StateCalcMCSDeltaVSquared._metadata, StateCalcMCSDeltaVSquared._set_squared_type_metadata, inVal)
 
     _property_names[squared_type] = "squared_type"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcMissionControlSequenceDeltaVSquared."""
+        """Construct an object of type StateCalcMCSDeltaVSquared."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMissionControlSequenceDeltaVSquared)
+        initialize_from_source_object(self, sourceObject, StateCalcMCSDeltaVSquared)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -21011,10 +21060,10 @@ class StateCalcMissionControlSequenceDeltaVSquared(IComponentInfo, ICloneable, S
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcMissionControlSequenceDeltaVSquared, [StateCalcMissionControlSequenceDeltaVSquared, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcMCSDeltaVSquared, [StateCalcMCSDeltaVSquared, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5628482244802819265, 12608246510277330571), StateCalcMissionControlSequenceDeltaVSquared)
-agcls.AgTypeNameMap["StateCalcMissionControlSequenceDeltaVSquared"] = StateCalcMissionControlSequenceDeltaVSquared
+agcls.AgClassCatalog.add_catalog_entry((5628482244802819265, 12608246510277330571), StateCalcMCSDeltaVSquared)
+agcls.AgTypeNameMap["StateCalcMCSDeltaVSquared"] = StateCalcMCSDeltaVSquared
 
 class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Sequence DeltaV calculation object."""
@@ -21784,8 +21833,8 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5242501412076507984, 7725825147363795095),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -21794,22 +21843,22 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcAbsoluteValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcAbsoluteValue._metadata, StateCalcAbsoluteValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcAbsoluteValue._metadata, StateCalcAbsoluteValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcAbsoluteValue._metadata, StateCalcAbsoluteValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcAbsoluteValue._metadata, StateCalcAbsoluteValue._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcAbsoluteValue."""
@@ -21836,8 +21885,8 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_difference_order_method_offset = 3
     _set_difference_order_method_offset = 4
     _metadata = {
@@ -21848,20 +21897,20 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDifference)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcDifference._metadata, StateCalcDifference._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcDifference._metadata, StateCalcDifference._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcDifference._metadata, StateCalcDifference._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcDifference._metadata, StateCalcDifference._set_calculation_object_name_metadata, inVal)
 
     _get_difference_order_metadata = { "offset" : _get_difference_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21878,7 +21927,7 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def difference_order(self, inVal:"DIFFERENCE_ORDER") -> None:
         return self._intf.set_property(StateCalcDifference._metadata, StateCalcDifference._set_difference_order_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[difference_order] = "difference_order"
 
     def __init__(self, sourceObject=None):
@@ -21906,8 +21955,8 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_other_segment_name_method_offset = 3
     _set_other_segment_name_method_offset = 4
     _get_segment_state_to_use_method_offset = 5
@@ -21922,20 +21971,20 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcDifferenceOtherSegment)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcDifferenceOtherSegment._metadata, StateCalcDifferenceOtherSegment._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcDifferenceOtherSegment._metadata, StateCalcDifferenceOtherSegment._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcDifferenceOtherSegment._metadata, StateCalcDifferenceOtherSegment._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcDifferenceOtherSegment._metadata, StateCalcDifferenceOtherSegment._set_calculation_object_name_metadata, inVal)
 
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -21982,7 +22031,7 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
     def difference_order(self, inVal:"SEGMENT_DIFFERENCE_ORDER") -> None:
         return self._intf.set_property(StateCalcDifferenceOtherSegment._metadata, StateCalcDifferenceOtherSegment._set_difference_order_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
     _property_names[difference_order] = "difference_order"
@@ -22222,8 +22271,8 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_other_segment_name_method_offset = 3
     _set_other_segment_name_method_offset = 4
     _get_segment_state_to_use_method_offset = 5
@@ -22236,20 +22285,20 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcValueAtSegment)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcValueAtSegment._metadata, StateCalcValueAtSegment._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcValueAtSegment._metadata, StateCalcValueAtSegment._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcValueAtSegment._metadata, StateCalcValueAtSegment._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcValueAtSegment._metadata, StateCalcValueAtSegment._set_calculation_object_name_metadata, inVal)
 
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22281,7 +22330,7 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
     def segment_state_to_use(self, inVal:"SEGMENT_STATE") -> None:
         return self._intf.set_property(StateCalcValueAtSegment._metadata, StateCalcValueAtSegment._set_segment_state_to_use_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
@@ -22310,8 +22359,8 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5693913850214738875, 7362033195491517325),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22320,22 +22369,22 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMaxValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcMaxValue._metadata, StateCalcMaxValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcMaxValue._metadata, StateCalcMaxValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcMaxValue._metadata, StateCalcMaxValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcMaxValue._metadata, StateCalcMaxValue._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcMaxValue."""
@@ -22362,8 +22411,8 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5508979191941518953, 13437319745405890183),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22372,22 +22421,22 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMinValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcMinValue._metadata, StateCalcMinValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcMinValue._metadata, StateCalcMinValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcMinValue._metadata, StateCalcMinValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcMinValue._metadata, StateCalcMinValue._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcMinValue."""
@@ -22414,8 +22463,8 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5071065384386542095, 2074797407162959239),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22424,22 +22473,22 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMeanValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcMeanValue._metadata, StateCalcMeanValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcMeanValue._metadata, StateCalcMeanValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcMeanValue._metadata, StateCalcMeanValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcMeanValue._metadata, StateCalcMeanValue._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcMeanValue."""
@@ -22466,8 +22515,8 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5380204605260779977, 8527191360378932610),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22476,22 +22525,22 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcMedianValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcMedianValue._metadata, StateCalcMedianValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcMedianValue._metadata, StateCalcMedianValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcMedianValue._metadata, StateCalcMedianValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcMedianValue._metadata, StateCalcMedianValue._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcMedianValue."""
@@ -22518,8 +22567,8 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5109749522595346465, 5943122520799404),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22528,22 +22577,22 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcStandardDeviation)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcStandardDeviation._metadata, StateCalcStandardDeviation._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcStandardDeviation._metadata, StateCalcStandardDeviation._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcStandardDeviation._metadata, StateCalcStandardDeviation._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcStandardDeviation._metadata, StateCalcStandardDeviation._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcStandardDeviation."""
@@ -22570,8 +22619,8 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _metadata = {
         "iid_data" : (5494223374580793993, 17445090105393654670),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22580,22 +22629,22 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcNegative)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation  object."""
-        return self._intf.get_property(StateCalcNegative._metadata, StateCalcNegative._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcNegative._metadata, StateCalcNegative._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcNegative._metadata, StateCalcNegative._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcNegative._metadata, StateCalcNegative._set_calculation_object_name_metadata, inVal)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcNegative."""
@@ -22651,17 +22700,17 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcEccentricity._metadata, StateCalcEccentricity._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcEccentricity._metadata, StateCalcEccentricity._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -22721,17 +22770,17 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcMeanAnomaly._metadata, StateCalcMeanAnomaly._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcMeanAnomaly._metadata, StateCalcMeanAnomaly._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -22791,17 +22840,17 @@ class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcRAAN._metadata, StateCalcRAAN._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcRAAN._metadata, StateCalcRAAN._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -23125,17 +23174,17 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
-    def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
+    def reference_type(self) -> "CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE":
         """Get or set the central body's reference type."""
         return self._intf.get_property(StateCalcDeltaDec._metadata, StateCalcDeltaDec._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "offset" : _set_reference_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @reference_type.setter
-    def reference_type(self, inVal:"CALC_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
+    def reference_type(self, inVal:"CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
         return self._intf.set_property(StateCalcDeltaDec._metadata, StateCalcDeltaDec._set_reference_type_metadata, inVal)
 
     _get_reference_body_metadata = { "offset" : _get_reference_body_method_offset,
@@ -23213,17 +23262,17 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @property
-    def reference_type(self) -> "CALC_OBJECT_CENTRAL_BODY_REFERENCE":
+    def reference_type(self) -> "CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE":
         """Get or set the central body's reference type."""
         return self._intf.get_property(StateCalcDeltaRA._metadata, StateCalcDeltaRA._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "offset" : _set_reference_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_CENTRAL_BODY_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE),) }
     @reference_type.setter
-    def reference_type(self, inVal:"CALC_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
+    def reference_type(self, inVal:"CALCULATION_OBJECT_CENTRAL_BODY_REFERENCE") -> None:
         return self._intf.set_property(StateCalcDeltaRA._metadata, StateCalcDeltaRA._set_reference_type_metadata, inVal)
 
     _get_reference_body_metadata = { "offset" : _get_reference_body_method_offset,
@@ -23403,17 +23452,17 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcLonOfPeriapsis._metadata, StateCalcLonOfPeriapsis._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcLonOfPeriapsis._metadata, StateCalcLonOfPeriapsis._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -23444,8 +23493,8 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _num_methods = 20
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_input_coord_system_name_method_offset = 3
     _set_input_coord_system_name_method_offset = 4
     _get_x_method_offset = 5
@@ -23472,20 +23521,20 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcOrbitStateValue)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcOrbitStateValue._metadata, StateCalcOrbitStateValue._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcOrbitStateValue._metadata, StateCalcOrbitStateValue._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcOrbitStateValue._metadata, StateCalcOrbitStateValue._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcOrbitStateValue._metadata, StateCalcOrbitStateValue._set_calculation_object_name_metadata, inVal)
 
     _get_input_coord_system_name_metadata = { "offset" : _get_input_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -23621,7 +23670,7 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
         """Return whether or not the control parameters can be set."""
         return self._intf.get_property(StateCalcOrbitStateValue._metadata, StateCalcOrbitStateValue._get_control_parameters_available_metadata)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[input_coord_system_name] = "input_coord_system_name"
     _property_names[x] = "x"
     _property_names[y] = "y"
@@ -23685,17 +23734,17 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcSignedEccentricity._metadata, StateCalcSignedEccentricity._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcSignedEccentricity._metadata, StateCalcSignedEccentricity._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -23755,17 +23804,17 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcInclination._metadata, StateCalcInclination._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcInclination._metadata, StateCalcInclination._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -23825,17 +23874,17 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type."""
         return self._intf.get_property(StateCalcTrueLon._metadata, StateCalcTrueLon._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcTrueLon._metadata, StateCalcTrueLon._set_element_type_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
@@ -23913,15 +23962,15 @@ class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4956417164732171081, 9430265978231260054), StateCalcPower)
 agcls.AgTypeNameMap["StateCalcPower"] = StateCalcPower
 
-class StateCalcRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Relative Motion calculation object."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
-    _get_origin_at_master_method_offset = 3
-    _set_origin_at_master_method_offset = 4
+    _get_origin_at_chief_method_offset = 3
+    _set_origin_at_chief_method_offset = 4
     _get_reference_selection_method_offset = 5
     _set_reference_selection_method_offset = 6
     _get_reference_method_offset = 7
@@ -23931,7 +23980,7 @@ class StateCalcRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcRelMotion)
+        return get_interface_property(attrname, StateCalcRelativeMotion)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -23939,44 +23988,44 @@ class StateCalcRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcRelMotion._metadata, StateCalcRelMotion._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelMotion._metadata, StateCalcRelMotion._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._set_central_body_name_metadata, inVal)
 
-    _get_origin_at_master_metadata = { "offset" : _get_origin_at_master_method_offset,
+    _get_origin_at_chief_metadata = { "offset" : _get_origin_at_chief_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def origin_at_master(self) -> bool:
+    def origin_at_chief(self) -> bool:
         """True if the origin is at the reference satellite, false if the origin is at the current satellite."""
-        return self._intf.get_property(StateCalcRelMotion._metadata, StateCalcRelMotion._get_origin_at_master_metadata)
+        return self._intf.get_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._get_origin_at_chief_metadata)
 
-    _set_origin_at_master_metadata = { "offset" : _set_origin_at_master_method_offset,
+    _set_origin_at_chief_metadata = { "offset" : _set_origin_at_chief_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @origin_at_master.setter
-    def origin_at_master(self, inVal:bool) -> None:
-        return self._intf.set_property(StateCalcRelMotion._metadata, StateCalcRelMotion._set_origin_at_master_metadata, inVal)
+    @origin_at_chief.setter
+    def origin_at_chief(self, inVal:bool) -> None:
+        return self._intf.set_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._set_origin_at_chief_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcRelMotion._metadata, StateCalcRelMotion._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcRelMotion._metadata, StateCalcRelMotion._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23984,17 +24033,17 @@ class StateCalcRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcRelMotion._metadata, StateCalcRelMotion._get_reference_metadata)
+        return self._intf.get_property(StateCalcRelativeMotion._metadata, StateCalcRelativeMotion._get_reference_metadata)
 
     _property_names[central_body_name] = "central_body_name"
-    _property_names[origin_at_master] = "origin_at_master"
+    _property_names[origin_at_chief] = "origin_at_chief"
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcRelMotion."""
+        """Construct an object of type StateCalcRelativeMotion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelMotion)
+        initialize_from_source_object(self, sourceObject, StateCalcRelativeMotion)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -24006,10 +24055,10 @@ class StateCalcRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcRelMotion, [StateCalcRelMotion, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcRelativeMotion, [StateCalcRelativeMotion, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4661395227350171712, 3732445803166842778), StateCalcRelMotion)
-agcls.AgTypeNameMap["StateCalcRelMotion"] = StateCalcRelMotion
+agcls.AgClassCatalog.add_catalog_entry((4661395227350171712, 3732445803166842778), StateCalcRelativeMotion)
+agcls.AgTypeNameMap["StateCalcRelativeMotion"] = StateCalcRelativeMotion
 
 class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Solar Beta Angle calculation object."""
@@ -24054,47 +24103,47 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_orbit_plane_source_metadata = { "offset" : _get_orbit_plane_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @property
-    def orbit_plane_source(self) -> "CALC_OBJECT_ORBIT_PLANE_SOURCE":
+    def orbit_plane_source(self) -> "CALCULATION_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
         return self._intf.get_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._get_orbit_plane_source_metadata)
 
     _set_orbit_plane_source_metadata = { "offset" : _set_orbit_plane_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+    def orbit_plane_source(self, inVal:"CALCULATION_OBJECT_ORBIT_PLANE_SOURCE") -> None:
         return self._intf.set_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._set_orbit_plane_source_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements."""
         return self._intf.get_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._set_element_type_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -24107,32 +24156,32 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_SUN_POSITION),) }
     @property
-    def sun_position(self) -> "CALC_OBJECT_SUN_POSITION":
+    def sun_position(self) -> "CALCULATION_OBJECT_SUN_POSITION":
         """Get or set the type of the Sun location."""
         return self._intf.get_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_SUN_POSITION),) }
     @sun_position.setter
-    def sun_position(self, inVal:"CALC_OBJECT_SUN_POSITION") -> None:
+    def sun_position(self, inVal:"CALCULATION_OBJECT_SUN_POSITION") -> None:
         return self._intf.set_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._set_sun_position_metadata, inVal)
 
     _get_sign_convention_metadata = { "offset" : _get_sign_convention_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @property
-    def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
+    def sign_convention(self) -> "CALCULATION_OBJECT_ANGLE_SIGN":
         """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
         return self._intf.get_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "offset" : _set_sign_convention_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @sign_convention.setter
-    def sign_convention(self, inVal:"CALC_OBJECT_ANGLE_SIGN") -> None:
+    def sign_convention(self, inVal:"CALCULATION_OBJECT_ANGLE_SIGN") -> None:
         return self._intf.set_property(StateCalcSolarBetaAngle._metadata, StateCalcSolarBetaAngle._set_sign_convention_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -24208,47 +24257,47 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _get_orbit_plane_source_metadata = { "offset" : _get_orbit_plane_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @property
-    def orbit_plane_source(self) -> "CALC_OBJECT_ORBIT_PLANE_SOURCE":
+    def orbit_plane_source(self) -> "CALCULATION_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_orbit_plane_source_metadata)
 
     _set_orbit_plane_source_metadata = { "offset" : _set_orbit_plane_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+    def orbit_plane_source(self, inVal:"CALCULATION_OBJECT_ORBIT_PLANE_SOURCE") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_orbit_plane_source_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_element_type_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -24261,47 +24310,47 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_SUN_POSITION),) }
     @property
-    def sun_position(self) -> "CALC_OBJECT_SUN_POSITION":
+    def sun_position(self) -> "CALCULATION_OBJECT_SUN_POSITION":
         """Get or set the type of the Sun location."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_SUN_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_SUN_POSITION),) }
     @sun_position.setter
-    def sun_position(self, inVal:"CALC_OBJECT_SUN_POSITION") -> None:
+    def sun_position(self, inVal:"CALCULATION_OBJECT_SUN_POSITION") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_sun_position_metadata, inVal)
 
     _get_counter_clockwise_rotation_metadata = { "offset" : _get_counter_clockwise_rotation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @property
-    def counter_clockwise_rotation(self) -> "CALC_OBJECT_ANGLE_SIGN":
+    def counter_clockwise_rotation(self) -> "CALCULATION_OBJECT_ANGLE_SIGN":
         """Set sign of the angle for counterclockwise rotation about orbit normal."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_counter_clockwise_rotation_metadata)
 
     _set_counter_clockwise_rotation_metadata = { "offset" : _set_counter_clockwise_rotation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @counter_clockwise_rotation.setter
-    def counter_clockwise_rotation(self, inVal:"CALC_OBJECT_ANGLE_SIGN") -> None:
+    def counter_clockwise_rotation(self, inVal:"CALCULATION_OBJECT_ANGLE_SIGN") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_counter_clockwise_rotation_metadata, inVal)
 
     _get_reference_direction_metadata = { "offset" : _get_reference_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_DIRECTION),) }
     @property
-    def reference_direction(self) -> "CALC_OBJECT_REFERENCE_DIRECTION":
+    def reference_direction(self) -> "CALCULATION_OBJECT_REFERENCE_DIRECTION":
         """Direction that establishes the zero value when projected into the orbit plane."""
         return self._intf.get_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._get_reference_direction_metadata)
 
     _set_reference_direction_metadata = { "offset" : _set_reference_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_DIRECTION),) }
     @reference_direction.setter
-    def reference_direction(self, inVal:"CALC_OBJECT_REFERENCE_DIRECTION") -> None:
+    def reference_direction(self, inVal:"CALCULATION_OBJECT_REFERENCE_DIRECTION") -> None:
         return self._intf.set_property(StateCalcSolarInPlaneAngle._metadata, StateCalcSolarInPlaneAngle._set_reference_direction_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -24333,7 +24382,7 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
 agcls.AgClassCatalog.add_catalog_entry((4748871734981473687, 2552028746492672439), StateCalcSolarInPlaneAngle)
 agcls.AgTypeNameMap["StateCalcSolarInPlaneAngle"] = StateCalcSolarInPlaneAngle
 
-class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Relative Position Declination Angle calculation object."""
 
     _num_methods = 13
@@ -24357,7 +24406,7 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCal
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcRelPositionDecAngle)
+        return get_interface_property(attrname, StateCalcRelativePositionDecAngle)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24365,59 +24414,59 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_central_body_name_metadata, inVal)
 
     _get_orbit_plane_source_metadata = { "offset" : _get_orbit_plane_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @property
-    def orbit_plane_source(self) -> "CALC_OBJECT_ORBIT_PLANE_SOURCE":
+    def orbit_plane_source(self) -> "CALCULATION_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_orbit_plane_source_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_orbit_plane_source_metadata)
 
     _set_orbit_plane_source_metadata = { "offset" : _set_orbit_plane_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_orbit_plane_source_metadata, inVal)
+    def orbit_plane_source(self, inVal:"CALCULATION_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_orbit_plane_source_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_element_type_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_element_type_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24425,37 +24474,37 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_reference_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_reference_metadata)
 
     _get_relative_position_type_metadata = { "offset" : _get_relative_position_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_RELATIVE_POSITION),) }
     @property
-    def relative_position_type(self) -> "CALC_OBJECT_RELATIVE_POSITION":
+    def relative_position_type(self) -> "CALCULATION_OBJECT_RELATIVE_POSITION":
         """Get or set the type of the relative position."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_relative_position_type_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_relative_position_type_metadata)
 
     _set_relative_position_type_metadata = { "offset" : _set_relative_position_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_RELATIVE_POSITION),) }
     @relative_position_type.setter
-    def relative_position_type(self, inVal:"CALC_OBJECT_RELATIVE_POSITION") -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_relative_position_type_metadata, inVal)
+    def relative_position_type(self, inVal:"CALCULATION_OBJECT_RELATIVE_POSITION") -> None:
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_relative_position_type_metadata, inVal)
 
     _get_sign_convention_metadata = { "offset" : _get_sign_convention_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @property
-    def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
+    def sign_convention(self) -> "CALCULATION_OBJECT_ANGLE_SIGN":
         """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
-        return self._intf.get_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._get_sign_convention_metadata)
+        return self._intf.get_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "offset" : _set_sign_convention_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @sign_convention.setter
-    def sign_convention(self, inVal:"CALC_OBJECT_ANGLE_SIGN") -> None:
-        return self._intf.set_property(StateCalcRelPositionDecAngle._metadata, StateCalcRelPositionDecAngle._set_sign_convention_metadata, inVal)
+    def sign_convention(self, inVal:"CALCULATION_OBJECT_ANGLE_SIGN") -> None:
+        return self._intf.set_property(StateCalcRelativePositionDecAngle._metadata, StateCalcRelativePositionDecAngle._set_sign_convention_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[orbit_plane_source] = "orbit_plane_source"
@@ -24466,9 +24515,9 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[sign_convention] = "sign_convention"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcRelPositionDecAngle."""
+        """Construct an object of type StateCalcRelativePositionDecAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelPositionDecAngle)
+        initialize_from_source_object(self, sourceObject, StateCalcRelativePositionDecAngle)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -24480,12 +24529,12 @@ class StateCalcRelPositionDecAngle(IComponentInfo, ICloneable, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcRelPositionDecAngle, [StateCalcRelPositionDecAngle, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcRelativePositionDecAngle, [StateCalcRelativePositionDecAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4885866484788968886, 3882329827102669962), StateCalcRelPositionDecAngle)
-agcls.AgTypeNameMap["StateCalcRelPositionDecAngle"] = StateCalcRelPositionDecAngle
+agcls.AgClassCatalog.add_catalog_entry((4885866484788968886, 3882329827102669962), StateCalcRelativePositionDecAngle)
+agcls.AgTypeNameMap["StateCalcRelativePositionDecAngle"] = StateCalcRelativePositionDecAngle
 
-class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Relative Position In Plane Angle calculation object."""
 
     _num_methods = 15
@@ -24511,7 +24560,7 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDelet
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcRelPositionInPlaneAngle)
+        return get_interface_property(attrname, StateCalcRelativePositionInPlaneAngle)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24519,59 +24568,59 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDelet
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_central_body_name_metadata, inVal)
 
     _get_orbit_plane_source_metadata = { "offset" : _get_orbit_plane_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @property
-    def orbit_plane_source(self) -> "CALC_OBJECT_ORBIT_PLANE_SOURCE":
+    def orbit_plane_source(self) -> "CALCULATION_OBJECT_ORBIT_PLANE_SOURCE":
         """Selection of the satellite that will generate the orbit plane."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_orbit_plane_source_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_orbit_plane_source_metadata)
 
     _set_orbit_plane_source_metadata = { "offset" : _set_orbit_plane_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ORBIT_PLANE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ORBIT_PLANE_SOURCE),) }
     @orbit_plane_source.setter
-    def orbit_plane_source(self, inVal:"CALC_OBJECT_ORBIT_PLANE_SOURCE") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_orbit_plane_source_metadata, inVal)
+    def orbit_plane_source(self, inVal:"CALCULATION_OBJECT_ORBIT_PLANE_SOURCE") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_orbit_plane_source_metadata, inVal)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_element_type_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_element_type_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24579,52 +24628,52 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDelet
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_reference_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_reference_metadata)
 
     _get_relative_position_type_metadata = { "offset" : _get_relative_position_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_RELATIVE_POSITION),) }
     @property
-    def relative_position_type(self) -> "CALC_OBJECT_RELATIVE_POSITION":
+    def relative_position_type(self) -> "CALCULATION_OBJECT_RELATIVE_POSITION":
         """Get or set the type of the relative position."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_relative_position_type_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_relative_position_type_metadata)
 
     _set_relative_position_type_metadata = { "offset" : _set_relative_position_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_RELATIVE_POSITION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_RELATIVE_POSITION),) }
     @relative_position_type.setter
-    def relative_position_type(self, inVal:"CALC_OBJECT_RELATIVE_POSITION") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_relative_position_type_metadata, inVal)
+    def relative_position_type(self, inVal:"CALCULATION_OBJECT_RELATIVE_POSITION") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_relative_position_type_metadata, inVal)
 
     _get_counter_clockwise_rotation_metadata = { "offset" : _get_counter_clockwise_rotation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @property
-    def counter_clockwise_rotation(self) -> "CALC_OBJECT_ANGLE_SIGN":
+    def counter_clockwise_rotation(self) -> "CALCULATION_OBJECT_ANGLE_SIGN":
         """Set sign of the angle for counterclockwise rotation about orbit normal."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_counter_clockwise_rotation_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_counter_clockwise_rotation_metadata)
 
     _set_counter_clockwise_rotation_metadata = { "offset" : _set_counter_clockwise_rotation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @counter_clockwise_rotation.setter
-    def counter_clockwise_rotation(self, inVal:"CALC_OBJECT_ANGLE_SIGN") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_counter_clockwise_rotation_metadata, inVal)
+    def counter_clockwise_rotation(self, inVal:"CALCULATION_OBJECT_ANGLE_SIGN") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_counter_clockwise_rotation_metadata, inVal)
 
     _get_reference_direction_metadata = { "offset" : _get_reference_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_DIRECTION),) }
     @property
-    def reference_direction(self) -> "CALC_OBJECT_REFERENCE_DIRECTION":
+    def reference_direction(self) -> "CALCULATION_OBJECT_REFERENCE_DIRECTION":
         """Direction that establishes the zero value when projected into the orbit plane."""
-        return self._intf.get_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._get_reference_direction_metadata)
+        return self._intf.get_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._get_reference_direction_metadata)
 
     _set_reference_direction_metadata = { "offset" : _set_reference_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_DIRECTION),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_DIRECTION),) }
     @reference_direction.setter
-    def reference_direction(self, inVal:"CALC_OBJECT_REFERENCE_DIRECTION") -> None:
-        return self._intf.set_property(StateCalcRelPositionInPlaneAngle._metadata, StateCalcRelPositionInPlaneAngle._set_reference_direction_metadata, inVal)
+    def reference_direction(self, inVal:"CALCULATION_OBJECT_REFERENCE_DIRECTION") -> None:
+        return self._intf.set_property(StateCalcRelativePositionInPlaneAngle._metadata, StateCalcRelativePositionInPlaneAngle._set_reference_direction_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[orbit_plane_source] = "orbit_plane_source"
@@ -24636,9 +24685,9 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDelet
     _property_names[reference_direction] = "reference_direction"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcRelPositionInPlaneAngle."""
+        """Construct an object of type StateCalcRelativePositionInPlaneAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelPositionInPlaneAngle)
+        initialize_from_source_object(self, sourceObject, StateCalcRelativePositionInPlaneAngle)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -24650,10 +24699,10 @@ class StateCalcRelPositionInPlaneAngle(IComponentInfo, ICloneable, SupportsDelet
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcRelPositionInPlaneAngle, [StateCalcRelPositionInPlaneAngle, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcRelativePositionInPlaneAngle, [StateCalcRelativePositionInPlaneAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5210025623232990293, 477647256645406897), StateCalcRelPositionInPlaneAngle)
-agcls.AgTypeNameMap["StateCalcRelPositionInPlaneAngle"] = StateCalcRelPositionInPlaneAngle
+agcls.AgClassCatalog.add_catalog_entry((5210025623232990293, 477647256645406897), StateCalcRelativePositionInPlaneAngle)
+agcls.AgTypeNameMap["StateCalcRelativePositionInPlaneAngle"] = StateCalcRelativePositionInPlaneAngle
 
 class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Relative Inclination Angle calculation object."""
@@ -24694,47 +24743,47 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
 
     _get_satellite_orbit_normal_type_metadata = { "offset" : _get_satellite_orbit_normal_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def satellite_orbit_normal_type(self) -> "CALC_OBJECT_ELEM":
+    def satellite_orbit_normal_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements for describing the orbit plane."""
         return self._intf.get_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._get_satellite_orbit_normal_type_metadata)
 
     _set_satellite_orbit_normal_type_metadata = { "offset" : _set_satellite_orbit_normal_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @satellite_orbit_normal_type.setter
-    def satellite_orbit_normal_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def satellite_orbit_normal_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._set_satellite_orbit_normal_type_metadata, inVal)
 
     _get_reference_satellite_orbit_normal_type_metadata = { "offset" : _get_reference_satellite_orbit_normal_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def reference_satellite_orbit_normal_type(self) -> "CALC_OBJECT_ELEM":
+    def reference_satellite_orbit_normal_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements for describing the orbit plane."""
         return self._intf.get_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._get_reference_satellite_orbit_normal_type_metadata)
 
     _set_reference_satellite_orbit_normal_type_metadata = { "offset" : _set_reference_satellite_orbit_normal_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @reference_satellite_orbit_normal_type.setter
-    def reference_satellite_orbit_normal_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def reference_satellite_orbit_normal_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._set_reference_satellite_orbit_normal_type_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
         return self._intf.get_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
         return self._intf.set_property(StateCalcRelativeInclination._metadata, StateCalcRelativeInclination._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
@@ -24771,7 +24820,7 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
 agcls.AgClassCatalog.add_catalog_entry((4783257135833872479, 4009038032584982670), StateCalcRelativeInclination)
 agcls.AgTypeNameMap["StateCalcRelativeInclination"] = StateCalcRelativeInclination
 
-class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for Curvilinear Relative Motion  calculation object."""
 
     _num_methods = 13
@@ -24795,7 +24844,7 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCa
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcCurvilinearRelMotion)
+        return get_interface_property(attrname, StateCalcCurvilinearRelativeMotion)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24803,59 +24852,59 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCa
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_central_body_name_metadata, inVal)
 
     _get_reference_ellipse_metadata = { "offset" : _get_reference_ellipse_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_ELLIPSE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_ELLIPSE),) }
     @property
-    def reference_ellipse(self) -> "CALC_OBJECT_REFERENCE_ELLIPSE":
+    def reference_ellipse(self) -> "CALCULATION_OBJECT_REFERENCE_ELLIPSE":
         """Selection of the satellite orbit that is used as the reference ellipse."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_reference_ellipse_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_reference_ellipse_metadata)
 
     _set_reference_ellipse_metadata = { "offset" : _set_reference_ellipse_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE_ELLIPSE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE_ELLIPSE),) }
     @reference_ellipse.setter
-    def reference_ellipse(self, inVal:"CALC_OBJECT_REFERENCE_ELLIPSE") -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_reference_ellipse_metadata, inVal)
+    def reference_ellipse(self, inVal:"CALCULATION_OBJECT_REFERENCE_ELLIPSE") -> None:
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_reference_ellipse_metadata, inVal)
 
     _get_location_source_metadata = { "offset" : _get_location_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_LOCATION_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_LOCATION_SOURCE),) }
     @property
-    def location_source(self) -> "CALC_OBJECT_LOCATION_SOURCE":
+    def location_source(self) -> "CALCULATION_OBJECT_LOCATION_SOURCE":
         """Selection of the satellite whose location is being reported with respect to the reference ellipse."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_location_source_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_location_source_metadata)
 
     _set_location_source_metadata = { "offset" : _set_location_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_LOCATION_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_LOCATION_SOURCE),) }
     @location_source.setter
-    def location_source(self, inVal:"CALC_OBJECT_LOCATION_SOURCE") -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_location_source_metadata, inVal)
+    def location_source(self, inVal:"CALCULATION_OBJECT_LOCATION_SOURCE") -> None:
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_location_source_metadata, inVal)
 
     _get_reference_selection_metadata = { "offset" : _get_reference_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @property
-    def reference_selection(self) -> "CALC_OBJECT_REFERENCE":
+    def reference_selection(self) -> "CALCULATION_OBJECT_REFERENCE":
         """Get or set the reference object selection."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_reference_selection_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_reference_selection_metadata)
 
     _set_reference_selection_metadata = { "offset" : _set_reference_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_REFERENCE),) }
     @reference_selection.setter
-    def reference_selection(self, inVal:"CALC_OBJECT_REFERENCE") -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_reference_selection_metadata, inVal)
+    def reference_selection(self, inVal:"CALCULATION_OBJECT_REFERENCE") -> None:
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_reference_selection_metadata, inVal)
 
     _get_reference_metadata = { "offset" : _get_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24863,37 +24912,37 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCa
     @property
     def reference(self) -> "ILinkToObject":
         """Get the reference object."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_reference_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_reference_metadata)
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Choice of osculating or mean elements."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_element_type_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_element_type_metadata, inVal)
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_element_type_metadata, inVal)
 
     _get_sign_convention_metadata = { "offset" : _get_sign_convention_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @property
-    def sign_convention(self) -> "CALC_OBJECT_ANGLE_SIGN":
+    def sign_convention(self) -> "CALCULATION_OBJECT_ANGLE_SIGN":
         """Get or set the sign of the angle when the relative position has a positive component along the orbit normal."""
-        return self._intf.get_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._get_sign_convention_metadata)
+        return self._intf.get_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._get_sign_convention_metadata)
 
     _set_sign_convention_metadata = { "offset" : _set_sign_convention_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ANGLE_SIGN),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ANGLE_SIGN),) }
     @sign_convention.setter
-    def sign_convention(self, inVal:"CALC_OBJECT_ANGLE_SIGN") -> None:
-        return self._intf.set_property(StateCalcCurvilinearRelMotion._metadata, StateCalcCurvilinearRelMotion._set_sign_convention_metadata, inVal)
+    def sign_convention(self, inVal:"CALCULATION_OBJECT_ANGLE_SIGN") -> None:
+        return self._intf.set_property(StateCalcCurvilinearRelativeMotion._metadata, StateCalcCurvilinearRelativeMotion._set_sign_convention_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
     _property_names[reference_ellipse] = "reference_ellipse"
@@ -24904,9 +24953,9 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names[sign_convention] = "sign_convention"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcCurvilinearRelMotion."""
+        """Construct an object of type StateCalcCurvilinearRelativeMotion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCurvilinearRelMotion)
+        initialize_from_source_object(self, sourceObject, StateCalcCurvilinearRelativeMotion)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -24918,10 +24967,10 @@ class StateCalcCurvilinearRelMotion(IComponentInfo, ICloneable, SupportsDeleteCa
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcCurvilinearRelMotion, [StateCalcCurvilinearRelMotion, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcCurvilinearRelativeMotion, [StateCalcCurvilinearRelativeMotion, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5266012728748371250, 3853977684437634452), StateCalcCurvilinearRelMotion)
-agcls.AgTypeNameMap["StateCalcCurvilinearRelMotion"] = StateCalcCurvilinearRelMotion
+agcls.AgClassCatalog.add_catalog_entry((5266012728748371250, 3853977684437634452), StateCalcCurvilinearRelativeMotion)
+agcls.AgTypeNameMap["StateCalcCurvilinearRelativeMotion"] = StateCalcCurvilinearRelativeMotion
 
 class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Custom Function calculation object."""
@@ -25016,12 +25065,12 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_arguments_method_offset = 1
+    _get_calculation_object_arguments_method_offset = 1
     _get_inline_func_method_offset = 2
     _set_inline_func_method_offset = 3
     _get_unit_dimension_method_offset = 4
     _set_unit_dimension_method_offset = 5
-    _get_calc_arguments_link_embed_method_offset = 6
+    _get_calculation_object_arguments_link_embed_method_offset = 6
     _metadata = {
         "iid_data" : (5230255327003470545, 156024352906426262),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25030,13 +25079,13 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcScript)
     
-    _get_calc_arguments_metadata = { "offset" : _get_calc_arguments_method_offset,
+    _get_calculation_object_arguments_metadata = { "offset" : _get_calculation_object_arguments_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_arguments(self) -> "CalcObjectCollection":
+    def calculation_object_arguments(self) -> "CalculationObjectCollection":
         """Get the arguments to be applied to the function."""
-        return self._intf.get_property(StateCalcScript._metadata, StateCalcScript._get_calc_arguments_metadata)
+        return self._intf.get_property(StateCalcScript._metadata, StateCalcScript._get_calculation_object_arguments_metadata)
 
     _get_inline_func_metadata = { "offset" : _get_inline_func_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25068,18 +25117,18 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def unit_dimension(self, inVal:str) -> None:
         return self._intf.set_property(StateCalcScript._metadata, StateCalcScript._set_unit_dimension_metadata, inVal)
 
-    _get_calc_arguments_link_embed_metadata = { "offset" : _get_calc_arguments_link_embed_method_offset,
+    _get_calculation_object_arguments_link_embed_metadata = { "offset" : _get_calculation_object_arguments_link_embed_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_arguments_link_embed(self) -> "CalcObjectLinkEmbedControlCollection":
+    def calculation_object_arguments_link_embed(self) -> "CalculationObjectLinkEmbedControlCollection":
         """Get the arguments to be applied to the function."""
-        return self._intf.get_property(StateCalcScript._metadata, StateCalcScript._get_calc_arguments_link_embed_metadata)
+        return self._intf.get_property(StateCalcScript._metadata, StateCalcScript._get_calculation_object_arguments_link_embed_metadata)
 
-    _property_names[calc_arguments] = "calc_arguments"
+    _property_names[calculation_object_arguments] = "calculation_object_arguments"
     _property_names[inline_func] = "inline_func"
     _property_names[unit_dimension] = "unit_dimension"
-    _property_names[calc_arguments_link_embed] = "calc_arguments_link_embed"
+    _property_names[calculation_object_arguments_link_embed] = "calculation_object_arguments_link_embed"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcScript."""
@@ -25305,7 +25354,7 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5114327262628149603, 6327582764702271372), StateCalcSRPArea)
 agcls.AgTypeNameMap["StateCalcSRPArea"] = StateCalcSRPArea
 
-class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Cosine of Vertical FPA calculation object."""
 
     _num_methods = 2
@@ -25318,7 +25367,7 @@ class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, SupportsDeleteCallba
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcCosOfVerticalFPA)
+        return get_interface_property(attrname, StateCalcCosOfVerticalFlightPathAngle)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25326,21 +25375,21 @@ class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, SupportsDeleteCallba
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcCosOfVerticalFPA._metadata, StateCalcCosOfVerticalFPA._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcCosOfVerticalFlightPathAngle._metadata, StateCalcCosOfVerticalFlightPathAngle._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcCosOfVerticalFPA._metadata, StateCalcCosOfVerticalFPA._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcCosOfVerticalFlightPathAngle._metadata, StateCalcCosOfVerticalFlightPathAngle._set_central_body_name_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcCosOfVerticalFPA."""
+        """Construct an object of type StateCalcCosOfVerticalFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCosOfVerticalFPA)
+        initialize_from_source_object(self, sourceObject, StateCalcCosOfVerticalFlightPathAngle)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -25352,10 +25401,10 @@ class StateCalcCosOfVerticalFPA(IComponentInfo, ICloneable, SupportsDeleteCallba
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcCosOfVerticalFPA, [StateCalcCosOfVerticalFPA, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcCosOfVerticalFlightPathAngle, [StateCalcCosOfVerticalFlightPathAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4912325927198559876, 16519063181087398335), StateCalcCosOfVerticalFPA)
-agcls.AgTypeNameMap["StateCalcCosOfVerticalFPA"] = StateCalcCosOfVerticalFPA
+agcls.AgClassCatalog.add_catalog_entry((4912325927198559876, 16519063181087398335), StateCalcCosOfVerticalFlightPathAngle)
+agcls.AgTypeNameMap["StateCalcCosOfVerticalFlightPathAngle"] = StateCalcCosOfVerticalFlightPathAngle
 
 class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Declination calculation object."""
@@ -25409,7 +25458,7 @@ class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5110197264312311168, 4345047158370537365), StateCalcDec)
 agcls.AgTypeNameMap["StateCalcDec"] = StateCalcDec
 
-class StateCalcFPA(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Flight Path Angle calculation object."""
 
     _num_methods = 2
@@ -25422,7 +25471,7 @@ class StateCalcFPA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcFPA)
+        return get_interface_property(attrname, StateCalcFlightPathAngle)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25430,21 +25479,21 @@ class StateCalcFPA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcFPA._metadata, StateCalcFPA._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcFlightPathAngle._metadata, StateCalcFlightPathAngle._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcFPA._metadata, StateCalcFPA._set_coord_system_name_metadata, inVal)
+        return self._intf.set_property(StateCalcFlightPathAngle._metadata, StateCalcFlightPathAngle._set_coord_system_name_metadata, inVal)
 
     _property_names[coord_system_name] = "coord_system_name"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcFPA."""
+        """Construct an object of type StateCalcFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcFPA)
+        initialize_from_source_object(self, sourceObject, StateCalcFlightPathAngle)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -25456,10 +25505,10 @@ class StateCalcFPA(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcFPA, [StateCalcFPA, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcFlightPathAngle, [StateCalcFlightPathAngle, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5560328887180138477, 15449525910187979693), StateCalcFPA)
-agcls.AgTypeNameMap["StateCalcFPA"] = StateCalcFPA
+agcls.AgClassCatalog.add_catalog_entry((5560328887180138477, 15449525910187979693), StateCalcFlightPathAngle)
+agcls.AgTypeNameMap["StateCalcFlightPathAngle"] = StateCalcFlightPathAngle
 
 class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an R Mag calculation object. AsStateCalcRMag."""
@@ -25704,17 +25753,17 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_element_type_metadata = { "offset" : _get_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @property
-    def element_type(self) -> "CALC_OBJECT_ELEM":
+    def element_type(self) -> "CALCULATION_OBJECT_ELEMENT":
         """Get or set the element type - osculating or a mean type."""
         return self._intf.get_property(StateCalcC3Energy._metadata, StateCalcC3Energy._get_element_type_metadata)
 
     _set_element_type_metadata = { "offset" : _set_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CALC_OBJECT_ELEM),) }
+            "marshallers" : (agmarshall.EnumArg(CALCULATION_OBJECT_ELEMENT),) }
     @element_type.setter
-    def element_type(self, inVal:"CALC_OBJECT_ELEM") -> None:
+    def element_type(self, inVal:"CALCULATION_OBJECT_ELEMENT") -> None:
         return self._intf.set_property(StateCalcC3Energy._metadata, StateCalcC3Energy._set_element_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -26809,42 +26858,42 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback
 agcls.AgClassCatalog.add_catalog_entry((5722868679097170223, 4646008177610324386), StateCalcOnePointAccess)
 agcls.AgTypeNameMap["StateCalcOnePointAccess"] = StateCalcOnePointAccess
 
-class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Difference Across Segments Across Satellites calculation object."""
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_other_segment_name_method_offset = 3
     _set_other_segment_name_method_offset = 4
     _get_segment_state_to_use_method_offset = 5
     _set_segment_state_to_use_method_offset = 6
     _get_difference_order_method_offset = 7
     _set_difference_order_method_offset = 8
-    _get_reference_sat_method_offset = 9
+    _get_reference_satellite_method_offset = 9
     _metadata = {
         "iid_data" : (5586974997613699158, 7969105052204490661),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcDifferenceAcrossSegmentsOtherSat)
+        return get_interface_property(attrname, StateCalcDifferenceAcrossSegmentsOtherSatellite)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._set_calculation_object_name_metadata, inVal)
 
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -26852,14 +26901,14 @@ class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, Supp
     @property
     def other_segment_name(self) -> str:
         """Get or set the segment to be compared against."""
-        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._get_other_segment_name_metadata)
+        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "offset" : _set_other_segment_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @other_segment_name.setter
     def other_segment_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._set_other_segment_name_metadata, inVal)
+        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._set_other_segment_name_metadata, inVal)
 
     _get_segment_state_to_use_metadata = { "offset" : _get_segment_state_to_use_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -26867,14 +26916,14 @@ class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, Supp
     @property
     def segment_state_to_use(self) -> "SEGMENT_STATE":
         """Get or set the segment state to use in the calculation."""
-        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._get_segment_state_to_use_metadata)
+        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "offset" : _set_segment_state_to_use_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SEGMENT_STATE),) }
     @segment_state_to_use.setter
     def segment_state_to_use(self, inVal:"SEGMENT_STATE") -> None:
-        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._set_segment_state_to_use_metadata, inVal)
+        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._set_segment_state_to_use_metadata, inVal)
 
     _get_difference_order_metadata = { "offset" : _get_difference_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -26882,33 +26931,33 @@ class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, Supp
     @property
     def difference_order(self) -> "SEGMENT_DIFFERENCE_ORDER":
         """Get or set the order of the difference calculation."""
-        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._get_difference_order_metadata)
+        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._get_difference_order_metadata)
 
     _set_difference_order_metadata = { "offset" : _set_difference_order_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SEGMENT_DIFFERENCE_ORDER),) }
     @difference_order.setter
     def difference_order(self, inVal:"SEGMENT_DIFFERENCE_ORDER") -> None:
-        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._set_difference_order_metadata, inVal)
+        return self._intf.set_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._set_difference_order_metadata, inVal)
 
-    _get_reference_sat_metadata = { "offset" : _get_reference_sat_method_offset,
+    _get_reference_satellite_metadata = { "offset" : _get_reference_satellite_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_sat(self) -> "ILinkToObject":
+    def reference_satellite(self) -> "ILinkToObject":
         """Get the Astrogator satellite on which the segment to be compared exists."""
-        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSat._metadata, StateCalcDifferenceAcrossSegmentsOtherSat._get_reference_sat_metadata)
+        return self._intf.get_property(StateCalcDifferenceAcrossSegmentsOtherSatellite._metadata, StateCalcDifferenceAcrossSegmentsOtherSatellite._get_reference_satellite_metadata)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
     _property_names[difference_order] = "difference_order"
-    _property_names[reference_sat] = "reference_sat"
+    _property_names[reference_satellite] = "reference_satellite"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcDifferenceAcrossSegmentsOtherSat."""
+        """Construct an object of type StateCalcDifferenceAcrossSegmentsOtherSatellite."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDifferenceAcrossSegmentsOtherSat)
+        initialize_from_source_object(self, sourceObject, StateCalcDifferenceAcrossSegmentsOtherSatellite)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -26920,23 +26969,23 @@ class StateCalcDifferenceAcrossSegmentsOtherSat(IComponentInfo, ICloneable, Supp
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcDifferenceAcrossSegmentsOtherSat, [StateCalcDifferenceAcrossSegmentsOtherSat, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcDifferenceAcrossSegmentsOtherSatellite, [StateCalcDifferenceAcrossSegmentsOtherSatellite, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5535002555039008667, 9414753759363378563), StateCalcDifferenceAcrossSegmentsOtherSat)
-agcls.AgTypeNameMap["StateCalcDifferenceAcrossSegmentsOtherSat"] = StateCalcDifferenceAcrossSegmentsOtherSat
+agcls.AgClassCatalog.add_catalog_entry((5535002555039008667, 9414753759363378563), StateCalcDifferenceAcrossSegmentsOtherSatellite)
+agcls.AgTypeNameMap["StateCalcDifferenceAcrossSegmentsOtherSatellite"] = StateCalcDifferenceAcrossSegmentsOtherSatellite
 
 class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Value At Segment Across Satellites calculation object."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_calc_object_name_method_offset = 1
-    _set_calc_object_name_method_offset = 2
+    _get_calculation_object_name_method_offset = 1
+    _set_calculation_object_name_method_offset = 2
     _get_other_segment_name_method_offset = 3
     _set_other_segment_name_method_offset = 4
     _get_segment_state_to_use_method_offset = 5
     _set_segment_state_to_use_method_offset = 6
-    _get_reference_sat_method_offset = 7
+    _get_reference_satellite_method_offset = 7
     _metadata = {
         "iid_data" : (4861373002110940755, 14099853278507236280),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -26945,20 +26994,20 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
     def _get_property(self, attrname):
         return get_interface_property(attrname, StateCalcValueAtSegmentOtherSat)
     
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the calculation object."""
-        return self._intf.get_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._get_calc_object_name_metadata)
+        return self._intf.get_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._set_calculation_object_name_metadata, inVal)
 
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -26990,18 +27039,18 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
     def segment_state_to_use(self, inVal:"SEGMENT_STATE") -> None:
         return self._intf.set_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._set_segment_state_to_use_metadata, inVal)
 
-    _get_reference_sat_metadata = { "offset" : _get_reference_sat_method_offset,
+    _get_reference_satellite_metadata = { "offset" : _get_reference_satellite_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_sat(self) -> "ILinkToObject":
+    def reference_satellite(self) -> "ILinkToObject":
         """Get the Astrogator satellite on which the segment to be compared exists."""
-        return self._intf.get_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._get_reference_sat_metadata)
+        return self._intf.get_property(StateCalcValueAtSegmentOtherSat._metadata, StateCalcValueAtSegmentOtherSat._get_reference_satellite_metadata)
 
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
-    _property_names[reference_sat] = "reference_sat"
+    _property_names[reference_satellite] = "reference_satellite"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type StateCalcValueAtSegmentOtherSat."""
@@ -27186,8 +27235,8 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
-    _get_grav_source_method_offset = 3
-    _set_grav_source_method_offset = 4
+    _get_gravitational_parameter_source_method_offset = 3
+    _set_gravitational_parameter_source_method_offset = 4
     _get_gravity_filename_method_offset = 5
     _set_gravity_filename_method_offset = 6
     _metadata = {
@@ -27213,20 +27262,20 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
     def central_body_name(self, inVal:str) -> None:
         return self._intf.set_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._set_central_body_name_metadata, inVal)
 
-    _get_grav_source_metadata = { "offset" : _get_grav_source_method_offset,
+    _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GRAVITATIONAL_PARAMETER_SOURCE),) }
     @property
-    def grav_source(self) -> "GRAVITATIONAL_PARAMETER_SOURCE":
+    def gravitational_parameter_source(self) -> "GRAVITATIONAL_PARAMETER_SOURCE":
         """Get or set the source for the gravitational parameter."""
-        return self._intf.get_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._get_grav_source_metadata)
+        return self._intf.get_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._get_gravitational_parameter_source_metadata)
 
-    _set_grav_source_metadata = { "offset" : _set_grav_source_method_offset,
+    _set_gravitational_parameter_source_metadata = { "offset" : _set_gravitational_parameter_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GRAVITATIONAL_PARAMETER_SOURCE),) }
-    @grav_source.setter
-    def grav_source(self, inVal:"GRAVITATIONAL_PARAMETER_SOURCE") -> None:
-        return self._intf.set_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._set_grav_source_metadata, inVal)
+    @gravitational_parameter_source.setter
+    def gravitational_parameter_source(self, inVal:"GRAVITATIONAL_PARAMETER_SOURCE") -> None:
+        return self._intf.set_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._set_gravitational_parameter_source_metadata, inVal)
 
     _get_gravity_filename_metadata = { "offset" : _get_gravity_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -27244,7 +27293,7 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
         return self._intf.set_property(StateCalcGravitationalParameter._metadata, StateCalcGravitationalParameter._set_gravity_filename_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
-    _property_names[grav_source] = "grav_source"
+    _property_names[gravitational_parameter_source] = "gravitational_parameter_source"
     _property_names[gravity_filename] = "gravity_filename"
 
     def __init__(self, sourceObject=None):
@@ -27412,17 +27461,17 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_coefficient_type_metadata = { "offset" : _get_coefficient_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRAV_COEFF_COEFFICIENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAVITY_COEFFICIENT_TYPE),) }
     @property
-    def coefficient_type(self) -> "GRAV_COEFF_COEFFICIENT_TYPE":
+    def coefficient_type(self) -> "GRAVITY_COEFFICIENT_TYPE":
         """Coefficient type."""
         return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_coefficient_type_metadata)
 
     _set_coefficient_type_metadata = { "offset" : _set_coefficient_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GRAV_COEFF_COEFFICIENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAVITY_COEFFICIENT_TYPE),) }
     @coefficient_type.setter
-    def coefficient_type(self, inVal:"GRAV_COEFF_COEFFICIENT_TYPE") -> None:
+    def coefficient_type(self, inVal:"GRAVITY_COEFFICIENT_TYPE") -> None:
         return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_coefficient_type_metadata, inVal)
 
     _get_degree_metadata = { "offset" : _get_degree_method_offset,
@@ -27457,17 +27506,17 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _get_normalization_type_metadata = { "offset" : _get_normalization_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRAV_COEFF_NORMALIZATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAVITY_COEFFICIENT_NORMALIZATION_TYPE),) }
     @property
-    def normalization_type(self) -> "GRAV_COEFF_NORMALIZATION_TYPE":
+    def normalization_type(self) -> "GRAVITY_COEFFICIENT_NORMALIZATION_TYPE":
         """Normalization type."""
         return self._intf.get_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._get_normalization_type_metadata)
 
     _set_normalization_type_metadata = { "offset" : _set_normalization_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GRAV_COEFF_NORMALIZATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GRAVITY_COEFFICIENT_NORMALIZATION_TYPE),) }
     @normalization_type.setter
-    def normalization_type(self, inVal:"GRAV_COEFF_NORMALIZATION_TYPE") -> None:
+    def normalization_type(self, inVal:"GRAVITY_COEFFICIENT_NORMALIZATION_TYPE") -> None:
         return self._intf.set_property(StateCalcGravCoeff._metadata, StateCalcGravCoeff._set_normalization_type_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
@@ -27739,7 +27788,7 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCall
 agcls.AgClassCatalog.add_catalog_entry((4650491514545192557, 13776968428773292448), StateCalcEarthMeanSolarTime)
 agcls.AgTypeNameMap["StateCalcEarthMeanSolarTime"] = StateCalcEarthMeanSolarTime
 
-class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Earth Mean Local Time of Ascending Node calculation object."""
 
     _num_methods = 2
@@ -27752,7 +27801,7 @@ class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, SupportsDeleteCall
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcEarthMeanLocTimeAN)
+        return get_interface_property(attrname, StateCalcEarthMeanLocalTimeOfAscendingNode)
     
     _get_central_body_name_metadata = { "offset" : _get_central_body_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -27760,21 +27809,21 @@ class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, SupportsDeleteCall
     @property
     def central_body_name(self) -> str:
         """Get or set the central body of the component."""
-        return self._intf.get_property(StateCalcEarthMeanLocTimeAN._metadata, StateCalcEarthMeanLocTimeAN._get_central_body_name_metadata)
+        return self._intf.get_property(StateCalcEarthMeanLocalTimeOfAscendingNode._metadata, StateCalcEarthMeanLocalTimeOfAscendingNode._get_central_body_name_metadata)
 
     _set_central_body_name_metadata = { "offset" : _set_central_body_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body_name.setter
     def central_body_name(self, inVal:str) -> None:
-        return self._intf.set_property(StateCalcEarthMeanLocTimeAN._metadata, StateCalcEarthMeanLocTimeAN._set_central_body_name_metadata, inVal)
+        return self._intf.set_property(StateCalcEarthMeanLocalTimeOfAscendingNode._metadata, StateCalcEarthMeanLocalTimeOfAscendingNode._set_central_body_name_metadata, inVal)
 
     _property_names[central_body_name] = "central_body_name"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StateCalcEarthMeanLocTimeAN."""
+        """Construct an object of type StateCalcEarthMeanLocalTimeOfAscendingNode."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEarthMeanLocTimeAN)
+        initialize_from_source_object(self, sourceObject, StateCalcEarthMeanLocalTimeOfAscendingNode)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -27786,10 +27835,10 @@ class StateCalcEarthMeanLocTimeAN(IComponentInfo, ICloneable, SupportsDeleteCall
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcEarthMeanLocTimeAN, [StateCalcEarthMeanLocTimeAN, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcEarthMeanLocalTimeOfAscendingNode, [StateCalcEarthMeanLocalTimeOfAscendingNode, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5240793249526993676, 4585501919491212454), StateCalcEarthMeanLocTimeAN)
-agcls.AgTypeNameMap["StateCalcEarthMeanLocTimeAN"] = StateCalcEarthMeanLocTimeAN
+agcls.AgClassCatalog.add_catalog_entry((5240793249526993676, 4585501919491212454), StateCalcEarthMeanLocalTimeOfAscendingNode)
+agcls.AgTypeNameMap["StateCalcEarthMeanLocalTimeOfAscendingNode"] = StateCalcEarthMeanLocalTimeOfAscendingNode
 
 class AutomaticSequenceCollection(SupportsDeleteCallback):
     """Properties for the Automatic Sequence Browser."""
@@ -27957,7 +28006,7 @@ class AutomaticSequence(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def sequence(self) -> "MissionControlSequenceSegmentCollection":
+    def sequence(self) -> "MCSSegmentCollection":
         """Return the segment collection of the sequence."""
         return self._intf.get_property(AutomaticSequence._metadata, AutomaticSequence._get_sequence_metadata)
 
@@ -27981,7 +28030,7 @@ class AutomaticSequence(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5084262556472041234, 3752935948797194130), AutomaticSequence)
 agcls.AgTypeNameMap["AutomaticSequence"] = AutomaticSequence
 
-class CentralBodyCollection(SupportsDeleteCallback):
+class CentralBodyComponentCollection(SupportsDeleteCallback):
     """The list of central bodies."""
 
     _num_methods = 8
@@ -28000,13 +28049,13 @@ class CentralBodyCollection(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyCollection)
+        return get_interface_property(attrname, CentralBodyComponentCollection)
     def __iter__(self):
-        """Create an iterator for the CentralBodyCollection object."""
+        """Create an iterator for the CentralBodyComponentCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "AstrogatorCentralBody":
+    def __next__(self) -> "CentralBodyComponent":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -28018,9 +28067,9 @@ class CentralBodyCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrCbName:typing.Any) -> "AstrogatorCentralBody":
+    def item(self, indexOrCbName:typing.Any) -> "CentralBodyComponent":
         """Allow you to iterate through the collection."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._item_metadata, indexOrCbName, OutArg())
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._item_metadata, indexOrCbName, OutArg())
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -28028,7 +28077,7 @@ class CentralBodyCollection(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Return the size of the collection."""
-        return self._intf.get_property(CentralBodyCollection._metadata, CentralBodyCollection._get_count_metadata)
+        return self._intf.get_property(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get_count_metadata)
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -28036,42 +28085,42 @@ class CentralBodyCollection(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Iterates through the collection."""
-        return self._intf.get_property(CentralBodyCollection._metadata, CentralBodyCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get__NewEnum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def add(self, cbName:str) -> None:
         """Add a central body to the collection."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._add_metadata, cbName)
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._add_metadata, cbName)
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def remove(self, indexOrName:typing.Any) -> None:
         """Remove a central body from the collection."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._remove_metadata, indexOrName)
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "offset" : _remove_all_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
         """Remove all central bodies from the collection."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._remove_all_metadata, )
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._remove_all_metadata, )
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "AstrogatorCentralBody":
+    def get_item_by_index(self, index:int) -> "CentralBodyComponent":
         """Retrieve a central body from the collection by index."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, cbName:str) -> "AstrogatorCentralBody":
+    def get_item_by_name(self, cbName:str) -> "CentralBodyComponent":
         """Retrieve a central body from the collection by name."""
-        return self._intf.invoke(CentralBodyCollection._metadata, CentralBodyCollection._get_item_by_name_metadata, cbName, OutArg())
+        return self._intf.invoke(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get_item_by_name_metadata, cbName, OutArg())
 
     __getitem__ = item
 
@@ -28080,9 +28129,9 @@ class CentralBodyCollection(SupportsDeleteCallback):
     _property_names[_NewEnum] = "_NewEnum"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyCollection."""
+        """Construct an object of type CentralBodyComponentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyCollection)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28090,18 +28139,18 @@ class CentralBodyCollection(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyCollection, [CentralBodyCollection, ])
+        set_class_attribute(self, attrname, value, CentralBodyComponentCollection, [CentralBodyComponentCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5646011597072473207, 6446331028504217010), CentralBodyCollection)
-agcls.AgTypeNameMap["CentralBodyCollection"] = CentralBodyCollection
+agcls.AgClassCatalog.add_catalog_entry((5646011597072473207, 6446331028504217010), CentralBodyComponentCollection)
+agcls.AgTypeNameMap["CentralBodyComponentCollection"] = CentralBodyComponentCollection
 
-class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """General properties for a central body."""
 
     _num_methods = 41
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_gravitational_param_method_offset = 1
-    _set_gravitational_param_method_offset = 2
+    _get_gravitational_parameter_method_offset = 1
+    _set_gravitational_parameter_method_offset = 2
     _get_parent_name_method_offset = 3
     _set_parent_name_method_offset = 4
     _get_children_method_offset = 5
@@ -28147,22 +28196,22 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AstrogatorCentralBody)
+        return get_interface_property(attrname, CentralBodyComponent)
     
-    _get_gravitational_param_metadata = { "offset" : _get_gravitational_param_method_offset,
+    _get_gravitational_parameter_metadata = { "offset" : _get_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def gravitational_param(self) -> float:
+    def gravitational_parameter(self) -> float:
         """Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_gravitational_param_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_gravitational_parameter_metadata)
 
-    _set_gravitational_param_metadata = { "offset" : _set_gravitational_param_method_offset,
+    _set_gravitational_parameter_metadata = { "offset" : _set_gravitational_parameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @gravitational_param.setter
-    def gravitational_param(self, newVal:float) -> None:
-        return self._intf.set_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_gravitational_param_metadata, newVal)
+    @gravitational_parameter.setter
+    def gravitational_parameter(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponent._metadata, CentralBodyComponent._set_gravitational_parameter_metadata, newVal)
 
     _get_parent_name_metadata = { "offset" : _get_parent_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28170,22 +28219,22 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def parent_name(self) -> str:
         """Get or set the parent of this central body."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_parent_name_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_parent_name_metadata)
 
     _set_parent_name_metadata = { "offset" : _set_parent_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @parent_name.setter
     def parent_name(self, newVal:str) -> None:
-        return self._intf.set_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_parent_name_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponent._metadata, CentralBodyComponent._set_parent_name_metadata, newVal)
 
     _get_children_metadata = { "offset" : _get_children_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def children(self) -> "CentralBodyCollection":
+    def children(self) -> "CentralBodyComponentCollection":
         """Get the children of this central body."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_children_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_children_metadata)
 
     _get_default_gravity_model_name_metadata = { "offset" : _get_default_gravity_model_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28193,36 +28242,36 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def default_gravity_model_name(self) -> str:
         """Get the gravity model."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_gravity_model_name_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_gravity_model_name_metadata)
 
     _set_default_gravity_model_by_name_metadata = { "offset" : _set_default_gravity_model_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_default_gravity_model_by_name(self, gravityModelName:str) -> None:
         """Select a gravity model."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_default_gravity_model_by_name_metadata, gravityModelName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._set_default_gravity_model_by_name_metadata, gravityModelName)
 
     _get_default_gravity_model_data_metadata = { "offset" : _get_default_gravity_model_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def default_gravity_model_data(self) -> "CentralBodyGravityModel":
+    def default_gravity_model_data(self) -> "CentralBodyComponentGravityModel":
         """Get the gravity model parameters."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_gravity_model_data_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_gravity_model_data_metadata)
 
     _add_gravity_model_metadata = { "offset" : _add_gravity_model_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(CENTRAL_BODY_GRAVITY_MODEL), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "CentralBodyGravityModel":
+    def add_gravity_model(self, eGravityModel:"CENTRAL_BODY_GRAVITY_MODEL", uniqueName:str) -> "CentralBodyComponentGravityModel":
         """Add a central body gravity model type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_gravity_model_metadata, eGravityModel, uniqueName, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_gravity_model_metadata, eGravityModel, uniqueName, OutArg())
 
     _remove_gravity_model_by_name_metadata = { "offset" : _remove_gravity_model_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def remove_gravity_model_by_name(self, gravityModelName:str) -> None:
         """Remove a central body gravity model type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._remove_gravity_model_by_name_metadata, gravityModelName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._remove_gravity_model_by_name_metadata, gravityModelName)
 
     _get_default_shape_name_metadata = { "offset" : _get_default_shape_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28230,36 +28279,36 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def default_shape_name(self) -> str:
         """Get the shape of the central body."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_shape_name_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_shape_name_metadata)
 
     _get_default_shape_data_metadata = { "offset" : _get_default_shape_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def default_shape_data(self) -> "ICentralBodyShape":
+    def default_shape_data(self) -> "ICentralBodyComponentShape":
         """Get the parameters of the central body shape."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_shape_data_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_shape_data_metadata)
 
     _set_default_shape_by_name_metadata = { "offset" : _set_default_shape_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_default_shape_by_name(self, shapeName:str) -> None:
         """Select a central body shape."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_default_shape_by_name_metadata, shapeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._set_default_shape_by_name_metadata, shapeName)
 
     _add_shape_metadata = { "offset" : _add_shape_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(CENTRAL_BODY_SHAPE), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add_shape(self, eShape:"CENTRAL_BODY_SHAPE", uniqueName:str) -> "ICentralBodyShape":
+    def add_shape(self, eShape:"CENTRAL_BODY_SHAPE", uniqueName:str) -> "ICentralBodyComponentShape":
         """Add a central body shape type from the available types."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_shape_metadata, eShape, uniqueName, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_shape_metadata, eShape, uniqueName, OutArg())
 
     _remove_shape_by_name_metadata = { "offset" : _remove_shape_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def remove_shape_by_name(self, shapeName:str) -> None:
         """Remove a central body shape type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._remove_shape_by_name_metadata, shapeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._remove_shape_by_name_metadata, shapeName)
 
     _get_default_attitude_name_metadata = { "offset" : _get_default_attitude_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28267,36 +28316,36 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def default_attitude_name(self) -> str:
         """Get the attitude of the central body."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_attitude_name_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_attitude_name_metadata)
 
     _get_default_attitude_data_metadata = { "offset" : _get_default_attitude_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def default_attitude_data(self) -> "ICentralBodyAttitude":
+    def default_attitude_data(self) -> "ICentralBodyComponentAttitude":
         """Get the parameters of the central body attitude."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_attitude_data_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_attitude_data_metadata)
 
     _set_default_attitude_by_name_metadata = { "offset" : _set_default_attitude_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_default_attitude_by_name(self, attitudeName:str) -> None:
         """Select a central body attitude."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_default_attitude_by_name_metadata, attitudeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._set_default_attitude_by_name_metadata, attitudeName)
 
     _add_attitude_metadata = { "offset" : _add_attitude_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(CENTRAL_BODY_ATTITUDE), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add_attitude(self, eAttitude:"CENTRAL_BODY_ATTITUDE", uniqueName:str) -> "ICentralBodyAttitude":
+    def add_attitude(self, eAttitude:"CENTRAL_BODY_ATTITUDE", uniqueName:str) -> "ICentralBodyComponentAttitude":
         """Add a central body attitude type from the available types."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_attitude_metadata, eAttitude, uniqueName, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_attitude_metadata, eAttitude, uniqueName, OutArg())
 
     _remove_attitude_by_name_metadata = { "offset" : _remove_attitude_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def remove_attitude_by_name(self, attitudeName:str) -> None:
         """Remove a central body attitude type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._remove_attitude_by_name_metadata, attitudeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._remove_attitude_by_name_metadata, attitudeName)
 
     _get_default_ephemeris_name_metadata = { "offset" : _get_default_ephemeris_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28304,150 +28353,150 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def default_ephemeris_name(self) -> str:
         """Get the ephemeris of the central body."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_ephemeris_name_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_ephemeris_name_metadata)
 
     _set_default_ephemeris_by_name_metadata = { "offset" : _set_default_ephemeris_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_default_ephemeris_by_name(self, ephemerisName:str) -> None:
         """Select an ephemeris type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._set_default_ephemeris_by_name_metadata, ephemerisName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._set_default_ephemeris_by_name_metadata, ephemerisName)
 
     _get_default_ephemeris_data_metadata = { "offset" : _get_default_ephemeris_data_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def default_ephemeris_data(self) -> "ICentralBodyEphemeris":
+    def default_ephemeris_data(self) -> "ICentralBodyComponentEphemeris":
         """Get the parameters of the central body ephemeris."""
-        return self._intf.get_property(AstrogatorCentralBody._metadata, AstrogatorCentralBody._get_default_ephemeris_data_metadata)
+        return self._intf.get_property(CentralBodyComponent._metadata, CentralBodyComponent._get_default_ephemeris_data_metadata)
 
     _add_ephemeris_metadata = { "offset" : _add_ephemeris_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(CENTRAL_BODY_EPHEMERIS), agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add_ephemeris(self, eEphemeris:"CENTRAL_BODY_EPHEMERIS", uniqueName:str) -> "ICentralBodyEphemeris":
+    def add_ephemeris(self, eEphemeris:"CENTRAL_BODY_EPHEMERIS", uniqueName:str) -> "ICentralBodyComponentEphemeris":
         """Add an ephemeris type from the available types."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_ephemeris_metadata, eEphemeris, uniqueName, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_ephemeris_metadata, eEphemeris, uniqueName, OutArg())
 
     _remove_ephemeris_by_name_metadata = { "offset" : _remove_ephemeris_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def remove_ephemeris_by_name(self, ephemerisName:str) -> None:
         """Remove an ephemeris type."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._remove_ephemeris_by_name_metadata, ephemerisName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._remove_ephemeris_by_name_metadata, ephemerisName)
 
     _cut_gravity_model_by_name_metadata = { "offset" : _cut_gravity_model_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def cut_gravity_model_by_name(self, gravityModelName:str) -> None:
         """Copy a gravity model to the clipboard and removes it from the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._cut_gravity_model_by_name_metadata, gravityModelName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._cut_gravity_model_by_name_metadata, gravityModelName)
 
     _copy_gravity_model_by_name_metadata = { "offset" : _copy_gravity_model_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def copy_gravity_model_by_name(self, gravityModelName:str) -> None:
         """Copy a gravity model to the clipboard."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._copy_gravity_model_by_name_metadata, gravityModelName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._copy_gravity_model_by_name_metadata, gravityModelName)
 
     _paste_gravity_model_metadata = { "offset" : _paste_gravity_model_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def paste_gravity_model(self) -> "CentralBodyGravityModel":
+    def paste_gravity_model(self) -> "CentralBodyComponentGravityModel":
         """Add the gravity model in the clipboard to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._paste_gravity_model_metadata, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._paste_gravity_model_metadata, OutArg())
 
     _add_copy_of_gravity_model_metadata = { "offset" : _add_copy_of_gravity_model_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("CentralBodyGravityModel"), agmarshall.InterfaceOutArg,) }
-    def add_copy_of_gravity_model(self, gravityModel:"CentralBodyGravityModel") -> "CentralBodyGravityModel":
+            "marshallers" : (agmarshall.InterfaceInArg("CentralBodyComponentGravityModel"), agmarshall.InterfaceOutArg,) }
+    def add_copy_of_gravity_model(self, gravityModel:"CentralBodyComponentGravityModel") -> "CentralBodyComponentGravityModel":
         """Add the gravity model to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_copy_of_gravity_model_metadata, gravityModel, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_copy_of_gravity_model_metadata, gravityModel, OutArg())
 
     _cut_shape_by_name_metadata = { "offset" : _cut_shape_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def cut_shape_by_name(self, shapeName:str) -> None:
         """Copy a central body shape to the clipboard and removes it from the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._cut_shape_by_name_metadata, shapeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._cut_shape_by_name_metadata, shapeName)
 
     _copy_shape_by_name_metadata = { "offset" : _copy_shape_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def copy_shape_by_name(self, shapeName:str) -> None:
         """Copy a central body shape to the clipboard."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._copy_shape_by_name_metadata, shapeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._copy_shape_by_name_metadata, shapeName)
 
     _paste_shape_metadata = { "offset" : _paste_shape_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def paste_shape(self) -> "ICentralBodyShape":
+    def paste_shape(self) -> "ICentralBodyComponentShape":
         """Add the central body shape in the clipboard to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._paste_shape_metadata, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._paste_shape_metadata, OutArg())
 
     _add_copy_of_shape_metadata = { "offset" : _add_copy_of_shape_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyShape"), agmarshall.InterfaceOutArg,) }
-    def add_copy_of_shape(self, shape:"ICentralBodyShape") -> "ICentralBodyShape":
+            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyComponentShape"), agmarshall.InterfaceOutArg,) }
+    def add_copy_of_shape(self, shape:"ICentralBodyComponentShape") -> "ICentralBodyComponentShape":
         """Add the central body shape to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_copy_of_shape_metadata, shape, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_copy_of_shape_metadata, shape, OutArg())
 
     _cut_attitude_by_name_metadata = { "offset" : _cut_attitude_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def cut_attitude_by_name(self, attitudeName:str) -> None:
         """Copy a central body attitude definition to the clipboard and removes it from the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._cut_attitude_by_name_metadata, attitudeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._cut_attitude_by_name_metadata, attitudeName)
 
     _copy_attitude_by_name_metadata = { "offset" : _copy_attitude_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def copy_attitude_by_name(self, attitudeName:str) -> None:
         """Copy a central body attitude definition to the clipboard."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._copy_attitude_by_name_metadata, attitudeName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._copy_attitude_by_name_metadata, attitudeName)
 
     _paste_attitude_metadata = { "offset" : _paste_attitude_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def paste_attitude(self) -> "ICentralBodyAttitude":
+    def paste_attitude(self) -> "ICentralBodyComponentAttitude":
         """Add the central body attitude definition in the clipboard to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._paste_attitude_metadata, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._paste_attitude_metadata, OutArg())
 
     _add_copy_of_attitude_metadata = { "offset" : _add_copy_of_attitude_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyAttitude"), agmarshall.InterfaceOutArg,) }
-    def add_copy_of_attitude(self, attitude:"ICentralBodyAttitude") -> "ICentralBodyAttitude":
+            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyComponentAttitude"), agmarshall.InterfaceOutArg,) }
+    def add_copy_of_attitude(self, attitude:"ICentralBodyComponentAttitude") -> "ICentralBodyComponentAttitude":
         """Add the central body attitude definition to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_copy_of_attitude_metadata, attitude, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_copy_of_attitude_metadata, attitude, OutArg())
 
     _cut_ephemeris_by_name_metadata = { "offset" : _cut_ephemeris_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def cut_ephemeris_by_name(self, ephemerisName:str) -> None:
         """Copy a central body ephemeris definition to the clipboard and removes it from the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._cut_ephemeris_by_name_metadata, ephemerisName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._cut_ephemeris_by_name_metadata, ephemerisName)
 
     _copy_ephemeris_by_name_metadata = { "offset" : _copy_ephemeris_by_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def copy_ephemeris_by_name(self, ephemerisName:str) -> None:
         """Copy a central body ephemeris definition to the clipboard."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._copy_ephemeris_by_name_metadata, ephemerisName)
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._copy_ephemeris_by_name_metadata, ephemerisName)
 
     _paste_ephemeris_metadata = { "offset" : _paste_ephemeris_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def paste_ephemeris(self) -> "ICentralBodyEphemeris":
+    def paste_ephemeris(self) -> "ICentralBodyComponentEphemeris":
         """Add the central body ephemeris definition in the clipboard to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._paste_ephemeris_metadata, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._paste_ephemeris_metadata, OutArg())
 
     _add_copy_of_ephemeris_metadata = { "offset" : _add_copy_of_ephemeris_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyEphemeris"), agmarshall.InterfaceOutArg,) }
-    def add_copy_of_ephemeris(self, ephemeris:"ICentralBodyEphemeris") -> "ICentralBodyEphemeris":
+            "marshallers" : (agmarshall.InterfaceInArg("ICentralBodyComponentEphemeris"), agmarshall.InterfaceOutArg,) }
+    def add_copy_of_ephemeris(self, ephemeris:"ICentralBodyComponentEphemeris") -> "ICentralBodyComponentEphemeris":
         """Add the central body ephemeris definition to the central body."""
-        return self._intf.invoke(AstrogatorCentralBody._metadata, AstrogatorCentralBody._add_copy_of_ephemeris_metadata, ephemeris, OutArg())
+        return self._intf.invoke(CentralBodyComponent._metadata, CentralBodyComponent._add_copy_of_ephemeris_metadata, ephemeris, OutArg())
 
-    _property_names[gravitational_param] = "gravitational_param"
+    _property_names[gravitational_parameter] = "gravitational_parameter"
     _property_names[parent_name] = "parent_name"
     _property_names[children] = "children"
     _property_names[default_gravity_model_name] = "default_gravity_model_name"
@@ -28460,9 +28509,9 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[default_ephemeris_data] = "default_ephemeris_data"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AstrogatorCentralBody."""
+        """Construct an object of type CentralBodyComponent."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AstrogatorCentralBody)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponent)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -28474,18 +28523,18 @@ class AstrogatorCentralBody(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AstrogatorCentralBody, [AstrogatorCentralBody, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, CentralBodyComponent, [CentralBodyComponent, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4946042482461305423, 869776284401354677), AstrogatorCentralBody)
-agcls.AgTypeNameMap["AstrogatorCentralBody"] = AstrogatorCentralBody
+agcls.AgClassCatalog.add_catalog_entry((4946042482461305423, 869776284401354677), CentralBodyComponent)
+agcls.AgTypeNameMap["CentralBodyComponent"] = CentralBodyComponent
 
-class CentralBodyGravityModel(SupportsDeleteCallback):
+class CentralBodyComponentGravityModel(SupportsDeleteCallback):
     """Properties for a central body gravity model."""
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_gravitational_param_method_offset = 1
-    _set_gravitational_param_method_offset = 2
+    _get_gravitational_parameter_method_offset = 1
+    _set_gravitational_parameter_method_offset = 2
     _get_reference_distance_method_offset = 3
     _set_reference_distance_method_offset = 4
     _get_j2_method_offset = 5
@@ -28500,22 +28549,22 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyGravityModel)
+        return get_interface_property(attrname, CentralBodyComponentGravityModel)
     
-    _get_gravitational_param_metadata = { "offset" : _get_gravitational_param_method_offset,
+    _get_gravitational_parameter_metadata = { "offset" : _get_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def gravitational_param(self) -> float:
+    def gravitational_parameter(self) -> float:
         """Get or set the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension."""
-        return self._intf.get_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._get_gravitational_param_metadata)
+        return self._intf.get_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._get_gravitational_parameter_metadata)
 
-    _set_gravitational_param_metadata = { "offset" : _set_gravitational_param_method_offset,
+    _set_gravitational_parameter_metadata = { "offset" : _set_gravitational_parameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @gravitational_param.setter
-    def gravitational_param(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._set_gravitational_param_metadata, newVal)
+    @gravitational_parameter.setter
+    def gravitational_parameter(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._set_gravitational_parameter_metadata, newVal)
 
     _get_reference_distance_metadata = { "offset" : _get_reference_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28523,14 +28572,14 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
     @property
     def reference_distance(self) -> float:
         """Distance from the center of mass of the central body to its surface. Typically defaults to the Maximum Radius entered in the Shape frame of the Central Body parameters window. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._get_reference_distance_metadata)
+        return self._intf.get_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._get_reference_distance_metadata)
 
     _set_reference_distance_metadata = { "offset" : _set_reference_distance_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @reference_distance.setter
     def reference_distance(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._set_reference_distance_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._set_reference_distance_metadata, newVal)
 
     _get_j2_metadata = { "offset" : _get_j2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28538,14 +28587,14 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
     @property
     def j2(self) -> float:
         """Get or set the J2 property. Taking into account first order Earth oblateness effects. Dimensionless."""
-        return self._intf.get_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._get_j2_metadata)
+        return self._intf.get_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._get_j2_metadata)
 
     _set_j2_metadata = { "offset" : _set_j2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @j2.setter
     def j2(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._set_j2_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._set_j2_metadata, newVal)
 
     _get_j3_metadata = { "offset" : _get_j3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28553,14 +28602,14 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
     @property
     def j3(self) -> float:
         """Get or set the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless."""
-        return self._intf.get_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._get_j3_metadata)
+        return self._intf.get_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._get_j3_metadata)
 
     _set_j3_metadata = { "offset" : _set_j3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @j3.setter
     def j3(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._set_j3_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._set_j3_metadata, newVal)
 
     _get_j4_metadata = { "offset" : _get_j4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28568,25 +28617,25 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
     @property
     def j4(self) -> float:
         """Get or set the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless."""
-        return self._intf.get_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._get_j4_metadata)
+        return self._intf.get_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._get_j4_metadata)
 
     _set_j4_metadata = { "offset" : _set_j4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @j4.setter
     def j4(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyGravityModel._metadata, CentralBodyGravityModel._set_j4_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentGravityModel._metadata, CentralBodyComponentGravityModel._set_j4_metadata, newVal)
 
-    _property_names[gravitational_param] = "gravitational_param"
+    _property_names[gravitational_parameter] = "gravitational_parameter"
     _property_names[reference_distance] = "reference_distance"
     _property_names[j2] = "j2"
     _property_names[j3] = "j3"
     _property_names[j4] = "j4"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyGravityModel."""
+        """Construct an object of type CentralBodyComponentGravityModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyGravityModel)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentGravityModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28594,25 +28643,25 @@ class CentralBodyGravityModel(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyGravityModel, [CentralBodyGravityModel, ])
+        set_class_attribute(self, attrname, value, CentralBodyComponentGravityModel, [CentralBodyComponentGravityModel, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4821830782571341978, 6560769308725594810), CentralBodyGravityModel)
-agcls.AgTypeNameMap["CentralBodyGravityModel"] = CentralBodyGravityModel
+agcls.AgClassCatalog.add_catalog_entry((4821830782571341978, 6560769308725594810), CentralBodyComponentGravityModel)
+agcls.AgTypeNameMap["CentralBodyComponentGravityModel"] = CentralBodyComponentGravityModel
 
-class CentralBodyShapeSphere(ICentralBodyShape, SupportsDeleteCallback):
+class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDeleteCallback):
     """Properties for the central body sphere shape."""
 
     _num_methods = 2
-    _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
+    _vtable_offset = ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods
     _get_radius_method_offset = 1
     _set_radius_method_offset = 2
     _metadata = {
         "iid_data" : (5230758235408657690, 9823643148124119432),
-        "vtable_reference" : ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyShapeSphere)
+        return get_interface_property(attrname, CentralBodyComponentShapeSphere)
     
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28620,40 +28669,40 @@ class CentralBodyShapeSphere(ICentralBodyShape, SupportsDeleteCallback):
     @property
     def radius(self) -> float:
         """Get or set the radius. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeSphere._metadata, CentralBodyShapeSphere._get_radius_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeSphere._metadata, CentralBodyComponentShapeSphere._get_radius_metadata)
 
     _set_radius_metadata = { "offset" : _set_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @radius.setter
     def radius(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeSphere._metadata, CentralBodyShapeSphere._set_radius_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentShapeSphere._metadata, CentralBodyComponentShapeSphere._set_radius_metadata, newVal)
 
     _property_names[radius] = "radius"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyShapeSphere."""
+        """Construct an object of type CentralBodyComponentShapeSphere."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyShapeSphere)
-        ICentralBodyShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeSphere)
+        ICentralBodyComponentShape.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyShape._private_init(self, intf)
+        ICentralBodyComponentShape._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyShapeSphere, [CentralBodyShapeSphere, ICentralBodyShape])
+        set_class_attribute(self, attrname, value, CentralBodyComponentShapeSphere, [CentralBodyComponentShapeSphere, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5260078994854281057, 16065891516535457), CentralBodyShapeSphere)
-agcls.AgTypeNameMap["CentralBodyShapeSphere"] = CentralBodyShapeSphere
+agcls.AgClassCatalog.add_catalog_entry((5260078994854281057, 16065891516535457), CentralBodyComponentShapeSphere)
+agcls.AgTypeNameMap["CentralBodyComponentShapeSphere"] = CentralBodyComponentShapeSphere
 
-class CentralBodyShapeOblateSpheroid(ICentralBodyShape, SupportsDeleteCallback):
+class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, SupportsDeleteCallback):
     """Properties for the central body oblate spheroid shape."""
 
     _num_methods = 5
-    _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
+    _vtable_offset = ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods
     _get_min_radius_method_offset = 1
     _set_min_radius_method_offset = 2
     _get_max_radius_method_offset = 3
@@ -28661,11 +28710,11 @@ class CentralBodyShapeOblateSpheroid(ICentralBodyShape, SupportsDeleteCallback):
     _get_flattening_coefficient_method_offset = 5
     _metadata = {
         "iid_data" : (5485250452012065507, 14839475088817686705),
-        "vtable_reference" : ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyShapeOblateSpheroid)
+        return get_interface_property(attrname, CentralBodyComponentShapeOblateSpheroid)
     
     _get_min_radius_metadata = { "offset" : _get_min_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28673,14 +28722,14 @@ class CentralBodyShapeOblateSpheroid(ICentralBodyShape, SupportsDeleteCallback):
     @property
     def min_radius(self) -> float:
         """Get or set the minimum radius. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeOblateSpheroid._metadata, CentralBodyShapeOblateSpheroid._get_min_radius_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeOblateSpheroid._metadata, CentralBodyComponentShapeOblateSpheroid._get_min_radius_metadata)
 
     _set_min_radius_metadata = { "offset" : _set_min_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @min_radius.setter
     def min_radius(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeOblateSpheroid._metadata, CentralBodyShapeOblateSpheroid._set_min_radius_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentShapeOblateSpheroid._metadata, CentralBodyComponentShapeOblateSpheroid._set_min_radius_metadata, newVal)
 
     _get_max_radius_metadata = { "offset" : _get_max_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28688,14 +28737,14 @@ class CentralBodyShapeOblateSpheroid(ICentralBodyShape, SupportsDeleteCallback):
     @property
     def max_radius(self) -> float:
         """Get or set the maximum radius. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeOblateSpheroid._metadata, CentralBodyShapeOblateSpheroid._get_max_radius_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeOblateSpheroid._metadata, CentralBodyComponentShapeOblateSpheroid._get_max_radius_metadata)
 
     _set_max_radius_metadata = { "offset" : _set_max_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @max_radius.setter
     def max_radius(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeOblateSpheroid._metadata, CentralBodyShapeOblateSpheroid._set_max_radius_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentShapeOblateSpheroid._metadata, CentralBodyComponentShapeOblateSpheroid._set_max_radius_metadata, newVal)
 
     _get_flattening_coefficient_metadata = { "offset" : _get_flattening_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28703,130 +28752,130 @@ class CentralBodyShapeOblateSpheroid(ICentralBodyShape, SupportsDeleteCallback):
     @property
     def flattening_coefficient(self) -> float:
         """Get the flattening coefficient; automatically derived from the minimum and maximum radii. Dimensionless."""
-        return self._intf.get_property(CentralBodyShapeOblateSpheroid._metadata, CentralBodyShapeOblateSpheroid._get_flattening_coefficient_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeOblateSpheroid._metadata, CentralBodyComponentShapeOblateSpheroid._get_flattening_coefficient_metadata)
 
     _property_names[min_radius] = "min_radius"
     _property_names[max_radius] = "max_radius"
     _property_names[flattening_coefficient] = "flattening_coefficient"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyShapeOblateSpheroid."""
+        """Construct an object of type CentralBodyComponentShapeOblateSpheroid."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyShapeOblateSpheroid)
-        ICentralBodyShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeOblateSpheroid)
+        ICentralBodyComponentShape.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyShape._private_init(self, intf)
+        ICentralBodyComponentShape._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyShapeOblateSpheroid, [CentralBodyShapeOblateSpheroid, ICentralBodyShape])
+        set_class_attribute(self, attrname, value, CentralBodyComponentShapeOblateSpheroid, [CentralBodyComponentShapeOblateSpheroid, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5219245590015143147, 10316844097444389793), CentralBodyShapeOblateSpheroid)
-agcls.AgTypeNameMap["CentralBodyShapeOblateSpheroid"] = CentralBodyShapeOblateSpheroid
+agcls.AgClassCatalog.add_catalog_entry((5219245590015143147, 10316844097444389793), CentralBodyComponentShapeOblateSpheroid)
+agcls.AgTypeNameMap["CentralBodyComponentShapeOblateSpheroid"] = CentralBodyComponentShapeOblateSpheroid
 
-class CentralBodyShapeTriaxialEllipsoid(ICentralBodyShape, SupportsDeleteCallback):
+class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, SupportsDeleteCallback):
     """Properties for the central body triaxial ellipsoid shape."""
 
     _num_methods = 6
-    _vtable_offset = ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods
-    _get_semi_major_axis_method_offset = 1
-    _set_semi_major_axis_method_offset = 2
-    _get_semi_mid_axis_method_offset = 3
-    _set_semi_mid_axis_method_offset = 4
-    _get_semi_minor_axis_method_offset = 5
-    _set_semi_minor_axis_method_offset = 6
+    _vtable_offset = ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods
+    _get_semimajor_axis_method_offset = 1
+    _set_semimajor_axis_method_offset = 2
+    _get_semimid_axis_method_offset = 3
+    _set_semimid_axis_method_offset = 4
+    _get_semiminor_axis_method_offset = 5
+    _set_semiminor_axis_method_offset = 6
     _metadata = {
         "iid_data" : (5063152003497522251, 9401477560282307262),
-        "vtable_reference" : ICentralBodyShape._vtable_offset + ICentralBodyShape._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentShape._vtable_offset + ICentralBodyComponentShape._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyShapeTriaxialEllipsoid)
+        return get_interface_property(attrname, CentralBodyComponentShapeTriaxialEllipsoid)
     
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """Get or set the semi-major axis. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._get_semi_major_axis_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._set_semimajor_axis_metadata, newVal)
 
-    _get_semi_mid_axis_metadata = { "offset" : _get_semi_mid_axis_method_offset,
+    _get_semimid_axis_metadata = { "offset" : _get_semimid_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_mid_axis(self) -> float:
+    def semimid_axis(self) -> float:
         """Get or set the semi-mid axis. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._get_semi_mid_axis_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._get_semimid_axis_metadata)
 
-    _set_semi_mid_axis_metadata = { "offset" : _set_semi_mid_axis_method_offset,
+    _set_semimid_axis_metadata = { "offset" : _set_semimid_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_mid_axis.setter
-    def semi_mid_axis(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._set_semi_mid_axis_metadata, newVal)
+    @semimid_axis.setter
+    def semimid_axis(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._set_semimid_axis_metadata, newVal)
 
-    _get_semi_minor_axis_metadata = { "offset" : _get_semi_minor_axis_method_offset,
+    _get_semiminor_axis_metadata = { "offset" : _get_semiminor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_minor_axis(self) -> float:
+    def semiminor_axis(self) -> float:
         """Get or set the semi-minor axis. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._get_semi_minor_axis_metadata)
+        return self._intf.get_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._get_semiminor_axis_metadata)
 
-    _set_semi_minor_axis_metadata = { "offset" : _set_semi_minor_axis_method_offset,
+    _set_semiminor_axis_metadata = { "offset" : _set_semiminor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_minor_axis.setter
-    def semi_minor_axis(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyShapeTriaxialEllipsoid._metadata, CentralBodyShapeTriaxialEllipsoid._set_semi_minor_axis_metadata, newVal)
+    @semiminor_axis.setter
+    def semiminor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentShapeTriaxialEllipsoid._metadata, CentralBodyComponentShapeTriaxialEllipsoid._set_semiminor_axis_metadata, newVal)
 
-    _property_names[semi_major_axis] = "semi_major_axis"
-    _property_names[semi_mid_axis] = "semi_mid_axis"
-    _property_names[semi_minor_axis] = "semi_minor_axis"
+    _property_names[semimajor_axis] = "semimajor_axis"
+    _property_names[semimid_axis] = "semimid_axis"
+    _property_names[semiminor_axis] = "semiminor_axis"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyShapeTriaxialEllipsoid."""
+        """Construct an object of type CentralBodyComponentShapeTriaxialEllipsoid."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyShapeTriaxialEllipsoid)
-        ICentralBodyShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeTriaxialEllipsoid)
+        ICentralBodyComponentShape.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyShape._private_init(self, intf)
+        ICentralBodyComponentShape._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyShapeTriaxialEllipsoid, [CentralBodyShapeTriaxialEllipsoid, ICentralBodyShape])
+        set_class_attribute(self, attrname, value, CentralBodyComponentShapeTriaxialEllipsoid, [CentralBodyComponentShapeTriaxialEllipsoid, ICentralBodyComponentShape])
 
-agcls.AgClassCatalog.add_catalog_entry((5050867345906750156, 12587040557795424178), CentralBodyShapeTriaxialEllipsoid)
-agcls.AgTypeNameMap["CentralBodyShapeTriaxialEllipsoid"] = CentralBodyShapeTriaxialEllipsoid
+agcls.AgClassCatalog.add_catalog_entry((5050867345906750156, 12587040557795424178), CentralBodyComponentShapeTriaxialEllipsoid)
+agcls.AgTypeNameMap["CentralBodyComponentShapeTriaxialEllipsoid"] = CentralBodyComponentShapeTriaxialEllipsoid
 
-class CentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitude, SupportsDeleteCallback):
+class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponentAttitude, SupportsDeleteCallback):
     """Properties for a rotation coefficients file attitude definition."""
 
     _num_methods = 2
-    _vtable_offset = ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods
+    _vtable_offset = ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
         "iid_data" : (5095681338417288511, 6927611188181800883),
-        "vtable_reference" : ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyAttitudeRotationCoefficientsFile)
+        return get_interface_property(attrname, CentralBodyComponentAttitudeRotationCoefficientsFile)
     
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -28834,40 +28883,40 @@ class CentralBodyAttitudeRotationCoefficientsFile(ICentralBodyAttitude, Supports
     @property
     def filename(self) -> str:
         """Get or set the name of the rotation coefficients file."""
-        return self._intf.get_property(CentralBodyAttitudeRotationCoefficientsFile._metadata, CentralBodyAttitudeRotationCoefficientsFile._get_filename_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeRotationCoefficientsFile._metadata, CentralBodyComponentAttitudeRotationCoefficientsFile._get_filename_metadata)
 
     _set_filename_metadata = { "offset" : _set_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @filename.setter
     def filename(self, newVal:str) -> None:
-        return self._intf.set_property(CentralBodyAttitudeRotationCoefficientsFile._metadata, CentralBodyAttitudeRotationCoefficientsFile._set_filename_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeRotationCoefficientsFile._metadata, CentralBodyComponentAttitudeRotationCoefficientsFile._set_filename_metadata, newVal)
 
     _property_names[filename] = "filename"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyAttitudeRotationCoefficientsFile."""
+        """Construct an object of type CentralBodyComponentAttitudeRotationCoefficientsFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyAttitudeRotationCoefficientsFile)
-        ICentralBodyAttitude.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentAttitudeRotationCoefficientsFile)
+        ICentralBodyComponentAttitude.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyAttitude._private_init(self, intf)
+        ICentralBodyComponentAttitude._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyAttitudeRotationCoefficientsFile, [CentralBodyAttitudeRotationCoefficientsFile, ICentralBodyAttitude])
+        set_class_attribute(self, attrname, value, CentralBodyComponentAttitudeRotationCoefficientsFile, [CentralBodyComponentAttitudeRotationCoefficientsFile, ICentralBodyComponentAttitude])
 
-agcls.AgClassCatalog.add_catalog_entry((4684700220808562037, 7877415965054162825), CentralBodyAttitudeRotationCoefficientsFile)
-agcls.AgTypeNameMap["CentralBodyAttitudeRotationCoefficientsFile"] = CentralBodyAttitudeRotationCoefficientsFile
+agcls.AgClassCatalog.add_catalog_entry((4684700220808562037, 7877415965054162825), CentralBodyComponentAttitudeRotationCoefficientsFile)
+agcls.AgTypeNameMap["CentralBodyComponentAttitudeRotationCoefficientsFile"] = CentralBodyComponentAttitudeRotationCoefficientsFile
 
-class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
+class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, SupportsDeleteCallback):
     """Properties for an IAU1994 attitude definition."""
 
     _num_methods = 12
-    _vtable_offset = ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods
+    _vtable_offset = ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods
     _get_right_ascension_method_offset = 1
     _set_right_ascension_method_offset = 2
     _get_declination_method_offset = 3
@@ -28882,11 +28931,11 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     _set_rotation_rate_method_offset = 12
     _metadata = {
         "iid_data" : (5549016629518068083, 12192704956758789263),
-        "vtable_reference" : ICentralBodyAttitude._vtable_offset + ICentralBodyAttitude._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentAttitude._vtable_offset + ICentralBodyComponentAttitude._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyAttitudeIAU1994)
+        return get_interface_property(attrname, CentralBodyComponentAttitudeIAU1994)
     
     _get_right_ascension_metadata = { "offset" : _get_right_ascension_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -28894,14 +28943,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def right_ascension(self) -> typing.Any:
         """Get or set the right ascension; the angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spin axis -- the angle  in the drawing below. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_right_ascension_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_right_ascension_metadata)
 
     _set_right_ascension_metadata = { "offset" : _set_right_ascension_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @right_ascension.setter
     def right_ascension(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_right_ascension_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_right_ascension_metadata, newVal)
 
     _get_declination_metadata = { "offset" : _get_declination_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -28909,14 +28958,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def declination(self) -> typing.Any:
         """Get or set the declination; the angle from the X-Y plane of the coordinate system to the spin axis vector. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_declination_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_declination_metadata)
 
     _set_declination_metadata = { "offset" : _set_declination_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @declination.setter
     def declination(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_declination_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_declination_metadata, newVal)
 
     _get_right_ascension_rate_metadata = { "offset" : _get_right_ascension_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28924,14 +28973,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def right_ascension_rate(self) -> float:
         """Get or set the right ascension rate; the rate of change in the right ascension. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_right_ascension_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_right_ascension_rate_metadata)
 
     _set_right_ascension_rate_metadata = { "offset" : _set_right_ascension_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @right_ascension_rate.setter
     def right_ascension_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_right_ascension_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_right_ascension_rate_metadata, newVal)
 
     _get_declination_rate_metadata = { "offset" : _get_declination_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28939,14 +28988,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def declination_rate(self) -> float:
         """Get or set the declination rate; the rate of change in the declination. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_declination_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_declination_rate_metadata)
 
     _set_declination_rate_metadata = { "offset" : _set_declination_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @declination_rate.setter
     def declination_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_declination_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_declination_rate_metadata, newVal)
 
     _get_rotation_offset_metadata = { "offset" : _get_rotation_offset_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -28954,14 +29003,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def rotation_offset(self) -> typing.Any:
         """Get or set the rotation offset; the angle from the inertially fixed reference direction to the body-fixed prime meridian (0 deg longitude) at the time of epoch. Uses AngleUnit Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_rotation_offset_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_rotation_offset_metadata)
 
     _set_rotation_offset_metadata = { "offset" : _set_rotation_offset_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @rotation_offset.setter
     def rotation_offset(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_rotation_offset_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_rotation_offset_metadata, newVal)
 
     _get_rotation_rate_metadata = { "offset" : _get_rotation_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -28969,14 +29018,14 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     @property
     def rotation_rate(self) -> float:
         """Get or set the rotation rate; the rate of the central body's rotation. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._get_rotation_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._get_rotation_rate_metadata)
 
     _set_rotation_rate_metadata = { "offset" : _set_rotation_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @rotation_rate.setter
     def rotation_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyAttitudeIAU1994._metadata, CentralBodyAttitudeIAU1994._set_rotation_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentAttitudeIAU1994._metadata, CentralBodyComponentAttitudeIAU1994._set_rotation_rate_metadata, newVal)
 
     _property_names[right_ascension] = "right_ascension"
     _property_names[declination] = "declination"
@@ -28986,34 +29035,34 @@ class CentralBodyAttitudeIAU1994(ICentralBodyAttitude, SupportsDeleteCallback):
     _property_names[rotation_rate] = "rotation_rate"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyAttitudeIAU1994."""
+        """Construct an object of type CentralBodyComponentAttitudeIAU1994."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyAttitudeIAU1994)
-        ICentralBodyAttitude.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentAttitudeIAU1994)
+        ICentralBodyComponentAttitude.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyAttitude._private_init(self, intf)
+        ICentralBodyComponentAttitude._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyAttitudeIAU1994, [CentralBodyAttitudeIAU1994, ICentralBodyAttitude])
+        set_class_attribute(self, attrname, value, CentralBodyComponentAttitudeIAU1994, [CentralBodyComponentAttitudeIAU1994, ICentralBodyComponentAttitude])
 
-agcls.AgClassCatalog.add_catalog_entry((5033176508424437318, 9839194961858099586), CentralBodyAttitudeIAU1994)
-agcls.AgTypeNameMap["CentralBodyAttitudeIAU1994"] = CentralBodyAttitudeIAU1994
+agcls.AgClassCatalog.add_catalog_entry((5033176508424437318, 9839194961858099586), CentralBodyComponentAttitudeIAU1994)
+agcls.AgTypeNameMap["CentralBodyComponentAttitudeIAU1994"] = CentralBodyComponentAttitudeIAU1994
 
-class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCallback):
+class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
     """Properties for the Analytic Orbit ephemeris source."""
 
     _num_methods = 26
-    _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
+    _vtable_offset = ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods
     _get_epoch_method_offset = 1
     _set_epoch_method_offset = 2
-    _get_semi_major_axis_method_offset = 3
-    _set_semi_major_axis_method_offset = 4
-    _get_semi_major_axis_rate_method_offset = 5
-    _set_semi_major_axis_rate_method_offset = 6
+    _get_semimajor_axis_method_offset = 3
+    _set_semimajor_axis_method_offset = 4
+    _get_semimajor_axis_rate_method_offset = 5
+    _set_semimajor_axis_rate_method_offset = 6
     _get_eccentricity_method_offset = 7
     _set_eccentricity_method_offset = 8
     _get_eccentricity_rate_method_offset = 9
@@ -29036,11 +29085,11 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     _set_mean_longitude_rate_method_offset = 26
     _metadata = {
         "iid_data" : (4753317389975628734, 12335812999387687081),
-        "vtable_reference" : ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyEphemerisAnalyticOrbit)
+        return get_interface_property(attrname, CentralBodyComponentEphemerisAnalyticOrbit)
     
     _get_epoch_metadata = { "offset" : _get_epoch_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29048,44 +29097,44 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def epoch(self) -> float:
         """Get or set the epoch. Dimensionless."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_epoch_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_epoch_metadata)
 
     _set_epoch_metadata = { "offset" : _set_epoch_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @epoch.setter
     def epoch(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_epoch_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_epoch_metadata, newVal)
 
-    _get_semi_major_axis_metadata = { "offset" : _get_semi_major_axis_method_offset,
+    _get_semimajor_axis_metadata = { "offset" : _get_semimajor_axis_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis(self) -> float:
+    def semimajor_axis(self) -> float:
         """Get or set the semi-major axis; one-half the distance along the long axis of the elliptical orbit. Uses Distance Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_semi_major_axis_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_semimajor_axis_metadata)
 
-    _set_semi_major_axis_metadata = { "offset" : _set_semi_major_axis_method_offset,
+    _set_semimajor_axis_metadata = { "offset" : _set_semimajor_axis_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis.setter
-    def semi_major_axis(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_semi_major_axis_metadata, newVal)
+    @semimajor_axis.setter
+    def semimajor_axis(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_semimajor_axis_metadata, newVal)
 
-    _get_semi_major_axis_rate_metadata = { "offset" : _get_semi_major_axis_rate_method_offset,
+    _get_semimajor_axis_rate_metadata = { "offset" : _get_semimajor_axis_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def semi_major_axis_rate(self) -> float:
+    def semimajor_axis_rate(self) -> float:
         """Get or set the semi-major axis rate of change. Uses Rate Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_semi_major_axis_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_semimajor_axis_rate_metadata)
 
-    _set_semi_major_axis_rate_metadata = { "offset" : _set_semi_major_axis_rate_method_offset,
+    _set_semimajor_axis_rate_metadata = { "offset" : _set_semimajor_axis_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @semi_major_axis_rate.setter
-    def semi_major_axis_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_semi_major_axis_rate_metadata, newVal)
+    @semimajor_axis_rate.setter
+    def semimajor_axis_rate(self, newVal:float) -> None:
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_semimajor_axis_rate_metadata, newVal)
 
     _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29093,14 +29142,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def eccentricity(self) -> float:
         """Get or set the eccentricity; the ratio of the distance between the two foci of the ellipse and its major axis. Dimensionless."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_eccentricity_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_eccentricity_metadata)
 
     _set_eccentricity_metadata = { "offset" : _set_eccentricity_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @eccentricity.setter
     def eccentricity(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_eccentricity_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_eccentricity_metadata, newVal)
 
     _get_eccentricity_rate_metadata = { "offset" : _get_eccentricity_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29108,14 +29157,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def eccentricity_rate(self) -> float:
         """Get or set the eccentricity rate of change. Dimensionless."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_eccentricity_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_eccentricity_rate_metadata)
 
     _set_eccentricity_rate_metadata = { "offset" : _set_eccentricity_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @eccentricity_rate.setter
     def eccentricity_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_eccentricity_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_eccentricity_rate_metadata, newVal)
 
     _get_inclination_metadata = { "offset" : _get_inclination_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -29123,14 +29172,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def inclination(self) -> typing.Any:
         """Get or set the inclination; the angle from the Z axis of the inertial coordinate system to the orbit angular velocity vector. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_inclination_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_inclination_metadata)
 
     _set_inclination_metadata = { "offset" : _set_inclination_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @inclination.setter
     def inclination(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_inclination_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_inclination_metadata, newVal)
 
     _get_inclination_rate_metadata = { "offset" : _get_inclination_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29138,14 +29187,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def inclination_rate(self) -> float:
         """Get or set the inclination rate of change. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_inclination_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_inclination_rate_metadata)
 
     _set_inclination_rate_metadata = { "offset" : _set_inclination_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @inclination_rate.setter
     def inclination_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_inclination_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_inclination_rate_metadata, newVal)
 
     _get_raan_metadata = { "offset" : _get_raan_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -29153,14 +29202,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def raan(self) -> typing.Any:
         """Get or set the right ascension; the angle from the X axis of the inertial coordinate system to the point where the orbit crosses the X-Y plane in the +Z direction. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_raan_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_raan_metadata)
 
     _set_raan_metadata = { "offset" : _set_raan_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @raan.setter
     def raan(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_raan_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_raan_metadata, newVal)
 
     _get_raan_rate_metadata = { "offset" : _get_raan_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29168,14 +29217,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def raan_rate(self) -> float:
         """Get or set the right ascension rate of change. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_raan_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_raan_rate_metadata)
 
     _set_raan_rate_metadata = { "offset" : _set_raan_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @raan_rate.setter
     def raan_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_raan_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_raan_rate_metadata, newVal)
 
     _get_arg_of_periapsis_metadata = { "offset" : _get_arg_of_periapsis_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -29183,14 +29232,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def arg_of_periapsis(self) -> typing.Any:
         """Get or set the argument of periapsis; The angle measured in direction of the body's orbital motion, and in the orbit plane, from the ascending node to the periapsis of the orbit. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_arg_of_periapsis_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_arg_of_periapsis_metadata)
 
     _set_arg_of_periapsis_metadata = { "offset" : _set_arg_of_periapsis_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @arg_of_periapsis.setter
     def arg_of_periapsis(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_arg_of_periapsis_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_arg_of_periapsis_metadata, newVal)
 
     _get_arg_of_periapsis_rate_metadata = { "offset" : _get_arg_of_periapsis_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29198,14 +29247,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def arg_of_periapsis_rate(self) -> float:
         """Get or set the argument of periapsis rate of change. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_arg_of_periapsis_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_arg_of_periapsis_rate_metadata)
 
     _set_arg_of_periapsis_rate_metadata = { "offset" : _set_arg_of_periapsis_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @arg_of_periapsis_rate.setter
     def arg_of_periapsis_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_arg_of_periapsis_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_arg_of_periapsis_rate_metadata, newVal)
 
     _get_mean_longitude_metadata = { "offset" : _get_mean_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -29213,14 +29262,14 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def mean_longitude(self) -> typing.Any:
         """Get or set the mean longitude; the sum of the Right Ascension of the Ascending Node, the Argument of Periapsis and the Mean Anomaly. Uses Angle Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_mean_longitude_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_mean_longitude_metadata)
 
     _set_mean_longitude_metadata = { "offset" : _set_mean_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @mean_longitude.setter
     def mean_longitude(self, newVal:typing.Any) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_mean_longitude_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_mean_longitude_metadata, newVal)
 
     _get_mean_longitude_rate_metadata = { "offset" : _get_mean_longitude_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -29228,18 +29277,18 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     @property
     def mean_longitude_rate(self) -> float:
         """Get or set the mean longitude rate of change. Uses AngleRate Dimension."""
-        return self._intf.get_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._get_mean_longitude_rate_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._get_mean_longitude_rate_metadata)
 
     _set_mean_longitude_rate_metadata = { "offset" : _set_mean_longitude_rate_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @mean_longitude_rate.setter
     def mean_longitude_rate(self, newVal:float) -> None:
-        return self._intf.set_property(CentralBodyEphemerisAnalyticOrbit._metadata, CentralBodyEphemerisAnalyticOrbit._set_mean_longitude_rate_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisAnalyticOrbit._metadata, CentralBodyComponentEphemerisAnalyticOrbit._set_mean_longitude_rate_metadata, newVal)
 
     _property_names[epoch] = "epoch"
-    _property_names[semi_major_axis] = "semi_major_axis"
-    _property_names[semi_major_axis_rate] = "semi_major_axis_rate"
+    _property_names[semimajor_axis] = "semimajor_axis"
+    _property_names[semimajor_axis_rate] = "semimajor_axis_rate"
     _property_names[eccentricity] = "eccentricity"
     _property_names[eccentricity_rate] = "eccentricity_rate"
     _property_names[inclination] = "inclination"
@@ -29252,37 +29301,37 @@ class CentralBodyEphemerisAnalyticOrbit(ICentralBodyEphemeris, SupportsDeleteCal
     _property_names[mean_longitude_rate] = "mean_longitude_rate"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyEphemerisAnalyticOrbit."""
+        """Construct an object of type CentralBodyComponentEphemerisAnalyticOrbit."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyEphemerisAnalyticOrbit)
-        ICentralBodyEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisAnalyticOrbit)
+        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyEphemeris._private_init(self, intf)
+        ICentralBodyComponentEphemeris._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyEphemerisAnalyticOrbit, [CentralBodyEphemerisAnalyticOrbit, ICentralBodyEphemeris])
+        set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisAnalyticOrbit, [CentralBodyComponentEphemerisAnalyticOrbit, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((5191484337519890481, 8136673290563576227), CentralBodyEphemerisAnalyticOrbit)
-agcls.AgTypeNameMap["CentralBodyEphemerisAnalyticOrbit"] = CentralBodyEphemerisAnalyticOrbit
+agcls.AgClassCatalog.add_catalog_entry((5191484337519890481, 8136673290563576227), CentralBodyComponentEphemerisAnalyticOrbit)
+agcls.AgTypeNameMap["CentralBodyComponentEphemerisAnalyticOrbit"] = CentralBodyComponentEphemerisAnalyticOrbit
 
-class CentralBodyEphemerisJPLSpice(ICentralBodyEphemeris, SupportsDeleteCallback):
+class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
     """Properties for the JPL SPICE ephemeris source."""
 
     _num_methods = 2
-    _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
+    _vtable_offset = ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods
     _get_jpl_spice_id_method_offset = 1
     _set_jpl_spice_id_method_offset = 2
     _metadata = {
         "iid_data" : (5009289977513944391, 11298641061474462136),
-        "vtable_reference" : ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyEphemerisJPLSpice)
+        return get_interface_property(attrname, CentralBodyComponentEphemerisJPLSpice)
     
     _get_jpl_spice_id_metadata = { "offset" : _get_jpl_spice_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -29290,49 +29339,49 @@ class CentralBodyEphemerisJPLSpice(ICentralBodyEphemeris, SupportsDeleteCallback
     @property
     def jpl_spice_id(self) -> str:
         """Get or set the SPICE file name."""
-        return self._intf.get_property(CentralBodyEphemerisJPLSpice._metadata, CentralBodyEphemerisJPLSpice._get_jpl_spice_id_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisJPLSpice._metadata, CentralBodyComponentEphemerisJPLSpice._get_jpl_spice_id_metadata)
 
     _set_jpl_spice_id_metadata = { "offset" : _set_jpl_spice_id_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @jpl_spice_id.setter
     def jpl_spice_id(self, newVal:str) -> None:
-        return self._intf.set_property(CentralBodyEphemerisJPLSpice._metadata, CentralBodyEphemerisJPLSpice._set_jpl_spice_id_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisJPLSpice._metadata, CentralBodyComponentEphemerisJPLSpice._set_jpl_spice_id_metadata, newVal)
 
     _property_names[jpl_spice_id] = "jpl_spice_id"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyEphemerisJPLSpice."""
+        """Construct an object of type CentralBodyComponentEphemerisJPLSpice."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyEphemerisJPLSpice)
-        ICentralBodyEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisJPLSpice)
+        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyEphemeris._private_init(self, intf)
+        ICentralBodyComponentEphemeris._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyEphemerisJPLSpice, [CentralBodyEphemerisJPLSpice, ICentralBodyEphemeris])
+        set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisJPLSpice, [CentralBodyComponentEphemerisJPLSpice, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4888079214115957403, 13298646673798486434), CentralBodyEphemerisJPLSpice)
-agcls.AgTypeNameMap["CentralBodyEphemerisJPLSpice"] = CentralBodyEphemerisJPLSpice
+agcls.AgClassCatalog.add_catalog_entry((4888079214115957403, 13298646673798486434), CentralBodyComponentEphemerisJPLSpice)
+agcls.AgTypeNameMap["CentralBodyComponentEphemerisJPLSpice"] = CentralBodyComponentEphemerisJPLSpice
 
-class CentralBodyEphemerisFile(ICentralBodyEphemeris, SupportsDeleteCallback):
+class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
     """Properties for the Ephemeris File ephemeris source."""
 
     _num_methods = 2
-    _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
+    _vtable_offset = ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods
     _get_filename_method_offset = 1
     _set_filename_method_offset = 2
     _metadata = {
         "iid_data" : (5233104570870713964, 9716818812748419470),
-        "vtable_reference" : ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyEphemerisFile)
+        return get_interface_property(attrname, CentralBodyComponentEphemerisFile)
     
     _get_filename_metadata = { "offset" : _get_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -29340,99 +29389,70 @@ class CentralBodyEphemerisFile(ICentralBodyEphemeris, SupportsDeleteCallback):
     @property
     def filename(self) -> str:
         """Get or set the ephemeris file name."""
-        return self._intf.get_property(CentralBodyEphemerisFile._metadata, CentralBodyEphemerisFile._get_filename_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisFile._metadata, CentralBodyComponentEphemerisFile._get_filename_metadata)
 
     _set_filename_metadata = { "offset" : _set_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @filename.setter
     def filename(self, newVal:str) -> None:
-        return self._intf.set_property(CentralBodyEphemerisFile._metadata, CentralBodyEphemerisFile._set_filename_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisFile._metadata, CentralBodyComponentEphemerisFile._set_filename_metadata, newVal)
 
     _property_names[filename] = "filename"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyEphemerisFile."""
+        """Construct an object of type CentralBodyComponentEphemerisFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyEphemerisFile)
-        ICentralBodyEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisFile)
+        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyEphemeris._private_init(self, intf)
+        ICentralBodyComponentEphemeris._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyEphemerisFile, [CentralBodyEphemerisFile, ICentralBodyEphemeris])
+        set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisFile, [CentralBodyComponentEphemerisFile, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4682194894607589662, 11232696290056966582), CentralBodyEphemerisFile)
-agcls.AgTypeNameMap["CentralBodyEphemerisFile"] = CentralBodyEphemerisFile
+agcls.AgClassCatalog.add_catalog_entry((4682194894607589662, 11232696290056966582), CentralBodyComponentEphemerisFile)
+agcls.AgTypeNameMap["CentralBodyComponentEphemerisFile"] = CentralBodyComponentEphemerisFile
 
-class CentralBodyEphemerisJPLDesignExplorerOptimizer(ICentralBodyEphemeris, SupportsDeleteCallback):
-    """Properties for the JPL DE ephemeris source."""
-
-    _num_methods = 2
-    _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
-    _get_jplde_filename_method_offset = 1
-    _set_jplde_filename_method_offset = 2
-    _metadata = {
-        "iid_data" : (5096958885497432761, 15383033303903279551),
-        "vtable_reference" : ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods - 1,
-    }
-    _property_names = {}
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyEphemerisJPLDesignExplorerOptimizer)
-    
-    _get_jplde_filename_metadata = { "offset" : _get_jplde_filename_method_offset,
-            "arg_types" : (POINTER(agcom.BSTR),),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @property
-    def jplde_filename(self) -> str:
-        """Get or set the DE file name."""
-        return self._intf.get_property(CentralBodyEphemerisJPLDesignExplorerOptimizer._metadata, CentralBodyEphemerisJPLDesignExplorerOptimizer._get_jplde_filename_metadata)
-
-    _set_jplde_filename_metadata = { "offset" : _set_jplde_filename_method_offset,
-            "arg_types" : (agcom.BSTR,),
-            "marshallers" : (agmarshall.BStrArg,) }
-    @jplde_filename.setter
-    def jplde_filename(self, newVal:str) -> None:
-        return self._intf.set_property(CentralBodyEphemerisJPLDesignExplorerOptimizer._metadata, CentralBodyEphemerisJPLDesignExplorerOptimizer._set_jplde_filename_metadata, newVal)
-
-    _property_names[jplde_filename] = "jplde_filename"
-
+class CentralBodyComponentEphemerisJPLDesignExplorerOptimizer(ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris, SupportsDeleteCallback):
+    """Central Body Ephemeris - JPL DE."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyEphemerisJPLDesignExplorerOptimizer."""
+        """Construct an object of type CentralBodyComponentEphemerisJPLDesignExplorerOptimizer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyEphemerisJPLDesignExplorerOptimizer)
-        ICentralBodyEphemeris.__init__(self, sourceObject)
+        ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides.__init__(self, sourceObject)
+        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyEphemeris._private_init(self, intf)
+        ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._private_init(self, intf)
+        ICentralBodyComponentEphemeris._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyEphemerisJPLDesignExplorerOptimizer, [CentralBodyEphemerisJPLDesignExplorerOptimizer, ICentralBodyEphemeris])
+        set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisJPLDesignExplorerOptimizer, [ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((5100712310690212330, 12064070645483617173), CentralBodyEphemerisJPLDesignExplorerOptimizer)
-agcls.AgTypeNameMap["CentralBodyEphemerisJPLDesignExplorerOptimizer"] = CentralBodyEphemerisJPLDesignExplorerOptimizer
+agcls.AgClassCatalog.add_catalog_entry((5100712310690212330, 12064070645483617173), CentralBodyComponentEphemerisJPLDesignExplorerOptimizer)
+agcls.AgTypeNameMap["CentralBodyComponentEphemerisJPLDesignExplorerOptimizer"] = CentralBodyComponentEphemerisJPLDesignExplorerOptimizer
 
-class CentralBodyEphemerisPlanetary(ICentralBodyEphemeris, SupportsDeleteCallback):
+class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, SupportsDeleteCallback):
     """Properties for the Planetary Ephemeris file ephemeris source."""
 
     _num_methods = 2
-    _vtable_offset = ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods
+    _vtable_offset = ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods
     _get_planetary_filename_method_offset = 1
     _set_planetary_filename_method_offset = 2
     _metadata = {
         "iid_data" : (5004093576315593887, 617831019861958046),
-        "vtable_reference" : ICentralBodyEphemeris._vtable_offset + ICentralBodyEphemeris._num_methods - 1,
+        "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CentralBodyEphemerisPlanetary)
+        return get_interface_property(attrname, CentralBodyComponentEphemerisPlanetary)
     
     _get_planetary_filename_metadata = { "offset" : _get_planetary_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -29440,36 +29460,36 @@ class CentralBodyEphemerisPlanetary(ICentralBodyEphemeris, SupportsDeleteCallbac
     @property
     def planetary_filename(self) -> str:
         """Get or set the planetary ephemeris file name."""
-        return self._intf.get_property(CentralBodyEphemerisPlanetary._metadata, CentralBodyEphemerisPlanetary._get_planetary_filename_metadata)
+        return self._intf.get_property(CentralBodyComponentEphemerisPlanetary._metadata, CentralBodyComponentEphemerisPlanetary._get_planetary_filename_metadata)
 
     _set_planetary_filename_metadata = { "offset" : _set_planetary_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @planetary_filename.setter
     def planetary_filename(self, newVal:str) -> None:
-        return self._intf.set_property(CentralBodyEphemerisPlanetary._metadata, CentralBodyEphemerisPlanetary._set_planetary_filename_metadata, newVal)
+        return self._intf.set_property(CentralBodyComponentEphemerisPlanetary._metadata, CentralBodyComponentEphemerisPlanetary._set_planetary_filename_metadata, newVal)
 
     _property_names[planetary_filename] = "planetary_filename"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CentralBodyEphemerisPlanetary."""
+        """Construct an object of type CentralBodyComponentEphemerisPlanetary."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyEphemerisPlanetary)
-        ICentralBodyEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisPlanetary)
+        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        ICentralBodyEphemeris._private_init(self, intf)
+        ICentralBodyComponentEphemeris._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CentralBodyEphemerisPlanetary, [CentralBodyEphemerisPlanetary, ICentralBodyEphemeris])
+        set_class_attribute(self, attrname, value, CentralBodyComponentEphemerisPlanetary, [CentralBodyComponentEphemerisPlanetary, ICentralBodyComponentEphemeris])
 
-agcls.AgClassCatalog.add_catalog_entry((4833493371149643349, 6987005291541553590), CentralBodyEphemerisPlanetary)
-agcls.AgTypeNameMap["CentralBodyEphemerisPlanetary"] = CentralBodyEphemerisPlanetary
+agcls.AgClassCatalog.add_catalog_entry((4833493371149643349, 6987005291541553590), CentralBodyComponentEphemerisPlanetary)
+agcls.AgTypeNameMap["CentralBodyComponentEphemerisPlanetary"] = CentralBodyComponentEphemerisPlanetary
 
-class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
+class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """The segment properties."""
 
     _num_methods = 9
@@ -29489,7 +29509,7 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissionControlSequenceSegmentProperties)
+        return get_interface_property(attrname, MCSSegmentProperties)
     
     _get_display_coordinate_system_metadata = { "offset" : _get_display_coordinate_system_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -29497,14 +29517,14 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     @property
     def display_coordinate_system(self) -> str:
         """Get or set the coordinate system that will be used in the segment summary report."""
-        return self._intf.get_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._get_display_coordinate_system_metadata)
+        return self._intf.get_property(MCSSegmentProperties._metadata, MCSSegmentProperties._get_display_coordinate_system_metadata)
 
     _set_display_coordinate_system_metadata = { "offset" : _set_display_coordinate_system_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @display_coordinate_system.setter
     def display_coordinate_system(self, inVal:str) -> None:
-        return self._intf.set_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._set_display_coordinate_system_metadata, inVal)
+        return self._intf.set_property(MCSSegmentProperties._metadata, MCSSegmentProperties._set_display_coordinate_system_metadata, inVal)
 
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
@@ -29512,14 +29532,14 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     @property
     def color(self) -> agcolor.Color:
         """Get or set the display color of the segment."""
-        return self._intf.get_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._get_color_metadata)
+        return self._intf.get_property(MCSSegmentProperties._metadata, MCSSegmentProperties._get_color_metadata)
 
     _set_color_metadata = { "offset" : _set_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
     def color(self, inVal:agcolor.Color) -> None:
-        return self._intf.set_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._set_color_metadata, inVal)
+        return self._intf.set_property(MCSSegmentProperties._metadata, MCSSegmentProperties._set_color_metadata, inVal)
 
     _get_update_animation_time_after_run_metadata = { "offset" : _get_update_animation_time_after_run_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -29527,21 +29547,21 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     @property
     def update_animation_time_after_run(self) -> bool:
         """If true, Astrogator will set the animation time to the final epoch of the segment when the segment finishes running."""
-        return self._intf.get_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._get_update_animation_time_after_run_metadata)
+        return self._intf.get_property(MCSSegmentProperties._metadata, MCSSegmentProperties._get_update_animation_time_after_run_metadata)
 
     _set_update_animation_time_after_run_metadata = { "offset" : _set_update_animation_time_after_run_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @update_animation_time_after_run.setter
     def update_animation_time_after_run(self, inVal:bool) -> None:
-        return self._intf.set_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._set_update_animation_time_after_run_metadata, inVal)
+        return self._intf.set_property(MCSSegmentProperties._metadata, MCSSegmentProperties._set_update_animation_time_after_run_metadata, inVal)
 
     _apply_final_state_to_b_planes_metadata = { "offset" : _apply_final_state_to_b_planes_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_final_state_to_b_planes(self) -> None:
         """Apply the last calculated final state of the segment to all selected B-Planes."""
-        return self._intf.invoke(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._apply_final_state_to_b_planes_metadata, )
+        return self._intf.invoke(MCSSegmentProperties._metadata, MCSSegmentProperties._apply_final_state_to_b_planes_metadata, )
 
     _get_b_planes_metadata = { "offset" : _get_b_planes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -29549,7 +29569,7 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     @property
     def b_planes(self) -> "BPlaneCollection":
         """Get the B-Plane or B-Planes to which the epoch, position, and velocity of the segment's final state will be applied, according to the B-Plane's definition."""
-        return self._intf.get_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._get_b_planes_metadata)
+        return self._intf.get_property(MCSSegmentProperties._metadata, MCSSegmentProperties._get_b_planes_metadata)
 
     _get_last_run_code_metadata = { "offset" : _get_last_run_code_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -29557,7 +29577,7 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     @property
     def last_run_code(self) -> "RUN_CODE":
         """Get the last run code returned by the segment."""
-        return self._intf.get_property(MissionControlSequenceSegmentProperties._metadata, MissionControlSequenceSegmentProperties._get_last_run_code_metadata)
+        return self._intf.get_property(MCSSegmentProperties._metadata, MCSSegmentProperties._get_last_run_code_metadata)
 
     _property_names[display_coordinate_system] = "display_coordinate_system"
     _property_names[color] = "color"
@@ -29566,9 +29586,9 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
     _property_names[last_run_code] = "last_run_code"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissionControlSequenceSegmentProperties."""
+        """Construct an object of type MCSSegmentProperties."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissionControlSequenceSegmentProperties)
+        initialize_from_source_object(self, sourceObject, MCSSegmentProperties)
         IRuntimeTypeInfoProvider.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -29578,10 +29598,10 @@ class MissionControlSequenceSegmentProperties(IRuntimeTypeInfoProvider, Supports
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissionControlSequenceSegmentProperties, [MissionControlSequenceSegmentProperties, IRuntimeTypeInfoProvider])
+        set_class_attribute(self, attrname, value, MCSSegmentProperties, [MCSSegmentProperties, IRuntimeTypeInfoProvider])
 
-agcls.AgClassCatalog.add_catalog_entry((4918113374685894782, 11279002414688382869), MissionControlSequenceSegmentProperties)
-agcls.AgTypeNameMap["MissionControlSequenceSegmentProperties"] = MissionControlSequenceSegmentProperties
+agcls.AgClassCatalog.add_catalog_entry((4918113374685894782, 11279002414688382869), MCSSegmentProperties)
+agcls.AgTypeNameMap["MCSSegmentProperties"] = MCSSegmentProperties
 
 class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Internal Power power source component."""
@@ -30189,7 +30209,7 @@ class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCall
 agcls.AgClassCatalog.add_catalog_entry((4874254178603224723, 3876770599854905017), StateTransformationFunction)
 agcls.AgTypeNameMap["StateTransformationFunction"] = StateTransformationFunction
 
-class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the CR3BP propagator function."""
 
     _num_methods = 9
@@ -30209,7 +30229,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CR3BPFunc)
+        return get_interface_property(attrname, CR3BPFunction)
     
     _get_secondary_name_metadata = { "offset" : _get_secondary_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -30217,14 +30237,14 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def secondary_name(self) -> str:
         """Get or set the secondary body  which should be consistently defined with CR3BP model definitions."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_secondary_name_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_secondary_name_metadata)
 
     _set_secondary_name_metadata = { "offset" : _set_secondary_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @secondary_name.setter
     def secondary_name(self, inVal:str) -> None:
-        return self._intf.set_property(CR3BPFunc._metadata, CR3BPFunc._set_secondary_name_metadata, inVal)
+        return self._intf.set_property(CR3BPFunction._metadata, CR3BPFunction._set_secondary_name_metadata, inVal)
 
     _get_ephemeris_epoch_metadata = { "offset" : _get_ephemeris_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -30232,7 +30252,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def ephemeris_epoch(self) -> typing.Any:
         """Get the epoch from which the eccentricity value is reported from the secondary."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_ephemeris_epoch_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_ephemeris_epoch_metadata)
 
     _get_eccentricity_metadata = { "offset" : _get_eccentricity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30240,7 +30260,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def eccentricity(self) -> float:
         """Get the eccentricity at the reference epoch for the secondary's orbit."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_eccentricity_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_eccentricity_metadata)
 
     _get_mass_parameter_metadata = { "offset" : _get_mass_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30248,7 +30268,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def mass_parameter(self) -> float:
         """Get the mass parameter computed from the primary and secondary bodies."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_mass_parameter_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_mass_parameter_metadata)
 
     _get_characteristic_distance_metadata = { "offset" : _get_characteristic_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30256,7 +30276,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def characteristic_distance(self) -> float:
         """Get the characteristic distance computed from the primary and secondary bodies."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_characteristic_distance_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_characteristic_distance_metadata)
 
     _get_characteristic_time_metadata = { "offset" : _get_characteristic_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30264,7 +30284,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def characteristic_time(self) -> float:
         """Get the characteristic time computed from the primary and secondary bodies."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_characteristic_time_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_characteristic_time_metadata)
 
     _get_characteristic_velocity_metadata = { "offset" : _get_characteristic_velocity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30272,7 +30292,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def characteristic_velocity(self) -> float:
         """Get the characteristic velocity computed from the primary and secondary bodies."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_characteristic_velocity_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_characteristic_velocity_metadata)
 
     _get_characteristic_acceleration_metadata = { "offset" : _get_characteristic_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30280,7 +30300,7 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def characteristic_acceleration(self) -> float:
         """Get the characteristic acceleration computed from the primary and secondary bodies."""
-        return self._intf.get_property(CR3BPFunc._metadata, CR3BPFunc._get_characteristic_acceleration_metadata)
+        return self._intf.get_property(CR3BPFunction._metadata, CR3BPFunction._get_characteristic_acceleration_metadata)
 
     _property_names[secondary_name] = "secondary_name"
     _property_names[ephemeris_epoch] = "ephemeris_epoch"
@@ -30292,9 +30312,9 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[characteristic_acceleration] = "characteristic_acceleration"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CR3BPFunc."""
+        """Construct an object of type CR3BPFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CR3BPFunc)
+        initialize_from_source_object(self, sourceObject, CR3BPFunction)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -30306,10 +30326,10 @@ class CR3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CR3BPFunc, [CR3BPFunc, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, CR3BPFunction, [CR3BPFunction, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4941304847140255314, 46803675568969603), CR3BPFunc)
-agcls.AgTypeNameMap["CR3BPFunc"] = CR3BPFunc
+agcls.AgClassCatalog.add_catalog_entry((4941304847140255314, 46803675568969603), CR3BPFunction)
+agcls.AgTypeNameMap["CR3BPFunction"] = CR3BPFunction
 
 class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the ER3BP propagator function."""
@@ -30457,10 +30477,10 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _get_central_body_name_method_offset = 7
     _get_override_segment_settings_method_offset = 8
     _set_override_segment_settings_method_offset = 9
-    _get_rad_pressure_coeff_method_offset = 10
-    _set_rad_pressure_coeff_method_offset = 11
-    _get_rad_pressure_area_method_offset = 12
-    _set_rad_pressure_area_method_offset = 13
+    _get_radiation_pressure_coefficient_method_offset = 10
+    _set_radiation_pressure_coefficient_method_offset = 11
+    _get_radiation_pressure_area_method_offset = 12
+    _set_radiation_pressure_area_method_offset = 13
     _metadata = {
         "iid_data" : (4624530237560393103, 8957756315584128935),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -30537,43 +30557,43 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     def override_segment_settings(self, inVal:bool) -> None:
         return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_override_segment_settings_metadata, inVal)
 
-    _get_rad_pressure_coeff_metadata = { "offset" : _get_rad_pressure_coeff_method_offset,
+    _get_radiation_pressure_coefficient_metadata = { "offset" : _get_radiation_pressure_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def rad_pressure_coeff(self) -> float:
+    def radiation_pressure_coefficient(self) -> float:
         """Coefficient, Ck, for use with radiation pressure computation."""
-        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_rad_pressure_coeff_metadata)
+        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_coefficient_metadata)
 
-    _set_rad_pressure_coeff_metadata = { "offset" : _set_rad_pressure_coeff_method_offset,
+    _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @rad_pressure_coeff.setter
-    def rad_pressure_coeff(self, inVal:float) -> None:
-        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_rad_pressure_coeff_metadata, inVal)
+    @radiation_pressure_coefficient.setter
+    def radiation_pressure_coefficient(self, inVal:float) -> None:
+        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_radiation_pressure_coefficient_metadata, inVal)
 
-    _get_rad_pressure_area_metadata = { "offset" : _get_rad_pressure_area_method_offset,
+    _get_radiation_pressure_area_metadata = { "offset" : _get_radiation_pressure_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def rad_pressure_area(self) -> float:
+    def radiation_pressure_area(self) -> float:
         """Area to be used for radiation pressure computations. Small area dimension."""
-        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_rad_pressure_area_metadata)
+        return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_area_metadata)
 
-    _set_rad_pressure_area_metadata = { "offset" : _set_rad_pressure_area_method_offset,
+    _set_radiation_pressure_area_metadata = { "offset" : _set_radiation_pressure_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @rad_pressure_area.setter
-    def rad_pressure_area(self, inVal:float) -> None:
-        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_rad_pressure_area_metadata, inVal)
+    @radiation_pressure_area.setter
+    def radiation_pressure_area(self, inVal:float) -> None:
+        return self._intf.set_property(RadiationPressureFunction._metadata, RadiationPressureFunction._set_radiation_pressure_area_metadata, inVal)
 
     _property_names[include_albedo] = "include_albedo"
     _property_names[include_thermal_radiation_pressure] = "include_thermal_radiation_pressure"
     _property_names[ground_reflection_model_filename] = "ground_reflection_model_filename"
     _property_names[central_body_name] = "central_body_name"
     _property_names[override_segment_settings] = "override_segment_settings"
-    _property_names[rad_pressure_coeff] = "rad_pressure_coeff"
-    _property_names[rad_pressure_area] = "rad_pressure_area"
+    _property_names[radiation_pressure_coefficient] = "radiation_pressure_coefficient"
+    _property_names[radiation_pressure_area] = "radiation_pressure_area"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type RadiationPressureFunction."""
@@ -30778,15 +30798,15 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _atm_density_model_method_offset = 1
-    _low_altitude_atm_density_model_method_offset = 2
+    _atmos_density_model_method_offset = 1
+    _low_altitude_atmosphere_density_model_method_offset = 2
     _get_density_blending_altitude_range_method_offset = 3
     _set_density_blending_altitude_range_method_offset = 4
-    _get_atm_density_model_name_method_offset = 5
-    _get_low_altitude_atm_density_model_name_method_offset = 6
+    _get_atmos_density_model_name_method_offset = 5
+    _get_low_altitude_atmosphere_density_model_name_method_offset = 6
     _get_use_approx_altitude_method_offset = 7
     _set_use_approx_altitude_method_offset = 8
-    _get_lower_bound_upper_atm_model_method_offset = 9
+    _get_lower_bound_upper_atmosphere_model_method_offset = 9
     _metadata = {
         "iid_data" : (5244451850145830949, 14069455859079753352),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -30795,19 +30815,19 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, BlendedDensity)
     
-    _atm_density_model_metadata = { "offset" : _atm_density_model_method_offset,
+    _atmos_density_model_metadata = { "offset" : _atmos_density_model_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
-    def atm_density_model(self, pInVal:"IComponentInfo") -> None:
+    def atmos_density_model(self, pInVal:"IComponentInfo") -> None:
         """Embeds a nominal atmosphere model from the component browser."""
-        return self._intf.invoke(BlendedDensity._metadata, BlendedDensity._atm_density_model_metadata, pInVal)
+        return self._intf.invoke(BlendedDensity._metadata, BlendedDensity._atmos_density_model_metadata, pInVal)
 
-    _low_altitude_atm_density_model_metadata = { "offset" : _low_altitude_atm_density_model_method_offset,
+    _low_altitude_atmosphere_density_model_metadata = { "offset" : _low_altitude_atmosphere_density_model_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
-    def low_altitude_atm_density_model(self, pInVal:"IComponentInfo") -> None:
+    def low_altitude_atmosphere_density_model(self, pInVal:"IComponentInfo") -> None:
         """Embeds a low altitude atmosphere model from the component browser."""
-        return self._intf.invoke(BlendedDensity._metadata, BlendedDensity._low_altitude_atm_density_model_metadata, pInVal)
+        return self._intf.invoke(BlendedDensity._metadata, BlendedDensity._low_altitude_atmosphere_density_model_metadata, pInVal)
 
     _get_density_blending_altitude_range_metadata = { "offset" : _get_density_blending_altitude_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30825,21 +30845,21 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Set the blending range."""
         return self._intf.set_property(BlendedDensity._metadata, BlendedDensity._set_density_blending_altitude_range_metadata, inVal)
 
-    _get_atm_density_model_name_metadata = { "offset" : _get_atm_density_model_name_method_offset,
+    _get_atmos_density_model_name_metadata = { "offset" : _get_atmos_density_model_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atm_density_model_name(self) -> str:
+    def atmos_density_model_name(self) -> str:
         """Return the name of the embedded nominal atmospheric model."""
-        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_atm_density_model_name_metadata)
+        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_atmos_density_model_name_metadata)
 
-    _get_low_altitude_atm_density_model_name_metadata = { "offset" : _get_low_altitude_atm_density_model_name_method_offset,
+    _get_low_altitude_atmosphere_density_model_name_metadata = { "offset" : _get_low_altitude_atmosphere_density_model_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def low_altitude_atm_density_model_name(self) -> str:
+    def low_altitude_atmosphere_density_model_name(self) -> str:
         """Return the name of the embedded low altitude atmospheric model."""
-        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_low_altitude_atm_density_model_name_metadata)
+        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_low_altitude_atmosphere_density_model_name_metadata)
 
     _get_use_approx_altitude_metadata = { "offset" : _get_use_approx_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -30856,19 +30876,19 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def use_approx_altitude(self, pVal:bool) -> None:
         return self._intf.set_property(BlendedDensity._metadata, BlendedDensity._set_use_approx_altitude_metadata, pVal)
 
-    _get_lower_bound_upper_atm_model_metadata = { "offset" : _get_lower_bound_upper_atm_model_method_offset,
+    _get_lower_bound_upper_atmosphere_model_metadata = { "offset" : _get_lower_bound_upper_atmosphere_model_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def lower_bound_upper_atm_model(self) -> float:
+    def lower_bound_upper_atmosphere_model(self) -> float:
         """Get the lowest valid altitude of the upper atmospheric density model."""
-        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_lower_bound_upper_atm_model_metadata)
+        return self._intf.get_property(BlendedDensity._metadata, BlendedDensity._get_lower_bound_upper_atmosphere_model_metadata)
 
     _property_names[density_blending_altitude_range] = "density_blending_altitude_range"
-    _property_names[atm_density_model_name] = "atm_density_model_name"
-    _property_names[low_altitude_atm_density_model_name] = "low_altitude_atm_density_model_name"
+    _property_names[atmos_density_model_name] = "atmos_density_model_name"
+    _property_names[low_altitude_atmosphere_density_model_name] = "low_altitude_atmosphere_density_model_name"
     _property_names[use_approx_altitude] = "use_approx_altitude"
-    _property_names[lower_bound_upper_atm_model] = "lower_bound_upper_atm_model"
+    _property_names[lower_bound_upper_atmosphere_model] = "lower_bound_upper_atmosphere_model"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BlendedDensity."""
@@ -36805,8 +36825,8 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_solid_tide_min_amp_method_offset = 12
     _get_use_ocean_tides_method_offset = 13
     _set_use_ocean_tides_method_offset = 14
-    _get_ocean_tide_min_amp_method_offset = 15
-    _set_ocean_tide_min_amp_method_offset = 16
+    _get_ocean_tide_min_amplitude_method_offset = 15
+    _set_ocean_tide_min_amplitude_method_offset = 16
     _get_min_radius_percent_method_offset = 17
     _set_min_radius_percent_method_offset = 18
     _get_central_body_name_method_offset = 19
@@ -36940,20 +36960,20 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def use_ocean_tides(self, inVal:bool) -> None:
         return self._intf.set_property(GravityFieldFunction._metadata, GravityFieldFunction._set_use_ocean_tides_metadata, inVal)
 
-    _get_ocean_tide_min_amp_metadata = { "offset" : _get_ocean_tide_min_amp_method_offset,
+    _get_ocean_tide_min_amplitude_metadata = { "offset" : _get_ocean_tide_min_amplitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def ocean_tide_min_amp(self) -> float:
+    def ocean_tide_min_amplitude(self) -> float:
         """Get or set the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension."""
-        return self._intf.get_property(GravityFieldFunction._metadata, GravityFieldFunction._get_ocean_tide_min_amp_metadata)
+        return self._intf.get_property(GravityFieldFunction._metadata, GravityFieldFunction._get_ocean_tide_min_amplitude_metadata)
 
-    _set_ocean_tide_min_amp_metadata = { "offset" : _set_ocean_tide_min_amp_method_offset,
+    _set_ocean_tide_min_amplitude_metadata = { "offset" : _set_ocean_tide_min_amplitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @ocean_tide_min_amp.setter
-    def ocean_tide_min_amp(self, inVal:float) -> None:
-        return self._intf.set_property(GravityFieldFunction._metadata, GravityFieldFunction._set_ocean_tide_min_amp_metadata, inVal)
+    @ocean_tide_min_amplitude.setter
+    def ocean_tide_min_amplitude(self, inVal:float) -> None:
+        return self._intf.set_property(GravityFieldFunction._metadata, GravityFieldFunction._set_ocean_tide_min_amplitude_metadata, inVal)
 
     _get_min_radius_percent_metadata = { "offset" : _get_min_radius_percent_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37107,7 +37127,7 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[include_time_dependent_solid_tides] = "include_time_dependent_solid_tides"
     _property_names[solid_tide_min_amp] = "solid_tide_min_amp"
     _property_names[use_ocean_tides] = "use_ocean_tides"
-    _property_names[ocean_tide_min_amp] = "ocean_tide_min_amp"
+    _property_names[ocean_tide_min_amplitude] = "ocean_tide_min_amplitude"
     _property_names[min_radius_percent] = "min_radius_percent"
     _property_names[central_body_name] = "central_body_name"
     _property_names[ocean_tide_max_degree] = "ocean_tide_max_degree"
@@ -37145,8 +37165,8 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_grav_source_method_offset = 1
-    _set_grav_source_method_offset = 2
+    _get_gravitational_parameter_source_method_offset = 1
+    _set_gravitational_parameter_source_method_offset = 2
     _get_mu_method_offset = 3
     _set_mu_method_offset = 4
     _metadata = {
@@ -37157,20 +37177,20 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, PointMassFunction)
     
-    _get_grav_source_metadata = { "offset" : _get_grav_source_method_offset,
+    _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
     @property
-    def grav_source(self) -> "GRAV_PARAM_SOURCE":
+    def gravitational_parameter_source(self) -> "GRAV_PARAM_SOURCE":
         """Get or set the source for the third body's gravitational parameter."""
-        return self._intf.get_property(PointMassFunction._metadata, PointMassFunction._get_grav_source_metadata)
+        return self._intf.get_property(PointMassFunction._metadata, PointMassFunction._get_gravitational_parameter_source_metadata)
 
-    _set_grav_source_metadata = { "offset" : _set_grav_source_method_offset,
+    _set_gravitational_parameter_source_metadata = { "offset" : _set_gravitational_parameter_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
-    @grav_source.setter
-    def grav_source(self, inVal:"GRAV_PARAM_SOURCE") -> None:
-        return self._intf.set_property(PointMassFunction._metadata, PointMassFunction._set_grav_source_metadata, inVal)
+    @gravitational_parameter_source.setter
+    def gravitational_parameter_source(self, inVal:"GRAV_PARAM_SOURCE") -> None:
+        return self._intf.set_property(PointMassFunction._metadata, PointMassFunction._set_gravitational_parameter_source_metadata, inVal)
 
     _get_mu_metadata = { "offset" : _get_mu_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37187,7 +37207,7 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def mu(self, inVal:float) -> None:
         return self._intf.set_property(PointMassFunction._metadata, PointMassFunction._set_mu_metadata, inVal)
 
-    _property_names[grav_source] = "grav_source"
+    _property_names[gravitational_parameter_source] = "gravitational_parameter_source"
     _property_names[mu] = "mu"
 
     def __init__(self, sourceObject=None):
@@ -37215,8 +37235,8 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_grav_source_method_offset = 1
-    _set_grav_source_method_offset = 2
+    _get_gravitational_parameter_source_method_offset = 1
+    _set_gravitational_parameter_source_method_offset = 2
     _get_mu_method_offset = 3
     _set_mu_method_offset = 4
     _get_min_radius_percent_method_offset = 5
@@ -37229,20 +37249,20 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, TwoBodyFunction)
     
-    _get_grav_source_metadata = { "offset" : _get_grav_source_method_offset,
+    _get_gravitational_parameter_source_metadata = { "offset" : _get_gravitational_parameter_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
     @property
-    def grav_source(self) -> "GRAV_PARAM_SOURCE":
+    def gravitational_parameter_source(self) -> "GRAV_PARAM_SOURCE":
         """Get or set the source for the gravitational parameter."""
-        return self._intf.get_property(TwoBodyFunction._metadata, TwoBodyFunction._get_grav_source_metadata)
+        return self._intf.get_property(TwoBodyFunction._metadata, TwoBodyFunction._get_gravitational_parameter_source_metadata)
 
-    _set_grav_source_metadata = { "offset" : _set_grav_source_method_offset,
+    _set_gravitational_parameter_source_metadata = { "offset" : _set_gravitational_parameter_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GRAV_PARAM_SOURCE),) }
-    @grav_source.setter
-    def grav_source(self, inVal:"GRAV_PARAM_SOURCE") -> None:
-        return self._intf.set_property(TwoBodyFunction._metadata, TwoBodyFunction._set_grav_source_metadata, inVal)
+    @gravitational_parameter_source.setter
+    def gravitational_parameter_source(self, inVal:"GRAV_PARAM_SOURCE") -> None:
+        return self._intf.set_property(TwoBodyFunction._metadata, TwoBodyFunction._set_gravitational_parameter_source_metadata, inVal)
 
     _get_mu_metadata = { "offset" : _get_mu_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37274,7 +37294,7 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def min_radius_percent(self, inVal:float) -> None:
         return self._intf.set_property(TwoBodyFunction._metadata, TwoBodyFunction._set_min_radius_percent_metadata, inVal)
 
-    _property_names[grav_source] = "grav_source"
+    _property_names[gravitational_parameter_source] = "gravitational_parameter_source"
     _property_names[mu] = "mu"
     _property_names[min_radius_percent] = "min_radius_percent"
 
@@ -37422,7 +37442,7 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5223247057825617700, 18398972489609883042), EOMFuncPluginFunction)
 agcls.AgTypeNameMap["EOMFuncPluginFunction"] = EOMFuncPluginFunction
 
-class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T20 solar radiation pressure model for GPS block IIA."""
 
     _num_methods = 13
@@ -37446,7 +37466,7 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SRPAeroT20)
+        return get_interface_property(attrname, SRPAerospaceT20)
     
     _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37454,14 +37474,14 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @atmos_altitude.setter
     def atmos_altitude(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_atmos_altitude_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_atmos_altitude_metadata, inVal)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37469,14 +37489,14 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
         """Get or set the shadow model type."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_shadow_model_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "offset" : _set_shadow_model_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @shadow_model.setter
     def shadow_model(self, inVal:"SHADOW_MODEL") -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_shadow_model_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_shadow_model_metadata, inVal)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37484,22 +37504,22 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SUN_POSITION":
         """Get or set the sun position computation."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_sun_position_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @sun_position.setter
     def sun_position(self, inVal:"SUN_POSITION") -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_sun_position_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_sun_position_metadata, inVal)
 
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_eclipsing_bodies_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_eclipsing_bodies_metadata)
 
     _get_include_boundary_mitigation_metadata = { "offset" : _get_include_boundary_mitigation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37507,14 +37527,14 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def include_boundary_mitigation(self) -> bool:
         """True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_include_boundary_mitigation_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_include_boundary_mitigation_metadata)
 
     _set_include_boundary_mitigation_metadata = { "offset" : _set_include_boundary_mitigation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_boundary_mitigation.setter
     def include_boundary_mitigation(self, mitigation:bool) -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_include_boundary_mitigation_metadata, mitigation)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_include_boundary_mitigation_metadata, mitigation)
 
     _get_use_sun_central_body_file_values_metadata = { "offset" : _get_use_sun_central_body_file_values_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37522,14 +37542,14 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_sun_central_body_file_values(self) -> bool:
         """True if solar radius should come from the Sun.cb file."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_use_sun_central_body_file_values_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_use_sun_central_body_file_values_metadata)
 
     _set_use_sun_central_body_file_values_metadata = { "offset" : _set_use_sun_central_body_file_values_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_sun_central_body_file_values.setter
     def use_sun_central_body_file_values(self, inVal:bool) -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_use_sun_central_body_file_values_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_use_sun_central_body_file_values_metadata, inVal)
 
     _get_solar_radius_metadata = { "offset" : _get_solar_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37537,14 +37557,14 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_radius(self) -> float:
         """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
-        return self._intf.get_property(SRPAeroT20._metadata, SRPAeroT20._get_solar_radius_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "offset" : _set_solar_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @solar_radius.setter
     def solar_radius(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAeroT20._metadata, SRPAeroT20._set_solar_radius_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_solar_radius_metadata, inVal)
 
     _property_names[atmos_altitude] = "atmos_altitude"
     _property_names[shadow_model] = "shadow_model"
@@ -37555,9 +37575,9 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SRPAeroT20."""
+        """Construct an object of type SRPAerospaceT20."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAeroT20)
+        initialize_from_source_object(self, sourceObject, SRPAerospaceT20)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37569,12 +37589,12 @@ class SRPAeroT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SRPAeroT20, [SRPAeroT20, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, SRPAerospaceT20, [SRPAerospaceT20, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5040644487386490720, 8016746528186754470), SRPAeroT20)
-agcls.AgTypeNameMap["SRPAeroT20"] = SRPAeroT20
+agcls.AgClassCatalog.add_catalog_entry((5040644487386490720, 8016746528186754470), SRPAerospaceT20)
+agcls.AgTypeNameMap["SRPAerospaceT20"] = SRPAerospaceT20
 
-class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Aerospace T30 solar radiation pressure model for GPS block IIR."""
 
     _num_methods = 13
@@ -37598,7 +37618,7 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SRPAeroT30)
+        return get_interface_property(attrname, SRPAerospaceT30)
     
     _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37606,14 +37626,14 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @atmos_altitude.setter
     def atmos_altitude(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_atmos_altitude_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_atmos_altitude_metadata, inVal)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37621,14 +37641,14 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
         """Get or set the shadow model type."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_shadow_model_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "offset" : _set_shadow_model_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @shadow_model.setter
     def shadow_model(self, inVal:"SHADOW_MODEL") -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_shadow_model_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_shadow_model_metadata, inVal)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37636,22 +37656,22 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SUN_POSITION":
         """Get or set the sun position computation."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_sun_position_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @sun_position.setter
     def sun_position(self, inVal:"SUN_POSITION") -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_sun_position_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_sun_position_metadata, inVal)
 
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_eclipsing_bodies_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_eclipsing_bodies_metadata)
 
     _get_include_boundary_mitigation_metadata = { "offset" : _get_include_boundary_mitigation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37659,14 +37679,14 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def include_boundary_mitigation(self) -> bool:
         """True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_include_boundary_mitigation_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_include_boundary_mitigation_metadata)
 
     _set_include_boundary_mitigation_metadata = { "offset" : _set_include_boundary_mitigation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_boundary_mitigation.setter
     def include_boundary_mitigation(self, mitigation:bool) -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_include_boundary_mitigation_metadata, mitigation)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_include_boundary_mitigation_metadata, mitigation)
 
     _get_use_sun_central_body_file_values_metadata = { "offset" : _get_use_sun_central_body_file_values_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37674,14 +37694,14 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_sun_central_body_file_values(self) -> bool:
         """True if solar radius should come from the Sun.cb file."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_use_sun_central_body_file_values_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_use_sun_central_body_file_values_metadata)
 
     _set_use_sun_central_body_file_values_metadata = { "offset" : _set_use_sun_central_body_file_values_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_sun_central_body_file_values.setter
     def use_sun_central_body_file_values(self, inVal:bool) -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_use_sun_central_body_file_values_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_use_sun_central_body_file_values_metadata, inVal)
 
     _get_solar_radius_metadata = { "offset" : _get_solar_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37689,14 +37709,14 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_radius(self) -> float:
         """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
-        return self._intf.get_property(SRPAeroT30._metadata, SRPAeroT30._get_solar_radius_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "offset" : _set_solar_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @solar_radius.setter
     def solar_radius(self, inVal:float) -> None:
-        return self._intf.set_property(SRPAeroT30._metadata, SRPAeroT30._set_solar_radius_metadata, inVal)
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_solar_radius_metadata, inVal)
 
     _property_names[atmos_altitude] = "atmos_altitude"
     _property_names[shadow_model] = "shadow_model"
@@ -37707,9 +37727,9 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SRPAeroT30."""
+        """Construct an object of type SRPAerospaceT30."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAeroT30)
+        initialize_from_source_object(self, sourceObject, SRPAerospaceT30)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -37721,10 +37741,10 @@ class SRPAeroT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SRPAeroT30, [SRPAeroT30, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, SRPAerospaceT30, [SRPAerospaceT30, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5064742270983407105, 17229057075486729390), SRPAeroT30)
-agcls.AgTypeNameMap["SRPAeroT30"] = SRPAeroT30
+agcls.AgClassCatalog.add_catalog_entry((5064742270983407105, 17229057075486729390), SRPAerospaceT30)
+agcls.AgTypeNameMap["SRPAerospaceT30"] = SRPAerospaceT30
 
 class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Bar-Sever GPS Solar Pressure Model 04a for block IIA."""
@@ -37801,7 +37821,7 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_eclipsing_bodies_metadata)
 
@@ -37953,7 +37973,7 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_eclipsing_bodies_metadata)
 
@@ -38105,7 +38125,7 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_eclipsing_bodies_metadata)
 
@@ -38257,7 +38277,7 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_eclipsing_bodies_metadata)
 
@@ -38415,7 +38435,7 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_eclipsing_bodies_metadata)
 
@@ -38623,7 +38643,7 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPNPlate._metadata, SRPNPlate._get_eclipsing_bodies_metadata)
 
@@ -38764,7 +38784,7 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4645210293341138373, 9981460367221995948), SRPNPlate)
 agcls.AgTypeNameMap["SRPNPlate"] = SRPNPlate
 
-class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the tabulated area vector SRP model."""
 
     _num_methods = 23
@@ -38798,7 +38818,7 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SRPTabAreaVec)
+        return get_interface_property(attrname, SRPTabulatedAreaVector)
     
     _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38806,14 +38826,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_atmos_altitude_metadata)
 
     _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @atmos_altitude.setter
     def atmos_altitude(self, inVal:float) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_atmos_altitude_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_atmos_altitude_metadata, inVal)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38821,14 +38841,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def shadow_model(self) -> "SHADOW_MODEL":
         """Get or set the shadow model type."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_shadow_model_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_shadow_model_metadata)
 
     _set_shadow_model_metadata = { "offset" : _set_shadow_model_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHADOW_MODEL),) }
     @shadow_model.setter
     def shadow_model(self, inVal:"SHADOW_MODEL") -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_shadow_model_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_shadow_model_metadata, inVal)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38836,22 +38856,22 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SUN_POSITION":
         """Get or set the sun position computation."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_sun_position_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SUN_POSITION),) }
     @sun_position.setter
     def sun_position(self, inVal:"SUN_POSITION") -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_sun_position_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_sun_position_metadata, inVal)
 
     _get_eclipsing_bodies_metadata = { "offset" : _get_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_eclipsing_bodies_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_eclipsing_bodies_metadata)
 
     _get_mean_flux_metadata = { "offset" : _get_mean_flux_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38859,14 +38879,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def mean_flux(self) -> float:
         """Get or set the mean solar flux at 1 au (W/m^2)."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_mean_flux_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_mean_flux_metadata)
 
     _set_mean_flux_metadata = { "offset" : _set_mean_flux_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @mean_flux.setter
     def mean_flux(self, inVal:float) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_mean_flux_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_mean_flux_metadata, inVal)
 
     _get_luminosity_metadata = { "offset" : _get_luminosity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38874,14 +38894,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def luminosity(self) -> float:
         """Get or set the luminosity of sun. Dimensionless."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_luminosity_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_luminosity_metadata)
 
     _set_luminosity_metadata = { "offset" : _set_luminosity_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @luminosity.setter
     def luminosity(self, inVal:float) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_luminosity_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_luminosity_metadata, inVal)
 
     _get_solar_force_method_metadata = { "offset" : _get_solar_force_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38889,14 +38909,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_force_method(self) -> "SOLAR_FORCE_METHOD":
         """Get or set the solar force method."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_solar_force_method_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_solar_force_method_metadata)
 
     _set_solar_force_method_metadata = { "offset" : _set_solar_force_method_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SOLAR_FORCE_METHOD),) }
     @solar_force_method.setter
     def solar_force_method(self, inVal:"SOLAR_FORCE_METHOD") -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_solar_force_method_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_solar_force_method_metadata, inVal)
 
     _get_include_boundary_mitigation_metadata = { "offset" : _get_include_boundary_mitigation_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -38904,14 +38924,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def include_boundary_mitigation(self) -> bool:
         """True if shadow boundary mitigation should be performed; the state of the satellite after crossing a shadow boundary will be corrected for errors possibly caused by the sudden change in SRP which occurred during the integration step."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_include_boundary_mitigation_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_include_boundary_mitigation_metadata)
 
     _set_include_boundary_mitigation_metadata = { "offset" : _set_include_boundary_mitigation_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_boundary_mitigation.setter
     def include_boundary_mitigation(self, mitigation:bool) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_include_boundary_mitigation_metadata, mitigation)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_include_boundary_mitigation_metadata, mitigation)
 
     _get_use_sun_central_body_file_values_metadata = { "offset" : _get_use_sun_central_body_file_values_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -38919,14 +38939,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_sun_central_body_file_values(self) -> bool:
         """True if solar values should come from the Sun.cb file."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_use_sun_central_body_file_values_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_use_sun_central_body_file_values_metadata)
 
     _set_use_sun_central_body_file_values_metadata = { "offset" : _set_use_sun_central_body_file_values_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_sun_central_body_file_values.setter
     def use_sun_central_body_file_values(self, inVal:bool) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_use_sun_central_body_file_values_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_use_sun_central_body_file_values_metadata, inVal)
 
     _get_solar_radius_metadata = { "offset" : _get_solar_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38934,14 +38954,14 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def solar_radius(self) -> float:
         """Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_solar_radius_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_solar_radius_metadata)
 
     _set_solar_radius_metadata = { "offset" : _set_solar_radius_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @solar_radius.setter
     def solar_radius(self, inVal:float) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_solar_radius_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_solar_radius_metadata, inVal)
 
     _get_tab_area_vector_definition_file_metadata = { "offset" : _get_tab_area_vector_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -38949,29 +38969,29 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def tab_area_vector_definition_file(self) -> str:
         """Full path of the tabulated area vector definition file."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_tab_area_vector_definition_file_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_tab_area_vector_definition_file_metadata)
 
     _set_tab_area_vector_definition_file_metadata = { "offset" : _set_tab_area_vector_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @tab_area_vector_definition_file.setter
     def tab_area_vector_definition_file(self, inVal:str) -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_tab_area_vector_definition_file_metadata, inVal)
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_tab_area_vector_definition_file_metadata, inVal)
 
     _get_interpolation_method_metadata = { "offset" : _get_interpolation_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TAB_VEC_INTERP_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(TAB_VEC_INTERPOLATION_METHOD),) }
     @property
-    def interpolation_method(self) -> "TAB_VEC_INTERP_METHOD":
+    def interpolation_method(self) -> "TAB_VEC_INTERPOLATION_METHOD":
         """Get or set the file interpolation method."""
-        return self._intf.get_property(SRPTabAreaVec._metadata, SRPTabAreaVec._get_interpolation_method_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_interpolation_method_metadata)
 
     _set_interpolation_method_metadata = { "offset" : _set_interpolation_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(TAB_VEC_INTERP_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(TAB_VEC_INTERPOLATION_METHOD),) }
     @interpolation_method.setter
-    def interpolation_method(self, inVal:"TAB_VEC_INTERP_METHOD") -> None:
-        return self._intf.set_property(SRPTabAreaVec._metadata, SRPTabAreaVec._set_interpolation_method_metadata, inVal)
+    def interpolation_method(self, inVal:"TAB_VEC_INTERPOLATION_METHOD") -> None:
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_interpolation_method_metadata, inVal)
 
     _property_names[atmos_altitude] = "atmos_altitude"
     _property_names[shadow_model] = "shadow_model"
@@ -38987,9 +39007,9 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[interpolation_method] = "interpolation_method"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SRPTabAreaVec."""
+        """Construct an object of type SRPTabulatedAreaVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPTabAreaVec)
+        initialize_from_source_object(self, sourceObject, SRPTabulatedAreaVector)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39001,10 +39021,10 @@ class SRPTabAreaVec(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SRPTabAreaVec, [SRPTabAreaVec, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, SRPTabulatedAreaVector, [SRPTabulatedAreaVector, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4701818138234904765, 5913653355719896758), SRPTabAreaVec)
-agcls.AgTypeNameMap["SRPTabAreaVec"] = SRPTabAreaVec
+agcls.AgClassCatalog.add_catalog_entry((4701818138234904765, 5913653355719896758), SRPTabulatedAreaVector)
+agcls.AgTypeNameMap["SRPTabulatedAreaVector"] = SRPTabulatedAreaVector
 
 class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Variable Area SRP model."""
@@ -39089,7 +39109,7 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPVariableArea._metadata, SRPVariableArea._get_eclipsing_bodies_metadata)
 
@@ -39237,8 +39257,8 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_third_body_name_method_offset = 1
     _set_third_body_name_method_offset = 2
-    _get_ephem_source_method_offset = 3
-    _set_ephem_source_method_offset = 4
+    _get_ephemeris_source_method_offset = 3
+    _set_ephemeris_source_method_offset = 4
     _get_mode_method_offset = 5
     _set_mode_type_method_offset = 6
     _get_mode_type_method_offset = 7
@@ -39266,20 +39286,20 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def third_body_name(self, inVal:str) -> None:
         return self._intf.set_property(ThirdBodyFunction._metadata, ThirdBodyFunction._set_third_body_name_metadata, inVal)
 
-    _get_ephem_source_metadata = { "offset" : _get_ephem_source_method_offset,
+    _get_ephemeris_source_metadata = { "offset" : _get_ephemeris_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EPHEM_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(EPHEMERIS_SOURCE),) }
     @property
-    def ephem_source(self) -> "EPHEM_SOURCE":
+    def ephemeris_source(self) -> "EPHEMERIS_SOURCE":
         """Source for the third body's ephemeris."""
-        return self._intf.get_property(ThirdBodyFunction._metadata, ThirdBodyFunction._get_ephem_source_metadata)
+        return self._intf.get_property(ThirdBodyFunction._metadata, ThirdBodyFunction._get_ephemeris_source_metadata)
 
-    _set_ephem_source_metadata = { "offset" : _set_ephem_source_method_offset,
+    _set_ephemeris_source_metadata = { "offset" : _set_ephemeris_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EPHEM_SOURCE),) }
-    @ephem_source.setter
-    def ephem_source(self, inVal:"EPHEM_SOURCE") -> None:
-        return self._intf.set_property(ThirdBodyFunction._metadata, ThirdBodyFunction._set_ephem_source_metadata, inVal)
+            "marshallers" : (agmarshall.EnumArg(EPHEMERIS_SOURCE),) }
+    @ephemeris_source.setter
+    def ephemeris_source(self, inVal:"EPHEMERIS_SOURCE") -> None:
+        return self._intf.set_property(ThirdBodyFunction._metadata, ThirdBodyFunction._set_ephemeris_source_metadata, inVal)
 
     _get_mode_metadata = { "offset" : _get_mode_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -39313,7 +39333,7 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return self._intf.get_property(ThirdBodyFunction._metadata, ThirdBodyFunction._get_ephemeris_source_warning_metadata)
 
     _property_names[third_body_name] = "third_body_name"
-    _property_names[ephem_source] = "ephem_source"
+    _property_names[ephemeris_source] = "ephemeris_source"
     _property_names[mode] = "mode"
     _property_names[mode_type] = "mode_type"
     _property_names[ephemeris_source_warning] = "ephemeris_source_warning"
@@ -39501,7 +39521,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def eclipsing_bodies(self) -> "CentralBodyCollection":
+    def eclipsing_bodies(self) -> "CentralBodyComponentCollection":
         """Other eclipsing bodies."""
         return self._intf.get_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._get_eclipsing_bodies_metadata)
 
@@ -39580,7 +39600,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5749102672076773026, 16538708712447368359), SRPReflectionPlugin)
 agcls.AgTypeNameMap["SRPReflectionPlugin"] = SRPReflectionPlugin
 
-class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Constant Acceleration and Isp engine model."""
 
     _num_methods = 10
@@ -39601,7 +39621,7 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, EngineConstAcc)
+        return get_interface_property(attrname, EngineConstantAcceleration)
     
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39609,14 +39629,14 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def g(self) -> float:
         """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
-        return self._intf.get_property(EngineConstAcc._metadata, EngineConstAcc._get_g_metadata)
+        return self._intf.get_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._get_g_metadata)
 
     _set_g_metadata = { "offset" : _set_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @g.setter
     def g(self, inVal:float) -> None:
-        return self._intf.set_property(EngineConstAcc._metadata, EngineConstAcc._set_g_metadata, inVal)
+        return self._intf.set_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._set_g_metadata, inVal)
 
     _get_acceleration_metadata = { "offset" : _get_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39624,14 +39644,14 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def acceleration(self) -> float:
         """Get or set the acceleration for this engine. Uses Acceleration Dimension."""
-        return self._intf.get_property(EngineConstAcc._metadata, EngineConstAcc._get_acceleration_metadata)
+        return self._intf.get_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._get_acceleration_metadata)
 
     _set_acceleration_metadata = { "offset" : _set_acceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @acceleration.setter
     def acceleration(self, inVal:float) -> None:
-        return self._intf.set_property(EngineConstAcc._metadata, EngineConstAcc._set_acceleration_metadata, inVal)
+        return self._intf.set_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._set_acceleration_metadata, inVal)
 
     _get_isp_metadata = { "offset" : _get_isp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39639,35 +39659,35 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def isp(self) -> float:
         """Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension."""
-        return self._intf.get_property(EngineConstAcc._metadata, EngineConstAcc._get_isp_metadata)
+        return self._intf.get_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._get_isp_metadata)
 
     _set_isp_metadata = { "offset" : _set_isp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @isp.setter
     def isp(self, inVal:float) -> None:
-        return self._intf.set_property(EngineConstAcc._metadata, EngineConstAcc._set_isp_metadata, inVal)
+        return self._intf.set_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._set_isp_metadata, inVal)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONST_ACC),) }
-    def enable_control_parameter(self, param:"CONTROL_ENGINE_CONST_ACC") -> None:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONSTANT_ACCELERATION),) }
+    def enable_control_parameter(self, param:"CONTROL_ENGINE_CONSTANT_ACCELERATION") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(EngineConstAcc._metadata, EngineConstAcc._enable_control_parameter_metadata, param)
+        return self._intf.invoke(EngineConstantAcceleration._metadata, EngineConstantAcceleration._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONST_ACC),) }
-    def disable_control_parameter(self, param:"CONTROL_ENGINE_CONST_ACC") -> None:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONSTANT_ACCELERATION),) }
+    def disable_control_parameter(self, param:"CONTROL_ENGINE_CONSTANT_ACCELERATION") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(EngineConstAcc._metadata, EngineConstAcc._disable_control_parameter_metadata, param)
+        return self._intf.invoke(EngineConstantAcceleration._metadata, EngineConstantAcceleration._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONST_ACC), agmarshall.VariantBoolArg,) }
-    def is_control_parameter_enabled(self, param:"CONTROL_ENGINE_CONST_ACC") -> bool:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_CONSTANT_ACCELERATION), agmarshall.VariantBoolArg,) }
+    def is_control_parameter_enabled(self, param:"CONTROL_ENGINE_CONSTANT_ACCELERATION") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(EngineConstAcc._metadata, EngineConstAcc._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(EngineConstantAcceleration._metadata, EngineConstantAcceleration._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -39675,7 +39695,7 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(EngineConstAcc._metadata, EngineConstAcc._get_control_parameters_available_metadata)
+        return self._intf.get_property(EngineConstantAcceleration._metadata, EngineConstantAcceleration._get_control_parameters_available_metadata)
 
     _property_names[g] = "g"
     _property_names[acceleration] = "acceleration"
@@ -39683,9 +39703,9 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[control_parameters_available] = "control_parameters_available"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type EngineConstAcc."""
+        """Construct an object of type EngineConstantAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineConstAcc)
+        initialize_from_source_object(self, sourceObject, EngineConstantAcceleration)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -39697,10 +39717,10 @@ class EngineConstAcc(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, EngineConstAcc, [EngineConstAcc, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, EngineConstantAcceleration, [EngineConstantAcceleration, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5132340659530008736, 12633535283190109318), EngineConstAcc)
-agcls.AgTypeNameMap["EngineConstAcc"] = EngineConstAcc
+agcls.AgClassCatalog.add_catalog_entry((5132340659530008736, 12633535283190109318), EngineConstantAcceleration)
+agcls.AgTypeNameMap["EngineConstantAcceleration"] = EngineConstantAcceleration
 
 class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Constant Thrust and Isp engine model."""
@@ -40478,7 +40498,7 @@ class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5599410985521995715, 2643318681551189431), EnginePlugin)
 agcls.AgTypeNameMap["EnginePlugin"] = EnginePlugin
 
-class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Polynomial Thrust and Isp engine model."""
 
     _num_methods = 8
@@ -40497,7 +40517,7 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, EngineModelPoly)
+        return get_interface_property(attrname, EngineModelPolynomial)
     
     _get_g_metadata = { "offset" : _get_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -40505,14 +40525,14 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def g(self) -> float:
         """Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension."""
-        return self._intf.get_property(EngineModelPoly._metadata, EngineModelPoly._get_g_metadata)
+        return self._intf.get_property(EngineModelPolynomial._metadata, EngineModelPolynomial._get_g_metadata)
 
     _set_g_metadata = { "offset" : _set_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @g.setter
     def g(self, inVal:float) -> None:
-        return self._intf.set_property(EngineModelPoly._metadata, EngineModelPoly._set_g_metadata, inVal)
+        return self._intf.set_property(EngineModelPolynomial._metadata, EngineModelPolynomial._set_g_metadata, inVal)
 
     _get_thrust_coefficients_metadata = { "offset" : _get_thrust_coefficients_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -40520,7 +40540,7 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def thrust_coefficients(self) -> "EngineModelThrustCoefficients":
         """Get the thrust Coefficients."""
-        return self._intf.get_property(EngineModelPoly._metadata, EngineModelPoly._get_thrust_coefficients_metadata)
+        return self._intf.get_property(EngineModelPolynomial._metadata, EngineModelPolynomial._get_thrust_coefficients_metadata)
 
     _get_isp_coefficients_metadata = { "offset" : _get_isp_coefficients_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -40528,28 +40548,28 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def isp_coefficients(self) -> "EngineModelIspCoefficients":
         """Get the Isp Coefficients."""
-        return self._intf.get_property(EngineModelPoly._metadata, EngineModelPoly._get_isp_coefficients_metadata)
+        return self._intf.get_property(EngineModelPolynomial._metadata, EngineModelPolynomial._get_isp_coefficients_metadata)
 
     _enable_control_parameter_metadata = { "offset" : _enable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLY),) }
-    def enable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLY") -> None:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLYNOMIAL),) }
+    def enable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLYNOMIAL") -> None:
         """Enable the specified control parameter."""
-        return self._intf.invoke(EngineModelPoly._metadata, EngineModelPoly._enable_control_parameter_metadata, param)
+        return self._intf.invoke(EngineModelPolynomial._metadata, EngineModelPolynomial._enable_control_parameter_metadata, param)
 
     _disable_control_parameter_metadata = { "offset" : _disable_control_parameter_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLY),) }
-    def disable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLY") -> None:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLYNOMIAL),) }
+    def disable_control_parameter(self, param:"CONTROL_ENGINE_MODEL_POLYNOMIAL") -> None:
         """Disables the specified control parameter."""
-        return self._intf.invoke(EngineModelPoly._metadata, EngineModelPoly._disable_control_parameter_metadata, param)
+        return self._intf.invoke(EngineModelPolynomial._metadata, EngineModelPolynomial._disable_control_parameter_metadata, param)
 
     _is_control_parameter_enabled_metadata = { "offset" : _is_control_parameter_enabled_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLY), agmarshall.VariantBoolArg,) }
-    def is_control_parameter_enabled(self, param:"CONTROL_ENGINE_MODEL_POLY") -> bool:
+            "marshallers" : (agmarshall.EnumArg(CONTROL_ENGINE_MODEL_POLYNOMIAL), agmarshall.VariantBoolArg,) }
+    def is_control_parameter_enabled(self, param:"CONTROL_ENGINE_MODEL_POLYNOMIAL") -> bool:
         """Sees if the specified control is enabled."""
-        return self._intf.invoke(EngineModelPoly._metadata, EngineModelPoly._is_control_parameter_enabled_metadata, param, OutArg())
+        return self._intf.invoke(EngineModelPolynomial._metadata, EngineModelPolynomial._is_control_parameter_enabled_metadata, param, OutArg())
 
     _get_control_parameters_available_metadata = { "offset" : _get_control_parameters_available_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -40557,7 +40577,7 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def control_parameters_available(self) -> bool:
         """Return whether or not the control parameters can be set."""
-        return self._intf.get_property(EngineModelPoly._metadata, EngineModelPoly._get_control_parameters_available_metadata)
+        return self._intf.get_property(EngineModelPolynomial._metadata, EngineModelPolynomial._get_control_parameters_available_metadata)
 
     _property_names[g] = "g"
     _property_names[thrust_coefficients] = "thrust_coefficients"
@@ -40565,9 +40585,9 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[control_parameters_available] = "control_parameters_available"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type EngineModelPoly."""
+        """Construct an object of type EngineModelPolynomial."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineModelPoly)
+        initialize_from_source_object(self, sourceObject, EngineModelPolynomial)
         IComponentInfo.__init__(self, sourceObject)
         ICloneable.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -40579,10 +40599,10 @@ class EngineModelPoly(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, EngineModelPoly, [EngineModelPoly, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, EngineModelPolynomial, [EngineModelPolynomial, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4861258356240938548, 15888178850114875033), EngineModelPoly)
-agcls.AgTypeNameMap["EngineModelPoly"] = EngineModelPoly
+agcls.AgClassCatalog.add_catalog_entry((4861258356240938548, 15888178850114875033), EngineModelPolynomial)
+agcls.AgTypeNameMap["EngineModelPolynomial"] = EngineModelPolynomial
 
 class EngineModelThrustCoefficients(SupportsDeleteCallback):
     """Thrust coefficient properties for engine definition."""
@@ -41654,8 +41674,8 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_characteristic_acceleration_method_offset = 15
     _get_rotating_system_choice_method_offset = 16
     _set_rotating_system_choice_method_offset = 17
-    _create_ideal_secondary_cb_method_offset = 18
-    _reset_ideal_secondary_cb_method_offset = 19
+    _create_ideal_secondary_body_method_offset = 18
+    _reset_ideal_secondary_body_method_offset = 19
     _update_ideal_secondary_cb_method_offset = 20
     _create_rotating_coordinate_system_method_offset = 21
     _delete_rotating_coordinate_system_method_offset = 22
@@ -41804,19 +41824,19 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def rotating_system_choice(self, inVal:"ROTATING_COORDINATE_SYSTEM") -> None:
         return self._intf.set_property(DesignCR3BPSetup._metadata, DesignCR3BPSetup._set_rotating_system_choice_metadata, inVal)
 
-    _create_ideal_secondary_cb_metadata = { "offset" : _create_ideal_secondary_cb_method_offset,
+    _create_ideal_secondary_body_metadata = { "offset" : _create_ideal_secondary_body_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def create_ideal_secondary_cb(self) -> None:
+    def create_ideal_secondary_body(self) -> None:
         """Construct the idealized secondary for the three-body system."""
-        return self._intf.invoke(DesignCR3BPSetup._metadata, DesignCR3BPSetup._create_ideal_secondary_cb_metadata, )
+        return self._intf.invoke(DesignCR3BPSetup._metadata, DesignCR3BPSetup._create_ideal_secondary_body_metadata, )
 
-    _reset_ideal_secondary_cb_metadata = { "offset" : _reset_ideal_secondary_cb_method_offset,
+    _reset_ideal_secondary_body_metadata = { "offset" : _reset_ideal_secondary_body_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def reset_ideal_secondary_cb(self) -> None:
+    def reset_ideal_secondary_body(self) -> None:
         """Reset the idealized secondary for the three-body system."""
-        return self._intf.invoke(DesignCR3BPSetup._metadata, DesignCR3BPSetup._reset_ideal_secondary_cb_metadata, )
+        return self._intf.invoke(DesignCR3BPSetup._metadata, DesignCR3BPSetup._reset_ideal_secondary_body_metadata, )
 
     _update_ideal_secondary_cb_metadata = { "offset" : _update_ideal_secondary_cb_method_offset,
             "arg_types" : (),
@@ -42905,18 +42925,18 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_criteria_method_offset = 1
     _set_criteria_method_offset = 2
-    _get_calc_object_method_offset = 3
-    _set_calc_object_method_offset = 4
-    _get_calc_object_name_method_offset = 5
-    _set_calc_object_name_method_offset = 6
+    _get_calculation_object_method_offset = 3
+    _set_calculation_object_method_offset = 4
+    _get_calculation_object_name_method_offset = 5
+    _set_calculation_object_name_method_offset = 6
     _get_value_method_offset = 7
     _set_value_method_offset = 8
     _get_tolerance_method_offset = 9
     _set_tolerance_method_offset = 10
     _get_use_absolute_value_method_offset = 11
     _set_use_absolute_value_method_offset = 12
-    _copy_calc_object_to_clipboard_method_offset = 13
-    _paste_calc_object_from_clipboard_method_offset = 14
+    _copy_calculation_object_to_clipboard_method_offset = 13
+    _paste_calculation_object_from_clipboard_method_offset = 14
     _metadata = {
         "iid_data" : (4822555187395734580, 16648748127025965747),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -42940,35 +42960,35 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def criteria(self, inVal:"CRITERIA") -> None:
         return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_criteria_metadata, inVal)
 
-    _get_calc_object_metadata = { "offset" : _get_calc_object_method_offset,
+    _get_calculation_object_metadata = { "offset" : _get_calculation_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_object(self) -> "IComponentInfo":
+    def calculation_object(self) -> "IComponentInfo":
         """Get or set the calculation object to perform calculation to evaluate condition."""
-        return self._intf.get_property(AsTriggerCondition._metadata, AsTriggerCondition._get_calc_object_metadata)
+        return self._intf.get_property(AsTriggerCondition._metadata, AsTriggerCondition._get_calculation_object_metadata)
 
-    _set_calc_object_metadata = { "offset" : _set_calc_object_method_offset,
+    _set_calculation_object_metadata = { "offset" : _set_calculation_object_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
-    @calc_object.setter
-    def calc_object(self, inVal:"IComponentInfo") -> None:
-        return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_calc_object_metadata, inVal)
+    @calculation_object.setter
+    def calculation_object(self, inVal:"IComponentInfo") -> None:
+        return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_calculation_object_metadata, inVal)
 
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the name of the calculation object to perform calculation to evaluate condition."""
-        return self._intf.get_property(AsTriggerCondition._metadata, AsTriggerCondition._get_calc_object_name_metadata)
+        return self._intf.get_property(AsTriggerCondition._metadata, AsTriggerCondition._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_calculation_object_name_metadata, inVal)
 
     _get_value_metadata = { "offset" : _get_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -43015,23 +43035,23 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def use_absolute_value(self, inVal:bool) -> None:
         return self._intf.set_property(AsTriggerCondition._metadata, AsTriggerCondition._set_use_absolute_value_metadata, inVal)
 
-    _copy_calc_object_to_clipboard_metadata = { "offset" : _copy_calc_object_to_clipboard_method_offset,
+    _copy_calculation_object_to_clipboard_metadata = { "offset" : _copy_calculation_object_to_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def copy_calc_object_to_clipboard(self) -> None:
+    def copy_calculation_object_to_clipboard(self) -> None:
         """Copy calculation object to clipboard."""
-        return self._intf.invoke(AsTriggerCondition._metadata, AsTriggerCondition._copy_calc_object_to_clipboard_metadata, )
+        return self._intf.invoke(AsTriggerCondition._metadata, AsTriggerCondition._copy_calculation_object_to_clipboard_metadata, )
 
-    _paste_calc_object_from_clipboard_metadata = { "offset" : _paste_calc_object_from_clipboard_method_offset,
+    _paste_calculation_object_from_clipboard_metadata = { "offset" : _paste_calculation_object_from_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def paste_calc_object_from_clipboard(self) -> None:
+    def paste_calculation_object_from_clipboard(self) -> None:
         """Replace calculation object with instance in clipboard."""
-        return self._intf.invoke(AsTriggerCondition._metadata, AsTriggerCondition._paste_calc_object_from_clipboard_metadata, )
+        return self._intf.invoke(AsTriggerCondition._metadata, AsTriggerCondition._paste_calculation_object_from_clipboard_metadata, )
 
     _property_names[criteria] = "criteria"
-    _property_names[calc_object] = "calc_object"
-    _property_names[calc_object_name] = "calc_object_name"
+    _property_names[calculation_object] = "calculation_object"
+    _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[value] = "value"
     _property_names[tolerance] = "tolerance"
     _property_names[use_absolute_value] = "use_absolute_value"
@@ -43533,8 +43553,8 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
     _get_max_sequences_method_offset = 15
     _set_max_sequences_method_offset = 16
     _get_max_iterations_method_offset = 17
@@ -43643,20 +43663,20 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(BulirschStoerIntegrator._metadata, BulirschStoerIntegrator._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(BulirschStoerIntegrator._metadata, BulirschStoerIntegrator._get_max_rel_err_metadata)
+        return self._intf.get_property(BulirschStoerIntegrator._metadata, BulirschStoerIntegrator._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(BulirschStoerIntegrator._metadata, BulirschStoerIntegrator._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(BulirschStoerIntegrator._metadata, BulirschStoerIntegrator._set_max_relative_err_metadata, inVal)
 
     _get_max_sequences_metadata = { "offset" : _get_max_sequences_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -43739,7 +43759,7 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
+    _property_names[max_relative_err] = "max_relative_err"
     _property_names[max_sequences] = "max_sequences"
     _property_names[max_iterations] = "max_iterations"
     _property_names[tolerance] = "tolerance"
@@ -43771,8 +43791,8 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_initial_step_method_offset = 1
     _set_initial_step_method_offset = 2
-    _get_max_corrector_rel_err_method_offset = 3
-    _set_max_corrector_rel_err_method_offset = 4
+    _get_max_corrector_relative_err_method_offset = 3
+    _set_max_corrector_relative_err_method_offset = 4
     _get_corrector_mode_method_offset = 5
     _set_corrector_mode_method_offset = 6
     _get_max_corrector_iterations_method_offset = 7
@@ -43803,20 +43823,20 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     def initial_step(self, inVal:float) -> None:
         return self._intf.set_property(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._set_initial_step_metadata, inVal)
 
-    _get_max_corrector_rel_err_metadata = { "offset" : _get_max_corrector_rel_err_method_offset,
+    _get_max_corrector_relative_err_metadata = { "offset" : _get_max_corrector_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_corrector_rel_err(self) -> float:
+    def max_corrector_relative_err(self) -> float:
         """Get or set the maximum relative error between corrector iterations. Dimensionless."""
-        return self._intf.get_property(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._get_max_corrector_rel_err_metadata)
+        return self._intf.get_property(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._get_max_corrector_relative_err_metadata)
 
-    _set_max_corrector_rel_err_metadata = { "offset" : _set_max_corrector_rel_err_method_offset,
+    _set_max_corrector_relative_err_metadata = { "offset" : _set_max_corrector_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_corrector_rel_err.setter
-    def max_corrector_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._set_max_corrector_rel_err_metadata, inVal)
+    @max_corrector_relative_err.setter
+    def max_corrector_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._set_max_corrector_relative_err_metadata, inVal)
 
     _get_corrector_mode_metadata = { "offset" : _get_corrector_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -43872,7 +43892,7 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
         return self._intf.invoke(GaussJacksonIntegrator._metadata, GaussJacksonIntegrator._set_single_step_integrator_metadata, integrator)
 
     _property_names[initial_step] = "initial_step"
-    _property_names[max_corrector_rel_err] = "max_corrector_rel_err"
+    _property_names[max_corrector_relative_err] = "max_corrector_relative_err"
     _property_names[corrector_mode] = "corrector_mode"
     _property_names[max_corrector_iterations] = "max_corrector_iterations"
     _property_names[single_step_integrator] = "single_step_integrator"
@@ -43913,10 +43933,10 @@ class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
-    _get_max_abs_err_method_offset = 15
-    _set_max_abs_err_method_offset = 16
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
+    _get_max_absolute_err_method_offset = 15
+    _set_max_absolute_err_method_offset = 16
     _get_high_safety_coefficient_method_offset = 17
     _set_high_safety_coefficient_method_offset = 18
     _get_low_safety_coefficient_method_offset = 19
@@ -44023,35 +44043,35 @@ class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_rel_err_metadata)
+        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_relative_err_metadata, inVal)
 
-    _get_max_abs_err_metadata = { "offset" : _get_max_abs_err_method_offset,
+    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_abs_err(self) -> float:
+    def max_absolute_err(self) -> float:
         """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_abs_err_metadata)
+        return self._intf.get_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._get_max_absolute_err_metadata)
 
-    _set_max_abs_err_metadata = { "offset" : _set_max_abs_err_method_offset,
+    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_abs_err.setter
-    def max_abs_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_abs_err_metadata, inVal)
+    @max_absolute_err.setter
+    def max_absolute_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta2nd3rd._metadata, RungeKutta2nd3rd._set_max_absolute_err_metadata, inVal)
 
     _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -44119,8 +44139,8 @@ class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
-    _property_names[max_abs_err] = "max_abs_err"
+    _property_names[max_relative_err] = "max_relative_err"
+    _property_names[max_absolute_err] = "max_absolute_err"
     _property_names[high_safety_coefficient] = "high_safety_coefficient"
     _property_names[low_safety_coefficient] = "low_safety_coefficient"
     _property_names[error_control] = "error_control"
@@ -44211,10 +44231,10 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
-    _get_max_abs_err_method_offset = 15
-    _set_max_abs_err_method_offset = 16
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
+    _get_max_absolute_err_method_offset = 15
+    _set_max_absolute_err_method_offset = 16
     _get_high_safety_coefficient_method_offset = 17
     _set_high_safety_coefficient_method_offset = 18
     _get_low_safety_coefficient_method_offset = 19
@@ -44321,35 +44341,35 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(RungeKutta4th5th._metadata, RungeKutta4th5th._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKutta4th5th._metadata, RungeKutta4th5th._get_max_rel_err_metadata)
+        return self._intf.get_property(RungeKutta4th5th._metadata, RungeKutta4th5th._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta4th5th._metadata, RungeKutta4th5th._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta4th5th._metadata, RungeKutta4th5th._set_max_relative_err_metadata, inVal)
 
-    _get_max_abs_err_metadata = { "offset" : _get_max_abs_err_method_offset,
+    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_abs_err(self) -> float:
+    def max_absolute_err(self) -> float:
         """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKutta4th5th._metadata, RungeKutta4th5th._get_max_abs_err_metadata)
+        return self._intf.get_property(RungeKutta4th5th._metadata, RungeKutta4th5th._get_max_absolute_err_metadata)
 
-    _set_max_abs_err_metadata = { "offset" : _set_max_abs_err_method_offset,
+    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_abs_err.setter
-    def max_abs_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta4th5th._metadata, RungeKutta4th5th._set_max_abs_err_metadata, inVal)
+    @max_absolute_err.setter
+    def max_absolute_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta4th5th._metadata, RungeKutta4th5th._set_max_absolute_err_metadata, inVal)
 
     _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -44417,8 +44437,8 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
-    _property_names[max_abs_err] = "max_abs_err"
+    _property_names[max_relative_err] = "max_relative_err"
+    _property_names[max_absolute_err] = "max_absolute_err"
     _property_names[high_safety_coefficient] = "high_safety_coefficient"
     _property_names[low_safety_coefficient] = "low_safety_coefficient"
     _property_names[error_control] = "error_control"
@@ -44459,10 +44479,10 @@ class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
-    _get_max_abs_err_method_offset = 15
-    _set_max_abs_err_method_offset = 16
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
+    _get_max_absolute_err_method_offset = 15
+    _set_max_absolute_err_method_offset = 16
     _get_high_safety_coefficient_method_offset = 17
     _set_high_safety_coefficient_method_offset = 18
     _get_low_safety_coefficient_method_offset = 19
@@ -44569,35 +44589,35 @@ class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_rel_err_metadata)
+        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_relative_err_metadata, inVal)
 
-    _get_max_abs_err_metadata = { "offset" : _get_max_abs_err_method_offset,
+    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_abs_err(self) -> float:
+    def max_absolute_err(self) -> float:
         """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_abs_err_metadata)
+        return self._intf.get_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._get_max_absolute_err_metadata)
 
-    _set_max_abs_err_metadata = { "offset" : _set_max_abs_err_method_offset,
+    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_abs_err.setter
-    def max_abs_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_abs_err_metadata, inVal)
+    @max_absolute_err.setter
+    def max_absolute_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKutta4thAdapt._metadata, RungeKutta4thAdapt._set_max_absolute_err_metadata, inVal)
 
     _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -44665,8 +44685,8 @@ class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
-    _property_names[max_abs_err] = "max_abs_err"
+    _property_names[max_relative_err] = "max_relative_err"
+    _property_names[max_absolute_err] = "max_absolute_err"
     _property_names[high_safety_coefficient] = "high_safety_coefficient"
     _property_names[low_safety_coefficient] = "low_safety_coefficient"
     _property_names[error_control] = "error_control"
@@ -44707,10 +44727,10 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
-    _get_max_abs_err_method_offset = 15
-    _set_max_abs_err_method_offset = 16
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
+    _get_max_absolute_err_method_offset = 15
+    _set_max_absolute_err_method_offset = 16
     _get_high_safety_coefficient_method_offset = 17
     _set_high_safety_coefficient_method_offset = 18
     _get_low_safety_coefficient_method_offset = 19
@@ -44817,35 +44837,35 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._get_max_rel_err_metadata)
+        return self._intf.get_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._set_max_relative_err_metadata, inVal)
 
-    _get_max_abs_err_metadata = { "offset" : _get_max_abs_err_method_offset,
+    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_abs_err(self) -> float:
+    def max_absolute_err(self) -> float:
         """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._get_max_abs_err_metadata)
+        return self._intf.get_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._get_max_absolute_err_metadata)
 
-    _set_max_abs_err_metadata = { "offset" : _set_max_abs_err_method_offset,
+    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_abs_err.setter
-    def max_abs_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._set_max_abs_err_metadata, inVal)
+    @max_absolute_err.setter
+    def max_absolute_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKuttaF7th8th._metadata, RungeKuttaF7th8th._set_max_absolute_err_metadata, inVal)
 
     _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -44913,8 +44933,8 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
-    _property_names[max_abs_err] = "max_abs_err"
+    _property_names[max_relative_err] = "max_relative_err"
+    _property_names[max_absolute_err] = "max_absolute_err"
     _property_names[high_safety_coefficient] = "high_safety_coefficient"
     _property_names[low_safety_coefficient] = "low_safety_coefficient"
     _property_names[error_control] = "error_control"
@@ -44955,10 +44975,10 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _set_max_step_method_offset = 10
     _get_min_step_method_offset = 11
     _set_min_step_method_offset = 12
-    _get_max_rel_err_method_offset = 13
-    _set_max_rel_err_method_offset = 14
-    _get_max_abs_err_method_offset = 15
-    _set_max_abs_err_method_offset = 16
+    _get_max_relative_err_method_offset = 13
+    _set_max_relative_err_method_offset = 14
+    _get_max_absolute_err_method_offset = 15
+    _set_max_absolute_err_method_offset = 16
     _get_high_safety_coefficient_method_offset = 17
     _set_high_safety_coefficient_method_offset = 18
     _get_low_safety_coefficient_method_offset = 19
@@ -44967,8 +44987,8 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _set_error_control_method_offset = 22
     _get_max_iterations_method_offset = 23
     _set_max_iterations_method_offset = 24
-    _get_coeff_type_method_offset = 25
-    _set_coeff_type_method_offset = 26
+    _get_coefficient_type_method_offset = 25
+    _set_coefficient_type_method_offset = 26
     _metadata = {
         "iid_data" : (5129527927042386535, 1794743312009283255),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -45067,35 +45087,35 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     def min_step(self, inVal:float) -> None:
         return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_min_step_metadata, inVal)
 
-    _get_max_rel_err_metadata = { "offset" : _get_max_rel_err_method_offset,
+    _get_max_relative_err_metadata = { "offset" : _get_max_relative_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_err(self) -> float:
+    def max_relative_err(self) -> float:
         """Get or set the maximum relative error used to control step size. Dimensionless."""
-        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_max_rel_err_metadata)
+        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_max_relative_err_metadata)
 
-    _set_max_rel_err_metadata = { "offset" : _set_max_rel_err_method_offset,
+    _set_max_relative_err_metadata = { "offset" : _set_max_relative_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_err.setter
-    def max_rel_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_max_rel_err_metadata, inVal)
+    @max_relative_err.setter
+    def max_relative_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_max_relative_err_metadata, inVal)
 
-    _get_max_abs_err_metadata = { "offset" : _get_max_abs_err_method_offset,
+    _get_max_absolute_err_metadata = { "offset" : _get_max_absolute_err_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_abs_err(self) -> float:
+    def max_absolute_err(self) -> float:
         """Get or set the maximum absolute error; Also used if relative scale is too small. Dimensionless."""
-        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_max_abs_err_metadata)
+        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_max_absolute_err_metadata)
 
-    _set_max_abs_err_metadata = { "offset" : _set_max_abs_err_method_offset,
+    _set_max_absolute_err_metadata = { "offset" : _set_max_absolute_err_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_abs_err.setter
-    def max_abs_err(self, inVal:float) -> None:
-        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_max_abs_err_metadata, inVal)
+    @max_absolute_err.setter
+    def max_absolute_err(self, inVal:float) -> None:
+        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_max_absolute_err_metadata, inVal)
 
     _get_high_safety_coefficient_metadata = { "offset" : _get_high_safety_coefficient_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -45157,20 +45177,20 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     def max_iterations(self, inVal:int) -> None:
         return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_max_iterations_metadata, inVal)
 
-    _get_coeff_type_metadata = { "offset" : _get_coeff_type_method_offset,
+    _get_coefficient_type_metadata = { "offset" : _get_coefficient_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(COEFF_RUNGE_KUTTA_V_8TH_9TH),) }
     @property
-    def coeff_type(self) -> "COEFF_RUNGE_KUTTA_V_8TH_9TH":
+    def coefficient_type(self) -> "COEFF_RUNGE_KUTTA_V_8TH_9TH":
         """Get or set the set of coefficients to use."""
-        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_coeff_type_metadata)
+        return self._intf.get_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._get_coefficient_type_metadata)
 
-    _set_coeff_type_metadata = { "offset" : _set_coeff_type_method_offset,
+    _set_coefficient_type_metadata = { "offset" : _set_coefficient_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(COEFF_RUNGE_KUTTA_V_8TH_9TH),) }
-    @coeff_type.setter
-    def coeff_type(self, inVal:"COEFF_RUNGE_KUTTA_V_8TH_9TH") -> None:
-        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_coeff_type_metadata, inVal)
+    @coefficient_type.setter
+    def coefficient_type(self, inVal:"COEFF_RUNGE_KUTTA_V_8TH_9TH") -> None:
+        return self._intf.set_property(RungeKuttaV8th9th._metadata, RungeKuttaV8th9th._set_coefficient_type_metadata, inVal)
 
     _property_names[initial_step] = "initial_step"
     _property_names[use_fixed_step] = "use_fixed_step"
@@ -45178,13 +45198,13 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[use_min_step] = "use_min_step"
     _property_names[max_step] = "max_step"
     _property_names[min_step] = "min_step"
-    _property_names[max_rel_err] = "max_rel_err"
-    _property_names[max_abs_err] = "max_abs_err"
+    _property_names[max_relative_err] = "max_relative_err"
+    _property_names[max_absolute_err] = "max_absolute_err"
     _property_names[high_safety_coefficient] = "high_safety_coefficient"
     _property_names[low_safety_coefficient] = "low_safety_coefficient"
     _property_names[error_control] = "error_control"
     _property_names[max_iterations] = "max_iterations"
-    _property_names[coeff_type] = "coeff_type"
+    _property_names[coefficient_type] = "coefficient_type"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type RungeKuttaV8th9th."""
@@ -45212,7 +45232,7 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _get_enable_method_offset = 1
     _set_enable_method_offset = 2
     _get_segment_properties_method_offset = 3
-    _get_calc_objects_method_offset = 4
+    _get_calculation_objects_method_offset = 4
     _get_parameters_method_offset = 5
     _get_language_type_method_offset = 6
     _set_language_type_method_offset = 7
@@ -45252,13 +45272,13 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Return the collection of the segment properties."""
         return self._intf.get_property(ScriptingTool._metadata, ScriptingTool._get_segment_properties_metadata)
 
-    _get_calc_objects_metadata = { "offset" : _get_calc_objects_method_offset,
+    _get_calculation_objects_metadata = { "offset" : _get_calculation_objects_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_objects(self) -> "ScriptingCalcObjectCollection":
+    def calculation_objects(self) -> "ScriptingCalculationObjectCollection":
         """Return the collection of the calculation objects."""
-        return self._intf.get_property(ScriptingTool._metadata, ScriptingTool._get_calc_objects_metadata)
+        return self._intf.get_property(ScriptingTool._metadata, ScriptingTool._get_calculation_objects_metadata)
 
     _get_parameters_metadata = { "offset" : _get_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -45321,7 +45341,7 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
 
     _property_names[enable] = "enable"
     _property_names[segment_properties] = "segment_properties"
-    _property_names[calc_objects] = "calc_objects"
+    _property_names[calculation_objects] = "calculation_objects"
     _property_names[parameters] = "parameters"
     _property_names[language_type] = "language_type"
     _property_names[pre_iterate] = "pre_iterate"
@@ -45793,8 +45813,8 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_name_method_offset = 1
     _set_name_method_offset = 2
-    _get_param_value_method_offset = 3
-    _set_param_value_method_offset = 4
+    _get_parameter_value_method_offset = 3
+    _set_parameter_value_method_offset = 4
     _get_unit_method_offset = 5
     _set_unit_method_offset = 6
     _get_type_method_offset = 7
@@ -45837,20 +45857,20 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     def name(self, inVal:str) -> None:
         return self._intf.set_property(ScriptingParameter._metadata, ScriptingParameter._set_name_metadata, inVal)
 
-    _get_param_value_metadata = { "offset" : _get_param_value_method_offset,
+    _get_parameter_value_metadata = { "offset" : _get_parameter_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def param_value(self) -> typing.Any:
+    def parameter_value(self) -> typing.Any:
         """Get or set the parameter value.  Set in Object Model unit preference for selected dimension."""
-        return self._intf.get_property(ScriptingParameter._metadata, ScriptingParameter._get_param_value_metadata)
+        return self._intf.get_property(ScriptingParameter._metadata, ScriptingParameter._get_parameter_value_metadata)
 
-    _set_param_value_metadata = { "offset" : _set_param_value_method_offset,
+    _set_parameter_value_metadata = { "offset" : _set_parameter_value_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @param_value.setter
-    def param_value(self, inVal:typing.Any) -> None:
-        return self._intf.set_property(ScriptingParameter._metadata, ScriptingParameter._set_param_value_metadata, inVal)
+    @parameter_value.setter
+    def parameter_value(self, inVal:typing.Any) -> None:
+        return self._intf.set_property(ScriptingParameter._metadata, ScriptingParameter._set_parameter_value_metadata, inVal)
 
     _get_unit_metadata = { "offset" : _get_unit_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -45996,7 +46016,7 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         return self._intf.set_property(ScriptingParameter._metadata, ScriptingParameter._set_max_value_metadata, inVal)
 
     _property_names[name] = "name"
-    _property_names[param_value] = "param_value"
+    _property_names[parameter_value] = "parameter_value"
     _property_names[unit] = "unit"
     _property_names[type] = "type"
     _property_names[inherit_value] = "inherit_value"
@@ -46026,28 +46046,28 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5251359406070671618, 17193361196137710260), ScriptingParameter)
 agcls.AgTypeNameMap["ScriptingParameter"] = ScriptingParameter
 
-class ScriptingCalcObject(SupportsDeleteCallback):
+class ScriptingCalculationObject(SupportsDeleteCallback):
     """Calc Object properties for scripting options."""
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_component_name_method_offset = 1
     _set_component_name_method_offset = 2
-    _get_calc_object_name_method_offset = 3
-    _set_calc_object_name_method_offset = 4
-    _get_calc_object_method_offset = 5
-    _set_calc_object_method_offset = 6
+    _get_calculation_object_name_method_offset = 3
+    _set_calculation_object_name_method_offset = 4
+    _get_calculation_object_method_offset = 5
+    _set_calculation_object_method_offset = 6
     _get_unit_method_offset = 7
     _set_unit_method_offset = 8
-    _copy_calc_object_to_clipboard_method_offset = 9
-    _paste_calc_object_from_clipboard_method_offset = 10
+    _copy_calculation_object_to_clipboard_method_offset = 9
+    _paste_calculation_object_from_clipboard_method_offset = 10
     _metadata = {
         "iid_data" : (4858284977774556021, 17365740631458954930),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ScriptingCalcObject)
+        return get_interface_property(attrname, ScriptingCalculationObject)
     
     _get_component_name_metadata = { "offset" : _get_component_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -46055,44 +46075,44 @@ class ScriptingCalcObject(SupportsDeleteCallback):
     @property
     def component_name(self) -> str:
         """Get or set the name of the component."""
-        return self._intf.get_property(ScriptingCalcObject._metadata, ScriptingCalcObject._get_component_name_metadata)
+        return self._intf.get_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._get_component_name_metadata)
 
     _set_component_name_metadata = { "offset" : _set_component_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @component_name.setter
     def component_name(self, inVal:str) -> None:
-        return self._intf.set_property(ScriptingCalcObject._metadata, ScriptingCalcObject._set_component_name_metadata, inVal)
+        return self._intf.set_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._set_component_name_metadata, inVal)
 
-    _get_calc_object_name_metadata = { "offset" : _get_calc_object_name_method_offset,
+    _get_calculation_object_name_metadata = { "offset" : _get_calculation_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def calc_object_name(self) -> str:
+    def calculation_object_name(self) -> str:
         """Get or set the name of the calculation object."""
-        return self._intf.get_property(ScriptingCalcObject._metadata, ScriptingCalcObject._get_calc_object_name_metadata)
+        return self._intf.get_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._get_calculation_object_name_metadata)
 
-    _set_calc_object_name_metadata = { "offset" : _set_calc_object_name_method_offset,
+    _set_calculation_object_name_metadata = { "offset" : _set_calculation_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @calc_object_name.setter
-    def calc_object_name(self, inVal:str) -> None:
-        return self._intf.set_property(ScriptingCalcObject._metadata, ScriptingCalcObject._set_calc_object_name_metadata, inVal)
+    @calculation_object_name.setter
+    def calculation_object_name(self, inVal:str) -> None:
+        return self._intf.set_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._set_calculation_object_name_metadata, inVal)
 
-    _get_calc_object_metadata = { "offset" : _get_calc_object_method_offset,
+    _get_calculation_object_metadata = { "offset" : _get_calculation_object_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def calc_object(self) -> "IComponentInfo":
+    def calculation_object(self) -> "IComponentInfo":
         """Get or set the calculation object type."""
-        return self._intf.get_property(ScriptingCalcObject._metadata, ScriptingCalcObject._get_calc_object_metadata)
+        return self._intf.get_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._get_calculation_object_metadata)
 
-    _set_calc_object_metadata = { "offset" : _set_calc_object_method_offset,
+    _set_calculation_object_metadata = { "offset" : _set_calculation_object_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentInfo"),) }
-    @calc_object.setter
-    def calc_object(self, inVal:"IComponentInfo") -> None:
-        return self._intf.set_property(ScriptingCalcObject._metadata, ScriptingCalcObject._set_calc_object_metadata, inVal)
+    @calculation_object.setter
+    def calculation_object(self, inVal:"IComponentInfo") -> None:
+        return self._intf.set_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._set_calculation_object_metadata, inVal)
 
     _get_unit_metadata = { "offset" : _get_unit_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -46100,38 +46120,38 @@ class ScriptingCalcObject(SupportsDeleteCallback):
     @property
     def unit(self) -> str:
         """Get or set the unit."""
-        return self._intf.get_property(ScriptingCalcObject._metadata, ScriptingCalcObject._get_unit_metadata)
+        return self._intf.get_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._get_unit_metadata)
 
     _set_unit_metadata = { "offset" : _set_unit_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @unit.setter
     def unit(self, inVal:str) -> None:
-        return self._intf.set_property(ScriptingCalcObject._metadata, ScriptingCalcObject._set_unit_metadata, inVal)
+        return self._intf.set_property(ScriptingCalculationObject._metadata, ScriptingCalculationObject._set_unit_metadata, inVal)
 
-    _copy_calc_object_to_clipboard_metadata = { "offset" : _copy_calc_object_to_clipboard_method_offset,
+    _copy_calculation_object_to_clipboard_metadata = { "offset" : _copy_calculation_object_to_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def copy_calc_object_to_clipboard(self) -> None:
+    def copy_calculation_object_to_clipboard(self) -> None:
         """Copy the wrapped calc object to the clipboard."""
-        return self._intf.invoke(ScriptingCalcObject._metadata, ScriptingCalcObject._copy_calc_object_to_clipboard_metadata, )
+        return self._intf.invoke(ScriptingCalculationObject._metadata, ScriptingCalculationObject._copy_calculation_object_to_clipboard_metadata, )
 
-    _paste_calc_object_from_clipboard_metadata = { "offset" : _paste_calc_object_from_clipboard_method_offset,
+    _paste_calculation_object_from_clipboard_metadata = { "offset" : _paste_calculation_object_from_clipboard_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def paste_calc_object_from_clipboard(self) -> None:
+    def paste_calculation_object_from_clipboard(self) -> None:
         """Replace the wrapped calc object with the instance in the clipboard."""
-        return self._intf.invoke(ScriptingCalcObject._metadata, ScriptingCalcObject._paste_calc_object_from_clipboard_metadata, )
+        return self._intf.invoke(ScriptingCalculationObject._metadata, ScriptingCalculationObject._paste_calculation_object_from_clipboard_metadata, )
 
     _property_names[component_name] = "component_name"
-    _property_names[calc_object_name] = "calc_object_name"
-    _property_names[calc_object] = "calc_object"
+    _property_names[calculation_object_name] = "calculation_object_name"
+    _property_names[calculation_object] = "calculation_object"
     _property_names[unit] = "unit"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ScriptingCalcObject."""
+        """Construct an object of type ScriptingCalculationObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingCalcObject)
+        initialize_from_source_object(self, sourceObject, ScriptingCalculationObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46139,12 +46159,12 @@ class ScriptingCalcObject(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ScriptingCalcObject, [ScriptingCalcObject, ])
+        set_class_attribute(self, attrname, value, ScriptingCalculationObject, [ScriptingCalculationObject, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5296189893641852469, 9482879366663785884), ScriptingCalcObject)
-agcls.AgTypeNameMap["ScriptingCalcObject"] = ScriptingCalcObject
+agcls.AgClassCatalog.add_catalog_entry((5296189893641852469, 9482879366663785884), ScriptingCalculationObject)
+agcls.AgTypeNameMap["ScriptingCalculationObject"] = ScriptingCalculationObject
 
-class ScriptingCalcObjectCollection(SupportsDeleteCallback):
+class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
     """The list of calc objects that the script can interact with."""
 
     _num_methods = 11
@@ -46166,13 +46186,13 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ScriptingCalcObjectCollection)
+        return get_interface_property(attrname, ScriptingCalculationObjectCollection)
     def __iter__(self):
-        """Create an iterator for the ScriptingCalcObjectCollection object."""
+        """Create an iterator for the ScriptingCalculationObjectCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "ScriptingCalcObject":
+    def __next__(self) -> "ScriptingCalculationObject":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -46184,30 +46204,30 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ScriptingCalcObject":
+    def item(self, indexOrName:typing.Any) -> "ScriptingCalculationObject":
         """Allow you to iterate through the collection."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._item_metadata, indexOrName, OutArg())
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add(self, componentName:str) -> "ScriptingCalcObject":
+    def add(self, componentName:str) -> "ScriptingCalculationObject":
         """Add a calculation object to the collection."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._add_metadata, componentName, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._add_metadata, componentName, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def remove(self, indexOrName:typing.Any) -> None:
         """Remove a calculation object."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._remove_metadata, indexOrName)
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._remove_metadata, indexOrName)
 
     _remove_all_metadata = { "offset" : _remove_all_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def remove_all(self) -> None:
         """Remove all calculation objects."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._remove_all_metadata, )
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._remove_all_metadata, )
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -46215,7 +46235,7 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46223,42 +46243,42 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Return the size of the collection."""
-        return self._intf.get_property(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._get_count_metadata)
+        return self._intf.get_property(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get_count_metadata)
 
     _cut_metadata = { "offset" : _cut_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def cut(self, indexOrName:typing.Any) -> None:
         """Copy the calc object into the clipboard and removes the calc object from the list."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._cut_metadata, indexOrName)
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "offset" : _paste_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def paste(self) -> "ScriptingCalcObject":
+    def paste(self) -> "ScriptingCalculationObject":
         """Pastes the calc object from the clipboard and inserts into the list."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._paste_metadata, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._paste_metadata, OutArg())
 
     _insert_copy_metadata = { "offset" : _insert_copy_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("ScriptingCalcObject"), agmarshall.InterfaceOutArg,) }
-    def insert_copy(self, calcObj:"ScriptingCalcObject") -> "ScriptingCalcObject":
+            "marshallers" : (agmarshall.InterfaceInArg("ScriptingCalculationObject"), agmarshall.InterfaceOutArg,) }
+    def insert_copy(self, calcObj:"ScriptingCalculationObject") -> "ScriptingCalculationObject":
         """Copy the calc object and inserts the copy into the list."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._insert_copy_metadata, calcObj, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._insert_copy_metadata, calcObj, OutArg())
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "ScriptingCalcObject":
+    def get_item_by_index(self, index:int) -> "ScriptingCalculationObject":
         """Retrieve a scripting calc object from the collection by index."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, componentName:str) -> "ScriptingCalcObject":
+    def get_item_by_name(self, componentName:str) -> "ScriptingCalculationObject":
         """Retrieve a scripting calc object from the collection by name."""
-        return self._intf.invoke(ScriptingCalcObjectCollection._metadata, ScriptingCalcObjectCollection._get_item_by_name_metadata, componentName, OutArg())
+        return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get_item_by_name_metadata, componentName, OutArg())
 
     __getitem__ = item
 
@@ -46267,9 +46287,9 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
     _property_names[count] = "count"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ScriptingCalcObjectCollection."""
+        """Construct an object of type ScriptingCalculationObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingCalcObjectCollection)
+        initialize_from_source_object(self, sourceObject, ScriptingCalculationObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46277,10 +46297,10 @@ class ScriptingCalcObjectCollection(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ScriptingCalcObjectCollection, [ScriptingCalcObjectCollection, ])
+        set_class_attribute(self, attrname, value, ScriptingCalculationObjectCollection, [ScriptingCalculationObjectCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4980684683189716790, 9229952429326373522), ScriptingCalcObjectCollection)
-agcls.AgTypeNameMap["ScriptingCalcObjectCollection"] = ScriptingCalcObjectCollection
+agcls.AgClassCatalog.add_catalog_entry((4980684683189716790, 9229952429326373522), ScriptingCalculationObjectCollection)
+agcls.AgTypeNameMap["ScriptingCalculationObjectCollection"] = ScriptingCalculationObjectCollection
 
 class UserVariableDefinition(SupportsDeleteCallback):
     """Properties for a User Variable definition."""
@@ -48740,8 +48760,8 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     _get_node_status_message_method_offset = 14
     _get_run_mode_method_offset = 15
     _set_run_mode_method_offset = 16
-    _get_halt_mission_control_sequence_when_no_convergence_method_offset = 17
-    _set_halt_mission_control_sequence_when_no_convergence_method_offset = 18
+    _get_halt_mission_control_sequence_for_nonconvergence_method_offset = 17
+    _set_halt_mission_control_sequence_for_nonconvergence_method_offset = 18
     _get_discretization_strategy_method_offset = 19
     _set_discretization_strategy_method_offset = 20
     _get_working_variables_method_offset = 21
@@ -48893,20 +48913,20 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     def run_mode(self, newVal:"OPTIMAL_FINITE_RUN_MODE") -> None:
         return self._intf.set_property(ManeuverOptimalFinite._metadata, ManeuverOptimalFinite._set_run_mode_metadata, newVal)
 
-    _get_halt_mission_control_sequence_when_no_convergence_metadata = { "offset" : _get_halt_mission_control_sequence_when_no_convergence_method_offset,
+    _get_halt_mission_control_sequence_for_nonconvergence_metadata = { "offset" : _get_halt_mission_control_sequence_for_nonconvergence_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def halt_mission_control_sequence_when_no_convergence(self) -> bool:
+    def halt_mission_control_sequence_for_nonconvergence(self) -> bool:
         """Halt MCS and discard result if optimization is unsuccessful."""
-        return self._intf.get_property(ManeuverOptimalFinite._metadata, ManeuverOptimalFinite._get_halt_mission_control_sequence_when_no_convergence_metadata)
+        return self._intf.get_property(ManeuverOptimalFinite._metadata, ManeuverOptimalFinite._get_halt_mission_control_sequence_for_nonconvergence_metadata)
 
-    _set_halt_mission_control_sequence_when_no_convergence_metadata = { "offset" : _set_halt_mission_control_sequence_when_no_convergence_method_offset,
+    _set_halt_mission_control_sequence_for_nonconvergence_metadata = { "offset" : _set_halt_mission_control_sequence_for_nonconvergence_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @halt_mission_control_sequence_when_no_convergence.setter
-    def halt_mission_control_sequence_when_no_convergence(self, newVal:bool) -> None:
-        return self._intf.set_property(ManeuverOptimalFinite._metadata, ManeuverOptimalFinite._set_halt_mission_control_sequence_when_no_convergence_metadata, newVal)
+    @halt_mission_control_sequence_for_nonconvergence.setter
+    def halt_mission_control_sequence_for_nonconvergence(self, newVal:bool) -> None:
+        return self._intf.set_property(ManeuverOptimalFinite._metadata, ManeuverOptimalFinite._set_halt_mission_control_sequence_for_nonconvergence_metadata, newVal)
 
     _get_discretization_strategy_metadata = { "offset" : _get_discretization_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -49084,7 +49104,7 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     _property_names[seed_method] = "seed_method"
     _property_names[node_status_message] = "node_status_message"
     _property_names[run_mode] = "run_mode"
-    _property_names[halt_mission_control_sequence_when_no_convergence] = "halt_mission_control_sequence_when_no_convergence"
+    _property_names[halt_mission_control_sequence_for_nonconvergence] = "halt_mission_control_sequence_for_nonconvergence"
     _property_names[discretization_strategy] = "discretization_strategy"
     _property_names[working_variables] = "working_variables"
     _property_names[scaling_options] = "scaling_options"
@@ -50120,7 +50140,7 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
-    _get_target_coord_type_method_offset = 3
+    _get_target_coordinate_type_method_offset = 3
     _set_target_coord_type_method_offset = 4
     _get_enable_second_maneuver_method_offset = 5
     _set_enable_second_maneuver_method_offset = 6
@@ -50197,18 +50217,18 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     def coord_system_name(self, newVal:str) -> None:
         return self._intf.set_property(ProfileLambertProfile._metadata, ProfileLambertProfile._set_coord_system_name_metadata, newVal)
 
-    _get_target_coord_type_metadata = { "offset" : _get_target_coord_type_method_offset,
+    _get_target_coordinate_type_metadata = { "offset" : _get_target_coordinate_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORDINATE_TYPE),) }
     @property
-    def target_coord_type(self) -> "LAMBERT_TARGET_COORD_TYPE":
+    def target_coordinate_type(self) -> "LAMBERT_TARGET_COORDINATE_TYPE":
         """Get the target coordinate type."""
-        return self._intf.get_property(ProfileLambertProfile._metadata, ProfileLambertProfile._get_target_coord_type_metadata)
+        return self._intf.get_property(ProfileLambertProfile._metadata, ProfileLambertProfile._get_target_coordinate_type_metadata)
 
     _set_target_coord_type_metadata = { "offset" : _set_target_coord_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
-    def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORDINATE_TYPE),) }
+    def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORDINATE_TYPE") -> None:
         """Select a target coordinate type."""
         return self._intf.invoke(ProfileLambertProfile._metadata, ProfileLambertProfile._set_target_coord_type_metadata, elementType)
 
@@ -50603,7 +50623,7 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
         return self._intf.set_property(ProfileLambertProfile._metadata, ProfileLambertProfile._set_second_maneuver_segment_metadata, newVal)
 
     _property_names[coord_system_name] = "coord_system_name"
-    _property_names[target_coord_type] = "target_coord_type"
+    _property_names[target_coordinate_type] = "target_coordinate_type"
     _property_names[enable_second_maneuver] = "enable_second_maneuver"
     _property_names[target_position_x] = "target_position_x"
     _property_names[target_position_y] = "target_position_y"
@@ -50658,7 +50678,7 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
     _vtable_offset = IProfile._vtable_offset + IProfile._num_methods
     _get_coord_system_name_method_offset = 1
     _set_coord_system_name_method_offset = 2
-    _get_target_coord_type_method_offset = 3
+    _get_target_coordinate_type_method_offset = 3
     _set_target_coord_type_method_offset = 4
     _get_enable_second_maneuver_method_offset = 5
     _set_enable_second_maneuver_method_offset = 6
@@ -50743,18 +50763,18 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
     def coord_system_name(self, newVal:str) -> None:
         return self._intf.set_property(ProfileLambertSearchProfile._metadata, ProfileLambertSearchProfile._set_coord_system_name_metadata, newVal)
 
-    _get_target_coord_type_metadata = { "offset" : _get_target_coord_type_method_offset,
+    _get_target_coordinate_type_metadata = { "offset" : _get_target_coordinate_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORDINATE_TYPE),) }
     @property
-    def target_coord_type(self) -> "LAMBERT_TARGET_COORD_TYPE":
+    def target_coordinate_type(self) -> "LAMBERT_TARGET_COORDINATE_TYPE":
         """Get the target coordinate type."""
-        return self._intf.get_property(ProfileLambertSearchProfile._metadata, ProfileLambertSearchProfile._get_target_coord_type_metadata)
+        return self._intf.get_property(ProfileLambertSearchProfile._metadata, ProfileLambertSearchProfile._get_target_coordinate_type_metadata)
 
     _set_target_coord_type_metadata = { "offset" : _set_target_coord_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORD_TYPE),) }
-    def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORD_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(LAMBERT_TARGET_COORDINATE_TYPE),) }
+    def set_target_coord_type(self, elementType:"LAMBERT_TARGET_COORDINATE_TYPE") -> None:
         """Select a target coordinate type."""
         return self._intf.invoke(ProfileLambertSearchProfile._metadata, ProfileLambertSearchProfile._set_target_coord_type_metadata, elementType)
 
@@ -51209,7 +51229,7 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
         return self._intf.set_property(ProfileLambertSearchProfile._metadata, ProfileLambertSearchProfile._set_second_maneuver_segment_metadata, newVal)
 
     _property_names[coord_system_name] = "coord_system_name"
-    _property_names[target_coord_type] = "target_coord_type"
+    _property_names[target_coordinate_type] = "target_coordinate_type"
     _property_names[enable_second_maneuver] = "enable_second_maneuver"
     _property_names[enable_target_match_phase] = "enable_target_match_phase"
     _property_names[target_position_x] = "target_position_x"
@@ -52429,7 +52449,7 @@ class GridSearchResult(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4937096937333925880, 757142270461828760), GridSearchResult)
 agcls.AgTypeNameMap["GridSearchResult"] = GridSearchResult
 
-class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
+class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     """Collection of link/embed calculation objects."""
 
     _num_methods = 10
@@ -52450,9 +52470,9 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, CalcObjectLinkEmbedControlCollection)
+        return get_interface_property(attrname, CalculationObjectLinkEmbedControlCollection)
     def __iter__(self):
-        """Create an iterator for the CalcObjectLinkEmbedControlCollection object."""
+        """Create an iterator for the CalculationObjectLinkEmbedControlCollection object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
@@ -52470,21 +52490,21 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE), agmarshall.InterfaceOutArg,) }
     def add(self, name:str, refType:"COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE") -> "IComponentLinkEmbedControl":
         """Add a link/embed calc object to the collection."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._add_metadata, name, refType, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._add_metadata, name, refType, OutArg())
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
     def item(self, indexOrName:typing.Any) -> "IComponentLinkEmbedControl":
         """Return a link/embed calc object."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._item_metadata, indexOrName, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def remove(self, indexOrName:typing.Any) -> None:
         """Remove a link/embed calc object from the collection."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._remove_metadata, indexOrName)
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._remove_metadata, indexOrName)
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -52492,7 +52512,7 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get__NewEnum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -52500,42 +52520,42 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Return the size of the collection."""
-        return self._intf.get_property(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._get_count_metadata)
+        return self._intf.get_property(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get_count_metadata)
 
     _cut_metadata = { "offset" : _cut_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     def cut(self, indexOrName:typing.Any) -> None:
         """Copy a link/embed calc object to the clipboard and removes the calc object from the list."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._cut_metadata, indexOrName)
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._cut_metadata, indexOrName)
 
     _paste_metadata = { "offset" : _paste_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def paste(self) -> "IComponentLinkEmbedControl":
         """Pastes a link/embed calc object from the clipboard into the list."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._paste_metadata, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._paste_metadata, OutArg())
 
     _insert_copy_metadata = { "offset" : _insert_copy_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IComponentLinkEmbedControl"), agmarshall.InterfaceOutArg,) }
     def insert_copy(self, calcObj:"IComponentLinkEmbedControl") -> "IComponentLinkEmbedControl":
         """Copy a link/embed calc object and inserts the copy into the list."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._insert_copy_metadata, calcObj, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._insert_copy_metadata, calcObj, OutArg())
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_index(self, index:int) -> "IComponentLinkEmbedControl":
         """Retrieve a link/embed calc object found by the index."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._get_item_by_index_metadata, index, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_item_by_name(self, name:str) -> "IComponentLinkEmbedControl":
         """Retrieve a link/embed calc object found by the name."""
-        return self._intf.invoke(CalcObjectLinkEmbedControlCollection._metadata, CalcObjectLinkEmbedControlCollection._get_item_by_name_metadata, name, OutArg())
+        return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get_item_by_name_metadata, name, OutArg())
 
     __getitem__ = item
 
@@ -52544,9 +52564,9 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     _property_names[count] = "count"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type CalcObjectLinkEmbedControlCollection."""
+        """Construct an object of type CalculationObjectLinkEmbedControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalcObjectLinkEmbedControlCollection)
+        initialize_from_source_object(self, sourceObject, CalculationObjectLinkEmbedControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52554,10 +52574,10 @@ class CalcObjectLinkEmbedControlCollection(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalcObjectLinkEmbedControlCollection, [CalcObjectLinkEmbedControlCollection, ])
+        set_class_attribute(self, attrname, value, CalculationObjectLinkEmbedControlCollection, [CalculationObjectLinkEmbedControlCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5719207221443687100, 18379399996235772605), CalcObjectLinkEmbedControlCollection)
-agcls.AgTypeNameMap["CalcObjectLinkEmbedControlCollection"] = CalcObjectLinkEmbedControlCollection
+agcls.AgClassCatalog.add_catalog_entry((5719207221443687100, 18379399996235772605), CalculationObjectLinkEmbedControlCollection)
+agcls.AgTypeNameMap["CalculationObjectLinkEmbedControlCollection"] = CalculationObjectLinkEmbedControlCollection
 
 class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     """Properties of Single Parameter Bisection profile."""

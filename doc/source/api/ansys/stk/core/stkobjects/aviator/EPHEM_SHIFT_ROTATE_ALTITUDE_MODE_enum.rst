@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ALTITUDE_MODE_WGS`
               - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeWGS.
 
-            * - :py:attr:`~ALTITUDE_MODE_REL`
+            * - :py:attr:`~ALTITUDE_MODE_RELATIVE`
               - Enumeration AgEAvtrEphemShiftRotateAltMode:eAltModeRel.
 
 

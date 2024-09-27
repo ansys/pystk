@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleBetweenVectors.from_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify the first of the two vectors the angle is measured.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleBetweenVectors.to_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify the second of the two vectors the angle is measured.
 

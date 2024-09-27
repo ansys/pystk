@@ -44,19 +44,19 @@ Property detail
 
 .. py:property:: point_a
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.point_a
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a point A.
 
 .. py:property:: point_b
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.point_b
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a point B.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.reference_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify a reference point.
 

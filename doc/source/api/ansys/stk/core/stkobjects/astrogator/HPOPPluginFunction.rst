@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.HPOPPluginFunction.plugin_config
-    :type: IPluginProperties
+    :type: PluginProperties
 
     Get the properties of the selected plugin.
 

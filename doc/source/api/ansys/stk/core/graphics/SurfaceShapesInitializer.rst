@@ -3,8 +3,6 @@ SurfaceShapesInitializer
 
 .. py:class:: ansys.stk.core.graphics.SurfaceShapesInitializer
 
-   Bases: 
-
    Compute boundary positions for shapes on the surface such as circles, ellipses, and sectors.
 
 .. py:currentmodule:: SurfaceShapesInitializer

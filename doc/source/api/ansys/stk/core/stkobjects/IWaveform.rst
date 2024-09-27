@@ -3,8 +3,6 @@ IWaveform
 
 .. py:class:: ansys.stk.core.stkobjects.IWaveform
 
-   object
-   
    Provide access to the properties and methods defining an antenna model.
 
 .. py:currentmodule:: IWaveform

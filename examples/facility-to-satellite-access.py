@@ -1,4 +1,4 @@
-# # Access Between Facility and Satellite Calculator
+# # Access between facility and satellite calculator
 
 # This tutorial demonstrates how to calculate access between a facility and a satellite using PySTK. It is inspired by [this tutorial](https://help.agi.com/stkdevkit/Content/stkObjects/ObjectModelTutorial.html).
 
@@ -97,8 +97,8 @@ facility.graphics.label_name = "Philadelphia Facility"
 
 # It is possible to use the ``children`` collection of the facility object to check if “MySensor” is already part of the collection. If the sensor already exists, it is possible to get the sensor object from the children collection using the path from the facility to the sensor.
 
-if (facility.children.contains(STK_OBJECT_TYPE.SENSOR, "MySensor")):
-    sensor = root.get_object_from_path('Facility/MyFacility/Sensor/MySensor')
+if facility.children.contains(STK_OBJECT_TYPE.SENSOR, "MySensor"):
+    sensor = root.get_object_from_path("Facility/MyFacility/Sensor/MySensor")
 
 # In this case, the sensor has not yet been created, so create the object from the root:
 
@@ -106,7 +106,7 @@ sensor = facility.children.new(STK_OBJECT_TYPE.SENSOR, "MySensor")
 
 # #### Set the sensor pattern
 
-# Now, set the sensor’s pattern to complex conic. The default sensor object is defined as a simple conic sensor. So, the first step is to change the sensor type to complex conic. The API also provides a helper function to set the sensor pattern properties. To access this helper function, get an ``ISensorCommonTasks`` object through the sensor's ``common_tasks`` property. 
+# Now, set the sensor’s pattern to complex conic. The default sensor object is defined as a simple conic sensor. So, the first step is to change the sensor type to complex conic. The API also provides a helper function to set the sensor pattern properties. To access this helper function, get an ``ISensorCommonTasks`` object through the sensor's ``common_tasks`` property.
 
 # +
 from ansys.stk.core.stkobjects import SENSOR_PATTERN
@@ -166,7 +166,9 @@ plotter.show()
 from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
 
 
-lighting_constraint = satellite.access_constraints.add_constraint(ACCESS_CONSTRAINTS.LIGHTING)
+lighting_constraint = satellite.access_constraints.add_constraint(
+    ACCESS_CONSTRAINTS.LIGHTING
+)
 lighting_constraint.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 # -
 
@@ -197,11 +199,21 @@ data_provider_elements = ["Time", "Azimuth", "Elevation", "Range"]
 
 for i in range(0, access_intervals.count):
     times = access_intervals.get_interval(i)
-    data_provider_result = access_data_provider_aer.exec_elements(times[0], times[1], 1, data_provider_elements)
-    time_values = data_provider_result.data_sets.get_data_set_by_name("Time").get_values()
-    azimuth_values = data_provider_result.data_sets.get_data_set_by_name("Azimuth").get_values()
-    elevation_values = data_provider_result.data_sets.get_data_set_by_name("Elevation").get_values()
-    range_values = data_provider_result.data_sets.get_data_set_by_name("Range").get_values()
+    data_provider_result = access_data_provider_aer.exec_elements(
+        times[0], times[1], 1, data_provider_elements
+    )
+    time_values = data_provider_result.data_sets.get_data_set_by_name(
+        "Time"
+    ).get_values()
+    azimuth_values = data_provider_result.data_sets.get_data_set_by_name(
+        "Azimuth"
+    ).get_values()
+    elevation_values = data_provider_result.data_sets.get_data_set_by_name(
+        "Elevation"
+    ).get_values()
+    range_values = data_provider_result.data_sets.get_data_set_by_name(
+        "Range"
+    ).get_values()
 
 # Alternately, convert the data provider data sets to a pandas ``dataframe`` or numpy array:
 
@@ -211,15 +223,15 @@ aer_df
 # Visualize the data using a line chart:
 
 # +
-import matplotlib.pyplot as plt
 import matplotlib.dates as md
+import matplotlib.pyplot as plt
 import pandas as pd
 
 
 # Convert columns to correct types
-aer_df['time'] = pd.to_datetime(aer_df["time"])
-aer_df.set_index('time', inplace=True)
-cols = ['azimuth', 'elevation', 'range']
+aer_df["time"] = pd.to_datetime(aer_df["time"])
+aer_df.set_index("time", inplace=True)
+cols = ["azimuth", "elevation", "range"]
 aer_df[cols] = aer_df[cols].apply(pd.to_numeric)
 
 # Create a plot and duplicate the x-axis
@@ -227,15 +239,19 @@ fig, ax1 = plt.subplots(figsize=(8, 8))
 ax2 = ax1.twinx()
 
 # Plot range, azimuth, and elevation
-line1, = ax2.plot(aer_df.index, aer_df['range'], color='hotpink', label='Range (km)')
-line2, = ax1.plot(aer_df.index, aer_df['azimuth'], color='skyblue', label='Azimuth (deg)')
-line3, = ax1.plot(aer_df.index, aer_df['elevation'], color='gold', label='Elevation (deg)')
+(line1,) = ax2.plot(aer_df.index, aer_df["range"], color="hotpink", label="Range (km)")
+(line2,) = ax1.plot(
+    aer_df.index, aer_df["azimuth"], color="skyblue", label="Azimuth (deg)"
+)
+(line3,) = ax1.plot(
+    aer_df.index, aer_df["elevation"], color="gold", label="Elevation (deg)"
+)
 
 # Set title and axes labels
 ax1.set_title("Azimuth, Elevation, and Range over Time")
-ax1.set_xlabel('Time')
+ax1.set_xlabel("Time")
 ax1.set_ylabel("Angle (deg)")
-ax2.set_ylabel('Distance (km)')
+ax2.set_ylabel("Distance (km)")
 
 # Combine legends
 lines = [line1, line2, line3]
@@ -244,10 +260,10 @@ ax1.legend(lines, labels, shadow=True)
 
 # Configure style
 ax1.set_facecolor("whitesmoke")
-ax1.grid(visible=True, which='both', linestyle='--')
+ax1.grid(visible=True, which="both", linestyle="--")
 
 # Improve x-axis formatting
-formatter = md.DateFormatter('%H:%M')
+formatter = md.DateFormatter("%H:%M")
 ax1.xaxis.set_major_formatter(formatter)
 # Set major and minor locators
 xlocator_major = md.MinuteLocator(interval=2)
@@ -273,7 +289,9 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 from ansys.stk.core.vgt import VECTOR_GEOMETRY_TOOL_VECTOR_TYPE
 
 
-vector = facility.vgt.vectors.factory.create("FromTo", "Vector description", VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT)
+vector = facility.vgt.vectors.factory.create(
+    "FromTo", "Vector description", VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT
+)
 vector.destination.set_point(satellite.vgt.points.item("Center"))
 # -
 
@@ -283,7 +301,9 @@ vector.destination.set_point(satellite.vgt.points.item("Center"))
 from ansys.stk.core.stkobjects import GEOMETRIC_ELEM_TYPE
 
 
-boresight_vector = facility.graphics_3d.vector.reference_crdns.add(GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Facility/Philadelphia FromTo Vector")
+boresight_vector = facility.graphics_3d.vector.reference_crdns.add(
+    GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Facility/Philadelphia FromTo Vector"
+)
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -
 
@@ -299,14 +319,16 @@ parameter_sets = access.vgt.parameter_sets.item("From-To-AER(Body)")
 
 # Then, get the magnitude vector:
 
-magnitude = parameter_sets.embedded_components.item("From-To-AER(Body).Cartesian.Magnitude")
+magnitude = parameter_sets.embedded_components.item(
+    "From-To-AER(Body).Cartesian.Magnitude"
+)
 
 # Get the times of the minimum value for each access interval:
 
-min_times = parameter_sets.embedded_components.item("From-To-AER(Body).Cartesian.Magnitude.TimesOfLocalMin")
+min_times = parameter_sets.embedded_components.item(
+    "From-To-AER(Body).Cartesian.Magnitude.TimesOfLocalMin"
+)
 time_array = min_times.find_times().times
 for at_time in time_array:
     result = magnitude.evaluate(at_time)
     print(f"Result at time {at_time}: {result.value}")
-
-

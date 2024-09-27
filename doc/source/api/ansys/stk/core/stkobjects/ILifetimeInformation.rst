@@ -3,8 +3,6 @@ ILifetimeInformation
 
 .. py:class:: ansys.stk.core.stkobjects.ILifetimeInformation
 
-   object
-   
    Provide the information about the lifetime of the object.
 
 .. py:currentmodule:: ILifetimeInformation

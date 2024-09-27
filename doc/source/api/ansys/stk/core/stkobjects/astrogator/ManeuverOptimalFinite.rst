@@ -47,7 +47,7 @@ Overview
               - A message that indicates what nodes are currently held by the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.run_mode`
               - Run mode.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_for_nonconvergence`
               - Halt MCS and discard result if optimization is unsuccessful.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.discretization_strategy`
               - Discretization Strategy.
@@ -139,8 +139,8 @@ Property detail
 
     Run mode.
 
-.. py:property:: halt_mission_control_sequence_when_no_convergence
-    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_when_no_convergence
+.. py:property:: halt_mission_control_sequence_for_nonconvergence
+    :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.halt_mission_control_sequence_for_nonconvergence
     :type: bool
 
     Halt MCS and discard result if optimization is unsuccessful.
@@ -177,25 +177,25 @@ Property detail
 
 .. py:property:: snopt_optimizer
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.snopt_optimizer
-    :type: IManeuverOptimalFiniteSNOPTOptimizer
+    :type: ManeuverOptimalFiniteSNOPTOptimizer
 
     SNOPT Optimizer Options.
 
 .. py:property:: initial_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.initial_boundary_conditions
-    :type: IManeuverOptimalFiniteInitialBoundaryConditions
+    :type: ManeuverOptimalFiniteInitialBoundaryConditions
 
     Initial Boundary Conditions.
 
 .. py:property:: final_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.final_boundary_conditions
-    :type: IManeuverOptimalFiniteFinalBoundaryConditions
+    :type: ManeuverOptimalFiniteFinalBoundaryConditions
 
     Final Boundary Conditions.
 
 .. py:property:: path_boundary_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.path_boundary_conditions
-    :type: IManeuverOptimalFinitePathBoundaryConditions
+    :type: ManeuverOptimalFinitePathBoundaryConditions
 
     Path Boundary Conditions.
 
@@ -213,7 +213,7 @@ Property detail
 
 .. py:property:: steering_nodes
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.steering_nodes
-    :type: IManeuverOptimalFiniteSteeringNodeCollection
+    :type: ManeuverOptimalFiniteSteeringNodeCollection
 
     Get the list of steering nodes.
 

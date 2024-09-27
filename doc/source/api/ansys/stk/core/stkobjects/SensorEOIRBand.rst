@@ -3,8 +3,6 @@ SensorEOIRBand
 
 .. py:class:: ansys.stk.core.stkobjects.SensorEOIRBand
 
-   Bases: 
-
    Class defining an EOIR band.
 
 .. py:currentmodule:: SensorEOIRBand
@@ -308,13 +306,13 @@ Property detail
 
 .. py:property:: sensitivities
     :canonical: ansys.stk.core.stkobjects.SensorEOIRBand.sensitivities
-    :type: ISensorEOIRSensitivityCollection
+    :type: SensorEOIRSensitivityCollection
 
     Get the collection of Sensitivity time-value pairs.
 
 .. py:property:: saturations
     :canonical: ansys.stk.core.stkobjects.SensorEOIRBand.saturations
-    :type: ISensorEOIRSaturationCollection
+    :type: SensorEOIRSaturationCollection
 
     Get the collection of Saturation time-value pairs.
 

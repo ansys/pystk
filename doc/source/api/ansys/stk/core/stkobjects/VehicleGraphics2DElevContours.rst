@@ -3,8 +3,6 @@ VehicleGraphics2DElevContours
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics2DElevContours
 
-   Bases: 
-
    General settings regarding display of elevation contours.
 
 .. py:currentmodule:: VehicleGraphics2DElevContours
@@ -72,7 +70,7 @@ Property detail
 
 .. py:property:: elevations
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevContours.elevations
-    :type: IVehicleGraphics2DElevationsCollection
+    :type: VehicleGraphics2DElevationsCollection
 
     Collection of Levels.
 

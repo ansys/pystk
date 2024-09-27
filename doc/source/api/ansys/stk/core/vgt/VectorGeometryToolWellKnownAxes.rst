@@ -3,8 +3,6 @@ VectorGeometryToolWellKnownAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes
 
-   Bases: 
-
    Represents well-known VGT Axes.
 
 .. py:currentmodule:: VectorGeometryToolWellKnownAxes
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: earth
     :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes.earth
-    :type: IVectorGeometryToolWellKnownEarthAxes
+    :type: VectorGeometryToolWellKnownEarthAxes
 
     Earth's well-known axes.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes.sun
-    :type: IVectorGeometryToolWellKnownSunAxes
+    :type: VectorGeometryToolWellKnownSunAxes
 
     The Sun's well-known axes.
 

@@ -3,8 +3,6 @@ LaunchVehicleGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D
 
-   Bases: 
-
    3D Graphics for a launch vehicle.
 
 .. py:currentmodule:: LaunchVehicleGraphics3D
@@ -70,103 +68,103 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.model
-    :type: IVehicleTrajectoryGraphics3DModel
+    :type: VehicleTrajectoryGraphics3DModel
 
     Get the launch vehicle's 3D model properties.
 
 .. py:property:: trajectory_systems
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.trajectory_systems
-    :type: IVehicleGraphics3DSystemsCollection
+    :type: VehicleGraphics3DSystemsCollection
 
     Get the launch vehicle's 3D trajectory frame properties.
 
 .. py:property:: proximity
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.proximity
-    :type: IVehicleGraphics3DTrajectoryProximity
+    :type: VehicleGraphics3DTrajectoryProximity
 
     Get the launch vehicle's 3D proximity properties.
 
 .. py:property:: elev_contours
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elev_contours
-    :type: IVehicleGraphics3DElevContours
+    :type: VehicleGraphics3DElevContours
 
     Get the launch vehicle's 3D elevation contour properties.
 
 .. py:property:: covariance_pointing_contour
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.covariance_pointing_contour
-    :type: IVehicleGraphics3DCovariancePointingContour
+    :type: VehicleGraphics3DCovariancePointingContour
 
     Get the launch vehicle's 3D covariance pointing properties.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.trajectory
-    :type: IVehicleGraphics3DTrajectory
+    :type: VehicleGraphics3DTrajectory
 
     Get the launch vehicle's 3D trajectory properties.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.offsets
-    :type: IGraphics3DOffset
+    :type: Graphics3DOffset
 
     Get the launch vehicle's 3D offsets properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.range_contours
-    :type: IGraphics3DRangeContours
+    :type: Graphics3DRangeContours
 
     Get the launch vehicle's 3D range contour properties.
 
 .. py:property:: covariance
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.covariance
-    :type: IVehicleGraphics3DCovariance
+    :type: VehicleGraphics3DCovariance
 
     Get the launch vehicle's 3D covariance properties.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the launch vehicle's 3D vector properties.
 
 .. py:property:: data_display
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.data_display
-    :type: IGraphics3DDataDisplayCollection
+    :type: Graphics3DDataDisplayCollection
 
     Get the launch vehicle's 3D data display properties.
 
 .. py:property:: model_pointing
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.model_pointing
-    :type: IGraphics3DModelPointing
+    :type: Graphics3DModelPointing
 
     Use to point parts of a launch vehicle's model toward a target, such as the Sun or Earth.
 
 .. py:property:: drop_lines
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.drop_lines
-    :type: IVehicleGraphics3DTrajectoryDropLines
+    :type: VehicleGraphics3DTrajectoryDropLines
 
     Returns an interface allowing to configure launch vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.vapor_trail
-    :type: IGraphics3DVaporTrail
+    :type: Graphics3DVaporTrail
 
     Vapor trail attributes.
 
 .. py:property:: saa
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.saa
-    :type: IVehicleGraphics3DSAA
+    :type: VehicleGraphics3DSAA
 
     Get the launch vehicle's South Atlantic Anomaly Contour properties.
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.velocity_covariance
-    :type: IVehicleGraphics3DVelCovariance
+    :type: VehicleGraphics3DVelCovariance
 
     Get the launch vehicle's 3D velocity covariance properties.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.radar_cross_section
-    :type: IRadarCrossSectionGraphics3D
+    :type: RadarCrossSectionGraphics3D
 
     Gets the radar cross section graphics interface.
 

@@ -3,8 +3,6 @@ AircraftCategory
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.AircraftCategory
 
-   Bases: 
-
    Class defining the aircraft category in the Aviator catalog.
 
 .. py:currentmodule:: AircraftCategory
@@ -42,19 +40,19 @@ Property detail
 
 .. py:property:: aircraft_models
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftCategory.aircraft_models
-    :type: IAircraftModels
+    :type: AircraftModels
 
     Get the user aircraft models.
 
 .. py:property:: missile_models
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftCategory.missile_models
-    :type: IMissileModels
+    :type: MissileModels
 
     Get the user missile models.
 
 .. py:property:: rotorcraft_models
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftCategory.rotorcraft_models
-    :type: IRotorcraftModels
+    :type: RotorcraftModels
 
     Get the user rotorcraft models.
 

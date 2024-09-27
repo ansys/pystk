@@ -3,8 +3,6 @@ RadarWaveformSarPulseDefinition
 
 .. py:class:: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition
 
-   Bases: 
-
    Class defining the pulse definition for a SAR waveform.
 
 .. py:currentmodule:: RadarWaveformSarPulseDefinition

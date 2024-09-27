@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: access_objects
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.access_objects
-    :type: IObjectLinkCollection
+    :type: ObjectLinkCollection
 
     Returns the collection of objects used for the access.
 

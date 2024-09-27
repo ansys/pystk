@@ -3,8 +3,6 @@ IVehicleGPSAlmanacProperties
 
 .. py:class:: ansys.stk.core.stkobjects.IVehicleGPSAlmanacProperties
 
-   object
-   
    A common base interface for GPS almanac properties.
 
 .. py:currentmodule:: IVehicleGPSAlmanacProperties

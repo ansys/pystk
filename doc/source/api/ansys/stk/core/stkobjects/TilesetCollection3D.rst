@@ -3,8 +3,6 @@ TilesetCollection3D
 
 .. py:class:: ansys.stk.core.stkobjects.TilesetCollection3D
 
-   Bases: 
-
    Collection of 3DTilesets available in the Scenario for analysis.
 
 .. py:currentmodule:: TilesetCollection3D

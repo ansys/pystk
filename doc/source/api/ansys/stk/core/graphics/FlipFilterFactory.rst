@@ -3,8 +3,6 @@ FlipFilterFactory
 
 .. py:class:: ansys.stk.core.graphics.FlipFilterFactory
 
-   Bases: 
-
    Flips the source raster along the given flip axis.
 
 .. py:currentmodule:: FlipFilterFactory
@@ -48,14 +46,14 @@ Method detail
 
         :obj:`~FlipFilter`
 
-.. py:method:: initialize_with_flip_axis(self, flipAxis: FLIP_AXIS) -> FlipFilter
+.. py:method:: initialize_with_flip_axis(self, flipAxis: RASTER_FLIP_AXIS) -> FlipFilter
     :canonical: ansys.stk.core.graphics.FlipFilterFactory.initialize_with_flip_axis
 
     Initialize a new instance with the specified flip axis.
 
     :Parameters:
 
-    **flipAxis** : :obj:`~FLIP_AXIS`
+    **flipAxis** : :obj:`~RASTER_FLIP_AXIS`
 
     :Returns:
 

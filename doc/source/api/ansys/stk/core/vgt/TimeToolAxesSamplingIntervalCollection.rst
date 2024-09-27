@@ -3,8 +3,6 @@ TimeToolAxesSamplingIntervalCollection
 
 .. py:class:: ansys.stk.core.vgt.TimeToolAxesSamplingIntervalCollection
 
-   Bases: 
-
    A collection of intervals where each interval contains the time, orientation and velocity arrays.
 
 .. py:currentmodule:: TimeToolAxesSamplingIntervalCollection

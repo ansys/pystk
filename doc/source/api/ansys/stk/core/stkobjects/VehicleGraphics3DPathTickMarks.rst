@@ -3,8 +3,6 @@ VehicleGraphics3DPathTickMarks
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks
 
-   Bases: 
-
    Tick marks for 3D trajectory graphics. Tick marks represent milestones at specified intervals along the trajectory in the 3D window.
 
 .. py:currentmodule:: VehicleGraphics3DPathTickMarks

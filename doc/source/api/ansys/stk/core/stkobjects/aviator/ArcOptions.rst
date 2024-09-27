@@ -3,8 +3,6 @@ ArcOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ArcOptions
 
-   Bases: 
-
    Class defining the arc options for a procedure.
 
 .. py:currentmodule:: ArcOptions

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: segment
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.segment
-    :type: IMissionControlSequenceManeuver
+    :type: MCSManeuver
 
     Gets or sets the targeted maneuver segment.
 

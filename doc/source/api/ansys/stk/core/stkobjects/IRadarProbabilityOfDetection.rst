@@ -3,8 +3,6 @@ IRadarProbabilityOfDetection
 
 .. py:class:: ansys.stk.core.stkobjects.IRadarProbabilityOfDetection
 
-   object
-   
    Provide access to the properties and methods for configuring probability of detection parameters.
 
 .. py:currentmodule:: IRadarProbabilityOfDetection

@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePropagatorAviator.avtr_propagator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePropagatorAviator.aviator_propagator`
               - Aviator propagator object.
 
 
@@ -45,8 +45,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: avtr_propagator
-    :canonical: ansys.stk.core.stkobjects.VehiclePropagatorAviator.avtr_propagator
+.. py:property:: aviator_propagator
+    :canonical: ansys.stk.core.stkobjects.VehiclePropagatorAviator.aviator_propagator
     :type: typing.Any
 
     Aviator propagator object.

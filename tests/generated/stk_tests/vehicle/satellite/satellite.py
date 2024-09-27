@@ -1169,7 +1169,7 @@ class EarlyBoundTests(TestBase):
             'SetState */Satellite/{0} Cartesian J2Perturbation "1 Jul 1999 00:00:00.00" "2 Jul 1999 00:00:00.00" 60 MeanOfEpoch "1 Jul 1999 00:00:00.00" -5465000.513055 4630000.194365 0.0 712.713627 841.292034 7377.687805 "3 Jul 1999 00:00:00.00"',
             (IStkObject(EarlyBoundTests.AG_SAT)).instance_name,
         )
-        res: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        res: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         del res
 
         Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION, EarlyBoundTests.AG_SAT.propagator_type)
@@ -1465,13 +1465,13 @@ class EarlyBoundTests(TestBase):
         oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
         Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_ALL, oPasses.pass_type)
-        Assert.assertIsNone(oPasses.pass_method)
+        Assert.assertIsNone(oPasses.satellite_pass)
         # SetPassType
         oPasses.set_pass_type(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES)
         TestBase.logger.WriteLine6("The new PassType is: {0}", oPasses.pass_type)
         Assert.assertEqual(VEHICLE_GRAPHICS_2D_PASS.PASS_SHOW_PASSES, oPasses.pass_type)
         # Pass
-        oShow: "VehicleGraphics2DPassShowPasses" = VehicleGraphics2DPassShowPasses(oPasses.pass_method)
+        oShow: "VehicleGraphics2DPassShowPasses" = VehicleGraphics2DPassShowPasses(oPasses.satellite_pass)
         Assert.assertIsNotNone(oShow)
         # FirstPass
         TestBase.logger.WriteLine3("The current FirstPass is: {0}", oShow.first_pass)
@@ -1727,7 +1727,7 @@ class EarlyBoundTests(TestBase):
     @category("Trail/Lead (3D)")
     def test_VOPass(self):
         oHelper = VOPassHelper(self.Units)
-        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.pass_method)
+        oHelper.Run(EarlyBoundTests.AG_SAT.graphics_3d.satellite_pass)
 
     # endregion
 
@@ -3262,7 +3262,7 @@ class EarlyBoundTests(TestBase):
         exportHelper.EphemerisCode500ExportTool(sat2.export_tools.get_ephemeris_code500_export_tool())
         exportHelper.EphemerisSpiceExportTool(sat2.export_tools.get_ephemeris_spice_export_tool())
         exportHelper.EphemerisSTKExportTool(sat2.export_tools.get_ephemeris_stk_export_tool(), True)
-        exportHelper.PropDefExportTool(sat2.export_tools.get_prop_definition_export_tool())
+        exportHelper.PropDefExportTool(sat2.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(sat2.export_tools.get_ephemeris_stk_binary_export_tool(), True)
 
         sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)

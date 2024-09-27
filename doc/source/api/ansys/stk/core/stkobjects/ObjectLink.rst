@@ -3,8 +3,6 @@ ObjectLink
 
 .. py:class:: ansys.stk.core.stkobjects.ObjectLink
 
-   Bases: 
-
    Class defining name of an STK object.
 
 .. py:currentmodule:: ObjectLink

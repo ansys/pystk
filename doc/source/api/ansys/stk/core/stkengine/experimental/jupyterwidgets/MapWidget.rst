@@ -3,7 +3,7 @@ MapWidget
 
 .. py:class:: ansys.stk.core.stkengine.experimental.jupyterwidgets.MapWidget
 
-   UiAx2DCntrl, WidgetBase
+   Graphics2DControlBase, WidgetBase
 
    The 2D Map widget for jupyter.
 

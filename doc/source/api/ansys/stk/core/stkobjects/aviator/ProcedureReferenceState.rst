@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: performance_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode
-    :type: REFERENCE_STATE_PERF_MODE
+    :type: REFERENCE_STATE_PERFORMANCE_MODE
 
     Gets or sets the type of motion the aircraft is engaged in.
 
@@ -117,25 +117,25 @@ Property detail
 
 .. py:property:: mode_as_forward_flight
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight
-    :type: IReferenceStateForwardFlightOptions
+    :type: ReferenceStateForwardFlightOptions
 
     Get the forward flight options.
 
 .. py:property:: mode_as_takeoff_landing
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing
-    :type: IReferenceStateTakeoffLandingOptions
+    :type: ReferenceStateTakeoffLandingOptions
 
     Get the takeoff and landing options.
 
 .. py:property:: mode_as_hover
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_hover
-    :type: IReferenceStateHoverOptions
+    :type: ReferenceStateHoverOptions
 
     Get the hover options.
 
 .. py:property:: mode_as_weight_on_wheels
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_weight_on_wheels
-    :type: IReferenceStateWeightOnWheelsOptions
+    :type: ReferenceStateWeightOnWheelsOptions
 
     Get the weight on wheels options.
 

@@ -3,8 +3,6 @@ VehicleGraphics3DRoute
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DRoute
 
-   Bases: 
-
    AgVeVORoute2 Class.
 
 .. py:currentmodule:: VehicleGraphics3DRoute
@@ -48,13 +46,13 @@ Property detail
 
 .. py:property:: track_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRoute.track_data
-    :type: IVehicleGraphics3DLeadTrailData
+    :type: VehicleGraphics3DLeadTrailData
 
     Get the leading/trailing route data.
 
 .. py:property:: waypoint_markers
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DRoute.waypoint_markers
-    :type: IVehicleGraphics3DWaypointMarkersCollection
+    :type: VehicleGraphics3DWaypointMarkersCollection
 
     Get the waypoint markers data.
 

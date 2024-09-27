@@ -3,8 +3,6 @@ VehicleTargetPointingCollection
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleTargetPointingCollection
 
-   Bases: 
-
    List of Attitude Targets.
 
 .. py:currentmodule:: VehicleTargetPointingCollection

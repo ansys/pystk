@@ -3,8 +3,6 @@ IKmlFeature
 
 .. py:class:: ansys.stk.core.graphics.IKmlFeature
 
-   object
-   
    A KML feature.
 
 .. py:currentmodule:: IKmlFeature
@@ -94,7 +92,7 @@ Property detail
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IKmlFeature.bounding_sphere
-    :type: IBoundingSphere
+    :type: BoundingSphere
 
     The bounding sphere encompassing the area associated with this feature.
 

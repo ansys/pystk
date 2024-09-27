@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system
-    :type: IOrbitStateCoordinateSystem
+    :type: OrbitStateCoordinateSystem
 
     Get the coordinate system and coordinate epoch.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.orientation
-    :type: IClassicalOrientation
+    :type: ClassicalOrientation
 
     Get the orbit orientation.
 

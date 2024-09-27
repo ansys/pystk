@@ -3,8 +3,6 @@ AutomaticSequence
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.AutomaticSequence
 
-   Bases: 
-
    Automatic Sequence.
 
 .. py:currentmodule:: AutomaticSequence
@@ -63,7 +61,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.sequence
-    :type: IMissionControlSequenceSegmentCollection
+    :type: MCSSegmentCollection
 
     Returns the segment collection of the sequence.
 

@@ -3,8 +3,6 @@ ReferenceStateWeightOnWheelsOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions
 
-   Bases: 
-
    Class defining the Weight on Wheels options for a Reference State procedure.
 
 .. py:currentmodule:: ReferenceStateWeightOnWheelsOptions
@@ -20,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_acceleration`
               - Set the longitudinal acceleration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_acceleration`
               - Set the lateral acceleration.
 
     .. tab-item:: Properties
@@ -37,7 +35,7 @@ Overview
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed_dot`
               - Get the groundspeed acceleration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading`
               - Gets or sets the direction the aircraft is pointing.
@@ -47,7 +45,7 @@ Overview
               - Get the heading rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.course_dot`
               - Get the course rate of change.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_acceleration_type`
               - Get the mode to specify the lateral acceleration.
 
 
@@ -81,9 +79,9 @@ Property detail
 
     Get the groundspeed acceleration.
 
-.. py:property:: longitudinal_accel_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_accel_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
+.. py:property:: longitudinal_acceleration_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type
+    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -111,9 +109,9 @@ Property detail
 
     Get the course rate of change.
 
-.. py:property:: lateral_accel_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_accel_type
-    :type: REFERENCE_STATE_LATERAL_ACCEL_MODE
+.. py:property:: lateral_acceleration_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_acceleration_type
+    :type: REFERENCE_STATE_LATERAL_ACCELERATION_MODE
 
     Get the mode to specify the lateral acceleration.
 
@@ -126,14 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_accel(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE, value: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_accel
+.. py:method:: set_longitudinal_acceleration(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE`
+    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
     **value** : :obj:`~float`
 
     :Returns:
@@ -147,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_lateral_accel(self, accelType: REFERENCE_STATE_LATERAL_ACCEL_MODE, value: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_accel
+.. py:method:: set_lateral_acceleration(self, accelType: REFERENCE_STATE_LATERAL_ACCELERATION_MODE, value: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_acceleration
 
     Set the lateral acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LATERAL_ACCEL_MODE`
+    **accelType** : :obj:`~REFERENCE_STATE_LATERAL_ACCELERATION_MODE`
     **value** : :obj:`~typing.Any`
 
     :Returns:

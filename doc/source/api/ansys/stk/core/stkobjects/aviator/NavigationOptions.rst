@@ -3,8 +3,6 @@ NavigationOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.NavigationOptions
 
-   Bases: 
-
    Class defining the navigation options in a procedure.
 
 .. py:currentmodule:: NavigationOptions
@@ -20,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.nav_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode`
               - Gets or sets the navigation mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.NavigationOptions.arrive_on_course`
               - Gets or sets the aircraft will start or arrive at the procedure site with the specified course. The nav mode must be set to Arrive on Course to set this value.
@@ -44,8 +42,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: nav_mode
-    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.nav_mode
+.. py:property:: navigation_mode
+    :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode
     :type: POINT_TO_POINT_MODE
 
     Gets or sets the navigation mode.

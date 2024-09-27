@@ -3,8 +3,6 @@ IAtmosphericTurbulenceModel
 
 .. py:class:: ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel
 
-   object
-   
    Provide access to a refractive index structure parameter model.
 
 .. py:currentmodule:: IAtmosphericTurbulenceModel

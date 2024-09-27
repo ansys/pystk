@@ -24,7 +24,7 @@ Overview
               - Set whether to enable collision avoidance and the corresponding minimum distance between this aircraft and the target aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.set_airspeed_factor`
               - Set whether to enable the option to control how fine the control is and the corresponding dimensionless factor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_tgt_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_vel`
               - Cancel the position velocity strategies for Rendezvous.
 
     .. tab-item:: Properties
@@ -53,7 +53,7 @@ Overview
               - Gets or sets the altitude difference between the aircraft and target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.maneuver_factor`
               - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.use_perf_model_limits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.use_performance_model_limits`
               - Gets or sets the option to derive the control limits of the aircraft from the applicable performance model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.altitude_rate_control`
               - Gets or sets the rate at which the aircraft will change altitude to achieve or maintain the ALtitude Split.
@@ -65,7 +65,7 @@ Overview
               - Gets or sets the limit to the airspeed difference between the aircraft and target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.airspeed_control_mode`
               - Gets or sets the method to define the aircraft's acceleration performance in formation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.accel_decel_g`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.acceleration_deceleration_g`
               - Gets or sets the aircraft's specified acceleration rate for an airspeed control mode set to override.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.use_separate_airspeed_control`
               - Get the option to control how fine the control is over the airspeed adjustments in formation flight.
@@ -149,8 +149,8 @@ Property detail
 
     Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
 
-.. py:property:: use_perf_model_limits
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.use_perf_model_limits
+.. py:property:: use_performance_model_limits
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.use_performance_model_limits
     :type: bool
 
     Gets or sets the option to derive the control limits of the aircraft from the applicable performance model.
@@ -181,12 +181,12 @@ Property detail
 
 .. py:property:: airspeed_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.airspeed_control_mode
-    :type: ACCEL_PERF_MODEL_OVERRIDE
+    :type: ACCELERATION_PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the method to define the aircraft's acceleration performance in formation.
 
-.. py:property:: accel_decel_g
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.accel_decel_g
+.. py:property:: acceleration_deceleration_g
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.acceleration_deceleration_g
     :type: float
 
     Gets or sets the aircraft's specified acceleration rate for an airspeed control mode set to override.
@@ -211,7 +211,7 @@ Property detail
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.position_vel_strategies
-    :type: IBasicManeuverTargetPositionVel
+    :type: BasicManeuverTargetPositionVel
 
     Get the position velocity strategies for Rendezvous.
 
@@ -283,8 +283,8 @@ Method detail
 
 
 
-.. py:method:: cancel_tgt_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_tgt_position_vel
+.. py:method:: cancel_target_position_vel(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_vel
 
     Cancel the position velocity strategies for Rendezvous.
 

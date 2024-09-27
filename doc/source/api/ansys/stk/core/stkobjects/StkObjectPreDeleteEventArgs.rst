@@ -3,8 +3,6 @@ StkObjectPreDeleteEventArgs
 
 .. py:class:: ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs
 
-   Bases: 
-
    Arguments for the OnStkObjectPreDelete event.
 
 .. py:currentmodule:: StkObjectPreDeleteEventArgs
@@ -22,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs.path`
               - Object path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs.continue_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs.continue_object_deletion`
               - The status to continue or stop the object deletion.
 
 
@@ -44,8 +42,8 @@ Property detail
 
     Object path.
 
-.. py:property:: continue_method
-    :canonical: ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs.continue_method
+.. py:property:: continue_object_deletion
+    :canonical: ansys.stk.core.stkobjects.StkObjectPreDeleteEventArgs.continue_object_deletion
     :type: bool
 
     The status to continue or stop the object deletion.

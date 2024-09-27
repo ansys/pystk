@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: waypoints
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorGreatArc.waypoints
-    :type: IVehicleWaypointsCollection
+    :type: VehicleWaypointsCollection
 
     Get the waypoints.
 

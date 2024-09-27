@@ -3,8 +3,6 @@ IVectorGeometryToolAngleFindAngleResult
 
 .. py:class:: ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult
 
-   object
-   
    Contains the results returned with IAgCrdnAngle.FindAngle method.
 
 .. py:currentmodule:: IVectorGeometryToolAngleFindAngleResult

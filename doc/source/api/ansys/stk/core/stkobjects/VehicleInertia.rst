@@ -3,8 +3,6 @@ VehicleInertia
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleInertia
 
-   Bases: 
-
    Satellite inertia matrix parameters.
 
 .. py:currentmodule:: VehicleInertia

@@ -3,8 +3,6 @@ Graphics3DModelItem
 
 .. py:class:: ansys.stk.core.stkobjects.Graphics3DModelItem
 
-   Bases: 
-
    Class defining selection and display of 3D models.
 
 .. py:currentmodule:: Graphics3DModelItem
@@ -46,7 +44,7 @@ Property detail
 
 .. py:property:: graphics_3d_model_file
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelItem.graphics_3d_model_file
-    :type: IGraphics3DModelFile
+    :type: Graphics3DModelFile
 
     Interface to specify model's file.
 

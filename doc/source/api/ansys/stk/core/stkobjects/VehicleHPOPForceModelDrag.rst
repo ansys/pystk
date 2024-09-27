@@ -3,8 +3,6 @@ VehicleHPOPForceModelDrag
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag
 
-   Bases: 
-
    Class defining the HPOP atmospheric drag model.
 
 .. py:currentmodule:: VehicleHPOPForceModelDrag

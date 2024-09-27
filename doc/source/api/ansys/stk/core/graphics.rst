@@ -755,28 +755,28 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.graphics.CYLINDER_FILL`
+            * - :py:class:`~ansys.stk.core.graphics.CYLINDER_FILL_OPTIONS`
               - Cylinder faces that can be filled.
 
             * - :py:class:`~ansys.stk.core.graphics.WINDING_ORDER`
               - Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling.
 
-            * - :py:class:`~ansys.stk.core.graphics.CAMERA_SNAPSHOT_FILE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.SNAPSHOT_FILE_FORMAT`
               - When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format.
 
-            * - :py:class:`~ansys.stk.core.graphics.CAMERA_VIDEO_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.VIDEO_FORMAT`
               - When using camera video recording to record a video, this specifies the file format.
 
             * - :py:class:`~ansys.stk.core.graphics.CONSTRAINED_UP_AXIS`
               - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
-            * - :py:class:`~ansys.stk.core.graphics.GLOBE_OVERLAY_ROLE`
+            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ROLE`
               - The role of a globe overlay.
 
-            * - :py:class:`~ansys.stk.core.graphics.INDICES_ORDER_HINT`
+            * - :py:class:`~ansys.stk.core.graphics.PRIMITIVE_INDICES_ORDER_HINT`
               - An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance.
 
-            * - :py:class:`~ansys.stk.core.graphics.MAINTAIN_ASPECT_RATIO`
+            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ASPECT_RATIO_MODE`
               - Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay.
 
             * - :py:class:`~ansys.stk.core.graphics.MAP_PROJECTION`
@@ -794,7 +794,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SORT_ORDER`
               - The order in which markers in a marker batch are sorted before rendering.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_UNIT`
+            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SIZE_UNIT`
               - The unit for marker sizes in a marker batch.
 
             * - :py:class:`~ansys.stk.core.graphics.MODEL_TRANSFORMATION_TYPE`
@@ -833,7 +833,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.VISIBILITY`
               - Result of a visibility test, such as testing if a sphere intersects a frustum.
 
-            * - :py:class:`~ansys.stk.core.graphics.ANTI_ALIASING`
+            * - :py:class:`~ansys.stk.core.graphics.ANTI_ALIASING_METHOD`
               - The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 
             * - :py:class:`~ansys.stk.core.graphics.BINARY_LOGIC_OPERATION`
@@ -845,7 +845,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.EDGE_DETECT_METHOD`
               - The method used to detect edges in a raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.FLIP_AXIS`
+            * - :py:class:`~ansys.stk.core.graphics.RASTER_FLIP_AXIS`
               - The axis on which a raster will be flipped.
 
             * - :py:class:`~ansys.stk.core.graphics.GRADIENT_DETECT_METHOD`
@@ -866,7 +866,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.RASTER_TYPE`
               - The type of data contained within each band of a raster dataset.
 
-            * - :py:class:`~ansys.stk.core.graphics.SHARPEN_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.RASTER_SHARPEN_METHOD`
               - The method used to sharpen a raster.
 
             * - :py:class:`~ansys.stk.core.graphics.VIDEO_PLAYBACK`
@@ -887,10 +887,10 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.POLYLINE_TYPE`
               - Describes how to interpret positions defining a polyline.
 
-            * - :py:class:`~ansys.stk.core.graphics.CULL_FACE`
+            * - :py:class:`~ansys.stk.core.graphics.FACE_CULLING_MODE`
               - Identifies whether front- and/or back-facing triangles are culled.
 
-            * - :py:class:`~ansys.stk.core.graphics.INTERNAL_TEXTURE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.TEXTURE_FORMAT`
               - The format of individual texels in a texture.
 
             * - :py:class:`~ansys.stk.core.graphics.MAGNIFICATION_FILTER`
@@ -899,7 +899,7 @@ Summary
             * - :py:class:`~ansys.stk.core.graphics.MINIFICATION_FILTER`
               - The filter used when the pixel being textured maps to an area greater than one texel.
 
-            * - :py:class:`~ansys.stk.core.graphics.RENDERER_SHADE_MODEL`
+            * - :py:class:`~ansys.stk.core.graphics.RENDERER_SHADING_MODEL`
               - Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors.
 
             * - :py:class:`~ansys.stk.core.graphics.TEXTURE_WRAP`
@@ -1193,20 +1193,20 @@ well as in STK Engine custom applications.
     :maxdepth: 1
     :hidden:
 
-    ≔ CYLINDER_FILL<graphics/CYLINDER_FILL_enum>
+    ≔ CYLINDER_FILL_OPTIONS<graphics/CYLINDER_FILL_OPTIONS_enum>
     ≔ WINDING_ORDER<graphics/WINDING_ORDER_enum>
-    ≔ CAMERA_SNAPSHOT_FILE_FORMAT<graphics/CAMERA_SNAPSHOT_FILE_FORMAT_enum>
-    ≔ CAMERA_VIDEO_FORMAT<graphics/CAMERA_VIDEO_FORMAT_enum>
+    ≔ SNAPSHOT_FILE_FORMAT<graphics/SNAPSHOT_FILE_FORMAT_enum>
+    ≔ VIDEO_FORMAT<graphics/VIDEO_FORMAT_enum>
     ≔ CONSTRAINED_UP_AXIS<graphics/CONSTRAINED_UP_AXIS_enum>
-    ≔ GLOBE_OVERLAY_ROLE<graphics/GLOBE_OVERLAY_ROLE_enum>
-    ≔ INDICES_ORDER_HINT<graphics/INDICES_ORDER_HINT_enum>
-    ≔ MAINTAIN_ASPECT_RATIO<graphics/MAINTAIN_ASPECT_RATIO_enum>
+    ≔ OVERLAY_ROLE<graphics/OVERLAY_ROLE_enum>
+    ≔ PRIMITIVE_INDICES_ORDER_HINT<graphics/PRIMITIVE_INDICES_ORDER_HINT_enum>
+    ≔ OVERLAY_ASPECT_RATIO_MODE<graphics/OVERLAY_ASPECT_RATIO_MODE_enum>
     ≔ MAP_PROJECTION<graphics/MAP_PROJECTION_enum>
     ≔ MARKER_BATCH_RENDERING_METHOD<graphics/MARKER_BATCH_RENDERING_METHOD_enum>
     ≔ MARKER_BATCH_RENDER_PASS<graphics/MARKER_BATCH_RENDER_PASS_enum>
     ≔ MARKER_BATCH_SIZE_SOURCE<graphics/MARKER_BATCH_SIZE_SOURCE_enum>
     ≔ MARKER_BATCH_SORT_ORDER<graphics/MARKER_BATCH_SORT_ORDER_enum>
-    ≔ MARKER_BATCH_UNIT<graphics/MARKER_BATCH_UNIT_enum>
+    ≔ MARKER_BATCH_SIZE_UNIT<graphics/MARKER_BATCH_SIZE_UNIT_enum>
     ≔ MODEL_TRANSFORMATION_TYPE<graphics/MODEL_TRANSFORMATION_TYPE_enum>
     ≔ ORIGIN<graphics/ORIGIN_enum>
     ≔ PATH_PRIMITIVE_REMOVE_LOCATION<graphics/PATH_PRIMITIVE_REMOVE_LOCATION_enum>
@@ -1219,29 +1219,29 @@ well as in STK Engine custom applications.
     ≔ SCREEN_OVERLAY_UNIT<graphics/SCREEN_OVERLAY_UNIT_enum>
     ≔ SURFACE_MESH_RENDERING_METHOD<graphics/SURFACE_MESH_RENDERING_METHOD_enum>
     ≔ VISIBILITY<graphics/VISIBILITY_enum>
-    ≔ ANTI_ALIASING<graphics/ANTI_ALIASING_enum>
+    ≔ ANTI_ALIASING_METHOD<graphics/ANTI_ALIASING_METHOD_enum>
     ≔ BINARY_LOGIC_OPERATION<graphics/BINARY_LOGIC_OPERATION_enum>
     ≔ BLUR_METHOD<graphics/BLUR_METHOD_enum>
     ≔ EDGE_DETECT_METHOD<graphics/EDGE_DETECT_METHOD_enum>
-    ≔ FLIP_AXIS<graphics/FLIP_AXIS_enum>
+    ≔ RASTER_FLIP_AXIS<graphics/RASTER_FLIP_AXIS_enum>
     ≔ GRADIENT_DETECT_METHOD<graphics/GRADIENT_DETECT_METHOD_enum>
     ≔ JPEG2000_COMPRESSION_PROFILE<graphics/JPEG2000_COMPRESSION_PROFILE_enum>
     ≔ RASTER_BAND<graphics/RASTER_BAND_enum>
     ≔ RASTER_FORMAT<graphics/RASTER_FORMAT_enum>
     ≔ RASTER_ORIENTATION<graphics/RASTER_ORIENTATION_enum>
     ≔ RASTER_TYPE<graphics/RASTER_TYPE_enum>
-    ≔ SHARPEN_METHOD<graphics/SHARPEN_METHOD_enum>
+    ≔ RASTER_SHARPEN_METHOD<graphics/RASTER_SHARPEN_METHOD_enum>
     ≔ VIDEO_PLAYBACK<graphics/VIDEO_PLAYBACK_enum>
     ≔ KML_NETWORK_LINK_REFRESH_MODE<graphics/KML_NETWORK_LINK_REFRESH_MODE_enum>
     ≔ KML_NETWORK_LINK_VIEW_REFRESH_MODE<graphics/KML_NETWORK_LINK_VIEW_REFRESH_MODE_enum>
     ≔ MODEL_UP_AXIS<graphics/MODEL_UP_AXIS_enum>
     ≔ OUTLINE_APPEARANCE<graphics/OUTLINE_APPEARANCE_enum>
     ≔ POLYLINE_TYPE<graphics/POLYLINE_TYPE_enum>
-    ≔ CULL_FACE<graphics/CULL_FACE_enum>
-    ≔ INTERNAL_TEXTURE_FORMAT<graphics/INTERNAL_TEXTURE_FORMAT_enum>
+    ≔ FACE_CULLING_MODE<graphics/FACE_CULLING_MODE_enum>
+    ≔ TEXTURE_FORMAT<graphics/TEXTURE_FORMAT_enum>
     ≔ MAGNIFICATION_FILTER<graphics/MAGNIFICATION_FILTER_enum>
     ≔ MINIFICATION_FILTER<graphics/MINIFICATION_FILTER_enum>
-    ≔ RENDERER_SHADE_MODEL<graphics/RENDERER_SHADE_MODEL_enum>
+    ≔ RENDERER_SHADING_MODEL<graphics/RENDERER_SHADING_MODEL_enum>
     ≔ TEXTURE_WRAP<graphics/TEXTURE_WRAP_enum>
     ≔ SET_HINT<graphics/SET_HINT_enum>
     ≔ STEREO_PROJECTION_MODE<graphics/STEREO_PROJECTION_MODE_enum>

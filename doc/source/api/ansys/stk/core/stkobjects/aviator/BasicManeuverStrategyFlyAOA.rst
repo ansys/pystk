@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA.roll_rate_mode
-    :type: PERF_MODEL_OVERRIDE
+    :type: PERFORMANCE_MODEL_OVERRIDE
 
     Gets or sets the roll rate mode for a Fly AOA basic maneuver strategy.
 
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA.airspeed_options
-    :type: IBasicManeuverAirspeedOptions
+    :type: BasicManeuverAirspeedOptions
 
     Get the airspeed options.
 

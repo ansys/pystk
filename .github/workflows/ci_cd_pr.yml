@@ -4,8 +4,8 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.11'
-  MINIMUM_PYTHON_VERSION: '3.9'
+  MAIN_PYTHON_VERSION: '3.12'
+  MINIMUM_PYTHON_VERSION: '3.10'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -50,7 +50,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v6
+      - uses: ansys/actions/branch-name-style@v7
 
   code-style:
     name: "Code style checks"
@@ -60,7 +60,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/code-style@v6
+      - uses: ansys/actions/code-style@v7
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -95,12 +95,30 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v6
+      - uses: ansys/actions/doc-style@v7
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  build-wheelhouse:
+    name: "Build wheelhouse for latest Python versions"
+    runs-on: ${{ matrix.os }}
+    needs: doc-style
+    strategy:
+       matrix:
+           os: [ubuntu-latest, windows-latest]
+           python-version: ['3.10', '3.11', '3.12']
+           target: ['all', 'grpc', 'visualization']
+    steps:
+      - name: "Build a wheelhouse of the Python library"
+        uses: ansys/actions/build-wheelhouse@v7.0
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          target: ${{ matrix.target }}
 
   doc-build:
     name: "Doc build"
@@ -121,12 +139,22 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: doc-style
+    needs: build-wheelhouse
     timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
         uses: actions/checkout@v4
+
+      - name: "Download wheelhouse into static path"
+        uses: actions/download-artifact@v4
+        with:
+          path: "doc/source/_static/wheelhouse"
+          pattern: "*-wheelhouse-*"
+
+      - name: "Display the wheelhouse layout"
+        run: |
+          tree doc/source/_static/wheelhouse
 
       - name: "Generate the name of the Docker image and the container"
         if: |
@@ -286,13 +314,13 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.9 to ensure backwards compatibility with
+        # Tests run against Python 3.10 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.9']
+        python: ['3.10']
       fail-fast: false
     steps:
 
@@ -396,6 +424,6 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v6
+      - uses: ansys/actions/build-library@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}

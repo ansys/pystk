@@ -3,8 +3,6 @@ ReferenceStateHoverOptions
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions
 
-   Bases: 
-
    Class defining the Hover options for a Reference State procedure.
 
 .. py:currentmodule:: ReferenceStateHoverOptions
@@ -20,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_longitudinal_accel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_longitudinal_acceleration`
               - Set the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_attitude_rate`
               - Set the vertical attitude rate.
@@ -39,7 +37,7 @@ Overview
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.groundspeed_dot`
               - Get the groundspeed acceleration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_accel_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading`
               - Gets or sets the direction the aircraft is pointing.
@@ -101,9 +99,9 @@ Property detail
 
     Get the groundspeed acceleration.
 
-.. py:property:: longitudinal_accel_type
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_accel_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
+.. py:property:: longitudinal_acceleration_type
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_acceleration_type
+    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -184,14 +182,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_accel(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE, value: float) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_longitudinal_accel
+.. py:method:: set_longitudinal_acceleration(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE`
+    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
     **value** : :obj:`~float`
 
     :Returns:

@@ -3,8 +3,6 @@ CRComplex
 
 .. py:class:: ansys.stk.core.stkobjects.CRComplex
 
-   Bases: 
-
    Class defining a complex number.
 
 .. py:currentmodule:: CRComplex

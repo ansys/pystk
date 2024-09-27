@@ -3,8 +3,6 @@ RadarCrossSectionVolumeGraphics
 
 .. py:class:: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics
 
-   Bases: 
-
    Class defining 3D Volume Graphics properties of radar cross section.
 
 .. py:currentmodule:: RadarCrossSectionVolumeGraphics
@@ -171,7 +169,7 @@ Property detail
 
 .. py:property:: levels
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.levels
-    :type: IRadarCrossSectionVolumeLevelCollection
+    :type: RadarCrossSectionVolumeLevelCollection
 
     Gets the collection of volume levels.
 

@@ -3,8 +3,6 @@ IPOPTResultCollection
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection
 
-   Bases: 
-
    IPOPT result collection.
 
 .. py:currentmodule:: IPOPTResultCollection

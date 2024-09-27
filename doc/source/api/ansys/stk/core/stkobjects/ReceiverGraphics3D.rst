@@ -3,8 +3,6 @@ ReceiverGraphics3D
 
 .. py:class:: ansys.stk.core.stkobjects.ReceiverGraphics3D
 
-   Bases: 
-
    Class defining 3D Graphics properties of a Receiver.
 
 .. py:currentmodule:: ReceiverGraphics3D
@@ -44,7 +42,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.ReceiverGraphics3D.vector
-    :type: IGraphics3DVector
+    :type: Graphics3DVector
 
     Get the receiver's Vector properties.
 
@@ -62,7 +60,7 @@ Property detail
 
 .. py:property:: volume
     :canonical: ansys.stk.core.stkobjects.ReceiverGraphics3D.volume
-    :type: IAntennaVolumeGraphics
+    :type: AntennaVolumeGraphics
 
     Gets the receiver's antenna volume graphics interface.
 

@@ -3,8 +3,6 @@ EOIRStagePlume
 
 .. py:class:: ansys.stk.core.stkobjects.EOIRStagePlume
 
-   Bases: 
-
    Plume shape class.
 
 .. py:currentmodule:: EOIRStagePlume

@@ -3,8 +3,6 @@ VehicleSpaceEnvironment
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleSpaceEnvironment
 
-   Bases: 
-
    SpaceEnvironment settings.
 
 .. py:currentmodule:: VehicleSpaceEnvironment
@@ -48,37 +46,37 @@ Property detail
 
 .. py:property:: saa_contour
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.saa_contour
-    :type: ISpaceEnvironmentSAAContour
+    :type: SpaceEnvironmentSAAContour
 
     SAA Contour settings.
 
 .. py:property:: magnetic_field
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.magnetic_field
-    :type: IVehicleSpaceEnvironmentMagneticField
+    :type: VehicleSpaceEnvironmentMagneticField
 
     Magnetic Field settings.
 
 .. py:property:: veh_temperature
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.veh_temperature
-    :type: IVehicleSpaceEnvironmentVehTemperature
+    :type: VehicleSpaceEnvironmentVehTemperature
 
     Vehicle Temperature settings.
 
 .. py:property:: particle_flux
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.particle_flux
-    :type: IVehicleSpaceEnvironmentParticleFlux
+    :type: VehicleSpaceEnvironmentParticleFlux
 
     Particle Flux settings.
 
 .. py:property:: radiation
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.radiation
-    :type: IVehicleSpaceEnvironmentRadiation
+    :type: VehicleSpaceEnvironmentRadiation
 
     Radiation settings.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.VehicleSpaceEnvironment.graphics
-    :type: IVehicleSpaceEnvironmentGraphics
+    :type: VehicleSpaceEnvironmentGraphics
 
     Graphics settings.
 

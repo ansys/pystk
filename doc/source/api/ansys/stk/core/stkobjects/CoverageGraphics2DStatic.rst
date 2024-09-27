@@ -3,8 +3,6 @@ CoverageGraphics2DStatic
 
 .. py:class:: ansys.stk.core.stkobjects.CoverageGraphics2DStatic
 
-   Bases: 
-
    Static 2D graphics display options for the coverage grid.
 
 .. py:currentmodule:: CoverageGraphics2DStatic

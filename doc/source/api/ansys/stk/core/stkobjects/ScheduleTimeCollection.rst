@@ -3,8 +3,6 @@ ScheduleTimeCollection
 
 .. py:class:: ansys.stk.core.stkobjects.ScheduleTimeCollection
 
-   Bases: 
-
    Collection of user-scheduled access times.
 
 .. py:currentmodule:: ScheduleTimeCollection

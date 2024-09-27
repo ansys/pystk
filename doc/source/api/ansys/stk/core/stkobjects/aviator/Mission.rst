@@ -3,8 +3,6 @@ Mission
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.Mission
 
-   Bases: 
-
    Class defining the Aviator mission.
 
 .. py:currentmodule:: Mission
@@ -57,7 +55,7 @@ Property detail
 
 .. py:property:: phases
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.phases
-    :type: IPhaseCollection
+    :type: PhaseCollection
 
     Get the mission phases.
 
@@ -69,19 +67,19 @@ Property detail
 
 .. py:property:: configuration
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.configuration
-    :type: IConfiguration
+    :type: Configuration
 
     Get the aircraft's configuration for the mission.
 
 .. py:property:: wind_model
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.wind_model
-    :type: IWindModel
+    :type: WindModel
 
     Get the mission wind model.
 
 .. py:property:: atmosphere_model
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.atmosphere_model
-    :type: IAtmosphereModel
+    :type: AtmosphereModel
 
     Get the mission atmosphere model.
 

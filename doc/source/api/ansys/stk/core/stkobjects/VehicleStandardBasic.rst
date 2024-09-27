@@ -3,8 +3,6 @@ VehicleStandardBasic
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleStandardBasic
 
-   Bases: 
-
    Basic attitude profile.
 
 .. py:currentmodule:: VehicleStandardBasic

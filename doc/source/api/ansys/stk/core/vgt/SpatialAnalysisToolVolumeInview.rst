@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: light_time_delay
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeInview.light_time_delay
-    :type: ITimeToolLightTimeDelay
+    :type: TimeToolLightTimeDelay
 
     Returns Light Time Delay options parameters.
 

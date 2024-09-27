@@ -4,82 +4,85 @@
 
 """Object Model components specifically designed to support STK Aviator."""
 
-__all__ = ["ACCELERATION_ADVANCED_ACCEL_MODE", "ACCEL_MANEUVER_AERO_PROP_MODE", "ACCEL_MANEUVER_MODE", "ACCEL_MODE", "ACCEL_PERF_MODEL_OVERRIDE", 
-"ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", "ADDS_MISSING_MSG_TYPE", "ADDS_MSG_EXTRAP_TYPE", "ADDS_MSG_INTERP_TYPE", 
-"ADVANCED_FIXED_WING_AERO_STRATEGY", "ADVANCED_FIXED_WING_GEOMETRY", "ADVANCED_FIXED_WING_POWERPLANT_STRATEGY", "AERO_PROP_FLIGHT_MODE", 
-"AERO_PROP_SIMPLE_MODE", "AFPROP_FUEL_TYPE", "AGL_MSL", "AILERON_ROLL_FLIGHT_PATH", "AILERON_ROLL_MODE", "AIRCRAFT_AERO_STRATEGY", 
-"AIRCRAFT_PROP_STRATEGY", "AIRSPEED_TYPE", "ALTITUDE_CONSTRAINT_MANEUVER_MODE", "ALTITUDE_REFERENCE", "AND_OR", "ANGLE_MODE", 
-"APPROACH_MODE", "ARINC424Airport", "ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", "ARINC424Source", "ARINC424Waypoint", 
-"ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", "AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZ_PLANE_MODE", "AdvancedFixedWingElectricPowerplant", 
-"AdvancedFixedWingEmpiricalJetEngine", "AdvancedFixedWingExternalAero", "AdvancedFixedWingExternalProp", "AdvancedFixedWingGeometryBasic", 
-"AdvancedFixedWingGeometryVariable", "AdvancedFixedWingPistonPowerplant", "AdvancedFixedWingRamjetBasic", "AdvancedFixedWingScramjetBasic", 
-"AdvancedFixedWingSubSuperHypersonicAero", "AdvancedFixedWingSubSuperHypersonicProp", "AdvancedFixedWingSubsonicAero", "AdvancedFixedWingSupersonicAero", 
-"AdvancedFixedWingTool", "AdvancedFixedWingTurbofanBasicABPowerplant", "AdvancedFixedWingTurbofanBasicABProp", "AdvancedFixedWingTurbojetBasicABPowerplant", 
-"AdvancedFixedWingTurbojetBasicABProp", "AdvancedFixedWingTurbopropPowerplant", "AeroPropManeuverModeHelper", "AircraftAcceleration", 
-"AircraftAccelerationMode", "AircraftAdvancedAccelerationModel", "AircraftAdvancedClimbModel", "AircraftAdvancedCruiseModel", 
-"AircraftAdvancedDescentModel", "AircraftAdvancedLandingModel", "AircraftAdvancedTakeoffModel", "AircraftAero", "AircraftBasicAccelerationModel", 
-"AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAero", "AircraftBasicFixedWingProp", 
-"AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", "AircraftCruise", "AircraftDescent", 
-"AircraftExternalAero", "AircraftExternalProp", "AircraftLanding", "AircraftModel", "AircraftModels", "AircraftProp", "AircraftSimpleAero", 
-"AircraftSimpleProp", "AircraftTakeoff", "AircraftTerrainFollow", "AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", 
-"AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", "AltitudeOptions", "ArcAltitudeAndDelayOptions", 
-"ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", "AtmosphereModelBasic", "AttitudeTransitions", 
-"AviatorPropagator", "BALLISTIC_3D_CONTROL_MODE", "BASIC_FIXED_WING_PROP_MODE", "BASIC_MANEUVER_AIRSPEED_MODE", "BASIC_MANEUVER_ALTITUDE_LIMIT", 
-"BASIC_MANEUVER_FUEL_FLOW_TYPE", "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", "BASIC_MANEUVER_REFERENCE_FRAME", "BASIC_MANEUVER_STRATEGY", 
-"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS", "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", "BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", 
-"BasicFixedWingFwdFlightLiftHelper", "BasicManeuverAirspeedOptions", "BasicManeuverStrategyAileronRoll", "BasicManeuverStrategyAutopilotNav", 
-"BasicManeuverStrategyAutopilotProf", "BasicManeuverStrategyBallistic3D", "BasicManeuverStrategyBarrelRoll", "BasicManeuverStrategyBezier", 
-"BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", "BasicManeuverStrategyGlideProfile", "BasicManeuverStrategyIntercept", 
-"BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", "BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", 
-"BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelSpeedAltitude", "BasicManeuverStrategyRelativeBearing", "BasicManeuverStrategyRelativeCourse", 
-"BasicManeuverStrategyRelativeFPA", "BasicManeuverStrategyRendezvous", "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", 
-"BasicManeuverStrategySmoothAccel", "BasicManeuverStrategySmoothTurn", "BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", 
-"BasicManeuverStrategyWeave", "BasicManeuverTargetPositionVel", "BasicManeuverTargetPositionVelNoisyBrgRng", "BasicManeuverTargetPositionVelNoisySurfTgt", 
-"CEA_FUEL_TYPE", "CLIMB_SPEED_TYPE", "CLOSURE_MODE", "CLOSURE_VALUE", "CRUISE_MAX_PERF_SPEED_TYPE", "CRUISE_SPEED", "CalculationOptions", 
-"Catalog", "ClimbAndDescentTransitions", "Configuration", "CruiseAirspeedAndProfileOptions", "CruiseAirspeedOptions", "CruiseAirspeedProfile", 
-"DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DELAY_ALTITUDE_MODE", "DELAY_TURN_DIRECTION", "DEPARTURE_SPEED_MODE", 
-"DESCENT_SPEED_TYPE", "EPHEM_SHIFT_ROTATE_ALTITUDE_MODE", "EPHEM_SHIFT_ROTATE_COURSE_MODE", "ERROR_CODES", "EXT_EPHEM_FLIGHT_MODE", 
-"EnrouteAndDelayOptions", "EnrouteOptions", "EnrouteTurnDirectionOptions", "FLIGHT_LINE_PROC_TYPE", "FLY_AOA_LEFT_RIGHT", 
-"FLY_TO_FLIGHT_PATH_ANGLE_MODE", "FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", "FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", 
-"FuelTankExternal", "FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", "HOLDING_PROFILE_MODE", "HOLD_REFUEL_DUMP_MODE", 
-"HOVER_ALTITUDE_MODE", "HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", "IARINC424Airport", "IARINC424Item", 
-"IAdvancedFixedWingGeometry", "IAdvancedFixedWingPowerplant", "IAutomationStrategyFactory", "IAviatorVehicle", "IBasicFixedWingLiftHelper", 
-"IBasicManeuverStrategy", "ICatalogAirport", "ICatalogItem", "ICatalogNavaid", "ICatalogRunway", "ICatalogSource", "ICatalogVTOLPoint", 
-"ICatalogWaypoint", "IConnect", "ICruiseAirspeedAndProfileOptions", "IDAFIFItem", "IEnrouteAndDelayOptions", "INTERCEPT_MODE", 
-"IPerformanceModel", "IProcedure", "ISite", "ISiteUnknown", "IStation", "IVerticalPlaneOptions", "JET_ENGINE_EXHAUST_NOZZLE_TYPE", 
-"JET_ENGINE_INTAKE_TYPE", "JET_ENGINE_TECHNOLOGY_LEVEL", "JET_ENGINE_TURBINE_TYPE", "JET_FUEL_TYPE", "JOIN_EXIT_ARC_METHOD", 
-"LANDING_APPROACH_FIX_RANGE_MODE", "LAUNCH_ATTITUDE_MODE", "LAUNCH_DYN_STATE_BEARING_REFERENCE", "LAUNCH_DYN_STATE_COORD_FRAME", 
-"LINE_ORIENTATION", "LandingCruiseAirspeedAndProfileOptions", "LandingEnrouteOptions", "LandingEnterDownwindPattern", "LandingInterceptGlideslope", 
-"LandingStandardInstrumentApproach", "LandingVerticalPlaneOptions", "LevelTurns", "MINIMIZE_SITE_PROC_TIME_DIFF", "MISSILE_AERO_STRATEGY", 
-"MISSILE_PROP_STRATEGY", "MissileAdvancedAero", "MissileAero", "MissileExternalAero", "MissileExternalProp", "MissileModel", 
-"MissileModels", "MissileProp", "MissileRamjetProp", "MissileRocketProp", "MissileSimpleAero", "MissileSimpleProp", "MissileTurbojetProp", 
-"Mission", "NAVIGATOR_TURN_DIRECTION", "NUMERICAL_INTEGRATOR", "NavaidCategory", "NavigationOptions", "PERF_MODEL_OVERRIDE", 
+__all__ = ["ACCELERATION_ADVANCED_ACCELERATION_MODE", "ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE", "ACCELERATION_MANEUVER_MODE", 
+"ACCELERATION_MODE", "ACCELERATION_PERFORMANCE_MODEL_OVERRIDE", "ADDSMessage", "ADDSMessageCollection", "ADDS_FORECAST_TYPE", 
+"ADDS_MESSAGE_EXTRAPOLATION_TYPE", "ADDS_MESSAGE_INTERPOLATION_TYPE", "ADDS_MISSING_MESSAGE_TYPE", "ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY", 
+"ADVANCED_FIXED_WING_GEOMETRY", "ADVANCED_FIXED_WING_POWERPLANT_STRATEGY", "AERODYNAMIC_PROPULSION_FLIGHT_MODE", "AERODYNAMIC_PROPULSION_SIMPLE_MODE", 
+"AFPROP_FUEL_TYPE", "AGL_MSL", "AILERON_ROLL_FLIGHT_PATH", "AILERON_ROLL_MODE", "AIRCRAFT_AERODYNAMIC_STRATEGY", "AIRCRAFT_PROPULSION_STRATEGY", 
+"AIRSPEED_TYPE", "ALTITUDE_CONSTRAINT_MANEUVER_MODE", "ALTITUDE_REFERENCE", "AND_OR", "ANGLE_MODE", "APPROACH_MODE", "ARINC424Airport", 
+"ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", "ARINC424Source", "ARINC424Waypoint", "ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", 
+"AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZONTAL_PLANE_MODE", "AdvancedFixedWingElectricPowerplant", "AdvancedFixedWingEmpiricalJetEngine", 
+"AdvancedFixedWingExternalAerodynamic", "AdvancedFixedWingExternalPropulsion", "AdvancedFixedWingGeometryBasic", "AdvancedFixedWingGeometryVariable", 
+"AdvancedFixedWingPistonPowerplant", "AdvancedFixedWingRamjetBasic", "AdvancedFixedWingScramjetBasic", "AdvancedFixedWingSubSuperHypersonicAerodynamic", 
+"AdvancedFixedWingSubSuperHypersonicPropulsion", "AdvancedFixedWingSubsonicAerodynamic", "AdvancedFixedWingSupersonicAerodynamic", 
+"AdvancedFixedWingTool", "AdvancedFixedWingTurbofanBasicABPowerplant", "AdvancedFixedWingTurbofanBasicABPropulsion", "AdvancedFixedWingTurbojetBasicABPowerplant", 
+"AdvancedFixedWingTurbojetBasicABPropulsion", "AdvancedFixedWingTurbopropPowerplant", "AerodynamicPropulsionManeuverModeHelper", 
+"AircraftAcceleration", "AircraftAccelerationMode", "AircraftAdvancedAccelerationModel", "AircraftAdvancedClimbModel", "AircraftAdvancedCruiseModel", 
+"AircraftAdvancedDescentModel", "AircraftAdvancedLandingModel", "AircraftAdvancedTakeoffModel", "AircraftAerodynamic", "AircraftBasicAccelerationModel", 
+"AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAerodynamic", 
+"AircraftBasicFixedWingPropulsion", "AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", 
+"AircraftCruise", "AircraftDescent", "AircraftExternalAerodynamic", "AircraftExternalPropulsion", "AircraftLanding", "AircraftModel", 
+"AircraftModels", "AircraftPropulsion", "AircraftSimpleAerodynamic", "AircraftSimplePropulsion", "AircraftTakeoff", "AircraftTerrainFollow", 
+"AircraftTerrainFollowModel", "AircraftVTOL", "AircraftVTOLModel", "AirportCategory", "AltitudeMSLAndLevelOffOptions", "AltitudeMSLOptions", 
+"AltitudeOptions", "ArcAltitudeAndDelayOptions", "ArcAltitudeOptions", "ArcOptions", "ArcVerticalPlaneOptions", "AtmosphereModel", 
+"AtmosphereModelBasic", "AttitudeTransitions", "AviatorPropagator", "BALLISTIC_3D_CONTROL_MODE", "BASIC_FIXED_WING_PROPULSION_MODE", 
+"BASIC_MANEUVER_AIRSPEED_MODE", "BASIC_MANEUVER_ALTITUDE_LIMIT", "BASIC_MANEUVER_FUEL_FLOW_TYPE", "BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE", 
+"BASIC_MANEUVER_REFERENCE_FRAME", "BASIC_MANEUVER_STRATEGY", "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS", "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", 
+"BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE", "BasicFixedWingForwardFlightLiftHelper", "BasicManeuverAirspeedOptions", 
+"BasicManeuverStrategyAileronRoll", "BasicManeuverStrategyAutopilotNavigation", "BasicManeuverStrategyAutopilotProf", "BasicManeuverStrategyBallistic3D", 
+"BasicManeuverStrategyBarrelRoll", "BasicManeuverStrategyBezier", "BasicManeuverStrategyCruiseProfile", "BasicManeuverStrategyFlyAOA", 
+"BasicManeuverStrategyGlideProfile", "BasicManeuverStrategyIntercept", "BasicManeuverStrategyLTAHover", "BasicManeuverStrategyLoop", 
+"BasicManeuverStrategyPitch3D", "BasicManeuverStrategyPull", "BasicManeuverStrategyPushPull", "BasicManeuverStrategyRelativeBearing", 
+"BasicManeuverStrategyRelativeCourse", "BasicManeuverStrategyRelativeFlightPathAngle", "BasicManeuverStrategyRelativeSpeedAltitude", 
+"BasicManeuverStrategyRendezvous", "BasicManeuverStrategyRollingPull", "BasicManeuverStrategySimpleTurn", "BasicManeuverStrategySmoothAcceleration", 
+"BasicManeuverStrategySmoothTurn", "BasicManeuverStrategyStationkeeping", "BasicManeuverStrategyStraightAhead", "BasicManeuverStrategyWeave", 
+"BasicManeuverTargetPositionVel", "BasicManeuverTargetPositionVelNoisyBearingRange", "BasicManeuverTargetPositionVelNoisySurfTarget", 
+"CEA_FUEL_TYPE", "CLIMB_SPEED_TYPE", "CLOSURE_MODE", "CLOSURE_VALUE", "CRUISE_MAX_PERFORMANCE_SPEED_TYPE", "CRUISE_SPEED", 
+"CalculationOptions", "Catalog", "ClimbAndDescentTransitions", "Configuration", "CruiseAirspeedAndProfileOptions", "CruiseAirspeedOptions", 
+"CruiseAirspeedProfile", "DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DELAY_ALTITUDE_MODE", "DELAY_TURN_DIRECTION", 
+"DEPARTURE_SPEED_MODE", "DESCENT_SPEED_TYPE", "EPHEM_SHIFT_ROTATE_ALTITUDE_MODE", "EPHEM_SHIFT_ROTATE_COURSE_MODE", "ERROR_CODES", 
+"EXT_EPHEM_FLIGHT_MODE", "EnrouteAndDelayOptions", "EnrouteOptions", "EnrouteTurnDirectionOptions", "FLIGHT_LINE_PROCEDURE_TYPE", 
+"FLY_AOA_LEFT_RIGHT", "FLY_TO_FLIGHT_PATH_ANGLE_MODE", "FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", "FuelModelKeroseneAFPROP", 
+"FuelModelKeroseneCEA", "FuelTankExternal", "FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", "HOLDING_PROFILE_MODE", 
+"HOLD_REFUEL_DUMP_MODE", "HOVER_ALTITUDE_MODE", "HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", "IARINC424Airport", 
+"IARINC424Item", "IAdvancedFixedWingGeometry", "IAdvancedFixedWingPowerplant", "IAutomationStrategyFactory", "IAviatorVehicle", 
+"IBasicFixedWingLiftHelper", "IBasicManeuverStrategy", "ICatalogAirport", "ICatalogItem", "ICatalogNavaid", "ICatalogRunway", 
+"ICatalogSource", "ICatalogVTOLPoint", "ICatalogWaypoint", "IConnect", "ICruiseAirspeedAndProfileOptions", "IDAFIFItem", 
+"IEnrouteAndDelayOptions", "INTERCEPT_MODE", "IPerformanceModel", "IProcedure", "ISite", "ISiteUnknown", "IStation", "IVerticalPlaneOptions", 
+"JET_ENGINE_EXHAUST_NOZZLE_TYPE", "JET_ENGINE_INTAKE_TYPE", "JET_ENGINE_TECHNOLOGY_LEVEL", "JET_ENGINE_TURBINE_TYPE", "JET_FUEL_TYPE", 
+"JOIN_EXIT_ARC_METHOD", "LANDING_APPROACH_FIX_RANGE_MODE", "LAUNCH_ATTITUDE_MODE", "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE", 
+"LAUNCH_DYNAMIC_STATE_COORD_FRAME", "LINE_ORIENTATION", "LandingCruiseAirspeedAndProfileOptions", "LandingEnrouteOptions", 
+"LandingEnterDownwindPattern", "LandingInterceptGlideslope", "LandingStandardInstrumentApproach", "LandingVerticalPlaneOptions", 
+"LevelTurns", "MINIMIZE_SITE_PROCEDURE_TIME_DIFF", "MISSILE_AERODYNAMIC_STRATEGY", "MISSILE_PROPULSION_STRATEGY", "MissileAdvancedAerodynamic", 
+"MissileAerodynamic", "MissileExternalAerodynamic", "MissileExternalPropulsion", "MissileModel", "MissileModels", "MissilePropulsion", 
+"MissileRamjetPropulsion", "MissileRocketPropulsion", "MissileSimpleAerodynamic", "MissileSimplePropulsion", "MissileTurbojetPropulsion", 
+"Mission", "NAVIGATOR_TURN_DIRECTION", "NUMERICAL_INTEGRATOR", "NavaidCategory", "NavigationOptions", "PERFORMANCE_MODEL_OVERRIDE", 
 "PHASE_OF_FLIGHT", "PITCH_3D_CONTROL_MODE", "POINT_TO_POINT_MODE", "PROCEDURE_TYPE", "PROFILE_CONTROL_LIMIT", "PULL_MODE", 
 "PUSH_PULL", "PayloadStation", "PerformanceModel", "PerformanceModelOptions", "Phase", "PhaseCollection", "Procedure", "ProcedureAirway", 
 "ProcedureAirwayRouter", "ProcedureArcEnroute", "ProcedureArcPointToPoint", "ProcedureAreaTargetSearch", "ProcedureBasicManeuver", 
 "ProcedureBasicPointToPoint", "ProcedureCollection", "ProcedureDelay", "ProcedureEnroute", "ProcedureExtEphem", "ProcedureFastTimeOptions", 
 "ProcedureFlightLine", "ProcedureFormationFlyer", "ProcedureFormationRecover", "ProcedureHoldingCircular", "ProcedureHoldingFigure8", 
 "ProcedureHoldingRacetrack", "ProcedureHover", "ProcedureHoverTranslate", "ProcedureInFormation", "ProcedureLanding", "ProcedureLaunch", 
-"ProcedureLaunchDynState", "ProcedureLaunchWaypoint", "ProcedureParallelFlightLine", "ProcedureReferenceState", "ProcedureSuperProcedure", 
+"ProcedureLaunchDynamicState", "ProcedureLaunchWaypoint", "ProcedureParallelFlightLine", "ProcedureReferenceState", "ProcedureSuperProcedure", 
 "ProcedureTakeoff", "ProcedureTerrainFollow", "ProcedureTimeOptions", "ProcedureTransitionToForwardFlight", "ProcedureTransitionToHover", 
 "ProcedureVGTPoint", "ProcedureVerticalLanding", "ProcedureVerticalTakeoff", "PropulsionEfficiencies", "PropulsionThrust", 
-"RAMJET_MODE", "REFERENCE_STATE_ATTITUDE_MODE", "REFERENCE_STATE_LATERAL_ACCEL_MODE", "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", 
-"REFERENCE_STATE_PERF_MODE", "REFUEL_DUMP_MODE", "RELATIVE_ALTITUDE_MODE", "REL_ABS_BEARING", "REL_SPEED_ALTITUDE_STOP_CONDITION", 
+"RAMJET_MODE", "REFERENCE_STATE_ATTITUDE_MODE", "REFERENCE_STATE_LATERAL_ACCELERATION_MODE", "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", 
+"REFERENCE_STATE_PERFORMANCE_MODE", "REFUEL_DUMP_MODE", "RELATIVE_ABSOLUTE_BEARING", "RELATIVE_ALTITUDE_MODE", "RELATIVE_SPEED_ALTITUDE_STOP_CONDITION", 
 "RENDEZVOUS_STOP_CONDITION", "ROLLING_PULL_MODE", "ROLL_LEFT_RIGHT", "ROLL_UPRIGHT_INVERTED", "ROTORCRAFT_POWERPLANT_TYPE", 
 "RUNWAY_HIGH_LOW_END", "ReferenceStateForwardFlightOptions", "ReferenceStateHoverOptions", "ReferenceStateTakeoffLandingOptions", 
-"ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAero", "RotorcraftModel", "RotorcraftModels", 
-"RotorcraftProp", "RunwayCategory", "RunwayHeadingOptions", "SCRAMJET_MODE", "SEARCH_PATTERN_COURSE_MODE", "SITE_TYPE", 
-"SMOOTH_ACCEL_LEFT_RIGHT", "SMOOTH_ACCEL_STOP_CONDITIONS", "SMOOTH_TURN_FPA_MODE", "SMOOTH_TURN_MODE", "STATIONKEEPING_STOP_CONDITION", 
-"STK_OBJECT_WAYPOINT_OFFSET_MODE", "STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", "SiteDynState", "SiteEndOfPrevProcedure", 
-"SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelToPrevProcedure", "SiteRelToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", 
-"SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", 
-"SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", "StationCollection", "TAKEOFF_LANDING_SPEED_MODE", 
-"TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", "TRAJECTORY_BLEND_MODE", "TRANSITION_TO_HOVER_MODE", "TURBINE_MODE", "TURN_DIRECTION", 
-"TURN_MODE", "TakeoffDeparturePoint", "TakeoffLowTransition", "TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", 
-"UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", "VERT_LANDING_MODE", "VTOLPointCategory", "VTOL_FINAL_HEADING_MODE", 
-"VTOL_HEADING_MODE", "VTOL_RATE_MODE", "VTOL_TRANSITION_MODE", "VTOL_TRANSLATION_FINAL_COURSE_MODE", "VTOL_TRANSLATION_MODE", 
-"VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", "WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", 
-"WindModel", "WindModelADDS", "WindModelConstant"]
+"ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAerodynamic", "RotorcraftModel", "RotorcraftModels", 
+"RotorcraftPropulsion", "RunwayCategory", "RunwayHeadingOptions", "SCRAMJET_MODE", "SEARCH_PATTERN_COURSE_MODE", "SITE_TYPE", 
+"SMOOTH_ACCELERATION_LEFT_RIGHT", "SMOOTH_ACCELERATION_STOP_CONDITIONS", "SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE", "SMOOTH_TURN_MODE", 
+"STATIONKEEPING_STOP_CONDITION", "STK_OBJECT_WAYPOINT_OFFSET_MODE", "STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", 
+"SiteDynamicState", "SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelativeToPrevProcedure", 
+"SiteRelativeToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", 
+"SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", 
+"StationCollection", "TAKEOFF_LANDING_SPEED_MODE", "TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", "TRAJECTORY_BLEND_MODE", 
+"TRANSITION_TO_HOVER_MODE", "TURBINE_MODE", "TURN_DIRECTION", "TURN_MODE", "TakeoffDeparturePoint", "TakeoffLowTransition", 
+"TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", 
+"VERT_LANDING_MODE", "VTOLPointCategory", "VTOL_FINAL_HEADING_MODE", "VTOL_HEADING_MODE", "VTOL_RATE_MODE", "VTOL_TRANSITION_MODE", 
+"VTOL_TRANSLATION_FINAL_COURSE_MODE", "VTOL_TRANSLATION_MODE", "VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", 
+"WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", "WindModel", "WindModelADDS", "WindModelConstant"]
 
 import typing
 
@@ -192,106 +195,106 @@ agcls.AgTypeNameMap["CLOSURE_VALUE"] = CLOSURE_VALUE
 class PROCEDURE_TYPE(IntEnum):
     """Aviator procedure types."""
    
-    PROC_AIRWAY = 0
+    PROCEDURE_AIRWAY = 0
     """Airway procedure."""
-    PROC_AIRWAY_ROUTER = 1
+    PROCEDURE_AIRWAY_ROUTER = 1
     """Airway Router procedure."""
-    PROC_ARC_ENROUTE = 2
+    PROCEDURE_ARC_ENROUTE = 2
     """ArcEnroute procedure."""
-    PROC_ARC_POINT_TO_POINT = 3
+    PROCEDURE_ARC_POINT_TO_POINT = 3
     """ArcPointToPoint procedure."""
-    PROC_AREA_TARGET_SEARCH = 4
+    PROCEDURE_AREA_TARGET_SEARCH = 4
     """Area Target Search procedure."""
-    PROC_BASIC_MANEUVER = 5
+    PROCEDURE_BASIC_MANEUVER = 5
     """Basic Maneuver procedure."""
-    PROC_BASIC_POINT_TO_POINT = 6
+    PROCEDURE_BASIC_POINT_TO_POINT = 6
     """Basic Point to Point procedure."""
-    PROC_DELAY = 7
+    PROCEDURE_DELAY = 7
     """Delay procedure."""
-    PROC_ENROUTE = 8
+    PROCEDURE_ENROUTE = 8
     """Enroute procedure."""
-    PROC_FLIGHT_LINE = 9
+    PROCEDURE_FLIGHT_LINE = 9
     """Flight Line procedure."""
-    PROC_FORMATION_RECOVER = 10
+    PROCEDURE_FORMATION_RECOVER = 10
     """Formation Recover procedure."""
-    PROC_HOLDING_CIRCULAR = 11
+    PROCEDURE_HOLDING_CIRCULAR = 11
     """Holding Circular procedure."""
-    PROC_HOLDING_FIGURE8 = 12
+    PROCEDURE_HOLDING_FIGURE8 = 12
     """Holding Figure 8 procedure."""
-    PROC_HOLDING_RACETRACK = 13
+    PROCEDURE_HOLDING_RACETRACK = 13
     """Holding Racetrack procedure."""
-    PROC_HOVER = 14
+    PROCEDURE_HOVER = 14
     """Hover procedure."""
-    PROC_HOVER_TRANSLATE = 15
+    PROCEDURE_HOVER_TRANSLATE = 15
     """Hover Translate procedure."""
-    PROC_IN_FORMATION = 16
+    PROCEDURE_IN_FORMATION = 16
     """In Formation procedure."""
-    PROC_LANDING = 17
+    PROCEDURE_LANDING = 17
     """Landing procedure."""
-    PROC_LAUNCH = 18
+    PROCEDURE_LAUNCH = 18
     """Launch procedure."""
-    PROC_PARALLEL_FLIGHT_LINE = 19
+    PROCEDURE_PARALLEL_FLIGHT_LINE = 19
     """Parallel Flight Line procedure."""
-    PROC_REFERENCE_STATE = 20
+    PROCEDURE_REFERENCE_STATE = 20
     """Reference State procedure."""
-    PROC_SUPER_PROCEDURE = 21
+    PROCEDURE_SUPER_PROCEDURE = 21
     """Super Procedure procedure."""
-    PROC_TAKEOFF = 22
+    PROCEDURE_TAKEOFF = 22
     """Takeoff procedure."""
-    PROC_TERRAIN_FOLLOWING = 23
+    PROCEDURE_TERRAIN_FOLLOWING = 23
     """Terrain Following procedure."""
-    PROC_TRANSITION_TO_FORWARD_FLIGHT = 24
+    PROCEDURE_TRANSITION_TO_FORWARD_FLIGHT = 24
     """Transition to Forward Flight procedure."""
-    PROC_TRANSITION_TO_HOVER = 25
+    PROCEDURE_TRANSITION_TO_HOVER = 25
     """Transition To Hover procedure."""
-    PROC_VERTICAL_LANDING = 26
+    PROCEDURE_VERTICAL_LANDING = 26
     """Vertical Landing procedure."""
-    PROC_VERTICAL_TAKEOFF = 27
+    PROCEDURE_VERTICAL_TAKEOFF = 27
     """Vertical Takeoff procedure."""
-    PROC_VGT_POINT = 28
+    PROCEDURE_VGT_POINT = 28
     """VGT Point procedure."""
-    PROC_LAUNCH_DYN_STATE = 29
+    PROCEDURE_LAUNCH_DYNAMIC_STATE = 29
     """LaunchDynState procedure."""
-    PROC_LAUNCH_WAYPOINT = 30
+    PROCEDURE_LAUNCH_WAYPOINT = 30
     """LaunchWaypoint procedure."""
-    PROC_FORMATION_FLYER = 31
+    PROCEDURE_FORMATION_FLYER = 31
     """FormationFlyer procedure."""
-    PROC_EXT_EPHEM = 32
+    PROCEDURE_EXT_EPHEM = 32
     """ExtEphem procedure."""
 
-PROCEDURE_TYPE.PROC_AIRWAY.__doc__ = "Airway procedure."
-PROCEDURE_TYPE.PROC_AIRWAY_ROUTER.__doc__ = "Airway Router procedure."
-PROCEDURE_TYPE.PROC_ARC_ENROUTE.__doc__ = "ArcEnroute procedure."
-PROCEDURE_TYPE.PROC_ARC_POINT_TO_POINT.__doc__ = "ArcPointToPoint procedure."
-PROCEDURE_TYPE.PROC_AREA_TARGET_SEARCH.__doc__ = "Area Target Search procedure."
-PROCEDURE_TYPE.PROC_BASIC_MANEUVER.__doc__ = "Basic Maneuver procedure."
-PROCEDURE_TYPE.PROC_BASIC_POINT_TO_POINT.__doc__ = "Basic Point to Point procedure."
-PROCEDURE_TYPE.PROC_DELAY.__doc__ = "Delay procedure."
-PROCEDURE_TYPE.PROC_ENROUTE.__doc__ = "Enroute procedure."
-PROCEDURE_TYPE.PROC_FLIGHT_LINE.__doc__ = "Flight Line procedure."
-PROCEDURE_TYPE.PROC_FORMATION_RECOVER.__doc__ = "Formation Recover procedure."
-PROCEDURE_TYPE.PROC_HOLDING_CIRCULAR.__doc__ = "Holding Circular procedure."
-PROCEDURE_TYPE.PROC_HOLDING_FIGURE8.__doc__ = "Holding Figure 8 procedure."
-PROCEDURE_TYPE.PROC_HOLDING_RACETRACK.__doc__ = "Holding Racetrack procedure."
-PROCEDURE_TYPE.PROC_HOVER.__doc__ = "Hover procedure."
-PROCEDURE_TYPE.PROC_HOVER_TRANSLATE.__doc__ = "Hover Translate procedure."
-PROCEDURE_TYPE.PROC_IN_FORMATION.__doc__ = "In Formation procedure."
-PROCEDURE_TYPE.PROC_LANDING.__doc__ = "Landing procedure."
-PROCEDURE_TYPE.PROC_LAUNCH.__doc__ = "Launch procedure."
-PROCEDURE_TYPE.PROC_PARALLEL_FLIGHT_LINE.__doc__ = "Parallel Flight Line procedure."
-PROCEDURE_TYPE.PROC_REFERENCE_STATE.__doc__ = "Reference State procedure."
-PROCEDURE_TYPE.PROC_SUPER_PROCEDURE.__doc__ = "Super Procedure procedure."
-PROCEDURE_TYPE.PROC_TAKEOFF.__doc__ = "Takeoff procedure."
-PROCEDURE_TYPE.PROC_TERRAIN_FOLLOWING.__doc__ = "Terrain Following procedure."
-PROCEDURE_TYPE.PROC_TRANSITION_TO_FORWARD_FLIGHT.__doc__ = "Transition to Forward Flight procedure."
-PROCEDURE_TYPE.PROC_TRANSITION_TO_HOVER.__doc__ = "Transition To Hover procedure."
-PROCEDURE_TYPE.PROC_VERTICAL_LANDING.__doc__ = "Vertical Landing procedure."
-PROCEDURE_TYPE.PROC_VERTICAL_TAKEOFF.__doc__ = "Vertical Takeoff procedure."
-PROCEDURE_TYPE.PROC_VGT_POINT.__doc__ = "VGT Point procedure."
-PROCEDURE_TYPE.PROC_LAUNCH_DYN_STATE.__doc__ = "LaunchDynState procedure."
-PROCEDURE_TYPE.PROC_LAUNCH_WAYPOINT.__doc__ = "LaunchWaypoint procedure."
-PROCEDURE_TYPE.PROC_FORMATION_FLYER.__doc__ = "FormationFlyer procedure."
-PROCEDURE_TYPE.PROC_EXT_EPHEM.__doc__ = "ExtEphem procedure."
+PROCEDURE_TYPE.PROCEDURE_AIRWAY.__doc__ = "Airway procedure."
+PROCEDURE_TYPE.PROCEDURE_AIRWAY_ROUTER.__doc__ = "Airway Router procedure."
+PROCEDURE_TYPE.PROCEDURE_ARC_ENROUTE.__doc__ = "ArcEnroute procedure."
+PROCEDURE_TYPE.PROCEDURE_ARC_POINT_TO_POINT.__doc__ = "ArcPointToPoint procedure."
+PROCEDURE_TYPE.PROCEDURE_AREA_TARGET_SEARCH.__doc__ = "Area Target Search procedure."
+PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER.__doc__ = "Basic Maneuver procedure."
+PROCEDURE_TYPE.PROCEDURE_BASIC_POINT_TO_POINT.__doc__ = "Basic Point to Point procedure."
+PROCEDURE_TYPE.PROCEDURE_DELAY.__doc__ = "Delay procedure."
+PROCEDURE_TYPE.PROCEDURE_ENROUTE.__doc__ = "Enroute procedure."
+PROCEDURE_TYPE.PROCEDURE_FLIGHT_LINE.__doc__ = "Flight Line procedure."
+PROCEDURE_TYPE.PROCEDURE_FORMATION_RECOVER.__doc__ = "Formation Recover procedure."
+PROCEDURE_TYPE.PROCEDURE_HOLDING_CIRCULAR.__doc__ = "Holding Circular procedure."
+PROCEDURE_TYPE.PROCEDURE_HOLDING_FIGURE8.__doc__ = "Holding Figure 8 procedure."
+PROCEDURE_TYPE.PROCEDURE_HOLDING_RACETRACK.__doc__ = "Holding Racetrack procedure."
+PROCEDURE_TYPE.PROCEDURE_HOVER.__doc__ = "Hover procedure."
+PROCEDURE_TYPE.PROCEDURE_HOVER_TRANSLATE.__doc__ = "Hover Translate procedure."
+PROCEDURE_TYPE.PROCEDURE_IN_FORMATION.__doc__ = "In Formation procedure."
+PROCEDURE_TYPE.PROCEDURE_LANDING.__doc__ = "Landing procedure."
+PROCEDURE_TYPE.PROCEDURE_LAUNCH.__doc__ = "Launch procedure."
+PROCEDURE_TYPE.PROCEDURE_PARALLEL_FLIGHT_LINE.__doc__ = "Parallel Flight Line procedure."
+PROCEDURE_TYPE.PROCEDURE_REFERENCE_STATE.__doc__ = "Reference State procedure."
+PROCEDURE_TYPE.PROCEDURE_SUPER_PROCEDURE.__doc__ = "Super Procedure procedure."
+PROCEDURE_TYPE.PROCEDURE_TAKEOFF.__doc__ = "Takeoff procedure."
+PROCEDURE_TYPE.PROCEDURE_TERRAIN_FOLLOWING.__doc__ = "Terrain Following procedure."
+PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_FORWARD_FLIGHT.__doc__ = "Transition to Forward Flight procedure."
+PROCEDURE_TYPE.PROCEDURE_TRANSITION_TO_HOVER.__doc__ = "Transition To Hover procedure."
+PROCEDURE_TYPE.PROCEDURE_VERTICAL_LANDING.__doc__ = "Vertical Landing procedure."
+PROCEDURE_TYPE.PROCEDURE_VERTICAL_TAKEOFF.__doc__ = "Vertical Takeoff procedure."
+PROCEDURE_TYPE.PROCEDURE_VGT_POINT.__doc__ = "VGT Point procedure."
+PROCEDURE_TYPE.PROCEDURE_LAUNCH_DYNAMIC_STATE.__doc__ = "LaunchDynState procedure."
+PROCEDURE_TYPE.PROCEDURE_LAUNCH_WAYPOINT.__doc__ = "LaunchWaypoint procedure."
+PROCEDURE_TYPE.PROCEDURE_FORMATION_FLYER.__doc__ = "FormationFlyer procedure."
+PROCEDURE_TYPE.PROCEDURE_EXT_EPHEM.__doc__ = "ExtEphem procedure."
 
 agcls.AgTypeNameMap["PROCEDURE_TYPE"] = PROCEDURE_TYPE
 
@@ -332,7 +335,7 @@ class SITE_TYPE(IntEnum):
     """Waypoint site."""
     SITE_WAYPOINT_FROM_CATALOG = 16
     """Waypoint from Catalog site."""
-    SITE_DYN_STATE = 17
+    SITE_DYNAMIC_STATE = 17
     """DynState site."""
 
 SITE_TYPE.SITE_AIRPORT_FROM_CATALOG.__doc__ = "Airport from Catalog site."
@@ -352,7 +355,7 @@ SITE_TYPE.SITE_VTOL_POINT.__doc__ = "VTOL Point site."
 SITE_TYPE.SITE_VTOL_POINT_FROM_CATALOG.__doc__ = "VTOL Point from Catalog site."
 SITE_TYPE.SITE_WAYPOINT.__doc__ = "Waypoint site."
 SITE_TYPE.SITE_WAYPOINT_FROM_CATALOG.__doc__ = "Waypoint from Catalog site."
-SITE_TYPE.SITE_DYN_STATE.__doc__ = "DynState site."
+SITE_TYPE.SITE_DYNAMIC_STATE.__doc__ = "DynState site."
 
 agcls.AgTypeNameMap["SITE_TYPE"] = SITE_TYPE
 
@@ -407,7 +410,7 @@ AIRSPEED_TYPE.TAS.__doc__ = "True airspeed."
 
 agcls.AgTypeNameMap["AIRSPEED_TYPE"] = AIRSPEED_TYPE
 
-class AERO_PROP_SIMPLE_MODE(IntEnum):
+class AERODYNAMIC_PROPULSION_SIMPLE_MODE(IntEnum):
     """Aircraft operating mode for basic acceleration models with aerodynamics set to Simple."""
    
     FIXED_WING = 0
@@ -415,32 +418,32 @@ class AERO_PROP_SIMPLE_MODE(IntEnum):
     HELICOPTER = 1
     """Helicopter operating mode."""
 
-AERO_PROP_SIMPLE_MODE.FIXED_WING.__doc__ = "Fixed wing operatiog mode."
-AERO_PROP_SIMPLE_MODE.HELICOPTER.__doc__ = "Helicopter operating mode."
+AERODYNAMIC_PROPULSION_SIMPLE_MODE.FIXED_WING.__doc__ = "Fixed wing operatiog mode."
+AERODYNAMIC_PROPULSION_SIMPLE_MODE.HELICOPTER.__doc__ = "Helicopter operating mode."
 
-agcls.AgTypeNameMap["AERO_PROP_SIMPLE_MODE"] = AERO_PROP_SIMPLE_MODE
+agcls.AgTypeNameMap["AERODYNAMIC_PROPULSION_SIMPLE_MODE"] = AERODYNAMIC_PROPULSION_SIMPLE_MODE
 
-class AERO_PROP_FLIGHT_MODE(IntEnum):
+class AERODYNAMIC_PROPULSION_FLIGHT_MODE(IntEnum):
     """Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models."""
    
-    FLIGHT_PERF_FORWARD_FLIGHT = 0
+    FLIGHT_PERFORMANCE_FORWARD_FLIGHT = 0
     """Forward Flight mode."""
-    FLIGHT_PERF_HOVER = 1
+    FLIGHT_PERFORMANCE_HOVER = 1
     """Hover mode."""
-    FLIGHT_PERF_TAKEOFF = 2
+    FLIGHT_PERFORMANCE_TAKEOFF = 2
     """Takeoff mode."""
-    FLIGHT_PERF_LANDING = 3
+    FLIGHT_PERFORMANCE_LANDING = 3
     """Landing mode."""
-    FLIGHT_PERF_WEIGHT_ON_WHEELS = 4
+    FLIGHT_PERFORMANCE_WEIGHT_ON_WHEELS = 4
     """Weight on wheels mode."""
 
-AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_FORWARD_FLIGHT.__doc__ = "Forward Flight mode."
-AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_HOVER.__doc__ = "Hover mode."
-AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_TAKEOFF.__doc__ = "Takeoff mode."
-AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_LANDING.__doc__ = "Landing mode."
-AERO_PROP_FLIGHT_MODE.FLIGHT_PERF_WEIGHT_ON_WHEELS.__doc__ = "Weight on wheels mode."
+AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_FORWARD_FLIGHT.__doc__ = "Forward Flight mode."
+AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_HOVER.__doc__ = "Hover mode."
+AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_TAKEOFF.__doc__ = "Takeoff mode."
+AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_LANDING.__doc__ = "Landing mode."
+AERODYNAMIC_PROPULSION_FLIGHT_MODE.FLIGHT_PERFORMANCE_WEIGHT_ON_WHEELS.__doc__ = "Weight on wheels mode."
 
-agcls.AgTypeNameMap["AERO_PROP_FLIGHT_MODE"] = AERO_PROP_FLIGHT_MODE
+agcls.AgTypeNameMap["AERODYNAMIC_PROPULSION_FLIGHT_MODE"] = AERODYNAMIC_PROPULSION_FLIGHT_MODE
 
 class PHASE_OF_FLIGHT(IntEnum):
     """Flight mode for basic maneuver procedures."""
@@ -480,7 +483,7 @@ class CRUISE_SPEED(IntEnum):
     """Other airspeed."""
     MAX_AIRSPEED = 4
     """Maximum airspeed."""
-    MAX_PERF_AIRSPEED = 6
+    MAX_PERFORMANCE_AIRSPEED = 6
     """Maximum performance airspeed."""
 
 CRUISE_SPEED.MIN_AIRSPEED.__doc__ = "Minimum airspeed."
@@ -488,7 +491,7 @@ CRUISE_SPEED.MAX_ENDURANCE_AIRSPEED.__doc__ = "Maximum endurance airspeed."
 CRUISE_SPEED.MAX_RANGE_AIRSPEED.__doc__ = "Maximum range airspeed."
 CRUISE_SPEED.OTHER_AIRSPEED.__doc__ = "Other airspeed."
 CRUISE_SPEED.MAX_AIRSPEED.__doc__ = "Maximum airspeed."
-CRUISE_SPEED.MAX_PERF_AIRSPEED.__doc__ = "Maximum performance airspeed."
+CRUISE_SPEED.MAX_PERFORMANCE_AIRSPEED.__doc__ = "Maximum performance airspeed."
 
 agcls.AgTypeNameMap["CRUISE_SPEED"] = CRUISE_SPEED
 
@@ -551,7 +554,7 @@ class BASIC_MANEUVER_FUEL_FLOW_TYPE(IntEnum):
     """Fuel flow defined for the current Landing performance model."""
     BASIC_MANEUVER_FUEL_FLOW_VTOL = 3
     """Fuel flow defined for the current VTOL performance model."""
-    BASIC_MANEUVER_FUEL_FLOW_AERO_PROP = 4
+    BASIC_MANEUVER_FUEL_FLOW_AERODYNAMIC_PROPULSION = 4
     """Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."""
     BASIC_MANEUVER_FUEL_FLOW_OVERRIDE = 5
     """Fuel flow defined manually."""
@@ -562,7 +565,7 @@ BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_TAKEOFF.__doc__ = "Fuel f
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_LANDING.__doc__ = "Fuel flow defined for the current Landing performance model."
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
-BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_AERO_PROP.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
+BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_AERODYNAMIC_PROPULSION.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE.__doc__ = "Fuel flow defined manually."
 BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_THRUST_MODEL.__doc__ = "Fuel flow defined using the thrust model for this maneuver."
 
@@ -613,84 +616,84 @@ BASIC_MANEUVER_REFERENCE_FRAME.WIND_FRAME.__doc__ = "Wind frame."
 
 agcls.AgTypeNameMap["BASIC_MANEUVER_REFERENCE_FRAME"] = BASIC_MANEUVER_REFERENCE_FRAME
 
-class BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT(IntEnum):
+class BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT(IntEnum):
     """Define the control limits for the aircraft during the maneuver."""
    
-    NAV_USE_ACCEL_PERF_MODEL = 0
+    NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL = 0
     """Use Accel Perf Model."""
-    NAV_MIN_TURN_RADIUS = 1
+    NAVIGATION_MIN_TURN_RADIUS = 1
     """Specify min turn radius."""
-    NAV_MAX_TURN_RATE = 2
+    NAVIGATION_MAX_TURN_RATE = 2
     """Specify max turn rate."""
-    NAV_MAX_HORIZ_ACCEL = 3
+    NAVIGATION_MAX_HORIZONTAL_ACCELERATION = 3
     """Specify max horiz accel."""
 
-BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_USE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model."
-BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MIN_TURN_RADIUS.__doc__ = "Specify min turn radius."
-BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_TURN_RATE.__doc__ = "Specify max turn rate."
-BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT.NAV_MAX_HORIZ_ACCEL.__doc__ = "Specify max horiz accel."
+BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL.__doc__ = "Use Accel Perf Model."
+BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MIN_TURN_RADIUS.__doc__ = "Specify min turn radius."
+BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE.__doc__ = "Specify max turn rate."
+BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_HORIZONTAL_ACCELERATION.__doc__ = "Specify max horiz accel."
 
-agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT"] = BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT
+agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT"] = BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
 
-class ACCEL_MANEUVER_MODE(IntEnum):
+class ACCELERATION_MANEUVER_MODE(IntEnum):
     """The mode that the aircraft will adhere to the specified acceleration parameters."""
    
-    ACCEL_MANEUVER_MODE_NORMAL = 0
+    ACCELERATION_MANEUVER_MODE_NORMAL = 0
     """Constant value (default)."""
-    ACCEL_MANEUVER_MODE_DENSITY_SCALE = 1
+    ACCELERATION_MANEUVER_MODE_DENSITY_SCALE = 1
     """Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."""
-    ACCEL_MANEUVER_MODE_AERO_PROP = 2
+    ACCELERATION_MANEUVER_MODE_AERODYNAMIC_PROPULSION = 2
     """Aero/Prop maneuver mode."""
 
-ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_NORMAL.__doc__ = "Constant value (default)."
-ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_DENSITY_SCALE.__doc__ = "Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."
-ACCEL_MANEUVER_MODE.ACCEL_MANEUVER_MODE_AERO_PROP.__doc__ = "Aero/Prop maneuver mode."
+ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_NORMAL.__doc__ = "Constant value (default)."
+ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_DENSITY_SCALE.__doc__ = "Scale by amtmospheric density. The aircraft will consider dynamic pressure when calculating turn radius."
+ACCELERATION_MANEUVER_MODE.ACCELERATION_MANEUVER_MODE_AERODYNAMIC_PROPULSION.__doc__ = "Aero/Prop maneuver mode."
 
-agcls.AgTypeNameMap["ACCEL_MANEUVER_MODE"] = ACCEL_MANEUVER_MODE
+agcls.AgTypeNameMap["ACCELERATION_MANEUVER_MODE"] = ACCELERATION_MANEUVER_MODE
 
-class AIRCRAFT_AERO_STRATEGY(IntEnum):
+class AIRCRAFT_AERODYNAMIC_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
    
-    AIRCRAFT_AERO_SIMPLE = 0
+    AIRCRAFT_AERODYNAMIC_SIMPLE = 0
     """Simple aerodynamics."""
-    AIRCRAFT_AERO_EXTERNAL_FILE = 1
+    AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE = 1
     """External file aerodynamics."""
-    AIRCRAFT_AERO_BASIC_FIXED_WING = 2
+    AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING = 2
     """Basic fixed wing aerodynamics."""
-    AIRCRAFT_AERO_ADVANCED_MISSILE = 3
+    AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE = 3
     """Advanced missile aerodynamics."""
 
-AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
-AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
-AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_BASIC_FIXED_WING.__doc__ = "Basic fixed wing aerodynamics."
-AIRCRAFT_AERO_STRATEGY.AIRCRAFT_AERO_ADVANCED_MISSILE.__doc__ = "Advanced missile aerodynamics."
+AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_SIMPLE.__doc__ = "Simple aerodynamics."
+AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
+AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING.__doc__ = "Basic fixed wing aerodynamics."
+AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE.__doc__ = "Advanced missile aerodynamics."
 
-agcls.AgTypeNameMap["AIRCRAFT_AERO_STRATEGY"] = AIRCRAFT_AERO_STRATEGY
+agcls.AgTypeNameMap["AIRCRAFT_AERODYNAMIC_STRATEGY"] = AIRCRAFT_AERODYNAMIC_STRATEGY
 
-class AIRCRAFT_PROP_STRATEGY(IntEnum):
+class AIRCRAFT_PROPULSION_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
    
-    AIRCRAFT_PROP_SIMPLE = 0
+    AIRCRAFT_PROPULSION_SIMPLE = 0
     """Simple propulsion."""
-    AIRCRAFT_PROP_EXTERNAL_FILE = 1
+    AIRCRAFT_PROPULSION_EXTERNAL_FILE = 1
     """External file propulsion."""
-    AIRCRAFT_PROP_BASIC_FIXED_WING = 2
+    AIRCRAFT_PROPULSION_BASIC_FIXED_WING = 2
     """Basic fixed wing propulsion."""
-    AIRCRAFT_PROP_MISSILE_RAMJET = 3
+    AIRCRAFT_PROPULSION_MISSILE_RAMJET = 3
     """Missile - Ramjet propulsion."""
-    AIRCRAFT_PROP_MISSILE_ROCKET = 4
+    AIRCRAFT_PROPULSION_MISSILE_ROCKET = 4
     """Missile - Rocket propulsion."""
-    AIRCRAFT_PROP_MISSILE_TURBOJET = 5
+    AIRCRAFT_PROPULSION_MISSILE_TURBOJET = 5
     """Missile - Turbojet propulsion."""
 
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_SIMPLE.__doc__ = "Simple propulsion."
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_BASIC_FIXED_WING.__doc__ = "Basic fixed wing propulsion."
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_RAMJET.__doc__ = "Missile - Ramjet propulsion."
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_ROCKET.__doc__ = "Missile - Rocket propulsion."
-AIRCRAFT_PROP_STRATEGY.AIRCRAFT_PROP_MISSILE_TURBOJET.__doc__ = "Missile - Turbojet propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_SIMPLE.__doc__ = "Simple propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_EXTERNAL_FILE.__doc__ = "External file propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_BASIC_FIXED_WING.__doc__ = "Basic fixed wing propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_RAMJET.__doc__ = "Missile - Ramjet propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_ROCKET.__doc__ = "Missile - Rocket propulsion."
+AIRCRAFT_PROPULSION_STRATEGY.AIRCRAFT_PROPULSION_MISSILE_TURBOJET.__doc__ = "Missile - Turbojet propulsion."
 
-agcls.AgTypeNameMap["AIRCRAFT_PROP_STRATEGY"] = AIRCRAFT_PROP_STRATEGY
+agcls.AgTypeNameMap["AIRCRAFT_PROPULSION_STRATEGY"] = AIRCRAFT_PROPULSION_STRATEGY
 
 class AGL_MSL(IntEnum):
     """The altitude mode."""
@@ -708,30 +711,30 @@ agcls.AgTypeNameMap["AGL_MSL"] = AGL_MSL
 class LANDING_APPROACH_FIX_RANGE_MODE(IntEnum):
     """The reference point on the runway for the Approach Fix Range."""
    
-    REL_TO_RUNWAY_CENTER = 0
+    RELATIVE_TO_RUNWAY_CENTER = 0
     """Runway center."""
-    REL_TO_RUNWAY_END = 1
+    RELATIVE_TO_RUNWAY_END = 1
     """Runway end."""
 
-LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_CENTER.__doc__ = "Runway center."
-LANDING_APPROACH_FIX_RANGE_MODE.REL_TO_RUNWAY_END.__doc__ = "Runway end."
+LANDING_APPROACH_FIX_RANGE_MODE.RELATIVE_TO_RUNWAY_CENTER.__doc__ = "Runway center."
+LANDING_APPROACH_FIX_RANGE_MODE.RELATIVE_TO_RUNWAY_END.__doc__ = "Runway end."
 
 agcls.AgTypeNameMap["LANDING_APPROACH_FIX_RANGE_MODE"] = LANDING_APPROACH_FIX_RANGE_MODE
 
-class ACCELERATION_ADVANCED_ACCEL_MODE(IntEnum):
+class ACCELERATION_ADVANCED_ACCELERATION_MODE(IntEnum):
     """Acceleration mode for aircraft advanced acceleration models."""
    
-    ACCEL_MODE_MAX_ACCEL = 0
+    ACCELERATION_MODE_MAX_ACCELERATION = 0
     """Max acceleration."""
-    ACCEL_MODE_OVERRIDE_ACCEL = 1
+    ACCELERATION_MODE_OVERRIDE_ACCELERATION = 1
     """Manually override the acceleration."""
 
-ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_MAX_ACCEL.__doc__ = "Max acceleration."
-ACCELERATION_ADVANCED_ACCEL_MODE.ACCEL_MODE_OVERRIDE_ACCEL.__doc__ = "Manually override the acceleration."
+ACCELERATION_ADVANCED_ACCELERATION_MODE.ACCELERATION_MODE_MAX_ACCELERATION.__doc__ = "Max acceleration."
+ACCELERATION_ADVANCED_ACCELERATION_MODE.ACCELERATION_MODE_OVERRIDE_ACCELERATION.__doc__ = "Manually override the acceleration."
 
-agcls.AgTypeNameMap["ACCELERATION_ADVANCED_ACCEL_MODE"] = ACCELERATION_ADVANCED_ACCEL_MODE
+agcls.AgTypeNameMap["ACCELERATION_ADVANCED_ACCELERATION_MODE"] = ACCELERATION_ADVANCED_ACCELERATION_MODE
 
-class ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
+class ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE(IntEnum):
     """The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models."""
    
     USE_THRUST_AND_LIFT_COEFFICIENT = 0
@@ -739,12 +742,12 @@ class ACCEL_MANEUVER_AERO_PROP_MODE(IntEnum):
     USE_LIFT_COEFFICIENT_ONLY = 1
     """Use Lift Coefficient only."""
 
-ACCEL_MANEUVER_AERO_PROP_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient."
-ACCEL_MANEUVER_AERO_PROP_MODE.USE_LIFT_COEFFICIENT_ONLY.__doc__ = "Use Lift Coefficient only."
+ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE.USE_THRUST_AND_LIFT_COEFFICIENT.__doc__ = "Use Thrust and Lift Coefficient."
+ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE.USE_LIFT_COEFFICIENT_ONLY.__doc__ = "Use Lift Coefficient only."
 
-agcls.AgTypeNameMap["ACCEL_MANEUVER_AERO_PROP_MODE"] = ACCEL_MANEUVER_AERO_PROP_MODE
+agcls.AgTypeNameMap["ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE"] = ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE
 
-class BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS(IntEnum):
+class BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS(IntEnum):
     """The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit."""
    
     CONSTRAIN_IF_VIOLATED = 0
@@ -756,12 +759,12 @@ class BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS(IntEnum):
     IGNORE_IF_VIOLATED = 3
     """Ignore when airspeed limit exceeded."""
 
-BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.CONSTRAIN_IF_VIOLATED.__doc__ = "Constrain the aircraft to not exceed the airspeed limit."
-BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.STOP_IF_VIOLATED.__doc__ = "Stop when airspeed limit exceeded.."
-BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.ERROR_IF_VIOLATED.__doc__ = "Error when airspeed limit exceeded."
-BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS.IGNORE_IF_VIOLATED.__doc__ = "Ignore when airspeed limit exceeded."
+BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED.__doc__ = "Constrain the aircraft to not exceed the airspeed limit."
+BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.STOP_IF_VIOLATED.__doc__ = "Stop when airspeed limit exceeded.."
+BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.ERROR_IF_VIOLATED.__doc__ = "Error when airspeed limit exceeded."
+BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.IGNORE_IF_VIOLATED.__doc__ = "Ignore when airspeed limit exceeded."
 
-agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS"] = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS
+agcls.AgTypeNameMap["BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS"] = BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
 
 class BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE(IntEnum):
     """Powered Cruise Options."""
@@ -786,7 +789,7 @@ class TURN_MODE(IntEnum):
     """Turn G. The standard G force of the aircraft in a turn."""
     TURN_MODE_BANK_ANGLE = 1
     """Bank angle."""
-    TURN_MODE_ACCEL = 2
+    TURN_MODE_ACCELERATION = 2
     """Turn acceleration."""
     TURN_MODE_RADIUS = 3
     """Turn radius."""
@@ -795,7 +798,7 @@ class TURN_MODE(IntEnum):
 
 TURN_MODE.TURN_MODE_TURN_G.__doc__ = "Turn G. The standard G force of the aircraft in a turn."
 TURN_MODE.TURN_MODE_BANK_ANGLE.__doc__ = "Bank angle."
-TURN_MODE.TURN_MODE_ACCEL.__doc__ = "Turn acceleration."
+TURN_MODE.TURN_MODE_ACCELERATION.__doc__ = "Turn acceleration."
 TURN_MODE.TURN_MODE_RADIUS.__doc__ = "Turn radius."
 TURN_MODE.TURN_MODE_RATE.__doc__ = "Turn rate."
 
@@ -874,44 +877,44 @@ WIND_ATMOS_MODEL_SOURCE.PROCEDURE_MODEL.__doc__ = "Procedure Model."
 
 agcls.AgTypeNameMap["WIND_ATMOS_MODEL_SOURCE"] = WIND_ATMOS_MODEL_SOURCE
 
-class ADDS_MSG_INTERP_TYPE(IntEnum):
+class ADDS_MESSAGE_INTERPOLATION_TYPE(IntEnum):
     """The interpolation method for the wind conditions."""
    
-    INTERP_ONE_POINT = 0
+    INTERPOLATION_ONE_POINT = 0
     """One Point Interpolation."""
-    INTERP_TWO_POINT = 1
+    INTERPOLATION_TWO_POINT = 1
     """Two Point Interpolation."""
 
-ADDS_MSG_INTERP_TYPE.INTERP_ONE_POINT.__doc__ = "One Point Interpolation."
-ADDS_MSG_INTERP_TYPE.INTERP_TWO_POINT.__doc__ = "Two Point Interpolation."
+ADDS_MESSAGE_INTERPOLATION_TYPE.INTERPOLATION_ONE_POINT.__doc__ = "One Point Interpolation."
+ADDS_MESSAGE_INTERPOLATION_TYPE.INTERPOLATION_TWO_POINT.__doc__ = "Two Point Interpolation."
 
-agcls.AgTypeNameMap["ADDS_MSG_INTERP_TYPE"] = ADDS_MSG_INTERP_TYPE
+agcls.AgTypeNameMap["ADDS_MESSAGE_INTERPOLATION_TYPE"] = ADDS_MESSAGE_INTERPOLATION_TYPE
 
-class ADDS_MISSING_MSG_TYPE(IntEnum):
+class ADDS_MISSING_MESSAGE_TYPE(IntEnum):
     """The wind effect to apply if there is an interval gap between messages."""
    
-    MISSING_MSG_ZERO_WIND = 0
+    MISSING_MESSAGE_ZERO_WIND = 0
     """Zero Wind."""
-    MISSING_MSG_INTERP_END_POINTS = 1
+    MISSING_MESSAGE_INTERPOLATION_END_POINTS = 1
     """Interpolate End Points."""
 
-ADDS_MISSING_MSG_TYPE.MISSING_MSG_ZERO_WIND.__doc__ = "Zero Wind."
-ADDS_MISSING_MSG_TYPE.MISSING_MSG_INTERP_END_POINTS.__doc__ = "Interpolate End Points."
+ADDS_MISSING_MESSAGE_TYPE.MISSING_MESSAGE_ZERO_WIND.__doc__ = "Zero Wind."
+ADDS_MISSING_MESSAGE_TYPE.MISSING_MESSAGE_INTERPOLATION_END_POINTS.__doc__ = "Interpolate End Points."
 
-agcls.AgTypeNameMap["ADDS_MISSING_MSG_TYPE"] = ADDS_MISSING_MSG_TYPE
+agcls.AgTypeNameMap["ADDS_MISSING_MESSAGE_TYPE"] = ADDS_MISSING_MESSAGE_TYPE
 
-class ADDS_MSG_EXTRAP_TYPE(IntEnum):
+class ADDS_MESSAGE_EXTRAPOLATION_TYPE(IntEnum):
     """The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages."""
    
-    EXTRAP_MSG_ZERO_WIND = 0
+    EXTRAPOLATION_MESSAGE_ZERO_WIND = 0
     """Zero Wind."""
-    EXTRAP_MSG_HOLD_END_POINTS = 1
+    EXTRAPOLATION_MESSAGE_HOLD_END_POINTS = 1
     """Hold End Point Wind."""
 
-ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_ZERO_WIND.__doc__ = "Zero Wind."
-ADDS_MSG_EXTRAP_TYPE.EXTRAP_MSG_HOLD_END_POINTS.__doc__ = "Hold End Point Wind."
+ADDS_MESSAGE_EXTRAPOLATION_TYPE.EXTRAPOLATION_MESSAGE_ZERO_WIND.__doc__ = "Zero Wind."
+ADDS_MESSAGE_EXTRAPOLATION_TYPE.EXTRAPOLATION_MESSAGE_HOLD_END_POINTS.__doc__ = "Hold End Point Wind."
 
-agcls.AgTypeNameMap["ADDS_MSG_EXTRAP_TYPE"] = ADDS_MSG_EXTRAP_TYPE
+agcls.AgTypeNameMap["ADDS_MESSAGE_EXTRAPOLATION_TYPE"] = ADDS_MESSAGE_EXTRAPOLATION_TYPE
 
 class ADDS_FORECAST_TYPE(IntEnum):
     """The forecast type for the NOAA ADDS message."""
@@ -967,18 +970,18 @@ SMOOTH_TURN_MODE.SMOOTH_TURN_ROLL_ANGLE.__doc__ = "Specify the roll angle of the
 
 agcls.AgTypeNameMap["SMOOTH_TURN_MODE"] = SMOOTH_TURN_MODE
 
-class PERF_MODEL_OVERRIDE(IntEnum):
+class PERFORMANCE_MODEL_OVERRIDE(IntEnum):
     """The performance model override mode."""
    
-    PERF_MODEL_VALUE = 0
+    PERFORMANCE_MODEL_VALUE = 0
     """Use the performance model value."""
     OVERRIDE = 1
     """Override the performance model value."""
 
-PERF_MODEL_OVERRIDE.PERF_MODEL_VALUE.__doc__ = "Use the performance model value."
-PERF_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value."
+PERFORMANCE_MODEL_OVERRIDE.PERFORMANCE_MODEL_VALUE.__doc__ = "Use the performance model value."
+PERFORMANCE_MODEL_OVERRIDE.OVERRIDE.__doc__ = "Override the performance model value."
 
-agcls.AgTypeNameMap["PERF_MODEL_OVERRIDE"] = PERF_MODEL_OVERRIDE
+agcls.AgTypeNameMap["PERFORMANCE_MODEL_OVERRIDE"] = PERFORMANCE_MODEL_OVERRIDE
 
 class BASIC_MANEUVER_AIRSPEED_MODE(IntEnum):
     """The basic maneuver airspeed mode."""
@@ -997,17 +1000,17 @@ class BASIC_MANEUVER_AIRSPEED_MODE(IntEnum):
     """Maintain the maximum airspeed for the aircraft."""
     MAINTAIN_MAX_PERFORMANCE_AIRSPEED = 6
     """Maintain the maximum performance airspeed for the aircraft."""
-    ACCEL_AT_G = 7
+    ACCELERATION_AT_G = 7
     """Accelerate at the specified rate."""
-    DECEL_AT_G = 8
+    DECELERATION_AT_G = 8
     """Decelerate at the specified rate."""
-    ACCEL_DECEL_UNDER_GRAVITY = 9
+    ACCELERATION_DECELERATION_UNDER_GRAVITY = 9
     """Accel/Decel at the force of gravity (no drag, no thrust)."""
-    ACCEL_DECEL_AERO_PROP = 10
+    ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION = 10
     """Accel/Decel using Aero/Propulsion with throttle setting."""
     THRUST = 11
     """Specify thrust (using drag from Aerodynamics model)."""
-    INTERPOLATE_ACCEL_DECEL = 12
+    INTERPOLATE_ACCELERATION_DECELERATION = 12
     """Interpolate Accelerate/Decelerate over interval."""
 
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED.__doc__ = "Maintain the current airspeed."
@@ -1017,12 +1020,12 @@ BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED.__doc__ = "Maintain
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_RANGE_AIRSPEED.__doc__ = "Maintain the maximum range airspeed for the aircraft."
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_AIRSPEED.__doc__ = "Maintain the maximum airspeed for the aircraft."
 BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_PERFORMANCE_AIRSPEED.__doc__ = "Maintain the maximum performance airspeed for the aircraft."
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_AT_G.__doc__ = "Accelerate at the specified rate."
-BASIC_MANEUVER_AIRSPEED_MODE.DECEL_AT_G.__doc__ = "Decelerate at the specified rate."
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_UNDER_GRAVITY.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)."
-BASIC_MANEUVER_AIRSPEED_MODE.ACCEL_DECEL_AERO_PROP.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_AT_G.__doc__ = "Accelerate at the specified rate."
+BASIC_MANEUVER_AIRSPEED_MODE.DECELERATION_AT_G.__doc__ = "Decelerate at the specified rate."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_DECELERATION_UNDER_GRAVITY.__doc__ = "Accel/Decel at the force of gravity (no drag, no thrust)."
+BASIC_MANEUVER_AIRSPEED_MODE.ACCELERATION_DECELERATION_AERODYNAMIC_PROPULSION.__doc__ = "Accel/Decel using Aero/Propulsion with throttle setting."
 BASIC_MANEUVER_AIRSPEED_MODE.THRUST.__doc__ = "Specify thrust (using drag from Aerodynamics model)."
-BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCEL_DECEL.__doc__ = "Interpolate Accelerate/Decelerate over interval."
+BASIC_MANEUVER_AIRSPEED_MODE.INTERPOLATE_ACCELERATION_DECELERATION.__doc__ = "Interpolate Accelerate/Decelerate over interval."
 
 agcls.AgTypeNameMap["BASIC_MANEUVER_AIRSPEED_MODE"] = BASIC_MANEUVER_AIRSPEED_MODE
 
@@ -1094,21 +1097,21 @@ FLY_AOA_LEFT_RIGHT.FLY_AOA_NO_ROLL.__doc__ = "No roll."
 
 agcls.AgTypeNameMap["FLY_AOA_LEFT_RIGHT"] = FLY_AOA_LEFT_RIGHT
 
-class SMOOTH_ACCEL_LEFT_RIGHT(IntEnum):
+class SMOOTH_ACCELERATION_LEFT_RIGHT(IntEnum):
     """The roll direction for a smooth acceleration strategy for a basic maneuver procedure."""
    
-    SMOOTH_ACCEL_LEFT = 0
+    SMOOTH_ACCELERATION_LEFT = 0
     """Roll left."""
-    SMOOTH_ACCEL_RIGHT = 1
+    SMOOTH_ACCELERATION_RIGHT = 1
     """Roll right."""
-    SMOOTH_ACCEL_NO_ROLL = 2
+    SMOOTH_ACCELERATION_NO_ROLL = 2
     """No roll."""
 
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_LEFT.__doc__ = "Roll left."
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_RIGHT.__doc__ = "Roll right."
-SMOOTH_ACCEL_LEFT_RIGHT.SMOOTH_ACCEL_NO_ROLL.__doc__ = "No roll."
+SMOOTH_ACCELERATION_LEFT_RIGHT.SMOOTH_ACCELERATION_LEFT.__doc__ = "Roll left."
+SMOOTH_ACCELERATION_LEFT_RIGHT.SMOOTH_ACCELERATION_RIGHT.__doc__ = "Roll right."
+SMOOTH_ACCELERATION_LEFT_RIGHT.SMOOTH_ACCELERATION_NO_ROLL.__doc__ = "No roll."
 
-agcls.AgTypeNameMap["SMOOTH_ACCEL_LEFT_RIGHT"] = SMOOTH_ACCEL_LEFT_RIGHT
+agcls.AgTypeNameMap["SMOOTH_ACCELERATION_LEFT_RIGHT"] = SMOOTH_ACCELERATION_LEFT_RIGHT
 
 class PULL_MODE(IntEnum):
     """The pull mode for a pull strategy of a basic maneuver procedure."""
@@ -1142,23 +1145,23 @@ ROLLING_PULL_MODE.PULL_TO_HORIZON_MODE.__doc__ = "Pull to the horizon plus the a
 
 agcls.AgTypeNameMap["ROLLING_PULL_MODE"] = ROLLING_PULL_MODE
 
-class SMOOTH_ACCEL_STOP_CONDITIONS(IntEnum):
+class SMOOTH_ACCELERATION_STOP_CONDITIONS(IntEnum):
     """The rolling pull mode for a rolling pull strategy of a basic maneuver procedure."""
    
     ROLL_RATE_AND_LOAD_FACTOR = 0
     """Roll rate and load factor rate achieved."""
     ROLL_RATE_OR_LOAD_FACTOR = 1
     """Roll rate or load factor rate achieved."""
-    SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS = 2
+    SMOOTH_ACCELERATION_NORMAL_STOP_CONDITIONS = 2
     """Basic stop conditions."""
 
-SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved."
-SMOOTH_ACCEL_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved."
-SMOOTH_ACCEL_STOP_CONDITIONS.SMOOTH_ACCEL_NORMAL_STOP_CONDITIONS.__doc__ = "Basic stop conditions."
+SMOOTH_ACCELERATION_STOP_CONDITIONS.ROLL_RATE_AND_LOAD_FACTOR.__doc__ = "Roll rate and load factor rate achieved."
+SMOOTH_ACCELERATION_STOP_CONDITIONS.ROLL_RATE_OR_LOAD_FACTOR.__doc__ = "Roll rate or load factor rate achieved."
+SMOOTH_ACCELERATION_STOP_CONDITIONS.SMOOTH_ACCELERATION_NORMAL_STOP_CONDITIONS.__doc__ = "Basic stop conditions."
 
-agcls.AgTypeNameMap["SMOOTH_ACCEL_STOP_CONDITIONS"] = SMOOTH_ACCEL_STOP_CONDITIONS
+agcls.AgTypeNameMap["SMOOTH_ACCELERATION_STOP_CONDITIONS"] = SMOOTH_ACCELERATION_STOP_CONDITIONS
 
-class AUTOPILOT_HORIZ_PLANE_MODE(IntEnum):
+class AUTOPILOT_HORIZONTAL_PLANE_MODE(IntEnum):
     """The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure."""
    
     AUTOPILOT_ABSOLUTE_HEADING = 0
@@ -1174,14 +1177,14 @@ class AUTOPILOT_HORIZ_PLANE_MODE(IntEnum):
     AUTOPILOT_COURSE_RATE = 5
     """The set course rate  mode."""
 
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode."
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode."
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_HEADING.__doc__ = "The relative heading change mode."
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_RELATIVE_COURSE.__doc__ = "The relative course change mode."
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_HEADING_RATE.__doc__ = "The set heading rate mode."
-AUTOPILOT_HORIZ_PLANE_MODE.AUTOPILOT_COURSE_RATE.__doc__ = "The set course rate  mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_ABSOLUTE_HEADING.__doc__ = "The absolute heading mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_ABSOLUTE_COURSE.__doc__ = "The absolute course mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_RELATIVE_HEADING.__doc__ = "The relative heading change mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_RELATIVE_COURSE.__doc__ = "The relative course change mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_HEADING_RATE.__doc__ = "The set heading rate mode."
+AUTOPILOT_HORIZONTAL_PLANE_MODE.AUTOPILOT_COURSE_RATE.__doc__ = "The set course rate  mode."
 
-agcls.AgTypeNameMap["AUTOPILOT_HORIZ_PLANE_MODE"] = AUTOPILOT_HORIZ_PLANE_MODE
+agcls.AgTypeNameMap["AUTOPILOT_HORIZONTAL_PLANE_MODE"] = AUTOPILOT_HORIZONTAL_PLANE_MODE
 
 class ANGLE_MODE(IntEnum):
     """The angle mode for a barrel roll strategy of a basic maneuver procedure."""
@@ -1253,9 +1256,9 @@ class AUTOPILOT_ALTITUDE_MODE(IntEnum):
     """The specify altitude rate mode."""
     AUTOPILOT_HOLD_INIT_ALTITUDE_RATE = 4
     """The hold initial altitude rate mode."""
-    AUTOPILOT_SPECIFY_FPA = 5
+    AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE = 5
     """The specify wind frame flight path angle mode."""
-    AUTOPILOT_HOLD_INIT_FPA = 6
+    AUTOPILOT_HOLD_INIT_FLIGHT_PATH_ANGLE = 6
     """The hold initial wind frame flight path angle mode."""
     AUTOPILOT_BALLISTIC = 7
     """The ballistic flight path mode."""
@@ -1265,8 +1268,8 @@ AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE.__doc__ = "The specify altitu
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_CHANGE.__doc__ = "The specify altitude change mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE_RATE.__doc__ = "The specify altitude rate mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_ALTITUDE_RATE.__doc__ = "The hold initial altitude rate mode."
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FPA.__doc__ = "The specify wind frame flight path angle mode."
-AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FPA.__doc__ = "The hold initial wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE.__doc__ = "The specify wind frame flight path angle mode."
+AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_HOLD_INIT_FLIGHT_PATH_ANGLE.__doc__ = "The hold initial wind frame flight path angle mode."
 AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_BALLISTIC.__doc__ = "The ballistic flight path mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_MODE"] = AUTOPILOT_ALTITUDE_MODE
@@ -1276,14 +1279,14 @@ class AUTOPILOT_ALTITUDE_CONTROL_MODE(IntEnum):
    
     AUTOPILOT_ALTITUDE_RATE = 0
     """The control altitude rate mode."""
-    AUTOPILOT_FPA = 1
+    AUTOPILOT_FLIGHT_PATH_ANGLE = 1
     """The control flight path angle mode."""
-    AUTOPILOT_PERF_MODELS = 2
+    AUTOPILOT_PERFORMANCE_MODELS = 2
     """The climb/descent performance models mode."""
 
 AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE.__doc__ = "The control altitude rate mode."
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FPA.__doc__ = "The control flight path angle mode."
-AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERF_MODELS.__doc__ = "The climb/descent performance models mode."
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_FLIGHT_PATH_ANGLE.__doc__ = "The control flight path angle mode."
+AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_PERFORMANCE_MODELS.__doc__ = "The climb/descent performance models mode."
 
 agcls.AgTypeNameMap["AUTOPILOT_ALTITUDE_CONTROL_MODE"] = AUTOPILOT_ALTITUDE_CONTROL_MODE
 
@@ -1325,7 +1328,7 @@ class RENDEZVOUS_STOP_CONDITION(IntEnum):
     """Stop after the target completes the current procedure."""
     STOP_AFTER_TARGET_CURRENT_PHASE = 2
     """Stop after the target completes the current phase."""
-    STOP_WHEN_TARGET_PERF_MODE_CHANGES = 3
+    STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES = 3
     """Stop when the target enters a new mode of flight."""
     STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 4
     """Stop when the target enters a new performance phase."""
@@ -1333,7 +1336,7 @@ class RENDEZVOUS_STOP_CONDITION(IntEnum):
 RENDEZVOUS_STOP_CONDITION.STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
 RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
 RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PHASE.__doc__ = "Stop after the target completes the current phase."
-RENDEZVOUS_STOP_CONDITION.STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
+RENDEZVOUS_STOP_CONDITION.STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
 RENDEZVOUS_STOP_CONDITION.STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop when the target enters a new performance phase."
 
 agcls.AgTypeNameMap["RENDEZVOUS_STOP_CONDITION"] = RENDEZVOUS_STOP_CONDITION
@@ -1355,7 +1358,7 @@ class FORMATION_FLYER_STOP_CONDITION(IntEnum):
     """Stop When Target Mission Changes."""
     FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
     """Stop When Target PhaseOfFlight Changes."""
-    FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 7
+    FORMATION_FLYER_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES = 7
     """Stop When Target PerfMode Changes."""
 
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_FULL_MISSION.__doc__ = "Stop After FullMission."
@@ -1365,7 +1368,7 @@ FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_AFTER_DOWN_RANGE.__doc__ = "
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PROCEDURE_CHANGES.__doc__ = "Stop When TargetProcedure Changes."
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_MISSION_CHANGES.__doc__ = "Stop When Target Mission Changes."
 FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop When Target PhaseOfFlight Changes."
-FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop When Target PerfMode Changes."
+FORMATION_FLYER_STOP_CONDITION.FORMATION_FLYER_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES.__doc__ = "Stop When Target PerfMode Changes."
 
 agcls.AgTypeNameMap["FORMATION_FLYER_STOP_CONDITION"] = FORMATION_FLYER_STOP_CONDITION
 
@@ -1400,21 +1403,21 @@ EXT_EPHEM_FLIGHT_MODE.EXT_EPHEM_FLIGHT_MODE_VTOL_HOVER.__doc__ = "VTOLHover ."
 
 agcls.AgTypeNameMap["EXT_EPHEM_FLIGHT_MODE"] = EXT_EPHEM_FLIGHT_MODE
 
-class ACCEL_PERF_MODEL_OVERRIDE(IntEnum):
+class ACCELERATION_PERFORMANCE_MODEL_OVERRIDE(IntEnum):
     """The acceleration performance model override mode."""
    
-    ACCEL_PERF_MODEL_VALUE = 0
-    """Use the acceleration performanc model value."""
-    ACCEL_OVERRIDE = 1
-    """Override the performanc model value."""
-    ACCEL_NO_LIMIT = 2
+    ACCELERATION_PERFORMANCE_MODEL_VALUE = 0
+    """Use the acceleration performance model value."""
+    ACCELERATION_OVERRIDE = 1
+    """Override the performance model value."""
+    ACCELERATION_NO_LIMIT = 2
     """Set no limit on the acceleration."""
 
-ACCEL_PERF_MODEL_OVERRIDE.ACCEL_PERF_MODEL_VALUE.__doc__ = "Use the acceleration performanc model value."
-ACCEL_PERF_MODEL_OVERRIDE.ACCEL_OVERRIDE.__doc__ = "Override the performanc model value."
-ACCEL_PERF_MODEL_OVERRIDE.ACCEL_NO_LIMIT.__doc__ = "Set no limit on the acceleration."
+ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_PERFORMANCE_MODEL_VALUE.__doc__ = "Use the acceleration performance model value."
+ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_OVERRIDE.__doc__ = "Override the performance model value."
+ACCELERATION_PERFORMANCE_MODEL_OVERRIDE.ACCELERATION_NO_LIMIT.__doc__ = "Set no limit on the acceleration."
 
-agcls.AgTypeNameMap["ACCEL_PERF_MODEL_OVERRIDE"] = ACCEL_PERF_MODEL_OVERRIDE
+agcls.AgTypeNameMap["ACCELERATION_PERFORMANCE_MODEL_OVERRIDE"] = ACCELERATION_PERFORMANCE_MODEL_OVERRIDE
 
 class STATIONKEEPING_STOP_CONDITION(IntEnum):
     """The stop condition options for a stationkeeping strategy."""
@@ -1451,43 +1454,43 @@ agcls.AgTypeNameMap["TURN_DIRECTION"] = TURN_DIRECTION
 class PROFILE_CONTROL_LIMIT(IntEnum):
     """Define the control limits for a profile strategy of a basic maneuver procedure."""
    
-    PROFILE_ACCEL_PERF_MODEL = 0
+    PROFILE_ACCELERATION_PERFORMANCE_MODEL = 0
     """Use Accel Perf Model."""
     PROFILE_PITCH_RATE = 1
     """Specify the pitch rate."""
 
-PROFILE_CONTROL_LIMIT.PROFILE_ACCEL_PERF_MODEL.__doc__ = "Use Accel Perf Model."
+PROFILE_CONTROL_LIMIT.PROFILE_ACCELERATION_PERFORMANCE_MODEL.__doc__ = "Use Accel Perf Model."
 PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE.__doc__ = "Specify the pitch rate."
 
 agcls.AgTypeNameMap["PROFILE_CONTROL_LIMIT"] = PROFILE_CONTROL_LIMIT
 
-class REL_SPEED_ALTITUDE_STOP_CONDITION(IntEnum):
+class RELATIVE_SPEED_ALTITUDE_STOP_CONDITION(IntEnum):
     """The stop condition options for a relative speed/altitude strategy."""
    
-    REL_SPEED_ALTITUDE_STOP_NORMAL = 0
+    RELATIVE_SPEED_ALTITUDE_STOP_NORMAL = 0
     """The basic stopping conditions will be used."""
-    REL_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED = 1
+    RELATIVE_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED = 1
     """Stop when the aircraft achieves the range for equal speed."""
-    REL_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE = 2
+    RELATIVE_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE = 2
     """Stop when the aircraft achieves the range to transition speed."""
-    REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE = 3
+    RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE = 3
     """Stop after the target completes the current procedure."""
-    REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE = 4
+    RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE = 4
     """Stop after the target completes the current phase."""
-    REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PERF_MODE_CHANGES = 5
+    RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES = 5
     """Stop when the target enters a new mode of flight."""
-    REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
+    RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES = 6
     """Stop when the target enters a new performance phase."""
 
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED.__doc__ = "Stop when the aircraft achieves the range for equal speed."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE.__doc__ = "Stop when the aircraft achieves the range to transition speed."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE.__doc__ = "Stop after the target completes the current phase."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PERF_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
-REL_SPEED_ALTITUDE_STOP_CONDITION.REL_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop when the target enters a new performance phase."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_NORMAL.__doc__ = "The basic stopping conditions will be used."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_MIN_RANGE_FOR_EQUAL_SPEED.__doc__ = "Stop when the aircraft achieves the range for equal speed."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_TRANSITION_SPEED_RANGE.__doc__ = "Stop when the aircraft achieves the range to transition speed."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PROCEDURE.__doc__ = "Stop after the target completes the current procedure."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_AFTER_TARGET_CURRENT_PHASE.__doc__ = "Stop after the target completes the current phase."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PERFORMANCE_MODE_CHANGES.__doc__ = "Stop when the target enters a new mode of flight."
+RELATIVE_SPEED_ALTITUDE_STOP_CONDITION.RELATIVE_SPEED_ALTITUDE_STOP_WHEN_TARGET_PHASE_OF_FLIGHT_CHANGES.__doc__ = "Stop when the target enters a new performance phase."
 
-agcls.AgTypeNameMap["REL_SPEED_ALTITUDE_STOP_CONDITION"] = REL_SPEED_ALTITUDE_STOP_CONDITION
+agcls.AgTypeNameMap["RELATIVE_SPEED_ALTITUDE_STOP_CONDITION"] = RELATIVE_SPEED_ALTITUDE_STOP_CONDITION
 
 class RELATIVE_ALTITUDE_MODE(IntEnum):
     """The relative altitude mode for a relative speed/altitude strategy."""
@@ -1534,21 +1537,21 @@ PUSH_PULL.PUSH_OVER.__doc__ = "Push over."
 
 agcls.AgTypeNameMap["PUSH_PULL"] = PUSH_PULL
 
-class ACCEL_MODE(IntEnum):
+class ACCELERATION_MODE(IntEnum):
     """The acceleration/decelation option for a push/pull profile strategy."""
    
-    ACCEL = 0
+    ACCELERATION = 0
     """Accelerate at specified G."""
-    DECEL = 1
+    DECELERATION = 1
     """Decelerate at specified G."""
     MAINTAIN_SPEED = 2
     """Maintain the initial airspeed."""
 
-ACCEL_MODE.ACCEL.__doc__ = "Accelerate at specified G."
-ACCEL_MODE.DECEL.__doc__ = "Decelerate at specified G."
-ACCEL_MODE.MAINTAIN_SPEED.__doc__ = "Maintain the initial airspeed."
+ACCELERATION_MODE.ACCELERATION.__doc__ = "Accelerate at specified G."
+ACCELERATION_MODE.DECELERATION.__doc__ = "Decelerate at specified G."
+ACCELERATION_MODE.MAINTAIN_SPEED.__doc__ = "Maintain the initial airspeed."
 
-agcls.AgTypeNameMap["ACCEL_MODE"] = ACCEL_MODE
+agcls.AgTypeNameMap["ACCELERATION_MODE"] = ACCELERATION_MODE
 
 class DELAY_ALTITUDE_MODE(IntEnum):
     """The altitude options for a delay procedure."""
@@ -1582,21 +1585,21 @@ JOIN_EXIT_ARC_METHOD.JOIN_EXIT_INBOUND.__doc__ = "The aircraft begins/ends on a 
 
 agcls.AgTypeNameMap["JOIN_EXIT_ARC_METHOD"] = JOIN_EXIT_ARC_METHOD
 
-class FLIGHT_LINE_PROC_TYPE(IntEnum):
+class FLIGHT_LINE_PROCEDURE_TYPE(IntEnum):
     """The procedure methodology used to calculate the flight line."""
    
-    PROC_TYPE_ENROUTE = 0
+    PROCEDURE_TYPE_ENROUTE = 0
     """An enroute procedure type."""
-    PROC_TYPE_BASIC_POINT_TO_POINT = 1
+    PROCEDURE_TYPE_BASIC_POINT_TO_POINT = 1
     """A basic point to point procedure type."""
-    PROC_TYPE_TERRAIN_FOLLOW = 2
+    PROCEDURE_TYPE_TERRAIN_FOLLOW = 2
     """A terrain follow procedure type."""
 
-FLIGHT_LINE_PROC_TYPE.PROC_TYPE_ENROUTE.__doc__ = "An enroute procedure type."
-FLIGHT_LINE_PROC_TYPE.PROC_TYPE_BASIC_POINT_TO_POINT.__doc__ = "A basic point to point procedure type."
-FLIGHT_LINE_PROC_TYPE.PROC_TYPE_TERRAIN_FOLLOW.__doc__ = "A terrain follow procedure type."
+FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_ENROUTE.__doc__ = "An enroute procedure type."
+FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_BASIC_POINT_TO_POINT.__doc__ = "A basic point to point procedure type."
+FLIGHT_LINE_PROCEDURE_TYPE.PROCEDURE_TYPE_TERRAIN_FOLLOW.__doc__ = "A terrain follow procedure type."
 
-agcls.AgTypeNameMap["FLIGHT_LINE_PROC_TYPE"] = FLIGHT_LINE_PROC_TYPE
+agcls.AgTypeNameMap["FLIGHT_LINE_PROCEDURE_TYPE"] = FLIGHT_LINE_PROCEDURE_TYPE
 
 class TRANSITION_TO_HOVER_MODE(IntEnum):
     """The type of hover to transition to."""
@@ -1833,7 +1836,7 @@ class FUEL_FLOW_TYPE(IntEnum):
     """Fuel flow defined for the current Landing performance model."""
     FUEL_FLOW_VTOL = 3
     """Fuel flow defined for the current VTOL performance model."""
-    FUEL_FLOW_AERO_PROP = 4
+    FUEL_FLOW_AERODYNAMIC_PROPULSION = 4
     """Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."""
     FUEL_FLOW_OVERRIDE = 5
     """Fuel flow defined manually."""
@@ -1842,7 +1845,7 @@ FUEL_FLOW_TYPE.FUEL_FLOW_TAKEOFF.__doc__ = "Fuel flow defined for the current Ta
 FUEL_FLOW_TYPE.FUEL_FLOW_CRUISE.__doc__ = "Fuel flow defined for the current Cruise performance model."
 FUEL_FLOW_TYPE.FUEL_FLOW_LANDING.__doc__ = "Fuel flow defined for the current Landing performance model."
 FUEL_FLOW_TYPE.FUEL_FLOW_VTOL.__doc__ = "Fuel flow defined for the current VTOL performance model."
-FUEL_FLOW_TYPE.FUEL_FLOW_AERO_PROP.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
+FUEL_FLOW_TYPE.FUEL_FLOW_AERODYNAMIC_PROPULSION.__doc__ = "Fuel flow defined for the Aerodynamics and Propulsion Analysis component of the current basic acceleration performance model."
 FUEL_FLOW_TYPE.FUEL_FLOW_OVERRIDE.__doc__ = "Fuel flow defined manually."
 
 agcls.AgTypeNameMap["FUEL_FLOW_TYPE"] = FUEL_FLOW_TYPE
@@ -1860,7 +1863,7 @@ LINE_ORIENTATION.FLIGHT_LINE_TO_RIGHT.__doc__ = "Right of the previous flight li
 
 agcls.AgTypeNameMap["LINE_ORIENTATION"] = LINE_ORIENTATION
 
-class REL_ABS_BEARING(IntEnum):
+class RELATIVE_ABSOLUTE_BEARING(IntEnum):
     """The options for a bearing that can be relative or absolute."""
    
     RELATIVE_BEARING = 0
@@ -1870,13 +1873,13 @@ class REL_ABS_BEARING(IntEnum):
     MAGNETIC_BEARING = 2
     """A bearing using magnetic north."""
 
-REL_ABS_BEARING.RELATIVE_BEARING.__doc__ = "A bearing relative to the previous course."
-REL_ABS_BEARING.TRUE_BEARING.__doc__ = "A bearing using true north."
-REL_ABS_BEARING.MAGNETIC_BEARING.__doc__ = "A bearing using magnetic north."
+RELATIVE_ABSOLUTE_BEARING.RELATIVE_BEARING.__doc__ = "A bearing relative to the previous course."
+RELATIVE_ABSOLUTE_BEARING.TRUE_BEARING.__doc__ = "A bearing using true north."
+RELATIVE_ABSOLUTE_BEARING.MAGNETIC_BEARING.__doc__ = "A bearing using magnetic north."
 
-agcls.AgTypeNameMap["REL_ABS_BEARING"] = REL_ABS_BEARING
+agcls.AgTypeNameMap["RELATIVE_ABSOLUTE_BEARING"] = RELATIVE_ABSOLUTE_BEARING
 
-class BASIC_FIXED_WING_PROP_MODE(IntEnum):
+class BASIC_FIXED_WING_PROPULSION_MODE(IntEnum):
     """The option to specify the thrust (jet engines) or power (propellers)."""
    
     SPECIFY_THRUST = 0
@@ -1884,10 +1887,10 @@ class BASIC_FIXED_WING_PROP_MODE(IntEnum):
     SPECIFY_POWER = 1
     """Propeller - Specify net power."""
 
-BASIC_FIXED_WING_PROP_MODE.SPECIFY_THRUST.__doc__ = "Jet - Specify net thrust."
-BASIC_FIXED_WING_PROP_MODE.SPECIFY_POWER.__doc__ = "Propeller - Specify net power."
+BASIC_FIXED_WING_PROPULSION_MODE.SPECIFY_THRUST.__doc__ = "Jet - Specify net thrust."
+BASIC_FIXED_WING_PROPULSION_MODE.SPECIFY_POWER.__doc__ = "Propeller - Specify net power."
 
-agcls.AgTypeNameMap["BASIC_FIXED_WING_PROP_MODE"] = BASIC_FIXED_WING_PROP_MODE
+agcls.AgTypeNameMap["BASIC_FIXED_WING_PROPULSION_MODE"] = BASIC_FIXED_WING_PROPULSION_MODE
 
 class CLIMB_SPEED_TYPE(IntEnum):
     """The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model."""
@@ -1908,7 +1911,7 @@ CLIMB_SPEED_TYPE.CLIMB_SPEED_OVERRIDE.__doc__ = "Manually specify the speed."
 
 agcls.AgTypeNameMap["CLIMB_SPEED_TYPE"] = CLIMB_SPEED_TYPE
 
-class CRUISE_MAX_PERF_SPEED_TYPE(IntEnum):
+class CRUISE_MAX_PERFORMANCE_SPEED_TYPE(IntEnum):
     """The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model."""
    
     CORNER_SPEED = 0
@@ -1922,13 +1925,13 @@ class CRUISE_MAX_PERF_SPEED_TYPE(IntEnum):
     MAX_RANGE_AFTERBURNER = 4
     """The speed which maximizes the aircraft range while afterburning."""
 
-CRUISE_MAX_PERF_SPEED_TYPE.CORNER_SPEED.__doc__ = "The lowest speed at which the aircraft can generate lift while pulling maximum Gs."
-CRUISE_MAX_PERF_SPEED_TYPE.MAX_PS_DRY_THRUST.__doc__ = "The maximum specific excess power without afterburning."
-CRUISE_MAX_PERF_SPEED_TYPE.MAX_PS_AFTERBURNER.__doc__ = "The maximum specific excess power while afterburning."
-CRUISE_MAX_PERF_SPEED_TYPE.MAX_SPEED_DRY_THRUST.__doc__ = "The maximum speed without afterburning."
-CRUISE_MAX_PERF_SPEED_TYPE.MAX_RANGE_AFTERBURNER.__doc__ = "The speed which maximizes the aircraft range while afterburning."
+CRUISE_MAX_PERFORMANCE_SPEED_TYPE.CORNER_SPEED.__doc__ = "The lowest speed at which the aircraft can generate lift while pulling maximum Gs."
+CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_PS_DRY_THRUST.__doc__ = "The maximum specific excess power without afterburning."
+CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_PS_AFTERBURNER.__doc__ = "The maximum specific excess power while afterburning."
+CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_SPEED_DRY_THRUST.__doc__ = "The maximum speed without afterburning."
+CRUISE_MAX_PERFORMANCE_SPEED_TYPE.MAX_RANGE_AFTERBURNER.__doc__ = "The speed which maximizes the aircraft range while afterburning."
 
-agcls.AgTypeNameMap["CRUISE_MAX_PERF_SPEED_TYPE"] = CRUISE_MAX_PERF_SPEED_TYPE
+agcls.AgTypeNameMap["CRUISE_MAX_PERFORMANCE_SPEED_TYPE"] = CRUISE_MAX_PERFORMANCE_SPEED_TYPE
 
 class DESCENT_SPEED_TYPE(IntEnum):
     """The method for calculating the aircraft's airspeed while descending."""
@@ -1981,24 +1984,24 @@ DEPARTURE_SPEED_MODE.USE_CLIMB_MODEL.__doc__ = "The aircraft will fly at the air
 
 agcls.AgTypeNameMap["DEPARTURE_SPEED_MODE"] = DEPARTURE_SPEED_MODE
 
-class ADVANCED_FIXED_WING_AERO_STRATEGY(IntEnum):
+class ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY(IntEnum):
     """The aerodynamic strategy for the Advanced Fixed Wing Tool."""
    
-    EXTERNAL_AERO_FILE = 0
+    EXTERNAL_AERODYNAMIC_FILE = 0
     """Define the aerodynamics using an external .aero file."""
-    SUB_SUPER_HYPER_AERO = 1
+    SUB_SUPER_HYPER_AERODYNAMIC = 1
     """Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."""
-    SUBSONIC_AERO = 2
+    SUBSONIC_AERODYNAMIC = 2
     """Define the aerodynamics for an aircraft that generally travels at subsonic speeds."""
-    SUPERSONIC_AERO = 3
+    SUPERSONIC_AERODYNAMIC = 3
     """Define the aerodynamics for an aircraft that generally travels at supersonic speeds."""
 
-ADVANCED_FIXED_WING_AERO_STRATEGY.EXTERNAL_AERO_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
-ADVANCED_FIXED_WING_AERO_STRATEGY.SUB_SUPER_HYPER_AERO.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
-ADVANCED_FIXED_WING_AERO_STRATEGY.SUBSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
-ADVANCED_FIXED_WING_AERO_STRATEGY.SUPERSONIC_AERO.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
+ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.EXTERNAL_AERODYNAMIC_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
+ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUB_SUPER_HYPER_AERODYNAMIC.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
+ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
+ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUPERSONIC_AERODYNAMIC.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
 
-agcls.AgTypeNameMap["ADVANCED_FIXED_WING_AERO_STRATEGY"] = ADVANCED_FIXED_WING_AERO_STRATEGY
+agcls.AgTypeNameMap["ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY"] = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY
 
 class ADVANCED_FIXED_WING_GEOMETRY(IntEnum):
     """The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool."""
@@ -2018,7 +2021,7 @@ class ADVANCED_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
    
     ELECTRIC_POWERPLANT = 0
     """An electric engine."""
-    EXTERNAL_PROP_FILE = 1
+    EXTERNAL_PROPULSION_FILE = 1
     """Define the powerplant using an external .prop file."""
     PISTON_POWERPLANT = 2
     """A piston, or reciprocating, engine."""
@@ -2042,7 +2045,7 @@ class ADVANCED_FIXED_WING_POWERPLANT_STRATEGY(IntEnum):
     """An empirical model that models a turboprop engine."""
 
 ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.ELECTRIC_POWERPLANT.__doc__ = "An electric engine."
-ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROP_FILE.__doc__ = "Define the powerplant using an external .prop file."
+ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.EXTERNAL_PROPULSION_FILE.__doc__ = "Define the powerplant using an external .prop file."
 ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.PISTON_POWERPLANT.__doc__ = "A piston, or reciprocating, engine."
 ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.SUB_SUPER_HYPER_POWERPLANT.__doc__ = "A thermodynamic model that includes turbine, ramjet, and scramjet performance modes."
 ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOFAN_BASIC_AB.__doc__ = "A thermodynamic model of a dual-spool turbofan engine that has an afterburner."
@@ -2056,43 +2059,43 @@ ADVANCED_FIXED_WING_POWERPLANT_STRATEGY.TURBOPROP.__doc__ = "An empirical model 
 
 agcls.AgTypeNameMap["ADVANCED_FIXED_WING_POWERPLANT_STRATEGY"] = ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
 
-class MISSILE_AERO_STRATEGY(IntEnum):
+class MISSILE_AERODYNAMIC_STRATEGY(IntEnum):
     """The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values."""
    
-    MISSILE_AERO_SIMPLE = 0
+    MISSILE_AERODYNAMIC_SIMPLE = 0
     """Simple aerodynamics."""
-    MISSILE_AERO_EXTERNAL_FILE = 1
+    MISSILE_AERODYNAMIC_EXTERNAL_FILE = 1
     """External file aerodynamics."""
-    MISSILE_AERO_ADVANCED = 2
+    MISSILE_AERODYNAMIC_ADVANCED = 2
     """Advanced missile aerodynamics."""
 
-MISSILE_AERO_STRATEGY.MISSILE_AERO_SIMPLE.__doc__ = "Simple aerodynamics."
-MISSILE_AERO_STRATEGY.MISSILE_AERO_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
-MISSILE_AERO_STRATEGY.MISSILE_AERO_ADVANCED.__doc__ = "Advanced missile aerodynamics."
+MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_SIMPLE.__doc__ = "Simple aerodynamics."
+MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
+MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_ADVANCED.__doc__ = "Advanced missile aerodynamics."
 
-agcls.AgTypeNameMap["MISSILE_AERO_STRATEGY"] = MISSILE_AERO_STRATEGY
+agcls.AgTypeNameMap["MISSILE_AERODYNAMIC_STRATEGY"] = MISSILE_AERODYNAMIC_STRATEGY
 
-class MISSILE_PROP_STRATEGY(IntEnum):
+class MISSILE_PROPULSION_STRATEGY(IntEnum):
     """The propulsion strategy used to compute thrust and throttle setting."""
    
-    MISSILE_PROP_SIMPLE = 0
+    MISSILE_PROPULSION_SIMPLE = 0
     """Simple propulsion."""
-    MISSILE_PROP_EXTERNAL_FILE = 1
+    MISSILE_PROPULSION_EXTERNAL_FILE = 1
     """External file propulsion."""
-    MISSILE_PROP_RAMJET = 2
+    MISSILE_PROPULSION_RAMJET = 2
     """Ramjet propulsion."""
-    MISSILE_PROP_ROCKET = 3
+    MISSILE_PROPULSION_ROCKET = 3
     """Rocket propulsion."""
-    MISSILE_PROP_TURBOJET = 4
+    MISSILE_PROPULSION_TURBOJET = 4
     """Turbojet propulsion."""
 
-MISSILE_PROP_STRATEGY.MISSILE_PROP_SIMPLE.__doc__ = "Simple propulsion."
-MISSILE_PROP_STRATEGY.MISSILE_PROP_EXTERNAL_FILE.__doc__ = "External file propulsion."
-MISSILE_PROP_STRATEGY.MISSILE_PROP_RAMJET.__doc__ = "Ramjet propulsion."
-MISSILE_PROP_STRATEGY.MISSILE_PROP_ROCKET.__doc__ = "Rocket propulsion."
-MISSILE_PROP_STRATEGY.MISSILE_PROP_TURBOJET.__doc__ = "Turbojet propulsion."
+MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_SIMPLE.__doc__ = "Simple propulsion."
+MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_EXTERNAL_FILE.__doc__ = "External file propulsion."
+MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_RAMJET.__doc__ = "Ramjet propulsion."
+MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_ROCKET.__doc__ = "Rocket propulsion."
+MISSILE_PROPULSION_STRATEGY.MISSILE_PROPULSION_TURBOJET.__doc__ = "Turbojet propulsion."
 
-agcls.AgTypeNameMap["MISSILE_PROP_STRATEGY"] = MISSILE_PROP_STRATEGY
+agcls.AgTypeNameMap["MISSILE_PROPULSION_STRATEGY"] = MISSILE_PROPULSION_STRATEGY
 
 class ROTORCRAFT_POWERPLANT_TYPE(IntEnum):
     """The powerplant type for a rotorcraft."""
@@ -2110,7 +2113,7 @@ ROTORCRAFT_POWERPLANT_TYPE.ROTORCRAFT_PISTON.__doc__ = "Piston propulsion."
 
 agcls.AgTypeNameMap["ROTORCRAFT_POWERPLANT_TYPE"] = ROTORCRAFT_POWERPLANT_TYPE
 
-class MINIMIZE_SITE_PROC_TIME_DIFF(IntEnum):
+class MINIMIZE_SITE_PROCEDURE_TIME_DIFF(IntEnum):
     """Options for minimizing the time difference between the procedure and site times."""
    
     MINIMIZE_TIME_DIFFERENCE_OFF = 0
@@ -2120,11 +2123,11 @@ class MINIMIZE_SITE_PROC_TIME_DIFF(IntEnum):
     MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE = 2
     """Only recalculate when updated."""
 
-MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF.__doc__ = "Do not converge the procedure and site times."
-MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS.__doc__ = "Always recalculate."
-MINIMIZE_SITE_PROC_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE.__doc__ = "Only recalculate when updated."
+MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_OFF.__doc__ = "Do not converge the procedure and site times."
+MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_ALWAYS.__doc__ = "Always recalculate."
+MINIMIZE_SITE_PROCEDURE_TIME_DIFF.MINIMIZE_TIME_DIFFERENCE_NEXT_UPDATE.__doc__ = "Only recalculate when updated."
 
-agcls.AgTypeNameMap["MINIMIZE_SITE_PROC_TIME_DIFF"] = MINIMIZE_SITE_PROC_TIME_DIFF
+agcls.AgTypeNameMap["MINIMIZE_SITE_PROCEDURE_TIME_DIFF"] = MINIMIZE_SITE_PROCEDURE_TIME_DIFF
 
 class STK_OBJECT_WAYPOINT_OFFSET_MODE(IntEnum):
     """The options to offset the site location relative to the STK Object."""
@@ -2202,7 +2205,7 @@ TRAJECTORY_BLEND_MODE.BLEND_ECF_CUBIC.__doc__ = "Cubic interpolation using the E
 
 agcls.AgTypeNameMap["TRAJECTORY_BLEND_MODE"] = TRAJECTORY_BLEND_MODE
 
-class REFERENCE_STATE_PERF_MODE(IntEnum):
+class REFERENCE_STATE_PERFORMANCE_MODE(IntEnum):
     """The type of motion the aircraft is engaged in at the reference state."""
    
     REFERENCE_STATE_CLIMB = 0
@@ -2222,18 +2225,18 @@ class REFERENCE_STATE_PERF_MODE(IntEnum):
     REFERENCE_STATE_TAKEOFF_RUN = 7
     """Weight On Wheels - Takeoff Run performance mode."""
 
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CLIMB.__doc__ = "Forward Flight - Climb performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_CRUISE.__doc__ = "Forward Flight - Cruise performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_DESCEND.__doc__ = "Forward Flight - Descend performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_HOVER.__doc__ = "Hover performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING.__doc__ = "Landing performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF.__doc__ = "Takeoff performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_LANDING_ROLLOUT.__doc__ = "Weight On Wheels - Landing Rollout performance mode."
-REFERENCE_STATE_PERF_MODE.REFERENCE_STATE_TAKEOFF_RUN.__doc__ = "Weight On Wheels - Takeoff Run performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CLIMB.__doc__ = "Forward Flight - Climb performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_CRUISE.__doc__ = "Forward Flight - Cruise performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_DESCEND.__doc__ = "Forward Flight - Descend performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_HOVER.__doc__ = "Hover performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_LANDING.__doc__ = "Landing performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_TAKEOFF.__doc__ = "Takeoff performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_LANDING_ROLLOUT.__doc__ = "Weight On Wheels - Landing Rollout performance mode."
+REFERENCE_STATE_PERFORMANCE_MODE.REFERENCE_STATE_TAKEOFF_RUN.__doc__ = "Weight On Wheels - Takeoff Run performance mode."
 
-agcls.AgTypeNameMap["REFERENCE_STATE_PERF_MODE"] = REFERENCE_STATE_PERF_MODE
+agcls.AgTypeNameMap["REFERENCE_STATE_PERFORMANCE_MODE"] = REFERENCE_STATE_PERFORMANCE_MODE
 
-class REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE(IntEnum):
+class REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE(IntEnum):
     """The mode to specify the longitudinal acceleration of the aircraft."""
    
     SPECIFY_TAS_DOT = 0
@@ -2241,12 +2244,12 @@ class REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE(IntEnum):
     SPECIFY_GROUND_SPEED_DOT = 1
     """Specify the groundspeed acceleration."""
 
-REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_TAS_DOT.__doc__ = "Specify the true airspeed acceleration."
-REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE.SPECIFY_GROUND_SPEED_DOT.__doc__ = "Specify the groundspeed acceleration."
+REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_TAS_DOT.__doc__ = "Specify the true airspeed acceleration."
+REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE.SPECIFY_GROUND_SPEED_DOT.__doc__ = "Specify the groundspeed acceleration."
 
-agcls.AgTypeNameMap["REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE"] = REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE
+agcls.AgTypeNameMap["REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE"] = REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
 
-class REFERENCE_STATE_LATERAL_ACCEL_MODE(IntEnum):
+class REFERENCE_STATE_LATERAL_ACCELERATION_MODE(IntEnum):
     """The mode to specify the lateral acceleration of the aircraft."""
    
     SPECIFY_HEADING_DOT = 0
@@ -2254,10 +2257,10 @@ class REFERENCE_STATE_LATERAL_ACCEL_MODE(IntEnum):
     SPECIFY_COURSE_DOT = 1
     """Specify the course rate of change."""
 
-REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_HEADING_DOT.__doc__ = "Specify the heading rate of change."
-REFERENCE_STATE_LATERAL_ACCEL_MODE.SPECIFY_COURSE_DOT.__doc__ = "Specify the course rate of change."
+REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_HEADING_DOT.__doc__ = "Specify the heading rate of change."
+REFERENCE_STATE_LATERAL_ACCELERATION_MODE.SPECIFY_COURSE_DOT.__doc__ = "Specify the course rate of change."
 
-agcls.AgTypeNameMap["REFERENCE_STATE_LATERAL_ACCEL_MODE"] = REFERENCE_STATE_LATERAL_ACCEL_MODE
+agcls.AgTypeNameMap["REFERENCE_STATE_LATERAL_ACCELERATION_MODE"] = REFERENCE_STATE_LATERAL_ACCELERATION_MODE
 
 class REFERENCE_STATE_ATTITUDE_MODE(IntEnum):
     """The mode to specify the attitude rate of change."""
@@ -2486,34 +2489,34 @@ BALLISTIC_3D_CONTROL_MODE.BALLISTIC_3D_PARACHUTE_MODE.__doc__ = "Model the vehic
 
 agcls.AgTypeNameMap["BALLISTIC_3D_CONTROL_MODE"] = BALLISTIC_3D_CONTROL_MODE
 
-class LAUNCH_DYN_STATE_COORD_FRAME(IntEnum):
+class LAUNCH_DYNAMIC_STATE_COORD_FRAME(IntEnum):
     """The coordinate frame used for a LaunchDynState procedure."""
    
-    LAUNCH_DYN_STATE_COORD_FRAME_BODY = 0
+    LAUNCH_DYNAMIC_STATE_COORD_FRAME_BODY = 0
     """The object's body frame."""
-    LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL = 1
+    LAUNCH_DYNAMIC_STATE_COORD_FRAME_LOCAL_HORIZONTAL = 1
     """The object's local horizontal frame."""
 
-LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_BODY.__doc__ = "The object's body frame."
-LAUNCH_DYN_STATE_COORD_FRAME.LAUNCH_DYN_STATE_COORD_FRAME_LOCAL_HORIZONTAL.__doc__ = "The object's local horizontal frame."
+LAUNCH_DYNAMIC_STATE_COORD_FRAME.LAUNCH_DYNAMIC_STATE_COORD_FRAME_BODY.__doc__ = "The object's body frame."
+LAUNCH_DYNAMIC_STATE_COORD_FRAME.LAUNCH_DYNAMIC_STATE_COORD_FRAME_LOCAL_HORIZONTAL.__doc__ = "The object's local horizontal frame."
 
-agcls.AgTypeNameMap["LAUNCH_DYN_STATE_COORD_FRAME"] = LAUNCH_DYN_STATE_COORD_FRAME
+agcls.AgTypeNameMap["LAUNCH_DYNAMIC_STATE_COORD_FRAME"] = LAUNCH_DYNAMIC_STATE_COORD_FRAME
 
-class LAUNCH_DYN_STATE_BEARING_REFERENCE(IntEnum):
+class LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE(IntEnum):
     """The vector used as a bearing reference for a LaunchDynState procedure."""
    
-    LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY = 0
+    LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY = 0
     """The object's velocity vector."""
-    LAUNCH_DYN_STATE_BEARING_REFERENCE_COORD_FRAME_X = 1
+    LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_COORD_FRAME_X = 1
     """The X vector of the object's coordinate frame."""
-    LAUNCH_DYN_STATE_BEARING_REFERENCE_NORTH = 2
+    LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_NORTH = 2
     """The object's vector to North."""
 
-LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_VELOCITY.__doc__ = "The object's velocity vector."
-LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_COORD_FRAME_X.__doc__ = "The X vector of the object's coordinate frame."
-LAUNCH_DYN_STATE_BEARING_REFERENCE.LAUNCH_DYN_STATE_BEARING_REFERENCE_NORTH.__doc__ = "The object's vector to North."
+LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_VELOCITY.__doc__ = "The object's velocity vector."
+LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_COORD_FRAME_X.__doc__ = "The X vector of the object's coordinate frame."
+LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_NORTH.__doc__ = "The object's vector to North."
 
-agcls.AgTypeNameMap["LAUNCH_DYN_STATE_BEARING_REFERENCE"] = LAUNCH_DYN_STATE_BEARING_REFERENCE
+agcls.AgTypeNameMap["LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE"] = LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE
 
 class ALTITUDE_REFERENCE(IntEnum):
     """The altitude reference."""
@@ -2531,18 +2534,18 @@ ALTITUDE_REFERENCE.ALTITUDE_REFERENCE_TERRAIN.__doc__ = "ALtitude above terrain.
 
 agcls.AgTypeNameMap["ALTITUDE_REFERENCE"] = ALTITUDE_REFERENCE
 
-class SMOOTH_TURN_FPA_MODE(IntEnum):
+class SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE(IntEnum):
     """The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure."""
    
-    SMOOTH_TURN_FPA_HOLD_INITIAL = 0
+    SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL = 0
     """Hold the initial flight path angle."""
-    SMOOTH_TURN_FPA_LEVEL_OFF = 1
+    SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF = 1
     """Levell off the flight path angle."""
 
-SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
-SMOOTH_TURN_FPA_MODE.SMOOTH_TURN_FPA_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
+SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_HOLD_INITIAL.__doc__ = "Hold the initial flight path angle."
+SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE.SMOOTH_TURN_FLIGHT_PATH_ANGLE_LEVEL_OFF.__doc__ = "Levell off the flight path angle."
 
-agcls.AgTypeNameMap["SMOOTH_TURN_FPA_MODE"] = SMOOTH_TURN_FPA_MODE
+agcls.AgTypeNameMap["SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE"] = SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE
 
 class PITCH_3D_CONTROL_MODE(IntEnum):
     """The control mode used to define the pitch 3D strategy of the basic maneuver procedure."""
@@ -2624,12 +2627,12 @@ class EPHEM_SHIFT_ROTATE_ALTITUDE_MODE(IntEnum):
     """Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeMSL."""
     ALTITUDE_MODE_WGS = 1
     """Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeWGS."""
-    ALTITUDE_MODE_REL = 2
+    ALTITUDE_MODE_RELATIVE = 2
     """Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeRel."""
 
 EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_MSL.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeMSL."
 EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_WGS.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeWGS."
-EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_REL.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeRel."
+EPHEM_SHIFT_ROTATE_ALTITUDE_MODE.ALTITUDE_MODE_RELATIVE.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_ALTITUDE_MODE:eAltModeRel."
 
 agcls.AgTypeNameMap["EPHEM_SHIFT_ROTATE_ALTITUDE_MODE"] = EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
 
@@ -2640,12 +2643,12 @@ class EPHEM_SHIFT_ROTATE_COURSE_MODE(IntEnum):
     """Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeTrue."""
     COURSE_MODE_MAGNITUDE = 1
     """Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeMag."""
-    COURSE_MODE_REL = 2
+    COURSE_MODE_RELATIVE = 2
     """Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeRel."""
 
 EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_TRUE.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeTrue."
 EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_MAGNITUDE.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeMag."
-EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_REL.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeRel."
+EPHEM_SHIFT_ROTATE_COURSE_MODE.COURSE_MODE_RELATIVE.__doc__ = "Enumeration EPHEM_SHIFT_ROTATE_COURSE_MODE:eCourseModeRel."
 
 agcls.AgTypeNameMap["EPHEM_SHIFT_ROTATE_COURSE_MODE"] = EPHEM_SHIFT_ROTATE_COURSE_MODE
 
@@ -4319,7 +4322,7 @@ class SiteSuperProcedure(ISite, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5371976027007327351, 12208188571124011188), SiteSuperProcedure)
 agcls.AgTypeNameMap["SiteSuperProcedure"] = SiteSuperProcedure
 
-class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
+class SiteRelativeToPrevProcedure(ISite, SupportsDeleteCallback):
     """Interface used to access the options for a Relative to Previous Procedure site."""
 
     _num_methods = 7
@@ -4337,23 +4340,23 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SiteRelToPrevProcedure)
+        return get_interface_property(attrname, SiteRelativeToPrevProcedure)
     
     _get_bearing_mode_metadata = { "offset" : _get_bearing_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REL_ABS_BEARING),) }
+            "marshallers" : (agmarshall.EnumArg(RELATIVE_ABSOLUTE_BEARING),) }
     @property
-    def bearing_mode(self) -> "REL_ABS_BEARING":
+    def bearing_mode(self) -> "RELATIVE_ABSOLUTE_BEARING":
         """Get or set the bearing reference."""
-        return self._intf.get_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._get_bearing_mode_metadata)
+        return self._intf.get_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._get_bearing_mode_metadata)
 
     _set_bearing_mode_metadata = { "offset" : _set_bearing_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(REL_ABS_BEARING),) }
+            "marshallers" : (agmarshall.EnumArg(RELATIVE_ABSOLUTE_BEARING),) }
     @bearing_mode.setter
-    def bearing_mode(self, newVal:"REL_ABS_BEARING") -> None:
+    def bearing_mode(self, newVal:"RELATIVE_ABSOLUTE_BEARING") -> None:
         """Get or set the bearing reference."""
-        return self._intf.set_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._set_bearing_mode_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._set_bearing_mode_metadata, newVal)
 
     _get_bearing_metadata = { "offset" : _get_bearing_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -4361,7 +4364,7 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
     @property
     def bearing(self) -> typing.Any:
         """Get or set the bearing to define the site."""
-        return self._intf.get_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._get_bearing_metadata)
+        return self._intf.get_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._get_bearing_metadata)
 
     _set_bearing_metadata = { "offset" : _set_bearing_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -4369,7 +4372,7 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
     @bearing.setter
     def bearing(self, newVal:typing.Any) -> None:
         """Get or set the bearing to define the site."""
-        return self._intf.set_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._set_bearing_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._set_bearing_metadata, newVal)
 
     _get_range_metadata = { "offset" : _get_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -4377,7 +4380,7 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
     @property
     def range(self) -> float:
         """Get or set the range from the previous procedure."""
-        return self._intf.get_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._get_range_metadata)
+        return self._intf.get_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._get_range_metadata)
 
     _set_range_metadata = { "offset" : _set_range_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -4385,23 +4388,23 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
     @range.setter
     def range(self, newVal:float) -> None:
         """Get or set the range from the previous procedure."""
-        return self._intf.set_property(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._set_range_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._set_range_metadata, newVal)
 
     _get_as_site_metadata = { "offset" : _get_as_site_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_site(self) -> "ISite":
         """Get the site interface."""
-        return self._intf.invoke(SiteRelToPrevProcedure._metadata, SiteRelToPrevProcedure._get_as_site_metadata, OutArg())
+        return self._intf.invoke(SiteRelativeToPrevProcedure._metadata, SiteRelativeToPrevProcedure._get_as_site_metadata, OutArg())
 
     _property_names[bearing_mode] = "bearing_mode"
     _property_names[bearing] = "bearing"
     _property_names[range] = "range"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SiteRelToPrevProcedure."""
+        """Construct an object of type SiteRelativeToPrevProcedure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRelToPrevProcedure)
+        initialize_from_source_object(self, sourceObject, SiteRelativeToPrevProcedure)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4411,10 +4414,10 @@ class SiteRelToPrevProcedure(ISite, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SiteRelToPrevProcedure, [SiteRelToPrevProcedure, ISite])
+        set_class_attribute(self, attrname, value, SiteRelativeToPrevProcedure, [SiteRelativeToPrevProcedure, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4958528407379756360, 17186724269580697779), SiteRelToPrevProcedure)
-agcls.AgTypeNameMap["SiteRelToPrevProcedure"] = SiteRelToPrevProcedure
+agcls.AgClassCatalog.add_catalog_entry((4958528407379756360, 17186724269580697779), SiteRelativeToPrevProcedure)
+agcls.AgTypeNameMap["SiteRelativeToPrevProcedure"] = SiteRelativeToPrevProcedure
 
 class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
     """Interface used to access the options for a STK Object Waypoint site."""
@@ -4427,8 +4430,8 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
     _get_min_time_method_offset = 4
     _get_waypoint_time_method_offset = 5
     _set_waypoint_time_method_offset = 6
-    _get_minimize_site_proc_time_diff_method_offset = 7
-    _set_minimize_site_proc_time_diff_method_offset = 8
+    _get_minimize_site_procedure_time_diff_method_offset = 7
+    _set_minimize_site_procedure_time_diff_method_offset = 8
     _get_max_time_method_offset = 9
     _get_offset_mode_method_offset = 10
     _set_offset_mode_method_offset = 11
@@ -4497,21 +4500,21 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
         """Get or set the time at which the object's position will be used as a waypoint."""
         return self._intf.set_property(SiteSTKObjectWaypoint._metadata, SiteSTKObjectWaypoint._set_waypoint_time_metadata, newVal)
 
-    _get_minimize_site_proc_time_diff_metadata = { "offset" : _get_minimize_site_proc_time_diff_method_offset,
+    _get_minimize_site_procedure_time_diff_metadata = { "offset" : _get_minimize_site_procedure_time_diff_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MINIMIZE_SITE_PROC_TIME_DIFF),) }
+            "marshallers" : (agmarshall.EnumArg(MINIMIZE_SITE_PROCEDURE_TIME_DIFF),) }
     @property
-    def minimize_site_proc_time_diff(self) -> "MINIMIZE_SITE_PROC_TIME_DIFF":
+    def minimize_site_procedure_time_diff(self) -> "MINIMIZE_SITE_PROCEDURE_TIME_DIFF":
         """Get or set the mode to minimize the time difference between the procedure and site times."""
-        return self._intf.get_property(SiteSTKObjectWaypoint._metadata, SiteSTKObjectWaypoint._get_minimize_site_proc_time_diff_metadata)
+        return self._intf.get_property(SiteSTKObjectWaypoint._metadata, SiteSTKObjectWaypoint._get_minimize_site_procedure_time_diff_metadata)
 
-    _set_minimize_site_proc_time_diff_metadata = { "offset" : _set_minimize_site_proc_time_diff_method_offset,
+    _set_minimize_site_procedure_time_diff_metadata = { "offset" : _set_minimize_site_procedure_time_diff_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MINIMIZE_SITE_PROC_TIME_DIFF),) }
-    @minimize_site_proc_time_diff.setter
-    def minimize_site_proc_time_diff(self, newVal:"MINIMIZE_SITE_PROC_TIME_DIFF") -> None:
+            "marshallers" : (agmarshall.EnumArg(MINIMIZE_SITE_PROCEDURE_TIME_DIFF),) }
+    @minimize_site_procedure_time_diff.setter
+    def minimize_site_procedure_time_diff(self, newVal:"MINIMIZE_SITE_PROCEDURE_TIME_DIFF") -> None:
         """Get or set the mode to minimize the time difference between the procedure and site times."""
-        return self._intf.set_property(SiteSTKObjectWaypoint._metadata, SiteSTKObjectWaypoint._set_minimize_site_proc_time_diff_metadata, newVal)
+        return self._intf.set_property(SiteSTKObjectWaypoint._metadata, SiteSTKObjectWaypoint._set_minimize_site_procedure_time_diff_metadata, newVal)
 
     _get_max_time_metadata = { "offset" : _get_max_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -4612,7 +4615,7 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
     _property_names[valid_object_names] = "valid_object_names"
     _property_names[min_time] = "min_time"
     _property_names[waypoint_time] = "waypoint_time"
-    _property_names[minimize_site_proc_time_diff] = "minimize_site_proc_time_diff"
+    _property_names[minimize_site_procedure_time_diff] = "minimize_site_procedure_time_diff"
     _property_names[max_time] = "max_time"
     _property_names[offset_mode] = "offset_mode"
     _property_names[bearing] = "bearing"
@@ -4707,7 +4710,7 @@ class SiteSTKStaticObject(ISite, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5632434088179407466, 7029154613056126903), SiteSTKStaticObject)
 agcls.AgTypeNameMap["SiteSTKStaticObject"] = SiteSTKStaticObject
 
-class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
+class SiteRelativeToSTKObject(ISite, SupportsDeleteCallback):
     """Interface used to access the options for a Relative to Stationary STK Object site."""
 
     _num_methods = 10
@@ -4728,7 +4731,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SiteRelToSTKObject)
+        return get_interface_property(attrname, SiteRelativeToSTKObject)
     
     _get_object_name_metadata = { "offset" : _get_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -4736,7 +4739,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @property
     def object_name(self) -> str:
         """Get or set the object name to link to."""
-        return self._intf.get_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_object_name_metadata)
+        return self._intf.get_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_object_name_metadata)
 
     _set_object_name_metadata = { "offset" : _set_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -4744,7 +4747,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @object_name.setter
     def object_name(self, newVal:str) -> None:
         """Get or set the object name to link to."""
-        return self._intf.set_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._set_object_name_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._set_object_name_metadata, newVal)
 
     _get_valid_object_names_metadata = { "offset" : _get_valid_object_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -4752,7 +4755,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @property
     def valid_object_names(self) -> list:
         """Return the valid object names."""
-        return self._intf.get_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_valid_object_names_metadata)
+        return self._intf.get_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_valid_object_names_metadata)
 
     _get_bearing_metadata = { "offset" : _get_bearing_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -4760,7 +4763,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @property
     def bearing(self) -> typing.Any:
         """Get or set the bearing from the STK object."""
-        return self._intf.get_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_bearing_metadata)
+        return self._intf.get_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_bearing_metadata)
 
     _set_bearing_metadata = { "offset" : _set_bearing_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -4768,7 +4771,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @bearing.setter
     def bearing(self, newVal:typing.Any) -> None:
         """Get or set the bearing from the STK object."""
-        return self._intf.set_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._set_bearing_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._set_bearing_metadata, newVal)
 
     _get_use_magnetic_bearing_metadata = { "offset" : _get_use_magnetic_bearing_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -4776,7 +4779,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @property
     def use_magnetic_bearing(self) -> bool:
         """Get or set the option to use a magnetic bearing."""
-        return self._intf.get_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_use_magnetic_bearing_metadata)
+        return self._intf.get_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_use_magnetic_bearing_metadata)
 
     _set_use_magnetic_bearing_metadata = { "offset" : _set_use_magnetic_bearing_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -4784,7 +4787,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @use_magnetic_bearing.setter
     def use_magnetic_bearing(self, newVal:bool) -> None:
         """Get or set the option to use a magnetic bearing."""
-        return self._intf.set_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._set_use_magnetic_bearing_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._set_use_magnetic_bearing_metadata, newVal)
 
     _get_range_metadata = { "offset" : _get_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -4792,7 +4795,7 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @property
     def range(self) -> float:
         """Get or set the range from the STK object."""
-        return self._intf.get_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_range_metadata)
+        return self._intf.get_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_range_metadata)
 
     _set_range_metadata = { "offset" : _set_range_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -4800,14 +4803,14 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     @range.setter
     def range(self, newVal:float) -> None:
         """Get or set the range from the STK object."""
-        return self._intf.set_property(SiteRelToSTKObject._metadata, SiteRelToSTKObject._set_range_metadata, newVal)
+        return self._intf.set_property(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._set_range_metadata, newVal)
 
     _get_as_site_metadata = { "offset" : _get_as_site_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_site(self) -> "ISite":
         """Get the site interface."""
-        return self._intf.invoke(SiteRelToSTKObject._metadata, SiteRelToSTKObject._get_as_site_metadata, OutArg())
+        return self._intf.invoke(SiteRelativeToSTKObject._metadata, SiteRelativeToSTKObject._get_as_site_metadata, OutArg())
 
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
@@ -4816,9 +4819,9 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
     _property_names[range] = "range"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SiteRelToSTKObject."""
+        """Construct an object of type SiteRelativeToSTKObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRelToSTKObject)
+        initialize_from_source_object(self, sourceObject, SiteRelativeToSTKObject)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -4828,10 +4831,10 @@ class SiteRelToSTKObject(ISite, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SiteRelToSTKObject, [SiteRelToSTKObject, ISite])
+        set_class_attribute(self, attrname, value, SiteRelativeToSTKObject, [SiteRelativeToSTKObject, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((5732220974452340660, 18011894982964506785), SiteRelToSTKObject)
-agcls.AgTypeNameMap["SiteRelToSTKObject"] = SiteRelToSTKObject
+agcls.AgClassCatalog.add_catalog_entry((5732220974452340660, 18011894982964506785), SiteRelativeToSTKObject)
+agcls.AgTypeNameMap["SiteRelativeToSTKObject"] = SiteRelativeToSTKObject
 
 class SiteSTKAreaTarget(ISite, SupportsDeleteCallback):
     """Interface used to access the options for a STK Area Target site."""
@@ -6276,17 +6279,17 @@ class ProcedureFlightLine(IProcedure, SupportsDeleteCallback):
 
     _get_procedure_type_metadata = { "offset" : _get_procedure_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @property
-    def procedure_type(self) -> "FLIGHT_LINE_PROC_TYPE":
+    def procedure_type(self) -> "FLIGHT_LINE_PROCEDURE_TYPE":
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.get_property(ProcedureFlightLine._metadata, ProcedureFlightLine._get_procedure_type_metadata)
 
     _set_procedure_type_metadata = { "offset" : _set_procedure_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @procedure_type.setter
-    def procedure_type(self, newVal:"FLIGHT_LINE_PROC_TYPE") -> None:
+    def procedure_type(self, newVal:"FLIGHT_LINE_PROCEDURE_TYPE") -> None:
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.set_property(ProcedureFlightLine._metadata, ProcedureFlightLine._set_procedure_type_metadata, newVal)
 
@@ -6756,7 +6759,7 @@ class Phase(SupportsDeleteCallback):
     _get_name_method_offset = 2
     _set_name_method_offset = 3
     _get_performance_model_by_type_method_offset = 4
-    _set_default_perf_models_method_offset = 5
+    _set_default_performance_models_method_offset = 5
     _copy_performance_models_method_offset = 6
     _paste_performance_models_method_offset = 7
     _metadata = {
@@ -6798,12 +6801,12 @@ class Phase(SupportsDeleteCallback):
         """Get the active performance model for the given category type."""
         return self._intf.invoke(Phase._metadata, Phase._get_performance_model_by_type_metadata, type, OutArg())
 
-    _set_default_perf_models_metadata = { "offset" : _set_default_perf_models_method_offset,
+    _set_default_performance_models_metadata = { "offset" : _set_default_performance_models_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def set_default_perf_models(self) -> None:
+    def set_default_performance_models(self) -> None:
         """Set the phase to use the default performance models of the aircraft."""
-        return self._intf.invoke(Phase._metadata, Phase._set_default_perf_models_metadata, )
+        return self._intf.invoke(Phase._metadata, Phase._set_default_performance_models_metadata, )
 
     _copy_performance_models_metadata = { "offset" : _copy_performance_models_method_offset,
             "arg_types" : (),
@@ -7056,11 +7059,11 @@ class AviatorPropagator(SupportsDeleteCallback):
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_avtr_mission_method_offset = 1
+    _get_aviator_mission_method_offset = 1
     _propagate_method_offset = 2
     _get_auto_recalculate_method_offset = 3
     _set_auto_recalculate_method_offset = 4
-    _get_avtr_catalog_method_offset = 5
+    _get_aviator_catalog_method_offset = 5
     _metadata = {
         "iid_data" : (5661397388601039162, 10681986619092325766),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -7069,13 +7072,13 @@ class AviatorPropagator(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, AviatorPropagator)
     
-    _get_avtr_mission_metadata = { "offset" : _get_avtr_mission_method_offset,
+    _get_aviator_mission_metadata = { "offset" : _get_aviator_mission_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def avtr_mission(self) -> "Mission":
+    def aviator_mission(self) -> "Mission":
         """Get the Aviator mission."""
-        return self._intf.get_property(AviatorPropagator._metadata, AviatorPropagator._get_avtr_mission_metadata)
+        return self._intf.get_property(AviatorPropagator._metadata, AviatorPropagator._get_aviator_mission_metadata)
 
     _propagate_metadata = { "offset" : _propagate_method_offset,
             "arg_types" : (),
@@ -7100,17 +7103,17 @@ class AviatorPropagator(SupportsDeleteCallback):
         """Opt whether to have the propagator auto recalculate."""
         return self._intf.set_property(AviatorPropagator._metadata, AviatorPropagator._set_auto_recalculate_metadata, vbAutoRecalc)
 
-    _get_avtr_catalog_metadata = { "offset" : _get_avtr_catalog_method_offset,
+    _get_aviator_catalog_metadata = { "offset" : _get_aviator_catalog_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def avtr_catalog(self) -> "Catalog":
+    def aviator_catalog(self) -> "Catalog":
         """Get the Aviator catalog."""
-        return self._intf.get_property(AviatorPropagator._metadata, AviatorPropagator._get_avtr_catalog_metadata)
+        return self._intf.get_property(AviatorPropagator._metadata, AviatorPropagator._get_aviator_catalog_metadata)
 
-    _property_names[avtr_mission] = "avtr_mission"
+    _property_names[aviator_mission] = "aviator_mission"
     _property_names[auto_recalculate] = "auto_recalculate"
-    _property_names[avtr_catalog] = "avtr_catalog"
+    _property_names[aviator_catalog] = "aviator_catalog"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type AviatorPropagator."""
@@ -7519,10 +7522,10 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
     _get_control_limit_mode_method_offset = 7
     _get_control_limit_turn_radius_method_offset = 8
     _get_control_limit_turn_rate_method_offset = 9
-    _get_control_limit_horiz_accel_method_offset = 10
+    _get_control_limit_horizontal_acceleration_method_offset = 10
     _set_control_limit_method_offset = 11
-    _get_compensate_for_coriolis_accel_method_offset = 12
-    _set_compensate_for_coriolis_accel_method_offset = 13
+    _get_compensate_for_coriolis_acceleration_method_offset = 12
+    _set_compensate_for_coriolis_acceleration_method_offset = 13
     _metadata = {
         "iid_data" : (5498161033082324708, 15050332780891237523),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -7578,9 +7581,9 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
         return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_control_limit_mode_metadata)
 
@@ -7600,35 +7603,35 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
         return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
         return self._intf.invoke(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyWeave._metadata, BasicManeuverStrategyWeave._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[heading_change] = "heading_change"
     _property_names[max_num_cycles] = "max_num_cycles"
@@ -7636,8 +7639,8 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategyWeave."""
@@ -7833,8 +7836,8 @@ class CalculationOptions(SupportsDeleteCallback):
 
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_max_rel_motion_factor_method_offset = 1
-    _set_max_rel_motion_factor_method_offset = 2
+    _get_max_relative_motion_factor_method_offset = 1
+    _set_max_relative_motion_factor_method_offset = 2
     _get_state_cache_time_interval_method_offset = 3
     _set_state_cache_time_interval_method_offset = 4
     _get_time_resolution_method_offset = 5
@@ -7855,21 +7858,21 @@ class CalculationOptions(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationOptions)
     
-    _get_max_rel_motion_factor_metadata = { "offset" : _get_max_rel_motion_factor_method_offset,
+    _get_max_relative_motion_factor_metadata = { "offset" : _get_max_relative_motion_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_rel_motion_factor(self) -> float:
+    def max_relative_motion_factor(self) -> float:
         """Get or set the maximum motion allowed between sampling points."""
-        return self._intf.get_property(CalculationOptions._metadata, CalculationOptions._get_max_rel_motion_factor_metadata)
+        return self._intf.get_property(CalculationOptions._metadata, CalculationOptions._get_max_relative_motion_factor_metadata)
 
-    _set_max_rel_motion_factor_metadata = { "offset" : _set_max_rel_motion_factor_method_offset,
+    _set_max_relative_motion_factor_metadata = { "offset" : _set_max_relative_motion_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_rel_motion_factor.setter
-    def max_rel_motion_factor(self, newVal:float) -> None:
+    @max_relative_motion_factor.setter
+    def max_relative_motion_factor(self, newVal:float) -> None:
         """Get or set the maximum motion allowed between sampling points."""
-        return self._intf.set_property(CalculationOptions._metadata, CalculationOptions._set_max_rel_motion_factor_metadata, newVal)
+        return self._intf.set_property(CalculationOptions._metadata, CalculationOptions._set_max_relative_motion_factor_metadata, newVal)
 
     _get_state_cache_time_interval_metadata = { "offset" : _get_state_cache_time_interval_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7967,7 +7970,7 @@ class CalculationOptions(SupportsDeleteCallback):
         """Get or set the integrator type as a string value. Use this for custom integrators."""
         return self._intf.set_property(CalculationOptions._metadata, CalculationOptions._set_integrator_type_string_metadata, pVal)
 
-    _property_names[max_rel_motion_factor] = "max_rel_motion_factor"
+    _property_names[max_relative_motion_factor] = "max_relative_motion_factor"
     _property_names[state_cache_time_interval] = "state_cache_time_interval"
     _property_names[time_resolution] = "time_resolution"
     _property_names[max_iterations] = "max_iterations"
@@ -8146,7 +8149,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_perf_model_types_method_offset = 1
+    _get_performance_model_types_method_offset = 1
     _get_acceleration_method_offset = 2
     _get_climb_method_offset = 3
     _get_cruise_method_offset = 4
@@ -8166,13 +8169,13 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, AircraftModel)
     
-    _get_perf_model_types_metadata = { "offset" : _get_perf_model_types_method_offset,
+    _get_performance_model_types_metadata = { "offset" : _get_performance_model_types_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @property
-    def perf_model_types(self) -> list:
+    def performance_model_types(self) -> list:
         """Get the types of performance models."""
-        return self._intf.get_property(AircraftModel._metadata, AircraftModel._get_perf_model_types_metadata)
+        return self._intf.get_property(AircraftModel._metadata, AircraftModel._get_performance_model_types_metadata)
 
     _get_acceleration_metadata = { "offset" : _get_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8261,7 +8264,7 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Get the TerrainFollow interface."""
         return self._intf.get_property(AircraftModel._metadata, AircraftModel._get_terrain_follow_metadata)
 
-    _property_names[perf_model_types] = "perf_model_types"
+    _property_names[performance_model_types] = "performance_model_types"
     _property_names[acceleration] = "acceleration"
     _property_names[climb] = "climb"
     _property_names[cruise] = "cruise"
@@ -8304,15 +8307,15 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _set_maneuver_mode_method_offset = 4
     _get_maneuver_mode_helper_method_offset = 5
     _get_attitude_transitions_method_offset = 6
-    _get_ignore_fpa_for_climb_descent_transitions_method_offset = 7
-    _set_ignore_fpa_for_climb_descent_transitions_method_offset = 8
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 7
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 8
     _get_climb_airspeed_method_offset = 9
     _get_climb_airspeed_type_method_offset = 10
     _set_climb_airspeed_method_offset = 11
-    _get_climb_max_fpa_method_offset = 12
-    _set_climb_max_fpa_method_offset = 13
-    _get_climb_min_fpa_method_offset = 14
-    _set_climb_min_fpa_method_offset = 15
+    _get_climb_max_flight_path_angle_method_offset = 12
+    _set_climb_max_flight_path_angle_method_offset = 13
+    _get_climb_min_flight_path_angle_method_offset = 14
+    _set_climb_min_flight_path_angle_method_offset = 15
     _get_climb_fail_on_insufficient_performance_method_offset = 16
     _set_climb_fail_on_insufficient_performance_method_offset = 17
     _get_cruise_max_airspeed_method_offset = 18
@@ -8323,10 +8326,10 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_descent_airspeed_method_offset = 23
     _get_descent_airspeed_type_method_offset = 24
     _set_descent_airspeed_method_offset = 25
-    _get_descent_max_fpa_method_offset = 26
-    _set_descent_max_fpa_method_offset = 27
-    _get_descent_min_fpa_method_offset = 28
-    _set_descent_min_fpa_method_offset = 29
+    _get_descent_max_flight_path_angle_method_offset = 26
+    _set_descent_max_flight_path_angle_method_offset = 27
+    _get_descent_min_flight_path_angle_method_offset = 28
+    _set_descent_min_flight_path_angle_method_offset = 29
     _get_descent_fail_on_insufficient_performance_method_offset = 30
     _set_descent_fail_on_insufficient_performance_method_offset = 31
     _get_use_total_temp_limit_method_offset = 32
@@ -8371,17 +8374,17 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
 
     _get_maneuver_mode_metadata = { "offset" : _get_maneuver_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @property
-    def maneuver_mode(self) -> "ACCEL_MANEUVER_MODE":
+    def maneuver_mode(self) -> "ACCELERATION_MANEUVER_MODE":
         """Get or set the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_maneuver_mode_metadata)
 
     _set_maneuver_mode_metadata = { "offset" : _set_maneuver_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"ACCEL_MANEUVER_MODE") -> None:
+    def maneuver_mode(self, newVal:"ACCELERATION_MANEUVER_MODE") -> None:
         """Get or set the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius."""
         return self._intf.set_property(MissileModel._metadata, MissileModel._set_maneuver_mode_metadata, newVal)
 
@@ -8389,7 +8392,7 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AerodynamicPropulsionManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_maneuver_mode_helper_metadata)
 
@@ -8401,21 +8404,21 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Get the attitude transitions interface."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_attitude_transitions_metadata)
 
-    _get_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa_for_climb_descent_transitions(self) -> bool:
+    def ignore_flight_path_angle_for_climb_descent_transitions(self) -> bool:
         """Opt whether to ignore the flight path angle limits for climb and descent transitions."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_ignore_fpa_for_climb_descent_transitions_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_ignore_flight_path_angle_for_climb_descent_transitions_metadata)
 
-    _set_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa_for_climb_descent_transitions.setter
-    def ignore_fpa_for_climb_descent_transitions(self, pVal:bool) -> None:
+    @ignore_flight_path_angle_for_climb_descent_transitions.setter
+    def ignore_flight_path_angle_for_climb_descent_transitions(self, pVal:bool) -> None:
         """Opt whether to ignore the flight path angle limits for climb and descent transitions."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_ignore_fpa_for_climb_descent_transitions_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_ignore_flight_path_angle_for_climb_descent_transitions_metadata, pVal)
 
     _get_climb_airspeed_metadata = { "offset" : _get_climb_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8440,37 +8443,37 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the missile's climb airspeed and airspeed type."""
         return self._intf.invoke(MissileModel._metadata, MissileModel._set_climb_airspeed_metadata, airspeedType, aispeed)
 
-    _get_climb_max_fpa_metadata = { "offset" : _get_climb_max_fpa_method_offset,
+    _get_climb_max_flight_path_angle_metadata = { "offset" : _get_climb_max_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def climb_max_fpa(self) -> typing.Any:
+    def climb_max_flight_path_angle(self) -> typing.Any:
         """Get or set the maximum flight path angle of the missile's flight path while climbing."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_max_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_max_flight_path_angle_metadata)
 
-    _set_climb_max_fpa_metadata = { "offset" : _set_climb_max_fpa_method_offset,
+    _set_climb_max_flight_path_angle_metadata = { "offset" : _set_climb_max_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @climb_max_fpa.setter
-    def climb_max_fpa(self, pVal:typing.Any) -> None:
+    @climb_max_flight_path_angle.setter
+    def climb_max_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the maximum flight path angle of the missile's flight path while climbing."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_max_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_max_flight_path_angle_metadata, pVal)
 
-    _get_climb_min_fpa_metadata = { "offset" : _get_climb_min_fpa_method_offset,
+    _get_climb_min_flight_path_angle_metadata = { "offset" : _get_climb_min_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def climb_min_fpa(self) -> typing.Any:
+    def climb_min_flight_path_angle(self) -> typing.Any:
         """Get or set the minimum flight path angle of the missile's flight path while climbing."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_min_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_climb_min_flight_path_angle_metadata)
 
-    _set_climb_min_fpa_metadata = { "offset" : _set_climb_min_fpa_method_offset,
+    _set_climb_min_flight_path_angle_metadata = { "offset" : _set_climb_min_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @climb_min_fpa.setter
-    def climb_min_fpa(self, pVal:typing.Any) -> None:
+    @climb_min_flight_path_angle.setter
+    def climb_min_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the minimum flight path angle of the missile's flight path while climbing."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_min_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_climb_min_flight_path_angle_metadata, pVal)
 
     _get_climb_fail_on_insufficient_performance_metadata = { "offset" : _get_climb_fail_on_insufficient_performance_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8550,37 +8553,37 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the missile's descent airspeed and airspeed type."""
         return self._intf.invoke(MissileModel._metadata, MissileModel._set_descent_airspeed_metadata, airspeedType, aispeed)
 
-    _get_descent_max_fpa_metadata = { "offset" : _get_descent_max_fpa_method_offset,
+    _get_descent_max_flight_path_angle_metadata = { "offset" : _get_descent_max_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def descent_max_fpa(self) -> typing.Any:
+    def descent_max_flight_path_angle(self) -> typing.Any:
         """Get or set the maximum flight path angle of the missile's flight path while descending."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_max_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_max_flight_path_angle_metadata)
 
-    _set_descent_max_fpa_metadata = { "offset" : _set_descent_max_fpa_method_offset,
+    _set_descent_max_flight_path_angle_metadata = { "offset" : _set_descent_max_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @descent_max_fpa.setter
-    def descent_max_fpa(self, pVal:typing.Any) -> None:
+    @descent_max_flight_path_angle.setter
+    def descent_max_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the maximum flight path angle of the missile's flight path while descending."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_max_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_max_flight_path_angle_metadata, pVal)
 
-    _get_descent_min_fpa_metadata = { "offset" : _get_descent_min_fpa_method_offset,
+    _get_descent_min_flight_path_angle_metadata = { "offset" : _get_descent_min_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def descent_min_fpa(self) -> typing.Any:
+    def descent_min_flight_path_angle(self) -> typing.Any:
         """Get or set the minimum flight path angle of the missile's flight path while descending."""
-        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_min_fpa_metadata)
+        return self._intf.get_property(MissileModel._metadata, MissileModel._get_descent_min_flight_path_angle_metadata)
 
-    _set_descent_min_fpa_metadata = { "offset" : _set_descent_min_fpa_method_offset,
+    _set_descent_min_flight_path_angle_metadata = { "offset" : _set_descent_min_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @descent_min_fpa.setter
-    def descent_min_fpa(self, pVal:typing.Any) -> None:
+    @descent_min_flight_path_angle.setter
+    def descent_min_flight_path_angle(self, pVal:typing.Any) -> None:
         """Get or set the minimum flight path angle of the missile's flight path while descending."""
-        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_min_fpa_metadata, pVal)
+        return self._intf.set_property(MissileModel._metadata, MissileModel._set_descent_min_flight_path_angle_metadata, pVal)
 
     _get_descent_fail_on_insufficient_performance_metadata = { "offset" : _get_descent_fail_on_insufficient_performance_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8706,7 +8709,7 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aerodynamics(self) -> "MissileAero":
+    def aerodynamics(self) -> "MissileAerodynamic":
         """Get the aerodynamics interface."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_aerodynamics_metadata)
 
@@ -8714,7 +8717,7 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def propulsion(self) -> "MissileProp":
+    def propulsion(self) -> "MissilePropulsion":
         """Get the propulsion interface."""
         return self._intf.get_property(MissileModel._metadata, MissileModel._get_propulsion_metadata)
 
@@ -8729,19 +8732,19 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[maneuver_mode] = "maneuver_mode"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
     _property_names[attitude_transitions] = "attitude_transitions"
-    _property_names[ignore_fpa_for_climb_descent_transitions] = "ignore_fpa_for_climb_descent_transitions"
+    _property_names[ignore_flight_path_angle_for_climb_descent_transitions] = "ignore_flight_path_angle_for_climb_descent_transitions"
     _property_names[climb_airspeed] = "climb_airspeed"
     _property_names[climb_airspeed_type] = "climb_airspeed_type"
-    _property_names[climb_max_fpa] = "climb_max_fpa"
-    _property_names[climb_min_fpa] = "climb_min_fpa"
+    _property_names[climb_max_flight_path_angle] = "climb_max_flight_path_angle"
+    _property_names[climb_min_flight_path_angle] = "climb_min_flight_path_angle"
     _property_names[climb_fail_on_insufficient_performance] = "climb_fail_on_insufficient_performance"
     _property_names[cruise_max_airspeed] = "cruise_max_airspeed"
     _property_names[cruise_max_airspeed_type] = "cruise_max_airspeed_type"
     _property_names[cruise_default_altitude] = "cruise_default_altitude"
     _property_names[descent_airspeed] = "descent_airspeed"
     _property_names[descent_airspeed_type] = "descent_airspeed_type"
-    _property_names[descent_max_fpa] = "descent_max_fpa"
-    _property_names[descent_min_fpa] = "descent_min_fpa"
+    _property_names[descent_max_flight_path_angle] = "descent_max_flight_path_angle"
+    _property_names[descent_min_flight_path_angle] = "descent_min_flight_path_angle"
     _property_names[descent_fail_on_insufficient_performance] = "descent_fail_on_insufficient_performance"
     _property_names[use_total_temp_limit] = "use_total_temp_limit"
     _property_names[total_temp_limit] = "total_temp_limit"
@@ -8816,8 +8819,8 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _get_max_safe_translation_speed_method_offset = 36
     _get_max_safe_translation_speed_type_method_offset = 37
     _set_max_safe_translation_speed_method_offset = 38
-    _get_ignore_fpa_for_climb_descent_transitions_method_offset = 39
-    _set_ignore_fpa_for_climb_descent_transitions_method_offset = 40
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 39
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset = 40
     _get_default_configuration_method_offset = 41
     _get_aerodynamics_method_offset = 42
     _get_propulsion_method_offset = 43
@@ -9132,21 +9135,21 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
         """Set the maximum safe translation airspeed and airspeed type."""
         return self._intf.invoke(RotorcraftModel._metadata, RotorcraftModel._set_max_safe_translation_speed_metadata, airspeedType, airspeed)
 
-    _get_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _get_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _get_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa_for_climb_descent_transitions(self) -> bool:
+    def ignore_flight_path_angle_for_climb_descent_transitions(self) -> bool:
         """Opt to ignore load factor limits when pushing over or pulling up."""
-        return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_ignore_fpa_for_climb_descent_transitions_metadata)
+        return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_ignore_flight_path_angle_for_climb_descent_transitions_metadata)
 
-    _set_ignore_fpa_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_fpa_for_climb_descent_transitions_method_offset,
+    _set_ignore_flight_path_angle_for_climb_descent_transitions_metadata = { "offset" : _set_ignore_flight_path_angle_for_climb_descent_transitions_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa_for_climb_descent_transitions.setter
-    def ignore_fpa_for_climb_descent_transitions(self, newVal:bool) -> None:
+    @ignore_flight_path_angle_for_climb_descent_transitions.setter
+    def ignore_flight_path_angle_for_climb_descent_transitions(self, newVal:bool) -> None:
         """Opt to ignore load factor limits when pushing over or pulling up."""
-        return self._intf.set_property(RotorcraftModel._metadata, RotorcraftModel._set_ignore_fpa_for_climb_descent_transitions_metadata, newVal)
+        return self._intf.set_property(RotorcraftModel._metadata, RotorcraftModel._set_ignore_flight_path_angle_for_climb_descent_transitions_metadata, newVal)
 
     _get_default_configuration_metadata = { "offset" : _get_default_configuration_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9160,7 +9163,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aerodynamics(self) -> "RotorcraftAero":
+    def aerodynamics(self) -> "RotorcraftAerodynamic":
         """Get the aerodynamics interface."""
         return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_aerodynamics_metadata)
 
@@ -9168,7 +9171,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def propulsion(self) -> "RotorcraftProp":
+    def propulsion(self) -> "RotorcraftPropulsion":
         """Get the propulsion interface."""
         return self._intf.get_property(RotorcraftModel._metadata, RotorcraftModel._get_propulsion_metadata)
 
@@ -9199,7 +9202,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[max_safe_airspeed_type] = "max_safe_airspeed_type"
     _property_names[max_safe_translation_speed] = "max_safe_translation_speed"
     _property_names[max_safe_translation_speed_type] = "max_safe_translation_speed_type"
-    _property_names[ignore_fpa_for_climb_descent_transitions] = "ignore_fpa_for_climb_descent_transitions"
+    _property_names[ignore_flight_path_angle_for_climb_descent_transitions] = "ignore_flight_path_angle_for_climb_descent_transitions"
     _property_names[default_configuration] = "default_configuration"
     _property_names[aerodynamics] = "aerodynamics"
     _property_names[propulsion] = "propulsion"
@@ -9224,7 +9227,7 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5132696765661705826, 14502770979691808656), RotorcraftModel)
 agcls.AgTypeNameMap["RotorcraftModel"] = RotorcraftModel
 
-class RotorcraftAero(SupportsDeleteCallback):
+class RotorcraftAerodynamic(SupportsDeleteCallback):
     """Interface used to access the aerodynamics options for a rotorcraft."""
 
     _num_methods = 22
@@ -9257,7 +9260,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, RotorcraftAero)
+        return get_interface_property(attrname, RotorcraftAerodynamic)
     
     _get_rotor_count_metadata = { "offset" : _get_rotor_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9265,7 +9268,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def rotor_count(self) -> int:
         """Get or set the number of rotors."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_rotor_count_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_rotor_count_metadata)
 
     _set_rotor_count_metadata = { "offset" : _set_rotor_count_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -9273,7 +9276,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @rotor_count.setter
     def rotor_count(self, newVal:int) -> None:
         """Get or set the number of rotors."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_rotor_count_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_rotor_count_metadata, newVal)
 
     _get_rotor_diameter_metadata = { "offset" : _get_rotor_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9281,7 +9284,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def rotor_diameter(self) -> float:
         """Get or set the diameter of the rotor."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_rotor_diameter_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_rotor_diameter_metadata)
 
     _set_rotor_diameter_metadata = { "offset" : _set_rotor_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9289,7 +9292,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @rotor_diameter.setter
     def rotor_diameter(self, newVal:float) -> None:
         """Get or set the diameter of the rotor."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_rotor_diameter_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_rotor_diameter_metadata, newVal)
 
     _get_blades_per_rotor_metadata = { "offset" : _get_blades_per_rotor_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9297,7 +9300,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def blades_per_rotor(self) -> int:
         """Get or set the number of blades on each rotor."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_blades_per_rotor_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_blades_per_rotor_metadata)
 
     _set_blades_per_rotor_metadata = { "offset" : _set_blades_per_rotor_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -9305,7 +9308,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @blades_per_rotor.setter
     def blades_per_rotor(self, newVal:int) -> None:
         """Get or set the number of blades on each rotor."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_blades_per_rotor_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_blades_per_rotor_metadata, newVal)
 
     _get_blade_chord_metadata = { "offset" : _get_blade_chord_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9313,7 +9316,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def blade_chord(self) -> float:
         """Get or set the chord length of the blade."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_blade_chord_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_blade_chord_metadata)
 
     _set_blade_chord_metadata = { "offset" : _set_blade_chord_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9321,7 +9324,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @blade_chord.setter
     def blade_chord(self, newVal:float) -> None:
         """Get or set the chord length of the blade."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_blade_chord_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_blade_chord_metadata, newVal)
 
     _get_rotor_tip_mach_metadata = { "offset" : _get_rotor_tip_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9329,7 +9332,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def rotor_tip_mach(self) -> float:
         """Get or set the Mach number of the advancing blade tip."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_rotor_tip_mach_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_rotor_tip_mach_metadata)
 
     _set_rotor_tip_mach_metadata = { "offset" : _set_rotor_tip_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9337,7 +9340,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @rotor_tip_mach.setter
     def rotor_tip_mach(self, newVal:float) -> None:
         """Get or set the Mach number of the advancing blade tip."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_rotor_tip_mach_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_rotor_tip_mach_metadata, newVal)
 
     _get_fuselage_flat_plate_area_metadata = { "offset" : _get_fuselage_flat_plate_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9345,7 +9348,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def fuselage_flat_plate_area(self) -> float:
         """Get or set the flat plate area for the fuselage."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_fuselage_flat_plate_area_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_fuselage_flat_plate_area_metadata)
 
     _set_fuselage_flat_plate_area_metadata = { "offset" : _set_fuselage_flat_plate_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9353,7 +9356,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @fuselage_flat_plate_area.setter
     def fuselage_flat_plate_area(self, newVal:float) -> None:
         """Get or set the flat plate area for the fuselage."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_fuselage_flat_plate_area_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_fuselage_flat_plate_area_metadata, newVal)
 
     _get_tail_rotor_offset_metadata = { "offset" : _get_tail_rotor_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9361,7 +9364,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def tail_rotor_offset(self) -> float:
         """Get or set the offset of the tail rotor."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_tail_rotor_offset_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_tail_rotor_offset_metadata)
 
     _set_tail_rotor_offset_metadata = { "offset" : _set_tail_rotor_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9369,7 +9372,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @tail_rotor_offset.setter
     def tail_rotor_offset(self, newVal:float) -> None:
         """Get or set the offset of the tail rotor."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_tail_rotor_offset_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_tail_rotor_offset_metadata, newVal)
 
     _get_tail_rotor_diameter_metadata = { "offset" : _get_tail_rotor_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9377,7 +9380,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def tail_rotor_diameter(self) -> float:
         """Get or set the diameter of the tail rotor."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_tail_rotor_diameter_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_tail_rotor_diameter_metadata)
 
     _set_tail_rotor_diameter_metadata = { "offset" : _set_tail_rotor_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9385,7 +9388,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @tail_rotor_diameter.setter
     def tail_rotor_diameter(self, newVal:float) -> None:
         """Get or set the diameter of the tail rotor."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_tail_rotor_diameter_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_tail_rotor_diameter_metadata, newVal)
 
     _get_blade_profile_drag_cd0_metadata = { "offset" : _get_blade_profile_drag_cd0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9393,7 +9396,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def blade_profile_drag_cd0(self) -> float:
         """Get or set the drag coefficient when the rotor disc does not generate any lift."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_blade_profile_drag_cd0_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_blade_profile_drag_cd0_metadata)
 
     _set_blade_profile_drag_cd0_metadata = { "offset" : _set_blade_profile_drag_cd0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9401,7 +9404,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @blade_profile_drag_cd0.setter
     def blade_profile_drag_cd0(self, newVal:float) -> None:
         """Get or set the drag coefficient when the rotor disc does not generate any lift."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_blade_profile_drag_cd0_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_blade_profile_drag_cd0_metadata, newVal)
 
     _get_blade_profile_drag_k_metadata = { "offset" : _get_blade_profile_drag_k_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9409,7 +9412,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def blade_profile_drag_k(self) -> float:
         """Get or set the induced drag coefficient, which accounts for how lift generation impacts drag."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_blade_profile_drag_k_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_blade_profile_drag_k_metadata)
 
     _set_blade_profile_drag_k_metadata = { "offset" : _set_blade_profile_drag_k_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9417,7 +9420,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @blade_profile_drag_k.setter
     def blade_profile_drag_k(self, newVal:float) -> None:
         """Get or set the induced drag coefficient, which accounts for how lift generation impacts drag."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_blade_profile_drag_k_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_blade_profile_drag_k_metadata, newVal)
 
     _get_induced_power_correction_factor_metadata = { "offset" : _get_induced_power_correction_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9425,7 +9428,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @property
     def induced_power_correction_factor(self) -> float:
         """Get or set the slop factor that accounts for losses."""
-        return self._intf.get_property(RotorcraftAero._metadata, RotorcraftAero._get_induced_power_correction_factor_metadata)
+        return self._intf.get_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._get_induced_power_correction_factor_metadata)
 
     _set_induced_power_correction_factor_metadata = { "offset" : _set_induced_power_correction_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9433,7 +9436,7 @@ class RotorcraftAero(SupportsDeleteCallback):
     @induced_power_correction_factor.setter
     def induced_power_correction_factor(self, newVal:float) -> None:
         """Get or set the slop factor that accounts for losses."""
-        return self._intf.set_property(RotorcraftAero._metadata, RotorcraftAero._set_induced_power_correction_factor_metadata, newVal)
+        return self._intf.set_property(RotorcraftAerodynamic._metadata, RotorcraftAerodynamic._set_induced_power_correction_factor_metadata, newVal)
 
     _property_names[rotor_count] = "rotor_count"
     _property_names[rotor_diameter] = "rotor_diameter"
@@ -9448,9 +9451,9 @@ class RotorcraftAero(SupportsDeleteCallback):
     _property_names[induced_power_correction_factor] = "induced_power_correction_factor"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type RotorcraftAero."""
+        """Construct an object of type RotorcraftAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftAero)
+        initialize_from_source_object(self, sourceObject, RotorcraftAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9458,12 +9461,12 @@ class RotorcraftAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, RotorcraftAero, [RotorcraftAero, ])
+        set_class_attribute(self, attrname, value, RotorcraftAerodynamic, [RotorcraftAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5254408426110746023, 3824899600395506365), RotorcraftAero)
-agcls.AgTypeNameMap["RotorcraftAero"] = RotorcraftAero
+agcls.AgClassCatalog.add_catalog_entry((5254408426110746023, 3824899600395506365), RotorcraftAerodynamic)
+agcls.AgTypeNameMap["RotorcraftAerodynamic"] = RotorcraftAerodynamic
 
-class RotorcraftProp(SupportsDeleteCallback):
+class RotorcraftPropulsion(SupportsDeleteCallback):
     """Interface used to access the Propulsion options for a rotorcraft."""
 
     _num_methods = 6
@@ -9480,7 +9483,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, RotorcraftProp)
+        return get_interface_property(attrname, RotorcraftPropulsion)
     
     _get_powerplant_type_metadata = { "offset" : _get_powerplant_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9488,7 +9491,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     @property
     def powerplant_type(self) -> "ROTORCRAFT_POWERPLANT_TYPE":
         """Get or set the rotorcraft's powerplant type."""
-        return self._intf.get_property(RotorcraftProp._metadata, RotorcraftProp._get_powerplant_type_metadata)
+        return self._intf.get_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._get_powerplant_type_metadata)
 
     _set_powerplant_type_metadata = { "offset" : _set_powerplant_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -9496,7 +9499,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     @powerplant_type.setter
     def powerplant_type(self, newVal:"ROTORCRAFT_POWERPLANT_TYPE") -> None:
         """Get or set the rotorcraft's powerplant type."""
-        return self._intf.set_property(RotorcraftProp._metadata, RotorcraftProp._set_powerplant_type_metadata, newVal)
+        return self._intf.set_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._set_powerplant_type_metadata, newVal)
 
     _get_max_sl_power_metadata = { "offset" : _get_max_sl_power_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9504,7 +9507,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     @property
     def max_sl_power(self) -> float:
         """Get or set the maximum power at sea level."""
-        return self._intf.get_property(RotorcraftProp._metadata, RotorcraftProp._get_max_sl_power_metadata)
+        return self._intf.get_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._get_max_sl_power_metadata)
 
     _set_max_sl_power_metadata = { "offset" : _set_max_sl_power_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9512,7 +9515,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     @max_sl_power.setter
     def max_sl_power(self, newVal:float) -> None:
         """Get or set the maximum power at sea level."""
-        return self._intf.set_property(RotorcraftProp._metadata, RotorcraftProp._set_max_sl_power_metadata, newVal)
+        return self._intf.set_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._set_max_sl_power_metadata, newVal)
 
     _get_max_sl_fuel_flow_metadata = { "offset" : _get_max_sl_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9520,7 +9523,7 @@ class RotorcraftProp(SupportsDeleteCallback):
     @property
     def max_sl_fuel_flow(self) -> float:
         """Get or set the maximum fuel flow at sea level."""
-        return self._intf.get_property(RotorcraftProp._metadata, RotorcraftProp._get_max_sl_fuel_flow_metadata)
+        return self._intf.get_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._get_max_sl_fuel_flow_metadata)
 
     _set_max_sl_fuel_flow_metadata = { "offset" : _set_max_sl_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -9528,16 +9531,16 @@ class RotorcraftProp(SupportsDeleteCallback):
     @max_sl_fuel_flow.setter
     def max_sl_fuel_flow(self, newVal:float) -> None:
         """Get or set the maximum fuel flow at sea level."""
-        return self._intf.set_property(RotorcraftProp._metadata, RotorcraftProp._set_max_sl_fuel_flow_metadata, newVal)
+        return self._intf.set_property(RotorcraftPropulsion._metadata, RotorcraftPropulsion._set_max_sl_fuel_flow_metadata, newVal)
 
     _property_names[powerplant_type] = "powerplant_type"
     _property_names[max_sl_power] = "max_sl_power"
     _property_names[max_sl_fuel_flow] = "max_sl_fuel_flow"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type RotorcraftProp."""
+        """Construct an object of type RotorcraftPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftProp)
+        initialize_from_source_object(self, sourceObject, RotorcraftPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9545,10 +9548,10 @@ class RotorcraftProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, RotorcraftProp, [RotorcraftProp, ])
+        set_class_attribute(self, attrname, value, RotorcraftPropulsion, [RotorcraftPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5760757719442343448, 132377700848243866), RotorcraftProp)
-agcls.AgTypeNameMap["RotorcraftProp"] = RotorcraftProp
+agcls.AgClassCatalog.add_catalog_entry((5760757719442343448, 132377700848243866), RotorcraftPropulsion)
+agcls.AgTypeNameMap["RotorcraftPropulsion"] = RotorcraftPropulsion
 
 class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
     """Interface used to access the acceleration options for an aircraft in the Aviator catalog."""
@@ -9661,7 +9664,7 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aerodynamics(self) -> "AircraftAero":
+    def aerodynamics(self) -> "AircraftAerodynamic":
         """Get the aerodynamics interface."""
         return self._intf.get_property(AircraftBasicAccelerationModel._metadata, AircraftBasicAccelerationModel._get_aerodynamics_metadata)
 
@@ -9669,7 +9672,7 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def propulsion(self) -> "AircraftProp":
+    def propulsion(self) -> "AircraftPropulsion":
         """Get the propulsion interface."""
         return self._intf.get_property(AircraftBasicAccelerationModel._metadata, AircraftBasicAccelerationModel._get_propulsion_metadata)
 
@@ -10038,8 +10041,8 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
     _set_airspeed_method_offset = 5
     _get_altitude_rate_method_offset = 6
     _set_altitude_rate_method_offset = 7
-    _get_use_aero_prop_fuel_method_offset = 8
-    _set_use_aero_prop_fuel_method_offset = 9
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 8
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 9
     _get_scale_fuel_flow_by_non_std_density_method_offset = 10
     _set_scale_fuel_flow_by_non_std_density_method_offset = 11
     _get_fuel_flow_method_offset = 12
@@ -10112,21 +10115,21 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
         """Get or set the altitude rate."""
         return self._intf.set_property(AircraftBasicClimbModel._metadata, AircraftBasicClimbModel._set_altitude_rate_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.get_property(AircraftBasicClimbModel._metadata, AircraftBasicClimbModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftBasicClimbModel._metadata, AircraftBasicClimbModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.set_property(AircraftBasicClimbModel._metadata, AircraftBasicClimbModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftBasicClimbModel._metadata, AircraftBasicClimbModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10203,7 +10206,7 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
     _property_names[airspeed] = "airspeed"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[altitude_rate] = "altitude_rate"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[fuel_flow] = "fuel_flow"
     _property_names[enable_relative_airspeed_tolerance] = "enable_relative_airspeed_tolerance"
@@ -10468,8 +10471,8 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     _set_ceiling_altitude_method_offset = 2
     _get_default_cruise_altitude_method_offset = 3
     _set_default_cruise_altitude_method_offset = 4
-    _get_use_aero_prop_fuel_method_offset = 5
-    _set_use_aero_prop_fuel_method_offset = 6
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 5
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 6
     _get_scale_fuel_flow_by_non_std_density_method_offset = 7
     _set_scale_fuel_flow_by_non_std_density_method_offset = 8
     _get_airspeed_type_method_offset = 9
@@ -10482,8 +10485,8 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     _set_max_range_airspeed_method_offset = 16
     _get_max_airspeed_method_offset = 17
     _set_max_airspeed_method_offset = 18
-    _get_max_perf_airspeed_method_offset = 19
-    _set_max_perf_airspeed_method_offset = 20
+    _get_max_performance_airspeed_method_offset = 19
+    _set_max_performance_airspeed_method_offset = 20
     _get_min_airspeed_fuel_flow_method_offset = 21
     _set_min_airspeed_fuel_flow_method_offset = 22
     _get_max_endurance_fuel_flow_method_offset = 23
@@ -10492,8 +10495,8 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     _set_max_range_fuel_flow_method_offset = 26
     _get_max_airspeed_fuel_flow_method_offset = 27
     _set_max_airspeed_fuel_flow_method_offset = 28
-    _get_max_perf_airspeed_fuel_flow_method_offset = 29
-    _set_max_perf_airspeed_fuel_flow_method_offset = 30
+    _get_max_performance_airspeed_fuel_flow_method_offset = 29
+    _set_max_performance_airspeed_fuel_flow_method_offset = 30
     _get_as_catalog_item_method_offset = 31
     _metadata = {
         "iid_data" : (5314586510594823485, 6471808013847381131),
@@ -10535,21 +10538,21 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
         """Get or set the aircraft's default cruise altitude."""
         return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_default_cruise_altitude_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Opt to use the fuel flow calculated by the acceleration performance model."""
-        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Opt to use the fuel flow calculated by the acceleration performance model."""
-        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10647,21 +10650,21 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
         """Get or set the maximum cruisng airspeed."""
         return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_airspeed_metadata, newVal)
 
-    _get_max_perf_airspeed_metadata = { "offset" : _get_max_perf_airspeed_method_offset,
+    _get_max_performance_airspeed_metadata = { "offset" : _get_max_performance_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_perf_airspeed(self) -> float:
+    def max_performance_airspeed(self) -> float:
         """Get or set the custom performance airspeed that can be used to model specific flight conditions."""
-        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_max_perf_airspeed_metadata)
+        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_max_performance_airspeed_metadata)
 
-    _set_max_perf_airspeed_metadata = { "offset" : _set_max_perf_airspeed_method_offset,
+    _set_max_performance_airspeed_metadata = { "offset" : _set_max_performance_airspeed_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_perf_airspeed.setter
-    def max_perf_airspeed(self, newVal:float) -> None:
+    @max_performance_airspeed.setter
+    def max_performance_airspeed(self, newVal:float) -> None:
         """Get or set the custom performance airspeed that can be used to model specific flight conditions."""
-        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_perf_airspeed_metadata, newVal)
+        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_performance_airspeed_metadata, newVal)
 
     _get_min_airspeed_fuel_flow_metadata = { "offset" : _get_min_airspeed_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -10727,21 +10730,21 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
         """Get or set the fuel flow for the maximum cruising airspeed."""
         return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_airspeed_fuel_flow_metadata, newVal)
 
-    _get_max_perf_airspeed_fuel_flow_metadata = { "offset" : _get_max_perf_airspeed_fuel_flow_method_offset,
+    _get_max_performance_airspeed_fuel_flow_metadata = { "offset" : _get_max_performance_airspeed_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_perf_airspeed_fuel_flow(self) -> float:
+    def max_performance_airspeed_fuel_flow(self) -> float:
         """Get or set the fuel flow for the maximum performance cruising airspeed."""
-        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_max_perf_airspeed_fuel_flow_metadata)
+        return self._intf.get_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._get_max_performance_airspeed_fuel_flow_metadata)
 
-    _set_max_perf_airspeed_fuel_flow_metadata = { "offset" : _set_max_perf_airspeed_fuel_flow_method_offset,
+    _set_max_performance_airspeed_fuel_flow_metadata = { "offset" : _set_max_performance_airspeed_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_perf_airspeed_fuel_flow.setter
-    def max_perf_airspeed_fuel_flow(self, newVal:float) -> None:
+    @max_performance_airspeed_fuel_flow.setter
+    def max_performance_airspeed_fuel_flow(self, newVal:float) -> None:
         """Get or set the fuel flow for the maximum performance cruising airspeed."""
-        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_perf_airspeed_fuel_flow_metadata, newVal)
+        return self._intf.set_property(AircraftBasicCruiseModel._metadata, AircraftBasicCruiseModel._set_max_performance_airspeed_fuel_flow_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "offset" : _get_as_catalog_item_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10752,19 +10755,19 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
 
     _property_names[ceiling_altitude] = "ceiling_altitude"
     _property_names[default_cruise_altitude] = "default_cruise_altitude"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[min_airspeed] = "min_airspeed"
     _property_names[max_endurance_airspeed] = "max_endurance_airspeed"
     _property_names[max_range_airspeed] = "max_range_airspeed"
     _property_names[max_airspeed] = "max_airspeed"
-    _property_names[max_perf_airspeed] = "max_perf_airspeed"
+    _property_names[max_performance_airspeed] = "max_performance_airspeed"
     _property_names[min_airspeed_fuel_flow] = "min_airspeed_fuel_flow"
     _property_names[max_endurance_fuel_flow] = "max_endurance_fuel_flow"
     _property_names[max_range_fuel_flow] = "max_range_fuel_flow"
     _property_names[max_airspeed_fuel_flow] = "max_airspeed_fuel_flow"
-    _property_names[max_perf_airspeed_fuel_flow] = "max_perf_airspeed_fuel_flow"
+    _property_names[max_performance_airspeed_fuel_flow] = "max_performance_airspeed_fuel_flow"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type AircraftBasicCruiseModel."""
@@ -10793,8 +10796,8 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_default_cruise_altitude_method_offset = 1
     _set_default_cruise_altitude_method_offset = 2
-    _get_max_perf_airspeed_method_offset = 3
-    _set_max_perf_airspeed_method_offset = 4
+    _get_max_performance_airspeed_method_offset = 3
+    _set_max_performance_airspeed_method_offset = 4
     _get_use_airspeed_limit_method_offset = 5
     _set_use_airspeed_limit_method_offset = 6
     _get_altitude_limit_method_offset = 7
@@ -10829,21 +10832,21 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
         """Get or set the aircraft's default cruising altitude."""
         return self._intf.set_property(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._set_default_cruise_altitude_metadata, newVal)
 
-    _get_max_perf_airspeed_metadata = { "offset" : _get_max_perf_airspeed_method_offset,
+    _get_max_performance_airspeed_metadata = { "offset" : _get_max_performance_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CRUISE_MAX_PERF_SPEED_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(CRUISE_MAX_PERFORMANCE_SPEED_TYPE),) }
     @property
-    def max_perf_airspeed(self) -> "CRUISE_MAX_PERF_SPEED_TYPE":
+    def max_performance_airspeed(self) -> "CRUISE_MAX_PERFORMANCE_SPEED_TYPE":
         """Get or set the method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        return self._intf.get_property(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._get_max_perf_airspeed_metadata)
+        return self._intf.get_property(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._get_max_performance_airspeed_metadata)
 
-    _set_max_perf_airspeed_metadata = { "offset" : _set_max_perf_airspeed_method_offset,
+    _set_max_performance_airspeed_metadata = { "offset" : _set_max_performance_airspeed_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CRUISE_MAX_PERF_SPEED_TYPE),) }
-    @max_perf_airspeed.setter
-    def max_perf_airspeed(self, newVal:"CRUISE_MAX_PERF_SPEED_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(CRUISE_MAX_PERFORMANCE_SPEED_TYPE),) }
+    @max_performance_airspeed.setter
+    def max_performance_airspeed(self, newVal:"CRUISE_MAX_PERFORMANCE_SPEED_TYPE") -> None:
         """Get or set the method for defining the maximum performance airspeed of the aircraft with respect to its altitude."""
-        return self._intf.set_property(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._set_max_perf_airspeed_metadata, newVal)
+        return self._intf.set_property(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._set_max_performance_airspeed_metadata, newVal)
 
     _get_use_airspeed_limit_metadata = { "offset" : _get_use_airspeed_limit_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10924,7 +10927,7 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
         return self._intf.invoke(AircraftAdvancedCruiseModel._metadata, AircraftAdvancedCruiseModel._get_as_catalog_item_metadata, OutArg())
 
     _property_names[default_cruise_altitude] = "default_cruise_altitude"
-    _property_names[max_perf_airspeed] = "max_perf_airspeed"
+    _property_names[max_performance_airspeed] = "max_performance_airspeed"
     _property_names[use_airspeed_limit] = "use_airspeed_limit"
     _property_names[altitude_limit] = "altitude_limit"
     _property_names[airspeed_limit_type] = "airspeed_limit_type"
@@ -10963,8 +10966,8 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _set_airspeed_method_offset = 5
     _get_altitude_rate_method_offset = 6
     _set_altitude_rate_method_offset = 7
-    _get_use_aero_prop_fuel_method_offset = 8
-    _set_use_aero_prop_fuel_method_offset = 9
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 8
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 9
     _get_scale_fuel_flow_by_non_std_density_method_offset = 10
     _set_scale_fuel_flow_by_non_std_density_method_offset = 11
     _get_fuel_flow_method_offset = 12
@@ -11037,21 +11040,21 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Get or set the altitude rate."""
         return self._intf.set_property(AircraftBasicDescentModel._metadata, AircraftBasicDescentModel._set_altitude_rate_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.get_property(AircraftBasicDescentModel._metadata, AircraftBasicDescentModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftBasicDescentModel._metadata, AircraftBasicDescentModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.set_property(AircraftBasicDescentModel._metadata, AircraftBasicDescentModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftBasicDescentModel._metadata, AircraftBasicDescentModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11128,7 +11131,7 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[airspeed] = "airspeed"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[altitude_rate] = "altitude_rate"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[fuel_flow] = "fuel_flow"
     _property_names[enable_relative_airspeed_tolerance] = "enable_relative_airspeed_tolerance"
@@ -11379,12 +11382,12 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _get_departure_speed_method_offset = 6
     _get_departure_speed_type_method_offset = 7
     _set_departure_speed_method_offset = 8
-    _get_use_aero_prop_fuel_method_offset = 9
-    _set_use_aero_prop_fuel_method_offset = 10
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 9
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 10
     _get_scale_fuel_flow_by_non_std_density_method_offset = 11
     _set_scale_fuel_flow_by_non_std_density_method_offset = 12
-    _get_accel_fuel_flow_method_offset = 13
-    _set_accel_fuel_flow_method_offset = 14
+    _get_acceleration_fuel_flow_method_offset = 13
+    _set_acceleration_fuel_flow_method_offset = 14
     _get_departure_fuel_flow_method_offset = 15
     _set_departure_fuel_flow_method_offset = 16
     _get_as_catalog_item_method_offset = 17
@@ -11458,21 +11461,21 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Set the departure speed of the aircraft."""
         return self._intf.invoke(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_departure_speed_metadata, airspeedType, aispeed)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.get_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.set_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11490,21 +11493,21 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Get or set whether to scale fuel flow by non std density."""
         return self._intf.set_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_scale_fuel_flow_by_non_std_density_metadata, newVal)
 
-    _get_accel_fuel_flow_metadata = { "offset" : _get_accel_fuel_flow_method_offset,
+    _get_acceleration_fuel_flow_metadata = { "offset" : _get_acceleration_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_fuel_flow(self) -> float:
+    def acceleration_fuel_flow(self) -> float:
         """Get or set the aircraft's fuel flow rate while accelerating during takeoff."""
-        return self._intf.get_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._get_accel_fuel_flow_metadata)
+        return self._intf.get_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._get_acceleration_fuel_flow_metadata)
 
-    _set_accel_fuel_flow_metadata = { "offset" : _set_accel_fuel_flow_method_offset,
+    _set_acceleration_fuel_flow_metadata = { "offset" : _set_acceleration_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_fuel_flow.setter
-    def accel_fuel_flow(self, newVal:float) -> None:
+    @acceleration_fuel_flow.setter
+    def acceleration_fuel_flow(self, newVal:float) -> None:
         """Get or set the aircraft's fuel flow rate while accelerating during takeoff."""
-        return self._intf.set_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_accel_fuel_flow_metadata, newVal)
+        return self._intf.set_property(AircraftBasicTakeoffModel._metadata, AircraftBasicTakeoffModel._set_acceleration_fuel_flow_metadata, newVal)
 
     _get_departure_fuel_flow_metadata = { "offset" : _get_departure_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11534,9 +11537,9 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[sea_level_ground_roll] = "sea_level_ground_roll"
     _property_names[departure_speed] = "departure_speed"
     _property_names[departure_speed_type] = "departure_speed_type"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
-    _property_names[accel_fuel_flow] = "accel_fuel_flow"
+    _property_names[acceleration_fuel_flow] = "acceleration_fuel_flow"
     _property_names[departure_fuel_flow] = "departure_fuel_flow"
 
     def __init__(self, sourceObject=None):
@@ -11751,8 +11754,8 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _set_landing_speed_method_offset = 3
     _get_sea_level_ground_roll_method_offset = 4
     _set_sea_level_ground_roll_method_offset = 5
-    _get_use_aero_prop_fuel_method_offset = 6
-    _set_use_aero_prop_fuel_method_offset = 7
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 6
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 7
     _get_scale_fuel_flow_by_non_std_density_method_offset = 8
     _set_scale_fuel_flow_by_non_std_density_method_offset = 9
     _get_fuel_flow_method_offset = 10
@@ -11805,21 +11808,21 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
         """Get or set the distance the aircraft travels along the ground while decelerating to a stop at sea level."""
         return self._intf.set_property(AircraftBasicLandingModel._metadata, AircraftBasicLandingModel._set_sea_level_ground_roll_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.get_property(AircraftBasicLandingModel._metadata, AircraftBasicLandingModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftBasicLandingModel._metadata, AircraftBasicLandingModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.set_property(AircraftBasicLandingModel._metadata, AircraftBasicLandingModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftBasicLandingModel._metadata, AircraftBasicLandingModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11863,7 +11866,7 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[landing_speed] = "landing_speed"
     _property_names[landing_speed_type] = "landing_speed_type"
     _property_names[sea_level_ground_roll] = "sea_level_ground_roll"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[fuel_flow] = "fuel_flow"
 
@@ -11902,8 +11905,8 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
     _set_flaps_method_offset = 8
     _get_speedbrakes_method_offset = 9
     _set_speedbrakes_method_offset = 10
-    _get_braking_decel_g_method_offset = 11
-    _set_braking_decel_g_method_offset = 12
+    _get_braking_deceleration_g_method_offset = 11
+    _set_braking_deceleration_g_method_offset = 12
     _get_as_catalog_item_method_offset = 13
     _metadata = {
         "iid_data" : (5277953693984597077, 10394557647785555631),
@@ -11991,21 +11994,21 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
         """Get or set the extension of the speedbrakes during the landing."""
         return self._intf.set_property(AircraftAdvancedLandingModel._metadata, AircraftAdvancedLandingModel._set_speedbrakes_metadata, newVal)
 
-    _get_braking_decel_g_metadata = { "offset" : _get_braking_decel_g_method_offset,
+    _get_braking_deceleration_g_metadata = { "offset" : _get_braking_deceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def braking_decel_g(self) -> float:
+    def braking_deceleration_g(self) -> float:
         """Get or set the deceleration rate, in G, when braking."""
-        return self._intf.get_property(AircraftAdvancedLandingModel._metadata, AircraftAdvancedLandingModel._get_braking_decel_g_metadata)
+        return self._intf.get_property(AircraftAdvancedLandingModel._metadata, AircraftAdvancedLandingModel._get_braking_deceleration_g_metadata)
 
-    _set_braking_decel_g_metadata = { "offset" : _set_braking_decel_g_method_offset,
+    _set_braking_deceleration_g_metadata = { "offset" : _set_braking_deceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @braking_decel_g.setter
-    def braking_decel_g(self, newVal:float) -> None:
+    @braking_deceleration_g.setter
+    def braking_deceleration_g(self, newVal:float) -> None:
         """Get or set the deceleration rate, in G, when braking."""
-        return self._intf.set_property(AircraftAdvancedLandingModel._metadata, AircraftAdvancedLandingModel._set_braking_decel_g_metadata, newVal)
+        return self._intf.set_property(AircraftAdvancedLandingModel._metadata, AircraftAdvancedLandingModel._set_braking_deceleration_g_metadata, newVal)
 
     _get_as_catalog_item_metadata = { "offset" : _get_as_catalog_item_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12019,7 +12022,7 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
     _property_names[angle_of_attack] = "angle_of_attack"
     _property_names[flaps] = "flaps"
     _property_names[speedbrakes] = "speedbrakes"
-    _property_names[braking_decel_g] = "braking_decel_g"
+    _property_names[braking_deceleration_g] = "braking_deceleration_g"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type AircraftAdvancedLandingModel."""
@@ -13502,8 +13505,8 @@ class NavigationOptions(SupportsDeleteCallback):
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_nav_mode_method_offset = 1
-    _set_nav_mode_method_offset = 2
+    _get_navigation_mode_method_offset = 1
+    _set_navigation_mode_method_offset = 2
     _get_arrive_on_course_method_offset = 3
     _set_arrive_on_course_method_offset = 4
     _get_use_magnetic_heading_method_offset = 5
@@ -13520,21 +13523,21 @@ class NavigationOptions(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, NavigationOptions)
     
-    _get_nav_mode_metadata = { "offset" : _get_nav_mode_method_offset,
+    _get_navigation_mode_metadata = { "offset" : _get_navigation_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(POINT_TO_POINT_MODE),) }
     @property
-    def nav_mode(self) -> "POINT_TO_POINT_MODE":
+    def navigation_mode(self) -> "POINT_TO_POINT_MODE":
         """Get or set the navigation mode."""
-        return self._intf.get_property(NavigationOptions._metadata, NavigationOptions._get_nav_mode_metadata)
+        return self._intf.get_property(NavigationOptions._metadata, NavigationOptions._get_navigation_mode_metadata)
 
-    _set_nav_mode_metadata = { "offset" : _set_nav_mode_method_offset,
+    _set_navigation_mode_metadata = { "offset" : _set_navigation_mode_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(POINT_TO_POINT_MODE),) }
-    @nav_mode.setter
-    def nav_mode(self, newVal:"POINT_TO_POINT_MODE") -> None:
+    @navigation_mode.setter
+    def navigation_mode(self, newVal:"POINT_TO_POINT_MODE") -> None:
         """Get or set the navigation mode."""
-        return self._intf.set_property(NavigationOptions._metadata, NavigationOptions._set_nav_mode_metadata, newVal)
+        return self._intf.set_property(NavigationOptions._metadata, NavigationOptions._set_navigation_mode_metadata, newVal)
 
     _get_arrive_on_course_metadata = { "offset" : _get_arrive_on_course_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -13600,7 +13603,7 @@ class NavigationOptions(SupportsDeleteCallback):
         """Option for the second turn."""
         return self._intf.set_property(NavigationOptions._metadata, NavigationOptions._set_enroute_second_turn_metadata, newVal)
 
-    _property_names[nav_mode] = "nav_mode"
+    _property_names[navigation_mode] = "navigation_mode"
     _property_names[arrive_on_course] = "arrive_on_course"
     _property_names[use_magnetic_heading] = "use_magnetic_heading"
     _property_names[enroute_first_turn] = "enroute_first_turn"
@@ -14903,17 +14906,17 @@ class LevelTurns(SupportsDeleteCallback):
 
     _get_maneuver_mode_metadata = { "offset" : _get_maneuver_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @property
-    def maneuver_mode(self) -> "ACCEL_MANEUVER_MODE":
+    def maneuver_mode(self) -> "ACCELERATION_MANEUVER_MODE":
         """Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         return self._intf.get_property(LevelTurns._metadata, LevelTurns._get_maneuver_mode_metadata)
 
     _set_maneuver_mode_metadata = { "offset" : _set_maneuver_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"ACCEL_MANEUVER_MODE") -> None:
+    def maneuver_mode(self, newVal:"ACCELERATION_MANEUVER_MODE") -> None:
         """Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         return self._intf.set_property(LevelTurns._metadata, LevelTurns._set_maneuver_mode_metadata, newVal)
 
@@ -14921,7 +14924,7 @@ class LevelTurns(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AerodynamicPropulsionManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         return self._intf.get_property(LevelTurns._metadata, LevelTurns._get_maneuver_mode_helper_metadata)
 
@@ -15048,8 +15051,8 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     _set_max_push_over_g_method_offset = 4
     _get_maneuver_mode_method_offset = 5
     _set_maneuver_mode_method_offset = 6
-    _get_ignore_fpa_method_offset = 7
-    _set_ignore_fpa_method_offset = 8
+    _get_ignore_flight_path_angle_method_offset = 7
+    _set_ignore_flight_path_angle_method_offset = 8
     _get_maneuver_mode_helper_method_offset = 9
     _metadata = {
         "iid_data" : (4787497693753872718, 5667952407318575531),
@@ -15093,48 +15096,48 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
 
     _get_maneuver_mode_metadata = { "offset" : _get_maneuver_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @property
-    def maneuver_mode(self) -> "ACCEL_MANEUVER_MODE":
+    def maneuver_mode(self) -> "ACCELERATION_MANEUVER_MODE":
         """Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_maneuver_mode_metadata)
 
     _set_maneuver_mode_metadata = { "offset" : _set_maneuver_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_MODE),) }
     @maneuver_mode.setter
-    def maneuver_mode(self, newVal:"ACCEL_MANEUVER_MODE") -> None:
+    def maneuver_mode(self, newVal:"ACCELERATION_MANEUVER_MODE") -> None:
         """Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius."""
         return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_maneuver_mode_metadata, newVal)
 
-    _get_ignore_fpa_metadata = { "offset" : _get_ignore_fpa_method_offset,
+    _get_ignore_flight_path_angle_metadata = { "offset" : _get_ignore_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def ignore_fpa(self) -> bool:
+    def ignore_flight_path_angle(self) -> bool:
         """Opt whether to ignore the flight path angle."""
-        return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_ignore_fpa_metadata)
+        return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_ignore_flight_path_angle_metadata)
 
-    _set_ignore_fpa_metadata = { "offset" : _set_ignore_fpa_method_offset,
+    _set_ignore_flight_path_angle_metadata = { "offset" : _set_ignore_flight_path_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @ignore_fpa.setter
-    def ignore_fpa(self, newVal:bool) -> None:
+    @ignore_flight_path_angle.setter
+    def ignore_flight_path_angle(self, newVal:bool) -> None:
         """Opt whether to ignore the flight path angle."""
-        return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_ignore_fpa_metadata, newVal)
+        return self._intf.set_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._set_ignore_flight_path_angle_metadata, newVal)
 
     _get_maneuver_mode_helper_metadata = { "offset" : _get_maneuver_mode_helper_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def maneuver_mode_helper(self) -> "AeroPropManeuverModeHelper":
+    def maneuver_mode_helper(self) -> "AerodynamicPropulsionManeuverModeHelper":
         """Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface."""
         return self._intf.get_property(ClimbAndDescentTransitions._metadata, ClimbAndDescentTransitions._get_maneuver_mode_helper_metadata)
 
     _property_names[max_pull_up_g] = "max_pull_up_g"
     _property_names[max_push_over_g] = "max_push_over_g"
     _property_names[maneuver_mode] = "maneuver_mode"
-    _property_names[ignore_fpa] = "ignore_fpa"
+    _property_names[ignore_flight_path_angle] = "ignore_flight_path_angle"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
 
     def __init__(self, sourceObject=None):
@@ -15153,7 +15156,7 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5374744943989914698, 12300077720877790391), ClimbAndDescentTransitions)
 agcls.AgTypeNameMap["ClimbAndDescentTransitions"] = ClimbAndDescentTransitions
 
-class AeroPropManeuverModeHelper(SupportsDeleteCallback):
+class AerodynamicPropulsionManeuverModeHelper(SupportsDeleteCallback):
     """Interface used to access the The calculation mode for the Aero/Prop maneuver mode helper. Helper found in the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 19
@@ -15176,46 +15179,46 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     _get_estimated_ps_method_offset = 16
     _get_control_authority_method_offset = 17
     _set_control_authority_method_offset = 18
-    _get_status_msg_method_offset = 19
+    _get_status_message_method_offset = 19
     _metadata = {
         "iid_data" : (5328095794674712717, 8005940665812164797),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AeroPropManeuverModeHelper)
+        return get_interface_property(attrname, AerodynamicPropulsionManeuverModeHelper)
     
     _get_mode_metadata = { "offset" : _get_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_AERO_PROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE),) }
     @property
-    def mode(self) -> "ACCEL_MANEUVER_AERO_PROP_MODE":
+    def mode(self) -> "ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE":
         """Get or set the calculation mode for the Aero/Prop maneuver mode helper."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_mode_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_mode_metadata)
 
     _set_mode_metadata = { "offset" : _set_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MANEUVER_AERO_PROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE),) }
     @mode.setter
-    def mode(self, newVal:"ACCEL_MANEUVER_AERO_PROP_MODE") -> None:
+    def mode(self, newVal:"ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE") -> None:
         """Get or set the calculation mode for the Aero/Prop maneuver mode helper."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_mode_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_mode_metadata, newVal)
 
     _get_flight_mode_metadata = { "offset" : _get_flight_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AERO_PROP_FLIGHT_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AERODYNAMIC_PROPULSION_FLIGHT_MODE),) }
     @property
-    def flight_mode(self) -> "AERO_PROP_FLIGHT_MODE":
+    def flight_mode(self) -> "AERODYNAMIC_PROPULSION_FLIGHT_MODE":
         """Get or set the performance flight mode."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_flight_mode_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_flight_mode_metadata)
 
     _set_flight_mode_metadata = { "offset" : _set_flight_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AERO_PROP_FLIGHT_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AERODYNAMIC_PROPULSION_FLIGHT_MODE),) }
     @flight_mode.setter
-    def flight_mode(self, newVal:"AERO_PROP_FLIGHT_MODE") -> None:
+    def flight_mode(self, newVal:"AERODYNAMIC_PROPULSION_FLIGHT_MODE") -> None:
         """Get or set the performance flight mode."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_flight_mode_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_flight_mode_metadata, newVal)
 
     _get_use_afterburner_metadata = { "offset" : _get_use_afterburner_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15223,7 +15226,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def use_afterburner(self) -> bool:
         """Opt whether to use the afterburner if it is possible."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_use_afterburner_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_use_afterburner_metadata)
 
     _set_use_afterburner_metadata = { "offset" : _set_use_afterburner_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -15231,7 +15234,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @use_afterburner.setter
     def use_afterburner(self, newVal:bool) -> None:
         """Opt whether to use the afterburner if it is possible."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_use_afterburner_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_use_afterburner_metadata, newVal)
 
     _get_reference_weight_metadata = { "offset" : _get_reference_weight_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15239,7 +15242,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def reference_weight(self) -> float:
         """Get or set the reference weight."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_reference_weight_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_reference_weight_metadata)
 
     _set_reference_weight_metadata = { "offset" : _set_reference_weight_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15247,7 +15250,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @reference_weight.setter
     def reference_weight(self, newVal:float) -> None:
         """Get or set the reference weight."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_reference_weight_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_reference_weight_metadata, newVal)
 
     _get_reference_altitude_metadata = { "offset" : _get_reference_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15255,7 +15258,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def reference_altitude(self) -> float:
         """Get or set the reference altitude."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_reference_altitude_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_reference_altitude_metadata)
 
     _set_reference_altitude_metadata = { "offset" : _set_reference_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15263,7 +15266,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @reference_altitude.setter
     def reference_altitude(self, newVal:float) -> None:
         """Get or set the reference altitude."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_reference_altitude_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_reference_altitude_metadata, newVal)
 
     _get_reference_airspeed_metadata = { "offset" : _get_reference_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15271,7 +15274,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def reference_airspeed(self) -> float:
         """Get the reference airspeed."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_reference_airspeed_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_reference_airspeed_metadata)
 
     _get_reference_airspeed_type_metadata = { "offset" : _get_reference_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15279,14 +15282,14 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def reference_airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the reference airspeed type."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_reference_airspeed_type_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_reference_airspeed_type_metadata)
 
     _set_reference_airspeed_metadata = { "offset" : _set_reference_airspeed_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_reference_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the reference airspeed and reference airspeed type."""
-        return self._intf.invoke(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_reference_airspeed_metadata, airspeedType, airspeed)
+        return self._intf.invoke(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_reference_airspeed_metadata, airspeedType, airspeed)
 
     _get_reference_load_factor_metadata = { "offset" : _get_reference_load_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15294,7 +15297,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def reference_load_factor(self) -> float:
         """Get or set the reference load factor."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_reference_load_factor_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_reference_load_factor_metadata)
 
     _set_reference_load_factor_metadata = { "offset" : _set_reference_load_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15302,7 +15305,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @reference_load_factor.setter
     def reference_load_factor(self, newVal:float) -> None:
         """Get or set the reference load factor."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_reference_load_factor_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_reference_load_factor_metadata, newVal)
 
     _get_estimated_ps_metadata = { "offset" : _get_estimated_ps_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15310,7 +15313,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def estimated_ps(self) -> float:
         """Get the estimated specific excess power."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_estimated_ps_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_estimated_ps_metadata)
 
     _get_control_authority_metadata = { "offset" : _get_control_authority_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15318,7 +15321,7 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @property
     def control_authority(self) -> float:
         """Get or set the control authority of how much to factor a turn over push/pull."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_control_authority_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_control_authority_metadata)
 
     _set_control_authority_metadata = { "offset" : _set_control_authority_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15326,15 +15329,15 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     @control_authority.setter
     def control_authority(self, newVal:float) -> None:
         """Get or set the control authority of how much to factor a turn over push/pull."""
-        return self._intf.set_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._set_control_authority_metadata, newVal)
+        return self._intf.set_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._set_control_authority_metadata, newVal)
 
-    _get_status_msg_metadata = { "offset" : _get_status_msg_method_offset,
+    _get_status_message_metadata = { "offset" : _get_status_message_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def status_msg(self) -> str:
+    def status_message(self) -> str:
         """Get the status message in the message window."""
-        return self._intf.get_property(AeroPropManeuverModeHelper._metadata, AeroPropManeuverModeHelper._get_status_msg_metadata)
+        return self._intf.get_property(AerodynamicPropulsionManeuverModeHelper._metadata, AerodynamicPropulsionManeuverModeHelper._get_status_message_metadata)
 
     _property_names[mode] = "mode"
     _property_names[flight_mode] = "flight_mode"
@@ -15346,12 +15349,12 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
     _property_names[reference_load_factor] = "reference_load_factor"
     _property_names[estimated_ps] = "estimated_ps"
     _property_names[control_authority] = "control_authority"
-    _property_names[status_msg] = "status_msg"
+    _property_names[status_message] = "status_message"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AeroPropManeuverModeHelper."""
+        """Construct an object of type AerodynamicPropulsionManeuverModeHelper."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AeroPropManeuverModeHelper)
+        initialize_from_source_object(self, sourceObject, AerodynamicPropulsionManeuverModeHelper)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15359,10 +15362,10 @@ class AeroPropManeuverModeHelper(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AeroPropManeuverModeHelper, [AeroPropManeuverModeHelper, ])
+        set_class_attribute(self, attrname, value, AerodynamicPropulsionManeuverModeHelper, [AerodynamicPropulsionManeuverModeHelper, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5554483294060101200, 8600938976610717093), AeroPropManeuverModeHelper)
-agcls.AgTypeNameMap["AeroPropManeuverModeHelper"] = AeroPropManeuverModeHelper
+agcls.AgClassCatalog.add_catalog_entry((5554483294060101200, 8600938976610717093), AerodynamicPropulsionManeuverModeHelper)
+agcls.AgTypeNameMap["AerodynamicPropulsionManeuverModeHelper"] = AerodynamicPropulsionManeuverModeHelper
 
 class AircraftAdvancedAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
     """Interface used to access the Advanced Acceleration Model options of an aircraft."""
@@ -15451,10 +15454,10 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_accel_mode_method_offset = 1
-    _set_accel_mode_method_offset = 2
-    _get_accel_g_method_offset = 3
-    _set_accel_g_method_offset = 4
+    _get_acceleration_mode_method_offset = 1
+    _set_acceleration_mode_method_offset = 2
+    _get_acceleration_g_method_offset = 3
+    _set_acceleration_g_method_offset = 4
     _metadata = {
         "iid_data" : (5657217427469576289, 12897697484585064127),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -15463,40 +15466,40 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, AircraftAccelerationMode)
     
-    _get_accel_mode_metadata = { "offset" : _get_accel_mode_method_offset,
+    _get_acceleration_mode_metadata = { "offset" : _get_acceleration_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCELERATION_MODE),) }
     @property
-    def accel_mode(self) -> "ACCELERATION_ADVANCED_ACCEL_MODE":
+    def acceleration_mode(self) -> "ACCELERATION_ADVANCED_ACCELERATION_MODE":
         """Opt whether to override the acceleration or deceleration of the aircraft."""
-        return self._intf.get_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._get_accel_mode_metadata)
+        return self._intf.get_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._get_acceleration_mode_metadata)
 
-    _set_accel_mode_metadata = { "offset" : _set_accel_mode_method_offset,
+    _set_acceleration_mode_metadata = { "offset" : _set_acceleration_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCEL_MODE),) }
-    @accel_mode.setter
-    def accel_mode(self, newVal:"ACCELERATION_ADVANCED_ACCEL_MODE") -> None:
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_ADVANCED_ACCELERATION_MODE),) }
+    @acceleration_mode.setter
+    def acceleration_mode(self, newVal:"ACCELERATION_ADVANCED_ACCELERATION_MODE") -> None:
         """Opt whether to override the acceleration or deceleration of the aircraft."""
-        return self._intf.set_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._set_accel_mode_metadata, newVal)
+        return self._intf.set_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._set_acceleration_mode_metadata, newVal)
 
-    _get_accel_g_metadata = { "offset" : _get_accel_g_method_offset,
+    _get_acceleration_g_metadata = { "offset" : _get_acceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_g(self) -> float:
+    def acceleration_g(self) -> float:
         """Get or set the rate of acceleration or deceleration of the aircraft if the accleeration mode is set to override."""
-        return self._intf.get_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._get_accel_g_metadata)
+        return self._intf.get_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._get_acceleration_g_metadata)
 
-    _set_accel_g_metadata = { "offset" : _set_accel_g_method_offset,
+    _set_acceleration_g_metadata = { "offset" : _set_acceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_g.setter
-    def accel_g(self, newVal:float) -> None:
+    @acceleration_g.setter
+    def acceleration_g(self, newVal:float) -> None:
         """Get or set the rate of acceleration or deceleration of the aircraft if the accleeration mode is set to override."""
-        return self._intf.set_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._set_accel_g_metadata, newVal)
+        return self._intf.set_property(AircraftAccelerationMode._metadata, AircraftAccelerationMode._set_acceleration_g_metadata, newVal)
 
-    _property_names[accel_mode] = "accel_mode"
-    _property_names[accel_g] = "accel_g"
+    _property_names[acceleration_mode] = "acceleration_mode"
+    _property_names[acceleration_g] = "acceleration_g"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type AircraftAccelerationMode."""
@@ -15514,7 +15517,7 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5216102563964361198, 17187029792935920802), AircraftAccelerationMode)
 agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
 
-class AircraftSimpleAero(SupportsDeleteCallback):
+class AircraftSimpleAerodynamic(SupportsDeleteCallback):
     """Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 8
@@ -15533,23 +15536,23 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftSimpleAero)
+        return get_interface_property(attrname, AircraftSimpleAerodynamic)
     
     _get_operating_mode_metadata = { "offset" : _get_operating_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AERO_PROP_SIMPLE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AERODYNAMIC_PROPULSION_SIMPLE_MODE),) }
     @property
-    def operating_mode(self) -> "AERO_PROP_SIMPLE_MODE":
+    def operating_mode(self) -> "AERODYNAMIC_PROPULSION_SIMPLE_MODE":
         """Get or set the mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude."""
-        return self._intf.get_property(AircraftSimpleAero._metadata, AircraftSimpleAero._get_operating_mode_metadata)
+        return self._intf.get_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._get_operating_mode_metadata)
 
     _set_operating_mode_metadata = { "offset" : _set_operating_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AERO_PROP_SIMPLE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AERODYNAMIC_PROPULSION_SIMPLE_MODE),) }
     @operating_mode.setter
-    def operating_mode(self, newVal:"AERO_PROP_SIMPLE_MODE") -> None:
+    def operating_mode(self, newVal:"AERODYNAMIC_PROPULSION_SIMPLE_MODE") -> None:
         """Get or set the mode option to treat the aircraft as a helicopter or a fixed wing aircraft when calculating the aircraft's attitude."""
-        return self._intf.set_property(AircraftSimpleAero._metadata, AircraftSimpleAero._set_operating_mode_metadata, newVal)
+        return self._intf.set_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._set_operating_mode_metadata, newVal)
 
     _get_s_reference_metadata = { "offset" : _get_s_reference_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15557,7 +15560,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @property
     def s_reference(self) -> float:
         """Get or set the reference surface area of the aircraft."""
-        return self._intf.get_property(AircraftSimpleAero._metadata, AircraftSimpleAero._get_s_reference_metadata)
+        return self._intf.get_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._get_s_reference_metadata)
 
     _set_s_reference_metadata = { "offset" : _set_s_reference_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15565,7 +15568,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @s_reference.setter
     def s_reference(self, newVal:float) -> None:
         """Get or set the reference surface area of the aircraft."""
-        return self._intf.set_property(AircraftSimpleAero._metadata, AircraftSimpleAero._set_s_reference_metadata, newVal)
+        return self._intf.set_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._set_s_reference_metadata, newVal)
 
     _get_cl_max_metadata = { "offset" : _get_cl_max_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15573,7 +15576,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @property
     def cl_max(self) -> float:
         """Get or set the max coefficient of lift."""
-        return self._intf.get_property(AircraftSimpleAero._metadata, AircraftSimpleAero._get_cl_max_metadata)
+        return self._intf.get_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._get_cl_max_metadata)
 
     _set_cl_max_metadata = { "offset" : _set_cl_max_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15581,7 +15584,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @cl_max.setter
     def cl_max(self, newVal:float) -> None:
         """Get or set the max coefficient of lift."""
-        return self._intf.set_property(AircraftSimpleAero._metadata, AircraftSimpleAero._set_cl_max_metadata, newVal)
+        return self._intf.set_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._set_cl_max_metadata, newVal)
 
     _get_cd_metadata = { "offset" : _get_cd_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15589,7 +15592,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @property
     def cd(self) -> float:
         """Get or set the coefficient of drag."""
-        return self._intf.get_property(AircraftSimpleAero._metadata, AircraftSimpleAero._get_cd_metadata)
+        return self._intf.get_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._get_cd_metadata)
 
     _set_cd_metadata = { "offset" : _set_cd_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15597,7 +15600,7 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     @cd.setter
     def cd(self, newVal:float) -> None:
         """Get or set the coefficient of drag."""
-        return self._intf.set_property(AircraftSimpleAero._metadata, AircraftSimpleAero._set_cd_metadata, newVal)
+        return self._intf.set_property(AircraftSimpleAerodynamic._metadata, AircraftSimpleAerodynamic._set_cd_metadata, newVal)
 
     _property_names[operating_mode] = "operating_mode"
     _property_names[s_reference] = "s_reference"
@@ -15605,9 +15608,9 @@ class AircraftSimpleAero(SupportsDeleteCallback):
     _property_names[cd] = "cd"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftSimpleAero."""
+        """Construct an object of type AircraftSimpleAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftSimpleAero)
+        initialize_from_source_object(self, sourceObject, AircraftSimpleAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15615,12 +15618,12 @@ class AircraftSimpleAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftSimpleAero, [AircraftSimpleAero, ])
+        set_class_attribute(self, attrname, value, AircraftSimpleAerodynamic, [AircraftSimpleAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4949274632612681163, 16986168694659548566), AircraftSimpleAero)
-agcls.AgTypeNameMap["AircraftSimpleAero"] = AircraftSimpleAero
+agcls.AgClassCatalog.add_catalog_entry((4949274632612681163, 16986168694659548566), AircraftSimpleAerodynamic)
+agcls.AgTypeNameMap["AircraftSimpleAerodynamic"] = AircraftSimpleAerodynamic
 
-class AircraftExternalAero(SupportsDeleteCallback):
+class AircraftExternalAerodynamic(SupportsDeleteCallback):
     """Interface used to access the External File Aerodynamics options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 14
@@ -15645,7 +15648,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftExternalAero)
+        return get_interface_property(attrname, AircraftExternalAerodynamic)
     
     _get_forward_flight_filepath_metadata = { "offset" : _get_forward_flight_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -15653,21 +15656,21 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def forward_flight_filepath(self) -> str:
         """Get the filepath for the forward flight aero file."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_forward_flight_filepath_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_forward_flight_filepath_metadata)
 
     _set_forward_flight_filepath_metadata = { "offset" : _set_forward_flight_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_forward_flight_filepath(self, filepath:str) -> str:
         """Set the filepath for the forward flight aero file."""
-        return self._intf.invoke(AircraftExternalAero._metadata, AircraftExternalAero._set_forward_flight_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._set_forward_flight_filepath_metadata, filepath, OutArg())
 
     _reload_forward_flight_file_metadata = { "offset" : _reload_forward_flight_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def reload_forward_flight_file(self) -> str:
         """Reload the forward flight aero file."""
-        return self._intf.invoke(AircraftExternalAero._metadata, AircraftExternalAero._reload_forward_flight_file_metadata, OutArg())
+        return self._intf.invoke(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._reload_forward_flight_file_metadata, OutArg())
 
     _get_forward_flight_reference_area_metadata = { "offset" : _get_forward_flight_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15675,7 +15678,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def forward_flight_reference_area(self) -> float:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_forward_flight_reference_area_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_forward_flight_reference_area_metadata)
 
     _set_forward_flight_reference_area_metadata = { "offset" : _set_forward_flight_reference_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15683,7 +15686,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @forward_flight_reference_area.setter
     def forward_flight_reference_area(self, pVal:float) -> None:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.set_property(AircraftExternalAero._metadata, AircraftExternalAero._set_forward_flight_reference_area_metadata, pVal)
+        return self._intf.set_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._set_forward_flight_reference_area_metadata, pVal)
 
     _get_can_set_forward_flight_reference_area_metadata = { "offset" : _get_can_set_forward_flight_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15691,7 +15694,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def can_set_forward_flight_reference_area(self) -> bool:
         """Check whether you can set the reference area or whether it is specified in the file."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_can_set_forward_flight_reference_area_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_can_set_forward_flight_reference_area_metadata)
 
     _get_is_forward_flight_valid_metadata = { "offset" : _get_is_forward_flight_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15699,7 +15702,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def is_forward_flight_valid(self) -> bool:
         """Check whether the forward flight file is valid."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_is_forward_flight_valid_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_is_forward_flight_valid_metadata)
 
     _get_takeoff_landing_filepath_metadata = { "offset" : _get_takeoff_landing_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -15707,21 +15710,21 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_filepath(self) -> str:
         """Get the filepath for the takeoff and landing aero file."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_takeoff_landing_filepath_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_takeoff_landing_filepath_metadata)
 
     _set_takeoff_landing_filepath_metadata = { "offset" : _set_takeoff_landing_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_takeoff_landing_filepath(self, filepath:str) -> str:
         """Set the filepath for the takeoff and landing aero file."""
-        return self._intf.invoke(AircraftExternalAero._metadata, AircraftExternalAero._set_takeoff_landing_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._set_takeoff_landing_filepath_metadata, filepath, OutArg())
 
     _reload_takeoff_landing_file_metadata = { "offset" : _reload_takeoff_landing_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def reload_takeoff_landing_file(self) -> str:
         """Reload the takeoff and landing aero file."""
-        return self._intf.invoke(AircraftExternalAero._metadata, AircraftExternalAero._reload_takeoff_landing_file_metadata, OutArg())
+        return self._intf.invoke(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._reload_takeoff_landing_file_metadata, OutArg())
 
     _get_takeoff_landing_reference_area_metadata = { "offset" : _get_takeoff_landing_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15729,7 +15732,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_reference_area(self) -> float:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_takeoff_landing_reference_area_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_takeoff_landing_reference_area_metadata)
 
     _set_takeoff_landing_reference_area_metadata = { "offset" : _set_takeoff_landing_reference_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15737,7 +15740,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @takeoff_landing_reference_area.setter
     def takeoff_landing_reference_area(self, pVal:float) -> None:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.set_property(AircraftExternalAero._metadata, AircraftExternalAero._set_takeoff_landing_reference_area_metadata, pVal)
+        return self._intf.set_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._set_takeoff_landing_reference_area_metadata, pVal)
 
     _get_can_set_takeoff_landing_reference_area_metadata = { "offset" : _get_can_set_takeoff_landing_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15745,7 +15748,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def can_set_takeoff_landing_reference_area(self) -> bool:
         """Check whether you can set the reference area or whether it is specified in the file."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_can_set_takeoff_landing_reference_area_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_can_set_takeoff_landing_reference_area_metadata)
 
     _get_is_takeoff_landing_valid_metadata = { "offset" : _get_is_takeoff_landing_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15753,7 +15756,7 @@ class AircraftExternalAero(SupportsDeleteCallback):
     @property
     def is_takeoff_landing_valid(self) -> bool:
         """Check whether the takeoff and landing file is valid."""
-        return self._intf.get_property(AircraftExternalAero._metadata, AircraftExternalAero._get_is_takeoff_landing_valid_metadata)
+        return self._intf.get_property(AircraftExternalAerodynamic._metadata, AircraftExternalAerodynamic._get_is_takeoff_landing_valid_metadata)
 
     _property_names[forward_flight_filepath] = "forward_flight_filepath"
     _property_names[forward_flight_reference_area] = "forward_flight_reference_area"
@@ -15765,9 +15768,9 @@ class AircraftExternalAero(SupportsDeleteCallback):
     _property_names[is_takeoff_landing_valid] = "is_takeoff_landing_valid"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftExternalAero."""
+        """Construct an object of type AircraftExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftExternalAero)
+        initialize_from_source_object(self, sourceObject, AircraftExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15775,18 +15778,18 @@ class AircraftExternalAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftExternalAero, [AircraftExternalAero, ])
+        set_class_attribute(self, attrname, value, AircraftExternalAerodynamic, [AircraftExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5605284744680812914, 13571106235899430788), AircraftExternalAero)
-agcls.AgTypeNameMap["AircraftExternalAero"] = AircraftExternalAero
+agcls.AgClassCatalog.add_catalog_entry((5605284744680812914, 13571106235899430788), AircraftExternalAerodynamic)
+agcls.AgTypeNameMap["AircraftExternalAerodynamic"] = AircraftExternalAerodynamic
 
-class AircraftAero(SupportsDeleteCallback):
+class AircraftAerodynamic(SupportsDeleteCallback):
     """Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_aero_strategy_method_offset = 1
-    _set_aero_strategy_method_offset = 2
+    _get_aerodynamic_strategy_method_offset = 1
+    _set_aerodynamic_strategy_method_offset = 2
     _get_mode_as_simple_method_offset = 3
     _get_mode_as_basic_fixed_wing_method_offset = 4
     _get_mode_as_external_method_offset = 5
@@ -15801,55 +15804,55 @@ class AircraftAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftAero)
+        return get_interface_property(attrname, AircraftAerodynamic)
     
-    _get_aero_strategy_metadata = { "offset" : _get_aero_strategy_method_offset,
+    _get_aerodynamic_strategy_metadata = { "offset" : _get_aerodynamic_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_AERO_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_AERODYNAMIC_STRATEGY),) }
     @property
-    def aero_strategy(self) -> "AIRCRAFT_AERO_STRATEGY":
+    def aerodynamic_strategy(self) -> "AIRCRAFT_AERODYNAMIC_STRATEGY":
         """Get or set the aerodynamic strategy type."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_aero_strategy_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_aerodynamic_strategy_metadata)
 
-    _set_aero_strategy_metadata = { "offset" : _set_aero_strategy_method_offset,
+    _set_aerodynamic_strategy_metadata = { "offset" : _set_aerodynamic_strategy_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_AERO_STRATEGY),) }
-    @aero_strategy.setter
-    def aero_strategy(self, newVal:"AIRCRAFT_AERO_STRATEGY") -> None:
+            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_AERODYNAMIC_STRATEGY),) }
+    @aerodynamic_strategy.setter
+    def aerodynamic_strategy(self, newVal:"AIRCRAFT_AERODYNAMIC_STRATEGY") -> None:
         """Get or set the aerodynamic strategy type."""
-        return self._intf.set_property(AircraftAero._metadata, AircraftAero._set_aero_strategy_metadata, newVal)
+        return self._intf.set_property(AircraftAerodynamic._metadata, AircraftAerodynamic._set_aerodynamic_strategy_metadata, newVal)
 
     _get_mode_as_simple_metadata = { "offset" : _get_mode_as_simple_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_simple(self) -> "AircraftSimpleAero":
+    def mode_as_simple(self) -> "AircraftSimpleAerodynamic":
         """Get the interface for a simple aerodynamics strategy."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_mode_as_simple_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_mode_as_simple_metadata)
 
     _get_mode_as_basic_fixed_wing_metadata = { "offset" : _get_mode_as_basic_fixed_wing_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingAero":
+    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingAerodynamic":
         """Get the interface for a basic fixed wing aerodynamics strategy."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_mode_as_basic_fixed_wing_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_mode_as_basic_fixed_wing_metadata)
 
     _get_mode_as_external_metadata = { "offset" : _get_mode_as_external_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_external(self) -> "AircraftExternalAero":
+    def mode_as_external(self) -> "AircraftExternalAerodynamic":
         """Get the interface for an external file aerodynamics strategy."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_mode_as_external_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_mode_as_external_metadata)
 
     _get_mode_as_advanced_missile_metadata = { "offset" : _get_mode_as_advanced_missile_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_advanced_missile(self) -> "MissileAdvancedAero":
+    def mode_as_advanced_missile(self) -> "MissileAdvancedAerodynamic":
         """Get the interface for an advanced missile aerodynamics strategy."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_mode_as_advanced_missile_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_mode_as_advanced_missile_metadata)
 
     _get_lift_factor_metadata = { "offset" : _get_lift_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15857,7 +15860,7 @@ class AircraftAero(SupportsDeleteCallback):
     @property
     def lift_factor(self) -> float:
         """Get or set the scalar value applied to the lift for parametric analysis."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_lift_factor_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_lift_factor_metadata)
 
     _set_lift_factor_metadata = { "offset" : _set_lift_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15865,7 +15868,7 @@ class AircraftAero(SupportsDeleteCallback):
     @lift_factor.setter
     def lift_factor(self, newVal:float) -> None:
         """Get or set the scalar value applied to the lift for parametric analysis."""
-        return self._intf.set_property(AircraftAero._metadata, AircraftAero._set_lift_factor_metadata, newVal)
+        return self._intf.set_property(AircraftAerodynamic._metadata, AircraftAerodynamic._set_lift_factor_metadata, newVal)
 
     _get_drag_factor_metadata = { "offset" : _get_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15873,7 +15876,7 @@ class AircraftAero(SupportsDeleteCallback):
     @property
     def drag_factor(self) -> float:
         """Get or set the scalar value applied to the drag for parametric analysis."""
-        return self._intf.get_property(AircraftAero._metadata, AircraftAero._get_drag_factor_metadata)
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_drag_factor_metadata)
 
     _set_drag_factor_metadata = { "offset" : _set_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15881,9 +15884,9 @@ class AircraftAero(SupportsDeleteCallback):
     @drag_factor.setter
     def drag_factor(self, newVal:float) -> None:
         """Get or set the scalar value applied to the drag for parametric analysis."""
-        return self._intf.set_property(AircraftAero._metadata, AircraftAero._set_drag_factor_metadata, newVal)
+        return self._intf.set_property(AircraftAerodynamic._metadata, AircraftAerodynamic._set_drag_factor_metadata, newVal)
 
-    _property_names[aero_strategy] = "aero_strategy"
+    _property_names[aerodynamic_strategy] = "aerodynamic_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_basic_fixed_wing] = "mode_as_basic_fixed_wing"
     _property_names[mode_as_external] = "mode_as_external"
@@ -15892,9 +15895,9 @@ class AircraftAero(SupportsDeleteCallback):
     _property_names[drag_factor] = "drag_factor"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftAero."""
+        """Construct an object of type AircraftAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAero)
+        initialize_from_source_object(self, sourceObject, AircraftAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15902,12 +15905,12 @@ class AircraftAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftAero, [AircraftAero, ])
+        set_class_attribute(self, attrname, value, AircraftAerodynamic, [AircraftAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5082480556701513469, 17564547437981405094), AircraftAero)
-agcls.AgTypeNameMap["AircraftAero"] = AircraftAero
+agcls.AgClassCatalog.add_catalog_entry((5082480556701513469, 17564547437981405094), AircraftAerodynamic)
+agcls.AgTypeNameMap["AircraftAerodynamic"] = AircraftAerodynamic
 
-class AircraftBasicFixedWingAero(SupportsDeleteCallback):
+class AircraftBasicFixedWingAerodynamic(SupportsDeleteCallback):
     """Interface used to access Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 32
@@ -15950,7 +15953,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftBasicFixedWingAero)
+        return get_interface_property(attrname, AircraftBasicFixedWingAerodynamic)
     
     _get_forward_flight_reference_area_metadata = { "offset" : _get_forward_flight_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15958,7 +15961,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_reference_area(self) -> float:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_reference_area_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_reference_area_metadata)
 
     _set_forward_flight_reference_area_metadata = { "offset" : _set_forward_flight_reference_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15966,7 +15969,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_reference_area.setter
     def forward_flight_reference_area(self, pVal:float) -> None:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_reference_area_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_reference_area_metadata, pVal)
 
     _get_forward_flight_use_compressible_flow_metadata = { "offset" : _get_forward_flight_use_compressible_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -15974,7 +15977,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_use_compressible_flow(self) -> bool:
         """Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_use_compressible_flow_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_use_compressible_flow_metadata)
 
     _set_forward_flight_use_compressible_flow_metadata = { "offset" : _set_forward_flight_use_compressible_flow_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -15982,7 +15985,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_use_compressible_flow.setter
     def forward_flight_use_compressible_flow(self, newVal:bool) -> None:
         """Opt to define the aerodynamic parameters for forward flight with respect to supersonic flight conditions."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_use_compressible_flow_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_use_compressible_flow_metadata, newVal)
 
     _get_forward_flight_cl0_metadata = { "offset" : _get_forward_flight_cl0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15990,7 +15993,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_cl0(self) -> float:
         """Get or set the coefficient of lift at zero angle of attack."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_cl0_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_cl0_metadata)
 
     _set_forward_flight_cl0_metadata = { "offset" : _set_forward_flight_cl0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -15998,7 +16001,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_cl0.setter
     def forward_flight_cl0(self, newVal:float) -> None:
         """Get or set the coefficient of lift at zero angle of attack."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_cl0_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_cl0_metadata, newVal)
 
     _get_forward_flight_cl_alpha_metadata = { "offset" : _get_forward_flight_cl_alpha_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16006,7 +16009,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_cl_alpha(self) -> float:
         """Get or set the slope of the coefficient of lift curve."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_cl_alpha_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_cl_alpha_metadata)
 
     _set_forward_flight_cl_alpha_metadata = { "offset" : _set_forward_flight_cl_alpha_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16014,7 +16017,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_cl_alpha.setter
     def forward_flight_cl_alpha(self, newVal:float) -> None:
         """Get or set the slope of the coefficient of lift curve."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_cl_alpha_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_cl_alpha_metadata, newVal)
 
     _get_forward_flight_min_aoa_metadata = { "offset" : _get_forward_flight_min_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -16022,7 +16025,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_min_aoa(self) -> typing.Any:
         """Get or set the minimum angle of attack possible."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_min_aoa_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_min_aoa_metadata)
 
     _set_forward_flight_min_aoa_metadata = { "offset" : _set_forward_flight_min_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -16030,7 +16033,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_min_aoa.setter
     def forward_flight_min_aoa(self, newVal:typing.Any) -> None:
         """Get or set the minimum angle of attack possible."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_min_aoa_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_min_aoa_metadata, newVal)
 
     _get_forward_flight_max_aoa_metadata = { "offset" : _get_forward_flight_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -16038,7 +16041,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_max_aoa(self) -> typing.Any:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_max_aoa_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_max_aoa_metadata)
 
     _set_forward_flight_max_aoa_metadata = { "offset" : _set_forward_flight_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -16046,7 +16049,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_max_aoa.setter
     def forward_flight_max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_max_aoa_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_max_aoa_metadata, newVal)
 
     _get_forward_flight_cd0_metadata = { "offset" : _get_forward_flight_cd0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16054,7 +16057,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_cd0(self) -> float:
         """Get or set the coefficient of drag of the lifting surface at zero angle of attack."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_cd0_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_cd0_metadata)
 
     _set_forward_flight_cd0_metadata = { "offset" : _set_forward_flight_cd0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16062,7 +16065,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_cd0.setter
     def forward_flight_cd0(self, newVal:float) -> None:
         """Get or set the coefficient of drag of the lifting surface at zero angle of attack."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_cd0_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_cd0_metadata, newVal)
 
     _get_forward_flight_k_metadata = { "offset" : _get_forward_flight_k_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16070,7 +16073,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def forward_flight_k(self) -> float:
         """Get or set the coefficient of induced drag."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_forward_flight_k_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_forward_flight_k_metadata)
 
     _set_forward_flight_k_metadata = { "offset" : _set_forward_flight_k_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16078,7 +16081,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @forward_flight_k.setter
     def forward_flight_k(self, newVal:float) -> None:
         """Get or set the coefficient of induced drag."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_forward_flight_k_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_forward_flight_k_metadata, newVal)
 
     _get_takeoff_landing_reference_area_metadata = { "offset" : _get_takeoff_landing_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16086,7 +16089,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_reference_area(self) -> float:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_reference_area_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_reference_area_metadata)
 
     _set_takeoff_landing_reference_area_metadata = { "offset" : _set_takeoff_landing_reference_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16094,7 +16097,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_reference_area.setter
     def takeoff_landing_reference_area(self, pVal:float) -> None:
         """Get or set the area of the lifting surface of the aircraft."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_reference_area_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_reference_area_metadata, pVal)
 
     _get_takeoff_landing_use_compressible_flow_metadata = { "offset" : _get_takeoff_landing_use_compressible_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16102,7 +16105,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_use_compressible_flow(self) -> bool:
         """Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_use_compressible_flow_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_use_compressible_flow_metadata)
 
     _set_takeoff_landing_use_compressible_flow_metadata = { "offset" : _set_takeoff_landing_use_compressible_flow_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -16110,7 +16113,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_use_compressible_flow.setter
     def takeoff_landing_use_compressible_flow(self, newVal:bool) -> None:
         """Opt to define the aerodynamic parameters for takeoff and landing with respect to supersonic flight conditions."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_use_compressible_flow_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_use_compressible_flow_metadata, newVal)
 
     _get_takeoff_landing_cl0_metadata = { "offset" : _get_takeoff_landing_cl0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16118,7 +16121,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_cl0(self) -> float:
         """Get or set the coefficient of lift at zero angle of attack."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_cl0_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_cl0_metadata)
 
     _set_takeoff_landing_cl0_metadata = { "offset" : _set_takeoff_landing_cl0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16126,7 +16129,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_cl0.setter
     def takeoff_landing_cl0(self, newVal:float) -> None:
         """Get or set the coefficient of lift at zero angle of attack."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_cl0_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_cl0_metadata, newVal)
 
     _get_takeoff_landing_cl_alpha_metadata = { "offset" : _get_takeoff_landing_cl_alpha_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16134,7 +16137,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_cl_alpha(self) -> float:
         """Get or set the slope of the coefficient of lift curve."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_cl_alpha_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_cl_alpha_metadata)
 
     _set_takeoff_landing_cl_alpha_metadata = { "offset" : _set_takeoff_landing_cl_alpha_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16142,7 +16145,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_cl_alpha.setter
     def takeoff_landing_cl_alpha(self, newVal:float) -> None:
         """Get or set the slope of the coefficient of lift curve."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_cl_alpha_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_cl_alpha_metadata, newVal)
 
     _get_takeoff_landing_min_aoa_metadata = { "offset" : _get_takeoff_landing_min_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -16150,7 +16153,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_min_aoa(self) -> typing.Any:
         """Get or set the minimum angle of attack possible."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_min_aoa_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_min_aoa_metadata)
 
     _set_takeoff_landing_min_aoa_metadata = { "offset" : _set_takeoff_landing_min_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -16158,7 +16161,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_min_aoa.setter
     def takeoff_landing_min_aoa(self, newVal:typing.Any) -> None:
         """Get or set the minimum angle of attack possible."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_min_aoa_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_min_aoa_metadata, newVal)
 
     _get_takeoff_landing_max_aoa_metadata = { "offset" : _get_takeoff_landing_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -16166,7 +16169,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_max_aoa(self) -> typing.Any:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_max_aoa_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_max_aoa_metadata)
 
     _set_takeoff_landing_max_aoa_metadata = { "offset" : _set_takeoff_landing_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -16174,7 +16177,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_max_aoa.setter
     def takeoff_landing_max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_max_aoa_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_max_aoa_metadata, newVal)
 
     _get_takeoff_landing_cd0_metadata = { "offset" : _get_takeoff_landing_cd0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16182,7 +16185,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_cd0(self) -> float:
         """Get or set the coefficient of drag of the lifting surface at zero angle of attack."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_cd0_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_cd0_metadata)
 
     _set_takeoff_landing_cd0_metadata = { "offset" : _set_takeoff_landing_cd0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16190,7 +16193,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_cd0.setter
     def takeoff_landing_cd0(self, newVal:float) -> None:
         """Get or set the coefficient of drag of the lifting surface at zero angle of attack."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_cd0_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_cd0_metadata, newVal)
 
     _get_takeoff_landing_k_metadata = { "offset" : _get_takeoff_landing_k_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16198,7 +16201,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @property
     def takeoff_landing_k(self) -> float:
         """Get or set the coefficient of induced drag."""
-        return self._intf.get_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._get_takeoff_landing_k_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._get_takeoff_landing_k_metadata)
 
     _set_takeoff_landing_k_metadata = { "offset" : _set_takeoff_landing_k_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16206,7 +16209,7 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     @takeoff_landing_k.setter
     def takeoff_landing_k(self, newVal:float) -> None:
         """Get or set the coefficient of induced drag."""
-        return self._intf.set_property(AircraftBasicFixedWingAero._metadata, AircraftBasicFixedWingAero._set_takeoff_landing_k_metadata, newVal)
+        return self._intf.set_property(AircraftBasicFixedWingAerodynamic._metadata, AircraftBasicFixedWingAerodynamic._set_takeoff_landing_k_metadata, newVal)
 
     _property_names[forward_flight_reference_area] = "forward_flight_reference_area"
     _property_names[forward_flight_use_compressible_flow] = "forward_flight_use_compressible_flow"
@@ -16226,9 +16229,9 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
     _property_names[takeoff_landing_k] = "takeoff_landing_k"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftBasicFixedWingAero."""
+        """Construct an object of type AircraftBasicFixedWingAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingAero)
+        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16236,18 +16239,18 @@ class AircraftBasicFixedWingAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftBasicFixedWingAero, [AircraftBasicFixedWingAero, ])
+        set_class_attribute(self, attrname, value, AircraftBasicFixedWingAerodynamic, [AircraftBasicFixedWingAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4615386614829789996, 13505783508724948142), AircraftBasicFixedWingAero)
-agcls.AgTypeNameMap["AircraftBasicFixedWingAero"] = AircraftBasicFixedWingAero
+agcls.AgClassCatalog.add_catalog_entry((4615386614829789996, 13505783508724948142), AircraftBasicFixedWingAerodynamic)
+agcls.AgTypeNameMap["AircraftBasicFixedWingAerodynamic"] = AircraftBasicFixedWingAerodynamic
 
-class AircraftProp(SupportsDeleteCallback):
+class AircraftPropulsion(SupportsDeleteCallback):
     """Interface used to access the propulsion options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_prop_strategy_method_offset = 1
-    _set_prop_strategy_method_offset = 2
+    _get_propulsion_strategy_method_offset = 1
+    _set_propulsion_strategy_method_offset = 2
     _get_mode_as_simple_method_offset = 3
     _get_mode_as_basic_fixed_wing_method_offset = 4
     _get_mode_as_external_method_offset = 5
@@ -16264,47 +16267,47 @@ class AircraftProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftProp)
+        return get_interface_property(attrname, AircraftPropulsion)
     
-    _get_prop_strategy_metadata = { "offset" : _get_prop_strategy_method_offset,
+    _get_propulsion_strategy_metadata = { "offset" : _get_propulsion_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_PROP_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_PROPULSION_STRATEGY),) }
     @property
-    def prop_strategy(self) -> "AIRCRAFT_PROP_STRATEGY":
+    def propulsion_strategy(self) -> "AIRCRAFT_PROPULSION_STRATEGY":
         """Get or set the propulsion strategy type."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_prop_strategy_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_propulsion_strategy_metadata)
 
-    _set_prop_strategy_metadata = { "offset" : _set_prop_strategy_method_offset,
+    _set_propulsion_strategy_metadata = { "offset" : _set_propulsion_strategy_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_PROP_STRATEGY),) }
-    @prop_strategy.setter
-    def prop_strategy(self, newVal:"AIRCRAFT_PROP_STRATEGY") -> None:
+            "marshallers" : (agmarshall.EnumArg(AIRCRAFT_PROPULSION_STRATEGY),) }
+    @propulsion_strategy.setter
+    def propulsion_strategy(self, newVal:"AIRCRAFT_PROPULSION_STRATEGY") -> None:
         """Get or set the propulsion strategy type."""
-        return self._intf.set_property(AircraftProp._metadata, AircraftProp._set_prop_strategy_metadata, newVal)
+        return self._intf.set_property(AircraftPropulsion._metadata, AircraftPropulsion._set_propulsion_strategy_metadata, newVal)
 
     _get_mode_as_simple_metadata = { "offset" : _get_mode_as_simple_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_simple(self) -> "AircraftSimpleProp":
+    def mode_as_simple(self) -> "AircraftSimplePropulsion":
         """Get the interface for a simple propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_simple_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_simple_metadata)
 
     _get_mode_as_basic_fixed_wing_metadata = { "offset" : _get_mode_as_basic_fixed_wing_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingProp":
+    def mode_as_basic_fixed_wing(self) -> "AircraftBasicFixedWingPropulsion":
         """Get the interface for a basic fixed wing propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_basic_fixed_wing_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_basic_fixed_wing_metadata)
 
     _get_mode_as_external_metadata = { "offset" : _get_mode_as_external_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_external(self) -> "AircraftExternalProp":
+    def mode_as_external(self) -> "AircraftExternalPropulsion":
         """Get the interface for an external file propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_external_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_external_metadata)
 
     _get_lift_factor_metadata = { "offset" : _get_lift_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16312,7 +16315,7 @@ class AircraftProp(SupportsDeleteCallback):
     @property
     def lift_factor(self) -> float:
         """Get or set the scalar value applied to the lift for parametric analysis."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_lift_factor_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_lift_factor_metadata)
 
     _set_lift_factor_metadata = { "offset" : _set_lift_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16320,7 +16323,7 @@ class AircraftProp(SupportsDeleteCallback):
     @lift_factor.setter
     def lift_factor(self, newVal:float) -> None:
         """Get or set the scalar value applied to the lift for parametric analysis."""
-        return self._intf.set_property(AircraftProp._metadata, AircraftProp._set_lift_factor_metadata, newVal)
+        return self._intf.set_property(AircraftPropulsion._metadata, AircraftPropulsion._set_lift_factor_metadata, newVal)
 
     _get_drag_factor_metadata = { "offset" : _get_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16328,7 +16331,7 @@ class AircraftProp(SupportsDeleteCallback):
     @property
     def drag_factor(self) -> float:
         """Get or set the scalar value applied to the drag for parametric analysis."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_drag_factor_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_drag_factor_metadata)
 
     _set_drag_factor_metadata = { "offset" : _set_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16336,33 +16339,33 @@ class AircraftProp(SupportsDeleteCallback):
     @drag_factor.setter
     def drag_factor(self, newVal:float) -> None:
         """Get or set the scalar value applied to the drag for parametric analysis."""
-        return self._intf.set_property(AircraftProp._metadata, AircraftProp._set_drag_factor_metadata, newVal)
+        return self._intf.set_property(AircraftPropulsion._metadata, AircraftPropulsion._set_drag_factor_metadata, newVal)
 
     _get_mode_as_ramjet_metadata = { "offset" : _get_mode_as_ramjet_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_ramjet(self) -> "MissileRamjetProp":
+    def mode_as_ramjet(self) -> "MissileRamjetPropulsion":
         """Get the interface for a Ramjet propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_ramjet_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_ramjet_metadata)
 
     _get_mode_as_turbojet_metadata = { "offset" : _get_mode_as_turbojet_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_turbojet(self) -> "MissileTurbojetProp":
+    def mode_as_turbojet(self) -> "MissileTurbojetPropulsion":
         """Get the interface for a Turbojet propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_turbojet_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_turbojet_metadata)
 
     _get_mode_as_rocket_metadata = { "offset" : _get_mode_as_rocket_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_rocket(self) -> "MissileRocketProp":
+    def mode_as_rocket(self) -> "MissileRocketPropulsion":
         """Get the interface for a Rocket propulsion strategy."""
-        return self._intf.get_property(AircraftProp._metadata, AircraftProp._get_mode_as_rocket_metadata)
+        return self._intf.get_property(AircraftPropulsion._metadata, AircraftPropulsion._get_mode_as_rocket_metadata)
 
-    _property_names[prop_strategy] = "prop_strategy"
+    _property_names[propulsion_strategy] = "propulsion_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_basic_fixed_wing] = "mode_as_basic_fixed_wing"
     _property_names[mode_as_external] = "mode_as_external"
@@ -16373,9 +16376,9 @@ class AircraftProp(SupportsDeleteCallback):
     _property_names[mode_as_rocket] = "mode_as_rocket"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftProp."""
+        """Construct an object of type AircraftPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftProp)
+        initialize_from_source_object(self, sourceObject, AircraftPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16383,20 +16386,20 @@ class AircraftProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftProp, [AircraftProp, ])
+        set_class_attribute(self, attrname, value, AircraftPropulsion, [AircraftPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5577330394102227800, 15792983096793871031), AircraftProp)
-agcls.AgTypeNameMap["AircraftProp"] = AircraftProp
+agcls.AgClassCatalog.add_catalog_entry((5577330394102227800, 15792983096793871031), AircraftPropulsion)
+agcls.AgTypeNameMap["AircraftPropulsion"] = AircraftPropulsion
 
-class AircraftSimpleProp(SupportsDeleteCallback):
+class AircraftSimplePropulsion(SupportsDeleteCallback):
     """Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_max_thrust_accel_method_offset = 1
-    _set_max_thrust_accel_method_offset = 2
-    _get_min_thrust_decel_method_offset = 3
-    _set_min_thrust_decel_method_offset = 4
+    _get_max_thrust_acceleration_method_offset = 1
+    _set_max_thrust_acceleration_method_offset = 2
+    _get_min_thrust_deceleration_method_offset = 3
+    _set_min_thrust_deceleration_method_offset = 4
     _get_use_density_scaling_method_offset = 5
     _get_density_ratio_exponent_method_offset = 6
     _set_density_scaling_method_offset = 7
@@ -16406,39 +16409,39 @@ class AircraftSimpleProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftSimpleProp)
+        return get_interface_property(attrname, AircraftSimplePropulsion)
     
-    _get_max_thrust_accel_metadata = { "offset" : _get_max_thrust_accel_method_offset,
+    _get_max_thrust_acceleration_metadata = { "offset" : _get_max_thrust_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_thrust_accel(self) -> float:
+    def max_thrust_acceleration(self) -> float:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.get_property(AircraftSimpleProp._metadata, AircraftSimpleProp._get_max_thrust_accel_metadata)
+        return self._intf.get_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._get_max_thrust_acceleration_metadata)
 
-    _set_max_thrust_accel_metadata = { "offset" : _set_max_thrust_accel_method_offset,
+    _set_max_thrust_acceleration_metadata = { "offset" : _set_max_thrust_acceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_thrust_accel.setter
-    def max_thrust_accel(self, pVal:float) -> None:
+    @max_thrust_acceleration.setter
+    def max_thrust_acceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.set_property(AircraftSimpleProp._metadata, AircraftSimpleProp._set_max_thrust_accel_metadata, pVal)
+        return self._intf.set_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._set_max_thrust_acceleration_metadata, pVal)
 
-    _get_min_thrust_decel_metadata = { "offset" : _get_min_thrust_decel_method_offset,
+    _get_min_thrust_deceleration_metadata = { "offset" : _get_min_thrust_deceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def min_thrust_decel(self) -> float:
+    def min_thrust_deceleration(self) -> float:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.get_property(AircraftSimpleProp._metadata, AircraftSimpleProp._get_min_thrust_decel_metadata)
+        return self._intf.get_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._get_min_thrust_deceleration_metadata)
 
-    _set_min_thrust_decel_metadata = { "offset" : _set_min_thrust_decel_method_offset,
+    _set_min_thrust_deceleration_metadata = { "offset" : _set_min_thrust_deceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @min_thrust_decel.setter
-    def min_thrust_decel(self, pVal:float) -> None:
+    @min_thrust_deceleration.setter
+    def min_thrust_deceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.set_property(AircraftSimpleProp._metadata, AircraftSimpleProp._set_min_thrust_decel_metadata, pVal)
+        return self._intf.set_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._set_min_thrust_deceleration_metadata, pVal)
 
     _get_use_density_scaling_metadata = { "offset" : _get_use_density_scaling_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16446,7 +16449,7 @@ class AircraftSimpleProp(SupportsDeleteCallback):
     @property
     def use_density_scaling(self) -> bool:
         """Opt whether to scale the accel/decel performance by the density ratio."""
-        return self._intf.get_property(AircraftSimpleProp._metadata, AircraftSimpleProp._get_use_density_scaling_metadata)
+        return self._intf.get_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._get_use_density_scaling_metadata)
 
     _get_density_ratio_exponent_metadata = { "offset" : _get_density_ratio_exponent_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16454,24 +16457,24 @@ class AircraftSimpleProp(SupportsDeleteCallback):
     @property
     def density_ratio_exponent(self) -> float:
         """Get the relative impace of atmospheric density on the aircraft's performance."""
-        return self._intf.get_property(AircraftSimpleProp._metadata, AircraftSimpleProp._get_density_ratio_exponent_metadata)
+        return self._intf.get_property(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._get_density_ratio_exponent_metadata)
 
     _set_density_scaling_metadata = { "offset" : _set_density_scaling_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_density_scaling(self, useScaling:bool, exponent:float) -> None:
         """Set the option to use density scaling and set the density ratio exponent."""
-        return self._intf.invoke(AircraftSimpleProp._metadata, AircraftSimpleProp._set_density_scaling_metadata, useScaling, exponent)
+        return self._intf.invoke(AircraftSimplePropulsion._metadata, AircraftSimplePropulsion._set_density_scaling_metadata, useScaling, exponent)
 
-    _property_names[max_thrust_accel] = "max_thrust_accel"
-    _property_names[min_thrust_decel] = "min_thrust_decel"
+    _property_names[max_thrust_acceleration] = "max_thrust_acceleration"
+    _property_names[min_thrust_deceleration] = "min_thrust_deceleration"
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftSimpleProp."""
+        """Construct an object of type AircraftSimplePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftSimpleProp)
+        initialize_from_source_object(self, sourceObject, AircraftSimplePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16479,25 +16482,25 @@ class AircraftSimpleProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftSimpleProp, [AircraftSimpleProp, ])
+        set_class_attribute(self, attrname, value, AircraftSimplePropulsion, [AircraftSimplePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5707285421522482526, 1559585226005544595), AircraftSimpleProp)
-agcls.AgTypeNameMap["AircraftSimpleProp"] = AircraftSimpleProp
+agcls.AgClassCatalog.add_catalog_entry((5707285421522482526, 1559585226005544595), AircraftSimplePropulsion)
+agcls.AgTypeNameMap["AircraftSimplePropulsion"] = AircraftSimplePropulsion
 
-class AircraftExternalProp(SupportsDeleteCallback):
+class AircraftExternalPropulsion(SupportsDeleteCallback):
     """Interface used to access the External File Propulsion options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_prop_filepath_method_offset = 1
-    _set_prop_filepath_method_offset = 2
-    _reload_prop_file_method_offset = 3
+    _get_propulsion_filepath_method_offset = 1
+    _set_propulsion_filepath_method_offset = 2
+    _reload_propulsion_file_method_offset = 3
     _get_is_valid_method_offset = 4
-    _get_can_set_accel_decel_method_offset = 5
-    _get_max_thrust_accel_method_offset = 6
-    _set_max_thrust_accel_method_offset = 7
-    _get_min_thrust_decel_method_offset = 8
-    _set_min_thrust_decel_method_offset = 9
+    _get_can_set_acceleration_deceleration_method_offset = 5
+    _get_max_thrust_acceleration_method_offset = 6
+    _set_max_thrust_acceleration_method_offset = 7
+    _get_min_thrust_deceleration_method_offset = 8
+    _set_min_thrust_deceleration_method_offset = 9
     _get_use_density_scaling_method_offset = 10
     _get_density_ratio_exponent_method_offset = 11
     _set_density_scaling_method_offset = 12
@@ -16507,29 +16510,29 @@ class AircraftExternalProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftExternalProp)
+        return get_interface_property(attrname, AircraftExternalPropulsion)
     
-    _get_prop_filepath_metadata = { "offset" : _get_prop_filepath_method_offset,
+    _get_propulsion_filepath_metadata = { "offset" : _get_propulsion_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def prop_filepath(self) -> str:
+    def propulsion_filepath(self) -> str:
         """Get the filepath for the prop file."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_prop_filepath_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_propulsion_filepath_metadata)
 
-    _set_prop_filepath_metadata = { "offset" : _set_prop_filepath_method_offset,
+    _set_propulsion_filepath_metadata = { "offset" : _set_propulsion_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def set_prop_filepath(self, filepath:str) -> str:
+    def set_propulsion_filepath(self, filepath:str) -> str:
         """Set the filepath for the prop file."""
-        return self._intf.invoke(AircraftExternalProp._metadata, AircraftExternalProp._set_prop_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._set_propulsion_filepath_metadata, filepath, OutArg())
 
-    _reload_prop_file_metadata = { "offset" : _reload_prop_file_method_offset,
+    _reload_propulsion_file_metadata = { "offset" : _reload_propulsion_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
-    def reload_prop_file(self) -> str:
+    def reload_propulsion_file(self) -> str:
         """Reload the prop file."""
-        return self._intf.invoke(AircraftExternalProp._metadata, AircraftExternalProp._reload_prop_file_metadata, OutArg())
+        return self._intf.invoke(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._reload_propulsion_file_metadata, OutArg())
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16537,47 +16540,47 @@ class AircraftExternalProp(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Check if the prop file is valid."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_is_valid_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_is_valid_metadata)
 
-    _get_can_set_accel_decel_metadata = { "offset" : _get_can_set_accel_decel_method_offset,
+    _get_can_set_acceleration_deceleration_metadata = { "offset" : _get_can_set_acceleration_deceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def can_set_accel_decel(self) -> bool:
+    def can_set_acceleration_deceleration(self) -> bool:
         """Check whether you can set the acceleration and deceleration values or whether they are specified in the file."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_can_set_accel_decel_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_can_set_acceleration_deceleration_metadata)
 
-    _get_max_thrust_accel_metadata = { "offset" : _get_max_thrust_accel_method_offset,
+    _get_max_thrust_acceleration_metadata = { "offset" : _get_max_thrust_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_thrust_accel(self) -> float:
+    def max_thrust_acceleration(self) -> float:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_max_thrust_accel_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_max_thrust_acceleration_metadata)
 
-    _set_max_thrust_accel_metadata = { "offset" : _set_max_thrust_accel_method_offset,
+    _set_max_thrust_acceleration_metadata = { "offset" : _set_max_thrust_acceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_thrust_accel.setter
-    def max_thrust_accel(self, pVal:float) -> None:
+    @max_thrust_acceleration.setter
+    def max_thrust_acceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.set_property(AircraftExternalProp._metadata, AircraftExternalProp._set_max_thrust_accel_metadata, pVal)
+        return self._intf.set_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._set_max_thrust_acceleration_metadata, pVal)
 
-    _get_min_thrust_decel_metadata = { "offset" : _get_min_thrust_decel_method_offset,
+    _get_min_thrust_deceleration_metadata = { "offset" : _get_min_thrust_deceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def min_thrust_decel(self) -> float:
+    def min_thrust_deceleration(self) -> float:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_min_thrust_decel_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_min_thrust_deceleration_metadata)
 
-    _set_min_thrust_decel_metadata = { "offset" : _set_min_thrust_decel_method_offset,
+    _set_min_thrust_deceleration_metadata = { "offset" : _set_min_thrust_deceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @min_thrust_decel.setter
-    def min_thrust_decel(self, pVal:float) -> None:
+    @min_thrust_deceleration.setter
+    def min_thrust_deceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.set_property(AircraftExternalProp._metadata, AircraftExternalProp._set_min_thrust_decel_metadata, pVal)
+        return self._intf.set_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._set_min_thrust_deceleration_metadata, pVal)
 
     _get_use_density_scaling_metadata = { "offset" : _get_use_density_scaling_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16585,7 +16588,7 @@ class AircraftExternalProp(SupportsDeleteCallback):
     @property
     def use_density_scaling(self) -> bool:
         """Opt whether to scale the accel/decel performance by the density ratio."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_use_density_scaling_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_use_density_scaling_metadata)
 
     _get_density_ratio_exponent_metadata = { "offset" : _get_density_ratio_exponent_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16593,27 +16596,27 @@ class AircraftExternalProp(SupportsDeleteCallback):
     @property
     def density_ratio_exponent(self) -> float:
         """Get the relative impace of atmospheric density on the aircraft's performance."""
-        return self._intf.get_property(AircraftExternalProp._metadata, AircraftExternalProp._get_density_ratio_exponent_metadata)
+        return self._intf.get_property(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._get_density_ratio_exponent_metadata)
 
     _set_density_scaling_metadata = { "offset" : _set_density_scaling_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_density_scaling(self, useScaling:bool, exponent:float) -> None:
         """Set the option to use density scaling and set the density ratio exponent."""
-        return self._intf.invoke(AircraftExternalProp._metadata, AircraftExternalProp._set_density_scaling_metadata, useScaling, exponent)
+        return self._intf.invoke(AircraftExternalPropulsion._metadata, AircraftExternalPropulsion._set_density_scaling_metadata, useScaling, exponent)
 
-    _property_names[prop_filepath] = "prop_filepath"
+    _property_names[propulsion_filepath] = "propulsion_filepath"
     _property_names[is_valid] = "is_valid"
-    _property_names[can_set_accel_decel] = "can_set_accel_decel"
-    _property_names[max_thrust_accel] = "max_thrust_accel"
-    _property_names[min_thrust_decel] = "min_thrust_decel"
+    _property_names[can_set_acceleration_deceleration] = "can_set_acceleration_deceleration"
+    _property_names[max_thrust_acceleration] = "max_thrust_acceleration"
+    _property_names[min_thrust_deceleration] = "min_thrust_deceleration"
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftExternalProp."""
+        """Construct an object of type AircraftExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftExternalProp)
+        initialize_from_source_object(self, sourceObject, AircraftExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16621,12 +16624,12 @@ class AircraftExternalProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftExternalProp, [AircraftExternalProp, ])
+        set_class_attribute(self, attrname, value, AircraftExternalPropulsion, [AircraftExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4931266991254779167, 11152857308621733023), AircraftExternalProp)
-agcls.AgTypeNameMap["AircraftExternalProp"] = AircraftExternalProp
+agcls.AgClassCatalog.add_catalog_entry((4931266991254779167, 11152857308621733023), AircraftExternalPropulsion)
+agcls.AgTypeNameMap["AircraftExternalPropulsion"] = AircraftExternalPropulsion
 
-class AircraftBasicFixedWingProp(SupportsDeleteCallback):
+class AircraftBasicFixedWingPropulsion(SupportsDeleteCallback):
     """Interface used to access the Basic Fixed Wing Propulsion options for the Basic Acceleration Model of an aircraft."""
 
     _num_methods = 23
@@ -16647,10 +16650,10 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     _set_max_power_thrust_method_offset = 14
     _get_max_fuel_flow_method_offset = 15
     _set_max_fuel_flow_method_offset = 16
-    _get_max_thrust_accel_method_offset = 17
-    _set_max_thrust_accel_method_offset = 18
-    _get_min_thrust_decel_method_offset = 19
-    _set_min_thrust_decel_method_offset = 20
+    _get_max_thrust_acceleration_method_offset = 17
+    _set_max_thrust_acceleration_method_offset = 18
+    _get_min_thrust_deceleration_method_offset = 19
+    _set_min_thrust_deceleration_method_offset = 20
     _get_use_density_scaling_method_offset = 21
     _get_density_ratio_exponent_method_offset = 22
     _set_density_scaling_method_offset = 23
@@ -16660,23 +16663,23 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AircraftBasicFixedWingProp)
+        return get_interface_property(attrname, AircraftBasicFixedWingPropulsion)
     
     _get_propulsion_mode_metadata = { "offset" : _get_propulsion_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_FIXED_WING_PROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_FIXED_WING_PROPULSION_MODE),) }
     @property
-    def propulsion_mode(self) -> "BASIC_FIXED_WING_PROP_MODE":
+    def propulsion_mode(self) -> "BASIC_FIXED_WING_PROPULSION_MODE":
         """Get or set the option of whether to specify net thrust or net power."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_propulsion_mode_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_propulsion_mode_metadata)
 
     _set_propulsion_mode_metadata = { "offset" : _set_propulsion_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_FIXED_WING_PROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_FIXED_WING_PROPULSION_MODE),) }
     @propulsion_mode.setter
-    def propulsion_mode(self, pVal:"BASIC_FIXED_WING_PROP_MODE") -> None:
+    def propulsion_mode(self, pVal:"BASIC_FIXED_WING_PROPULSION_MODE") -> None:
         """Get or set the option of whether to specify net thrust or net power."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_propulsion_mode_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_propulsion_mode_metadata, pVal)
 
     _get_propeller_count_metadata = { "offset" : _get_propeller_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16684,7 +16687,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def propeller_count(self) -> int:
         """Get or set the number of propellers."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_propeller_count_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_propeller_count_metadata)
 
     _set_propeller_count_metadata = { "offset" : _set_propeller_count_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -16692,7 +16695,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @propeller_count.setter
     def propeller_count(self, pVal:int) -> None:
         """Get or set the number of propellers."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_propeller_count_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_propeller_count_metadata, pVal)
 
     _get_propeller_diameter_metadata = { "offset" : _get_propeller_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16700,7 +16703,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def propeller_diameter(self) -> float:
         """Get or set the propeller diameter."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_propeller_diameter_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_propeller_diameter_metadata)
 
     _set_propeller_diameter_metadata = { "offset" : _set_propeller_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16708,7 +16711,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @propeller_diameter.setter
     def propeller_diameter(self, pVal:float) -> None:
         """Get or set the propeller diameter."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_propeller_diameter_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_propeller_diameter_metadata, pVal)
 
     _get_propeller_rpm_metadata = { "offset" : _get_propeller_rpm_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16716,7 +16719,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def propeller_rpm(self) -> float:
         """Get or set the propeller RPM."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_propeller_rpm_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_propeller_rpm_metadata)
 
     _set_propeller_rpm_metadata = { "offset" : _set_propeller_rpm_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16724,7 +16727,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @propeller_rpm.setter
     def propeller_rpm(self, pVal:float) -> None:
         """Get or set the propeller RPM."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_propeller_rpm_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_propeller_rpm_metadata, pVal)
 
     _get_min_power_thrust_metadata = { "offset" : _get_min_power_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16732,7 +16735,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def min_power_thrust(self) -> float:
         """Get or set the minimum power/thrust depending on the propulsion mode."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_min_power_thrust_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_min_power_thrust_metadata)
 
     _set_min_power_thrust_metadata = { "offset" : _set_min_power_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16740,7 +16743,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @min_power_thrust.setter
     def min_power_thrust(self, pVal:float) -> None:
         """Get or set the minimum power/thrust depending on the propulsion mode."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_min_power_thrust_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_min_power_thrust_metadata, pVal)
 
     _get_min_fuel_flow_metadata = { "offset" : _get_min_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16748,7 +16751,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def min_fuel_flow(self) -> float:
         """Get or set the fuel flow for the minimum thrust/power setting."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_min_fuel_flow_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_min_fuel_flow_metadata)
 
     _set_min_fuel_flow_metadata = { "offset" : _set_min_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16756,7 +16759,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @min_fuel_flow.setter
     def min_fuel_flow(self, pVal:float) -> None:
         """Get or set the fuel flow for the minimum thrust/power setting."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_min_fuel_flow_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_min_fuel_flow_metadata, pVal)
 
     _get_max_power_thrust_metadata = { "offset" : _get_max_power_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16764,7 +16767,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def max_power_thrust(self) -> float:
         """Get or set the maximum power/thrust depending on the propulsion mode."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_max_power_thrust_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_max_power_thrust_metadata)
 
     _set_max_power_thrust_metadata = { "offset" : _set_max_power_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16772,7 +16775,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @max_power_thrust.setter
     def max_power_thrust(self, pVal:float) -> None:
         """Get or set the maximum power/thrust depending on the propulsion mode."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_max_power_thrust_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_max_power_thrust_metadata, pVal)
 
     _get_max_fuel_flow_metadata = { "offset" : _get_max_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16780,7 +16783,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def max_fuel_flow(self) -> float:
         """Get or set the fuel flow for the maximum thrust/power setting."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_max_fuel_flow_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_max_fuel_flow_metadata)
 
     _set_max_fuel_flow_metadata = { "offset" : _set_max_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -16788,39 +16791,39 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @max_fuel_flow.setter
     def max_fuel_flow(self, pVal:float) -> None:
         """Get or set the fuel flow for the maximum thrust/power setting."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_max_fuel_flow_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_max_fuel_flow_metadata, pVal)
 
-    _get_max_thrust_accel_metadata = { "offset" : _get_max_thrust_accel_method_offset,
+    _get_max_thrust_acceleration_metadata = { "offset" : _get_max_thrust_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_thrust_accel(self) -> float:
+    def max_thrust_acceleration(self) -> float:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_max_thrust_accel_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_max_thrust_acceleration_metadata)
 
-    _set_max_thrust_accel_metadata = { "offset" : _set_max_thrust_accel_method_offset,
+    _set_max_thrust_acceleration_metadata = { "offset" : _set_max_thrust_acceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_thrust_accel.setter
-    def max_thrust_accel(self, pVal:float) -> None:
+    @max_thrust_acceleration.setter
+    def max_thrust_acceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft speeds up at max throttle."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_max_thrust_accel_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_max_thrust_acceleration_metadata, pVal)
 
-    _get_min_thrust_decel_metadata = { "offset" : _get_min_thrust_decel_method_offset,
+    _get_min_thrust_deceleration_metadata = { "offset" : _get_min_thrust_deceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def min_thrust_decel(self) -> float:
+    def min_thrust_deceleration(self) -> float:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_min_thrust_decel_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_min_thrust_deceleration_metadata)
 
-    _set_min_thrust_decel_metadata = { "offset" : _set_min_thrust_decel_method_offset,
+    _set_min_thrust_deceleration_metadata = { "offset" : _set_min_thrust_deceleration_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @min_thrust_decel.setter
-    def min_thrust_decel(self, pVal:float) -> None:
+    @min_thrust_deceleration.setter
+    def min_thrust_deceleration(self, pVal:float) -> None:
         """Get or set the rate at which the aircraft slows down at minimum throttle setting."""
-        return self._intf.set_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_min_thrust_decel_metadata, pVal)
+        return self._intf.set_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_min_thrust_deceleration_metadata, pVal)
 
     _get_use_density_scaling_metadata = { "offset" : _get_use_density_scaling_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16828,7 +16831,7 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def use_density_scaling(self) -> bool:
         """Opt whether to scale the accel/decel performance by the density ratio."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_use_density_scaling_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_use_density_scaling_metadata)
 
     _get_density_ratio_exponent_metadata = { "offset" : _get_density_ratio_exponent_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16836,14 +16839,14 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     @property
     def density_ratio_exponent(self) -> float:
         """Get the relative impace of atmospheric density on the aircraft's performance."""
-        return self._intf.get_property(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._get_density_ratio_exponent_metadata)
+        return self._intf.get_property(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._get_density_ratio_exponent_metadata)
 
     _set_density_scaling_metadata = { "offset" : _set_density_scaling_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_density_scaling(self, useScaling:bool, exponent:float) -> None:
         """Set the option to use density scaling and set the density ratio exponent."""
-        return self._intf.invoke(AircraftBasicFixedWingProp._metadata, AircraftBasicFixedWingProp._set_density_scaling_metadata, useScaling, exponent)
+        return self._intf.invoke(AircraftBasicFixedWingPropulsion._metadata, AircraftBasicFixedWingPropulsion._set_density_scaling_metadata, useScaling, exponent)
 
     _property_names[propulsion_mode] = "propulsion_mode"
     _property_names[propeller_count] = "propeller_count"
@@ -16853,15 +16856,15 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
     _property_names[min_fuel_flow] = "min_fuel_flow"
     _property_names[max_power_thrust] = "max_power_thrust"
     _property_names[max_fuel_flow] = "max_fuel_flow"
-    _property_names[max_thrust_accel] = "max_thrust_accel"
-    _property_names[min_thrust_decel] = "min_thrust_decel"
+    _property_names[max_thrust_acceleration] = "max_thrust_acceleration"
+    _property_names[min_thrust_deceleration] = "min_thrust_deceleration"
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AircraftBasicFixedWingProp."""
+        """Construct an object of type AircraftBasicFixedWingPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingProp)
+        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16869,10 +16872,10 @@ class AircraftBasicFixedWingProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AircraftBasicFixedWingProp, [AircraftBasicFixedWingProp, ])
+        set_class_attribute(self, attrname, value, AircraftBasicFixedWingPropulsion, [AircraftBasicFixedWingPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5671810767600845155, 12908412790033902229), AircraftBasicFixedWingProp)
-agcls.AgTypeNameMap["AircraftBasicFixedWingProp"] = AircraftBasicFixedWingProp
+agcls.AgClassCatalog.add_catalog_entry((5671810767600845155, 12908412790033902229), AircraftBasicFixedWingPropulsion)
+agcls.AgTypeNameMap["AircraftBasicFixedWingPropulsion"] = AircraftBasicFixedWingPropulsion
 
 class ARINC424Source(ICatalogSource, SupportsDeleteCallback):
     """Interface used to access the options for any ARINC424 source in the Aviator catalog."""
@@ -17076,10 +17079,10 @@ class DAFIFSource(ICatalogSource, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4669407446549507698, 4351897649948657831), DAFIFSource)
 agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
 
-class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsDeleteCallback):
+class BasicFixedWingForwardFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsDeleteCallback):
     """Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicFixedWingFwdFlightLiftHelper."""
+        """Construct an object of type BasicFixedWingForwardFlightLiftHelper."""
         SupportsDeleteCallback.__init__(self)
         IBasicFixedWingLiftHelper.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -17090,10 +17093,10 @@ class BasicFixedWingFwdFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsDelet
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicFixedWingFwdFlightLiftHelper, [IBasicFixedWingLiftHelper])
+        set_class_attribute(self, attrname, value, BasicFixedWingForwardFlightLiftHelper, [IBasicFixedWingLiftHelper])
 
-agcls.AgClassCatalog.add_catalog_entry((4835967416678721147, 2787928793404869025), BasicFixedWingFwdFlightLiftHelper)
-agcls.AgTypeNameMap["BasicFixedWingFwdFlightLiftHelper"] = BasicFixedWingFwdFlightLiftHelper
+agcls.AgClassCatalog.add_catalog_entry((4835967416678721147, 2787928793404869025), BasicFixedWingForwardFlightLiftHelper)
+agcls.AgTypeNameMap["BasicFixedWingForwardFlightLiftHelper"] = BasicFixedWingForwardFlightLiftHelper
 
 class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure."""
@@ -17102,8 +17105,8 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_reference_frame_method_offset = 1
     _set_reference_frame_method_offset = 2
-    _get_compensate_for_coriolis_accel_method_offset = 3
-    _set_compensate_for_coriolis_accel_method_offset = 4
+    _get_compensate_for_coriolis_acceleration_method_offset = 3
+    _set_compensate_for_coriolis_acceleration_method_offset = 4
     _metadata = {
         "iid_data" : (5334953136761860956, 12274532353622486171),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -17127,23 +17130,23 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
     def reference_frame(self, pVal:"STRAIGHT_AHEAD_REFERENCE_FRAME") -> None:
         return self._intf.set_property(BasicManeuverStrategyStraightAhead._metadata, BasicManeuverStrategyStraightAhead._set_reference_frame_metadata, pVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyStraightAhead._metadata, BasicManeuverStrategyStraightAhead._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStraightAhead._metadata, BasicManeuverStrategyStraightAhead._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyStraightAhead._metadata, BasicManeuverStrategyStraightAhead._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyStraightAhead._metadata, BasicManeuverStrategyStraightAhead._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[reference_frame] = "reference_frame"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategyStraightAhead."""
@@ -17179,8 +17182,8 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
     _get_cruise_airspeed_options_method_offset = 9
     _get_stop_after_level_off_method_offset = 10
     _set_stop_after_level_off_method_offset = 11
-    _get_compensate_for_coriolis_accel_method_offset = 12
-    _set_compensate_for_coriolis_accel_method_offset = 13
+    _get_compensate_for_coriolis_acceleration_method_offset = 12
+    _set_compensate_for_coriolis_acceleration_method_offset = 13
     _metadata = {
         "iid_data" : (5262849801508960856, 3879152463803584443),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -17272,20 +17275,20 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
     def stop_after_level_off(self, pVal:bool) -> None:
         return self._intf.set_property(BasicManeuverStrategyCruiseProfile._metadata, BasicManeuverStrategyCruiseProfile._set_stop_after_level_off_metadata, pVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyCruiseProfile._metadata, BasicManeuverStrategyCruiseProfile._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyCruiseProfile._metadata, BasicManeuverStrategyCruiseProfile._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyCruiseProfile._metadata, BasicManeuverStrategyCruiseProfile._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyCruiseProfile._metadata, BasicManeuverStrategyCruiseProfile._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[reference_frame] = "reference_frame"
     _property_names[use_default_cruise_altitude] = "use_default_cruise_altitude"
@@ -17293,7 +17296,7 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[requested_altitude] = "requested_altitude"
     _property_names[cruise_airspeed_options] = "cruise_airspeed_options"
     _property_names[stop_after_level_off] = "stop_after_level_off"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategyCruiseProfile."""
@@ -17329,8 +17332,8 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
     _get_max_speed_limits_method_offset = 9
     _set_max_speed_limits_method_offset = 10
     _set_airspeed_method_offset = 11
-    _get_compensate_for_coriolis_accel_method_offset = 12
-    _set_compensate_for_coriolis_accel_method_offset = 13
+    _get_compensate_for_coriolis_acceleration_method_offset = 12
+    _set_compensate_for_coriolis_acceleration_method_offset = 13
     _get_powered_cruise_mode_method_offset = 14
     _set_powered_cruise_mode_method_offset = 15
     _get_powered_cruise_throttle_method_offset = 16
@@ -17410,17 +17413,17 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
 
     _get_max_speed_limits_metadata = { "offset" : _get_max_speed_limits_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @property
-    def max_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
+    def max_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS":
         """Get or set the options of what the procedure will do if the aircraft has exceeded the maximum speed limits."""
         return self._intf.get_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._get_max_speed_limits_metadata)
 
     _set_max_speed_limits_metadata = { "offset" : _set_max_speed_limits_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @max_speed_limits.setter
-    def max_speed_limits(self, pVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
+    def max_speed_limits(self, pVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS") -> None:
         return self._intf.set_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._set_max_speed_limits_metadata, pVal)
 
     _set_airspeed_metadata = { "offset" : _set_airspeed_method_offset,
@@ -17430,20 +17433,20 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
         """Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled."""
         return self._intf.invoke(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._set_airspeed_metadata, airspeedType, airspeed)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyGlideProfile._metadata, BasicManeuverStrategyGlideProfile._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_powered_cruise_mode_metadata = { "offset" : _get_powered_cruise_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -17512,7 +17515,7 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
     _property_names[min_g] = "min_g"
     _property_names[max_g] = "max_g"
     _property_names[max_speed_limits] = "max_speed_limits"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[powered_cruise_mode] = "powered_cruise_mode"
     _property_names[powered_cruise_throttle] = "powered_cruise_throttle"
     _property_names[powered_cruise_thrust_model] = "powered_cruise_thrust_model"
@@ -18715,14 +18718,14 @@ class WindModelADDS(SupportsDeleteCallback):
     _set_name_method_offset = 2
     _get_blend_time_method_offset = 3
     _set_blend_time_method_offset = 4
-    _get_msg_interpolation_type_method_offset = 5
-    _set_msg_interpolation_type_method_offset = 6
-    _get_msg_extrapolation_type_method_offset = 7
-    _set_msg_extrapolation_type_method_offset = 8
-    _get_missing_msg_type_method_offset = 9
-    _set_missing_msg_type_method_offset = 10
-    _get_interp_blend_time_method_offset = 11
-    _set_interp_blend_time_method_offset = 12
+    _get_message_interpolation_type_method_offset = 5
+    _set_message_interpolation_type_method_offset = 6
+    _get_message_extrapolation_type_method_offset = 7
+    _set_message_extrapolation_type_method_offset = 8
+    _get_missing_message_type_method_offset = 9
+    _set_missing_message_type_method_offset = 10
+    _get_interpolation_blend_time_method_offset = 11
+    _set_interpolation_blend_time_method_offset = 12
     _add_current_forecast_method_offset = 13
     _get_messages_method_offset = 14
     _metadata = {
@@ -18765,69 +18768,69 @@ class WindModelADDS(SupportsDeleteCallback):
         """Get or set the blend time to transition from the previous wind model if one exists."""
         return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_blend_time_metadata, newVal)
 
-    _get_msg_interpolation_type_metadata = { "offset" : _get_msg_interpolation_type_method_offset,
+    _get_message_interpolation_type_metadata = { "offset" : _get_message_interpolation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MSG_INTERP_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ADDS_MESSAGE_INTERPOLATION_TYPE),) }
     @property
-    def msg_interpolation_type(self) -> "ADDS_MSG_INTERP_TYPE":
+    def message_interpolation_type(self) -> "ADDS_MESSAGE_INTERPOLATION_TYPE":
         """Get or set the message interpolation type."""
-        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_msg_interpolation_type_metadata)
+        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_message_interpolation_type_metadata)
 
-    _set_msg_interpolation_type_metadata = { "offset" : _set_msg_interpolation_type_method_offset,
+    _set_message_interpolation_type_metadata = { "offset" : _set_message_interpolation_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MSG_INTERP_TYPE),) }
-    @msg_interpolation_type.setter
-    def msg_interpolation_type(self, newVal:"ADDS_MSG_INTERP_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(ADDS_MESSAGE_INTERPOLATION_TYPE),) }
+    @message_interpolation_type.setter
+    def message_interpolation_type(self, newVal:"ADDS_MESSAGE_INTERPOLATION_TYPE") -> None:
         """Get or set the message interpolation type."""
-        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_msg_interpolation_type_metadata, newVal)
+        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_message_interpolation_type_metadata, newVal)
 
-    _get_msg_extrapolation_type_metadata = { "offset" : _get_msg_extrapolation_type_method_offset,
+    _get_message_extrapolation_type_metadata = { "offset" : _get_message_extrapolation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MSG_EXTRAP_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ADDS_MESSAGE_EXTRAPOLATION_TYPE),) }
     @property
-    def msg_extrapolation_type(self) -> "ADDS_MSG_EXTRAP_TYPE":
+    def message_extrapolation_type(self) -> "ADDS_MESSAGE_EXTRAPOLATION_TYPE":
         """Get or set the message extrapolation type."""
-        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_msg_extrapolation_type_metadata)
+        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_message_extrapolation_type_metadata)
 
-    _set_msg_extrapolation_type_metadata = { "offset" : _set_msg_extrapolation_type_method_offset,
+    _set_message_extrapolation_type_metadata = { "offset" : _set_message_extrapolation_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MSG_EXTRAP_TYPE),) }
-    @msg_extrapolation_type.setter
-    def msg_extrapolation_type(self, newVal:"ADDS_MSG_EXTRAP_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(ADDS_MESSAGE_EXTRAPOLATION_TYPE),) }
+    @message_extrapolation_type.setter
+    def message_extrapolation_type(self, newVal:"ADDS_MESSAGE_EXTRAPOLATION_TYPE") -> None:
         """Get or set the message extrapolation type."""
-        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_msg_extrapolation_type_metadata, newVal)
+        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_message_extrapolation_type_metadata, newVal)
 
-    _get_missing_msg_type_metadata = { "offset" : _get_missing_msg_type_method_offset,
+    _get_missing_message_type_metadata = { "offset" : _get_missing_message_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MISSING_MSG_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ADDS_MISSING_MESSAGE_TYPE),) }
     @property
-    def missing_msg_type(self) -> "ADDS_MISSING_MSG_TYPE":
+    def missing_message_type(self) -> "ADDS_MISSING_MESSAGE_TYPE":
         """Get or set the missing message type."""
-        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_missing_msg_type_metadata)
+        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_missing_message_type_metadata)
 
-    _set_missing_msg_type_metadata = { "offset" : _set_missing_msg_type_method_offset,
+    _set_missing_message_type_metadata = { "offset" : _set_missing_message_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADDS_MISSING_MSG_TYPE),) }
-    @missing_msg_type.setter
-    def missing_msg_type(self, newVal:"ADDS_MISSING_MSG_TYPE") -> None:
+            "marshallers" : (agmarshall.EnumArg(ADDS_MISSING_MESSAGE_TYPE),) }
+    @missing_message_type.setter
+    def missing_message_type(self, newVal:"ADDS_MISSING_MESSAGE_TYPE") -> None:
         """Get or set the missing message type."""
-        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_missing_msg_type_metadata, newVal)
+        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_missing_message_type_metadata, newVal)
 
-    _get_interp_blend_time_metadata = { "offset" : _get_interp_blend_time_method_offset,
+    _get_interpolation_blend_time_metadata = { "offset" : _get_interpolation_blend_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def interp_blend_time(self) -> float:
+    def interpolation_blend_time(self) -> float:
         """Get or set the blend time to transition from the previous wind condition."""
-        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_interp_blend_time_metadata)
+        return self._intf.get_property(WindModelADDS._metadata, WindModelADDS._get_interpolation_blend_time_metadata)
 
-    _set_interp_blend_time_metadata = { "offset" : _set_interp_blend_time_method_offset,
+    _set_interpolation_blend_time_metadata = { "offset" : _set_interpolation_blend_time_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @interp_blend_time.setter
-    def interp_blend_time(self, newVal:float) -> None:
+    @interpolation_blend_time.setter
+    def interpolation_blend_time(self, newVal:float) -> None:
         """Get or set the blend time to transition from the previous wind condition."""
-        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_interp_blend_time_metadata, newVal)
+        return self._intf.set_property(WindModelADDS._metadata, WindModelADDS._set_interpolation_blend_time_metadata, newVal)
 
     _add_current_forecast_metadata = { "offset" : _add_current_forecast_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -18846,10 +18849,10 @@ class WindModelADDS(SupportsDeleteCallback):
 
     _property_names[name] = "name"
     _property_names[blend_time] = "blend_time"
-    _property_names[msg_interpolation_type] = "msg_interpolation_type"
-    _property_names[msg_extrapolation_type] = "msg_extrapolation_type"
-    _property_names[missing_msg_type] = "missing_msg_type"
-    _property_names[interp_blend_time] = "interp_blend_time"
+    _property_names[message_interpolation_type] = "message_interpolation_type"
+    _property_names[message_extrapolation_type] = "message_extrapolation_type"
+    _property_names[missing_message_type] = "missing_message_type"
+    _property_names[interpolation_blend_time] = "interpolation_blend_time"
     _property_names[messages] = "messages"
 
     def __init__(self, sourceObject=None):
@@ -19299,8 +19302,8 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _set_turn_angle_method_offset = 4
     _get_turn_radius_factor_method_offset = 5
     _set_turn_radius_factor_method_offset = 6
-    _get_compensate_for_coriolis_accel_method_offset = 7
-    _set_compensate_for_coriolis_accel_method_offset = 8
+    _get_compensate_for_coriolis_acceleration_method_offset = 7
+    _set_compensate_for_coriolis_acceleration_method_offset = 8
     _metadata = {
         "iid_data" : (5493616845962227984, 7381268894000172433),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -19357,25 +19360,25 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCall
         """Get or set the turn radius factor for the simple turn."""
         return self._intf.set_property(BasicManeuverStrategySimpleTurn._metadata, BasicManeuverStrategySimpleTurn._set_turn_radius_factor_metadata, newVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategySimpleTurn._metadata, BasicManeuverStrategySimpleTurn._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategySimpleTurn._metadata, BasicManeuverStrategySimpleTurn._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategySimpleTurn._metadata, BasicManeuverStrategySimpleTurn._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategySimpleTurn._metadata, BasicManeuverStrategySimpleTurn._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[reference_frame] = "reference_frame"
     _property_names[turn_angle] = "turn_angle"
     _property_names[turn_radius_factor] = "turn_radius_factor"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategySimpleTurn."""
@@ -19505,17 +19508,17 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategy, SupportsDeleteCal
 
     _get_roll_rate_mode_metadata = { "offset" : _get_roll_rate_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def roll_rate_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def roll_rate_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the roll rate mode for the aileron roll."""
         return self._intf.get_property(BasicManeuverStrategyAileronRoll._metadata, BasicManeuverStrategyAileronRoll._get_roll_rate_mode_metadata)
 
     _set_roll_rate_mode_metadata = { "offset" : _set_roll_rate_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def roll_rate_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the roll rate mode for the aileron roll."""
         return self._intf.set_property(BasicManeuverStrategyAileronRoll._metadata, BasicManeuverStrategyAileronRoll._set_roll_rate_mode_metadata, newVal)
 
@@ -19618,17 +19621,17 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategy, SupportsDeleteCallback
 
     _get_roll_rate_mode_metadata = { "offset" : _get_roll_rate_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def roll_rate_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def roll_rate_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the roll rate mode for a Fly AOA basic maneuver strategy."""
         return self._intf.get_property(BasicManeuverStrategyFlyAOA._metadata, BasicManeuverStrategyFlyAOA._get_roll_rate_mode_metadata)
 
     _set_roll_rate_mode_metadata = { "offset" : _set_roll_rate_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def roll_rate_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the roll rate mode for a Fly AOA basic maneuver strategy."""
         return self._intf.set_property(BasicManeuverStrategyFlyAOA._metadata, BasicManeuverStrategyFlyAOA._set_roll_rate_mode_metadata, newVal)
 
@@ -19820,17 +19823,17 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategy, SupportsDeleteCallback):
 
     _get_pull_g_mode_metadata = { "offset" : _get_pull_g_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def pull_g_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def pull_g_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the pull G mode for a pull basic maneuver strategy."""
         return self._intf.get_property(BasicManeuverStrategyPull._metadata, BasicManeuverStrategyPull._get_pull_g_mode_metadata)
 
     _set_pull_g_mode_metadata = { "offset" : _set_pull_g_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @pull_g_mode.setter
-    def pull_g_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def pull_g_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the pull G mode for a pull basic maneuver strategy."""
         return self._intf.set_property(BasicManeuverStrategyPull._metadata, BasicManeuverStrategyPull._set_pull_g_mode_metadata, newVal)
 
@@ -19978,17 +19981,17 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
 
     _get_roll_rate_mode_metadata = { "offset" : _get_roll_rate_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def roll_rate_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def roll_rate_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the roll rate mode for the rolling pull."""
         return self._intf.get_property(BasicManeuverStrategyRollingPull._metadata, BasicManeuverStrategyRollingPull._get_roll_rate_mode_metadata)
 
     _set_roll_rate_mode_metadata = { "offset" : _set_roll_rate_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def roll_rate_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the roll rate mode for the rolling pull."""
         return self._intf.set_property(BasicManeuverStrategyRollingPull._metadata, BasicManeuverStrategyRollingPull._set_roll_rate_mode_metadata, newVal)
 
@@ -20010,17 +20013,17 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
 
     _get_pull_g_mode_metadata = { "offset" : _get_pull_g_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def pull_g_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def pull_g_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the pull G mode for a rolling pull."""
         return self._intf.get_property(BasicManeuverStrategyRollingPull._metadata, BasicManeuverStrategyRollingPull._get_pull_g_mode_metadata)
 
     _set_pull_g_mode_metadata = { "offset" : _set_pull_g_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @pull_g_mode.setter
-    def pull_g_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def pull_g_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the pull G mode for a rolling pull."""
         return self._intf.set_property(BasicManeuverStrategyRollingPull._metadata, BasicManeuverStrategyRollingPull._set_pull_g_mode_metadata, newVal)
 
@@ -20076,7 +20079,7 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
 agcls.AgClassCatalog.add_catalog_entry((5201286070707408939, 16266359450549158825), BasicManeuverStrategyRollingPull)
 agcls.AgTypeNameMap["BasicManeuverStrategyRollingPull"] = BasicManeuverStrategyRollingPull
 
-class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCallback):
+class BasicManeuverStrategySmoothAcceleration(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Smooth Accel Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 29
@@ -20116,39 +20119,39 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverStrategySmoothAccel)
+        return get_interface_property(attrname, BasicManeuverStrategySmoothAcceleration)
     
     _get_turn_direction_metadata = { "offset" : _get_turn_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCEL_LEFT_RIGHT),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCELERATION_LEFT_RIGHT),) }
     @property
-    def turn_direction(self) -> "SMOOTH_ACCEL_LEFT_RIGHT":
+    def turn_direction(self) -> "SMOOTH_ACCELERATION_LEFT_RIGHT":
         """Get or set the roll turn direction for a Smooth Accel basic maneuver strategy."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_turn_direction_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_turn_direction_metadata)
 
     _set_turn_direction_metadata = { "offset" : _set_turn_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCEL_LEFT_RIGHT),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCELERATION_LEFT_RIGHT),) }
     @turn_direction.setter
-    def turn_direction(self, newVal:"SMOOTH_ACCEL_LEFT_RIGHT") -> None:
+    def turn_direction(self, newVal:"SMOOTH_ACCELERATION_LEFT_RIGHT") -> None:
         """Get or set the roll turn direction for a Smooth Accel  basic maneuver strategy."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_turn_direction_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_turn_direction_metadata, newVal)
 
     _get_roll_rate_mode_metadata = { "offset" : _get_roll_rate_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def roll_rate_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def roll_rate_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the roll rate mode for a Smooth Accel basic maneuver strategy."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_roll_rate_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_roll_rate_mode_metadata)
 
     _set_roll_rate_mode_metadata = { "offset" : _set_roll_rate_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def roll_rate_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the roll rate mode for a Smooth Accel basic maneuver strategy."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_roll_rate_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_roll_rate_mode_metadata, newVal)
 
     _get_override_roll_rate_metadata = { "offset" : _get_override_roll_rate_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -20156,7 +20159,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def override_roll_rate(self) -> typing.Any:
         """Get or set the roll rate override value for the Smooth Accel basic maneuver strategy. The roll rate mode must be set to override to access this property."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_override_roll_rate_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_override_roll_rate_metadata)
 
     _set_override_roll_rate_metadata = { "offset" : _set_override_roll_rate_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -20164,7 +20167,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @override_roll_rate.setter
     def override_roll_rate(self, newVal:typing.Any) -> None:
         """Get or set the roll rate override value for the Smooth Accel basic maneuver strategy. The roll rate mode must be set to override to access this property."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_override_roll_rate_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_override_roll_rate_metadata, newVal)
 
     _get_roll_rate_dot_metadata = { "offset" : _get_roll_rate_dot_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -20172,7 +20175,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def roll_rate_dot(self) -> typing.Any:
         """Get or set the rate of change of the roll rate."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_roll_rate_dot_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_roll_rate_dot_metadata)
 
     _set_roll_rate_dot_metadata = { "offset" : _set_roll_rate_dot_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -20180,7 +20183,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @roll_rate_dot.setter
     def roll_rate_dot(self, newVal:typing.Any) -> None:
         """Get or set the rate of change of the roll rate."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_roll_rate_dot_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_roll_rate_dot_metadata, newVal)
 
     _get_control_roll_angle_metadata = { "offset" : _get_control_roll_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20188,7 +20191,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_roll_angle(self) -> bool:
         """Get or set the option to define a goal value for the aircraft's roll angle."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_control_roll_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_control_roll_angle_metadata)
 
     _set_control_roll_angle_metadata = { "offset" : _set_control_roll_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -20196,7 +20199,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @control_roll_angle.setter
     def control_roll_angle(self, newVal:bool) -> None:
         """Get or set the option to define a goal value for the aircraft's roll angle."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_control_roll_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_control_roll_angle_metadata, newVal)
 
     _get_roll_angle_metadata = { "offset" : _get_roll_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -20204,7 +20207,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def roll_angle(self) -> typing.Any:
         """Get or set the goal value for the roll angle."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_roll_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_roll_angle_metadata)
 
     _set_roll_angle_metadata = { "offset" : _set_roll_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -20212,23 +20215,23 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @roll_angle.setter
     def roll_angle(self, newVal:typing.Any) -> None:
         """Get or set the goal value for the roll angle."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_roll_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_roll_angle_metadata, newVal)
 
     _get_load_factor_mode_metadata = { "offset" : _get_load_factor_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def load_factor_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def load_factor_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the load factor mode for the Smooth Accel basic maneuver strategy."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_load_factor_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_load_factor_mode_metadata)
 
     _set_load_factor_mode_metadata = { "offset" : _set_load_factor_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @load_factor_mode.setter
-    def load_factor_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def load_factor_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the load factormode for the Smooth Accel basic maneuver strategy."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_load_factor_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_load_factor_mode_metadata, newVal)
 
     _get_override_load_factor_metadata = { "offset" : _get_override_load_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -20236,7 +20239,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def override_load_factor(self) -> float:
         """Get or set the load factor override value for the smooth accel. The load factor mode must be set to override to access this property."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_override_load_factor_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_override_load_factor_metadata)
 
     _set_override_load_factor_metadata = { "offset" : _set_override_load_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -20244,7 +20247,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @override_load_factor.setter
     def override_load_factor(self, newVal:float) -> None:
         """Get or set the load factor override value for the smooth accel. The load factor mode must be set to override to access this property."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_override_load_factor_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_override_load_factor_metadata, newVal)
 
     _get_load_factor_dot_metadata = { "offset" : _get_load_factor_dot_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -20252,7 +20255,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def load_factor_dot(self) -> float:
         """Get or set the rate of change of the load factor."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_load_factor_dot_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_load_factor_dot_metadata)
 
     _set_load_factor_dot_metadata = { "offset" : _set_load_factor_dot_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -20260,7 +20263,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @load_factor_dot.setter
     def load_factor_dot(self, newVal:float) -> None:
         """Get or set the rate of change of the load factor."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_load_factor_dot_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_load_factor_dot_metadata, newVal)
 
     _get_control_pitch_angle_metadata = { "offset" : _get_control_pitch_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20268,7 +20271,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_pitch_angle(self) -> bool:
         """Get or set the option to define a goal value for the aircraft's pitch angle."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_control_pitch_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_control_pitch_angle_metadata)
 
     _set_control_pitch_angle_metadata = { "offset" : _set_control_pitch_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -20276,7 +20279,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @control_pitch_angle.setter
     def control_pitch_angle(self, newVal:bool) -> None:
         """Get or set the option to define a goal value for the aircraft's pitch angle."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_control_pitch_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_control_pitch_angle_metadata, newVal)
 
     _get_pitch_angle_metadata = { "offset" : _get_pitch_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -20284,7 +20287,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def pitch_angle(self) -> typing.Any:
         """Get or set the goal value for the pitch angle."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_pitch_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_pitch_angle_metadata)
 
     _set_pitch_angle_metadata = { "offset" : _set_pitch_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -20292,23 +20295,23 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @pitch_angle.setter
     def pitch_angle(self, newVal:typing.Any) -> None:
         """Get or set the goal value for the pitch angle."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_pitch_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_pitch_angle_metadata, newVal)
 
     _get_stop_conditions_metadata = { "offset" : _get_stop_conditions_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCEL_STOP_CONDITIONS),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCELERATION_STOP_CONDITIONS),) }
     @property
-    def stop_conditions(self) -> "SMOOTH_ACCEL_STOP_CONDITIONS":
+    def stop_conditions(self) -> "SMOOTH_ACCELERATION_STOP_CONDITIONS":
         """Get or set the stop condition for the Smooth Accel basic maneuver strategy."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_stop_conditions_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_stop_conditions_metadata)
 
     _set_stop_conditions_metadata = { "offset" : _set_stop_conditions_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCEL_STOP_CONDITIONS),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_ACCELERATION_STOP_CONDITIONS),) }
     @stop_conditions.setter
-    def stop_conditions(self, newVal:"SMOOTH_ACCEL_STOP_CONDITIONS") -> None:
+    def stop_conditions(self, newVal:"SMOOTH_ACCELERATION_STOP_CONDITIONS") -> None:
         """Get or set the stop condition for the Smooth Accel  basic maneuver strategy."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_stop_conditions_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_stop_conditions_metadata, newVal)
 
     _get_stop_on_roll_angle_metadata = { "offset" : _get_stop_on_roll_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20316,7 +20319,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def stop_on_roll_angle(self) -> bool:
         """Get or set the option to stop the maneuver if the specified roll angle is achieved."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_stop_on_roll_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_stop_on_roll_angle_metadata)
 
     _set_stop_on_roll_angle_metadata = { "offset" : _set_stop_on_roll_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -20324,7 +20327,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @stop_on_roll_angle.setter
     def stop_on_roll_angle(self, newVal:bool) -> None:
         """Get or set the option to stop the maneuver if the specified roll angle is achieved."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_stop_on_roll_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_stop_on_roll_angle_metadata, newVal)
 
     _get_stop_on_pitch_angle_metadata = { "offset" : _get_stop_on_pitch_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20332,7 +20335,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def stop_on_pitch_angle(self) -> bool:
         """Get or set the option to stop the maneuver if the specified pitch angle is achieved."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_stop_on_pitch_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_stop_on_pitch_angle_metadata)
 
     _set_stop_on_pitch_angle_metadata = { "offset" : _set_stop_on_pitch_angle_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -20340,7 +20343,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @stop_on_pitch_angle.setter
     def stop_on_pitch_angle(self, newVal:bool) -> None:
         """Get or set the option to stop the maneuver if the specified pitch angle is achieved."""
-        return self._intf.set_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._set_stop_on_pitch_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._set_stop_on_pitch_angle_metadata, newVal)
 
     _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20348,7 +20351,7 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
-        return self._intf.get_property(BasicManeuverStrategySmoothAccel._metadata, BasicManeuverStrategySmoothAccel._get_airspeed_options_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothAcceleration._metadata, BasicManeuverStrategySmoothAcceleration._get_airspeed_options_metadata)
 
     _property_names[turn_direction] = "turn_direction"
     _property_names[roll_rate_mode] = "roll_rate_mode"
@@ -20367,9 +20370,9 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[airspeed_options] = "airspeed_options"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverStrategySmoothAccel."""
+        """Construct an object of type BasicManeuverStrategySmoothAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategySmoothAccel)
+        initialize_from_source_object(self, sourceObject, BasicManeuverStrategySmoothAcceleration)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -20379,10 +20382,10 @@ class BasicManeuverStrategySmoothAccel(IBasicManeuverStrategy, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAccel, [BasicManeuverStrategySmoothAccel, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, BasicManeuverStrategySmoothAcceleration, [BasicManeuverStrategySmoothAcceleration, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5309213016362285124, 9310491107287959706), BasicManeuverStrategySmoothAccel)
-agcls.AgTypeNameMap["BasicManeuverStrategySmoothAccel"] = BasicManeuverStrategySmoothAccel
+agcls.AgClassCatalog.add_catalog_entry((5309213016362285124, 9310491107287959706), BasicManeuverStrategySmoothAcceleration)
+agcls.AgTypeNameMap["BasicManeuverStrategySmoothAcceleration"] = BasicManeuverStrategySmoothAcceleration
 
 class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Smooth Turn Strategy of a Basic Maneuver Procedure."""
@@ -20406,8 +20409,8 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _get_override_roll_rate_method_offset = 15
     _set_override_roll_rate_method_offset = 16
     _get_airspeed_options_method_offset = 17
-    _get_fpa_mode_method_offset = 18
-    _set_fpa_mode_method_offset = 19
+    _get_flight_path_angle_mode_method_offset = 18
+    _set_flight_path_angle_mode_method_offset = 19
     _metadata = {
         "iid_data" : (5493265518926974794, 14820752937463885992),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -20450,17 +20453,17 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
 
     _get_load_factor_mode_metadata = { "offset" : _get_load_factor_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def load_factor_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def load_factor_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the load factor mode for the smooth turn."""
         return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_load_factor_mode_metadata)
 
     _set_load_factor_mode_metadata = { "offset" : _set_load_factor_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @load_factor_mode.setter
-    def load_factor_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def load_factor_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the load factormode for the smooth turn."""
         return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_load_factor_mode_metadata, newVal)
 
@@ -20498,17 +20501,17 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
 
     _get_roll_rate_mode_metadata = { "offset" : _get_roll_rate_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def roll_rate_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def roll_rate_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the roll rate mode for the smooth turn."""
         return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_roll_rate_mode_metadata)
 
     _set_roll_rate_mode_metadata = { "offset" : _set_roll_rate_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @roll_rate_mode.setter
-    def roll_rate_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def roll_rate_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the roll rate mode for the smooth turn."""
         return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_roll_rate_mode_metadata, newVal)
 
@@ -20552,21 +20555,21 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
         """Get the airspeed options."""
         return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_airspeed_options_metadata)
 
-    _get_fpa_mode_metadata = { "offset" : _get_fpa_mode_method_offset,
+    _get_flight_path_angle_mode_metadata = { "offset" : _get_flight_path_angle_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FPA_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE),) }
     @property
-    def fpa_mode(self) -> "SMOOTH_TURN_FPA_MODE":
+    def flight_path_angle_mode(self) -> "SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE":
         """Get or set the flight path angle mode."""
-        return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_fpa_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._get_flight_path_angle_mode_metadata)
 
-    _set_fpa_mode_metadata = { "offset" : _set_fpa_mode_method_offset,
+    _set_flight_path_angle_mode_metadata = { "offset" : _set_flight_path_angle_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FPA_MODE),) }
-    @fpa_mode.setter
-    def fpa_mode(self, newVal:"SMOOTH_TURN_FPA_MODE") -> None:
+            "marshallers" : (agmarshall.EnumArg(SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE),) }
+    @flight_path_angle_mode.setter
+    def flight_path_angle_mode(self, newVal:"SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE") -> None:
         """Get or set the flight path angle mode."""
-        return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_fpa_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategySmoothTurn._metadata, BasicManeuverStrategySmoothTurn._set_flight_path_angle_mode_metadata, newVal)
 
     _property_names[heading_change] = "heading_change"
     _property_names[turn_mode] = "turn_mode"
@@ -20577,7 +20580,7 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[roll_angle] = "roll_angle"
     _property_names[override_roll_rate] = "override_roll_rate"
     _property_names[airspeed_options] = "airspeed_options"
-    _property_names[fpa_mode] = "fpa_mode"
+    _property_names[flight_path_angle_mode] = "flight_path_angle_mode"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategySmoothTurn."""
@@ -20612,20 +20615,20 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
     _set_maintain_airspeed_type_method_offset = 8
     _get_specified_airspeed_type_method_offset = 9
     _set_specified_airspeed_type_method_offset = 10
-    _get_specified_accel_decel_mode_method_offset = 11
-    _set_specified_accel_decel_mode_method_offset = 12
+    _get_specified_acceleration_deceleration_mode_method_offset = 11
+    _set_specified_acceleration_deceleration_mode_method_offset = 12
     _get_specified_airspeed_method_offset = 13
     _set_specified_airspeed_method_offset = 14
-    _get_specified_accel_decel_g_method_offset = 15
-    _set_specified_accel_decel_g_method_offset = 16
-    _get_accel_g_method_offset = 17
-    _set_accel_g_method_offset = 18
-    _get_decel_g_method_offset = 19
-    _set_decel_g_method_offset = 20
-    _get_accel_mode_method_offset = 21
-    _set_accel_mode_method_offset = 22
-    _get_decel_mode_method_offset = 23
-    _set_decel_mode_method_offset = 24
+    _get_specified_acceleration_deceleration_g_method_offset = 15
+    _set_specified_acceleration_deceleration_g_method_offset = 16
+    _get_acceleration_g_method_offset = 17
+    _set_acceleration_g_method_offset = 18
+    _get_deceleration_g_method_offset = 19
+    _set_deceleration_g_method_offset = 20
+    _get_acceleration_mode_method_offset = 21
+    _set_acceleration_mode_method_offset = 22
+    _get_deceleration_mode_method_offset = 23
+    _set_deceleration_mode_method_offset = 24
     _get_throttle_method_offset = 25
     _set_throttle_method_offset = 26
     _get_interpolate_init_g_method_offset = 27
@@ -20663,33 +20666,33 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
 
     _get_min_speed_limits_metadata = { "offset" : _get_min_speed_limits_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @property
-    def min_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
+    def min_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS":
         """Get or set the minimum speed limit type to enforce."""
         return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_min_speed_limits_metadata)
 
     _set_min_speed_limits_metadata = { "offset" : _set_min_speed_limits_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @min_speed_limits.setter
-    def min_speed_limits(self, newVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
+    def min_speed_limits(self, newVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS") -> None:
         """Get or set the minimum speed limit type to enforce."""
         return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_min_speed_limits_metadata, newVal)
 
     _get_max_speed_limits_metadata = { "offset" : _get_max_speed_limits_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @property
-    def max_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS":
+    def max_speed_limits(self) -> "BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS":
         """Get or set the maximum speed limit type to enforce."""
         return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_max_speed_limits_metadata)
 
     _set_max_speed_limits_metadata = { "offset" : _set_max_speed_limits_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS),) }
     @max_speed_limits.setter
-    def max_speed_limits(self, newVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERF_LIMITS") -> None:
+    def max_speed_limits(self, newVal:"BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS") -> None:
         """Get or set the maximum speed limit type to enforce."""
         return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_max_speed_limits_metadata, newVal)
 
@@ -20725,21 +20728,21 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
         """Get or set the airspeed type option in the Maintain Specified Airspeed mode."""
         return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_airspeed_type_metadata, newVal)
 
-    _get_specified_accel_decel_mode_metadata = { "offset" : _get_specified_accel_decel_mode_method_offset,
+    _get_specified_acceleration_deceleration_mode_metadata = { "offset" : _get_specified_acceleration_deceleration_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def specified_accel_decel_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def specified_acceleration_deceleration_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the accel/decel mode for the Maintain Specified Airspeed mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_specified_accel_decel_mode_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_specified_acceleration_deceleration_mode_metadata)
 
-    _set_specified_accel_decel_mode_metadata = { "offset" : _set_specified_accel_decel_mode_method_offset,
+    _set_specified_acceleration_deceleration_mode_metadata = { "offset" : _set_specified_acceleration_deceleration_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
-    @specified_accel_decel_mode.setter
-    def specified_accel_decel_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
+    @specified_acceleration_deceleration_mode.setter
+    def specified_acceleration_deceleration_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the accel/decel mode for the Maintain Specified Airspeed mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_accel_decel_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_acceleration_deceleration_mode_metadata, newVal)
 
     _get_specified_airspeed_metadata = { "offset" : _get_specified_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -20757,85 +20760,85 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
         """Get or set the airspeed for the Maintain Specified Airspeed mode."""
         return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_airspeed_metadata, newVal)
 
-    _get_specified_accel_decel_g_metadata = { "offset" : _get_specified_accel_decel_g_method_offset,
+    _get_specified_acceleration_deceleration_g_metadata = { "offset" : _get_specified_acceleration_deceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def specified_accel_decel_g(self) -> float:
+    def specified_acceleration_deceleration_g(self) -> float:
         """Get or set the accel/decel G for the Maintain Specified Airspeed mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_specified_accel_decel_g_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_specified_acceleration_deceleration_g_metadata)
 
-    _set_specified_accel_decel_g_metadata = { "offset" : _set_specified_accel_decel_g_method_offset,
+    _set_specified_acceleration_deceleration_g_metadata = { "offset" : _set_specified_acceleration_deceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @specified_accel_decel_g.setter
-    def specified_accel_decel_g(self, newVal:float) -> None:
+    @specified_acceleration_deceleration_g.setter
+    def specified_acceleration_deceleration_g(self, newVal:float) -> None:
         """Get or set the accel/decel G for the Maintain Specified Airspeed mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_accel_decel_g_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_specified_acceleration_deceleration_g_metadata, newVal)
 
-    _get_accel_g_metadata = { "offset" : _get_accel_g_method_offset,
+    _get_acceleration_g_metadata = { "offset" : _get_acceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_g(self) -> float:
+    def acceleration_g(self) -> float:
         """Get or set the accel G for the Accelerate at mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_accel_g_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_acceleration_g_metadata)
 
-    _set_accel_g_metadata = { "offset" : _set_accel_g_method_offset,
+    _set_acceleration_g_metadata = { "offset" : _set_acceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_g.setter
-    def accel_g(self, newVal:float) -> None:
+    @acceleration_g.setter
+    def acceleration_g(self, newVal:float) -> None:
         """Get or set the accel G for the Accelerate at mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_accel_g_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_acceleration_g_metadata, newVal)
 
-    _get_decel_g_metadata = { "offset" : _get_decel_g_method_offset,
+    _get_deceleration_g_metadata = { "offset" : _get_deceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def decel_g(self) -> float:
+    def deceleration_g(self) -> float:
         """Get or set the decel G for the Decelerate at mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_decel_g_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_deceleration_g_metadata)
 
-    _set_decel_g_metadata = { "offset" : _set_decel_g_method_offset,
+    _set_deceleration_g_metadata = { "offset" : _set_deceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @decel_g.setter
-    def decel_g(self, newVal:float) -> None:
+    @deceleration_g.setter
+    def deceleration_g(self, newVal:float) -> None:
         """Get or set the decel G for the Decelerate at mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_decel_g_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_deceleration_g_metadata, newVal)
 
-    _get_accel_mode_metadata = { "offset" : _get_accel_mode_method_offset,
+    _get_acceleration_mode_metadata = { "offset" : _get_acceleration_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def accel_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def acceleration_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the accel mode for the Accelerate at mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_accel_mode_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_acceleration_mode_metadata)
 
-    _set_accel_mode_metadata = { "offset" : _set_accel_mode_method_offset,
+    _set_acceleration_mode_metadata = { "offset" : _set_acceleration_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
-    @accel_mode.setter
-    def accel_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
+    @acceleration_mode.setter
+    def acceleration_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the accel mode for the Accelerate at mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_accel_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_acceleration_mode_metadata, newVal)
 
-    _get_decel_mode_metadata = { "offset" : _get_decel_mode_method_offset,
+    _get_deceleration_mode_metadata = { "offset" : _get_deceleration_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def decel_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def deceleration_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the accel mode for the Decelerate at mode."""
-        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_decel_mode_metadata)
+        return self._intf.get_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._get_deceleration_mode_metadata)
 
-    _set_decel_mode_metadata = { "offset" : _set_decel_mode_method_offset,
+    _set_deceleration_mode_metadata = { "offset" : _set_deceleration_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
-    @decel_mode.setter
-    def decel_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
+    @deceleration_mode.setter
+    def deceleration_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the accel mode for the Decelerate at mode."""
-        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_decel_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverAirspeedOptions._metadata, BasicManeuverAirspeedOptions._set_deceleration_mode_metadata, newVal)
 
     _get_throttle_metadata = { "offset" : _get_throttle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -20930,13 +20933,13 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
     _property_names[max_speed_limits] = "max_speed_limits"
     _property_names[maintain_airspeed_type] = "maintain_airspeed_type"
     _property_names[specified_airspeed_type] = "specified_airspeed_type"
-    _property_names[specified_accel_decel_mode] = "specified_accel_decel_mode"
+    _property_names[specified_acceleration_deceleration_mode] = "specified_acceleration_deceleration_mode"
     _property_names[specified_airspeed] = "specified_airspeed"
-    _property_names[specified_accel_decel_g] = "specified_accel_decel_g"
-    _property_names[accel_g] = "accel_g"
-    _property_names[decel_g] = "decel_g"
-    _property_names[accel_mode] = "accel_mode"
-    _property_names[decel_mode] = "decel_mode"
+    _property_names[specified_acceleration_deceleration_g] = "specified_acceleration_deceleration_g"
+    _property_names[acceleration_g] = "acceleration_g"
+    _property_names[deceleration_g] = "deceleration_g"
+    _property_names[acceleration_mode] = "acceleration_mode"
+    _property_names[deceleration_mode] = "deceleration_mode"
     _property_names[throttle] = "throttle"
     _property_names[interpolate_init_g] = "interpolate_init_g"
     _property_names[interpolate_end_g] = "interpolate_end_g"
@@ -21160,7 +21163,7 @@ class PropulsionThrust(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5602735193462223002, 11939510195580016258), PropulsionThrust)
 agcls.AgTypeNameMap["PropulsionThrust"] = PropulsionThrust
 
-class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCallback):
+class BasicManeuverStrategyAutopilotNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for the Autopilot - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 15
@@ -21174,10 +21177,10 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     _get_control_limit_mode_method_offset = 7
     _get_control_limit_turn_radius_method_offset = 8
     _get_control_limit_turn_rate_method_offset = 9
-    _get_control_limit_horiz_accel_method_offset = 10
+    _get_control_limit_horizontal_acceleration_method_offset = 10
     _set_control_limit_method_offset = 11
-    _get_compensate_for_coriolis_accel_method_offset = 12
-    _set_compensate_for_coriolis_accel_method_offset = 13
+    _get_compensate_for_coriolis_acceleration_method_offset = 12
+    _set_compensate_for_coriolis_acceleration_method_offset = 13
     _get_stop_when_conditions_met_method_offset = 14
     _set_stop_when_conditions_met_method_offset = 15
     _metadata = {
@@ -21186,23 +21189,23 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverStrategyAutopilotNav)
+        return get_interface_property(attrname, BasicManeuverStrategyAutopilotNavigation)
     
     _get_active_mode_metadata = { "offset" : _get_active_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AUTOPILOT_HORIZ_PLANE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AUTOPILOT_HORIZONTAL_PLANE_MODE),) }
     @property
-    def active_mode(self) -> "AUTOPILOT_HORIZ_PLANE_MODE":
+    def active_mode(self) -> "AUTOPILOT_HORIZONTAL_PLANE_MODE":
         """Get or set the autopilot - horizontal plane mode."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_active_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_active_mode_metadata)
 
     _set_active_mode_metadata = { "offset" : _set_active_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AUTOPILOT_HORIZ_PLANE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(AUTOPILOT_HORIZONTAL_PLANE_MODE),) }
     @active_mode.setter
-    def active_mode(self, newVal:"AUTOPILOT_HORIZ_PLANE_MODE") -> None:
+    def active_mode(self, newVal:"AUTOPILOT_HORIZONTAL_PLANE_MODE") -> None:
         """Get or set the autopilot - horizontal plane mode."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_active_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_active_mode_metadata, newVal)
 
     _get_active_heading_course_value_metadata = { "offset" : _get_active_heading_course_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -21210,7 +21213,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @property
     def active_heading_course_value(self) -> typing.Any:
         """Get or set the heading/course angle or rate for the active mode."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_active_heading_course_value_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_active_heading_course_value_metadata)
 
     _set_active_heading_course_value_metadata = { "offset" : _set_active_heading_course_value_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -21218,7 +21221,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @active_heading_course_value.setter
     def active_heading_course_value(self, newVal:typing.Any) -> None:
         """Get or set the heading/course angle or rate for the active mode."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_active_heading_course_value_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_active_heading_course_value_metadata, newVal)
 
     _get_damping_ratio_metadata = { "offset" : _get_damping_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -21226,7 +21229,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @property
     def damping_ratio(self) -> float:
         """Get or set the damping ratio of the control law."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_damping_ratio_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_damping_ratio_metadata)
 
     _set_damping_ratio_metadata = { "offset" : _set_damping_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -21234,15 +21237,15 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @damping_ratio.setter
     def damping_ratio(self, newVal:float) -> None:
         """Get or set the damping ratio of the control law."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_damping_ratio_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_damping_ratio_metadata, newVal)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_control_limit_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_control_limit_mode_metadata)
 
     _get_control_limit_turn_radius_metadata = { "offset" : _get_control_limit_turn_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -21250,7 +21253,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @property
     def control_limit_turn_radius(self) -> float:
         """Get the specified turn radius for a control limit mode of specify min turn radius."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_control_limit_turn_radius_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_control_limit_turn_radius_metadata)
 
     _get_control_limit_turn_rate_metadata = { "offset" : _get_control_limit_turn_rate_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -21258,37 +21261,37 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @property
     def control_limit_turn_rate(self) -> typing.Any:
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_control_limit_turn_rate_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        return self._intf.invoke(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_control_limit_metadata, controlLimitMode, controlLimitValue)
+        return self._intf.invoke(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_stop_when_conditions_met_metadata = { "offset" : _get_stop_when_conditions_met_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -21296,7 +21299,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @property
     def stop_when_conditions_met(self) -> bool:
         """Stop when conditions are met."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._get_stop_when_conditions_met_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._get_stop_when_conditions_met_metadata)
 
     _set_stop_when_conditions_met_metadata = { "offset" : _set_stop_when_conditions_met_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -21304,7 +21307,7 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     @stop_when_conditions_met.setter
     def stop_when_conditions_met(self, newVal:bool) -> None:
         """Stop when conditions are met."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotNav._metadata, BasicManeuverStrategyAutopilotNav._set_stop_when_conditions_met_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotNavigation._metadata, BasicManeuverStrategyAutopilotNavigation._set_stop_when_conditions_met_metadata, newVal)
 
     _property_names[active_mode] = "active_mode"
     _property_names[active_heading_course_value] = "active_heading_course_value"
@@ -21312,14 +21315,14 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[stop_when_conditions_met] = "stop_when_conditions_met"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverStrategyAutopilotNav."""
+        """Construct an object of type BasicManeuverStrategyAutopilotNavigation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyAutopilotNav)
+        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyAutopilotNavigation)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -21329,10 +21332,10 @@ class BasicManeuverStrategyAutopilotNav(IBasicManeuverStrategy, SupportsDeleteCa
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNav, [BasicManeuverStrategyAutopilotNav, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyAutopilotNavigation, [BasicManeuverStrategyAutopilotNavigation, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4732726606686848626, 4213261683524251822), BasicManeuverStrategyAutopilotNav)
-agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNav"] = BasicManeuverStrategyAutopilotNav
+agcls.AgClassCatalog.add_catalog_entry((4732726606686848626, 4213261683524251822), BasicManeuverStrategyAutopilotNavigation)
+agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNavigation"] = BasicManeuverStrategyAutopilotNavigation
 
 class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure."""
@@ -21347,14 +21350,14 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _set_relative_altitude_change_method_offset = 6
     _get_altitude_rate_method_offset = 7
     _set_altitude_rate_method_offset = 8
-    _get_fpa_method_offset = 9
-    _set_fpa_method_offset = 10
+    _get_flight_path_angle_method_offset = 9
+    _set_flight_path_angle_method_offset = 10
     _get_altitude_control_mode_method_offset = 11
     _set_altitude_control_mode_method_offset = 12
     _get_control_altitude_rate_value_method_offset = 13
     _set_control_altitude_rate_value_method_offset = 14
-    _get_control_fpa_value_method_offset = 15
-    _set_control_fpa_value_method_offset = 16
+    _get_control_flight_path_angle_value_method_offset = 15
+    _set_control_flight_path_angle_value_method_offset = 16
     _get_control_limit_mode_method_offset = 17
     _set_control_limit_mode_method_offset = 18
     _get_max_pitch_rate_method_offset = 19
@@ -21364,8 +21367,8 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _get_damping_ratio_method_offset = 23
     _set_damping_ratio_method_offset = 24
     _get_airspeed_options_method_offset = 25
-    _get_compensate_for_coriolis_accel_method_offset = 26
-    _set_compensate_for_coriolis_accel_method_offset = 27
+    _get_compensate_for_coriolis_acceleration_method_offset = 26
+    _set_compensate_for_coriolis_acceleration_method_offset = 27
     _get_stop_when_conditions_met_method_offset = 28
     _set_stop_when_conditions_met_method_offset = 29
     _metadata = {
@@ -21440,21 +21443,21 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Get or set the altitude rate for the specify altitude rate mode."""
         return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_altitude_rate_metadata, newVal)
 
-    _get_fpa_metadata = { "offset" : _get_fpa_method_offset,
+    _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def fpa(self) -> typing.Any:
+    def flight_path_angle(self) -> typing.Any:
         """Get or set the flight path angle for the specify wind frame flight path angle mode."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_flight_path_angle_metadata)
 
-    _set_fpa_metadata = { "offset" : _set_fpa_method_offset,
+    _set_flight_path_angle_metadata = { "offset" : _set_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @fpa.setter
-    def fpa(self, newVal:typing.Any) -> None:
+    @flight_path_angle.setter
+    def flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle for the specify wind frame flight path angle mode."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_flight_path_angle_metadata, newVal)
 
     _get_altitude_control_mode_metadata = { "offset" : _get_altitude_control_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21488,35 +21491,35 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Get or set the altitude rate control value for the hold initial altitude, specify altitude, and specify altitude change modes."""
         return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_altitude_rate_value_metadata, newVal)
 
-    _get_control_fpa_value_metadata = { "offset" : _get_control_fpa_value_method_offset,
+    _get_control_flight_path_angle_value_metadata = { "offset" : _get_control_flight_path_angle_value_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def control_fpa_value(self) -> typing.Any:
+    def control_flight_path_angle_value(self) -> typing.Any:
         """Get or set the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_control_fpa_value_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_control_flight_path_angle_value_metadata)
 
-    _set_control_fpa_value_metadata = { "offset" : _set_control_fpa_value_method_offset,
+    _set_control_flight_path_angle_value_metadata = { "offset" : _set_control_flight_path_angle_value_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @control_fpa_value.setter
-    def control_fpa_value(self, newVal:typing.Any) -> None:
+    @control_flight_path_angle_value.setter
+    def control_flight_path_angle_value(self, newVal:typing.Any) -> None:
         """Get or set the control flight path angle value for the hold initial altitude, specify altitude, and specify altitude change modes."""
-        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_fpa_value_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_flight_path_angle_value_metadata, newVal)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def control_limit_mode(self) -> "PERF_MODEL_OVERRIDE":
+    def control_limit_mode(self) -> "PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the control limits mode."""
         return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_control_limit_mode_metadata)
 
     _set_control_limit_mode_metadata = { "offset" : _set_control_limit_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(PERFORMANCE_MODEL_OVERRIDE),) }
     @control_limit_mode.setter
-    def control_limit_mode(self, newVal:"PERF_MODEL_OVERRIDE") -> None:
+    def control_limit_mode(self, newVal:"PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the control limits mode."""
         return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_control_limit_mode_metadata, newVal)
 
@@ -21576,20 +21579,20 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
         """Get the airspeed options."""
         return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_airspeed_options_metadata)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyAutopilotProf._metadata, BasicManeuverStrategyAutopilotProf._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_stop_when_conditions_met_metadata = { "offset" : _get_stop_when_conditions_met_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -21611,16 +21614,16 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[absolute_altitude] = "absolute_altitude"
     _property_names[relative_altitude_change] = "relative_altitude_change"
     _property_names[altitude_rate] = "altitude_rate"
-    _property_names[fpa] = "fpa"
+    _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[altitude_control_mode] = "altitude_control_mode"
     _property_names[control_altitude_rate_value] = "control_altitude_rate_value"
-    _property_names[control_fpa_value] = "control_fpa_value"
+    _property_names[control_flight_path_angle_value] = "control_flight_path_angle_value"
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[max_pitch_rate] = "max_pitch_rate"
     _property_names[fly_ballistic] = "fly_ballistic"
     _property_names[damping_ratio] = "damping_ratio"
     _property_names[airspeed_options] = "airspeed_options"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[stop_when_conditions_met] = "stop_when_conditions_met"
 
     def __init__(self, sourceObject=None):
@@ -22277,7 +22280,7 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _get_control_limit_mode_method_offset = 20
     _get_control_limit_turn_radius_method_offset = 21
     _get_control_limit_turn_rate_method_offset = 22
-    _get_control_limit_horiz_accel_method_offset = 23
+    _get_control_limit_horizontal_acceleration_method_offset = 23
     _set_control_limit_method_offset = 24
     _get_closure_mode_method_offset = 25
     _set_closure_mode_method_offset = 26
@@ -22285,10 +22288,10 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _set_hobs_max_angle_method_offset = 28
     _get_hobs_angle_tol_method_offset = 29
     _set_hobs_angle_tol_method_offset = 30
-    _get_compensate_for_coriolis_accel_method_offset = 31
-    _set_compensate_for_coriolis_accel_method_offset = 32
+    _get_compensate_for_coriolis_acceleration_method_offset = 31
+    _set_compensate_for_coriolis_acceleration_method_offset = 32
     _get_position_vel_strategies_method_offset = 33
-    _cancel_tgt_position_vel_method_offset = 34
+    _cancel_target_position_vel_method_offset = 34
     _metadata = {
         "iid_data" : (5313400505422947784, 17687416165806767533),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22449,9 +22452,9 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
         return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_control_limit_mode_metadata)
 
@@ -22471,18 +22474,18 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
         return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
         return self._intf.invoke(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
@@ -22534,20 +22537,20 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.set_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._set_hobs_angle_tol_metadata, newVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22557,12 +22560,12 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
         """Get the position velocity strategies for Intercept."""
         return self._intf.get_property(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Intercept."""
-        return self._intf.invoke(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyIntercept._metadata, BasicManeuverStrategyIntercept._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -22578,11 +22581,11 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
     _property_names[closure_mode] = "closure_mode"
     _property_names[hobs_max_angle] = "hobs_max_angle"
     _property_names[hobs_angle_tol] = "hobs_angle_tol"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
     def __init__(self, sourceObject=None):
@@ -22613,19 +22616,19 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     _get_valid_target_names_method_offset = 3
     _get_target_resolution_method_offset = 4
     _set_target_resolution_method_offset = 5
-    _get_rel_bearing_method_offset = 6
-    _set_rel_bearing_method_offset = 7
+    _get_relative_bearing_method_offset = 6
+    _set_relative_bearing_method_offset = 7
     _get_min_range_method_offset = 8
     _set_min_range_method_offset = 9
     _get_control_limit_mode_method_offset = 10
     _get_control_limit_turn_radius_method_offset = 11
     _get_control_limit_turn_rate_method_offset = 12
-    _get_control_limit_horiz_accel_method_offset = 13
+    _get_control_limit_horizontal_acceleration_method_offset = 13
     _set_control_limit_method_offset = 14
-    _get_compensate_for_coriolis_accel_method_offset = 15
-    _set_compensate_for_coriolis_accel_method_offset = 16
+    _get_compensate_for_coriolis_acceleration_method_offset = 15
+    _set_compensate_for_coriolis_acceleration_method_offset = 16
     _get_position_vel_strategies_method_offset = 17
-    _cancel_tgt_position_vel_method_offset = 18
+    _cancel_target_position_vel_method_offset = 18
     _metadata = {
         "iid_data" : (4866238946930048015, 14417521249700002203),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22674,21 +22677,21 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
         """Get or set the target position/velocity sampling resolution."""
         return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_target_resolution_metadata, newVal)
 
-    _get_rel_bearing_metadata = { "offset" : _get_rel_bearing_method_offset,
+    _get_relative_bearing_metadata = { "offset" : _get_relative_bearing_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def rel_bearing(self) -> typing.Any:
+    def relative_bearing(self) -> typing.Any:
         """Get or set the relative bearing angle."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_rel_bearing_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_relative_bearing_metadata)
 
-    _set_rel_bearing_metadata = { "offset" : _set_rel_bearing_method_offset,
+    _set_relative_bearing_metadata = { "offset" : _set_relative_bearing_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @rel_bearing.setter
-    def rel_bearing(self, newVal:typing.Any) -> None:
+    @relative_bearing.setter
+    def relative_bearing(self, newVal:typing.Any) -> None:
         """Get or set the relative bearing angle."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_rel_bearing_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_relative_bearing_metadata, newVal)
 
     _get_min_range_metadata = { "offset" : _get_min_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -22708,9 +22711,9 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
         return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_control_limit_mode_metadata)
 
@@ -22730,35 +22733,35 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
         return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
         return self._intf.invoke(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22768,23 +22771,23 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
         """Get the position velocity strategies for Relative Bearing."""
         return self._intf.get_property(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Relative Bearing."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeBearing._metadata, BasicManeuverStrategyRelativeBearing._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
     _property_names[target_resolution] = "target_resolution"
-    _property_names[rel_bearing] = "rel_bearing"
+    _property_names[relative_bearing] = "relative_bearing"
     _property_names[min_range] = "min_range"
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
     def __init__(self, sourceObject=None):
@@ -22830,7 +22833,7 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _get_control_limit_mode_method_offset = 18
     _get_control_limit_turn_radius_method_offset = 19
     _get_control_limit_turn_rate_method_offset = 20
-    _get_control_limit_horiz_accel_method_offset = 21
+    _get_control_limit_horizontal_acceleration_method_offset = 21
     _set_control_limit_method_offset = 22
     _get_closure_mode_method_offset = 23
     _set_closure_mode_method_offset = 24
@@ -22840,10 +22843,10 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _set_hobs_max_angle_method_offset = 28
     _get_hobs_angle_tol_method_offset = 29
     _set_hobs_angle_tol_method_offset = 30
-    _get_compensate_for_coriolis_accel_method_offset = 31
-    _set_compensate_for_coriolis_accel_method_offset = 32
+    _get_compensate_for_coriolis_acceleration_method_offset = 31
+    _set_compensate_for_coriolis_acceleration_method_offset = 32
     _get_position_vel_strategies_method_offset = 33
-    _cancel_tgt_position_vel_method_offset = 34
+    _cancel_target_position_vel_method_offset = 34
     _metadata = {
         "iid_data" : (5054084160759805633, 8063128821334535086),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -22990,9 +22993,9 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
         return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_control_limit_mode_metadata)
 
@@ -23012,18 +23015,18 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
         return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
         return self._intf.invoke(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
@@ -23091,20 +23094,20 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
         """Get or set the closure high off boresight angle tolerance."""
         return self._intf.set_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._set_hobs_angle_tol_metadata, newVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23114,12 +23117,12 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
         """Get the position velocity strategies for Relative Course."""
         return self._intf.get_property(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Relative Course."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeCourse._metadata, BasicManeuverStrategyRelativeCourse._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -23133,12 +23136,12 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
     _property_names[closure_mode] = "closure_mode"
     _property_names[downrange_offset] = "downrange_offset"
     _property_names[hobs_max_angle] = "hobs_max_angle"
     _property_names[hobs_angle_tol] = "hobs_angle_tol"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
     def __init__(self, sourceObject=None):
@@ -23182,8 +23185,8 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _set_altitude_split_method_offset = 16
     _get_maneuver_factor_method_offset = 17
     _set_maneuver_factor_method_offset = 18
-    _get_use_perf_model_limits_method_offset = 19
-    _set_use_perf_model_limits_method_offset = 20
+    _get_use_performance_model_limits_method_offset = 19
+    _set_use_performance_model_limits_method_offset = 20
     _get_altitude_rate_control_method_offset = 21
     _set_altitude_rate_control_method_offset = 22
     _get_min_load_factor_g_method_offset = 23
@@ -23194,15 +23197,15 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _set_max_speed_advantage_method_offset = 28
     _get_airspeed_control_mode_method_offset = 29
     _set_airspeed_control_mode_method_offset = 30
-    _get_accel_decel_g_method_offset = 31
-    _set_accel_decel_g_method_offset = 32
+    _get_acceleration_deceleration_g_method_offset = 31
+    _set_acceleration_deceleration_g_method_offset = 32
     _get_use_separate_airspeed_control_method_offset = 33
     _get_airspeed_factor_method_offset = 34
     _set_airspeed_factor_method_offset = 35
     _get_stop_condition_method_offset = 36
     _set_stop_condition_method_offset = 37
     _get_position_vel_strategies_method_offset = 38
-    _cancel_tgt_position_vel_method_offset = 39
+    _cancel_target_position_vel_method_offset = 39
     _metadata = {
         "iid_data" : (5284660652818080215, 12593108281635057289),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -23354,21 +23357,21 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
         """Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver."""
         return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_maneuver_factor_metadata, newVal)
 
-    _get_use_perf_model_limits_metadata = { "offset" : _get_use_perf_model_limits_method_offset,
+    _get_use_performance_model_limits_metadata = { "offset" : _get_use_performance_model_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_perf_model_limits(self) -> bool:
+    def use_performance_model_limits(self) -> bool:
         """Get or set the option to derive the control limits of the aircraft from the applicable performance model."""
-        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_use_perf_model_limits_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_use_performance_model_limits_metadata)
 
-    _set_use_perf_model_limits_metadata = { "offset" : _set_use_perf_model_limits_method_offset,
+    _set_use_performance_model_limits_metadata = { "offset" : _set_use_performance_model_limits_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_perf_model_limits.setter
-    def use_perf_model_limits(self, newVal:bool) -> None:
+    @use_performance_model_limits.setter
+    def use_performance_model_limits(self, newVal:bool) -> None:
         """Get or set the option to derive the control limits of the aircraft from the applicable performance model."""
-        return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_use_perf_model_limits_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_use_performance_model_limits_metadata, newVal)
 
     _get_altitude_rate_control_metadata = { "offset" : _get_altitude_rate_control_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -23436,35 +23439,35 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
 
     _get_airspeed_control_mode_metadata = { "offset" : _get_airspeed_control_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_PERFORMANCE_MODEL_OVERRIDE),) }
     @property
-    def airspeed_control_mode(self) -> "ACCEL_PERF_MODEL_OVERRIDE":
+    def airspeed_control_mode(self) -> "ACCELERATION_PERFORMANCE_MODEL_OVERRIDE":
         """Get or set the method to define the aircraft's acceleration performance in formation."""
         return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_airspeed_control_mode_metadata)
 
     _set_airspeed_control_mode_metadata = { "offset" : _set_airspeed_control_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_PERF_MODEL_OVERRIDE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_PERFORMANCE_MODEL_OVERRIDE),) }
     @airspeed_control_mode.setter
-    def airspeed_control_mode(self, newVal:"ACCEL_PERF_MODEL_OVERRIDE") -> None:
+    def airspeed_control_mode(self, newVal:"ACCELERATION_PERFORMANCE_MODEL_OVERRIDE") -> None:
         """Get or set the method to define the aircraft's acceleration performance in formation."""
         return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_airspeed_control_mode_metadata, newVal)
 
-    _get_accel_decel_g_metadata = { "offset" : _get_accel_decel_g_method_offset,
+    _get_acceleration_deceleration_g_metadata = { "offset" : _get_acceleration_deceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_decel_g(self) -> float:
+    def acceleration_deceleration_g(self) -> float:
         """Get or set the aircraft's specified acceleration rate for an airspeed control mode set to override."""
-        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_accel_decel_g_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_acceleration_deceleration_g_metadata)
 
-    _set_accel_decel_g_metadata = { "offset" : _set_accel_decel_g_method_offset,
+    _set_acceleration_deceleration_g_metadata = { "offset" : _set_acceleration_deceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_decel_g.setter
-    def accel_decel_g(self, newVal:float) -> None:
+    @acceleration_deceleration_g.setter
+    def acceleration_deceleration_g(self, newVal:float) -> None:
         """Get or set the aircraft's specified acceleration rate for an airspeed control mode set to override."""
-        return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_accel_decel_g_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._set_acceleration_deceleration_g_metadata, newVal)
 
     _get_use_separate_airspeed_control_metadata = { "offset" : _get_use_separate_airspeed_control_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -23513,12 +23516,12 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
         """Get the position velocity strategies for Rendezvous."""
         return self._intf.get_property(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Rendezvous."""
-        return self._intf.invoke(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRendezvous._metadata, BasicManeuverStrategyRendezvous._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -23530,13 +23533,13 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[relative_range] = "relative_range"
     _property_names[altitude_split] = "altitude_split"
     _property_names[maneuver_factor] = "maneuver_factor"
-    _property_names[use_perf_model_limits] = "use_perf_model_limits"
+    _property_names[use_performance_model_limits] = "use_performance_model_limits"
     _property_names[altitude_rate_control] = "altitude_rate_control"
     _property_names[min_load_factor_g] = "min_load_factor_g"
     _property_names[max_load_factor_g] = "max_load_factor_g"
     _property_names[max_speed_advantage] = "max_speed_advantage"
     _property_names[airspeed_control_mode] = "airspeed_control_mode"
-    _property_names[accel_decel_g] = "accel_decel_g"
+    _property_names[acceleration_deceleration_g] = "acceleration_deceleration_g"
     _property_names[use_separate_airspeed_control] = "use_separate_airspeed_control"
     _property_names[airspeed_factor] = "airspeed_factor"
     _property_names[stop_condition] = "stop_condition"
@@ -23572,10 +23575,10 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _set_target_resolution_method_offset = 5
     _get_max_target_speed_fraction_method_offset = 6
     _set_max_target_speed_fraction_method_offset = 7
-    _get_rel_bearing_method_offset = 8
-    _set_rel_bearing_method_offset = 9
-    _get_rel_range_method_offset = 10
-    _set_rel_range_method_offset = 11
+    _get_relative_bearing_method_offset = 8
+    _set_relative_bearing_method_offset = 9
+    _get_relative_range_method_offset = 10
+    _set_relative_range_method_offset = 11
     _get_desired_radius_method_offset = 12
     _set_desired_radius_method_offset = 13
     _get_turn_direction_method_offset = 14
@@ -23597,12 +23600,12 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _get_control_limit_mode_method_offset = 30
     _get_control_limit_turn_radius_method_offset = 31
     _get_control_limit_turn_rate_method_offset = 32
-    _get_control_limit_horiz_accel_method_offset = 33
+    _get_control_limit_horizontal_acceleration_method_offset = 33
     _set_control_limit_method_offset = 34
-    _get_compensate_for_coriolis_accel_method_offset = 35
-    _set_compensate_for_coriolis_accel_method_offset = 36
+    _get_compensate_for_coriolis_acceleration_method_offset = 35
+    _set_compensate_for_coriolis_acceleration_method_offset = 36
     _get_position_vel_strategies_method_offset = 37
-    _cancel_tgt_position_vel_method_offset = 38
+    _cancel_target_position_vel_method_offset = 38
     _metadata = {
         "iid_data" : (5315651566696080808, 8511792787367462056),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -23667,37 +23670,37 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
         """Get or set the maximum speed relative to the target."""
         return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_max_target_speed_fraction_metadata, newVal)
 
-    _get_rel_bearing_metadata = { "offset" : _get_rel_bearing_method_offset,
+    _get_relative_bearing_metadata = { "offset" : _get_relative_bearing_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def rel_bearing(self) -> typing.Any:
+    def relative_bearing(self) -> typing.Any:
         """Get or set the bearing relative to the target that the aircraft will hold."""
-        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_rel_bearing_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_relative_bearing_metadata)
 
-    _set_rel_bearing_metadata = { "offset" : _set_rel_bearing_method_offset,
+    _set_relative_bearing_metadata = { "offset" : _set_relative_bearing_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @rel_bearing.setter
-    def rel_bearing(self, newVal:typing.Any) -> None:
+    @relative_bearing.setter
+    def relative_bearing(self, newVal:typing.Any) -> None:
         """Get or set the bearing relative to the target that the aircraft will hold."""
-        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_rel_bearing_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_relative_bearing_metadata, newVal)
 
-    _get_rel_range_metadata = { "offset" : _get_rel_range_method_offset,
+    _get_relative_range_metadata = { "offset" : _get_relative_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def rel_range(self) -> float:
+    def relative_range(self) -> float:
         """Get or set the range from the target where the aircraft will hold."""
-        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_rel_range_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_relative_range_metadata)
 
-    _set_rel_range_metadata = { "offset" : _set_rel_range_method_offset,
+    _set_relative_range_metadata = { "offset" : _set_relative_range_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @rel_range.setter
-    def rel_range(self, newVal:float) -> None:
+    @relative_range.setter
+    def relative_range(self, newVal:float) -> None:
         """Get or set the range from the target where the aircraft will hold."""
-        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_rel_range_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_relative_range_metadata, newVal)
 
     _get_desired_radius_metadata = { "offset" : _get_desired_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -23845,9 +23848,9 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT),) }
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT),) }
     @property
-    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT":
+    def control_limit_mode(self) -> "BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
         return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_control_limit_mode_metadata)
 
@@ -23867,35 +23870,35 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
         """Get the specified turn rate for a control limit mode of specify max turn rate."""
         return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_control_limit_turn_rate_metadata)
 
-    _get_control_limit_horiz_accel_metadata = { "offset" : _get_control_limit_horiz_accel_method_offset,
+    _get_control_limit_horizontal_acceleration_metadata = { "offset" : _get_control_limit_horizontal_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def control_limit_horiz_accel(self) -> float:
+    def control_limit_horizontal_acceleration(self) -> float:
         """Get the specified horizontal acceleration for a control limit mode of specify max horiz accel."""
-        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_control_limit_horiz_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_control_limit_horizontal_acceleration_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT), agmarshall.DoubleArg,) }
-    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAV_CONTROL_LIMIT", controlLimitValue:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT), agmarshall.DoubleArg,) }
+    def set_control_limit(self, controlLimitMode:"BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT", controlLimitValue:float) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
         return self._intf.invoke(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23905,19 +23908,19 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
         """Get the position velocity strategies for Station Keeping."""
         return self._intf.get_property(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Station Keeping."""
-        return self._intf.invoke(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyStationkeeping._metadata, BasicManeuverStrategyStationkeeping._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
     _property_names[target_resolution] = "target_resolution"
     _property_names[max_target_speed_fraction] = "max_target_speed_fraction"
-    _property_names[rel_bearing] = "rel_bearing"
-    _property_names[rel_range] = "rel_range"
+    _property_names[relative_bearing] = "relative_bearing"
+    _property_names[relative_range] = "relative_range"
     _property_names[desired_radius] = "desired_radius"
     _property_names[turn_direction] = "turn_direction"
     _property_names[maneuver_factor] = "maneuver_factor"
@@ -23930,8 +23933,8 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _property_names[control_limit_mode] = "control_limit_mode"
     _property_names[control_limit_turn_radius] = "control_limit_turn_radius"
     _property_names[control_limit_turn_rate] = "control_limit_turn_rate"
-    _property_names[control_limit_horiz_accel] = "control_limit_horiz_accel"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
     def __init__(self, sourceObject=None):
@@ -23952,13 +23955,13 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
 agcls.AgClassCatalog.add_catalog_entry((5702255453772112199, 1626181488337625527), BasicManeuverStrategyStationkeeping)
 agcls.AgTypeNameMap["BasicManeuverStrategyStationkeeping"] = BasicManeuverStrategyStationkeeping
 
-class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCallback):
+class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for the Relative Flight Path Angle Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 24
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_fpa_method_offset = 1
-    _set_fpa_method_offset = 2
+    _get_flight_path_angle_method_offset = 1
+    _set_flight_path_angle_method_offset = 2
     _get_anchor_altitude_offset_method_offset = 3
     _set_anchor_altitude_offset_method_offset = 4
     _get_maneuver_factor_method_offset = 5
@@ -23973,37 +23976,37 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     _get_max_absolute_altitude_method_offset = 14
     _get_use_max_absolute_altitude_method_offset = 15
     _set_max_absolute_altitude_method_offset = 16
-    _get_min_altitude_rel_anchor_method_offset = 17
-    _get_use_min_altitude_rel_anchor_method_offset = 18
-    _set_min_altitude_rel_anchor_method_offset = 19
-    _get_max_altitude_rel_anchor_method_offset = 20
-    _get_use_max_altitude_rel_anchor_method_offset = 21
-    _set_max_altitude_rel_anchor_method_offset = 22
-    _get_compensate_for_coriolis_accel_method_offset = 23
-    _set_compensate_for_coriolis_accel_method_offset = 24
+    _get_min_altitude_relative_anchor_method_offset = 17
+    _get_use_min_altitude_relative_anchor_method_offset = 18
+    _set_min_altitude_relative_anchor_method_offset = 19
+    _get_max_altitude_relative_anchor_method_offset = 20
+    _get_use_max_altitude_relative_anchor_method_offset = 21
+    _set_max_altitude_relative_anchor_method_offset = 22
+    _get_compensate_for_coriolis_acceleration_method_offset = 23
+    _set_compensate_for_coriolis_acceleration_method_offset = 24
     _metadata = {
         "iid_data" : (5255887612627280946, 16294942005206168238),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverStrategyRelativeFPA)
+        return get_interface_property(attrname, BasicManeuverStrategyRelativeFlightPathAngle)
     
-    _get_fpa_metadata = { "offset" : _get_fpa_method_offset,
+    _get_flight_path_angle_metadata = { "offset" : _get_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def fpa(self) -> typing.Any:
+    def flight_path_angle(self) -> typing.Any:
         """Get or set the flight path angle for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_flight_path_angle_metadata)
 
-    _set_fpa_metadata = { "offset" : _set_fpa_method_offset,
+    _set_flight_path_angle_metadata = { "offset" : _set_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @fpa.setter
-    def fpa(self, newVal:typing.Any) -> None:
+    @flight_path_angle.setter
+    def flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_flight_path_angle_metadata, newVal)
 
     _get_anchor_altitude_offset_metadata = { "offset" : _get_anchor_altitude_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24011,7 +24014,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def anchor_altitude_offset(self) -> float:
         """Get or set the goal height above or below the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_anchor_altitude_offset_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_anchor_altitude_offset_metadata)
 
     _set_anchor_altitude_offset_metadata = { "offset" : _set_anchor_altitude_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24019,7 +24022,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @anchor_altitude_offset.setter
     def anchor_altitude_offset(self, newVal:float) -> None:
         """Get or set the goal height above or below the target."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_anchor_altitude_offset_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_anchor_altitude_offset_metadata, newVal)
 
     _get_maneuver_factor_metadata = { "offset" : _get_maneuver_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24027,7 +24030,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def maneuver_factor(self) -> float:
         """Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_maneuver_factor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_maneuver_factor_metadata)
 
     _set_maneuver_factor_metadata = { "offset" : _set_maneuver_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24035,7 +24038,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @maneuver_factor.setter
     def maneuver_factor(self, newVal:float) -> None:
         """Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_maneuver_factor_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_maneuver_factor_metadata, newVal)
 
     _get_control_limit_mode_metadata = { "offset" : _get_control_limit_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24043,7 +24046,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_limit_mode(self) -> "PROFILE_CONTROL_LIMIT":
         """Get the method to define the control limits of the aircraft during the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_control_limit_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_control_limit_mode_metadata)
 
     _get_control_limit_pitch_rate_metadata = { "offset" : _get_control_limit_pitch_rate_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -24051,14 +24054,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def control_limit_pitch_rate(self) -> typing.Any:
         """Get the specified pitch rate for a control limit mode of specify max pitch rate."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_control_limit_pitch_rate_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_control_limit_pitch_rate_metadata)
 
     _set_control_limit_metadata = { "offset" : _set_control_limit_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant,),
             "marshallers" : (agmarshall.EnumArg(PROFILE_CONTROL_LIMIT), agmarshall.VariantArg,) }
     def set_control_limit(self, controlLimitMode:"PROFILE_CONTROL_LIMIT", controlLimitValue:typing.Any) -> None:
         """Set the method and corresponding value to define the control limits of the aircraft during the maneuver."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_control_limit_metadata, controlLimitMode, controlLimitValue)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_control_limit_metadata, controlLimitMode, controlLimitValue)
 
     _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24066,7 +24069,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def airspeed_options(self) -> "BasicManeuverAirspeedOptions":
         """Get the airspeed options."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_airspeed_options_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_airspeed_options_metadata)
 
     _get_min_absolute_altitude_metadata = { "offset" : _get_min_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24074,7 +24077,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def min_absolute_altitude(self) -> float:
         """Get the minimum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_min_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_min_absolute_altitude_metadata)
 
     _get_use_min_absolute_altitude_metadata = { "offset" : _get_use_min_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24082,14 +24085,14 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_min_absolute_altitude(self) -> bool:
         """Get the option to specify a minimum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_min_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_min_absolute_altitude_metadata)
 
     _set_min_absolute_altitude_metadata = { "offset" : _set_min_absolute_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_min_absolute_altitude(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the minimum absolute altitude."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_min_absolute_altitude_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_min_absolute_altitude_metadata, enable, altitude)
 
     _get_max_absolute_altitude_metadata = { "offset" : _get_max_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24097,7 +24100,7 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def max_absolute_altitude(self) -> float:
         """Get the maximum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_max_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_max_absolute_altitude_metadata)
 
     _get_use_max_absolute_altitude_metadata = { "offset" : _get_use_max_absolute_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24105,77 +24108,77 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     @property
     def use_max_absolute_altitude(self) -> bool:
         """Get the option to specify a maximum absolute altitude."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_max_absolute_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_max_absolute_altitude_metadata)
 
     _set_max_absolute_altitude_metadata = { "offset" : _set_max_absolute_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
     def set_max_absolute_altitude(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the maximum absolute altitude."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_max_absolute_altitude_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_max_absolute_altitude_metadata, enable, altitude)
 
-    _get_min_altitude_rel_anchor_metadata = { "offset" : _get_min_altitude_rel_anchor_method_offset,
+    _get_min_altitude_relative_anchor_metadata = { "offset" : _get_min_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def min_altitude_rel_anchor(self) -> float:
+    def min_altitude_relative_anchor(self) -> float:
         """Get the minimum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_min_altitude_rel_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_min_altitude_relative_anchor_metadata)
 
-    _get_use_min_altitude_rel_anchor_metadata = { "offset" : _get_use_min_altitude_rel_anchor_method_offset,
+    _get_use_min_altitude_relative_anchor_metadata = { "offset" : _get_use_min_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_min_altitude_rel_anchor(self) -> bool:
+    def use_min_altitude_relative_anchor(self) -> bool:
         """Get the option to specify a minimum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_min_altitude_rel_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_min_altitude_relative_anchor_metadata)
 
-    _set_min_altitude_rel_anchor_metadata = { "offset" : _set_min_altitude_rel_anchor_method_offset,
+    _set_min_altitude_relative_anchor_metadata = { "offset" : _set_min_altitude_relative_anchor_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
-    def set_min_altitude_rel_anchor(self, enable:bool, altitude:float) -> None:
+    def set_min_altitude_relative_anchor(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the minimum altitude offset from the target."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_min_altitude_rel_anchor_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_min_altitude_relative_anchor_metadata, enable, altitude)
 
-    _get_max_altitude_rel_anchor_metadata = { "offset" : _get_max_altitude_rel_anchor_method_offset,
+    _get_max_altitude_relative_anchor_metadata = { "offset" : _get_max_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_altitude_rel_anchor(self) -> float:
+    def max_altitude_relative_anchor(self) -> float:
         """Get the maximum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_max_altitude_rel_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_max_altitude_relative_anchor_metadata)
 
-    _get_use_max_altitude_rel_anchor_metadata = { "offset" : _get_use_max_altitude_rel_anchor_method_offset,
+    _get_use_max_altitude_relative_anchor_metadata = { "offset" : _get_use_max_altitude_relative_anchor_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_max_altitude_rel_anchor(self) -> bool:
+    def use_max_altitude_relative_anchor(self) -> bool:
         """Get the option to specify a maximum altitude offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_use_max_altitude_rel_anchor_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_use_max_altitude_relative_anchor_metadata)
 
-    _set_max_altitude_rel_anchor_metadata = { "offset" : _set_max_altitude_rel_anchor_method_offset,
+    _set_max_altitude_relative_anchor_metadata = { "offset" : _set_max_altitude_relative_anchor_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.DOUBLE,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.DoubleArg,) }
-    def set_max_altitude_rel_anchor(self, enable:bool, altitude:float) -> None:
+    def set_max_altitude_relative_anchor(self, enable:bool, altitude:float) -> None:
         """Set whether to enable and a value for the maximum altitude offset from the target."""
-        return self._intf.invoke(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_max_altitude_rel_anchor_metadata, enable, altitude)
+        return self._intf.invoke(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_max_altitude_relative_anchor_metadata, enable, altitude)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyRelativeFPA._metadata, BasicManeuverStrategyRelativeFPA._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyRelativeFlightPathAngle._metadata, BasicManeuverStrategyRelativeFlightPathAngle._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
-    _property_names[fpa] = "fpa"
+    _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[anchor_altitude_offset] = "anchor_altitude_offset"
     _property_names[maneuver_factor] = "maneuver_factor"
     _property_names[control_limit_mode] = "control_limit_mode"
@@ -24185,16 +24188,16 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[use_min_absolute_altitude] = "use_min_absolute_altitude"
     _property_names[max_absolute_altitude] = "max_absolute_altitude"
     _property_names[use_max_absolute_altitude] = "use_max_absolute_altitude"
-    _property_names[min_altitude_rel_anchor] = "min_altitude_rel_anchor"
-    _property_names[use_min_altitude_rel_anchor] = "use_min_altitude_rel_anchor"
-    _property_names[max_altitude_rel_anchor] = "max_altitude_rel_anchor"
-    _property_names[use_max_altitude_rel_anchor] = "use_max_altitude_rel_anchor"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[min_altitude_relative_anchor] = "min_altitude_relative_anchor"
+    _property_names[use_min_altitude_relative_anchor] = "use_min_altitude_relative_anchor"
+    _property_names[max_altitude_relative_anchor] = "max_altitude_relative_anchor"
+    _property_names[use_max_altitude_relative_anchor] = "use_max_altitude_relative_anchor"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverStrategyRelativeFPA."""
+        """Construct an object of type BasicManeuverStrategyRelativeFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeFPA)
+        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeFlightPathAngle)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24204,12 +24207,12 @@ class BasicManeuverStrategyRelativeFPA(IBasicManeuverStrategy, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFPA, [BasicManeuverStrategyRelativeFPA, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeFlightPathAngle, [BasicManeuverStrategyRelativeFlightPathAngle, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((5235810298562675973, 15451148610208858280), BasicManeuverStrategyRelativeFPA)
-agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFPA"] = BasicManeuverStrategyRelativeFPA
+agcls.AgClassCatalog.add_catalog_entry((5235810298562675973, 15451148610208858280), BasicManeuverStrategyRelativeFlightPathAngle)
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeFlightPathAngle"] = BasicManeuverStrategyRelativeFlightPathAngle
 
-class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDeleteCallback):
+class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Relative Speed/Altitude Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 38
@@ -24228,10 +24231,10 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     _get_airspeed_offset_type_method_offset = 12
     _get_airspeed_offset_method_offset = 13
     _set_airspeed_offset_method_offset = 14
-    _get_use_tgt_aspect_for_airspeed_method_offset = 15
-    _set_use_tgt_aspect_for_airspeed_method_offset = 16
-    _get_use_perf_model_limits_method_offset = 17
-    _set_use_perf_model_limits_method_offset = 18
+    _get_use_target_aspect_for_airspeed_method_offset = 15
+    _set_use_target_aspect_for_airspeed_method_offset = 16
+    _get_use_performance_model_limits_method_offset = 17
+    _set_use_performance_model_limits_method_offset = 18
     _get_range_for_equal_speed_method_offset = 19
     _set_range_for_equal_speed_method_offset = 20
     _get_range_to_transition_speed_method_offset = 21
@@ -24248,17 +24251,17 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     _set_max_airspeed_method_offset = 32
     _get_stop_condition_method_offset = 33
     _set_stop_condition_method_offset = 34
-    _get_compensate_for_coriolis_accel_method_offset = 35
-    _set_compensate_for_coriolis_accel_method_offset = 36
+    _get_compensate_for_coriolis_acceleration_method_offset = 35
+    _set_compensate_for_coriolis_acceleration_method_offset = 36
     _get_position_vel_strategies_method_offset = 37
-    _cancel_tgt_position_vel_method_offset = 38
+    _cancel_target_position_vel_method_offset = 38
     _metadata = {
         "iid_data" : (5691163621320581131, 205069969700959880),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverStrategyRelSpeedAltitude)
+        return get_interface_property(attrname, BasicManeuverStrategyRelativeSpeedAltitude)
     
     _get_target_name_metadata = { "offset" : _get_target_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -24266,7 +24269,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def target_name(self) -> str:
         """Get or set the target name."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_target_name_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_target_name_metadata)
 
     _set_target_name_metadata = { "offset" : _set_target_name_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -24274,7 +24277,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @target_name.setter
     def target_name(self, newVal:str) -> None:
         """Get or set the target name."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_target_name_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_target_name_metadata, newVal)
 
     _get_valid_target_names_metadata = { "offset" : _get_valid_target_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -24282,7 +24285,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def valid_target_names(self) -> list:
         """Return the valid target names."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_valid_target_names_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_valid_target_names_metadata)
 
     _get_target_resolution_metadata = { "offset" : _get_target_resolution_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24290,7 +24293,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def target_resolution(self) -> float:
         """Get or set the target position/velocity sampling resolution."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_target_resolution_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_target_resolution_metadata)
 
     _set_target_resolution_metadata = { "offset" : _set_target_resolution_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24298,7 +24301,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @target_resolution.setter
     def target_resolution(self, newVal:float) -> None:
         """Get or set the target position/velocity sampling resolution."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_target_resolution_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_target_resolution_metadata, newVal)
 
     _get_relative_altitude_mode_metadata = { "offset" : _get_relative_altitude_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24306,7 +24309,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def relative_altitude_mode(self) -> "RELATIVE_ALTITUDE_MODE":
         """Get or set the mode to define the hold objective for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_relative_altitude_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_relative_altitude_mode_metadata)
 
     _set_relative_altitude_mode_metadata = { "offset" : _set_relative_altitude_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -24314,7 +24317,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @relative_altitude_mode.setter
     def relative_altitude_mode(self, newVal:"RELATIVE_ALTITUDE_MODE") -> None:
         """Get or set the mode to define the hold objective for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_relative_altitude_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_relative_altitude_mode_metadata, newVal)
 
     _get_elevation_angle_metadata = { "offset" : _get_elevation_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -24322,7 +24325,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def elevation_angle(self) -> typing.Any:
         """Get or set the goal elevation angle from the target to the aircraft."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_elevation_angle_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_elevation_angle_metadata)
 
     _set_elevation_angle_metadata = { "offset" : _set_elevation_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -24330,7 +24333,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @elevation_angle.setter
     def elevation_angle(self, newVal:typing.Any) -> None:
         """Get or set the goal elevation angle from the target to the aircraft."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_elevation_angle_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_elevation_angle_metadata, newVal)
 
     _get_altitude_offset_metadata = { "offset" : _get_altitude_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24338,7 +24341,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def altitude_offset(self) -> float:
         """Get or set the goal altitude offset from the target to the aircraft."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_altitude_offset_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_altitude_offset_metadata)
 
     _set_altitude_offset_metadata = { "offset" : _set_altitude_offset_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24346,7 +24349,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @altitude_offset.setter
     def altitude_offset(self, newVal:float) -> None:
         """Get or set the goal altitude offset from the target to the aircraft."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_altitude_offset_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_altitude_offset_metadata, newVal)
 
     _get_airspeed_offset_type_metadata = { "offset" : _get_airspeed_offset_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24354,7 +24357,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def airspeed_offset_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed type."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_airspeed_offset_type_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_airspeed_offset_type_metadata)
 
     _get_airspeed_offset_metadata = { "offset" : _get_airspeed_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24362,46 +24365,46 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def airspeed_offset(self) -> float:
         """Get the airspeed offset from the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_airspeed_offset_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_airspeed_offset_metadata)
 
     _set_airspeed_offset_metadata = { "offset" : _set_airspeed_offset_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_airspeed_offset(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the airspeed offset value and type."""
-        return self._intf.invoke(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_airspeed_offset_metadata, airspeedType, airspeed)
+        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_airspeed_offset_metadata, airspeedType, airspeed)
 
-    _get_use_tgt_aspect_for_airspeed_metadata = { "offset" : _get_use_tgt_aspect_for_airspeed_method_offset,
+    _get_use_target_aspect_for_airspeed_metadata = { "offset" : _get_use_target_aspect_for_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_tgt_aspect_for_airspeed(self) -> bool:
+    def use_target_aspect_for_airspeed(self) -> bool:
         """Get or set the option to use the target aspect to compute the enforced airspeed difference."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_use_tgt_aspect_for_airspeed_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_use_target_aspect_for_airspeed_metadata)
 
-    _set_use_tgt_aspect_for_airspeed_metadata = { "offset" : _set_use_tgt_aspect_for_airspeed_method_offset,
+    _set_use_target_aspect_for_airspeed_metadata = { "offset" : _set_use_target_aspect_for_airspeed_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_tgt_aspect_for_airspeed.setter
-    def use_tgt_aspect_for_airspeed(self, newVal:bool) -> None:
+    @use_target_aspect_for_airspeed.setter
+    def use_target_aspect_for_airspeed(self, newVal:bool) -> None:
         """Get or set the option to use the target aspect to compute the enforced airspeed difference."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_use_tgt_aspect_for_airspeed_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_use_target_aspect_for_airspeed_metadata, newVal)
 
-    _get_use_perf_model_limits_metadata = { "offset" : _get_use_perf_model_limits_method_offset,
+    _get_use_performance_model_limits_metadata = { "offset" : _get_use_performance_model_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_perf_model_limits(self) -> bool:
+    def use_performance_model_limits(self) -> bool:
         """Get or set the option to use the performance model limits for the aircraft."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_use_perf_model_limits_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_use_performance_model_limits_metadata)
 
-    _set_use_perf_model_limits_metadata = { "offset" : _set_use_perf_model_limits_method_offset,
+    _set_use_performance_model_limits_metadata = { "offset" : _set_use_performance_model_limits_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_perf_model_limits.setter
-    def use_perf_model_limits(self, newVal:bool) -> None:
+    @use_performance_model_limits.setter
+    def use_performance_model_limits(self, newVal:bool) -> None:
         """Get or set the option to use the performance model limits for the aircraft."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_use_perf_model_limits_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_use_performance_model_limits_metadata, newVal)
 
     _get_range_for_equal_speed_metadata = { "offset" : _get_range_for_equal_speed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24409,7 +24412,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def range_for_equal_speed(self) -> float:
         """Get or set the range at which the aircraft will achieve the same airspeed as the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_range_for_equal_speed_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_range_for_equal_speed_metadata)
 
     _set_range_for_equal_speed_metadata = { "offset" : _set_range_for_equal_speed_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24417,7 +24420,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @range_for_equal_speed.setter
     def range_for_equal_speed(self, newVal:float) -> None:
         """Get or set the range at which the aircraft will achieve the same airspeed as the target."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_range_for_equal_speed_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_range_for_equal_speed_metadata, newVal)
 
     _get_range_to_transition_speed_metadata = { "offset" : _get_range_to_transition_speed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24425,7 +24428,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def range_to_transition_speed(self) -> float:
         """Get or set the range at which the aircraft will begin to slow down to match the speed of the target."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_range_to_transition_speed_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_range_to_transition_speed_metadata)
 
     _set_range_to_transition_speed_metadata = { "offset" : _set_range_to_transition_speed_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24433,7 +24436,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @range_to_transition_speed.setter
     def range_to_transition_speed(self, newVal:float) -> None:
         """Get or set the range at which the aircraft will begin to slow down to match the speed of the target."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_range_to_transition_speed_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_range_to_transition_speed_metadata, newVal)
 
     _get_min_altitude_metadata = { "offset" : _get_min_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24441,7 +24444,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def min_altitude(self) -> float:
         """Get or set the minimum altitude boundary for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_min_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_min_altitude_metadata)
 
     _set_min_altitude_metadata = { "offset" : _set_min_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24449,7 +24452,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @min_altitude.setter
     def min_altitude(self, newVal:float) -> None:
         """Get or set the minimum altitude boundary for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_min_altitude_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_min_altitude_metadata, newVal)
 
     _get_max_altitude_metadata = { "offset" : _get_max_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24457,7 +24460,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def max_altitude(self) -> float:
         """Get or set the maximum altitude boundary for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_max_altitude_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_max_altitude_metadata)
 
     _set_max_altitude_metadata = { "offset" : _set_max_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -24465,7 +24468,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @max_altitude.setter
     def max_altitude(self, newVal:float) -> None:
         """Get or set the maximum altitude boundary for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_max_altitude_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_max_altitude_metadata, newVal)
 
     _get_min_airspeed_metadata = { "offset" : _get_min_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24473,7 +24476,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def min_airspeed(self) -> float:
         """Get the minimum airspeed limit for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_min_airspeed_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_min_airspeed_metadata)
 
     _get_min_airspeed_type_metadata = { "offset" : _get_min_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24481,14 +24484,14 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def min_airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed type."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_min_airspeed_type_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_min_airspeed_type_metadata)
 
     _set_min_airspeed_metadata = { "offset" : _set_min_airspeed_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_min_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the minimum airspeed value and type."""
-        return self._intf.invoke(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_min_airspeed_metadata, airspeedType, airspeed)
+        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_min_airspeed_metadata, airspeedType, airspeed)
 
     _get_max_airspeed_metadata = { "offset" : _get_max_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24496,7 +24499,7 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def max_airspeed(self) -> float:
         """Get the maximum airspeed limit for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_max_airspeed_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_max_airspeed_metadata)
 
     _get_max_airspeed_type_metadata = { "offset" : _get_max_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24504,45 +24507,45 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def max_airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed type."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_max_airspeed_type_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_max_airspeed_type_metadata)
 
     _set_max_airspeed_metadata = { "offset" : _set_max_airspeed_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_max_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the maximum airspeed value and type."""
-        return self._intf.invoke(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_max_airspeed_metadata, airspeedType, airspeed)
+        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_max_airspeed_metadata, airspeedType, airspeed)
 
     _get_stop_condition_metadata = { "offset" : _get_stop_condition_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REL_SPEED_ALTITUDE_STOP_CONDITION),) }
+            "marshallers" : (agmarshall.EnumArg(RELATIVE_SPEED_ALTITUDE_STOP_CONDITION),) }
     @property
-    def stop_condition(self) -> "REL_SPEED_ALTITUDE_STOP_CONDITION":
+    def stop_condition(self) -> "RELATIVE_SPEED_ALTITUDE_STOP_CONDITION":
         """Get or set the stopping condition for the maneuver."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_stop_condition_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_stop_condition_metadata)
 
     _set_stop_condition_metadata = { "offset" : _set_stop_condition_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(REL_SPEED_ALTITUDE_STOP_CONDITION),) }
+            "marshallers" : (agmarshall.EnumArg(RELATIVE_SPEED_ALTITUDE_STOP_CONDITION),) }
     @stop_condition.setter
-    def stop_condition(self, newVal:"REL_SPEED_ALTITUDE_STOP_CONDITION") -> None:
+    def stop_condition(self, newVal:"RELATIVE_SPEED_ALTITUDE_STOP_CONDITION") -> None:
         """Get or set the stopping condition for the maneuver."""
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_stop_condition_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_stop_condition_metadata, newVal)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24550,14 +24553,14 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     @property
     def position_vel_strategies(self) -> "BasicManeuverTargetPositionVel":
         """Get the position velocity strategies for Rel Speed Alt."""
-        return self._intf.get_property(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._get_position_vel_strategies_metadata)
+        return self._intf.get_property(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for Rel Speed Alt."""
-        return self._intf.invoke(BasicManeuverStrategyRelSpeedAltitude._metadata, BasicManeuverStrategyRelSpeedAltitude._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverStrategyRelativeSpeedAltitude._metadata, BasicManeuverStrategyRelativeSpeedAltitude._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -24567,8 +24570,8 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     _property_names[altitude_offset] = "altitude_offset"
     _property_names[airspeed_offset_type] = "airspeed_offset_type"
     _property_names[airspeed_offset] = "airspeed_offset"
-    _property_names[use_tgt_aspect_for_airspeed] = "use_tgt_aspect_for_airspeed"
-    _property_names[use_perf_model_limits] = "use_perf_model_limits"
+    _property_names[use_target_aspect_for_airspeed] = "use_target_aspect_for_airspeed"
+    _property_names[use_performance_model_limits] = "use_performance_model_limits"
     _property_names[range_for_equal_speed] = "range_for_equal_speed"
     _property_names[range_to_transition_speed] = "range_to_transition_speed"
     _property_names[min_altitude] = "min_altitude"
@@ -24578,13 +24581,13 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
     _property_names[max_airspeed] = "max_airspeed"
     _property_names[max_airspeed_type] = "max_airspeed_type"
     _property_names[stop_condition] = "stop_condition"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverStrategyRelSpeedAltitude."""
+        """Construct an object of type BasicManeuverStrategyRelativeSpeedAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelSpeedAltitude)
+        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeSpeedAltitude)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -24594,10 +24597,10 @@ class BasicManeuverStrategyRelSpeedAltitude(IBasicManeuverStrategy, SupportsDele
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelSpeedAltitude, [BasicManeuverStrategyRelSpeedAltitude, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, BasicManeuverStrategyRelativeSpeedAltitude, [BasicManeuverStrategyRelativeSpeedAltitude, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4894758819387771869, 8683178293969344168), BasicManeuverStrategyRelSpeedAltitude)
-agcls.AgTypeNameMap["BasicManeuverStrategyRelSpeedAltitude"] = BasicManeuverStrategyRelSpeedAltitude
+agcls.AgClassCatalog.add_catalog_entry((4894758819387771869, 8683178293969344168), BasicManeuverStrategyRelativeSpeedAltitude)
+agcls.AgTypeNameMap["BasicManeuverStrategyRelativeSpeedAltitude"] = BasicManeuverStrategyRelativeSpeedAltitude
 
 class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a Bezier Strategy of a Basic Maneuver Procedure."""
@@ -24624,8 +24627,8 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
     _get_stop_airspeed_method_offset = 18
     _get_stop_airspeed_type_method_offset = 19
     _set_stop_airspeed_method_offset = 20
-    _get_compensate_for_coriolis_accel_method_offset = 21
-    _set_compensate_for_coriolis_accel_method_offset = 22
+    _get_compensate_for_coriolis_acceleration_method_offset = 21
+    _set_compensate_for_coriolis_acceleration_method_offset = 22
     _metadata = {
         "iid_data" : (5595669399647378963, 17571238138391423883),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -24790,20 +24793,20 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
         """Set whether to enable the airspeed stopping condition and the corresponding value."""
         return self._intf.invoke(BasicManeuverStrategyBezier._metadata, BasicManeuverStrategyBezier._set_stop_airspeed_metadata, enable, airspeedType, airspeed)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyBezier._metadata, BasicManeuverStrategyBezier._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyBezier._metadata, BasicManeuverStrategyBezier._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyBezier._metadata, BasicManeuverStrategyBezier._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyBezier._metadata, BasicManeuverStrategyBezier._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[reference_frame] = "reference_frame"
     _property_names[altitude] = "altitude"
@@ -24818,7 +24821,7 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
     _property_names[use_stop_at_airspeed] = "use_stop_at_airspeed"
     _property_names[stop_airspeed] = "stop_airspeed"
     _property_names[stop_airspeed_type] = "stop_airspeed_type"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategyBezier."""
@@ -24849,10 +24852,10 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
     _set_push_pull_method_offset = 4
     _get_push_pull_g_method_offset = 5
     _set_push_pull_g_method_offset = 6
-    _get_accel_mode_method_offset = 7
-    _set_accel_mode_method_offset = 8
-    _get_accel_decel_g_method_offset = 9
-    _set_accel_decel_g_method_offset = 10
+    _get_acceleration_mode_method_offset = 7
+    _set_acceleration_mode_method_offset = 8
+    _get_acceleration_deceleration_g_method_offset = 9
+    _set_acceleration_deceleration_g_method_offset = 10
     _get_maintain_airspeed_type_method_offset = 11
     _set_maintain_airspeed_type_method_offset = 12
     _get_maintain_airspeed_method_offset = 13
@@ -24868,8 +24871,8 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
     _get_stop_airspeed_method_offset = 23
     _get_stop_airspeed_type_method_offset = 24
     _set_stop_airspeed_method_offset = 25
-    _get_compensate_for_coriolis_accel_method_offset = 26
-    _set_compensate_for_coriolis_accel_method_offset = 27
+    _get_compensate_for_coriolis_acceleration_method_offset = 26
+    _set_compensate_for_coriolis_acceleration_method_offset = 27
     _metadata = {
         "iid_data" : (5379525353037390362, 8450611450859654847),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -24926,37 +24929,37 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
         """Get or set the G force of the maneuver."""
         return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_push_pull_g_metadata, newVal)
 
-    _get_accel_mode_metadata = { "offset" : _get_accel_mode_method_offset,
+    _get_acceleration_mode_metadata = { "offset" : _get_acceleration_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MODE),) }
     @property
-    def accel_mode(self) -> "ACCEL_MODE":
+    def acceleration_mode(self) -> "ACCELERATION_MODE":
         """Get or set the option to accelerate, decelerate, or maintain the current airspeed."""
-        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_accel_mode_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_acceleration_mode_metadata)
 
-    _set_accel_mode_metadata = { "offset" : _set_accel_mode_method_offset,
+    _set_acceleration_mode_metadata = { "offset" : _set_acceleration_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ACCEL_MODE),) }
-    @accel_mode.setter
-    def accel_mode(self, newVal:"ACCEL_MODE") -> None:
+            "marshallers" : (agmarshall.EnumArg(ACCELERATION_MODE),) }
+    @acceleration_mode.setter
+    def acceleration_mode(self, newVal:"ACCELERATION_MODE") -> None:
         """Get or set the option to accelerate, decelerate, or maintain the current airspeed."""
-        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_accel_mode_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_acceleration_mode_metadata, newVal)
 
-    _get_accel_decel_g_metadata = { "offset" : _get_accel_decel_g_method_offset,
+    _get_acceleration_deceleration_g_metadata = { "offset" : _get_acceleration_deceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_decel_g(self) -> float:
+    def acceleration_deceleration_g(self) -> float:
         """Get or set the specific G force rate to accelerate/decelerate at."""
-        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_accel_decel_g_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_acceleration_deceleration_g_metadata)
 
-    _set_accel_decel_g_metadata = { "offset" : _set_accel_decel_g_method_offset,
+    _set_acceleration_deceleration_g_metadata = { "offset" : _set_acceleration_deceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_decel_g.setter
-    def accel_decel_g(self, newVal:float) -> None:
+    @acceleration_deceleration_g.setter
+    def acceleration_deceleration_g(self, newVal:float) -> None:
         """Get or set the specific G force rate to accelerate/decelerate at."""
-        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_accel_decel_g_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_acceleration_deceleration_g_metadata, newVal)
 
     _get_maintain_airspeed_type_metadata = { "offset" : _get_maintain_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -25075,26 +25078,26 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
         """Set whether to enable the airspeed stopping condition and the corresponding value."""
         return self._intf.invoke(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_stop_airspeed_metadata, enable, airspeedType, airspeed)
 
-    _get_compensate_for_coriolis_accel_metadata = { "offset" : _get_compensate_for_coriolis_accel_method_offset,
+    _get_compensate_for_coriolis_acceleration_metadata = { "offset" : _get_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def compensate_for_coriolis_accel(self) -> bool:
+    def compensate_for_coriolis_acceleration(self) -> bool:
         """Get or set the option to compensate for the acceleration due to the Coriolis effect."""
-        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_compensate_for_coriolis_accel_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._get_compensate_for_coriolis_acceleration_metadata)
 
-    _set_compensate_for_coriolis_accel_metadata = { "offset" : _set_compensate_for_coriolis_accel_method_offset,
+    _set_compensate_for_coriolis_acceleration_metadata = { "offset" : _set_compensate_for_coriolis_acceleration_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @compensate_for_coriolis_accel.setter
-    def compensate_for_coriolis_accel(self, newVal:bool) -> None:
-        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_compensate_for_coriolis_accel_metadata, newVal)
+    @compensate_for_coriolis_acceleration.setter
+    def compensate_for_coriolis_acceleration(self, newVal:bool) -> None:
+        return self._intf.set_property(BasicManeuverStrategyPushPull._metadata, BasicManeuverStrategyPushPull._set_compensate_for_coriolis_acceleration_metadata, newVal)
 
     _property_names[reference_frame] = "reference_frame"
     _property_names[push_pull] = "push_pull"
     _property_names[push_pull_g] = "push_pull_g"
-    _property_names[accel_mode] = "accel_mode"
-    _property_names[accel_decel_g] = "accel_decel_g"
+    _property_names[acceleration_mode] = "acceleration_mode"
+    _property_names[acceleration_deceleration_g] = "acceleration_deceleration_g"
     _property_names[maintain_airspeed_type] = "maintain_airspeed_type"
     _property_names[maintain_airspeed] = "maintain_airspeed"
     _property_names[stop_flight_path_angle] = "stop_flight_path_angle"
@@ -25105,7 +25108,7 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
     _property_names[use_stop_at_airspeed] = "use_stop_at_airspeed"
     _property_names[stop_airspeed] = "stop_airspeed"
     _property_names[stop_airspeed_type] = "stop_airspeed_type"
-    _property_names[compensate_for_coriolis_accel] = "compensate_for_coriolis_accel"
+    _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverStrategyPushPull."""
@@ -27470,17 +27473,17 @@ class ProcedureReferenceState(IProcedure, SupportsDeleteCallback):
 
     _get_performance_mode_metadata = { "offset" : _get_performance_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_PERF_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_PERFORMANCE_MODE),) }
     @property
-    def performance_mode(self) -> "REFERENCE_STATE_PERF_MODE":
+    def performance_mode(self) -> "REFERENCE_STATE_PERFORMANCE_MODE":
         """Get or set the type of motion the aircraft is engaged in."""
         return self._intf.get_property(ProcedureReferenceState._metadata, ProcedureReferenceState._get_performance_mode_metadata)
 
     _set_performance_mode_metadata = { "offset" : _set_performance_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_PERF_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_PERFORMANCE_MODE),) }
     @performance_mode.setter
-    def performance_mode(self, newVal:"REFERENCE_STATE_PERF_MODE") -> None:
+    def performance_mode(self, newVal:"REFERENCE_STATE_PERFORMANCE_MODE") -> None:
         """Get or set the type of motion the aircraft is engaged in."""
         return self._intf.set_property(ProcedureReferenceState._metadata, ProcedureReferenceState._set_performance_mode_metadata, newVal)
 
@@ -27650,8 +27653,8 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
     _set_attitude_mode_method_offset = 8
     _get_specify_launch_airspeed_method_offset = 9
     _set_specify_launch_airspeed_method_offset = 10
-    _get_accel_g_method_offset = 11
-    _set_accel_g_method_offset = 12
+    _get_acceleration_g_method_offset = 11
+    _set_acceleration_g_method_offset = 12
     _get_airspeed_type_method_offset = 13
     _get_airspeed_method_offset = 14
     _set_airspeed_method_offset = 15
@@ -27750,21 +27753,21 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
         """Opt to specify a minimum launch speed the aircraft will accelerate to."""
         return self._intf.set_property(ProcedureLaunch._metadata, ProcedureLaunch._set_specify_launch_airspeed_metadata, newVal)
 
-    _get_accel_g_metadata = { "offset" : _get_accel_g_method_offset,
+    _get_acceleration_g_metadata = { "offset" : _get_acceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_g(self) -> float:
+    def acceleration_g(self) -> float:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.get_property(ProcedureLaunch._metadata, ProcedureLaunch._get_accel_g_metadata)
+        return self._intf.get_property(ProcedureLaunch._metadata, ProcedureLaunch._get_acceleration_g_metadata)
 
-    _set_accel_g_metadata = { "offset" : _set_accel_g_method_offset,
+    _set_acceleration_g_metadata = { "offset" : _set_acceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_g.setter
-    def accel_g(self, newVal:float) -> None:
+    @acceleration_g.setter
+    def acceleration_g(self, newVal:float) -> None:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.set_property(ProcedureLaunch._metadata, ProcedureLaunch._set_accel_g_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunch._metadata, ProcedureLaunch._set_acceleration_g_metadata, newVal)
 
     _get_airspeed_type_metadata = { "offset" : _get_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27849,7 +27852,7 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
     _property_names[direction_vec_name] = "direction_vec_name"
     _property_names[attitude_mode] = "attitude_mode"
     _property_names[specify_launch_airspeed] = "specify_launch_airspeed"
-    _property_names[accel_g] = "accel_g"
+    _property_names[acceleration_g] = "acceleration_g"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[airspeed] = "airspeed"
     _property_names[fuel_flow_type] = "fuel_flow_type"
@@ -28345,17 +28348,17 @@ class ProcedureAreaTargetSearch(IProcedure, SupportsDeleteCallback):
 
     _get_procedure_type_metadata = { "offset" : _get_procedure_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @property
-    def procedure_type(self) -> "FLIGHT_LINE_PROC_TYPE":
+    def procedure_type(self) -> "FLIGHT_LINE_PROCEDURE_TYPE":
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.get_property(ProcedureAreaTargetSearch._metadata, ProcedureAreaTargetSearch._get_procedure_type_metadata)
 
     _set_procedure_type_metadata = { "offset" : _set_procedure_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @procedure_type.setter
-    def procedure_type(self, newVal:"FLIGHT_LINE_PROC_TYPE") -> None:
+    def procedure_type(self, newVal:"FLIGHT_LINE_PROCEDURE_TYPE") -> None:
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.set_property(ProcedureAreaTargetSearch._metadata, ProcedureAreaTargetSearch._set_procedure_type_metadata, newVal)
 
@@ -28531,8 +28534,8 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _set_fuel_flow_type_method_offset = 16
     _get_override_fuel_flow_value_method_offset = 17
     _set_override_fuel_flow_value_method_offset = 18
-    _get_consider_accel_for_fuel_flow_method_offset = 19
-    _set_consider_accel_for_fuel_flow_method_offset = 20
+    _get_consider_acceleration_for_fuel_flow_method_offset = 19
+    _set_consider_acceleration_for_fuel_flow_method_offset = 20
     _get_first_pause_method_offset = 21
     _set_first_pause_method_offset = 22
     _get_transition_time_method_offset = 23
@@ -28700,21 +28703,21 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
         """Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value."""
         return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_override_fuel_flow_value_metadata, newVal)
 
-    _get_consider_accel_for_fuel_flow_metadata = { "offset" : _get_consider_accel_for_fuel_flow_method_offset,
+    _get_consider_acceleration_for_fuel_flow_metadata = { "offset" : _get_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def consider_accel_for_fuel_flow(self) -> bool:
+    def consider_acceleration_for_fuel_flow(self) -> bool:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.get_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._get_consider_accel_for_fuel_flow_metadata)
+        return self._intf.get_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._get_consider_acceleration_for_fuel_flow_metadata)
 
-    _set_consider_accel_for_fuel_flow_metadata = { "offset" : _set_consider_accel_for_fuel_flow_method_offset,
+    _set_consider_acceleration_for_fuel_flow_metadata = { "offset" : _set_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @consider_accel_for_fuel_flow.setter
-    def consider_accel_for_fuel_flow(self, newVal:bool) -> None:
+    @consider_acceleration_for_fuel_flow.setter
+    def consider_acceleration_for_fuel_flow(self, newVal:bool) -> None:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_consider_accel_for_fuel_flow_metadata, newVal)
+        return self._intf.set_property(ProcedureFormationRecover._metadata, ProcedureFormationRecover._set_consider_acceleration_for_fuel_flow_metadata, newVal)
 
     _get_first_pause_metadata = { "offset" : _get_first_pause_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -28869,7 +28872,7 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _property_names[altitude_offset] = "altitude_offset"
     _property_names[fuel_flow_type] = "fuel_flow_type"
     _property_names[override_fuel_flow_value] = "override_fuel_flow_value"
-    _property_names[consider_accel_for_fuel_flow] = "consider_accel_for_fuel_flow"
+    _property_names[consider_acceleration_for_fuel_flow] = "consider_acceleration_for_fuel_flow"
     _property_names[first_pause] = "first_pause"
     _property_names[transition_time] = "transition_time"
     _property_names[second_pause] = "second_pause"
@@ -28920,8 +28923,8 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
     _set_fuel_flow_type_method_offset = 15
     _get_override_fuel_flow_value_method_offset = 16
     _set_override_fuel_flow_value_method_offset = 17
-    _get_consider_accel_for_fuel_flow_method_offset = 18
-    _set_consider_accel_for_fuel_flow_method_offset = 19
+    _get_consider_acceleration_for_fuel_flow_method_offset = 18
+    _set_consider_acceleration_for_fuel_flow_method_offset = 19
     _metadata = {
         "iid_data" : (5297555687400448155, 1815741588290416825),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -29065,21 +29068,21 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
         """Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value."""
         return self._intf.set_property(ProcedureInFormation._metadata, ProcedureInFormation._set_override_fuel_flow_value_metadata, newVal)
 
-    _get_consider_accel_for_fuel_flow_metadata = { "offset" : _get_consider_accel_for_fuel_flow_method_offset,
+    _get_consider_acceleration_for_fuel_flow_metadata = { "offset" : _get_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def consider_accel_for_fuel_flow(self) -> bool:
+    def consider_acceleration_for_fuel_flow(self) -> bool:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.get_property(ProcedureInFormation._metadata, ProcedureInFormation._get_consider_accel_for_fuel_flow_metadata)
+        return self._intf.get_property(ProcedureInFormation._metadata, ProcedureInFormation._get_consider_acceleration_for_fuel_flow_metadata)
 
-    _set_consider_accel_for_fuel_flow_metadata = { "offset" : _set_consider_accel_for_fuel_flow_method_offset,
+    _set_consider_acceleration_for_fuel_flow_metadata = { "offset" : _set_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @consider_accel_for_fuel_flow.setter
-    def consider_accel_for_fuel_flow(self, newVal:bool) -> None:
+    @consider_acceleration_for_fuel_flow.setter
+    def consider_acceleration_for_fuel_flow(self, newVal:bool) -> None:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.set_property(ProcedureInFormation._metadata, ProcedureInFormation._set_consider_accel_for_fuel_flow_metadata, newVal)
+        return self._intf.set_property(ProcedureInFormation._metadata, ProcedureInFormation._set_consider_acceleration_for_fuel_flow_metadata, newVal)
 
     _property_names[flight_mode] = "flight_mode"
     _property_names[formation_point] = "formation_point"
@@ -29089,7 +29092,7 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
     _property_names[trajectory_blending] = "trajectory_blending"
     _property_names[fuel_flow_type] = "fuel_flow_type"
     _property_names[override_fuel_flow_value] = "override_fuel_flow_value"
-    _property_names[consider_accel_for_fuel_flow] = "consider_accel_for_fuel_flow"
+    _property_names[consider_acceleration_for_fuel_flow] = "consider_acceleration_for_fuel_flow"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type ProcedureInFormation."""
@@ -29175,17 +29178,17 @@ class ProcedureParallelFlightLine(IProcedure, SupportsDeleteCallback):
 
     _get_procedure_type_metadata = { "offset" : _get_procedure_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @property
-    def procedure_type(self) -> "FLIGHT_LINE_PROC_TYPE":
+    def procedure_type(self) -> "FLIGHT_LINE_PROCEDURE_TYPE":
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.get_property(ProcedureParallelFlightLine._metadata, ProcedureParallelFlightLine._get_procedure_type_metadata)
 
     _set_procedure_type_metadata = { "offset" : _set_procedure_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FLIGHT_LINE_PROCEDURE_TYPE),) }
     @procedure_type.setter
-    def procedure_type(self, newVal:"FLIGHT_LINE_PROC_TYPE") -> None:
+    def procedure_type(self, newVal:"FLIGHT_LINE_PROCEDURE_TYPE") -> None:
         """Get or set the procedure methodology used to calculate the flight line."""
         return self._intf.set_property(ProcedureParallelFlightLine._metadata, ProcedureParallelFlightLine._set_procedure_type_metadata, newVal)
 
@@ -29344,8 +29347,8 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _set_fuel_flow_type_method_offset = 15
     _get_override_fuel_flow_value_method_offset = 16
     _set_override_fuel_flow_value_method_offset = 17
-    _get_consider_accel_for_fuel_flow_method_offset = 18
-    _set_consider_accel_for_fuel_flow_method_offset = 19
+    _get_consider_acceleration_for_fuel_flow_method_offset = 18
+    _set_consider_acceleration_for_fuel_flow_method_offset = 19
     _get_flight_mode_method_offset = 20
     _set_flight_mode_method_offset = 21
     _get_display_step_time_method_offset = 22
@@ -29493,21 +29496,21 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
         """Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value."""
         return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_override_fuel_flow_value_metadata, newVal)
 
-    _get_consider_accel_for_fuel_flow_metadata = { "offset" : _get_consider_accel_for_fuel_flow_method_offset,
+    _get_consider_acceleration_for_fuel_flow_metadata = { "offset" : _get_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def consider_accel_for_fuel_flow(self) -> bool:
+    def consider_acceleration_for_fuel_flow(self) -> bool:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.get_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._get_consider_accel_for_fuel_flow_metadata)
+        return self._intf.get_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._get_consider_acceleration_for_fuel_flow_metadata)
 
-    _set_consider_accel_for_fuel_flow_metadata = { "offset" : _set_consider_accel_for_fuel_flow_method_offset,
+    _set_consider_acceleration_for_fuel_flow_metadata = { "offset" : _set_consider_acceleration_for_fuel_flow_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @consider_accel_for_fuel_flow.setter
-    def consider_accel_for_fuel_flow(self, newVal:bool) -> None:
+    @consider_acceleration_for_fuel_flow.setter
+    def consider_acceleration_for_fuel_flow(self, newVal:bool) -> None:
         """Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft."""
-        return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_consider_accel_for_fuel_flow_metadata, newVal)
+        return self._intf.set_property(ProcedureVGTPoint._metadata, ProcedureVGTPoint._set_consider_acceleration_for_fuel_flow_metadata, newVal)
 
     _get_flight_mode_metadata = { "offset" : _get_flight_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -29550,7 +29553,7 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _property_names[use_max_point_stop_time] = "use_max_point_stop_time"
     _property_names[fuel_flow_type] = "fuel_flow_type"
     _property_names[override_fuel_flow_value] = "override_fuel_flow_value"
-    _property_names[consider_accel_for_fuel_flow] = "consider_accel_for_fuel_flow"
+    _property_names[consider_acceleration_for_fuel_flow] = "consider_acceleration_for_fuel_flow"
     _property_names[flight_mode] = "flight_mode"
     _property_names[display_step_time] = "display_step_time"
 
@@ -29697,16 +29700,16 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _set_use_max_temperature_limit_method_offset = 18
     _get_max_temperature_method_offset = 19
     _set_max_temperature_method_offset = 20
-    _get_cache_aero_data_method_offset = 21
-    _set_cache_aero_data_method_offset = 22
+    _get_cache_aerodynamic_data_method_offset = 21
+    _set_cache_aerodynamic_data_method_offset = 22
     _get_cache_fuel_flow_method_offset = 23
     _set_cache_fuel_flow_method_offset = 24
-    _get_aero_strategy_method_offset = 25
-    _set_aero_strategy_method_offset = 26
-    _get_aero_mode_as_external_method_offset = 27
-    _get_aero_mode_as_subsonic_method_offset = 28
-    _get_aero_mode_as_sub_super_hypersonic_method_offset = 29
-    _get_aero_mode_as_supersonic_method_offset = 30
+    _get_aerodynamic_strategy_method_offset = 25
+    _set_aerodynamic_strategy_method_offset = 26
+    _get_aerodynamic_mode_as_external_method_offset = 27
+    _get_aerodynamic_mode_as_subsonic_method_offset = 28
+    _get_aerodynamic_mode_as_sub_super_hypersonic_method_offset = 29
+    _get_aerodynamic_mode_as_supersonic_method_offset = 30
     _get_powerplant_strategy_method_offset = 31
     _set_powerplant_strategy_method_offset = 32
     _get_powerplant_mode_as_electric_method_offset = 33
@@ -29714,7 +29717,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _get_powerplant_mode_as_piston_method_offset = 35
     _get_powerplant_mode_as_turboprop_method_offset = 36
     _get_powerplant_mode_as_empirical_jet_engine_method_offset = 37
-    _create_all_perf_models_method_offset = 38
+    _create_all_performance_models_method_offset = 38
     _get_powerplant_mode_as_basic_turbofan_method_offset = 39
     _get_powerplant_mode_as_basic_turbojet_method_offset = 40
     _get_powerplant_mode_as_sub_super_hypersonic_method_offset = 41
@@ -29886,21 +29889,21 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
         """Get or set the maximum total temperature limit of the aircraft."""
         return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_max_temperature_metadata, newVal)
 
-    _get_cache_aero_data_metadata = { "offset" : _get_cache_aero_data_method_offset,
+    _get_cache_aerodynamic_data_metadata = { "offset" : _get_cache_aerodynamic_data_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def cache_aero_data(self) -> bool:
+    def cache_aerodynamic_data(self) -> bool:
         """Get or set the option to store intermediate results for aerodynamics calculations."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_cache_aero_data_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_cache_aerodynamic_data_metadata)
 
-    _set_cache_aero_data_metadata = { "offset" : _set_cache_aero_data_method_offset,
+    _set_cache_aerodynamic_data_metadata = { "offset" : _set_cache_aerodynamic_data_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @cache_aero_data.setter
-    def cache_aero_data(self, newVal:bool) -> None:
+    @cache_aerodynamic_data.setter
+    def cache_aerodynamic_data(self, newVal:bool) -> None:
         """Get or set the option to store intermediate results for aerodynamics calculations."""
-        return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_cache_aero_data_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_cache_aerodynamic_data_metadata, newVal)
 
     _get_cache_fuel_flow_metadata = { "offset" : _get_cache_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -29918,53 +29921,53 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
         """Get or set the option to store intermediate results for fuel flow calculations."""
         return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_cache_fuel_flow_metadata, newVal)
 
-    _get_aero_strategy_metadata = { "offset" : _get_aero_strategy_method_offset,
+    _get_aerodynamic_strategy_metadata = { "offset" : _get_aerodynamic_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERO_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY),) }
     @property
-    def aero_strategy(self) -> "ADVANCED_FIXED_WING_AERO_STRATEGY":
+    def aerodynamic_strategy(self) -> "ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY":
         """Get or set the aerodynamic strategy type."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aero_strategy_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_strategy_metadata)
 
-    _set_aero_strategy_metadata = { "offset" : _set_aero_strategy_method_offset,
+    _set_aerodynamic_strategy_metadata = { "offset" : _set_aerodynamic_strategy_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERO_STRATEGY),) }
-    @aero_strategy.setter
-    def aero_strategy(self, newVal:"ADVANCED_FIXED_WING_AERO_STRATEGY") -> None:
+            "marshallers" : (agmarshall.EnumArg(ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY),) }
+    @aerodynamic_strategy.setter
+    def aerodynamic_strategy(self, newVal:"ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY") -> None:
         """Get or set the aerodynamic strategy type."""
-        return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_aero_strategy_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._set_aerodynamic_strategy_metadata, newVal)
 
-    _get_aero_mode_as_external_metadata = { "offset" : _get_aero_mode_as_external_method_offset,
+    _get_aerodynamic_mode_as_external_metadata = { "offset" : _get_aerodynamic_mode_as_external_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_external(self) -> "AdvancedFixedWingExternalAero":
+    def aerodynamic_mode_as_external(self) -> "AdvancedFixedWingExternalAerodynamic":
         """Get the interface for an Extern File Aerodynamics strategy."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aero_mode_as_external_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_mode_as_external_metadata)
 
-    _get_aero_mode_as_subsonic_metadata = { "offset" : _get_aero_mode_as_subsonic_method_offset,
+    _get_aerodynamic_mode_as_subsonic_metadata = { "offset" : _get_aerodynamic_mode_as_subsonic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_subsonic(self) -> "AdvancedFixedWingSubsonicAero":
+    def aerodynamic_mode_as_subsonic(self) -> "AdvancedFixedWingSubsonicAerodynamic":
         """Get the interface for a Subsonic Aerodynamics strategy."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aero_mode_as_subsonic_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_mode_as_subsonic_metadata)
 
-    _get_aero_mode_as_sub_super_hypersonic_metadata = { "offset" : _get_aero_mode_as_sub_super_hypersonic_method_offset,
+    _get_aerodynamic_mode_as_sub_super_hypersonic_metadata = { "offset" : _get_aerodynamic_mode_as_sub_super_hypersonic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicAero":
+    def aerodynamic_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicAerodynamic":
         """Get the interface for a Sub/Super/Hypersonic Aerodynamics strategy."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aero_mode_as_sub_super_hypersonic_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_mode_as_sub_super_hypersonic_metadata)
 
-    _get_aero_mode_as_supersonic_metadata = { "offset" : _get_aero_mode_as_supersonic_method_offset,
+    _get_aerodynamic_mode_as_supersonic_metadata = { "offset" : _get_aerodynamic_mode_as_supersonic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def aero_mode_as_supersonic(self) -> "AdvancedFixedWingSupersonicAero":
+    def aerodynamic_mode_as_supersonic(self) -> "AdvancedFixedWingSupersonicAerodynamic":
         """Get the interface for a Supersonic Aerodynamics strategy."""
-        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aero_mode_as_supersonic_metadata)
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_mode_as_supersonic_metadata)
 
     _get_powerplant_strategy_metadata = { "offset" : _get_powerplant_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -29994,7 +29997,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_external(self) -> "AdvancedFixedWingExternalProp":
+    def powerplant_mode_as_external(self) -> "AdvancedFixedWingExternalPropulsion":
         """Get the interface for an External Prop File Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_external_metadata)
 
@@ -30022,18 +30025,18 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
         """Get the interface for an Empirical Jet Engine Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_empirical_jet_engine_metadata)
 
-    _create_all_perf_models_metadata = { "offset" : _create_all_perf_models_method_offset,
+    _create_all_performance_models_metadata = { "offset" : _create_all_performance_models_method_offset,
             "arg_types" : (agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
-    def create_all_perf_models(self, name:str, overwrite:bool, makeDefault:bool) -> None:
+    def create_all_performance_models(self, name:str, overwrite:bool, makeDefault:bool) -> None:
         """Create a set of advanced performance models for the aircraft with the given name."""
-        return self._intf.invoke(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._create_all_perf_models_metadata, name, overwrite, makeDefault)
+        return self._intf.invoke(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._create_all_performance_models_metadata, name, overwrite, makeDefault)
 
     _get_powerplant_mode_as_basic_turbofan_metadata = { "offset" : _get_powerplant_mode_as_basic_turbofan_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_basic_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABProp":
+    def powerplant_mode_as_basic_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABPropulsion":
         """Get the interface for a Turbofan - Basic w/ AB Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_basic_turbofan_metadata)
 
@@ -30041,7 +30044,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_basic_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABProp":
+    def powerplant_mode_as_basic_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABPropulsion":
         """Get the interface for a Turbojet - Basic w/ AB Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_basic_turbojet_metadata)
 
@@ -30049,7 +30052,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def powerplant_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicProp":
+    def powerplant_mode_as_sub_super_hypersonic(self) -> "AdvancedFixedWingSubSuperHypersonicPropulsion":
         """Get the interface for a Sub/Super/Hypersoinc Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_sub_super_hypersonic_metadata)
 
@@ -30063,13 +30066,13 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _property_names[max_load_factor] = "max_load_factor"
     _property_names[use_max_temperature_limit] = "use_max_temperature_limit"
     _property_names[max_temperature] = "max_temperature"
-    _property_names[cache_aero_data] = "cache_aero_data"
+    _property_names[cache_aerodynamic_data] = "cache_aerodynamic_data"
     _property_names[cache_fuel_flow] = "cache_fuel_flow"
-    _property_names[aero_strategy] = "aero_strategy"
-    _property_names[aero_mode_as_external] = "aero_mode_as_external"
-    _property_names[aero_mode_as_subsonic] = "aero_mode_as_subsonic"
-    _property_names[aero_mode_as_sub_super_hypersonic] = "aero_mode_as_sub_super_hypersonic"
-    _property_names[aero_mode_as_supersonic] = "aero_mode_as_supersonic"
+    _property_names[aerodynamic_strategy] = "aerodynamic_strategy"
+    _property_names[aerodynamic_mode_as_external] = "aerodynamic_mode_as_external"
+    _property_names[aerodynamic_mode_as_subsonic] = "aerodynamic_mode_as_subsonic"
+    _property_names[aerodynamic_mode_as_sub_super_hypersonic] = "aerodynamic_mode_as_sub_super_hypersonic"
+    _property_names[aerodynamic_mode_as_supersonic] = "aerodynamic_mode_as_supersonic"
     _property_names[powerplant_strategy] = "powerplant_strategy"
     _property_names[powerplant_mode_as_electric] = "powerplant_mode_as_electric"
     _property_names[powerplant_mode_as_external] = "powerplant_mode_as_external"
@@ -30096,7 +30099,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4959167576758306460, 5150777901270384053), AdvancedFixedWingTool)
 agcls.AgTypeNameMap["AdvancedFixedWingTool"] = AdvancedFixedWingTool
 
-class AdvancedFixedWingExternalAero(SupportsDeleteCallback):
+class AdvancedFixedWingExternalAerodynamic(SupportsDeleteCallback):
     """Interface used to access the options for an external file aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 3
@@ -30110,7 +30113,7 @@ class AdvancedFixedWingExternalAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingExternalAero)
+        return get_interface_property(attrname, AdvancedFixedWingExternalAerodynamic)
     
     _get_filepath_metadata = { "offset" : _get_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -30118,14 +30121,14 @@ class AdvancedFixedWingExternalAero(SupportsDeleteCallback):
     @property
     def filepath(self) -> str:
         """Get the filepath for the external aero file."""
-        return self._intf.get_property(AdvancedFixedWingExternalAero._metadata, AdvancedFixedWingExternalAero._get_filepath_metadata)
+        return self._intf.get_property(AdvancedFixedWingExternalAerodynamic._metadata, AdvancedFixedWingExternalAerodynamic._get_filepath_metadata)
 
     _set_filepath_metadata = { "offset" : _set_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external aero file."""
-        return self._intf.invoke(AdvancedFixedWingExternalAero._metadata, AdvancedFixedWingExternalAero._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(AdvancedFixedWingExternalAerodynamic._metadata, AdvancedFixedWingExternalAerodynamic._set_filepath_metadata, filepath, OutArg())
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -30133,15 +30136,15 @@ class AdvancedFixedWingExternalAero(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(AdvancedFixedWingExternalAero._metadata, AdvancedFixedWingExternalAero._get_is_valid_metadata)
+        return self._intf.get_property(AdvancedFixedWingExternalAerodynamic._metadata, AdvancedFixedWingExternalAerodynamic._get_is_valid_metadata)
 
     _property_names[filepath] = "filepath"
     _property_names[is_valid] = "is_valid"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingExternalAero."""
+        """Construct an object of type AdvancedFixedWingExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalAero)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30149,12 +30152,12 @@ class AdvancedFixedWingExternalAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalAero, [AdvancedFixedWingExternalAero, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalAerodynamic, [AdvancedFixedWingExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4930872444534161422, 10999827858917784511), AdvancedFixedWingExternalAero)
-agcls.AgTypeNameMap["AdvancedFixedWingExternalAero"] = AdvancedFixedWingExternalAero
+agcls.AgClassCatalog.add_catalog_entry((4930872444534161422, 10999827858917784511), AdvancedFixedWingExternalAerodynamic)
+agcls.AgTypeNameMap["AdvancedFixedWingExternalAerodynamic"] = AdvancedFixedWingExternalAerodynamic
 
-class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
+class AdvancedFixedWingSubsonicAerodynamic(SupportsDeleteCallback):
     """Interface used to access the options for the subsonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 12
@@ -30177,7 +30180,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingSubsonicAero)
+        return get_interface_property(attrname, AdvancedFixedWingSubsonicAerodynamic)
     
     _get_geometry_type_metadata = { "offset" : _get_geometry_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -30185,7 +30188,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def geometry_type(self) -> "ADVANCED_FIXED_WING_GEOMETRY":
         """Get or set the type of wing geometry for the aircraft."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_geometry_type_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_geometry_type_metadata)
 
     _set_geometry_type_metadata = { "offset" : _set_geometry_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -30193,7 +30196,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @geometry_type.setter
     def geometry_type(self, newVal:"ADVANCED_FIXED_WING_GEOMETRY") -> None:
         """Get or set the type of wing geometry for the aircraft."""
-        return self._intf.set_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._set_geometry_type_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._set_geometry_type_metadata, newVal)
 
     _get_geometry_mode_as_basic_metadata = { "offset" : _get_geometry_mode_as_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30201,7 +30204,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def geometry_mode_as_basic(self) -> "AdvancedFixedWingGeometryBasic":
         """Get the options for a basic geometry wing."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_geometry_mode_as_basic_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_geometry_mode_as_basic_metadata)
 
     _get_geometry_mode_as_variable_metadata = { "offset" : _get_geometry_mode_as_variable_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30209,7 +30212,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def geometry_mode_as_variable(self) -> "AdvancedFixedWingGeometryVariable":
         """Get the options for a variable geometry wing."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_geometry_mode_as_variable_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_geometry_mode_as_variable_metadata)
 
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -30217,7 +30220,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def max_aoa(self) -> typing.Any:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -30225,7 +30228,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.set_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._set_max_aoa_metadata, newVal)
 
     _get_cd0_metadata = { "offset" : _get_cd0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30233,7 +30236,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def cd0(self) -> float:
         """Get or set the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_cd0_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_cd0_metadata)
 
     _set_cd0_metadata = { "offset" : _set_cd0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30241,7 +30244,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @cd0.setter
     def cd0(self, newVal:float) -> None:
         """Get or set the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.set_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._set_cd0_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._set_cd0_metadata, newVal)
 
     _get_mach_divergence_metadata = { "offset" : _get_mach_divergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30249,7 +30252,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def mach_divergence(self) -> float:
         """Get or set the speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_mach_divergence_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_mach_divergence_metadata)
 
     _set_mach_divergence_metadata = { "offset" : _set_mach_divergence_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30257,7 +30260,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @mach_divergence.setter
     def mach_divergence(self, newVal:float) -> None:
         """Get or set the speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._set_mach_divergence_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._set_mach_divergence_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "offset" : _get_transonic_mach_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30265,7 +30268,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence."""
-        return self._intf.get_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "offset" : _set_transonic_mach_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30273,7 +30276,7 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying faster than the Mach Divergence."""
-        return self._intf.set_property(AdvancedFixedWingSubsonicAero._metadata, AdvancedFixedWingSubsonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubsonicAerodynamic._metadata, AdvancedFixedWingSubsonicAerodynamic._set_transonic_mach_drag_factor_metadata, newVal)
 
     _property_names[geometry_type] = "geometry_type"
     _property_names[geometry_mode_as_basic] = "geometry_mode_as_basic"
@@ -30284,9 +30287,9 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
     _property_names[transonic_mach_drag_factor] = "transonic_mach_drag_factor"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingSubsonicAero."""
+        """Construct an object of type AdvancedFixedWingSubsonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubsonicAero)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubsonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30294,12 +30297,12 @@ class AdvancedFixedWingSubsonicAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingSubsonicAero, [AdvancedFixedWingSubsonicAero, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubsonicAerodynamic, [AdvancedFixedWingSubsonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5062145481846871754, 6094659154782220179), AdvancedFixedWingSubsonicAero)
-agcls.AgTypeNameMap["AdvancedFixedWingSubsonicAero"] = AdvancedFixedWingSubsonicAero
+agcls.AgClassCatalog.add_catalog_entry((5062145481846871754, 6094659154782220179), AdvancedFixedWingSubsonicAerodynamic)
+agcls.AgTypeNameMap["AdvancedFixedWingSubsonicAerodynamic"] = AdvancedFixedWingSubsonicAerodynamic
 
-class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
+class AdvancedFixedWingSubSuperHypersonicAerodynamic(SupportsDeleteCallback):
     """Interface used to access the options for the Sub/Super/Hypersonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 16
@@ -30326,7 +30329,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingSubSuperHypersonicAero)
+        return get_interface_property(attrname, AdvancedFixedWingSubSuperHypersonicAerodynamic)
     
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -30334,7 +30337,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def max_aoa(self) -> typing.Any:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -30342,7 +30345,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_max_aoa_metadata, newVal)
 
     _get_transonic_min_mach_metadata = { "offset" : _get_transonic_min_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30350,7 +30353,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def transonic_min_mach(self) -> float:
         """Get or set the minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_transonic_min_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_transonic_min_mach_metadata)
 
     _set_transonic_min_mach_metadata = { "offset" : _set_transonic_min_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30358,7 +30361,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @transonic_min_mach.setter
     def transonic_min_mach(self, newVal:float) -> None:
         """Get or set the minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_transonic_min_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_transonic_min_mach_metadata, newVal)
 
     _get_transonic_max_mach_metadata = { "offset" : _get_transonic_max_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30366,7 +30369,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def transonic_max_mach(self) -> float:
         """Get or set the maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_transonic_max_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_transonic_max_mach_metadata)
 
     _set_transonic_max_mach_metadata = { "offset" : _set_transonic_max_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30374,7 +30377,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @transonic_max_mach.setter
     def transonic_max_mach(self, newVal:float) -> None:
         """Get or set the maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_transonic_max_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_transonic_max_mach_metadata, newVal)
 
     _get_super_hyper_mach_transition_metadata = { "offset" : _get_super_hyper_mach_transition_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30382,7 +30385,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def super_hyper_mach_transition(self) -> float:
         """Get or set the minimum speed at which the air flow will be treated as hypersonic."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_super_hyper_mach_transition_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_super_hyper_mach_transition_metadata)
 
     _set_super_hyper_mach_transition_metadata = { "offset" : _set_super_hyper_mach_transition_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30390,7 +30393,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @super_hyper_mach_transition.setter
     def super_hyper_mach_transition(self, newVal:float) -> None:
         """Get or set the minimum speed at which the air flow will be treated as hypersonic."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_super_hyper_mach_transition_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_super_hyper_mach_transition_metadata, newVal)
 
     _get_leading_edge_frontal_area_ratio_metadata = { "offset" : _get_leading_edge_frontal_area_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30398,7 +30401,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def leading_edge_frontal_area_ratio(self) -> float:
         """Get or set the frontal face thickness of the aircraft's wings at their leading edge."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_leading_edge_frontal_area_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_leading_edge_frontal_area_ratio_metadata)
 
     _set_leading_edge_frontal_area_ratio_metadata = { "offset" : _set_leading_edge_frontal_area_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30406,7 +30409,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @leading_edge_frontal_area_ratio.setter
     def leading_edge_frontal_area_ratio(self, newVal:float) -> None:
         """Get or set the frontal face thickness of the aircraft's wings at their leading edge."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_leading_edge_frontal_area_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_leading_edge_frontal_area_ratio_metadata, newVal)
 
     _get_subsonic_aspect_ratio_metadata = { "offset" : _get_subsonic_aspect_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30414,7 +30417,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def subsonic_aspect_ratio(self) -> float:
         """Get or set the aircraft's wingspan squared divided by the wing area."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_subsonic_aspect_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_subsonic_aspect_ratio_metadata)
 
     _set_subsonic_aspect_ratio_metadata = { "offset" : _set_subsonic_aspect_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30422,7 +30425,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @subsonic_aspect_ratio.setter
     def subsonic_aspect_ratio(self, newVal:float) -> None:
         """Get or set the aircraft's wingspan squared divided by the wing area."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_subsonic_aspect_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_subsonic_aspect_ratio_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "offset" : _get_transonic_mach_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30430,7 +30433,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "offset" : _set_transonic_mach_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30438,7 +30441,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_transonic_mach_drag_factor_metadata, newVal)
 
     _get_wave_drag_factor_metadata = { "offset" : _get_wave_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30446,7 +30449,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @property
     def wave_drag_factor(self) -> float:
         """Get or set the scalar value that models drag produced by shock waves at or near the aircraft's critical Mach number."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._get_wave_drag_factor_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._get_wave_drag_factor_metadata)
 
     _set_wave_drag_factor_metadata = { "offset" : _set_wave_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30454,7 +30457,7 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     @wave_drag_factor.setter
     def wave_drag_factor(self, newVal:float) -> None:
         """Get or set the scalar value that models drag produced by shock waves at or near the aircraft's critical Mach number."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAero._metadata, AdvancedFixedWingSubSuperHypersonicAero._set_wave_drag_factor_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicAerodynamic._metadata, AdvancedFixedWingSubSuperHypersonicAerodynamic._set_wave_drag_factor_metadata, newVal)
 
     _property_names[max_aoa] = "max_aoa"
     _property_names[transonic_min_mach] = "transonic_min_mach"
@@ -30466,9 +30469,9 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
     _property_names[wave_drag_factor] = "wave_drag_factor"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingSubSuperHypersonicAero."""
+        """Construct an object of type AdvancedFixedWingSubSuperHypersonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicAero)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30476,12 +30479,12 @@ class AdvancedFixedWingSubSuperHypersonicAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicAero, [AdvancedFixedWingSubSuperHypersonicAero, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicAerodynamic, [AdvancedFixedWingSubSuperHypersonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4952686633379458317, 2294599711029805235), AdvancedFixedWingSubSuperHypersonicAero)
-agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicAero"] = AdvancedFixedWingSubSuperHypersonicAero
+agcls.AgClassCatalog.add_catalog_entry((4952686633379458317, 2294599711029805235), AdvancedFixedWingSubSuperHypersonicAerodynamic)
+agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicAerodynamic"] = AdvancedFixedWingSubSuperHypersonicAerodynamic
 
-class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
+class AdvancedFixedWingSupersonicAerodynamic(SupportsDeleteCallback):
     """Interface used to access the options for the supersonic aerodynamic strategy in the advanced fixed wing tool."""
 
     _num_methods = 20
@@ -30512,7 +30515,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingSupersonicAero)
+        return get_interface_property(attrname, AdvancedFixedWingSupersonicAerodynamic)
     
     _get_geometry_type_metadata = { "offset" : _get_geometry_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -30520,7 +30523,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def geometry_type(self) -> "ADVANCED_FIXED_WING_GEOMETRY":
         """Get or set the type of wing geometry for the aircraft."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_geometry_type_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_geometry_type_metadata)
 
     _set_geometry_type_metadata = { "offset" : _set_geometry_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -30528,7 +30531,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @geometry_type.setter
     def geometry_type(self, newVal:"ADVANCED_FIXED_WING_GEOMETRY") -> None:
         """Get or set the type of wing geometry for the aircraft."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_geometry_type_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_geometry_type_metadata, newVal)
 
     _get_geometry_mode_as_basic_metadata = { "offset" : _get_geometry_mode_as_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30536,7 +30539,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def geometry_mode_as_basic(self) -> "AdvancedFixedWingGeometryBasic":
         """Get the options for a basic geometry wing."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_geometry_mode_as_basic_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_geometry_mode_as_basic_metadata)
 
     _get_geometry_mode_as_variable_metadata = { "offset" : _get_geometry_mode_as_variable_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -30544,7 +30547,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def geometry_mode_as_variable(self) -> "AdvancedFixedWingGeometryVariable":
         """Get the options for a variable geometry wing."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_geometry_mode_as_variable_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_geometry_mode_as_variable_metadata)
 
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -30552,7 +30555,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def max_aoa(self) -> typing.Any:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_max_aoa_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -30560,7 +30563,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the maximum angle of attack possible."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_max_aoa_metadata, newVal)
 
     _get_subsonic_cd0_metadata = { "offset" : _get_subsonic_cd0_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30568,7 +30571,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def subsonic_cd0(self) -> float:
         """Get or set the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_subsonic_cd0_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_subsonic_cd0_metadata)
 
     _set_subsonic_cd0_metadata = { "offset" : _set_subsonic_cd0_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30576,7 +30579,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @subsonic_cd0.setter
     def subsonic_cd0(self, newVal:float) -> None:
         """Get or set the parasitic drag coefficient of the aircraft when flying at a speed less than the Mach Divergence."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_subsonic_cd0_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_subsonic_cd0_metadata, newVal)
 
     _get_transonic_min_mach_metadata = { "offset" : _get_transonic_min_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30584,7 +30587,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def transonic_min_mach(self) -> float:
         """Get or set the minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_transonic_min_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_transonic_min_mach_metadata)
 
     _set_transonic_min_mach_metadata = { "offset" : _set_transonic_min_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30592,7 +30595,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @transonic_min_mach.setter
     def transonic_min_mach(self, newVal:float) -> None:
         """Get or set the minimum speed at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_transonic_min_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_transonic_min_mach_metadata, newVal)
 
     _get_transonic_max_mach_metadata = { "offset" : _get_transonic_max_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30600,7 +30603,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def transonic_max_mach(self) -> float:
         """Get or set the maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_transonic_max_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_transonic_max_mach_metadata)
 
     _set_transonic_max_mach_metadata = { "offset" : _set_transonic_max_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30608,7 +30611,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @transonic_max_mach.setter
     def transonic_max_mach(self, newVal:float) -> None:
         """Get or set the maximum speed, below supersonic, at which the aircraft begins to experience air compression."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_transonic_max_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_transonic_max_mach_metadata, newVal)
 
     _get_supersonic_max_mach_metadata = { "offset" : _get_supersonic_max_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30616,7 +30619,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def supersonic_max_mach(self) -> float:
         """Get or set the speed at which the Supersonic Mach Drag Factor is applied."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_supersonic_max_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_supersonic_max_mach_metadata)
 
     _set_supersonic_max_mach_metadata = { "offset" : _set_supersonic_max_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30624,7 +30627,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @supersonic_max_mach.setter
     def supersonic_max_mach(self, newVal:float) -> None:
         """Get or set the speed at which the Supersonic Mach Drag Factor is applied."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_supersonic_max_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_supersonic_max_mach_metadata, newVal)
 
     _get_transonic_mach_drag_factor_metadata = { "offset" : _get_transonic_mach_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30632,7 +30635,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def transonic_mach_drag_factor(self) -> float:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_transonic_mach_drag_factor_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_transonic_mach_drag_factor_metadata)
 
     _set_transonic_mach_drag_factor_metadata = { "offset" : _set_transonic_mach_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30640,7 +30643,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @transonic_mach_drag_factor.setter
     def transonic_mach_drag_factor(self, newVal:float) -> None:
         """Get or set the factor applied to the aircraft's parasitic drag coefficient when it is flying between the Transonic Min Mach and Transonic Mach Drag Factor speeds."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_transonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_transonic_mach_drag_factor_metadata, newVal)
 
     _get_supersonic_mach_drag_factor_metadata = { "offset" : _get_supersonic_mach_drag_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30648,7 +30651,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def supersonic_mach_drag_factor(self) -> float:
         """Get or set the scalar value applied to the aircraft's parasitic drag coefficient when it is flying faster than the Supersonic Max Mach."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_supersonic_mach_drag_factor_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_supersonic_mach_drag_factor_metadata)
 
     _set_supersonic_mach_drag_factor_metadata = { "offset" : _set_supersonic_mach_drag_factor_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30656,7 +30659,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @supersonic_mach_drag_factor.setter
     def supersonic_mach_drag_factor(self, newVal:float) -> None:
         """Get or set the scalar value applied to the aircraft's parasitic drag coefficient when it is flying faster than the Supersonic Max Mach."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_supersonic_mach_drag_factor_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_supersonic_mach_drag_factor_metadata, newVal)
 
     _get_leading_edge_suction_efficiency_metadata = { "offset" : _get_leading_edge_suction_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -30664,7 +30667,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @property
     def leading_edge_suction_efficiency(self) -> float:
         """Get or set the ability of the wing's leading edge to ingest turbulent airflow and thereby reduce induced drag."""
-        return self._intf.get_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._get_leading_edge_suction_efficiency_metadata)
+        return self._intf.get_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._get_leading_edge_suction_efficiency_metadata)
 
     _set_leading_edge_suction_efficiency_metadata = { "offset" : _set_leading_edge_suction_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -30672,7 +30675,7 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     @leading_edge_suction_efficiency.setter
     def leading_edge_suction_efficiency(self, newVal:float) -> None:
         """Get or set the ability of the wing's leading edge to ingest turbulent airflow and thereby reduce induced drag."""
-        return self._intf.set_property(AdvancedFixedWingSupersonicAero._metadata, AdvancedFixedWingSupersonicAero._set_leading_edge_suction_efficiency_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSupersonicAerodynamic._metadata, AdvancedFixedWingSupersonicAerodynamic._set_leading_edge_suction_efficiency_metadata, newVal)
 
     _property_names[geometry_type] = "geometry_type"
     _property_names[geometry_mode_as_basic] = "geometry_mode_as_basic"
@@ -30687,9 +30690,9 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
     _property_names[leading_edge_suction_efficiency] = "leading_edge_suction_efficiency"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingSupersonicAero."""
+        """Construct an object of type AdvancedFixedWingSupersonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSupersonicAero)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSupersonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30697,10 +30700,10 @@ class AdvancedFixedWingSupersonicAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingSupersonicAero, [AdvancedFixedWingSupersonicAero, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSupersonicAerodynamic, [AdvancedFixedWingSupersonicAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5450196044160187843, 1674866698247736221), AdvancedFixedWingSupersonicAero)
-agcls.AgTypeNameMap["AdvancedFixedWingSupersonicAero"] = AdvancedFixedWingSupersonicAero
+agcls.AgClassCatalog.add_catalog_entry((5450196044160187843, 1674866698247736221), AdvancedFixedWingSupersonicAerodynamic)
+agcls.AgTypeNameMap["AdvancedFixedWingSupersonicAerodynamic"] = AdvancedFixedWingSupersonicAerodynamic
 
 class PerformanceModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
     """Class defining an unknown performance model."""
@@ -31005,7 +31008,7 @@ class AdvancedFixedWingElectricPowerplant(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5409750622288828148, 653894210607339956), AdvancedFixedWingElectricPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingElectricPowerplant"] = AdvancedFixedWingElectricPowerplant
 
-class AdvancedFixedWingExternalProp(SupportsDeleteCallback):
+class AdvancedFixedWingExternalPropulsion(SupportsDeleteCallback):
     """Interface used to access the options for the External Prop File powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 3
@@ -31019,7 +31022,7 @@ class AdvancedFixedWingExternalProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingExternalProp)
+        return get_interface_property(attrname, AdvancedFixedWingExternalPropulsion)
     
     _get_filepath_metadata = { "offset" : _get_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -31027,14 +31030,14 @@ class AdvancedFixedWingExternalProp(SupportsDeleteCallback):
     @property
     def filepath(self) -> str:
         """Get the filepath for the external aero file."""
-        return self._intf.get_property(AdvancedFixedWingExternalProp._metadata, AdvancedFixedWingExternalProp._get_filepath_metadata)
+        return self._intf.get_property(AdvancedFixedWingExternalPropulsion._metadata, AdvancedFixedWingExternalPropulsion._get_filepath_metadata)
 
     _set_filepath_metadata = { "offset" : _set_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external aero file."""
-        return self._intf.invoke(AdvancedFixedWingExternalProp._metadata, AdvancedFixedWingExternalProp._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(AdvancedFixedWingExternalPropulsion._metadata, AdvancedFixedWingExternalPropulsion._set_filepath_metadata, filepath, OutArg())
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -31042,15 +31045,15 @@ class AdvancedFixedWingExternalProp(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(AdvancedFixedWingExternalProp._metadata, AdvancedFixedWingExternalProp._get_is_valid_metadata)
+        return self._intf.get_property(AdvancedFixedWingExternalPropulsion._metadata, AdvancedFixedWingExternalPropulsion._get_is_valid_metadata)
 
     _property_names[filepath] = "filepath"
     _property_names[is_valid] = "is_valid"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingExternalProp."""
+        """Construct an object of type AdvancedFixedWingExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalProp)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31058,12 +31061,12 @@ class AdvancedFixedWingExternalProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalProp, [AdvancedFixedWingExternalProp, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingExternalPropulsion, [AdvancedFixedWingExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5248810364255474372, 10276250267386325905), AdvancedFixedWingExternalProp)
-agcls.AgTypeNameMap["AdvancedFixedWingExternalProp"] = AdvancedFixedWingExternalProp
+agcls.AgClassCatalog.add_catalog_entry((5248810364255474372, 10276250267386325905), AdvancedFixedWingExternalPropulsion)
+agcls.AgTypeNameMap["AdvancedFixedWingExternalPropulsion"] = AdvancedFixedWingExternalPropulsion
 
-class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
+class AdvancedFixedWingSubSuperHypersonicPropulsion(SupportsDeleteCallback):
     """Interface used to access the options for the Sub/Super/Hypersonic powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 25
@@ -31099,7 +31102,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingSubSuperHypersonicProp)
+        return get_interface_property(attrname, AdvancedFixedWingSubSuperHypersonicPropulsion)
     
     _get_turbine_mode_metadata = { "offset" : _get_turbine_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31107,7 +31110,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def turbine_mode(self) -> "TURBINE_MODE":
         """Get or set the turbine operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_turbine_mode_metadata)
 
     _set_turbine_mode_metadata = { "offset" : _set_turbine_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -31115,23 +31118,23 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @turbine_mode.setter
     def turbine_mode(self, newVal:"TURBINE_MODE") -> None:
         """Get or set the turbine operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_turbine_mode_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_turbine_mode_metadata, newVal)
 
     _get_turbine_mode_as_turbojet_metadata = { "offset" : _get_turbine_mode_as_turbojet_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def turbine_mode_as_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABProp":
+    def turbine_mode_as_turbojet(self) -> "AdvancedFixedWingTurbojetBasicABPropulsion":
         """Get or set the interface for a Turbojet Basic w/ AB tubrine mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbojet_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_turbine_mode_as_turbojet_metadata)
 
     _get_turbine_mode_as_turbofan_metadata = { "offset" : _get_turbine_mode_as_turbofan_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def turbine_mode_as_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABProp":
+    def turbine_mode_as_turbofan(self) -> "AdvancedFixedWingTurbofanBasicABPropulsion":
         """Get or set the interface for a Turbojet Basic w/ AB tubrine mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_turbine_mode_as_turbofan_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_turbine_mode_as_turbofan_metadata)
 
     _get_ramjet_mode_metadata = { "offset" : _get_ramjet_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31139,7 +31142,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def ramjet_mode(self) -> "RAMJET_MODE":
         """Get or set the ramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_ramjet_mode_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_ramjet_mode_metadata)
 
     _set_ramjet_mode_metadata = { "offset" : _set_ramjet_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -31147,7 +31150,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @ramjet_mode.setter
     def ramjet_mode(self, newVal:"RAMJET_MODE") -> None:
         """Get or set the ramjet operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_ramjet_mode_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_ramjet_mode_metadata, newVal)
 
     _get_ramjet_mode_as_basic_metadata = { "offset" : _get_ramjet_mode_as_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31155,7 +31158,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def ramjet_mode_as_basic(self) -> "AdvancedFixedWingRamjetBasic":
         """Get the interface for a Ramjet - Basic."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_ramjet_mode_as_basic_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_ramjet_mode_as_basic_metadata)
 
     _get_scramjet_mode_metadata = { "offset" : _get_scramjet_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31163,7 +31166,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def scramjet_mode(self) -> "SCRAMJET_MODE":
         """Get or set the scramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_scramjet_mode_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_scramjet_mode_metadata)
 
     _set_scramjet_mode_metadata = { "offset" : _set_scramjet_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -31171,7 +31174,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @scramjet_mode.setter
     def scramjet_mode(self, newVal:"SCRAMJET_MODE") -> None:
         """Get or set the scramjet operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_scramjet_mode_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_scramjet_mode_metadata, newVal)
 
     _get_scramjet_mode_as_basic_metadata = { "offset" : _get_scramjet_mode_as_basic_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31179,7 +31182,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def scramjet_mode_as_basic(self) -> "AdvancedFixedWingScramjetBasic":
         """Get the interface for a Scramjet - Basic."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_scramjet_mode_as_basic_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_scramjet_mode_as_basic_metadata)
 
     _get_turbine_reference_area_metadata = { "offset" : _get_turbine_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31187,7 +31190,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def turbine_reference_area(self) -> float:
         """Get the reference area used for the turbine operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_turbine_reference_area_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_turbine_reference_area_metadata)
 
     _get_ramjet_reference_area_metadata = { "offset" : _get_ramjet_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31195,7 +31198,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def ramjet_reference_area(self) -> float:
         """Get the reference area used for the ramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_ramjet_reference_area_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_ramjet_reference_area_metadata)
 
     _get_scramjet_reference_area_metadata = { "offset" : _get_scramjet_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31203,7 +31206,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def scramjet_reference_area(self) -> float:
         """Get the reference area used for the scramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_scramjet_reference_area_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_scramjet_reference_area_metadata)
 
     _get_max_turbine_compression_temp_metadata = { "offset" : _get_max_turbine_compression_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31211,7 +31214,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def max_turbine_compression_temp(self) -> float:
         """Get or set the maximum temperature at the compressor stage in the turbine operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_max_turbine_compression_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_max_turbine_compression_temp_metadata)
 
     _set_max_turbine_compression_temp_metadata = { "offset" : _set_max_turbine_compression_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31219,7 +31222,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @max_turbine_compression_temp.setter
     def max_turbine_compression_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the compressor stage in the turbine operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_max_turbine_compression_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_max_turbine_compression_temp_metadata, newVal)
 
     _get_max_turbine_burner_temp_metadata = { "offset" : _get_max_turbine_burner_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31227,7 +31230,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def max_turbine_burner_temp(self) -> float:
         """Get or set the maximum temperature at the combustion stage in the turbine operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_max_turbine_burner_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_max_turbine_burner_temp_metadata)
 
     _set_max_turbine_burner_temp_metadata = { "offset" : _set_max_turbine_burner_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31235,7 +31238,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @max_turbine_burner_temp.setter
     def max_turbine_burner_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the combustion stage in the turbine operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_max_turbine_burner_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_max_turbine_burner_temp_metadata, newVal)
 
     _get_can_ram_compressor_pressure_ratio_metadata = { "offset" : _get_can_ram_compressor_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31243,7 +31246,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def can_ram_compressor_pressure_ratio(self) -> float:
         """Can Ram compressor pressure ratio."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_can_ram_compressor_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_can_ram_compressor_pressure_ratio_metadata)
 
     _set_can_ram_compressor_pressure_ratio_metadata = { "offset" : _set_can_ram_compressor_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31251,7 +31254,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @can_ram_compressor_pressure_ratio.setter
     def can_ram_compressor_pressure_ratio(self, newVal:float) -> None:
         """Can Ram compressor pressure ratio."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_can_ram_compressor_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_can_ram_compressor_pressure_ratio_metadata, newVal)
 
     _get_must_ram_compressor_pressure_ratio_metadata = { "offset" : _get_must_ram_compressor_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31259,7 +31262,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def must_ram_compressor_pressure_ratio(self) -> float:
         """Must Ram compressor pressure ratio."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_must_ram_compressor_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_must_ram_compressor_pressure_ratio_metadata)
 
     _set_must_ram_compressor_pressure_ratio_metadata = { "offset" : _set_must_ram_compressor_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31267,7 +31270,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @must_ram_compressor_pressure_ratio.setter
     def must_ram_compressor_pressure_ratio(self, newVal:float) -> None:
         """Must Ram compressor pressure ratio."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_must_ram_compressor_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_must_ram_compressor_pressure_ratio_metadata, newVal)
 
     _get_max_ram_scram_compression_temperature_metadata = { "offset" : _get_max_ram_scram_compression_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31275,7 +31278,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def max_ram_scram_compression_temperature(self) -> float:
         """Get or set the maximum temperature at the compressor stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_max_ram_scram_compression_temperature_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_max_ram_scram_compression_temperature_metadata)
 
     _set_max_ram_scram_compression_temperature_metadata = { "offset" : _set_max_ram_scram_compression_temperature_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31283,7 +31286,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @max_ram_scram_compression_temperature.setter
     def max_ram_scram_compression_temperature(self, newVal:float) -> None:
         """Get or set the maximum temperature at the compressor stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_max_ram_scram_compression_temperature_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_max_ram_scram_compression_temperature_metadata, newVal)
 
     _get_max_ram_scram_burner_total_temperature_metadata = { "offset" : _get_max_ram_scram_burner_total_temperature_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31291,7 +31294,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @property
     def max_ram_scram_burner_total_temperature(self) -> float:
         """Get or set the maximum temperature at the combustion stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._get_max_ram_scram_burner_total_temperature_metadata)
+        return self._intf.get_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._get_max_ram_scram_burner_total_temperature_metadata)
 
     _set_max_ram_scram_burner_total_temperature_metadata = { "offset" : _set_max_ram_scram_burner_total_temperature_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31299,7 +31302,7 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     @max_ram_scram_burner_total_temperature.setter
     def max_ram_scram_burner_total_temperature(self, newVal:float) -> None:
         """Get or set the maximum temperature at the combustion stage in the Ramjet or Scramjet operating mode."""
-        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicProp._metadata, AdvancedFixedWingSubSuperHypersonicProp._set_max_ram_scram_burner_total_temperature_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingSubSuperHypersonicPropulsion._metadata, AdvancedFixedWingSubSuperHypersonicPropulsion._set_max_ram_scram_burner_total_temperature_metadata, newVal)
 
     _property_names[turbine_mode] = "turbine_mode"
     _property_names[turbine_mode_as_turbojet] = "turbine_mode_as_turbojet"
@@ -31319,9 +31322,9 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
     _property_names[max_ram_scram_burner_total_temperature] = "max_ram_scram_burner_total_temperature"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingSubSuperHypersonicProp."""
+        """Construct an object of type AdvancedFixedWingSubSuperHypersonicPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicProp)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31329,10 +31332,10 @@ class AdvancedFixedWingSubSuperHypersonicProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicProp, [AdvancedFixedWingSubSuperHypersonicProp, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingSubSuperHypersonicPropulsion, [AdvancedFixedWingSubSuperHypersonicPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5011678706765634819, 12159855238285393045), AdvancedFixedWingSubSuperHypersonicProp)
-agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicProp"] = AdvancedFixedWingSubSuperHypersonicProp
+agcls.AgClassCatalog.add_catalog_entry((5011678706765634819, 12159855238285393045), AdvancedFixedWingSubSuperHypersonicPropulsion)
+agcls.AgTypeNameMap["AdvancedFixedWingSubSuperHypersonicPropulsion"] = AdvancedFixedWingSubSuperHypersonicPropulsion
 
 class AdvancedFixedWingPistonPowerplant(SupportsDeleteCallback):
     """Interface used to access the options for the Piston powerplant strategy in the advanced fixed wing tool."""
@@ -31566,7 +31569,7 @@ agcls.AgClassCatalog.add_catalog_entry((5173205300249269855, 3414284464176281766
 agcls.AgTypeNameMap["AdvancedFixedWingEmpiricalJetEngine"] = AdvancedFixedWingEmpiricalJetEngine
 
 class AdvancedFixedWingTurbofanBasicABPowerplant(SupportsDeleteCallback):
-    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABProp instead."""
+    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbofanBasicABPropulsion instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -31596,7 +31599,7 @@ agcls.AgClassCatalog.add_catalog_entry((5401994752137022731, 1478812670506076763
 agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPowerplant"] = AdvancedFixedWingTurbofanBasicABPowerplant
 
 class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
-    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABProp instead."""
+    """Do not use this interface, as it is deprecated. Use AdvancedFixedWingTurbojetBasicABPropulsion instead."""
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -31625,7 +31628,7 @@ class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5440608781197312823, 13762363781635156626), AdvancedFixedWingTurbojetBasicABPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABPowerplant"] = AdvancedFixedWingTurbojetBasicABPowerplant
 
-class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
+class AdvancedFixedWingTurbofanBasicABPropulsion(SupportsDeleteCallback):
     """Interface used to access the options for the Turbofan - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 27
@@ -31663,7 +31666,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingTurbofanBasicABProp)
+        return get_interface_property(attrname, AdvancedFixedWingTurbofanBasicABPropulsion)
     
     _get_can_use_afterburner_metadata = { "offset" : _get_can_use_afterburner_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -31671,7 +31674,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def can_use_afterburner(self) -> bool:
         """Opt whether the engine has an afterburner."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_can_use_afterburner_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_can_use_afterburner_metadata)
 
     _set_can_use_afterburner_metadata = { "offset" : _set_can_use_afterburner_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -31679,7 +31682,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @can_use_afterburner.setter
     def can_use_afterburner(self, newVal:bool) -> None:
         """Opt whether the engine has an afterburner."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_can_use_afterburner_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_can_use_afterburner_metadata, newVal)
 
     _get_design_altitude_metadata = { "offset" : _get_design_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31687,7 +31690,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def design_altitude(self) -> float:
         """Get or set the altitude design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_design_altitude_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "offset" : _set_design_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31695,7 +31698,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """Get or set the altitude design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "offset" : _get_design_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31703,7 +31706,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def design_mach(self) -> float:
         """Get or set the mach number design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_design_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "offset" : _set_design_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31711,7 +31714,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """Get or set the mach number design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "offset" : _get_design_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31719,7 +31722,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def design_thrust(self) -> float:
         """Get or set the thrust design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_design_thrust_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "offset" : _set_design_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31727,7 +31730,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """Get or set the thrust design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_design_thrust_metadata, newVal)
 
     _get_afterburner_on_metadata = { "offset" : _get_afterburner_on_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -31735,7 +31738,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def afterburner_on(self) -> bool:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_afterburner_on_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "offset" : _set_afterburner_on_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -31743,7 +31746,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @afterburner_on.setter
     def afterburner_on(self, newVal:bool) -> None:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_afterburner_on_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_afterburner_on_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "offset" : _get_max_compression_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31751,7 +31754,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def max_compression_temp(self) -> float:
         """Get or set the maximum temperature at the compressor stage."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_max_compression_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "offset" : _set_max_compression_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31759,7 +31762,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the compressor stage."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "offset" : _get_max_burner_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31767,7 +31770,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def max_burner_temp(self) -> float:
         """Get or set the maximum temperature at the combustion stage."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_max_burner_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "offset" : _set_max_burner_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31775,7 +31778,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the combustion stage."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_max_burner_temp_metadata, newVal)
 
     _get_max_afterburner_temp_metadata = { "offset" : _get_max_afterburner_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31783,7 +31786,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def max_afterburner_temp(self) -> float:
         """Get or set the maximum temperature at the afterburner."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_max_afterburner_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_max_afterburner_temp_metadata)
 
     _set_max_afterburner_temp_metadata = { "offset" : _set_max_afterburner_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31791,7 +31794,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @max_afterburner_temp.setter
     def max_afterburner_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the afterburner."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_max_afterburner_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_max_afterburner_temp_metadata, newVal)
 
     _get_hpc_pressure_ratio_metadata = { "offset" : _get_hpc_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31799,7 +31802,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def hpc_pressure_ratio(self) -> float:
         """Get or set the pressure ratio of the high-pressure compressor."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_hpc_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_hpc_pressure_ratio_metadata)
 
     _set_hpc_pressure_ratio_metadata = { "offset" : _set_hpc_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31807,7 +31810,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @hpc_pressure_ratio.setter
     def hpc_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio of the high-pressure compressor."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_hpc_pressure_ratio_metadata, newVal)
 
     _get_lpc_pressure_ratio_metadata = { "offset" : _get_lpc_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31815,7 +31818,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def lpc_pressure_ratio(self) -> float:
         """Get or set the pressure ratio of the low-pressure compressor."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_lpc_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_lpc_pressure_ratio_metadata)
 
     _set_lpc_pressure_ratio_metadata = { "offset" : _set_lpc_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31823,7 +31826,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @lpc_pressure_ratio.setter
     def lpc_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio of the low-pressure compressor."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_lpc_pressure_ratio_metadata, newVal)
 
     _get_fan_pressure_ratio_metadata = { "offset" : _get_fan_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31831,7 +31834,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def fan_pressure_ratio(self) -> float:
         """Get or set the pressure ratio of the fan."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_fan_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_fan_pressure_ratio_metadata)
 
     _set_fan_pressure_ratio_metadata = { "offset" : _set_fan_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31839,7 +31842,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @fan_pressure_ratio.setter
     def fan_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio of the fan."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_fan_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_fan_pressure_ratio_metadata, newVal)
 
     _get_efficiencies_and_losses_metadata = { "offset" : _get_efficiencies_and_losses_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31847,7 +31850,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """Get the jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_efficiencies_and_losses_metadata)
 
     _get_fuel_type_metadata = { "offset" : _get_fuel_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31855,7 +31858,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """Get or set the jet engine's fuel type."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_fuel_type_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "offset" : _set_fuel_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -31863,7 +31866,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """Get or set the jet engine's fuel type."""
-        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "offset" : _get_fuel_mode_as_afprop_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31871,7 +31874,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "offset" : _get_fuel_mode_as_cea_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -31879,7 +31882,7 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABProp._metadata, AdvancedFixedWingTurbofanBasicABProp._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbofanBasicABPropulsion._metadata, AdvancedFixedWingTurbofanBasicABPropulsion._get_fuel_mode_as_cea_metadata)
 
     _property_names[can_use_afterburner] = "can_use_afterburner"
     _property_names[design_altitude] = "design_altitude"
@@ -31898,9 +31901,9 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingTurbofanBasicABProp."""
+        """Construct an object of type AdvancedFixedWingTurbofanBasicABPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbofanBasicABProp)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbofanBasicABPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31908,12 +31911,12 @@ class AdvancedFixedWingTurbofanBasicABProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABProp, [AdvancedFixedWingTurbofanBasicABProp, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbofanBasicABPropulsion, [AdvancedFixedWingTurbofanBasicABPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4926635412744452730, 7898790107185743281), AdvancedFixedWingTurbofanBasicABProp)
-agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABProp"] = AdvancedFixedWingTurbofanBasicABProp
+agcls.AgClassCatalog.add_catalog_entry((4926635412744452730, 7898790107185743281), AdvancedFixedWingTurbofanBasicABPropulsion)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbofanBasicABPropulsion"] = AdvancedFixedWingTurbofanBasicABPropulsion
 
-class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
+class AdvancedFixedWingTurbojetBasicABPropulsion(SupportsDeleteCallback):
     """Interface used to access the options for the Turbojet - Basic w/AB (Thermodynamic) powerplant strategy in the advanced fixed wing tool."""
 
     _num_methods = 25
@@ -31949,7 +31952,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AdvancedFixedWingTurbojetBasicABProp)
+        return get_interface_property(attrname, AdvancedFixedWingTurbojetBasicABPropulsion)
     
     _get_can_use_afterburner_metadata = { "offset" : _get_can_use_afterburner_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -31957,7 +31960,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def can_use_afterburner(self) -> bool:
         """Opt whether the engine has an afterburner."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_can_use_afterburner_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_can_use_afterburner_metadata)
 
     _set_can_use_afterburner_metadata = { "offset" : _set_can_use_afterburner_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -31965,7 +31968,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @can_use_afterburner.setter
     def can_use_afterburner(self, newVal:bool) -> None:
         """Opt whether the engine has an afterburner."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_can_use_afterburner_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_can_use_afterburner_metadata, newVal)
 
     _get_design_altitude_metadata = { "offset" : _get_design_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31973,7 +31976,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def design_altitude(self) -> float:
         """Get or set the altitude design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_design_altitude_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "offset" : _set_design_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31981,7 +31984,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """Get or set the altitude design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_design_altitude_metadata, newVal)
 
     _get_design_mach_metadata = { "offset" : _get_design_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31989,7 +31992,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def design_mach(self) -> float:
         """Get or set the mach number design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_design_mach_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "offset" : _set_design_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -31997,7 +32000,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """Get or set the mach number design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_design_mach_metadata, newVal)
 
     _get_design_thrust_metadata = { "offset" : _get_design_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32005,7 +32008,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def design_thrust(self) -> float:
         """Get or set the thrust design point of the engine."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_design_thrust_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "offset" : _set_design_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32013,7 +32016,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """Get or set the thrust design point of the engine."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_design_thrust_metadata, newVal)
 
     _get_afterburner_on_metadata = { "offset" : _get_afterburner_on_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32021,7 +32024,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def afterburner_on(self) -> bool:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_afterburner_on_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_afterburner_on_metadata)
 
     _set_afterburner_on_metadata = { "offset" : _set_afterburner_on_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -32029,7 +32032,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @afterburner_on.setter
     def afterburner_on(self, newVal:bool) -> None:
         """Opt whether to specify the design point with the afterburner on."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_afterburner_on_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_afterburner_on_metadata, newVal)
 
     _get_max_compression_temp_metadata = { "offset" : _get_max_compression_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32037,7 +32040,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def max_compression_temp(self) -> float:
         """Get or set the maximum temperature at the compressor stage."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_max_compression_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_max_compression_temp_metadata)
 
     _set_max_compression_temp_metadata = { "offset" : _set_max_compression_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32045,7 +32048,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @max_compression_temp.setter
     def max_compression_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the compressor stage."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_max_compression_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_max_compression_temp_metadata, newVal)
 
     _get_max_burner_temp_metadata = { "offset" : _get_max_burner_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32053,7 +32056,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def max_burner_temp(self) -> float:
         """Get or set the maximum temperature at the combustion stage."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_max_burner_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_max_burner_temp_metadata)
 
     _set_max_burner_temp_metadata = { "offset" : _set_max_burner_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32061,7 +32064,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @max_burner_temp.setter
     def max_burner_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the combustion stage."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_max_burner_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_max_burner_temp_metadata, newVal)
 
     _get_max_afterburner_temp_metadata = { "offset" : _get_max_afterburner_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32069,7 +32072,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def max_afterburner_temp(self) -> float:
         """Get or set the maximum temperature at the afterburner."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_max_afterburner_temp_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_max_afterburner_temp_metadata)
 
     _set_max_afterburner_temp_metadata = { "offset" : _set_max_afterburner_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32077,7 +32080,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @max_afterburner_temp.setter
     def max_afterburner_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature at the afterburner."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_max_afterburner_temp_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_max_afterburner_temp_metadata, newVal)
 
     _get_hpc_pressure_ratio_metadata = { "offset" : _get_hpc_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32085,7 +32088,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def hpc_pressure_ratio(self) -> float:
         """Get or set the pressure ratio of the high-pressure compressor."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_hpc_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_hpc_pressure_ratio_metadata)
 
     _set_hpc_pressure_ratio_metadata = { "offset" : _set_hpc_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32093,7 +32096,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @hpc_pressure_ratio.setter
     def hpc_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio of the high-pressure compressor."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_hpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_hpc_pressure_ratio_metadata, newVal)
 
     _get_lpc_pressure_ratio_metadata = { "offset" : _get_lpc_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32101,7 +32104,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def lpc_pressure_ratio(self) -> float:
         """Get or set the pressure ratio of the low-pressure compressor."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_lpc_pressure_ratio_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_lpc_pressure_ratio_metadata)
 
     _set_lpc_pressure_ratio_metadata = { "offset" : _set_lpc_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32109,7 +32112,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @lpc_pressure_ratio.setter
     def lpc_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio of the low-pressure compressor."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_lpc_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_lpc_pressure_ratio_metadata, newVal)
 
     _get_efficiencies_and_losses_metadata = { "offset" : _get_efficiencies_and_losses_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32117,7 +32120,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def efficiencies_and_losses(self) -> "PropulsionEfficiencies":
         """Get the jet engine's propulsion efficiencies and losses."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_efficiencies_and_losses_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_efficiencies_and_losses_metadata)
 
     _get_fuel_type_metadata = { "offset" : _get_fuel_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32125,7 +32128,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_type(self) -> "JET_FUEL_TYPE":
         """Get or set the jet engine's fuel type."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_fuel_type_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_fuel_type_metadata)
 
     _set_fuel_type_metadata = { "offset" : _set_fuel_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -32133,7 +32136,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @fuel_type.setter
     def fuel_type(self, newVal:"JET_FUEL_TYPE") -> None:
         """Get or set the jet engine's fuel type."""
-        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._set_fuel_type_metadata, newVal)
+        return self._intf.set_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._set_fuel_type_metadata, newVal)
 
     _get_fuel_mode_as_afprop_metadata = { "offset" : _get_fuel_mode_as_afprop_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32141,7 +32144,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_mode_as_afprop(self) -> "FuelModelKeroseneAFPROP":
         """Get the interface for a Kerosene - AFPROP fuel mode."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_fuel_mode_as_afprop_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_fuel_mode_as_afprop_metadata)
 
     _get_fuel_mode_as_cea_metadata = { "offset" : _get_fuel_mode_as_cea_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32149,7 +32152,7 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     @property
     def fuel_mode_as_cea(self) -> "FuelModelKeroseneCEA":
         """Get the interface for a Kerosene - CEA fuel mode."""
-        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABProp._metadata, AdvancedFixedWingTurbojetBasicABProp._get_fuel_mode_as_cea_metadata)
+        return self._intf.get_property(AdvancedFixedWingTurbojetBasicABPropulsion._metadata, AdvancedFixedWingTurbojetBasicABPropulsion._get_fuel_mode_as_cea_metadata)
 
     _property_names[can_use_afterburner] = "can_use_afterburner"
     _property_names[design_altitude] = "design_altitude"
@@ -32167,9 +32170,9 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AdvancedFixedWingTurbojetBasicABProp."""
+        """Construct an object of type AdvancedFixedWingTurbojetBasicABPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbojetBasicABProp)
+        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbojetBasicABPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32177,10 +32180,10 @@ class AdvancedFixedWingTurbojetBasicABProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABProp, [AdvancedFixedWingTurbojetBasicABProp, ])
+        set_class_attribute(self, attrname, value, AdvancedFixedWingTurbojetBasicABPropulsion, [AdvancedFixedWingTurbojetBasicABPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5587093581665900282, 11546350750593065653), AdvancedFixedWingTurbojetBasicABProp)
-agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABProp"] = AdvancedFixedWingTurbojetBasicABProp
+agcls.AgClassCatalog.add_catalog_entry((5587093581665900282, 11546350750593065653), AdvancedFixedWingTurbojetBasicABPropulsion)
+agcls.AgTypeNameMap["AdvancedFixedWingTurbojetBasicABPropulsion"] = AdvancedFixedWingTurbojetBasicABPropulsion
 
 class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
     """Interface used to access the options for the Turboprop powerplant strategy in the advanced fixed wing tool."""
@@ -32288,7 +32291,7 @@ class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5749297225109159978, 6837240057346569620), AdvancedFixedWingTurbopropPowerplant)
 agcls.AgTypeNameMap["AdvancedFixedWingTurbopropPowerplant"] = AdvancedFixedWingTurbopropPowerplant
 
-class MissileSimpleAero(SupportsDeleteCallback):
+class MissileSimpleAerodynamic(SupportsDeleteCallback):
     """Interface used to access the Simple aerodynamics options for a missile."""
 
     _num_methods = 9
@@ -32308,7 +32311,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileSimpleAero)
+        return get_interface_property(attrname, MissileSimpleAerodynamic)
     
     _get_s_reference_metadata = { "offset" : _get_s_reference_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32316,7 +32319,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @property
     def s_reference(self) -> float:
         """Get or set the area of the lifting surface of the missile."""
-        return self._intf.get_property(MissileSimpleAero._metadata, MissileSimpleAero._get_s_reference_metadata)
+        return self._intf.get_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._get_s_reference_metadata)
 
     _set_s_reference_metadata = { "offset" : _set_s_reference_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32324,7 +32327,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @s_reference.setter
     def s_reference(self, newVal:float) -> None:
         """Get or set the area of the lifting surface of the missile."""
-        return self._intf.set_property(MissileSimpleAero._metadata, MissileSimpleAero._set_s_reference_metadata, newVal)
+        return self._intf.set_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._set_s_reference_metadata, newVal)
 
     _get_cl_max_metadata = { "offset" : _get_cl_max_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32332,7 +32335,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @property
     def cl_max(self) -> float:
         """Get or set the max coefficient of lift."""
-        return self._intf.get_property(MissileSimpleAero._metadata, MissileSimpleAero._get_cl_max_metadata)
+        return self._intf.get_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._get_cl_max_metadata)
 
     _set_cl_max_metadata = { "offset" : _set_cl_max_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32340,7 +32343,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @cl_max.setter
     def cl_max(self, newVal:float) -> None:
         """Get or set the max coefficient of lift."""
-        return self._intf.set_property(MissileSimpleAero._metadata, MissileSimpleAero._set_cl_max_metadata, newVal)
+        return self._intf.set_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._set_cl_max_metadata, newVal)
 
     _get_cd_metadata = { "offset" : _get_cd_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32348,7 +32351,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @property
     def cd(self) -> float:
         """Get or set the coefficient of drag."""
-        return self._intf.get_property(MissileSimpleAero._metadata, MissileSimpleAero._get_cd_metadata)
+        return self._intf.get_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._get_cd_metadata)
 
     _set_cd_metadata = { "offset" : _set_cd_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32356,7 +32359,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @cd.setter
     def cd(self, newVal:float) -> None:
         """Get or set the coefficient of drag."""
-        return self._intf.set_property(MissileSimpleAero._metadata, MissileSimpleAero._set_cd_metadata, newVal)
+        return self._intf.set_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._set_cd_metadata, newVal)
 
     _get_calculate_aoa_metadata = { "offset" : _get_calculate_aoa_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32364,7 +32367,7 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @property
     def calculate_aoa(self) -> bool:
         """Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default."""
-        return self._intf.get_property(MissileSimpleAero._metadata, MissileSimpleAero._get_calculate_aoa_metadata)
+        return self._intf.get_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._get_calculate_aoa_metadata)
 
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32372,14 +32375,14 @@ class MissileSimpleAero(SupportsDeleteCallback):
     @property
     def max_aoa(self) -> typing.Any:
         """Get the missile's maximum angle of attack."""
-        return self._intf.get_property(MissileSimpleAero._metadata, MissileSimpleAero._get_max_aoa_metadata)
+        return self._intf.get_property(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.Variant,),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.VariantArg,) }
     def set_max_aoa(self, calculateAoA:bool, maxAoA:typing.Any) -> None:
         """Set whether to calculate the Angle of Attack and the corresponding value."""
-        return self._intf.invoke(MissileSimpleAero._metadata, MissileSimpleAero._set_max_aoa_metadata, calculateAoA, maxAoA)
+        return self._intf.invoke(MissileSimpleAerodynamic._metadata, MissileSimpleAerodynamic._set_max_aoa_metadata, calculateAoA, maxAoA)
 
     _property_names[s_reference] = "s_reference"
     _property_names[cl_max] = "cl_max"
@@ -32388,9 +32391,9 @@ class MissileSimpleAero(SupportsDeleteCallback):
     _property_names[max_aoa] = "max_aoa"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileSimpleAero."""
+        """Construct an object of type MissileSimpleAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileSimpleAero)
+        initialize_from_source_object(self, sourceObject, MissileSimpleAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32398,12 +32401,12 @@ class MissileSimpleAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileSimpleAero, [MissileSimpleAero, ])
+        set_class_attribute(self, attrname, value, MissileSimpleAerodynamic, [MissileSimpleAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4705636248765593079, 6791367994635073692), MissileSimpleAero)
-agcls.AgTypeNameMap["MissileSimpleAero"] = MissileSimpleAero
+agcls.AgClassCatalog.add_catalog_entry((4705636248765593079, 6791367994635073692), MissileSimpleAerodynamic)
+agcls.AgTypeNameMap["MissileSimpleAerodynamic"] = MissileSimpleAerodynamic
 
-class MissileExternalAero(SupportsDeleteCallback):
+class MissileExternalAerodynamic(SupportsDeleteCallback):
     """Interface used to access the External aerodynamics options for a missile."""
 
     _num_methods = 7
@@ -32421,7 +32424,7 @@ class MissileExternalAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileExternalAero)
+        return get_interface_property(attrname, MissileExternalAerodynamic)
     
     _get_filepath_metadata = { "offset" : _get_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -32429,21 +32432,21 @@ class MissileExternalAero(SupportsDeleteCallback):
     @property
     def filepath(self) -> str:
         """Get the filepath for the external aero file."""
-        return self._intf.get_property(MissileExternalAero._metadata, MissileExternalAero._get_filepath_metadata)
+        return self._intf.get_property(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._get_filepath_metadata)
 
     _set_filepath_metadata = { "offset" : _set_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external aero file."""
-        return self._intf.invoke(MissileExternalAero._metadata, MissileExternalAero._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._set_filepath_metadata, filepath, OutArg())
 
     _reload_metadata = { "offset" : _reload_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def reload(self) -> str:
         """Reload the external aero file."""
-        return self._intf.invoke(MissileExternalAero._metadata, MissileExternalAero._reload_metadata, OutArg())
+        return self._intf.invoke(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._reload_metadata, OutArg())
 
     _get_reference_area_metadata = { "offset" : _get_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32451,7 +32454,7 @@ class MissileExternalAero(SupportsDeleteCallback):
     @property
     def reference_area(self) -> float:
         """Get or set the area of the lifting surface of the missile."""
-        return self._intf.get_property(MissileExternalAero._metadata, MissileExternalAero._get_reference_area_metadata)
+        return self._intf.get_property(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._get_reference_area_metadata)
 
     _set_reference_area_metadata = { "offset" : _set_reference_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32459,7 +32462,7 @@ class MissileExternalAero(SupportsDeleteCallback):
     @reference_area.setter
     def reference_area(self, pVal:float) -> None:
         """Get or set the area of the lifting surface of the missile."""
-        return self._intf.set_property(MissileExternalAero._metadata, MissileExternalAero._set_reference_area_metadata, pVal)
+        return self._intf.set_property(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._set_reference_area_metadata, pVal)
 
     _get_can_set_reference_area_metadata = { "offset" : _get_can_set_reference_area_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32467,7 +32470,7 @@ class MissileExternalAero(SupportsDeleteCallback):
     @property
     def can_set_reference_area(self) -> bool:
         """Check whether you can set the reference area or whether it is specified in the file."""
-        return self._intf.get_property(MissileExternalAero._metadata, MissileExternalAero._get_can_set_reference_area_metadata)
+        return self._intf.get_property(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._get_can_set_reference_area_metadata)
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32475,7 +32478,7 @@ class MissileExternalAero(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(MissileExternalAero._metadata, MissileExternalAero._get_is_valid_metadata)
+        return self._intf.get_property(MissileExternalAerodynamic._metadata, MissileExternalAerodynamic._get_is_valid_metadata)
 
     _property_names[filepath] = "filepath"
     _property_names[reference_area] = "reference_area"
@@ -32483,9 +32486,9 @@ class MissileExternalAero(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileExternalAero."""
+        """Construct an object of type MissileExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileExternalAero)
+        initialize_from_source_object(self, sourceObject, MissileExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32493,12 +32496,12 @@ class MissileExternalAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileExternalAero, [MissileExternalAero, ])
+        set_class_attribute(self, attrname, value, MissileExternalAerodynamic, [MissileExternalAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5636656773253566004, 13838327309331494071), MissileExternalAero)
-agcls.AgTypeNameMap["MissileExternalAero"] = MissileExternalAero
+agcls.AgClassCatalog.add_catalog_entry((5636656773253566004, 13838327309331494071), MissileExternalAerodynamic)
+agcls.AgTypeNameMap["MissileExternalAerodynamic"] = MissileExternalAerodynamic
 
-class MissileAdvancedAero(SupportsDeleteCallback):
+class MissileAdvancedAerodynamic(SupportsDeleteCallback):
     """Interface used to access the Advanced aerodynamics options for a missile."""
 
     _num_methods = 48
@@ -32529,8 +32532,8 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     _set_wing_leading_edge_sweep_angle_method_offset = 24
     _get_wing_leading_edge_section_angle_method_offset = 25
     _set_wing_leading_edge_section_angle_method_offset = 26
-    _get_wing_mean_aero_chord_length_method_offset = 27
-    _set_wing_mean_aero_chord_length_method_offset = 28
+    _get_wing_mean_aerodynamic_chord_length_method_offset = 27
+    _set_wing_mean_aerodynamic_chord_length_method_offset = 28
     _get_wing_max_thickness_along_mac_method_offset = 29
     _set_wing_max_thickness_along_mac_method_offset = 30
     _get_wing_lift_fraction_method_offset = 31
@@ -32545,8 +32548,8 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     _set_tail_leading_edge_sweep_angle_method_offset = 40
     _get_tail_leading_edge_section_angle_method_offset = 41
     _set_tail_leading_edge_section_angle_method_offset = 42
-    _get_tail_mean_aero_chord_length_method_offset = 43
-    _set_tail_mean_aero_chord_length_method_offset = 44
+    _get_tail_mean_aerodynamic_chord_length_method_offset = 43
+    _set_tail_mean_aerodynamic_chord_length_method_offset = 44
     _get_tail_max_thickness_along_mac_method_offset = 45
     _set_tail_max_thickness_along_mac_method_offset = 46
     _get_tail_lift_fraction_method_offset = 47
@@ -32557,7 +32560,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileAdvancedAero)
+        return get_interface_property(attrname, MissileAdvancedAerodynamic)
     
     _get_body_width_metadata = { "offset" : _get_body_width_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32565,7 +32568,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def body_width(self) -> float:
         """Get or set the missile body's width."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_body_width_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_body_width_metadata)
 
     _set_body_width_metadata = { "offset" : _set_body_width_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32573,7 +32576,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @body_width.setter
     def body_width(self, newVal:float) -> None:
         """Get or set the missile body's width."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_body_width_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_body_width_metadata, newVal)
 
     _get_body_height_metadata = { "offset" : _get_body_height_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32581,7 +32584,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def body_height(self) -> float:
         """Get or set the missile body's height."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_body_height_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_body_height_metadata)
 
     _set_body_height_metadata = { "offset" : _set_body_height_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32589,7 +32592,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @body_height.setter
     def body_height(self, newVal:float) -> None:
         """Get or set the missile body's height."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_body_height_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_body_height_metadata, newVal)
 
     _get_body_length_metadata = { "offset" : _get_body_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32597,7 +32600,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def body_length(self) -> float:
         """Get or set the missile body's length."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_body_length_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_body_length_metadata)
 
     _set_body_length_metadata = { "offset" : _set_body_length_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32605,7 +32608,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @body_length.setter
     def body_length(self, newVal:float) -> None:
         """Get or set the missile body's length."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_body_length_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_body_length_metadata, newVal)
 
     _get_nose_length_metadata = { "offset" : _get_nose_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32613,7 +32616,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def nose_length(self) -> float:
         """Get or set the missile nose's length."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_nose_length_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_nose_length_metadata)
 
     _set_nose_length_metadata = { "offset" : _set_nose_length_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32621,7 +32624,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @nose_length.setter
     def nose_length(self, newVal:float) -> None:
         """Get or set the missile nose's length."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_nose_length_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_nose_length_metadata, newVal)
 
     _get_nose_tip_diameter_metadata = { "offset" : _get_nose_tip_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32629,7 +32632,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def nose_tip_diameter(self) -> float:
         """Get or set the missile nose's diameter at the tip."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_nose_tip_diameter_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_nose_tip_diameter_metadata)
 
     _set_nose_tip_diameter_metadata = { "offset" : _set_nose_tip_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32637,7 +32640,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @nose_tip_diameter.setter
     def nose_tip_diameter(self, newVal:float) -> None:
         """Get or set the missile nose's diameter at the tip."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_nose_tip_diameter_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_nose_tip_diameter_metadata, newVal)
 
     _get_nozzle_diameter_metadata = { "offset" : _get_nozzle_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32645,7 +32648,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def nozzle_diameter(self) -> float:
         """Get or set the diameter of the missile's nozzle."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_nozzle_diameter_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_nozzle_diameter_metadata)
 
     _set_nozzle_diameter_metadata = { "offset" : _set_nozzle_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32653,7 +32656,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @nozzle_diameter.setter
     def nozzle_diameter(self, newVal:float) -> None:
         """Get or set the diameter of the missile's nozzle."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_nozzle_diameter_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_nozzle_diameter_metadata, newVal)
 
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32661,7 +32664,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def max_aoa(self) -> typing.Any:
         """Get or set the missile's maximum angle of attack."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_max_aoa_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_max_aoa_metadata)
 
     _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -32669,7 +32672,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @max_aoa.setter
     def max_aoa(self, newVal:typing.Any) -> None:
         """Get or set the missile's maximum angle of attack."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_max_aoa_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_max_aoa_metadata, newVal)
 
     _get_min_mach_metadata = { "offset" : _get_min_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32677,7 +32680,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def min_mach(self) -> float:
         """Get or set the minimum mach number of the missile."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_min_mach_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_min_mach_metadata)
 
     _set_min_mach_metadata = { "offset" : _set_min_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32685,7 +32688,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @min_mach.setter
     def min_mach(self, newVal:float) -> None:
         """Get or set the minimum mach number of the missile."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_min_mach_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_min_mach_metadata, newVal)
 
     _get_wing_count_metadata = { "offset" : _get_wing_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32693,7 +32696,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_count(self) -> int:
         """Get or set the number of wings on the missile."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_count_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_count_metadata)
 
     _set_wing_count_metadata = { "offset" : _set_wing_count_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -32701,7 +32704,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_count.setter
     def wing_count(self, newVal:int) -> None:
         """Get or set the number of wings on the missile."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_count_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_count_metadata, newVal)
 
     _get_wing_span_metadata = { "offset" : _get_wing_span_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32709,7 +32712,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_span(self) -> float:
         """Get or set the span of one of the missile's wings."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_span_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_span_metadata)
 
     _set_wing_span_metadata = { "offset" : _set_wing_span_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32717,7 +32720,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_span.setter
     def wing_span(self, newVal:float) -> None:
         """Get or set the span of one of the missile's wings."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_span_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_span_metadata, newVal)
 
     _get_wing_surface_area_metadata = { "offset" : _get_wing_surface_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32725,7 +32728,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_surface_area(self) -> float:
         """Get or set the area of one of the missile's wings."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_surface_area_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_surface_area_metadata)
 
     _set_wing_surface_area_metadata = { "offset" : _set_wing_surface_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32733,7 +32736,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_surface_area.setter
     def wing_surface_area(self, newVal:float) -> None:
         """Get or set the area of one of the missile's wings."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_surface_area_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_surface_area_metadata, newVal)
 
     _get_wing_leading_edge_sweep_angle_metadata = { "offset" : _get_wing_leading_edge_sweep_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32741,7 +32744,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_leading_edge_sweep_angle(self) -> typing.Any:
         """Get or set the leading edge weep angle of the wings."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_leading_edge_sweep_angle_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_leading_edge_sweep_angle_metadata)
 
     _set_wing_leading_edge_sweep_angle_metadata = { "offset" : _set_wing_leading_edge_sweep_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -32749,7 +32752,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_leading_edge_sweep_angle.setter
     def wing_leading_edge_sweep_angle(self, newVal:typing.Any) -> None:
         """Get or set the leading edge weep angle of the wings."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_leading_edge_sweep_angle_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_leading_edge_sweep_angle_metadata, newVal)
 
     _get_wing_leading_edge_section_angle_metadata = { "offset" : _get_wing_leading_edge_section_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32757,7 +32760,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_leading_edge_section_angle(self) -> typing.Any:
         """Get or set the leading edge section angle of the wings."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_leading_edge_section_angle_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_leading_edge_section_angle_metadata)
 
     _set_wing_leading_edge_section_angle_metadata = { "offset" : _set_wing_leading_edge_section_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -32765,23 +32768,23 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_leading_edge_section_angle.setter
     def wing_leading_edge_section_angle(self, newVal:typing.Any) -> None:
         """Get or set the leading edge section angle of the wings."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_leading_edge_section_angle_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_leading_edge_section_angle_metadata, newVal)
 
-    _get_wing_mean_aero_chord_length_metadata = { "offset" : _get_wing_mean_aero_chord_length_method_offset,
+    _get_wing_mean_aerodynamic_chord_length_metadata = { "offset" : _get_wing_mean_aerodynamic_chord_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def wing_mean_aero_chord_length(self) -> float:
+    def wing_mean_aerodynamic_chord_length(self) -> float:
         """Get or set the mean chord length of one of the missile's wings."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_mean_aero_chord_length_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_mean_aerodynamic_chord_length_metadata)
 
-    _set_wing_mean_aero_chord_length_metadata = { "offset" : _set_wing_mean_aero_chord_length_method_offset,
+    _set_wing_mean_aerodynamic_chord_length_metadata = { "offset" : _set_wing_mean_aerodynamic_chord_length_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @wing_mean_aero_chord_length.setter
-    def wing_mean_aero_chord_length(self, newVal:float) -> None:
+    @wing_mean_aerodynamic_chord_length.setter
+    def wing_mean_aerodynamic_chord_length(self, newVal:float) -> None:
         """Get or set the mean chord length of one of the missile's wings."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_mean_aero_chord_length_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_mean_aerodynamic_chord_length_metadata, newVal)
 
     _get_wing_max_thickness_along_mac_metadata = { "offset" : _get_wing_max_thickness_along_mac_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32789,7 +32792,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_max_thickness_along_mac(self) -> float:
         """Get or set the max thickness of the wing along the mean aerodynamic chord."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_max_thickness_along_mac_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_max_thickness_along_mac_metadata)
 
     _set_wing_max_thickness_along_mac_metadata = { "offset" : _set_wing_max_thickness_along_mac_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32797,7 +32800,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_max_thickness_along_mac.setter
     def wing_max_thickness_along_mac(self, newVal:float) -> None:
         """Get or set the max thickness of the wing along the mean aerodynamic chord."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_max_thickness_along_mac_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_max_thickness_along_mac_metadata, newVal)
 
     _get_wing_lift_fraction_metadata = { "offset" : _get_wing_lift_fraction_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32805,7 +32808,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def wing_lift_fraction(self) -> float:
         """Get or set the lift fraction of the wing."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_wing_lift_fraction_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_wing_lift_fraction_metadata)
 
     _set_wing_lift_fraction_metadata = { "offset" : _set_wing_lift_fraction_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32813,7 +32816,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @wing_lift_fraction.setter
     def wing_lift_fraction(self, newVal:float) -> None:
         """Get or set the lift fraction of the wing."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_wing_lift_fraction_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_wing_lift_fraction_metadata, newVal)
 
     _get_tail_count_metadata = { "offset" : _get_tail_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32821,7 +32824,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_count(self) -> int:
         """Get or set the number of tails on the missile."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_count_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_count_metadata)
 
     _set_tail_count_metadata = { "offset" : _set_tail_count_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -32829,7 +32832,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_count.setter
     def tail_count(self, newVal:int) -> None:
         """Get or set the number of tails on the missile."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_count_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_count_metadata, newVal)
 
     _get_tail_span_metadata = { "offset" : _get_tail_span_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32837,7 +32840,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_span(self) -> float:
         """Get or set the span of one of the missile's tails."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_span_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_span_metadata)
 
     _set_tail_span_metadata = { "offset" : _set_tail_span_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32845,7 +32848,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_span.setter
     def tail_span(self, newVal:float) -> None:
         """Get or set the span of one of the missile's tails."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_span_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_span_metadata, newVal)
 
     _get_tail_surface_area_metadata = { "offset" : _get_tail_surface_area_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32853,7 +32856,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_surface_area(self) -> float:
         """Get or set the area of one of the missile's tails."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_surface_area_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_surface_area_metadata)
 
     _set_tail_surface_area_metadata = { "offset" : _set_tail_surface_area_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32861,7 +32864,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_surface_area.setter
     def tail_surface_area(self, newVal:float) -> None:
         """Get or set the area of one of the missile's tails."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_surface_area_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_surface_area_metadata, newVal)
 
     _get_tail_leading_edge_sweep_angle_metadata = { "offset" : _get_tail_leading_edge_sweep_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32869,7 +32872,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_leading_edge_sweep_angle(self) -> typing.Any:
         """Get or set the leading edge weep angle of the tails."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_leading_edge_sweep_angle_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_leading_edge_sweep_angle_metadata)
 
     _set_tail_leading_edge_sweep_angle_metadata = { "offset" : _set_tail_leading_edge_sweep_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -32877,7 +32880,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_leading_edge_sweep_angle.setter
     def tail_leading_edge_sweep_angle(self, newVal:typing.Any) -> None:
         """Get or set the leading edge weep angle of the tails."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_leading_edge_sweep_angle_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_leading_edge_sweep_angle_metadata, newVal)
 
     _get_tail_leading_edge_section_angle_metadata = { "offset" : _get_tail_leading_edge_section_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -32885,7 +32888,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_leading_edge_section_angle(self) -> typing.Any:
         """Get or set the leading edge section angle of the tails."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_leading_edge_section_angle_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_leading_edge_section_angle_metadata)
 
     _set_tail_leading_edge_section_angle_metadata = { "offset" : _set_tail_leading_edge_section_angle_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -32893,23 +32896,23 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_leading_edge_section_angle.setter
     def tail_leading_edge_section_angle(self, newVal:typing.Any) -> None:
         """Get or set the leading edge section angle of the tails."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_leading_edge_section_angle_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_leading_edge_section_angle_metadata, newVal)
 
-    _get_tail_mean_aero_chord_length_metadata = { "offset" : _get_tail_mean_aero_chord_length_method_offset,
+    _get_tail_mean_aerodynamic_chord_length_metadata = { "offset" : _get_tail_mean_aerodynamic_chord_length_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def tail_mean_aero_chord_length(self) -> float:
+    def tail_mean_aerodynamic_chord_length(self) -> float:
         """Get or set the mean chord length of one of the missile's tails."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_mean_aero_chord_length_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_mean_aerodynamic_chord_length_metadata)
 
-    _set_tail_mean_aero_chord_length_metadata = { "offset" : _set_tail_mean_aero_chord_length_method_offset,
+    _set_tail_mean_aerodynamic_chord_length_metadata = { "offset" : _set_tail_mean_aerodynamic_chord_length_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @tail_mean_aero_chord_length.setter
-    def tail_mean_aero_chord_length(self, newVal:float) -> None:
+    @tail_mean_aerodynamic_chord_length.setter
+    def tail_mean_aerodynamic_chord_length(self, newVal:float) -> None:
         """Get or set the mean chord length of one of the missile's tails."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_mean_aero_chord_length_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_mean_aerodynamic_chord_length_metadata, newVal)
 
     _get_tail_max_thickness_along_mac_metadata = { "offset" : _get_tail_max_thickness_along_mac_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32917,7 +32920,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_max_thickness_along_mac(self) -> float:
         """Get or set the max thickness of the tail along the mean aerodynamic chord."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_max_thickness_along_mac_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_max_thickness_along_mac_metadata)
 
     _set_tail_max_thickness_along_mac_metadata = { "offset" : _set_tail_max_thickness_along_mac_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32925,7 +32928,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_max_thickness_along_mac.setter
     def tail_max_thickness_along_mac(self, newVal:float) -> None:
         """Get or set the max thickness of the tail along the mean aerodynamic chord."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_max_thickness_along_mac_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_max_thickness_along_mac_metadata, newVal)
 
     _get_tail_lift_fraction_metadata = { "offset" : _get_tail_lift_fraction_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32933,7 +32936,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @property
     def tail_lift_fraction(self) -> float:
         """Get or set the lift fraction of the tail."""
-        return self._intf.get_property(MissileAdvancedAero._metadata, MissileAdvancedAero._get_tail_lift_fraction_metadata)
+        return self._intf.get_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._get_tail_lift_fraction_metadata)
 
     _set_tail_lift_fraction_metadata = { "offset" : _set_tail_lift_fraction_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -32941,7 +32944,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     @tail_lift_fraction.setter
     def tail_lift_fraction(self, newVal:float) -> None:
         """Get or set the lift fraction of the tail."""
-        return self._intf.set_property(MissileAdvancedAero._metadata, MissileAdvancedAero._set_tail_lift_fraction_metadata, newVal)
+        return self._intf.set_property(MissileAdvancedAerodynamic._metadata, MissileAdvancedAerodynamic._set_tail_lift_fraction_metadata, newVal)
 
     _property_names[body_width] = "body_width"
     _property_names[body_height] = "body_height"
@@ -32956,7 +32959,7 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     _property_names[wing_surface_area] = "wing_surface_area"
     _property_names[wing_leading_edge_sweep_angle] = "wing_leading_edge_sweep_angle"
     _property_names[wing_leading_edge_section_angle] = "wing_leading_edge_section_angle"
-    _property_names[wing_mean_aero_chord_length] = "wing_mean_aero_chord_length"
+    _property_names[wing_mean_aerodynamic_chord_length] = "wing_mean_aerodynamic_chord_length"
     _property_names[wing_max_thickness_along_mac] = "wing_max_thickness_along_mac"
     _property_names[wing_lift_fraction] = "wing_lift_fraction"
     _property_names[tail_count] = "tail_count"
@@ -32964,14 +32967,14 @@ class MissileAdvancedAero(SupportsDeleteCallback):
     _property_names[tail_surface_area] = "tail_surface_area"
     _property_names[tail_leading_edge_sweep_angle] = "tail_leading_edge_sweep_angle"
     _property_names[tail_leading_edge_section_angle] = "tail_leading_edge_section_angle"
-    _property_names[tail_mean_aero_chord_length] = "tail_mean_aero_chord_length"
+    _property_names[tail_mean_aerodynamic_chord_length] = "tail_mean_aerodynamic_chord_length"
     _property_names[tail_max_thickness_along_mac] = "tail_max_thickness_along_mac"
     _property_names[tail_lift_fraction] = "tail_lift_fraction"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileAdvancedAero."""
+        """Construct an object of type MissileAdvancedAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileAdvancedAero)
+        initialize_from_source_object(self, sourceObject, MissileAdvancedAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32979,18 +32982,18 @@ class MissileAdvancedAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileAdvancedAero, [MissileAdvancedAero, ])
+        set_class_attribute(self, attrname, value, MissileAdvancedAerodynamic, [MissileAdvancedAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5052893031100834404, 2206664014496294047), MissileAdvancedAero)
-agcls.AgTypeNameMap["MissileAdvancedAero"] = MissileAdvancedAero
+agcls.AgClassCatalog.add_catalog_entry((5052893031100834404, 2206664014496294047), MissileAdvancedAerodynamic)
+agcls.AgTypeNameMap["MissileAdvancedAerodynamic"] = MissileAdvancedAerodynamic
 
-class MissileAero(SupportsDeleteCallback):
+class MissileAerodynamic(SupportsDeleteCallback):
     """Interface used to access the aerodynamics options for a missile."""
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_aero_strategy_method_offset = 1
-    _set_aero_strategy_method_offset = 2
+    _get_aerodynamic_strategy_method_offset = 1
+    _set_aerodynamic_strategy_method_offset = 2
     _get_mode_as_simple_method_offset = 3
     _get_mode_as_external_method_offset = 4
     _get_mode_as_advanced_method_offset = 5
@@ -33000,57 +33003,57 @@ class MissileAero(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileAero)
+        return get_interface_property(attrname, MissileAerodynamic)
     
-    _get_aero_strategy_metadata = { "offset" : _get_aero_strategy_method_offset,
+    _get_aerodynamic_strategy_metadata = { "offset" : _get_aerodynamic_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MISSILE_AERO_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(MISSILE_AERODYNAMIC_STRATEGY),) }
     @property
-    def aero_strategy(self) -> "MISSILE_AERO_STRATEGY":
+    def aerodynamic_strategy(self) -> "MISSILE_AERODYNAMIC_STRATEGY":
         """Get or set the aerodynamic strategy type."""
-        return self._intf.get_property(MissileAero._metadata, MissileAero._get_aero_strategy_metadata)
+        return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_aerodynamic_strategy_metadata)
 
-    _set_aero_strategy_metadata = { "offset" : _set_aero_strategy_method_offset,
+    _set_aerodynamic_strategy_metadata = { "offset" : _set_aerodynamic_strategy_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MISSILE_AERO_STRATEGY),) }
-    @aero_strategy.setter
-    def aero_strategy(self, newVal:"MISSILE_AERO_STRATEGY") -> None:
+            "marshallers" : (agmarshall.EnumArg(MISSILE_AERODYNAMIC_STRATEGY),) }
+    @aerodynamic_strategy.setter
+    def aerodynamic_strategy(self, newVal:"MISSILE_AERODYNAMIC_STRATEGY") -> None:
         """Get or set the aerodynamic strategy type."""
-        return self._intf.set_property(MissileAero._metadata, MissileAero._set_aero_strategy_metadata, newVal)
+        return self._intf.set_property(MissileAerodynamic._metadata, MissileAerodynamic._set_aerodynamic_strategy_metadata, newVal)
 
     _get_mode_as_simple_metadata = { "offset" : _get_mode_as_simple_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_simple(self) -> "MissileSimpleAero":
+    def mode_as_simple(self) -> "MissileSimpleAerodynamic":
         """Get the interface for a simple aerodynamics strategy."""
-        return self._intf.get_property(MissileAero._metadata, MissileAero._get_mode_as_simple_metadata)
+        return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_mode_as_simple_metadata)
 
     _get_mode_as_external_metadata = { "offset" : _get_mode_as_external_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_external(self) -> "MissileExternalAero":
+    def mode_as_external(self) -> "MissileExternalAerodynamic":
         """Get the interface for an external file aerodynamics strategy."""
-        return self._intf.get_property(MissileAero._metadata, MissileAero._get_mode_as_external_metadata)
+        return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_mode_as_external_metadata)
 
     _get_mode_as_advanced_metadata = { "offset" : _get_mode_as_advanced_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_advanced(self) -> "MissileAdvancedAero":
+    def mode_as_advanced(self) -> "MissileAdvancedAerodynamic":
         """Get the interface for an advanced aerodynamics strategy."""
-        return self._intf.get_property(MissileAero._metadata, MissileAero._get_mode_as_advanced_metadata)
+        return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_mode_as_advanced_metadata)
 
-    _property_names[aero_strategy] = "aero_strategy"
+    _property_names[aerodynamic_strategy] = "aerodynamic_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_external] = "mode_as_external"
     _property_names[mode_as_advanced] = "mode_as_advanced"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileAero."""
+        """Construct an object of type MissileAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileAero)
+        initialize_from_source_object(self, sourceObject, MissileAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33058,18 +33061,18 @@ class MissileAero(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileAero, [MissileAero, ])
+        set_class_attribute(self, attrname, value, MissileAerodynamic, [MissileAerodynamic, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5323354002225726516, 2938484025708401802), MissileAero)
-agcls.AgTypeNameMap["MissileAero"] = MissileAero
+agcls.AgClassCatalog.add_catalog_entry((5323354002225726516, 2938484025708401802), MissileAerodynamic)
+agcls.AgTypeNameMap["MissileAerodynamic"] = MissileAerodynamic
 
-class MissileProp(SupportsDeleteCallback):
+class MissilePropulsion(SupportsDeleteCallback):
     """Interface used to access the Propulsion options for a missile."""
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_prop_strategy_method_offset = 1
-    _set_prop_strategy_method_offset = 2
+    _get_propulsion_strategy_method_offset = 1
+    _set_propulsion_strategy_method_offset = 2
     _get_mode_as_simple_method_offset = 3
     _get_mode_as_external_method_offset = 4
     _get_mode_as_ramjet_method_offset = 5
@@ -33081,65 +33084,65 @@ class MissileProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileProp)
+        return get_interface_property(attrname, MissilePropulsion)
     
-    _get_prop_strategy_metadata = { "offset" : _get_prop_strategy_method_offset,
+    _get_propulsion_strategy_metadata = { "offset" : _get_propulsion_strategy_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MISSILE_PROP_STRATEGY),) }
+            "marshallers" : (agmarshall.EnumArg(MISSILE_PROPULSION_STRATEGY),) }
     @property
-    def prop_strategy(self) -> "MISSILE_PROP_STRATEGY":
+    def propulsion_strategy(self) -> "MISSILE_PROPULSION_STRATEGY":
         """Get or set the propulsion strategy type."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_prop_strategy_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_propulsion_strategy_metadata)
 
-    _set_prop_strategy_metadata = { "offset" : _set_prop_strategy_method_offset,
+    _set_propulsion_strategy_metadata = { "offset" : _set_propulsion_strategy_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MISSILE_PROP_STRATEGY),) }
-    @prop_strategy.setter
-    def prop_strategy(self, newVal:"MISSILE_PROP_STRATEGY") -> None:
+            "marshallers" : (agmarshall.EnumArg(MISSILE_PROPULSION_STRATEGY),) }
+    @propulsion_strategy.setter
+    def propulsion_strategy(self, newVal:"MISSILE_PROPULSION_STRATEGY") -> None:
         """Get or set the propulsion strategy type."""
-        return self._intf.set_property(MissileProp._metadata, MissileProp._set_prop_strategy_metadata, newVal)
+        return self._intf.set_property(MissilePropulsion._metadata, MissilePropulsion._set_propulsion_strategy_metadata, newVal)
 
     _get_mode_as_simple_metadata = { "offset" : _get_mode_as_simple_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_simple(self) -> "MissileSimpleProp":
+    def mode_as_simple(self) -> "MissileSimplePropulsion":
         """Get the interface for a simple propulsion strategy."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_mode_as_simple_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_mode_as_simple_metadata)
 
     _get_mode_as_external_metadata = { "offset" : _get_mode_as_external_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_external(self) -> "MissileExternalProp":
+    def mode_as_external(self) -> "MissileExternalPropulsion":
         """Get the interface for an external file propulsion strategy."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_mode_as_external_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_mode_as_external_metadata)
 
     _get_mode_as_ramjet_metadata = { "offset" : _get_mode_as_ramjet_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_ramjet(self) -> "MissileRamjetProp":
+    def mode_as_ramjet(self) -> "MissileRamjetPropulsion":
         """Get the interface for an Ramjet propulsion strategy."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_mode_as_ramjet_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_mode_as_ramjet_metadata)
 
     _get_mode_as_turbojet_metadata = { "offset" : _get_mode_as_turbojet_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_turbojet(self) -> "MissileTurbojetProp":
+    def mode_as_turbojet(self) -> "MissileTurbojetPropulsion":
         """Get the interface for an Turbojet propulsion strategy."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_mode_as_turbojet_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_mode_as_turbojet_metadata)
 
     _get_mode_as_rocket_metadata = { "offset" : _get_mode_as_rocket_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_rocket(self) -> "MissileRocketProp":
+    def mode_as_rocket(self) -> "MissileRocketPropulsion":
         """Get the interface for an Rocket propulsion strategy."""
-        return self._intf.get_property(MissileProp._metadata, MissileProp._get_mode_as_rocket_metadata)
+        return self._intf.get_property(MissilePropulsion._metadata, MissilePropulsion._get_mode_as_rocket_metadata)
 
-    _property_names[prop_strategy] = "prop_strategy"
+    _property_names[propulsion_strategy] = "propulsion_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_external] = "mode_as_external"
     _property_names[mode_as_ramjet] = "mode_as_ramjet"
@@ -33147,9 +33150,9 @@ class MissileProp(SupportsDeleteCallback):
     _property_names[mode_as_rocket] = "mode_as_rocket"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileProp."""
+        """Construct an object of type MissilePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileProp)
+        initialize_from_source_object(self, sourceObject, MissilePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33157,12 +33160,12 @@ class MissileProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileProp, [MissileProp, ])
+        set_class_attribute(self, attrname, value, MissilePropulsion, [MissilePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5659655677833601230, 74880851413770914), MissileProp)
-agcls.AgTypeNameMap["MissileProp"] = MissileProp
+agcls.AgClassCatalog.add_catalog_entry((5659655677833601230, 74880851413770914), MissilePropulsion)
+agcls.AgTypeNameMap["MissilePropulsion"] = MissilePropulsion
 
-class MissileSimpleProp(SupportsDeleteCallback):
+class MissileSimplePropulsion(SupportsDeleteCallback):
     """Interface used to access the Simple propulsion options for a missile."""
 
     _num_methods = 6
@@ -33179,7 +33182,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileSimpleProp)
+        return get_interface_property(attrname, MissileSimplePropulsion)
     
     _get_max_thrust_metadata = { "offset" : _get_max_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33187,7 +33190,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @property
     def max_thrust(self) -> float:
         """Get or set the maximum thrust of the missile."""
-        return self._intf.get_property(MissileSimpleProp._metadata, MissileSimpleProp._get_max_thrust_metadata)
+        return self._intf.get_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._get_max_thrust_metadata)
 
     _set_max_thrust_metadata = { "offset" : _set_max_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33195,7 +33198,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @max_thrust.setter
     def max_thrust(self, pVal:float) -> None:
         """Get or set the maximum thrust of the missile."""
-        return self._intf.set_property(MissileSimpleProp._metadata, MissileSimpleProp._set_max_thrust_metadata, pVal)
+        return self._intf.set_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._set_max_thrust_metadata, pVal)
 
     _get_fuel_flow_metadata = { "offset" : _get_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33203,7 +33206,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @property
     def fuel_flow(self) -> float:
         """Get or set the fuel flow at max thrust."""
-        return self._intf.get_property(MissileSimpleProp._metadata, MissileSimpleProp._get_fuel_flow_metadata)
+        return self._intf.get_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._get_fuel_flow_metadata)
 
     _set_fuel_flow_metadata = { "offset" : _set_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33211,7 +33214,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @fuel_flow.setter
     def fuel_flow(self, pVal:float) -> None:
         """Get or set the fuel flow at max thrust."""
-        return self._intf.set_property(MissileSimpleProp._metadata, MissileSimpleProp._set_fuel_flow_metadata, pVal)
+        return self._intf.set_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._set_fuel_flow_metadata, pVal)
 
     _get_no_thrust_when_no_fuel_metadata = { "offset" : _get_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33219,7 +33222,7 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @property
     def no_thrust_when_no_fuel(self) -> bool:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.get_property(MissileSimpleProp._metadata, MissileSimpleProp._get_no_thrust_when_no_fuel_metadata)
+        return self._intf.get_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._get_no_thrust_when_no_fuel_metadata)
 
     _set_no_thrust_when_no_fuel_metadata = { "offset" : _set_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -33227,16 +33230,16 @@ class MissileSimpleProp(SupportsDeleteCallback):
     @no_thrust_when_no_fuel.setter
     def no_thrust_when_no_fuel(self, pVal:bool) -> None:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.set_property(MissileSimpleProp._metadata, MissileSimpleProp._set_no_thrust_when_no_fuel_metadata, pVal)
+        return self._intf.set_property(MissileSimplePropulsion._metadata, MissileSimplePropulsion._set_no_thrust_when_no_fuel_metadata, pVal)
 
     _property_names[max_thrust] = "max_thrust"
     _property_names[fuel_flow] = "fuel_flow"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileSimpleProp."""
+        """Construct an object of type MissileSimplePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileSimpleProp)
+        initialize_from_source_object(self, sourceObject, MissileSimplePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33244,12 +33247,12 @@ class MissileSimpleProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileSimpleProp, [MissileSimpleProp, ])
+        set_class_attribute(self, attrname, value, MissileSimplePropulsion, [MissileSimplePropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5403921619446802984, 4318640400048778903), MissileSimpleProp)
-agcls.AgTypeNameMap["MissileSimpleProp"] = MissileSimpleProp
+agcls.AgClassCatalog.add_catalog_entry((5403921619446802984, 4318640400048778903), MissileSimplePropulsion)
+agcls.AgTypeNameMap["MissileSimplePropulsion"] = MissileSimplePropulsion
 
-class MissileExternalProp(SupportsDeleteCallback):
+class MissileExternalPropulsion(SupportsDeleteCallback):
     """Interface used to access the External Prop file options for a missile."""
 
     _num_methods = 6
@@ -33266,7 +33269,7 @@ class MissileExternalProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileExternalProp)
+        return get_interface_property(attrname, MissileExternalPropulsion)
     
     _get_filepath_metadata = { "offset" : _get_filepath_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33274,21 +33277,21 @@ class MissileExternalProp(SupportsDeleteCallback):
     @property
     def filepath(self) -> str:
         """Get the filepath for the external prop file."""
-        return self._intf.get_property(MissileExternalProp._metadata, MissileExternalProp._get_filepath_metadata)
+        return self._intf.get_property(MissileExternalPropulsion._metadata, MissileExternalPropulsion._get_filepath_metadata)
 
     _set_filepath_metadata = { "offset" : _set_filepath_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def set_filepath(self, filepath:str) -> str:
         """Set the filepath for the external prop file."""
-        return self._intf.invoke(MissileExternalProp._metadata, MissileExternalProp._set_filepath_metadata, filepath, OutArg())
+        return self._intf.invoke(MissileExternalPropulsion._metadata, MissileExternalPropulsion._set_filepath_metadata, filepath, OutArg())
 
     _reload_metadata = { "offset" : _reload_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     def reload(self) -> str:
         """Reload the external prop file."""
-        return self._intf.invoke(MissileExternalProp._metadata, MissileExternalProp._reload_metadata, OutArg())
+        return self._intf.invoke(MissileExternalPropulsion._metadata, MissileExternalPropulsion._reload_metadata, OutArg())
 
     _get_no_thrust_when_no_fuel_metadata = { "offset" : _get_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33296,7 +33299,7 @@ class MissileExternalProp(SupportsDeleteCallback):
     @property
     def no_thrust_when_no_fuel(self) -> bool:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.get_property(MissileExternalProp._metadata, MissileExternalProp._get_no_thrust_when_no_fuel_metadata)
+        return self._intf.get_property(MissileExternalPropulsion._metadata, MissileExternalPropulsion._get_no_thrust_when_no_fuel_metadata)
 
     _set_no_thrust_when_no_fuel_metadata = { "offset" : _set_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -33304,7 +33307,7 @@ class MissileExternalProp(SupportsDeleteCallback):
     @no_thrust_when_no_fuel.setter
     def no_thrust_when_no_fuel(self, pVal:bool) -> None:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.set_property(MissileExternalProp._metadata, MissileExternalProp._set_no_thrust_when_no_fuel_metadata, pVal)
+        return self._intf.set_property(MissileExternalPropulsion._metadata, MissileExternalPropulsion._set_no_thrust_when_no_fuel_metadata, pVal)
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33312,16 +33315,16 @@ class MissileExternalProp(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Check whether the filepath is valid."""
-        return self._intf.get_property(MissileExternalProp._metadata, MissileExternalProp._get_is_valid_metadata)
+        return self._intf.get_property(MissileExternalPropulsion._metadata, MissileExternalPropulsion._get_is_valid_metadata)
 
     _property_names[filepath] = "filepath"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
     _property_names[is_valid] = "is_valid"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileExternalProp."""
+        """Construct an object of type MissileExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileExternalProp)
+        initialize_from_source_object(self, sourceObject, MissileExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33329,12 +33332,12 @@ class MissileExternalProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileExternalProp, [MissileExternalProp, ])
+        set_class_attribute(self, attrname, value, MissileExternalPropulsion, [MissileExternalPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4988835713659863239, 13600985963996914596), MissileExternalProp)
-agcls.AgTypeNameMap["MissileExternalProp"] = MissileExternalProp
+agcls.AgClassCatalog.add_catalog_entry((4988835713659863239, 13600985963996914596), MissileExternalPropulsion)
+agcls.AgTypeNameMap["MissileExternalPropulsion"] = MissileExternalPropulsion
 
-class MissileRamjetProp(SupportsDeleteCallback):
+class MissileRamjetPropulsion(SupportsDeleteCallback):
     """Interface used to access the Ramjet propulsion options for a missile."""
 
     _num_methods = 22
@@ -33367,7 +33370,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileRamjetProp)
+        return get_interface_property(attrname, MissileRamjetPropulsion)
     
     _get_design_mach_metadata = { "offset" : _get_design_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33375,7 +33378,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def design_mach(self) -> float:
         """Get or set the mach number design point of the engine."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_design_mach_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "offset" : _set_design_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33383,7 +33386,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """Get or set the mach number design point of the engine."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_design_mach_metadata, newVal)
 
     _get_design_altitude_metadata = { "offset" : _get_design_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33391,7 +33394,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def design_altitude(self) -> float:
         """Get or set the altitude design point of the engine."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_design_altitude_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "offset" : _set_design_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33399,7 +33402,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """Get or set the altitude design point of the engine."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_design_altitude_metadata, newVal)
 
     _get_design_thrust_metadata = { "offset" : _get_design_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33407,7 +33410,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def design_thrust(self) -> float:
         """Get or set the thrust design point of the engine."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_design_thrust_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "offset" : _set_design_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33415,7 +33418,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """Get or set the thrust design point of the engine."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_design_thrust_metadata, newVal)
 
     _get_engine_temp_metadata = { "offset" : _get_engine_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33423,7 +33426,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def engine_temp(self) -> float:
         """Get or set the maximum temperature that the engine material can support."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_engine_temp_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_engine_temp_metadata)
 
     _set_engine_temp_metadata = { "offset" : _set_engine_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33431,7 +33434,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @engine_temp.setter
     def engine_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature that the engine material can support."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_engine_temp_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_engine_temp_metadata, newVal)
 
     _get_fuel_heating_value_metadata = { "offset" : _get_fuel_heating_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33439,7 +33442,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def fuel_heating_value(self) -> float:
         """Get or set the heating value of the fuel."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_fuel_heating_value_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_fuel_heating_value_metadata)
 
     _set_fuel_heating_value_metadata = { "offset" : _set_fuel_heating_value_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33447,7 +33450,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @fuel_heating_value.setter
     def fuel_heating_value(self, newVal:float) -> None:
         """Get or set the heating value of the fuel."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_fuel_heating_value_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_fuel_heating_value_metadata, newVal)
 
     _get_inlet_pressure_ratio_metadata = { "offset" : _get_inlet_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33455,7 +33458,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def inlet_pressure_ratio(self) -> float:
         """Get or set the pressure ratio from the inlet exit to the entrance."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_inlet_pressure_ratio_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_inlet_pressure_ratio_metadata)
 
     _set_inlet_pressure_ratio_metadata = { "offset" : _set_inlet_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33463,7 +33466,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @inlet_pressure_ratio.setter
     def inlet_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio from the inlet exit to the entrance."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_inlet_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_inlet_pressure_ratio_metadata, newVal)
 
     _get_burner_pressure_ratio_metadata = { "offset" : _get_burner_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33471,7 +33474,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def burner_pressure_ratio(self) -> float:
         """Get or set the pressure ratio from the burner exit to the entrance."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_burner_pressure_ratio_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_burner_pressure_ratio_metadata)
 
     _set_burner_pressure_ratio_metadata = { "offset" : _set_burner_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33479,7 +33482,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @burner_pressure_ratio.setter
     def burner_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio from the burner exit to the entrance."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_burner_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_burner_pressure_ratio_metadata, newVal)
 
     _get_nozzle_pressure_ratio_metadata = { "offset" : _get_nozzle_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33487,7 +33490,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def nozzle_pressure_ratio(self) -> float:
         """Get or set the pressure ratio from the nozzle exit to the entrance."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_nozzle_pressure_ratio_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_nozzle_pressure_ratio_metadata)
 
     _set_nozzle_pressure_ratio_metadata = { "offset" : _set_nozzle_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33495,7 +33498,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @nozzle_pressure_ratio.setter
     def nozzle_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio from the nozzle exit to the entrance."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_nozzle_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_nozzle_pressure_ratio_metadata, newVal)
 
     _get_p_0over_p9_metadata = { "offset" : _get_p_0over_p9_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33503,7 +33506,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def p_0over_p9(self) -> float:
         """Get or set the pressure ratio from ambient conditions to the engine exit."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_p_0over_p9_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_p_0over_p9_metadata)
 
     _set_p_0over_p9_metadata = { "offset" : _set_p_0over_p9_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33511,7 +33514,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @p_0over_p9.setter
     def p_0over_p9(self, newVal:float) -> None:
         """Get or set the pressure ratio from ambient conditions to the engine exit."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_p_0over_p9_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_p_0over_p9_metadata, newVal)
 
     _get_burner_efficiency_metadata = { "offset" : _get_burner_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33519,7 +33522,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def burner_efficiency(self) -> float:
         """Get or set the efficiency of the burner."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_burner_efficiency_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_burner_efficiency_metadata)
 
     _set_burner_efficiency_metadata = { "offset" : _set_burner_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33527,7 +33530,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @burner_efficiency.setter
     def burner_efficiency(self, newVal:float) -> None:
         """Get or set the efficiency of the burner."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_burner_efficiency_metadata, newVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_burner_efficiency_metadata, newVal)
 
     _get_no_thrust_when_no_fuel_metadata = { "offset" : _get_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33535,7 +33538,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @property
     def no_thrust_when_no_fuel(self) -> bool:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.get_property(MissileRamjetProp._metadata, MissileRamjetProp._get_no_thrust_when_no_fuel_metadata)
+        return self._intf.get_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._get_no_thrust_when_no_fuel_metadata)
 
     _set_no_thrust_when_no_fuel_metadata = { "offset" : _set_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -33543,7 +33546,7 @@ class MissileRamjetProp(SupportsDeleteCallback):
     @no_thrust_when_no_fuel.setter
     def no_thrust_when_no_fuel(self, pVal:bool) -> None:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.set_property(MissileRamjetProp._metadata, MissileRamjetProp._set_no_thrust_when_no_fuel_metadata, pVal)
+        return self._intf.set_property(MissileRamjetPropulsion._metadata, MissileRamjetPropulsion._set_no_thrust_when_no_fuel_metadata, pVal)
 
     _property_names[design_mach] = "design_mach"
     _property_names[design_altitude] = "design_altitude"
@@ -33558,9 +33561,9 @@ class MissileRamjetProp(SupportsDeleteCallback):
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileRamjetProp."""
+        """Construct an object of type MissileRamjetPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileRamjetProp)
+        initialize_from_source_object(self, sourceObject, MissileRamjetPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33568,12 +33571,12 @@ class MissileRamjetProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileRamjetProp, [MissileRamjetProp, ])
+        set_class_attribute(self, attrname, value, MissileRamjetPropulsion, [MissileRamjetPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5614474896998347186, 3316151172710167988), MissileRamjetProp)
-agcls.AgTypeNameMap["MissileRamjetProp"] = MissileRamjetProp
+agcls.AgClassCatalog.add_catalog_entry((5614474896998347186, 3316151172710167988), MissileRamjetPropulsion)
+agcls.AgTypeNameMap["MissileRamjetPropulsion"] = MissileRamjetPropulsion
 
-class MissileRocketProp(SupportsDeleteCallback):
+class MissileRocketPropulsion(SupportsDeleteCallback):
     """Interface used to access the Rocket propulsion options for a missile."""
 
     _num_methods = 18
@@ -33602,7 +33605,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileRocketProp)
+        return get_interface_property(attrname, MissileRocketPropulsion)
     
     _get_nozzle_expansion_ratio_metadata = { "offset" : _get_nozzle_expansion_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33610,7 +33613,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def nozzle_expansion_ratio(self) -> float:
         """Get or set the exit area divided by the throat area."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_nozzle_expansion_ratio_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_nozzle_expansion_ratio_metadata)
 
     _set_nozzle_expansion_ratio_metadata = { "offset" : _set_nozzle_expansion_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33618,7 +33621,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @nozzle_expansion_ratio.setter
     def nozzle_expansion_ratio(self, newVal:float) -> None:
         """Get or set the exit area divided by the throat area."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_nozzle_expansion_ratio_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_nozzle_expansion_ratio_metadata, newVal)
 
     _get_nozzle_exit_diameter_metadata = { "offset" : _get_nozzle_exit_diameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33626,7 +33629,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def nozzle_exit_diameter(self) -> float:
         """Get or set the diameter of the nozzle exit."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_nozzle_exit_diameter_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_nozzle_exit_diameter_metadata)
 
     _set_nozzle_exit_diameter_metadata = { "offset" : _set_nozzle_exit_diameter_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33634,7 +33637,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @nozzle_exit_diameter.setter
     def nozzle_exit_diameter(self, newVal:float) -> None:
         """Get or set the diameter of the nozzle exit."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_nozzle_exit_diameter_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_nozzle_exit_diameter_metadata, newVal)
 
     _get_combustion_chamber_pressure_metadata = { "offset" : _get_combustion_chamber_pressure_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33642,7 +33645,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def combustion_chamber_pressure(self) -> float:
         """Get or set the pressure in the combustion chamber."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_combustion_chamber_pressure_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_combustion_chamber_pressure_metadata)
 
     _set_combustion_chamber_pressure_metadata = { "offset" : _set_combustion_chamber_pressure_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33650,7 +33653,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @combustion_chamber_pressure.setter
     def combustion_chamber_pressure(self, newVal:float) -> None:
         """Get or set the pressure in the combustion chamber."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_combustion_chamber_pressure_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_combustion_chamber_pressure_metadata, newVal)
 
     _get_propellant_specific_heat_ratio_metadata = { "offset" : _get_propellant_specific_heat_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33658,7 +33661,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def propellant_specific_heat_ratio(self) -> float:
         """Get or set the ratio of the propellant's constant-pressure specific heat to the constant volume specific heat."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_propellant_specific_heat_ratio_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_propellant_specific_heat_ratio_metadata)
 
     _set_propellant_specific_heat_ratio_metadata = { "offset" : _set_propellant_specific_heat_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33666,7 +33669,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @propellant_specific_heat_ratio.setter
     def propellant_specific_heat_ratio(self, newVal:float) -> None:
         """Get or set the ratio of the propellant's constant-pressure specific heat to the constant volume specific heat."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_propellant_specific_heat_ratio_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_propellant_specific_heat_ratio_metadata, newVal)
 
     _get_propellant_characteristic_velocity_metadata = { "offset" : _get_propellant_characteristic_velocity_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33674,7 +33677,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def propellant_characteristic_velocity(self) -> float:
         """Get or set the propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine)."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_propellant_characteristic_velocity_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_propellant_characteristic_velocity_metadata)
 
     _set_propellant_characteristic_velocity_metadata = { "offset" : _set_propellant_characteristic_velocity_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33682,7 +33685,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @propellant_characteristic_velocity.setter
     def propellant_characteristic_velocity(self, newVal:float) -> None:
         """Get or set the propellant's characteristic velocity (Chamber Pressure * Throat Area / Mass Flow Rate of the engine)."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_propellant_characteristic_velocity_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_propellant_characteristic_velocity_metadata, newVal)
 
     _get_use_boost_sustain_mode_metadata = { "offset" : _get_use_boost_sustain_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33690,7 +33693,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def use_boost_sustain_mode(self) -> bool:
         """Opt for the engine to use a boost phase to achieve a target velocity and then transition to a sustenance phase."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_use_boost_sustain_mode_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_use_boost_sustain_mode_metadata)
 
     _set_use_boost_sustain_mode_metadata = { "offset" : _set_use_boost_sustain_mode_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -33698,7 +33701,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @use_boost_sustain_mode.setter
     def use_boost_sustain_mode(self, newVal:bool) -> None:
         """Opt for the engine to use a boost phase to achieve a target velocity and then transition to a sustenance phase."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_use_boost_sustain_mode_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_use_boost_sustain_mode_metadata, newVal)
 
     _get_boost_fuel_fraction_metadata = { "offset" : _get_boost_fuel_fraction_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33706,7 +33709,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def boost_fuel_fraction(self) -> float:
         """Get or set the amount of fuel that is consumed during the boost phase."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_boost_fuel_fraction_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_boost_fuel_fraction_metadata)
 
     _set_boost_fuel_fraction_metadata = { "offset" : _set_boost_fuel_fraction_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33714,7 +33717,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @boost_fuel_fraction.setter
     def boost_fuel_fraction(self, newVal:float) -> None:
         """Get or set the amount of fuel that is consumed during the boost phase."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_boost_fuel_fraction_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_boost_fuel_fraction_metadata, newVal)
 
     _get_boost_chamber_pressure_metadata = { "offset" : _get_boost_chamber_pressure_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33722,7 +33725,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def boost_chamber_pressure(self) -> float:
         """Get or set the combustion chamber pressure during the boost phase."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_boost_chamber_pressure_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_boost_chamber_pressure_metadata)
 
     _set_boost_chamber_pressure_metadata = { "offset" : _set_boost_chamber_pressure_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33730,7 +33733,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @boost_chamber_pressure.setter
     def boost_chamber_pressure(self, newVal:float) -> None:
         """Get or set the combustion chamber pressure during the boost phase."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_boost_chamber_pressure_metadata, newVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_boost_chamber_pressure_metadata, newVal)
 
     _get_no_thrust_when_no_fuel_metadata = { "offset" : _get_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33738,7 +33741,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @property
     def no_thrust_when_no_fuel(self) -> bool:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.get_property(MissileRocketProp._metadata, MissileRocketProp._get_no_thrust_when_no_fuel_metadata)
+        return self._intf.get_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._get_no_thrust_when_no_fuel_metadata)
 
     _set_no_thrust_when_no_fuel_metadata = { "offset" : _set_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -33746,7 +33749,7 @@ class MissileRocketProp(SupportsDeleteCallback):
     @no_thrust_when_no_fuel.setter
     def no_thrust_when_no_fuel(self, pVal:bool) -> None:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.set_property(MissileRocketProp._metadata, MissileRocketProp._set_no_thrust_when_no_fuel_metadata, pVal)
+        return self._intf.set_property(MissileRocketPropulsion._metadata, MissileRocketPropulsion._set_no_thrust_when_no_fuel_metadata, pVal)
 
     _property_names[nozzle_expansion_ratio] = "nozzle_expansion_ratio"
     _property_names[nozzle_exit_diameter] = "nozzle_exit_diameter"
@@ -33759,9 +33762,9 @@ class MissileRocketProp(SupportsDeleteCallback):
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileRocketProp."""
+        """Construct an object of type MissileRocketPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileRocketProp)
+        initialize_from_source_object(self, sourceObject, MissileRocketPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33769,12 +33772,12 @@ class MissileRocketProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileRocketProp, [MissileRocketProp, ])
+        set_class_attribute(self, attrname, value, MissileRocketPropulsion, [MissileRocketPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4829527676256086967, 2901581551454081419), MissileRocketProp)
-agcls.AgTypeNameMap["MissileRocketProp"] = MissileRocketProp
+agcls.AgClassCatalog.add_catalog_entry((4829527676256086967, 2901581551454081419), MissileRocketPropulsion)
+agcls.AgTypeNameMap["MissileRocketPropulsion"] = MissileRocketPropulsion
 
-class MissileTurbojetProp(SupportsDeleteCallback):
+class MissileTurbojetPropulsion(SupportsDeleteCallback):
     """Interface used to access the Turbojet propulsion options for a missile."""
 
     _num_methods = 30
@@ -33815,7 +33818,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MissileTurbojetProp)
+        return get_interface_property(attrname, MissileTurbojetPropulsion)
     
     _get_design_mach_metadata = { "offset" : _get_design_mach_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33823,7 +33826,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def design_mach(self) -> float:
         """Get or set the mach number design point of the engine."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_design_mach_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_design_mach_metadata)
 
     _set_design_mach_metadata = { "offset" : _set_design_mach_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33831,7 +33834,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @design_mach.setter
     def design_mach(self, newVal:float) -> None:
         """Get or set the mach number design point of the engine."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_design_mach_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_design_mach_metadata, newVal)
 
     _get_design_altitude_metadata = { "offset" : _get_design_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33839,7 +33842,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def design_altitude(self) -> float:
         """Get or set the altitude design point of the engine."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_design_altitude_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_design_altitude_metadata)
 
     _set_design_altitude_metadata = { "offset" : _set_design_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33847,7 +33850,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @design_altitude.setter
     def design_altitude(self, newVal:float) -> None:
         """Get or set the altitude design point of the engine."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_design_altitude_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_design_altitude_metadata, newVal)
 
     _get_design_thrust_metadata = { "offset" : _get_design_thrust_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33855,7 +33858,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def design_thrust(self) -> float:
         """Get or set the thrust design point of the engine."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_design_thrust_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_design_thrust_metadata)
 
     _set_design_thrust_metadata = { "offset" : _set_design_thrust_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33863,7 +33866,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @design_thrust.setter
     def design_thrust(self, newVal:float) -> None:
         """Get or set the thrust design point of the engine."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_design_thrust_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_design_thrust_metadata, newVal)
 
     _get_turbine_temp_metadata = { "offset" : _get_turbine_temp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33871,7 +33874,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def turbine_temp(self) -> float:
         """Get or set the maximum temperature that the turbine material can support."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_turbine_temp_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_turbine_temp_metadata)
 
     _set_turbine_temp_metadata = { "offset" : _set_turbine_temp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33879,7 +33882,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @turbine_temp.setter
     def turbine_temp(self, newVal:float) -> None:
         """Get or set the maximum temperature that the turbine material can support."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_turbine_temp_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_turbine_temp_metadata, newVal)
 
     _get_compressor_pressure_ratio_metadata = { "offset" : _get_compressor_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33887,7 +33890,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def compressor_pressure_ratio(self) -> float:
         """Get or set the maximum compressor pressure ratio."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_compressor_pressure_ratio_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_compressor_pressure_ratio_metadata)
 
     _set_compressor_pressure_ratio_metadata = { "offset" : _set_compressor_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33895,7 +33898,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @compressor_pressure_ratio.setter
     def compressor_pressure_ratio(self, newVal:float) -> None:
         """Get or set the maximum compressor pressure ratio."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_compressor_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_compressor_pressure_ratio_metadata, newVal)
 
     _get_fuel_heating_value_metadata = { "offset" : _get_fuel_heating_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33903,7 +33906,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def fuel_heating_value(self) -> float:
         """Get or set the heating value of the fuel."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_fuel_heating_value_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_fuel_heating_value_metadata)
 
     _set_fuel_heating_value_metadata = { "offset" : _set_fuel_heating_value_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33911,7 +33914,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @fuel_heating_value.setter
     def fuel_heating_value(self, newVal:float) -> None:
         """Get or set the heating value of the fuel."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_fuel_heating_value_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_fuel_heating_value_metadata, newVal)
 
     _get_inlet_subsonic_pressure_ratio_metadata = { "offset" : _get_inlet_subsonic_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33919,7 +33922,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def inlet_subsonic_pressure_ratio(self) -> float:
         """Get or set the subsonic pressure ratio from the inlet exit to the entrance."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_inlet_subsonic_pressure_ratio_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_inlet_subsonic_pressure_ratio_metadata)
 
     _set_inlet_subsonic_pressure_ratio_metadata = { "offset" : _set_inlet_subsonic_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33927,7 +33930,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @inlet_subsonic_pressure_ratio.setter
     def inlet_subsonic_pressure_ratio(self, newVal:float) -> None:
         """Get or set the subsonic pressure ratio from the inlet exit to the entrance."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_inlet_subsonic_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_inlet_subsonic_pressure_ratio_metadata, newVal)
 
     _get_burner_pressure_ratio_metadata = { "offset" : _get_burner_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33935,7 +33938,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def burner_pressure_ratio(self) -> float:
         """Get or set the pressure ratio from the burner exit to the entrance."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_burner_pressure_ratio_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_burner_pressure_ratio_metadata)
 
     _set_burner_pressure_ratio_metadata = { "offset" : _set_burner_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33943,7 +33946,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @burner_pressure_ratio.setter
     def burner_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio from the burner exit to the entrance."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_burner_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_burner_pressure_ratio_metadata, newVal)
 
     _get_nozzle_pressure_ratio_metadata = { "offset" : _get_nozzle_pressure_ratio_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33951,7 +33954,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def nozzle_pressure_ratio(self) -> float:
         """Get or set the pressure ratio from the nozzle exit to the entrance."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_nozzle_pressure_ratio_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_nozzle_pressure_ratio_metadata)
 
     _set_nozzle_pressure_ratio_metadata = { "offset" : _set_nozzle_pressure_ratio_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33959,7 +33962,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @nozzle_pressure_ratio.setter
     def nozzle_pressure_ratio(self, newVal:float) -> None:
         """Get or set the pressure ratio from the nozzle exit to the entrance."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_nozzle_pressure_ratio_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_nozzle_pressure_ratio_metadata, newVal)
 
     _get_p_0over_p9_metadata = { "offset" : _get_p_0over_p9_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33967,7 +33970,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def p_0over_p9(self) -> float:
         """Get or set the pressure ratio from ambient conditions to the engine exit."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_p_0over_p9_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_p_0over_p9_metadata)
 
     _set_p_0over_p9_metadata = { "offset" : _set_p_0over_p9_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33975,7 +33978,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @p_0over_p9.setter
     def p_0over_p9(self, newVal:float) -> None:
         """Get or set the pressure ratio from ambient conditions to the engine exit."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_p_0over_p9_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_p_0over_p9_metadata, newVal)
 
     _get_compressor_efficiency_metadata = { "offset" : _get_compressor_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33983,7 +33986,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def compressor_efficiency(self) -> float:
         """Get or set the efficiency of the compressor."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_compressor_efficiency_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_compressor_efficiency_metadata)
 
     _set_compressor_efficiency_metadata = { "offset" : _set_compressor_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -33991,7 +33994,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @compressor_efficiency.setter
     def compressor_efficiency(self, newVal:float) -> None:
         """Get or set the efficiency of the compressor."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_compressor_efficiency_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_compressor_efficiency_metadata, newVal)
 
     _get_turbine_efficiency_metadata = { "offset" : _get_turbine_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33999,7 +34002,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def turbine_efficiency(self) -> float:
         """Get or set the efficiency of the turbine."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_turbine_efficiency_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_turbine_efficiency_metadata)
 
     _set_turbine_efficiency_metadata = { "offset" : _set_turbine_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -34007,7 +34010,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @turbine_efficiency.setter
     def turbine_efficiency(self, newVal:float) -> None:
         """Get or set the efficiency of the turbine."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_turbine_efficiency_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_turbine_efficiency_metadata, newVal)
 
     _get_burner_efficiency_metadata = { "offset" : _get_burner_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34015,7 +34018,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def burner_efficiency(self) -> float:
         """Get or set the efficiency of the burner."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_burner_efficiency_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_burner_efficiency_metadata)
 
     _set_burner_efficiency_metadata = { "offset" : _set_burner_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -34023,7 +34026,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @burner_efficiency.setter
     def burner_efficiency(self, newVal:float) -> None:
         """Get or set the efficiency of the burner."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_burner_efficiency_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_burner_efficiency_metadata, newVal)
 
     _get_mechanical_efficiency_metadata = { "offset" : _get_mechanical_efficiency_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34031,7 +34034,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def mechanical_efficiency(self) -> float:
         """Get or set the mechanical efficiency of the engine."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_mechanical_efficiency_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_mechanical_efficiency_metadata)
 
     _set_mechanical_efficiency_metadata = { "offset" : _set_mechanical_efficiency_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -34039,7 +34042,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @mechanical_efficiency.setter
     def mechanical_efficiency(self, newVal:float) -> None:
         """Get or set the mechanical efficiency of the engine."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_mechanical_efficiency_metadata, newVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_mechanical_efficiency_metadata, newVal)
 
     _get_no_thrust_when_no_fuel_metadata = { "offset" : _get_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34047,7 +34050,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @property
     def no_thrust_when_no_fuel(self) -> bool:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.get_property(MissileTurbojetProp._metadata, MissileTurbojetProp._get_no_thrust_when_no_fuel_metadata)
+        return self._intf.get_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._get_no_thrust_when_no_fuel_metadata)
 
     _set_no_thrust_when_no_fuel_metadata = { "offset" : _set_no_thrust_when_no_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -34055,7 +34058,7 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     @no_thrust_when_no_fuel.setter
     def no_thrust_when_no_fuel(self, pVal:bool) -> None:
         """Opt to have no thrust if the fuel is empty."""
-        return self._intf.set_property(MissileTurbojetProp._metadata, MissileTurbojetProp._set_no_thrust_when_no_fuel_metadata, pVal)
+        return self._intf.set_property(MissileTurbojetPropulsion._metadata, MissileTurbojetPropulsion._set_no_thrust_when_no_fuel_metadata, pVal)
 
     _property_names[design_mach] = "design_mach"
     _property_names[design_altitude] = "design_altitude"
@@ -34074,9 +34077,9 @@ class MissileTurbojetProp(SupportsDeleteCallback):
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type MissileTurbojetProp."""
+        """Construct an object of type MissileTurbojetPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileTurbojetProp)
+        initialize_from_source_object(self, sourceObject, MissileTurbojetPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -34084,10 +34087,10 @@ class MissileTurbojetProp(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MissileTurbojetProp, [MissileTurbojetProp, ])
+        set_class_attribute(self, attrname, value, MissileTurbojetPropulsion, [MissileTurbojetPropulsion, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4617727346808770983, 17951140982718247851), MissileTurbojetProp)
-agcls.AgTypeNameMap["MissileTurbojetProp"] = MissileTurbojetProp
+agcls.AgClassCatalog.add_catalog_entry((4617727346808770983, 17951140982718247851), MissileTurbojetPropulsion)
+agcls.AgTypeNameMap["MissileTurbojetPropulsion"] = MissileTurbojetPropulsion
 
 class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     """Interface used to access the forward flight options for a reference state procedure."""
@@ -34103,8 +34106,8 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     _set_flight_path_angle_method_offset = 7
     _get_tas_dot_method_offset = 8
     _get_groundspeed_dot_method_offset = 9
-    _get_longitudinal_accel_type_method_offset = 10
-    _set_longitudinal_accel_method_offset = 11
+    _get_longitudinal_acceleration_type_method_offset = 10
+    _set_longitudinal_acceleration_method_offset = 11
     _get_heading_method_offset = 12
     _set_heading_method_offset = 13
     _get_heading_is_magnetic_method_offset = 14
@@ -34115,8 +34118,8 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     _set_course_is_magnetic_method_offset = 19
     _get_heading_dot_method_offset = 20
     _get_course_dot_method_offset = 21
-    _get_lateral_accel_type_method_offset = 22
-    _set_lateral_accel_method_offset = 23
+    _get_lateral_acceleration_type_method_offset = 22
+    _set_lateral_acceleration_method_offset = 23
     _get_roll_angle_method_offset = 24
     _set_roll_angle_method_offset = 25
     _get_aoa_method_offset = 26
@@ -34206,20 +34209,20 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
         """Get the groundspeed acceleration."""
         return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_groundspeed_dot_metadata)
 
-    _get_longitudinal_accel_type_metadata = { "offset" : _get_longitudinal_accel_type_method_offset,
+    _get_longitudinal_acceleration_type_metadata = { "offset" : _get_longitudinal_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE),) }
     @property
-    def longitudinal_accel_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE":
+    def longitudinal_acceleration_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE":
         """Get the mode to specify the longitudinal acceleration."""
-        return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_longitudinal_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_longitudinal_acceleration_type_metadata)
 
-    _set_longitudinal_accel_metadata = { "offset" : _set_longitudinal_accel_method_offset,
+    _set_longitudinal_acceleration_metadata = { "offset" : _set_longitudinal_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE), agmarshall.DoubleArg,) }
-    def set_longitudinal_accel(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE), agmarshall.DoubleArg,) }
+    def set_longitudinal_acceleration(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        return self._intf.invoke(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._set_longitudinal_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._set_longitudinal_acceleration_metadata, accelType, value)
 
     _get_heading_metadata = { "offset" : _get_heading_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -34301,20 +34304,20 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
         """Get the course rate of change."""
         return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_course_dot_metadata)
 
-    _get_lateral_accel_type_metadata = { "offset" : _get_lateral_accel_type_method_offset,
+    _get_lateral_acceleration_type_metadata = { "offset" : _get_lateral_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE),) }
     @property
-    def lateral_accel_type(self) -> "REFERENCE_STATE_LATERAL_ACCEL_MODE":
+    def lateral_acceleration_type(self) -> "REFERENCE_STATE_LATERAL_ACCELERATION_MODE":
         """Get the mode to specify the lateral acceleration."""
-        return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_lateral_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._get_lateral_acceleration_type_metadata)
 
-    _set_lateral_accel_metadata = { "offset" : _set_lateral_accel_method_offset,
+    _set_lateral_acceleration_metadata = { "offset" : _set_lateral_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE), agmarshall.VariantArg,) }
-    def set_lateral_accel(self, accelType:"REFERENCE_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE), agmarshall.VariantArg,) }
+    def set_lateral_acceleration(self, accelType:"REFERENCE_STATE_LATERAL_ACCELERATION_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        return self._intf.invoke(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._set_lateral_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateForwardFlightOptions._metadata, ReferenceStateForwardFlightOptions._set_lateral_acceleration_metadata, accelType, value)
 
     _get_roll_angle_metadata = { "offset" : _get_roll_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -34401,14 +34404,14 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[tas_dot] = "tas_dot"
     _property_names[groundspeed_dot] = "groundspeed_dot"
-    _property_names[longitudinal_accel_type] = "longitudinal_accel_type"
+    _property_names[longitudinal_acceleration_type] = "longitudinal_acceleration_type"
     _property_names[heading] = "heading"
     _property_names[heading_is_magnetic] = "heading_is_magnetic"
     _property_names[course] = "course"
     _property_names[course_is_magnetic] = "course_is_magnetic"
     _property_names[heading_dot] = "heading_dot"
     _property_names[course_dot] = "course_dot"
-    _property_names[lateral_accel_type] = "lateral_accel_type"
+    _property_names[lateral_acceleration_type] = "lateral_acceleration_type"
     _property_names[roll_angle] = "roll_angle"
     _property_names[aoa] = "aoa"
     _property_names[sideslip] = "sideslip"
@@ -34446,8 +34449,8 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
     _set_flight_path_angle_method_offset = 7
     _get_tas_dot_method_offset = 8
     _get_groundspeed_dot_method_offset = 9
-    _get_longitudinal_accel_type_method_offset = 10
-    _set_longitudinal_accel_method_offset = 11
+    _get_longitudinal_acceleration_type_method_offset = 10
+    _set_longitudinal_acceleration_method_offset = 11
     _get_heading_method_offset = 12
     _set_heading_method_offset = 13
     _get_heading_is_magnetic_method_offset = 14
@@ -34458,8 +34461,8 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
     _set_course_is_magnetic_method_offset = 19
     _get_heading_dot_method_offset = 20
     _get_course_dot_method_offset = 21
-    _get_lateral_accel_type_method_offset = 22
-    _set_lateral_accel_method_offset = 23
+    _get_lateral_acceleration_type_method_offset = 22
+    _set_lateral_acceleration_method_offset = 23
     _get_roll_angle_method_offset = 24
     _set_roll_angle_method_offset = 25
     _get_aoa_method_offset = 26
@@ -34549,20 +34552,20 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
         """Get the groundspeed acceleration."""
         return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_groundspeed_dot_metadata)
 
-    _get_longitudinal_accel_type_metadata = { "offset" : _get_longitudinal_accel_type_method_offset,
+    _get_longitudinal_acceleration_type_metadata = { "offset" : _get_longitudinal_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE),) }
     @property
-    def longitudinal_accel_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE":
+    def longitudinal_acceleration_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE":
         """Get the mode to specify the longitudinal acceleration."""
-        return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_longitudinal_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_longitudinal_acceleration_type_metadata)
 
-    _set_longitudinal_accel_metadata = { "offset" : _set_longitudinal_accel_method_offset,
+    _set_longitudinal_acceleration_metadata = { "offset" : _set_longitudinal_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE), agmarshall.DoubleArg,) }
-    def set_longitudinal_accel(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE), agmarshall.DoubleArg,) }
+    def set_longitudinal_acceleration(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        return self._intf.invoke(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._set_longitudinal_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._set_longitudinal_acceleration_metadata, accelType, value)
 
     _get_heading_metadata = { "offset" : _get_heading_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -34644,20 +34647,20 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
         """Get the course rate of change."""
         return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_course_dot_metadata)
 
-    _get_lateral_accel_type_metadata = { "offset" : _get_lateral_accel_type_method_offset,
+    _get_lateral_acceleration_type_metadata = { "offset" : _get_lateral_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE),) }
     @property
-    def lateral_accel_type(self) -> "REFERENCE_STATE_LATERAL_ACCEL_MODE":
+    def lateral_acceleration_type(self) -> "REFERENCE_STATE_LATERAL_ACCELERATION_MODE":
         """Get the mode to specify the lateral acceleration."""
-        return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_lateral_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._get_lateral_acceleration_type_metadata)
 
-    _set_lateral_accel_metadata = { "offset" : _set_lateral_accel_method_offset,
+    _set_lateral_acceleration_metadata = { "offset" : _set_lateral_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE), agmarshall.VariantArg,) }
-    def set_lateral_accel(self, accelType:"REFERENCE_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE), agmarshall.VariantArg,) }
+    def set_lateral_acceleration(self, accelType:"REFERENCE_STATE_LATERAL_ACCELERATION_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        return self._intf.invoke(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._set_lateral_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateTakeoffLandingOptions._metadata, ReferenceStateTakeoffLandingOptions._set_lateral_acceleration_metadata, accelType, value)
 
     _get_roll_angle_metadata = { "offset" : _get_roll_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -34744,14 +34747,14 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
     _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[tas_dot] = "tas_dot"
     _property_names[groundspeed_dot] = "groundspeed_dot"
-    _property_names[longitudinal_accel_type] = "longitudinal_accel_type"
+    _property_names[longitudinal_acceleration_type] = "longitudinal_acceleration_type"
     _property_names[heading] = "heading"
     _property_names[heading_is_magnetic] = "heading_is_magnetic"
     _property_names[course] = "course"
     _property_names[course_is_magnetic] = "course_is_magnetic"
     _property_names[heading_dot] = "heading_dot"
     _property_names[course_dot] = "course_dot"
-    _property_names[lateral_accel_type] = "lateral_accel_type"
+    _property_names[lateral_acceleration_type] = "lateral_acceleration_type"
     _property_names[roll_angle] = "roll_angle"
     _property_names[aoa] = "aoa"
     _property_names[sideslip] = "sideslip"
@@ -34786,8 +34789,8 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
     _set_altitude_rate_method_offset = 4
     _get_tas_dot_method_offset = 5
     _get_groundspeed_dot_method_offset = 6
-    _get_longitudinal_accel_type_method_offset = 7
-    _set_longitudinal_accel_method_offset = 8
+    _get_longitudinal_acceleration_type_method_offset = 7
+    _set_longitudinal_acceleration_method_offset = 8
     _get_heading_method_offset = 9
     _set_heading_method_offset = 10
     _get_heading_is_magnetic_method_offset = 11
@@ -34864,20 +34867,20 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
         """Get the groundspeed acceleration."""
         return self._intf.get_property(ReferenceStateHoverOptions._metadata, ReferenceStateHoverOptions._get_groundspeed_dot_metadata)
 
-    _get_longitudinal_accel_type_metadata = { "offset" : _get_longitudinal_accel_type_method_offset,
+    _get_longitudinal_acceleration_type_metadata = { "offset" : _get_longitudinal_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE),) }
     @property
-    def longitudinal_accel_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE":
+    def longitudinal_acceleration_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE":
         """Get the mode to specify the longitudinal acceleration."""
-        return self._intf.get_property(ReferenceStateHoverOptions._metadata, ReferenceStateHoverOptions._get_longitudinal_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateHoverOptions._metadata, ReferenceStateHoverOptions._get_longitudinal_acceleration_type_metadata)
 
-    _set_longitudinal_accel_metadata = { "offset" : _set_longitudinal_accel_method_offset,
+    _set_longitudinal_acceleration_metadata = { "offset" : _set_longitudinal_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE), agmarshall.DoubleArg,) }
-    def set_longitudinal_accel(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE), agmarshall.DoubleArg,) }
+    def set_longitudinal_acceleration(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        return self._intf.invoke(ReferenceStateHoverOptions._metadata, ReferenceStateHoverOptions._set_longitudinal_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateHoverOptions._metadata, ReferenceStateHoverOptions._set_longitudinal_acceleration_metadata, accelType, value)
 
     _get_heading_metadata = { "offset" : _get_heading_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -35042,7 +35045,7 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
     _property_names[altitude_rate] = "altitude_rate"
     _property_names[tas_dot] = "tas_dot"
     _property_names[groundspeed_dot] = "groundspeed_dot"
-    _property_names[longitudinal_accel_type] = "longitudinal_accel_type"
+    _property_names[longitudinal_acceleration_type] = "longitudinal_acceleration_type"
     _property_names[heading] = "heading"
     _property_names[heading_is_magnetic] = "heading_is_magnetic"
     _property_names[course] = "course"
@@ -35080,16 +35083,16 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
     _set_groundspeed_method_offset = 2
     _get_tas_dot_method_offset = 3
     _get_groundspeed_dot_method_offset = 4
-    _get_longitudinal_accel_type_method_offset = 5
-    _set_longitudinal_accel_method_offset = 6
+    _get_longitudinal_acceleration_type_method_offset = 5
+    _set_longitudinal_acceleration_method_offset = 6
     _get_heading_method_offset = 7
     _set_heading_method_offset = 8
     _get_heading_is_magnetic_method_offset = 9
     _set_heading_is_magnetic_method_offset = 10
     _get_heading_dot_method_offset = 11
     _get_course_dot_method_offset = 12
-    _get_lateral_accel_type_method_offset = 13
-    _set_lateral_accel_method_offset = 14
+    _get_lateral_acceleration_type_method_offset = 13
+    _set_lateral_acceleration_method_offset = 14
     _metadata = {
         "iid_data" : (4614298239361583107, 13743389205874316980),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -35130,20 +35133,20 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
         """Get the groundspeed acceleration."""
         return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_groundspeed_dot_metadata)
 
-    _get_longitudinal_accel_type_metadata = { "offset" : _get_longitudinal_accel_type_method_offset,
+    _get_longitudinal_acceleration_type_metadata = { "offset" : _get_longitudinal_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE),) }
     @property
-    def longitudinal_accel_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE":
+    def longitudinal_acceleration_type(self) -> "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE":
         """Get the mode to specify the longitudinal acceleration."""
-        return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_longitudinal_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_longitudinal_acceleration_type_metadata)
 
-    _set_longitudinal_accel_metadata = { "offset" : _set_longitudinal_accel_method_offset,
+    _set_longitudinal_acceleration_metadata = { "offset" : _set_longitudinal_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE), agmarshall.DoubleArg,) }
-    def set_longitudinal_accel(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCEL_MODE", value:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE), agmarshall.DoubleArg,) }
+    def set_longitudinal_acceleration(self, accelType:"REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", value:float) -> None:
         """Set the longitudinal acceleration."""
-        return self._intf.invoke(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._set_longitudinal_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._set_longitudinal_acceleration_metadata, accelType, value)
 
     _get_heading_metadata = { "offset" : _get_heading_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -35193,30 +35196,30 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
         """Get the course rate of change."""
         return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_course_dot_metadata)
 
-    _get_lateral_accel_type_metadata = { "offset" : _get_lateral_accel_type_method_offset,
+    _get_lateral_acceleration_type_metadata = { "offset" : _get_lateral_acceleration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE),) }
     @property
-    def lateral_accel_type(self) -> "REFERENCE_STATE_LATERAL_ACCEL_MODE":
+    def lateral_acceleration_type(self) -> "REFERENCE_STATE_LATERAL_ACCELERATION_MODE":
         """Get the mode to specify the lateral acceleration."""
-        return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_lateral_accel_type_metadata)
+        return self._intf.get_property(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._get_lateral_acceleration_type_metadata)
 
-    _set_lateral_accel_metadata = { "offset" : _set_lateral_accel_method_offset,
+    _set_lateral_acceleration_metadata = { "offset" : _set_lateral_acceleration_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCEL_MODE), agmarshall.VariantArg,) }
-    def set_lateral_accel(self, accelType:"REFERENCE_STATE_LATERAL_ACCEL_MODE", value:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(REFERENCE_STATE_LATERAL_ACCELERATION_MODE), agmarshall.VariantArg,) }
+    def set_lateral_acceleration(self, accelType:"REFERENCE_STATE_LATERAL_ACCELERATION_MODE", value:typing.Any) -> None:
         """Set the lateral acceleration."""
-        return self._intf.invoke(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._set_lateral_accel_metadata, accelType, value)
+        return self._intf.invoke(ReferenceStateWeightOnWheelsOptions._metadata, ReferenceStateWeightOnWheelsOptions._set_lateral_acceleration_metadata, accelType, value)
 
     _property_names[groundspeed] = "groundspeed"
     _property_names[tas_dot] = "tas_dot"
     _property_names[groundspeed_dot] = "groundspeed_dot"
-    _property_names[longitudinal_accel_type] = "longitudinal_accel_type"
+    _property_names[longitudinal_acceleration_type] = "longitudinal_acceleration_type"
     _property_names[heading] = "heading"
     _property_names[heading_is_magnetic] = "heading_is_magnetic"
     _property_names[heading_dot] = "heading_dot"
     _property_names[course_dot] = "course_dot"
-    _property_names[lateral_accel_type] = "lateral_accel_type"
+    _property_names[lateral_acceleration_type] = "lateral_acceleration_type"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type ReferenceStateWeightOnWheelsOptions."""
@@ -36757,8 +36760,8 @@ class AircraftVTOLModel(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_max_hover_altitude_method_offset = 1
     _set_max_hover_altitude_method_offset = 2
-    _get_use_aero_prop_fuel_method_offset = 3
-    _set_use_aero_prop_fuel_method_offset = 4
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 3
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 4
     _get_scale_fuel_flow_by_non_std_density_method_offset = 5
     _set_scale_fuel_flow_by_non_std_density_method_offset = 6
     _get_hover_fuel_method_offset = 7
@@ -36804,21 +36807,21 @@ class AircraftVTOLModel(SupportsDeleteCallback):
         """Get or set the maximum altitude at which the aircraft is capable of hovering."""
         return self._intf.set_property(AircraftVTOLModel._metadata, AircraftVTOLModel._set_max_hover_altitude_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.get_property(AircraftVTOLModel._metadata, AircraftVTOLModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftVTOLModel._metadata, AircraftVTOLModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Get or set whether to use Aero/Propulsion fuel flow."""
-        return self._intf.set_property(AircraftVTOLModel._metadata, AircraftVTOLModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftVTOLModel._metadata, AircraftVTOLModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -36988,7 +36991,7 @@ class AircraftVTOLModel(SupportsDeleteCallback):
         return self._intf.set_property(AircraftVTOLModel._metadata, AircraftVTOLModel._set_forward_flight_transition_time_metadata, newVal)
 
     _property_names[max_hover_altitude] = "max_hover_altitude"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[hover_fuel] = "hover_fuel"
     _property_names[heading_rate] = "heading_rate"
@@ -37072,8 +37075,8 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_airspeed_type_method_offset = 1
     _set_airspeed_type_method_offset = 2
-    _get_use_aero_prop_fuel_method_offset = 3
-    _set_use_aero_prop_fuel_method_offset = 4
+    _get_use_aerodynamic_propulsion_fuel_method_offset = 3
+    _set_use_aerodynamic_propulsion_fuel_method_offset = 4
     _get_scale_fuel_flow_by_non_std_density_method_offset = 5
     _set_scale_fuel_flow_by_non_std_density_method_offset = 6
     _get_min_airspeed_method_offset = 7
@@ -37084,8 +37087,8 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
     _set_max_range_airspeed_method_offset = 12
     _get_max_airspeed_method_offset = 13
     _set_max_airspeed_method_offset = 14
-    _get_max_perf_airspeed_method_offset = 15
-    _set_max_perf_airspeed_method_offset = 16
+    _get_max_performance_airspeed_method_offset = 15
+    _set_max_performance_airspeed_method_offset = 16
     _get_min_airspeed_fuel_flow_method_offset = 17
     _set_min_airspeed_fuel_flow_method_offset = 18
     _get_max_endurance_fuel_flow_method_offset = 19
@@ -37094,8 +37097,8 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
     _set_max_range_fuel_flow_method_offset = 22
     _get_max_airspeed_fuel_flow_method_offset = 23
     _set_max_airspeed_fuel_flow_method_offset = 24
-    _get_max_perf_airspeed_fuel_flow_method_offset = 25
-    _set_max_perf_airspeed_fuel_flow_method_offset = 26
+    _get_max_performance_airspeed_fuel_flow_method_offset = 25
+    _set_max_performance_airspeed_fuel_flow_method_offset = 26
     _get_max_pitch_angle_method_offset = 27
     _set_max_pitch_angle_method_offset = 28
     _get_terrain_window_method_offset = 29
@@ -37125,21 +37128,21 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
         """Get or set the airspeed type."""
         return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_airspeed_type_metadata, newVal)
 
-    _get_use_aero_prop_fuel_metadata = { "offset" : _get_use_aero_prop_fuel_method_offset,
+    _get_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _get_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def use_aero_prop_fuel(self) -> bool:
+    def use_aerodynamic_propulsion_fuel(self) -> bool:
         """Opt to use the fuel flow calculated by the acceleration performance model."""
-        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_use_aero_prop_fuel_metadata)
+        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_use_aerodynamic_propulsion_fuel_metadata)
 
-    _set_use_aero_prop_fuel_metadata = { "offset" : _set_use_aero_prop_fuel_method_offset,
+    _set_use_aerodynamic_propulsion_fuel_metadata = { "offset" : _set_use_aerodynamic_propulsion_fuel_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @use_aero_prop_fuel.setter
-    def use_aero_prop_fuel(self, newVal:bool) -> None:
+    @use_aerodynamic_propulsion_fuel.setter
+    def use_aerodynamic_propulsion_fuel(self, newVal:bool) -> None:
         """Opt to use the fuel flow calculated by the acceleration performance model."""
-        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_use_aero_prop_fuel_metadata, newVal)
+        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_use_aerodynamic_propulsion_fuel_metadata, newVal)
 
     _get_scale_fuel_flow_by_non_std_density_metadata = { "offset" : _get_scale_fuel_flow_by_non_std_density_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37221,21 +37224,21 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
         """Get or set the maximum airspeed."""
         return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_airspeed_metadata, newVal)
 
-    _get_max_perf_airspeed_metadata = { "offset" : _get_max_perf_airspeed_method_offset,
+    _get_max_performance_airspeed_metadata = { "offset" : _get_max_performance_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_perf_airspeed(self) -> float:
+    def max_performance_airspeed(self) -> float:
         """Get or set the custom performance airspeed that can be used to model specific flight conditions."""
-        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_max_perf_airspeed_metadata)
+        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_max_performance_airspeed_metadata)
 
-    _set_max_perf_airspeed_metadata = { "offset" : _set_max_perf_airspeed_method_offset,
+    _set_max_performance_airspeed_metadata = { "offset" : _set_max_performance_airspeed_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_perf_airspeed.setter
-    def max_perf_airspeed(self, newVal:float) -> None:
+    @max_performance_airspeed.setter
+    def max_performance_airspeed(self, newVal:float) -> None:
         """Get or set the custom performance airspeed that can be used to model specific flight conditions."""
-        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_perf_airspeed_metadata, newVal)
+        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_performance_airspeed_metadata, newVal)
 
     _get_min_airspeed_fuel_flow_metadata = { "offset" : _get_min_airspeed_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37301,21 +37304,21 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
         """Get or set the fuel flow for the maximum airspeed."""
         return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_airspeed_fuel_flow_metadata, newVal)
 
-    _get_max_perf_airspeed_fuel_flow_metadata = { "offset" : _get_max_perf_airspeed_fuel_flow_method_offset,
+    _get_max_performance_airspeed_fuel_flow_metadata = { "offset" : _get_max_performance_airspeed_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def max_perf_airspeed_fuel_flow(self) -> float:
+    def max_performance_airspeed_fuel_flow(self) -> float:
         """Get or set the fuel flow for the maximum performance airspeed."""
-        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_max_perf_airspeed_fuel_flow_metadata)
+        return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_max_performance_airspeed_fuel_flow_metadata)
 
-    _set_max_perf_airspeed_fuel_flow_metadata = { "offset" : _set_max_perf_airspeed_fuel_flow_method_offset,
+    _set_max_performance_airspeed_fuel_flow_metadata = { "offset" : _set_max_performance_airspeed_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @max_perf_airspeed_fuel_flow.setter
-    def max_perf_airspeed_fuel_flow(self, newVal:float) -> None:
+    @max_performance_airspeed_fuel_flow.setter
+    def max_performance_airspeed_fuel_flow(self, newVal:float) -> None:
         """Get or set the fuel flow for the maximum performance airspeed."""
-        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_perf_airspeed_fuel_flow_metadata, newVal)
+        return self._intf.set_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._set_max_performance_airspeed_fuel_flow_metadata, newVal)
 
     _get_max_pitch_angle_metadata = { "offset" : _get_max_pitch_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -37358,18 +37361,18 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
         return self._intf.get_property(AircraftTerrainFollowModel._metadata, AircraftTerrainFollowModel._get_max_load_factor_metadata)
 
     _property_names[airspeed_type] = "airspeed_type"
-    _property_names[use_aero_prop_fuel] = "use_aero_prop_fuel"
+    _property_names[use_aerodynamic_propulsion_fuel] = "use_aerodynamic_propulsion_fuel"
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[min_airspeed] = "min_airspeed"
     _property_names[max_endurance_airspeed] = "max_endurance_airspeed"
     _property_names[max_range_airspeed] = "max_range_airspeed"
     _property_names[max_airspeed] = "max_airspeed"
-    _property_names[max_perf_airspeed] = "max_perf_airspeed"
+    _property_names[max_performance_airspeed] = "max_performance_airspeed"
     _property_names[min_airspeed_fuel_flow] = "min_airspeed_fuel_flow"
     _property_names[max_endurance_fuel_flow] = "max_endurance_fuel_flow"
     _property_names[max_range_fuel_flow] = "max_range_fuel_flow"
     _property_names[max_airspeed_fuel_flow] = "max_airspeed_fuel_flow"
-    _property_names[max_perf_airspeed_fuel_flow] = "max_perf_airspeed_fuel_flow"
+    _property_names[max_performance_airspeed_fuel_flow] = "max_performance_airspeed_fuel_flow"
     _property_names[max_pitch_angle] = "max_pitch_angle"
     _property_names[terrain_window] = "terrain_window"
     _property_names[max_load_factor] = "max_load_factor"
@@ -37556,7 +37559,7 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategy, SupportsDeleteCal
 agcls.AgClassCatalog.add_catalog_entry((5015647986010523822, 9925779917142272656), BasicManeuverStrategyBallistic3D)
 agcls.AgTypeNameMap["BasicManeuverStrategyBallistic3D"] = BasicManeuverStrategyBallistic3D
 
-class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
+class ProcedureLaunchDynamicState(IProcedure, SupportsDeleteCallback):
     """Interface used to access the options for a dyn state launch procedure."""
 
     _num_methods = 26
@@ -37575,8 +37578,8 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     _set_attitude_mode_method_offset = 12
     _get_specify_launch_airspeed_method_offset = 13
     _set_specify_launch_airspeed_method_offset = 14
-    _get_accel_g_method_offset = 15
-    _set_accel_g_method_offset = 16
+    _get_acceleration_g_method_offset = 15
+    _set_acceleration_g_method_offset = 16
     _get_airspeed_type_method_offset = 17
     _get_airspeed_method_offset = 18
     _set_airspeed_method_offset = 19
@@ -37593,7 +37596,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ProcedureLaunchDynState)
+        return get_interface_property(attrname, ProcedureLaunchDynamicState)
     
     _get_launch_time_metadata = { "offset" : _get_launch_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -37601,7 +37604,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def launch_time(self) -> typing.Any:
         """Get or set the launch time of the aircraft."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_launch_time_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_launch_time_metadata)
 
     _set_launch_time_metadata = { "offset" : _set_launch_time_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -37609,39 +37612,39 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @launch_time.setter
     def launch_time(self, newVal:typing.Any) -> None:
         """Get or set the launch time of the aircraft."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_launch_time_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_launch_time_metadata, newVal)
 
     _get_coord_frame_metadata = { "offset" : _get_coord_frame_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYN_STATE_COORD_FRAME),) }
+            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYNAMIC_STATE_COORD_FRAME),) }
     @property
-    def coord_frame(self) -> "LAUNCH_DYN_STATE_COORD_FRAME":
+    def coord_frame(self) -> "LAUNCH_DYNAMIC_STATE_COORD_FRAME":
         """Get or set the reference coordinate frame for the dyn state launch procedure."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_coord_frame_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_coord_frame_metadata)
 
     _set_coord_frame_metadata = { "offset" : _set_coord_frame_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYN_STATE_COORD_FRAME),) }
+            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYNAMIC_STATE_COORD_FRAME),) }
     @coord_frame.setter
-    def coord_frame(self, pVal:"LAUNCH_DYN_STATE_COORD_FRAME") -> None:
+    def coord_frame(self, pVal:"LAUNCH_DYNAMIC_STATE_COORD_FRAME") -> None:
         """Get or set the reference coordinate frame for the dyn state launch procedure."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_coord_frame_metadata, pVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_coord_frame_metadata, pVal)
 
     _get_bearing_reference_metadata = { "offset" : _get_bearing_reference_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYN_STATE_BEARING_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE),) }
     @property
-    def bearing_reference(self) -> "LAUNCH_DYN_STATE_BEARING_REFERENCE":
+    def bearing_reference(self) -> "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE":
         """Get or set the bearing reference for the dyn state launch procedure."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_bearing_reference_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_bearing_reference_metadata)
 
     _set_bearing_reference_metadata = { "offset" : _set_bearing_reference_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYN_STATE_BEARING_REFERENCE),) }
+            "marshallers" : (agmarshall.EnumArg(LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE),) }
     @bearing_reference.setter
-    def bearing_reference(self, pVal:"LAUNCH_DYN_STATE_BEARING_REFERENCE") -> None:
+    def bearing_reference(self, pVal:"LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE") -> None:
         """Get or set the bearing reference for the dyn state launch procedure."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_bearing_reference_metadata, pVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_bearing_reference_metadata, pVal)
 
     _get_launch_bearing_metadata = { "offset" : _get_launch_bearing_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -37649,7 +37652,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def launch_bearing(self) -> typing.Any:
         """Get or set the launch direction bearing."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_launch_bearing_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_launch_bearing_metadata)
 
     _set_launch_bearing_metadata = { "offset" : _set_launch_bearing_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -37657,7 +37660,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @launch_bearing.setter
     def launch_bearing(self, newVal:typing.Any) -> None:
         """Get or set the launch direction bearing."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_launch_bearing_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_launch_bearing_metadata, newVal)
 
     _get_launch_elevation_metadata = { "offset" : _get_launch_elevation_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -37665,7 +37668,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def launch_elevation(self) -> typing.Any:
         """Get or set the launch direction elevation."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_launch_elevation_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_launch_elevation_metadata)
 
     _set_launch_elevation_metadata = { "offset" : _set_launch_elevation_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -37673,7 +37676,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @launch_elevation.setter
     def launch_elevation(self, newVal:typing.Any) -> None:
         """Get or set the launch direction elevation."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_launch_elevation_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_launch_elevation_metadata, newVal)
 
     _get_attitude_mode_metadata = { "offset" : _get_attitude_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37681,7 +37684,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def attitude_mode(self) -> "LAUNCH_ATTITUDE_MODE":
         """Get or set the attitude mode during the launch."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_attitude_mode_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_attitude_mode_metadata)
 
     _set_attitude_mode_metadata = { "offset" : _set_attitude_mode_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -37689,7 +37692,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @attitude_mode.setter
     def attitude_mode(self, newVal:"LAUNCH_ATTITUDE_MODE") -> None:
         """Get or set the attitude mode during the launch."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_attitude_mode_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_attitude_mode_metadata, newVal)
 
     _get_specify_launch_airspeed_metadata = { "offset" : _get_specify_launch_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -37697,7 +37700,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def specify_launch_airspeed(self) -> bool:
         """Opt to specify a minimum launch speed the aircraft will accelerate to."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_specify_launch_airspeed_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_specify_launch_airspeed_metadata)
 
     _set_specify_launch_airspeed_metadata = { "offset" : _set_specify_launch_airspeed_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -37705,23 +37708,23 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @specify_launch_airspeed.setter
     def specify_launch_airspeed(self, newVal:bool) -> None:
         """Opt to specify a minimum launch speed the aircraft will accelerate to."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_specify_launch_airspeed_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_specify_launch_airspeed_metadata, newVal)
 
-    _get_accel_g_metadata = { "offset" : _get_accel_g_method_offset,
+    _get_acceleration_g_metadata = { "offset" : _get_acceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_g(self) -> float:
+    def acceleration_g(self) -> float:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_accel_g_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_acceleration_g_metadata)
 
-    _set_accel_g_metadata = { "offset" : _set_accel_g_method_offset,
+    _set_acceleration_g_metadata = { "offset" : _set_acceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_g.setter
-    def accel_g(self, newVal:float) -> None:
+    @acceleration_g.setter
+    def acceleration_g(self, newVal:float) -> None:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_accel_g_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_acceleration_g_metadata, newVal)
 
     _get_airspeed_type_metadata = { "offset" : _get_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37729,7 +37732,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def airspeed_type(self) -> "AIRSPEED_TYPE":
         """Get the airspeed type."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_airspeed_type_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_airspeed_type_metadata)
 
     _get_airspeed_metadata = { "offset" : _get_airspeed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37737,14 +37740,14 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def airspeed(self) -> float:
         """Get the goal airspeed for the launch."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_airspeed_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_airspeed_metadata)
 
     _set_airspeed_metadata = { "offset" : _set_airspeed_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE,),
             "marshallers" : (agmarshall.EnumArg(AIRSPEED_TYPE), agmarshall.DoubleArg,) }
     def set_airspeed(self, airspeedType:"AIRSPEED_TYPE", airspeed:float) -> None:
         """Set the launch airspeed."""
-        return self._intf.invoke(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_airspeed_metadata, airspeedType, airspeed)
+        return self._intf.invoke(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_airspeed_metadata, airspeedType, airspeed)
 
     _get_fuel_flow_type_metadata = { "offset" : _get_fuel_flow_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37752,7 +37755,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def fuel_flow_type(self) -> "FUEL_FLOW_TYPE":
         """Get or set the fuel flow type of the aircraft during the launch."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_fuel_flow_type_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_fuel_flow_type_metadata)
 
     _set_fuel_flow_type_metadata = { "offset" : _set_fuel_flow_type_method_offset,
             "arg_types" : (agcom.LONG,),
@@ -37760,7 +37763,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @fuel_flow_type.setter
     def fuel_flow_type(self, newVal:"FUEL_FLOW_TYPE") -> None:
         """Get or set the fuel flow type of the aircraft during the launch."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_fuel_flow_type_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_fuel_flow_type_metadata, newVal)
 
     _get_override_fuel_flow_metadata = { "offset" : _get_override_fuel_flow_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -37768,7 +37771,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def override_fuel_flow(self) -> float:
         """Get or set the fuel flow value for a fuel flow type set to Override."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_override_fuel_flow_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_override_fuel_flow_metadata)
 
     _set_override_fuel_flow_metadata = { "offset" : _set_override_fuel_flow_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -37776,7 +37779,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @override_fuel_flow.setter
     def override_fuel_flow(self, newVal:float) -> None:
         """Get or set the fuel flow value for a fuel flow type set to Override."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_override_fuel_flow_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_override_fuel_flow_metadata, newVal)
 
     _get_true_course_hint_metadata = { "offset" : _get_true_course_hint_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -37784,7 +37787,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @property
     def true_course_hint(self) -> typing.Any:
         """Get or set the true course used when the vehicle's direction vector is set to Zenith."""
-        return self._intf.get_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_true_course_hint_metadata)
+        return self._intf.get_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_true_course_hint_metadata)
 
     _set_true_course_hint_metadata = { "offset" : _set_true_course_hint_method_offset,
             "arg_types" : (agcom.Variant,),
@@ -37792,14 +37795,14 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     @true_course_hint.setter
     def true_course_hint(self, newVal:typing.Any) -> None:
         """Get or set the true course used when the vehicle's direction vector is set to Zenith."""
-        return self._intf.set_property(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._set_true_course_hint_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._set_true_course_hint_metadata, newVal)
 
     _get_as_procedure_metadata = { "offset" : _get_as_procedure_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_procedure(self) -> "IProcedure":
         """Get the procedure interface."""
-        return self._intf.invoke(ProcedureLaunchDynState._metadata, ProcedureLaunchDynState._get_as_procedure_metadata, OutArg())
+        return self._intf.invoke(ProcedureLaunchDynamicState._metadata, ProcedureLaunchDynamicState._get_as_procedure_metadata, OutArg())
 
     _property_names[launch_time] = "launch_time"
     _property_names[coord_frame] = "coord_frame"
@@ -37808,7 +37811,7 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     _property_names[launch_elevation] = "launch_elevation"
     _property_names[attitude_mode] = "attitude_mode"
     _property_names[specify_launch_airspeed] = "specify_launch_airspeed"
-    _property_names[accel_g] = "accel_g"
+    _property_names[acceleration_g] = "acceleration_g"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[airspeed] = "airspeed"
     _property_names[fuel_flow_type] = "fuel_flow_type"
@@ -37816,9 +37819,9 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
     _property_names[true_course_hint] = "true_course_hint"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ProcedureLaunchDynState."""
+        """Construct an object of type ProcedureLaunchDynamicState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureLaunchDynState)
+        initialize_from_source_object(self, sourceObject, ProcedureLaunchDynamicState)
         IProcedure.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -37828,10 +37831,10 @@ class ProcedureLaunchDynState(IProcedure, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ProcedureLaunchDynState, [ProcedureLaunchDynState, IProcedure])
+        set_class_attribute(self, attrname, value, ProcedureLaunchDynamicState, [ProcedureLaunchDynamicState, IProcedure])
 
-agcls.AgClassCatalog.add_catalog_entry((5103080724342277659, 9519329222150555578), ProcedureLaunchDynState)
-agcls.AgTypeNameMap["ProcedureLaunchDynState"] = ProcedureLaunchDynState
+agcls.AgClassCatalog.add_catalog_entry((5103080724342277659, 9519329222150555578), ProcedureLaunchDynamicState)
+agcls.AgTypeNameMap["ProcedureLaunchDynamicState"] = ProcedureLaunchDynamicState
 
 class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
     """Interface used to access the options for a waypoint launch procedure."""
@@ -37848,8 +37851,8 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
     _set_launch_true_bearing_method_offset = 8
     _get_launch_elevation_method_offset = 9
     _set_launch_elevation_method_offset = 10
-    _get_accel_g_method_offset = 11
-    _set_accel_g_method_offset = 12
+    _get_acceleration_g_method_offset = 11
+    _set_acceleration_g_method_offset = 12
     _get_airspeed_type_method_offset = 13
     _get_airspeed_method_offset = 14
     _set_airspeed_method_offset = 15
@@ -37946,21 +37949,21 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
         """Get or set the launch direction elevation."""
         return self._intf.set_property(ProcedureLaunchWaypoint._metadata, ProcedureLaunchWaypoint._set_launch_elevation_metadata, newVal)
 
-    _get_accel_g_metadata = { "offset" : _get_accel_g_method_offset,
+    _get_acceleration_g_metadata = { "offset" : _get_acceleration_g_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def accel_g(self) -> float:
+    def acceleration_g(self) -> float:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.get_property(ProcedureLaunchWaypoint._metadata, ProcedureLaunchWaypoint._get_accel_g_metadata)
+        return self._intf.get_property(ProcedureLaunchWaypoint._metadata, ProcedureLaunchWaypoint._get_acceleration_g_metadata)
 
-    _set_accel_g_metadata = { "offset" : _set_accel_g_method_offset,
+    _set_acceleration_g_metadata = { "offset" : _set_acceleration_g_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @accel_g.setter
-    def accel_g(self, newVal:float) -> None:
+    @acceleration_g.setter
+    def acceleration_g(self, newVal:float) -> None:
         """Get or set the acceleration of the aircraft during the launch."""
-        return self._intf.set_property(ProcedureLaunchWaypoint._metadata, ProcedureLaunchWaypoint._set_accel_g_metadata, newVal)
+        return self._intf.set_property(ProcedureLaunchWaypoint._metadata, ProcedureLaunchWaypoint._set_acceleration_g_metadata, newVal)
 
     _get_airspeed_type_metadata = { "offset" : _get_airspeed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38029,7 +38032,7 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
     _property_names[launch_altitude] = "launch_altitude"
     _property_names[launch_true_bearing] = "launch_true_bearing"
     _property_names[launch_elevation] = "launch_elevation"
-    _property_names[accel_g] = "accel_g"
+    _property_names[acceleration_g] = "acceleration_g"
     _property_names[airspeed_type] = "airspeed_type"
     _property_names[airspeed] = "airspeed"
     _property_names[fuel_flow_type] = "fuel_flow_type"
@@ -38053,7 +38056,7 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5333950039959211110, 14850972797194543528), ProcedureLaunchWaypoint)
 agcls.AgTypeNameMap["ProcedureLaunchWaypoint"] = ProcedureLaunchWaypoint
 
-class SiteDynState(ISite, SupportsDeleteCallback):
+class SiteDynamicState(ISite, SupportsDeleteCallback):
     """Interface used to access the options for a dyn state site type."""
 
     _num_methods = 4
@@ -38068,7 +38071,7 @@ class SiteDynState(ISite, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, SiteDynState)
+        return get_interface_property(attrname, SiteDynamicState)
     
     _get_object_name_metadata = { "offset" : _get_object_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -38076,7 +38079,7 @@ class SiteDynState(ISite, SupportsDeleteCallback):
     @property
     def object_name(self) -> str:
         """Get or set the object name to link to."""
-        return self._intf.get_property(SiteDynState._metadata, SiteDynState._get_object_name_metadata)
+        return self._intf.get_property(SiteDynamicState._metadata, SiteDynamicState._get_object_name_metadata)
 
     _set_object_name_metadata = { "offset" : _set_object_name_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -38084,7 +38087,7 @@ class SiteDynState(ISite, SupportsDeleteCallback):
     @object_name.setter
     def object_name(self, newVal:str) -> None:
         """Get or set the object name to link to."""
-        return self._intf.set_property(SiteDynState._metadata, SiteDynState._set_object_name_metadata, newVal)
+        return self._intf.set_property(SiteDynamicState._metadata, SiteDynamicState._set_object_name_metadata, newVal)
 
     _get_valid_object_names_metadata = { "offset" : _get_valid_object_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -38092,22 +38095,22 @@ class SiteDynState(ISite, SupportsDeleteCallback):
     @property
     def valid_object_names(self) -> list:
         """Return the valid object names."""
-        return self._intf.get_property(SiteDynState._metadata, SiteDynState._get_valid_object_names_metadata)
+        return self._intf.get_property(SiteDynamicState._metadata, SiteDynamicState._get_valid_object_names_metadata)
 
     _get_as_site_metadata = { "offset" : _get_as_site_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_as_site(self) -> "ISite":
         """Get the site interface."""
-        return self._intf.invoke(SiteDynState._metadata, SiteDynState._get_as_site_metadata, OutArg())
+        return self._intf.invoke(SiteDynamicState._metadata, SiteDynamicState._get_as_site_metadata, OutArg())
 
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type SiteDynState."""
+        """Construct an object of type SiteDynamicState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteDynState)
+        initialize_from_source_object(self, sourceObject, SiteDynamicState)
         ISite.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -38117,10 +38120,10 @@ class SiteDynState(ISite, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SiteDynState, [SiteDynState, ISite])
+        set_class_attribute(self, attrname, value, SiteDynamicState, [SiteDynamicState, ISite])
 
-agcls.AgClassCatalog.add_catalog_entry((4847814716997792407, 18231396679680366494), SiteDynState)
-agcls.AgTypeNameMap["SiteDynState"] = SiteDynState
+agcls.AgClassCatalog.add_catalog_entry((4847814716997792407, 18231396679680366494), SiteDynamicState)
+agcls.AgTypeNameMap["SiteDynamicState"] = SiteDynamicState
 
 class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a pitch 3D strategy of a basic maneuver procedure."""
@@ -38129,12 +38132,12 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_control_mode_method_offset = 1
     _set_control_mode_method_offset = 2
-    _get_command_fpa_method_offset = 3
-    _set_command_fpa_method_offset = 4
-    _get_control_fpa_dot_method_offset = 5
-    _set_control_fpa_dot_method_offset = 6
-    _get_stop_when_fpa_achieved_method_offset = 7
-    _set_stop_when_fpa_achieved_method_offset = 8
+    _get_command_flight_path_angle_method_offset = 3
+    _set_command_flight_path_angle_method_offset = 4
+    _get_control_flight_path_angle_dot_method_offset = 5
+    _set_control_flight_path_angle_dot_method_offset = 6
+    _get_stop_when_flight_path_angle_achieved_method_offset = 7
+    _set_stop_when_flight_path_angle_achieved_method_offset = 8
     _get_airspeed_options_method_offset = 9
     _get_wind_force_effective_area_method_offset = 10
     _set_wind_force_effective_area_method_offset = 11
@@ -38162,53 +38165,53 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
         """Get or set the control mode for the pitch 3D strategy."""
         return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_mode_metadata, newVal)
 
-    _get_command_fpa_metadata = { "offset" : _get_command_fpa_method_offset,
+    _get_command_flight_path_angle_metadata = { "offset" : _get_command_flight_path_angle_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def command_fpa(self) -> typing.Any:
+    def command_flight_path_angle(self) -> typing.Any:
         """Get or set the commanded flight path angle."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_command_fpa_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_command_flight_path_angle_metadata)
 
-    _set_command_fpa_metadata = { "offset" : _set_command_fpa_method_offset,
+    _set_command_flight_path_angle_metadata = { "offset" : _set_command_flight_path_angle_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @command_fpa.setter
-    def command_fpa(self, newVal:typing.Any) -> None:
+    @command_flight_path_angle.setter
+    def command_flight_path_angle(self, newVal:typing.Any) -> None:
         """Get or set the commanded flight path angle."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_command_fpa_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_command_flight_path_angle_metadata, newVal)
 
-    _get_control_fpa_dot_metadata = { "offset" : _get_control_fpa_dot_method_offset,
+    _get_control_flight_path_angle_dot_metadata = { "offset" : _get_control_flight_path_angle_dot_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def control_fpa_dot(self) -> typing.Any:
+    def control_flight_path_angle_dot(self) -> typing.Any:
         """Get or set the flight path angle rate."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_control_fpa_dot_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_control_flight_path_angle_dot_metadata)
 
-    _set_control_fpa_dot_metadata = { "offset" : _set_control_fpa_dot_method_offset,
+    _set_control_flight_path_angle_dot_metadata = { "offset" : _set_control_flight_path_angle_dot_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @control_fpa_dot.setter
-    def control_fpa_dot(self, newVal:typing.Any) -> None:
+    @control_flight_path_angle_dot.setter
+    def control_flight_path_angle_dot(self, newVal:typing.Any) -> None:
         """Get or set the flight path angle rate."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_fpa_dot_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_control_flight_path_angle_dot_metadata, newVal)
 
-    _get_stop_when_fpa_achieved_metadata = { "offset" : _get_stop_when_fpa_achieved_method_offset,
+    _get_stop_when_flight_path_angle_achieved_metadata = { "offset" : _get_stop_when_flight_path_angle_achieved_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def stop_when_fpa_achieved(self) -> bool:
+    def stop_when_flight_path_angle_achieved(self) -> bool:
         """Stop when the commanded flight path angle is achieved."""
-        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_stop_when_fpa_achieved_metadata)
+        return self._intf.get_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._get_stop_when_flight_path_angle_achieved_metadata)
 
-    _set_stop_when_fpa_achieved_metadata = { "offset" : _set_stop_when_fpa_achieved_method_offset,
+    _set_stop_when_flight_path_angle_achieved_metadata = { "offset" : _set_stop_when_flight_path_angle_achieved_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    @stop_when_fpa_achieved.setter
-    def stop_when_fpa_achieved(self, newVal:bool) -> None:
+    @stop_when_flight_path_angle_achieved.setter
+    def stop_when_flight_path_angle_achieved(self, newVal:bool) -> None:
         """Stop when the commanded flight path angle is achieved."""
-        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_stop_when_fpa_achieved_metadata, newVal)
+        return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_stop_when_flight_path_angle_achieved_metadata, newVal)
 
     _get_airspeed_options_metadata = { "offset" : _get_airspeed_options_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -38235,9 +38238,9 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
         return self._intf.set_property(BasicManeuverStrategyPitch3D._metadata, BasicManeuverStrategyPitch3D._set_wind_force_effective_area_metadata, newVal)
 
     _property_names[control_mode] = "control_mode"
-    _property_names[command_fpa] = "command_fpa"
-    _property_names[control_fpa_dot] = "control_fpa_dot"
-    _property_names[stop_when_fpa_achieved] = "stop_when_fpa_achieved"
+    _property_names[command_flight_path_angle] = "command_flight_path_angle"
+    _property_names[control_flight_path_angle_dot] = "control_flight_path_angle_dot"
+    _property_names[stop_when_flight_path_angle_achieved] = "stop_when_flight_path_angle_achieved"
     _property_names[airspeed_options] = "airspeed_options"
     _property_names[wind_force_effective_area] = "wind_force_effective_area"
 
@@ -38467,8 +38470,8 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
     _set_target_position_vel_type_method_offset = 2
     _get_target_position_vel_type_string_method_offset = 3
     _set_target_position_vel_type_string_method_offset = 4
-    _get_mode_as_noisy_brg_rng_method_offset = 5
-    _get_mode_as_noisy_surf_tgt_method_offset = 6
+    _get_mode_as_noisy_bearing_range_method_offset = 5
+    _get_mode_as_noisy_surf_target_method_offset = 6
     _apply_position_vel_method_offset = 7
     _cancel_position_vel_method_offset = 8
     _metadata = {
@@ -38511,21 +38514,21 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
         """Get or set the target pos vel as a string value. Use this for custom models."""
         return self._intf.set_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._set_target_position_vel_type_string_metadata, pVal)
 
-    _get_mode_as_noisy_brg_rng_metadata = { "offset" : _get_mode_as_noisy_brg_rng_method_offset,
+    _get_mode_as_noisy_bearing_range_metadata = { "offset" : _get_mode_as_noisy_bearing_range_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_noisy_brg_rng(self) -> "BasicManeuverTargetPositionVelNoisyBrgRng":
+    def mode_as_noisy_bearing_range(self) -> "BasicManeuverTargetPositionVelNoisyBearingRange":
         """Get the options for a noisy bearing range velocity strategy."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_brg_rng_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_bearing_range_metadata)
 
-    _get_mode_as_noisy_surf_tgt_metadata = { "offset" : _get_mode_as_noisy_surf_tgt_method_offset,
+    _get_mode_as_noisy_surf_target_metadata = { "offset" : _get_mode_as_noisy_surf_target_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def mode_as_noisy_surf_tgt(self) -> "BasicManeuverTargetPositionVelNoisySurfTgt":
+    def mode_as_noisy_surf_target(self) -> "BasicManeuverTargetPositionVelNoisySurfTarget":
         """Get the options for a noisy surface target position velocity strategy."""
-        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_surf_tgt_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVel._metadata, BasicManeuverTargetPositionVel._get_mode_as_noisy_surf_target_metadata)
 
     _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
             "arg_types" : (),
@@ -38543,8 +38546,8 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
 
     _property_names[target_position_vel_type] = "target_position_vel_type"
     _property_names[target_position_vel_type_string] = "target_position_vel_type_string"
-    _property_names[mode_as_noisy_brg_rng] = "mode_as_noisy_brg_rng"
-    _property_names[mode_as_noisy_surf_tgt] = "mode_as_noisy_surf_tgt"
+    _property_names[mode_as_noisy_bearing_range] = "mode_as_noisy_bearing_range"
+    _property_names[mode_as_noisy_surf_target] = "mode_as_noisy_surf_target"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type BasicManeuverTargetPositionVel."""
@@ -38562,7 +38565,7 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5720707950419700583, 14220721990871486647), BasicManeuverTargetPositionVel)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVel"] = BasicManeuverTargetPositionVel
 
-class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
+class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     """Interface used to access target position and velocity strategy, NoisyBrnRng."""
 
     _num_methods = 12
@@ -38578,21 +38581,21 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     _set_range_error_std_dev_method_offset = 9
     _apply_position_vel_method_offset = 10
     _cancel_position_vel_method_offset = 11
-    _set_base_dyn_state_link_name_method_offset = 12
+    _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
         "iid_data" : (5036622950677551442, 17790904143506270117),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisyBrgRng)
+        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisyBearingRange)
     
     _new_random_engine_seed_metadata = { "offset" : _new_random_engine_seed_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
         """Generate a new random engine seed."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._new_random_engine_seed_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._new_random_engine_seed_metadata, )
 
     _get_smoothing_constant_metadata = { "offset" : _get_smoothing_constant_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38600,14 +38603,14 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     @property
     def smoothing_constant(self) -> float:
         """Get or set the smoothing constant property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._get_smoothing_constant_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_smoothing_constant_metadata)
 
     _set_smoothing_constant_metadata = { "offset" : _set_smoothing_constant_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @smoothing_constant.setter
     def smoothing_constant(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._set_smoothing_constant_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_smoothing_constant_metadata, newVal)
 
     _get_velocity_time_step_metadata = { "offset" : _get_velocity_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38615,14 +38618,14 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     @property
     def velocity_time_step(self) -> float:
         """Get or set the velocity time step property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._get_velocity_time_step_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_velocity_time_step_metadata)
 
     _set_velocity_time_step_metadata = { "offset" : _set_velocity_time_step_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @velocity_time_step.setter
     def velocity_time_step(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._set_velocity_time_step_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_velocity_time_step_metadata, newVal)
 
     _get_angle_error_std_dev_metadata = { "offset" : _get_angle_error_std_dev_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38630,14 +38633,14 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     @property
     def angle_error_std_dev(self) -> float:
         """Get or set the angle error standard deviation property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._get_angle_error_std_dev_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_angle_error_std_dev_metadata)
 
     _set_angle_error_std_dev_metadata = { "offset" : _set_angle_error_std_dev_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @angle_error_std_dev.setter
     def angle_error_std_dev(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._set_angle_error_std_dev_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_angle_error_std_dev_metadata, newVal)
 
     _get_range_error_std_dev_metadata = { "offset" : _get_range_error_std_dev_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38645,35 +38648,35 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     @property
     def range_error_std_dev(self) -> float:
         """Get or set the range error standard deviation property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._get_range_error_std_dev_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._get_range_error_std_dev_metadata)
 
     _set_range_error_std_dev_metadata = { "offset" : _set_range_error_std_dev_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @range_error_std_dev.setter
     def range_error_std_dev(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._set_range_error_std_dev_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_range_error_std_dev_metadata, newVal)
 
     _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_position_vel(self) -> None:
         """Apply the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._apply_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._apply_position_vel_metadata, )
 
     _cancel_position_vel_metadata = { "offset" : _cancel_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def cancel_position_vel(self) -> None:
         """Cancel the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._cancel_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._cancel_position_vel_metadata, )
 
-    _set_base_dyn_state_link_name_metadata = { "offset" : _set_base_dyn_state_link_name_method_offset,
+    _set_base_dynamic_state_link_name_metadata = { "offset" : _set_base_dynamic_state_link_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_base_dyn_state_link_name(self, newVal:str) -> None:
+    def set_base_dynamic_state_link_name(self, newVal:str) -> None:
         """Set the BaseDynStateLinkName."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBrgRng._metadata, BasicManeuverTargetPositionVelNoisyBrgRng._set_base_dyn_state_link_name_metadata, newVal)
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisyBearingRange._metadata, BasicManeuverTargetPositionVelNoisyBearingRange._set_base_dynamic_state_link_name_metadata, newVal)
 
     _property_names[smoothing_constant] = "smoothing_constant"
     _property_names[velocity_time_step] = "velocity_time_step"
@@ -38681,9 +38684,9 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
     _property_names[range_error_std_dev] = "range_error_std_dev"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverTargetPositionVelNoisyBrgRng."""
+        """Construct an object of type BasicManeuverTargetPositionVelNoisyBearingRange."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisyBrgRng)
+        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisyBearingRange)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38691,12 +38694,12 @@ class BasicManeuverTargetPositionVelNoisyBrgRng(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBrgRng, [BasicManeuverTargetPositionVelNoisyBrgRng, ])
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisyBearingRange, [BasicManeuverTargetPositionVelNoisyBearingRange, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5183636736005802859, 6010191698451056009), BasicManeuverTargetPositionVelNoisyBrgRng)
-agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisyBrgRng"] = BasicManeuverTargetPositionVelNoisyBrgRng
+agcls.AgClassCatalog.add_catalog_entry((5183636736005802859, 6010191698451056009), BasicManeuverTargetPositionVelNoisyBearingRange)
+agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisyBearingRange"] = BasicManeuverTargetPositionVelNoisyBearingRange
 
-class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
+class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     """Interface used to access target position and velocity strategy, Surf Tgt Pos Vel."""
 
     _num_methods = 12
@@ -38712,21 +38715,21 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     _set_speed_error_method_offset = 9
     _apply_position_vel_method_offset = 10
     _cancel_position_vel_method_offset = 11
-    _set_base_dyn_state_link_name_method_offset = 12
+    _set_base_dynamic_state_link_name_method_offset = 12
     _metadata = {
         "iid_data" : (5603321029489925551, 13135773816960132759),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisySurfTgt)
+        return get_interface_property(attrname, BasicManeuverTargetPositionVelNoisySurfTarget)
     
     _new_random_engine_seed_metadata = { "offset" : _new_random_engine_seed_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def new_random_engine_seed(self) -> None:
         """Generate a new random engine seed."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._new_random_engine_seed_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._new_random_engine_seed_metadata, )
 
     _get_measurement_time_step_metadata = { "offset" : _get_measurement_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38734,14 +38737,14 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     @property
     def measurement_time_step(self) -> float:
         """Get or set the measurement time step property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._get_measurement_time_step_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_measurement_time_step_metadata)
 
     _set_measurement_time_step_metadata = { "offset" : _set_measurement_time_step_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @measurement_time_step.setter
     def measurement_time_step(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._set_measurement_time_step_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_measurement_time_step_metadata, newVal)
 
     _get_position_cep_metadata = { "offset" : _get_position_cep_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38749,14 +38752,14 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     @property
     def position_cep(self) -> float:
         """Get or set the position CEP property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._get_position_cep_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_position_cep_metadata)
 
     _set_position_cep_metadata = { "offset" : _set_position_cep_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @position_cep.setter
     def position_cep(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._set_position_cep_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_position_cep_metadata, newVal)
 
     _get_course_error_metadata = { "offset" : _get_course_error_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38764,14 +38767,14 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     @property
     def course_error(self) -> float:
         """Get or set the course error property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._get_course_error_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_course_error_metadata)
 
     _set_course_error_metadata = { "offset" : _set_course_error_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @course_error.setter
     def course_error(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._set_course_error_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_course_error_metadata, newVal)
 
     _get_speed_error_metadata = { "offset" : _get_speed_error_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -38779,35 +38782,35 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     @property
     def speed_error(self) -> float:
         """Get or set the speed error property."""
-        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._get_speed_error_metadata)
+        return self._intf.get_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._get_speed_error_metadata)
 
     _set_speed_error_metadata = { "offset" : _set_speed_error_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @speed_error.setter
     def speed_error(self, newVal:float) -> None:
-        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._set_speed_error_metadata, newVal)
+        return self._intf.set_property(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_speed_error_metadata, newVal)
 
     _apply_position_vel_metadata = { "offset" : _apply_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_position_vel(self) -> None:
         """Apply the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._apply_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._apply_position_vel_metadata, )
 
     _cancel_position_vel_metadata = { "offset" : _cancel_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def cancel_position_vel(self) -> None:
         """Cancel the current position velocity strategy."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._cancel_position_vel_metadata, )
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._cancel_position_vel_metadata, )
 
-    _set_base_dyn_state_link_name_metadata = { "offset" : _set_base_dyn_state_link_name_method_offset,
+    _set_base_dynamic_state_link_name_metadata = { "offset" : _set_base_dynamic_state_link_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_base_dyn_state_link_name(self, newVal:str) -> None:
+    def set_base_dynamic_state_link_name(self, newVal:str) -> None:
         """Set the BaseDynStateLinkName."""
-        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTgt._metadata, BasicManeuverTargetPositionVelNoisySurfTgt._set_base_dyn_state_link_name_metadata, newVal)
+        return self._intf.invoke(BasicManeuverTargetPositionVelNoisySurfTarget._metadata, BasicManeuverTargetPositionVelNoisySurfTarget._set_base_dynamic_state_link_name_metadata, newVal)
 
     _property_names[measurement_time_step] = "measurement_time_step"
     _property_names[position_cep] = "position_cep"
@@ -38815,9 +38818,9 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
     _property_names[speed_error] = "speed_error"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type BasicManeuverTargetPositionVelNoisySurfTgt."""
+        """Construct an object of type BasicManeuverTargetPositionVelNoisySurfTarget."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisySurfTgt)
+        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisySurfTarget)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38825,10 +38828,10 @@ class BasicManeuverTargetPositionVelNoisySurfTgt(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTgt, [BasicManeuverTargetPositionVelNoisySurfTgt, ])
+        set_class_attribute(self, attrname, value, BasicManeuverTargetPositionVelNoisySurfTarget, [BasicManeuverTargetPositionVelNoisySurfTarget, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelNoisySurfTgt)
-agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisySurfTgt"] = BasicManeuverTargetPositionVelNoisySurfTgt
+agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelNoisySurfTarget)
+agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisySurfTarget"] = BasicManeuverTargetPositionVelNoisySurfTarget
 
 
 ################################################################################

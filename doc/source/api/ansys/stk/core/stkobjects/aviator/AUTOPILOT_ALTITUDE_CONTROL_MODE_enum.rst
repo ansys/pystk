@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~AUTOPILOT_ALTITUDE_RATE`
               - The control altitude rate mode.
 
-            * - :py:attr:`~AUTOPILOT_FPA`
+            * - :py:attr:`~AUTOPILOT_FLIGHT_PATH_ANGLE`
               - The control flight path angle mode.
 
-            * - :py:attr:`~AUTOPILOT_PERF_MODELS`
+            * - :py:attr:`~AUTOPILOT_PERFORMANCE_MODELS`
               - The climb/descent performance models mode.
 
 

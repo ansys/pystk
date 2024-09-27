@@ -3,8 +3,6 @@ STKXApplication
 
 .. py:class:: ansys.stk.core.stkx.STKXApplication
 
-   Bases: 
-
    STK X Application object.
 
 .. py:currentmodule:: STKXApplication
@@ -161,7 +159,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, command: str) -> ExecCmdResult
+.. py:method:: execute_command(self, command: str) -> ExecuteCommandResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_command
 
     Send a connect command to STK X.
@@ -172,7 +170,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ExecCmdResult`
+        :obj:`~ExecuteCommandResult`
 
 
 
@@ -238,7 +236,7 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXEC_MULTI_CMD_RESULT_ACTION) -> ExecMultiCmdResult
+.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
@@ -246,11 +244,11 @@ Method detail
     :Parameters:
 
     **connectCommands** : :obj:`~list`
-    **eAction** : :obj:`~EXEC_MULTI_CMD_RESULT_ACTION`
+    **eAction** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
 
     :Returns:
 
-        :obj:`~ExecMultiCmdResult`
+        :obj:`~ExecuteMultipleCommandResult`
 
 .. py:method:: is_feature_available(self, featureCode: FEATURE_CODES) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.is_feature_available

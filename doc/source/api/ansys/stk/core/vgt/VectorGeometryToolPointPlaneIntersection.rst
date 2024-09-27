@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection.direction_vector
-    :type: IVectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorRefTo
 
     Specify a direction vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection.reference_plane
-    :type: IVectorGeometryToolPlaneRefTo
+    :type: VectorGeometryToolPlaneRefTo
 
     Specify a reference plane.
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection.origin_point
-    :type: IVectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointRefTo
 
     Specify the origin point.
 

@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: altitude_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.altitude_options
-    :type: IHoverAltitudeOptions
+    :type: HoverAltitudeOptions
 
     Get the altitude options.
 

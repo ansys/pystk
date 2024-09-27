@@ -3,8 +3,6 @@ PointBatchPrimitiveOptionalParametersFactory
 
 .. py:class:: ansys.stk.core.graphics.PointBatchPrimitiveOptionalParametersFactory
 
-   Bases: 
-
    Optional per-point parameters for point batch primitive that overrides the point batch primitive's global parameters...
 
 .. py:currentmodule:: PointBatchPrimitiveOptionalParametersFactory

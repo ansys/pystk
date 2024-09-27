@@ -3,8 +3,6 @@ VehicleGraphics3DTrajectoryDropLines
 
 .. py:class:: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryDropLines
 
-   Bases: 
-
    Droplines for launch vehicles and missiles.
 
 .. py:currentmodule:: VehicleGraphics3DTrajectoryDropLines
@@ -40,13 +38,13 @@ Property detail
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryDropLines.position
-    :type: IVehicleGraphics3DDropLinePositionItemCollection
+    :type: VehicleGraphics3DDropLinePositionItemCollection
 
     Get the list of droplines from the vehicle's current positions.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryDropLines.trajectory
-    :type: IVehicleGraphics3DDropLinePathItemCollection
+    :type: VehicleGraphics3DDropLinePathItemCollection
 
     Get the list of droplines at intervals along the vehicle's trajectory.
 

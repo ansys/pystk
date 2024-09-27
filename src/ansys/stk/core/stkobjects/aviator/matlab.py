@@ -9,7 +9,8 @@ MATLAB strategies allow the users to utilize MATLAB
 Aerospace Toolbox functions to define the force modeling of the aircraft.
 """
 
-__all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNav", "StrategyMATLABProfile"]
+__all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation", 
+"StrategyMATLABProfile"]
 
 import typing
 
@@ -31,7 +32,7 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 
-class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
+class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a MATLAB - Horizontal Plane Strategy of a Basic Maneuver Procedure."""
 
     _num_methods = 7
@@ -49,7 +50,7 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StrategyMATLABNav)
+        return get_interface_property(attrname, StrategyMATLABNavigation)
     
     _get_function_name_metadata = { "offset" : _get_function_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -57,7 +58,7 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @property
     def function_name(self) -> str:
         """Get or set the name of the MATLAB function."""
-        return self._intf.get_property(StrategyMATLABNav._metadata, StrategyMATLABNav._get_function_name_metadata)
+        return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_function_name_metadata)
 
     _set_function_name_metadata = { "offset" : _set_function_name_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -65,14 +66,14 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @function_name.setter
     def function_name(self, newVal:str) -> None:
         """Get or set the name of the MATLAB function."""
-        return self._intf.set_property(StrategyMATLABNav._metadata, StrategyMATLABNav._set_function_name_metadata, newVal)
+        return self._intf.set_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._set_function_name_metadata, newVal)
 
     _is_function_path_valid_metadata = { "offset" : _is_function_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def is_function_path_valid(self) -> bool:
         """Check if the MATLAB function path is valid."""
-        return self._intf.invoke(StrategyMATLABNav._metadata, StrategyMATLABNav._is_function_path_valid_metadata, OutArg())
+        return self._intf.invoke(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._is_function_path_valid_metadata, OutArg())
 
     _get_check_for_errors_metadata = { "offset" : _get_check_for_errors_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -80,7 +81,7 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @property
     def check_for_errors(self) -> bool:
         """Get or set the option to check the function for errors."""
-        return self._intf.get_property(StrategyMATLABNav._metadata, StrategyMATLABNav._get_check_for_errors_metadata)
+        return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_check_for_errors_metadata)
 
     _set_check_for_errors_metadata = { "offset" : _set_check_for_errors_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -88,7 +89,7 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @check_for_errors.setter
     def check_for_errors(self, newVal:bool) -> None:
         """Get or set the option to check the function for errors."""
-        return self._intf.set_property(StrategyMATLABNav._metadata, StrategyMATLABNav._set_check_for_errors_metadata, newVal)
+        return self._intf.set_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._set_check_for_errors_metadata, newVal)
 
     _get_display_output_metadata = { "offset" : _get_display_output_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -96,7 +97,7 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @property
     def display_output(self) -> bool:
         """Get or set the option to display the output from the MATLAB function."""
-        return self._intf.get_property(StrategyMATLABNav._metadata, StrategyMATLABNav._get_display_output_metadata)
+        return self._intf.get_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._get_display_output_metadata)
 
     _set_display_output_metadata = { "offset" : _set_display_output_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
@@ -104,16 +105,16 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
     @display_output.setter
     def display_output(self, newVal:bool) -> None:
         """Get or set the option to display the output from the MATLAB function."""
-        return self._intf.set_property(StrategyMATLABNav._metadata, StrategyMATLABNav._set_display_output_metadata, newVal)
+        return self._intf.set_property(StrategyMATLABNavigation._metadata, StrategyMATLABNavigation._set_display_output_metadata, newVal)
 
     _property_names[function_name] = "function_name"
     _property_names[check_for_errors] = "check_for_errors"
     _property_names[display_output] = "display_output"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type StrategyMATLABNav."""
+        """Construct an object of type StrategyMATLABNavigation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StrategyMATLABNav)
+        initialize_from_source_object(self, sourceObject, StrategyMATLABNavigation)
         IBasicManeuverStrategy.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -123,10 +124,10 @@ class StrategyMATLABNav(IBasicManeuverStrategy, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StrategyMATLABNav, [StrategyMATLABNav, IBasicManeuverStrategy])
+        set_class_attribute(self, attrname, value, StrategyMATLABNavigation, [StrategyMATLABNavigation, IBasicManeuverStrategy])
 
-agcls.AgClassCatalog.add_catalog_entry((4922865625757889154, 4997589758508718220), StrategyMATLABNav)
-agcls.AgTypeNameMap["StrategyMATLABNav"] = StrategyMATLABNav
+agcls.AgClassCatalog.add_catalog_entry((4922865625757889154, 4997589758508718220), StrategyMATLABNavigation)
+agcls.AgTypeNameMap["StrategyMATLABNavigation"] = StrategyMATLABNavigation
 
 class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
     """Interface used to access options for a MATLAB - Vertical Plane Strategy of a Basic Maneuver Procedure."""
@@ -355,7 +356,7 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _set_compute_tas_dot_method_offset = 26
     _get_airspeed_options_method_offset = 27
     _get_position_vel_strategies_method_offset = 28
-    _cancel_tgt_position_vel_method_offset = 29
+    _cancel_target_position_vel_method_offset = 29
     _metadata = {
         "iid_data" : (5207808632699689454, 11389872158525712815),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -585,12 +586,12 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Get the position velocity strategies for MATLAB 3D Guidance."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_position_vel_strategies_metadata)
 
-    _cancel_tgt_position_vel_metadata = { "offset" : _cancel_tgt_position_vel_method_offset,
+    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_tgt_position_vel(self) -> None:
+    def cancel_target_position_vel(self) -> None:
         """Cancel the position velocity strategies for MATLAB 3D Guidance."""
-        return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._cancel_tgt_position_vel_metadata, )
+        return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._cancel_target_position_vel_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"

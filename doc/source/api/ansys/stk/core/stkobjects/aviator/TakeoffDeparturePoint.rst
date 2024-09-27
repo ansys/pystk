@@ -3,8 +3,6 @@ TakeoffDeparturePoint
 
 .. py:class:: ansys.stk.core.stkobjects.aviator.TakeoffDeparturePoint
 
-   Bases: 
-
    Class defining the departure point options for a takeoff procedure.
 
 .. py:currentmodule:: TakeoffDeparturePoint

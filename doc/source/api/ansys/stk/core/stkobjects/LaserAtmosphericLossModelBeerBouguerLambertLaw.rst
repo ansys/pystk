@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: atmosphere_layers
     :canonical: ansys.stk.core.stkobjects.LaserAtmosphericLossModelBeerBouguerLambertLaw.atmosphere_layers
-    :type: IBeerBouguerLambertLawLayerCollection
+    :type: BeerBouguerLambertLawLayerCollection
 
     Gets the atmosphere layer collection.
 

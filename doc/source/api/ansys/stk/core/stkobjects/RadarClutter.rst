@@ -3,8 +3,6 @@ RadarClutter
 
 .. py:class:: ansys.stk.core.stkobjects.RadarClutter
 
-   Bases: 
-
    Class defining a radar clutter.
 
 .. py:currentmodule:: RadarClutter
