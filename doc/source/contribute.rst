@@ -1,5 +1,5 @@
-Contributing
-############
+Contribute
+##########
 
 Thank you for your interest in contributing to PySTK! We welcome contributions
 to make the project better, whether it's fixing bugs, adding new features, or
@@ -15,31 +15,31 @@ Start by selecting your role in the project:
 .. grid:: 1 1 3 3
 
     .. grid-item-card:: :fa:`user` User
-        :link: contributing/user
+        :link: contribute/user
         :link-type: doc
         :padding: 2 2 2 2
 
-        Reporting bugs, suggesting features, and asking questions.
+        Report bugs, suggesting features, and ask questions.
 
     .. grid-item-card:: :fa:`book` Documentarian
-        :link: contributing/documentarian
+        :link: contribute/documentarian
         :link-type: doc
         :padding: 2 2 2 2
 
-        Improving the documentation and writing guides.
+        Improve the documentation and write new guides.
 
     .. grid-item-card:: :fa:`laptop-code` Developer
-        :link: contributing/developer
+        :link: contribute/developer
         :link-type: doc
         :padding: 2 2 2 2
 
-        Fixing bugs, adding features, and improving the codebase.
+        Fix bugs, add new features, and improve the codebase.
 
 .. toctree::
     :hidden:
     :maxdepth: 3
-    :caption: Contributing
+    :caption: Contribute
 
-    User<contributing/user>
-    Documentarian<contributing/documentarian>
-    Developer<contributing/developer>
+    User<contribute/user>
+    Documentarian<contribute/documentarian>
+    Developer<contribute/developer>
