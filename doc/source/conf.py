@@ -12,6 +12,7 @@ import zipfile
 import sphinx
 from sphinx.util import logging
 from sphinx.util.display import status_iterator
+from sphinx.errors import NoUri
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -551,6 +552,25 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def ignore_examples_and_api_refs(app, env, pending_xref, node):
+    """Ignore any references targeting to the examples and API sections.
+
+    Parameters
+    ----------
+    app : ~sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    env : ~sphinx.environment.BuildEnvironment
+        Environment used to build the documentation.
+    pending_xref : dict
+        Cross-reference information.
+    node : ~docutils.nodes.Node
+        Object representing the information in the documentation.
+
+    """
+    if pending_xref["reftarget"] in ["examples", "api reference"]:
+        raise NoUri
+
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -572,3 +592,6 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
+
+    if not BUILD_EXAMPLES or BUILD_API:
+        app.connect("missing-reference", ignore_examples_and_api_refs)
