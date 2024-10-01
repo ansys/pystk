@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: doc-build
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v7
+      - uses: ansys/actions/doc-deploy-dev@v8
         with:
           doc-artifact-name: "complete-documentation-html"
           cname: ${{ env.DOCUMENTATION_CNAME }}
