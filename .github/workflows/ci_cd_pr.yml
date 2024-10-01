@@ -42,15 +42,13 @@ jobs:
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  branch-name-style:
-    name: "Branch style checks"
+  check-pr-title:
+    name: "Check pull-request title follows conventional commits"
     runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v8
+      - uses: ansys/actions/check-pr-title@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   code-style:
     name: "Code style checks"
@@ -58,7 +56,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
       - uses: ansys/actions/code-style@v8
         with: 
@@ -70,7 +68,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
