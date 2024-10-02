@@ -3,7 +3,7 @@ CalculationToolScalarElapsedTime
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarElapsedTime
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Time elapsed since the reference time instant. Negative if in the past.
 
@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.CalculationToolScalarElapsedTime.reference_time_instant
-    :type: ITimeToolEvent
+    :type: ITimeToolInstant
 
     The reference time instant.
 

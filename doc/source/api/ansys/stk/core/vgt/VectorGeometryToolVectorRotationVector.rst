@@ -3,7 +3,7 @@ VectorGeometryToolVectorRotationVector
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector.axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify the axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

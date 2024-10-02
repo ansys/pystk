@@ -124,39 +124,33 @@ class DisplayTimesHelper(object):
             dttc.get_qualified_path(),
         )
 
-        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.events["AnalysisStartTime"], IAnalysisWorkbenchComponent
+        crdn: "IComponent" = clr.CastAs(
+            self.m_oRoot.current_scenario.vgt.time_instants["AnalysisStartTime"], IComponent
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
-        crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.children["Facility1"].vgt.event_interval_collections["LightingIntervals"],
-            IAnalysisWorkbenchComponent,
+        crdnFac: "IComponent" = clr.CastAs(
+            self.m_oRoot.current_scenario.children["Facility1"].vgt.time_interval_collections["LightingIntervals"],
+            IComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdnFac)
-        crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
-        )
+        crdn = clr.CastAs(self.m_oRoot.current_scenario.vgt.time_arrays["OneMinuteSampleTimes"], IComponent)
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
 
-        crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
-        )
+        crdn = clr.CastAs(self.m_oRoot.current_scenario.vgt.time_intervals["AnalysisInterval"], IComponent)
         dttc.set_time_component(crdn)
         Assert.assertEqual(
             (("Scenario/" + self.m_oRoot.current_scenario.instance_name) + " AnalysisInterval EventInterval"),
-            (clr.CastAs(dttc.get_time_component(), IAnalysisWorkbenchComponent)).qualified_path,
+            (clr.CastAs(dttc.get_time_component(), IComponent)).qualified_path,
         )
 
-        crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
-        )
+        crdn = clr.CastAs(self.m_oRoot.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"], IComponent)
         dttc.set_time_component(crdn)
         Assert.assertEqual(
             (("Scenario/" + self.m_oRoot.current_scenario.instance_name) + " AvailabilityIntervals EventIntervalList"),
-            (clr.CastAs(dttc.get_time_component(), IAnalysisWorkbenchComponent)).qualified_path,
+            (clr.CastAs(dttc.get_time_component(), IComponent)).qualified_path,
         )
 
         dttc.reset()

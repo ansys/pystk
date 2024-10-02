@@ -3,7 +3,7 @@ VectorGeometryToolVectorScaled
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorScaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it.
 
@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScaled.reference_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorReference
 
     A vector being scaled.
 

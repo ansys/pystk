@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorHPOP.ephemeris_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Get the propagator's ephemeris interval.
 

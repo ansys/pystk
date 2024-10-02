@@ -56,12 +56,12 @@ Method detail
 -------------
 
 
-.. py:method:: get_time_component(self) -> IAnalysisWorkbenchComponent
+.. py:method:: get_time_component(self) -> IComponent
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventElement.get_time_component
 
     Return an instance of a time component which provides the time intervals to control the appearance and visibility of the graphics path. The method may throw an exception if the component is invalid.
 
     :Returns:
 
-        :obj:`~IAnalysisWorkbenchComponent`
+        :obj:`~IComponent`
 

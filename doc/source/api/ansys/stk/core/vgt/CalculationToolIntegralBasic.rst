@@ -3,7 +3,7 @@ CalculationToolIntegralBasic
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolIntegralBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Integral definition determines how scalar calculation is numerically integrated.
 
@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.CalculationToolIntegralBasic.type
-    :type: CRDN_INTEGRAL_TYPE
+    :type: QUADRATURE_TYPE
 
     Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
 

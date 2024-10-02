@@ -3,7 +3,7 @@ VectorGeometryToolVectorTwoPlanesIntersection
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorTwoPlanesIntersection
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Defined along the intersection of two planes.
 
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: plane_a
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorTwoPlanesIntersection.plane_a
-    :type: VectorGeometryToolPlaneRefTo
+    :type: PlaneReference
 
     Specify the first of the two planes which intersection defines the vector.
 
 .. py:property:: plane_b
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorTwoPlanesIntersection.plane_b
-    :type: VectorGeometryToolPlaneRefTo
+    :type: PlaneReference
 
     Specify the second of the two planes which intersection defines the vector.
 

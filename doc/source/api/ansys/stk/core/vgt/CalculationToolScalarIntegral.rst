@@ -3,7 +3,7 @@ CalculationToolScalarIntegral
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarIntegral
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: integration_window_type
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.integration_window_type
-    :type: CRDN_INTEGRATION_WINDOW_TYPE
+    :type: INTEGRATION_WINDOW_TYPE
 
     The integration window, or accumulation, type.
 
@@ -105,19 +105,19 @@ Property detail
 
 .. py:property:: custom_time_limits
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.custom_time_limits
-    :type: ITimeToolEventIntervalList
+    :type: ITimeToolTimeIntervalList
 
     The interval list within which the global minimum or maximum is sought. The default is the overall availability of host object.
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.save_data_option
-    :type: CRDN_SAVE_DATA_OPTION
+    :type: SAVE_DATA_TYPE
 
     Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.interpolation
-    :type: IAnalysisWorkbenchInterp
+    :type: IAnalysisWorkbenchInterpolator
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 

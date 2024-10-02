@@ -203,7 +203,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.AZ_EL_ABOUT_BORESIGHT`
               - About Boresight options for AzEl orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.EULER_ORIENTATION_SEQUENCE`
+            * - :py:class:`~ansys.stk.core.stkutil.EULER_ORIENTATION_SEQUENCE_TYPE`
               - Euler rotation sequence options:.
 
             * - :py:class:`~ansys.stk.core.stkutil.YPR_ANGLES_SEQUENCE`
@@ -323,7 +323,7 @@ in the STK X and STK Objects libraries.
     ≔ PR_SEQUENCE<stkutil/PR_SEQUENCE_enum>
     ≔ ORIENTATION_TYPE<stkutil/ORIENTATION_TYPE_enum>
     ≔ AZ_EL_ABOUT_BORESIGHT<stkutil/AZ_EL_ABOUT_BORESIGHT_enum>
-    ≔ EULER_ORIENTATION_SEQUENCE<stkutil/EULER_ORIENTATION_SEQUENCE_enum>
+    ≔ EULER_ORIENTATION_SEQUENCE_TYPE<stkutil/EULER_ORIENTATION_SEQUENCE_TYPE_enum>
     ≔ YPR_ANGLES_SEQUENCE<stkutil/YPR_ANGLES_SEQUENCE_enum>
     ≔ ORBIT_STATE_TYPE<stkutil/ORBIT_STATE_TYPE_enum>
     ≔ COORDINATE_SYSTEM<stkutil/COORDINATE_SYSTEM_enum>

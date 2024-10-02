@@ -3,7 +3,7 @@ VectorGeometryToolVectorFixedAtTimeInstant
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFixedAtTimeInstant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Vector fixed relative to reference axes based on another vector evaluated at specified time instant.
 
@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFixedAtTimeInstant.reference_time_instant
-    :type: ITimeToolEvent
+    :type: ITimeToolInstant
 
     A reference time instant. Can be any Time event.
 

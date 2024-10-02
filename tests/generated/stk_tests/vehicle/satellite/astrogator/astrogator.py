@@ -4367,13 +4367,13 @@ longitude = 121;"""
         maneuver: "MCSManeuver" = clr.CastAs(driver.main_sequence["Maneuver"], MCSManeuver)
         impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
-        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, deuler0, deuler1, deuler2)
+        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312, deuler0, deuler1, deuler2)
 
         a: typing.Any = None
         b: typing.Any = None
         c: typing.Any = None
 
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]
@@ -4389,8 +4389,8 @@ longitude = 121;"""
         settle: "MCSManeuver" = clr.CastAs(driver2.main_sequence["Settle"], MCSManeuver)
         impulse2: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att2: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse2.attitude_control)
-        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, euler0, euler1, euler2)
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312, euler0, euler1, euler2)
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]

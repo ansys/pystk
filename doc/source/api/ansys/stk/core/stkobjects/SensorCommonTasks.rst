@@ -191,14 +191,14 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_euler(self, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
+.. py:method:: set_pointing_fixed_euler(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler
 
     Set the pointing method to Fixed with a Euler Angles orientation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -255,7 +255,7 @@ Method detail
 
         :obj:`~SensorPointingFixedAxes`
 
-.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes: str, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedAxes
+.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes: str, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler
 
     Set the pointing method to FixedAxes with a Euler Angles orientation.
@@ -263,7 +263,7 @@ Method detail
     :Parameters:
 
     **referenceAxes** : :obj:`~str`
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`

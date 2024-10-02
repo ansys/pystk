@@ -3,7 +3,7 @@ AnalysisWorkbenchDerivative
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchDerivative
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Represents a base class for derivative definitions.
 

@@ -62,7 +62,7 @@ class GPSSnippets(CodeSnippetsTestBase):
     def ConfigureGPSWithAlmanac(self, propagator: "VehiclePropagatorGPS", almanacPath: str, scenario: "IStkObject"):
         # Configure properties
         # Use the scenario's analysis interval
-        propagator.ephemeris_interval.set_implicit_interval(scenario.vgt.event_intervals["AnalysisInterval"])
+        propagator.ephemeris_interval.set_implicit_interval(scenario.vgt.time_intervals["AnalysisInterval"])
 
         # PRN must be set before configuring GPS almanac
         propagator.prn = int(str(propagator.available_prns[0]))

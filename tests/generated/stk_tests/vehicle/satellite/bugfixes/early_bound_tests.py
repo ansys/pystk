@@ -116,7 +116,7 @@ class EarlyBoundTests(TestBase):
 
     #    cart.CoordinateSystemType = AgECoordinateSystem.MEAN_OF_EPOCH;
     #    OrbitStateCoordinateSystem coordsys = (OrbitStateCoordinateSystem)cart.CoordinateSystem;
-    #    ITimeToolEvent referenceEvent = Application.CurrentScenario.Vgt.Events["AnalysisStartTime"];
+    #    ITimeToolInstant referenceEvent = Application.CurrentScenario.Vgt.Events["AnalysisStartTime"];
     #    cart.CoordinateSystem.CoordinateSystemEpoch.SetImplicitTime(referenceEvent);
 
     #    j2prop.InitialState.Representation.Assign(cart);
@@ -171,7 +171,7 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_BUG112927_IAgVORefCrdnAngle_ShowDihedralAngleSupportingArcs(self):
         TestBase.Application.vgt_root.get_provider("Satellite/Satellite1").angles.factory.create(
-            "BUG112927_Dihedral", "", VECTOR_GEOMETRY_TOOL_ANGLE_TYPE.DIHEDRAL_ANGLE
+            "BUG112927_Dihedral", "", ANGLE_TYPE.DIHEDRAL_ANGLE
         )
         dihedral: "Graphics3DReferenceVectorGeometryToolAngle" = clr.CastAs(
             EarlyBoundTests.AG_SAT.graphics_3d.vector.reference_crdns.add(

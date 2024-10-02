@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: display_interval
     :canonical: ansys.stk.core.stkobjects.Graphics3DVaporTrail.display_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Defines a display interval of the vapor trail in the 3D window.
 

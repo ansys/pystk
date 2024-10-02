@@ -3,7 +3,7 @@ VectorGeometryToolAxesFixedAtEpoch
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Axes based on another set fixed at a specified epoch.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: source_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch.source_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a source axes.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFixedAtEpoch.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

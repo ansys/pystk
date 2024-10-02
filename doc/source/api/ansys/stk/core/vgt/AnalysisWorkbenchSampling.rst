@@ -3,7 +3,7 @@ AnalysisWorkbenchSampling
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchSampling
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSampling`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSampling`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Base sampling interface.
 

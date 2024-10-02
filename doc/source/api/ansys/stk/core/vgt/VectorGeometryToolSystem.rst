@@ -3,7 +3,7 @@ VectorGeometryToolSystem
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystem
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Base class for VGT axes.
 

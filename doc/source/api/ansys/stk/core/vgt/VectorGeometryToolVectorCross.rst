@@ -3,7 +3,7 @@ VectorGeometryToolVectorCross
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorCross
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    The vector cross product of two vectors.
 
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.from_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorReference
 
     Specify one of the two vectors which define the vector cross product.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.to_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorReference
 
     Specify the second of the two vectors which define the vector cross product.
 

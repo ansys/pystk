@@ -3,7 +3,7 @@ AnalysisWorkbenchSignalDelay
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchSignalDelay
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSignalDelay`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSignalDelay`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Signal delay definition determines how long it takes for a signal to propagate from one location to another.
 

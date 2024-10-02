@@ -177,7 +177,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
 
     def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator: "VehiclePropagatorGreatArc"):
         # Set the epoch time to tomorrow.
-        startEpoch: "TimeToolEventSmartEpoch" = propagator.ephemeris_interval.get_start_epoch()
+        startEpoch: "TimeToolInstantSmartEpoch" = propagator.ephemeris_interval.get_start_epoch()
         startEpoch.set_explicit_time("Tomorrow")
         propagator.ephemeris_interval.set_start_epoch(startEpoch)
 

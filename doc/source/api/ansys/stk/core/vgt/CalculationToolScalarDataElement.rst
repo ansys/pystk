@@ -3,7 +3,7 @@ CalculationToolScalarDataElement
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarDataElement
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Any time-dependent data element from STK data providers available for parent STK object.
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.interpolation
-    :type: IAnalysisWorkbenchInterp
+    :type: IAnalysisWorkbenchInterpolator
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: CRDN_SAVE_DATA_OPTION
+    :type: SAVE_DATA_TYPE
 
     Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 

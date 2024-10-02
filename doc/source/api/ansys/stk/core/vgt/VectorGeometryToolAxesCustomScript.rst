@@ -3,7 +3,7 @@ VectorGeometryToolAxesCustomScript
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesCustomScript
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Customized axes offset with respect to a set of reference Axes.
 
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCustomScript.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

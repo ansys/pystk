@@ -3,7 +3,7 @@ VectorGeometryToolVectorLineOfNodes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorLineOfNodes
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body.
 
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLineOfNodes.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLineOfNodes.reference_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a reference point.
 

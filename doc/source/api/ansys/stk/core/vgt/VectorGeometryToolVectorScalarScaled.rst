@@ -3,7 +3,7 @@ VectorGeometryToolVectorScalarScaled
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorScalarScaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Scaled version of the input vector using scalar.
 
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarScaled.dimension_inheritance
-    :type: VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE
+    :type: VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE
 
     Whether or not to inherit dimension from the input vector or the scalar.
 

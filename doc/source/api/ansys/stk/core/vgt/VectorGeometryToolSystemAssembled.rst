@@ -3,7 +3,7 @@ VectorGeometryToolSystemAssembled
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    A system assembled from an origin point and a set of reference axes.
 
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: origin_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled.origin_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a point of origin.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemAssembled.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

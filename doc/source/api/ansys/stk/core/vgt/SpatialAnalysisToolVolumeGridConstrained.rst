@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridConstrained
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridConstrained
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    A volume grid constrained interface.
 

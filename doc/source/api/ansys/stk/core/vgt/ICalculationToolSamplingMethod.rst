@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: method_type
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingMethod.method_type
-    :type: CRDN_SAMPLING_METHOD
+    :type: VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD
 
     A sampling method type.
 

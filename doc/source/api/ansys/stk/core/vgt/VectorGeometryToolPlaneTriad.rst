@@ -3,7 +3,7 @@ VectorGeometryToolPlaneTriad
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    A Plane containing points PointA, PointB and ReferencePont with the first axis aligned with the direction from the ReferencePoint to PointA and the second axis toward the direction from the ReferencePoint to PointB.
 
@@ -44,19 +44,19 @@ Property detail
 
 .. py:property:: point_a
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.point_a
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a point A.
 
 .. py:property:: point_b
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.point_b
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a point B.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneTriad.reference_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a reference point.
 

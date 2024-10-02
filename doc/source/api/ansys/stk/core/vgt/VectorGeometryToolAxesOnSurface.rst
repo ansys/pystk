@@ -3,7 +3,7 @@ VectorGeometryToolAxesOnSurface
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Topocentric axes located at the reference point's projection on the central body.
 
@@ -24,7 +24,7 @@ Overview
               - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.reference_point`
               - Specify a reference point.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.use_msl`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.use_mean_sea_level`
               - Specify whether the reference shape is at the Mean Sea Level.
 
 
@@ -42,18 +42,18 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.reference_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a reference point.
 
-.. py:property:: use_msl
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.use_msl
+.. py:property:: use_mean_sea_level
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesOnSurface.use_mean_sea_level
     :type: bool
 
     Specify whether the reference shape is at the Mean Sea Level.

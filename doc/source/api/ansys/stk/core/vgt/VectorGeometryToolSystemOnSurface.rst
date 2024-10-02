@@ -3,7 +3,7 @@ VectorGeometryToolSystemOnSurface
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystem`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
 
@@ -24,7 +24,7 @@ Overview
               - Specify a central body.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.azimuth_angle`
               - An angle by which the topocentric axes is rotated.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.use_msl`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.use_mean_sea_level`
               - Specify whether to use the Mean Sea Level as the reference shape.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.position`
               - Specify the position of the system's origin.
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
@@ -54,15 +54,15 @@ Property detail
 
     An angle by which the topocentric axes is rotated.
 
-.. py:property:: use_msl
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.use_msl
+.. py:property:: use_mean_sea_level
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.use_mean_sea_level
     :type: bool
 
     Specify whether to use the Mean Sea Level as the reference shape.
 
 .. py:property:: position
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface.position
-    :type: AnalysisWorkbenchLLAPosition
+    :type: AnalysisWorkbenchPositionLLA
 
     Specify the position of the system's origin.
 

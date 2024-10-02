@@ -3,7 +3,7 @@ CalculationToolScalarSurfaceDistanceBetweenPoints
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude).
 
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point1`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point_1`
               - Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point2`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point_2`
               - Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.surface_central_body`
               - Central body on which the surface distance between points is to be calculated.
@@ -42,14 +42,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: point1
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point1
+.. py:property:: point_1
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point_1
     :type: IVectorGeometryToolPoint
 
     Starting point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).
 
-.. py:property:: point2
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point2
+.. py:property:: point_2
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarSurfaceDistanceBetweenPoints.point_2
     :type: IVectorGeometryToolPoint
 
     Terminating point on the central body ellipsoid (or projection of point at altitude onto the ellipsoid).

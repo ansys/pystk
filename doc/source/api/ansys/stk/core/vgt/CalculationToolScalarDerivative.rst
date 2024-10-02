@@ -3,7 +3,7 @@ CalculationToolScalarDerivative
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarDerivative
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Derivative of an input scalar calculation.
 

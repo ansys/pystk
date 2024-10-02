@@ -3,7 +3,7 @@ CalculationToolScalarFixedAtTimeInstant
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFixedAtTimeInstant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined.
 
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFixedAtTimeInstant.reference_time_instant
-    :type: ITimeToolEvent
+    :type: ITimeToolInstant
 
     The reference time instant.
 

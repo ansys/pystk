@@ -122,117 +122,119 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(access.vgt)  # Verify that StkAccess reference is initialized
 
         access.compute_access()
-        provider: "AnalysisWorkbenchProvider" = access.vgt
+        provider: "AnalysisWorkbenchComponentProvider" = access.vgt
         Assert.assertIsNotNone(provider)
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.ANGLE))
-        type: "VECTOR_GEOMETRY_TOOL_ANGLE_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_GEOMETRY_TOOL_ANGLE_TYPE)):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.ANGLE))
+        type: "ANGLE_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(ANGLE_TYPE)):
             if provider.angles.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolAngle" = provider.angles.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.angles.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.AXES))
-        type: "VECTOR_GEOMETRY_TOOL_AXES_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_GEOMETRY_TOOL_AXES_TYPE)):
-            if provider.axes.factory.is_type_supported(type) and (type != VECTOR_GEOMETRY_TOOL_AXES_TYPE.PLUGIN):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.AXES))
+        type: "AXES_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(AXES_TYPE)):
+            if provider.axes.factory.is_type_supported(type) and (type != AXES_TYPE.PLUGIN):
                 obj: "IVectorGeometryToolAxes" = provider.axes.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.axes.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.PLANE))
-        type: "VECTOR_GEOMETRY_TOOL_PLANE_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_GEOMETRY_TOOL_PLANE_TYPE)):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.PLANE))
+        type: "PLANE_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(PLANE_TYPE)):
             if provider.planes.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolPlane" = provider.planes.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.planes.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.POINT))
-        type: "VECTOR_GEOMETRY_TOOL_POINT_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_GEOMETRY_TOOL_POINT_TYPE)):
-            if provider.points.factory.is_type_supported(type) and (type != VECTOR_GEOMETRY_TOOL_POINT_TYPE.PLUGIN):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.POINT))
+        type: "POINT_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(POINT_TYPE)):
+            if provider.points.factory.is_type_supported(type) and (type != POINT_TYPE.PLUGIN):
                 obj: "IVectorGeometryToolPoint" = provider.points.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.points.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.SYSTEM))
-        type: "CRDN_SYSTEM_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_SYSTEM_TYPE)):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.SYSTEM))
+        type: "SYSTEM_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(SYSTEM_TYPE)):
             if provider.systems.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolSystem" = provider.systems.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.systems.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(CRDN_KIND.VECTOR))
-        type: "VECTOR_GEOMETRY_TOOL_VECTOR_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_GEOMETRY_TOOL_VECTOR_TYPE)):
-            if provider.vectors.factory.is_type_supported(type) and (type != VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.PLUGIN):
+        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.VECTOR))
+        type: "VECTOR_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(VECTOR_TYPE)):
+            if provider.vectors.factory.is_type_supported(type) and (type != VECTOR_TYPE.PLUGIN):
                 obj: "IVectorGeometryToolVector" = provider.vectors.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.vectors.remove("NameHere")
 
-        type: "CRDN_EVENT_ARRAY_TYPE"
+        type: "EVENT_ARRAY_TYPE"
 
-        for type in Enum.GetValues(clr.TypeOf(CRDN_EVENT_ARRAY_TYPE)):
-            if provider.event_arrays.factory.is_type_supported(type):
-                obj: "ITimeToolEventArray" = provider.event_arrays.factory.create("NameHere", "", type)
+        for type in Enum.GetValues(clr.TypeOf(EVENT_ARRAY_TYPE)):
+            if provider.time_arrays.factory.is_type_supported(type):
+                obj: "ITimeToolTimeArray" = provider.time_arrays.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.event_arrays.remove("NameHere")
+                provider.time_arrays.remove("NameHere")
 
-        type: "CRDN_EVENT_INTERVAL_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_EVENT_INTERVAL_TYPE)):
-            if provider.event_intervals.factory.is_type_supported(type):
-                obj: "ITimeToolEventInterval" = provider.event_intervals.factory.create("NameHere", "", type)
+        type: "EVENT_INTERVAL_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_TYPE)):
+            if provider.time_intervals.factory.is_type_supported(type):
+                obj: "ITimeToolTimeInterval" = provider.time_intervals.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.event_intervals.remove("NameHere")
+                provider.time_intervals.remove("NameHere")
 
-        type: "CRDN_EVENT_INTERVAL_LIST_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_EVENT_INTERVAL_LIST_TYPE)):
-            if provider.event_interval_lists.factory.is_type_supported(type):
-                obj: "ITimeToolEventIntervalList" = provider.event_interval_lists.factory.create("NameHere", "", type)
+        type: "EVENT_INTERVAL_LIST_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_LIST_TYPE)):
+            if provider.time_interval_lists.factory.is_type_supported(type):
+                obj: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.event_interval_lists.remove("NameHere")
+                provider.time_interval_lists.remove("NameHere")
 
-        type: "CRDN_EVENT_INTERVAL_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_EVENT_INTERVAL_TYPE)):
-            if provider.event_intervals.factory.is_type_supported(type):
-                obj: "ITimeToolEventInterval" = provider.event_intervals.factory.create("NameHere", "", type)
+        type: "EVENT_INTERVAL_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_TYPE)):
+            if provider.time_intervals.factory.is_type_supported(type):
+                obj: "ITimeToolTimeInterval" = provider.time_intervals.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.event_intervals.remove("NameHere")
+                provider.time_intervals.remove("NameHere")
 
-        type: "CRDN_EVENT_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_EVENT_TYPE)):
-            if provider.events.factory.is_type_supported(type):
-                obj: "ITimeToolEvent" = provider.events.factory.create("NameHere", "", type)
+        type: "TIME_EVENT_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(TIME_EVENT_TYPE)):
+            if provider.time_instants.factory.is_type_supported(type):
+                obj: "ITimeToolInstant" = provider.time_instants.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.events.remove("NameHere")
+                provider.time_instants.remove("NameHere")
 
-        type: "CRDN_CALC_SCALAR_TYPE"
+        type: "CALCULATION_SCALAR_TYPE"
 
-        for type in Enum.GetValues(clr.TypeOf(CRDN_CALC_SCALAR_TYPE)):
-            if provider.calc_scalars.factory.is_type_supported(type) and (type != CRDN_CALC_SCALAR_TYPE.PLUGIN):
-                obj: "ICalculationToolScalar" = provider.calc_scalars.factory.create("NameHere", "", type)
+        for type in Enum.GetValues(clr.TypeOf(CALCULATION_SCALAR_TYPE)):
+            if provider.calculation_scalars.factory.is_type_supported(type) and (
+                type != CALCULATION_SCALAR_TYPE.PLUGIN
+            ):
+                obj: "ICalculationToolScalar" = provider.calculation_scalars.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
-                provider.calc_scalars.remove("NameHere")
+                provider.calculation_scalars.remove("NameHere")
 
-        type: "CRDN_CONDITION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_CONDITION_TYPE)):
+        type: "CONDITION_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(CONDITION_TYPE)):
             if provider.conditions.factory.is_type_supported(type):
                 obj: "ICalculationToolCondition" = provider.conditions.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.conditions.remove("NameHere")
 
-        type: "CRDN_PARAMETER_SET_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_PARAMETER_SET_TYPE)):
+        type: "PARAMETER_SET_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(PARAMETER_SET_TYPE)):
             if provider.parameter_sets.factory.is_type_supported(type):
                 obj: "ICalculationToolParameterSet" = provider.parameter_sets.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.parameter_sets.remove("NameHere")
 
-        type: "CRDN_VOLUME_GRID_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CRDN_VOLUME_GRID_TYPE)):
+        type: "VOLUME_GRID_TYPE"
+        for type in Enum.GetValues(clr.TypeOf(VOLUME_GRID_TYPE)):
             pass
 
         access.save_computed_data = True

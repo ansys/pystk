@@ -3,7 +3,7 @@ CalculationToolScalarAngle
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarAngle
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Scalar equal to angular displacement obtained from any angle in VGT.
 

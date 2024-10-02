@@ -3,7 +3,7 @@ VectorGeometryToolPointAtTimeInstant
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointAtTimeInstant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
+   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    Point fixed relative to reference system based on another point evaluated at specified time instant.
 
@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: reference_time_instant
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointAtTimeInstant.reference_time_instant
-    :type: ITimeToolEvent
+    :type: ITimeToolInstant
 
     A reference time instant. Can be any Time event.
 

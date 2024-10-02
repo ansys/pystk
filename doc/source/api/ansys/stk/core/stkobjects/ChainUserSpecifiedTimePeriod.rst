@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: time_interval
     :canonical: ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod.time_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Allows configuring the time interval.
 

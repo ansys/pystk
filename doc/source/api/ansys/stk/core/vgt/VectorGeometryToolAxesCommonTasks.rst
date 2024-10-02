@@ -58,7 +58,7 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: create_topocentric_axes_euler_angles(self, originPoint: IVectorGeometryToolPoint, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
+.. py:method:: create_topocentric_axes_euler_angles(self, originPoint: IVectorGeometryToolPoint, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles
 
     Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
@@ -66,7 +66,7 @@ Method detail
     :Parameters:
 
     **originPoint** : :obj:`~IVectorGeometryToolPoint`
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -88,7 +88,7 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: sample(self, axes: IVectorGeometryToolAxes, referenceAxes: IVectorGeometryToolAxes, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolAxesSamplingResult
+.. py:method:: sample(self, axes: IVectorGeometryToolAxes, referenceAxes: IVectorGeometryToolAxes, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolSamplingResult
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.sample
 
     Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
@@ -104,5 +104,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~TimeToolAxesSamplingResult`
+        :obj:`~TimeToolSamplingResult`
 

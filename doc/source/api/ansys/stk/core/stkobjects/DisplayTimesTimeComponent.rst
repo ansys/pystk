@@ -45,14 +45,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_time_component(self, component: IAnalysisWorkbenchComponent) -> None
+.. py:method:: set_time_component(self, component: IComponent) -> None
     :canonical: ansys.stk.core.stkobjects.DisplayTimesTimeComponent.set_time_component
 
     Configure the display times using the specified time component. Allowed are only intervals and interval lists.
 
     :Parameters:
 
-    **component** : :obj:`~IAnalysisWorkbenchComponent`
+    **component** : :obj:`~IComponent`
 
     :Returns:
 
@@ -71,14 +71,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_time_component(self) -> IAnalysisWorkbenchComponent
+.. py:method:: get_time_component(self) -> IComponent
     :canonical: ansys.stk.core.stkobjects.DisplayTimesTimeComponent.get_time_component
 
     Return a time component used to configure the display times or null if component has not been configured yet.
 
     :Returns:
 
-        :obj:`~IAnalysisWorkbenchComponent`
+        :obj:`~IComponent`
 
 .. py:method:: get_qualified_path(self) -> str
     :canonical: ansys.stk.core.stkobjects.DisplayTimesTimeComponent.get_qualified_path

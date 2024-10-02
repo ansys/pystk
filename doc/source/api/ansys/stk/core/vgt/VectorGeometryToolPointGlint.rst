@@ -3,7 +3,7 @@ VectorGeometryToolPointGlint
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGlint
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Point on central body surface that reflects from source to observer.
 
@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
 .. py:property:: source_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.source_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a source point.
 
 .. py:property:: observer_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGlint.observer_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify an observer point.
 

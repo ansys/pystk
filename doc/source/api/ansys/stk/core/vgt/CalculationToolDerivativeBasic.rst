@@ -3,7 +3,7 @@ CalculationToolDerivativeBasic
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolDerivativeBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Derivative definition determines how numerical differencing is used to compute derivatives.
 

@@ -3,7 +3,7 @@ CalculationToolParameterSetAttitude
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolParameterSetAttitude
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Attitude parameter set contains various representations of attitude of one set of axes relative to another.
 

@@ -3,7 +3,7 @@ CalculationToolConditionCombined
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionCombined
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Define a condition which combines multiple conditions.
 
@@ -39,9 +39,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.combine_operation`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.boolean_operation`
               - Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.condition_count`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.count`
               - Gets the number of conditions in the combined condition.
 
 
@@ -57,14 +57,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: combine_operation
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.combine_operation
-    :type: CRDN_CONDITION_COMBINED_OPERATION_TYPE
+.. py:property:: boolean_operation
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.boolean_operation
+    :type: CONDITION_COMBINED_OPERATION_TYPE
 
     Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS.
 
-.. py:property:: condition_count
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.condition_count
+.. py:property:: count
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.count
     :type: int
 
     Gets the number of conditions in the combined condition.

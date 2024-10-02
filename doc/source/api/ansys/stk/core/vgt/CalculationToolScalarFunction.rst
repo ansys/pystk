@@ -3,7 +3,7 @@ CalculationToolScalarFunction
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFunction
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
 
    Defined by performing the specified function on the input scalar or time instant.
 
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.use_scalar`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.use_calculation_scalar`
               - Specify whether to use the input scalar calculation or the time elapsed from the input time instant. Set to true to use the scalar.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.input_scalar`
               - The input scalar calculation (used if UseScalar is true). The UseScalar property should be set to true before this property can be set.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.input_time`
               - The input time instant (used if UseScalar is false).
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.input_unit`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.input_time_units`
               - The input time unit to interpret input time.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.a`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_a`
               - The constant coefficient A.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.b`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_b`
               - The constant coefficient B.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.c`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_c`
               - The constant coefficient C.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.d`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_d`
               - The constant coefficient D.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.coefficients`
               - The array of constant coefficients, whose dimension and units are determined by those of input and output.
@@ -46,7 +46,7 @@ Overview
               - Specify whether to inherit the output dimension from the input scalar or time instant.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.output_dimension`
               - The output dimension. Use any of STK supported dimensions. This value will be used if InheritDimensionFromInput is false. The InheritDimensionFromInput property should be set to false before this property can be fixed.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.output_unit`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.output_units`
               - Specify a unit for the selected output dimension. This is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunction.sampling`
               - The Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
@@ -66,8 +66,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: use_scalar
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.use_scalar
+.. py:property:: use_calculation_scalar
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.use_calculation_scalar
     :type: bool
 
     Specify whether to use the input scalar calculation or the time elapsed from the input time instant. Set to true to use the scalar.
@@ -80,36 +80,36 @@ Property detail
 
 .. py:property:: input_time
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.input_time
-    :type: ITimeToolEvent
+    :type: ITimeToolInstant
 
     The input time instant (used if UseScalar is false).
 
-.. py:property:: input_unit
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.input_unit
+.. py:property:: input_time_units
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.input_time_units
     :type: str
 
     The input time unit to interpret input time.
 
-.. py:property:: a
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.a
+.. py:property:: coefficient_a
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_a
     :type: float
 
     The constant coefficient A.
 
-.. py:property:: b
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.b
+.. py:property:: coefficient_b
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_b
     :type: float
 
     The constant coefficient B.
 
-.. py:property:: c
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.c
+.. py:property:: coefficient_c
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_c
     :type: float
 
     The constant coefficient C.
 
-.. py:property:: d
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.d
+.. py:property:: coefficient_d
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.coefficient_d
     :type: float
 
     The constant coefficient D.
@@ -144,8 +144,8 @@ Property detail
 
     The output dimension. Use any of STK supported dimensions. This value will be used if InheritDimensionFromInput is false. The InheritDimensionFromInput property should be set to false before this property can be fixed.
 
-.. py:property:: output_unit
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.output_unit
+.. py:property:: output_units
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.output_units
     :type: str
 
     Specify a unit for the selected output dimension. This is not used for internal computations or reporting/graphing but is needed to unambiguously interpret units of associated coefficients.
@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: convergence
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFunction.convergence
-    :type: IAnalysisWorkbenchConverge
+    :type: IAnalysisWorkbenchConvergence
 
     The Convergence definition, which uses time tolerance to determine when time of extremum is found.
 
