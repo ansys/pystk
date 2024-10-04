@@ -26,9 +26,9 @@ Overview
               - This property is deprecated. Use MaxEx.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
               - The number of steps between coordinate values.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum`
               - Minimum coordinate value as IAgQuantity.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum`
               - Maximum coordinate value as IAgQuantity.
 
 
@@ -62,14 +62,14 @@ Property detail
 
     The number of steps between coordinate values.
 
-.. py:property:: min_ex
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min_ex
+.. py:property:: minimum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum
     :type: Quantity
 
     Minimum coordinate value as IAgQuantity.
 
-.. py:property:: max_ex
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max_ex
+.. py:property:: maximum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.maximum
     :type: Quantity
 
     Maximum coordinate value as IAgQuantity.

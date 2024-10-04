@@ -175,14 +175,14 @@ class EarlyBoundTests(TestBase):
 
     # region Interval
     def test_Interval(self):
-        smartInterval: "TimeToolEventIntervalSmartInterval" = EarlyBoundTests.commSystem.time_period
-        smartInterval.set_implicit_interval(TestBase.Application.current_scenario.vgt.event_intervals["TodayInterval"])
+        smartInterval: "TimeToolTimeIntervalSmartInterval" = EarlyBoundTests.commSystem.time_period
+        smartInterval.set_implicit_interval(TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"])
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["TodayInterval"].find_interval().interval.start,
+            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"].find_interval().interval.start,
             EarlyBoundTests.commSystem.time_period.reference_interval.find_interval().interval.start,
         )
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["TodayInterval"].find_interval().interval.stop,
+            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"].find_interval().interval.stop,
             EarlyBoundTests.commSystem.time_period.reference_interval.find_interval().interval.stop,
         )
 

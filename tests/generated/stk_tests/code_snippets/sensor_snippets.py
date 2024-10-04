@@ -131,7 +131,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSensorPointingFixedEuler(self, sensor: "Sensor"):
         fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_euler(
-            EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+            EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132, 30, 40, 50
         )
 
     # endregion
@@ -142,7 +142,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSensorPointingFixedAxesEuler(self, sensor: "Sensor"):
         fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_euler(
-            "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+            "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132, 30, 40, 50
         )
 
     # endregion

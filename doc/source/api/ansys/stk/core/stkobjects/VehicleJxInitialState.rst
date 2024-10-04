@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleJxInitialState.orbit_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Get the smart epoch component to configure the orbit state epoch.
 

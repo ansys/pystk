@@ -2553,7 +2553,7 @@ class Representation(TestBase):
 
         hpop.initial_state.representation.assign(cart)
         Assert.assertEqual(cart.epoch, hpop.initial_state.orbit_epoch.time_instant)
-        Assert.assertEqual(cart.epoch, (ITimeToolEvent(hpop.initial_state.orbit_epoch)).find_occurrence().epoch)
+        Assert.assertEqual(cart.epoch, (ITimeToolInstant(hpop.initial_state.orbit_epoch)).find_occurrence().epoch)
         Assert.assertEqual("1 Nov 2000 00:00:00.000", hpop.ephemeris_interval.find_start_time())
         Assert.assertEqual("1 Nov 2000 01:00:00.000", hpop.ephemeris_interval.find_stop_time())
         hpop.propagate()
@@ -2884,7 +2884,7 @@ class Attitude(TestBase):
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
             interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_121
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2900,7 +2900,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_123
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2916,7 +2916,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_131
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2932,7 +2932,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_132
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2948,7 +2948,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_212
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2964,7 +2964,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_213
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2980,7 +2980,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_231
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2996,7 +2996,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_231
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3014,7 +3014,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3030,7 +3030,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_312
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3046,7 +3046,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_313
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3062,7 +3062,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3078,7 +3078,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_323
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3895,7 +3895,7 @@ class Pointing(TestBase):
         oEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
             oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -45.0
@@ -3905,7 +3905,7 @@ class Pointing(TestBase):
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
         oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -125.0
@@ -4344,7 +4344,7 @@ class Pointing(TestBase):
             oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         oEuler.a = 100.0
         oEuler.b = 130.0
         oEuler.c = -95.0
@@ -4358,7 +4358,7 @@ class Pointing(TestBase):
         oOrientation = oBrstFixed.orientation
         oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         oEuler.a = 140.0
         oEuler.b = 132.0
         oEuler.c = -141.0
@@ -10231,7 +10231,7 @@ class Access(TestBase):
         access = obj1.get_access_to_object(obj2)
         access.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
         access.specify_access_event_intervals(
-            TestBase.Application.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"]
+            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"]
         )
         access.compute_access()
         intervalDp = DataProviderInterval(access.data_providers["Access Data"])
@@ -10273,10 +10273,10 @@ class Access(TestBase):
         access.access_time_period = ACCESS_TIME_TYPE.INTERVALS
         intervalCollection: "IntervalCollection" = clr.CastAs(access.access_time_period_data, IntervalCollection)
 
-        interval: "ITimeToolEventInterval" = TestBase.Application.current_scenario.vgt.event_intervals[
+        interval: "ITimeToolTimeInterval" = TestBase.Application.current_scenario.vgt.time_intervals[
             "AvailabilityIntervals.First"
         ]
-        intervalResult: "TimeToolEventIntervalResult" = interval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = interval.find_interval()
         intervalCollection.add(intervalResult.interval.start, intervalResult.interval.stop)
 
         access.compute_access()

@@ -26,13 +26,13 @@ Overview
               - Number of grid point coordinates representing second dimension of volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.size_k`
               - Number of grid point coordinates representing third dimension of volume grid.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_data_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.data_vector`
               - Vector of scalar values representing volumetric data.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_position_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.position_vector`
               - Vector of Cartesian coordinates of all volume grid points.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.native_position_vector`
               - Vector of native coordinates of all volume grid points.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.gradient_vector`
               - Vector of Cartesian coordinates representing gradient vectors at all volume grid points.
 
 
@@ -72,26 +72,26 @@ Property detail
 
     Number of grid point coordinates representing third dimension of volume grid.
 
-.. py:property:: volume_metric_data_vector
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_data_vector
+.. py:property:: data_vector
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.data_vector
     :type: list
 
     Vector of scalar values representing volumetric data.
 
-.. py:property:: volume_metric_position_vector
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_position_vector
+.. py:property:: position_vector
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.position_vector
     :type: list
 
     Vector of Cartesian coordinates of all volume grid points.
 
-.. py:property:: volume_metric_native_position_vector
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_native_position_vector
+.. py:property:: native_position_vector
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.native_position_vector
     :type: list
 
     Vector of native coordinates of all volume grid points.
 
-.. py:property:: volume_metric_gradient_vector
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.volume_metric_gradient_vector
+.. py:property:: gradient_vector
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult.gradient_vector
     :type: list
 
     Vector of Cartesian coordinates representing gradient vectors at all volume grid points.

@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleProfileSpinning.smart_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Epoch of the offset.
 

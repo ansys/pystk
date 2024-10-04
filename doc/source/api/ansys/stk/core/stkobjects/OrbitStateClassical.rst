@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.state_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

@@ -63,7 +63,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: get_template_provider(self, className: str) -> AnalysisWorkbenchProvider
+.. py:method:: get_template_provider(self, className: str) -> AnalysisWorkbenchComponentProvider
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_template_provider
 
     Return a template provider. The method takes a class name (i.e. \"Satellite\", \"Facility\", etc.).
@@ -74,9 +74,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~AnalysisWorkbenchProvider`
+        :obj:`~AnalysisWorkbenchComponentProvider`
 
-.. py:method:: get_provider(self, instPath: str) -> AnalysisWorkbenchProvider
+.. py:method:: get_provider(self, instPath: str) -> AnalysisWorkbenchComponentProvider
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchRoot.get_provider
 
     Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. \"Satellite/Satellite1\", \"CentralBody/Earth\", etc.).
@@ -87,7 +87,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~AnalysisWorkbenchProvider`
+        :obj:`~AnalysisWorkbenchComponentProvider`
 
 
 

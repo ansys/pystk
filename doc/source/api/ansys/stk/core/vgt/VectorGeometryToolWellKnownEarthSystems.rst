@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.fixed`
               - Earth's Fixed coordinate system.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.ICRF`
               - Earth's ICRF.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.inertial`
               - Earth's Inertial coordinate system (as defined in STK).
@@ -44,8 +44,8 @@ Property detail
 
     Earth's Fixed coordinate system.
 
-.. py:property:: icrf
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.icrf
+.. py:property:: ICRF
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems.ICRF
     :type: IVectorGeometryToolSystem
 
     Earth's ICRF.

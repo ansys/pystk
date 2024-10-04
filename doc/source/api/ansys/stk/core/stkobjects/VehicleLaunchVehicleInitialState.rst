@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: trajectory_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleLaunchVehicleInitialState.trajectory_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Get the smart epoch component to access the trajectory epoch.
 

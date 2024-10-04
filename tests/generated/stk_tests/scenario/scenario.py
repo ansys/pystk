@@ -28,10 +28,10 @@ class EarlyBoundTests(TestBase):
     today: str = None
     tomorrow: str = None
 
-    todayEpoch: "TimeToolEventSmartEpoch" = None
-    tomorrowEpoch: "TimeToolEventSmartEpoch" = None
+    todayEpoch: "TimeToolInstantSmartEpoch" = None
+    tomorrowEpoch: "TimeToolInstantSmartEpoch" = None
 
-    todayInterval: "ITimeToolEventInterval" = None
+    todayInterval: "ITimeToolTimeInterval" = None
     # endregion
 
     # region OneTimeSetUp
@@ -44,25 +44,25 @@ class EarlyBoundTests(TestBase):
             scenarioObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)
 
             EarlyBoundTests.today = str(
-                TestBase.Application.current_scenario.vgt.events["Today"].find_occurrence().epoch
+                TestBase.Application.current_scenario.vgt.time_instants["Today"].find_occurrence().epoch
             )
             EarlyBoundTests.tomorrow = str(
-                TestBase.Application.current_scenario.vgt.events["Tomorrow"].find_occurrence().epoch
+                TestBase.Application.current_scenario.vgt.time_instants["Tomorrow"].find_occurrence().epoch
             )
 
             EarlyBoundTests.todayEpoch = clr.CastAs(
-                scenarioObj.vgt.events.factory.create_smart_epoch_from_time(EarlyBoundTests.today),
-                TimeToolEventSmartEpoch,
+                scenarioObj.vgt.time_instants.factory.create_smart_epoch_from_time(EarlyBoundTests.today),
+                TimeToolInstantSmartEpoch,
             )
             EarlyBoundTests.tomorrowEpoch = clr.CastAs(
-                scenarioObj.vgt.events.factory.create_smart_epoch_from_time(EarlyBoundTests.tomorrow),
-                TimeToolEventSmartEpoch,
+                scenarioObj.vgt.time_instants.factory.create_smart_epoch_from_time(EarlyBoundTests.tomorrow),
+                TimeToolInstantSmartEpoch,
             )
 
             EarlyBoundTests.todayEpoch.set_explicit_time(EarlyBoundTests.today)
             EarlyBoundTests.tomorrowEpoch.set_explicit_time(EarlyBoundTests.tomorrow)
 
-            EarlyBoundTests.todayInterval = TestBase.Application.current_scenario.vgt.event_intervals["TodayInterval"]
+            EarlyBoundTests.todayInterval = TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"]
 
         except Exception as e:
             raise e
@@ -358,12 +358,12 @@ class EarlyBoundTests(TestBase):
         )
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.events["AnalysisStartTime"], IAnalysisWorkbenchComponent
+            TestBase.Application.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdn)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.children["Facility1"].vgt.event_interval_collections[
+            TestBase.Application.current_scenario.children["Facility1"].vgt.time_interval_collections[
                 "LightingIntervals"
             ],
             IAnalysisWorkbenchComponent,
@@ -371,19 +371,19 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnFac)
         crdnIntervals: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntervals)
         crdnIntList: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"],
+            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntList)
 
         crdnSat: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.children["Satellite1"].vgt.event_arrays["EphemerisTimes"],
+            TestBase.Application.current_scenario.children["Satellite1"].vgt.time_arrays["EphemerisTimes"],
             IAnalysisWorkbenchComponent,
         )
         ani.set_time_array_component(crdnSat)
@@ -667,15 +667,15 @@ class EarlyBoundTests(TestBase):
         ]
         ga.set_points_smooth_rate_and_propagate(waypoints)
 
-        originPoint: "VectorGeometryToolPointCentBodyIntersect" = clr.CastAs(
-            aircraft.vgt.points.factory.create("cbi", "", VECTOR_GEOMETRY_TOOL_POINT_TYPE.CENTRAL_BODY_INTERSECT),
-            VectorGeometryToolPointCentBodyIntersect,
+        originPoint: "VectorGeometryToolPointCentralBodyIntersect" = clr.CastAs(
+            aircraft.vgt.points.factory.create("cbi", "", POINT_TYPE.CENTRAL_BODY_INTERSECTION),
+            VectorGeometryToolPointCentralBodyIntersect,
         )
         nadirVector: "IVectorGeometryToolVector" = aircraft.vgt.vectors["Nadir(Detic)"]
         destinationPoint: "IVectorGeometryToolPoint" = aircraft.vgt.points["Center"]
         originPoint.direction_vector = nadirVector
         originPoint.reference_point = destinationPoint
-        originPoint.intersection_surface = CRDN_INTERSECTION_SURFACE.AT_TERRAIN
+        originPoint.intersection_surface = INTERSECTION_SURFACE_TYPE.AT_TERRAIN
 
         displacementVector: "VectorGeometryToolVectorDisplacement" = (
             aircraft.vgt.vectors.factory.create_displacement_vector(
@@ -684,31 +684,30 @@ class EarlyBoundTests(TestBase):
         )
 
         vm: "CalculationToolScalarVectorMagnitude" = clr.CastAs(
-            aircraft.vgt.calc_scalars.factory.create_calc_scalar_vector_magnitude("vm", "test"),
+            aircraft.vgt.calculation_scalars.factory.create_vector_magnitude("vm", "test"),
             CalculationToolScalarVectorMagnitude,
         )
         vm.input_vector = clr.CastAs(displacementVector, IVectorGeometryToolVector)
 
         bounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
-            aircraft.vgt.conditions.factory.create_condition_scalar_bounds("sb", "desc"),
-            CalculationToolConditionScalarBounds,
+            aircraft.vgt.conditions.factory.create_scalar_bounds("sb", "desc"), CalculationToolConditionScalarBounds
         )
         qtyMin: "Quantity" = TestBase.Application.conversion_utility.new_quantity("TimeUnit", "sec", 3.05)
         bounds.set_minimum(qtyMin)
-        bounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN
+        bounds.operation = CONDITION_THRESHOLD_TYPE.ABOVE_MINIMUM
         bounds.scalar = clr.CastAs(vm, ICalculationToolScalar)
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(aircraft.vgt.conditions["sb"], IAnalysisWorkbenchComponent)
 
-        crdnEvent: "ITimeToolEventIntervalList" = clr.CastAs(
-            crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolEventIntervalList
+        crdnEvent: "ITimeToolTimeIntervalList" = clr.CastAs(
+            crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolTimeIntervalList
         )
         if crdnEvent != None:
             result: "TimeToolIntervalListResult" = crdnEvent.find_intervals()
             Assert.assertEqual(2, result.intervals.count)
 
         oTerrain.use_terrain = False
-        crdnEvent = clr.CastAs(crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolEventIntervalList)
+        crdnEvent = clr.CastAs(crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolTimeIntervalList)
         if crdnEvent != None:
             result: "TimeToolIntervalListResult" = crdnEvent.find_intervals()
             Assert.assertEqual(1, result.intervals.count)
@@ -2122,7 +2121,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SC.epoch = "1 Jan 2015 01:23:45.678"
         Assert.assertEqual("1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.epoch)
         Assert.assertEqual("1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.analysis_epoch.time_instant)
-        Assert.assertEqual(CRDN_SMART_EPOCH_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
+        Assert.assertEqual(SMART_EPOCH_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             EarlyBoundTests.AG_SC.epoch = "bogus"
@@ -2138,8 +2137,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_SC.analysis_epoch.set_explicit_time("1 Jan 2015 01:23:45.678")
         Assert.assertEqual("1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.epoch)
         Assert.assertEqual("1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.analysis_epoch.time_instant)
-        Assert.assertEqual(CRDN_SMART_EPOCH_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
-        Assert.assertIsNone(EarlyBoundTests.AG_SC.analysis_epoch.reference_event)
+        Assert.assertEqual(SMART_EPOCH_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
+        Assert.assertIsNone(EarlyBoundTests.AG_SC.analysis_epoch.reference_epoch)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid date")):
             EarlyBoundTests.AG_SC.analysis_epoch.set_explicit_time("bogus")
@@ -2153,21 +2152,23 @@ class EarlyBoundTests(TestBase):
         holdEpoch: typing.Any = EarlyBoundTests.AG_SC.epoch
 
         EarlyBoundTests.AG_SC.analysis_epoch.set_implicit_time(
-            TestBase.Application.current_scenario.vgt.events["B1950Epoch"]
+            TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"]
         )
         Assert.assertEqual("31 Dec 1949 22:09:04.682", EarlyBoundTests.AG_SC.epoch)
         Assert.assertEqual("31 Dec 1949 22:09:04.682", EarlyBoundTests.AG_SC.analysis_epoch.time_instant)
-        Assert.assertEqual(CRDN_SMART_EPOCH_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
+        Assert.assertEqual(SMART_EPOCH_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
         Assert.assertEqual(
             (
-                clr.CastAs(TestBase.Application.current_scenario.vgt.events["B1950Epoch"], IAnalysisWorkbenchComponent)
+                clr.CastAs(
+                    TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"], IAnalysisWorkbenchComponent
+                )
             ).name,
-            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_epoch.reference_event, IAnalysisWorkbenchComponent)).name,
+            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_epoch.reference_epoch, IAnalysisWorkbenchComponent)).name,
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SC.analysis_epoch.set_implicit_time(
-                TestBase.Application.current_scenario.vgt.events["Bogus"]
+                TestBase.Application.current_scenario.vgt.time_instants["Bogus"]
             )
 
         EarlyBoundTests.AG_SC.epoch = holdEpoch
@@ -2184,7 +2185,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             "1 Jan 1998 01:23:45.678", EarlyBoundTests.AG_SC.analysis_interval.get_start_epoch().time_instant
         )
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             EarlyBoundTests.AG_SC.start_time = "bogus"
@@ -2205,7 +2206,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             "1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.analysis_interval.get_stop_epoch().time_instant
         )
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             EarlyBoundTests.AG_SC.stop_time = "bogus"
@@ -2232,7 +2233,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             "1 Jan 2015 01:23:45.678", EarlyBoundTests.AG_SC.analysis_interval.get_stop_epoch().time_instant
         )
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             EarlyBoundTests.AG_SC.set_time_period("bogus1", "bogus2")
@@ -2288,7 +2289,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("2 Jan 2012 12:00:00.000", EarlyBoundTests.AG_SC.stop_time)
         Assert.assertEqual("1 Jan 2012 12:00:00.000", EarlyBoundTests.AG_SC.analysis_interval.find_start_time())
         Assert.assertEqual("2 Jan 2012 12:00:00.000", EarlyBoundTests.AG_SC.analysis_interval.find_stop_time())
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.EXPLICIT, EarlyBoundTests.AG_SC.analysis_interval.state)
         Assert.assertIsNone(EarlyBoundTests.AG_SC.analysis_interval.reference_interval)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid date")):
@@ -2309,14 +2310,14 @@ class EarlyBoundTests(TestBase):
         holdStop: typing.Any = EarlyBoundTests.AG_SC.stop_time
 
         EarlyBoundTests.AG_SC.analysis_interval.set_implicit_interval(
-            TestBase.Application.current_scenario.vgt.event_intervals["TodayInterval"]
+            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"]
         )
         Assert.assertEqual(EarlyBoundTests.today, EarlyBoundTests.AG_SC.start_time)
         Assert.assertEqual(EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.stop_time)
         Assert.assertEqual(EarlyBoundTests.today, EarlyBoundTests.AG_SC.analysis_interval.find_start_time())
         Assert.assertEqual(EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.analysis_interval.find_stop_time())
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_interval.state)
         Assert.assertEqual(
             (clr.CastAs(EarlyBoundTests.todayInterval, IAnalysisWorkbenchComponent)).name,
             (clr.CastAs(EarlyBoundTests.AG_SC.analysis_interval.reference_interval, IAnalysisWorkbenchComponent)).name,
@@ -2340,7 +2341,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EarlyBoundTests.today, EarlyBoundTests.AG_SC.analysis_interval.find_start_time())
         Assert.assertEqual(EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.analysis_interval.find_stop_time())
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("less or equal")):
             EarlyBoundTests.AG_SC.analysis_interval.set_start_and_stop_epochs(
@@ -2371,7 +2372,7 @@ class EarlyBoundTests(TestBase):
             "2 Jan 2012 12:00:00.000", EarlyBoundTests.AG_SC.analysis_interval.get_stop_epoch().time_instant
         )
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("less or equal")):
             EarlyBoundTests.AG_SC.analysis_interval.set_start_and_stop_times(
@@ -2388,20 +2389,18 @@ class EarlyBoundTests(TestBase):
         holdStart: typing.Any = EarlyBoundTests.AG_SC.start_time
         holdStop: typing.Any = EarlyBoundTests.AG_SC.stop_time
 
-        EarlyBoundTests.AG_SC.analysis_interval.state = CRDN_SMART_INTERVAL_STATE.EXPLICIT
+        EarlyBoundTests.AG_SC.analysis_interval.state = SMART_INTERVAL_STATE.EXPLICIT
         with pytest.raises(Exception, match=RegexSubstringMatch("state does not allow")):
             EarlyBoundTests.AG_SC.analysis_interval.set_start_epoch(EarlyBoundTests.todayEpoch)
 
-        EarlyBoundTests.AG_SC.analysis_interval.state = (
-            CRDN_SMART_INTERVAL_STATE.START_STOP
-        )  # to allow the method below
+        EarlyBoundTests.AG_SC.analysis_interval.state = SMART_INTERVAL_STATE.START_STOP  # to allow the method below
 
         EarlyBoundTests.AG_SC.analysis_interval.set_start_epoch(EarlyBoundTests.todayEpoch)
         Assert.assertEqual(
             EarlyBoundTests.today, EarlyBoundTests.AG_SC.analysis_interval.get_start_epoch().time_instant
         )
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         EarlyBoundTests.AG_SC.start_time = holdStart
         EarlyBoundTests.AG_SC.stop_time = holdStop
@@ -2413,20 +2412,18 @@ class EarlyBoundTests(TestBase):
         holdStart: typing.Any = EarlyBoundTests.AG_SC.start_time
         holdStop: typing.Any = EarlyBoundTests.AG_SC.stop_time
 
-        EarlyBoundTests.AG_SC.analysis_interval.state = CRDN_SMART_INTERVAL_STATE.EXPLICIT
+        EarlyBoundTests.AG_SC.analysis_interval.state = SMART_INTERVAL_STATE.EXPLICIT
         with pytest.raises(Exception, match=RegexSubstringMatch("state does not allow")):
             EarlyBoundTests.AG_SC.analysis_interval.set_start_epoch(EarlyBoundTests.todayEpoch)
 
-        EarlyBoundTests.AG_SC.analysis_interval.state = (
-            CRDN_SMART_INTERVAL_STATE.START_STOP
-        )  # to allow the method below
+        EarlyBoundTests.AG_SC.analysis_interval.state = SMART_INTERVAL_STATE.START_STOP  # to allow the method below
 
         EarlyBoundTests.AG_SC.analysis_interval.set_stop_epoch(EarlyBoundTests.tomorrowEpoch)
         Assert.assertEqual(
             EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.analysis_interval.get_stop_epoch().time_instant
         )
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_STOP, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         EarlyBoundTests.AG_SC.start_time = holdStart
         EarlyBoundTests.AG_SC.stop_time = holdStop
@@ -2444,7 +2441,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("1 Jan 2012 12:00:00.000", EarlyBoundTests.AG_SC.analysis_interval.find_start_time())
         Assert.assertEqual("1 Jan 2012 13:00:00.000", EarlyBoundTests.AG_SC.analysis_interval.find_stop_time())
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.EXPLICIT_DURATION, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.EXPLICIT_DURATION, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         EarlyBoundTests.AG_SC.start_time = holdStart
         EarlyBoundTests.AG_SC.stop_time = holdStop
@@ -2473,7 +2470,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(EarlyBoundTests.today, EarlyBoundTests.AG_SC.analysis_interval.find_start_time())
         Assert.assertEqual(EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.analysis_interval.find_stop_time())
 
-        Assert.assertEqual(CRDN_SMART_INTERVAL_STATE.START_DURATION, EarlyBoundTests.AG_SC.analysis_interval.state)
+        Assert.assertEqual(SMART_INTERVAL_STATE.START_DURATION, EarlyBoundTests.AG_SC.analysis_interval.state)
 
         EarlyBoundTests.AG_SC.start_time = holdStart
         EarlyBoundTests.AG_SC.stop_time = holdStop

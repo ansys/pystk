@@ -3,7 +3,7 @@ VectorGeometryToolVectorDirectionToStar
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorDirectionToStar
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined with respect to a star object. For a star object to be available, you must first create one.
 
