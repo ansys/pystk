@@ -3,7 +3,7 @@ SpatialAnalysisToolConditionSpatialCalculationBounds
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolConditionSpatialCalculationBounds
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An volume from calc volume interface.
 

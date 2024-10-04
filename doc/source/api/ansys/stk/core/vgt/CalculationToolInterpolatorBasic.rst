@@ -3,7 +3,7 @@ CalculationToolInterpolatorBasic
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolInterpolatorBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchInterpolator`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchInterpolator`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details.
 

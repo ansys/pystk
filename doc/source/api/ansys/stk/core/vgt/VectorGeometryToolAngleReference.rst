@@ -3,7 +3,7 @@ VectorGeometryToolAngleReference
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleReference
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentReference`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
 
    Represents a reference to a VGT angle.
 

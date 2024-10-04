@@ -3,7 +3,7 @@ VectorGeometryToolVectorProjectionAlongVector
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorProjectionAlongVector
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    A projection of a source vector in the direction of another vector.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorPlugin
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorPlugin
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    A VGT vector plugin.
 

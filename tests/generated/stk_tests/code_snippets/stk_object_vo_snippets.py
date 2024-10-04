@@ -191,16 +191,22 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         # See AvailableCrdns for supported elements
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM,
-            (IComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])).qualified_path,
+            (
+                IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])
+            ).qualified_path,
         )
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.AXES_ELEM,
-            (IComponent(CodeSnippetsTestBase.m_Root.central_bodies["Moon"].vgt.vectors["Position"])).qualified_path,
+            (
+                IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Moon"].vgt.vectors["Position"])
+            ).qualified_path,
         )
         vector.reference_crdns.add(
             GEOMETRIC_ELEM_TYPE.VECTOR_ELEM,
             (
-                IComponent(CodeSnippetsTestBase.m_Root.central_bodies["Sun"].vgt.vectors["Velocity(Barycenter)"])
+                IAnalysisWorkbenchComponent(
+                    CodeSnippetsTestBase.m_Root.central_bodies["Sun"].vgt.vectors["Velocity(Barycenter)"]
+                )
             ).qualified_path,
         )
 
@@ -208,7 +214,9 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         body: "Graphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
             vector.reference_crdns.get_crdn_by_name(
                 GEOMETRIC_ELEM_TYPE.AXES_ELEM,
-                (IComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])).qualified_path,
+                (
+                    IAnalysisWorkbenchComponent(CodeSnippetsTestBase.m_Root.central_bodies["Earth"].vgt.vectors["Moon"])
+                ).qualified_path,
             ),
             Graphics3DReferenceVectorGeometryToolVector,
         )

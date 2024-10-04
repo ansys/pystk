@@ -162,14 +162,14 @@ Method detail
 
 
 
-.. py:method:: set_time_array_component(self, component: IComponent) -> None
+.. py:method:: set_time_array_component(self, component: IAnalysisWorkbenchComponent) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_component
 
     Configure the time array using the specified time component. Allowed are only event arrays.
 
     :Parameters:
 
-    **component** : :obj:`~IComponent`
+    **component** : :obj:`~IAnalysisWorkbenchComponent`
 
     :Returns:
 
@@ -188,14 +188,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_time_array_component(self) -> IComponent
+.. py:method:: get_time_array_component(self) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_component
 
     Return a time array component used to configure the time array or null if component has not been configured yet.
 
     :Returns:
 
-        :obj:`~IComponent`
+        :obj:`~IAnalysisWorkbenchComponent`
 
 .. py:method:: get_time_array_qualified_path(self) -> str
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_qualified_path

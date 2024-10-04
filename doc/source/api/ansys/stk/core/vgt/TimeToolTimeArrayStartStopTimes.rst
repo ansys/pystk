@@ -3,7 +3,7 @@ TimeToolTimeArrayStartStopTimes
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArrayStartStopTimes
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list...
 

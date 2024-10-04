@@ -1099,7 +1099,7 @@ class BugFixes(TestBase):
             Assert.assertEqual(oAccess.access_time_period, ACCESS_TIME_TYPE.EVENT_INTERVALS)
             accInvtlList: "AccessTimeEventIntervals" = AccessTimeEventIntervals(oAccess.access_time_period_data)
             accInvtlListVals: "ITimeToolTimeIntervalList" = accInvtlList.list_of_intervals
-            accCrdn: "IComponent" = clr.CastAs(accInvtlListVals, IComponent)
+            accCrdn: "IAnalysisWorkbenchComponent" = clr.CastAs(accInvtlListVals, IAnalysisWorkbenchComponent)
             if BugFixes._verbose:
                 Console.WriteLine(("Component name is " + accCrdn.name))
                 Console.WriteLine(("Component path is " + accCrdn.path))

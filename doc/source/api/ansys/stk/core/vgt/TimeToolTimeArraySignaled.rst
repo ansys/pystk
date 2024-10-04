@@ -3,7 +3,7 @@ TimeToolTimeArraySignaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArraySignaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations...
 

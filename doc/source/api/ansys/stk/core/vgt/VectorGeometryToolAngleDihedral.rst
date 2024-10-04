@@ -3,7 +3,7 @@ VectorGeometryToolAngleDihedral
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between two vectors about an axis.
 
@@ -46,19 +46,19 @@ Property detail
 
 .. py:property:: from_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.from_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a first vector to measure the angle.
 
 .. py:property:: to_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.to_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a second vector to measure the angle.
 
 .. py:property:: pole_about
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleDihedral.pole_about
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a vector about.
 

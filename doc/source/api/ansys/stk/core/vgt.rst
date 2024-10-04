@@ -37,10 +37,10 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`
               - The interface defines methods and properties common to all VGT planes.
 
-            * - :py:class:`~ansys.stk.core.vgt.IComponentContext`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentContext`
               - The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template.
 
-            * - :py:class:`~ansys.stk.core.vgt.IComponent`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
               - A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component.
 
             * - :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`
@@ -106,68 +106,11 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`
               - A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`
               - Define methods to compute time properties such as availability and special times.
 
-            * - :py:class:`~ansys.stk.core.vgt.IComponentReference`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
               - A base interface for all VGT component references.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAngleFindAngleResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngle method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAngleFindAngleWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAngleFindWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAngleFindResult`
-              - Contains the results returned with IAgCrdnAngle.FindCoordinates method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAxesTransformResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFrom method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAxesTransformWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPlaneFindInAxesResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPlaneFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPlaneFindInSystemResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPlaneFindInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAxesFindInAxesResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IAxesFindAxesWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPointLocateInSystemResult`
-              - Contains the results returned with IAgCrdnPoint.LocateInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IPointLocateInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.ISystemTransformResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
-
-            * - :py:class:`~ansys.stk.core.vgt.ISystemTransformWithRateResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
-
-            * - :py:class:`~ansys.stk.core.vgt.ISystemFindInSystemResult`
-              - Contains the results returned with IAgCrdnSystem.FindInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorFindInAxesResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`
               - Instances of the interface are used to return the result of a computation.
@@ -450,7 +393,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListScaled`
               - Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeIntervalListSignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListSignaled`
               - Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations...
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListTimeOffset`
@@ -684,7 +627,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointReference`
               - Represents a reference to a VGT point.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorReference`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorReference`
               - Represents a vector reference.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesReference`
@@ -696,7 +639,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemReference`
               - Represents a System reference.
 
-            * - :py:class:`~ansys.stk.core.vgt.PlaneReference`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPlaneReference`
               - Represents a Plane reference.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVector`
@@ -990,7 +933,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentProvider`
               - Allow accessing existing Vector Geometry Tool components.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchProviderRoot`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot`
               - Represents a VGT root.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthSystems`
@@ -1062,7 +1005,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchVectorFindInAxesWithRateResult`
               - Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchFindAngleWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleWithRateResult`
               - Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult`
@@ -1095,7 +1038,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection`
               - A collection of intervals where each interval contains the time, position and velocity arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolSamplingResult`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolAxesSamplingResult`
               - Contains tabulated orientations and angular velocities of axes created by Sample method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolAxesSamplingInterval`
@@ -1328,7 +1271,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.SIGNAL_DIRECTION_TYPE`
               - Signal sense transmission options.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERSECTION_SURFACE`
+            * - :py:class:`~ansys.stk.core.vgt.INTERSECTION_SURFACE_TYPE`
               - Intersection surface flags.
 
             * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE`
@@ -1362,8 +1305,8 @@ analysis.
      IVectorGeometryToolAxes<vgt/IVectorGeometryToolAxes>
      IVectorGeometryToolAngle<vgt/IVectorGeometryToolAngle>
      IVectorGeometryToolPlane<vgt/IVectorGeometryToolPlane>
-     IComponentContext<vgt/IComponentContext>
-     IComponent<vgt/IComponent>
+     IAnalysisWorkbenchComponentContext<vgt/IAnalysisWorkbenchComponentContext>
+     IAnalysisWorkbenchComponent<vgt/IAnalysisWorkbenchComponent>
      ICalculationToolScalar<vgt/ICalculationToolScalar>
      ICalculationToolCondition<vgt/ICalculationToolCondition>
      ICalculationToolConditionSet<vgt/ICalculationToolConditionSet>
@@ -1385,27 +1328,8 @@ analysis.
      ISpatialAnalysisToolVolume<vgt/ISpatialAnalysisToolVolume>
      ISpatialAnalysisToolSpatialCalculation<vgt/ISpatialAnalysisToolSpatialCalculation>
      ISpatialAnalysisToolVolumeGrid<vgt/ISpatialAnalysisToolVolumeGrid>
-     IComponentTimeProperties<vgt/IComponentTimeProperties>
-     IComponentReference<vgt/IComponentReference>
-     IAngleFindAngleResult<vgt/IAngleFindAngleResult>
-     IAngleFindAngleWithRateResult<vgt/IAngleFindAngleWithRateResult>
-     IAngleFindWithRateResult<vgt/IAngleFindWithRateResult>
-     IAngleFindResult<vgt/IAngleFindResult>
-     IAxesTransformResult<vgt/IAxesTransformResult>
-     IAxesTransformWithRateResult<vgt/IAxesTransformWithRateResult>
-     IPlaneFindInAxesResult<vgt/IPlaneFindInAxesResult>
-     IPlaneFindInAxesWithRateResult<vgt/IPlaneFindInAxesWithRateResult>
-     IPlaneFindInSystemResult<vgt/IPlaneFindInSystemResult>
-     IPlaneFindInSystemWithRateResult<vgt/IPlaneFindInSystemWithRateResult>
-     IAxesFindInAxesResult<vgt/IAxesFindInAxesResult>
-     IAxesFindAxesWithRateResult<vgt/IAxesFindAxesWithRateResult>
-     IPointLocateInSystemResult<vgt/IPointLocateInSystemResult>
-     IPointLocateInSystemWithRateResult<vgt/IPointLocateInSystemWithRateResult>
-     ISystemTransformResult<vgt/ISystemTransformResult>
-     ISystemTransformWithRateResult<vgt/ISystemTransformWithRateResult>
-     ISystemFindInSystemResult<vgt/ISystemFindInSystemResult>
-     IVectorFindInAxesResult<vgt/IVectorFindInAxesResult>
-     IVectorFindInAxesWithRateResult<vgt/IVectorFindInAxesWithRateResult>
+     IAnalysisWorkbenchComponentTimeProperties<vgt/IAnalysisWorkbenchComponentTimeProperties>
+     IAnalysisWorkbenchComponentReference<vgt/IAnalysisWorkbenchComponentReference>
      IAnalysisWorkbenchMethodCallResult<vgt/IAnalysisWorkbenchMethodCallResult>
 
 .. toctree::
@@ -1503,7 +1427,7 @@ analysis.
      TimeToolTimeIntervalListFixed<vgt/TimeToolTimeIntervalListFixed>
      TimeToolTimeIntervalListMerged<vgt/TimeToolTimeIntervalListMerged>
      TimeToolTimeIntervalListScaled<vgt/TimeToolTimeIntervalListScaled>
-     TimeIntervalListSignaled<vgt/TimeIntervalListSignaled>
+     TimeToolTimeIntervalListSignaled<vgt/TimeToolTimeIntervalListSignaled>
      TimeToolTimeIntervalListTimeOffset<vgt/TimeToolTimeIntervalListTimeOffset>
      TimeToolTimeIntervalScaled<vgt/TimeToolTimeIntervalScaled>
      TimeToolTimeIntervalSignaled<vgt/TimeToolTimeIntervalSignaled>
@@ -1581,11 +1505,11 @@ analysis.
      AnalysisWorkbenchComponentInstance<vgt/AnalysisWorkbenchComponentInstance>
      AnalysisWorkbenchComponentTemplate<vgt/AnalysisWorkbenchComponentTemplate>
      VectorGeometryToolPointReference<vgt/VectorGeometryToolPointReference>
-     VectorReference<vgt/VectorReference>
+     VectorGeometryToolVectorReference<vgt/VectorGeometryToolVectorReference>
      VectorGeometryToolAxesReference<vgt/VectorGeometryToolAxesReference>
      VectorGeometryToolAngleReference<vgt/VectorGeometryToolAngleReference>
      VectorGeometryToolSystemReference<vgt/VectorGeometryToolSystemReference>
-     PlaneReference<vgt/PlaneReference>
+     VectorGeometryToolPlaneReference<vgt/VectorGeometryToolPlaneReference>
      VectorGeometryToolVector<vgt/VectorGeometryToolVector>
      VectorGeometryToolAxesLabels<vgt/VectorGeometryToolAxesLabels>
      VectorGeometryToolAxes<vgt/VectorGeometryToolAxes>
@@ -1683,7 +1607,7 @@ analysis.
      VectorGeometryToolPlaneGroup<vgt/VectorGeometryToolPlaneGroup>
      VectorGeometryToolSystemGroup<vgt/VectorGeometryToolSystemGroup>
      AnalysisWorkbenchComponentProvider<vgt/AnalysisWorkbenchComponentProvider>
-     AnalysisWorkbenchProviderRoot<vgt/AnalysisWorkbenchProviderRoot>
+     AnalysisWorkbenchRoot<vgt/AnalysisWorkbenchRoot>
      VectorGeometryToolWellKnownEarthSystems<vgt/VectorGeometryToolWellKnownEarthSystems>
      VectorGeometryToolWellKnownEarthAxes<vgt/VectorGeometryToolWellKnownEarthAxes>
      VectorGeometryToolWellKnownSunSystems<vgt/VectorGeometryToolWellKnownSunSystems>
@@ -1707,7 +1631,7 @@ analysis.
      AnalysisWorkbenchSystemFindInSystemResult<vgt/AnalysisWorkbenchSystemFindInSystemResult>
      AnalysisWorkbenchVectorFindInAxesResult<vgt/AnalysisWorkbenchVectorFindInAxesResult>
      AnalysisWorkbenchVectorFindInAxesWithRateResult<vgt/AnalysisWorkbenchVectorFindInAxesWithRateResult>
-     AnalysisWorkbenchFindAngleWithRateResult<vgt/AnalysisWorkbenchFindAngleWithRateResult>
+     AnalysisWorkbenchAngleFindAngleWithRateResult<vgt/AnalysisWorkbenchAngleFindAngleWithRateResult>
      AnalysisWorkbenchAngleFindAngleResult<vgt/AnalysisWorkbenchAngleFindAngleResult>
      TimeToolInterval<vgt/TimeToolInterval>
      TimeToolIntervalCollection<vgt/TimeToolIntervalCollection>
@@ -1718,7 +1642,7 @@ analysis.
      TimeToolPointSamplingResult<vgt/TimeToolPointSamplingResult>
      TimeToolPointSamplingInterval<vgt/TimeToolPointSamplingInterval>
      TimeToolPointSamplingIntervalCollection<vgt/TimeToolPointSamplingIntervalCollection>
-     TimeToolSamplingResult<vgt/TimeToolSamplingResult>
+     TimeToolAxesSamplingResult<vgt/TimeToolAxesSamplingResult>
      TimeToolAxesSamplingInterval<vgt/TimeToolAxesSamplingInterval>
      TimeToolAxesSamplingIntervalCollection<vgt/TimeToolAxesSamplingIntervalCollection>
 
@@ -1799,6 +1723,6 @@ analysis.
     ≔ SURFACE_SHAPE_TYPE<vgt/SURFACE_SHAPE_TYPE_enum>
     ≔ ROTATION_SWEEP_MODE_TYPE<vgt/ROTATION_SWEEP_MODE_TYPE_enum>
     ≔ SIGNAL_DIRECTION_TYPE<vgt/SIGNAL_DIRECTION_TYPE_enum>
-    ≔ INTERSECTION_SURFACE<vgt/INTERSECTION_SURFACE_enum>
+    ≔ INTERSECTION_SURFACE_TYPE<vgt/INTERSECTION_SURFACE_TYPE_enum>
     ≔ VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE<vgt/VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE_enum>
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorRotationVector
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorRotationVector
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis.
 

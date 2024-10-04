@@ -3,7 +3,7 @@ AnalysisWorkbenchComponentTemplate
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchComponentTemplate
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentContext`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentContext`
 
    Enable to obtain information about the STK class that owns the VGT component.
 

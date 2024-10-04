@@ -3,7 +3,7 @@ VectorGeometryToolAngleToPlane
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An angle between a vector and a plane.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.reference_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a reference vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.reference_plane
-    :type: PlaneReference
+    :type: VectorGeometryToolPlaneReference
 
     Specify a reference plane.
 

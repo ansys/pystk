@@ -3,7 +3,7 @@ VectorGeometryToolVectorSurfaceDisplacement
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Displacement between origin and destination points using surface distance and altitude difference.
 

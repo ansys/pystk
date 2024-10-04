@@ -2735,7 +2735,10 @@ class VOProximityHelper(object):
 
         newAxes: "IVectorGeometryToolAxes" = self.m_root.vgt_root.get_provider("Satellite/Satellite1").axes[0]
         oBox.reference_frame = newAxes
-        Assert.assertEqual((clr.CastAs(newAxes, IComponent)).name, (clr.CastAs(oBox.reference_frame, IComponent)).name)
+        Assert.assertEqual(
+            (clr.CastAs(newAxes, IAnalysisWorkbenchComponent)).name,
+            (clr.CastAs(oBox.reference_frame, IAnalysisWorkbenchComponent)).name,
+        )
         # ENG113854
         with pytest.raises(Exception):
             oBox.reference_frame = None

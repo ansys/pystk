@@ -3,7 +3,7 @@ TimeToolInstantExtremum
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstantExtremum
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 

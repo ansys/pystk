@@ -50,14 +50,14 @@ class VGT(CodeSnippetsTestBase):
 
     # region rootGetVGTProvider
     def test_rootGetVGTProvider(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         try:
             self.rootGetVGTProvider(root, "Satellite/Satellite1")
 
         finally:
             del root
 
-    def rootGetVGTProvider(self, root: "AnalysisWorkbenchProviderRoot", path: str):
+    def rootGetVGTProvider(self, root: "AnalysisWorkbenchRoot", path: str):
         # Returns a provider associated with the specified
         # instance of an STK Object or a Central Body.
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider(path)
@@ -66,14 +66,14 @@ class VGT(CodeSnippetsTestBase):
 
     # region rootGetVGTTemplateProvider
     def test_rootGetVGTTemplateProvider(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         try:
             self.rootGetVGTTemplateProvider(root, "Satellite")
 
         finally:
             del root
 
-    def rootGetVGTTemplateProvider(self, root: "AnalysisWorkbenchProviderRoot", className: str):
+    def rootGetVGTTemplateProvider(self, root: "AnalysisWorkbenchRoot", className: str):
         # Returns a VGT provider associated with the specified
         # STK object class (i.e., Satellite, Facility, etc.) or
         # a Central Body.
@@ -83,7 +83,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EnumerateThroughVectors
     def test_EnumerateThroughVectors(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughVectors(provider)
@@ -96,16 +96,16 @@ class VGT(CodeSnippetsTestBase):
         vector: "IVectorGeometryToolVector"
         # Enumerate the existing vectors using specified CrdnProvider.
         for vector in provider.vectors:
-            # All vectors implement IComponent interface which provides
+            # All vectors implement IAnalysisWorkbenchComponent interface which provides
             # information about the vector instance and its type.
-            crdn: "IComponent" = clr.CastAs(vector, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(vector, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, vector.type)
 
     # endregion
 
     # region EnumerateThroughPoints
     def test_EnumerateThroughPoints(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughPoints(provider)
@@ -118,16 +118,16 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint"
         # Enumerate the existing points using specified CrdnProvider.
         for point in provider.points:
-            # All points implement IComponent interface which provides
+            # All points implement IAnalysisWorkbenchComponent interface which provides
             # information about the point instance and its type.
-            crdn: "IComponent" = clr.CastAs(point, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(point, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, point.type)
 
     # endregion
 
     # region EnumerateThroughAngles
     def test_EnumerateThroughAngles(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughAngles(provider)
@@ -140,16 +140,16 @@ class VGT(CodeSnippetsTestBase):
         angle: "IVectorGeometryToolAngle"
         # Enumerate the existing angles using specified CrdnProvider.
         for angle in provider.angles:
-            # All angles implement IComponent interface which provides
+            # All angles implement IAnalysisWorkbenchComponent interface which provides
             # information about the angle instance and its type.
-            crdn: "IComponent" = clr.CastAs(angle, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(angle, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, angle.type)
 
     # endregion
 
     # region EnumerateThroughAxes
     def test_EnumerateThroughAxes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughAxes(provider)
@@ -162,16 +162,16 @@ class VGT(CodeSnippetsTestBase):
         axes: "IVectorGeometryToolAxes"
         # Enumerate the existing Axes using specified CrdnProvider.
         for axes in provider.axes:
-            # All axes implement IComponent interface which provides
+            # All axes implement IAnalysisWorkbenchComponent interface which provides
             # information about the axes instance and its type.
-            crdn: "IComponent" = clr.CastAs(axes, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(axes, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, axes.type)
 
     # endregion
 
     # region EnumerateThroughPlanes
     def test_EnumerateThroughPlanes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughPlanes(provider)
@@ -184,16 +184,16 @@ class VGT(CodeSnippetsTestBase):
         plane: "IVectorGeometryToolPlane"
         # Enumerate the existing Planes using specified CrdnProvider.
         for plane in provider.planes:
-            # All planes implement IComponent interface which provides
+            # All planes implement IAnalysisWorkbenchComponent interface which provides
             # information about the plane instance and its type.
-            crdn: "IComponent" = clr.CastAs(plane, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(plane, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, plane.type)
 
     # endregion
 
     # region EnumerateThroughSystems
     def test_EnumerateThroughSystems(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughSystems(provider)
@@ -206,16 +206,16 @@ class VGT(CodeSnippetsTestBase):
         system: "IVectorGeometryToolSystem"
         # Enumerate the existing Systems using specified CrdnProvider.
         for system in provider.systems:
-            # All systems implement IComponent interface which provides
+            # All systems implement IAnalysisWorkbenchComponent interface which provides
             # information about the system instance and its type.
-            crdn: "IComponent" = clr.CastAs(system, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(system, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, system.type)
 
     # endregion
 
     # region EnumerateThroughParameterSets
     def test_EnumerateThroughParameterSets(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughParameterSets(provider)
@@ -228,16 +228,16 @@ class VGT(CodeSnippetsTestBase):
         parameterSet: "ICalculationToolParameterSet"
         # Enumerate the existing ParameterSets using specified CrdnProvider.
         for parameterSet in provider.parameter_sets:
-            # All parameter sets implement IComponent interface which provides
+            # All parameter sets implement IAnalysisWorkbenchComponent interface which provides
             # information about the parameter set instance and its type.
-            crdn: "IComponent" = clr.CastAs(parameterSet, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(parameterSet, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, parameterSet.type)
 
     # endregion
 
     # region EnumerateThroughCalcScalars
     def test_EnumerateThroughCalcScalars(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughCalcScalars(provider)
@@ -250,16 +250,16 @@ class VGT(CodeSnippetsTestBase):
         calcScalar: "ICalculationToolScalar"
         # Enumerate the existing CalcScalars using specified CrdnProvider.
         for calcScalar in provider.calculation_scalars:
-            # All calc scalars implement IComponent interface which provides
+            # All calc scalars implement IAnalysisWorkbenchComponent interface which provides
             # information about the calc scalar instance and its type.
-            crdn: "IComponent" = clr.CastAs(calcScalar, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, calcScalar.type)
 
     # endregion
 
     # region EnumerateThroughConditions
     def test_EnumerateThroughConditions(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughConditions(provider)
@@ -272,16 +272,16 @@ class VGT(CodeSnippetsTestBase):
         condition: "ICalculationToolCondition"
         # Enumerate the existing Conditions using specified CrdnProvider.
         for condition in provider.conditions:
-            # All conditions implement IComponent interface which provides
+            # All conditions implement IAnalysisWorkbenchComponent interface which provides
             # information about the condition instance and its type.
-            crdn: "IComponent" = clr.CastAs(condition, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(condition, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, condition.type)
 
     # endregion
 
     # region EnumerateThroughEvents
     def test_EnumerateThroughEvents(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughEvents(provider)
@@ -294,16 +294,16 @@ class VGT(CodeSnippetsTestBase):
         event: "ITimeToolInstant"
         # Enumerate the existing Events using specified CrdnProvider.
         for event in provider.time_instants:
-            # All events implement IComponent interface which provides
+            # All events implement IAnalysisWorkbenchComponent interface which provides
             # information about the event instance and its type.
-            crdn: "IComponent" = clr.CastAs(event, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(event, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, event.type)
 
     # endregion
 
     # region EnumerateThroughEventArrays
     def test_EnumerateThroughEventArrays(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughEventArrays(provider)
@@ -316,16 +316,16 @@ class VGT(CodeSnippetsTestBase):
         eventArray: "ITimeToolTimeArray"
         # Enumerate the existing EventArrays using specified CrdnProvider.
         for eventArray in provider.time_arrays:
-            # All event arrays implement IComponent interface which provides
+            # All event arrays implement IAnalysisWorkbenchComponent interface which provides
             # information about the event array instance and its type.
-            crdn: "IComponent" = clr.CastAs(eventArray, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventArray, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventArray.type)
 
     # endregion
 
     # region EnumerateThroughEventIntervals
     def test_EnumerateThroughEventIntervals(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughEventIntervals(provider)
@@ -338,16 +338,16 @@ class VGT(CodeSnippetsTestBase):
         eventInterval: "ITimeToolTimeInterval"
         # Enumerate the existing EventIntervals using specified CrdnProvider.
         for eventInterval in provider.time_intervals:
-            # All event intervals implement IComponent interface which provides
+            # All event intervals implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval instance and its type.
-            crdn: "IComponent" = clr.CastAs(eventInterval, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventInterval, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventInterval.type)
 
     # endregion
 
     # region EnumerateThroughEventIntervalCollections
     def test_EnumerateThroughEventIntervalCollections(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughEventIntervalCollections(provider)
@@ -360,16 +360,16 @@ class VGT(CodeSnippetsTestBase):
         eventIntervalCollection: "ITimeToolTimeIntervalCollection"
         # Enumerate the existing EventIntervalCollections using specified CrdnProvider.
         for eventIntervalCollection in provider.time_interval_collections:
-            # All event interval collections implement IComponent interface which provides
+            # All event interval collections implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval collection instance and its type.
-            crdn: "IComponent" = clr.CastAs(eventIntervalCollection, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventIntervalCollection, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalCollection.type)
 
     # endregion
 
     # region EnumerateThroughEventIntervalLists
     def test_EnumerateThroughEventIntervalLists(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EnumerateThroughEventIntervalLists(provider)
@@ -382,16 +382,16 @@ class VGT(CodeSnippetsTestBase):
         eventIntervalList: "ITimeToolTimeIntervalList"
         # Enumerate the existing EventIntervalLists using specified CrdnProvider.
         for eventIntervalList in provider.time_interval_lists:
-            # All event interval lists implement IComponent interface which provides
+            # All event interval lists implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval list instance and its type.
-            crdn: "IComponent" = clr.CastAs(eventIntervalList, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(eventIntervalList, IAnalysisWorkbenchComponent)
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalList.type)
 
     # endregion
 
     # region IterateThroughVectors
     def test_IterateThroughVectors(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughVectors(provider)
@@ -403,9 +403,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.vectors.count:
             vector: "IVectorGeometryToolVector" = provider.vectors[i]
-            # All vectors implement IComponent interface which provides
+            # All vectors implement IAnalysisWorkbenchComponent interface which provides
             # information about the vector instance and its type.
-            crdn: "IComponent" = clr.CastAs(vector, IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(vector, IAnalysisWorkbenchComponent)
             # Print the vector name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, vector.type)
 
@@ -415,7 +415,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughPoint
     def test_IterateThroughPoints(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughPoints(provider)
@@ -427,9 +427,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.points.count:
             point: "IVectorGeometryToolPoint" = provider.points[i]
-            # All points implement IComponent interface which provides
+            # All points implement IAnalysisWorkbenchComponent interface which provides
             # information about the point instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.points[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.points[i], IAnalysisWorkbenchComponent)
             # Print the point name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, point.type)
 
@@ -439,7 +439,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughAngles
     def test_IterateThroughAngles(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughAngles(provider)
@@ -451,9 +451,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.angles.count:
             angle: "IVectorGeometryToolAngle" = provider.angles[i]
-            # All angles implement IComponent interface which provides
+            # All angles implement IAnalysisWorkbenchComponent interface which provides
             # information about the angle instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.angles[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.angles[i], IAnalysisWorkbenchComponent)
             # Print the angle name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, angle.type)
 
@@ -463,7 +463,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughAxes
     def test_IterateThroughAxes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughAxes(provider)
@@ -475,9 +475,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.axes.count:
             axes: "IVectorGeometryToolAxes" = provider.axes[i]
-            # All axes implement IComponent interface which provides
+            # All axes implement IAnalysisWorkbenchComponent interface which provides
             # information about the axes instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.axes[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.axes[i], IAnalysisWorkbenchComponent)
             # Print the axes name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, axes.type)
 
@@ -487,7 +487,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughPlanes
     def test_IterateThroughPlanes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughPlanes(provider)
@@ -499,9 +499,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.planes.count:
             plane: "IVectorGeometryToolPlane" = provider.planes[i]
-            # All planes implement IComponent interface which provides
+            # All planes implement IAnalysisWorkbenchComponent interface which provides
             # information about the plane's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.planes[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.planes[i], IAnalysisWorkbenchComponent)
             # Print the plane's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, plane.type)
 
@@ -511,7 +511,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughSystems
     def test_IterateThroughSystems(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughSystems(provider)
@@ -523,9 +523,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.systems.count:
             crdnSystem: "IVectorGeometryToolSystem" = provider.systems[i]
-            # All coordinate reference frames implement IComponent interface which provides
+            # All coordinate reference frames implement IAnalysisWorkbenchComponent interface which provides
             # information about the reference frame's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.systems[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.systems[i], IAnalysisWorkbenchComponent)
             # Print the reference frame's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, crdnSystem.type)
 
@@ -535,7 +535,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughParameterSets
     def test_IterateThroughParameterSets(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughParameterSets(provider)
@@ -547,9 +547,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.parameter_sets.count:
             parameterSet: "ICalculationToolParameterSet" = provider.parameter_sets[i]
-            # All parameter sets implement IComponent interface which provides
+            # All parameter sets implement IAnalysisWorkbenchComponent interface which provides
             # information about the parameter set's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.parameter_sets[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.parameter_sets[i], IAnalysisWorkbenchComponent)
             # Print the parameter set's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, parameterSet.type)
 
@@ -559,7 +559,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughCalcScalars
     def test_IterateThroughCalcScalars(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughCalcScalars(provider)
@@ -571,9 +571,11 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.calculation_scalars.count:
             calcScalar: "ICalculationToolScalar" = provider.calculation_scalars[i]
-            # All calc scalars implement IComponent interface which provides
+            # All calc scalars implement IAnalysisWorkbenchComponent interface which provides
             # information about the calc scalar's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.calculation_scalars[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
+                provider.calculation_scalars[i], IAnalysisWorkbenchComponent
+            )
             # Print the calc scalar's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, calcScalar.type)
 
@@ -583,7 +585,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughConditions
     def test_IterateThroughConditions(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughConditions(provider)
@@ -595,9 +597,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.conditions.count:
             condition: "ICalculationToolCondition" = provider.conditions[i]
-            # All conditions implement IComponent interface which provides
+            # All conditions implement IAnalysisWorkbenchComponent interface which provides
             # information about the condition's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.conditions[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.conditions[i], IAnalysisWorkbenchComponent)
             # Print the condition's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, condition.type)
 
@@ -607,7 +609,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEvents
     def test_IterateThroughEvents(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughEvents(provider)
@@ -619,9 +621,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.time_instants.count:
             event: "ITimeToolInstant" = provider.time_instants[i]
-            # All events implement IComponent interface which provides
+            # All events implement IAnalysisWorkbenchComponent interface which provides
             # information about the event's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.time_instants[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.time_instants[i], IAnalysisWorkbenchComponent)
             # Print the event's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, event.type)
 
@@ -631,7 +633,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEventArrays
     def test_IterateThroughEventArrays(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughEventArrays(provider)
@@ -643,9 +645,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.time_arrays.count:
             eventArray: "ITimeToolTimeArray" = provider.time_arrays[i]
-            # All event arrays implement IComponent interface which provides
+            # All event arrays implement IAnalysisWorkbenchComponent interface which provides
             # information about the event array's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.time_arrays[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.time_arrays[i], IAnalysisWorkbenchComponent)
             # Print the event array's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventArray.type)
 
@@ -655,7 +657,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEventIntervals
     def test_IterateThroughEventIntervals(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughEventIntervals(provider)
@@ -667,9 +669,9 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.time_intervals.count:
             eventInterval: "ITimeToolTimeInterval" = provider.time_intervals[i]
-            # All event intervals implement IComponent interface which provides
+            # All event intervals implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.time_intervals[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(provider.time_intervals[i], IAnalysisWorkbenchComponent)
             # Print the event interval's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventInterval.type)
 
@@ -679,7 +681,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEventIntervalCollections
     def test_IterateThroughEventIntervalCollections(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughEventIntervalCollections(provider)
@@ -691,9 +693,11 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.time_interval_collections.count:
             eventIntervalCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections[i]
-            # All event interval collections implement IComponent interface which provides
+            # All event interval collections implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval collection's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.time_interval_collections[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
+                provider.time_interval_collections[i], IAnalysisWorkbenchComponent
+            )
             # Print the event interval collection's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalCollection.type)
 
@@ -703,7 +707,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEventIntervalLists
     def test_IterateThroughEventIntervalLists(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.IterateThroughEventIntervalLists(provider)
@@ -715,9 +719,11 @@ class VGT(CodeSnippetsTestBase):
         i: int = 0
         while i < provider.time_interval_lists.count:
             eventIntervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists[i]
-            # All event interval lists implement IComponent interface which provides
+            # All event interval lists implement IAnalysisWorkbenchComponent interface which provides
             # information about the event interval list's instance and its type.
-            crdn: "IComponent" = clr.CastAs(provider.time_interval_lists[i], IComponent)
+            crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
+                provider.time_interval_lists[i], IAnalysisWorkbenchComponent
+            )
             # Print the event interval list's name and type to the standard output.
             Console.WriteLine("Name: {0}, type: {1}", crdn.name, eventIntervalList.type)
 
@@ -727,7 +733,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateAngleRateVector
     def test_CreateAngleRateVector(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("myVector")))
         try:
@@ -749,7 +755,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsVectorTypeSupported
     def test_IsVectorTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("myVector")))
         try:
@@ -768,7 +774,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateDisplacementVector
     def test_CreateDisplacementVector(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("Point1")))
         Assert.assertTrue((not provider.points.contains("Point2")))
@@ -797,7 +803,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateCrossProductVector
     def test_CreateCrossProductVector(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("Vector1")))
         Assert.assertTrue((not provider.vectors.contains("Vector2")))
@@ -826,7 +832,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region VectorContains
     def test_VectorContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.VectorContains(provider, "FlightPath")
@@ -842,14 +848,14 @@ class VGT(CodeSnippetsTestBase):
 
     # region VectorRemove
     def test_VectorRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("SomeVector")))
         someVector: "IVectorGeometryToolVector" = provider.vectors.factory.create(
             "SomeVector", String.Empty, VECTOR_TYPE.DISPLACEMENT
         )
         try:
-            self.VectorRemove(provider, (IComponent(someVector)).name)
+            self.VectorRemove(provider, (IAnalysisWorkbenchComponent(someVector)).name)
 
         finally:
             del root
@@ -862,7 +868,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateAngleBetweenPlanes
     def test_CreateAngleBetweenPlanes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         try:
@@ -882,7 +888,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsAngleTypeSupported
     def test_IsAngleTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("MyAngle")))
         try:
@@ -902,7 +908,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region AngleContains
     def test_AngleContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.AngleContains(provider)
@@ -919,7 +925,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region AngleRemove
     def test_AngleRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
@@ -939,7 +945,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateNormalPlane
     def test_CreateNormalPlane(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.planes.contains("PlaneName")))
         try:
@@ -959,7 +965,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsPlaneTypeSupported
     def test_IsPlaneTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.planes.contains("PlaneName")))
         try:
@@ -977,7 +983,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region PlaneContains
     def test_PlaneContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.PlaneContains(provider)
@@ -993,7 +999,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region PlaneRemove
     def test_PlaneRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.planes.contains("PlaneName")))
         plane: "IVectorGeometryToolPlane" = provider.planes.factory.create("PlaneName", String.Empty, PLANE_TYPE.NORMAL)
@@ -1011,7 +1017,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateAxesAlignedAndConstrained
     def test_CreateAxesAlignedAndConstrained(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
         try:
@@ -1030,7 +1036,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsAxesTypeSupported
     def test_IsAxesTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
         try:
@@ -1048,7 +1054,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region AxesContains
     def test_AxesContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.AxesContains(provider)
@@ -1064,7 +1070,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region AxesRemove
     def test_AxesRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
         axes: "IVectorGeometryToolAxes" = provider.axes.factory.create("AxesName", String.Empty, AXES_TYPE.FIXED)
@@ -1082,7 +1088,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreatePointBPlane
     def test_CreatePointBPlane(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         try:
@@ -1103,7 +1109,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsPointTypeSupported
     def test_IsPointTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         try:
@@ -1121,7 +1127,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region PointContains
     def test_PointContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.PointContains(provider)
@@ -1137,7 +1143,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region PointRemove
     def test_PointRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
@@ -1157,7 +1163,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateSystemAssembled
     def test_CreateSystemAssembled(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         try:
@@ -1185,7 +1191,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsSystemTypeSupported
     def test_IsSystemTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         try:
@@ -1206,7 +1212,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region SystemContains
     def test_SystemContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.SystemContains(provider)
@@ -1222,7 +1228,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region SystemRemove
     def test_SystemRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.systems.contains("SystemName")))
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
@@ -1242,7 +1248,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateParameterSetAttitude
     def test_CreateParameterSetAttitude(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.parameter_sets.contains("ParameterSetName")))
         try:
@@ -1264,7 +1270,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsParameterSetTypeSupported
     def test_IsParameterSetTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.parameter_sets.contains("MyParameterSet")))
         try:
@@ -1287,7 +1293,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region ParameterSetContains
     def test_ParameterSetContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.ParameterSetContains(provider)
@@ -1303,7 +1309,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region ParameterSetRemove
     def test_ParameterSetRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.parameter_sets.contains("ParameterSetName")))
         parameterSet: "ICalculationToolParameterSet" = provider.parameter_sets.factory.create(
@@ -1323,7 +1329,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateCalcScalarConstant
     def test_CreateCalcScalarConstant(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.calculation_scalars.contains("CalcScalarName")))
         try:
@@ -1345,7 +1351,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsCalcScalarTypeSupported
     def test_IsCalcScalarTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.calculation_scalars.contains("MyCalcScalar")))
         try:
@@ -1368,7 +1374,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CalcScalarContains
     def test_CalcScalarContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.CalcScalarContains(provider)
@@ -1384,7 +1390,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CalcScalarRemove
     def test_CalcScalarRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.calculation_scalars.contains("CalcScalarName")))
         calcScalar: "ICalculationToolScalar" = provider.calculation_scalars.factory.create(
@@ -1404,7 +1410,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region CreateConditionScalarBounds
     def test_CreateConditionScalarBounds(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.conditions.contains("ConditionName")))
         try:
@@ -1426,7 +1432,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsConditionTypeSupported
     def test_IsConditionTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.conditions.contains("MyCondition")))
         try:
@@ -1447,7 +1453,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region ConditionContains
     def test_ConditionContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.ConditionContains(provider)
@@ -1463,7 +1469,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region ConditionRemove
     def test_ConditionRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.conditions.contains("ConditionName")))
         condition: "ICalculationToolCondition" = provider.conditions.factory.create(
@@ -1483,7 +1489,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsEventTypeSupported
     def test_IsEventTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_instants.contains("MyEvent")))
         try:
@@ -1502,7 +1508,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventContains
     def test_EventContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EventContains(provider)
@@ -1518,7 +1524,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventRemove
     def test_EventRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_instants.contains("EventName")))
         event: "ITimeToolInstant" = provider.time_instants.factory.create(
@@ -1538,7 +1544,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsEventArrayTypeSupported
     def test_IsEventArrayTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_arrays.contains("MyEventArray")))
         try:
@@ -1561,7 +1567,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventArrayContains
     def test_EventArrayContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EventArrayContains(provider)
@@ -1577,7 +1583,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventArrayRemove
     def test_EventArrayRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_arrays.contains("EventArrayName")))
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create(
@@ -1597,7 +1603,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsEventIntervalTypeSupported
     def test_IsEventIntervalTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_intervals.contains("MyEventInterval")))
         try:
@@ -1620,7 +1626,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalContains
     def test_EventIntervalContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EventIntervalContains(provider)
@@ -1636,7 +1642,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalRemove
     def test_EventIntervalRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_intervals.contains("EventIntervalName")))
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create(
@@ -1656,7 +1662,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsEventIntervalCollectionTypeSupported
     def test_IsEventIntervalCollectionTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_interval_collections.contains("MyEventIntervalCollection")))
         try:
@@ -1683,7 +1689,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalCollectionContains
     def test_EventIntervalCollectionContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EventIntervalCollectionContains(provider)
@@ -1699,7 +1705,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalCollectionRemove
     def test_EventIntervalCollectionRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_interval_collections.contains("EventIntervalCollectionName")))
         eventIntervalCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections.factory.create(
@@ -1719,7 +1725,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region IsEventIntervalListTypeSupported
     def test_IsEventIntervalListTypeSupported(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_interval_lists.contains("MyEventIntervalList")))
         try:
@@ -1742,7 +1748,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalListContains
     def test_EventIntervalListContains(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             self.EventIntervalListContains(provider)
@@ -1758,7 +1764,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region EventIntervalListRemove
     def test_EventIntervalListRemove(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.time_interval_lists.contains("EventIntervalListName")))
         eventIntervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create(
@@ -1778,7 +1784,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Angle.FindAngle
     def test_FindAngle(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
@@ -1792,7 +1798,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAngle(self, angle: "IVectorGeometryToolAngle"):
-        result: "IAngleFindAngleResult" = angle.find_angle(0)
+        result: "AnalysisWorkbenchAngleFindAngleResult" = angle.find_angle(0)
         if result.is_valid:
             Console.WriteLine("Angle: {0}", result.angle)
 
@@ -1800,7 +1806,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Angle.FindAngleAndRate
     def test_FindAngleAndRate(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.angles.contains("AngleName")))
         angle: "IVectorGeometryToolAngle" = provider.angles.factory.create(
@@ -1814,7 +1820,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAngleAndRate(self, angle: "IVectorGeometryToolAngle"):
-        result: "IAngleFindAngleWithRateResult" = angle.find_angle_with_rate(0)
+        result: "AnalysisWorkbenchAngleFindAngleWithRateResult" = angle.find_angle_with_rate(0)
         if result.is_valid:
             Console.WriteLine("Angle: {0}, Rate: {1}", result.angle, result.angle_rate)
 
@@ -1822,7 +1828,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.FindInAxes
     def test_FindAxesInEarthFixed(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.axes.contains("AxesName")))
         axes: "IVectorGeometryToolAxes" = provider.axes.factory.create("AxesName", String.Empty, AXES_TYPE.FIXED)
@@ -1834,7 +1840,7 @@ class VGT(CodeSnippetsTestBase):
             del root
 
     def FindAxesInEarthFixed(self, provider: "AnalysisWorkbenchComponentProvider", axes: "IVectorGeometryToolAxes"):
-        result: "IAxesFindInAxesResult" = axes.find_in_axes(0, provider.well_known_axes.earth.fixed)
+        result: "AnalysisWorkbenchAxesFindInAxesResult" = axes.find_in_axes(0, provider.well_known_axes.earth.fixed)
         if result.is_valid:
             angles: "IOrientationEulerAngles" = IOrientationEulerAngles(
                 result.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
@@ -1868,7 +1874,7 @@ class VGT(CodeSnippetsTestBase):
 
         # Use the Transform method to transform ICRF to Fixed
         axesFixed: "IVectorGeometryToolAxes" = sat.vgt.well_known_axes.earth.fixed
-        result: "IAxesTransformResult" = axesICRF.transform(numEpSec, axesFixed, vectorICRF)
+        result: "AnalysisWorkbenchAxesTransformResult" = axesICRF.transform(numEpSec, axesFixed, vectorICRF)
 
         # Get the Fixed coordinates
         xFixed: float = result.vector.x
@@ -1913,7 +1919,7 @@ class VGT(CodeSnippetsTestBase):
 
         # Use the TransformWithRate method to transform ICRF to Fixed
         axesFixed: "IVectorGeometryToolAxes" = sat.vgt.well_known_axes.earth.fixed
-        result: "IAxesTransformWithRateResult" = axesICRF.transform_with_rate(
+        result: "AnalysisWorkbenchAxesTransformWithRateResult" = axesICRF.transform_with_rate(
             numEpSec, axesFixed, vectorICRF, vectorvelICRF
         )
 
@@ -1929,7 +1935,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Point.LocateInEarthFixedSystem
     def test_PointLocateInEarthFixedSystem(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.points.contains("PointName")))
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
@@ -1945,7 +1951,9 @@ class VGT(CodeSnippetsTestBase):
     def PointLocateInEarthFixedSystem(
         self, provider: "AnalysisWorkbenchComponentProvider", point: "IVectorGeometryToolPoint"
     ):
-        result: "IPointLocateInSystemResult" = point.locate_in_system(0, provider.well_known_systems.earth.fixed)
+        result: "AnalysisWorkbenchPointLocateInSystemResult" = point.locate_in_system(
+            0, provider.well_known_systems.earth.fixed
+        )
         if result.is_valid:
             Console.WriteLine(
                 "The position of the point in Earth's Fixed reference frame: {0},{1},{2}",
@@ -1958,7 +1966,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Vector.VectorFindInEarthFixedAxes
     def test_VectorFindInEarthFixedAxes(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         Assert.assertTrue((not provider.vectors.contains("VectorName")))
         vector: "IVectorGeometryToolVector" = provider.vectors.factory.create(
@@ -1974,7 +1982,7 @@ class VGT(CodeSnippetsTestBase):
     def VectorFindInEarthFixedAxes(
         self, provider: "AnalysisWorkbenchComponentProvider", vector: "IVectorGeometryToolVector"
     ):
-        result: "IVectorFindInAxesResult" = vector.find_in_axes(0, provider.well_known_axes.earth.fixed)
+        result: "AnalysisWorkbenchVectorFindInAxesResult" = vector.find_in_axes(0, provider.well_known_axes.earth.fixed)
         if result.is_valid:
             Console.WriteLine(
                 "Vector in the Earth's Fixed axes (x,y,z) => {0},{1},{2}",
@@ -1987,7 +1995,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.AnonymousFixed
     def test_AxesAnonymousFixed(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         try:
             vector: "ICartesian3Vector" = TestBase.Application.conversion_utility.new_cartesian3_vector()
@@ -2004,7 +2012,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.CreateTopocentricAxesEulerAngles
     def test_AxesCreateTopocentricAxesEulerAngles(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.central_bodies["Earth"].vgt
         try:
@@ -2033,7 +2041,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Axes.CreateTopocentricAxesQuaternion
     def test_AxesCreateTopocentricAxesQuaternion(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.central_bodies["Earth"].vgt
         try:
@@ -2060,7 +2068,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Systems.CreateAssembled
     def test_SystemsCreateAssembled(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.central_bodies["Earth"].vgt
         try:
@@ -2078,7 +2086,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Systems.CreateEastNorthUpCartographic
     def test_SystemsCreateEastNorthUpCartographic(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.current_scenario.children["Facility1"].vgt
         try:
@@ -2103,7 +2111,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Point.CreateFixedInSystemCartographic
     def test_PointCreateFixedInSystemCartographic(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.central_bodies["Earth"].vgt
         try:
@@ -2128,7 +2136,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region Point.CreateFixedInSystemCartesian
     def test_PointCreateFixedInSystemCartesian(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         facility: "Facility" = clr.CastAs(TestBase.Application.current_scenario.children["Facility1"], Facility)
         provider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.central_bodies["Earth"].vgt
         try:
@@ -2163,7 +2171,9 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
             "OriginalPoint", "description", POINT_TYPE.AT_TIME_INSTANT
         )
-        duplicate: "IComponent" = (IComponent(point)).duplicate("DuplicatePoint", "description")
+        duplicate: "IAnalysisWorkbenchComponent" = (IAnalysisWorkbenchComponent(point)).duplicate(
+            "DuplicatePoint", "description"
+        )
 
     # endregion
 
@@ -2181,46 +2191,46 @@ class VGT(CodeSnippetsTestBase):
         point: "IVectorGeometryToolPoint" = provider.points.factory.create(
             "OriginalPoint", "description", POINT_TYPE.AT_TIME_INSTANT
         )
-        anonymousDuplicate: "IComponent" = (IComponent(point)).anonymous_duplicate()
+        anonymousDuplicate: "IAnalysisWorkbenchComponent" = (IAnalysisWorkbenchComponent(point)).anonymous_duplicate()
 
     # endregion
 
     # region GetEmbeddedComponent
     def test_GetEmbeddedComponent(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
             "mySystem", String.Empty, SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.GetEmbeddedComponent(IComponent(system))
+            self.GetEmbeddedComponent(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
             del root
 
-    def GetEmbeddedComponent(self, crdn: "IComponent"):
+    def GetEmbeddedComponent(self, crdn: "IAnalysisWorkbenchComponent"):
         if crdn.embedded_components.contains("Origin"):
-            embeddedComponent: "IComponent" = crdn.embedded_components["Origin"]
+            embeddedComponent: "IAnalysisWorkbenchComponent" = crdn.embedded_components["Origin"]
 
     # endregion
 
     # region EnumerateThroughEmbeddedComponents
     def test_EnumerateThroughEmbeddedComponents(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
             "mySystem", String.Empty, SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.EnumerateThroughEmbeddedComponents(IComponent(system))
+            self.EnumerateThroughEmbeddedComponents(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
             del root
 
-    def EnumerateThroughEmbeddedComponents(self, crdn: "IComponent"):
-        embeddedComponent: "IComponent"
+    def EnumerateThroughEmbeddedComponents(self, crdn: "IAnalysisWorkbenchComponent"):
+        embeddedComponent: "IAnalysisWorkbenchComponent"
         for embeddedComponent in crdn.embedded_components:
             Console.WriteLine("Name: {0}, kind: {1}", embeddedComponent.name, embeddedComponent.component_type)
 
@@ -2228,22 +2238,22 @@ class VGT(CodeSnippetsTestBase):
 
     # region IterateThroughEmbeddedComponents
     def test_IterateThroughEmbeddedComponents(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         system: "IVectorGeometryToolSystem" = provider.systems.factory.create(
             "mySystem", String.Empty, SYSTEM_TYPE.ASSEMBLED
         )
         try:
-            self.IterateThroughEmbeddedComponents(IComponent(system))
+            self.IterateThroughEmbeddedComponents(IAnalysisWorkbenchComponent(system))
 
         finally:
             provider.systems.remove("mySystem")
             del root
 
-    def IterateThroughEmbeddedComponents(self, crdn: "IComponent"):
+    def IterateThroughEmbeddedComponents(self, crdn: "IAnalysisWorkbenchComponent"):
         i: int = 0
         while i < crdn.embedded_components.count:
-            embeddedComponent: "IComponent" = crdn.embedded_components[i]
+            embeddedComponent: "IAnalysisWorkbenchComponent" = crdn.embedded_components[i]
             Console.WriteLine("Name: {0}, kind: {1}", embeddedComponent.name, embeddedComponent.component_type)
 
             i += 1
@@ -2252,7 +2262,7 @@ class VGT(CodeSnippetsTestBase):
 
     # region AngleHasCyclicDependency
     def test_AngleHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         angleRate: "VectorGeometryToolVectorAngleRate" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.ANGLE_RATE),
@@ -2272,15 +2282,15 @@ class VGT(CodeSnippetsTestBase):
         if angleRefTo.has_cyclic_dependency(angle):
             Console.WriteLine(
                 "The angle {0} has a cyclic dependency on angle {1}.",
-                (IComponent(angleRefTo.get_angle())).name,
-                (IComponent(angle)).name,
+                (IAnalysisWorkbenchComponent(angleRefTo.get_angle())).name,
+                (IAnalysisWorkbenchComponent(angle)).name,
             )
 
     # endregion
 
     # region AxesHasCyclicDependency
     def test_AxesHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         angVel: "VectorGeometryToolVectorAngularVelocity" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.ANGULAR_VELOCITY),
@@ -2298,15 +2308,15 @@ class VGT(CodeSnippetsTestBase):
         if axesRefTo.has_cyclic_dependency(axes):
             Console.WriteLine(
                 "The axes {0} has a cyclic dependency on axes {1}.",
-                (IComponent(axesRefTo.get_axes())).name,
-                (IComponent(axes)).name,
+                (IAnalysisWorkbenchComponent(axesRefTo.get_axes())).name,
+                (IAnalysisWorkbenchComponent(axes)).name,
             )
 
     # endregion
 
     # region PlaneHasCyclicDependency
     def test_PlaneHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         twoPlane: "VectorGeometryToolVectorTwoPlanesIntersection" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.TWO_PLANES_INTERSECTION),
@@ -2320,19 +2330,21 @@ class VGT(CodeSnippetsTestBase):
             provider.vectors.remove("DependencyTest")
             del root
 
-    def PlaneHasCyclicDependency(self, planeRefTo: "PlaneReference", plane: "IVectorGeometryToolPlane"):
+    def PlaneHasCyclicDependency(
+        self, planeRefTo: "VectorGeometryToolPlaneReference", plane: "IVectorGeometryToolPlane"
+    ):
         if planeRefTo.has_cyclic_dependency(plane):
             Console.WriteLine(
                 "The plane {0} has a cyclic dependency on plane {1}.",
-                (IComponent(planeRefTo.get_plane())).name,
-                (IComponent(plane)).name,
+                (IAnalysisWorkbenchComponent(planeRefTo.get_plane())).name,
+                (IAnalysisWorkbenchComponent(plane)).name,
             )
 
     # endregion
 
     # region PointHasCyclicDependency
     def test_PointHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         apoapsis: "VectorGeometryToolVectorApoapsis" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.APOAPSIS),
@@ -2352,15 +2364,15 @@ class VGT(CodeSnippetsTestBase):
         if pointRefTo.has_cyclic_dependency(point):
             Console.WriteLine(
                 "The point {0} has a cyclic dependency on point {1}.",
-                (IComponent(pointRefTo.get_point())).name,
-                (IComponent(point)).name,
+                (IAnalysisWorkbenchComponent(pointRefTo.get_point())).name,
+                (IAnalysisWorkbenchComponent(point)).name,
             )
 
     # endregion
 
     # region SystemHasCyclicDependency
     def test_SystemHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         displacement: "VectorGeometryToolVectorDisplacement" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.DISPLACEMENT),
@@ -2381,15 +2393,15 @@ class VGT(CodeSnippetsTestBase):
         if systemRefTo.has_cyclic_dependency(system):
             Console.WriteLine(
                 "The system {0} has a cyclic dependency on system {1}.",
-                (IComponent(systemRefTo.get_system())).name,
-                (IComponent(system)).name,
+                (IAnalysisWorkbenchComponent(systemRefTo.get_system())).name,
+                (IAnalysisWorkbenchComponent(system)).name,
             )
 
     # endregion
 
     # region VectorHasCyclicDependency
     def test_VectorHasCyclicDependency(self):
-        root: "AnalysisWorkbenchProviderRoot" = TestBase.Application.vgt_root
+        root: "AnalysisWorkbenchRoot" = TestBase.Application.vgt_root
         provider: "AnalysisWorkbenchComponentProvider" = root.get_provider("Satellite/Satellite1")
         reflection: "VectorGeometryToolVectorReflection" = clr.CastAs(
             provider.vectors.factory.create("DependencyTest", String.Empty, VECTOR_TYPE.REFLECTION),
@@ -2403,12 +2415,14 @@ class VGT(CodeSnippetsTestBase):
             provider.vectors.remove("DependencyTest")
             del root
 
-    def VectorHasCyclicDependency(self, vectorRefTo: "VectorReference", vector: "IVectorGeometryToolVector"):
+    def VectorHasCyclicDependency(
+        self, vectorRefTo: "VectorGeometryToolVectorReference", vector: "IVectorGeometryToolVector"
+    ):
         if vectorRefTo.has_cyclic_dependency(vector):
             Console.WriteLine(
                 "The vector {0} has a cyclic dependency on vector {1}.",
-                (IComponent(vectorRefTo.get_vector())).name,
-                (IComponent(vector)).name,
+                (IAnalysisWorkbenchComponent(vectorRefTo.get_vector())).name,
+                (IAnalysisWorkbenchComponent(vector)).name,
             )
 
     # endregion

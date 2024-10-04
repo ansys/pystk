@@ -3,7 +3,7 @@ CalculationToolConditionCombined
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionCombined
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Define a condition which combines multiple conditions.
 

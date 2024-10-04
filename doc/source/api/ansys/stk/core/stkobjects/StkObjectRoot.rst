@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: vgt_root
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.vgt_root
-    :type: IAnalysisWorkbenchProviderRoot
+    :type: IAnalysisWorkbenchRoot
 
     Returns an instance of VGT root object.
 

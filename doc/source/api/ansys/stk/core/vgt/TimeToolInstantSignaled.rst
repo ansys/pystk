@@ -3,7 +3,7 @@ TimeToolInstantSignaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstantSignaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event recorded on specified clock via signal transmission from original time instant recorded on different clock.
 

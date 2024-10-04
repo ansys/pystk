@@ -3,7 +3,7 @@ SpatialAnalysisToolConditionLighting
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A lighting volume interface.
 

@@ -3,7 +3,7 @@ VectorGeometryToolVectorReflection
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorReflection
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane.
 
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: incoming_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.incoming_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     The reflecting vector.
 
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.normal_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     The vector defines the reflection surface.
 

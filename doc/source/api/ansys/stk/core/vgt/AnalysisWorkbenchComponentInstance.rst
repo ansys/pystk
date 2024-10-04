@@ -3,7 +3,7 @@ AnalysisWorkbenchComponentInstance
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentContext`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentContext`
 
    Enable to obtain information about the parent object that owns the VGT component.
 
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: template
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance.template
-    :type: IComponent
+    :type: IAnalysisWorkbenchComponent
 
     Returns a template object the VGT component was created from or null if the VGT component was not created from a template.
 

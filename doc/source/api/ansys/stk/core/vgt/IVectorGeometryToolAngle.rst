@@ -59,7 +59,7 @@ Method detail
 -------------
 
 
-.. py:method:: find_angle(self, epoch: typing.Any) -> IAngleFindAngleResult
+.. py:method:: find_angle(self, epoch: typing.Any) -> AnalysisWorkbenchAngleFindAngleResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle
 
     Find an angle at the specified epoch.
@@ -70,9 +70,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAngleFindAngleResult`
+        :obj:`~AnalysisWorkbenchAngleFindAngleResult`
 
-.. py:method:: find_angle_with_rate(self, epoch: typing.Any) -> IAngleFindAngleWithRateResult
+.. py:method:: find_angle_with_rate(self, epoch: typing.Any) -> AnalysisWorkbenchAngleFindAngleWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_angle_with_rate
 
     Find an angle and angle rate.
@@ -83,9 +83,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAngleFindAngleWithRateResult`
+        :obj:`~AnalysisWorkbenchAngleFindAngleWithRateResult`
 
-.. py:method:: find_coordinates(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IAngleFindResult
+.. py:method:: find_coordinates(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAngleFindResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates
 
     Find the angle value and three vectors that define the angle in a specified input axes.
@@ -97,9 +97,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAngleFindResult`
+        :obj:`~AnalysisWorkbenchAngleFindResult`
 
-.. py:method:: find_coordinates_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IAngleFindWithRateResult
+.. py:method:: find_coordinates_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAngleFindWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.find_coordinates_with_rate
 
     Find the angle value, the angle rate and three vectors that define the angle in a specified input axes.
@@ -111,5 +111,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAngleFindWithRateResult`
+        :obj:`~AnalysisWorkbenchAngleFindWithRateResult`
 

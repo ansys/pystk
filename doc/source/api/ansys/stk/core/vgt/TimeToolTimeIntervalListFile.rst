@@ -3,7 +3,7 @@ TimeToolTimeIntervalListFile
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalListFile
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval list loaded from specified interval file - ASCII file with .int extension. See STK help.
 

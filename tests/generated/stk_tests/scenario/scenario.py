@@ -357,37 +357,39 @@ class EarlyBoundTests(TestBase):
             "Scenario/ScenarioTests OneMinuteSampleTimes EventArray", ani.get_time_array_qualified_path()
         )
 
-        crdn: "IComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_instants["AnalysisStartTime"], IComponent
+        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
+            TestBase.Application.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdn)
-        crdnFac: "IComponent" = clr.CastAs(
+        crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
             TestBase.Application.current_scenario.children["Facility1"].vgt.time_interval_collections[
                 "LightingIntervals"
             ],
-            IComponent,
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnFac)
-        crdnIntervals: "IComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"], IComponent
+        crdnIntervals: "IAnalysisWorkbenchComponent" = clr.CastAs(
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntervals)
-        crdnIntList: "IComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"], IComponent
+        crdnIntList: "IAnalysisWorkbenchComponent" = clr.CastAs(
+            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"],
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntList)
 
-        crdnSat: "IComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.children["Satellite1"].vgt.time_arrays["EphemerisTimes"], IComponent
+        crdnSat: "IAnalysisWorkbenchComponent" = clr.CastAs(
+            TestBase.Application.current_scenario.children["Satellite1"].vgt.time_arrays["EphemerisTimes"],
+            IAnalysisWorkbenchComponent,
         )
         ani.set_time_array_component(crdnSat)
         Assert.assertEqual(
             "Satellite/Satellite1 EphemerisTimes EventArray",
-            (clr.CastAs(ani.get_time_array_component(), IComponent)).qualified_path,
+            (clr.CastAs(ani.get_time_array_component(), IAnalysisWorkbenchComponent)).qualified_path,
         )
 
         ani.reset_time_array_component()
@@ -673,7 +675,7 @@ class EarlyBoundTests(TestBase):
         destinationPoint: "IVectorGeometryToolPoint" = aircraft.vgt.points["Center"]
         originPoint.direction_vector = nadirVector
         originPoint.reference_point = destinationPoint
-        originPoint.intersection_surface = INTERSECTION_SURFACE.AT_TERRAIN
+        originPoint.intersection_surface = INTERSECTION_SURFACE_TYPE.AT_TERRAIN
 
         displacementVector: "VectorGeometryToolVectorDisplacement" = (
             aircraft.vgt.vectors.factory.create_displacement_vector(
@@ -695,7 +697,7 @@ class EarlyBoundTests(TestBase):
         bounds.operation = CONDITION_THRESHOLD_TYPE.ABOVE_MINIMUM
         bounds.scalar = clr.CastAs(vm, ICalculationToolScalar)
 
-        crdn: "IComponent" = clr.CastAs(aircraft.vgt.conditions["sb"], IComponent)
+        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(aircraft.vgt.conditions["sb"], IAnalysisWorkbenchComponent)
 
         crdnEvent: "ITimeToolTimeIntervalList" = clr.CastAs(
             crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolTimeIntervalList
@@ -2156,8 +2158,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("31 Dec 1949 22:09:04.682", EarlyBoundTests.AG_SC.analysis_epoch.time_instant)
         Assert.assertEqual(SMART_EPOCH_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_epoch.state)
         Assert.assertEqual(
-            (clr.CastAs(TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"], IComponent)).name,
-            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_epoch.reference_epoch, IComponent)).name,
+            (
+                clr.CastAs(
+                    TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"], IAnalysisWorkbenchComponent
+                )
+            ).name,
+            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_epoch.reference_epoch, IAnalysisWorkbenchComponent)).name,
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
@@ -2313,8 +2319,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(SMART_INTERVAL_STATE.IMPLICIT, EarlyBoundTests.AG_SC.analysis_interval.state)
         Assert.assertEqual(
-            (clr.CastAs(EarlyBoundTests.todayInterval, IComponent)).name,
-            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_interval.reference_interval, IComponent)).name,
+            (clr.CastAs(EarlyBoundTests.todayInterval, IAnalysisWorkbenchComponent)).name,
+            (clr.CastAs(EarlyBoundTests.AG_SC.analysis_interval.reference_interval, IAnalysisWorkbenchComponent)).name,
         )
 
         EarlyBoundTests.AG_SC.start_time = holdStart

@@ -81,7 +81,7 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IComponent
+.. py:method:: item(self, indexOrName: typing.Any) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentCollection.item
 
     Retrieve an element of the collection using the name of the element or a position in the collection.
@@ -92,10 +92,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~IComponent`
+        :obj:`~IAnalysisWorkbenchComponent`
 
 
-.. py:method:: get_item_by_index(self, index: int) -> IComponent
+.. py:method:: get_item_by_index(self, index: int) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentCollection.get_item_by_index
 
     Retrieve an item from the crdn collection by index.
@@ -106,9 +106,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IComponent`
+        :obj:`~IAnalysisWorkbenchComponent`
 
-.. py:method:: get_item_by_name(self, name: str) -> IComponent
+.. py:method:: get_item_by_name(self, name: str) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentCollection.get_item_by_name
 
     Retrieve an item from the crdn collection by name.
@@ -119,5 +119,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~IComponent`
+        :obj:`~IAnalysisWorkbenchComponent`
 

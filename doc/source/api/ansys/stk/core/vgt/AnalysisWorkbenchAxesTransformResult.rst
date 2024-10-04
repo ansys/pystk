@@ -3,7 +3,7 @@ AnalysisWorkbenchAxesTransformResult
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`, :py:class:`~ansys.stk.core.vgt.IAxesTransformResult`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`
 
    Contains the results returned with IAgCrdnAxes.TransformFrom method.
 
@@ -11,6 +11,19 @@ AnalysisWorkbenchAxesTransformResult
 
 Overview
 --------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult.is_valid`
+              - Indicates whether the result object is valid.
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult.vector`
+              - The output vector in the current axes.
 
 
 
@@ -21,5 +34,20 @@ Import detail
 
     from ansys.stk.core.vgt import AnalysisWorkbenchAxesTransformResult
 
+
+Property detail
+---------------
+
+.. py:property:: is_valid
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult.is_valid
+    :type: bool
+
+    Indicates whether the result object is valid.
+
+.. py:property:: vector
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult.vector
+    :type: ICartesian3Vector
+
+    The output vector in the current axes.
 
 

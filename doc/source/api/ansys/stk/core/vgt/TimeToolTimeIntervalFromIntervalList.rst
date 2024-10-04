@@ -3,7 +3,7 @@ TimeToolTimeIntervalFromIntervalList
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalFromIntervalList
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval created from specified interval list by using one of several selection methods.
 

@@ -3,7 +3,7 @@ TimeToolTimeIntervalCollectionLighting
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionLighting
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalCollection`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalCollection`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
 

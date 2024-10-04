@@ -3,7 +3,7 @@ TimeToolTimeArray
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArray
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An ordered array of times, which may or may not be evenly spaced.
 

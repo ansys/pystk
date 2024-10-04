@@ -3,7 +3,7 @@ VectorGeometryToolPointCentralBodyIntersect
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyIntersect
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`
 
    Point on central body surface along direction vector originating at source point.
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: intersection_surface
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyIntersect.intersection_surface
-    :type: INTERSECTION_SURFACE
+    :type: INTERSECTION_SURFACE_TYPE
 
     An intersection surface.
 

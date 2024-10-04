@@ -3,7 +3,7 @@ VectorGeometryToolPointCovarianceGrazing
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointCovarianceGrazing
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option.
 
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCovarianceGrazing.direction_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a direction vector to be used in conjunction with the displacement vector from the selected target object to the reference point to define a plane in which the line will lie.
 

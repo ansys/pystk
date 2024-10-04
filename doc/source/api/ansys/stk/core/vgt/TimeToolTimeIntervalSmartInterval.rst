@@ -3,7 +3,7 @@ TimeToolTimeIntervalSmartInterval
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A smart interval.
 

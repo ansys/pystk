@@ -3,7 +3,7 @@ CalculationToolConvergeBasic
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConvergeBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
 

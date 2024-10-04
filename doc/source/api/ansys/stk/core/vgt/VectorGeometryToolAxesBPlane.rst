@@ -3,7 +3,7 @@ VectorGeometryToolAxesBPlane
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    B-Plane axes using the selected target body and reference vector.
 
@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane.reference_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a reference vector.
 

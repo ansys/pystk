@@ -3,7 +3,7 @@ TimeToolTimeArrayFixedTimes
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArrayFixedTimes
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Array defined by time ordered instants each explicitly specified.
 

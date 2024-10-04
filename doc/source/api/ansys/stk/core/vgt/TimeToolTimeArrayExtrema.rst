@@ -3,7 +3,7 @@ TimeToolTimeArrayExtrema
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArrayExtrema
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 

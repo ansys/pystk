@@ -778,7 +778,7 @@ class AccessSnippets(CodeSnippetsTestBase):
     def AddAWBAccessConstraintFromAWBComponent(self, stkobject: "IStkObject"):
         if stkobject.vgt.vectors.contains("East"):
             vec: "IVectorGeometryToolVector" = stkobject.vgt.vectors["East"]
-            crdnVec: "IComponent" = clr.CastAs(vec, IComponent)
+            crdnVec: "IAnalysisWorkbenchComponent" = clr.CastAs(vec, IAnalysisWorkbenchComponent)
 
             accessConstraints: "AccessConstraintCollection" = stkobject.access_constraints
             awbAccessConstraints: "AccessConstraintAnalysisWorkbenchCollection" = (

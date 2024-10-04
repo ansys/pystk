@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationPropagationDelayToLocation
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationPropagationDelayToLocation
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc propagation delay to location interface.
 

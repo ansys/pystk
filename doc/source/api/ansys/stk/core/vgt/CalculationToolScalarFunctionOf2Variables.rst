@@ -3,7 +3,7 @@ CalculationToolScalarFunctionOf2Variables
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by performing a function(x,y) on two scalar arguments.
 

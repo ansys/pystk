@@ -558,7 +558,7 @@ class GfxAttributesTimeComponentsHelper(object):
         )
         Assert.assertIsNotNone(evEle1)
 
-        crdn: "IComponent" = evEle1.get_time_component()
+        crdn: "IAnalysisWorkbenchComponent" = evEle1.get_time_component()
         Assert.assertEqual(
             (("Scenario/" + oRoot.current_scenario.instance_name) + " AnalysisInterval EventInterval"),
             crdn.qualified_path,

@@ -3,7 +3,7 @@ VectorGeometryToolVectorAngularVelocity
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorAngularVelocity
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Angular velocity vector of one set of axes computed with respect to the reference set.
 

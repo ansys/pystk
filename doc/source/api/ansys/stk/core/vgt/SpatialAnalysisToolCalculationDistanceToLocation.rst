@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationDistanceToLocation
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationDistanceToLocation
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc distance to location interface.
 

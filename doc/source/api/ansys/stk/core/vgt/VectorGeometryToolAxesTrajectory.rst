@@ -3,7 +3,7 @@ VectorGeometryToolAxesTrajectory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes based on trajectory of the point relative to the reference coordinate system.
 

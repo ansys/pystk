@@ -3,7 +3,7 @@ TimeToolInstantTimeOffset
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstantTimeOffset
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Event at fixed offset from specified reference event.
 

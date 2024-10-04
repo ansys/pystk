@@ -3,7 +3,7 @@ CalculationToolScalarFunction
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarFunction
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by performing the specified function on the input scalar or time instant.
 

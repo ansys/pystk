@@ -3,7 +3,7 @@ TimeToolSignalDelayBasic
 
 .. py:class:: ansys.stk.core.vgt.TimeToolSignalDelayBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSignalDelay`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchSignalDelay`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Signal delay definition determines how long it takes for a signal to propagate from one location to another.
 

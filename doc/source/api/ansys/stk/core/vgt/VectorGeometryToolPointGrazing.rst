@@ -3,7 +3,7 @@ VectorGeometryToolPointGrazing
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointGrazing
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The grazing point is the point of closest approach to the surface of the selected central body along a defined direction.
 
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGrazing.direction_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie.
 

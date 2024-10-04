@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationAngleToLocation
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationAngleToLocation
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc angle off vector interface.
 

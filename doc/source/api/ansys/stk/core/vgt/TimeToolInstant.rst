@@ -3,7 +3,7 @@ TimeToolInstant
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Define an event (time instant).
 

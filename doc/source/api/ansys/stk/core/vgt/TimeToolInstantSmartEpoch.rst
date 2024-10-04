@@ -3,7 +3,7 @@ TimeToolInstantSmartEpoch
 
 .. py:class:: ansys.stk.core.vgt.TimeToolInstantSmartEpoch
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A smart epoch.
 

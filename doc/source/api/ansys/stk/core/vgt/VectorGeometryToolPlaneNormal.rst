@@ -3,7 +3,7 @@ VectorGeometryToolPlaneNormal
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A plane normal to a vector at a given point.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: normal_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal.normal_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a Normal vector.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneNormal.reference_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a reference vector.
 

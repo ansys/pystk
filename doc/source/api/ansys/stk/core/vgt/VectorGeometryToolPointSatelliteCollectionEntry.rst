@@ -3,7 +3,7 @@ VectorGeometryToolPointSatelliteCollectionEntry
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointSatelliteCollectionEntry
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A point placed at the center of mass of a specified satellite of the satellite collection.
 

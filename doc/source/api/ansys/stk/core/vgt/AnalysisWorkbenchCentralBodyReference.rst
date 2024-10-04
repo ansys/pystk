@@ -3,7 +3,7 @@ AnalysisWorkbenchCentralBodyReference
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyReference
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentReference`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
 
    Represents a central body reference.
 

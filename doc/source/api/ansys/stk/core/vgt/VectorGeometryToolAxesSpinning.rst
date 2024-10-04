@@ -3,7 +3,7 @@ VectorGeometryToolAxesSpinning
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesSpinning
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset.
 
@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesSpinning.spin_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a spin vector.
 

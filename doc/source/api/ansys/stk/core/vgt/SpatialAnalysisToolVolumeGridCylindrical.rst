@@ -3,7 +3,7 @@ SpatialAnalysisToolVolumeGridCylindrical
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCylindrical
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume grid cylindrical interface.
 

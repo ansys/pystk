@@ -3,7 +3,7 @@ TimeToolTimeIntervalCollectionSignaled
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionSignaled
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalCollection`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalCollection`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations...
 

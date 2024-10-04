@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationFromCalculationScalar
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationFromCalculationScalar
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc scalar to location interface.
 

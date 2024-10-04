@@ -3,7 +3,7 @@ CalculationToolScalarVectorComponent
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarVectorComponent
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The specified component of a vector when resolved in the specified axes.
 

@@ -3,7 +3,7 @@ TimeToolTimeIntervalListFiltered
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalListFiltered
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by filtering intervals from original interval list using specified filtering method.
 

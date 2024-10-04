@@ -3,7 +3,7 @@ VectorGeometryToolVectorVelocityAcceleration
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorVelocityAcceleration
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponent`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Velocity vector of a point in a coordinate system.
 

@@ -3,7 +3,7 @@ VectorGeometryToolSystemReference
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolSystemReference
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentReference`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
 
    Represents a System reference.
 

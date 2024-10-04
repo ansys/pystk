@@ -55,7 +55,7 @@ Method detail
 -------------
 
 
-.. py:method:: locate_in_system_with_rate(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> IPointLocateInSystemWithRateResult
+.. py:method:: locate_in_system_with_rate(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> AnalysisWorkbenchPointLocateInSystemWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPoint.locate_in_system_with_rate
 
     Locates the point's position and velocity in a specified coordinate system.
@@ -67,9 +67,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IPointLocateInSystemWithRateResult`
+        :obj:`~AnalysisWorkbenchPointLocateInSystemWithRateResult`
 
-.. py:method:: locate_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> IPointLocateInSystemResult
+.. py:method:: locate_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> AnalysisWorkbenchPointLocateInSystemResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPoint.locate_in_system
 
     Locates the point's position in a specified coordinate system.
@@ -81,5 +81,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~IPointLocateInSystemResult`
+        :obj:`~AnalysisWorkbenchPointLocateInSystemResult`
 

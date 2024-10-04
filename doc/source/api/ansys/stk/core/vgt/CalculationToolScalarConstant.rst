@@ -3,7 +3,7 @@ CalculationToolScalarConstant
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarConstant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Constant scalar value of specified dimension.
 

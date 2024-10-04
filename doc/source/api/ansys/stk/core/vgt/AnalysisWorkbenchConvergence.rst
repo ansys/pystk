@@ -3,7 +3,7 @@ AnalysisWorkbenchConvergence
 
 .. py:class:: ansys.stk.core.vgt.AnalysisWorkbenchConvergence
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Represents a base class for convergence definitions.
 

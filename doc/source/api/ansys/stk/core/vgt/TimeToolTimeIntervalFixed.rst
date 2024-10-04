@@ -3,7 +3,7 @@ TimeToolTimeIntervalFixed
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalFixed
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start.
 

@@ -3,7 +3,7 @@ CalculationToolConditionTrajectoryWithinVolume
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConditionTrajectoryWithinVolume
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolCondition`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
 

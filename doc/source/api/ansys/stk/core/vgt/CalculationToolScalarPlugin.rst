@@ -3,7 +3,7 @@ CalculationToolScalarPlugin
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarPlugin
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Use a scalar calculation plugin.
 

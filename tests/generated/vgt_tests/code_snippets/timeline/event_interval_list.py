@@ -231,7 +231,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         intervalList: "ITimeToolTimeIntervalList" = satelliteVgtProvider.time_interval_lists.factory.create_signaled(
             "MyIntervalListSignaled", "MyDescription"
         )
-        asListSingled: "TimeIntervalListSignaled" = clr.CastAs(intervalList, TimeIntervalListSignaled)
+        asListSingled: "TimeToolTimeIntervalListSignaled" = clr.CastAs(intervalList, TimeToolTimeIntervalListSignaled)
 
         asListSingled.original_intervals = aircraftVgtProvider.time_interval_lists["BeforeStop.SatisfactionIntervals"]
         asListSingled.base_clock_location = satelliteVgtProvider.points["Center"]

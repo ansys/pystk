@@ -3,7 +3,7 @@ TimeToolTimeArrayFixedStep
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArrayFixedStep
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
 

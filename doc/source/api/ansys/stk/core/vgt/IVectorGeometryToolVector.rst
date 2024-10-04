@@ -55,7 +55,7 @@ Method detail
 -------------
 
 
-.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorFindInAxesResult
+.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchVectorFindInAxesResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVector.find_in_axes
 
     Compute the vector in the specified axes.
@@ -67,9 +67,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IVectorFindInAxesResult`
+        :obj:`~AnalysisWorkbenchVectorFindInAxesResult`
 
-.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorFindInAxesWithRateResult
+.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchVectorFindInAxesWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVector.find_in_axes_with_rate
 
     Compute the vector and its rate in the specified axes.
@@ -81,5 +81,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~IVectorFindInAxesWithRateResult`
+        :obj:`~AnalysisWorkbenchVectorFindInAxesWithRateResult`
 

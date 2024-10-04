@@ -3,7 +3,7 @@ VectorGeometryToolVectorDerivative
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorDerivative
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A vector derivative of a vector computed with respect to specified axes.
 
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDerivative.vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a base vector.
 

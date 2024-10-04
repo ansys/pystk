@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationFile
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationFile
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Volumetric data loaded from a specified file - A file with .h5 extension. See STK help.
 

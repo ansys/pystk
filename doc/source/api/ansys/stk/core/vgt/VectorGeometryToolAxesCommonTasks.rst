@@ -88,7 +88,7 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: sample(self, axes: IVectorGeometryToolAxes, referenceAxes: IVectorGeometryToolAxes, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolSamplingResult
+.. py:method:: sample(self, axes: IVectorGeometryToolAxes, referenceAxes: IVectorGeometryToolAxes, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolAxesSamplingResult
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.sample
 
     Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
@@ -104,5 +104,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~TimeToolSamplingResult`
+        :obj:`~TimeToolAxesSamplingResult`
 

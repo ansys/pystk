@@ -3,7 +3,7 @@ TimeToolTimeArrayFiltered
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeArrayFiltered
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Defined by filtering times from original time array according to specified filtering method.
 

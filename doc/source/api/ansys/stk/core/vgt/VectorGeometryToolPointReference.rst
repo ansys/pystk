@@ -3,7 +3,7 @@ VectorGeometryToolPointReference
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointReference
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IComponentReference`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
 
    Represents a reference to a VGT point.
 

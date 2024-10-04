@@ -3,7 +3,7 @@ SpatialAnalysisToolConditionOverTime
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An over time volume interface.
 

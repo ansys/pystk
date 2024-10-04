@@ -3,7 +3,7 @@ VectorGeometryToolPointFixedInSystem
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointFixedInSystem
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Point fixed in a reference coordinate system using the selected coordinate type.
 

@@ -3,7 +3,7 @@ VectorGeometryToolPointPlaneIntersection
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Point on a plane located along a given direction looking from a given origin.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: direction_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection.direction_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a direction vector.
 
 .. py:property:: reference_plane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointPlaneIntersection.reference_plane
-    :type: PlaneReference
+    :type: VectorGeometryToolPlaneReference
 
     Specify a reference plane.
 

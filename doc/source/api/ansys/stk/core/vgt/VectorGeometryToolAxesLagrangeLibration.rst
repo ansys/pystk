@@ -3,7 +3,7 @@ VectorGeometryToolAxesLagrangeLibration
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesLagrangeLibration
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type.
 

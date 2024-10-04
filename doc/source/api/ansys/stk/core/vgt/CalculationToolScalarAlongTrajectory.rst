@@ -3,7 +3,7 @@ CalculationToolScalarAlongTrajectory
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolScalarAlongTrajectory
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolScalar`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Scalar value of spatial calculation evaluated along trajectory of point.
 

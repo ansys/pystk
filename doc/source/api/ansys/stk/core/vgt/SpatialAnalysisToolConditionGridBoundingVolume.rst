@@ -3,7 +3,7 @@ SpatialAnalysisToolConditionGridBoundingVolume
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    An over time volume interface.
 

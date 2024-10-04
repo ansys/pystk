@@ -3,7 +3,7 @@ TimeToolTimeIntervalListMerged
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents.
 
@@ -71,13 +71,13 @@ Property detail
 
 .. py:property:: interval_list_or_interval_a
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.interval_list_or_interval_a
-    :type: IComponent
+    :type: IAnalysisWorkbenchComponent
 
     The interval list or interval A.
 
 .. py:property:: interval_list_or_interval_b
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.interval_list_or_interval_b
-    :type: IComponent
+    :type: IAnalysisWorkbenchComponent
 
     The interval list or interval B.
 

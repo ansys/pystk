@@ -3,7 +3,7 @@ VectorGeometryToolVectorConing
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorConing
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector created by revolving the Reference vector around the About vector with the specified rate.
 
@@ -50,13 +50,13 @@ Property detail
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.about_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a vector around which the the reference vector is revolved.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.reference_vector
-    :type: VectorReference
+    :type: VectorGeometryToolVectorReference
 
     Specify a reference vector.
 

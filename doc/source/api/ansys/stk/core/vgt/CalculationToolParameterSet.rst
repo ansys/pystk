@@ -3,7 +3,7 @@ CalculationToolParameterSet
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolParameterSet
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSet`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Parameter set contains various sets of scalar computations.
 

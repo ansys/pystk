@@ -11,71 +11,68 @@ analysis.
 """
 
 __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE_DIRECTION_TYPE", "AXES_TYPE", "AnalysisWorkbenchAngleFindAngleResult", 
-"AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", "AnalysisWorkbenchAxesFindInAxesResult", 
-"AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", "AnalysisWorkbenchAxesTransformWithRateResult", 
-"AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent", 
-"AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", "AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate", 
-"AnalysisWorkbenchComponentTypeInformation", "AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchFindAngleWithRateResult", 
-"AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterpolator", "AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult", 
-"AnalysisWorkbenchPlaneFindInSystemResult", "AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult", 
-"AnalysisWorkbenchPointLocateInSystemWithRateResult", "AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchProviderRoot", "AnalysisWorkbenchSampling", 
-"AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", "AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult", 
-"AnalysisWorkbenchVectorFindInAxesResult", "AnalysisWorkbenchVectorFindInAxesWithRateResult", "CALCULATION_SCALAR_TYPE", 
-"CLOCK_HOST_TYPE", "CONDITION_COMBINED_OPERATION_TYPE", "CONDITION_SET_TYPE", "CONDITION_THRESHOLD_TYPE", "CONDITION_TYPE", 
-"CalculationToolCondition", "CalculationToolConditionCombined", "CalculationToolConditionFactory", "CalculationToolConditionGroup", 
-"CalculationToolConditionScalarBounds", "CalculationToolConditionSet", "CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", 
-"CalculationToolConditionSetFactory", "CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", 
-"CalculationToolConditionTrajectoryWithinVolume", "CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", "CalculationToolEvaluateResult", 
-"CalculationToolEvaluateWithRateResult", "CalculationToolIntegralBasic", "CalculationToolInterpolatorBasic", "CalculationToolParameterSet", 
-"CalculationToolParameterSetAttitude", "CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", 
-"CalculationToolParameterSetGroup", "CalculationToolParameterSetOrbit", "CalculationToolParameterSetTrajectory", "CalculationToolParameterSetVector", 
-"CalculationToolSamplingBasic", "CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep", "CalculationToolSamplingMethod", 
-"CalculationToolSamplingMethodFactory", "CalculationToolSamplingRelativeTolerance", "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", 
-"CalculationToolScalarAngle", "CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom", 
-"CalculationToolScalarCustomInlineScript", "CalculationToolScalarDataElement", "CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", 
-"CalculationToolScalarElapsedTime", "CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", 
-"CalculationToolScalarFunction", "CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral", 
-"CalculationToolScalarPlugin", "CalculationToolScalarStandardDeviation", "CalculationToolScalarSurfaceDistanceBetweenPoints", 
-"CalculationToolScalarVectorComponent", "CalculationToolScalarVectorMagnitude", "DISTANCE_TO_LOCATION_TYPE", "EVENT_ARRAY_FILTER_TYPE", 
-"EVENT_ARRAY_TYPE", "EVENT_INTERVAL_COLLECTION_TYPE", "EVENT_INTERVAL_LIST_TYPE", "EVENT_INTERVAL_TYPE", "EVENT_LIST_MERGE_OPERATION", 
-"EXTREMUM_TYPE", "FILE_INTERPOLATOR_TYPE", "GRID_VALUES_METHOD_TYPE", "IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", 
-"IAnalysisWorkbenchIntegral", "IAnalysisWorkbenchInterpolator", "IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", 
-"IAnalysisWorkbenchSignalDelay", "IAngleFindAngleResult", "IAngleFindAngleWithRateResult", "IAngleFindResult", "IAngleFindWithRateResult", 
-"IAxesFindAxesWithRateResult", "IAxesFindInAxesResult", "IAxesTransformResult", "IAxesTransformWithRateResult", "ICalculationToolCondition", 
-"ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", "ICalculationToolScalar", 
-"IComponent", "IComponentContext", "IComponentReference", "IComponentTimeProperties", "INHERIT_DIMENSION_TYPE", "INTEGRATION_WINDOW_TYPE", 
-"INTERPOLATON_METHOD_TYPE", "INTERSECTION_SURFACE", "INTERVAL_DURATION_TYPE", "INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE", 
-"INTERVAL_PRUNE_FILTER_TYPE", "IPlaneFindInAxesResult", "IPlaneFindInAxesWithRateResult", "IPlaneFindInSystemResult", "IPlaneFindInSystemWithRateResult", 
-"IPointLocateInSystemResult", "IPointLocateInSystemWithRateResult", "ISpatialAnalysisToolGridValuesMethod", "ISpatialAnalysisToolSpatialCalculation", 
-"ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid", "ISystemFindInSystemResult", "ISystemTransformResult", "ISystemTransformWithRateResult", 
-"ITimeToolInstant", "ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection", 
-"ITimeToolTimeIntervalList", "IVectorFindInAxesResult", "IVectorFindInAxesWithRateResult", "IVectorGeometryToolAngle", "IVectorGeometryToolAxes", 
-"IVectorGeometryToolPlane", "IVectorGeometryToolPoint", "IVectorGeometryToolSystem", "IVectorGeometryToolVector", "LAGRANGE_LIBRATION_POINT_TYPE", 
-"LIGHTING_CONDITIONS_TYPE", "MEAN_ELEMENT_THEORY", "PARAMETER_SET_TYPE", "PLANE_QUADRANT_TYPE", "PLANE_TYPE", "POINT_B_PLANE_TYPE", 
-"POINT_TYPE", "PRINCIPAL_AXIS_OF_ROTATION_TYPE", "PlaneReference", "QUADRATURE_TYPE", "RANGE_SPEED_TYPE", "RESULT_VECTOR_REQUEST_TYPE", 
-"ROTATION_SWEEP_MODE_TYPE", "SAMPLE_REFERENCE_TIME_TYPE", "SATISFACTION_CROSSING", "SAVE_DATA_TYPE", "SIGNAL_DIRECTION_TYPE", 
-"SIGNAL_PATH_REFERENCE_SYSTEM", "SIGNED_ANGLE_TYPE", "SMART_EPOCH_STATE", "SMART_INTERVAL_STATE", "SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE", 
-"SPATIAL_CALCULATION_TYPE", "SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE", "SPEED_TYPE", "START_STOP_TYPE", "SURFACE_REFERENCE_SHAPE_TYPE", 
-"SURFACE_SHAPE_TYPE", "SYSTEM_TYPE", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", "SpatialAnalysisToolCalculationAltitude", 
-"SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", "SpatialAnalysisToolCalculationDistanceToLocation", 
-"SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", "SpatialAnalysisToolCalculationFromCalculationScalar", 
-"SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", "SpatialAnalysisToolCalculationSolarIntensity", 
-"SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", "SpatialAnalysisToolConditionConditionAtLocation", 
-"SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", "SpatialAnalysisToolConditionGroup", 
-"SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds", 
+"AnalysisWorkbenchAngleFindAngleWithRateResult", "AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", 
+"AnalysisWorkbenchAxesFindInAxesResult", "AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", 
+"AnalysisWorkbenchAxesTransformWithRateResult", "AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", 
+"AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent", "AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", 
+"AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate", "AnalysisWorkbenchComponentTypeInformation", 
+"AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterpolator", 
+"AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult", "AnalysisWorkbenchPlaneFindInSystemResult", 
+"AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult", "AnalysisWorkbenchPointLocateInSystemWithRateResult", 
+"AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", "AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", 
+"AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult", "AnalysisWorkbenchVectorFindInAxesResult", 
+"AnalysisWorkbenchVectorFindInAxesWithRateResult", "CALCULATION_SCALAR_TYPE", "CLOCK_HOST_TYPE", "CONDITION_COMBINED_OPERATION_TYPE", 
+"CONDITION_SET_TYPE", "CONDITION_THRESHOLD_TYPE", "CONDITION_TYPE", "CalculationToolCondition", "CalculationToolConditionCombined", 
+"CalculationToolConditionFactory", "CalculationToolConditionGroup", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet", 
+"CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory", 
+"CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", "CalculationToolConditionTrajectoryWithinVolume", 
+"CalculationToolConvergeBasic", "CalculationToolDerivativeBasic", "CalculationToolEvaluateResult", "CalculationToolEvaluateWithRateResult", 
+"CalculationToolIntegralBasic", "CalculationToolInterpolatorBasic", "CalculationToolParameterSet", "CalculationToolParameterSetAttitude", 
+"CalculationToolParameterSetFactory", "CalculationToolParameterSetGroundTrajectory", "CalculationToolParameterSetGroup", 
+"CalculationToolParameterSetOrbit", "CalculationToolParameterSetTrajectory", "CalculationToolParameterSetVector", "CalculationToolSamplingBasic", 
+"CalculationToolSamplingCurvatureTolerance", "CalculationToolSamplingFixedStep", "CalculationToolSamplingMethod", "CalculationToolSamplingMethodFactory", 
+"CalculationToolSamplingRelativeTolerance", "CalculationToolScalar", "CalculationToolScalarAlongTrajectory", "CalculationToolScalarAngle", 
+"CalculationToolScalarAverage", "CalculationToolScalarConstant", "CalculationToolScalarCustom", "CalculationToolScalarCustomInlineScript", 
+"CalculationToolScalarDataElement", "CalculationToolScalarDerivative", "CalculationToolScalarDotProduct", "CalculationToolScalarElapsedTime", 
+"CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction", 
+"CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral", "CalculationToolScalarPlugin", 
+"CalculationToolScalarStandardDeviation", "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent", 
+"CalculationToolScalarVectorMagnitude", "DISTANCE_TO_LOCATION_TYPE", "EVENT_ARRAY_FILTER_TYPE", "EVENT_ARRAY_TYPE", "EVENT_INTERVAL_COLLECTION_TYPE", 
+"EVENT_INTERVAL_LIST_TYPE", "EVENT_INTERVAL_TYPE", "EVENT_LIST_MERGE_OPERATION", "EXTREMUM_TYPE", "FILE_INTERPOLATOR_TYPE", 
+"GRID_VALUES_METHOD_TYPE", "IAnalysisWorkbenchComponent", "IAnalysisWorkbenchComponentContext", "IAnalysisWorkbenchComponentReference", 
+"IAnalysisWorkbenchComponentTimeProperties", "IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", "IAnalysisWorkbenchIntegral", 
+"IAnalysisWorkbenchInterpolator", "IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", "IAnalysisWorkbenchSignalDelay", 
+"ICalculationToolCondition", "ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", 
+"ICalculationToolScalar", "INHERIT_DIMENSION_TYPE", "INTEGRATION_WINDOW_TYPE", "INTERPOLATON_METHOD_TYPE", "INTERSECTION_SURFACE_TYPE", 
+"INTERVAL_DURATION_TYPE", "INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE", "INTERVAL_PRUNE_FILTER_TYPE", "ISpatialAnalysisToolGridValuesMethod", 
+"ISpatialAnalysisToolSpatialCalculation", "ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid", "ITimeToolInstant", 
+"ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection", "ITimeToolTimeIntervalList", 
+"IVectorGeometryToolAngle", "IVectorGeometryToolAxes", "IVectorGeometryToolPlane", "IVectorGeometryToolPoint", "IVectorGeometryToolSystem", 
+"IVectorGeometryToolVector", "LAGRANGE_LIBRATION_POINT_TYPE", "LIGHTING_CONDITIONS_TYPE", "MEAN_ELEMENT_THEORY", "PARAMETER_SET_TYPE", 
+"PLANE_QUADRANT_TYPE", "PLANE_TYPE", "POINT_B_PLANE_TYPE", "POINT_TYPE", "PRINCIPAL_AXIS_OF_ROTATION_TYPE", "QUADRATURE_TYPE", 
+"RANGE_SPEED_TYPE", "RESULT_VECTOR_REQUEST_TYPE", "ROTATION_SWEEP_MODE_TYPE", "SAMPLE_REFERENCE_TIME_TYPE", "SATISFACTION_CROSSING", 
+"SAVE_DATA_TYPE", "SIGNAL_DIRECTION_TYPE", "SIGNAL_PATH_REFERENCE_SYSTEM", "SIGNED_ANGLE_TYPE", "SMART_EPOCH_STATE", "SMART_INTERVAL_STATE", 
+"SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE", "SPATIAL_CALCULATION_TYPE", "SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE", 
+"SPEED_TYPE", "START_STOP_TYPE", "SURFACE_REFERENCE_SHAPE_TYPE", "SURFACE_SHAPE_TYPE", "SYSTEM_TYPE", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", 
+"SpatialAnalysisToolCalculationAltitude", "SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", 
+"SpatialAnalysisToolCalculationDistanceToLocation", "SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", 
+"SpatialAnalysisToolCalculationFromCalculationScalar", "SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", 
+"SpatialAnalysisToolCalculationSolarIntensity", "SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", 
+"SpatialAnalysisToolConditionConditionAtLocation", "SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", 
+"SpatialAnalysisToolConditionGroup", "SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds", 
 "SpatialAnalysisToolConditionValidTimeAtLocation", "SpatialAnalysisToolGridCoordinateDefinition", "SpatialAnalysisToolGridValuesCustom", 
 "SpatialAnalysisToolGridValuesFixedNumberOfSteps", "SpatialAnalysisToolGridValuesFixedStep", "SpatialAnalysisToolGridValuesMethod", 
 "SpatialAnalysisToolSpatialCalculation", "SpatialAnalysisToolVolume", "SpatialAnalysisToolVolumeGrid", "SpatialAnalysisToolVolumeGridCartesian", 
 "SpatialAnalysisToolVolumeGridConstrained", "SpatialAnalysisToolVolumeGridCylindrical", "SpatialAnalysisToolVolumeGridFactory", 
 "SpatialAnalysisToolVolumeGridGroup", "SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude", "SpatialAnalysisToolVolumeGridResult", 
 "SpatialAnalysisToolVolumeGridSpherical", "THRESHOLD_CONVERGENCE_SENSE_TYPE", "TIME_EVENT_TYPE", "TIME_SENSE_TYPE", "TRAJECTORY_AXES_COORDINATES_TYPE", 
-"TimeIntervalListSignaled", "TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolInstant", 
+"TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolAxesSamplingResult", "TimeToolInstant", 
 "TimeToolInstantEpoch", "TimeToolInstantExtremum", "TimeToolInstantFactory", "TimeToolInstantGroup", "TimeToolInstantOccurrenceResult", 
 "TimeToolInstantSignaled", "TimeToolInstantSmartEpoch", "TimeToolInstantStartStopTime", "TimeToolInstantTimeOffset", "TimeToolInterval", 
 "TimeToolIntervalCollection", "TimeToolIntervalListResult", "TimeToolIntervalVectorCollection", "TimeToolIntervalsFilter", 
 "TimeToolIntervalsVectorResult", "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection", 
-"TimeToolPointSamplingResult", "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolSamplingResult", "TimeToolSignalDelayBasic", 
-"TimeToolTimeArray", "TimeToolTimeArrayConditionCrossings", "TimeToolTimeArrayExtrema", "TimeToolTimeArrayFactory", "TimeToolTimeArrayFiltered", 
+"TimeToolPointSamplingResult", "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolSignalDelayBasic", "TimeToolTimeArray", 
+"TimeToolTimeArrayConditionCrossings", "TimeToolTimeArrayExtrema", "TimeToolTimeArrayFactory", "TimeToolTimeArrayFiltered", 
 "TimeToolTimeArrayFindTimesResult", "TimeToolTimeArrayFixedStep", "TimeToolTimeArrayFixedTimes", "TimeToolTimeArrayGroup", 
 "TimeToolTimeArrayMerged", "TimeToolTimeArraySignaled", "TimeToolTimeArrayStartStopTimes", "TimeToolTimeInterval", "TimeToolTimeIntervalBetweenTimeInstants", 
 "TimeToolTimeIntervalCollection", "TimeToolTimeIntervalCollectionCondition", "TimeToolTimeIntervalCollectionFactory", "TimeToolTimeIntervalCollectionGroup", 
@@ -84,7 +81,7 @@ __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE
 "TimeToolTimeIntervalFromIntervalList", "TimeToolTimeIntervalGapsFilter", "TimeToolTimeIntervalGroup", "TimeToolTimeIntervalLastIntervalsFilter", 
 "TimeToolTimeIntervalList", "TimeToolTimeIntervalListCondition", "TimeToolTimeIntervalListFactory", "TimeToolTimeIntervalListFile", 
 "TimeToolTimeIntervalListFiltered", "TimeToolTimeIntervalListFixed", "TimeToolTimeIntervalListGroup", "TimeToolTimeIntervalListMerged", 
-"TimeToolTimeIntervalListScaled", "TimeToolTimeIntervalListTimeOffset", "TimeToolTimeIntervalRelativeSatisfactionConditionFilter", 
+"TimeToolTimeIntervalListScaled", "TimeToolTimeIntervalListSignaled", "TimeToolTimeIntervalListTimeOffset", "TimeToolTimeIntervalRelativeSatisfactionConditionFilter", 
 "TimeToolTimeIntervalResult", "TimeToolTimeIntervalSatisfactionConditionFilter", "TimeToolTimeIntervalScaled", "TimeToolTimeIntervalSignaled", 
 "TimeToolTimeIntervalSmartInterval", "TimeToolTimeIntervalTimeOffset", "VECTOR_COMPONENT_TYPE", "VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE", 
 "VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD", "VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE", "VECTOR_TYPE", 
@@ -98,27 +95,28 @@ __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE
 "VectorGeometryToolAxesGroup", "VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", "VectorGeometryToolAxesModelAttachment", 
 "VectorGeometryToolAxesOnSurface", "VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesReference", "VectorGeometryToolAxesSpinning", 
 "VectorGeometryToolAxesTrajectory", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", "VectorGeometryToolPlaneGroup", 
-"VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", "VectorGeometryToolPlaneTrajectory", 
-"VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", "VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", 
-"VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset", "VectorGeometryToolPointCentralBodyIntersect", 
-"VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing", "VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", 
-"VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint", "VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", 
-"VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttachment", "VectorGeometryToolPointOnSurface", 
-"VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", "VectorGeometryToolPointPlugin", "VectorGeometryToolPointReference", 
-"VectorGeometryToolPointSatelliteCollectionEntry", "VectorGeometryToolSystem", "VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", 
-"VectorGeometryToolSystemFactory", "VectorGeometryToolSystemGroup", "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", 
-"VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", "VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", 
-"VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross", "VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", 
-"VectorGeometryToolVectorDirectionToStar", "VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", 
-"VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", 
-"VectorGeometryToolVectorFixedInAxes", "VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", 
-"VectorGeometryToolVectorModelAttachment", "VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", 
-"VectorGeometryToolVectorPeriapsis", "VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector", 
-"VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", 
-"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", 
-"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", 
-"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", 
-"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorReference"]
+"VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", "VectorGeometryToolPlaneReference", 
+"VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", "VectorGeometryToolPoint", 
+"VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset", 
+"VectorGeometryToolPointCentralBodyIntersect", "VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing", 
+"VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint", 
+"VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttachment", 
+"VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", 
+"VectorGeometryToolPointPlugin", "VectorGeometryToolPointReference", "VectorGeometryToolPointSatelliteCollectionEntry", 
+"VectorGeometryToolSystem", "VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", 
+"VectorGeometryToolSystemGroup", "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", 
+"VectorGeometryToolVectorAngleRate", "VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", 
+"VectorGeometryToolVectorCross", "VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
+"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFixedAtEpoch", 
+"VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", "VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", 
+"VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", "VectorGeometryToolVectorOrbitAngularMomentum", 
+"VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", "VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", 
+"VectorGeometryToolVectorProjectionAlongVector", "VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", 
+"VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled", 
+"VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", "VectorGeometryToolVectorTwoPlanesIntersection", 
+"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", 
+"VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", 
+"VectorGeometryToolWellKnownSystems"]
 
 import typing
 
@@ -1845,7 +1843,7 @@ SIGNAL_DIRECTION_TYPE.TRANSMIT.__doc__ = "Signal transmit."
 
 agcls.AgTypeNameMap["SIGNAL_DIRECTION_TYPE"] = SIGNAL_DIRECTION_TYPE
 
-class INTERSECTION_SURFACE(IntEnum):
+class INTERSECTION_SURFACE_TYPE(IntEnum):
     """Intersection surface flags."""
    
     ON_CENTRAL_BODY_ELLIPSOID = 0
@@ -1855,11 +1853,11 @@ class INTERSECTION_SURFACE(IntEnum):
     AT_TERRAIN = 2
     """Use terrain as intersection surface."""
 
-INTERSECTION_SURFACE.ON_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
-INTERSECTION_SURFACE.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
-INTERSECTION_SURFACE.AT_TERRAIN.__doc__ = "Use terrain as intersection surface."
+INTERSECTION_SURFACE_TYPE.ON_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
+INTERSECTION_SURFACE_TYPE.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
+INTERSECTION_SURFACE_TYPE.AT_TERRAIN.__doc__ = "Use terrain as intersection surface."
 
-agcls.AgTypeNameMap["INTERSECTION_SURFACE"] = INTERSECTION_SURFACE
+agcls.AgTypeNameMap["INTERSECTION_SURFACE_TYPE"] = INTERSECTION_SURFACE_TYPE
 
 class VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
@@ -1916,14 +1914,14 @@ class IVectorGeometryToolPoint(object):
     _locate_in_system_with_rate_metadata = { "offset" : _locate_in_system_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceOutArg,) }
-    def locate_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IPointLocateInSystemWithRateResult":
+    def locate_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchPointLocateInSystemWithRateResult":
         """Locates the point's position and velocity in a specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPoint._metadata, IVectorGeometryToolPoint._locate_in_system_with_rate_metadata, epoch, system, OutArg())
 
     _locate_in_system_metadata = { "offset" : _locate_in_system_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceOutArg,) }
-    def locate_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IPointLocateInSystemResult":
+    def locate_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchPointLocateInSystemResult":
         """Locates the point's position in a specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPoint._metadata, IVectorGeometryToolPoint._locate_in_system_metadata, epoch, system, OutArg())
 
@@ -1971,14 +1969,14 @@ class IVectorGeometryToolVector(object):
     _find_in_axes_metadata = { "offset" : _find_in_axes_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchVectorFindInAxesResult":
         """Compute the vector in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._find_in_axes_metadata, epoch, axes, OutArg())
 
     _find_in_axes_with_rate_metadata = { "offset" : _find_in_axes_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IVectorFindInAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchVectorFindInAxesWithRateResult":
         """Compute the vector and its rate in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._find_in_axes_with_rate_metadata, epoch, axes, OutArg())
 
@@ -2027,21 +2025,21 @@ class IVectorGeometryToolSystem(object):
     _find_in_system_metadata = { "offset" : _find_in_system_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceOutArg,) }
-    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "ISystemFindInSystemResult":
+    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchSystemFindInSystemResult":
         """Find position, velocity, rate and orientation using the specified system."""
         return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._find_in_system_metadata, epoch, system, OutArg())
 
     _transform_metadata = { "offset" : _transform_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "ISystemTransformResult":
+    def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformResult":
         """Translate the position vector from this system into the output system."""
         return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_metadata, epoch, outputSystem, positionInMySystem, OutArg())
 
     _transform_with_rate_metadata = { "offset" : _transform_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "ISystemTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformWithRateResult":
         """Translate the position and rate vectors from this system into the output system."""
         return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_with_rate_metadata, epoch, outputSystem, positionInMySystem, velocityInMySystem, OutArg())
 
@@ -2095,14 +2093,14 @@ class IVectorGeometryToolAxes(object):
     _find_in_axes_with_rate_metadata = { "offset" : _find_in_axes_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IAxesFindAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchAxesFindInAxesWithRateResult":
         """Find an angular velocity and orientation in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._find_in_axes_with_rate_metadata, epoch, axes, OutArg())
 
     _find_in_axes_metadata = { "offset" : _find_in_axes_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IAxesFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchAxesFindInAxesResult":
         """Find an orientation in the specified axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._find_in_axes_metadata, epoch, axes, OutArg())
 
@@ -2141,14 +2139,14 @@ class IVectorGeometryToolAxes(object):
     _transform_metadata = { "offset" : _transform_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "IAxesTransformResult":
+    def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformResult":
         """Transform the input vector from this axes into the output axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_metadata, epoch, outputAxes, vectorInMyAxes, OutArg())
 
     _transform_with_rate_metadata = { "offset" : _transform_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "IAxesTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformWithRateResult":
         """Transform the input vector and vector's rate from this axes into the output axes."""
         return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_with_rate_metadata, epoch, outputAxes, vectorInMyAxes, rateInMyAxes, OutArg())
 
@@ -2202,28 +2200,28 @@ class IVectorGeometryToolAngle(object):
     _find_angle_metadata = { "offset" : _find_angle_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def find_angle(self, epoch:typing.Any) -> "IAngleFindAngleResult":
+    def find_angle(self, epoch:typing.Any) -> "AnalysisWorkbenchAngleFindAngleResult":
         """Find an angle at the specified epoch."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_angle_metadata, epoch, OutArg())
 
     _find_angle_with_rate_metadata = { "offset" : _find_angle_with_rate_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def find_angle_with_rate(self, epoch:typing.Any) -> "IAngleFindAngleWithRateResult":
+    def find_angle_with_rate(self, epoch:typing.Any) -> "AnalysisWorkbenchAngleFindAngleWithRateResult":
         """Find an angle and angle rate."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_angle_with_rate_metadata, epoch, OutArg())
 
     _find_coordinates_metadata = { "offset" : _find_coordinates_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IAngleFindResult":
+    def find_coordinates(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchAngleFindResult":
         """Find the angle value and three vectors that define the angle in a specified input axes."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_coordinates_metadata, epoch, axes, OutArg())
 
     _find_coordinates_with_rate_metadata = { "offset" : _find_coordinates_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IAngleFindWithRateResult":
+    def find_coordinates_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchAngleFindWithRateResult":
         """Find the angle value, the angle rate and three vectors that define the angle in a specified input axes."""
         return self._intf.invoke(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._find_coordinates_with_rate_metadata, epoch, axes, OutArg())
 
@@ -2274,28 +2272,28 @@ class IVectorGeometryToolPlane(object):
     _find_in_axes_metadata = { "offset" : _find_in_axes_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IPlaneFindInAxesResult":
+    def find_in_axes(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchPlaneFindInAxesResult":
         """Compute the plane's axes vectors in a specified reference axes."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_axes_metadata, epoch, axes, OutArg())
 
     _find_in_axes_with_rate_metadata = { "offset" : _find_in_axes_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "IPlaneFindInAxesWithRateResult":
+    def find_in_axes_with_rate(self, epoch:typing.Any, axes:"IVectorGeometryToolAxes") -> "AnalysisWorkbenchPlaneFindInAxesWithRateResult":
         """Compute the plane's axes vectors and their rates in a specified reference axes."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_axes_with_rate_metadata, epoch, axes, OutArg())
 
     _find_in_system_metadata = { "offset" : _find_in_system_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceOutArg,) }
-    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IPlaneFindInSystemResult":
+    def find_in_system(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchPlaneFindInSystemResult":
         """Compute the position and X and Y axes in the specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_system_metadata, epoch, system, OutArg())
 
     _find_in_system_with_rate_metadata = { "offset" : _find_in_system_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceOutArg,) }
-    def find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "IPlaneFindInSystemWithRateResult":
+    def find_in_system_with_rate(self, epoch:typing.Any, system:"IVectorGeometryToolSystem") -> "AnalysisWorkbenchPlaneFindInSystemWithRateResult":
         """Compute the position, X and Y axes and their rates of change in the specified coordinate system."""
         return self._intf.invoke(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._find_in_system_with_rate_metadata, epoch, system, OutArg())
 
@@ -2314,7 +2312,7 @@ class IVectorGeometryToolPlane(object):
 agcls.AgClassCatalog.add_catalog_entry((4649944266039171678, 14893747184173212307), IVectorGeometryToolPlane)
 agcls.AgTypeNameMap["IVectorGeometryToolPlane"] = IVectorGeometryToolPlane
 
-class IComponentContext(object):
+class IAnalysisWorkbenchComponentContext(object):
     """The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template."""
 
     _num_methods = 1
@@ -2326,18 +2324,18 @@ class IComponentContext(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IComponentContext."""
-        initialize_from_source_object(self, sourceObject, IComponentContext)
+        """Construct an object of type IAnalysisWorkbenchComponentContext."""
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentContext)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IComponentContext)
+        return get_interface_property(attrname, IAnalysisWorkbenchComponentContext)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IComponentContext, None)
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentContext, None)
     
     _get_is_template_metadata = { "offset" : _get_is_template_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2345,15 +2343,15 @@ class IComponentContext(object):
     @property
     def is_template(self) -> bool:
         """Return whether the current instance is a VGT template."""
-        return self._intf.get_property(IComponentContext._metadata, IComponentContext._get_is_template_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponentContext._metadata, IAnalysisWorkbenchComponentContext._get_is_template_metadata)
 
     _property_names[is_template] = "is_template"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4867448151487010560, 8329384048399829653), IComponentContext)
-agcls.AgTypeNameMap["IComponentContext"] = IComponentContext
+agcls.AgClassCatalog.add_catalog_entry((4867448151487010560, 8329384048399829653), IAnalysisWorkbenchComponentContext)
+agcls.AgTypeNameMap["IAnalysisWorkbenchComponentContext"] = IAnalysisWorkbenchComponentContext
 
-class IComponent(object):
+class IAnalysisWorkbenchComponent(object):
     """A base interface implemented by all VGT components. The methods and properties of the interface provide type information about the VGT component."""
 
     _num_methods = 19
@@ -2383,18 +2381,18 @@ class IComponent(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IComponent."""
-        initialize_from_source_object(self, sourceObject, IComponent)
+        """Construct an object of type IAnalysisWorkbenchComponent."""
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IComponent)
+        return get_interface_property(attrname, IAnalysisWorkbenchComponent)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IComponent, None)
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponent, None)
     
     _get_component_type_metadata = { "offset" : _get_component_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2402,7 +2400,7 @@ class IComponent(object):
     @property
     def component_type(self) -> "VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE":
         """Return the component kind."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_component_type_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_component_type_metadata)
 
     _get_category_metadata = { "offset" : _get_category_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2410,14 +2408,14 @@ class IComponent(object):
     @property
     def category(self) -> str:
         """Allow the user to access or change the component category (Folder)."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_category_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_category_metadata)
 
     _set_category_metadata = { "offset" : _set_category_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @category.setter
     def category(self, category:str) -> None:
-        return self._intf.set_property(IComponent._metadata, IComponent._set_category_metadata, category)
+        return self._intf.set_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._set_category_metadata, category)
 
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2425,7 +2423,7 @@ class IComponent(object):
     @property
     def name(self) -> str:
         """Return the component name."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_name_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_name_metadata)
 
     _get_description_metadata = { "offset" : _get_description_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2433,7 +2431,7 @@ class IComponent(object):
     @property
     def description(self) -> str:
         """Return the component description."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_description_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_description_metadata)
 
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2441,7 +2439,7 @@ class IComponent(object):
     @property
     def path(self) -> str:
         """Return the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.)."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_path_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_path_metadata)
 
     _get_is_duplicable_metadata = { "offset" : _get_is_duplicable_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2449,15 +2447,15 @@ class IComponent(object):
     @property
     def is_duplicable(self) -> bool:
         """Return whether the VGT component can be duplicated."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_is_duplicable_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_duplicable_metadata)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return the context object associated with the instance. The returned object is either an instance of AnalysisWorkbenchComponentInstance or IAnalysisWorkbenchComponentTemplate interface."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_context_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_context_metadata)
 
     _get_type_information_metadata = { "offset" : _get_type_information_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -2465,7 +2463,7 @@ class IComponent(object):
     @property
     def type_information(self) -> "AnalysisWorkbenchComponentTypeInformation":
         """Return the component type information."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_type_information_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_type_information_metadata)
 
     _get_qualified_path_metadata = { "offset" : _get_qualified_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2473,7 +2471,7 @@ class IComponent(object):
     @property
     def qualified_path(self) -> str:
         """An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. ``CentralBody/Earth Body Vector``, etc.)."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_qualified_path_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_qualified_path_metadata)
 
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2481,7 +2479,7 @@ class IComponent(object):
     @property
     def is_valid(self) -> bool:
         """Return whether the component is valid."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_is_valid_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_valid_metadata)
 
     _get_is_ready_metadata = { "offset" : _get_is_ready_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2489,7 +2487,7 @@ class IComponent(object):
     @property
     def is_ready(self) -> bool:
         """Return whether the component is ready. The component is ready if it's been fully initialized."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_is_ready_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_ready_metadata)
 
     _get_is_read_only_metadata = { "offset" : _get_is_read_only_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2497,28 +2495,28 @@ class IComponent(object):
     @property
     def is_read_only(self) -> bool:
         """Return whether the component is modifiable."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_is_read_only_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_is_read_only_metadata)
 
     _duplicate_metadata = { "offset" : _duplicate_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def duplicate(self, newName:str, description:str) -> "IComponent":
+    def duplicate(self, newName:str, description:str) -> "IAnalysisWorkbenchComponent":
         """Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded."""
-        return self._intf.invoke(IComponent._metadata, IComponent._duplicate_metadata, newName, description, OutArg())
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._duplicate_metadata, newName, description, OutArg())
 
     _anonymous_duplicate_metadata = { "offset" : _anonymous_duplicate_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
-    def anonymous_duplicate(self) -> "IComponent":
+    def anonymous_duplicate(self) -> "IAnalysisWorkbenchComponent":
         """Create an anonymous copy of the instance of a VGT component. The new component is not registered and will not be persisted nor restored when a scenario is saved or loaded."""
-        return self._intf.invoke(IComponent._metadata, IComponent._anonymous_duplicate_metadata, OutArg())
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._anonymous_duplicate_metadata, OutArg())
 
     _depends_on_metadata = { "offset" : _depends_on_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.InterfaceInArg("IComponent"), agmarshall.VariantBoolArg,) }
-    def depends_on(self, component:"IComponent") -> bool:
+            "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchComponent"), agmarshall.VariantBoolArg,) }
+    def depends_on(self, component:"IAnalysisWorkbenchComponent") -> bool:
         """Test if the instance depends on another component."""
-        return self._intf.invoke(IComponent._metadata, IComponent._depends_on_metadata, component, OutArg())
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._depends_on_metadata, component, OutArg())
 
     _get_embedded_components_metadata = { "offset" : _get_embedded_components_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -2526,21 +2524,21 @@ class IComponent(object):
     @property
     def embedded_components(self) -> "AnalysisWorkbenchComponentCollection":
         """Return a collection of embedded components."""
-        return self._intf.get_property(IComponent._metadata, IComponent._get_embedded_components_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_embedded_components_metadata)
 
     _export_metadata = { "offset" : _export_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
     def export(self, filename:str, comments:str) -> None:
         """Export the component to a file."""
-        return self._intf.invoke(IComponent._metadata, IComponent._export_metadata, filename, comments)
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._export_metadata, filename, comments)
 
     _rename_metadata = { "offset" : _rename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def rename(self, newName:str) -> None:
         """Rename the component."""
-        return self._intf.invoke(IComponent._metadata, IComponent._rename_metadata, newName)
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._rename_metadata, newName)
 
     _property_names[component_type] = "component_type"
     _property_names[category] = "category"
@@ -2557,8 +2555,8 @@ class IComponent(object):
     _property_names[embedded_components] = "embedded_components"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5666204506719628304, 9309708717126950559), IComponent)
-agcls.AgTypeNameMap["IComponent"] = IComponent
+agcls.AgClassCatalog.add_catalog_entry((5666204506719628304, 9309708717126950559), IAnalysisWorkbenchComponent)
+agcls.AgTypeNameMap["IAnalysisWorkbenchComponent"] = IAnalysisWorkbenchComponent
 
 class ICalculationToolScalar(object):
     """Any scalar calculation that is not constant by construction."""
@@ -3631,7 +3629,7 @@ class ISpatialAnalysisToolVolumeGrid(object):
 agcls.AgClassCatalog.add_catalog_entry((4872197438153942913, 17020680151074665636), ISpatialAnalysisToolVolumeGrid)
 agcls.AgTypeNameMap["ISpatialAnalysisToolVolumeGrid"] = ISpatialAnalysisToolVolumeGrid
 
-class IComponentTimeProperties(object):
+class IAnalysisWorkbenchComponentTimeProperties(object):
     """Define methods to compute time properties such as availability and special times."""
 
     _num_methods = 1
@@ -3643,32 +3641,32 @@ class IComponentTimeProperties(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IComponentTimeProperties."""
-        initialize_from_source_object(self, sourceObject, IComponentTimeProperties)
+        """Construct an object of type IAnalysisWorkbenchComponentTimeProperties."""
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentTimeProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IComponentTimeProperties)
+        return get_interface_property(attrname, IAnalysisWorkbenchComponentTimeProperties)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IComponentTimeProperties, None)
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentTimeProperties, None)
     
     _get_availability_metadata = { "offset" : _get_availability_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_availability(self) -> "TimeToolIntervalCollection":
         """Return a collection of availability intervals."""
-        return self._intf.invoke(IComponentTimeProperties._metadata, IComponentTimeProperties._get_availability_metadata, OutArg())
+        return self._intf.invoke(IAnalysisWorkbenchComponentTimeProperties._metadata, IAnalysisWorkbenchComponentTimeProperties._get_availability_metadata, OutArg())
 
 
 
-agcls.AgClassCatalog.add_catalog_entry((4693587397954990762, 1841444941110468780), IComponentTimeProperties)
-agcls.AgTypeNameMap["IComponentTimeProperties"] = IComponentTimeProperties
+agcls.AgClassCatalog.add_catalog_entry((4693587397954990762, 1841444941110468780), IAnalysisWorkbenchComponentTimeProperties)
+agcls.AgTypeNameMap["IAnalysisWorkbenchComponentTimeProperties"] = IAnalysisWorkbenchComponentTimeProperties
 
-class IComponentReference(object):
+class IAnalysisWorkbenchComponentReference(object):
     """A base interface for all VGT component references."""
 
     _num_methods = 1
@@ -3680,18 +3678,18 @@ class IComponentReference(object):
     }
     _property_names = {}
     def __init__(self, sourceObject=None):
-        """Construct an object of type IComponentReference."""
-        initialize_from_source_object(self, sourceObject, IComponentReference)
+        """Construct an object of type IAnalysisWorkbenchComponentReference."""
+        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentReference)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IComponentReference)
+        return get_interface_property(attrname, IAnalysisWorkbenchComponentReference)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IComponentReference, None)
+        set_interface_attribute(self, attrname, value, IAnalysisWorkbenchComponentReference, None)
     
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -3699,1214 +3697,13 @@ class IComponentReference(object):
     @property
     def path(self) -> str:
         """Return a path to the referenced VGT component."""
-        return self._intf.get_property(IComponentReference._metadata, IComponentReference._get_path_metadata)
+        return self._intf.get_property(IAnalysisWorkbenchComponentReference._metadata, IAnalysisWorkbenchComponentReference._get_path_metadata)
 
     _property_names[path] = "path"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5000476646516070310, 1217044254048263356), IComponentReference)
-agcls.AgTypeNameMap["IComponentReference"] = IComponentReference
-
-class IAngleFindAngleResult(object):
-    """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_angle_method_offset = 2
-    _metadata = {
-        "iid_data" : (5484695193085506764, 12995272954624926875),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAngleFindAngleResult."""
-        initialize_from_source_object(self, sourceObject, IAngleFindAngleResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAngleFindAngleResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAngleFindAngleResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAngleFindAngleResult._metadata, IAngleFindAngleResult._get_is_valid_metadata)
-
-    _get_angle_metadata = { "offset" : _get_angle_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
-        return self._intf.get_property(IAngleFindAngleResult._metadata, IAngleFindAngleResult._get_angle_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[angle] = "angle"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5484695193085506764, 12995272954624926875), IAngleFindAngleResult)
-agcls.AgTypeNameMap["IAngleFindAngleResult"] = IAngleFindAngleResult
-
-class IAngleFindAngleWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_angle_method_offset = 2
-    _get_angle_rate_method_offset = 3
-    _metadata = {
-        "iid_data" : (5292967736344146106, 3501262746512687271),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAngleFindAngleWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IAngleFindAngleWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAngleFindAngleWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAngleFindAngleWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAngleFindAngleWithRateResult._metadata, IAngleFindAngleWithRateResult._get_is_valid_metadata)
-
-    _get_angle_metadata = { "offset" : _get_angle_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
-        return self._intf.get_property(IAngleFindAngleWithRateResult._metadata, IAngleFindAngleWithRateResult._get_angle_metadata)
-
-    _get_angle_rate_metadata = { "offset" : _get_angle_rate_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle_rate(self) -> typing.Any:
-        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
-        return self._intf.get_property(IAngleFindAngleWithRateResult._metadata, IAngleFindAngleWithRateResult._get_angle_rate_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[angle] = "angle"
-    _property_names[angle_rate] = "angle_rate"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5292967736344146106, 3501262746512687271), IAngleFindAngleWithRateResult)
-agcls.AgTypeNameMap["IAngleFindAngleWithRateResult"] = IAngleFindAngleWithRateResult
-
-class IAngleFindWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
-
-    _num_methods = 6
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_angle_method_offset = 2
-    _get_angle_rate_method_offset = 3
-    _get_vector_from_method_offset = 4
-    _get_vector_to_method_offset = 5
-    _get_vector_about_method_offset = 6
-    _metadata = {
-        "iid_data" : (4856057119568825575, 2109696612937815446),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAngleFindWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IAngleFindWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAngleFindWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAngleFindWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_is_valid_metadata)
-
-    _get_angle_metadata = { "offset" : _get_angle_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_angle_metadata)
-
-    _get_angle_rate_metadata = { "offset" : _get_angle_rate_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle_rate(self) -> typing.Any:
-        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_angle_rate_metadata)
-
-    _get_vector_from_metadata = { "offset" : _get_vector_from_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_from(self) -> "ICartesian3Vector":
-        """The first of the two vectors the angle is measured."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_vector_from_metadata)
-
-    _get_vector_to_metadata = { "offset" : _get_vector_to_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_to(self) -> "ICartesian3Vector":
-        """The second of the two vectors the angle is measured."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_vector_to_metadata)
-
-    _get_vector_about_metadata = { "offset" : _get_vector_about_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_about(self) -> "ICartesian3Vector":
-        """The vector the angle is rotated about."""
-        return self._intf.get_property(IAngleFindWithRateResult._metadata, IAngleFindWithRateResult._get_vector_about_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[angle] = "angle"
-    _property_names[angle_rate] = "angle_rate"
-    _property_names[vector_from] = "vector_from"
-    _property_names[vector_to] = "vector_to"
-    _property_names[vector_about] = "vector_about"
-
-
-agcls.AgClassCatalog.add_catalog_entry((4856057119568825575, 2109696612937815446), IAngleFindWithRateResult)
-agcls.AgTypeNameMap["IAngleFindWithRateResult"] = IAngleFindWithRateResult
-
-class IAngleFindResult(object):
-    """Contains the results returned with IVectorGeometryToolAngle.FindCoordinates method."""
-
-    _num_methods = 5
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_angle_method_offset = 2
-    _get_vector_from_method_offset = 3
-    _get_vector_to_method_offset = 4
-    _get_vector_about_method_offset = 5
-    _metadata = {
-        "iid_data" : (5298240106436331533, 9541969718117272231),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAngleFindResult."""
-        initialize_from_source_object(self, sourceObject, IAngleFindResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAngleFindResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAngleFindResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAngleFindResult._metadata, IAngleFindResult._get_is_valid_metadata)
-
-    _get_angle_metadata = { "offset" : _get_angle_method_offset,
-            "arg_types" : (POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.VariantArg,) }
-    @property
-    def angle(self) -> typing.Any:
-        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
-        return self._intf.get_property(IAngleFindResult._metadata, IAngleFindResult._get_angle_metadata)
-
-    _get_vector_from_metadata = { "offset" : _get_vector_from_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_from(self) -> "ICartesian3Vector":
-        """The first of the two vectors the angle is measured."""
-        return self._intf.get_property(IAngleFindResult._metadata, IAngleFindResult._get_vector_from_metadata)
-
-    _get_vector_to_metadata = { "offset" : _get_vector_to_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_to(self) -> "ICartesian3Vector":
-        """The second of the two vectors the angle is measured."""
-        return self._intf.get_property(IAngleFindResult._metadata, IAngleFindResult._get_vector_to_metadata)
-
-    _get_vector_about_metadata = { "offset" : _get_vector_about_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector_about(self) -> "ICartesian3Vector":
-        """The vector the angle is rotated about."""
-        return self._intf.get_property(IAngleFindResult._metadata, IAngleFindResult._get_vector_about_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[angle] = "angle"
-    _property_names[vector_from] = "vector_from"
-    _property_names[vector_to] = "vector_to"
-    _property_names[vector_about] = "vector_about"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5298240106436331533, 9541969718117272231), IAngleFindResult)
-agcls.AgTypeNameMap["IAngleFindResult"] = IAngleFindResult
-
-class IAxesTransformResult(object):
-    """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _metadata = {
-        "iid_data" : (4792970338091440318, 435178607338115222),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAxesTransformResult."""
-        initialize_from_source_object(self, sourceObject, IAxesTransformResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAxesTransformResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAxesTransformResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAxesTransformResult._metadata, IAxesTransformResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The output vector in the current axes."""
-        return self._intf.get_property(IAxesTransformResult._metadata, IAxesTransformResult._get_vector_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-
-
-agcls.AgClassCatalog.add_catalog_entry((4792970338091440318, 435178607338115222), IAxesTransformResult)
-agcls.AgTypeNameMap["IAxesTransformResult"] = IAxesTransformResult
-
-class IAxesTransformWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _get_velocity_method_offset = 3
-    _metadata = {
-        "iid_data" : (5332039326563042843, 17391837893968577945),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAxesTransformWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IAxesTransformWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAxesTransformWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAxesTransformWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """Indicate whether the result object is valid."""
-        return self._intf.get_property(IAxesTransformWithRateResult._metadata, IAxesTransformWithRateResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The output vector in the current axes."""
-        return self._intf.get_property(IAxesTransformWithRateResult._metadata, IAxesTransformWithRateResult._get_vector_metadata)
-
-    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def velocity(self) -> "ICartesian3Vector":
-        """The vector velocity."""
-        return self._intf.get_property(IAxesTransformWithRateResult._metadata, IAxesTransformWithRateResult._get_velocity_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-    _property_names[velocity] = "velocity"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5332039326563042843, 17391837893968577945), IAxesTransformWithRateResult)
-agcls.AgTypeNameMap["IAxesTransformWithRateResult"] = IAxesTransformWithRateResult
-
-class IPlaneFindInAxesResult(object):
-    """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_x_axis_method_offset = 2
-    _get_y_axis_method_offset = 3
-    _metadata = {
-        "iid_data" : (5411394135561936255, 5770799577348852129),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPlaneFindInAxesResult."""
-        initialize_from_source_object(self, sourceObject, IPlaneFindInAxesResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPlaneFindInAxesResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPlaneFindInAxesResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPlaneFindInAxesResult._metadata, IPlaneFindInAxesResult._get_is_valid_metadata)
-
-    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis(self) -> "ICartesian3Vector":
-        """X-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesResult._metadata, IPlaneFindInAxesResult._get_x_axis_metadata)
-
-    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis(self) -> "ICartesian3Vector":
-        """Y-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesResult._metadata, IPlaneFindInAxesResult._get_y_axis_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[x_axis] = "x_axis"
-    _property_names[y_axis] = "y_axis"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5411394135561936255, 5770799577348852129), IPlaneFindInAxesResult)
-agcls.AgTypeNameMap["IPlaneFindInAxesResult"] = IPlaneFindInAxesResult
-
-class IPlaneFindInAxesWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
-
-    _num_methods = 5
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_x_axis_method_offset = 2
-    _get_x_axis_rate_method_offset = 3
-    _get_y_axis_method_offset = 4
-    _get_y_axis_rate_method_offset = 5
-    _metadata = {
-        "iid_data" : (5396764601440543912, 17001129713529799298),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPlaneFindInAxesWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IPlaneFindInAxesWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPlaneFindInAxesWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPlaneFindInAxesWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPlaneFindInAxesWithRateResult._metadata, IPlaneFindInAxesWithRateResult._get_is_valid_metadata)
-
-    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis(self) -> "ICartesian3Vector":
-        """X-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesWithRateResult._metadata, IPlaneFindInAxesWithRateResult._get_x_axis_metadata)
-
-    _get_x_axis_rate_metadata = { "offset" : _get_x_axis_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis_rate(self) -> "ICartesian3Vector":
-        """The rate of change of X-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesWithRateResult._metadata, IPlaneFindInAxesWithRateResult._get_x_axis_rate_metadata)
-
-    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis(self) -> "ICartesian3Vector":
-        """Y-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesWithRateResult._metadata, IPlaneFindInAxesWithRateResult._get_y_axis_metadata)
-
-    _get_y_axis_rate_metadata = { "offset" : _get_y_axis_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis_rate(self) -> "ICartesian3Vector":
-        """The rate of change of Y-axis vector in the specified reference axes."""
-        return self._intf.get_property(IPlaneFindInAxesWithRateResult._metadata, IPlaneFindInAxesWithRateResult._get_y_axis_rate_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[x_axis] = "x_axis"
-    _property_names[x_axis_rate] = "x_axis_rate"
-    _property_names[y_axis] = "y_axis"
-    _property_names[y_axis_rate] = "y_axis_rate"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5396764601440543912, 17001129713529799298), IPlaneFindInAxesWithRateResult)
-agcls.AgTypeNameMap["IPlaneFindInAxesWithRateResult"] = IPlaneFindInAxesWithRateResult
-
-class IPlaneFindInSystemResult(object):
-    """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
-
-    _num_methods = 4
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_origin_position_method_offset = 2
-    _get_x_axis_method_offset = 3
-    _get_y_axis_method_offset = 4
-    _metadata = {
-        "iid_data" : (5012572268011808901, 10907720006031719318),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPlaneFindInSystemResult."""
-        initialize_from_source_object(self, sourceObject, IPlaneFindInSystemResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPlaneFindInSystemResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPlaneFindInSystemResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPlaneFindInSystemResult._metadata, IPlaneFindInSystemResult._get_is_valid_metadata)
-
-    _get_origin_position_metadata = { "offset" : _get_origin_position_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def origin_position(self) -> "ICartesian3Vector":
-        """The position of the plane's center point in the specified coordinate system."""
-        return self._intf.get_property(IPlaneFindInSystemResult._metadata, IPlaneFindInSystemResult._get_origin_position_metadata)
-
-    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis(self) -> "ICartesian3Vector":
-        """X-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemResult._metadata, IPlaneFindInSystemResult._get_x_axis_metadata)
-
-    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis(self) -> "ICartesian3Vector":
-        """Y-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemResult._metadata, IPlaneFindInSystemResult._get_y_axis_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[origin_position] = "origin_position"
-    _property_names[x_axis] = "x_axis"
-    _property_names[y_axis] = "y_axis"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5012572268011808901, 10907720006031719318), IPlaneFindInSystemResult)
-agcls.AgTypeNameMap["IPlaneFindInSystemResult"] = IPlaneFindInSystemResult
-
-class IPlaneFindInSystemWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
-
-    _num_methods = 7
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_origin_position_method_offset = 2
-    _get_origin_velocity_method_offset = 3
-    _get_x_axis_method_offset = 4
-    _get_x_axis_rate_method_offset = 5
-    _get_y_axis_method_offset = 6
-    _get_y_axis_rate_method_offset = 7
-    _metadata = {
-        "iid_data" : (5090839955308321227, 317761085157350305),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPlaneFindInSystemWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IPlaneFindInSystemWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPlaneFindInSystemWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPlaneFindInSystemWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_is_valid_metadata)
-
-    _get_origin_position_metadata = { "offset" : _get_origin_position_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def origin_position(self) -> "ICartesian3Vector":
-        """The position of the plane's center point in the specified coordinate system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_origin_position_metadata)
-
-    _get_origin_velocity_metadata = { "offset" : _get_origin_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def origin_velocity(self) -> "ICartesian3Vector":
-        """The rate of change of the position of the plane's center point in the specified coordinate system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_origin_velocity_metadata)
-
-    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis(self) -> "ICartesian3Vector":
-        """X-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_x_axis_metadata)
-
-    _get_x_axis_rate_metadata = { "offset" : _get_x_axis_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def x_axis_rate(self) -> "ICartesian3Vector":
-        """A rate of change of the X-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_x_axis_rate_metadata)
-
-    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis(self) -> "ICartesian3Vector":
-        """Y-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_y_axis_metadata)
-
-    _get_y_axis_rate_metadata = { "offset" : _get_y_axis_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def y_axis_rate(self) -> "ICartesian3Vector":
-        """A rate of change of the Y-axis vector in the specified reference system."""
-        return self._intf.get_property(IPlaneFindInSystemWithRateResult._metadata, IPlaneFindInSystemWithRateResult._get_y_axis_rate_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[origin_position] = "origin_position"
-    _property_names[origin_velocity] = "origin_velocity"
-    _property_names[x_axis] = "x_axis"
-    _property_names[x_axis_rate] = "x_axis_rate"
-    _property_names[y_axis] = "y_axis"
-    _property_names[y_axis_rate] = "y_axis_rate"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5090839955308321227, 317761085157350305), IPlaneFindInSystemWithRateResult)
-agcls.AgTypeNameMap["IPlaneFindInSystemWithRateResult"] = IPlaneFindInSystemWithRateResult
-
-class IAxesFindInAxesResult(object):
-    """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_orientation_method_offset = 2
-    _metadata = {
-        "iid_data" : (5526443865819486130, 6485450650085686414),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAxesFindInAxesResult."""
-        initialize_from_source_object(self, sourceObject, IAxesFindInAxesResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAxesFindInAxesResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAxesFindInAxesResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IAxesFindInAxesResult._metadata, IAxesFindInAxesResult._get_is_valid_metadata)
-
-    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def orientation(self) -> "IOrientation":
-        """The axes' orientation."""
-        return self._intf.get_property(IAxesFindInAxesResult._metadata, IAxesFindInAxesResult._get_orientation_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[orientation] = "orientation"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5526443865819486130, 6485450650085686414), IAxesFindInAxesResult)
-agcls.AgTypeNameMap["IAxesFindInAxesResult"] = IAxesFindInAxesResult
-
-class IAxesFindAxesWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_angular_velocity_method_offset = 2
-    _get_orientation_method_offset = 3
-    _metadata = {
-        "iid_data" : (5583004664022191568, 13635182811892187530),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IAxesFindAxesWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IAxesFindAxesWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IAxesFindAxesWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IAxesFindAxesWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IAxesFindAxesWithRateResult._metadata, IAxesFindAxesWithRateResult._get_is_valid_metadata)
-
-    _get_angular_velocity_metadata = { "offset" : _get_angular_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def angular_velocity(self) -> "ICartesian3Vector":
-        """Axes' angular velocity."""
-        return self._intf.get_property(IAxesFindAxesWithRateResult._metadata, IAxesFindAxesWithRateResult._get_angular_velocity_metadata)
-
-    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def orientation(self) -> "IOrientation":
-        """The axes' orientation."""
-        return self._intf.get_property(IAxesFindAxesWithRateResult._metadata, IAxesFindAxesWithRateResult._get_orientation_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[angular_velocity] = "angular_velocity"
-    _property_names[orientation] = "orientation"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5583004664022191568, 13635182811892187530), IAxesFindAxesWithRateResult)
-agcls.AgTypeNameMap["IAxesFindAxesWithRateResult"] = IAxesFindAxesWithRateResult
-
-class IPointLocateInSystemResult(object):
-    """Contains the results returned with IVectorGeometryToolPoint.LocateInSystem method."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_position_method_offset = 2
-    _metadata = {
-        "iid_data" : (5568521725362388460, 7875089545265969057),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPointLocateInSystemResult."""
-        initialize_from_source_object(self, sourceObject, IPointLocateInSystemResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPointLocateInSystemResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPointLocateInSystemResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPointLocateInSystemResult._metadata, IPointLocateInSystemResult._get_is_valid_metadata)
-
-    _get_position_metadata = { "offset" : _get_position_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def position(self) -> "ICartesian3Vector":
-        """The point position in the specified coordinate system."""
-        return self._intf.get_property(IPointLocateInSystemResult._metadata, IPointLocateInSystemResult._get_position_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[position] = "position"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5568521725362388460, 7875089545265969057), IPointLocateInSystemResult)
-agcls.AgTypeNameMap["IPointLocateInSystemResult"] = IPointLocateInSystemResult
-
-class IPointLocateInSystemWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_position_method_offset = 2
-    _get_velocity_method_offset = 3
-    _metadata = {
-        "iid_data" : (4718438476070115548, 11456293296871538843),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IPointLocateInSystemWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IPointLocateInSystemWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IPointLocateInSystemWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IPointLocateInSystemWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IPointLocateInSystemWithRateResult._metadata, IPointLocateInSystemWithRateResult._get_is_valid_metadata)
-
-    _get_position_metadata = { "offset" : _get_position_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def position(self) -> "ICartesian3Vector":
-        """The point position in the specified coordinate system."""
-        return self._intf.get_property(IPointLocateInSystemWithRateResult._metadata, IPointLocateInSystemWithRateResult._get_position_metadata)
-
-    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def velocity(self) -> "ICartesian3Vector":
-        """The point velocity in the specified coordinate system."""
-        return self._intf.get_property(IPointLocateInSystemWithRateResult._metadata, IPointLocateInSystemWithRateResult._get_velocity_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[position] = "position"
-    _property_names[velocity] = "velocity"
-
-
-agcls.AgClassCatalog.add_catalog_entry((4718438476070115548, 11456293296871538843), IPointLocateInSystemWithRateResult)
-agcls.AgTypeNameMap["IPointLocateInSystemWithRateResult"] = IPointLocateInSystemWithRateResult
-
-class ISystemTransformResult(object):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _metadata = {
-        "iid_data" : (5602727224913179539, 3056221723684415935),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type ISystemTransformResult."""
-        initialize_from_source_object(self, sourceObject, ISystemTransformResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, ISystemTransformResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ISystemTransformResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(ISystemTransformResult._metadata, ISystemTransformResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The transformed vector."""
-        return self._intf.get_property(ISystemTransformResult._metadata, ISystemTransformResult._get_vector_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5602727224913179539, 3056221723684415935), ISystemTransformResult)
-agcls.AgTypeNameMap["ISystemTransformResult"] = ISystemTransformResult
-
-class ISystemTransformWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _get_velocity_method_offset = 3
-    _metadata = {
-        "iid_data" : (5028026059164558160, 8691094400863508390),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type ISystemTransformWithRateResult."""
-        initialize_from_source_object(self, sourceObject, ISystemTransformWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, ISystemTransformWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ISystemTransformWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(ISystemTransformWithRateResult._metadata, ISystemTransformWithRateResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The transformed vector."""
-        return self._intf.get_property(ISystemTransformWithRateResult._metadata, ISystemTransformWithRateResult._get_vector_metadata)
-
-    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def velocity(self) -> "ICartesian3Vector":
-        """The vector's velocity."""
-        return self._intf.get_property(ISystemTransformWithRateResult._metadata, ISystemTransformWithRateResult._get_velocity_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-    _property_names[velocity] = "velocity"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5028026059164558160, 8691094400863508390), ISystemTransformWithRateResult)
-agcls.AgTypeNameMap["ISystemTransformWithRateResult"] = ISystemTransformWithRateResult
-
-class ISystemFindInSystemResult(object):
-    """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
-
-    _num_methods = 5
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_position_method_offset = 2
-    _get_velocity_method_offset = 3
-    _get_rate_method_offset = 4
-    _get_orientation_method_offset = 5
-    _metadata = {
-        "iid_data" : (4961058888294584522, 6819225686450287036),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type ISystemFindInSystemResult."""
-        initialize_from_source_object(self, sourceObject, ISystemFindInSystemResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, ISystemFindInSystemResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, ISystemFindInSystemResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(ISystemFindInSystemResult._metadata, ISystemFindInSystemResult._get_is_valid_metadata)
-
-    _get_position_metadata = { "offset" : _get_position_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def position(self) -> "ICartesian3Vector":
-        """A position vector."""
-        return self._intf.get_property(ISystemFindInSystemResult._metadata, ISystemFindInSystemResult._get_position_metadata)
-
-    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def velocity(self) -> "ICartesian3Vector":
-        """A velocity vector."""
-        return self._intf.get_property(ISystemFindInSystemResult._metadata, ISystemFindInSystemResult._get_velocity_metadata)
-
-    _get_rate_metadata = { "offset" : _get_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def rate(self) -> "ICartesian3Vector":
-        """Rate of change."""
-        return self._intf.get_property(ISystemFindInSystemResult._metadata, ISystemFindInSystemResult._get_rate_metadata)
-
-    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def orientation(self) -> "IOrientation":
-        """Orientation."""
-        return self._intf.get_property(ISystemFindInSystemResult._metadata, ISystemFindInSystemResult._get_orientation_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[position] = "position"
-    _property_names[velocity] = "velocity"
-    _property_names[rate] = "rate"
-    _property_names[orientation] = "orientation"
-
-
-agcls.AgClassCatalog.add_catalog_entry((4961058888294584522, 6819225686450287036), ISystemFindInSystemResult)
-agcls.AgTypeNameMap["ISystemFindInSystemResult"] = ISystemFindInSystemResult
-
-class IVectorFindInAxesResult(object):
-    """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
-
-    _num_methods = 2
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _metadata = {
-        "iid_data" : (5163850874032675488, 11046602307391063209),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IVectorFindInAxesResult."""
-        initialize_from_source_object(self, sourceObject, IVectorFindInAxesResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IVectorFindInAxesResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IVectorFindInAxesResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IVectorFindInAxesResult._metadata, IVectorFindInAxesResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The vector in a specified axes."""
-        return self._intf.get_property(IVectorFindInAxesResult._metadata, IVectorFindInAxesResult._get_vector_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5163850874032675488, 11046602307391063209), IVectorFindInAxesResult)
-agcls.AgTypeNameMap["IVectorFindInAxesResult"] = IVectorFindInAxesResult
-
-class IVectorFindInAxesWithRateResult(object):
-    """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
-
-    _num_methods = 3
-    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_is_valid_method_offset = 1
-    _get_vector_method_offset = 2
-    _get_rate_method_offset = 3
-    _metadata = {
-        "iid_data" : (5384991910738500476, 5081428842426900099),
-        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
-    }
-    _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IVectorFindInAxesWithRateResult."""
-        initialize_from_source_object(self, sourceObject, IVectorFindInAxesWithRateResult)
-    def _private_init(self, intf:InterfaceProxy):
-        self.__dict__["_intf"] = intf
-    def __eq__(self, other):
-        """Check equality of the underlying STK references."""
-        return agcls.compare_com_objects(self, other)
-    def _get_property(self, attrname):
-        return get_interface_property(attrname, IVectorFindInAxesWithRateResult)
-    def __setattr__(self, attrname, value):
-        """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IVectorFindInAxesWithRateResult, None)
-    
-    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
-            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.VariantBoolArg,) }
-    @property
-    def is_valid(self) -> bool:
-        """True indicates the method call was successful."""
-        return self._intf.get_property(IVectorFindInAxesWithRateResult._metadata, IVectorFindInAxesWithRateResult._get_is_valid_metadata)
-
-    _get_vector_metadata = { "offset" : _get_vector_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def vector(self) -> "ICartesian3Vector":
-        """The vector in a specified axes."""
-        return self._intf.get_property(IVectorFindInAxesWithRateResult._metadata, IVectorFindInAxesWithRateResult._get_vector_metadata)
-
-    _get_rate_metadata = { "offset" : _get_rate_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg,) }
-    @property
-    def rate(self) -> "ICartesian3Vector":
-        """The vector rate in a specified axes."""
-        return self._intf.get_property(IVectorFindInAxesWithRateResult._metadata, IVectorFindInAxesWithRateResult._get_rate_metadata)
-
-    _property_names[is_valid] = "is_valid"
-    _property_names[vector] = "vector"
-    _property_names[rate] = "rate"
-
-
-agcls.AgClassCatalog.add_catalog_entry((5384991910738500476, 5081428842426900099), IVectorFindInAxesWithRateResult)
-agcls.AgTypeNameMap["IVectorFindInAxesWithRateResult"] = IVectorFindInAxesWithRateResult
+agcls.AgClassCatalog.add_catalog_entry((5000476646516070310, 1217044254048263356), IAnalysisWorkbenchComponentReference)
+agcls.AgTypeNameMap["IAnalysisWorkbenchComponentReference"] = IAnalysisWorkbenchComponentReference
 
 class IAnalysisWorkbenchMethodCallResult(object):
     """Instances of the interface are used to return the result of a computation."""
@@ -5509,7 +4306,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(TimeToolInstantGroup._metadata, TimeToolInstantGroup._get_context_metadata)
 
@@ -5635,7 +4432,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._get_context_metadata)
 
@@ -5761,7 +4558,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._get_context_metadata)
 
@@ -5887,7 +4684,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._get_context_metadata)
 
@@ -6013,7 +4810,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get_context_metadata)
 
@@ -6139,7 +4936,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._get_context_metadata)
 
@@ -6265,7 +5062,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._get_context_metadata)
 
@@ -6391,7 +5188,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._get_context_metadata)
 
@@ -6517,7 +5314,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._get_context_metadata)
 
@@ -6753,7 +5550,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._get_context_metadata)
 
@@ -6879,7 +5676,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._get_context_metadata)
 
@@ -7005,7 +5802,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._get_context_metadata)
 
@@ -7085,28 +5882,28 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5357586751106003383, 7462844834759351198), SpatialAnalysisToolCalculationGroup)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationGroup"] = SpatialAnalysisToolCalculationGroup
 
-class CalculationToolScalar(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Any scalar calculation that is not constant by construction."""
     def __init__(self, sourceObject=None):
         """Construct an object of type CalculationToolScalar."""
         SupportsDeleteCallback.__init__(self)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalar, [ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5230397928531433355, 10269566397212942242), CalculationToolScalar)
 agcls.AgTypeNameMap["CalculationToolScalar"] = CalculationToolScalar
 
-class CalculationToolScalarAngle(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Scalar equal to angular displacement obtained from any angle in VGT."""
 
     _num_methods = 2
@@ -7143,22 +5940,22 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IComponent, SupportsDel
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarAngle)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [CalculationToolScalarAngle, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarAngle, [CalculationToolScalarAngle, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4904462145790055437, 5156190887739896966), CalculationToolScalarAngle)
 agcls.AgTypeNameMap["CalculationToolScalarAngle"] = CalculationToolScalarAngle
 
-class CalculationToolScalarAverage(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
 
     _num_methods = 25
@@ -7401,22 +6198,22 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IComponent, SupportsD
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarAverage)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarAverage, [CalculationToolScalarAverage, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarAverage, [CalculationToolScalarAverage, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5436686424833363725, 875804097364919458), CalculationToolScalarAverage)
 agcls.AgTypeNameMap["CalculationToolScalarAverage"] = CalculationToolScalarAverage
 
-class CalculationToolScalarConstant(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Constant scalar value of specified dimension."""
 
     _num_methods = 4
@@ -7471,22 +6268,22 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IComponent, Supports
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarConstant)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [CalculationToolScalarConstant, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarConstant, [CalculationToolScalarConstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5761343657246828391, 12742771671638689976), CalculationToolScalarConstant)
 agcls.AgTypeNameMap["CalculationToolScalarConstant"] = CalculationToolScalarConstant
 
-class CalculationToolScalarCustom(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."""
 
     _num_methods = 5
@@ -7549,22 +6346,22 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IComponent, SupportsDe
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarCustom)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [CalculationToolScalarCustom, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarCustom, [CalculationToolScalarCustom, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5177995385747099113, 10709837510467460012), CalculationToolScalarCustom)
 agcls.AgTypeNameMap["CalculationToolScalarCustom"] = CalculationToolScalarCustom
 
-class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A calc scalar based on using an inline scripted algorithm in MATLAB, Perl, VBScript or JScript to define its value and rate."""
 
     _num_methods = 10
@@ -7671,22 +6468,22 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarCustomInlineScript)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarCustomInlineScript, [CalculationToolScalarCustomInlineScript, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarCustomInlineScript, [CalculationToolScalarCustomInlineScript, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5758632709114625099, 1419255989428412582), CalculationToolScalarCustomInlineScript)
 agcls.AgTypeNameMap["CalculationToolScalarCustomInlineScript"] = CalculationToolScalarCustomInlineScript
 
-class CalculationToolScalarDataElement(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Any time-dependent data element from STK data providers available for parent STK object."""
 
     _num_methods = 15
@@ -7841,22 +6638,22 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarDataElement)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [CalculationToolScalarDataElement, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarDataElement, [CalculationToolScalarDataElement, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5321856052550789231, 6123381429176273038), CalculationToolScalarDataElement)
 agcls.AgTypeNameMap["CalculationToolScalarDataElement"] = CalculationToolScalarDataElement
 
-class CalculationToolScalarDerivative(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Derivative of an input scalar calculation."""
 
     _num_methods = 6
@@ -7929,22 +6726,22 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IComponent, Suppor
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarDerivative)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [CalculationToolScalarDerivative, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarDerivative, [CalculationToolScalarDerivative, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5415006546127808424, 17328826830833065386), CalculationToolScalarDerivative)
 agcls.AgTypeNameMap["CalculationToolScalarDerivative"] = CalculationToolScalarDerivative
 
-class CalculationToolScalarDotProduct(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Dot product between two vectors."""
 
     _num_methods = 10
@@ -8053,22 +6850,22 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IComponent, Suppor
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarDotProduct)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [CalculationToolScalarDotProduct, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarDotProduct, [CalculationToolScalarDotProduct, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4792387092728447134, 3158224088086022029), CalculationToolScalarDotProduct)
 agcls.AgTypeNameMap["CalculationToolScalarDotProduct"] = CalculationToolScalarDotProduct
 
-class CalculationToolScalarElapsedTime(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Time elapsed since the reference time instant. Negative if in the past."""
 
     _num_methods = 2
@@ -8105,17 +6902,17 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarElapsedTime)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [CalculationToolScalarElapsedTime, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarElapsedTime, [CalculationToolScalarElapsedTime, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4848170193154715426, 2061643609355890078), CalculationToolScalarElapsedTime)
 agcls.AgTypeNameMap["CalculationToolScalarElapsedTime"] = CalculationToolScalarElapsedTime
@@ -8344,7 +7141,7 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5603183957251412242, 16723870511898521754), CalculationToolScalarFactory)
 agcls.AgTypeNameMap["CalculationToolScalarFactory"] = CalculationToolScalarFactory
 
-class CalculationToolScalarFile(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Tabulated scalar calculation data loaded from specified file - a file with .csc extension."""
 
     _num_methods = 10
@@ -8451,22 +7248,22 @@ class CalculationToolScalarFile(ICalculationToolScalar, IComponent, SupportsDele
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarFile)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarFile, [CalculationToolScalarFile, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarFile, [CalculationToolScalarFile, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5148097650078253983, 10233293468354629821), CalculationToolScalarFile)
 agcls.AgTypeNameMap["CalculationToolScalarFile"] = CalculationToolScalarFile
 
-class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Constant scalar created by evaluating the input scalar calculation at the specified reference time instant. Undefined if original scalar is not available at specified time or if reference time instant is undefined."""
 
     _num_methods = 4
@@ -8521,22 +7318,22 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarFixedAtTimeInstant)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [CalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarFixedAtTimeInstant, [CalculationToolScalarFixedAtTimeInstant, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4932699577219865707, 13915785772631940010), CalculationToolScalarFixedAtTimeInstant)
 agcls.AgTypeNameMap["CalculationToolScalarFixedAtTimeInstant"] = CalculationToolScalarFixedAtTimeInstant
 
-class CalculationToolScalarFunction(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by performing the specified function on the input scalar or time instant."""
 
     _num_methods = 31
@@ -8835,22 +7632,22 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IComponent, Supports
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarFunction)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [CalculationToolScalarFunction, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarFunction, [CalculationToolScalarFunction, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4712789712859139993, 16973698019291607179), CalculationToolScalarFunction)
 agcls.AgTypeNameMap["CalculationToolScalarFunction"] = CalculationToolScalarFunction
 
-class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by performing a function(x,y) on two scalar arguments."""
 
     _num_methods = 23
@@ -9077,22 +7874,22 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, ICompone
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarFunctionOf2Variables)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarFunctionOf2Variables, [CalculationToolScalarFunctionOf2Variables, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarFunctionOf2Variables, [CalculationToolScalarFunctionOf2Variables, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4967368611246770084, 41349991072973977), CalculationToolScalarFunctionOf2Variables)
 agcls.AgTypeNameMap["CalculationToolScalarFunctionOf2Variables"] = CalculationToolScalarFunctionOf2Variables
 
-class CalculationToolScalarIntegral(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
 
     _num_methods = 25
@@ -9335,22 +8132,22 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IComponent, Supports
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarIntegral)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [CalculationToolScalarIntegral, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarIntegral, [CalculationToolScalarIntegral, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5398899900186130554, 246171721776597151), CalculationToolScalarIntegral)
 agcls.AgTypeNameMap["CalculationToolScalarIntegral"] = CalculationToolScalarIntegral
 
-class CalculationToolScalarPlugin(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Use a scalar calculation plugin."""
 
     _num_methods = 6
@@ -9423,22 +8220,22 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IComponent, SupportsDe
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarPlugin)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [CalculationToolScalarPlugin, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarPlugin, [CalculationToolScalarPlugin, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5691400509382320907, 9517433290752141957), CalculationToolScalarPlugin)
 agcls.AgTypeNameMap["CalculationToolScalarPlugin"] = CalculationToolScalarPlugin
 
-class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Scalar value of spatial calculation evaluated along trajectory of point."""
 
     _num_methods = 4
@@ -9493,22 +8290,22 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IComponent, S
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarAlongTrajectory)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarAlongTrajectory, [CalculationToolScalarAlongTrajectory, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarAlongTrajectory, [CalculationToolScalarAlongTrajectory, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4648048658061411939, 12881727305934950065), CalculationToolScalarAlongTrajectory)
 agcls.AgTypeNameMap["CalculationToolScalarAlongTrajectory"] = CalculationToolScalarAlongTrajectory
 
-class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Integral of input scalar computed with respect to time using one of the specified numerical methods and using one of the specified accumulation types."""
 
     _num_methods = 25
@@ -9751,22 +8548,22 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IComponent,
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarStandardDeviation)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarStandardDeviation, [CalculationToolScalarStandardDeviation, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarStandardDeviation, [CalculationToolScalarStandardDeviation, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4728970761222061821, 15128931790916762790), CalculationToolScalarStandardDeviation)
 agcls.AgTypeNameMap["CalculationToolScalarStandardDeviation"] = CalculationToolScalarStandardDeviation
 
-class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."""
 
     _num_methods = 8
@@ -9857,22 +8654,22 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarSurfaceDistanceBetweenPoints)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [CalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarSurfaceDistanceBetweenPoints, [CalculationToolScalarSurfaceDistanceBetweenPoints, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5458481980404184200, 1068397851801295271), CalculationToolScalarSurfaceDistanceBetweenPoints)
 agcls.AgTypeNameMap["CalculationToolScalarSurfaceDistanceBetweenPoints"] = CalculationToolScalarSurfaceDistanceBetweenPoints
 
-class CalculationToolScalarVectorComponent(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The specified component of a vector when resolved in the specified axes."""
 
     _num_methods = 6
@@ -9945,22 +8742,22 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IComponent, S
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorComponent)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [CalculationToolScalarVectorComponent, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarVectorComponent, [CalculationToolScalarVectorComponent, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5434681583091997855, 8195345628688496798), CalculationToolScalarVectorComponent)
 agcls.AgTypeNameMap["CalculationToolScalarVectorComponent"] = CalculationToolScalarVectorComponent
 
-class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IComponent, SupportsDeleteCallback):
+class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Scalar equal to the magnitude of a specified vector."""
 
     _num_methods = 2
@@ -9997,43 +8794,43 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IComponent, S
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorMagnitude)
         ICalculationToolScalar.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [CalculationToolScalarVectorMagnitude, ICalculationToolScalar, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolScalarVectorMagnitude, [CalculationToolScalarVectorMagnitude, ICalculationToolScalar, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5718680998699535592, 13838468874888393908), CalculationToolScalarVectorMagnitude)
 agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolScalarVectorMagnitude
 
-class CalculationToolCondition(ICalculationToolCondition, IComponent, SupportsDeleteCallback):
+class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
     def __init__(self, sourceObject=None):
         """Construct an object of type CalculationToolCondition."""
         SupportsDeleteCallback.__init__(self)
         ICalculationToolCondition.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolCondition, [ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4627729760611390020, 5273234787457922734), CalculationToolCondition)
 agcls.AgTypeNameMap["CalculationToolCondition"] = CalculationToolCondition
 
-class CalculationToolConditionCombined(ICalculationToolCondition, IComponent, SupportsDeleteCallback):
+class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Define a condition which combines multiple conditions."""
 
     _num_methods = 9
@@ -10128,17 +8925,17 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IComponent, Su
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolConditionCombined)
         ICalculationToolCondition.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [CalculationToolConditionCombined, ICalculationToolCondition, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConditionCombined, [CalculationToolConditionCombined, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4767400244892944523, 13373757026237479857), CalculationToolConditionCombined)
 agcls.AgTypeNameMap["CalculationToolConditionCombined"] = CalculationToolConditionCombined
@@ -10213,7 +9010,7 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4995204375913048056, 16018337718719146118), CalculationToolConditionFactory)
 agcls.AgTypeNameMap["CalculationToolConditionFactory"] = CalculationToolConditionFactory
 
-class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, IComponent, SupportsDeleteCallback):
+class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate."""
 
     _num_methods = 4
@@ -10268,22 +9065,22 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolConditionTrajectoryWithinVolume)
         ICalculationToolCondition.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConditionTrajectoryWithinVolume, [CalculationToolConditionTrajectoryWithinVolume, ICalculationToolCondition, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConditionTrajectoryWithinVolume, [CalculationToolConditionTrajectoryWithinVolume, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4949089905743702745, 12125459046762185093), CalculationToolConditionTrajectoryWithinVolume)
 agcls.AgTypeNameMap["CalculationToolConditionTrajectoryWithinVolume"] = CalculationToolConditionTrajectoryWithinVolume
 
-class CalculationToolConditionScalarBounds(ICalculationToolCondition, IComponent, SupportsDeleteCallback):
+class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by determining if input scalar is within specified bounds; returns +1 if satisfied, -1 if not satisfied and 0 if on boundary."""
 
     _num_methods = 14
@@ -10418,38 +9215,38 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolConditionScalarBounds)
         ICalculationToolCondition.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [CalculationToolConditionScalarBounds, ICalculationToolCondition, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConditionScalarBounds, [CalculationToolConditionScalarBounds, ICalculationToolCondition, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5647988579309068664, 11530525339333461889), CalculationToolConditionScalarBounds)
 agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolConditionScalarBounds
 
-class CalculationToolConditionSet(ICalculationToolConditionSet, IComponent, SupportsDeleteCallback):
+class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
     def __init__(self, sourceObject=None):
         """Construct an object of type CalculationToolConditionSet."""
         SupportsDeleteCallback.__init__(self)
         ICalculationToolConditionSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConditionSet, [ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5331250789123914523, 14006917373386840708), CalculationToolConditionSet)
 agcls.AgTypeNameMap["CalculationToolConditionSet"] = CalculationToolConditionSet
@@ -10508,7 +9305,7 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5012399328141270168, 11113123877685848731), CalculationToolConditionSetFactory)
 agcls.AgTypeNameMap["CalculationToolConditionSetFactory"] = CalculationToolConditionSetFactory
 
-class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, IComponent, SupportsDeleteCallback):
+class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition set based on single scalar calculation compared to set of threshold values."""
 
     _num_methods = 9
@@ -10609,43 +9406,43 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolConditionSetScalarThresholds)
         ICalculationToolConditionSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [CalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConditionSetScalarThresholds, [CalculationToolConditionSetScalarThresholds, ICalculationToolConditionSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5572445424587947883, 5673353751277832377), CalculationToolConditionSetScalarThresholds)
 agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = CalculationToolConditionSetScalarThresholds
 
-class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for convergence definitions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchConvergence."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchConvergence, [IAnalysisWorkbenchConvergence, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchConvergence, [IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4882492916629755513, 15853984640358895501), AnalysisWorkbenchConvergence)
 agcls.AgTypeNameMap["AnalysisWorkbenchConvergence"] = AnalysisWorkbenchConvergence
 
-class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IComponent, SupportsDeleteCallback):
+class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations."""
 
     _num_methods = 8
@@ -10736,43 +9533,43 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IComponent, Su
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolConvergeBasic)
         IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [CalculationToolConvergeBasic, IAnalysisWorkbenchConvergence, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolConvergeBasic, [CalculationToolConvergeBasic, IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5514954824464931267, 18409877581449644180), CalculationToolConvergeBasic)
 agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBasic
 
-class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for derivative definitions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchDerivative."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchDerivative, [IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5587768146652831139, 5043452618809804181), AnalysisWorkbenchDerivative)
 agcls.AgTypeNameMap["AnalysisWorkbenchDerivative"] = AnalysisWorkbenchDerivative
 
-class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IComponent, SupportsDeleteCallback):
+class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Derivative definition determines how numerical differencing is used to compute derivatives."""
 
     _num_methods = 2
@@ -10809,64 +9606,64 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IComponent, S
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolDerivativeBasic)
         IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [CalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolDerivativeBasic, [CalculationToolDerivativeBasic, IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4922997640042415299, 3689582741653722007), CalculationToolDerivativeBasic)
 agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativeBasic
 
-class TimeToolInstant(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstant(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Define an event (time instant)."""
     def __init__(self, sourceObject=None):
         """Construct an object of type TimeToolInstant."""
         SupportsDeleteCallback.__init__(self)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstant, [ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstant, [ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5398793057979554597, 7356352219388702598), TimeToolInstant)
 agcls.AgTypeNameMap["TimeToolInstant"] = TimeToolInstant
 
-class TimeToolTimeArray(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArray(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered array of times, which may or may not be evenly spaced."""
     def __init__(self, sourceObject=None):
         """Construct an object of type TimeToolTimeArray."""
         SupportsDeleteCallback.__init__(self)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArray, [ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArray, [ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5332777741257833242, 4202084266511321478), TimeToolTimeArray)
 agcls.AgTypeNameMap["TimeToolTimeArray"] = TimeToolTimeArray
 
-class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters."""
 
     _num_methods = 14
@@ -11011,22 +9808,22 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IComponent, Suppor
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayConditionCrossings)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayConditionCrossings, [TimeToolTimeArrayConditionCrossings, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayConditionCrossings, [TimeToolTimeArrayConditionCrossings, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5396215197440132353, 5751529864914655407), TimeToolTimeArrayConditionCrossings)
 agcls.AgTypeNameMap["TimeToolTimeArrayConditionCrossings"] = TimeToolTimeArrayConditionCrossings
 
-class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     _num_methods = 16
@@ -11189,17 +9986,17 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IComponent, SupportsDeleteCal
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayExtrema)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayExtrema, [TimeToolTimeArrayExtrema, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayExtrema, [TimeToolTimeArrayExtrema, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4895652447947847564, 10544338283664157372), TimeToolTimeArrayExtrema)
 agcls.AgTypeNameMap["TimeToolTimeArrayExtrema"] = TimeToolTimeArrayExtrema
@@ -11314,7 +10111,7 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5458075538004504061, 2067516564496506015), TimeToolTimeArrayFactory)
 agcls.AgTypeNameMap["TimeToolTimeArrayFactory"] = TimeToolTimeArrayFactory
 
-class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by filtering times from original time array according to specified filtering method."""
 
     _num_methods = 12
@@ -11441,22 +10238,22 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IComponent, SupportsDeleteCa
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFiltered)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayFiltered, [TimeToolTimeArrayFiltered, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayFiltered, [TimeToolTimeArrayFiltered, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4642904597198643175, 4377576397480008330), TimeToolTimeArrayFiltered)
 agcls.AgTypeNameMap["TimeToolTimeArrayFiltered"] = TimeToolTimeArrayFiltered
 
-class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."""
 
     _num_methods = 10
@@ -11565,22 +10362,22 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IComponent, SupportsDeleteC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedStep)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedStep, [TimeToolTimeArrayFixedStep, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedStep, [TimeToolTimeArrayFixedStep, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5291295331531848140, 1885669106906320519), TimeToolTimeArrayFixedStep)
 agcls.AgTypeNameMap["TimeToolTimeArrayFixedStep"] = TimeToolTimeArrayFixedStep
 
-class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Array defined by time ordered instants each explicitly specified."""
 
     _num_methods = 2
@@ -11617,22 +10414,22 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IComponent, SupportsDelete
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedTimes)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedTimes, [TimeToolTimeArrayFixedTimes, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayFixedTimes, [TimeToolTimeArrayFixedTimes, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5593791433450696394, 1539321884068845490), TimeToolTimeArrayFixedTimes)
 agcls.AgTypeNameMap["TimeToolTimeArrayFixedTimes"] = TimeToolTimeArrayFixedTimes
 
-class TimeToolTimeArrayMerged(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together."""
 
     _num_methods = 4
@@ -11687,22 +10484,22 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IComponent, SupportsDeleteCall
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayMerged)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayMerged, [TimeToolTimeArrayMerged, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayMerged, [TimeToolTimeArrayMerged, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4782774864999860286, 3889233035658327469), TimeToolTimeArrayMerged)
 agcls.AgTypeNameMap["TimeToolTimeArrayMerged"] = TimeToolTimeArrayMerged
 
-class TimeToolTimeArraySignaled(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations..."""
 
     _num_methods = 10
@@ -11811,22 +10608,22 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IComponent, SupportsDeleteCa
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArraySignaled)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArraySignaled, [TimeToolTimeArraySignaled, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArraySignaled, [TimeToolTimeArraySignaled, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5435814862915860050, 12317878345385448122), TimeToolTimeArraySignaled)
 agcls.AgTypeNameMap["TimeToolTimeArraySignaled"] = TimeToolTimeArraySignaled
 
-class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IComponent, SupportsDeleteCallback):
+class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list..."""
 
     _num_methods = 4
@@ -11881,22 +10678,22 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IComponent, SupportsDe
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeArrayStartStopTimes)
         ITimeToolTimeArray.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeArrayStartStopTimes, [TimeToolTimeArrayStartStopTimes, ITimeToolTimeArray, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeArrayStartStopTimes, [TimeToolTimeArrayStartStopTimes, ITimeToolTimeArray, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4860958271402795436, 3117480943035526832), TimeToolTimeArrayStartStopTimes)
 agcls.AgTypeNameMap["TimeToolTimeArrayStartStopTimes"] = TimeToolTimeArrayStartStopTimes
 
-class TimeToolInstantEpoch(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Event set at specified date/time."""
 
     _num_methods = 2
@@ -11933,22 +10730,22 @@ class TimeToolInstantEpoch(ITimeToolInstant, IComponent, SupportsDeleteCallback)
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantEpoch)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantEpoch, [TimeToolInstantEpoch, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantEpoch, [TimeToolInstantEpoch, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5435356060854789844, 4067587155681333929), TimeToolInstantEpoch)
 agcls.AgTypeNameMap["TimeToolInstantEpoch"] = TimeToolInstantEpoch
 
-class TimeToolInstantExtremum(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     _num_methods = 14
@@ -12093,17 +10890,17 @@ class TimeToolInstantExtremum(ITimeToolInstant, IComponent, SupportsDeleteCallba
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantExtremum)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantExtremum, [TimeToolInstantExtremum, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantExtremum, [TimeToolInstantExtremum, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5389385592881205397, 339728145862133895), TimeToolInstantExtremum)
 agcls.AgTypeNameMap["TimeToolInstantExtremum"] = TimeToolInstantExtremum
@@ -12230,28 +11027,28 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5272300824979797026, 16498667286970460562), TimeToolInstantFactory)
 agcls.AgTypeNameMap["TimeToolInstantFactory"] = TimeToolInstantFactory
 
-class TimeToolTimeInterval(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A single time interval."""
     def __init__(self, sourceObject=None):
         """Construct an object of type TimeToolTimeInterval."""
         SupportsDeleteCallback.__init__(self)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeInterval, [ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeInterval, [ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4907362365384322524, 7697029984187487375), TimeToolTimeInterval)
 agcls.AgTypeNameMap["TimeToolTimeInterval"] = TimeToolTimeInterval
 
-class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined."""
 
     _num_methods = 4
@@ -12306,43 +11103,43 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IComponent,
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalBetweenTimeInstants)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalBetweenTimeInstants, [TimeToolTimeIntervalBetweenTimeInstants, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalBetweenTimeInstants, [TimeToolTimeIntervalBetweenTimeInstants, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5441730547251256494, 11273521191384897433), TimeToolTimeIntervalBetweenTimeInstants)
 agcls.AgTypeNameMap["TimeToolTimeIntervalBetweenTimeInstants"] = TimeToolTimeIntervalBetweenTimeInstants
 
-class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A collection of related interval lists."""
     def __init__(self, sourceObject=None):
         """Construct an object of type TimeToolTimeIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
         ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollection, [ITimeToolTimeIntervalCollection, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollection, [ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5320390972149596139, 11612889387071709314), TimeToolTimeIntervalCollection)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollection"] = TimeToolTimeIntervalCollection
 
-class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     _num_methods = 12
@@ -12469,17 +11266,17 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionCondition)
         ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionCondition, [TimeToolTimeIntervalCollectionCondition, ITimeToolTimeIntervalCollection, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionCondition, [TimeToolTimeIntervalCollectionCondition, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5096431107182997469, 15497237714408753540), TimeToolTimeIntervalCollectionCondition)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionCondition"] = TimeToolTimeIntervalCollectionCondition
@@ -12554,7 +11351,7 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5176155607638442896, 7177596217140786077), TimeToolTimeIntervalCollectionFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionFactory"] = TimeToolTimeIntervalCollectionFactory
 
-class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."""
 
     _num_methods = 6
@@ -12627,22 +11424,22 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionLighting)
         ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionLighting, [TimeToolTimeIntervalCollectionLighting, ITimeToolTimeIntervalCollection, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionLighting, [TimeToolTimeIntervalCollectionLighting, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4778372489419407290, 1841925492488396976), TimeToolTimeIntervalCollectionLighting)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionLighting"] = TimeToolTimeIntervalCollectionLighting
 
-class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations..."""
 
     _num_methods = 10
@@ -12751,17 +11548,17 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionSignaled)
         ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionSignaled, [TimeToolTimeIntervalCollectionSignaled, ITimeToolTimeIntervalCollection, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalCollectionSignaled, [TimeToolTimeIntervalCollectionSignaled, ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4681123355224258665, 3519235201891138198), TimeToolTimeIntervalCollectionSignaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalCollectionSignaled"] = TimeToolTimeIntervalCollectionSignaled
@@ -12868,7 +11665,7 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5271144977203828184, 14422681085791257527), TimeToolTimeIntervalFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFactory"] = TimeToolTimeIntervalFactory
 
-class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start."""
 
     _num_methods = 3
@@ -12915,22 +11712,22 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IComponent, SupportsDelet
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixed)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixed, [TimeToolTimeIntervalFixed, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixed, [TimeToolTimeIntervalFixed, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5434382701560354571, 17399214976131420314), TimeToolTimeIntervalFixed)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFixed"] = TimeToolTimeIntervalFixed
 
-class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."""
 
     _num_methods = 6
@@ -13003,22 +11800,22 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixedDuration)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixedDuration, [TimeToolTimeIntervalFixedDuration, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFixedDuration, [TimeToolTimeIntervalFixedDuration, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5617013323472138033, 5900512052836164536), TimeToolTimeIntervalFixedDuration)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFixedDuration"] = TimeToolTimeIntervalFixedDuration
 
-class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval created from specified interval list by using one of several selection methods."""
 
     _num_methods = 6
@@ -13091,43 +11888,43 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IComponent, Su
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFromIntervalList)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFromIntervalList, [TimeToolTimeIntervalFromIntervalList, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalFromIntervalList, [TimeToolTimeIntervalFromIntervalList, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5605488631452751831, 17424609706075019906), TimeToolTimeIntervalFromIntervalList)
 agcls.AgTypeNameMap["TimeToolTimeIntervalFromIntervalList"] = TimeToolTimeIntervalFromIntervalList
 
-class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered list of time intervals."""
     def __init__(self, sourceObject=None):
         """Construct an object of type TimeToolTimeIntervalList."""
         SupportsDeleteCallback.__init__(self)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalList, [ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalList, [ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4931610229651409517, 5176676340500202392), TimeToolTimeIntervalList)
 agcls.AgTypeNameMap["TimeToolTimeIntervalList"] = TimeToolTimeIntervalList
 
-class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters."""
 
     _num_methods = 12
@@ -13254,17 +12051,17 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IComponent, S
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListCondition)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListCondition, [TimeToolTimeIntervalListCondition, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListCondition, [TimeToolTimeIntervalListCondition, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5695291326310786302, 3161624783042523292), TimeToolTimeIntervalListCondition)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListCondition"] = TimeToolTimeIntervalListCondition
@@ -13379,7 +12176,7 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5520594195372287577, 9965002346799811229), TimeToolTimeIntervalListFactory)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFactory"] = TimeToolTimeIntervalListFactory
 
-class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval list loaded from specified interval file - ASCII file with .int extension. See STK help."""
 
     _num_methods = 4
@@ -13432,22 +12229,22 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IComponent, Suppor
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFile)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFile, [TimeToolTimeIntervalListFile, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFile, [TimeToolTimeIntervalListFile, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4939698509197330113, 12995431996803870356), TimeToolTimeIntervalListFile)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFile"] = TimeToolTimeIntervalListFile
 
-class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined by filtering intervals from original interval list using specified filtering method."""
 
     _num_methods = 5
@@ -13512,22 +12309,22 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IComponent, Su
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFiltered)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFiltered, [TimeToolTimeIntervalListFiltered, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFiltered, [TimeToolTimeIntervalListFiltered, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4625969561133636137, 1394880749826965914), TimeToolTimeIntervalListFiltered)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFiltered"] = TimeToolTimeIntervalListFiltered
 
-class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval."""
 
     _num_methods = 2
@@ -13562,22 +12359,22 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFixed)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFixed, [TimeToolTimeIntervalListFixed, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListFixed, [TimeToolTimeIntervalListFixed, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5035876072746351075, 10259654735031477925), TimeToolTimeIntervalListFixed)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListFixed"] = TimeToolTimeIntervalListFixed
 
-class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents."""
 
     _num_methods = 15
@@ -13609,7 +12406,7 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IComponent, Supp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def interval_list_or_interval_a(self) -> "IComponent":
+    def interval_list_or_interval_a(self) -> "IAnalysisWorkbenchComponent":
         """The interval list or interval A."""
         return self._intf.get_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._get_interval_list_or_interval_a_metadata)
 
@@ -13617,7 +12414,7 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IComponent, Supp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def interval_list_or_interval_b(self) -> "IComponent":
+    def interval_list_or_interval_b(self) -> "IAnalysisWorkbenchComponent":
         """The interval list or interval B."""
         return self._intf.get_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._get_interval_list_or_interval_b_metadata)
 
@@ -13722,22 +12519,22 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IComponent, Supp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListMerged)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListMerged, [TimeToolTimeIntervalListMerged, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListMerged, [TimeToolTimeIntervalListMerged, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5271487708003070052, 15898448361769664948), TimeToolTimeIntervalListMerged)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListMerged"] = TimeToolTimeIntervalListMerged
 
-class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list..."""
 
     _num_methods = 8
@@ -13828,22 +12625,22 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IComponent, Supp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListScaled)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListScaled, [TimeToolTimeIntervalListScaled, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListScaled, [TimeToolTimeIntervalListScaled, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5135112674452953850, 13376159879454619046), TimeToolTimeIntervalListScaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListScaled"] = TimeToolTimeIntervalListScaled
 
-class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations..."""
 
     _num_methods = 10
@@ -13864,7 +12661,7 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, TimeIntervalListSignaled)
+        return get_interface_property(attrname, TimeToolTimeIntervalListSignaled)
     
     _get_original_intervals_metadata = { "offset" : _get_original_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13872,14 +12669,14 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     @property
     def original_intervals(self) -> "ITimeToolTimeIntervalList":
         """The original time interval list."""
-        return self._intf.get_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._get_original_intervals_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_original_intervals_metadata)
 
     _set_original_intervals_metadata = { "offset" : _set_original_intervals_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @original_intervals.setter
     def original_intervals(self, originalIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._set_original_intervals_metadata, originalIntervals)
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_original_intervals_metadata, originalIntervals)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13887,14 +12684,14 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     @property
     def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
-        return self._intf.get_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._get_signal_sense_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
     def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._set_signal_sense_metadata, signalSense)
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_sense_metadata, signalSense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13902,14 +12699,14 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     @property
     def base_clock_location(self) -> "IVectorGeometryToolPoint":
         """The base clock location, which is a point from VGT."""
-        return self._intf.get_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._get_base_clock_location_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_base_clock_location_metadata)
 
     _set_base_clock_location_metadata = { "offset" : _set_base_clock_location_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
     def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._set_base_clock_location_metadata, baseClockLocation)
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_base_clock_location_metadata, baseClockLocation)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13917,14 +12714,14 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     @property
     def target_clock_location(self) -> "IVectorGeometryToolPoint":
         """The target clock location, which is a point from VGT."""
-        return self._intf.get_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._get_target_clock_location_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_target_clock_location_metadata)
 
     _set_target_clock_location_metadata = { "offset" : _set_target_clock_location_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
     def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._set_target_clock_location_metadata, targetClockLocation)
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_target_clock_location_metadata, targetClockLocation)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13932,14 +12729,14 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     @property
     def signal_delay(self) -> "IAnalysisWorkbenchSignalDelay":
         """The Signal delay definition, which includes signal transmission, time delay convergence and signal path reference system."""
-        return self._intf.get_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._get_signal_delay_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_signal_delay_metadata)
 
     _set_signal_delay_metadata = { "offset" : _set_signal_delay_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
     def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeIntervalListSignaled._metadata, TimeIntervalListSignaled._set_signal_delay_metadata, signalDelay)
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_delay_metadata, signalDelay)
 
     _property_names[original_intervals] = "original_intervals"
     _property_names[signal_sense] = "signal_sense"
@@ -13948,26 +12745,26 @@ class TimeIntervalListSignaled(ITimeToolTimeIntervalList, IComponent, SupportsDe
     _property_names[signal_delay] = "signal_delay"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type TimeIntervalListSignaled."""
+        """Construct an object of type TimeToolTimeIntervalListSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeIntervalListSignaled)
+        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListSignaled)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeIntervalListSignaled, [TimeIntervalListSignaled, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListSignaled, [TimeToolTimeIntervalListSignaled, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
-agcls.AgClassCatalog.add_catalog_entry((5092160389376989615, 317323019564379040), TimeIntervalListSignaled)
-agcls.AgTypeNameMap["TimeIntervalListSignaled"] = TimeIntervalListSignaled
+agcls.AgClassCatalog.add_catalog_entry((5092160389376989615, 317323019564379040), TimeToolTimeIntervalListSignaled)
+agcls.AgTypeNameMap["TimeToolTimeIntervalListSignaled"] = TimeToolTimeIntervalListSignaled
 
-class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval List defined by shifting the specified reference interval list by a fixed time offset."""
 
     _num_methods = 4
@@ -14022,22 +12819,22 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IComponent, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListTimeOffset)
         ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListTimeOffset, [TimeToolTimeIntervalListTimeOffset, ITimeToolTimeIntervalList, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalListTimeOffset, [TimeToolTimeIntervalListTimeOffset, ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5150624900174320789, 5541852546161415593), TimeToolTimeIntervalListTimeOffset)
 agcls.AgTypeNameMap["TimeToolTimeIntervalListTimeOffset"] = TimeToolTimeIntervalListTimeOffset
 
-class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined."""
 
     _num_methods = 8
@@ -14128,22 +12925,22 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IComponent, SupportsDele
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalScaled)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalScaled, [TimeToolTimeIntervalScaled, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalScaled, [TimeToolTimeIntervalScaled, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5407853737749222524, 4515930083547027092), TimeToolTimeIntervalScaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalScaled"] = TimeToolTimeIntervalScaled
 
-class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations."""
 
     _num_methods = 10
@@ -14252,22 +13049,22 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IComponent, SupportsDe
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSignaled)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalSignaled, [TimeToolTimeIntervalSignaled, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalSignaled, [TimeToolTimeIntervalSignaled, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5146912718400089076, 7977322097241354916), TimeToolTimeIntervalSignaled)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSignaled"] = TimeToolTimeIntervalSignaled
 
-class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A smart interval."""
 
     _num_methods = 17
@@ -14428,22 +13225,22 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSmartInterval)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalSmartInterval, [TimeToolTimeIntervalSmartInterval, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalSmartInterval, [TimeToolTimeIntervalSmartInterval, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5123187924205363884, 5573303980465739693), TimeToolTimeIntervalSmartInterval)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSmartInterval"] = TimeToolTimeIntervalSmartInterval
 
-class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IComponent, SupportsDeleteCallback):
+class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interval defined by shifting specified reference interval by fixed time offset."""
 
     _num_methods = 4
@@ -14498,22 +13295,22 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IComponent, Supports
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalTimeOffset)
         ITimeToolTimeInterval.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolTimeIntervalTimeOffset, [TimeToolTimeIntervalTimeOffset, ITimeToolTimeInterval, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolTimeIntervalTimeOffset, [TimeToolTimeIntervalTimeOffset, ITimeToolTimeInterval, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5594696185291586304, 7469384033316253831), TimeToolTimeIntervalTimeOffset)
 agcls.AgTypeNameMap["TimeToolTimeIntervalTimeOffset"] = TimeToolTimeIntervalTimeOffset
 
-class TimeToolInstantSignaled(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Event recorded on specified clock via signal transmission from original time instant recorded on different clock."""
 
     _num_methods = 10
@@ -14622,22 +13419,22 @@ class TimeToolInstantSignaled(ITimeToolInstant, IComponent, SupportsDeleteCallba
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantSignaled)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantSignaled, [TimeToolInstantSignaled, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantSignaled, [TimeToolInstantSignaled, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5693916528422022973, 3263658904170695863), TimeToolInstantSignaled)
 agcls.AgTypeNameMap["TimeToolInstantSignaled"] = TimeToolInstantSignaled
 
-class TimeToolInstantSmartEpoch(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A smart epoch."""
 
     _num_methods = 6
@@ -14710,22 +13507,22 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IComponent, SupportsDeleteCall
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantSmartEpoch)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantSmartEpoch, [TimeToolInstantSmartEpoch, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantSmartEpoch, [TimeToolInstantSmartEpoch, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5284572681912631891, 10588360420919622552), TimeToolInstantSmartEpoch)
 agcls.AgTypeNameMap["TimeToolInstantSmartEpoch"] = TimeToolInstantSmartEpoch
 
-class TimeToolInstantStartStopTime(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Event is either start or stop time selected from a reference interval."""
 
     _num_methods = 4
@@ -14780,22 +13577,22 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IComponent, SupportsDeleteC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantStartStopTime)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantStartStopTime, [TimeToolInstantStartStopTime, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantStartStopTime, [TimeToolInstantStartStopTime, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5286281606334682631, 1156813953277887129), TimeToolInstantStartStopTime)
 agcls.AgTypeNameMap["TimeToolInstantStartStopTime"] = TimeToolInstantStartStopTime
 
-class TimeToolInstantTimeOffset(ITimeToolInstant, IComponent, SupportsDeleteCallback):
+class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Event at fixed offset from specified reference event."""
 
     _num_methods = 4
@@ -14850,17 +13647,17 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IComponent, SupportsDeleteCall
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolInstantTimeOffset)
         ITimeToolInstant.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolInstantTimeOffset, [TimeToolInstantTimeOffset, ITimeToolInstant, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolInstantTimeOffset, [TimeToolInstantTimeOffset, ITimeToolInstant, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4631038835821414856, 7748244684488556208), TimeToolInstantTimeOffset)
 agcls.AgTypeNameMap["TimeToolInstantTimeOffset"] = TimeToolInstantTimeOffset
@@ -14983,28 +13780,28 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
 agcls.AgClassCatalog.add_catalog_entry((4915234003613464599, 13847403613333364110), TimeToolTimeIntervalGapsFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalGapsFilter"] = TimeToolTimeIntervalGapsFilter
 
-class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for integral definitions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchIntegral."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchIntegral, [IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5141699313388952889, 439554261460355240), AnalysisWorkbenchIntegral)
 agcls.AgTypeNameMap["AnalysisWorkbenchIntegral"] = AnalysisWorkbenchIntegral
 
-class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IComponent, SupportsDeleteCallback):
+class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Integral definition determines how scalar calculation is numerically integrated."""
 
     _num_methods = 6
@@ -15077,43 +13874,43 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolIntegralBasic)
         IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [CalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolIntegralBasic, [CalculationToolIntegralBasic, IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4728253546109001966, 9993082615726594997), CalculationToolIntegralBasic)
 agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBasic
 
-class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for interpolation definitions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchInterpolator."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchInterpolator, [IAnalysisWorkbenchInterpolator, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchInterpolator, [IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4634326977035843189, 527318962673378965), AnalysisWorkbenchInterpolator)
 agcls.AgTypeNameMap["AnalysisWorkbenchInterpolator"] = AnalysisWorkbenchInterpolator
 
-class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IComponent, SupportsDeleteCallback):
+class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details."""
 
     _num_methods = 4
@@ -15168,17 +13965,17 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolInterpolatorBasic)
         IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolInterpolatorBasic, [CalculationToolInterpolatorBasic, IAnalysisWorkbenchInterpolator, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolInterpolatorBasic, [CalculationToolInterpolatorBasic, IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5710680427636003903, 2230165650911561406), CalculationToolInterpolatorBasic)
 agcls.AgTypeNameMap["CalculationToolInterpolatorBasic"] = CalculationToolInterpolatorBasic
@@ -15301,28 +14098,28 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
 agcls.AgClassCatalog.add_catalog_entry((5370173919127882269, 172199397625736352), TimeToolTimeIntervalLastIntervalsFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalLastIntervalsFilter"] = TimeToolTimeIntervalLastIntervalsFilter
 
-class CalculationToolParameterSet(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Parameter set contains various sets of scalar computations."""
     def __init__(self, sourceObject=None):
         """Construct an object of type CalculationToolParameterSet."""
         SupportsDeleteCallback.__init__(self)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSet, [ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5211800288647545596, 7543106923046475154), CalculationToolParameterSet)
 agcls.AgTypeNameMap["CalculationToolParameterSet"] = CalculationToolParameterSet
 
-class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Attitude parameter set contains various representations of attitude of one set of axes relative to another."""
 
     _num_methods = 4
@@ -15377,17 +14174,17 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, ICompone
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolParameterSetAttitude)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [CalculationToolParameterSetAttitude, ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetAttitude, [CalculationToolParameterSetAttitude, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5089636213011434244, 12709160544851939744), CalculationToolParameterSetAttitude)
 agcls.AgTypeNameMap["CalculationToolParameterSetAttitude"] = CalculationToolParameterSetAttitude
@@ -15478,7 +14275,7 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5191271020123231030, 13615349136520883352), CalculationToolParameterSetFactory)
 agcls.AgTypeNameMap["CalculationToolParameterSetFactory"] = CalculationToolParameterSetFactory
 
-class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Ground trajectory parameter set contains various representations of trajectory of a point relative to central body reference shape."""
 
     _num_methods = 4
@@ -15533,22 +14330,22 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolParameterSetGroundTrajectory)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [CalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetGroundTrajectory, [CalculationToolParameterSetGroundTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5476359557675953687, 12818036812419277696), CalculationToolParameterSetGroundTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetGroundTrajectory"] = CalculationToolParameterSetGroundTrajectory
 
-class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Orbit parameter set contains various trajectory representations of an orbiting point."""
 
     _num_methods = 12
@@ -15675,22 +14472,22 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IComponent,
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolParameterSetOrbit)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [CalculationToolParameterSetOrbit, ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetOrbit, [CalculationToolParameterSetOrbit, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4611801354393510048, 12183196691739788168), CalculationToolParameterSetOrbit)
 agcls.AgTypeNameMap["CalculationToolParameterSetOrbit"] = CalculationToolParameterSetOrbit
 
-class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Trajectory parameter set contains various representations of trajectory of a point relative to a reference coordinate system."""
 
     _num_methods = 4
@@ -15745,22 +14542,22 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, ICompo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolParameterSetTrajectory)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [CalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetTrajectory, [CalculationToolParameterSetTrajectory, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5733434664696181485, 15500898216521877646), CalculationToolParameterSetTrajectory)
 agcls.AgTypeNameMap["CalculationToolParameterSetTrajectory"] = CalculationToolParameterSetTrajectory
 
-class CalculationToolParameterSetVector(ICalculationToolParameterSet, IComponent, SupportsDeleteCallback):
+class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector parameter set contains various representations of a vector in a reference set of axes."""
 
     _num_methods = 4
@@ -15815,17 +14612,17 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolParameterSetVector)
         ICalculationToolParameterSet.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [CalculationToolParameterSetVector, ICalculationToolParameterSet, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolParameterSetVector, [CalculationToolParameterSetVector, ICalculationToolParameterSet, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5342518829739884757, 14433235443967563942), CalculationToolParameterSetVector)
 agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParameterSetVector
@@ -15973,28 +14770,28 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
 agcls.AgClassCatalog.add_catalog_entry((5599006480069411520, 196698249444219283), TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalRelativeSatisfactionConditionFilter"] = TimeToolTimeIntervalRelativeSatisfactionConditionFilter
 
-class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base sampling interface."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchSampling."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSampling, [IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5764026328462147817, 7669428216318596746), AnalysisWorkbenchSampling)
 agcls.AgTypeNameMap["AnalysisWorkbenchSampling"] = AnalysisWorkbenchSampling
 
-class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IComponent, SupportsDeleteCallback):
+class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Sampling definition determines how scalar data should be sampled in order to adequately capture trends in that data."""
 
     _num_methods = 3
@@ -16041,17 +14838,17 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IComponent, Suppo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, CalculationToolSamplingBasic)
         IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [CalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IComponent])
+        set_class_attribute(self, attrname, value, CalculationToolSamplingBasic, [CalculationToolSamplingBasic, IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4842369728921496656, 433140158192125353), CalculationToolSamplingBasic)
 agcls.AgTypeNameMap["CalculationToolSamplingBasic"] = CalculationToolSamplingBasic
@@ -16527,28 +15324,28 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
 agcls.AgClassCatalog.add_catalog_entry((4851832596060338991, 14965342242796491937), TimeToolTimeIntervalSatisfactionConditionFilter)
 agcls.AgTypeNameMap["TimeToolTimeIntervalSatisfactionConditionFilter"] = TimeToolTimeIntervalSatisfactionConditionFilter
 
-class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchSignalDelay."""
         SupportsDeleteCallback.__init__(self)
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSignalDelay, [IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4953635476598966337, 4896658474318640771), AnalysisWorkbenchSignalDelay)
 agcls.AgTypeNameMap["AnalysisWorkbenchSignalDelay"] = AnalysisWorkbenchSignalDelay
 
-class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IComponent, SupportsDeleteCallback):
+class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
 
     _num_methods = 10
@@ -16657,17 +15454,17 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IComponent, Suppor
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, TimeToolSignalDelayBasic)
         IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [TimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IComponent])
+        set_class_attribute(self, attrname, value, TimeToolSignalDelayBasic, [TimeToolSignalDelayBasic, IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5642525835138409264, 10528515051945010859), TimeToolSignalDelayBasic)
 agcls.AgTypeNameMap["TimeToolSignalDelayBasic"] = TimeToolSignalDelayBasic
@@ -17501,49 +16298,49 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5707542397246644802, 8133195754214030981), TimeToolLightTimeDelay)
 agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
-class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type SpatialAnalysisToolVolume."""
         SupportsDeleteCallback.__init__(self)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolume, [ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5136212516512030015, 17210711229734835135), SpatialAnalysisToolVolume)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
-class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type SpatialAnalysisToolSpatialCalculation."""
         SupportsDeleteCallback.__init__(self)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolSpatialCalculation, [ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolSpatialCalculation, [ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5603624786402262993, 11281447092007354792), SpatialAnalysisToolSpatialCalculation)
 agcls.AgTypeNameMap["SpatialAnalysisToolSpatialCalculation"] = SpatialAnalysisToolSpatialCalculation
 
-class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc altitude interface."""
 
     _num_methods = 8
@@ -17634,22 +16431,22 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAltitude)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAltitude, [SpatialAnalysisToolCalculationAltitude, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAltitude, [SpatialAnalysisToolCalculationAltitude, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5246343411400455836, 13693915155416519566), SpatialAnalysisToolCalculationAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationAltitude"] = SpatialAnalysisToolCalculationAltitude
 
-class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc angle off vector interface."""
 
     _num_methods = 10
@@ -17758,22 +16555,22 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAngleToLocation)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAngleToLocation, [SpatialAnalysisToolCalculationAngleToLocation, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationAngleToLocation, [SpatialAnalysisToolCalculationAngleToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5561615505447228747, 2307594500702910097), SpatialAnalysisToolCalculationAngleToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationAngleToLocation"] = SpatialAnalysisToolCalculationAngleToLocation
 
-class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc condition satisfaction interface."""
 
     _num_methods = 20
@@ -17972,22 +16769,22 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationConditionSatisfactionMetric, [SpatialAnalysisToolCalculationConditionSatisfactionMetric, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationConditionSatisfactionMetric, [SpatialAnalysisToolCalculationConditionSatisfactionMetric, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5757987867521137107, 16897264315178726031), SpatialAnalysisToolCalculationConditionSatisfactionMetric)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationConditionSatisfactionMetric"] = SpatialAnalysisToolCalculationConditionSatisfactionMetric
 
-class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc propagation delay to location interface."""
 
     _num_methods = 12
@@ -18114,22 +16911,22 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationPropagationDelayToLocation)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationPropagationDelayToLocation, [SpatialAnalysisToolCalculationPropagationDelayToLocation, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationPropagationDelayToLocation, [SpatialAnalysisToolCalculationPropagationDelayToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5452141680403908840, 4382880934208172435), SpatialAnalysisToolCalculationPropagationDelayToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationPropagationDelayToLocation"] = SpatialAnalysisToolCalculationPropagationDelayToLocation
 
-class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Volumetric data loaded from a specified file - A file with .h5 extension. See STK help."""
 
     _num_methods = 3
@@ -18174,22 +16971,22 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFile)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFile, [SpatialAnalysisToolCalculationFile, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFile, [SpatialAnalysisToolCalculationFile, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5046729131766552262, 14215457174500361369), SpatialAnalysisToolCalculationFile)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationFile"] = SpatialAnalysisToolCalculationFile
 
-class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc scalar to location interface."""
 
     _num_methods = 2
@@ -18226,22 +17023,22 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFromCalculationScalar)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFromCalculationScalar, [SpatialAnalysisToolCalculationFromCalculationScalar, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationFromCalculationScalar, [SpatialAnalysisToolCalculationFromCalculationScalar, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5507501849095280163, 3788369914884987542), SpatialAnalysisToolCalculationFromCalculationScalar)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationFromCalculationScalar"] = SpatialAnalysisToolCalculationFromCalculationScalar
 
-class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc distance to location interface."""
 
     _num_methods = 8
@@ -18332,22 +17129,22 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationDistanceToLocation)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationDistanceToLocation, [SpatialAnalysisToolCalculationDistanceToLocation, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationDistanceToLocation, [SpatialAnalysisToolCalculationDistanceToLocation, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5742064057873770847, 7474360553064389522), SpatialAnalysisToolCalculationDistanceToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationDistanceToLocation"] = SpatialAnalysisToolCalculationDistanceToLocation
 
-class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCalculation, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc solar intensityn interface."""
 
     _num_methods = 4
@@ -18402,22 +17199,22 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationSolarIntensity)
         ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationSolarIntensity, [SpatialAnalysisToolCalculationSolarIntensity, ISpatialAnalysisToolSpatialCalculation, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolCalculationSolarIntensity, [SpatialAnalysisToolCalculationSolarIntensity, ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5721214495491549297, 15401307401531350179), SpatialAnalysisToolCalculationSolarIntensity)
 agcls.AgTypeNameMap["SpatialAnalysisToolCalculationSolarIntensity"] = SpatialAnalysisToolCalculationSolarIntensity
 
-class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A combined volume interface."""
 
     _num_methods = 8
@@ -18504,22 +17301,22 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionCombined)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionCombined, [SpatialAnalysisToolConditionCombined, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionCombined, [SpatialAnalysisToolConditionCombined, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5171174926120201865, 5073276570713395112), SpatialAnalysisToolConditionCombined)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionCombined"] = SpatialAnalysisToolConditionCombined
 
-class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An volume from calc volume interface."""
 
     _num_methods = 9
@@ -18614,22 +17411,22 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionSpatialCalculationBounds)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionSpatialCalculationBounds, [SpatialAnalysisToolConditionSpatialCalculationBounds, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionSpatialCalculationBounds, [SpatialAnalysisToolConditionSpatialCalculationBounds, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5512201731345924287, 6484453261337714838), SpatialAnalysisToolConditionSpatialCalculationBounds)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionSpatialCalculationBounds"] = SpatialAnalysisToolConditionSpatialCalculationBounds
 
-class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume from conditioninterface."""
 
     _num_methods = 10
@@ -18738,22 +17535,22 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionConditionAtLocation)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionConditionAtLocation, [SpatialAnalysisToolConditionConditionAtLocation, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionConditionAtLocation, [SpatialAnalysisToolConditionConditionAtLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5732933615123458834, 6568177297179918983), SpatialAnalysisToolConditionConditionAtLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionConditionAtLocation"] = SpatialAnalysisToolConditionConditionAtLocation
 
-class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An over time volume interface."""
 
     _num_methods = 4
@@ -18808,22 +17605,22 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionGridBoundingVolume)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionGridBoundingVolume, [SpatialAnalysisToolConditionGridBoundingVolume, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionGridBoundingVolume, [SpatialAnalysisToolConditionGridBoundingVolume, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4654272327836492418, 16823323511191899287), SpatialAnalysisToolConditionGridBoundingVolume)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionGridBoundingVolume"] = SpatialAnalysisToolConditionGridBoundingVolume
 
-class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An volume from time satisfaction volume interface."""
 
     _num_methods = 2
@@ -18860,43 +17657,43 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionValidTimeAtLocation)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionValidTimeAtLocation, [SpatialAnalysisToolConditionValidTimeAtLocation, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionValidTimeAtLocation, [SpatialAnalysisToolConditionValidTimeAtLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5627140386690235637, 13821308809228561049), SpatialAnalysisToolConditionValidTimeAtLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionValidTimeAtLocation"] = SpatialAnalysisToolConditionValidTimeAtLocation
 
-class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
     def __init__(self, sourceObject=None):
         """Construct an object of type SpatialAnalysisToolVolumeGrid."""
         SupportsDeleteCallback.__init__(self)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGrid, [ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5702248548041919544, 8355142271349343408), SpatialAnalysisToolVolumeGrid)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGrid"] = SpatialAnalysisToolVolumeGrid
 
-class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid bearing alt (Surface Bearing) interface."""
 
     _num_methods = 11
@@ -19017,22 +17814,22 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, [SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, [SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5623451090371518830, 6528069848114595743), SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude"] = SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude
 
-class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid Cartesian interface."""
 
     _num_methods = 5
@@ -19099,22 +17896,22 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, ICo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCartesian)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [SpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCartesian, [SpatialAnalysisToolVolumeGridCartesian, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5143879619490205860, 15008466888120033703), SpatialAnalysisToolVolumeGridCartesian)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCartesian"] = SpatialAnalysisToolVolumeGridCartesian
 
-class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid constrained interface."""
 
     _num_methods = 4
@@ -19169,22 +17966,22 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridConstrained)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [SpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridConstrained, [SpatialAnalysisToolVolumeGridConstrained, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5355718201764201772, 18302606991020932526), SpatialAnalysisToolVolumeGridConstrained)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridConstrained"] = SpatialAnalysisToolVolumeGridConstrained
 
-class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid cylindrical interface."""
 
     _num_methods = 5
@@ -19251,22 +18048,22 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCylindrical)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [SpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridCylindrical, [SpatialAnalysisToolVolumeGridCylindrical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5616361831989159850, 14417449230462750362), SpatialAnalysisToolVolumeGridCylindrical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridCylindrical"] = SpatialAnalysisToolVolumeGridCylindrical
 
-class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid lat lon alt (Cartogrographic) interface."""
 
     _num_methods = 7
@@ -19351,17 +18148,17 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, [SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, [SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5432256157047656388, 11350183618881279388), SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude"] = SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude
@@ -19476,7 +18273,7 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4933513940597038247, 13537496590627059615), SpatialAnalysisToolVolumeGridResult)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridResult"] = SpatialAnalysisToolVolumeGridResult
 
-class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid spherical interface."""
 
     _num_methods = 5
@@ -19543,22 +18340,22 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, ICo
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridSpherical)
         ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [SpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolVolumeGridSpherical, [SpatialAnalysisToolVolumeGridSpherical, ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5230140972615936311, 7226435708672804267), SpatialAnalysisToolVolumeGridSpherical)
 agcls.AgTypeNameMap["SpatialAnalysisToolVolumeGridSpherical"] = SpatialAnalysisToolVolumeGridSpherical
 
-class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An Inview volume interface."""
 
     _num_methods = 3
@@ -19605,22 +18402,22 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionAccessToLocation)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionAccessToLocation, [SpatialAnalysisToolConditionAccessToLocation, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionAccessToLocation, [SpatialAnalysisToolConditionAccessToLocation, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5724962521871071047, 12322705441895077515), SpatialAnalysisToolConditionAccessToLocation)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionAccessToLocation"] = SpatialAnalysisToolConditionAccessToLocation
 
-class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A lighting volume interface."""
 
     _num_methods = 6
@@ -19693,22 +18490,22 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionLighting)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionLighting, [SpatialAnalysisToolConditionLighting, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionLighting, [SpatialAnalysisToolConditionLighting, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4846621819260420121, 12614405677517105581), SpatialAnalysisToolConditionLighting)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionLighting"] = SpatialAnalysisToolConditionLighting
 
-class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IComponent, SupportsDeleteCallback):
+class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An over time volume interface."""
 
     _num_methods = 10
@@ -19817,36 +18614,36 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionOverTime)
         ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionOverTime, [SpatialAnalysisToolConditionOverTime, ISpatialAnalysisToolVolume, IComponent])
+        set_class_attribute(self, attrname, value, SpatialAnalysisToolConditionOverTime, [SpatialAnalysisToolConditionOverTime, ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4854841648937134318, 3250948660834583456), SpatialAnalysisToolConditionOverTime)
 agcls.AgTypeNameMap["SpatialAnalysisToolConditionOverTime"] = SpatialAnalysisToolConditionOverTime
 
-class AnalysisWorkbenchComponent(IComponent, SupportsDeleteCallback):
+class AnalysisWorkbenchComponent(IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Generic VGT component."""
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchComponent."""
         SupportsDeleteCallback.__init__(self)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponent, [IComponent])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponent, [IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5463600693607263739, 3992744111484991654), AnalysisWorkbenchComponent)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponent"] = AnalysisWorkbenchComponent
@@ -19911,7 +18708,7 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5699426269249570940, 15161479374799558806), AnalysisWorkbenchComponentTypeInformation)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentTypeInformation"] = AnalysisWorkbenchComponentTypeInformation
 
-class AnalysisWorkbenchComponentInstance(IComponentContext, SupportsDeleteCallback):
+class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, SupportsDeleteCallback):
     """The AnalysisWorkbenchComponentInstance interface enables to obtain information about the parent object that owns the VGT component."""
 
     _num_methods = 2
@@ -19938,7 +18735,7 @@ class AnalysisWorkbenchComponentInstance(IComponentContext, SupportsDeleteCallba
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def template(self) -> "IComponent":
+    def template(self) -> "IAnalysisWorkbenchComponent":
         """Return a template object the VGT component was created from or null if the VGT component was not created from a template."""
         return self._intf.get_property(AnalysisWorkbenchComponentInstance._metadata, AnalysisWorkbenchComponentInstance._get_template_metadata)
 
@@ -19949,21 +18746,21 @@ class AnalysisWorkbenchComponentInstance(IComponentContext, SupportsDeleteCallba
         """Construct an object of type AnalysisWorkbenchComponentInstance."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentInstance)
-        IComponentContext.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentContext._private_init(self, intf)
+        IAnalysisWorkbenchComponentContext._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentInstance, [AnalysisWorkbenchComponentInstance, IComponentContext])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentInstance, [AnalysisWorkbenchComponentInstance, IAnalysisWorkbenchComponentContext])
 
 agcls.AgClassCatalog.add_catalog_entry((5391125706042513269, 1545934538743815612), AnalysisWorkbenchComponentInstance)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentInstance"] = AnalysisWorkbenchComponentInstance
 
-class AnalysisWorkbenchComponentTemplate(IComponentContext, SupportsDeleteCallback):
+class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, SupportsDeleteCallback):
     """The AnalysisWorkbenchComponentTemplate interface enables to obtain information about the STK class that owns the VGT component."""
 
     _num_methods = 1
@@ -19991,21 +18788,21 @@ class AnalysisWorkbenchComponentTemplate(IComponentContext, SupportsDeleteCallba
         """Construct an object of type AnalysisWorkbenchComponentTemplate."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentTemplate)
-        IComponentContext.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentContext._private_init(self, intf)
+        IAnalysisWorkbenchComponentContext._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentTemplate, [AnalysisWorkbenchComponentTemplate, IComponentContext])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchComponentTemplate, [AnalysisWorkbenchComponentTemplate, IAnalysisWorkbenchComponentContext])
 
 agcls.AgClassCatalog.add_catalog_entry((4884527547614411789, 16415357707545642411), AnalysisWorkbenchComponentTemplate)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentTemplate"] = AnalysisWorkbenchComponentTemplate
 
-class VectorGeometryToolPointReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT point."""
 
     _num_methods = 4
@@ -20040,7 +18837,7 @@ class VectorGeometryToolPointReference(IComponentReference, SupportsDeleteCallba
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_point(self) -> "IVectorGeometryToolPoint":
-        """Return the actual point object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
+        """Return the actual point object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(VectorGeometryToolPointReference._metadata, VectorGeometryToolPointReference._get_point_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
@@ -20055,21 +18852,21 @@ class VectorGeometryToolPointReference(IComponentReference, SupportsDeleteCallba
         """Construct an object of type VectorGeometryToolPointReference."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointReference)
-        IComponentReference.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointReference, [VectorGeometryToolPointReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointReference, [VectorGeometryToolPointReference, IAnalysisWorkbenchComponentReference])
 
 agcls.AgClassCatalog.add_catalog_entry((4704692840303707085, 8020029865205775543), VectorGeometryToolPointReference)
 agcls.AgTypeNameMap["VectorGeometryToolPointReference"] = VectorGeometryToolPointReference
 
-class VectorReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT vector."""
 
     _num_methods = 4
@@ -20084,56 +18881,56 @@ class VectorReference(IComponentReference, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, VectorReference)
+        return get_interface_property(attrname, VectorGeometryToolVectorReference)
     
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_path(self, path:str) -> None:
         """Set a new vector."""
-        return self._intf.invoke(VectorReference._metadata, VectorReference._set_path_metadata, path)
+        return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._set_path_metadata, path)
 
     _set_vector_metadata = { "offset" : _set_vector_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     def set_vector(self, vector:"IVectorGeometryToolVector") -> None:
         """Set a new vector."""
-        return self._intf.invoke(VectorReference._metadata, VectorReference._set_vector_metadata, vector)
+        return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._set_vector_metadata, vector)
 
     _get_vector_metadata = { "offset" : _get_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_vector(self) -> "IVectorGeometryToolVector":
-        """Return the actual vector object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
-        return self._intf.invoke(VectorReference._metadata, VectorReference._get_vector_metadata, OutArg())
+        """Return the actual vector object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._get_vector_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"), agmarshall.VariantBoolArg,) }
     def has_cyclic_dependency(self, vector:"IVectorGeometryToolVector") -> bool:
         """Test whether the input component and the target component form a cyclic dependency."""
-        return self._intf.invoke(VectorReference._metadata, VectorReference._has_cyclic_dependency_metadata, vector, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._has_cyclic_dependency_metadata, vector, OutArg())
 
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type VectorReference."""
+        """Construct an object of type VectorGeometryToolVectorReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorReference)
-        IComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorReference, [VectorReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorReference, [VectorGeometryToolVectorReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((5440566115286381237, 11986298819353492100), VectorReference)
-agcls.AgTypeNameMap["VectorReference"] = VectorReference
+agcls.AgClassCatalog.add_catalog_entry((5440566115286381237, 11986298819353492100), VectorGeometryToolVectorReference)
+agcls.AgTypeNameMap["VectorGeometryToolVectorReference"] = VectorGeometryToolVectorReference
 
-class VectorGeometryToolAxesReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT axes."""
 
     _num_methods = 4
@@ -20168,7 +18965,7 @@ class VectorGeometryToolAxesReference(IComponentReference, SupportsDeleteCallbac
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_axes(self) -> "IVectorGeometryToolAxes":
-        """Return the actual axes object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
+        """Return the actual axes object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(VectorGeometryToolAxesReference._metadata, VectorGeometryToolAxesReference._get_axes_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
@@ -20183,21 +18980,21 @@ class VectorGeometryToolAxesReference(IComponentReference, SupportsDeleteCallbac
         """Construct an object of type VectorGeometryToolAxesReference."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesReference)
-        IComponentReference.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesReference, [VectorGeometryToolAxesReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesReference, [VectorGeometryToolAxesReference, IAnalysisWorkbenchComponentReference])
 
 agcls.AgClassCatalog.add_catalog_entry((5051443874454375573, 2367503670708117661), VectorGeometryToolAxesReference)
 agcls.AgTypeNameMap["VectorGeometryToolAxesReference"] = VectorGeometryToolAxesReference
 
-class VectorGeometryToolAngleReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT angle."""
 
     _num_methods = 4
@@ -20232,7 +19029,7 @@ class VectorGeometryToolAngleReference(IComponentReference, SupportsDeleteCallba
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_angle(self) -> "IVectorGeometryToolAngle":
-        """Return the actual angle object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
+        """Return the actual angle object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(VectorGeometryToolAngleReference._metadata, VectorGeometryToolAngleReference._get_angle_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
@@ -20247,21 +19044,21 @@ class VectorGeometryToolAngleReference(IComponentReference, SupportsDeleteCallba
         """Construct an object of type VectorGeometryToolAngleReference."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleReference)
-        IComponentReference.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleReference, [VectorGeometryToolAngleReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleReference, [VectorGeometryToolAngleReference, IAnalysisWorkbenchComponentReference])
 
 agcls.AgClassCatalog.add_catalog_entry((5362491565921591286, 3697870622063550641), VectorGeometryToolAngleReference)
 agcls.AgTypeNameMap["VectorGeometryToolAngleReference"] = VectorGeometryToolAngleReference
 
-class VectorGeometryToolSystemReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT system."""
 
     _num_methods = 4
@@ -20296,7 +19093,7 @@ class VectorGeometryToolSystemReference(IComponentReference, SupportsDeleteCallb
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_system(self) -> "IVectorGeometryToolSystem":
-        """Return the actual system object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
+        """Return the actual system object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
         return self._intf.invoke(VectorGeometryToolSystemReference._metadata, VectorGeometryToolSystemReference._get_system_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
@@ -20311,21 +19108,21 @@ class VectorGeometryToolSystemReference(IComponentReference, SupportsDeleteCallb
         """Construct an object of type VectorGeometryToolSystemReference."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemReference)
-        IComponentReference.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolSystemReference, [VectorGeometryToolSystemReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemReference, [VectorGeometryToolSystemReference, IAnalysisWorkbenchComponentReference])
 
 agcls.AgClassCatalog.add_catalog_entry((4872681286682929827, 12142992341420117925), VectorGeometryToolSystemReference)
 agcls.AgTypeNameMap["VectorGeometryToolSystemReference"] = VectorGeometryToolSystemReference
 
-class PlaneReference(IComponentReference, SupportsDeleteCallback):
+class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT plane."""
 
     _num_methods = 4
@@ -20340,74 +19137,74 @@ class PlaneReference(IComponentReference, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, PlaneReference)
+        return get_interface_property(attrname, VectorGeometryToolPlaneReference)
     
     _set_path_metadata = { "offset" : _set_path_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     def set_path(self, path:str) -> None:
         """Set a new plane using a specified path."""
-        return self._intf.invoke(PlaneReference._metadata, PlaneReference._set_path_metadata, path)
+        return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._set_path_metadata, path)
 
     _set_plane_metadata = { "offset" : _set_plane_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPlane"),) }
     def set_plane(self, plane:"IVectorGeometryToolPlane") -> None:
         """Set a new plane."""
-        return self._intf.invoke(PlaneReference._metadata, PlaneReference._set_plane_metadata, plane)
+        return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._set_plane_metadata, plane)
 
     _get_plane_metadata = { "offset" : _get_plane_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     def get_plane(self) -> "IVectorGeometryToolPlane":
-        """Return the actual plane object behind the reference. Use IComponent.IsValid to test the validity of the returned object."""
-        return self._intf.invoke(PlaneReference._metadata, PlaneReference._get_plane_metadata, OutArg())
+        """Return the actual plane object behind the reference. Use IAnalysisWorkbenchComponent.IsValid to test the validity of the returned object."""
+        return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._get_plane_metadata, OutArg())
 
     _has_cyclic_dependency_metadata = { "offset" : _has_cyclic_dependency_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPlane"), agmarshall.VariantBoolArg,) }
     def has_cyclic_dependency(self, plane:"IVectorGeometryToolPlane") -> bool:
         """Test whether the input component and the target component form a cyclic dependency."""
-        return self._intf.invoke(PlaneReference._metadata, PlaneReference._has_cyclic_dependency_metadata, plane, OutArg())
+        return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._has_cyclic_dependency_metadata, plane, OutArg())
 
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type PlaneReference."""
+        """Construct an object of type VectorGeometryToolPlaneReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PlaneReference)
-        IComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, PlaneReference, [PlaneReference, IComponentReference])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneReference, [VectorGeometryToolPlaneReference, IAnalysisWorkbenchComponentReference])
 
-agcls.AgClassCatalog.add_catalog_entry((4889764551144905757, 6174863000760270723), PlaneReference)
-agcls.AgTypeNameMap["PlaneReference"] = PlaneReference
+agcls.AgClassCatalog.add_catalog_entry((4889764551144905757, 6174863000760270723), VectorGeometryToolPlaneReference)
+agcls.AgTypeNameMap["VectorGeometryToolPlaneReference"] = VectorGeometryToolPlaneReference
 
-class VectorGeometryToolVector(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic vector class."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolVector."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVector, [IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4788543380264657974, 4021920445499540372), VectorGeometryToolVector)
 agcls.AgTypeNameMap["VectorGeometryToolVector"] = VectorGeometryToolVector
@@ -20496,94 +19293,94 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5086004625897624493, 5710003380506752172), VectorGeometryToolAxesLabels)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabels
 
-class VectorGeometryToolAxes(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxes(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic axes class."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolAxes."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxes, [IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5044961233979432208, 9395285165778922900), VectorGeometryToolAxes)
 agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
-class VectorGeometryToolPoint(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPoint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic VGT point class."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolPoint."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPoint, [IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5419596708576411945, 12185975766433231289), VectorGeometryToolPoint)
 agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
-class VectorGeometryToolSystem(IVectorGeometryToolSystem, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolSystem(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolSystem."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystem, [IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5448501409524915739, 12010762595595467697), VectorGeometryToolSystem)
 agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
-class VectorGeometryToolAngle(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngle(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolAngle."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngle, [IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5629500551113305507, 7730710653323930790), VectorGeometryToolAngle)
 agcls.AgTypeNameMap["VectorGeometryToolAngle"] = VectorGeometryToolAngle
@@ -20654,30 +19451,30 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5708362026720629481, 8749304800057505166), VectorGeometryToolPlaneLabels)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLabels
 
-class VectorGeometryToolPlane(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlane(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
     def __init__(self, sourceObject=None):
         """Construct an object of type VectorGeometryToolPlane."""
         SupportsDeleteCallback.__init__(self)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlane, [IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5498477606257732229, 9946486879664144023), VectorGeometryToolPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPlane"] = VectorGeometryToolPlane
 
-class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."""
 
     _num_methods = 4
@@ -20698,7 +19495,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IComp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def alignment_reference_vector(self) -> "VectorReference":
+    def alignment_reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify an alignment reference vector."""
         return self._intf.get_property(VectorGeometryToolAxesAlignedAndConstrained._metadata, VectorGeometryToolAxesAlignedAndConstrained._get_alignment_reference_vector_metadata)
 
@@ -20706,7 +19503,7 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IComp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def constraint_reference_vector(self) -> "VectorReference":
+    def constraint_reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a constraint reference vector."""
         return self._intf.get_property(VectorGeometryToolAxesAlignedAndConstrained._metadata, VectorGeometryToolAxesAlignedAndConstrained._get_constraint_reference_vector_metadata)
 
@@ -20736,24 +19533,24 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IComp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAlignedAndConstrained)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [VectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAlignedAndConstrained, [VectorGeometryToolAxesAlignedAndConstrained, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4850207006922603867, 3173509712834431154), VectorGeometryToolAxesAlignedAndConstrained)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAlignedAndConstrained"] = VectorGeometryToolAxesAlignedAndConstrained
 
-class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."""
 
     _num_methods = 5
@@ -20775,7 +19572,7 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IComponentTim
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def spin_vector(self) -> "VectorReference":
+    def spin_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a spin vector."""
         return self._intf.get_property(VectorGeometryToolAxesAngularOffset._metadata, VectorGeometryToolAxesAngularOffset._get_spin_vector_metadata)
 
@@ -20820,24 +19617,24 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IComponentTim
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAngularOffset)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [VectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAngularOffset, [VectorGeometryToolAxesAngularOffset, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4997754132062289803, 5413856362237364661), VectorGeometryToolAxesAngularOffset)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAngularOffset"] = VectorGeometryToolAxesAngularOffset
 
-class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes based on another set fixed at a specified epoch."""
 
     _num_methods = 4
@@ -20894,24 +19691,24 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IComponentTime
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixedAtEpoch)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [VectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixedAtEpoch, [VectorGeometryToolAxesFixedAtEpoch, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5521125035658318449, 12431711413893056934), VectorGeometryToolAxesFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixedAtEpoch"] = VectorGeometryToolAxesFixedAtEpoch
 
-class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """B-Plane axes using the selected target body and reference vector."""
 
     _num_methods = 5
@@ -20941,7 +19738,7 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IComponentTimeProper
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a reference vector."""
         return self._intf.get_property(VectorGeometryToolAxesBPlane._metadata, VectorGeometryToolAxesBPlane._get_reference_vector_metadata)
 
@@ -20978,24 +19775,24 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IComponentTimeProper
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesBPlane)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [VectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesBPlane, [VectorGeometryToolAxesBPlane, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5733700134692656362, 13054031072239382407), VectorGeometryToolAxesBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAxesBPlane"] = VectorGeometryToolAxesBPlane
 
-class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Customized axes offset with respect to a set of reference Axes."""
 
     _num_methods = 3
@@ -21042,24 +19839,24 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IComponentTime
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesCustomScript)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [VectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesCustomScript, [VectorGeometryToolAxesCustomScript, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5110760456880555996, 122080162762217350), VectorGeometryToolAxesCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCustomScript"] = VectorGeometryToolAxesCustomScript
 
-class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes specified by data from a file."""
 
     _num_methods = 2
@@ -21096,24 +19893,24 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IComponentTime
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAttitudeFile)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [VectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAttitudeFile, [VectorGeometryToolAxesAttitudeFile, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5288525702130684003, 14972327049341920664), VectorGeometryToolAxesAttitudeFile)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAttitudeFile"] = VectorGeometryToolAxesAttitudeFile
 
-class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes fixed in reference axes."""
 
     _num_methods = 2
@@ -21152,24 +19949,24 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IComponentTimePropert
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixed)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [VectorGeometryToolAxesFixed, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesFixed, [VectorGeometryToolAxesFixed, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4637366771607936115, 17213460083789714103), VectorGeometryToolAxesFixed)
 agcls.AgTypeNameMap["VectorGeometryToolAxesFixed"] = VectorGeometryToolAxesFixed
 
-class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."""
 
     _num_methods = 2
@@ -21206,24 +20003,24 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesModelAttachment)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttachment, [VectorGeometryToolAxesModelAttachment, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesModelAttachment, [VectorGeometryToolAxesModelAttachment, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5193235162391666986, 18246769432303230655), VectorGeometryToolAxesModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolAxesModelAttachment"] = VectorGeometryToolAxesModelAttachment
 
-class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."""
 
     _num_methods = 8
@@ -21248,7 +20045,7 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IComponentTimeProp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def spin_vector(self) -> "VectorReference":
+    def spin_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a spin vector."""
         return self._intf.get_property(VectorGeometryToolAxesSpinning._metadata, VectorGeometryToolAxesSpinning._get_spin_vector_metadata)
 
@@ -21316,24 +20113,24 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IComponentTimeProp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesSpinning)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [VectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesSpinning, [VectorGeometryToolAxesSpinning, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4995482426629917549, 13130993006376102317), VectorGeometryToolAxesSpinning)
 agcls.AgTypeNameMap["VectorGeometryToolAxesSpinning"] = VectorGeometryToolAxesSpinning
 
-class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Topocentric axes located at the reference point's projection on the central body."""
 
     _num_methods = 4
@@ -21390,24 +20187,24 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IComponentTimePro
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesOnSurface)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [VectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesOnSurface, [VectorGeometryToolAxesOnSurface, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4971314585753366554, 1292441604687819144), VectorGeometryToolAxesOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolAxesOnSurface"] = VectorGeometryToolAxesOnSurface
 
-class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Axes based on trajectory of the point relative to the reference coordinate system."""
 
     _num_methods = 4
@@ -21464,24 +20261,24 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesTrajectory)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [VectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesTrajectory, [VectorGeometryToolAxesTrajectory, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5298893710421423902, 14770159094158175145), VectorGeometryToolAxesTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolAxesTrajectory"] = VectorGeometryToolAxesTrajectory
 
-class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."""
 
     _num_methods = 4
@@ -21538,19 +20335,19 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesLagrangeLibration)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [VectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesLagrangeLibration, [VectorGeometryToolAxesLagrangeLibration, IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5341406077696168069, 3448170282291780742), VectorGeometryToolAxesLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolAxesLagrangeLibration"] = VectorGeometryToolAxesLagrangeLibration
@@ -21596,7 +20393,7 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
     _sample_metadata = { "offset" : _sample_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolSamplingResult":
+    def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolAxesSamplingResult":
         """Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters."""
         return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._sample_metadata, axes, referenceAxes, intervals, minStep, maxStep, targetRate, OutArg())
 
@@ -21617,7 +20414,7 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5420778078107633244, 5349538928625407639), VectorGeometryToolAxesCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolAxesCommonTasks"] = VectorGeometryToolAxesCommonTasks
 
-class VectorGeometryToolAxesAtTimeInstant(IComponent, IComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
+class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
     """Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."""
 
     _num_methods = 6
@@ -21689,25 +20486,25 @@ class VectorGeometryToolAxesAtTimeInstant(IComponent, IComponentTimeProperties, 
         """Construct an object of type VectorGeometryToolAxesAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAtTimeInstant)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolAxes._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [VectorGeometryToolAxesAtTimeInstant, IComponent, IComponentTimeProperties, IVectorGeometryToolAxes])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesAtTimeInstant, [VectorGeometryToolAxesAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry((5017193475427648010, 10215401686756772007), VectorGeometryToolAxesAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolAxesAtTimeInstant"] = VectorGeometryToolAxesAtTimeInstant
 
-class VectorGeometryToolAxesPlugin(IComponent, IComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
+class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes, SupportsDeleteCallback):
     """A VGT axes plugin."""
 
     _num_methods = 6
@@ -21779,25 +20576,25 @@ class VectorGeometryToolAxesPlugin(IComponent, IComponentTimeProperties, IVector
         """Construct an object of type VectorGeometryToolAxesPlugin."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesPlugin)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolAxes.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolAxes._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [VectorGeometryToolAxesPlugin, IComponent, IComponentTimeProperties, IVectorGeometryToolAxes])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAxesPlugin, [VectorGeometryToolAxesPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolAxes])
 
 agcls.AgClassCatalog.add_catalog_entry((5024306098242634861, 9027031691428489138), VectorGeometryToolAxesPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolAxesPlugin"] = VectorGeometryToolAxesPlugin
 
-class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An angle between two vectors."""
 
     _num_methods = 2
@@ -21816,7 +20613,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IComponent
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_vector(self) -> "VectorReference":
+    def from_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify the first of the two vectors the angle is measured."""
         return self._intf.get_property(VectorGeometryToolAngleBetweenVectors._metadata, VectorGeometryToolAngleBetweenVectors._get_from_vector_metadata)
 
@@ -21824,7 +20621,7 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IComponent
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to_vector(self) -> "VectorReference":
+    def to_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify the second of the two vectors the angle is measured."""
         return self._intf.get_property(VectorGeometryToolAngleBetweenVectors._metadata, VectorGeometryToolAngleBetweenVectors._get_to_vector_metadata)
 
@@ -21836,24 +20633,24 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenVectors)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [VectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenVectors, [VectorGeometryToolAngleBetweenVectors, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4934121995950007344, 3509908635259060373), VectorGeometryToolAngleBetweenVectors)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenVectors"] = VectorGeometryToolAngleBetweenVectors
 
-class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An angle between two planes."""
 
     _num_methods = 2
@@ -21872,7 +20669,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IComponentT
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_plane(self) -> "PlaneReference":
+    def from_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify the first of the two planes the angle is measured."""
         return self._intf.get_property(VectorGeometryToolAngleBetweenPlanes._metadata, VectorGeometryToolAngleBetweenPlanes._get_from_plane_metadata)
 
@@ -21880,7 +20677,7 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IComponentT
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to_plane(self) -> "PlaneReference":
+    def to_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify the second of the two planes the angle is measured."""
         return self._intf.get_property(VectorGeometryToolAngleBetweenPlanes._metadata, VectorGeometryToolAngleBetweenPlanes._get_to_plane_metadata)
 
@@ -21892,24 +20689,24 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenPlanes)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [VectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleBetweenPlanes, [VectorGeometryToolAngleBetweenPlanes, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5142415411480004719, 5672759854970127006), VectorGeometryToolAngleBetweenPlanes)
 agcls.AgTypeNameMap["VectorGeometryToolAngleBetweenPlanes"] = VectorGeometryToolAngleBetweenPlanes
 
-class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An angle between two vectors about an axis."""
 
     _num_methods = 7
@@ -21933,7 +20730,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_vector(self) -> "VectorReference":
+    def from_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a first vector to measure the angle."""
         return self._intf.get_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._get_from_vector_metadata)
 
@@ -21941,7 +20738,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to_vector(self) -> "VectorReference":
+    def to_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a second vector to measure the angle."""
         return self._intf.get_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._get_to_vector_metadata)
 
@@ -21949,7 +20746,7 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def pole_about(self) -> "VectorReference":
+    def pole_about(self) -> "VectorGeometryToolVectorReference":
         """Specify a vector about."""
         return self._intf.get_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._get_pole_about_metadata)
 
@@ -21994,24 +20791,24 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleDihedral)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [VectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleDihedral, [VectorGeometryToolAngleDihedral, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4903268742534288827, 1669198075433999546), VectorGeometryToolAngleDihedral)
 agcls.AgTypeNameMap["VectorGeometryToolAngleDihedral"] = VectorGeometryToolAngleDihedral
 
-class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Angle of the shortest rotation between the specified FromAxes and ToAxes axes."""
 
     _num_methods = 4
@@ -22068,24 +20865,24 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleRotation)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [VectorGeometryToolAngleRotation, IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleRotation, [VectorGeometryToolAngleRotation, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4804078596032006051, 13921202890855074486), VectorGeometryToolAngleRotation)
 agcls.AgTypeNameMap["VectorGeometryToolAngleRotation"] = VectorGeometryToolAngleRotation
 
-class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An angle between a vector and a plane."""
 
     _num_methods = 4
@@ -22106,7 +20903,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IComponentTimePro
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a reference vector."""
         return self._intf.get_property(VectorGeometryToolAngleToPlane._metadata, VectorGeometryToolAngleToPlane._get_reference_vector_metadata)
 
@@ -22114,7 +20911,7 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IComponentTimePro
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_plane(self) -> "PlaneReference":
+    def reference_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify a reference plane."""
         return self._intf.get_property(VectorGeometryToolAngleToPlane._metadata, VectorGeometryToolAngleToPlane._get_reference_plane_metadata)
 
@@ -22142,24 +20939,24 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IComponentTimePro
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleToPlane)
         IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [VectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolAngleToPlane, [VectorGeometryToolAngleToPlane, IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4741464092637169531, 108701953784669870), VectorGeometryToolAngleToPlane)
 agcls.AgTypeNameMap["VectorGeometryToolAngleToPlane"] = VectorGeometryToolAngleToPlane
 
-class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A plane normal to a vector at a given point."""
 
     _num_methods = 3
@@ -22179,7 +20976,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IComponentTimeProp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def normal_vector(self) -> "VectorReference":
+    def normal_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a Normal vector."""
         return self._intf.get_property(VectorGeometryToolPlaneNormal._metadata, VectorGeometryToolPlaneNormal._get_normal_vector_metadata)
 
@@ -22187,7 +20984,7 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IComponentTimeProp
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a reference vector."""
         return self._intf.get_property(VectorGeometryToolPlaneNormal._metadata, VectorGeometryToolPlaneNormal._get_reference_vector_metadata)
 
@@ -22208,24 +21005,24 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IComponentTimeProp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneNormal)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [VectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneNormal, [VectorGeometryToolPlaneNormal, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5056270710623515037, 7829687135599012744), VectorGeometryToolPlaneNormal)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneNormal"] = VectorGeometryToolPlaneNormal
 
-class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A plane based on a selected Quadrant of a reference system."""
 
     _num_methods = 3
@@ -22272,24 +21069,24 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneQuadrant)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [VectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneQuadrant, [VectorGeometryToolPlaneQuadrant, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5733687016289259105, 17528777649977896622), VectorGeometryToolPlaneQuadrant)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneQuadrant"] = VectorGeometryToolPlaneQuadrant
 
-class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The plane is defined on the basis of a trajectory of a Point with respect to a ReferenceSystem."""
 
     _num_methods = 4
@@ -22346,24 +21143,24 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IComponentTime
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTrajectory)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [VectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTrajectory, [VectorGeometryToolPlaneTrajectory, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5238081677499142009, 8579850293282649519), VectorGeometryToolPlaneTrajectory)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTrajectory"] = VectorGeometryToolPlaneTrajectory
 
-class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A Plane containing points A, B and ReferencePont with the first axis aligned with the direction from the ReferencePoint to point A and the second axis toward the direction from the ReferencePoint to point B."""
 
     _num_methods = 5
@@ -22430,24 +21227,24 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IComponentTimePrope
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTriad)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [VectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTriad, [VectorGeometryToolPlaneTriad, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5574538283155536192, 17633244628996092321), VectorGeometryToolPlaneTriad)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTriad"] = VectorGeometryToolPlaneTriad
 
-class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A plane passing through point and containing two given vectors."""
 
     _num_methods = 3
@@ -22467,7 +21264,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IComponentTimeP
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a reference vector."""
         return self._intf.get_property(VectorGeometryToolPlaneTwoVector._metadata, VectorGeometryToolPlaneTwoVector._get_reference_vector_metadata)
 
@@ -22475,7 +21272,7 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IComponentTimeP
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def vector_2(self) -> "VectorReference":
+    def vector_2(self) -> "VectorGeometryToolVectorReference":
         """Specify a Normal vector."""
         return self._intf.get_property(VectorGeometryToolPlaneTwoVector._metadata, VectorGeometryToolPlaneTwoVector._get_vector_2_metadata)
 
@@ -22496,24 +21293,24 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IComponentTimeP
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTwoVector)
         IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [VectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPlaneTwoVector, [VectorGeometryToolPlaneTwoVector, IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5259565249100914298, 10449004369849458077), VectorGeometryToolPlaneTwoVector)
 agcls.AgTypeNameMap["VectorGeometryToolPlaneTwoVector"] = VectorGeometryToolPlaneTwoVector
 
-class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """B-Plane point using the selected target body."""
 
     _num_methods = 6
@@ -22588,24 +21385,24 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IComponentTimeProp
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointBPlane)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [VectorGeometryToolPointBPlane, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointBPlane, [VectorGeometryToolPointBPlane, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5174217959427746283, 8080120297144408971), VectorGeometryToolPointBPlane)
 agcls.AgTypeNameMap["VectorGeometryToolPointBPlane"] = VectorGeometryToolPointBPlane
 
-class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Point specified by data from a file."""
 
     _num_methods = 2
@@ -22642,24 +21439,24 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IComponentTimeProper
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFile)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [VectorGeometryToolPointFile, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointFile, [VectorGeometryToolPointFile, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5372805118883383591, 8272625305257767061), VectorGeometryToolPointFile)
 agcls.AgTypeNameMap["VectorGeometryToolPointFile"] = VectorGeometryToolPointFile
 
-class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Point fixed in a reference coordinate system using the selected coordinate type."""
 
     _num_methods = 2
@@ -22698,24 +21495,24 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFixedInSystem)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [VectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointFixedInSystem, [VectorGeometryToolPointFixedInSystem, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4930325908174212614, 8676034700317006526), VectorGeometryToolPointFixedInSystem)
 agcls.AgTypeNameMap["VectorGeometryToolPointFixedInSystem"] = VectorGeometryToolPointFixedInSystem
 
-class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."""
 
     _num_methods = 5
@@ -22753,7 +21550,7 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IComponentTimePro
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def direction_vector(self) -> "VectorReference":
+    def direction_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a direction vector to be used in conjunction with the position vector from the selected central body to the reference point to define a plane in which the line will lie."""
         return self._intf.get_property(VectorGeometryToolPointGrazing._metadata, VectorGeometryToolPointGrazing._get_direction_vector_metadata)
 
@@ -22782,24 +21579,24 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IComponentTimePro
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGrazing)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [VectorGeometryToolPointGrazing, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointGrazing, [VectorGeometryToolPointGrazing, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4873095929191246164, 17861236567847545995), VectorGeometryToolPointGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointGrazing"] = VectorGeometryToolPointGrazing
 
-class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Point on central body surface that reflects from source to observer."""
 
     _num_methods = 3
@@ -22848,24 +21645,24 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IComponentTimePrope
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGlint)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [VectorGeometryToolPointGlint, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointGlint, [VectorGeometryToolPointGlint, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5016182750180824403, 8007295032329350291), VectorGeometryToolPointGlint)
 agcls.AgTypeNameMap["VectorGeometryToolPointGlint"] = VectorGeometryToolPointGlint
 
-class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."""
 
     _num_methods = 12
@@ -22902,7 +21699,7 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, ICompon
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def direction_vector(self) -> "VectorReference":
+    def direction_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a direction vector to be used in conjunction with the displacement vector from the selected target object to the reference point to define a plane in which the line will lie."""
         return self._intf.get_property(VectorGeometryToolPointCovarianceGrazing._metadata, VectorGeometryToolPointCovarianceGrazing._get_direction_vector_metadata)
 
@@ -22994,24 +21791,24 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCovarianceGrazing)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [VectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCovarianceGrazing, [VectorGeometryToolPointCovarianceGrazing, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5112836196461516807, 2313902703372365995), VectorGeometryToolPointCovarianceGrazing)
 agcls.AgTypeNameMap["VectorGeometryToolPointCovarianceGrazing"] = VectorGeometryToolPointCovarianceGrazing
 
-class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Point on a plane located along a given direction looking from a given origin."""
 
     _num_methods = 3
@@ -23031,7 +21828,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, ICompon
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def direction_vector(self) -> "VectorReference":
+    def direction_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a direction vector."""
         return self._intf.get_property(VectorGeometryToolPointPlaneIntersection._metadata, VectorGeometryToolPointPlaneIntersection._get_direction_vector_metadata)
 
@@ -23039,7 +21836,7 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, ICompon
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_plane(self) -> "PlaneReference":
+    def reference_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify a reference plane."""
         return self._intf.get_property(VectorGeometryToolPointPlaneIntersection._metadata, VectorGeometryToolPointPlaneIntersection._get_reference_plane_metadata)
 
@@ -23060,24 +21857,24 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneIntersection)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [VectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneIntersection, [VectorGeometryToolPointPlaneIntersection, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5461437594446824900, 7840863517079307695), VectorGeometryToolPointPlaneIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneIntersection"] = VectorGeometryToolPointPlaneIntersection
 
-class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The detic subpoint of the reference point as projected onto the central body."""
 
     _num_methods = 6
@@ -23152,24 +21949,24 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IComponentTimeP
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointOnSurface)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [VectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointOnSurface, [VectorGeometryToolPointOnSurface, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5194814587264618449, 6271131256489865090), VectorGeometryToolPointOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolPointOnSurface"] = VectorGeometryToolPointOnSurface
 
-class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."""
 
     _num_methods = 4
@@ -23224,24 +22021,24 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointModelAttachment)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttachment, [VectorGeometryToolPointModelAttachment, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointModelAttachment, [VectorGeometryToolPointModelAttachment, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5148449423463122454, 9925486399943562398), VectorGeometryToolPointModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolPointModelAttachment"] = VectorGeometryToolPointModelAttachment
 
-class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
 
     _num_methods = 2
@@ -23278,24 +22075,24 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointSatelliteCollectionEntry)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [VectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointSatelliteCollectionEntry, [VectorGeometryToolPointSatelliteCollectionEntry, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5612905802720005101, 1472722314735659699), VectorGeometryToolPointSatelliteCollectionEntry)
 agcls.AgTypeNameMap["VectorGeometryToolPointSatelliteCollectionEntry"] = VectorGeometryToolPointSatelliteCollectionEntry
 
-class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The projection of a point onto a reference plane. Specify the Source Point and Reference Plane."""
 
     _num_methods = 2
@@ -23322,7 +22119,7 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IComponen
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_plane(self) -> "PlaneReference":
+    def reference_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify a reference plane."""
         return self._intf.get_property(VectorGeometryToolPointPlaneProjection._metadata, VectorGeometryToolPointPlaneProjection._get_reference_plane_metadata)
 
@@ -23334,24 +22131,24 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IComponen
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneProjection)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [VectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlaneProjection, [VectorGeometryToolPointPlaneProjection, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4825084289371647385, 4219695295586287035), VectorGeometryToolPointPlaneProjection)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlaneProjection"] = VectorGeometryToolPointPlaneProjection
 
-class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type."""
 
     _num_methods = 4
@@ -23408,19 +22205,19 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointLagrangeLibration)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [VectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointLagrangeLibration, [VectorGeometryToolPointLagrangeLibration, IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4926224797655292278, 9084591209309612973), VectorGeometryToolPointLagrangeLibration)
 agcls.AgTypeNameMap["VectorGeometryToolPointLagrangeLibration"] = VectorGeometryToolPointLagrangeLibration
@@ -23479,7 +22276,7 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5070744430662018124, 11417400654641998503), VectorGeometryToolPointCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolPointCommonTasks"] = VectorGeometryToolPointCommonTasks
 
-class VectorGeometryToolPointCentralBodyIntersect(IComponent, IComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
+class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
     """Point on central body surface along direction vector originating at source point."""
 
     _num_methods = 23
@@ -23562,17 +22359,17 @@ class VectorGeometryToolPointCentralBodyIntersect(IComponent, IComponentTimeProp
 
     _get_intersection_surface_metadata = { "offset" : _get_intersection_surface_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE),) }
+            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE_TYPE),) }
     @property
-    def intersection_surface(self) -> "INTERSECTION_SURFACE":
+    def intersection_surface(self) -> "INTERSECTION_SURFACE_TYPE":
         """An intersection surface."""
         return self._intf.get_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._get_intersection_surface_metadata)
 
     _set_intersection_surface_metadata = { "offset" : _set_intersection_surface_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE),) }
+            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE_TYPE),) }
     @intersection_surface.setter
-    def intersection_surface(self, intersectionSurface:"INTERSECTION_SURFACE") -> None:
+    def intersection_surface(self, intersectionSurface:"INTERSECTION_SURFACE_TYPE") -> None:
         return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_intersection_surface_metadata, intersectionSurface)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
@@ -23703,25 +22500,25 @@ class VectorGeometryToolPointCentralBodyIntersect(IComponent, IComponentTimeProp
         """Construct an object of type VectorGeometryToolPointCentralBodyIntersect."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyIntersect)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyIntersect, [VectorGeometryToolPointCentralBodyIntersect, IComponent, IComponentTimeProperties, IVectorGeometryToolPoint])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyIntersect, [VectorGeometryToolPointCentralBodyIntersect, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry((5231912502645770216, 9486194056870701488), VectorGeometryToolPointCentralBodyIntersect)
 agcls.AgTypeNameMap["VectorGeometryToolPointCentralBodyIntersect"] = VectorGeometryToolPointCentralBodyIntersect
 
-class VectorGeometryToolPointAtTimeInstant(IComponent, IComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
+class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
     """Point fixed relative to reference system based on another point evaluated at specified time instant."""
 
     _num_methods = 6
@@ -23793,25 +22590,25 @@ class VectorGeometryToolPointAtTimeInstant(IComponent, IComponentTimeProperties,
         """Construct an object of type VectorGeometryToolPointAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointAtTimeInstant)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [VectorGeometryToolPointAtTimeInstant, IComponent, IComponentTimeProperties, IVectorGeometryToolPoint])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointAtTimeInstant, [VectorGeometryToolPointAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry((5033554046644602591, 15766838857592252346), VectorGeometryToolPointAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolPointAtTimeInstant"] = VectorGeometryToolPointAtTimeInstant
 
-class VectorGeometryToolPointPlugin(IComponent, IComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
+class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
     """A VGT point plugin."""
 
     _num_methods = 6
@@ -23883,25 +22680,25 @@ class VectorGeometryToolPointPlugin(IComponent, IComponentTimeProperties, IVecto
         """Construct an object of type VectorGeometryToolPointPlugin."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlugin)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [VectorGeometryToolPointPlugin, IComponent, IComponentTimeProperties, IVectorGeometryToolPoint])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointPlugin, [VectorGeometryToolPointPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry((5757596304647117876, 17401426131146318778), VectorGeometryToolPointPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolPointPlugin"] = VectorGeometryToolPointPlugin
 
-class VectorGeometryToolPointCentralBodyFixedOffset(IComponent, IComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
+class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint, SupportsDeleteCallback):
     """Point specified by fixed components with respect to central body."""
 
     _num_methods = 5
@@ -23965,25 +22762,25 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IComponent, IComponentTimePr
         """Construct an object of type VectorGeometryToolPointCentralBodyFixedOffset."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyFixedOffset)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolPoint.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolPoint._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyFixedOffset, [VectorGeometryToolPointCentralBodyFixedOffset, IComponent, IComponentTimeProperties, IVectorGeometryToolPoint])
+        set_class_attribute(self, attrname, value, VectorGeometryToolPointCentralBodyFixedOffset, [VectorGeometryToolPointCentralBodyFixedOffset, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolPoint])
 
 agcls.AgClassCatalog.add_catalog_entry((5575906236718038446, 6573727919483783565), VectorGeometryToolPointCentralBodyFixedOffset)
 agcls.AgTypeNameMap["VectorGeometryToolPointCentralBodyFixedOffset"] = VectorGeometryToolPointCentralBodyFixedOffset
 
-class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A system assembled from an origin point and a set of reference axes."""
 
     _num_methods = 2
@@ -24022,24 +22819,24 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IComponentTim
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemAssembled)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [VectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemAssembled, [VectorGeometryToolSystemAssembled, IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5078526353961026737, 9169402548554558883), VectorGeometryToolSystemAssembled)
 agcls.AgTypeNameMap["VectorGeometryToolSystemAssembled"] = VectorGeometryToolSystemAssembled
 
-class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin."""
 
     _num_methods = 6
@@ -24114,19 +22911,19 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IComponentTim
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemOnSurface)
         IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [VectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolSystemOnSurface, [VectorGeometryToolSystemOnSurface, IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4833388918947980281, 1384230461932870068), VectorGeometryToolSystemOnSurface)
 agcls.AgTypeNameMap["VectorGeometryToolSystemOnSurface"] = VectorGeometryToolSystemOnSurface
@@ -24261,7 +23058,7 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5585304109946744641, 4691437628496683701), VectorGeometryToolSystemCommonTasks)
 agcls.AgTypeNameMap["VectorGeometryToolSystemCommonTasks"] = VectorGeometryToolSystemCommonTasks
 
-class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Angle rate vector perpendicular to the plane in which the angle is defined."""
 
     _num_methods = 3
@@ -24308,24 +23105,24 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IComponentTim
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngleRate)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [VectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngleRate, [VectorGeometryToolVectorAngleRate, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4661945362119516281, 7374273867052019634), VectorGeometryToolVectorAngleRate)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngleRate"] = VectorGeometryToolVectorAngleRate
 
-class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."""
 
     _num_methods = 4
@@ -24382,24 +23179,24 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IComponentTime
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorApoapsis)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [VectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorApoapsis, [VectorGeometryToolVectorApoapsis, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4900243800521446284, 154039380244160657), VectorGeometryToolVectorApoapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorApoapsis"] = VectorGeometryToolVectorApoapsis
 
-class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A vector based on another vector fixed at a specified epoch."""
 
     _num_methods = 4
@@ -24435,7 +23232,7 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IComponent
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def source_vector(self) -> "VectorReference":
+    def source_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a source vector."""
         return self._intf.get_property(VectorGeometryToolVectorFixedAtEpoch._metadata, VectorGeometryToolVectorFixedAtEpoch._get_source_vector_metadata)
 
@@ -24456,24 +23253,24 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtEpoch)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [VectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtEpoch, [VectorGeometryToolVectorFixedAtEpoch, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4676459523933582837, 2528162089752102555), VectorGeometryToolVectorFixedAtEpoch)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtEpoch"] = VectorGeometryToolVectorFixedAtEpoch
 
-class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Angular velocity vector of one set of axes computed with respect to the reference set."""
 
     _num_methods = 4
@@ -24530,24 +23327,24 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngularVelocity)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [VectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorAngularVelocity, [VectorGeometryToolVectorAngularVelocity, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5373198340793861083, 1284675054128437125), VectorGeometryToolVectorAngularVelocity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorAngularVelocity"] = VectorGeometryToolVectorAngularVelocity
 
-class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector created by revolving the Reference vector around the About vector with the specified rate."""
 
     _num_methods = 12
@@ -24576,7 +23373,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def about_vector(self) -> "VectorReference":
+    def about_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a vector around which the the reference vector is revolved."""
         return self._intf.get_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._get_about_vector_metadata)
 
@@ -24584,7 +23381,7 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a reference vector."""
         return self._intf.get_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._get_reference_vector_metadata)
 
@@ -24676,24 +23473,24 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorConing)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [VectorGeometryToolVectorConing, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorConing, [VectorGeometryToolVectorConing, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4689903705630636422, 13286675890476868740), VectorGeometryToolVectorConing)
 agcls.AgTypeNameMap["VectorGeometryToolVectorConing"] = VectorGeometryToolVectorConing
 
-class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """The vector cross product of two vectors."""
 
     _num_methods = 6
@@ -24716,7 +23513,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IComponentTimePro
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def from_vector(self) -> "VectorReference":
+    def from_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify one of the two vectors which define the vector cross product."""
         return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_from_vector_metadata)
 
@@ -24724,7 +23521,7 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IComponentTimePro
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def to_vector(self) -> "VectorReference":
+    def to_vector(self) -> "VectorGeometryToolVectorReference":
         """Specify the second of the two vectors which define the vector cross product."""
         return self._intf.get_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._get_to_vector_metadata)
 
@@ -24768,24 +23565,24 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IComponentTimePro
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCross)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [VectorGeometryToolVectorCross, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCross, [VectorGeometryToolVectorCross, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5034551376650625975, 1225344703421792407), VectorGeometryToolVectorCross)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCross"] = VectorGeometryToolVectorCross
 
-class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Customized vector components defined with respect to reference axes."""
 
     _num_methods = 5
@@ -24850,24 +23647,24 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCustomScript)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [VectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorCustomScript, [VectorGeometryToolVectorCustomScript, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4728535357545307590, 16737740404794421951), VectorGeometryToolVectorCustomScript)
 agcls.AgTypeNameMap["VectorGeometryToolVectorCustomScript"] = VectorGeometryToolVectorCustomScript
 
-class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A vector derivative of a vector computed with respect to specified axes."""
 
     _num_methods = 6
@@ -24890,7 +23687,7 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IComponentTi
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def vector(self) -> "VectorReference":
+    def vector(self) -> "VectorGeometryToolVectorReference":
         """Specify a base vector."""
         return self._intf.get_property(VectorGeometryToolVectorDerivative._metadata, VectorGeometryToolVectorDerivative._get_vector_metadata)
 
@@ -24942,24 +23739,24 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IComponentTi
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDerivative)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [VectorGeometryToolVectorDerivative, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDerivative, [VectorGeometryToolVectorDerivative, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5309408879000341305, 12873274334918222470), VectorGeometryToolVectorDerivative)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDerivative"] = VectorGeometryToolVectorDerivative
 
-class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector defined by its start and end points."""
 
     _num_methods = 9
@@ -25062,24 +23859,24 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDisplacement)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [VectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDisplacement, [VectorGeometryToolVectorDisplacement, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5117622138243308135, 15050542198214194335), VectorGeometryToolVectorDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDisplacement"] = VectorGeometryToolVectorDisplacement
 
-class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined along the intersection of two planes."""
 
     _num_methods = 2
@@ -25098,7 +23895,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def plane_a(self) -> "PlaneReference":
+    def plane_a(self) -> "VectorGeometryToolPlaneReference":
         """Specify the first of the two planes which intersection defines the vector."""
         return self._intf.get_property(VectorGeometryToolVectorTwoPlanesIntersection._metadata, VectorGeometryToolVectorTwoPlanesIntersection._get_plane_a_metadata)
 
@@ -25106,7 +23903,7 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def plane_b(self) -> "PlaneReference":
+    def plane_b(self) -> "VectorGeometryToolPlaneReference":
         """Specify the second of the two planes which intersection defines the vector."""
         return self._intf.get_property(VectorGeometryToolVectorTwoPlanesIntersection._metadata, VectorGeometryToolVectorTwoPlanesIntersection._get_plane_b_metadata)
 
@@ -25118,24 +23915,24 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorTwoPlanesIntersection)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [VectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorTwoPlanesIntersection, [VectorGeometryToolVectorTwoPlanesIntersection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5484952021995115859, 5066214406894258350), VectorGeometryToolVectorTwoPlanesIntersection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorTwoPlanesIntersection"] = VectorGeometryToolVectorTwoPlanesIntersection
 
-class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."""
 
     _num_methods = 2
@@ -25172,24 +23969,24 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorModelAttachment)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttachment, [VectorGeometryToolVectorModelAttachment, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorModelAttachment, [VectorGeometryToolVectorModelAttachment, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5211444618584649400, 9648191457011466908), VectorGeometryToolVectorModelAttachment)
 agcls.AgTypeNameMap["VectorGeometryToolVectorModelAttachment"] = VectorGeometryToolVectorModelAttachment
 
-class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A projection of a vector computed with respect to a reference plane."""
 
     _num_methods = 2
@@ -25208,7 +24005,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IComponentTi
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def source(self) -> "VectorReference":
+    def source(self) -> "VectorGeometryToolVectorReference":
         """Specify a source vector."""
         return self._intf.get_property(VectorGeometryToolVectorProjection._metadata, VectorGeometryToolVectorProjection._get_source_metadata)
 
@@ -25216,7 +24013,7 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IComponentTi
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_plane(self) -> "PlaneReference":
+    def reference_plane(self) -> "VectorGeometryToolPlaneReference":
         """Specify a reference plane."""
         return self._intf.get_property(VectorGeometryToolVectorProjection._metadata, VectorGeometryToolVectorProjection._get_reference_plane_metadata)
 
@@ -25228,24 +24025,24 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IComponentTi
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjection)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [VectorGeometryToolVectorProjection, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjection, [VectorGeometryToolVectorProjection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5150896074625799242, 60409490020408760), VectorGeometryToolVectorProjection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjection"] = VectorGeometryToolVectorProjection
 
-class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Scaled version of the input vector. Set IsNormalized to convert the input vector to a unit vector before scaling it."""
 
     _num_methods = 5
@@ -25267,7 +24064,7 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IComponentTimePr
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def reference_vector(self) -> "VectorReference":
+    def reference_vector(self) -> "VectorGeometryToolVectorReference":
         """A vector being scaled."""
         return self._intf.get_property(VectorGeometryToolVectorScaled._metadata, VectorGeometryToolVectorScaled._get_reference_vector_metadata)
 
@@ -25310,24 +24107,24 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IComponentTimePr
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScaled)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [VectorGeometryToolVectorScaled, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScaled, [VectorGeometryToolVectorScaled, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4858017423407189033, 9592990787974832285), VectorGeometryToolVectorScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScaled"] = VectorGeometryToolVectorScaled
 
-class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."""
 
     _num_methods = 4
@@ -25384,24 +24181,24 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IComponent
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorEccentricity)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [VectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorEccentricity, [VectorGeometryToolVectorEccentricity, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5150167353244342231, 587328373879496597), VectorGeometryToolVectorEccentricity)
 agcls.AgTypeNameMap["VectorGeometryToolVectorEccentricity"] = VectorGeometryToolVectorEccentricity
 
-class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector fixed in the reference axes using the selected coordinate type."""
 
     _num_methods = 2
@@ -25440,24 +24237,24 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedInAxes)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [VectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedInAxes, [VectorGeometryToolVectorFixedInAxes, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5414607667608549731, 5541039856994583477), VectorGeometryToolVectorFixedInAxes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedInAxes"] = VectorGeometryToolVectorFixedInAxes
 
-class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."""
 
     _num_methods = 2
@@ -25496,24 +24293,24 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLineOfNodes)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [VectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLineOfNodes, [VectorGeometryToolVectorLineOfNodes, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5697497466063765457, 2971359664823275691), VectorGeometryToolVectorLineOfNodes)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLineOfNodes"] = VectorGeometryToolVectorLineOfNodes
 
-class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
 
     _num_methods = 4
@@ -25570,24 +24367,24 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IC
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitAngularMomentum)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [VectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitAngularMomentum, [VectorGeometryToolVectorOrbitAngularMomentum, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((4891611620770882179, 10483757950771463324), VectorGeometryToolVectorOrbitAngularMomentum)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitAngularMomentum"] = VectorGeometryToolVectorOrbitAngularMomentum
 
-class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."""
 
     _num_methods = 4
@@ -25644,24 +24441,24 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IComponentT
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitNormal)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [VectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorOrbitNormal, [VectorGeometryToolVectorOrbitNormal, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5690167406211296648, 16267055690317479320), VectorGeometryToolVectorOrbitNormal)
 agcls.AgTypeNameMap["VectorGeometryToolVectorOrbitNormal"] = VectorGeometryToolVectorOrbitNormal
 
-class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."""
 
     _num_methods = 4
@@ -25718,24 +24515,24 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IComponentTim
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPeriapsis)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [VectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPeriapsis, [VectorGeometryToolVectorPeriapsis, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5256947048057516928, 4939205471749242766), VectorGeometryToolVectorPeriapsis)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPeriapsis"] = VectorGeometryToolVectorPeriapsis
 
-class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A vector (incident vector) reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."""
 
     _num_methods = 8
@@ -25760,7 +24557,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IComponentTi
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def incoming_vector(self) -> "VectorReference":
+    def incoming_vector(self) -> "VectorGeometryToolVectorReference":
         """The reflecting vector."""
         return self._intf.get_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._get_incoming_vector_metadata)
 
@@ -25783,7 +24580,7 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IComponentTi
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def normal_vector(self) -> "VectorReference":
+    def normal_vector(self) -> "VectorGeometryToolVectorReference":
         """The vector defines the reflection surface."""
         return self._intf.get_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._get_normal_vector_metadata)
 
@@ -25828,24 +24625,24 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IComponentTi
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReflection)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [VectorGeometryToolVectorReflection, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorReflection, [VectorGeometryToolVectorReflection, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5242169156125559792, 12802032634593964167), VectorGeometryToolVectorReflection)
 agcls.AgTypeNameMap["VectorGeometryToolVectorReflection"] = VectorGeometryToolVectorReflection
 
-class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
 
     _num_methods = 4
@@ -25902,24 +24699,24 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, ICompone
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorRotationVector)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [VectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorRotationVector, [VectorGeometryToolVectorRotationVector, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5286863955939671726, 10289535475779917705), VectorGeometryToolVectorRotationVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorRotationVector"] = VectorGeometryToolVectorRotationVector
 
-class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IComponentTimeProperties, IComponent, SupportsDeleteCallback):
+class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Defined with respect to a star object. For a star object to be available, you must first create one."""
 
     _num_methods = 2
@@ -25956,24 +24753,24 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, ICompon
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDirectionToStar)
         IVectorGeometryToolVector.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
-        IComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
-        IComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [VectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, IComponentTimeProperties, IComponent])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorDirectionToStar, [VectorGeometryToolVectorDirectionToStar, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
 
 agcls.AgClassCatalog.add_catalog_entry((5047539549077495756, 11298035590861304728), VectorGeometryToolVectorDirectionToStar)
 agcls.AgTypeNameMap["VectorGeometryToolVectorDirectionToStar"] = VectorGeometryToolVectorDirectionToStar
 
-class VectorGeometryToolVectorFixedAtTimeInstant(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Vector fixed relative to reference axes based on another vector evaluated at specified time instant."""
 
     _num_methods = 6
@@ -26045,25 +24842,25 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IComponent, IComponentTimePrope
         """Construct an object of type VectorGeometryToolVectorFixedAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtTimeInstant)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [VectorGeometryToolVectorFixedAtTimeInstant, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFixedAtTimeInstant, [VectorGeometryToolVectorFixedAtTimeInstant, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5433779106058024883, 18263442844859596677), VectorGeometryToolVectorFixedAtTimeInstant)
 agcls.AgTypeNameMap["VectorGeometryToolVectorFixedAtTimeInstant"] = VectorGeometryToolVectorFixedAtTimeInstant
 
-class VectorGeometryToolVectorLinearCombination(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Linear combination of two input vectors."""
 
     _num_methods = 16
@@ -26225,25 +25022,25 @@ class VectorGeometryToolVectorLinearCombination(IComponent, IComponentTimeProper
         """Construct an object of type VectorGeometryToolVectorLinearCombination."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLinearCombination)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [VectorGeometryToolVectorLinearCombination, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorLinearCombination, [VectorGeometryToolVectorLinearCombination, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5538434821612795468, 13698347071120474037), VectorGeometryToolVectorLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorLinearCombination"] = VectorGeometryToolVectorLinearCombination
 
-class VectorGeometryToolVectorProjectionAlongVector(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """A projection of a source vector in the direction of another vector."""
 
     _num_methods = 4
@@ -26297,25 +25094,25 @@ class VectorGeometryToolVectorProjectionAlongVector(IComponent, IComponentTimePr
         """Construct an object of type VectorGeometryToolVectorProjectionAlongVector."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjectionAlongVector)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectionAlongVector, [VectorGeometryToolVectorProjectionAlongVector, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorProjectionAlongVector, [VectorGeometryToolVectorProjectionAlongVector, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5381541363365362073, 9025593909509941933), VectorGeometryToolVectorProjectionAlongVector)
 agcls.AgTypeNameMap["VectorGeometryToolVectorProjectionAlongVector"] = VectorGeometryToolVectorProjectionAlongVector
 
-class VectorGeometryToolVectorScalarLinearCombination(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Linear combination of two input vectors using scalars."""
 
     _num_methods = 24
@@ -26549,25 +25346,25 @@ class VectorGeometryToolVectorScalarLinearCombination(IComponent, IComponentTime
         """Construct an object of type VectorGeometryToolVectorScalarLinearCombination."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarLinearCombination)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [VectorGeometryToolVectorScalarLinearCombination, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarLinearCombination, [VectorGeometryToolVectorScalarLinearCombination, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5336658214580096933, 17880387423263486893), VectorGeometryToolVectorScalarLinearCombination)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarLinearCombination"] = VectorGeometryToolVectorScalarLinearCombination
 
-class VectorGeometryToolVectorScalarScaled(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Scaled version of the input vector using scalar."""
 
     _num_methods = 12
@@ -26693,25 +25490,25 @@ class VectorGeometryToolVectorScalarScaled(IComponent, IComponentTimeProperties,
         """Construct an object of type VectorGeometryToolVectorScalarScaled."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarScaled)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [VectorGeometryToolVectorScalarScaled, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorScalarScaled, [VectorGeometryToolVectorScalarScaled, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((4832758772442315154, 12540700473237060019), VectorGeometryToolVectorScalarScaled)
 agcls.AgTypeNameMap["VectorGeometryToolVectorScalarScaled"] = VectorGeometryToolVectorScalarScaled
 
-class VectorGeometryToolVectorVelocityAcceleration(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Velocity vector of a point in a coordinate system."""
 
     _num_methods = 6
@@ -26783,25 +25580,25 @@ class VectorGeometryToolVectorVelocityAcceleration(IComponent, IComponentTimePro
         """Construct an object of type VectorGeometryToolVectorVelocityAcceleration."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorVelocityAcceleration)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [VectorGeometryToolVectorVelocityAcceleration, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorVelocityAcceleration, [VectorGeometryToolVectorVelocityAcceleration, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5695013519916147237, 17504416085998501559), VectorGeometryToolVectorVelocityAcceleration)
 agcls.AgTypeNameMap["VectorGeometryToolVectorVelocityAcceleration"] = VectorGeometryToolVectorVelocityAcceleration
 
-class VectorGeometryToolVectorPlugin(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """A VGT vector plugin."""
 
     _num_methods = 6
@@ -26873,25 +25670,25 @@ class VectorGeometryToolVectorPlugin(IComponent, IComponentTimeProperties, IVect
         """Construct an object of type VectorGeometryToolVectorPlugin."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPlugin)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [VectorGeometryToolVectorPlugin, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorPlugin, [VectorGeometryToolVectorPlugin, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5185411868180955802, 1723185518236018616), VectorGeometryToolVectorPlugin)
 agcls.AgTypeNameMap["VectorGeometryToolVectorPlugin"] = VectorGeometryToolVectorPlugin
 
-class VectorGeometryToolVectorSurfaceDisplacement(IComponent, IComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
+class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector, SupportsDeleteCallback):
     """Displacement between origin and destination points using surface distance and altitude difference."""
 
     _num_methods = 8
@@ -26981,20 +25778,20 @@ class VectorGeometryToolVectorSurfaceDisplacement(IComponent, IComponentTimeProp
         """Construct an object of type VectorGeometryToolVectorSurfaceDisplacement."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorSurfaceDisplacement)
-        IComponent.__init__(self, sourceObject)
-        IComponentTimeProperties.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
         IVectorGeometryToolVector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponent._private_init(self, intf)
-        IComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
         IVectorGeometryToolVector._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IComponent, IComponentTimeProperties, IVectorGeometryToolVector])
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
 agcls.AgClassCatalog.add_catalog_entry((5165198519091638019, 11878832301117811344), VectorGeometryToolVectorSurfaceDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceDisplacement"] = VectorGeometryToolVectorSurfaceDisplacement
@@ -27399,7 +26196,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._get_context_metadata)
 
@@ -27526,7 +26323,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._get_context_metadata)
 
@@ -27661,7 +26458,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._get_context_metadata)
 
@@ -27788,7 +26585,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._get_context_metadata)
 
@@ -27923,7 +26720,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._get_context_metadata)
 
@@ -28050,7 +26847,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def context(self) -> "IComponentContext":
+    def context(self) -> "IAnalysisWorkbenchComponentContext":
         """Return a context object. The context can be used to find out which central body or STK object this instance is associated with."""
         return self._intf.get_property(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._get_context_metadata)
 
@@ -28385,7 +27182,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5195044977180352481, 9063844977118760340), AnalysisWorkbenchComponentProvider)
 agcls.AgTypeNameMap["AnalysisWorkbenchComponentProvider"] = AnalysisWorkbenchComponentProvider
 
-class AnalysisWorkbenchProviderRoot(SupportsDeleteCallback):
+class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     """Represents a VGT root object."""
 
     _num_methods = 4
@@ -28400,21 +27197,21 @@ class AnalysisWorkbenchProviderRoot(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, AnalysisWorkbenchProviderRoot)
+        return get_interface_property(attrname, AnalysisWorkbenchRoot)
     
     _get_template_provider_metadata = { "offset" : _get_template_provider_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_template_provider(self, className:str) -> "AnalysisWorkbenchComponentProvider":
         """Return a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)."""
-        return self._intf.invoke(AnalysisWorkbenchProviderRoot._metadata, AnalysisWorkbenchProviderRoot._get_template_provider_metadata, className, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_template_provider_metadata, className, OutArg())
 
     _get_provider_metadata = { "offset" : _get_provider_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def get_provider(self, instPath:str) -> "AnalysisWorkbenchComponentProvider":
         """Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)."""
-        return self._intf.invoke(AnalysisWorkbenchProviderRoot._metadata, AnalysisWorkbenchProviderRoot._get_provider_metadata, instPath, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_provider_metadata, instPath, OutArg())
 
     _get_well_known_systems_metadata = { "offset" : _get_well_known_systems_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -28422,7 +27219,7 @@ class AnalysisWorkbenchProviderRoot(SupportsDeleteCallback):
     @property
     def well_known_systems(self) -> "VectorGeometryToolWellKnownSystems":
         """Return the most commonly used systems (e.g. Sun Fixed, Earth Fixed, etc.)."""
-        return self._intf.get_property(AnalysisWorkbenchProviderRoot._metadata, AnalysisWorkbenchProviderRoot._get_well_known_systems_metadata)
+        return self._intf.get_property(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_well_known_systems_metadata)
 
     _get_well_known_axes_metadata = { "offset" : _get_well_known_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -28430,15 +27227,15 @@ class AnalysisWorkbenchProviderRoot(SupportsDeleteCallback):
     @property
     def well_known_axes(self) -> "VectorGeometryToolWellKnownAxes":
         """Return the most commonly used axes (e.g. Sun ICRF, Earth Inertial, etc.)."""
-        return self._intf.get_property(AnalysisWorkbenchProviderRoot._metadata, AnalysisWorkbenchProviderRoot._get_well_known_axes_metadata)
+        return self._intf.get_property(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_well_known_axes_metadata)
 
     _property_names[well_known_systems] = "well_known_systems"
     _property_names[well_known_axes] = "well_known_axes"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type AnalysisWorkbenchProviderRoot."""
+        """Construct an object of type AnalysisWorkbenchRoot."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchProviderRoot)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchRoot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28446,10 +27243,10 @@ class AnalysisWorkbenchProviderRoot(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchProviderRoot, [AnalysisWorkbenchProviderRoot, ])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchRoot, [AnalysisWorkbenchRoot, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4987483468362517359, 13532663607263998902), AnalysisWorkbenchProviderRoot)
-agcls.AgTypeNameMap["AnalysisWorkbenchProviderRoot"] = AnalysisWorkbenchProviderRoot
+agcls.AgClassCatalog.add_catalog_entry((4987483468362517359, 13532663607263998902), AnalysisWorkbenchRoot)
+agcls.AgTypeNameMap["AnalysisWorkbenchRoot"] = AnalysisWorkbenchRoot
 
 class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
     """Well-known Earth's coordinate systems."""
@@ -28831,401 +27628,1260 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5448146556058645578, 7798730398512524450), VectorGeometryToolWellKnownAxes)
 agcls.AgTypeNameMap["VectorGeometryToolWellKnownAxes"] = VectorGeometryToolWellKnownAxes
 
-class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, IAngleFindResult, SupportsDeleteCallback):
-    """Represents result returned with IVectorGeometryToolAngle.FindCoordinates method."""
+class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
+    """Contains the results returned with IVectorGeometryToolAngle.FindCoordinates method."""
+
+    _num_methods = 5
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_angle_method_offset = 2
+    _get_vector_from_method_offset = 3
+    _get_vector_to_method_offset = 4
+    _get_vector_about_method_offset = 5
+    _metadata = {
+        "iid_data" : (5298240106436331533, 9541969718117272231),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAngleFindResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindResult._metadata, AnalysisWorkbenchAngleFindResult._get_is_valid_metadata)
+
+    _get_angle_metadata = { "offset" : _get_angle_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle(self) -> typing.Any:
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindResult._metadata, AnalysisWorkbenchAngleFindResult._get_angle_metadata)
+
+    _get_vector_from_metadata = { "offset" : _get_vector_from_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_from(self) -> "ICartesian3Vector":
+        """The first of the two vectors the angle is measured."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindResult._metadata, AnalysisWorkbenchAngleFindResult._get_vector_from_metadata)
+
+    _get_vector_to_metadata = { "offset" : _get_vector_to_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_to(self) -> "ICartesian3Vector":
+        """The second of the two vectors the angle is measured."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindResult._metadata, AnalysisWorkbenchAngleFindResult._get_vector_to_metadata)
+
+    _get_vector_about_metadata = { "offset" : _get_vector_about_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_about(self) -> "ICartesian3Vector":
+        """The vector the angle is rotated about."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindResult._metadata, AnalysisWorkbenchAngleFindResult._get_vector_about_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[angle] = "angle"
+    _property_names[vector_from] = "vector_from"
+    _property_names[vector_to] = "vector_to"
+    _property_names[vector_about] = "vector_about"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAngleFindResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAngleFindResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAngleFindResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindResult, [IAnalysisWorkbenchMethodCallResult, IAngleFindResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindResult, [AnalysisWorkbenchAngleFindResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5338744576563927160, 2966521297346615686), AnalysisWorkbenchAngleFindResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindResult"] = AnalysisWorkbenchAngleFindResult
 
-class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResult, IAngleFindWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAngle.FindCoordinatesWithRate method."""
+
+    _num_methods = 6
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_angle_method_offset = 2
+    _get_angle_rate_method_offset = 3
+    _get_vector_from_method_offset = 4
+    _get_vector_to_method_offset = 5
+    _get_vector_about_method_offset = 6
+    _metadata = {
+        "iid_data" : (4856057119568825575, 2109696612937815446),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAngleFindWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_is_valid_metadata)
+
+    _get_angle_metadata = { "offset" : _get_angle_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle(self) -> typing.Any:
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_angle_metadata)
+
+    _get_angle_rate_metadata = { "offset" : _get_angle_rate_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle_rate(self) -> typing.Any:
+        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_angle_rate_metadata)
+
+    _get_vector_from_metadata = { "offset" : _get_vector_from_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_from(self) -> "ICartesian3Vector":
+        """The first of the two vectors the angle is measured."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_vector_from_metadata)
+
+    _get_vector_to_metadata = { "offset" : _get_vector_to_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_to(self) -> "ICartesian3Vector":
+        """The second of the two vectors the angle is measured."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_vector_to_metadata)
+
+    _get_vector_about_metadata = { "offset" : _get_vector_about_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector_about(self) -> "ICartesian3Vector":
+        """The vector the angle is rotated about."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindWithRateResult._metadata, AnalysisWorkbenchAngleFindWithRateResult._get_vector_about_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[angle] = "angle"
+    _property_names[angle_rate] = "angle_rate"
+    _property_names[vector_from] = "vector_from"
+    _property_names[vector_to] = "vector_to"
+    _property_names[vector_about] = "vector_about"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAngleFindWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAngleFindWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAngleFindWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindWithRateResult, [IAnalysisWorkbenchMethodCallResult, IAngleFindWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindWithRateResult, [AnalysisWorkbenchAngleFindWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5683985578297816291, 14320833342729481856), AnalysisWorkbenchAngleFindWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindWithRateResult"] = AnalysisWorkbenchAngleFindWithRateResult
 
-class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, IAxesTransformResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFrom method."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _metadata = {
+        "iid_data" : (4792970338091440318, 435178607338115222),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAxesTransformResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAxesTransformResult._metadata, AnalysisWorkbenchAxesTransformResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The output vector in the current axes."""
+        return self._intf.get_property(AnalysisWorkbenchAxesTransformResult._metadata, AnalysisWorkbenchAxesTransformResult._get_vector_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAxesTransformResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAxesTransformResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformResult, [IAnalysisWorkbenchMethodCallResult, IAxesTransformResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformResult, [AnalysisWorkbenchAxesTransformResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4776430414755889351, 925017437207209092), AnalysisWorkbenchAxesTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesTransformResult"] = AnalysisWorkbenchAxesTransformResult
 
-class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, IAxesTransformWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAxes.TransformFromWithRate method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _get_velocity_method_offset = 3
+    _metadata = {
+        "iid_data" : (5332039326563042843, 17391837893968577945),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAxesTransformWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAxesTransformWithRateResult._metadata, AnalysisWorkbenchAxesTransformWithRateResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The output vector in the current axes."""
+        return self._intf.get_property(AnalysisWorkbenchAxesTransformWithRateResult._metadata, AnalysisWorkbenchAxesTransformWithRateResult._get_vector_metadata)
+
+    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def velocity(self) -> "ICartesian3Vector":
+        """The vector velocity."""
+        return self._intf.get_property(AnalysisWorkbenchAxesTransformWithRateResult._metadata, AnalysisWorkbenchAxesTransformWithRateResult._get_velocity_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+    _property_names[velocity] = "velocity"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAxesTransformWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAxesTransformWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, IAxesTransformWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesTransformWithRateResult, [AnalysisWorkbenchAxesTransformWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5551248800008965786, 9162399115088396946), AnalysisWorkbenchAxesTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesTransformWithRateResult"] = AnalysisWorkbenchAxesTransformWithRateResult
 
-class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IAxesFindInAxesResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxes method."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_orientation_method_offset = 2
+    _metadata = {
+        "iid_data" : (5526443865819486130, 6485450650085686414),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAxesFindInAxesResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchAxesFindInAxesResult._metadata, AnalysisWorkbenchAxesFindInAxesResult._get_is_valid_metadata)
+
+    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def orientation(self) -> "IOrientation":
+        """The axes' orientation."""
+        return self._intf.get_property(AnalysisWorkbenchAxesFindInAxesResult._metadata, AnalysisWorkbenchAxesFindInAxesResult._get_orientation_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[orientation] = "orientation"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAxesFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAxesFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IAxesFindInAxesResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesResult, [AnalysisWorkbenchAxesFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5174479259770279351, 3364511849778566074), AnalysisWorkbenchAxesFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesFindInAxesResult"] = AnalysisWorkbenchAxesFindInAxesResult
 
-class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IAxesFindAxesWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAxes.FindInAxesWithRate method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_angular_velocity_method_offset = 2
+    _get_orientation_method_offset = 3
+    _metadata = {
+        "iid_data" : (5583004664022191568, 13635182811892187530),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAxesFindInAxesWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchAxesFindInAxesWithRateResult._metadata, AnalysisWorkbenchAxesFindInAxesWithRateResult._get_is_valid_metadata)
+
+    _get_angular_velocity_metadata = { "offset" : _get_angular_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def angular_velocity(self) -> "ICartesian3Vector":
+        """Axes' angular velocity."""
+        return self._intf.get_property(AnalysisWorkbenchAxesFindInAxesWithRateResult._metadata, AnalysisWorkbenchAxesFindInAxesWithRateResult._get_angular_velocity_metadata)
+
+    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def orientation(self) -> "IOrientation":
+        """The axes' orientation."""
+        return self._intf.get_property(AnalysisWorkbenchAxesFindInAxesWithRateResult._metadata, AnalysisWorkbenchAxesFindInAxesWithRateResult._get_orientation_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[angular_velocity] = "angular_velocity"
+    _property_names[orientation] = "orientation"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAxesFindAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAxesFindAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IAxesFindAxesWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAxesFindInAxesWithRateResult, [AnalysisWorkbenchAxesFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5737719566038969118, 88673256768790167), AnalysisWorkbenchAxesFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAxesFindInAxesWithRateResult"] = AnalysisWorkbenchAxesFindInAxesWithRateResult
 
-class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IPlaneFindInAxesResult, SupportsDeleteCallback):
+class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxes method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_x_axis_method_offset = 2
+    _get_y_axis_method_offset = 3
+    _metadata = {
+        "iid_data" : (5411394135561936255, 5770799577348852129),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInAxesResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesResult._metadata, AnalysisWorkbenchPlaneFindInAxesResult._get_is_valid_metadata)
+
+    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis(self) -> "ICartesian3Vector":
+        """X-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesResult._metadata, AnalysisWorkbenchPlaneFindInAxesResult._get_x_axis_metadata)
+
+    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis(self) -> "ICartesian3Vector":
+        """Y-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesResult._metadata, AnalysisWorkbenchPlaneFindInAxesResult._get_y_axis_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[x_axis] = "x_axis"
+    _property_names[y_axis] = "y_axis"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPlaneFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPlaneFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IPlaneFindInAxesResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesResult, [AnalysisWorkbenchPlaneFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5573313095156225739, 2162996710023035835), AnalysisWorkbenchPlaneFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInAxesResult"] = AnalysisWorkbenchPlaneFindInAxesResult
 
-class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IPlaneFindInAxesWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolPlane.FindInAxesWithRate method."""
+
+    _num_methods = 5
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_x_axis_method_offset = 2
+    _get_x_axis_rate_method_offset = 3
+    _get_y_axis_method_offset = 4
+    _get_y_axis_rate_method_offset = 5
+    _metadata = {
+        "iid_data" : (5396764601440543912, 17001129713529799298),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesWithRateResult._metadata, AnalysisWorkbenchPlaneFindInAxesWithRateResult._get_is_valid_metadata)
+
+    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis(self) -> "ICartesian3Vector":
+        """X-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesWithRateResult._metadata, AnalysisWorkbenchPlaneFindInAxesWithRateResult._get_x_axis_metadata)
+
+    _get_x_axis_rate_metadata = { "offset" : _get_x_axis_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis_rate(self) -> "ICartesian3Vector":
+        """The rate of change of X-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesWithRateResult._metadata, AnalysisWorkbenchPlaneFindInAxesWithRateResult._get_x_axis_rate_metadata)
+
+    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis(self) -> "ICartesian3Vector":
+        """Y-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesWithRateResult._metadata, AnalysisWorkbenchPlaneFindInAxesWithRateResult._get_y_axis_metadata)
+
+    _get_y_axis_rate_metadata = { "offset" : _get_y_axis_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis_rate(self) -> "ICartesian3Vector":
+        """The rate of change of Y-axis vector in the specified reference axes."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInAxesWithRateResult._metadata, AnalysisWorkbenchPlaneFindInAxesWithRateResult._get_y_axis_rate_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[x_axis] = "x_axis"
+    _property_names[x_axis_rate] = "x_axis_rate"
+    _property_names[y_axis] = "y_axis"
+    _property_names[y_axis_rate] = "y_axis_rate"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPlaneFindInAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPlaneFindInAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IPlaneFindInAxesWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInAxesWithRateResult, [AnalysisWorkbenchPlaneFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5753478954477836794, 2404139334665332140), AnalysisWorkbenchPlaneFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInAxesWithRateResult"] = AnalysisWorkbenchPlaneFindInAxesWithRateResult
 
-class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResult, IPlaneFindInSystemResult, SupportsDeleteCallback):
+class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystem method."""
+
+    _num_methods = 4
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_origin_position_method_offset = 2
+    _get_x_axis_method_offset = 3
+    _get_y_axis_method_offset = 4
+    _metadata = {
+        "iid_data" : (5012572268011808901, 10907720006031719318),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInSystemResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemResult._metadata, AnalysisWorkbenchPlaneFindInSystemResult._get_is_valid_metadata)
+
+    _get_origin_position_metadata = { "offset" : _get_origin_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def origin_position(self) -> "ICartesian3Vector":
+        """The position of the plane's center point in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemResult._metadata, AnalysisWorkbenchPlaneFindInSystemResult._get_origin_position_metadata)
+
+    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis(self) -> "ICartesian3Vector":
+        """X-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemResult._metadata, AnalysisWorkbenchPlaneFindInSystemResult._get_x_axis_metadata)
+
+    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis(self) -> "ICartesian3Vector":
+        """Y-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemResult._metadata, AnalysisWorkbenchPlaneFindInSystemResult._get_y_axis_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[origin_position] = "origin_position"
+    _property_names[x_axis] = "x_axis"
+    _property_names[y_axis] = "y_axis"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPlaneFindInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPlaneFindInSystemResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, IPlaneFindInSystemResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemResult, [AnalysisWorkbenchPlaneFindInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4975921903591042021, 6262793899525063358), AnalysisWorkbenchPlaneFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInSystemResult"] = AnalysisWorkbenchPlaneFindInSystemResult
 
-class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, IPlaneFindInSystemWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
+
+    _num_methods = 7
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_origin_position_method_offset = 2
+    _get_origin_velocity_method_offset = 3
+    _get_x_axis_method_offset = 4
+    _get_x_axis_rate_method_offset = 5
+    _get_y_axis_method_offset = 6
+    _get_y_axis_rate_method_offset = 7
+    _metadata = {
+        "iid_data" : (5090839955308321227, 317761085157350305),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_is_valid_metadata)
+
+    _get_origin_position_metadata = { "offset" : _get_origin_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def origin_position(self) -> "ICartesian3Vector":
+        """The position of the plane's center point in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_origin_position_metadata)
+
+    _get_origin_velocity_metadata = { "offset" : _get_origin_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def origin_velocity(self) -> "ICartesian3Vector":
+        """The rate of change of the position of the plane's center point in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_origin_velocity_metadata)
+
+    _get_x_axis_metadata = { "offset" : _get_x_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis(self) -> "ICartesian3Vector":
+        """X-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_x_axis_metadata)
+
+    _get_x_axis_rate_metadata = { "offset" : _get_x_axis_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def x_axis_rate(self) -> "ICartesian3Vector":
+        """A rate of change of the X-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_x_axis_rate_metadata)
+
+    _get_y_axis_metadata = { "offset" : _get_y_axis_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis(self) -> "ICartesian3Vector":
+        """Y-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_y_axis_metadata)
+
+    _get_y_axis_rate_metadata = { "offset" : _get_y_axis_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def y_axis_rate(self) -> "ICartesian3Vector":
+        """A rate of change of the Y-axis vector in the specified reference system."""
+        return self._intf.get_property(AnalysisWorkbenchPlaneFindInSystemWithRateResult._metadata, AnalysisWorkbenchPlaneFindInSystemWithRateResult._get_y_axis_rate_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[origin_position] = "origin_position"
+    _property_names[origin_velocity] = "origin_velocity"
+    _property_names[x_axis] = "x_axis"
+    _property_names[x_axis_rate] = "x_axis_rate"
+    _property_names[y_axis] = "y_axis"
+    _property_names[y_axis_rate] = "y_axis_rate"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPlaneFindInSystemWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPlaneFindInSystemWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IPlaneFindInSystemWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPlaneFindInSystemWithRateResult, [AnalysisWorkbenchPlaneFindInSystemWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5341422434034558608, 8015115794607794853), AnalysisWorkbenchPlaneFindInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPlaneFindInSystemWithRateResult"] = AnalysisWorkbenchPlaneFindInSystemWithRateResult
 
-class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallResult, IPointLocateInSystemResult, SupportsDeleteCallback):
-    """Contains the results returned with IVectorGeometryToolPlane.FindInSystemWithRate method."""
+class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
+    """Contains the results returned with IVectorGeometryToolPoint.LocateInSystem method."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_position_method_offset = 2
+    _metadata = {
+        "iid_data" : (5568521725362388460, 7875089545265969057),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPointLocateInSystemResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPointLocateInSystemResult._metadata, AnalysisWorkbenchPointLocateInSystemResult._get_is_valid_metadata)
+
+    _get_position_metadata = { "offset" : _get_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def position(self) -> "ICartesian3Vector":
+        """The point position in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPointLocateInSystemResult._metadata, AnalysisWorkbenchPointLocateInSystemResult._get_position_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[position] = "position"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPointLocateInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPointLocateInSystemResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemResult, [IAnalysisWorkbenchMethodCallResult, IPointLocateInSystemResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemResult, [AnalysisWorkbenchPointLocateInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4675192971753711238, 4056422737239134394), AnalysisWorkbenchPointLocateInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPointLocateInSystemResult"] = AnalysisWorkbenchPointLocateInSystemResult
 
-class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, IPointLocateInSystemWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolPoint.LocateInSystemWithRate method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_position_method_offset = 2
+    _get_velocity_method_offset = 3
+    _metadata = {
+        "iid_data" : (4718438476070115548, 11456293296871538843),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchPointLocateInSystemWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchPointLocateInSystemWithRateResult._metadata, AnalysisWorkbenchPointLocateInSystemWithRateResult._get_is_valid_metadata)
+
+    _get_position_metadata = { "offset" : _get_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def position(self) -> "ICartesian3Vector":
+        """The point position in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPointLocateInSystemWithRateResult._metadata, AnalysisWorkbenchPointLocateInSystemWithRateResult._get_position_metadata)
+
+    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def velocity(self) -> "ICartesian3Vector":
+        """The point velocity in the specified coordinate system."""
+        return self._intf.get_property(AnalysisWorkbenchPointLocateInSystemWithRateResult._metadata, AnalysisWorkbenchPointLocateInSystemWithRateResult._get_velocity_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[position] = "position"
+    _property_names[velocity] = "velocity"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IPointLocateInSystemWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IPointLocateInSystemWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemWithRateResult, [IAnalysisWorkbenchMethodCallResult, IPointLocateInSystemWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchPointLocateInSystemWithRateResult, [AnalysisWorkbenchPointLocateInSystemWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4771085085991853208, 16712650806298139816), AnalysisWorkbenchPointLocateInSystemWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchPointLocateInSystemWithRateResult"] = AnalysisWorkbenchPointLocateInSystemWithRateResult
 
-class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult, ISystemTransformResult, SupportsDeleteCallback):
+class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFrom and IVectorGeometryToolSystem.TransformTo methods."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _metadata = {
+        "iid_data" : (5602727224913179539, 3056221723684415935),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchSystemTransformResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchSystemTransformResult._metadata, AnalysisWorkbenchSystemTransformResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The transformed vector."""
+        return self._intf.get_property(AnalysisWorkbenchSystemTransformResult._metadata, AnalysisWorkbenchSystemTransformResult._get_vector_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        ISystemTransformResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        ISystemTransformResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformResult, [IAnalysisWorkbenchMethodCallResult, ISystemTransformResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformResult, [AnalysisWorkbenchSystemTransformResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4732248531040369310, 11519390737172858259), AnalysisWorkbenchSystemTransformResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemTransformResult"] = AnalysisWorkbenchSystemTransformResult
 
-class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, ISystemTransformWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolSystem.TransformFromWithRate and IVectorGeometryToolSystem.TransformToWithRate methods."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _get_velocity_method_offset = 3
+    _metadata = {
+        "iid_data" : (5028026059164558160, 8691094400863508390),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchSystemTransformWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchSystemTransformWithRateResult._metadata, AnalysisWorkbenchSystemTransformWithRateResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The transformed vector."""
+        return self._intf.get_property(AnalysisWorkbenchSystemTransformWithRateResult._metadata, AnalysisWorkbenchSystemTransformWithRateResult._get_vector_metadata)
+
+    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def velocity(self) -> "ICartesian3Vector":
+        """The vector's velocity."""
+        return self._intf.get_property(AnalysisWorkbenchSystemTransformWithRateResult._metadata, AnalysisWorkbenchSystemTransformWithRateResult._get_velocity_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+    _property_names[velocity] = "velocity"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        ISystemTransformWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        ISystemTransformWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformWithRateResult, [IAnalysisWorkbenchMethodCallResult, ISystemTransformWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemTransformWithRateResult, [AnalysisWorkbenchSystemTransformWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4773661828698350098, 14241460882684623754), AnalysisWorkbenchSystemTransformWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemTransformWithRateResult"] = AnalysisWorkbenchSystemTransformWithRateResult
 
-class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResult, ISystemFindInSystemResult, SupportsDeleteCallback):
+class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolSystem.FindInSystem method."""
+
+    _num_methods = 5
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_position_method_offset = 2
+    _get_velocity_method_offset = 3
+    _get_rate_method_offset = 4
+    _get_orientation_method_offset = 5
+    _metadata = {
+        "iid_data" : (4961058888294584522, 6819225686450287036),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchSystemFindInSystemResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchSystemFindInSystemResult._metadata, AnalysisWorkbenchSystemFindInSystemResult._get_is_valid_metadata)
+
+    _get_position_metadata = { "offset" : _get_position_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def position(self) -> "ICartesian3Vector":
+        """A position vector."""
+        return self._intf.get_property(AnalysisWorkbenchSystemFindInSystemResult._metadata, AnalysisWorkbenchSystemFindInSystemResult._get_position_metadata)
+
+    _get_velocity_metadata = { "offset" : _get_velocity_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def velocity(self) -> "ICartesian3Vector":
+        """A velocity vector."""
+        return self._intf.get_property(AnalysisWorkbenchSystemFindInSystemResult._metadata, AnalysisWorkbenchSystemFindInSystemResult._get_velocity_metadata)
+
+    _get_rate_metadata = { "offset" : _get_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def rate(self) -> "ICartesian3Vector":
+        """Rate of change."""
+        return self._intf.get_property(AnalysisWorkbenchSystemFindInSystemResult._metadata, AnalysisWorkbenchSystemFindInSystemResult._get_rate_metadata)
+
+    _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def orientation(self) -> "IOrientation":
+        """Orientation."""
+        return self._intf.get_property(AnalysisWorkbenchSystemFindInSystemResult._metadata, AnalysisWorkbenchSystemFindInSystemResult._get_orientation_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[position] = "position"
+    _property_names[velocity] = "velocity"
+    _property_names[rate] = "rate"
+    _property_names[orientation] = "orientation"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchSystemFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemFindInSystemResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        ISystemFindInSystemResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        ISystemFindInSystemResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemFindInSystemResult, [IAnalysisWorkbenchMethodCallResult, ISystemFindInSystemResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchSystemFindInSystemResult, [AnalysisWorkbenchSystemFindInSystemResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((4901836917752659950, 3314518124226065597), AnalysisWorkbenchSystemFindInSystemResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchSystemFindInSystemResult"] = AnalysisWorkbenchSystemFindInSystemResult
 
-class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult, IVectorFindInAxesResult, SupportsDeleteCallback):
+class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxes method."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _metadata = {
+        "iid_data" : (5163850874032675488, 11046602307391063209),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchVectorFindInAxesResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchVectorFindInAxesResult._metadata, AnalysisWorkbenchVectorFindInAxesResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The vector in a specified axes."""
+        return self._intf.get_property(AnalysisWorkbenchVectorFindInAxesResult._metadata, AnalysisWorkbenchVectorFindInAxesResult._get_vector_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IVectorFindInAxesResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IVectorFindInAxesResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesResult, [IAnalysisWorkbenchMethodCallResult, IVectorFindInAxesResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesResult, [AnalysisWorkbenchVectorFindInAxesResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5305219641346644613, 3358734389861877669), AnalysisWorkbenchVectorFindInAxesResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchVectorFindInAxesResult"] = AnalysisWorkbenchVectorFindInAxesResult
 
-class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, IVectorFindInAxesWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolVector.FindInAxesWithRate method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_vector_method_offset = 2
+    _get_rate_method_offset = 3
+    _metadata = {
+        "iid_data" : (5384991910738500476, 5081428842426900099),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchVectorFindInAxesWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """True indicates the method call was successful."""
+        return self._intf.get_property(AnalysisWorkbenchVectorFindInAxesWithRateResult._metadata, AnalysisWorkbenchVectorFindInAxesWithRateResult._get_is_valid_metadata)
+
+    _get_vector_metadata = { "offset" : _get_vector_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def vector(self) -> "ICartesian3Vector":
+        """The vector in a specified axes."""
+        return self._intf.get_property(AnalysisWorkbenchVectorFindInAxesWithRateResult._metadata, AnalysisWorkbenchVectorFindInAxesWithRateResult._get_vector_metadata)
+
+    _get_rate_metadata = { "offset" : _get_rate_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def rate(self) -> "ICartesian3Vector":
+        """The vector rate in a specified axes."""
+        return self._intf.get_property(AnalysisWorkbenchVectorFindInAxesWithRateResult._metadata, AnalysisWorkbenchVectorFindInAxesWithRateResult._get_rate_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[vector] = "vector"
+    _property_names[rate] = "rate"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IVectorFindInAxesWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IVectorFindInAxesWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesWithRateResult, [IAnalysisWorkbenchMethodCallResult, IVectorFindInAxesWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchVectorFindInAxesWithRateResult, [AnalysisWorkbenchVectorFindInAxesWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5526758868339235638, 15327334100431991214), AnalysisWorkbenchVectorFindInAxesWithRateResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchVectorFindInAxesWithRateResult"] = AnalysisWorkbenchVectorFindInAxesWithRateResult
 
-class AnalysisWorkbenchFindAngleWithRateResult(IAnalysisWorkbenchMethodCallResult, IAngleFindAngleWithRateResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngleWithRate method."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_angle_method_offset = 2
+    _get_angle_rate_method_offset = 3
+    _metadata = {
+        "iid_data" : (5292967736344146106, 3501262746512687271),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAngleFindAngleWithRateResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindAngleWithRateResult._metadata, AnalysisWorkbenchAngleFindAngleWithRateResult._get_is_valid_metadata)
+
+    _get_angle_metadata = { "offset" : _get_angle_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle(self) -> typing.Any:
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindAngleWithRateResult._metadata, AnalysisWorkbenchAngleFindAngleWithRateResult._get_angle_metadata)
+
+    _get_angle_rate_metadata = { "offset" : _get_angle_rate_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle_rate(self) -> typing.Any:
+        """The computed angle rate. The value of the angle rate is in ``AngleRateUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindAngleWithRateResult._metadata, AnalysisWorkbenchAngleFindAngleWithRateResult._get_angle_rate_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[angle] = "angle"
+    _property_names[angle_rate] = "angle_rate"
+
     def __init__(self, sourceObject=None):
-        """Construct an object of type AnalysisWorkbenchFindAngleWithRateResult."""
+        """Construct an object of type AnalysisWorkbenchAngleFindAngleWithRateResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleWithRateResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAngleFindAngleWithRateResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAngleFindAngleWithRateResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchFindAngleWithRateResult, [IAnalysisWorkbenchMethodCallResult, IAngleFindAngleWithRateResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindAngleWithRateResult, [AnalysisWorkbenchAngleFindAngleWithRateResult, IAnalysisWorkbenchMethodCallResult])
 
-agcls.AgClassCatalog.add_catalog_entry((4649475226236495161, 15745033739960350352), AnalysisWorkbenchFindAngleWithRateResult)
-agcls.AgTypeNameMap["AnalysisWorkbenchFindAngleWithRateResult"] = AnalysisWorkbenchFindAngleWithRateResult
+agcls.AgClassCatalog.add_catalog_entry((4649475226236495161, 15745033739960350352), AnalysisWorkbenchAngleFindAngleWithRateResult)
+agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindAngleWithRateResult"] = AnalysisWorkbenchAngleFindAngleWithRateResult
 
-class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, IAngleFindAngleResult, SupportsDeleteCallback):
+class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, SupportsDeleteCallback):
     """Contains the results returned with IVectorGeometryToolAngle.FindAngle method."""
+
+    _num_methods = 2
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_is_valid_method_offset = 1
+    _get_angle_method_offset = 2
+    _metadata = {
+        "iid_data" : (5484695193085506764, 12995272954624926875),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AnalysisWorkbenchAngleFindAngleResult)
+    
+    _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
+            "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.VariantBoolArg,) }
+    @property
+    def is_valid(self) -> bool:
+        """Indicate whether the result object is valid."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindAngleResult._metadata, AnalysisWorkbenchAngleFindAngleResult._get_is_valid_metadata)
+
+    _get_angle_metadata = { "offset" : _get_angle_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def angle(self) -> typing.Any:
+        """The computed angle. The value of the angle is in ``AngleUnit`` dimension."""
+        return self._intf.get_property(AnalysisWorkbenchAngleFindAngleResult._metadata, AnalysisWorkbenchAngleFindAngleResult._get_angle_metadata)
+
+    _property_names[is_valid] = "is_valid"
+    _property_names[angle] = "angle"
+
     def __init__(self, sourceObject=None):
         """Construct an object of type AnalysisWorkbenchAngleFindAngleResult."""
         SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleResult)
         IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
-        IAngleFindAngleResult.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
-        IAngleFindAngleResult._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindAngleResult, [IAnalysisWorkbenchMethodCallResult, IAngleFindAngleResult])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchAngleFindAngleResult, [AnalysisWorkbenchAngleFindAngleResult, IAnalysisWorkbenchMethodCallResult])
 
 agcls.AgClassCatalog.add_catalog_entry((5703953535685278056, 1024662027560619958), AnalysisWorkbenchAngleFindAngleResult)
 agcls.AgTypeNameMap["AnalysisWorkbenchAngleFindAngleResult"] = AnalysisWorkbenchAngleFindAngleResult
@@ -29394,7 +29050,7 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4920377372252981471, 2995698768068563878), AnalysisWorkbenchCentralBody)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBody"] = AnalysisWorkbenchCentralBody
 
-class AnalysisWorkbenchCentralBodyReference(IComponentReference, SupportsDeleteCallback):
+class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference, SupportsDeleteCallback):
     """Represents a reference to a VGT CentralBody."""
 
     _num_methods = 3
@@ -29436,16 +29092,16 @@ class AnalysisWorkbenchCentralBodyReference(IComponentReference, SupportsDeleteC
         """Construct an object of type AnalysisWorkbenchCentralBodyReference."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBodyReference)
-        IComponentReference.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IComponentReference._private_init(self, intf)
+        IAnalysisWorkbenchComponentReference._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyReference, [AnalysisWorkbenchCentralBodyReference, IComponentReference])
+        set_class_attribute(self, attrname, value, AnalysisWorkbenchCentralBodyReference, [AnalysisWorkbenchCentralBodyReference, IAnalysisWorkbenchComponentReference])
 
 agcls.AgClassCatalog.add_catalog_entry((5340102991488887384, 6469328972034659504), AnalysisWorkbenchCentralBodyReference)
 agcls.AgTypeNameMap["AnalysisWorkbenchCentralBodyReference"] = AnalysisWorkbenchCentralBodyReference
@@ -29563,7 +29219,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "IComponent":
+    def __next__(self) -> "IAnalysisWorkbenchComponent":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -29590,7 +29246,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IComponent":
+    def item(self, indexOrName:typing.Any) -> "IAnalysisWorkbenchComponent":
         """Retrieve an element of the collection using the name of the element or a position in the collection."""
         return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._item_metadata, indexOrName, OutArg())
 
@@ -29605,14 +29261,14 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_index(self, index:int) -> "IComponent":
+    def get_item_by_index(self, index:int) -> "IAnalysisWorkbenchComponent":
         """Retrieve an item from the crdn collection by index."""
         return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get_item_by_index_metadata, index, OutArg())
 
     _get_item_by_name_metadata = { "offset" : _get_item_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_item_by_name(self, name:str) -> "IComponent":
+    def get_item_by_name(self, name:str) -> "IAnalysisWorkbenchComponent":
         """Retrieve an item from the crdn collection by name."""
         return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get_item_by_name_metadata, name, OutArg())
 
@@ -29842,7 +29498,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5287350835476231857, 6426093684585889170), TimeToolPointSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolPointSamplingIntervalCollection"] = TimeToolPointSamplingIntervalCollection
 
-class TimeToolSamplingResult(SupportsDeleteCallback):
+class TimeToolAxesSamplingResult(SupportsDeleteCallback):
     """Contains tabulated orientations and angular velocities of axes created by Sample method."""
 
     _num_methods = 2
@@ -29855,7 +29511,7 @@ class TimeToolSamplingResult(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, TimeToolSamplingResult)
+        return get_interface_property(attrname, TimeToolAxesSamplingResult)
     
     _get_is_valid_metadata = { "offset" : _get_is_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -29863,7 +29519,7 @@ class TimeToolSamplingResult(SupportsDeleteCallback):
     @property
     def is_valid(self) -> bool:
         """Indicate whether the result object is valid."""
-        return self._intf.get_property(TimeToolSamplingResult._metadata, TimeToolSamplingResult._get_is_valid_metadata)
+        return self._intf.get_property(TimeToolAxesSamplingResult._metadata, TimeToolAxesSamplingResult._get_is_valid_metadata)
 
     _get_intervals_metadata = { "offset" : _get_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -29871,15 +29527,15 @@ class TimeToolSamplingResult(SupportsDeleteCallback):
     @property
     def intervals(self) -> "TimeToolAxesSamplingIntervalCollection":
         """A collection of sampling intervals."""
-        return self._intf.get_property(TimeToolSamplingResult._metadata, TimeToolSamplingResult._get_intervals_metadata)
+        return self._intf.get_property(TimeToolAxesSamplingResult._metadata, TimeToolAxesSamplingResult._get_intervals_metadata)
 
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type TimeToolSamplingResult."""
+        """Construct an object of type TimeToolAxesSamplingResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolSamplingResult)
+        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29887,10 +29543,10 @@ class TimeToolSamplingResult(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, TimeToolSamplingResult, [TimeToolSamplingResult, ])
+        set_class_attribute(self, attrname, value, TimeToolAxesSamplingResult, [TimeToolAxesSamplingResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5514187429032108392, 5428366094586886549), TimeToolSamplingResult)
-agcls.AgTypeNameMap["TimeToolSamplingResult"] = TimeToolSamplingResult
+agcls.AgClassCatalog.add_catalog_entry((5514187429032108392, 5428366094586886549), TimeToolAxesSamplingResult)
+agcls.AgTypeNameMap["TimeToolAxesSamplingResult"] = TimeToolAxesSamplingResult
 
 class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
     """The interface represents an interval with the time, orientation and velocity arrays."""

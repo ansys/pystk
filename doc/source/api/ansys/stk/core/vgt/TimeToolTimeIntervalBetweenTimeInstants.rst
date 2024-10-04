@@ -3,7 +3,7 @@ TimeToolTimeIntervalBetweenTimeInstants
 
 .. py:class:: ansys.stk.core.vgt.TimeToolTimeIntervalBetweenTimeInstants
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined.
 

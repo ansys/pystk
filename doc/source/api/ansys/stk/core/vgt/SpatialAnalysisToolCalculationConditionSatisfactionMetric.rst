@@ -3,7 +3,7 @@ SpatialAnalysisToolCalculationConditionSatisfactionMetric
 
 .. py:class:: ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric
 
-   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A volume calc condition satisfaction interface.
 

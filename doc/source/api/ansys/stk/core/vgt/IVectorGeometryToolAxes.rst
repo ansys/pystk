@@ -91,7 +91,7 @@ Method detail
 -------------
 
 
-.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IAxesFindAxesWithRateResult
+.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAxesFindInAxesWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes_with_rate
 
     Find an angular velocity and orientation in the specified axes.
@@ -103,9 +103,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAxesFindAxesWithRateResult`
+        :obj:`~AnalysisWorkbenchAxesFindInAxesWithRateResult`
 
-.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IAxesFindInAxesResult
+.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAxesFindInAxesResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes
 
     Find an orientation in the specified axes.
@@ -117,13 +117,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAxesFindInAxesResult`
+        :obj:`~AnalysisWorkbenchAxesFindInAxesResult`
 
 
 
 
 
-.. py:method:: transform(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector) -> IAxesTransformResult
+.. py:method:: transform(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform
 
     Transform the input vector from this axes into the output axes.
@@ -136,9 +136,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAxesTransformResult`
+        :obj:`~AnalysisWorkbenchAxesTransformResult`
 
-.. py:method:: transform_with_rate(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector, rateInMyAxes: ICartesian3Vector) -> IAxesTransformWithRateResult
+.. py:method:: transform_with_rate(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector, rateInMyAxes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform_with_rate
 
     Transform the input vector and vector's rate from this axes into the output axes.
@@ -152,5 +152,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~IAxesTransformWithRateResult`
+        :obj:`~AnalysisWorkbenchAxesTransformWithRateResult`
 
