@@ -1006,7 +1006,7 @@ class BugFixes(TestBase):
 
             # compute over umbra times
             oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.specify_access_event_intervals(oSatellite.vgt.time_interval_lists["LightingIntervals.Umbra"])
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(0, intColl.count)
@@ -1027,7 +1027,7 @@ class BugFixes(TestBase):
 
             # compute over umbra times
             oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.specify_access_event_intervals(oSatellite.vgt.time_interval_lists["LightingIntervals.Umbra"])
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(1, intColl.count)
@@ -1037,7 +1037,7 @@ class BugFixes(TestBase):
             # start over - assign the time component, don't compute, update the satellite, then compute
             oAccess = oFacility.get_access_to_object(oSatellite)
             oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.specify_access_event_intervals(oSatellite.vgt.time_interval_lists["LightingIntervals.Umbra"])
             # update raan
             oRAAN.value = 0.0
             twobody.initial_state.representation.assign(classical)
@@ -1061,18 +1061,18 @@ class BugFixes(TestBase):
         oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesSat"]
 
         compName: str = "bug108208FixedIntrvl"
-        group: "TimeToolEventIntervalListGroup" = None
+        group: "TimeToolTimeIntervalListGroup" = None
         oAccess: "StkAccess" = None
 
         try:
-            group = oSatellite.vgt.event_interval_lists
-            factory: "TimeToolEventIntervalListFactory" = group.factory
-            intrvlList: "ITimeToolEventIntervalList" = factory.create_event_interval_list_fixed(
+            group = oSatellite.vgt.time_interval_lists
+            factory: "TimeToolTimeIntervalListFactory" = group.factory
+            intrvlList: "ITimeToolTimeIntervalList" = factory.create_fixed(
                 compName, "Fixed interval to test bug 108208"
             )
             Assert.assertIsNotNone(intrvlList)
 
-            intrvlListFxd: "TimeToolEventIntervalListFixed" = clr.CastAs(intrvlList, TimeToolEventIntervalListFixed)
+            intrvlListFxd: "TimeToolTimeIntervalListFixed" = clr.CastAs(intrvlList, TimeToolTimeIntervalListFixed)
 
             # these intervals are within withe normal access intervals
             start1: str = "1 Jul 1999 13:45:00.000"
@@ -1083,7 +1083,7 @@ class BugFixes(TestBase):
             intrvlListFxd.set_intervals(arIntervals)
             oAccess = oFacility.get_access_to_object(oSatellite)
             oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists[compName])
+            oAccess.specify_access_event_intervals(oSatellite.vgt.time_interval_lists[compName])
             oAccess.compute_access()
             intColl: "IntervalCollection" = oAccess.computed_access_interval_times
             Assert.assertEqual(2, intColl.count)
@@ -1098,7 +1098,7 @@ class BugFixes(TestBase):
             Assert.assertEqual(2, intColl.count)
             Assert.assertEqual(oAccess.access_time_period, ACCESS_TIME_TYPE.EVENT_INTERVALS)
             accInvtlList: "AccessTimeEventIntervals" = AccessTimeEventIntervals(oAccess.access_time_period_data)
-            accInvtlListVals: "ITimeToolEventIntervalList" = accInvtlList.list_of_intervals
+            accInvtlListVals: "ITimeToolTimeIntervalList" = accInvtlList.list_of_intervals
             accCrdn: "IAnalysisWorkbenchComponent" = clr.CastAs(accInvtlListVals, IAnalysisWorkbenchComponent)
             if BugFixes._verbose:
                 Console.WriteLine(("Component name is " + accCrdn.name))
@@ -1113,8 +1113,8 @@ class BugFixes(TestBase):
             accCrdnInstPath: str = accCrdn.path[0 : (0 + Math.Min(expectedLen, len(accCrdn.path)))]
             Assert.assertEqual(expectedInstPath, accCrdnInstPath)
 
-            accIntrvlListType: "CRDN_EVENT_INTERVAL_LIST_TYPE" = accInvtlListVals.type
-            Assert.assertEqual(accIntrvlListType, CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED)
+            accIntrvlListType: "EVENT_INTERVAL_LIST_TYPE" = accInvtlListVals.type
+            Assert.assertEqual(accIntrvlListType, EVENT_INTERVAL_LIST_TYPE.FIXED)
             res: "TimeToolIntervalListResult" = accInvtlListVals.find_intervals()
             Assert.assertTrue(res.is_valid)
             coll: "TimeToolIntervalCollection" = res.intervals

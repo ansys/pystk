@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.fixed`
               - The Sun's Fixed coordinate system.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.ICRF`
               - The Sun's International Celestial Reference Frame (ICRF).
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.inertial`
               - The Sun's Inertial coordinate system (as defined in STK).
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.j2000`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.J2000`
               - The Sun's J2000 coordinate system.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.barycenter`
               - The Inertial system at the Sun's barycenter.
@@ -48,8 +48,8 @@ Property detail
 
     The Sun's Fixed coordinate system.
 
-.. py:property:: icrf
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.icrf
+.. py:property:: ICRF
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.ICRF
     :type: IVectorGeometryToolSystem
 
     The Sun's International Celestial Reference Frame (ICRF).
@@ -60,8 +60,8 @@ Property detail
 
     The Sun's Inertial coordinate system (as defined in STK).
 
-.. py:property:: j2000
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.j2000
+.. py:property:: J2000
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunSystems.J2000
     :type: IVectorGeometryToolSystem
 
     The Sun's J2000 coordinate system.

@@ -80,9 +80,9 @@ class EarlyBoundTests(TestBase):
 
     # region Main
     def test_Main(self):
-        eventIntSmartInterval: "TimeToolEventIntervalSmartInterval" = EarlyBoundTests.AG_ACAT.time_period
+        eventIntSmartInterval: "TimeToolTimeIntervalSmartInterval" = EarlyBoundTests.AG_ACAT.time_period
         eventIntSmartInterval.set_implicit_interval(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         Assert.assertEqual("1 Jul 1999 00:00:00.000", eventIntSmartInterval.find_start_time())
         Assert.assertEqual("2 Jul 1999 00:00:00.000", eventIntSmartInterval.find_stop_time())

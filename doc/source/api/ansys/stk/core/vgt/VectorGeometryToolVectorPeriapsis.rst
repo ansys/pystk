@@ -3,7 +3,7 @@ VectorGeometryToolVectorPeriapsis
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorPeriapsis
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point.
 
@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorPeriapsis.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorPeriapsis.reference_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Elliptical orbit is fit to the current motion of the reference point according to the selected mean theory.
 
 .. py:property:: mean_element_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorPeriapsis.mean_element_type
-    :type: CRDN_MEAN_ELEMENT_THEORY
+    :type: MEAN_ELEMENT_THEORY
 
     Specify the mean element theory type for approximating motion.
 

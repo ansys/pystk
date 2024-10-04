@@ -3,7 +3,7 @@ VectorGeometryToolAngleRotation
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAngleRotation
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngle`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Angle of the shortest rotation between the specified FromAxes and ToAxes axes.
 
@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: from_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.from_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify an axes to rotate from.
 
 .. py:property:: to_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.to_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify an axes to rotate to.
 
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.reference_direction
-    :type: CRDN_DISPLAY_AXIS_SELECTOR
+    :type: PRINCIPAL_AXIS_OF_ROTATION_TYPE
 
     Specify a rotation direction.
 

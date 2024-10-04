@@ -299,8 +299,8 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
         for cvAsset in coverage.asset_list:
             subAsset: "IStkObject" = stkRoot.get_object_from_path(cvAsset.object_name)
-            if subAsset.vgt.event_intervals.contains("AvailabilityTimeSpan"):
-                availableTimeSpan: "TimeToolEventIntervalResult" = subAsset.vgt.event_intervals[
+            if subAsset.vgt.time_intervals.contains("AvailabilityTimeSpan"):
+                availableTimeSpan: "TimeToolTimeIntervalResult" = subAsset.vgt.time_intervals[
                     "AvailabilityTimeSpan"
                 ].find_interval()
                 startDate: "Date" = stkRoot.conversion_utility.new_date(

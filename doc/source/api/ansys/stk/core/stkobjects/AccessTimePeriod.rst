@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.access_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Returns an access interval.
 

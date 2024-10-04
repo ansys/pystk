@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolCondition.type
-    :type: CRDN_CONDITION_TYPE
+    :type: CONDITION_TYPE
 
     Returns the type of condition.
 

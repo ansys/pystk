@@ -533,21 +533,21 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         # For this code snippet, let's use the time interval when the UAV reached min and max altitude values.
         # Note, this assumes time at min happens before time at max.
-        timeOfAltMin: "ITimeToolEvent" = uav.vgt.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        timeOfAltMax: "ITimeToolEvent" = uav.vgt.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
+        timeOfAltMin: "ITimeToolInstant" = uav.vgt.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
+        timeOfAltMax: "ITimeToolInstant" = uav.vgt.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
 
         # Set the access time period with the times we figured out above.
         access: "StkAccess" = sensor.get_access_to_object(coloradoSprings)
         access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
 
-        accessTimePeriod.access_interval.state = CRDN_SMART_INTERVAL_STATE.START_STOP
+        accessTimePeriod.access_interval.state = SMART_INTERVAL_STATE.START_STOP
 
-        accessStartEpoch: "TimeToolEventSmartEpoch" = accessTimePeriod.access_interval.get_start_epoch()
+        accessStartEpoch: "TimeToolInstantSmartEpoch" = accessTimePeriod.access_interval.get_start_epoch()
         accessStartEpoch.set_implicit_time(timeOfAltMin)
         accessTimePeriod.access_interval.set_start_epoch(accessStartEpoch)
 
-        accessStopEpoch: "TimeToolEventSmartEpoch" = accessTimePeriod.access_interval.get_stop_epoch()
+        accessStopEpoch: "TimeToolInstantSmartEpoch" = accessTimePeriod.access_interval.get_stop_epoch()
         accessStopEpoch.set_implicit_time(timeOfAltMax)
         accessTimePeriod.access_interval.set_stop_epoch(accessStopEpoch)
 
@@ -585,8 +585,8 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
-        if otherObject.vgt.event_intervals.contains("AvailabilityTimeSpan"):
-            availabilityTimeSpan: "ITimeToolEventInterval" = otherObject.vgt.event_intervals["AvailabilityTimeSpan"]
+        if otherObject.vgt.time_intervals.contains("AvailabilityTimeSpan"):
+            availabilityTimeSpan: "ITimeToolTimeInterval" = otherObject.vgt.time_intervals["AvailabilityTimeSpan"]
             accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
 
     # endregion

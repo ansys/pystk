@@ -116,7 +116,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
         # Get VehicleProfileInertial interface
         interfix: "VehicleProfileInertial" = clr.CastAs(standard.basic.profile, VehicleProfileInertial)
 
-        interfix.inertial.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_123, 20.1, 50.0, 20.0)
+        interfix.inertial.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123, 20.1, 50.0, 20.0)
 
     # endregion
 

@@ -120,14 +120,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> None
+.. py:method:: assign_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign_euler_angles
 
     Set orientation using the Euler angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -177,14 +177,14 @@ Method detail
 
         :obj:`~typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]`
 
-.. py:method:: query_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+.. py:method:: query_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles
 
     Get orientation using the Euler angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
 
     :Returns:
 
@@ -221,14 +221,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: query_euler_angles_array(self, sequence: EULER_ORIENTATION_SEQUENCE) -> list
+.. py:method:: query_euler_angles_array(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles_array
 
     Return the Euler elements as an array.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
 
     :Returns:
 

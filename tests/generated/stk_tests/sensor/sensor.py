@@ -346,7 +346,7 @@ class BugFixes(TestBase):
             # - ... or to an axes dependent upon the sensor's body axes;
             objSensor: "IStkObject" = clr.CastAs(BugFixes._sensor, IStkObject)
             depOnSensorsBodyAxes: "IVectorGeometryToolAxes" = objSensor.vgt.axes.factory.create(
-                "DepOnSensorsBodyAxes", "", VECTOR_GEOMETRY_TOOL_AXES_TYPE.FIXED
+                "DepOnSensorsBodyAxes", "", AXES_TYPE.FIXED
             )
             depOnSensorsBodyAxesFixed: "VectorGeometryToolAxesFixed" = clr.CastAs(
                 depOnSensorsBodyAxes, VectorGeometryToolAxesFixed
@@ -381,7 +381,7 @@ class BugFixes(TestBase):
             # ... or to an axes dependent upon the satellite's body axes
             objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
             depOnSatsBodyAxes: "IVectorGeometryToolAxes" = objSat.vgt.axes.factory.create(
-                "DepOnSatsBodyAxes3b", "", VECTOR_GEOMETRY_TOOL_AXES_TYPE.FIXED
+                "DepOnSatsBodyAxes3b", "", AXES_TYPE.FIXED
             )
             depOnSatsBodyAxesFixed: "VectorGeometryToolAxesFixed" = clr.CastAs(
                 depOnSatsBodyAxes, VectorGeometryToolAxesFixed
@@ -421,7 +421,7 @@ class BugFixes(TestBase):
             # ... or to an axes dependent upon the satellite's body axes
             objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
             depOnSatsBodyAxes: "IVectorGeometryToolAxes" = objSat.vgt.axes.factory.create(
-                "DepOnSatsBodyAxes4b", "", VECTOR_GEOMETRY_TOOL_AXES_TYPE.FIXED
+                "DepOnSatsBodyAxes4b", "", AXES_TYPE.FIXED
             )
             depOnSatsBodyAxesFixed: "VectorGeometryToolAxesFixed" = clr.CastAs(
                 depOnSatsBodyAxes, VectorGeometryToolAxesFixed
@@ -447,7 +447,7 @@ class BugFixes(TestBase):
             # (AlignedVector)
             objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
             depOnSatsBodyAxes: "IVectorGeometryToolVector" = objSat.vgt.vectors.factory.create(
-                "DepOnSatsBodyAxes5a", "", VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.FIXED_IN_AXES
+                "DepOnSatsBodyAxes5a", "", VECTOR_TYPE.FIXED_IN_AXES
             )
             depOnSatsBodyVectorFixed: "VectorGeometryToolVectorFixedInAxes" = clr.CastAs(
                 depOnSatsBodyAxes, VectorGeometryToolVectorFixedInAxes
@@ -473,7 +473,7 @@ class BugFixes(TestBase):
             # (ConstrainedVector)
             objSat: "IStkObject" = clr.CastAs(BugFixes._sat, IStkObject)
             depOnSatsBodyAxes: "IVectorGeometryToolVector" = objSat.vgt.vectors.factory.create(
-                "DepOnSatsBodyAxes5b", "", VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.FIXED_IN_AXES
+                "DepOnSatsBodyAxes5b", "", VECTOR_TYPE.FIXED_IN_AXES
             )
             depOnSatsBodyVectorFixed: "VectorGeometryToolVectorFixedInAxes" = clr.CastAs(
                 depOnSatsBodyAxes, VectorGeometryToolVectorFixedInAxes
@@ -3724,7 +3724,7 @@ class SensorHelper(object):
 
         # SetPointingFixedEuler
         oFixed2: "SensorPointingFixed" = self.m_oSensor.common_tasks.set_pointing_fixed_euler(
-            EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+            EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132, 30, 40, 50
         )
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED, self.m_oSensor.pointing_type)
         Assert.assertIsNotNone(oFixed2)
@@ -3735,7 +3735,7 @@ class SensorHelper(object):
         b: typing.Any = None
         c: typing.Any = None
 
-        (a, b, c) = oOrientation2.query_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_132)
+        (a, b, c) = oOrientation2.query_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132)
         Assert.assertAlmostEqual(30, float(a), delta=1e-08)
         Assert.assertAlmostEqual(40, float(b), delta=1e-08)
         Assert.assertAlmostEqual(50, float(c), delta=1e-08)
@@ -3800,7 +3800,7 @@ class SensorHelper(object):
 
         # SetPointingFixedAxesEuler
         oFixedAxes6: "SensorPointingFixedAxes" = self.m_oSensor.common_tasks.set_pointing_fixed_axes_euler(
-            "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+            "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132, 30, 40, 50
         )
         Assert.assertEqual(SENSOR_POINTING.POINT_FIXED_AXES, self.m_oSensor.pointing_type)
         Assert.assertIsNotNone(oFixedAxes6)
@@ -3813,7 +3813,7 @@ class SensorHelper(object):
         b6: typing.Any = None
         c6: typing.Any = None
 
-        (a6, b6, c6) = oOrientation6.query_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_132)
+        (a6, b6, c6) = oOrientation6.query_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132)
         Assert.assertAlmostEqual(30, float(a6), delta=1e-08)
         Assert.assertAlmostEqual(40, float(b6), delta=1e-08)
         Assert.assertAlmostEqual(50, float(c6), delta=1e-08)
