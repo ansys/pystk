@@ -40,7 +40,7 @@ Overview
               - Restores mouse cursor back to normal.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.set_mouse_cursor_from_handle`
               - Set mouse cursor to the passed cursor handle.
-            * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.Subscribe`
+            * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.subscribe`
               - """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics3DControlBase."""
 
     .. tab-item:: Properties
