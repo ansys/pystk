@@ -9886,7 +9886,7 @@ class ImageCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    def Subscribe(self) -> IImageCollectionEventHandler:
+    def subscribe(self) -> IImageCollectionEventHandler:
         """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of ImageCollection."""
         return IImageCollectionEventHandler(self._intf)
     
@@ -11835,7 +11835,7 @@ class KmlGraphics(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, KmlGraphics)
-    def Subscribe(self) -> IKmlGraphicsEventHandler:
+    def subscribe(self) -> IKmlGraphicsEventHandler:
         """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of KmlGraphics."""
         return IKmlGraphicsEventHandler(self._intf)
     
@@ -14844,7 +14844,7 @@ class Scene(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Scene)
-    def Subscribe(self) -> ISceneEventHandler:
+    def subscribe(self) -> ISceneEventHandler:
         """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of Scene."""
         return ISceneEventHandler(self._intf)
     
@@ -16152,7 +16152,7 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
         if nextval is None:
             raise StopIteration
         return nextval
-    def Subscribe(self) -> ITerrainOverlayCollectionEventHandler:
+    def subscribe(self) -> ITerrainOverlayCollectionEventHandler:
         """Return an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of TerrainOverlayCollection."""
         return ITerrainOverlayCollectionEventHandler(self._intf)
     

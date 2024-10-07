@@ -15,7 +15,7 @@ class ObjectChangedMonitor(IObjectModelEventMonitor):
         self._counter: int = 0
         self._root: "StkObjectRoot" = root
 
-        self.csToPy_OnStkObjectChangedSubscription = (self._root).Subscribe()
+        self.csToPy_OnStkObjectChangedSubscription = (self._root).subscribe()
         self.csToPy_OnStkObjectChangedSubscription.on_stk_object_changed += self._root_OnStkObjectChanged
 
     @property
