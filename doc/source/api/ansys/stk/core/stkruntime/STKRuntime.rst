@@ -1,0 +1,92 @@
+STKRuntime
+==========
+
+.. py:class:: ansys.stk.core.stkruntime.STKRuntime
+
+   object
+
+   Connect to STKRuntime using gRPC.
+
+.. py:currentmodule:: STKRuntime
+
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Methods
+
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.start_application`
+              - Create a new STK Runtime instance and attach to the remote host.  
+                
+                grpc_host is the IP address or DNS name of the gRPC server.
+                grpc_port is the integral port number that the gRPC server is using.
+                grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+                Specify userControl = True to return the application to the user's control 
+                (the application remains open) after terminating the Python API connection.
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntime.attach_to_application`
+              - Attach to STKRuntime.
+                
+                grpc_host is the IP address or DNS name of the gRPC server.
+                grpc_port is the integral port number that the gRPC server is using.
+                grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkruntime import STKRuntime
+
+
+Method detail
+-------------
+
+.. py:method:: start_application(grpc_host: str = 0.0.0.0, grpc_port: int = 0.0.0.0, grpc_timeout_sec: int = 0.0.0.0, userControl: bool = 0.0.0.0, noGraphics: bool = 0.0.0.0) -> STKRuntimeApplication
+    :canonical: ansys.stk.core.stkruntime.STKRuntime.start_application
+
+    Create a new STK Runtime instance and attach to the remote host.  
+    
+    grpc_host is the IP address or DNS name of the gRPC server.
+    grpc_port is the integral port number that the gRPC server is using.
+    grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+    Specify userControl = True to return the application to the user's control 
+    (the application remains open) after terminating the Python API connection.
+
+    :Parameters:
+
+    **grpc_host** : :obj:`~str`
+    **grpc_port** : :obj:`~int`
+    **grpc_timeout_sec** : :obj:`~int`
+    **userControl** : :obj:`~bool`
+    **noGraphics** : :obj:`~bool`
+
+    :Returns:
+
+        :obj:`~STKRuntimeApplication`
+
+.. py:method:: attach_to_application(grpc_host: str = localhost, grpc_port: int = localhost, grpc_timeout_sec: int = localhost) -> STKRuntimeApplication
+    :canonical: ansys.stk.core.stkruntime.STKRuntime.attach_to_application
+
+    Attach to STKRuntime.
+    
+    grpc_host is the IP address or DNS name of the gRPC server.
+    grpc_port is the integral port number that the gRPC server is using.
+    grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+
+    :Parameters:
+
+    **grpc_host** : :obj:`~str`
+    **grpc_port** : :obj:`~int`
+    **grpc_timeout_sec** : :obj:`~int`
+
+    :Returns:
+
+        :obj:`~STKRuntimeApplication`
+
+

@@ -1,0 +1,45 @@
+stk.v.12.0
+WrittenBy    STK_v12.8.1
+BEGIN CALCSCALAR
+    Type		 CALCSCALAR_FUNCTION
+    Name		 My_CS
+    Description		 <Enter description (up to 300 chars)>
+    UseScalar		 Yes
+    InheritDimFromScalar		 Yes
+    Scalar		
+    BEGIN CALCSCALAR
+        Type		 CALCSCALAR_LINKTO
+        Name		 From-To-AER(Body).Cartesian.Magnitude
+    END CALCSCALAR
+    RefEvent		
+    BEGIN EVENT
+        Type		 EVENT_LINKTO
+        Name		 ConsideredStartTime
+    END EVENT
+    UnitAbbr		 m
+    FunctionType		 a+b*x+c*x^2+d*x^3
+    DimensionName		 Distance
+    UnitAbbrResult		 m
+    Coefficients		  1.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00  0.0000000000000000e+00
+    InvalidValue		  0.0000000000000000e+00
+    RangeLimit		  1.0000000000000001e+50
+    Sampling		
+    BEGIN SAMPLING
+        Method		 AdaptiveStepValueError
+        AbsoluteTolerance		  1.0000000000000000e-02
+        RelativeTolerance		  1.0000000000000000e-03
+        CurvatureTolerance		  1.0000000000000001e-01
+        FixedTimeStep		  6.0000000000000000e+01
+        MinTimeStep		  1.0000000000000000e-03
+        MaxTimeStep		  1.0000000000000000e+01
+        BoundTimeStep		  1.0000000000000000e-02
+        MaxAngularDisp		  5.2359877559829882e-01
+    END SAMPLING
+    Convergence		
+    BEGIN CONVERGE
+        Sense		 Above
+        AbsoluteTolerance		  1.0000000000000000e-14
+        RelativeTolerance		  1.0000000000000000e-08
+        TimeTolerance		  1.0000000000000000e-03
+    END CONVERGE
+END CALCSCALAR

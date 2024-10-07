@@ -101,11 +101,7 @@ class ExportDataFileHelper(object):
             supportedCoordinateAxes = attitude.supported_coordinate_axes
             ocoordAxis: typing.Any
             for ocoordAxis in supportedCoordinateAxes:
-                coordAxis: "ATTITUDE_COORDINATE_AXES" = (
-                    ATTITUDE_COORDINATE_AXES(int(ocoordAxis))
-                    if (int(ocoordAxis) in [item.value for item in ATTITUDE_COORDINATE_AXES])
-                    else int(ocoordAxis)
-                )
+                coordAxis: "ATTITUDE_COORDINATE_AXES" = ATTITUDE_COORDINATE_AXES(int(ocoordAxis))
                 self.m_logger.WriteLine6("Supported coordinate axes: {0}", coordAxis)
                 if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
                     if (
@@ -218,7 +214,7 @@ class ExportDataFileHelper(object):
     # endregion
 
     # region PropDefExportTool
-    def PropDefExportTool(self, dataFile: "VehiclePropDefinitionExportTool"):
+    def PropDefExportTool(self, dataFile: "VehiclePropagationDefinitionExportTool"):
         dataFile.export(TestBase.GetScenarioFile("OMExternalFilePropDef.pg"))
         self._root.execute_command(
             (
@@ -281,10 +277,10 @@ class ExportDataFileHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 stkEphem.central_body_name = "Europa"
 
-        stkEphem.include_interp = False
-        Assert.assertFalse(stkEphem.include_interp)
-        stkEphem.include_interp = True
-        Assert.assertTrue(stkEphem.include_interp)
+        stkEphem.include_interpolation = False
+        Assert.assertFalse(stkEphem.include_interpolation)
+        stkEphem.include_interpolation = True
+        Assert.assertTrue(stkEphem.include_interpolation)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
@@ -416,11 +412,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -432,11 +424,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -448,11 +436,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
@@ -665,11 +649,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -681,11 +661,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -697,11 +673,7 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = (
-                CCSDS_REFERENCE_FRAME(int(refTypeObj))
-                if (int(refTypeObj) in [item.value for item in CCSDS_REFERENCE_FRAME])
-                else int(refTypeObj)
-            )
+            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
@@ -1180,10 +1152,10 @@ class ExportDataFileHelper(object):
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 binary.central_body_name = "Europa"
 
-        binary.include_interp = False
-        Assert.assertFalse(binary.include_interp)
-        binary.include_interp = True
-        Assert.assertTrue(binary.include_interp)
+        binary.include_interpolation = False
+        Assert.assertFalse(binary.include_interpolation)
+        binary.include_interpolation = True
+        Assert.assertTrue(binary.include_interpolation)
 
         binary.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, binary.version_format)
@@ -1636,11 +1608,7 @@ class PropagatorGreatArcHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eRefType: "VEHICLE_ALTITUDE_REFERENCE" = (
-                VEHICLE_ALTITUDE_REFERENCE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ALTITUDE_REFERENCE])
-                else int(arTypes[iIndex][0])
-            )
+            eRefType: "VEHICLE_ALTITUDE_REFERENCE" = VEHICLE_ALTITUDE_REFERENCE(int(arTypes[iIndex][0]))
             if not oGreatArc.is_altitude_reference_type_supported(eRefType):
                 Assert.fail("The {0} Altitude Ref Type should be supported!", eRefType)
 
@@ -1689,14 +1657,18 @@ class PropagatorGreatArcHelper(object):
                 with pytest.raises(Exception):
                     oTerrain.granularity = -65.4321
                 # InterpMethod (WAYPOINT_ELLIPSOID_HEIGHT)
-                self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interp_method)
-                oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
-                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
-                Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT, oTerrain.interp_method)
+                self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interpolation_method)
+                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
+                Assert.assertEqual(
+                    VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT, oTerrain.interpolation_method
+                )
                 # InterpMethod (WAYPOINT_TERRAIN_HEIGHT)
-                oTerrain.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT
-                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interp_method)
-                Assert.assertEqual(VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_TERRAIN_HEIGHT, oTerrain.interp_method)
+                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_TERRAIN_HEIGHT
+                self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
+                Assert.assertEqual(
+                    VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_TERRAIN_HEIGHT, oTerrain.interpolation_method
+                )
             else:
                 Assert.fail("Invalid Altitude Ref Type: {0}!", eRefType)
             # Propagate
@@ -1734,7 +1706,7 @@ class PropagatorGreatArcHelper(object):
 
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_start_time())
 
-        oGreatArc.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oGreatArc.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oGreatArc.propagate()
 
         Assert.assertEqual(sc.start_time, oGreatArc.ephemeris_interval.find_start_time())
@@ -2062,7 +2034,7 @@ class PropagatorSimpleAscentHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
 
-        oSimple.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oSimple.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oSimple.propagate()
 
         Assert.assertEqual(sc.start_time, oSimple.ephemeris_interval.find_start_time())
@@ -2146,7 +2118,7 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
 
-        oTwoBody.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oTwoBody.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oTwoBody.propagate()
 
         Assert.assertEqual(sc.start_time, oTwoBody.ephemeris_interval.find_start_time())
@@ -2154,25 +2126,13 @@ class PropagatorTwoBodyHelper(object):
 
         arSupportedPropagationFrames = oTwoBody.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oTwoBody.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[2])))
-            if (int((arSupportedPropagationFrames[2])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else int((arSupportedPropagationFrames[2]))
-        )
+        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[2])))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oTwoBody.propagation_frame)
         oTwoBody.propagate()
-        oTwoBody.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[1])))
-            if (int((arSupportedPropagationFrames[1])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else int((arSupportedPropagationFrames[1]))
-        )
+        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[1])))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oTwoBody.propagation_frame)
         oTwoBody.propagate()
-        oTwoBody.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[0])))
-            if (int((arSupportedPropagationFrames[0])) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else int((arSupportedPropagationFrames[0]))
-        )
+        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[0])))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oTwoBody.propagation_frame)
         oTwoBody.propagate()
 
@@ -2583,7 +2543,7 @@ class PropagatorJ2PerturbationHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_stop_time())
 
         oJ2.ephemeris_interval.set_implicit_interval(
-            self.m_oApplication.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            self.m_oApplication.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         oJ2.propagate()
 
@@ -2592,25 +2552,13 @@ class PropagatorJ2PerturbationHelper(object):
 
         arSupportedPropagationFrames = oJ2.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oJ2.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
-            if ((arSupportedPropagationFrames[2]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[2])
-        )
+        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ2.propagation_frame)
         oJ2.propagate()
-        oJ2.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
-            if ((arSupportedPropagationFrames[1]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[1])
-        )
+        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ2.propagation_frame)
         oJ2.propagate()
-        oJ2.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
-            if ((arSupportedPropagationFrames[0]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[0])
-        )
+        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ2.propagation_frame)
         oJ2.propagate()
 
@@ -2698,7 +2646,7 @@ class PropagatorJ4PerturbationHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_stop_time())
 
         oJ4.ephemeris_interval.set_implicit_interval(
-            self.m_oApplication.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            self.m_oApplication.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         oJ4.propagate()
 
@@ -2707,25 +2655,13 @@ class PropagatorJ4PerturbationHelper(object):
 
         arSupportedPropagationFrames = oJ4.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oJ4.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
-            if ((arSupportedPropagationFrames[2]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[2])
-        )
+        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_EPOCH, oJ4.propagation_frame)
         oJ4.propagate()
-        oJ4.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
-            if ((arSupportedPropagationFrames[1]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[1])
-        )
+        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_TRUE_OF_DATE, oJ4.propagation_frame)
         oJ4.propagate()
-        oJ4.propagation_frame = (
-            VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
-            if ((arSupportedPropagationFrames[0]) in [item.value for item in VEHICLE_PROPAGATION_FRAME])
-            else (arSupportedPropagationFrames[0])
-        )
+        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
         Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.PROPAGATION_FRAME_INERTIAL, oJ4.propagation_frame)
         oJ4.propagate()
 
@@ -3680,7 +3616,7 @@ class PropagatorHPOPHelper(object):
         Assert.assertIsNotNone(oHPOP)
 
         # Select specific GravModel which tests were written for
-        result: "ExecCmdResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
+        result: "ExecuteCommandResult" = self.m_oApplication.execute_command("GetSTKHomeDir /")
         fi = FileInfo(TestBase.PathCombine(result[0], "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"))
         if fi.Exists:
             oHPOP.force_model.central_body_gravity.file = fi.FullName
@@ -3910,11 +3846,7 @@ class PropagatorHPOPHelper(object):
 
         i: int = 0
         while i < len(oSrpModelChoices):
-            eModel: "SRP_MODEL" = (
-                SRP_MODEL(int(oSrpModelChoices[i][0]))
-                if (int(oSrpModelChoices[i][0]) in [item.value for item in SRP_MODEL])
-                else int(oSrpModelChoices[i][0])
-            )
+            eModel: "SRP_MODEL" = SRP_MODEL(int(oSrpModelChoices[i][0]))
             self.m_logger.WriteLine6("SRP Model: {0}", eModel)
             oSrpModel.set_model_type(eModel)
             eModel1: "SRP_MODEL" = oSrpModel.model_type
@@ -3941,10 +3873,13 @@ class PropagatorHPOPHelper(object):
             elif (
                 (
                     (
-                        (((eModel == SRP_MODEL.GPS_BLKIIA_AERO_T20)) or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A)))
+                        (
+                            ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T20))
+                            or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_A))
+                        )
                         or ((eModel == SRP_MODEL.GPS_BLKIIA_GSP_M_04_AE))
                     )
-                    or ((eModel == SRP_MODEL.GPS_BLKIIR_AERO_T30))
+                    or ((eModel == SRP_MODEL.GPS_BLKIIA_AEROSPACE_T30))
                 )
                 or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_A))
             ) or ((eModel == SRP_MODEL.GPS_BLKIIR_GSP_M_04_AE)):
@@ -4433,11 +4368,7 @@ class PropagatorHPOPHelper(object):
 
         i: int = 0
         while i < len(oDragModelChoices):
-            eModel: "DRAG_MODEL" = (
-                DRAG_MODEL(int(oDragModelChoices[i][0]))
-                if (int(oDragModelChoices[i][0]) in [item.value for item in DRAG_MODEL])
-                else int(oDragModelChoices[i][0])
-            )
+            eModel: "DRAG_MODEL" = DRAG_MODEL(int(oDragModelChoices[i][0]))
             self.m_logger.WriteLine6("Drag Model: {0}", eModel)
             oDrag.set_drag_model_type(eModel)
             Assert.assertEqual(eModel, oDrag.drag_model_type)
@@ -5882,11 +5813,7 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arLanchTypes):
-            eLaunch: "VEHICLE_LAUNCH" = (
-                VEHICLE_LAUNCH(int(arLanchTypes[iIndex][0]))
-                if (int(arLanchTypes[iIndex][0]) in [item.value for item in VEHICLE_LAUNCH])
-                else int(arLanchTypes[iIndex][0])
-            )
+            eLaunch: "VEHICLE_LAUNCH" = VEHICLE_LAUNCH(int(arLanchTypes[iIndex][0]))
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arLanchTypes[iIndex][1], eLaunch)
             if not oBallistic.is_launch_type_supported(eLaunch):
                 Assert.fail("The {0} type should be supported!", eLaunch)
@@ -5965,11 +5892,7 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arImpactTypes):
-            eImpact: "VEHICLE_IMPACT_LOCATION" = (
-                VEHICLE_IMPACT_LOCATION(int(arImpactTypes[iIndex][0]))
-                if (int(arImpactTypes[iIndex][0]) in [item.value for item in VEHICLE_IMPACT_LOCATION])
-                else int(arImpactTypes[iIndex][0])
-            )
+            eImpact: "VEHICLE_IMPACT_LOCATION" = VEHICLE_IMPACT_LOCATION(int(arImpactTypes[iIndex][0]))
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arImpactTypes[iIndex][1], eImpact)
             if not oBallistic.is_impact_location_type_supported(eImpact):
                 Assert.fail("The {0} type should be supported!", eImpact)
@@ -6015,11 +5938,7 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arPITypes):
-                    eI: "VEHICLE_IMPACT" = (
-                        VEHICLE_IMPACT(int(arPITypes[j][0]))
-                        if (int(arPITypes[j][0]) in [item.value for item in VEHICLE_IMPACT])
-                        else int(arPITypes[j][0])
-                    )
+                    eI: "VEHICLE_IMPACT" = VEHICLE_IMPACT(int(arPITypes[j][0]))
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arPITypes[j][1], eI)
                     if not oPoint.is_impact_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -6093,11 +6012,7 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arLCTypes):
-                    eI: "VEHICLE_LAUNCH_CONTROL" = (
-                        VEHICLE_LAUNCH_CONTROL(int(arLCTypes[j][0]))
-                        if (int(arLCTypes[j][0]) in [item.value for item in VEHICLE_LAUNCH_CONTROL])
-                        else int(arLCTypes[j][0])
-                    )
+                    eI: "VEHICLE_LAUNCH_CONTROL" = VEHICLE_LAUNCH_CONTROL(int(arLCTypes[j][0]))
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arLCTypes[j][1], eI)
                     if not oPoint.is_launch_control_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -6200,10 +6115,10 @@ class PropagatorBallisticHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
         # Assert.AreEqual("2 Jul 2005 12:00:00.000", oBallistic.StopTime);
 
-        oBallistic.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oBallistic.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oBallistic.ephemeris_interval.set_explicit_interval(
-            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
-            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
         )
         oBallistic.propagate()
 
@@ -6433,11 +6348,7 @@ class PropagatorRealtimeHelper(object):
 
         i: int = 0
         while i < len(supportedPropagators):
-            supportedType: "LOOK_AHEAD_PROPAGATOR" = (
-                LOOK_AHEAD_PROPAGATOR(int(supportedPropagators[i]))
-                if (int(supportedPropagators[i]) in [item.value for item in LOOK_AHEAD_PROPAGATOR])
-                else int(supportedPropagators[i])
-            )
+            supportedType: "LOOK_AHEAD_PROPAGATOR" = LOOK_AHEAD_PROPAGATOR(int(supportedPropagators[i]))
             self.m_logger.WriteLine6("Supported lookahead propagator: {0}", supportedType)
             if ((supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CBI_POSITION)) or (
                 (supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CBF_POSITION)
@@ -6827,11 +6738,7 @@ class BasicAttitudeStandardHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_PROFILE" = (
-                VEHICLE_PROFILE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_PROFILE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_PROFILE" = VEHICLE_PROFILE(int(arTypes[iIndex][0]))
             self.m_logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oBasic.is_profile_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -6858,10 +6765,16 @@ class BasicAttitudeStandardHelper(object):
         if oProfile.type == "Aligned and Constrained":
             oAAC: "VehicleProfileAlignedAndConstrained" = VehicleProfileAlignedAndConstrained(oProfile)
             Assert.assertIsNotNone(oAAC)
+
             # AlignedVector
             self.Vector(oAAC.aligned_vector)
+            Assert.assertEqual(DIRECTION_TYPE.XYZ, oAAC.displayed_aligned_vector_type)  # See PLTFA-1812, PLTFA-40045
+
             # ConstrainedVector
             self.Vector(oAAC.constrained_vector)
+            Assert.assertEqual(
+                DIRECTION_TYPE.XYZ, oAAC.displayed_constrained_vector_type
+            )  # See PLTFA-1812, PLTFA-40045
 
         if oProfile.type == "Coordinated Turn":
             oCTurn: "VehicleProfileCoordinatedTurn" = VehicleProfileCoordinatedTurn(oProfile)
@@ -7250,12 +7163,12 @@ class BasicAttitudeStandardHelper(object):
         attStart3: str = "1 Jul 1999 03:33:33.000"
         self.m_logger.WriteLine("\tCreate a time component for use with att override")
         scen: "IStkObject" = self.m_oApplication.current_scenario
-        prv: "AnalysisWorkbenchProvider" = scen.vgt
-        grp: "TimeToolEventGroup" = prv.events
-        evt: "ITimeToolEvent" = prv.events.factory.create_event_epoch(
+        prv: "AnalysisWorkbenchComponentProvider" = scen.vgt
+        grp: "TimeToolInstantGroup" = prv.time_instants
+        evt: "ITimeToolInstant" = prv.time_instants.factory.create_epoch(
             "AttOverrideTest", "External Attitude - Override testing"
         )
-        evtEpoch: "TimeToolEventEpoch" = clr.CastAs(evt, TimeToolEventEpoch)
+        evtEpoch: "TimeToolInstantEpoch" = clr.CastAs(evt, TimeToolInstantEpoch)
         evtEpoch.epoch = attStart3
 
         self.m_logger.WriteLine("\tUse the time component for att override")
@@ -7270,8 +7183,8 @@ class BasicAttitudeStandardHelper(object):
         # StopTime
         self.m_logger.WriteLine6("\t\tThe new StopTime is: {0}", oExternal.stop_time)
         # AttStart
-        refEvt: "ITimeToolEvent" = oExternal.attitude_start_epoch.reference_event
-        res: "TimeToolEventFindOccurrenceResult" = refEvt.find_occurrence()
+        refEvt: "ITimeToolInstant" = oExternal.attitude_start_epoch.reference_epoch
+        res: "TimeToolInstantOccurrenceResult" = refEvt.find_occurrence()
         self.m_logger.WriteLine7("\t\tThe new AttitudeStart is: {0} and isValid: {1}", res.epoch, res.is_valid)
 
         # delete the time component
@@ -8156,11 +8069,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         i: int = 0
         while i < len(supportedProfileTypes):
-            profileid: "VEHICLE_PROFILE" = (
-                VEHICLE_PROFILE(int(supportedProfileTypes[i][0]))
-                if (int(supportedProfileTypes[i][0]) in [item.value for item in VEHICLE_PROFILE])
-                else int(supportedProfileTypes[i][0])
-            )
+            profileid: "VEHICLE_PROFILE" = VEHICLE_PROFILE(int(supportedProfileTypes[i][0]))
             self.m_logger.WriteLine6("DataReference: {0}", profileid)
             oAttitude.data_reference.set_profile_type(profileid)
             Assert.assertIsNotNone(oAttitude.data_reference.profile)
@@ -8391,10 +8300,10 @@ class AccessEventDetectionHelper(object):
                 Assert.assertIsNotNone(oSubSampling)
                 # AbsValueConvergence (readonly)
                 with pytest.raises(Exception):
-                    oSubSampling.abs_value_convergence = 0.1
+                    oSubSampling.absolute_value_convergence = 0.1
                 # RelValueConvergence (readonly)
                 with pytest.raises(Exception):
-                    oSubSampling.rel_value_convergence = 0.1
+                    oSubSampling.relative_value_convergence = 0.1
                 # TimeConvergence (readonly)
                 with pytest.raises(Exception):
                     oSubSampling.time_convergence = 0.01
@@ -8410,11 +8319,7 @@ class AccessEventDetectionHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "EVENT_DETECTION" = (
-                    EVENT_DETECTION(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in EVENT_DETECTION])
-                    else int(arTypes[iIndex][0])
-                )
+                eType: "EVENT_DETECTION" = EVENT_DETECTION(int(arTypes[iIndex][0]))
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oDetection.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -8445,26 +8350,26 @@ class AccessEventDetectionHelper(object):
                         oSubSampling.time_convergence = -0.5
                     # AbsValueConvergence
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
+                        "\t\t\tThe current AbsValueConvergence is: {0}", oSubSampling.absolute_value_convergence
                     )
-                    oSubSampling.abs_value_convergence = 0.5
+                    oSubSampling.absolute_value_convergence = 0.5
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe new AbsValueConvergence is: {0}", oSubSampling.abs_value_convergence
+                        "\t\t\tThe new AbsValueConvergence is: {0}", oSubSampling.absolute_value_convergence
                     )
-                    Assert.assertEqual(0.5, oSubSampling.abs_value_convergence)
+                    Assert.assertEqual(0.5, oSubSampling.absolute_value_convergence)
                     with pytest.raises(Exception):
-                        oSubSampling.abs_value_convergence = -0.5
+                        oSubSampling.absolute_value_convergence = -0.5
                     # RelValueConvergence
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
+                        "\t\t\tThe current RelValueConvergence is: {0}", oSubSampling.relative_value_convergence
                     )
-                    oSubSampling.rel_value_convergence = 0.5
+                    oSubSampling.relative_value_convergence = 0.5
                     self.m_logger.WriteLine6(
-                        "\t\t\tThe new RelValueConvergence is: {0}", oSubSampling.rel_value_convergence
+                        "\t\t\tThe new RelValueConvergence is: {0}", oSubSampling.relative_value_convergence
                     )
-                    Assert.assertEqual(0.5, oSubSampling.rel_value_convergence)
+                    Assert.assertEqual(0.5, oSubSampling.relative_value_convergence)
                     with pytest.raises(Exception):
-                        oSubSampling.rel_value_convergence = -0.5
+                        oSubSampling.relative_value_convergence = -0.5
                 else:
                     Assert.fail("Invalid type!")
 
@@ -8520,11 +8425,7 @@ class AccessSamplingHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "SAMPLING_METHOD" = (
-                    SAMPLING_METHOD(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in SAMPLING_METHOD])
-                    else int(arTypes[iIndex][0])
-                )
+                eType: "SAMPLING_METHOD" = SAMPLING_METHOD(int(arTypes[iIndex][0]))
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oSampling.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -9026,7 +8927,7 @@ class EclipsingBodiesHelper(object):
 class PlatformLaserEnvAtmosLossBBLLHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9114,7 +9015,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
 class PlatformLaserEnvAtmosLossModtranHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_atmospheric_loss_model = False
         Assert.assertFalse(laserPropChan.enable_atmospheric_loss_model)
@@ -9184,7 +9085,7 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 class PlatformLaserEnvTropoScintLossHelper(object):
     # region Run
     def Run(self, laserEnv: "PlatformLaserEnvironment"):
-        laserPropChan: "LaserPropagationLossModels" = laserEnv.propagation_channel
+        laserPropChan: "ILaserPropagationChannel" = laserEnv.propagation_channel
 
         laserPropChan.enable_tropospheric_scintillation_loss_model = False
         Assert.assertFalse(laserPropChan.enable_tropospheric_scintillation_loss_model)
@@ -9241,7 +9142,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
 # region PlatformRF_Environment_EnvironmentalDataHelper
 class PlatformRF_Environment_EnvironmentalDataHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         propChan.enable_itu_618_section2_p5 = False
@@ -9256,7 +9157,7 @@ class PlatformRF_Environment_EnvironmentalDataHelper(object):
 # region PlatformRF_Environment_RainCloudFog_RainModelHelper
 class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
     # region Run
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9420,7 +9321,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
 # region PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper
 class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
-    def Run(self, rfEnv: "Atmosphere", root: "StkObjectRoot"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", root: "StkObjectRoot"):
         holdUnit: str = root.unit_preferences.get_current_unit_abbrv("Temperature")
         root.unit_preferences.set_current_unit("Temperature", "degC")
         root.unit_preferences.set_current_unit("MassUnit", "g")
@@ -9664,7 +9565,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -9680,6 +9581,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
         propChan.enable_atmos_absorption = True
         Assert.assertTrue(propChan.enable_atmos_absorption)
 
+        helper = AtmosphereHelper(self._root)
         supportedAtmosAbsorptionModels = propChan.supported_atmos_absorption_models
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
@@ -9689,7 +9591,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
-                    clr.CastAs(aaModel, AtmosphericAbsorptionModelITURP676_9)
+                    clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
@@ -9715,8 +9617,22 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
             elif aaModelName == "VOACAP":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                helper = AtmosphereHelper(self._root)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+            elif aaModelName == "Early ITU Foliage Model CSharp Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Early ITU Foliage Model JScript Example":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
+                )
+            elif aaModelName == "Python Plugin":
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
+                )
             else:
                 Assert.fail("Unknown model type")
 
@@ -9725,7 +9641,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
         self._root.unit_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "AtmosphericAbsorptionModelITURP676_9"):
+    def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
         Assert.assertFalse(iturp676.fast_approximation_method)
         iturp676.fast_approximation_method = True
@@ -9842,7 +9758,7 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere", IsVehicle: bool):
+    def Run(self, rfEnv: "IPlatformRFEnvironment", IsVehicle: bool):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -10015,7 +9931,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         holdUnit: str = self._root.unit_preferences.get_current_unit_abbrv("Temperature")
         self._root.unit_preferences.set_current_unit("Temperature", "degC")
 
@@ -10152,7 +10068,7 @@ class PlatformRF_Environment_CustomModelsHelper(object):
 
     # endregion
 
-    def Run(self, rfEnv: "Atmosphere"):
+    def Run(self, rfEnv: "IPlatformRFEnvironment"):
         propChan: "PropagationChannel" = rfEnv.propagation_channel
 
         self.Test_IAgCustomPropagationModel(propChan.custom_a)

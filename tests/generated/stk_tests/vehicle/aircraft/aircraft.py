@@ -554,11 +554,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_PROPAGATOR_TYPE" = (
-                VEHICLE_PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_PROPAGATOR_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_PROPAGATOR_TYPE" = VEHICLE_PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_AC.is_route_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -645,11 +641,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = (
-                VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_ATTITUDE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_AC.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -692,7 +684,7 @@ class EarlyBoundTests(TestBase):
                 propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
             )
             altRef.granularity = 51.33
-            altRef.interp_method = VEHICLE_WAYPOINT_INTERP_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+            altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
             propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
 
             point1: "VehicleWaypointsElement" = propagator.waypoints.add()
@@ -750,9 +742,9 @@ class EarlyBoundTests(TestBase):
             )
             aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
             aviator: "VehiclePropagatorAviator" = clr.CastAs(aircraft.route, VehiclePropagatorAviator)
-            avtr: "AviatorPropagator" = clr.CastAs(aviator.avtr_propagator, AviatorPropagator)
-            mission: "Mission" = avtr.avtr_mission
-            mission.phases[0].procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROC_TAKEOFF)
+            avtr: "AviatorPropagator" = clr.CastAs(aviator.aviator_propagator, AviatorPropagator)
+            mission: "Mission" = avtr.aviator_mission
+            mission.phases[0].procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
             avtr.propagate()
 
             dp: "IDataProvider" = clr.CastAs(
@@ -853,11 +845,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ATTRIBUTES])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_2D_ATTRIBUTES(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1396,7 +1384,7 @@ class EarlyBoundTests(TestBase):
         exportHelper = ExportDataFileHelper(IStkObject(ac), TestBase.Application)
         exportHelper.AttitudeExportTool(ac.export_tools.get_attitude_export_tool())
         exportHelper.EphemerisSTKExportTool(ac.export_tools.get_ephemeris_stk_export_tool(), False)
-        exportHelper.PropDefExportTool(ac.export_tools.get_prop_definition_export_tool())
+        exportHelper.PropDefExportTool(ac.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(ac.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
         TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "ExportAc")

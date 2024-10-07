@@ -1207,13 +1207,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oInterval.use_scenario_interval)
         # Interval
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"]
-            .find_interval()
-            .interval.start,
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
             oInterval.analysis_interval.find_start_time(),
         )
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"].find_interval().interval.stop,
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"].find_interval().interval.stop,
             oInterval.analysis_interval.find_stop_time(),
         )
         # UseScenarioInterval (false)
@@ -1870,14 +1868,16 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6(
             "\tThe current RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration
         )
-        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_AUTOMATIC
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration)
-        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF
+        Assert.assertEqual(
+            COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_AUTOMATIC, oAdvanced.region_access_acceleration
+        )
+        oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_OFF
         TestBase.logger.WriteLine6("\tThe new RegionAccessAcceleration is: {0}", oAdvanced.region_access_acceleration)
-        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
+        Assert.assertEqual(COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_OFF, oAdvanced.region_access_acceleration)
         with pytest.raises(Exception):
-            oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCEL.REGION_ACCESS_UNKNOWN
+            oAdvanced.region_access_acceleration = COVERAGE_REGION_ACCESS_ACCELERATION.REGION_ACCESS_UNKNOWN
 
         # EnableLightTimeDelay
         TestBase.logger.WriteLine4("\tThe current EnableLightTimeDelay is: {0}", oAdvanced.enable_light_time_delay)
@@ -2308,11 +2308,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = (
-                FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in FIGURE_OF_MERIT_DEFINITION_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
             if not fom.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -2489,14 +2485,12 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("BUG68304")
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
+        scenarioObj: "IStkObject" = TestBase.Application.current_scenario
         scenario.set_time_period("7 Sep 2012 16:00:00.000", "8 Sep 2012 16:00:00.000")
 
-        sat: "Satellite" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite
-        )
+        sat: "Satellite" = clr.CastAs(scenarioObj.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1"), Satellite)
         covdef: "CoverageDefinition" = clr.CastAs(
-            (clr.CastAs(scenario, IStkObject)).children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"),
-            CoverageDefinition,
+            scenarioObj.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Cov1"), CoverageDefinition
         )
 
         sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)

@@ -1,0 +1,67 @@
+VectorGeometryToolWellKnownSunAxes
+==================================
+
+.. py:class:: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes
+
+   Well-known Sun's axes.
+
+.. py:currentmodule:: VectorGeometryToolWellKnownSunAxes
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.fixed`
+              - Sun's Fixed axes.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.ICRF`
+              - Sun's ICRF.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.inertial`
+              - Sun's Inertial axes (as defined in STK).
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.J2000`
+              - The Sun's J2000 axes.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.vgt import VectorGeometryToolWellKnownSunAxes
+
+
+Property detail
+---------------
+
+.. py:property:: fixed
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.fixed
+    :type: IVectorGeometryToolAxes
+
+    Sun's Fixed axes.
+
+.. py:property:: ICRF
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.ICRF
+    :type: IVectorGeometryToolAxes
+
+    Sun's ICRF.
+
+.. py:property:: inertial
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.inertial
+    :type: IVectorGeometryToolAxes
+
+    Sun's Inertial axes (as defined in STK).
+
+.. py:property:: J2000
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.J2000
+    :type: IVectorGeometryToolAxes
+
+    The Sun's J2000 axes.
+
+

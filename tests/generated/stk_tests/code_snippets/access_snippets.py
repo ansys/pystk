@@ -194,6 +194,43 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     # endregion
 
+    # region AddAndConfigureCbObstructionConstraint
+    def test_AddAndConfigureCbObstructionConstraint(self):
+        satelliteName: str = "satellite1"
+        stkobject: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
+            STK_OBJECT_TYPE.SATELLITE, satelliteName
+        )
+        self.AddAndConfigureCbObstructionConstraint(stkobject.access_constraints)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
+
+    def AddAndConfigureCbObstructionConstraint(self, accessconstraints: "AccessConstraintCollection"):
+        # Get AccessConstraintCentralBodyObstruction interface
+        cbObstrConstraint: "AccessConstraintCentralBodyObstruction" = clr.CastAs(
+            accessconstraints.add_constraint(ACCESS_CONSTRAINTS.CENTRAL_BODY_OBSTRUCTION),
+            AccessConstraintCentralBodyObstruction,
+        )
+
+        # AvailableObstructions returns a one dimensional array of obstruction paths
+        availableArray = cbObstrConstraint.available_obstructions
+
+        # In this example add all available obstructions
+        Console.WriteLine("Available obstructions")
+        available: str
+        for available in availableArray:
+            Console.WriteLine(available)
+            if "Sun" != available:
+                cbObstrConstraint.add_obstruction(available)
+
+        # AssignedObstructions returns a one dimensional array of obstruction paths
+        assignedArray = cbObstrConstraint.assigned_obstructions
+
+        Console.WriteLine("Assigned obstructions")
+        assigned: str
+        for assigned in assignedArray:
+            Console.WriteLine(assigned)
+
+    # endregion
+
     # region ListAllConstraintExclusiveZones
     def test_ListAllConstraintExclusiveZones(self):
         satelliteName: str = "satellite1"
@@ -460,11 +497,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
-            eAccessConstraint: "ACCESS_CONSTRAINTS" = (
-                ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
-                if (int(arAvailable[i][1]) in [item.value for item in ACCESS_CONSTRAINTS])
-                else int(arAvailable[i][1])
-            )
+            eAccessConstraint: "ACCESS_CONSTRAINTS" = ACCESS_CONSTRAINTS(int(arAvailable[i][1]))
             Console.WriteLine("\tConstraint {0}: {1} ({2})", i, availName, eAccessConstraint)
 
             i += 1
@@ -500,21 +533,21 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         # For this code snippet, let's use the time interval when the UAV reached min and max altitude values.
         # Note, this assumes time at min happens before time at max.
-        timeOfAltMin: "ITimeToolEvent" = uav.vgt.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        timeOfAltMax: "ITimeToolEvent" = uav.vgt.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
+        timeOfAltMin: "ITimeToolInstant" = uav.vgt.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
+        timeOfAltMax: "ITimeToolInstant" = uav.vgt.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
 
         # Set the access time period with the times we figured out above.
         access: "StkAccess" = sensor.get_access_to_object(coloradoSprings)
         access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
 
-        accessTimePeriod.access_interval.state = CRDN_SMART_INTERVAL_STATE.START_STOP
+        accessTimePeriod.access_interval.state = SMART_INTERVAL_STATE.START_STOP
 
-        accessStartEpoch: "TimeToolEventSmartEpoch" = accessTimePeriod.access_interval.get_start_epoch()
+        accessStartEpoch: "TimeToolInstantSmartEpoch" = accessTimePeriod.access_interval.get_start_epoch()
         accessStartEpoch.set_implicit_time(timeOfAltMin)
         accessTimePeriod.access_interval.set_start_epoch(accessStartEpoch)
 
-        accessStopEpoch: "TimeToolEventSmartEpoch" = accessTimePeriod.access_interval.get_stop_epoch()
+        accessStopEpoch: "TimeToolInstantSmartEpoch" = accessTimePeriod.access_interval.get_stop_epoch()
         accessStopEpoch.set_implicit_time(timeOfAltMax)
         accessTimePeriod.access_interval.set_stop_epoch(accessStopEpoch)
 
@@ -552,8 +585,8 @@ class AccessSnippets(CodeSnippetsTestBase):
 
         access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
-        if otherObject.vgt.event_intervals.contains("AvailabilityTimeSpan"):
-            availabilityTimeSpan: "ITimeToolEventInterval" = otherObject.vgt.event_intervals["AvailabilityTimeSpan"]
+        if otherObject.vgt.time_intervals.contains("AvailabilityTimeSpan"):
+            availabilityTimeSpan: "ITimeToolTimeInterval" = otherObject.vgt.time_intervals["AvailabilityTimeSpan"]
             accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
 
     # endregion

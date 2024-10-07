@@ -1,0 +1,61 @@
+StateCalcDeltaFromMaster
+========================
+
+.. py:class:: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster
+
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
+
+   DeltaFromMaster Calc objects.
+
+.. py:currentmodule:: StateCalcDeltaFromMaster
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Properties
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.calculation_object_name`
+              - Gets or sets the calculation object of interest.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference_selection`
+              - Gets or sets the reference object selection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference`
+              - Get the reference object.
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects.astrogator import StateCalcDeltaFromMaster
+
+
+Property detail
+---------------
+
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.calculation_object_name
+    :type: str
+
+    Gets or sets the calculation object of interest.
+
+.. py:property:: reference_selection
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference_selection
+    :type: CALCULATION_OBJECT_REFERENCE
+
+    Gets or sets the reference object selection.
+
+.. py:property:: reference
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference
+    :type: ILinkToObject
+
+    Get the reference object.
+
+

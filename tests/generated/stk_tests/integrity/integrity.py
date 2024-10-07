@@ -838,9 +838,9 @@ class Propagation(TestBase):
         spher.right_ascension = 0.0
         spher.declination = 0.0
         spher.radius = 8059000.0
-        spher.fpa_type = 0
-        hor: "SphericalFPAHorizontal" = SphericalFPAHorizontal(spher.fpa)
-        hor.fpa = 0.0
+        spher.flight_path_angle_type = 0
+        hor: "SphericalFlightPathAngleHorizontal" = SphericalFlightPathAngleHorizontal(spher.flight_path_angle)
+        hor.flight_path_angle = 0.0
         spher.azimuth = 26.5
         spher.velocity = 7033.0
 
@@ -1036,18 +1036,16 @@ class Propagation(TestBase):
 
         # OM Setup
         Propagation.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driverMCS: "DriverMissionControlSequence" = DriverMissionControlSequence(Propagation.AG_SAT.propagator)
+        driverMCS: "MCSDriver" = MCSDriver(Propagation.AG_SAT.propagator)
         driverMCS.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "Propagate")
-        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
+        ts: "MCSTargetSequence" = MCSTargetSequence(
             driverMCS.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-")
         )
-        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-")
-        )
+        maneuver: "MCSManeuver" = MCSManeuver(ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
 
         maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
 
-        driverMCS.run_mission_control_sequence()
+        driverMCS.run_mcs()
 
         ComparisionUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -1055,7 +1053,7 @@ class Propagation(TestBase):
         ts.segments.remove("Maneuver")
         driverMCS.main_sequence.remove("Target_Sequence")
         driverMCS.main_sequence.remove("Maneuver")
-        driverMCS.run_mission_control_sequence()
+        driverMCS.run_mcs()
 
         # Connect Setup
         TestBase.Application.execute_command("Astrogator */Satellite/Satellite1 SetProp")
@@ -1771,19 +1769,17 @@ class Propagation(TestBase):
         # Astrogator is not implemented in OM
         AstgSun: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgSun"], Satellite)
         AstgSun.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        astgSunDriver: "DriverMissionControlSequence" = clr.CastAs(AstgSun.propagator, DriverMissionControlSequence)
-        astgSunInitialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            astgSunDriver.main_sequence["Initial State"], MissionControlSequenceInitialState
+        astgSunDriver: "MCSDriver" = clr.CastAs(AstgSun.propagator, MCSDriver)
+        astgSunInitialState: "MCSInitialState" = clr.CastAs(
+            astgSunDriver.main_sequence["Initial State"], MCSInitialState
         )
         astgSunInitialState.orbit_epoch = "1 Jul 2007 12:00:00.000"
-        astgSunPropagate: "MissionControlSequencePropagate" = clr.CastAs(
-            astgSunDriver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        astgSunPropagate: "MCSPropagate" = clr.CastAs(astgSunDriver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition: "StoppingCondition" = clr.CastAs(
             astgSunPropagate.stopping_conditions[0].properties, StoppingCondition
         )
         stoppingCondition.trip = 864000
-        astgSunDriver.run_mission_control_sequence()
+        astgSunDriver.run_mcs()
         oComparator1.TakeOMSnapshot(TestBase.Application)
 
         # Moon - 1 day - Fixed Step
@@ -1805,17 +1801,15 @@ class Propagation(TestBase):
         # Application.ExecuteCommand("Propagate */Satellite/AstgMoon \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgMoon: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgMoon"], Satellite)
         AstgMoon.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        astgMoonDriver: "DriverMissionControlSequence" = clr.CastAs(AstgMoon.propagator, DriverMissionControlSequence)
-        astgMoonInitialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            astgMoonDriver.main_sequence["Initial State"], MissionControlSequenceInitialState
+        astgMoonDriver: "MCSDriver" = clr.CastAs(AstgMoon.propagator, MCSDriver)
+        astgMoonInitialState: "MCSInitialState" = clr.CastAs(
+            astgMoonDriver.main_sequence["Initial State"], MCSInitialState
         )
         astgMoonInitialState.orbit_epoch = "1 Jul 2007 12:00:00.000"
-        astgMoonPropagate: "MissionControlSequencePropagate" = clr.CastAs(
-            astgMoonDriver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        astgMoonPropagate: "MCSPropagate" = clr.CastAs(astgMoonDriver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition = clr.CastAs(astgMoonPropagate.stopping_conditions[0].properties, StoppingCondition)
         stoppingCondition.trip = 86400
-        astgMoonDriver.run_mission_control_sequence()
+        astgMoonDriver.run_mcs()
         oComparator2.TakeOMSnapshot(TestBase.Application)
 
         # Mars - 1 day -  Fixed Step
@@ -1837,17 +1831,15 @@ class Propagation(TestBase):
         # Application.ExecuteCommand("Propagate */Satellite/AstgMars \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgMars: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgMars"], Satellite)
         AstgMars.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        astgMarsDriver: "DriverMissionControlSequence" = clr.CastAs(AstgMars.propagator, DriverMissionControlSequence)
-        astgMarsInitialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            astgMarsDriver.main_sequence["Initial State"], MissionControlSequenceInitialState
+        astgMarsDriver: "MCSDriver" = clr.CastAs(AstgMars.propagator, MCSDriver)
+        astgMarsInitialState: "MCSInitialState" = clr.CastAs(
+            astgMarsDriver.main_sequence["Initial State"], MCSInitialState
         )
         astgMarsInitialState.orbit_epoch = "1 Jul 2007 12:00:00.000"
-        astgMarsPropagate: "MissionControlSequencePropagate" = clr.CastAs(
-            astgMarsDriver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        astgMarsPropagate: "MCSPropagate" = clr.CastAs(astgMarsDriver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition = clr.CastAs(astgMarsPropagate.stopping_conditions[0].properties, StoppingCondition)
         stoppingCondition.trip = 86400
-        astgMarsDriver.run_mission_control_sequence()
+        astgMarsDriver.run_mcs()
         oComparator3.TakeOMSnapshot(TestBase.Application)
 
         # Europa - 1 day -  Fixed Step
@@ -1869,19 +1861,15 @@ class Propagation(TestBase):
         # Application.ExecuteCommand("Propagate */Satellite/AstgEuropa \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgEuropa: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgEuropa"], Satellite)
         AstgEuropa.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        astgEuropaDriver: "DriverMissionControlSequence" = clr.CastAs(
-            AstgEuropa.propagator, DriverMissionControlSequence
-        )
-        astgEuropaInitialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            astgEuropaDriver.main_sequence["Initial State"], MissionControlSequenceInitialState
+        astgEuropaDriver: "MCSDriver" = clr.CastAs(AstgEuropa.propagator, MCSDriver)
+        astgEuropaInitialState: "MCSInitialState" = clr.CastAs(
+            astgEuropaDriver.main_sequence["Initial State"], MCSInitialState
         )
         astgEuropaInitialState.orbit_epoch = "1 Jul 2007 12:00:00.000"
-        astgEuropaPropagate: "MissionControlSequencePropagate" = clr.CastAs(
-            astgEuropaDriver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        astgEuropaPropagate: "MCSPropagate" = clr.CastAs(astgEuropaDriver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition = clr.CastAs(astgEuropaPropagate.stopping_conditions[0].properties, StoppingCondition)
         stoppingCondition.trip = 86400
-        astgEuropaDriver.run_mission_control_sequence()
+        astgEuropaDriver.run_mcs()
         oComparator4.TakeOMSnapshot(TestBase.Application)
 
         # Jupiter - 1 day - VOP using step error control
@@ -1905,19 +1893,17 @@ class Propagation(TestBase):
             TestBase.Application.current_scenario.children["AstgJupiterVOP"], Satellite
         )
         AstgJupiterVOP.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        astgJupiterVOPDriver: "DriverMissionControlSequence" = clr.CastAs(
-            AstgJupiterVOP.propagator, DriverMissionControlSequence
-        )
-        astgJupiterVOPInitialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            astgJupiterVOPDriver.main_sequence["Initial State"], MissionControlSequenceInitialState
+        astgJupiterVOPDriver: "MCSDriver" = clr.CastAs(AstgJupiterVOP.propagator, MCSDriver)
+        astgJupiterVOPInitialState: "MCSInitialState" = clr.CastAs(
+            astgJupiterVOPDriver.main_sequence["Initial State"], MCSInitialState
         )
         astgJupiterVOPInitialState.orbit_epoch = "1 Jul 2007 12:00:00.000"
-        astgJupiterVOPPropagate: "MissionControlSequencePropagate" = clr.CastAs(
-            astgJupiterVOPDriver.main_sequence["Propagate"], MissionControlSequencePropagate
+        astgJupiterVOPPropagate: "MCSPropagate" = clr.CastAs(
+            astgJupiterVOPDriver.main_sequence["Propagate"], MCSPropagate
         )
         stoppingCondition = clr.CastAs(astgJupiterVOPPropagate.stopping_conditions[0].properties, StoppingCondition)
         stoppingCondition.trip = 86400
-        astgJupiterVOPDriver.run_mission_control_sequence()
+        astgJupiterVOPDriver.run_mcs()
         # only ask at the end, since there will be interpolation diffs because the integrator choose different nodes
         oComparator5.TakeOMSnapshot(TestBase.Application)
 
@@ -2455,9 +2441,11 @@ class Representation(TestBase):
         mixed.longitude = 110.0
         mixed.latitude = 0.0
         mixed.altitude = 1681000.0
-        mixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_HORIZONTAL
-        hor: "MixedSphericalFPAHorizontal" = MixedSphericalFPAHorizontal(mixed.fpa)
-        hor.fpa = 0.0
+        mixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_HORIZONTAL
+        hor: "MixedSphericalFlightPathAngleHorizontal" = MixedSphericalFlightPathAngleHorizontal(
+            mixed.flight_path_angle
+        )
+        hor.flight_path_angle = 0.0
         mixed.azimuth = 26.5
         mixed.velocity = 7033.0
 
@@ -2565,7 +2553,7 @@ class Representation(TestBase):
 
         hpop.initial_state.representation.assign(cart)
         Assert.assertEqual(cart.epoch, hpop.initial_state.orbit_epoch.time_instant)
-        Assert.assertEqual(cart.epoch, (ITimeToolEvent(hpop.initial_state.orbit_epoch)).find_occurrence().epoch)
+        Assert.assertEqual(cart.epoch, (ITimeToolInstant(hpop.initial_state.orbit_epoch)).find_occurrence().epoch)
         Assert.assertEqual("1 Nov 2000 00:00:00.000", hpop.ephemeris_interval.find_start_time())
         Assert.assertEqual("1 Nov 2000 01:00:00.000", hpop.ephemeris_interval.find_stop_time())
         hpop.propagate()
@@ -2611,9 +2599,9 @@ class Representation(TestBase):
         spher.right_ascension = 133.32
         spher.declination = -71.2
         spher.radius = 7744584.2
-        spher.fpa_type = SPHERICAL_FPA.HORIZONTAL
-        hor: "SphericalFPAHorizontal" = SphericalFPAHorizontal(spher.fpa)
-        hor.fpa = 2.5
+        spher.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.HORIZONTAL
+        hor: "SphericalFlightPathAngleHorizontal" = SphericalFlightPathAngleHorizontal(spher.flight_path_angle)
+        hor.flight_path_angle = 2.5
         spher.azimuth = 82.4
         spher.velocity = 7418.85
 
@@ -2896,7 +2884,7 @@ class Attitude(TestBase):
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
             interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_121
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2912,7 +2900,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_123
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2928,7 +2916,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_131
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2944,7 +2932,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_132
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2960,7 +2948,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_212
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2976,7 +2964,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_213
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2992,7 +2980,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_231
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3008,7 +2996,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_231
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3026,7 +3014,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3042,7 +3030,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_312
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3058,7 +3046,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_313
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3074,7 +3062,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3090,7 +3078,7 @@ class Attitude(TestBase):
         interfix = VehicleProfileInertial(standard.basic.profile)
 
         euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_323
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3907,7 +3895,7 @@ class Pointing(TestBase):
         oEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
             oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -45.0
@@ -3917,7 +3905,7 @@ class Pointing(TestBase):
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
         oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -125.0
@@ -4356,7 +4344,7 @@ class Pointing(TestBase):
             oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         oEuler.a = 100.0
         oEuler.b = 130.0
         oEuler.c = -95.0
@@ -4370,7 +4358,7 @@ class Pointing(TestBase):
         oOrientation = oBrstFixed.orientation
         oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
+        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
         oEuler.a = 140.0
         oEuler.b = 132.0
         oEuler.c = -141.0
@@ -8564,7 +8552,7 @@ class Definition(TestBase):
         self.Visibility()
         self.Visibility2()
         (
-            StkObjectRoot(TestBase.Application)
+            IAnimation(TestBase.Application)
         ).current_time = 0  # Set back to original because this gets changed in NoGfx case.
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("MTO_Integrity", "MTO_Test.sc"))
@@ -8626,10 +8614,10 @@ class Definition(TestBase):
         fov: "MtoAnalysisFieldOfView" = mto.analysis.field_of_view
         fov.sensor = "Satellite/Geo1/Sensor/A_Sensor"
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
 
-        results: "ExecCmdResult" = TestBase.Application.execute_command(
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor"
         )
         isInFOV: bool = fov.is_any_track_in_fov(date.format("UTCG"))
@@ -8778,7 +8766,7 @@ class Definition(TestBase):
     def MTOFOVHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -8891,9 +8879,9 @@ class Definition(TestBase):
             ) and (self.TrackId == other.TrackId)
 
     def Position(self):
-        results: "ExecCmdResult" = TestBase.Application.execute_command("Position_RM */MTO/A_MTO")
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command("Position_RM */MTO/A_MTO")
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
         mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["A_MTO"], Mto)
         position: "MtoAnalysisPosition" = mto.analysis.position
@@ -9064,9 +9052,11 @@ class Definition(TestBase):
         mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["A_MTO"], Mto)
         range: "MtoAnalysisRange" = mto.analysis.range
         range.stk_object_path = "Satellite/Geo1"
-        results: "ExecCmdResult" = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1")
+        results: "ExecuteCommandResult" = TestBase.Application.execute_command(
+            "Range_RM */MTO/A_MTO Object */Satellite/Geo1"
+        )
         date: "Date" = TestBase.Application.conversion_utility.new_date(
-            "EpSec", Double.ToString((StkObjectRoot(TestBase.Application)).current_time)
+            "EpSec", Double.ToString((IAnimation(TestBase.Application)).current_time)
         )
         isInRange: bool = range.is_any_track_in_range(date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
@@ -9217,7 +9207,7 @@ class Definition(TestBase):
     def MTORangeHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -9305,7 +9295,7 @@ class Definition(TestBase):
             visibility.compute_tracks(MTO_VISIBILITY_MODE.VISIBILITY_MODE_EACH, tracksRef, "1 Jul 2007 12:05:00.000"),
         )
 
-        result: "ExecCmdResult" = TestBase.Application.execute_command(
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Any Tracks 500  549  470 550'
         )
         isVis: bool = visibility.are_tracks_visible(MTO_TRACK_EVAL.ANY, tracksRef, "1 Jul 2007 12:05:00")
@@ -9429,7 +9419,7 @@ class Definition(TestBase):
     def MTOVisibilityHelper(self, dictionary, command: str):
         dictionary.clear()
         separator: "List[int]" = [","]
-        result: "ExecCmdResult" = TestBase.Application.execute_command(command)
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(command)
         value: str
         for value in result:
             values: "List[str]" = String.Split(value, separator)
@@ -9451,7 +9441,7 @@ class Definition(TestBase):
         with pytest.raises(Exception):
             visibility.stk_object_path = "Satellite/Bogus_Sat"
 
-        result: "ExecCmdResult" = TestBase.Application.execute_command(
+        result: "ExecuteCommandResult" = TestBase.Application.execute_command(
             'Visibility_RM */MTO/VisTest2_MTO Object */Satellite/VisTest2_Sat Time "23 Feb 2009 17:07:00" Terrain No Mode All Tracks 2'
         )
         Assert.assertEqual("1", result[0], "MTOVisibility2 - 1")
@@ -9548,11 +9538,7 @@ class Definition(TestBase):
             visibility.are_tracks_visible(MTO_TRACK_EVAL.ALL, tracksOfInterest, "23 Bad 2009 17:09:00.000")
 
         with pytest.raises(Exception):
-            visibility.are_tracks_visible(
-                (MTO_TRACK_EVAL((-1)) if ((-1) in [item.value for item in MTO_TRACK_EVAL]) else (-1)),
-                tracksOfInterest,
-                "23 Feb 2009 17:09:00.000",
-            )
+            visibility.are_tracks_visible(-1, tracksOfInterest, "23 Feb 2009 17:09:00.000")
 
         tracksOfInterest2 = [-2, -3]
 
@@ -10136,7 +10122,7 @@ class Access(TestBase):
     AG_FAC: "Facility" = None
     # endregion
 
-    def CompareAccessResults(self, execResult: "ExecCmdResult", drResult: "DataProviderResult"):
+    def CompareAccessResults(self, execResult: "ExecuteCommandResult", drResult: "DataProviderResult"):
         result: str = execResult[0]
         token: "List[int]" = [" "]
         connectParsed: "List[str]" = String.Split(result, token)
@@ -10202,7 +10188,9 @@ class Access(TestBase):
         #
         # Use Object Time Periods (OBJECT_ACCESS_TIME)
         #
-        execResult: "ExecCmdResult" = TestBase.Application.execute_command(((("Access " + objPath1) + " ") + objPath2))
+        execResult: "ExecuteCommandResult" = TestBase.Application.execute_command(
+            ((("Access " + objPath1) + " ") + objPath2)
+        )
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access: "StkAccess" = obj1.get_access_to_object(obj2)
@@ -10243,7 +10231,7 @@ class Access(TestBase):
         access = obj1.get_access_to_object(obj2)
         access.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
         access.specify_access_event_intervals(
-            TestBase.Application.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"]
+            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"]
         )
         access.compute_access()
         intervalDp = DataProviderInterval(access.data_providers["Access Data"])
@@ -10285,10 +10273,10 @@ class Access(TestBase):
         access.access_time_period = ACCESS_TIME_TYPE.INTERVALS
         intervalCollection: "IntervalCollection" = clr.CastAs(access.access_time_period_data, IntervalCollection)
 
-        interval: "ITimeToolEventInterval" = TestBase.Application.current_scenario.vgt.event_intervals[
+        interval: "ITimeToolTimeInterval" = TestBase.Application.current_scenario.vgt.time_intervals[
             "AvailabilityIntervals.First"
         ]
-        intervalResult: "TimeToolEventIntervalResult" = interval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = interval.find_interval()
         intervalCollection.add(intervalResult.interval.start, intervalResult.interval.stop)
 
         access.compute_access()
@@ -10311,7 +10299,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(cmd)
 
         cmd = 'OnePointAccess */Satellite/Satellite1 */Facility/Facility1 Compute "1 Jul 1999 00:00:00.000" "2 Jul 1999 00:00:00.000" 2400'
-        connectResult: "ExecCmdResult" = TestBase.Application.execute_command(cmd)
+        connectResult: "ExecuteCommandResult" = TestBase.Application.execute_command(cmd)
         # foreach (string s in connectResult)
         # {
         #    logger.WriteLine(s);

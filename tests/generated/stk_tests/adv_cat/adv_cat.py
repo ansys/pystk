@@ -80,9 +80,9 @@ class EarlyBoundTests(TestBase):
 
     # region Main
     def test_Main(self):
-        eventIntSmartInterval: "TimeToolEventIntervalSmartInterval" = EarlyBoundTests.AG_ACAT.time_period
+        eventIntSmartInterval: "TimeToolTimeIntervalSmartInterval" = EarlyBoundTests.AG_ACAT.time_period
         eventIntSmartInterval.set_implicit_interval(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         Assert.assertEqual("1 Jul 1999 00:00:00.000", eventIntSmartInterval.find_start_time())
         Assert.assertEqual("2 Jul 1999 00:00:00.000", eventIntSmartInterval.find_stop_time())
@@ -528,10 +528,10 @@ class EarlyBoundTests(TestBase):
         advanced.correlation_file = TestBase.PathCombine(SatDBDir, "stkRelatedObjects.rel")
         Assert.assertEqual("stkRelatedObjects.rel", advanced.correlation_file)
 
-        advanced.show_msg_in_msg_viewer = False
-        Assert.assertFalse(advanced.show_msg_in_msg_viewer)
-        advanced.show_msg_in_msg_viewer = True
-        Assert.assertTrue(advanced.show_msg_in_msg_viewer)
+        advanced.show_message_in_message_viewer = False
+        Assert.assertFalse(advanced.show_message_in_message_viewer)
+        advanced.show_message_in_message_viewer = True
+        Assert.assertTrue(advanced.show_message_in_message_viewer)
 
         advanced.force_repropagation_on_load = False
         Assert.assertFalse(advanced.force_repropagation_on_load)

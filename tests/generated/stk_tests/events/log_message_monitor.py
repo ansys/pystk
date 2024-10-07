@@ -17,17 +17,17 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         self._counter: int = 0
         self._root: "StkObjectRoot" = root
 
-        self.csToPy_OnLogMessageSubscription = (self._root).Subscribe()
+        self.csToPy_OnLogMessageSubscription = (self._root).subscribe()
         self.csToPy_OnLogMessageSubscription.on_log_message += self._root_OnLogMessage
 
     def _root_OnLogMessage(
         self,
         Message: str,
-        MsgType: "LOG_MSG_TYPE",
+        MsgType: "LOG_MESSAGE_TYPE",
         ErrorCode: int,
         Filename: str,
         LineNo: int,
-        DispID: "LOG_MSG_DISP_ID",
+        DispID: "LOG_MESSAGE_DISPLAY_ID",
     ):
         if self._filterEcho:
             if Message.startswith("STK/CON:"):

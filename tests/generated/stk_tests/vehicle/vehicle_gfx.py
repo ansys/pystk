@@ -1515,13 +1515,9 @@ class GfxLightingHelper(object):
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
         with pytest.raises(Exception):
-            oVeGfxLightingElement.line_width = (
-                LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
-            )
+            oVeGfxLightingElement.line_width = -1
         with pytest.raises(Exception):
-            oVeGfxLightingElement.line_width = (
-                LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
-            )
+            oVeGfxLightingElement.line_width = 11
 
         # MarkerStyle
         self.m_logger.WriteLine5("\tThe current MarkerStyle is: {0}", oVeGfxLightingElement.marker_style)
@@ -1683,11 +1679,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                (
-                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1697,11 +1689,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_lead_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -1764,11 +1752,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                (
-                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1778,11 +1762,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_trail_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -1839,13 +1819,7 @@ class GfxLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(
-            (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[0][0]))
-                if (int(arSupportedTypes[0][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[0][0])
-            )
-        )
+        leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA(int(arSupportedTypes[0][0])))
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -1885,11 +1859,7 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = (
-                VEHICLE_GRAPHICS_2D_ELEVATION(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_ELEVATION])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = VEHICLE_GRAPHICS_2D_ELEVATION(int(arTypes[iIndex][0]))
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -2170,11 +2140,7 @@ class GfxTimeEventsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = (
-                VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE(int(arTypes[iIndex][0]))
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -2205,7 +2171,7 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("25 Jul 2005 12:00:00.000", oLine.event_interval.find_stop_time())
 
                 oLine.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oLine.event_interval.find_start_time())
                 Assert.assertEqual("2 Jul 1999 00:00:00.000", oLine.event_interval.find_stop_time())
@@ -2240,11 +2206,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = (
-                        VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
-                        if (int(arOffsetTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_OFFSET])
-                        else int(arOffsetTypes[i][0])
-                    )
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2288,7 +2250,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oMarker.StopTime);
 
                 oMarker.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oMarker.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oMarker.StopTime);
@@ -2332,7 +2294,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oText.StopTime);
 
                 oText.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).vgt.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oText.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oText.StopTime);
@@ -2362,11 +2324,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = (
-                        VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
-                        if (int(arOffsetTypes[i][0]) in [item.value for item in VEHICLE_GRAPHICS_2D_OFFSET])
-                        else int(arOffsetTypes[i][0])
-                    )
+                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 

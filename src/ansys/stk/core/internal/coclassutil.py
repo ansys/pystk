@@ -12,6 +12,26 @@ from ..utilities.comobject  import COMObject
 from ..utilities.exceptions import *
 
 ###############################################################################
+#   Backwards Compatibility Mapping
+###############################################################################
+
+class _CreateBackwardsCompatibilityMapping(object):
+    """Singleton class for recording GUID pairs needed for backwards compatability"""
+    def __init__(self):
+        self.mapping = dict()
+
+    def add_mapping(self, new_guid, old_guid):
+        self.mapping[new_guid] = old_guid
+
+    def check_guid_available(self, guid):
+        return guid in self.mapping
+
+    def get_old_guid(self, new_guid):
+        return self.mapping[new_guid]
+
+AgBackwardsCompatabilityMapping = _CreateBackwardsCompatibilityMapping()
+
+###############################################################################
 #   Class Catalog
 ###############################################################################
 

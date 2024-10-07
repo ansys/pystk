@@ -68,9 +68,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("MtoTests", "MTO_UseTrackTimes", "MtoAnalysisTest.sc"))
 
-        visibility: "MtoAnalysisVisibility" = (
-            clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
-        ).analysis.visibility
+        mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
+        visibility: "MtoAnalysisVisibility" = mto.analysis.visibility
         visibility.stk_object_path = "Aircraft/Aircraft1"
 
         Assert.assertTrue(visibility.is_any_track_visible("UseTrackTimes"))
@@ -151,9 +150,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("MtoTests", "MTO_UseTrackTimes", "MtoAnalysisTest.sc"))
 
-        range: "MtoAnalysisRange" = (
-            clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
-        ).analysis.range
+        mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
+        range: "MtoAnalysisRange" = mto.analysis.range
         range.stk_object_path = "Aircraft/Aircraft1"
 
         Assert.assertTrue(range.is_any_track_in_range("UseTrackTimes"))
@@ -228,9 +226,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.close_scenario()
             TestBase.LoadTestScenario(TestBase.PathCombine("MtoTests", "MTO_UseTrackTimes", "MtoAnalysisTest.sc"))
 
-        fov: "MtoAnalysisFieldOfView" = (
-            clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
-        ).analysis.field_of_view
+        mto: "Mto" = clr.CastAs(TestBase.Application.current_scenario.children["MTO1"], Mto)
+        fov: "MtoAnalysisFieldOfView" = mto.analysis.field_of_view
         fov.sensor = "Aircraft/Aircraft1/Sensor/Sensor1"
 
         Assert.assertTrue(fov.is_any_track_in_fov("UseTrackTimes"))

@@ -199,14 +199,15 @@ class ChainSnippets(CodeSnippetsTestBase):
         # Considered Start and Stop time
         Console.WriteLine(
             "Chain considered start time: {0}",
-            chainAsStkObject.vgt.events["ConsideredStartTime"].find_occurrence().epoch,
+            chainAsStkObject.vgt.time_instants["ConsideredStartTime"].find_occurrence().epoch,
         )
         Console.WriteLine(
-            "Chain considered stop time: {0}", chainAsStkObject.vgt.events["ConsideredStopTime"].find_occurrence().epoch
+            "Chain considered stop time: {0}",
+            chainAsStkObject.vgt.time_instants["ConsideredStopTime"].find_occurrence().epoch,
         )
 
-        objectParticipationIntervals: "ITimeToolEventIntervalCollection" = (
-            chainAsStkObject.vgt.event_interval_collections["StrandAccessIntervals"]
+        objectParticipationIntervals: "ITimeToolTimeIntervalCollection" = (
+            chainAsStkObject.vgt.time_interval_collections["StrandAccessIntervals"]
         )
         intervalListResult: "TimeToolIntervalsVectorResult" = objectParticipationIntervals.find_interval_collection()
 

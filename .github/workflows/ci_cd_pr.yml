@@ -4,14 +4,15 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
-  MINIMUM_PYTHON_VERSION: '3.8'
+  MAIN_PYTHON_VERSION: '3.12'
+  MINIMUM_PYTHON_VERSION: '3.10'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
+  QUARTO_VERSION: '1.5.55'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -49,7 +50,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v6
+      - uses: ansys/actions/branch-name-style@v7
 
   code-style:
     name: "Code style checks"
@@ -59,7 +60,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/code-style@v6
+      - uses: ansys/actions/code-style@v7
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -71,24 +72,93 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
     needs: branch-name-style
     steps:
-      - uses: ansys/actions/doc-style@v6
-        with: 
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Install jq"
+        run: |
+          # Used to format Vale input as a JSON-formatted list of files
+          sudo apt install -y jq
+
+      - name: "Collect desired files"
+        run: |
+          # Find all .rst files excluding those in doc/source/api/
+          RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+
+          # Find all .py files inside the examples/ directory, excluding those with an underscore
+          PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
+
+          # Combine both file lists and convert them to a JSON array
+          # TODO: include Python files too. See Vale issue
+          # https://github.com/errata-ai/vale/issues/858
+          # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+          VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
+          echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
+
+      - uses: ansys/actions/doc-style@v7
+        with:
+          checkout: false
+          files: "${{ env.VALE_FILES }}"
+          vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  build-wheelhouse:
+    name: "Build wheelhouse for latest Python versions"
+    runs-on: ${{ matrix.os }}
+    needs: doc-style
+    strategy:
+       matrix:
+           os: [ubuntu-latest, windows-latest]
+           python-version: ['3.10', '3.11', '3.12']
+           target: ['all', 'grpc', 'visualization']
+    steps:
+      - name: "Build a wheelhouse of the Python library"
+        uses: ansys/actions/build-wheelhouse@v7.0
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          target: ${{ matrix.target }}
 
   doc-build:
     name: "Doc build"
-    runs-on: [self-hosted, pystk]
+    runs-on: ${{ matrix.runner }}
+    # Limitations with one line GitHub actions conditionals forces us to use a
+    # matrix strategy. If examples execution is required, a self-hosted runner
+    # is selected. Otherwise, a GitHub runner is used.
+    strategy:
+      matrix:
+        runner: [ubuntu-latest, [self-hosted, pystk]]
+        needs-self-hosted-runner:
+          - ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }}
+        exclude:
+          - needs-self-hosted-runner: false
+            runner: [self-hosted, pystk]
+          - needs-self-hosted-runner: true
+            runner: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: doc-style
-    timeout-minutes: 30
+    needs: build-wheelhouse
+    timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
         uses: actions/checkout@v4
 
+      - name: "Download wheelhouse into static path"
+        uses: actions/download-artifact@v4
+        with:
+          path: "doc/source/_static/wheelhouse"
+          pattern: "*-wheelhouse-*"
+
+      - name: "Display the wheelhouse layout"
+        run: |
+          tree doc/source/_static/wheelhouse
+
       - name: "Generate the name of the Docker image and the container"
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
           python_image_name=${{ env.STK_DOCKER_IMAGE }}-python${{ env.MAIN_PYTHON_VERSION }}
           container_name=stk-python${{ env.MAIN_PYTHON_VERSION }}
@@ -96,6 +166,8 @@ jobs:
           echo "STK_CONTAINER=$container_name" >> $GITHUB_ENV
 
       - name: "Start the container from the desired image"
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
           docker run \
             --detach -it \
@@ -105,20 +177,42 @@ jobs:
             --volume ${PWD}:/home/stk/pystk \
             ${{ env.STK_PYTHON_IMAGE }}
 
-      - name: "Install pandoc for building the examples"
+      - name: "Install system dependencies required for building examples"
+        if: |
+          contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
           docker exec \
             --user root \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "apt update && apt install -y pandoc"
+            "apt update && apt install -y wget pandoc"
 
-      - name: "Install Tox"
-        run: |
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "python -m pip install tox && rm -rf .tox"
+            "wget --no-check-certificate https://github.com/quarto-dev/quarto-cli/releases/download/v${{ env.QUARTO_VERSION }}/quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --user root \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "dpkg -i quarto-${{ env.QUARTO_VERSION }}-linux-amd64.deb"
+
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "quarto install tinytex"
+
+      - name: "Install Tox in the GitHub runner or the self-hosted runner"
+        run: |
+          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true" ]]; then
+            docker exec \
+              --workdir ${{ env.PYSTK_DIR }} \
+              ${{ env.STK_CONTAINER }} /bin/bash -c \
+              "python -m pip install tox && rm -rf .tox"
+          else
+            python -m pip install tox && rm -rf .tox
+          fi
 
       # Render the documentation including or excluding different sections
       # according to the labels of the pull-request.
@@ -132,7 +226,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=false BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       - name: "Build docs including the 'API' section"
         id: build-doc-with-api
@@ -140,21 +234,20 @@ jobs:
           contains(github.event.pull_request.labels.*.name, 'docs:api') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:examples')
         run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=false && tox -e doc"
-
+            python -m tox -e doc-links,doc-html
+        env:
+          BUILD_API: true
+          BUILD_EXAMPLES: false
       - name: "Build docs excluding 'API' and 'Examples' sections"
         id: build-doc-minimum
         if: |
           !contains(github.event.pull_request.labels.*.name, 'docs:examples') &&
           !contains(github.event.pull_request.labels.*.name, 'docs:api')
         run: |
-          docker exec \
-            --workdir ${{ env.PYSTK_DIR }} \
-            ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=false BUILD_EXAMPLES=false && tox -e doc"
+          python -m tox -e doc-links,doc-html
+        env:
+          BUILD_API: false
+          BUILD_EXAMPLES: false
 
       - name: "Build docs including 'API' and 'Examples' sections"
         id: build-doc-full
@@ -165,7 +258,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc"
+            "export BUILD_API=true BUILD_EXAMPLES=true && tox -e doc-links,doc-html"
 
       # If required, combine partially rendered documentation with the nightly
       # build artifacts. Upload the generated documentation as an artifact in
@@ -192,6 +285,7 @@ jobs:
           steps.build-doc-with-api.outcome == 'success' ||
           steps.build-doc-minimum.outcome == 'success'
         run: |
+          cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp gh-pages/version/dev/index.html doc/_build/html/index.html
@@ -205,9 +299,11 @@ jobs:
       - name: "Stop the container"
         if: always()
         run: |
-          docker stop ${{ env.STK_CONTAINER }}
-          docker logs ${{ env.STK_CONTAINER }}
-          docker rm ${{ env.STK_CONTAINER }}
+          if [[ ${{ contains(github.event.pull_request.labels.*.name, 'docs:examples') }} == "true" ]]; then
+            docker stop ${{ env.STK_CONTAINER }}
+            docker logs ${{ env.STK_CONTAINER }}
+            docker rm ${{ env.STK_CONTAINER }}
+          fi
 
   tests:
     name: "Tests Python ${{ matrix.python }}"
@@ -218,13 +314,13 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.8 to ensure backwards compatibility with
+        # Tests run against Python 3.10 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.8']
+        python: ['3.10']
       fail-fast: false
     steps:
 
@@ -328,6 +424,6 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v6
+      - uses: ansys/actions/build-library@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}

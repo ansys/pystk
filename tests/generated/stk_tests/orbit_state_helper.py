@@ -411,14 +411,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -516,14 +509,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -564,7 +550,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oClassical.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
@@ -1337,14 +1323,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -1657,14 +1636,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -1704,7 +1676,7 @@ class OrbitStateHelper(object):
         self.CoordinateSystemTest(self.m_oDelaunay.orbit_state_type, COORDINATE_SYSTEM.TRUE_OF_EPOCH)
         # TRUE_OF_REFERENCE_DATE
         # GetLicenses
-        oLicenses: "ExecCmdResult" = None
+        oLicenses: "ExecuteCommandResult" = None
         oLicenses = self.m_oApplication.execute_command("GetLicenses /")
         Assert.assertIsNotNone(oLicenses)
 
@@ -1950,14 +1922,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -2220,14 +2185,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -2370,19 +2328,23 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set Velocity out of bounds")
 
         # FPA (Horizontal) test
-        self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oMixed.fpa_type)
-        self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_HORIZONTAL
-        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
-        Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_HORIZONTAL, self.m_oMixed.fpa_type)
-        oHorizontal: "MixedSphericalFPAHorizontal" = MixedSphericalFPAHorizontal(self.m_oMixed.fpa)
+        self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
+        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_HORIZONTAL
+        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
+        Assert.assertEqual(
+            MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_HORIZONTAL, self.m_oMixed.flight_path_angle_type
+        )
+        oHorizontal: "MixedSphericalFlightPathAngleHorizontal" = MixedSphericalFlightPathAngleHorizontal(
+            self.m_oMixed.flight_path_angle
+        )
         Assert.assertIsNotNone(oHorizontal)
-        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
-        oHorizontal.fpa = 1.2345
-        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oHorizontal.fpa)
-        Assert.assertEqual(1.2345, oHorizontal.fpa)
+        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.flight_path_angle)
+        oHorizontal.flight_path_angle = 1.2345
+        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oHorizontal.flight_path_angle)
+        Assert.assertEqual(1.2345, oHorizontal.flight_path_angle)
         try:
             bCaught = False
-            oHorizontal.fpa = -1234
+            oHorizontal.flight_path_angle = -1234
 
         except Exception as e:
             bCaught = True
@@ -2392,18 +2354,22 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_VERTICAL
-        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.fpa_type)
-        Assert.assertEqual(MIXED_SPHERICAL_FPA.FPA_VERTICAL, self.m_oMixed.fpa_type)
-        oVertical: "MixedSphericalFPAVertical" = MixedSphericalFPAVertical(self.m_oMixed.fpa)
+        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_VERTICAL
+        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
+        Assert.assertEqual(
+            MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_VERTICAL, self.m_oMixed.flight_path_angle_type
+        )
+        oVertical: "MixedSphericalFlightPathAngleVertical" = MixedSphericalFlightPathAngleVertical(
+            self.m_oMixed.flight_path_angle
+        )
         Assert.assertIsNotNone(oVertical)
-        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
-        oVertical.fpa = -1.2345
-        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oVertical.fpa)
-        Assert.assertAlmostEqual(-1.2345, oVertical.fpa, delta=1e-05)
+        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.flight_path_angle)
+        oVertical.flight_path_angle = -1.2345
+        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oVertical.flight_path_angle)
+        Assert.assertAlmostEqual(-1.2345, oVertical.flight_path_angle, delta=1e-05)
         try:
             bCaught = False
-            oVertical.fpa = -1234
+            oVertical.flight_path_angle = -1234
 
         except Exception as e:
             bCaught = True
@@ -2414,8 +2380,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oMixed.fpa_type = MIXED_SPHERICAL_FPA.FPA_UNKNOWN
-            Assert.fail("Cannot set MIXED_SPHERICAL_FPA.FPA_UNKNOWN.")
+            self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_UNKNOWN
+            Assert.fail("Cannot set MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2444,14 +2410,7 @@ class OrbitStateHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in COORDINATE_SYSTEM])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], COORDINATE_SYSTEM(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -2584,19 +2543,21 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set Velocity out of bounds")
 
         # FPA (Horizontal) test
-        self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oSpherical.fpa_type)
-        self.m_oSpherical.fpa_type = SPHERICAL_FPA.HORIZONTAL
-        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
-        Assert.assertEqual(SPHERICAL_FPA.HORIZONTAL, self.m_oSpherical.fpa_type)
-        oHorizontal: "SphericalFPAHorizontal" = SphericalFPAHorizontal(self.m_oSpherical.fpa)
+        self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
+        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.HORIZONTAL
+        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
+        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_ANGLE.HORIZONTAL, self.m_oSpherical.flight_path_angle_type)
+        oHorizontal: "SphericalFlightPathAngleHorizontal" = SphericalFlightPathAngleHorizontal(
+            self.m_oSpherical.flight_path_angle
+        )
         Assert.assertIsNotNone(oHorizontal)
-        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.fpa)
-        oHorizontal.fpa = 1.2345
-        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oHorizontal.fpa)
-        Assert.assertEqual(1.2345, oHorizontal.fpa)
+        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oHorizontal.flight_path_angle)
+        oHorizontal.flight_path_angle = 1.2345
+        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oHorizontal.flight_path_angle)
+        Assert.assertEqual(1.2345, oHorizontal.flight_path_angle)
         try:
             bCaught = False
-            oHorizontal.fpa = -1234
+            oHorizontal.flight_path_angle = -1234
 
         except Exception as e:
             bCaught = True
@@ -2606,18 +2567,20 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oSpherical.fpa_type = SPHERICAL_FPA.VERTICAL
-        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.fpa_type)
-        Assert.assertEqual(SPHERICAL_FPA.VERTICAL, self.m_oSpherical.fpa_type)
-        oVertical: "SphericalFPAVertical" = SphericalFPAVertical(self.m_oSpherical.fpa)
+        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.VERTICAL
+        self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
+        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_ANGLE.VERTICAL, self.m_oSpherical.flight_path_angle_type)
+        oVertical: "SphericalFlightPathAngleVertical" = SphericalFlightPathAngleVertical(
+            self.m_oSpherical.flight_path_angle
+        )
         Assert.assertIsNotNone(oVertical)
-        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.fpa)
-        oVertical.fpa = -1.2345
-        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oVertical.fpa)
-        Assert.assertAlmostEqual(-1.2345, oVertical.fpa, delta=1e-05)
+        self.m_logger.WriteLine6("\t\t\tCurrent FPA is: {0}", oVertical.flight_path_angle)
+        oVertical.flight_path_angle = -1.2345
+        self.m_logger.WriteLine6("\t\t\tNew FPA is: {0}", oVertical.flight_path_angle)
+        Assert.assertAlmostEqual(-1.2345, oVertical.flight_path_angle, delta=1e-05)
         try:
             bCaught = False
-            oVertical.fpa = -1234
+            oVertical.flight_path_angle = -1234
 
         except Exception as e:
             bCaught = True
@@ -2628,8 +2591,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oSpherical.fpa_type = SPHERICAL_FPA.UNKNOWN
-            Assert.fail("Cannot set SPHERICAL_FPA.UNKNOWN.")
+            self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.UNKNOWN
+            Assert.fail("Cannot set SPHERICAL_FLIGHT_PATH_ANGLE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))

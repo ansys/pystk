@@ -1,0 +1,198 @@
+stk.v.12.0
+WrittenBy    STK_v12.5.0
+
+BEGIN FigureOfMerit
+
+    Name		 Coverage_Time
+
+    BEGIN FomDefinition
+
+
+        BEGIN CoverageTime
+            TimeType		 AbsoluteTimeAbove
+            MinNumAssets		 1
+
+        END CoverageTime
+        ApplySatisfaction		 No
+        SatisfactionType		 Above
+        SatisfactionThreshold		  0.0000000000000000e+00
+        NotExecutedValue		  0.0000000000000000e+00
+        UseFOMValueRangeCheck		 0
+        ExcludeValuesInRange		 0
+        FOMValueRangeMin		  0.0000000000000000e+00
+        FOMValueRangeMax		  0.0000000000000000e+00
+
+    END FomDefinition
+
+    BEGIN SavedValues
+        FileName		 Coverage_Time.fmv
+    END SavedValues
+
+    BEGIN Extensions
+
+        BEGIN ExternData
+        END ExternData
+
+        BEGIN ADFFileData
+        END ADFFileData
+
+        BEGIN Desc
+        END Desc
+
+        BEGIN Graphics
+
+            BEGIN Attributes
+
+                StaticColor		 #00ffff
+                StaticColorRampStartColor		 #ff0000
+                StaticColorRampEndColor		 #0000ff
+                StaticMarkerStyle		 3
+                AnimationColor		 #ff00ff
+                AnimColorRampStartColor		 #00ff00
+                AnimColorRampEndColor		 #00ffff
+                AnimationMarkerStyle		 2
+                ObjectCovMarkerStyle		 0
+                ObjectCovLineStyle		 0
+                ObjectCovLineWidth		 1
+
+            END Attributes
+
+            BEGIN Graphics
+
+                Show		 Yes
+                ShowStatic		 Yes
+                ShowAnim		 Yes
+                ShowStaticContours		 Yes
+                ShowAnimContours		 No
+                ShareContours		 No
+                StaticFillPoints		 Yes
+                AnimFillPoints		 Yes
+                StaticColorRamp		 Yes
+                AnimColorRamp		 Yes
+                StaticContourType		 SmoothFill
+                AnimContourType		 Block
+                StaticShowUpToMax		 No
+                DynShowUpToMax		 No
+                BEGIN StaticContours
+                    NumContourLevels		 10
+                    BEGIN ContourLevel
+                        Value		  0.0000000000000000e+00
+                        Color		 #ff0000
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  5.0000000000000000e+00
+                        Color		 #ffffff
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  1.0000000000000000e+01
+                        Color		 #00ff00
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  1.5000000000000000e+01
+                        Color		 #00ffff
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  2.0000000000000000e+01
+                        Color		 #ff00ff
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  2.5000000000000000e+01
+                        Color		 #ffff00
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  3.0000000000000000e+01
+                        Color		 #0000ff
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  3.5000000000000000e+01
+                        Color		 #ff0000
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  4.0000000000000000e+01
+                        Color		 #ffffff
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                    BEGIN ContourLevel
+                        Value		  4.5000000000000000e+01
+                        Color		 #00ff00
+                        CntMarkerStyle		 0
+                        LineStyle		 0
+                        LineWidth		 0
+                    END ContourLevel
+                END StaticContours
+                StaticTranslucent		 Yes
+                StaticTranslucency		 0.5
+                StaticShowLines		 No
+                StaticCntrLinesStyle		 0
+                StaticCntrLinesWidth		 1
+                DynamicTranslucent		 Yes
+                DynamicTranslucency		 0.7000000000000001
+                DynamicShowLines		 No
+                DynamicCntrLinesStyle		 0
+                DynamicCntrLinesWidth		 1
+                NNSampleSizeMode		 Medium
+                MaxNumSearchPixels		 512
+                BEGIN StaticLegend
+                    DrawLegendOnMap		 Yes
+                    XPixelLocation		 5
+                    YPixelLocation		 5
+                    Orientation		 HorizMinToMax
+                    MaxPerRow		 20
+                    ColorPixelWidth		 50
+                    ColorPixelHeight		 20
+                    TextColor		 #ffffff
+                    BackgroundColor		 #000000
+                    Title		 Coverage Time (seconds)
+                    Format		 %.0f
+                END StaticLegend
+                BEGIN DynamicLegend
+                    DrawLegendOnMap		 No
+                    XPixelLocation		 5
+                    YPixelLocation		 5
+                    Orientation		 HorizMinToMax
+                    MaxPerRow		 20
+                    ColorPixelWidth		 40
+                    ColorPixelHeight		 20
+                    TextColor		 #ffffff
+                    BackgroundColor		 #000000
+                    Title		 Coverage Time - Dynamic Contours
+                    Format		 %.1f
+                END DynamicLegend
+                AccumulationType		 CurrentOnly
+
+            END Graphics
+        END Graphics
+
+        BEGIN VO
+        END VO
+
+    END Extensions
+
+END FigureOfMerit
+

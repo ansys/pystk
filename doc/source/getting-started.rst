@@ -1,30 +1,38 @@
 Getting started
 ###############
 
-To run PySTK, you must have a licensed copy of `STK`_.
+This page helps you quickly get started with PySTK. It lists all the
+prerequisites and guides you step by step to install the library on your
+platform.
 
+.. grid:: 3
 
-.. grid:: 2
-
-    .. grid-item-card:: Building STK images :fab:`docker`
-        :link: getting-started/building-stk-images
+    .. grid-item-card:: :fa:`info-circle` About PySTK
+        :link: getting-started/about
         :link-type: doc
 
-        Step-by-step guidelines on how to build your own Docker image for STK.
+        About the next generation Python API for STK
 
-    .. grid-item-card:: Installing PySTK :fab:`python`
-        :link: getting-started/installing-pystk
+    .. grid-item-card:: :fa:`tasks` Prerequisites
+        :link: getting-started/prerequisites
         :link-type: doc
 
-        Learn how to download and install PySTK in your development environment
-        from various official sources including PyPI and official Ansys
-        repositories.
+        What you need prior installing PySTK
+
+    .. grid-item-card:: :fa:`download` Install
+        :link: getting-started/install
+        :link-type: doc
+
+        Guidelines on how to install PySTK in your system
+
 
 
 .. toctree::
    :maxdepth: 3
    :hidden:
 
-   getting-started/building-stk-images 
-   getting-started/installing-pystk
+   About<getting-started/about>
+   Prerequisites<getting-started/prerequisites>
+   Install<getting-started/install>
+   
 

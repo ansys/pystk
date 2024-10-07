@@ -27,14 +27,7 @@ class DisplayTimesHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\tType {0}: {1} ({2})",
-                iIndex,
-                arTypes[iIndex][1],
-                (
-                    DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -51,11 +44,7 @@ class DisplayTimesHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "DISPLAY_TIMES_TYPE" = (
-                DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in DISPLAY_TIMES_TYPE])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "DISPLAY_TIMES_TYPE" = DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
             if not oDisplay.is_display_status_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -136,24 +125,24 @@ class DisplayTimesHelper(object):
         )
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.events["AnalysisStartTime"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.children["Facility1"].vgt.event_interval_collections["LightingIntervals"],
+            self.m_oRoot.current_scenario.children["Facility1"].vgt.time_interval_collections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdnFac)
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(
@@ -162,7 +151,7 @@ class DisplayTimesHelper(object):
         )
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(

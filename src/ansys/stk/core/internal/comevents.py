@@ -5,8 +5,8 @@
 __all__ = [ "COMEventHandlerImpl",
             "IStkObjectRootEventCOMHandler", 
             "ISTKXApplicationEventCOMHandler", 
-            "IUiAxGraphics2DCntrlEventCOMHandler", 
-            "IUiAxGraphics3DCntrlEventCOMHandler",
+            "IGraphics2DControlEventCOMHandler", 
+            "IGraphics3DControlEventCOMHandler",
             "ISceneEventCOMHandler",
             "IKmlGraphicsEventCOMHandler",
             "IImageCollectionEventCOMHandler",
@@ -231,7 +231,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 
     def _on_log_message(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
 
     def _on_anim_update(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -452,7 +452,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MSG_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MSG_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -513,7 +513,7 @@ class _UiAxStockEventsUnkSink(Structure):
                  ("ole_drag_drop", c_void_p),
                  ("mouse_wheel",  c_void_p)]
                  
-class _AgUiAxGraphics3DCntrlEventsUnkSink(Structure):
+class _Graphics3DControlEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",             c_void_p),
                  ("IUnknown2",             c_void_p),
                  ("IUnknown3",             c_void_p),
@@ -599,7 +599,7 @@ class IAgUiAxStockEventCOMHandler(object):
                 callback(arg_Data.python_val, Effect, KeyCode, Shift, X, Y)
         return S_OK
             
-class IUiAxGraphics2DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
+class IGraphics2DControlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
     _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
@@ -640,21 +640,21 @@ class IUiAxGraphics2DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         elif iid == IAgUiAxStockEventCOMHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics2DCntrlEventCOMHandler._IID_IAgUiAx2DCntrlEvents:
+        elif iid == IGraphics2DControlEventCOMHandler._IID_IAgUiAx2DCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
             ppvObject[0] = 0
             return E_NOINTERFACE
 
-class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
+class IGraphics3DControlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
     _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
     _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         IAgUiAxStockEventCOMHandler.__init__(self, events)
         self._init_vtable()
-        COMEventHandlerImpl.__init__(self, pUnk, self._pUnkSink, IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlEvents)
+        COMEventHandlerImpl.__init__(self, pUnk, self._pUnkSink, IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlEvents)
 
     def _init_vtable(self):
         if os.name == "nt":
@@ -670,7 +670,7 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         self.__dict__["_cfunc_OnObjectEditingCancel"] = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_cancel)
         self.__dict__["_cfunc_OnObjectEditingStop"]   = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_stop)
         
-        self.__dict__["_vtable"] = _AgUiAxGraphics3DCntrlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
+        self.__dict__["_vtable"] = _Graphics3DControlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
                                                                   cast(self._cfunc_IUnknown2,             c_void_p),
                                                                   cast(self._cfunc_IUnknown3,             c_void_p),
                                                                   cast(self._cfunc_KeyDown,               c_void_p),
@@ -697,10 +697,10 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         elif iid == IAgUiAxStockEventCOMHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlRawEvents:
+        elif iid == IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlEvents:
+        elif iid == IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:

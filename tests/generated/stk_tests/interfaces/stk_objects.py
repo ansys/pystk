@@ -356,11 +356,7 @@ class STKObjectHelper(object):
 
             j: int = 0
             while j < Array.Length(SupportedChildTypes):
-                objType: "STK_OBJECT_TYPE" = (
-                    STK_OBJECT_TYPE(int(SupportedChildTypes[j]))
-                    if (int(SupportedChildTypes[j]) in [item.value for item in STK_OBJECT_TYPE])
-                    else int(SupportedChildTypes[j])
-                )
+                objType: "STK_OBJECT_TYPE" = STK_OBJECT_TYPE(int(SupportedChildTypes[j]))
                 if objType == STK_OBJECT_TYPE.SENSOR:
                     found = True
 

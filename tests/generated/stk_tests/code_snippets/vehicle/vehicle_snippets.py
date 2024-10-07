@@ -64,7 +64,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
     ):
         # set export parameters
         stkEphem.coordinate_system = STK_EPHEM_COORDINATE_SYSTEM.FIXED
-        stkEphem.include_interp = True
+        stkEphem.include_interpolation = True
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
 

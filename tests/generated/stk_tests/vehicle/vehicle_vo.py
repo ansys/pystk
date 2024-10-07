@@ -152,9 +152,9 @@ class VOAttributesBasicHelper(object):
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oBasic.line_width)
         Assert.assertEqual(LINE_WIDTH.WIDTH5, oBasic.line_width)
         with pytest.raises(Exception):
-            oBasic.line_width = LINE_WIDTH((-1)) if ((-1) in [item.value for item in LINE_WIDTH]) else (-1)
+            oBasic.line_width = -1
         with pytest.raises(Exception):
-            oBasic.line_width = LINE_WIDTH((11)) if ((11) in [item.value for item in LINE_WIDTH]) else (11)
+            oBasic.line_width = 11
 
         oBasic.translucency = 50
         Assert.assertEqual(50, oBasic.translucency)
@@ -356,11 +356,7 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arChoices[iIndex][0]))
-                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
-                    else int(arChoices[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
@@ -402,11 +398,7 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0]))
-                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
-                    else int(arChoices[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
@@ -481,11 +473,7 @@ class VOVelocityCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0]))
-                    if (int(arChoices[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
-                    else int(arChoices[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
@@ -550,11 +538,7 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -564,11 +548,7 @@ class VOCovariancePointingContourHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_ATTRIBUTES" = (
-                VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_ATTRIBUTES])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "VEHICLE_GRAPHICS_3D_ATTRIBUTES" = VEHICLE_GRAPHICS_3D_ATTRIBUTES(int(arSupportedTypes[iIndex][0]))
             if (eType != VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_BASIC) and (
                 eType != VEHICLE_GRAPHICS_3D_ATTRIBUTES.GRAPHICS_3D_ATTRIBUTES_INTERVALS
             ):
@@ -617,22 +597,14 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                (
-                    VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = (
-                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in VEHICLE_GRAPHICS_3D_SIGMA_SCALE])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
             if (eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_PROBABILITY) and (
                 eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SIGMA_SCALE_SCALE
             ):
@@ -3716,11 +3688,7 @@ class VOLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                (
-                    LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                    if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                    else int(arSupportedTypes[iIndex][0])
-                ),
+                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -3730,11 +3698,7 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -3811,11 +3775,7 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
-                if (int(arSupportedTypes[iIndex][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[iIndex][0])
-            )
+            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -3888,13 +3848,7 @@ class VOLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(
-            (
-                LEAD_TRAIL_DATA(int(arSupportedTypes[0][0]))
-                if (int(arSupportedTypes[0][0]) in [item.value for item in LEAD_TRAIL_DATA])
-                else int(arSupportedTypes[0][0])
-            )
-        )
+        leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA(int(arSupportedTypes[0][0])))
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -4197,14 +4151,7 @@ class VOPathTickMarksHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\tType {0} is: {1} ({2})",
-                iIndex,
-                str(arTypes[iIndex][1]),
-                (
-                    TICK_DATA(int(arTypes[iIndex][0]))
-                    if (int(arTypes[iIndex][0]) in [item.value for item in TICK_DATA])
-                    else int(arTypes[iIndex][0])
-                ),
+                "\t\tType {0} is: {1} ({2})", iIndex, str(arTypes[iIndex][1]), TICK_DATA(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -4218,9 +4165,7 @@ class VOPathTickMarksHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oPath.set_tick_data_type(
-                (TICK_DATA(arTypes[0][0]) if (arTypes[0][0] in [item.value for item in TICK_DATA]) else arTypes[0][0])
-            )
+            oPath.set_tick_data_type(TICK_DATA(arTypes[0][0]))
 
         except Exception as e:
             bCaught = True
@@ -4276,11 +4221,7 @@ class VOPathTickMarksHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "TICK_DATA" = (
-                TICK_DATA(int(arTypes[iIndex][0]))
-                if (int(arTypes[iIndex][0]) in [item.value for item in TICK_DATA])
-                else int(arTypes[iIndex][0])
-            )
+            eType: "TICK_DATA" = TICK_DATA(int(arTypes[iIndex][0]))
             if not oPath.is_tick_data_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -5028,9 +4969,7 @@ class VOVectorsHelper(object):
             )
 
         with pytest.raises(Exception):
-            oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
-                (GEOMETRIC_ELEM_TYPE((-1)) if ((-1) in [item.value for item in GEOMETRIC_ELEM_TYPE]) else (-1)), "bogus"
-            )
+            oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(-1, "bogus")
         with pytest.raises(Exception):
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_crdn_by_name(
                 GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, ""
@@ -5038,11 +4977,7 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = (
-                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "GEOMETRIC_ELEM_TYPE" = GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
             if eType == GEOMETRIC_ELEM_TYPE.ANGLE_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5059,11 +4994,7 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = (
-                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "GEOMETRIC_ELEM_TYPE" = GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
             if eType == GEOMETRIC_ELEM_TYPE.AXES_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5080,11 +5011,7 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = (
-                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "GEOMETRIC_ELEM_TYPE" = GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
             if eType == GEOMETRIC_ELEM_TYPE.PLANE_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5101,11 +5028,7 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = (
-                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "GEOMETRIC_ELEM_TYPE" = GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
             if eType == GEOMETRIC_ELEM_TYPE.POINT_ELEM:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
@@ -5125,11 +5048,7 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEM_TYPE" = (
-                GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
-                if (int(arAvailable[iIndex][1]) in [item.value for item in GEOMETRIC_ELEM_TYPE])
-                else int(arAvailable[iIndex][1])
-            )
+            eType: "GEOMETRIC_ELEM_TYPE" = GEOMETRIC_ELEM_TYPE(int(arAvailable[iIndex][1]))
             if eType == GEOMETRIC_ELEM_TYPE.VECTOR_ELEM:
                 oVector: "Graphics3DReferenceVectorGeometryToolVector" = Graphics3DReferenceVectorGeometryToolVector(
                     oCollection.add(eType, str(arAvailable[iIndex][0]))
@@ -5264,9 +5183,7 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine3("After RemoveByName() the Vector Collection contains: {0} elements", oCollection.count)
 
         with pytest.raises(Exception):
-            oCollection.remove_by_name(
-                (GEOMETRIC_ELEM_TYPE((-1)) if ((-1) in [item.value for item in GEOMETRIC_ELEM_TYPE]) else (-1)), "bogus"
-            )
+            oCollection.remove_by_name(-1, "bogus")
         with pytest.raises(Exception):
             oCollection.remove_by_name(GEOMETRIC_ELEM_TYPE.ANGLE_ELEM, "bogus")
 

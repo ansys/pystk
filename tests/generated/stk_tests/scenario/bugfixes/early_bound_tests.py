@@ -12,7 +12,7 @@ class EarlyBoundTests(TestBase):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
 
     # region Static DataMembers
-    _animation: "StkObjectRoot" = None
+    _animation: "IAnimation" = None
     # endregion
 
     # region OneTimeSetUp
@@ -21,7 +21,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("ScenarioTests", "ScenarioTests.sc"))
 
-        EarlyBoundTests._animation = clr.CastAs(TestBase.Application, StkObjectRoot)
+        EarlyBoundTests._animation = clr.CastAs(TestBase.Application, IAnimation)
         Assert.assertIsNotNone(EarlyBoundTests._animation)
 
     # endregion
@@ -241,7 +241,7 @@ class EarlyBoundTests(TestBase):
         ele.is_visible = True
         Assert.assertTrue(ele.is_visible)
         Assert.assertEqual("RIC", ele.name)
-        (StkObjectRoot(TestBase.Application)).rewind()
+        (IAnimation(TestBase.Application)).rewind()
 
     @category("VO Tests")
     def test_BUG70140_DynamicDisplay_RequiresPreData_Fail(self):

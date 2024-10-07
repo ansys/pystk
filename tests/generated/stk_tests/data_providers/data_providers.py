@@ -862,7 +862,7 @@ class EarlyBoundTests(TestBase):
 
         # Console.WriteLine(sAllNames);
         Assert.assertEqual(
-            "All ConstraintsAnglesArticulationAstrogator Accel HistAstrogator LogAstrogator MCS Ephemeris SegmentsAstrogator Maneuver Ephemeris Block FinalAstrogator Maneuver Ephemeris Block HistoryAstrogator Maneuver Ephemeris Block InitialAstrogator Pass DataAstrogator Script SummaryAstrogator Targeter DataAstrogator ValuesAttitude QuaternionsAttitude Segment DescriptionAttitude Segment ECF QuaternionsAttitude Segment Euler AnglesAttitude Segment QuaternionsAttitude Segment ScheduleAttitude Segment YPRAttitude YPRAvailable TimesAxes Choose AxesBeta AngleBody Axes OrientationBody Axes Orientation:YPR 123Body Axes Orientation:YPR 132Body Axes Orientation:YPR 213Body Axes Orientation:YPR 231Body Axes Orientation:YPR 312Body Axes Orientation:YPR 321Brouwer-Lyd Mean LongBrouwer-Lyd Mean ShortCartesian AccelerationCartesian PositionCartesian VelocityClassical ElementsClose Approach Compute ResultsClose Approach DefinitionClose Approach Filter SettingsCloseApproachCloseApproachByMinRangeCloseApproachBySSCCollection of Interval ListsConditionCondition SetConfigured ConstraintsCrdn Available TimesData Provider DetailData Provider SummaryDeckAccessDeckAccess DataDelaunay ElementsECF Attitude QuaternionsEclipse DefinitionEclipse Solar IntensityEclipse SummaryEclipse TimesEcliptic CrossingsElement SetEphemeris DiffEphemeris Diff in Curvilinear CoordinatesEquinoctial ElementsEuler AnglesGeo Station Keeping ElementsGravity ModelGround Ellipse DefinitionHeadingIIRV User InputIntervalInterval ListKozai-Izsak MeanLLA StateLLR StateLOP Mean ElementsLaunch Window DefinitionLifetimeLighting AERLighting TimesLunar Eclipse Solar IntensityMCS SummaryManeuver SummaryMassMixed Spherical ElementsModel AreaModel LOD 0 ArticulationsModel LOD 1 ArticulationsModified Equinoctial ElementsMoon AERMoon VectorParameter Set: AttitudeParameter Set: Cartographic TrajectoryParameter Set: OrbitParameter Set: TrajectoryParameter Set: VectorPass Event TimesPassesPlanes Choose SystemPlanes(Fixed)Planes(ICRF)Planes(Inertial)Planes(J2000)Pointing Covariance (Projection)Points Choose PlanePoints Choose SystemPoints(Fixed)Points(ICRF)Points(Inertial)Points(J2000)Pos Vel Projected CovariancePos Vel Rotated CovariancePosition CovariancePosition Covariance Choose AxesPosition Covariance CrossSectionPosition Covariance CrossSection Choose PlanePosition Covariance ProjectionPosition Covariance Projection Choose PlanePosition Covariance in AxesPrecision PassesPropagator InputsRIC CoordinatesRelative MotionSEET Debris FluxSEET GCR Differential Fluence by EnergySEET GCR Differential Flux by EnergySEET GCR Integral Fluence by EnergySEET GCR Integral Flux by EnergySEET GCR ModelSEET Magnetic ConjugacySEET Magnetic CoordinatesSEET Magnetic FieldSEET Magnetic Field ModelSEET Meteor FluxSEET Particle Distribution FluenceSEET Particle FluenceSEET Particle Flux ModelSEET Radiation Accumulated DoseSEET Radiation Accumulated Dose By ThicknessSEET Radiation Average Dose RateSEET Radiation Average Dose Rate By ThicknessSEET Radiation Dose DepthSEET Radiation Dose RateSEET Radiation Dose Rate By ThicknessSEET Radiation FluxSEET Radiation Flux by EnergySEET Radiation Integral FluxSEET Radiation Integral Flux by EnergySEET Radiation ModelSEET SAA Contour SettingsSEET SAA Crossing TimesSEET SAA Flux IntensitySEET SEP Energy by FluenceSEET SEP Fluence by Probability per EnergySEET SEP ModelSEET Vehicle TemperatureSEET Vehicle Temperature ModelSTM EigendecompositionScalar CalculationsSegment SummaryShadow LLASolar Apparent TimeSolar IntensitySolar Panel AnglesSolar Panel AreaSolar Panel Area No SumSolar Panel PowerSolar Panel Power No SumSolar Specular PointSpherical ElementsState Transition MatrixSun VectorSwath PointsTLE Residual DataTLE Set DataTLE Summary DataTime ArrayTime InstantTrue Anomaly StepUser Supplied DataVector Choose AxesVector Choose PlaneVectors(Body)Vectors(Fixed)Vectors(Fixed_VVLH)Vectors(ICRF)Vectors(Inertial)Vectors(J2000)Vectors(LVLH)Vectors(VNC)Vectors(VVLH(CBF))Vectors(VVLH)Velocity Projected Covariance",
+            "All ConstraintsAnglesArticulationAstrogator Accel HistAstrogator LogAstrogator MCS Ephemeris SegmentsAstrogator Maneuver Ephemeris Block FinalAstrogator Maneuver Ephemeris Block HistoryAstrogator Maneuver Ephemeris Block InitialAstrogator Pass DataAstrogator Script SummaryAstrogator Targeter DataAstrogator Terminal Stopping ConditionAstrogator ValuesAttitude QuaternionsAttitude Segment DescriptionAttitude Segment ECF QuaternionsAttitude Segment Euler AnglesAttitude Segment QuaternionsAttitude Segment ScheduleAttitude Segment YPRAttitude YPRAvailable TimesAxes Choose AxesBeta AngleBody Axes OrientationBody Axes Orientation:YPR 123Body Axes Orientation:YPR 132Body Axes Orientation:YPR 213Body Axes Orientation:YPR 231Body Axes Orientation:YPR 312Body Axes Orientation:YPR 321Brouwer-Lyd Mean LongBrouwer-Lyd Mean ShortCartesian AccelerationCartesian PositionCartesian VelocityClassical ElementsClose Approach Compute ResultsClose Approach DefinitionClose Approach Filter SettingsCloseApproachCloseApproachByMinRangeCloseApproachBySSCCollection of Interval ListsConditionCondition SetConfigured ConstraintsCrdn Available TimesData Provider DetailData Provider SummaryDeckAccessDeckAccess DataDelaunay ElementsECF Attitude QuaternionsEclipse DefinitionEclipse Solar IntensityEclipse SummaryEclipse TimesEcliptic CrossingsElement SetEphemeris DiffEphemeris Diff in Curvilinear CoordinatesEquinoctial ElementsEuler AnglesGeo Station Keeping ElementsGravity ModelGround Ellipse DefinitionHeadingIIRV User InputIntervalInterval ListKozai-Izsak MeanLLA StateLLR StateLOP Mean ElementsLaunch Window DefinitionLifetimeLighting AERLighting TimesLunar Eclipse Solar IntensityMCS SummaryManeuver SummaryMassMixed Spherical ElementsModel AreaModel LOD 0 ArticulationsModel LOD 1 ArticulationsModified Equinoctial ElementsMoon AERMoon VectorParameter Set: AttitudeParameter Set: Cartographic TrajectoryParameter Set: OrbitParameter Set: TrajectoryParameter Set: VectorPass Event TimesPassesPlanes Choose SystemPlanes(Fixed)Planes(ICRF)Planes(Inertial)Planes(J2000)Pointing Covariance (Projection)Points Choose PlanePoints Choose SystemPoints(Fixed)Points(ICRF)Points(Inertial)Points(J2000)Pos Vel Projected CovariancePos Vel Rotated CovariancePosition CovariancePosition Covariance Choose AxesPosition Covariance CrossSectionPosition Covariance CrossSection Choose PlanePosition Covariance ProjectionPosition Covariance Projection Choose PlanePosition Covariance in AxesPrecision PassesPropagator InputsRIC CoordinatesRelative MotionSEET Debris FluxSEET GCR Differential Fluence by EnergySEET GCR Differential Flux by EnergySEET GCR Integral Fluence by EnergySEET GCR Integral Flux by EnergySEET GCR ModelSEET Magnetic ConjugacySEET Magnetic CoordinatesSEET Magnetic FieldSEET Magnetic Field ModelSEET Meteor FluxSEET Particle Distribution FluenceSEET Particle FluenceSEET Particle Flux ModelSEET Radiation Accumulated DoseSEET Radiation Accumulated Dose By ThicknessSEET Radiation Average Dose RateSEET Radiation Average Dose Rate By ThicknessSEET Radiation Dose DepthSEET Radiation Dose RateSEET Radiation Dose Rate By ThicknessSEET Radiation FluxSEET Radiation Flux by EnergySEET Radiation Integral FluxSEET Radiation Integral Flux by EnergySEET Radiation ModelSEET SAA Contour SettingsSEET SAA Crossing TimesSEET SAA Flux IntensitySEET SEP Energy by FluenceSEET SEP Fluence by Probability per EnergySEET SEP ModelSEET Vehicle TemperatureSEET Vehicle Temperature ModelSTM EigendecompositionScalar CalculationsSegment SummaryShadow LLASolar Apparent TimeSolar IntensitySolar Panel AnglesSolar Panel AreaSolar Panel Area No SumSolar Panel PowerSolar Panel Power No SumSolar Specular PointSpherical ElementsState Transition MatrixSun VectorSwath PointsTLE Residual DataTLE Set DataTLE Summary DataTime ArrayTime InstantTrue Anomaly StepUser Supplied DataVector Choose AxesVector Choose PlaneVectors(Body)Vectors(Fixed)Vectors(Fixed_VVLH)Vectors(ICRF)Vectors(Inertial)Vectors(J2000)Vectors(LVLH)Vectors(VNC)Vectors(VVLH(CBF))Vectors(VVLH)Velocity Projected Covariance",
             sAllNames,
         )
 
@@ -2227,13 +2227,13 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             # Arguments are the EventArray and the object's start and stop times
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
@@ -2270,10 +2270,10 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
                 EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
@@ -2325,13 +2325,13 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
@@ -2354,10 +2354,10 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             # DataProviderResult oResult2 = ((DataProviderTimeVarying)oProvider).ExecEventArray(EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000");
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
@@ -2429,10 +2429,10 @@ class EarlyBoundTests(TestBase):
             # Get the Time Event Array that will be used for testing
             EventArrayName: str = "TestTimeArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
@@ -2453,10 +2453,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertAlmostEqual(4432.522791342938, float(arValues[2]), delta=1.0)
             Assert.assertAlmostEqual(-2995.723486981184, float(arValues[3]), delta=1.0)
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
                 EventArrayTestObject2, elemCols
@@ -3347,17 +3347,17 @@ class EarlyBoundTests(TestBase):
         # logger.WriteLine("\tName = {0}, Type = {1}, IsGroup = {2}",
         # 	oInfo.Name, oInfo.Type, oInfo.IsGroup());
         Assert.assertFalse(oInfo.is_group())
-
         oProvider: "IDataProvider" = IDataProvider(oInfo)
         Assert.assertIsNotNone(oProvider)
-        Assert.assertEqual(7, oProvider.elements.count)
+        Assert.assertEqual(8, oProvider.elements.count)
         Assert.assertEqual("Constraint", oProvider.elements[0].name)
         Assert.assertEqual("Value", oProvider.elements[1].name)
-        Assert.assertEqual("Value with Units", oProvider.elements[2].name)
-        Assert.assertEqual("Action", oProvider.elements[3].name)
-        Assert.assertEqual("Max Time Step", oProvider.elements[4].name)
-        Assert.assertEqual("Max Relative Motion", oProvider.elements[5].name)
-        Assert.assertEqual("To Classes", oProvider.elements[6].name)
+        Assert.assertEqual("Display Name", oProvider.elements[2].name)
+        Assert.assertEqual("Value with Units", oProvider.elements[3].name)
+        Assert.assertEqual("Action", oProvider.elements[4].name)
+        Assert.assertEqual("Max Time Step", oProvider.elements[5].name)
+        Assert.assertEqual("Max Relative Motion", oProvider.elements[6].name)
+        Assert.assertEqual("To Classes", oProvider.elements[7].name)
 
         iIndex: int = 0
         while iIndex < oProvider.elements.count:
@@ -3747,11 +3747,11 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(startTime)
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(stopTime)
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -3819,10 +3819,10 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Start Time", "Stop Time", "Duration"]
             oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_elements_event_array(
@@ -3859,10 +3859,10 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
@@ -3895,11 +3895,11 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(startTime)
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(stopTime)
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 

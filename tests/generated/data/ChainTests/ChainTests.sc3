@@ -236,33 +236,6 @@ BEGIN SceneWindow
                     BaseOn		 Yes
                 END
             EndCentralBody
-            BeginCentralBody "Moon"
-                Show		 Yes
-                Textured		 Yes
-                AltOffset		 0
-                Color		 #ffffff
-                SpecularColor		 #545454
-                Shininess		 40
-                ShowWater		 No
-                ShowUmbraCone		 No
-                ShowPenumbraCone		 No
-                ShowPenumbraLimit		 No
-                ShowSubsolarPoint		 No
-                _AGI_PIBEGINTERRAINIMAGECALLDATA "SRC"
-                    BlendMode		 Value
-                    BlendFactor		 1
-                    BlendAltitudeLowerFactor		 1
-                    BlendAltitudeUpperFactor		 0
-                    BlendAltitudeLowerAltitude		 500000
-                    BlendAltitudeUpperAltitude		 2500000
-                    TextureRole		 Day
-                    URI		 "file:///Moon.jp2"
-                    BeginImageSetDefOn
-                    END
-                    InBase		 Yes
-                    BaseOn		 Yes
-                END
-            EndCentralBody
             BeginCentralBody "Sun"
                 Show		 Yes
                 Textured		 No
@@ -284,6 +257,33 @@ BEGIN SceneWindow
                     BlendAltitudeUpperAltitude		 2500000
                     TextureRole		 Day
                     URI		 "file:///Sun.jp2"
+                    BeginImageSetDefOn
+                    END
+                    InBase		 Yes
+                    BaseOn		 Yes
+                END
+            EndCentralBody
+            BeginCentralBody "Moon"
+                Show		 Yes
+                Textured		 Yes
+                AltOffset		 0
+                Color		 #ffffff
+                SpecularColor		 #545454
+                Shininess		 40
+                ShowWater		 No
+                ShowUmbraCone		 No
+                ShowPenumbraCone		 No
+                ShowPenumbraLimit		 No
+                ShowSubsolarPoint		 No
+                _AGI_PIBEGINTERRAINIMAGECALLDATA "SRC"
+                    BlendMode		 Value
+                    BlendFactor		 1
+                    BlendAltitudeLowerFactor		 1
+                    BlendAltitudeUpperFactor		 0
+                    BlendAltitudeLowerAltitude		 500000
+                    BlendAltitudeUpperAltitude		 2500000
+                    TextureRole		 Day
+                    URI		 "file:///Moon.jp2"
                     BeginImageSetDefOn
                     END
                     InBase		 Yes
@@ -376,12 +376,12 @@ BEGIN SceneWindow
                 ShowLabel		 No
             EndCentralBody
             BeginCentralBody
-                Name		 "Moon"
-                ShowLabel		 Yes
-            EndCentralBody
-            BeginCentralBody
                 Name		 "Sun"
                 ShowLabel		 No
+            EndCentralBody
+            BeginCentralBody
+                Name		 "Moon"
+                ShowLabel		 Yes
             EndCentralBody
         END CentralBodyOpts
         isShowingOverlay		 Yes
