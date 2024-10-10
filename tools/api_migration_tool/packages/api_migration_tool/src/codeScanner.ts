@@ -142,10 +142,11 @@ export class CodeScanner {
       );
     }
 
-    const configOptions = new ConfigOptions(
-      this.rootDirectory!,
-      this.options.strict ? "strict" : undefined
-    );
+    const configOptions = new ConfigOptions(this.rootDirectory!);
+
+    if (this.options.strict) {
+      configOptions.initializeTypeCheckingMode("strict");
+    }
 
     configOptions.defaultPythonPlatform = this.options.pythonPlatform;
 
@@ -265,10 +266,10 @@ export class CodeScanner {
       for (const symbolOccurence of symbolReference.occurrences) {
         result.push(
           new CodeEdit(
-            symbolOccurence.uri.getFilePath(),
-            symbolOccurence.range.start.line,
-            symbolOccurence.range.start.character,
-            symbolOccurence.range.end.character,
+            symbolOccurence.location.uri.getFilePath(),
+            symbolOccurence.location.range.start.line,
+            symbolOccurence.location.range.start.character,
+            symbolOccurence.location.range.end.character,
             symbolReference.newName
           )
         );

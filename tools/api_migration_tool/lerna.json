@@ -1,0 +1,13 @@
+{
+    "packages": [
+        "packages/*"
+    ],
+    "version": "0.1.000",
+    "command": {
+        "version": {
+            "push": false,
+            "tagVersionPrefix": "",
+            "message": "Published %s"
+        }
+    }
+}

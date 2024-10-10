@@ -1,12 +1,12 @@
 import { Program } from "pyright-internal/analyzer/program";
 import { ConsoleInterface } from "pyright-internal/common/console";
-import {
-  ServiceProvider,
-  SourceFileInfo,
-} from "pyright-internal/common/extensibility";
-import { DocumentRange } from "pyright-internal/common/textRange";
+import { SourceFileInfo } from "pyright-internal/common/extensibility";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 import { Uri } from "pyright-internal/common/uri/uri";
-import { FindReferencesTreeWalker } from "pyright-internal/languageService/referencesProvider";
+import {
+  FindReferencesTreeWalker,
+  LocationWithNode,
+} from "pyright-internal/languageService/referencesProvider";
 import { CancellationTokenSource } from "vscode-jsonrpc";
 
 import { SymbolRenameRecord } from "./symbolRenameRecord";
@@ -15,7 +15,7 @@ export class Reference {
   constructor(
     readonly oldName: string,
     readonly newName: string,
-    readonly occurrences: DocumentRange[]
+    readonly occurrences: LocationWithNode[]
   ) {}
 }
 

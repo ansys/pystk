@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { ConsoleInterface } from "pyright-internal/common/console";
 import { Uri } from "pyright-internal/common/uri/uri";
 
-import { ServiceProvider } from "pyright-internal/common/extensibility";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 import { getPathRelativeToRoot } from "./fileUtilities";
 
 export class CodeEdit {

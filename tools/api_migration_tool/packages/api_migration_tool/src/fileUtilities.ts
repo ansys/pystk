@@ -1,7 +1,7 @@
 import Path from "path";
 import { ConsoleInterface } from "pyright-internal/common/console";
-import { ServiceProvider } from "pyright-internal/common/extensibility";
 import { FileSystem } from "pyright-internal/common/fileSystem";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 import { Uri } from "pyright-internal/common/uri/uri";
 import xml2js from "xml2js";
 

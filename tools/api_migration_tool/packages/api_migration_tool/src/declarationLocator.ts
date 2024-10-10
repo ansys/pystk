@@ -1,8 +1,8 @@
 import {
   ProgramView,
   ReferenceUseCase,
-  ServiceProvider,
 } from "pyright-internal/common/extensibility";
+import { ServiceProvider } from "pyright-internal/common/serviceProvider";
 import { Position } from "pyright-internal/common/textRange";
 import { Uri } from "pyright-internal/common/uri/uri";
 import { DocumentSymbolProvider } from "pyright-internal/languageService/documentSymbolProvider";
