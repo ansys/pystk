@@ -59,7 +59,7 @@ html_theme_options = {
     "logo": "pyansys",
     "static_search": {
         "limit": 10,
-        "min_chars_for_search": 2,
+        "minMatchCharLength": 2,
     },
 }
 html_static_path = ["_static"]
