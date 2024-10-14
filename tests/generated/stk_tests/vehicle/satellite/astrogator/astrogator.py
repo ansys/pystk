@@ -3941,12 +3941,9 @@ longitude = 121;"""
                 rttip2: "IRuntimeTypeInfoProvider" = clr.CastAs(pi.get_value(), IRuntimeTypeInfoProvider)
                 if rttip2 != None:
                     rtti2: "RuntimeTypeInfo" = rttip2.provide_runtime_type_info
-
-                    name: "PropertyInfo" = rtti2.properties[0]
-                    Assert.assertEqual(enumChoices[i].name, str(name.get_value()))
-                    value: "PropertyInfo" = rtti2.properties[1]
-                    rttiValue: typing.Any = value.get_value()
-                    Assert.assertEqual(enumChoices[i].value, int(rttiValue))
+                    EarlyBoundTests.ScriptingToolParametersCheckNameValue(
+                        enumChoices[i].name, enumChoices[i].value, rtti2
+                    )
 
                 i += 1
 
@@ -4208,6 +4205,14 @@ longitude = 121;"""
         # endregion
 
         (IStkObject(sat)).unload()
+
+    @staticmethod
+    def ScriptingToolParametersCheckNameValue(expectedName: str, expectedValue: int, rtti2: "RuntimeTypeInfo"):
+        name: "PropertyInfo" = rtti2.properties[0]
+        Assert.assertEqual(expectedName, str(name.get_value()))
+        value: "PropertyInfo" = rtti2.properties[1]
+        rttiValue: typing.Any = value.get_value()
+        Assert.assertEqual(expectedValue, int(rttiValue))
 
     # endregion
 
