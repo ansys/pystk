@@ -34,7 +34,7 @@ Overview
               - Unloads a kml document. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
             * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.unload_all`
               - Unloads all kml documents associated with this central body. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
-            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.Subscribe`
+            * - :py:attr:`~ansys.stk.core.graphics.KmlGraphics.subscribe`
               - """Return an IKmlGraphicsEventHandler that is subscribed to handle events associated with this instance of KmlGraphics."""
 
     .. tab-item:: Properties

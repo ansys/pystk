@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.AdvCAT.time_period
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Get the time period for the close approach analysis.
 

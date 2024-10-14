@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.StkObjectCoverage.access_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     The object coverage's access interval.
 

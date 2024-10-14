@@ -1207,13 +1207,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(oInterval.use_scenario_interval)
         # Interval
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"]
-            .find_interval()
-            .interval.start,
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
             oInterval.analysis_interval.find_start_time(),
         )
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.event_intervals["AnalysisInterval"].find_interval().interval.stop,
+            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"].find_interval().interval.stop,
             oInterval.analysis_interval.find_stop_time(),
         )
         # UseScenarioInterval (false)

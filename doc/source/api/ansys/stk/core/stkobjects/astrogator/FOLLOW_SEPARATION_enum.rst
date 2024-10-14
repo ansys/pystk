@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~SPECIFY`
               - Specify Separation Conditions - specify separation conditions to define when the spacecraft will stop following the leader. Separation conditions will become apparent on a new tab - Separation.
 
-            * - :py:attr:`~AT_END_OF_LEADERS_EPHEM`
+            * - :py:attr:`~AT_END_OF_LEADERS_EPHEMERIS`
               - Separate at End of Leader's Ephemeris - the spacecraft will follow the leader to the end of the leader's ephemeris and then separate.
 
 

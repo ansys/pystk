@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: pass_data_epoch
     :canonical: ansys.stk.core.stkobjects.VehiclePassNumberingDateOfFirstPass.pass_data_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Get the start time of the first pass.
 

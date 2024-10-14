@@ -36,7 +36,7 @@ Overview
               - Gets or sets the minimum amplitude for solid tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.use_ocean_tides`
               - True if using ocean tides.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude`
               - Gets or sets the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.min_radius_percent`
               - Gets or sets the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
@@ -122,8 +122,8 @@ Property detail
 
     True if using ocean tides.
 
-.. py:property:: ocean_tide_min_amp
-    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amp
+.. py:property:: ocean_tide_min_amplitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.ocean_tide_min_amplitude
     :type: float
 
     Gets or sets the minimum amplitude for ocean tides; contributors that are below the minimum amplitude will not be factored into the computation. Uses SmallDistance Dimension.

@@ -36,7 +36,7 @@ Overview
               - Terminates the use of STK Engine. This must be the last call to STK Engine.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.use_software_renderer`
               - Configure engine graphics to use a software renderer in order to meet minimum graphics requirements. Enabling this option will result in significant performance impacts.
-            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.Subscribe`
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.subscribe`
               - """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
 
     .. tab-item:: Properties

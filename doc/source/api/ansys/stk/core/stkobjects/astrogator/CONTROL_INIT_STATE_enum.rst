@@ -67,16 +67,16 @@ Overview
             * - :py:attr:`~KEPLERIAN_ECCENTRICITY`
               - Eccentricity - the ratio of the distance between the foci to the major axis of the orbital ellipse. Dimensionless.
 
-            * - :py:attr:`~KEPLERIAN_INC`
+            * - :py:attr:`~KEPLERIAN_INCLINATION`
               - Inclination - the angle from the +Z axis of the coordinate system to the angular momentum vector of the spacecraft's orbit.
 
             * - :py:attr:`~KEPLERIAN_RAAN`
               - Right Ascension of Ascending Node - the angle between the X direction of the coordinate system and the point where the orbit crosses the X-Y plane in the +Z direction.
 
-            * - :py:attr:`~KEPLERIAN_SMA`
+            * - :py:attr:`~KEPLERIAN_SEMIMAJOR_AXIS`
               - Semimajor Axis - half the length of the major (longest) axis of the orbital ellipse.
 
-            * - :py:attr:`~KEPLERIAN_TA`
+            * - :py:attr:`~KEPLERIAN_TRUE_ANOMALY`
               - True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
 
             * - :py:attr:`~KEPLERIAN_W`
@@ -88,22 +88,22 @@ Overview
             * - :py:attr:`~CK`
               - Radiation Pressure (Albedo/Thermal) Coefficient (Ck) - the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all.
 
-            * - :py:attr:`~SPHERICAL_AZ`
+            * - :py:attr:`~SPHERICAL_AZIMUTH`
               - Velocity Azimuth - the angle in the spacecraft local horizontal plane between the projection of the velocity vector onto that plane and the local +Z direction measured as positive in the clockwise direction from north.
 
-            * - :py:attr:`~SPHERICAL_DEC`
+            * - :py:attr:`~SPHERICAL_DECLINATION`
               - Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
 
-            * - :py:attr:`~SPHERICAL_HORIZONTAL_FPA`
+            * - :py:attr:`~SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE`
               - Horizontal Flight Path Angle - the complement of the angle between the spacecraft velocity vector and the radius vector (90 deg minus the vertical flight path angle).
 
-            * - :py:attr:`~SPHERICAL_RA`
+            * - :py:attr:`~SPHERICAL_RIGHT_ASCENSION`
               - Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector.
 
-            * - :py:attr:`~SPHERICAL_R_MAGNITUDE`
+            * - :py:attr:`~SPHERICAL_RADIUS_MAGNITUDE`
               - Radius Magnitude - the magnitude of the spacecraft position vector.
 
-            * - :py:attr:`~SPHERICAL_V_MAGNITUDE`
+            * - :py:attr:`~SPHERICAL_VELOCITY_MAGNITUDE`
               - Velocity Magnitude - the magnitude of the spacecraft velocity vector.
 
             * - :py:attr:`~SRP_AREA`
@@ -112,43 +112,43 @@ Overview
             * - :py:attr:`~TANK_PRESSURE`
               - Tank Pressure - the fuel tank pressure.
 
-            * - :py:attr:`~TANK_TEMP`
+            * - :py:attr:`~TANK_TEMPERATURE`
               - Tank Temperature - the temperature of the fuel tank.
 
-            * - :py:attr:`~TARGET_VEC_IN_ASYMP_DEC`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_ASYMPTOTE_DECLINATION`
               - Declination of Incoming Asymptote - the declination of the incoming asymptote in the selected coordinate system.
 
-            * - :py:attr:`~TARGET_VEC_IN_ASYMP_RA`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_ASYMPTOTE_RIGHT_ASCENSION`
               - Right Ascension of Incoming Asymptote - the right ascension of the hyperbolic incoming asymptote in the selected coordinate system.
 
-            * - :py:attr:`~TARGET_VEC_IN_VEL_AZ_AT_PERIAPSIS`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_VELOCITY_AZIMUTH_AT_PERIAPSIS`
               - Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
 
-            * - :py:attr:`~TARGET_VEC_IN_C3`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_C3`
               - C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
 
-            * - :py:attr:`~TARGET_VEC_IN_RAD_OF_PERIAPSIS`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_RADIUS_OF_PERIAPSIS`
               - Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
 
-            * - :py:attr:`~TARGET_VEC_IN_TRUE_ANOMALY`
+            * - :py:attr:`~TARGET_VECTOR_INCOMING_TRUE_ANOMALY`
               - True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
 
-            * - :py:attr:`~TARGET_VEC_OUT_ASYMP_DEC`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_ASYMPTOTE_DECLINATION`
               - Declination of Outgoing Asymptote - the declination of the outgoing asymptote in the selected coordinate system.
 
-            * - :py:attr:`~TARGET_VEC_OUT_ASYMP_RA`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_ASYMPTOTE_RIGHT_ASCENSION`
               - Right Ascension of Outgoing Asymptote - the right ascension of the hyperbolic outgoing asymptote in the selected coordinate system.
 
-            * - :py:attr:`~TARGET_VEC_OUT_VEL_AZ_AT_PERIAPSIS`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_VELOCITY_AZIMUTH_AT_PERIAPSIS`
               - Velocity Azimuth at Periapsis - the inertial flight path azimuth of the trajectory measured at periapsis.
 
-            * - :py:attr:`~TARGET_VEC_OUT_C3`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_C3`
               - C3 Energy - the energy of the orbit, computed as - mu / a, where mu is the gravity constant of the central body and a is the semimajor axis.
 
-            * - :py:attr:`~TARGET_VEC_OUT_RAD_OF_PERIAPSIS`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_RADIUS_OF_PERIAPSIS`
               - Radius of Periapsis - distance from the center of mass of the central body to the periapsis of the hyperbolic orbit.
 
-            * - :py:attr:`~TARGET_VEC_OUT_TRUE_ANOMALY`
+            * - :py:attr:`~TARGET_VECTOR_OUTGOING_TRUE_ANOMALY`
               - True Anomaly - the angle from the periapsis of the orbit to the spacecraft's position vector, measured in the direction of spacecraft motion.
 
             * - :py:attr:`~MAX_FUEL_MASS`
@@ -163,7 +163,7 @@ Overview
             * - :py:attr:`~DELAUNAY_H`
               - H - Z component of orbital angular momentum, (H: G cos(inc)).
 
-            * - :py:attr:`~DELAUNAY_INC`
+            * - :py:attr:`~DELAUNAY_INCLINATION`
               - Inclination - The angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis.
 
             * - :py:attr:`~DELAUNAY_L`
@@ -175,10 +175,10 @@ Overview
             * - :py:attr:`~DELAUNAY_RAAN`
               - Right Ascension of Ascending Node - The angle from the inertial X axis to the ascending node measured in a right-handed sense about the inertial Z axis in the equatorial plane.
 
-            * - :py:attr:`~DELAUNAY_SEMI_LATUS_RECTUM`
+            * - :py:attr:`~DELAUNAY_SEMILATUS_RECTUM`
               - Semi-latus Rectum - Distance from focus to orbit at true anomaly of 90 degrees.
 
-            * - :py:attr:`~DELAUNAY_SMA`
+            * - :py:attr:`~DELAUNAY_SEMIMAJOR_AXIS`
               - Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
 
             * - :py:attr:`~DELAUNAY_W`
@@ -202,7 +202,7 @@ Overview
             * - :py:attr:`~EQUINOCTIAL_Q`
               - Q - With P, describes the orientation of the orbit plane, (Q: tan(inc/2) * cos(RAAN)).
 
-            * - :py:attr:`~EQUINOCTIAL_SMA`
+            * - :py:attr:`~EQUINOCTIAL_SEMIMAJOR_AXIS`
               - Semimajor Axis - Half the length of the major (longest) axis of the orbital ellipse.
 
             * - :py:attr:`~MIXED_SPHERICAL_ALTITUDE`
@@ -211,7 +211,7 @@ Overview
             * - :py:attr:`~MIXED_SPHERICAL_AZIMUTH`
               - Azimuth - The angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
 
-            * - :py:attr:`~MIXED_SPHERICAL_HORIZONTAL_FPA`
+            * - :py:attr:`~MIXED_SPHERICAL_HORIZONTAL_FLIGHT_PATH_ANGLE`
               - Horizontal Flight Path Angle - The complement of the angle between the inertial velocity vector and the radius vector.
 
             * - :py:attr:`~MIXED_SPHERICAL_LATITUDE`
@@ -220,13 +220,13 @@ Overview
             * - :py:attr:`~MIXED_SPHERICAL_LONGITUDE`
               - Longitude.
 
-            * - :py:attr:`~MIXED_SPHERICAL_VERTICAL_FPA`
+            * - :py:attr:`~MIXED_SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE`
               - Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
 
             * - :py:attr:`~MIXED_SPHERICAL_V_MAGNITUDE`
               - Velocity Magnitude - The magnitude of the inertial velocity vector.
 
-            * - :py:attr:`~SPHERICAL_VERTICAL_FPA`
+            * - :py:attr:`~SPHERICAL_VERTICAL_FLIGHT_PATH_ANGLE`
               - Vertical Flight Path Angle -  The angle between the inertial velocity vector and the radius vector.
 
             * - :py:attr:`~KEPLERIAN_APOAPSIS_ALTITUDE_SHAPE`
@@ -235,19 +235,19 @@ Overview
             * - :py:attr:`~KEPLERIAN_APOAPSIS_ALTITUDE_SIZE`
               - Apoapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of maximum radius in the orbit.
 
-            * - :py:attr:`~KEPLERIAN_APOAPSIS_RAD_SHAPE`
+            * - :py:attr:`~KEPLERIAN_APOAPSIS_RADIUS_SHAPE`
               - Apoapsis Radius - Shape Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
 
-            * - :py:attr:`~KEPLERIAN_APOAPSIS_RAD_SIZE`
+            * - :py:attr:`~KEPLERIAN_APOAPSIS_RADIUS_SIZE`
               - Apoapsis Radius - Size Parameter - Distance from the center of the central body to the point of maximum radius in the orbit.
 
-            * - :py:attr:`~KEPLERIAN_ARG_LAT`
+            * - :py:attr:`~KEPLERIAN_ARGUMENT_LATITUDE`
               - Argument of Latitude - The sum of the True Anomaly and the Argument of Perigee.
 
-            * - :py:attr:`~KEPLERIAN_ECCENTRICITY_ANOMALY`
+            * - :py:attr:`~KEPLERIAN_ECCENTRIC_ANOMALY`
               - Eccentric Anomaly - Angle measured with an origin at the center of the ellipse from the direction of perigee to a point on a circumscribing circle from which a line perpendicular to the SMA intersects the position of the satellite on the ellipse.
 
-            * - :py:attr:`~KEPLERIAN_LAN`
+            * - :py:attr:`~KEPLERIAN_LONGITUDE_OF_ASCENDING_NODE`
               - Longitude of Ascending Node - Longitude of the Ascending Node is the Earth-fixed longitude where the satellite has crossed the inertial equator from south to north based on an assumption of two-body motion.
 
             * - :py:attr:`~KEPLERIAN_MEAN_ANOMALY`
@@ -262,34 +262,34 @@ Overview
             * - :py:attr:`~KEPLERIAN_PERIAPSIS_ALTITUDE_SIZE`
               - Periapsis Altitude - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
 
-            * - :py:attr:`~KEPLERIAN_PERIAPSIS_RAD_SHAPE`
+            * - :py:attr:`~KEPLERIAN_PERIAPSIS_RADIUS_SHAPE`
               - Periapsis Radius - Shape Parameter - Distance from the center of the central body to the point of minimum radius in the orbit.
 
-            * - :py:attr:`~KEPLERIAN_PERIAPSIS_RAD_SIZE`
+            * - :py:attr:`~KEPLERIAN_PERIAPSIS_RADIUS_SIZE`
               - Periapsis Radius - Size Parameter - Distance from the surface of the central body to the point of minimum radius in the orbit.
 
             * - :py:attr:`~KEPLERIAN_PERIOD`
               - Period - The duration of one orbit, based on assumed two-body motion.
 
-            * - :py:attr:`~KEPLERIAN_TIME_PAST_AN`
+            * - :py:attr:`~KEPLERIAN_TIME_PAST_ASCENDING_NODE`
               - Time Past Ascending Node - The elapsed time since the last ascending node crossing based on assumed two-body motion.
 
             * - :py:attr:`~KEPLERIAN_TIME_PAST_PERIAPSIS`
               - Time Past Periapsis - The elapsed time since the last perigee passage based on assumed two-body motion.
 
-            * - :py:attr:`~SPHERICAL_RANGE_RATE_DEC`
+            * - :py:attr:`~SPHERICAL_RANGE_RATE_DECLINATION`
               - Declination - the angle from the X-Y plane of the coordinate system to the spacecraft position vector.
 
-            * - :py:attr:`~SPHERICAL_RANGE_RATE_RA`
+            * - :py:attr:`~SPHERICAL_RANGE_RATE_RIGHT_ASCENSION`
               - Right Ascension - angle measured in the inertial equatorial plane from the inertial X axis in a right-handed sense about the inertial Z axis to the spacecraft position vector.
 
             * - :py:attr:`~SPHERICAL_RANGE_RATE_RANGE`
               - Range - distance of an object from the center point of the coordinate system.
 
-            * - :py:attr:`~SPHERICAL_RANGE_RATE_DEC_RATE`
+            * - :py:attr:`~SPHERICAL_RANGE_RATE_DECLINATION_RATE`
               - Declination Rate - the change of the declination angle over time.
 
-            * - :py:attr:`~SPHERICAL_RANGE_RATE_RA_RATE`
+            * - :py:attr:`~SPHERICAL_RANGE_RATE_RIGHT_ASCENSION_RATE`
               - Right Ascension Rate - the change of the right ascension angle over time.
 
             * - :py:attr:`~SPHERICAL_RANGE_RATE_RANGE_RATE`

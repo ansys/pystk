@@ -9,7 +9,12 @@
 .. _Ansys Systems Tool Kit: https://www.ansys.com/products/missions/ansys-stk
 .. _STK: https://www.ansys.com/products/missions/ansys-stk
 .. _STK distribution artifacts: https://support.agi.com/downloads/5/
+.. _STK Programming Help: https://help.agi.com/stkdevkit/index.htm
 .. _PyAnsys: https://docs.pyansys.com
+
+.. Python documentation
+
+.. _Python Enhancement Proposals (PEP8) Style Guide: https://peps.python.org/pep-0008/
 
 
 .. Python libraries

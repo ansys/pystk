@@ -3319,7 +3319,7 @@ class EarlyBoundTests(TestBase):
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
             fixed.orientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
         )
-        euler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_212
+        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212
         fixed.orientation.assign(euler)
 
         # *** Quaternion

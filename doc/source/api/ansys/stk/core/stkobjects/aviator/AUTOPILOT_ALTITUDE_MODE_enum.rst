@@ -34,10 +34,10 @@ Overview
             * - :py:attr:`~AUTOPILOT_HOLD_INIT_ALTITUDE_RATE`
               - The hold initial altitude rate mode.
 
-            * - :py:attr:`~AUTOPILOT_SPECIFY_FPA`
+            * - :py:attr:`~AUTOPILOT_SPECIFY_FLIGHT_PATH_ANGLE`
               - The specify wind frame flight path angle mode.
 
-            * - :py:attr:`~AUTOPILOT_HOLD_INIT_FPA`
+            * - :py:attr:`~AUTOPILOT_HOLD_INIT_FLIGHT_PATH_ANGLE`
               - The hold initial wind frame flight path angle mode.
 
             * - :py:attr:`~AUTOPILOT_BALLISTIC`

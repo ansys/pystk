@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: list_of_intervals
     :canonical: ansys.stk.core.stkobjects.AccessTimeEventIntervals.list_of_intervals
-    :type: ITimeToolEventIntervalList
+    :type: ITimeToolTimeIntervalList
 
     A list of timeline intervals used to define a list of allowed access intervals.
 

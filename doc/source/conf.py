@@ -12,6 +12,7 @@ import zipfile
 import sphinx
 from sphinx.util import logging
 from sphinx.util.display import status_iterator
+from sphinx.errors import NoUri
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -58,12 +59,13 @@ html_theme_options = {
     "logo": "pyansys",
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
+html_css_files = ["css/highlight.css"]
 
 # Sphinx extensions
 extensions = [
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx_design",
@@ -114,6 +116,17 @@ suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
     # https://github.com/ansys-internal/pystk/issues/414
     "ref.python",
+    # Sphinx-design downloads some font-awesome icons that conflict with the
+    # ones in pydata-sphinx-theme.
+    "design.fa-build",
+    # If Jinja is used to skip the rendering of the examples and the API reference,
+    # Sphinx design complains about the indentation of these cards.
+    "design.grid",
+    # Some pages, like the API reference, follow a template. This template
+    # contains some sections for every object. Because multiple objects are
+    # documented, the same sections repeat across the documentation, fooling
+    # `autosectionlabel` into thinking that the same section is being repeated.
+    "autosectionlabel.*",
 ]
 
 # The suffix(es) of source filenames
@@ -132,6 +145,15 @@ links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
 
+# -- Linkcheck configuration -------------------------------------------------
+user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_ignore = [
+    "https://www.ansys.com/*",
+    # Requires sign-in
+    f"https://github.com/{user_repo}/*",
+    "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
+]
 
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
@@ -279,8 +301,17 @@ ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
+WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
+if not WHEELHOUSE_PATH.exists():
+    linkcheck_ignore.append(r".*/wheelhouse/.*")
+
+jinja_globals = {
+    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
+    "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
+    "STK_VERSION": "12.9.0",
+}
+
 jinja_contexts = {
-    "install_guide": {"stk_version": "12.9.0"},
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
@@ -292,9 +323,23 @@ jinja_contexts = {
         "source": ARTIFACTS_SDIST.name,
         "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
         "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
-        "platforms": ["Windows", "Linux"],
+    },
+    # NOTE: wheelhouse artifacts are only available during CI/CD runs
+    "wheelhouse": {
+        "wheelhouse": {
+            platform: {
+                python: {
+                    target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                    for target in ["all", "grpc", "visualization"]
+                }
+                for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
+            }
+            for platform in ["windows", "ubuntu"]
+        }
     },
 }
+
+print(jinja_contexts["wheelhouse"]["wheelhouse"])
 
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
@@ -308,19 +353,13 @@ autodoc_default_options = {
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
 
-# -- Linkcheck configuration -------------------------------------------------
-user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Edg/123.0.2420.81"
-linkcheck_ignore = [
-    "https://www.ansys.com/*",
-    # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-]
-
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- LaTeX configuration
+latex_elements = {
+    "extraclassoptions": "openany,oneside",
+}
 
 # -- Sphinx application setup ------------------------------------------------
 
@@ -505,6 +544,25 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def ignore_examples_and_api_refs(app, env, pending_xref, node):
+    """Ignore any references targeting to the examples and API sections.
+
+    Parameters
+    ----------
+    app : ~sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+    env : ~sphinx.environment.BuildEnvironment
+        Environment used to build the documentation.
+    pending_xref : dict
+        Cross-reference information.
+    node : ~docutils.nodes.Node
+        Object representing the information in the documentation.
+
+    """
+    if pending_xref["reftarget"] in ["examples", "api reference"]:
+        raise NoUri
+
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -526,3 +584,6 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
+
+    if not BUILD_EXAMPLES or BUILD_API:
+        app.connect("missing-reference", ignore_examples_and_api_refs)

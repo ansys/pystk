@@ -28,17 +28,32 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# TODO: the approval of PEP 735 should allow the usage of dependency groups
+# https://peps.python.org/pep-0735/
+all = [
+    "grpcio",
+    "protobuf",
+    "jupyter-rfb==0.4.4",
+    "numpy==2.1.1",
+    "Pillow==10.4.0",
+    "simplejpeg==1.7.6",
+    "sidecar==0.7.0"
+]
+grpc = [
+    "grpcio",
+    "protobuf",
+]
 tests = [
-    "pytest==8.3.2",
+    "pytest==8.3.3",
     "pytest-cov==5.0.0",
-    "pytz==2024.1",
+    "pytz==2024.2",
     "parameterized==0.9.0",
-    "pandas==2.2.2",
-    "numpy==2.1.0"
+    "pandas==2.2.3",
+    "numpy==2.1.1"
 ]
 doc = [
-    "ansys-sphinx-theme==1.0.7",
-    "build==1.2.1",
+    "ansys-sphinx-theme==1.0.11",
+    "build==1.2.2",
     "jupyterlab==4.2.5",
     "jupytext==1.16.4",
     "jupyter-server==2.14.2",
@@ -50,19 +65,19 @@ doc = [
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
-    "pandas==2.2.2",
+    "pandas==2.2.3",
     "matplotlib==3.9.2"
 ]
 visualization = [
     "jupyter-rfb==0.4.4",
-    "numpy==2.1.0",
+    "numpy==2.1.1",
     "Pillow==10.4.0",
-    "simplejpeg==1.7.4",
+    "simplejpeg==1.7.6",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
-    "bandit==1.7.9",
-    "safety==3.2.6",
+    "bandit==1.7.10",
+    "safety==3.2.8",
 ]
 
 [tool.flit.module]

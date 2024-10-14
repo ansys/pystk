@@ -125,24 +125,24 @@ class DisplayTimesHelper(object):
         )
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.events["AnalysisStartTime"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.children["Facility1"].vgt.event_interval_collections["LightingIntervals"],
+            self.m_oRoot.current_scenario.children["Facility1"].vgt.time_interval_collections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdnFac)
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(
@@ -151,7 +151,7 @@ class DisplayTimesHelper(object):
         )
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.event_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(

@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.interpolation
-    :type: IAnalysisWorkbenchInterp
+    :type: IAnalysisWorkbenchInterpolator
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: CRDN_SAVE_DATA_OPTION
+    :type: SAVE_DATA_TYPE
 
     Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 

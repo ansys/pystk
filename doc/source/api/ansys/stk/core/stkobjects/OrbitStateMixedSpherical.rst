@@ -30,9 +30,9 @@ Overview
               - Measured from -180.0 deg to +360.0 deg. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.altitude`
               - Gets or sets the object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.fpa_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle_type`
               - Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle`
               - Value of Vertical or Horizontal Flight Path Angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateMixedSpherical.azimuth`
               - Azimuth the angle in the satellite local horizontal plane between the projection of the inertial velocity vector onto this plane and the local north direction measured as positive in the clockwise direction.
@@ -86,14 +86,14 @@ Property detail
 
     Gets or sets the object's position above or below the reference ellipsoid. Altitude is measured along a normal to the surface of the reference ellipsoid. Uses Distance Dimension.
 
-.. py:property:: fpa_type
-    :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.fpa_type
-    :type: MIXED_SPHERICAL_FPA
+.. py:property:: flight_path_angle_type
+    :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle_type
+    :type: MIXED_SPHERICAL_FLIGHT_PATH_ANGLE
 
     Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
 
-.. py:property:: fpa
-    :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.fpa
+.. py:property:: flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle
     :type: IFlightPathAngle
 
     Value of Vertical or Horizontal Flight Path Angle.
@@ -118,7 +118,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.state_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

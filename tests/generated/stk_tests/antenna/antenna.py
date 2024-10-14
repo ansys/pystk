@@ -1588,8 +1588,8 @@ class EarlyBoundTests(TestBase):
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
             satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
             satelliteProp: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
-            ephemInterval: "TimeToolEventIntervalSmartInterval" = clr.CastAs(
-                satelliteProp.ephemeris_interval, TimeToolEventIntervalSmartInterval
+            ephemInterval: "TimeToolTimeIntervalSmartInterval" = clr.CastAs(
+                satelliteProp.ephemeris_interval, TimeToolTimeIntervalSmartInterval
             )
             ephemInterval.set_explicit_interval("1 Jan 2022 10:00:00.000", "2 Jan 2022 10:00:00.000")
             satelliteProp.propagate()
