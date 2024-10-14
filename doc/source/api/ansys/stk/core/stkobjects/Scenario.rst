@@ -217,13 +217,13 @@ Property detail
 
 .. py:property:: analysis_interval
     :canonical: ansys.stk.core.stkobjects.Scenario.analysis_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Allows the user to configure the scenario's analysis time period.
 
 .. py:property:: analysis_epoch
     :canonical: ansys.stk.core.stkobjects.Scenario.analysis_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Allows the user to configure the scenario's analysis epoch.
 

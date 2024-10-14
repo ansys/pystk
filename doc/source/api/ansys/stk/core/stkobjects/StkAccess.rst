@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.StkAccess.vgt
-    :type: IAnalysisWorkbenchProvider
+    :type: IAnalysisWorkbenchComponentProvider
 
     Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
 
@@ -206,14 +206,14 @@ Method detail
 
 
 
-.. py:method:: specify_access_event_intervals(self, pEventIntervalList: ITimeToolEventIntervalList) -> None
+.. py:method:: specify_access_event_intervals(self, pEventIntervalList: ITimeToolTimeIntervalList) -> None
     :canonical: ansys.stk.core.stkobjects.StkAccess.specify_access_event_intervals
 
     Access is computed using the intervals in the specified event interval list.
 
     :Parameters:
 
-    **pEventIntervalList** : :obj:`~ITimeToolEventIntervalList`
+    **pEventIntervalList** : :obj:`~ITimeToolTimeIntervalList`
 
     :Returns:
 

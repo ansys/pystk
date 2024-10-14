@@ -597,7 +597,7 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics3DControlBase)
-    def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
+    def subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
         """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics3DControlBase."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
     
@@ -1054,7 +1054,7 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, Graphics2DControlBase)
-    def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
+    def subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
         """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics2DControlBase."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
     
@@ -1559,7 +1559,7 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXApplication)
-    def Subscribe(self) -> ISTKXApplicationEventHandler:
+    def subscribe(self) -> ISTKXApplicationEventHandler:
         """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
     

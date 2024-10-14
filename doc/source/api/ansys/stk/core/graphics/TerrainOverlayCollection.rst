@@ -52,7 +52,7 @@ Overview
               - Brings the terrain overlay to the front of the collection so it is rendered first or on the bottom.
             * - :py:attr:`~ansys.stk.core.graphics.TerrainOverlayCollection.send_to_back`
               - Send the terrain overlay to the back of the collection so it is rendered last or on the top.
-            * - :py:attr:`~ansys.stk.core.graphics.TerrainOverlayCollection.Subscribe`
+            * - :py:attr:`~ansys.stk.core.graphics.TerrainOverlayCollection.subscribe`
               - """Return an ITerrainOverlayCollectionEventHandler that is subscribed to handle events associated with this instance of TerrainOverlayCollection."""
 
     .. tab-item:: Properties

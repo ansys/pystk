@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: signal_path_reference_system
     :canonical: ansys.stk.core.vgt.TimeToolSignalDelayBasic.signal_path_reference_system
-    :type: CRDN_SIGNAL_PATH_REFERENCE_SYSTEM
+    :type: SIGNAL_PATH_REFERENCE_SYSTEM
 
     Get the type of signal path reference system which can be set to use STK Access default (see STK Help for further details), Solar system barycenter inertial reference, central body inertial reference or custom reference system...
 
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: speed_option
     :canonical: ansys.stk.core.vgt.TimeToolSignalDelayBasic.speed_option
-    :type: CRDN_SPEED_OPTIONS
+    :type: SPEED_TYPE
 
     Get the speed option which determines whether to use the speed of light or a custom speed value.
 

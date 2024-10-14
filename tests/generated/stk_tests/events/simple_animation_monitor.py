@@ -52,7 +52,7 @@ class SimpleAnimationUpdateMonitor(IObjectModelEventMonitor):
             self._stopTime = float(str(scenario.animation.anim_cycle_time))
             self._startTime = float(str(scenario.animation.start_time))
 
-        self.csToPy_OnAnimUpdateSubscription = (self._root).Subscribe()
+        self.csToPy_OnAnimUpdateSubscription = (self._root).subscribe()
         self.csToPy_OnAnimUpdateSubscription.on_anim_update += IAgStkObjectRootEvents_OnAnimUpdateEventHandler(
             self.root_OnAnimUpdate
         )

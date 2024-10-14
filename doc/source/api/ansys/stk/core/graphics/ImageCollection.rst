@@ -52,7 +52,7 @@ Overview
               - Brings the globe image overlay to the front of the collection so it is rendered first or on the bottom.
             * - :py:attr:`~ansys.stk.core.graphics.ImageCollection.send_to_back`
               - Send the globe image overlay to the back of the collection so it is rendered last or on the top.
-            * - :py:attr:`~ansys.stk.core.graphics.ImageCollection.Subscribe`
+            * - :py:attr:`~ansys.stk.core.graphics.ImageCollection.subscribe`
               - """Return an IImageCollectionEventHandler that is subscribed to handle events associated with this instance of ImageCollection."""
 
     .. tab-item:: Properties

@@ -3,7 +3,7 @@ VectorGeometryToolVectorPlugin
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorPlugin
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    A VGT vector plugin.
 
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorPlugin.prog_id`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorPlugin.ProgID`
               - A programmatic ID associated with the component.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorPlugin.display_name`
               - Plugin's Display Name associated with the COM plugin.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prog_id
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorPlugin.prog_id
+.. py:property:: ProgID
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorPlugin.ProgID
     :type: str
 
     A programmatic ID associated with the component.

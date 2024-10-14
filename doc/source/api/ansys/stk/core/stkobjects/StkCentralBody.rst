@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.StkCentralBody.vgt
-    :type: IAnalysisWorkbenchProvider
+    :type: IAnalysisWorkbenchComponentProvider
 
     Returns the central body's Vector Geometry Tool provider.
 

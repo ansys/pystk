@@ -286,11 +286,11 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 # Create a vector between the satellite and facility objects:
 
 # +
-from ansys.stk.core.vgt import VECTOR_GEOMETRY_TOOL_VECTOR_TYPE
+from ansys.stk.core.vgt import VECTOR_TYPE
 
 
 vector = facility.vgt.vectors.factory.create(
-    "FromTo", "Vector description", VECTOR_GEOMETRY_TOOL_VECTOR_TYPE.DISPLACEMENT
+    "FromTo", "Vector description", VECTOR_TYPE.DISPLACEMENT
 )
 vector.destination.set_point(satellite.vgt.points.item("Center"))
 # -

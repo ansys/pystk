@@ -212,10 +212,10 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
         satellite: "Satellite" = clr.CastAs(stkRoot.get_object_from_path("/Satellite/GeoEye"), Satellite)
 
-        vgtProvider: "AnalysisWorkbenchProvider" = stkRoot.vgt_root.get_provider("/Satellite/GeoEye")
+        vgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.vgt_root.get_provider("/Satellite/GeoEye")
         twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
-        startEpoch: "TimeToolEventSmartEpoch" = twoBody.ephemeris_interval.get_start_epoch()
-        stopEpoch: "TimeToolEventSmartEpoch" = twoBody.ephemeris_interval.get_stop_epoch()
+        startEpoch: "TimeToolInstantSmartEpoch" = twoBody.ephemeris_interval.get_start_epoch()
+        stopEpoch: "TimeToolInstantSmartEpoch" = twoBody.ephemeris_interval.get_stop_epoch()
 
         scenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 

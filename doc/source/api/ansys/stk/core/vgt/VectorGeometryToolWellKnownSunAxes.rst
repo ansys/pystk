@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.fixed`
               - Sun's Fixed axes.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.ICRF`
               - Sun's ICRF.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.inertial`
               - Sun's Inertial axes (as defined in STK).
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.j2000`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.J2000`
               - The Sun's J2000 axes.
 
 
@@ -46,8 +46,8 @@ Property detail
 
     Sun's Fixed axes.
 
-.. py:property:: icrf
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.icrf
+.. py:property:: ICRF
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.ICRF
     :type: IVectorGeometryToolAxes
 
     Sun's ICRF.
@@ -58,8 +58,8 @@ Property detail
 
     Sun's Inertial axes (as defined in STK).
 
-.. py:property:: j2000
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.j2000
+.. py:property:: J2000
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownSunAxes.J2000
     :type: IVectorGeometryToolAxes
 
     The Sun's J2000 axes.

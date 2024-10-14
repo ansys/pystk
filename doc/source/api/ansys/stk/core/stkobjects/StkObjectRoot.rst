@@ -66,7 +66,7 @@ Overview
               - Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf`
               - Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.Subscribe`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.subscribe`
               - """Return an IStkObjectRootEventHandler that is subscribed to handle events associated with this instance of StkObjectRoot."""
 
     .. tab-item:: Properties

@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: ephemeris_start_epoch
     :canonical: ansys.stk.core.stkobjects.VehiclePropagatorStkExternal.ephemeris_start_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     If overriding the times contained in the external file, specify the time of the first ephemeris point.
 

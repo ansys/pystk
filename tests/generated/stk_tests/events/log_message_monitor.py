@@ -17,7 +17,7 @@ class LogMessageMonitor(IObjectModelEventMonitor):
         self._counter: int = 0
         self._root: "StkObjectRoot" = root
 
-        self.csToPy_OnLogMessageSubscription = (self._root).Subscribe()
+        self.csToPy_OnLogMessageSubscription = (self._root).subscribe()
         self.csToPy_OnLogMessageSubscription.on_log_message += self._root_OnLogMessage
 
     def _root_OnLogMessage(

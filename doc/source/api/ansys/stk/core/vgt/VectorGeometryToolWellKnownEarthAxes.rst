@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.fixed`
               - Earth's Fixed axes.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.icrf`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.ICRF`
               - Earth's ICRF axes.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.inertial`
               - Earth's Inertial axes (as defined in STK).
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.j2000`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.J2000`
               - The Earth's J2000 axes.
 
 
@@ -46,8 +46,8 @@ Property detail
 
     Earth's Fixed axes.
 
-.. py:property:: icrf
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.icrf
+.. py:property:: ICRF
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.ICRF
     :type: IVectorGeometryToolAxes
 
     Earth's ICRF axes.
@@ -58,8 +58,8 @@ Property detail
 
     Earth's Inertial axes (as defined in STK).
 
-.. py:property:: j2000
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.j2000
+.. py:property:: J2000
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolWellKnownEarthAxes.J2000
     :type: IVectorGeometryToolAxes
 
     The Earth's J2000 axes.
