@@ -57,6 +57,10 @@ html_theme_options = {
     "check_switcher": False,
     "navigation_with_keys": True,
     "logo": "pyansys",
+    "static_search": {
+        "limit": 10,
+        "minMatchCharLength": 2,
+    },
 }
 html_static_path = ["_static"]
 html_css_files = ["css/highlight.css"]
