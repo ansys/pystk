@@ -7,7 +7,7 @@ updates:
     labels:
       - "dependencies:pyproject"
     commit-message:
-      prefix: "maint"
+      prefix: "bump"
     groups:
       tests:
         patterns:
@@ -34,7 +34,7 @@ updates:
     labels:
       - "dependencies:ci"
     commit-message:
-      prefix: "maint"
+      prefix: "bump"
     groups:
       actions:
         patterns:
