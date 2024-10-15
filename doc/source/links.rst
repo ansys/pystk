@@ -3,6 +3,7 @@
 .. _PySTK repository: https://github.com/ansys-internal/pystk
 .. _PySTK issues: https://github.com/ansys-internal/pystk/issues
 .. _PySTK discussions: https://github.com/ansys-internal/pystk/discussions
+.. _PySTK labels: https://github.com/ansys-internal/pystk/labels
 .. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
 
 .. Ansys products

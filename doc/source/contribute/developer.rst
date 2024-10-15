@@ -75,17 +75,17 @@ Make sure you `configure SSH <Connection to GitHub with SSH>`_ with your GitHub
 account. This allows you to clone the repository without having to use tokens
 or passwords. Also, make sure you have `git`_ installed in your machine.
 
-To clone the repository, run:
+To clone the repository using SSH, run:
 
 .. code-block:: bash
 
     git clone git@github.com:ansys-internal/pystk
 
-Finally, navigate to the project's root directory:
+.. note::
 
-.. code-block:: text
-
-    cd pystk
+    If you are not an Ansys employee, you need to :ref:`fork the repository <Fork the repository>` and
+    replace ``ansys-internal`` with your GitHub user name in the ``git clone``
+    command.
 
 .. _install-for-developers:
 
@@ -99,14 +99,20 @@ the library every time you make a change.
 Virtual environment
 -------------------
 
-Create a new virtual environment named ``.venv`` to isolate your system's
+Start by navigating to the project's root directory by running:
+
+.. code-block::
+
+    cd pystk
+
+Then, create a new virtual environment named ``.venv`` to isolate your system's
 Python environment by running:
 
 .. code-block:: text
 
     python -m venv .venv
 
-Then, activate this environment by running:
+Finally, activate this environment by running:
 
 .. tab-set::
 
@@ -135,7 +141,7 @@ Then, activate this environment by running:
 Development mode
 ----------------
 
-Install PySTK in editable mode by running:
+Now, install PySTK in editable mode by running:
 
 .. code-block:: text
 
@@ -237,3 +243,35 @@ dedicated `Tox`_ environment.
 
 Run CI/CD pipelines
 ===================
+
+PySTK has a set of CI/CD pipelines that are executed automatically when certain
+events are detected in the repository. Some of these events include opening a
+pull-request, labelling a pull-request, and tagging a commit.
+
+.. important::
+
+    The CI/CD pipelines are protected. Only team members of the ``PySTK
+    developers`` team can run the pipelines. For non team members, a ``PySTK
+    developers`` team member must authorize the CI/CD run for every new commit
+    or change. This prevents unauthorized or malicious code from being
+    executed in the runners.
+
+You can label a pull-request to skip certain jobs in the pipeline. Supported
+labels are listed in the `PySTK labels`_ page.
+
+.. list-table::
+    :widths: auto
+    :header-rows: 1
+
+    * - Label
+      - Description
+    * - ``style:skip``
+      - Skip the style job
+    * - ``docs:skip``
+      - Skip the documentation job
+    * - ``docs:examples``
+      - Build the documentation with examples
+    * - ``docs:api``
+      - Build the documentation with API references
+    * - ``tests:skip``
+      - Skip the tests job
