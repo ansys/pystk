@@ -27,6 +27,9 @@
 .. _ctypes: https://docs.python.org/3/library/ctypes.html
 .. _pip: https://pypi.org/project/pip/
 .. _Tox: https://tox.wiki/en/stable/
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
+.. _Markdown: https://www.markdownguide.org/
 
 .. Docker links
 
