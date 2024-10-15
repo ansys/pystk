@@ -29,7 +29,7 @@ Contributing as a developer
         :link: build-docker-containers
         :link-type: ref
 
-        Build Docker containers for testing.
+        Build the Docker containers for testing.
 
     .. grid-item-card:: :fa:`vial-circle-check` Run the tests
         :padding: 2 2 2 2
@@ -163,8 +163,8 @@ Verify the installation by checking the version of the library:
 
        >>> PySTK version is {{ PYSTK_VERSION }}
 
-Installing Tox
---------------
+Install Tox
+-----------
 
 Once the project is installed, you can install `Tox`_. This is a cross-platform
 automation tool. The main advantage of Tox is that it allows you to test your
@@ -202,16 +202,77 @@ Finally, verify the installation by listing all the different environments
 
 .. _build-docker-containers:
 
-Build Docker containers
-=======================
+Build the Docker containers
+===========================
 
 STK is containerized using Docker. This allows you to deploy the project in
 multiple environments without having to worry about dependencies.
 
+Although building a Docker container is not required if you have `STK`_
+installed in your local machine, it helps to isolate all your development
+environment.
+
+To build the Docker containers, you need to have `Docker Engine`_ and `Docker
+Compose`_ installed in your system.
+
+Then, download the latest `STK Engine`_ artifacts for your platform.
+
+Next, create a folder named ``distributions/`` inside next to the corresponding
+``docker/<platform>/stk-engine/`` and place the artifacts inside this folder.
+
+Ensure the ``ANSYSLMD_LICENSE_FILE=<PORT>@<HOSTNAME>`` environment variable is
+set and that your license server has a valid license for running STK.
+
+Build the docker images for your platform by running the corresponding Tox
+environment:
+
+.. jinja:: toxenvs
+
+    .. dropdown:: Docker build environments
+        :animate: fade-in
+        :icon: three-bars
+
+        .. list-table::
+            :header-rows: 1
+            :widths: auto
+
+            * - Environment
+              - Command
+            {% for environment in envs %}
+            {% set name, description  = environment.split("->") %}
+            {% if name.startswith("docker-build")%}
+            * - {{ name }}
+              - python -m tox -e {{ name }}
+            {% endif %}
+            {% endfor %}
+
+Finally, run the container by running the corresponding Tox environment:
+
+.. jinja:: toxenvs
+
+    .. dropdown:: Docker run environments
+        :animate: fade-in
+        :icon: three-bars
+
+        .. list-table::
+            :header-rows: 1
+            :widths: auto
+
+            * - Environment
+              - Command
+            {% for environment in envs %}
+            {% set name, description  = environment.split("->") %}
+            {% if name.startswith("docker-run")%}
+            * - {{ name }}
+              - python -m tox -e {{ name }}
+            {% endif %}
+            {% endfor %}
+
+
 .. _run-tests:
 
-Run tests
-=========
+Run the tests
+=============
 
 Once you have made your changes, you can run the tests to verify that your
 modifications did not break the project. PySTK tests support different markers
@@ -251,10 +312,10 @@ pull-request, labelling a pull-request, and tagging a commit.
 .. important::
 
     The CI/CD pipelines are protected. Only team members of the ``PySTK
-    developers`` team can run the pipelines. For non team members, a ``PySTK
-    developers`` team member must authorize the CI/CD run for every new commit
-    or change. This prevents unauthorized or malicious code from being
-    executed in the runners.
+    developers team`` can run the pipelines. For non team members, a ``PySTK
+    developers team`` member must authorize the CI/CD run for every new commit
+    or change. This prevents unauthorized or malicious code from being executed
+    in the runners.
 
 You can label a pull-request to skip certain jobs in the pipeline. Supported
 labels are listed in the `PySTK labels`_ page.
