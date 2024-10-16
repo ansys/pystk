@@ -24,14 +24,6 @@ Contributing as a documentarian
 
         Render the documentation to see your changes reflected.
 
-    .. grid-item-card:: :fa:`search` Focus on SEO
-        :padding: 2 2 2 2
-        :link: focus-on-seo
-        :link-type: ref
-
-        Ensure that the documentation is easily discoverable.
-
-
 .. _write-documentation:
 
 Write documentation
@@ -170,16 +162,3 @@ Two environment variables are available for the documentation build:
 By using these environment variables, you can speed up the build process. This
 allows to shorten the build time when only certain parts of the documentation
 are modified.
-
-.. _focus-on-seo:
-
-
-A note about SEO
-================
-
-Search Engine Optimization (SEO) is important in a world where search engines
-are ignoring automatically generated content. Some parts of the PySTK
-documentation are completely automated to ease the maintenance of the project.
-
-Therefore, it is important to include relevant keywords in the documentation.
-Keywords are words or phrases that describe the content of a webpage.
