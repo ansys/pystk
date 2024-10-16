@@ -1,10 +1,9 @@
 Contributing as a user
 ######################
 
- Users can contribute
-in a variety of ways, such as reporting bugs, requesting new features, testing
-in-development features, starting discussions, answering questions, and sharing
-their work with the community.
+Users can contribute in a variety of ways, such as reporting bugs, requesting
+new features, testing in-development features, starting discussions, answering
+questions, and sharing their work with the community.
 
 .. warning::
 
