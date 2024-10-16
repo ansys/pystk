@@ -25,7 +25,7 @@ their work with the community.
         :link: request-a-new-feature
         :link-type: ref
 
-        Got an idea for a new feature? Share it with us.
+        Got an idea for a new feature? Share it!
 
     .. grid-item-card:: :fa:`vial-circle-check` Test a new feature
         :padding: 2 2 2 2
@@ -61,7 +61,7 @@ Report bugs
 ===========
 
 If you encounter a bug or an issue while using the project, please report it.
-Your feedback helps us identify problems we may not have noticed.
+Your feedback helps to identify problems.
 
 - Search the `issue tracker <PySTK issues>`_ to see if the issue has already
   been reported.
@@ -78,9 +78,9 @@ Your feedback helps us identify problems we may not have noticed.
 Request a new feature
 =====================
 
-If you have an idea for a new feature or an improvement, please let us know. We
-welcome your suggestions. You can request a new feature by creating an issue in
-the `issue tracker <PySTK issues>`_.
+Do you have an idea for a new feature or an improvement? Your suggestions are
+welcome. You can request a new feature by creating an issue in the `issue
+tracker <PySTK issues>`_.
 
 .. _test-a-new-feature:
 

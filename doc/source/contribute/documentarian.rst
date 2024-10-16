@@ -75,8 +75,8 @@ is declared.
 
 .. _write-examples:
 
-Write a new exmample
-====================
+Write a new example
+===================
 
 The :ref:`examples <Examples>` section of the documentation showcases different
 capabilities of PySTK. Each example is a standalone Python script. Despite
