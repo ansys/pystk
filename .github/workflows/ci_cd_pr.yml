@@ -4,8 +4,8 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.12'
-  MINIMUM_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.13'
+  MINIMUM_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -107,7 +107,7 @@ jobs:
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
-           python-version: ['3.10', '3.11', '3.12']
+           python-version: ['3.11', '3.11', '3.13']
            target: ['all', 'grpc', 'visualization']
     steps:
       - name: "Build a wheelhouse of the Python library"

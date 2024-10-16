@@ -310,7 +310,7 @@ if not WHEELHOUSE_PATH.exists():
     linkcheck_ignore.append(r".*/wheelhouse/.*")
 
 jinja_globals = {
-    "SUPPORTED_PYTHON_VERSIONS": ["3.10", "3.11", "3.12"],
+    "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "STK_VERSION": "12.9.0",
 }
