@@ -45,7 +45,7 @@
 
 .. GitHub documentation
 
-.. _Connection to GitHub with SSH: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+.. _configure SSH: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
 .. Other links
 

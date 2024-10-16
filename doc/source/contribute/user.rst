@@ -1,7 +1,7 @@
 Contributing as a user
 ######################
 
-Contributing to PySTK doesn't always require writing code. Users can contribute
+ Users can contribute
 in a variety of ways, such as reporting bugs, requesting new features, testing
 in-development features, starting discussions, answering questions, and sharing
 their work with the community.
@@ -63,8 +63,7 @@ Report bugs
 If you encounter a bug or an issue while using the project, please report it.
 Your feedback helps to identify problems.
 
-- Search the `issue tracker <PySTK issues>`_ to see if the issue has already
-  been reported.
+- Search the `PySTK issues`_ to see if the issue has already been reported.
 
 - Create a new issue if it hasn’t been reported.
 
@@ -79,8 +78,8 @@ Request a new feature
 =====================
 
 Do you have an idea for a new feature or an improvement? Your suggestions are
-welcome. You can request a new feature by creating an issue in the `issue
-tracker <PySTK issues>`_.
+welcome. You can request a new feature by creating an issue in the `PySTK
+issues`_ board.
 
 .. _test-a-new-feature:
 
@@ -98,7 +97,7 @@ Start a discussion
 Complex topics may require a discussion. Whether you want to know how to use
 PySTK for solving your specific problem or you have a suggestion for a new
 feature, a discussion is a good place to start. You can open a new discussion
-in the `discussions <PySTK discussions>`_ section.
+in the `PySTK discussions`_ section.
 
 .. _answer-questions:
 
@@ -116,6 +115,6 @@ Share your work
 ===============
 
 If you have used PySTK to create something interesting, share it with the rest
-of the community. You can share your work in the `discussions <PySTK
-discussions>`_. Include a brief description of your work and any relevant links
-that others may find useful.
+of the community. You can share your work in the `PySTK discussions`_. Include
+a brief description of your work and any relevant links that others may find
+useful.
