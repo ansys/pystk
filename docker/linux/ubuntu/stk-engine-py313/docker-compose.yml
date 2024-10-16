@@ -1,8 +1,8 @@
 version: '3.8'
 services:
-  stk-python3.10:
-    image: ansys/stk:dev-ubuntu22.04-python3.10
-    container_name: stk-python3.10
+  stk-python3.13:
+    image: ansys/stk:dev-ubuntu22.04-python3.13
+    container_name: stk-python3.13
     build: 
       context: .
       args:
