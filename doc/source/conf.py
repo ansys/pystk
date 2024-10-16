@@ -43,6 +43,7 @@ html_context = {
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
 }
 html_theme_options = {
+    "header_links_before_dropdown": 6,
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
