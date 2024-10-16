@@ -1,9 +1,0 @@
-# Write a guide on how to install a project in development mode. Explain how to clone and install a Python library in editable mode.
-
-Start by cloning the repository in your local machine. If you are using a :
-
-.. code-block:: console
-    
-    git clone git@github.com:ansys-internal/pystk
-
-Navigate to the project directory:
