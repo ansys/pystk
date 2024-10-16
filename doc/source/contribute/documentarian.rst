@@ -51,7 +51,7 @@ files.
 
 The layout of the ``doc/source`` directory is reflected in the slug of the
 online documentation. For example, the
-``doc/source/contribute/documentarian.rst`` will render as
+``doc/source/contribute/documentarian.rst`` renders as
 ``https://docs.pystk.com/contribute/documentarian``. 
 
 Thus, if you create a new file, it important to follow these rules:
@@ -121,7 +121,7 @@ Finally, here are some tips for writing examples:
   are inserted in the document. You do not need to include the screenshots
   yourself. However, do include the graphics widgets (2D or 3D) at points in
   your example. When the documentation is built, a screenshot of the widget
-  will be inserted in its place. Jupyter widgets are included in
+  is inserted in its place. Jupyter widgets are included in
   :py:mod:`~ansys.stk.core.stkengine.experimental.jupyterwidgets`.
 
 
