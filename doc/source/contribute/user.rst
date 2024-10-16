@@ -78,8 +78,8 @@ Request a new feature
 =====================
 
 Do you have an idea for a new feature or an improvement? Your suggestions are
-welcome. You can request a new feature by creating an issue in the `PySTK
-issues`_ board.
+welcome. You can request a new feature by creating an issue in the `PySTK issues`_
+board.
 
 .. _test-a-new-feature:
 
