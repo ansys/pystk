@@ -34,8 +34,8 @@ all = [
     "grpcio",
     "protobuf",
     "jupyter-rfb==0.4.4",
-    "numpy==2.1.1",
-    "Pillow==10.4.0",
+    "numpy==2.1.2",
+    "Pillow==11.0.0",
     "simplejpeg==1.7.6",
     "sidecar==0.7.0"
 ]
@@ -49,10 +49,10 @@ tests = [
     "pytz==2024.2",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.1.1"
+    "numpy==2.1.2"
 ]
 doc = [
-    "ansys-sphinx-theme==1.1.4",
+    "ansys-sphinx-theme==1.1.6",
     "build==1.2.2.post1",
     "jupyterlab==4.2.5",
     "jupytext==1.16.4",
@@ -70,8 +70,8 @@ doc = [
 ]
 visualization = [
     "jupyter-rfb==0.4.4",
-    "numpy==2.1.1",
-    "Pillow==10.4.0",
+    "numpy==2.1.2",
+    "Pillow==11.0.0",
     "simplejpeg==1.7.6",
     "sidecar==0.7.0"
 ]
