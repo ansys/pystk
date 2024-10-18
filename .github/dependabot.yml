@@ -34,7 +34,7 @@ updates:
     labels:
       - "dependencies:ci"
     commit-message:
-      prefix: "bump"
+      prefix: "build"
     groups:
       actions:
         patterns:
