@@ -7,7 +7,7 @@ updates:
     labels:
       - "dependencies:pyproject"
     commit-message:
-      prefix: "bump"
+      prefix: "build"
     groups:
       tests:
         patterns:
