@@ -8,7 +8,7 @@ Contributing as a documentarian
         :link: write-documentation
         :link-type: ref
 
-        Explain others how to get started, use, and contribute to the project.
+        Explain how to get started, use, and contribute to the project.
 
     .. grid-item-card:: :fa:`laptop-code` Add a new example
         :padding: 2 2 2 2
