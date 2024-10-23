@@ -76,7 +76,9 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
 
 
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
+initial_state = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+)
 # -
 
 # A total of six orbital parameters are required to specify the initial state of the satellite. Considering the data provided in this example, Keplerian elements can be used. Thus, it is possible to assign the following parameters:
@@ -99,7 +101,9 @@ initial_state.element.true_anomaly = 0.00
 #
 # The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the Bi-elliptic transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
 
-parking_orbit_propagate = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-")
+parking_orbit_propagate = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-"
+)
 parking_orbit_propagate.propagator_name = "Earth point mass"
 parking_orbit_propagate.stopping_conditions["Duration"].properties.trip = 7200
 
@@ -128,29 +132,47 @@ parking_orbit_propagate.properties.color = Colors.Blue
 # All maneuvers are modeled as `IMPULSIVE` maneuver type. The attitude control used is of the type `THRUST_VECTOR`.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, ATTITUDE_CONTROL
+from ansys.stk.core.stkobjects.astrogator import ATTITUDE_CONTROL, MANEUVER_TYPE
 
 
-bielliptic_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "BiElliptic Transfer", "-")
+bielliptic_transfer = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.SEQUENCE, "BiElliptic Transfer", "-"
+)
 
-bielliptic_start = bielliptic_transfer.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic Start", "-")
-first_impulse = bielliptic_start.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
+bielliptic_start = bielliptic_transfer.segments.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic Start", "-"
+)
+first_impulse = bielliptic_start.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "First Impulse", "-"
+)
 first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 first_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 
-first_propagate = bielliptic_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "First Propagate", "-")
+first_propagate = bielliptic_transfer.segments.insert(
+    SEGMENT_TYPE.PROPAGATE, "First Propagate", "-"
+)
 first_propagate.propagator_name = "Earth Point Mass"
 
-bielliptic_middle = bielliptic_transfer.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic Middle", "-")
-second_impulse = bielliptic_middle.segments.insert(SEGMENT_TYPE.MANEUVER, "Second Impulse", "-")
+bielliptic_middle = bielliptic_transfer.segments.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic Middle", "-"
+)
+second_impulse = bielliptic_middle.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "Second Impulse", "-"
+)
 second_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 second_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 
-second_propagate = bielliptic_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Second Propagate", "-")
+second_propagate = bielliptic_transfer.segments.insert(
+    SEGMENT_TYPE.PROPAGATE, "Second Propagate", "-"
+)
 second_propagate.propagator_name = "Earth Point Mass"
 
-bielliptic_end = bielliptic_transfer.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic End", "-")
-last_impulse = bielliptic_end.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
+bielliptic_end = bielliptic_transfer.segments.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "BiElliptic End", "-"
+)
+last_impulse = bielliptic_end.segments.insert(
+    SEGMENT_TYPE.MANEUVER, "Last Impulse", "-"
+)
 last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 last_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 # -
@@ -175,7 +197,7 @@ from ansys.stk.core.stkobjects.astrogator import CONTROL_MANEUVER
 
 
 first_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-first_impulse.results.add('Keplerian Elems/Radius of Apoapsis');
+first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 # -
 
 # Now, configure the solver for this first impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
@@ -183,15 +205,20 @@ first_impulse.results.add('Keplerian Elems/Radius of Apoapsis');
 # +
 from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE
 
+
 bielliptic_start_solver = bielliptic_start.profiles["Differential Corrector"]
 bielliptic_start_solver.mode = PROFILE_MODE.ITERATE
 bielliptic_start_solver.max_iterations = 50
 
-delta_v1_x = bielliptic_start_solver.control_parameters.get_control_by_paths("First Impulse", "ImpulsiveMnvr.Cartesian.X")
+delta_v1_x = bielliptic_start_solver.control_parameters.get_control_by_paths(
+    "First Impulse", "ImpulsiveMnvr.Cartesian.X"
+)
 delta_v1_x.enable = True
 delta_v1_x.max_step = 0.30
 
-desired_radius_of_apoapsis = bielliptic_start_solver.results.get_result_by_paths("First Impulse", "Radius Of Apoapsis")
+desired_radius_of_apoapsis = bielliptic_start_solver.results.get_result_by_paths(
+    "First Impulse", "Radius Of Apoapsis"
+)
 desired_radius_of_apoapsis.enable = True
 desired_radius_of_apoapsis.desired_value = 80000.00
 desired_radius_of_apoapsis.tolerance = 0.10
@@ -213,8 +240,7 @@ first_propagate.properties.color = Colors.Red
 # Again, enable the component of the velocity impulse along the X axis as a control parameter. Add the radius of periapsis as a result to be achieved.
 
 second_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-second_impulse.results.add("Keplerian Elems/Radius of Periapsis");
-
+second_impulse.results.add("Keplerian Elems/Radius of Periapsis")
 # Now, configure the solver for this second impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
@@ -222,11 +248,15 @@ bielliptic_middle_solver = bielliptic_middle.profiles["Differential Corrector"]
 bielliptic_middle_solver.mode = PROFILE_MODE.ITERATE
 bielliptic_middle_solver.max_iterations = 50
 
-delta_v2_x = bielliptic_middle_solver.control_parameters.get_control_by_paths("Second Impulse", "ImpulsiveMnvr.Cartesian.X")
+delta_v2_x = bielliptic_middle_solver.control_parameters.get_control_by_paths(
+    "Second Impulse", "ImpulsiveMnvr.Cartesian.X"
+)
 delta_v2_x.enable = True
 delta_v2_x.max_step = 0.30
 
-desired_radius_of_periapsis = bielliptic_middle_solver.results.get_result_by_paths("Second Impulse", "Radius Of Periapsis")
+desired_radius_of_periapsis = bielliptic_middle_solver.results.get_result_by_paths(
+    "Second Impulse", "Radius Of Periapsis"
+)
 desired_radius_of_periapsis.enable = True
 desired_radius_of_periapsis.desired_value = 42238.00
 desired_radius_of_periapsis.tolerance = 0.10
@@ -248,8 +278,7 @@ second_propagate.properties.color = Colors.Yellow
 # Again, enable the component of the velocity impulse along the X axis as a control parameter. In this case, add the eccentricity as a result to be achieved.
 
 last_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
-last_impulse.results.add("Keplerian Elems/Eccentricity");
-
+last_impulse.results.add("Keplerian Elems/Eccentricity")
 # Now, configure the solver for this last impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
@@ -257,11 +286,15 @@ bielliptic_end_solver = bielliptic_end.profiles["Differential Corrector"]
 bielliptic_end_solver.mode = PROFILE_MODE.ITERATE
 bielliptic_end_solver.max_iterations = 50
 
-delta_v3_x = bielliptic_end_solver.control_parameters.get_control_by_paths("Last Impulse", "ImpulsiveMnvr.Cartesian.X")
+delta_v3_x = bielliptic_end_solver.control_parameters.get_control_by_paths(
+    "Last Impulse", "ImpulsiveMnvr.Cartesian.X"
+)
 delta_v3_x.enable = True
 delta_v3_x.max_step = 0.30
 
-desired_eccentricity = bielliptic_end_solver.results.get_result_by_paths("Last Impulse", "Eccentricity")
+desired_eccentricity = bielliptic_end_solver.results.get_result_by_paths(
+    "Last Impulse", "Eccentricity"
+)
 desired_eccentricity.enable = True
 desired_eccentricity.desired_value = 0
 desired_eccentricity.tolerance = 0.01
@@ -271,7 +304,9 @@ desired_eccentricity.tolerance = 0.01
 #
 # Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
 
-propagate_final_orbit = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-")
+propagate_final_orbit = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-"
+)
 propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
 propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
@@ -282,6 +317,7 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 
 # +
 from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION
+
 
 bielliptic_start.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
 bielliptic_middle.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
