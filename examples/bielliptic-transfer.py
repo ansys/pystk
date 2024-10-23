@@ -73,7 +73,7 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 # Start by adding a new segment to the main sequence for modeling the initial state of the satellite:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
+from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE, TARGET_SEQUENCE_ACTION
 
 
 initial_state = satellite.propagator.main_sequence.insert(
@@ -319,11 +319,11 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION
 
 
-bielliptic_start.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-bielliptic_middle.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-bielliptic_end.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+bielliptic_start.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
+bielliptic_middle.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
+bielliptic_end.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
 
-satellite.propagator.run_mission_control_sequence()
+satellite.propagator.run_mcs()
 # -
 
 # ## Retrieve the results
