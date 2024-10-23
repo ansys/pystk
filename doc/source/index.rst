@@ -54,7 +54,7 @@ and payloads in a realistic mission context. You are viewing version |version|.
         {% endif %}
     
         .. grid-item-card:: :fa:`user-group` Contribute
-            :link: contributing
+            :link: contribute
             :link-type: doc
             :padding: 2 2 2 2
     
@@ -82,6 +82,6 @@ and payloads in a realistic mission context. You are viewing version |version|.
        {% if build_examples %}
        examples
        {% endif %}
-       contributing
+       contribute
        artifacts
 

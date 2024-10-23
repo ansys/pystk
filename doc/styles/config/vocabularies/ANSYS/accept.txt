@@ -4,6 +4,7 @@ Ansys
 ansys
 Astrogator
 Dockerfiles
+documentarians
 ephemerides
 cartodetic
 FOM
@@ -28,3 +29,4 @@ STK Desktop
 STKEngine
 STK Engine
 Subpackages
+Tox
