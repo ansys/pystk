@@ -598,5 +598,5 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
 
-    if not BUILD_EXAMPLES or BUILD_API:
+    if not BUILD_EXAMPLES or not BUILD_API:
         app.connect("missing-reference", ignore_examples_and_api_refs)
