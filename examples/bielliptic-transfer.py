@@ -344,5 +344,7 @@ satellite.propagator.apply_all_profile_changes()
 #
 # Finally, it is possible to visualize the complete sequence of maneuvers by showing the plotter again. Since the maneuver gets out of the field of view of the plotter's camera, the position of the camera is updated:
 
+# + tags=["nbsphinx-thumbnail"]
 plotter.camera.position = [100000, 150000, 100000]
 plotter.show()
+# -
