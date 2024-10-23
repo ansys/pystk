@@ -1706,7 +1706,7 @@ class PropagatorGreatArcHelper(object):
 
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oGreatArc.ephemeris_interval.find_start_time())
 
-        oGreatArc.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oGreatArc.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oGreatArc.propagate()
 
         Assert.assertEqual(sc.start_time, oGreatArc.ephemeris_interval.find_start_time())
@@ -2034,7 +2034,7 @@ class PropagatorSimpleAscentHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oSimple.ephemeris_interval.find_stop_time())
 
-        oSimple.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oSimple.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oSimple.propagate()
 
         Assert.assertEqual(sc.start_time, oSimple.ephemeris_interval.find_start_time())
@@ -2118,7 +2118,7 @@ class PropagatorTwoBodyHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_start_time())
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oTwoBody.ephemeris_interval.find_stop_time())
 
-        oTwoBody.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oTwoBody.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oTwoBody.propagate()
 
         Assert.assertEqual(sc.start_time, oTwoBody.ephemeris_interval.find_start_time())
@@ -2543,7 +2543,7 @@ class PropagatorJ2PerturbationHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ2.ephemeris_interval.find_stop_time())
 
         oJ2.ephemeris_interval.set_implicit_interval(
-            self.m_oApplication.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            self.m_oApplication.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         oJ2.propagate()
 
@@ -2646,7 +2646,7 @@ class PropagatorJ4PerturbationHelper(object):
         Assert.assertEqual("2 Jul 2005 12:00:00.000", oJ4.ephemeris_interval.find_stop_time())
 
         oJ4.ephemeris_interval.set_implicit_interval(
-            self.m_oApplication.current_scenario.vgt.event_intervals["AnalysisInterval"]
+            self.m_oApplication.current_scenario.vgt.time_intervals["AnalysisInterval"]
         )
         oJ4.propagate()
 
@@ -6115,10 +6115,10 @@ class PropagatorBallisticHelper(object):
         Assert.assertEqual("1 Jul 2005 12:00:00.000", oBallistic.ephemeris_interval.find_start_time())
         # Assert.AreEqual("2 Jul 2005 12:00:00.000", oBallistic.StopTime);
 
-        oBallistic.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.event_intervals["AnalysisInterval"])
+        oBallistic.ephemeris_interval.set_implicit_interval((IStkObject(sc)).vgt.time_intervals["AnalysisInterval"])
         oBallistic.ephemeris_interval.set_explicit_interval(
-            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
-            (IStkObject(sc)).vgt.event_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
+            (IStkObject(sc)).vgt.time_intervals["AnalysisInterval"].find_interval().interval.start,
         )
         oBallistic.propagate()
 
@@ -7163,12 +7163,12 @@ class BasicAttitudeStandardHelper(object):
         attStart3: str = "1 Jul 1999 03:33:33.000"
         self.m_logger.WriteLine("\tCreate a time component for use with att override")
         scen: "IStkObject" = self.m_oApplication.current_scenario
-        prv: "AnalysisWorkbenchProvider" = scen.vgt
-        grp: "TimeToolEventGroup" = prv.events
-        evt: "ITimeToolEvent" = prv.events.factory.create_event_epoch(
+        prv: "AnalysisWorkbenchComponentProvider" = scen.vgt
+        grp: "TimeToolInstantGroup" = prv.time_instants
+        evt: "ITimeToolInstant" = prv.time_instants.factory.create_epoch(
             "AttOverrideTest", "External Attitude - Override testing"
         )
-        evtEpoch: "TimeToolEventEpoch" = clr.CastAs(evt, TimeToolEventEpoch)
+        evtEpoch: "TimeToolInstantEpoch" = clr.CastAs(evt, TimeToolInstantEpoch)
         evtEpoch.epoch = attStart3
 
         self.m_logger.WriteLine("\tUse the time component for att override")
@@ -7183,8 +7183,8 @@ class BasicAttitudeStandardHelper(object):
         # StopTime
         self.m_logger.WriteLine6("\t\tThe new StopTime is: {0}", oExternal.stop_time)
         # AttStart
-        refEvt: "ITimeToolEvent" = oExternal.attitude_start_epoch.reference_event
-        res: "TimeToolEventFindOccurrenceResult" = refEvt.find_occurrence()
+        refEvt: "ITimeToolInstant" = oExternal.attitude_start_epoch.reference_epoch
+        res: "TimeToolInstantOccurrenceResult" = refEvt.find_occurrence()
         self.m_logger.WriteLine7("\t\tThe new AttitudeStart is: {0} and isValid: {1}", res.epoch, res.is_valid)
 
         # delete the time component

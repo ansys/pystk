@@ -13,7 +13,7 @@ in the STK X and STK Objects libraries.
 __all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
 "CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
 "Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
-"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE", "EXECUTE_MULTIPLE_COMMANDS_MODE", "ExecuteCommandResult", 
+"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE_TYPE", "EXECUTE_MULTIPLE_COMMANDS_MODE", "ExecuteCommandResult", 
 "ExecuteMultipleCommandResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
 "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
 "IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISPLAY_ID", "LOG_MESSAGE_TYPE", 
@@ -150,7 +150,7 @@ AZ_EL_ABOUT_BORESIGHT.ROTATE.__doc__ = "Rotate: rotation about the sensor's or a
 
 agcls.AgTypeNameMap["AZ_EL_ABOUT_BORESIGHT"] = AZ_EL_ABOUT_BORESIGHT
 
-class EULER_ORIENTATION_SEQUENCE(IntEnum):
+class EULER_ORIENTATION_SEQUENCE_TYPE(IntEnum):
     """Euler rotation sequence options:."""
    
     SEQUENCE_121 = 0
@@ -178,20 +178,20 @@ class EULER_ORIENTATION_SEQUENCE(IntEnum):
     SEQUENCE_323 = 11
     """323 rotation."""
 
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_121.__doc__ = "121 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_123.__doc__ = "123 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_131.__doc__ = "131 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_132.__doc__ = "132 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_212.__doc__ = "212 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_213.__doc__ = "213 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_231.__doc__ = "231 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_232.__doc__ = "232 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_312.__doc__ = "312 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_313.__doc__ = "313 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_321.__doc__ = "321 rotation."
-EULER_ORIENTATION_SEQUENCE.SEQUENCE_323.__doc__ = "323 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121.__doc__ = "121 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123.__doc__ = "123 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131.__doc__ = "131 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132.__doc__ = "132 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212.__doc__ = "212 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213.__doc__ = "213 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231.__doc__ = "231 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232.__doc__ = "232 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312.__doc__ = "312 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313.__doc__ = "313 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321.__doc__ = "321 rotation."
+EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323.__doc__ = "323 rotation."
 
-agcls.AgTypeNameMap["EULER_ORIENTATION_SEQUENCE"] = EULER_ORIENTATION_SEQUENCE
+agcls.AgTypeNameMap["EULER_ORIENTATION_SEQUENCE_TYPE"] = EULER_ORIENTATION_SEQUENCE_TYPE
 
 class YPR_ANGLES_SEQUENCE(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
@@ -1064,8 +1064,8 @@ class IOrientation(object):
 
     _assign_euler_angles_metadata = { "offset" : _assign_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def assign_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def assign_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
         """Set orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_euler_angles_metadata, sequence, a, b, c)
 
@@ -1092,8 +1092,8 @@ class IOrientation(object):
 
     _query_euler_angles_metadata = { "offset" : _query_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def query_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
+            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def query_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Get orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
@@ -1120,8 +1120,8 @@ class IOrientation(object):
 
     _query_euler_angles_array_metadata = { "offset" : _query_euler_angles_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE), agmarshall.LPSafearrayArg,) }
-    def query_euler_angles_array(self, sequence:"EULER_ORIENTATION_SEQUENCE") -> list:
+            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.LPSafearrayArg,) }
+    def query_euler_angles_array(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE") -> list:
         """Return the Euler elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_array_metadata, sequence, OutArg())
 
@@ -1264,17 +1264,17 @@ class IOrientationEulerAngles(IOrientation):
     
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE),) }
     @property
-    def sequence(self) -> "EULER_ORIENTATION_SEQUENCE":
+    def sequence(self) -> "EULER_ORIENTATION_SEQUENCE_TYPE":
         """Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_sequence_metadata)
 
     _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE),) }
     @sequence.setter
-    def sequence(self, ppVal:"EULER_ORIENTATION_SEQUENCE") -> None:
+    def sequence(self, ppVal:"EULER_ORIENTATION_SEQUENCE_TYPE") -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_sequence_metadata, ppVal)
 
     _get_a_metadata = { "offset" : _get_a_method_offset,

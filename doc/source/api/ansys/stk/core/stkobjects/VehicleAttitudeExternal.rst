@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: attitude_start_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExternal.attitude_start_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     If overriding the times contained in the external file, specifies the time of the first attitude point.
 

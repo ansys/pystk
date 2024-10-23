@@ -118,18 +118,18 @@ class OrientationTest(object):
             oEulerAngles.a = 123.45
             oEulerAngles.b = 234.51
             oEulerAngles.c = 345.12
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_121
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_123
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_131
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_132
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_212
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_213
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_231
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_232
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_312
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_313
-            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_321
-            oEulerAngles.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_323, 123.45, 234.51, 345.12)
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313
+            oEulerAngles.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
+            oEulerAngles.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323, 123.45, 234.51, 345.12)
             self.m_logger.WriteLine("\t\tNew values:")
             self.Display(oEulerAngles)
             oEulerAngles.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
@@ -221,13 +221,13 @@ class OrientationTest(object):
             Assert.assertEqual(AZ_EL_ABOUT_BORESIGHT.ROTATE, pAzEl.about_boresight)
 
         if ((eTypes & Orientations.EulerAngles)) == Orientations.EulerAngles:
-            oOrientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_121, 34.45, 56.51, 76.12)
+            oOrientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121, 34.45, 56.51, 76.12)
             pEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
                 oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
             )
             self.Display(pEuler)
-            pEuler.sequence = EULER_ORIENTATION_SEQUENCE.SEQUENCE_121
-            Assert.assertEqual(EULER_ORIENTATION_SEQUENCE.SEQUENCE_121, pEuler.sequence)
+            pEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121
+            Assert.assertEqual(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121, pEuler.sequence)
             Assert.assertAlmostEqual(34.45, float(pEuler.a), delta=0.001)
             Assert.assertAlmostEqual(56.51, float(pEuler.b), delta=0.001)
             Assert.assertAlmostEqual(76.12, float(pEuler.c), delta=0.001)

@@ -3,7 +3,7 @@ VectorGeometryToolAxesTrajectory
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes based on trajectory of the point relative to the reference coordinate system.
 
@@ -42,19 +42,19 @@ Property detail
 
 .. py:property:: trajectory_point
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_point
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a trajectory point.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.reference_system
-    :type: VectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemReference
 
     Specify a reference system.
 
 .. py:property:: trajectory_axes_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_axes_type
-    :type: CRDN_TRAJECTORY_AXES_TYPE
+    :type: TRAJECTORY_AXES_COORDINATES_TYPE
 
     Specify a type of the trajectory's coordinate frame.
 

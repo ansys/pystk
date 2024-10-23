@@ -156,14 +156,14 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
+.. py:method:: exec_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
     :canonical: ansys.stk.core.stkobjects.DataProviderTimeVarying.exec_event_array
 
     Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~ITimeToolEventArray`
+    **pEventArray** : :obj:`~ITimeToolTimeArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
 
@@ -171,14 +171,14 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_elements_event_array(self, pEventArray: ITimeToolEventArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
+.. py:method:: exec_elements_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
     :canonical: ansys.stk.core.stkobjects.DataProviderTimeVarying.exec_elements_event_array
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~ITimeToolEventArray`
+    **pEventArray** : :obj:`~ITimeToolTimeArray`
     **startTime** : :obj:`~typing.Any`
     **stopTime** : :obj:`~typing.Any`
     **elementNames** : :obj:`~list`
@@ -187,14 +187,14 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_elements_event_array_only(self, pEventArray: ITimeToolEventArray, elementNames: list) -> DataProviderResult
+.. py:method:: exec_elements_event_array_only(self, pEventArray: ITimeToolTimeArray, elementNames: list) -> DataProviderResult
     :canonical: ansys.stk.core.stkobjects.DataProviderTimeVarying.exec_elements_event_array_only
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component.
 
     :Parameters:
 
-    **pEventArray** : :obj:`~ITimeToolEventArray`
+    **pEventArray** : :obj:`~ITimeToolTimeArray`
     **elementNames** : :obj:`~list`
 
     :Returns:

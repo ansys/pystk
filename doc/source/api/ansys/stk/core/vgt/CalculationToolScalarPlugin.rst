@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarPlugin.prog_id`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarPlugin.ProgID`
               - A programmatic ID associated with the component.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarPlugin.display_name`
               - The plugin's Display Name associated with the COM plugin.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prog_id
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarPlugin.prog_id
+.. py:property:: ProgID
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarPlugin.ProgID
     :type: str
 
     A programmatic ID associated with the component.

@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleProfilePrecessingSpin.smart_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Get the epoch of the attitude profile.
 

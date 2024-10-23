@@ -246,8 +246,8 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "FigureOfMerit", stkRoot: "StkObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.
-        provider: "AnalysisWorkbenchProvider" = stkRoot.vgt_root.get_provider("CentralBody/Sun")
-        calcScalar: "ICalculationToolScalar" = provider.calc_scalars[0]
+        provider: "AnalysisWorkbenchComponentProvider" = stkRoot.vgt_root.get_provider("CentralBody/Sun")
+        calcScalar: "ICalculationToolScalar" = provider.calculation_scalars[0]
         calcScalarQualifiedPath: str = (clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)).qualified_path
 
         # Set the Scalar Calculation definition using the qualified path

@@ -3941,12 +3941,9 @@ longitude = 121;"""
                 rttip2: "IRuntimeTypeInfoProvider" = clr.CastAs(pi.get_value(), IRuntimeTypeInfoProvider)
                 if rttip2 != None:
                     rtti2: "RuntimeTypeInfo" = rttip2.provide_runtime_type_info
-
-                    name: "PropertyInfo" = rtti2.properties[0]
-                    Assert.assertEqual(enumChoices[i].name, str(name.get_value()))
-                    value: "PropertyInfo" = rtti2.properties[1]
-                    rttiValue: typing.Any = value.get_value()
-                    Assert.assertEqual(enumChoices[i].value, int(rttiValue))
+                    EarlyBoundTests.ScriptingToolParametersCheckNameValue(
+                        enumChoices[i].name, enumChoices[i].value, rtti2
+                    )
 
                 i += 1
 
@@ -4209,6 +4206,14 @@ longitude = 121;"""
 
         (IStkObject(sat)).unload()
 
+    @staticmethod
+    def ScriptingToolParametersCheckNameValue(expectedName: str, expectedValue: int, rtti2: "RuntimeTypeInfo"):
+        name: "PropertyInfo" = rtti2.properties[0]
+        Assert.assertEqual(expectedName, str(name.get_value()))
+        value: "PropertyInfo" = rtti2.properties[1]
+        rttiValue: typing.Any = value.get_value()
+        Assert.assertEqual(expectedValue, int(rttiValue))
+
     # endregion
 
     # region BUG86787
@@ -4367,13 +4372,13 @@ longitude = 121;"""
         maneuver: "MCSManeuver" = clr.CastAs(driver.main_sequence["Maneuver"], MCSManeuver)
         impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
-        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, deuler0, deuler1, deuler2)
+        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312, deuler0, deuler1, deuler2)
 
         a: typing.Any = None
         b: typing.Any = None
         c: typing.Any = None
 
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]
@@ -4389,8 +4394,8 @@ longitude = 121;"""
         settle: "MCSManeuver" = clr.CastAs(driver2.main_sequence["Settle"], MCSManeuver)
         impulse2: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att2: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse2.attitude_control)
-        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, euler0, euler1, euler2)
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312, euler0, euler1, euler2)
+        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]

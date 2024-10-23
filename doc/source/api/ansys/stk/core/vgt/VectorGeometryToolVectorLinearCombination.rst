@@ -3,7 +3,7 @@ VectorGeometryToolVectorLinearCombination
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Linear combination of two input vectors.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension_inheritance
-    :type: CRDN_DIMENSION_INHERITANCE
+    :type: INHERIT_DIMENSION_TYPE
 
     Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
 

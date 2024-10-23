@@ -2227,13 +2227,13 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             # Arguments are the EventArray and the object's start and stop times
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
@@ -2270,10 +2270,10 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
                 EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
@@ -2325,13 +2325,13 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
@@ -2354,10 +2354,10 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             # DataProviderResult oResult2 = ((DataProviderTimeVarying)oProvider).ExecEventArray(EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000");
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
@@ -2429,10 +2429,10 @@ class EarlyBoundTests(TestBase):
             # Get the Time Event Array that will be used for testing
             EventArrayName: str = "TestTimeArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
             oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
@@ -2453,10 +2453,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertAlmostEqual(4432.522791342938, float(arValues[2]), delta=1.0)
             Assert.assertAlmostEqual(-2995.723486981184, float(arValues[3]), delta=1.0)
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Place/Place1"
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
                 EventArrayTestObject2, elemCols
@@ -3747,11 +3747,11 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(startTime)
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(stopTime)
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -3819,10 +3819,10 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Start Time", "Stop Time", "Duration"]
             oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_elements_event_array(
@@ -3859,10 +3859,10 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = TestBase.Application.vgt_root.get_provider(
                 "Satellite/Satellite1"
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
@@ -3895,11 +3895,11 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(startTime)
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = (
+            TestBase.Application.current_scenario.vgt.time_instants.factory.create_smart_epoch_from_time(stopTime)
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 

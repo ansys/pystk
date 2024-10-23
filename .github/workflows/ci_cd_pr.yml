@@ -42,15 +42,13 @@ jobs:
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  branch-name-style:
-    name: "Branch style checks"
+  check-pr-title:
+    name: "Check pull-request title follows conventional commits"
     runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v7
+      - uses: ansys/actions/check-pr-title@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   code-style:
     name: "Code style checks"
@@ -58,9 +56,9 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
-      - uses: ansys/actions/code-style@v7
+      - uses: ansys/actions/code-style@v8
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -70,7 +68,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
@@ -95,7 +93,7 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v7
+      - uses: ansys/actions/doc-style@v8
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
@@ -113,7 +111,7 @@ jobs:
            target: ['all', 'grpc', 'visualization']
     steps:
       - name: "Build a wheelhouse of the Python library"
-        uses: ansys/actions/build-wheelhouse@v7.0
+        uses: ansys/actions/build-wheelhouse@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           operating-system: ${{ matrix.os }}
@@ -424,6 +422,6 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v7
+      - uses: ansys/actions/build-library@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}

@@ -12,13 +12,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_DetermineIfEventOccurredInInterval(self):
         self.DetermineIfEventOccurredInInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def DetermineIfEventOccurredInInterval(self, provider: "AnalysisWorkbenchProvider"):
+    def DetermineIfEventOccurredInInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         # The event you are interested in.
-        timeEventInterval: "ITimeToolEventInterval" = provider.event_intervals["LightingIntervals.Sunlight.First"]
+        timeEventInterval: "ITimeToolTimeInterval" = provider.time_intervals["LightingIntervals.Sunlight.First"]
 
         # The reference event you want to determine if event occurred in the interval.
-        timeEvent: "ITimeToolEvent" = provider.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
-        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        timeEvent: "ITimeToolInstant" = provider.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"]
+        occurrence: "TimeToolInstantOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:
             if timeEventInterval.occurred(occurrence.epoch):
                 Console.WriteLine("Our highest altitude was reached on the first lighting pass")
@@ -32,10 +32,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_DetermineEventInterval(self):
         self.DetermineStartAndStopTimesOfEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def DetermineStartAndStopTimesOfEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = provider.event_intervals["AvailabilityTimeSpan"]
+    def DetermineStartAndStopTimesOfEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals["AvailabilityTimeSpan"]
 
-        interval: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        interval: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if interval.is_valid:
             Console.WriteLine(("Interval Start: " + str(interval.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(interval.interval.stop)))
@@ -46,20 +46,18 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateEventIntervalBetweenTwoInstants(self):
         self.CreateEventIntervalBetweenTwoInstants(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateEventIntervalBetweenTwoInstants(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = (
-            provider.event_intervals.factory.create_event_interval_between_time_instants(
-                "MyIntervalBetweenTwoInstants", "MyDescription"
-            )
+    def CreateEventIntervalBetweenTwoInstants(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_between_time_instants(
+            "MyIntervalBetweenTwoInstants", "MyDescription"
         )
-        asTimeInstant: "TimeToolEventIntervalBetweenTimeInstants" = clr.CastAs(
-            eventInterval, TimeToolEventIntervalBetweenTimeInstants
+        asTimeInstant: "TimeToolTimeIntervalBetweenTimeInstants" = clr.CastAs(
+            eventInterval, TimeToolTimeIntervalBetweenTimeInstants
         )
 
-        asTimeInstant.start_time_instant = provider.events["EphemerisStartTime"]
-        asTimeInstant.stop_time_instant = provider.events["EphemerisStopTime"]
+        asTimeInstant.start_time_instant = provider.time_instants["EphemerisStartTime"]
+        asTimeInstant.stop_time_instant = provider.time_instants["EphemerisStopTime"]
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -70,15 +68,15 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateFixedDurationEventInterval(self):
         self.CreateFixedDurationEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFixedDurationEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = provider.event_intervals.factory.create_event_interval_fixed_duration(
+    def CreateFixedDurationEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_fixed_duration(
             "MyIntervalFixedDuration", "MyDescription"
         )
-        asFixedDuration: "TimeToolEventIntervalFixedDuration" = clr.CastAs(
-            eventInterval, TimeToolEventIntervalFixedDuration
+        asFixedDuration: "TimeToolTimeIntervalFixedDuration" = clr.CastAs(
+            eventInterval, TimeToolTimeIntervalFixedDuration
         )
 
-        asFixedDuration.reference_time_instant = provider.events["AvailabilityStartTime"]
+        asFixedDuration.reference_time_instant = provider.time_instants["AvailabilityStartTime"]
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFixedDuration.start_offset = 10
@@ -86,7 +84,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFixedDuration.stop_offset = 360
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -97,18 +95,18 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateFixedEventInterval(self):
         self.CreateFixedEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateFixedEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = provider.event_intervals.factory.create_event_interval_fixed(
+    def CreateFixedEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_fixed(
             "MyIntervalFixed", "MyDescription"
         )
-        asFixed: "TimeToolEventIntervalFixed" = clr.CastAs(eventInterval, TimeToolEventIntervalFixed)
+        asFixed: "TimeToolTimeIntervalFixed" = clr.CastAs(eventInterval, TimeToolTimeIntervalFixed)
 
         asFixed.set_interval(
-            provider.events["AvailabilityStartTime"].find_occurrence().epoch,
-            provider.events["AvailabilityStopTime"].find_occurrence().epoch,
+            provider.time_instants["AvailabilityStartTime"].find_occurrence().epoch,
+            provider.time_instants["AvailabilityStopTime"].find_occurrence().epoch,
         )
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -119,20 +117,18 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateTimeOffsetEventInterval(self):
         self.CreateTimeOffsetEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateTimeOffsetEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = provider.event_intervals.factory.create_event_interval_time_offset(
+    def CreateTimeOffsetEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_time_offset(
             "MyIntervalFixedTimeOffset", "MyDescription"
         )
-        asFixedTimeOffset: "TimeToolEventIntervalTimeOffset" = clr.CastAs(
-            eventInterval, TimeToolEventIntervalTimeOffset
-        )
+        asFixedTimeOffset: "TimeToolTimeIntervalTimeOffset" = clr.CastAs(eventInterval, TimeToolTimeIntervalTimeOffset)
 
-        asFixedTimeOffset.reference_interval = provider.event_intervals["AvailabilityTimeSpan"]
+        asFixedTimeOffset.reference_interval = provider.time_intervals["AvailabilityTimeSpan"]
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asFixedTimeOffset.time_offset = 30
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -143,22 +139,22 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateEventIntervalFromIntervalList(self):
         self.CreateEventIntervalFromIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateEventIntervalFromIntervalList(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = (
-            provider.event_intervals.factory.create_event_interval_from_interval_list("MyIntervalList", "MyDescription")
+    def CreateEventIntervalFromIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_from_interval_list(
+            "MyIntervalList", "MyDescription"
         )
-        asIntervalList: "TimeToolEventIntervalFromIntervalList" = clr.CastAs(
-            eventInterval, TimeToolEventIntervalFromIntervalList
+        asIntervalList: "TimeToolTimeIntervalFromIntervalList" = clr.CastAs(
+            eventInterval, TimeToolTimeIntervalFromIntervalList
         )
 
-        asIntervalList.reference_intervals = provider.event_interval_lists["AttitudeIntervals"]
-        asIntervalList.interval_selection = CRDN_INTERVAL_SELECTION.MAX_GAP
+        asIntervalList.reference_intervals = provider.time_interval_lists["AttitudeIntervals"]
+        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MAXIMUM_GAP
 
         # Or from start
-        asIntervalList.interval_selection = CRDN_INTERVAL_SELECTION.FROM_START
+        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.FROM_START
         asIntervalList.interval_number = 1
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -169,13 +165,13 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_CreateScaledEventInterval(self):
         self.CreateScaledEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
 
-    def CreateScaledEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        eventInterval: "ITimeToolEventInterval" = provider.event_intervals.factory.create_event_interval_scaled(
+    def CreateScaledEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_scaled(
             "MyIntervalScaled", "MyDescription"
         )
-        asScaled: "TimeToolEventIntervalScaled" = clr.CastAs(eventInterval, TimeToolEventIntervalScaled)
+        asScaled: "TimeToolTimeIntervalScaled" = clr.CastAs(eventInterval, TimeToolTimeIntervalScaled)
 
-        asScaled.original_interval = provider.event_intervals["AvailabilityTimeSpan"]
+        asScaled.original_interval = provider.time_intervals["AvailabilityTimeSpan"]
 
         asScaled.absolute_increment = 30
 
@@ -183,7 +179,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         asScaled.use_absolute_increment = False
         asScaled.relative_increment = 45  # Percentage
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -195,28 +191,26 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventInterval(TestBase.Application)
 
     def CreateSignaledEventInterval(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
 
-        eventInterval: "ITimeToolEventInterval" = (
-            satelliteVgtProvider.event_intervals.factory.create_event_interval_signaled(
-                "MyIntervalSignaled", "MyDescription"
-            )
+        eventInterval: "ITimeToolTimeInterval" = satelliteVgtProvider.time_intervals.factory.create_signaled(
+            "MyIntervalSignaled", "MyDescription"
         )
-        asSignaled: "TimeToolEventIntervalSignaled" = clr.CastAs(eventInterval, TimeToolEventIntervalSignaled)
+        asSignaled: "TimeToolTimeIntervalSignaled" = clr.CastAs(eventInterval, TimeToolTimeIntervalSignaled)
 
-        asSignaled.original_interval = aircraftVgtProvider.event_intervals["AvailabilityTimeSpan"]
+        asSignaled.original_interval = aircraftVgtProvider.time_intervals["AvailabilityTimeSpan"]
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = CRDN_SIGNAL_SENSE.RECEIVE
+        asSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.RECEIVE
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SPEED_TYPE.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
 
-        intervalResult: "TimeToolEventIntervalResult" = eventInterval.find_interval()
+        intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
         if intervalResult.is_valid:
             Console.WriteLine(("Interval Start: " + str(intervalResult.interval.start)))
             Console.WriteLine(("Interval Stop: " + str(intervalResult.interval.stop)))
@@ -229,7 +223,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
         self.SetSmartIntervalToTodayAndStopTimeToTomorrow(scenario.analysis_interval)
 
-    def SetSmartIntervalToTodayAndStopTimeToTomorrow(self, smartInterval: "TimeToolEventIntervalSmartInterval"):
+    def SetSmartIntervalToTodayAndStopTimeToTomorrow(self, smartInterval: "TimeToolTimeIntervalSmartInterval"):
         smartInterval.set_explicit_interval("Today", "Tomorrow")
 
     # endregion
@@ -238,24 +232,24 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_ConfigureSmartIntervalStateStartStop(self):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
-        startEvent: "ITimeToolEvent" = (IStkObject(scenario)).vgt.events["AnalysisStartTime"]
-        stopEvent: "ITimeToolEvent" = (IStkObject(scenario)).vgt.events["AnalysisStopTime"]
+        startEvent: "ITimeToolInstant" = (IStkObject(scenario)).vgt.time_instants["AnalysisStartTime"]
+        stopEvent: "ITimeToolInstant" = (IStkObject(scenario)).vgt.time_instants["AnalysisStopTime"]
 
         self.ConfigureSmartIntervalStateStartStop(scenario.analysis_interval, startEvent, stopEvent)
 
     def ConfigureSmartIntervalStateStartStop(
         self,
-        smartInterval: "TimeToolEventIntervalSmartInterval",
-        startEventEpoch: "ITimeToolEvent",
-        stopEventEpoch: "ITimeToolEvent",
+        smartInterval: "TimeToolTimeIntervalSmartInterval",
+        startEventEpoch: "ITimeToolInstant",
+        stopEventEpoch: "ITimeToolInstant",
     ):
-        smartInterval.state = CRDN_SMART_INTERVAL_STATE.START_STOP
+        smartInterval.state = SMART_INTERVAL_STATE.START_STOP
 
-        accessStartEpoch: "TimeToolEventSmartEpoch" = smartInterval.get_start_epoch()
+        accessStartEpoch: "TimeToolInstantSmartEpoch" = smartInterval.get_start_epoch()
         accessStartEpoch.set_implicit_time(startEventEpoch)
         smartInterval.set_start_epoch(accessStartEpoch)
 
-        accessStopEpoch: "TimeToolEventSmartEpoch" = smartInterval.get_stop_epoch()
+        accessStopEpoch: "TimeToolInstantSmartEpoch" = smartInterval.get_stop_epoch()
         accessStopEpoch.set_implicit_time(stopEventEpoch)
         smartInterval.set_stop_epoch(accessStopEpoch)
 
@@ -266,9 +260,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         self.ConfigureSmartIntervalEpochAndDuration(scenario.analysis_interval)
 
-    def ConfigureSmartIntervalEpochAndDuration(self, smartInterval: "TimeToolEventIntervalSmartInterval"):
+    def ConfigureSmartIntervalEpochAndDuration(self, smartInterval: "TimeToolTimeIntervalSmartInterval"):
         # Change the time interval to 1 week after the dependent interval.
-        epochOfInterest: "TimeToolEventSmartEpoch" = smartInterval.get_stop_epoch()
+        epochOfInterest: "TimeToolInstantSmartEpoch" = smartInterval.get_stop_epoch()
         smartInterval.set_start_epoch_and_duration(epochOfInterest, "+1 week")
 
         # Or if you want a specific time, use SetStartTimeAndDuration.
@@ -288,7 +282,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         self.GetSmartIntervalStartAndStopTime(scenario.analysis_interval)
 
-    def GetSmartIntervalStartAndStopTime(self, smartInterval: "TimeToolEventIntervalSmartInterval"):
+    def GetSmartIntervalStartAndStopTime(self, smartInterval: "TimeToolTimeIntervalSmartInterval"):
         smartInterval.set_start_time_and_duration("Now", "+100 day")
         startTime: typing.Any = smartInterval.find_start_time()
         stopTime: typing.Any = smartInterval.find_stop_time()

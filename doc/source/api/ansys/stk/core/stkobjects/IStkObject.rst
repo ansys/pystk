@@ -176,7 +176,7 @@ Property detail
 
 .. py:property:: vgt
     :canonical: ansys.stk.core.stkobjects.IStkObject.vgt
-    :type: IAnalysisWorkbenchProvider
+    :type: IAnalysisWorkbenchComponentProvider
 
     Returns an instance of Vector Geometry Tool provider.
 

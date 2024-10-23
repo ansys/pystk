@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
