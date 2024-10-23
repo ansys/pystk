@@ -1,10 +1,10 @@
 # # Bi-elliptic transfer
 #
-# This tutorial provides a practical example on how to solve a Bi-elliptic transfer problem using Python.
+# This tutorial provides a practical example on how to solve a bi-elliptic transfer problem using Python.
 #
-# ## What is a Bi-elliptic transfer?
+# ## What is a bi-elliptic transfer?
 #
-# A Bi-elliptic transfer is an orbital maneuver used in spaceflight to transfer a spacecraft between two orbits using two half-elliptical orbits and three engine impulses. It is more fuel-efficient than a Hohmann transfer for certain orbital changes where the final orbit radius is significantly larger than the initial orbit radius.
+# A bi-elliptic transfer is an orbital maneuver used in spaceflight to transfer a spacecraft between two orbits using two half-elliptical orbits and three engine impulses. It is more fuel-efficient than a Hohmann transfer for certain orbital changes where the final orbit radius is significantly larger than the initial orbit radius.
 #
 # The orbit transfer is typically modeled under the two-body assumption. This means that it assumes a simplified scenario where only two significant gravitational bodies are considered: the spacecraft and the central body (e.g., a planet or a moon).
 #
@@ -99,7 +99,7 @@ initial_state.element.true_anomaly = 0.00
 
 # ## Propagate the parking orbit of the satellite
 #
-# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the Bi-elliptic transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
+# The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the bi-elliptic transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
 
 parking_orbit_propagate = satellite.propagator.main_sequence.insert(
     SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-"
@@ -116,9 +116,9 @@ from ansys.stk.core.utilities.colors import Colors
 parking_orbit_propagate.properties.color = Colors.Blue
 # -
 
-# ## Set up the Bi-elliptic transfer
+# ## Set up the bi-elliptic transfer
 #
-# The Bi-elliptic transfer can be modelled as a sequence composed by five segments:
+# The bi-elliptic transfer can be modelled as a sequence composed by five segments:
 #
 #
 # - **First impulse.** It is applied at the periapsis to raise the radius of apoapsis up to a desired value.
@@ -177,7 +177,7 @@ last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
 last_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
 # -
 
-# Finally, it is possible to visualize the segments layout of the Bi-elliptic transfer sequence by running:
+# Finally, it is possible to visualize the segments layout of the bi-elliptic transfer sequence by running:
 
 print(bielliptic_transfer.name)
 for control_sequence in bielliptic_transfer.segments:
@@ -226,7 +226,7 @@ desired_radius_of_apoapsis.tolerance = 0.10
 
 # ### First Propagation
 
-# After the first impulse, a propagation segment takes place in a Bi-elliptic transfer. The stopping condition is imposed to take place at the apoapsis of the orbit:
+# After the first impulse, a propagation segment takes place in a bi-elliptic transfer. The stopping condition is imposed to take place at the apoapsis of the orbit:
 
 first_propagate.stopping_conditions.add("Apoapsis")
 first_propagate.stopping_conditions.remove("Duration")
@@ -264,7 +264,7 @@ desired_radius_of_periapsis.tolerance = 0.10
 
 # ### Second Propagation
 
-# After the second impulse, another propagation segment takes place in a Bi-elliptic transfer. The stopping condition is imposed to take place at the periapsis of the orbit:
+# After the second impulse, another propagation segment takes place in a bi-elliptic transfer. The stopping condition is imposed to take place at the periapsis of the orbit:
 
 second_propagate.stopping_conditions.add("Periapsis")
 second_propagate.stopping_conditions.remove("Duration")
