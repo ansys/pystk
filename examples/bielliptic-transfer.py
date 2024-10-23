@@ -316,7 +316,7 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 # Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TARGET_SEQ_ACTION
+from ansys.stk.core.stkobjects.astrogator import TARGET_SEQUENCE_ACTION
 
 
 bielliptic_start.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
