@@ -32,6 +32,7 @@ This series of tutorials explain how to model and simulate orbital maneuvers usi
     :caption: Orbital maneuvers
 
     examples/hohmann-transfer
+    examples/bielliptic-transfer
     examples/lambert-transfer
 
 Communications and radar
