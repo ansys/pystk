@@ -380,7 +380,7 @@ class WidgetBase(RemoteFrameBuffer):
             data = super()._repr_mimebundle_(include=include, exclude=exclude)
         else:
             data = {
-                "image/png": array2png(self.get_frame())
+                "image/png": array2png(self.snapshot().data)
             }
         return data
 
