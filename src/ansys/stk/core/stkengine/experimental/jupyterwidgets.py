@@ -379,13 +379,8 @@ class WidgetBase(RemoteFrameBuffer):
         if not needs_snapshot:
             data = super()._repr_mimebundle_(include=include, exclude=exclude)
         else:
-            # TODO: find a better solution for flushing the scene
-            # https://github.com/ansys-internal/pystk/issues/530
-            import time
-            time.sleep(3)
-
             data = {
-                "image/png": array2png(self.get_frame())
+                "image/png": array2png(self.snapshot().data)
             }
         return data
 
