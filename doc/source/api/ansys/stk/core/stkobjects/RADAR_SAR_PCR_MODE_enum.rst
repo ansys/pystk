@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PCR`
+            * - :py:attr:`~PULSE_COMPRESSION_RATIO`
               - Pulse compression ratio.
 
             * - :py:attr:`~PULSE_WIDTH`

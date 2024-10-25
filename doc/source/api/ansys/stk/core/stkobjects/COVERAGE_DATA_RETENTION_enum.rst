@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DATA_RETENTION_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown data retention method.
 
             * - :py:attr:`~ALL_DATA`

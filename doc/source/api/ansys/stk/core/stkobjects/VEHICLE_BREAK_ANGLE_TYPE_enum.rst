@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~BREAK_ANGLE_TYPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Represents a type of break angle not supported by the Object Model.
 
-            * - :py:attr:`~BREAK_BY_LATITUDE`
+            * - :py:attr:`~BY_LATITUDE`
               - Latitude: the Latitude crossing at which a new pass begins. Recommended for non-equatorial orbits. A latitude of 0 deg for an inclined orbit coincides with the ascending or descending node.
 
-            * - :py:attr:`~BREAK_BY_LONGITUDE`
+            * - :py:attr:`~BY_LONGITUDE`
               - Longitude: the Longitude crossing at which a new pass will begin. Not suitable for polar orbits.
 
 

@@ -1,11 +1,11 @@
-MtoTrackPoint
+MTOTrackPoint
 =============
 
-.. py:class:: ansys.stk.core.stkobjects.MtoTrackPoint
+.. py:class:: ansys.stk.core.stkobjects.MTOTrackPoint
 
    The points defined for the selected track.
 
-.. py:currentmodule:: MtoTrackPoint
+.. py:currentmodule:: MTOTrackPoint
 
 Overview
 --------
@@ -18,17 +18,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.time`
               - Get the time at which the point occurs. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.latitude`
               - Gets or sets the latitude of the point. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.longitude`
               - Gets or sets the longitude of the point. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.altitude`
               - Gets or sets the altitude of the point. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.position`
               - Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPoint.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.identifier`
               - Get the ID number assigned to the track. This field is auto-populated in numeric sequential order, and cannot be modified.
 
 
@@ -38,44 +38,44 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoTrackPoint
+    from ansys.stk.core.stkobjects import MTOTrackPoint
 
 
 Property detail
 ---------------
 
 .. py:property:: time
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.time
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.time
     :type: typing.Any
 
     Get the time at which the point occurs. Uses DateFormat Dimension.
 
 .. py:property:: latitude
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.latitude
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.latitude
     :type: float
 
     Gets or sets the latitude of the point. Uses Angle Dimension.
 
 .. py:property:: longitude
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.longitude
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.longitude
     :type: float
 
     Gets or sets the longitude of the point. Uses Angle Dimension.
 
 .. py:property:: altitude
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.altitude
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.altitude
     :type: float
 
     Gets or sets the altitude of the point. Uses Distance Dimension.
 
 .. py:property:: position
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.position
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.position
     :type: IPosition
 
     Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPoint.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.identifier
     :type: int
 
     Get the ID number assigned to the track. This field is auto-populated in numeric sequential order, and cannot be modified.

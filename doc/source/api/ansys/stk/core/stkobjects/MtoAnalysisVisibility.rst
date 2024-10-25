@@ -1,11 +1,11 @@
-MtoAnalysisVisibility
+MTOAnalysisVisibility
 =====================
 
-.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisVisibility
+.. py:class:: ansys.stk.core.stkobjects.MTOAnalysisVisibility
 
    MTO Visibility Computation.
 
-.. py:currentmodule:: MtoAnalysisVisibility
+.. py:currentmodule:: MTOAnalysisVisibility
 
 Overview
 --------
@@ -18,17 +18,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.is_any_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.show_any_track`
               - Return true if any track is visible to the object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.are_all_tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.are_all_tracks_visible`
               - Return true if all tracks are visible to the object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.is_track_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.show_track`
               - Return true is the track is visible to the object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.are_tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.are_tracks_visible`
               - Return true if any track in the array is visible to the object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.compute_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.compute_tracks`
               - Return an array of track ids with a bool value indicating if it's visible to the specified object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.compute_all_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.compute_all_tracks`
               - Return an array of track ids with a bool value indicating if it's visible to the specified object.
 
     .. tab-item:: Properties
@@ -37,15 +37,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.use_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.use_terrain`
               - Indicate whether to use terrain instead of line of sight. Default is Terrain Off.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.entirety`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.entirety`
               - Visibility Entirety.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.object_interval`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_interval`
               - Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.object_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_data`
               - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisVisibility.stk_object_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_path`
               - Gets or sets the object used for the visibility computation.
 
 
@@ -55,38 +55,38 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoAnalysisVisibility
+    from ansys.stk.core.stkobjects import MTOAnalysisVisibility
 
 
 Property detail
 ---------------
 
 .. py:property:: use_terrain
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.use_terrain
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.use_terrain
     :type: bool
 
     Indicate whether to use terrain instead of line of sight. Default is Terrain Off.
 
 .. py:property:: entirety
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.entirety
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.entirety
     :type: MTO_ENTIRETY
 
     Visibility Entirety.
 
 .. py:property:: object_interval
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.object_interval
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_interval
     :type: MTO_OBJECT_INTERVAL
 
     Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
 
 .. py:property:: object_data
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.object_data
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_data
     :type: int
 
     If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
 
-.. py:property:: stk_object_path
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.stk_object_path
+.. py:property:: object_path
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_path
     :type: str
 
     Gets or sets the object used for the visibility computation.
@@ -95,8 +95,8 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: is_any_track_visible(self, time: typing.Any) -> bool
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.is_any_track_visible
+.. py:method:: show_any_track(self, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.show_any_track
 
     Return true if any track is visible to the object.
 
@@ -109,7 +109,7 @@ Method detail
         :obj:`~bool`
 
 .. py:method:: are_all_tracks_visible(self, time: typing.Any) -> bool
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.are_all_tracks_visible
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.are_all_tracks_visible
 
     Return true if all tracks are visible to the object.
 
@@ -129,8 +129,8 @@ Method detail
 
 
 
-.. py:method:: is_track_visible(self, trackId: int, time: typing.Any) -> bool
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.is_track_visible
+.. py:method:: show_track(self, trackId: int, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.show_track
 
     Return true is the track is visible to the object.
 
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_visible(self, eval: MTO_TRACK_EVAL, trackIds: list, time: typing.Any) -> bool
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.are_tracks_visible
+.. py:method:: are_tracks_visible(self, eval: MTO_TRACK_EVALUATION_TYPE, trackIds: list, time: typing.Any) -> bool
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.are_tracks_visible
 
     Return true if any track in the array is visible to the object.
 
     :Parameters:
 
-    **eval** : :obj:`~MTO_TRACK_EVAL`
+    **eval** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
     **trackIds** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
@@ -161,7 +161,7 @@ Method detail
         :obj:`~bool`
 
 .. py:method:: compute_tracks(self, mode: MTO_VISIBILITY_MODE, trackIds: list, time: typing.Any) -> list
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.compute_tracks
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.compute_tracks
 
     Return an array of track ids with a bool value indicating if it's visible to the specified object.
 
@@ -176,7 +176,7 @@ Method detail
         :obj:`~list`
 
 .. py:method:: compute_all_tracks(self, mode: MTO_VISIBILITY_MODE, time: typing.Any) -> list
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisVisibility.compute_all_tracks
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.compute_all_tracks
 
     Return an array of track ids with a bool value indicating if it's visible to the specified object.
 

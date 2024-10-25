@@ -55,7 +55,7 @@ Overview
               - Show Projection on 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.use_distance`
               - Opt whether the sensor's field-of-view crossings at specified distances are to be computed and displayed in the 2D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistence`
               - Specify whether to allow display times to affect the sensor's persistence on/off state.
 
 
@@ -131,8 +131,8 @@ Property detail
 
     Opt whether the sensor's field-of-view crossings at specified distances are to be computed and displayed in the 2D Graphics window.
 
-.. py:property:: display_times_hides_persistance
-    :canonical: ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistance
+.. py:property:: display_times_hides_persistence
+    :canonical: ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistence
     :type: bool
 
     Specify whether to allow display times to affect the sensor's persistence on/off state.

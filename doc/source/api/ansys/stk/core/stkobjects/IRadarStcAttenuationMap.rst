@@ -1,11 +1,11 @@
-IRadarStcAttenuationMap
+IRadarSTCAttenuationMap
 =======================
 
-.. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuationMap
+.. py:class:: ansys.stk.core.stkobjects.IRadarSTCAttenuationMap
 
    Provide access to the properties and methods defining a radar STC attenuation map.
 
-.. py:currentmodule:: IRadarStcAttenuationMap
+.. py:currentmodule:: IRadarSTCAttenuationMap
 
 Overview
 --------
@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuationMap.filename`
               - Gets or sets the map filename.
 
 
@@ -27,14 +27,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import IRadarStcAttenuationMap
+    from ansys.stk.core.stkobjects import IRadarSTCAttenuationMap
 
 
 Property detail
 ---------------
 
 .. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.IRadarStcAttenuationMap.filename
+    :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuationMap.filename
     :type: str
 
     Gets or sets the map filename.

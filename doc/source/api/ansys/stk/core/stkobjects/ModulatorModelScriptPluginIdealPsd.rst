@@ -1,13 +1,13 @@
-ModulatorModelScriptPluginIdealPsd
+ModulatorModelScriptPluginIdealPSD
 ==================================
 
-.. py:class:: ansys.stk.core.stkobjects.ModulatorModelScriptPluginIdealPsd
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelScriptPluginIdealPSD
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a ideal PSD script plugin modulator model.
 
-.. py:currentmodule:: ModulatorModelScriptPluginIdealPsd
+.. py:currentmodule:: ModulatorModelScriptPluginIdealPSD
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import ModulatorModelScriptPluginIdealPsd
+    from ansys.stk.core.stkobjects import ModulatorModelScriptPluginIdealPSD
 
 
 

@@ -1,13 +1,13 @@
-RadarModeBistaticReceiverSar
+RadarModeBistaticReceiverSAR
 ============================
 
-.. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSar
+.. py:class:: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSAR
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a bistatic receiver sar radar mode.
 
-.. py:currentmodule:: RadarModeBistaticReceiverSar
+.. py:currentmodule:: RadarModeBistaticReceiverSAR
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSar.pulse_integration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSAR.pulse_integration`
               - Gets the interface for configuring the SAR waveform pulse integration.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import RadarModeBistaticReceiverSar
+    from ansys.stk.core.stkobjects import RadarModeBistaticReceiverSAR
 
 
 Property detail
 ---------------
 
 .. py:property:: pulse_integration
-    :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSar.pulse_integration
+    :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSAR.pulse_integration
     :type: RadarWaveformSarPulseIntegration
 
     Gets the interface for configuring the SAR waveform pulse integration.

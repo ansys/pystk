@@ -33,9 +33,9 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
                 STK_OBJECT_TYPE.SATELLITE, AstrogatorSnippets.m_DefaultName
             )
         )
-        AstrogatorSnippets.m_Satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        AstrogatorSnippets.m_Satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         AstrogatorSnippets.m_Object = clr.CastAs(AstrogatorSnippets.m_Satellite.propagator, MCSDriver)
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -51,7 +51,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         self.ConfigureAstrogratorPropagator(AstrogatorSnippets.m_Satellite)
 
     def ConfigureAstrogratorPropagator(self, satellite: "Satellite"):
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
 
         driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
 

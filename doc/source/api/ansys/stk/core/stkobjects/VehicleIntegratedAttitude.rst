@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegratedAttitude.init_from_attitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegratedAttitude.initialize_from_attitude`
               - Initialize the parameters using a satellite's attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegratedAttitude.save_to_file`
               - Generate an external attitude file for a satellite by numerically integrating Euler's equations for the current satellite and save results to the specified file.
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: torque
     :canonical: ansys.stk.core.stkobjects.VehicleIntegratedAttitude.torque
-    :type: VehicleTorque
+    :type: AttitudeTorque
 
     Get the external torque data.
 
@@ -125,8 +125,8 @@ Method detail
 
 
 
-.. py:method:: init_from_attitude(self) -> None
-    :canonical: ansys.stk.core.stkobjects.VehicleIntegratedAttitude.init_from_attitude
+.. py:method:: initialize_from_attitude(self) -> None
+    :canonical: ansys.stk.core.stkobjects.VehicleIntegratedAttitude.initialize_from_attitude
 
     Initialize the parameters using a satellite's attitude.
 

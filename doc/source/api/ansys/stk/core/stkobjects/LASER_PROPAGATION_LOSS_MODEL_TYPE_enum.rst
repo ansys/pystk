@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~BEER_BOUGUER_LAMBERT_LAW`
               - Beer-Bouguer-Lambert law laser propagation loss model type.
 
-            * - :py:attr:`~MODTRAN_LOOKUP_TABLE_TYPE`
+            * - :py:attr:`~MODTRAN_LOOKUP_TABLE`
               - MODTRAN lookup table laser propagation model type.
 
-            * - :py:attr:`~MODTRAN_TYPE`
+            * - :py:attr:`~MODTRAN`
               - MODTRAN propagation model type.
 
 

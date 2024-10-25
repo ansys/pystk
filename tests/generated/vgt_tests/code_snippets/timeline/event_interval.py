@@ -10,7 +10,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region DetermineIfEventOccurredInInterval
     def test_DetermineIfEventOccurredInInterval(self):
-        self.DetermineIfEventOccurredInInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIfEventOccurredInInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineIfEventOccurredInInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         # The event you are interested in.
@@ -30,7 +32,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region DetermineEventInterval
     def test_DetermineEventInterval(self):
-        self.DetermineStartAndStopTimesOfEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineStartAndStopTimesOfEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineStartAndStopTimesOfEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals["AvailabilityTimeSpan"]
@@ -44,7 +48,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateEventIntervalBetweenTwoInstants
     def test_CreateEventIntervalBetweenTwoInstants(self):
-        self.CreateEventIntervalBetweenTwoInstants(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateEventIntervalBetweenTwoInstants(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateEventIntervalBetweenTwoInstants(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_between_time_instants(
@@ -66,7 +72,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateFixedDurationEventInterval
     def test_CreateFixedDurationEventInterval(self):
-        self.CreateFixedDurationEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFixedDurationEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFixedDurationEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_fixed_duration(
@@ -93,7 +101,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateFixedEventInterval
     def test_CreateFixedEventInterval(self):
-        self.CreateFixedEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFixedEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFixedEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_fixed(
@@ -115,7 +125,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateTimeOffsetEventInterval
     def test_CreateTimeOffsetEventInterval(self):
-        self.CreateTimeOffsetEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateTimeOffsetEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateTimeOffsetEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_time_offset(
@@ -137,7 +149,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateEventIntervalFromIntervalList
     def test_CreateEventIntervalFromIntervalList(self):
-        self.CreateEventIntervalFromIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateEventIntervalFromIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateEventIntervalFromIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_from_interval_list(
@@ -163,7 +177,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
 
     # region CreateScaledEventInterval
     def test_CreateScaledEventInterval(self):
-        self.CreateScaledEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateScaledEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateScaledEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventInterval: "ITimeToolTimeInterval" = provider.time_intervals.factory.create_scaled(
@@ -191,8 +207,12 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventInterval(TestBase.Application)
 
     def CreateSignaledEventInterval(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         eventInterval: "ITimeToolTimeInterval" = satelliteVgtProvider.time_intervals.factory.create_signaled(
             "MyIntervalSignaled", "MyDescription"
@@ -232,8 +252,12 @@ class EventInterval(TimelineCodeSnippetsTestBase):
     def test_ConfigureSmartIntervalStateStartStop(self):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
-        startEvent: "ITimeToolInstant" = (IStkObject(scenario)).vgt.time_instants["AnalysisStartTime"]
-        stopEvent: "ITimeToolInstant" = (IStkObject(scenario)).vgt.time_instants["AnalysisStopTime"]
+        startEvent: "ITimeToolInstant" = (IStkObject(scenario)).analysis_workbench_components.time_instants[
+            "AnalysisStartTime"
+        ]
+        stopEvent: "ITimeToolInstant" = (IStkObject(scenario)).analysis_workbench_components.time_instants[
+            "AnalysisStopTime"
+        ]
 
         self.ConfigureSmartIntervalStateStartStop(scenario.analysis_interval, startEvent, stopEvent)
 

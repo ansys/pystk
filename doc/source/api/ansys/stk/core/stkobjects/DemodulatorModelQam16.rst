@@ -1,13 +1,13 @@
-DemodulatorModelQam16
+DemodulatorModelQAM16
 =====================
 
-.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelQam16
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModelQAM16
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a QAM 16 modulator model.
 
-.. py:currentmodule:: DemodulatorModelQam16
+.. py:currentmodule:: DemodulatorModelQAM16
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import DemodulatorModelQam16
+    from ansys.stk.core.stkobjects import DemodulatorModelQAM16
 
 
 

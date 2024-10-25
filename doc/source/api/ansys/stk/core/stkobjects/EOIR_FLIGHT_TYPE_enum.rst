@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~AG_EEOIR_FLIGHT_NONE`
+            * - :py:attr:`~NONE`
               - EOIR Flight Type : None.
 
-            * - :py:attr:`~AG_EEOIR_FLIGHT_POWERED`
+            * - :py:attr:`~POWERED`
               - EOIR Flight Type : Powered.
 
-            * - :py:attr:`~AG_EEOIR_FLIGHT_FALLING`
+            * - :py:attr:`~FALLING`
               - EOIR Flight Type : Falling.
 
 

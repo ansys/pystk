@@ -19,19 +19,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~WAYPOINT_ALTITUDE_REFERENCE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~WAYPOINT_ALTITUDE_REFERENCE_MSL`
+            * - :py:attr:`~MEAN_SEA_LEVEL`
               - Referenced to Mean Sea Level.
 
-            * - :py:attr:`~WAYPOINT_ALTITUDE_REFERENCE_TERRAIN`
+            * - :py:attr:`~TERRAIN`
               - Referenced to the terrain under the vehicle's route (if terrain sources are loaded into the scenario).
 
-            * - :py:attr:`~WAYPOINT_ALTITUDE_REFERENCE_WGS84`
+            * - :py:attr:`~WGS84`
               - Referenced to the central body's reference ellipsoid (WGS84).
 
-            * - :py:attr:`~WAYPOINT_ALTITUDE_REFERENCE_ELLIPSOID`
+            * - :py:attr:`~ELLIPSOID`
               - Referenced to the central body's reference ellipsoid.
 
 

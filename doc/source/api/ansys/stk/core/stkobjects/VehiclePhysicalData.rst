@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePhysicalData.drag_cross_sectional_area`
               - Gets or sets the satellite's cross-sectional area to be used in atmospheric drag calculations. Uses Area Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePhysicalData.srp_cross_sectional_area`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePhysicalData.solar_radiation_pressure_cross_sectional_area`
               - Gets or sets the satellite's cross-sectional area to be used in solar radiation pressure calculations. Uses Area Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehiclePhysicalData.satellite_mass`
               - Gets or sets the mass of the satellite to be used in atmospheric drag and solar radiation pressure calculations. Uses Mass Dimension.
@@ -44,8 +44,8 @@ Property detail
 
     Gets or sets the satellite's cross-sectional area to be used in atmospheric drag calculations. Uses Area Dimension.
 
-.. py:property:: srp_cross_sectional_area
-    :canonical: ansys.stk.core.stkobjects.VehiclePhysicalData.srp_cross_sectional_area
+.. py:property:: solar_radiation_pressure_cross_sectional_area
+    :canonical: ansys.stk.core.stkobjects.VehiclePhysicalData.solar_radiation_pressure_cross_sectional_area
     :type: float
 
     Gets or sets the satellite's cross-sectional area to be used in solar radiation pressure calculations. Uses Area Dimension.

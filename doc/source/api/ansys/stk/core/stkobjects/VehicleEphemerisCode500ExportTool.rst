@@ -27,7 +27,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.sat_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.satellite_identifer`
               - Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
@@ -47,8 +47,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: sat_id
-    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.sat_id
+.. py:property:: satellite_identifer
+    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.satellite_identifer
     :type: int
 
     Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.

@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~CENTER`
               - Center: the sensor is located at the center of its parent object.
 
-            * - :py:attr:`~VECTOR_GEOMETRY_TOOL_POINT`
+            * - :py:attr:`~POINT`
               - Point: the sensor's location is based upon a Vector Geometry Tool point.
 
 

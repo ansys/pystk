@@ -144,7 +144,7 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
         # for pandas.
         if element_type == DATA_PROVIDER_ELEMENT_TYPE.REAL and element_dimensions_name not in "date":
             pd_dtype = numpy.float64
-        elif element_type == DATA_PROVIDER_ELEMENT_TYPE.INT:
+        elif element_type == DATA_PROVIDER_ELEMENT_TYPE.INTEGER:
             pd_dtype = numpy.int64
         else:
             # by default make everything else a str, strings like datatime strings can be handled/parsed

@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~POSITION_FILE`
+            * - :py:attr:`~FILE`
               - Use a planetary ephemeris (.pe) file to define the planet.
 
-            * - :py:attr:`~POSITION_CENTRAL_BODY`
+            * - :py:attr:`~CENTRAL_BODY`
               - Specify the name of a central body to define the planet.
 
 

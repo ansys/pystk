@@ -1,11 +1,11 @@
-MtoGraphics2DGlobalTrackOptions
+MTOGraphics2DGlobalTrackOptions
 ===============================
 
-.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DGlobalTrackOptions
+.. py:class:: ansys.stk.core.stkobjects.MTOGraphics2DGlobalTrackOptions
 
    Global 2D graphics options for an MTO.
 
-.. py:currentmodule:: MtoGraphics2DGlobalTrackOptions
+.. py:currentmodule:: MTOGraphics2DGlobalTrackOptions
 
 Overview
 --------
@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DGlobalTrackOptions.tracks_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DGlobalTrackOptions.show_tracks`
               - Opt whether to display or hide 2D graphics tracks for the MTO.
 
 
@@ -28,14 +28,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoGraphics2DGlobalTrackOptions
+    from ansys.stk.core.stkobjects import MTOGraphics2DGlobalTrackOptions
 
 
 Property detail
 ---------------
 
-.. py:property:: tracks_visible
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DGlobalTrackOptions.tracks_visible
+.. py:property:: show_tracks
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DGlobalTrackOptions.show_tracks
     :type: bool
 
     Opt whether to display or hide 2D graphics tracks for the MTO.

@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DO_NOT_SAVE_COMPUTE_DATA`
+            * - :py:attr:`~DO_NOT_SAVE_COMPUTED_DATA`
               - Don't save compute data.
 
             * - :py:attr:`~COMPUTE_DATA_ON_LOAD`
               - Don't save, but compute on load.
 
-            * - :py:attr:`~SAVE_COMPUTE_DATA`
+            * - :py:attr:`~SAVE_COMPUTED_DATA`
               - Save compute data.
 
 

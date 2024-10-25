@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~STRAND_METRIC_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported Chain optimal strand metric type.
 
             * - :py:attr:`~STRAND_METRIC_DISTANCE`

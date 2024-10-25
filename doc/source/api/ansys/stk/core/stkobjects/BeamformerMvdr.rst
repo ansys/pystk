@@ -1,13 +1,13 @@
-BeamformerMvdr
+BeamformerMVDR
 ==============
 
-.. py:class:: ansys.stk.core.stkobjects.BeamformerMvdr
+.. py:class:: ansys.stk.core.stkobjects.BeamformerMVDR
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer mvdr.
 
-.. py:currentmodule:: BeamformerMvdr
+.. py:currentmodule:: BeamformerMVDR
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerMvdr.constraint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerMVDR.constraint`
               - Gets or sets the constraint.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import BeamformerMvdr
+    from ansys.stk.core.stkobjects import BeamformerMVDR
 
 
 Property detail
 ---------------
 
 .. py:property:: constraint
-    :canonical: ansys.stk.core.stkobjects.BeamformerMvdr.constraint
+    :canonical: ansys.stk.core.stkobjects.BeamformerMVDR.constraint
     :type: float
 
     Gets or sets the constraint.

@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~FULL`
               - Include both time-dependent and time-independent contributions. This option is only available for gravity field models that support a tide model.
 
-            * - :py:attr:`~PERMANENT`
+            * - :py:attr:`~PERMANENT_ONLY`
               - Include only the permanent tide - the time-independent contribution.
 
             * - :py:attr:`~NONE`

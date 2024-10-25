@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation.min_max_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation.minimum_maximum_data`
               - Minimum and maximum time intervals for determining if two or more coverage intervals occur within a specified time interval.
 
 
@@ -36,9 +36,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min_max_data
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation.min_max_data
-    :type: FigureOfMeritDefinitionDataMinMax
+.. py:property:: minimum_maximum_data
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessSeparation.minimum_maximum_data
+    :type: FigureOfMeritDefinitionDataMinimumMaximum
 
     Minimum and maximum time intervals for determining if two or more coverage intervals occur within a specified time interval.
 

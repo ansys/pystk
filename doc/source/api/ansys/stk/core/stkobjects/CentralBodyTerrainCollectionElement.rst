@@ -24,7 +24,7 @@ Overview
               - Return the altitudes at the specified position array relative to the input reference surface. If a specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitudes_between_points_at_resolution`
               - Return the terrain profile at the specified resolution relative to the input reference surface. If a position along the profile is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_extent_max_resolution`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_extent_maximum_resolution`
               - Return the highest resolution for any terrain that overlaps the specified rectangle.
 
     .. tab-item:: Properties
@@ -117,8 +117,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_extent_max_resolution(self, sWLatitude: typing.Any, sWLongitude: typing.Any, nELatitude: typing.Any, nELongitude: typing.Any) -> float
-    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_extent_max_resolution
+.. py:method:: get_extent_maximum_resolution(self, sWLatitude: typing.Any, sWLongitude: typing.Any, nELatitude: typing.Any, nELongitude: typing.Any) -> float
+    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_extent_maximum_resolution
 
     Return the highest resolution for any terrain that overlaps the specified rectangle.
 

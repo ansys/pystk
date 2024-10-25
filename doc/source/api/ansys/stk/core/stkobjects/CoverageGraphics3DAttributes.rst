@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3DAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3DAttributes.show_graphics`
               - Show Animation Graphics: specify whether to display coverage data for all points based on evaluation over the entire coverage interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics3DAttributes.translucency`
               - Animation Translucency Percentage: the translucency of the static graphics when grid points are filled. Dimensionless.
@@ -38,8 +38,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3DAttributes.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics3DAttributes.show_graphics
     :type: bool
 
     Show Animation Graphics: specify whether to display coverage data for all points based on evaluation over the entire coverage interval.

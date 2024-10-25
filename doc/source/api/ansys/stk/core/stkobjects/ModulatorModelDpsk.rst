@@ -1,13 +1,13 @@
-ModulatorModelDpsk
+ModulatorModelDPSK
 ==================
 
-.. py:class:: ansys.stk.core.stkobjects.ModulatorModelDpsk
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelDPSK
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a DPSK modulator model.
 
-.. py:currentmodule:: ModulatorModelDpsk
+.. py:currentmodule:: ModulatorModelDPSK
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import ModulatorModelDpsk
+    from ansys.stk.core.stkobjects import ModulatorModelDPSK
 
 
 

@@ -39,15 +39,15 @@ Overview
               - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_receive_gains_losses`
               - Gets the collection of additional pre-receive gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demodulator_gains_losses`
               - Gets the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.link_margin`
               - Gets the interface for configuring the link margin computation parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.scale_bandwidth_automatically`
               - Gets or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.bandwidth`
               - Gets or set the bandwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.select_demodulator_automatically`
               - Gets or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.supported_demodulators`
               - Gets an array of supported demodulator model names.
@@ -59,7 +59,7 @@ Overview
               - Gets an array of supported rain outage percent values.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.rain_outage_percent`
               - Gets or sets the rain outage percent.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.track_frequency_automatically`
               - Gets or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelMultibeam.antenna_to_lna_line_loss`
               - Gets or sets the antenna to LNA line loss.
@@ -111,8 +111,8 @@ Property detail
 
     Gets the collection of additional pre-receive gains and losses.
 
-.. py:property:: pre_demod_gains_losses
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demod_gains_losses
+.. py:property:: pre_demodulator_gains_losses
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.pre_demodulator_gains_losses
     :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
@@ -123,8 +123,8 @@ Property detail
 
     Gets the interface for configuring the link margin computation parameters.
 
-.. py:property:: auto_scale_bandwidth
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_scale_bandwidth
+.. py:property:: scale_bandwidth_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.scale_bandwidth_automatically
     :type: bool
 
     Gets or set the auto scale bandwidth option.
@@ -135,8 +135,8 @@ Property detail
 
     Gets or set the bandwidth.
 
-.. py:property:: auto_select_demodulator
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_select_demodulator
+.. py:property:: select_demodulator_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.select_demodulator_automatically
     :type: bool
 
     Gets or set the auto select demodulator option.
@@ -171,8 +171,8 @@ Property detail
 
     Gets or sets the rain outage percent.
 
-.. py:property:: auto_track_frequency
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.auto_track_frequency
+.. py:property:: track_frequency_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelMultibeam.track_frequency_automatically
     :type: bool
 
     Gets or set the auto track frequency option.

@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: profile_type
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile_type
-    :type: VEHICLE_PROFILE
+    :type: ATTITUDE_PROFILE
 
     Get realtime data reference profile type.
 
@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_profile_type(self, profile: VEHICLE_PROFILE) -> None
+.. py:method:: set_profile_type(self, profile: ATTITUDE_PROFILE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.set_profile_type
 
     Set realtime data reference profile type.
 
     :Parameters:
 
-    **profile** : :obj:`~VEHICLE_PROFILE`
+    **profile** : :obj:`~ATTITUDE_PROFILE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_profile_type_supported(self, profile: VEHICLE_PROFILE) -> bool
+.. py:method:: is_profile_type_supported(self, profile: ATTITUDE_PROFILE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.is_profile_type_supported
 
     Get a value indicating whether the specified profile type can be used.
 
     :Parameters:
 
-    **profile** : :obj:`~VEHICLE_PROFILE`
+    **profile** : :obj:`~ATTITUDE_PROFILE`
 
     :Returns:
 

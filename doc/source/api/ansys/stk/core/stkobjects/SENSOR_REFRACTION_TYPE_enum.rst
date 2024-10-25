@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~EARTH_4_3_RADIUS_METHOD`
+            * - :py:attr:`~EARTH_FOUR_THIRDS_RADIUS_METHOD`
               - 4/3 Earth Radius: computes the apparent elevation due to refraction by assuming an Earth radius 4/3 of its actual value.
 
             * - :py:attr:`~SCF_METHOD`

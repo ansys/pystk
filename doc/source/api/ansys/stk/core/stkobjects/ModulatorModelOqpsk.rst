@@ -1,13 +1,13 @@
-ModulatorModelOqpsk
+ModulatorModelOQPSK
 ===================
 
-.. py:class:: ansys.stk.core.stkobjects.ModulatorModelOqpsk
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelOQPSK
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a OQPSK modulator model.
 
-.. py:currentmodule:: ModulatorModelOqpsk
+.. py:currentmodule:: ModulatorModelOQPSK
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import ModulatorModelOqpsk
+    from ansys.stk.core.stkobjects import ModulatorModelOQPSK
 
 
 

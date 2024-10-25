@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~UNADJUSTED_RCV_FLUX_DENSITY`
+            * - :py:attr:`~UNADJUSTED_RECEIVE_FLUX_DENSITY`
               - Use unadjusted receive flux density.
 
-            * - :py:attr:`~RCV_ANT_GAIN_DELTA_ADJUSTED_FLUX_DENSITY`
+            * - :py:attr:`~RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY`
               - Use receiver antenna gain delta adjusted flux density.
 
             * - :py:attr:`~CONSTANT_OUTPUT_POWER`

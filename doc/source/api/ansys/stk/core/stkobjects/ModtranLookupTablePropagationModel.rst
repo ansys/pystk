@@ -1,13 +1,13 @@
-ModtranLookupTablePropagationModel
+MODTRANLookupTablePropagationModel
 ==================================
 
-.. py:class:: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel
+.. py:class:: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.ILaserAtmosphericLossModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining an MODTRAN-based lookup table propagation model.
 
-.. py:currentmodule:: ModtranLookupTablePropagationModel
+.. py:currentmodule:: MODTRANLookupTablePropagationModel
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.set_aerosol_model_type_by_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.set_aerosol_model_type_by_name`
               - Set the aerosol model type by name.
 
     .. tab-item:: Properties
@@ -29,15 +29,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.aerosol_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.aerosol_model_type`
               - Gets or sets the aerosol model type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.visibility`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility`
               - Gets or sets the visibility.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.relative_humidity`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.relative_humidity`
               - Gets or sets the relative humidity.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.surface_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature`
               - Gets or sets the surface temperature.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.supported_aerosol_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.supported_aerosol_models`
               - Gets an array of supported aerosol model names.
 
 
@@ -47,38 +47,38 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import ModtranLookupTablePropagationModel
+    from ansys.stk.core.stkobjects import MODTRANLookupTablePropagationModel
 
 
 Property detail
 ---------------
 
 .. py:property:: aerosol_model_type
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.aerosol_model_type
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.aerosol_model_type
     :type: MODTRAN_AEROSOL_MODEL_TYPE
 
     Gets or sets the aerosol model type.
 
 .. py:property:: visibility
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.visibility
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.visibility
     :type: float
 
     Gets or sets the visibility.
 
 .. py:property:: relative_humidity
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.relative_humidity
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.relative_humidity
     :type: float
 
     Gets or sets the relative humidity.
 
 .. py:property:: surface_temperature
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.surface_temperature
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.surface_temperature
     :type: float
 
     Gets or sets the surface temperature.
 
 .. py:property:: supported_aerosol_models
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.supported_aerosol_models
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.supported_aerosol_models
     :type: list
 
     Gets an array of supported aerosol model names.
@@ -97,7 +97,7 @@ Method detail
 
 
 .. py:method:: set_aerosol_model_type_by_name(self, name: str) -> None
-    :canonical: ansys.stk.core.stkobjects.ModtranLookupTablePropagationModel.set_aerosol_model_type_by_name
+    :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.set_aerosol_model_type_by_name
 
     Set the aerosol model type by name.
 

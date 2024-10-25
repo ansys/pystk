@@ -19,19 +19,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~CASE0`
+            * - :py:attr:`~CASE_0`
               - 0.
 
-            * - :py:attr:`~I`
+            * - :py:attr:`~CASE_I`
               - I.
 
-            * - :py:attr:`~II`
+            * - :py:attr:`~CASE_II`
               - II.
 
-            * - :py:attr:`~III`
+            * - :py:attr:`~CASE_III`
               - III.
 
-            * - :py:attr:`~IV`
+            * - :py:attr:`~CASE_IV`
               - IV.
 
 

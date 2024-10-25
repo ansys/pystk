@@ -24,7 +24,7 @@ Overview
               - Get the satellite's OrbitSystem properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.proximity`
               - Get the satellite's Proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.elevation_contours`
               - Get the satellite's Elevation Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.saa`
               - Get the satellite's South Atlantic Anomaly Contour properties.
@@ -86,9 +86,9 @@ Property detail
 
     Get the satellite's Proximity properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the satellite's Elevation Contours properties.
 

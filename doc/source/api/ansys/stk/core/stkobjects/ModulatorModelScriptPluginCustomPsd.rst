@@ -1,13 +1,13 @@
-ModulatorModelScriptPluginCustomPsd
+ModulatorModelScriptPluginCustomPSD
 ===================================
 
-.. py:class:: ansys.stk.core.stkobjects.ModulatorModelScriptPluginCustomPsd
+.. py:class:: ansys.stk.core.stkobjects.ModulatorModelScriptPluginCustomPSD
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin`, :py:class:`~ansys.stk.core.stkobjects.IModulatorModel`
 
    Class defining a custom PSD script plugin modulator model.
 
-.. py:currentmodule:: ModulatorModelScriptPluginCustomPsd
+.. py:currentmodule:: ModulatorModelScriptPluginCustomPSD
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import ModulatorModelScriptPluginCustomPsd
+    from ansys.stk.core.stkobjects import ModulatorModelScriptPluginCustomPSD
 
 
 

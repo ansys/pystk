@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~LAT_LON_WGS84`
+            * - :py:attr:`~WGS84_LATITUDE_LONGITUDE`
               - Lat/Lon WGS84.
 
-            * - :py:attr:`~UTMWGS84`
+            * - :py:attr:`~WGS84_UTM`
               - UTM WGS94.
 
 

@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.show_graphics`
               - Whether the Target Point is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.color`
               - Gets or sets the color of the Target Point.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.show_graphics
     :type: bool
 
     Whether the Target Point is displayed.

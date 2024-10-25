@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: solar_flux_geo_magnitude_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude_type
-    :type: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
+    :type: VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE
 
     Get the method for specifying solar and geomagnetic flux.
 
@@ -134,14 +134,14 @@ Method detail
 
 
 
-.. py:method:: set_solar_flux_geo_magnitude_type(self, solarFluxGeoMag: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE) -> None
+.. py:method:: set_solar_flux_geo_magnitude_type(self, solarFluxGeoMag: VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.set_solar_flux_geo_magnitude_type
 
     Set the method for specifying solar and geomagnetic flux.
 
     :Parameters:
 
-    **solarFluxGeoMag** : :obj:`~VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE`
+    **solarFluxGeoMag** : :obj:`~VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE`
 
     :Returns:
 

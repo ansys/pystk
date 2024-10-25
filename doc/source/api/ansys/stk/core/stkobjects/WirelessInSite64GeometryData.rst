@@ -28,7 +28,7 @@ Overview
               - Get or sets the building height data attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_reference_method`
               - Gets or sets the building height reference method.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_unit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_units`
               - Gets or sets the building height unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.override_geometry_tile_origin`
               - Gets or sets the option for overriding the geometry tile origin.
@@ -38,13 +38,13 @@ Overview
               - Gets or sets the geometry tile origin longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.use_terrain_data`
               - Gets or sets the option for using terrain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_min_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude`
               - Gets the terrain extent min latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_max_latitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_latitude`
               - Gets the terrain extent max latitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_min_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_longitude`
               - Gets the terrain extent min longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_max_longitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_longitude`
               - Gets the terrain extent max longitude.
 
 
@@ -90,9 +90,9 @@ Property detail
 
     Gets or sets the building height reference method.
 
-.. py:property:: building_height_unit
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_unit
-    :type: BUILD_HEIGHT_UNIT
+.. py:property:: building_height_units
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.building_height_units
+    :type: BUILDING_HEIGHT_UNIT
 
     Gets or sets the building height unit.
 
@@ -120,26 +120,26 @@ Property detail
 
     Gets or sets the option for using terrain data.
 
-.. py:property:: terrain_extent_min_latitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_min_latitude
+.. py:property:: terrain_extent_minimum_latitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_latitude
     :type: typing.Any
 
     Gets the terrain extent min latitude.
 
-.. py:property:: terrain_extent_max_latitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_max_latitude
+.. py:property:: terrain_extent_maximum_latitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_latitude
     :type: typing.Any
 
     Gets the terrain extent max latitude.
 
-.. py:property:: terrain_extent_min_longitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_min_longitude
+.. py:property:: terrain_extent_minimum_longitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_minimum_longitude
     :type: typing.Any
 
     Gets the terrain extent min longitude.
 
-.. py:property:: terrain_extent_max_longitude
-    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_max_longitude
+.. py:property:: terrain_extent_maximum_longitude
+    :canonical: ansys.stk.core.stkobjects.WirelessInSite64GeometryData.terrain_extent_maximum_longitude
     :type: typing.Any
 
     Gets the terrain extent max longitude.

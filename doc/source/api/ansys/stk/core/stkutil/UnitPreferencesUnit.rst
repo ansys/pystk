@@ -22,7 +22,7 @@ Overview
               - Returns the fullname of the unit.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.abbrv`
               - Returns the abbreviation of the unit.
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.id`
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.identifier`
               - Returns the ID of the unit.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnit.dimension`
               - Returns the Dimension for this unit.
@@ -52,8 +52,8 @@ Property detail
 
     Returns the abbreviation of the unit.
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnit.identifier
     :type: int
 
     Returns the ID of the unit.

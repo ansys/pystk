@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~EPHEM`
+            * - :py:attr:`~EPHEMERIS`
               - The Step Size specified in the vehicle's Basic properties.
 
             * - :py:attr:`~SPECIFY`

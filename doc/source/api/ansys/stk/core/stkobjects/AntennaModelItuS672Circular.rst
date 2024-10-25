@@ -1,13 +1,13 @@
-AntennaModelItuS672Circular
+AntennaModelITUS672Circular
 ===========================
 
-.. py:class:: ansys.stk.core.stkobjects.AntennaModelItuS672Circular
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelITUS672Circular
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a ITU-R S672 circular antenna model.
 
-.. py:currentmodule:: AntennaModelItuS672Circular
+.. py:currentmodule:: AntennaModelITUS672Circular
 
 Overview
 --------
@@ -20,21 +20,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.mainlobe_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.mainlobe_gain`
               - Gets or sets the main-lobe gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.efficiency`
               - Gets or sets the efficiency.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.diameter`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.diameter`
               - Gets or sets the diameter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.use_mainlobe_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.use_mainlobe_model`
               - Gets or sets the option for enabling the mainlobe model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.override_half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.override_half_beamwidth`
               - Gets or sets the option for overriding the half beamwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.half_beamwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.half_beamwidth`
               - Gets or sets the half beamwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.nearin_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.near_in_sidelobe_level`
               - Gets or sets the near in sidelobe level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelItuS672Circular.farout_sidelobe_level`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS672Circular.farout_sidelobe_level`
               - Gets or sets the far out sidelobe level.
 
 
@@ -44,56 +44,56 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import AntennaModelItuS672Circular
+    from ansys.stk.core.stkobjects import AntennaModelITUS672Circular
 
 
 Property detail
 ---------------
 
 .. py:property:: mainlobe_gain
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.mainlobe_gain
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.mainlobe_gain
     :type: float
 
     Gets or sets the main-lobe gain.
 
 .. py:property:: efficiency
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.efficiency
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.efficiency
     :type: float
 
     Gets or sets the efficiency.
 
 .. py:property:: diameter
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.diameter
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.diameter
     :type: float
 
     Gets or sets the diameter.
 
 .. py:property:: use_mainlobe_model
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.use_mainlobe_model
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.use_mainlobe_model
     :type: bool
 
     Gets or sets the option for enabling the mainlobe model.
 
 .. py:property:: override_half_beamwidth
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.override_half_beamwidth
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.override_half_beamwidth
     :type: bool
 
     Gets or sets the option for overriding the half beamwidth.
 
 .. py:property:: half_beamwidth
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.half_beamwidth
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.half_beamwidth
     :type: typing.Any
 
     Gets or sets the half beamwidth.
 
-.. py:property:: nearin_sidelobe_level
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.nearin_sidelobe_level
+.. py:property:: near_in_sidelobe_level
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.near_in_sidelobe_level
     :type: float
 
     Gets or sets the near in sidelobe level.
 
 .. py:property:: farout_sidelobe_level
-    :canonical: ansys.stk.core.stkobjects.AntennaModelItuS672Circular.farout_sidelobe_level
+    :canonical: ansys.stk.core.stkobjects.AntennaModelITUS672Circular.farout_sidelobe_level
     :type: float
 
     Gets or sets the far out sidelobe level.

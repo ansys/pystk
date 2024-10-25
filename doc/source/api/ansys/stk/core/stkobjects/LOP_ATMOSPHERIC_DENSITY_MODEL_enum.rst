@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~UNKNOWN_DENSITY_MODEL`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported or unknown atmospheric density model.
 
-            * - :py:attr:`~LOP1976_STANDARD_ATMOS_MODEL`
+            * - :py:attr:`~STANDARD_ATMOSPHERE_MODEL_1976`
               - 1976 Standard Atmosphere: look-up model based on the satellite's altitude, with a valid range of 86km - 1000 km.
 
-            * - :py:attr:`~EXPONENTIAL_MODEL`
+            * - :py:attr:`~EXPONENTIAL`
               - Exponential Model: uses equation calculating atmospheric density on basis of a specified altitude, reference density, reference altitude and scale altitude.
 
 

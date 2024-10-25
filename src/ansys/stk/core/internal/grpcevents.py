@@ -162,7 +162,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_animation_playback(self, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
             try:
-                callback(CurrentTime, AgTypeNameMap["ANIMATION_ACTIONS"](eAction), AgTypeNameMap["ANIMATION_DIRECTIONS"](eDirection))
+                callback(CurrentTime, AgTypeNameMap["ANIMATION_ACTION_TYPE"](eAction), AgTypeNameMap["ANIMATION_DIRECTION_TYPE"](eDirection))
             except:
                 pass
                 
@@ -180,7 +180,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
             except:
                 pass
                 
-    def _on_scenario_before_save(self, pArgs:"ScenarioBeforeSaveEventArgs") -> None:
+    def _on_scenario_before_save(self, pArgs:"ScenarioBeforeSaveEventArguments") -> None:
         for callback in self._events["OnScenarioBeforeSave"]._callbacks:
             try:
                 callback(pArgs)
@@ -215,7 +215,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
             except:
                 pass
             
-    def _on_percent_complete_update(self, pArgs:"PctCmpltEventArgs") -> None:
+    def _on_percent_complete_update(self, pArgs:"ProgressBarEventArguments") -> None:
         for callback in self._events["OnPercentCompleteUpdate"]._callbacks:
             try:
                 callback(pArgs)
@@ -236,7 +236,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
             except:
                 pass
             
-    def _on_stk_object_changed(self, pArgs:"StkObjectChangedEventArgs") -> None:
+    def _on_stk_object_changed(self, pArgs:"StkObjectChangedEventArguments") -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
             try:
                 callback(pArgs)
@@ -250,7 +250,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
             except:
                 pass
             
-    def _on_stk_object_pre_delete(self, pArgs:"StkObjectPreDeleteEventArgs") -> None:
+    def _on_stk_object_pre_delete(self, pArgs:"StkObjectPreDeleteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
             try:
                 callback(pArgs)
@@ -285,21 +285,21 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
             except:
                 pass
             
-    def _on_stk_object_pre_cut(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_pre_cut(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
             try:
                 callback(pArgs)
             except:
                 pass
             
-    def _on_stk_object_copy(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_copy(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
             try:
                 callback(pArgs)
             except:
                 pass
             
-    def _on_stk_object_paste(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_paste(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
             try:
                 callback(pArgs)

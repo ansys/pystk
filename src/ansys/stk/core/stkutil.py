@@ -10,11 +10,11 @@ types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 """
 
-__all__ = ["AZ_EL_ABOUT_BORESIGHT", "COORDINATE_SYSTEM", "CROrientationAzEl", "CROrientationEulerAngles", "CROrientationOffsetCart", 
-"CROrientationQuaternion", "CROrientationYPRAngles", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
+__all__ = ["AZ_EL_ABOUT_BORESIGHT", "AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
+"AgCROrientationYPRAngles", "COORDINATE_SYSTEM", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
 "Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
 "DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE_TYPE", "EXECUTE_MULTIPLE_COMMANDS_MODE", "ExecuteCommandResult", 
-"ExecuteMultipleCommandResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
+"ExecuteMultipleCommandsResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
 "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
 "IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISPLAY_ID", "LOG_MESSAGE_TYPE", 
 "ORBIT_STATE_TYPE", "ORIENTATION_TYPE", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", 
@@ -1849,7 +1849,7 @@ agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{97E6F61
 agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{CC5C63BC-FF0A-4CC8-AD58-5A8D11DD9C60}').as_data_pair(), agcom.GUID.from_registry_format('{90EF2D03-F064-4F54-9E02-6E34E3CF5D55}').as_data_pair())
 agcls.AgTypeNameMap["ExecuteCommandResult"] = ExecuteCommandResult
 
-class ExecuteMultipleCommandResult(SupportsDeleteCallback):
+class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
     """Collection of objects returned by the ExecuteMultipleCommands."""
 
     _num_methods = 3
@@ -1863,9 +1863,9 @@ class ExecuteMultipleCommandResult(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ExecuteMultipleCommandResult)
+        return get_interface_property(attrname, ExecuteMultipleCommandsResult)
     def __iter__(self):
-        """Create an iterator for the ExecuteMultipleCommandResult object."""
+        """Create an iterator for the ExecuteMultipleCommandsResult object."""
         self.__dict__["_enumerator"] = self._NewEnum
         self._enumerator.reset()
         return self
@@ -1884,14 +1884,14 @@ class ExecuteMultipleCommandResult(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
-        return self._intf.get_property(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._get_count_metadata)
+        return self._intf.get_property(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
     def item(self, index:int) -> "ExecuteCommandResult":
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._item_metadata, index, OutArg())
+        return self._intf.invoke(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._item_metadata, index, OutArg())
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1899,7 +1899,7 @@ class ExecuteMultipleCommandResult(SupportsDeleteCallback):
     @property
     def _NewEnum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the objects in the collection."""
-        return self._intf.get_property(ExecuteMultipleCommandResult._metadata, ExecuteMultipleCommandResult._get__NewEnum_metadata)
+        return self._intf.get_property(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._get__NewEnum_metadata)
 
     __getitem__ = item
 
@@ -1908,9 +1908,9 @@ class ExecuteMultipleCommandResult(SupportsDeleteCallback):
     _property_names[_NewEnum] = "_NewEnum"
 
     def __init__(self, sourceObject=None):
-        """Construct an object of type ExecuteMultipleCommandResult."""
+        """Construct an object of type ExecuteMultipleCommandsResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExecuteMultipleCommandResult)
+        initialize_from_source_object(self, sourceObject, ExecuteMultipleCommandsResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1918,13 +1918,13 @@ class ExecuteMultipleCommandResult(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ExecuteMultipleCommandResult, [ExecuteMultipleCommandResult, ])
+        set_class_attribute(self, attrname, value, ExecuteMultipleCommandsResult, [ExecuteMultipleCommandsResult, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecuteMultipleCommandResult)
-agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecuteMultipleCommandResult)
-# mapping for ExecuteMultipleCommandResult
+agcls.AgClassCatalog.add_catalog_entry((5597408360176953121, 16609041734428668607), ExecuteMultipleCommandsResult)
+agcls.AgClassCatalog.add_catalog_entry(agcom.GUID.from_registry_format('{3849A604-DEB9-428C-8A72-D879719277E5}').as_data_pair(), ExecuteMultipleCommandsResult)
+# mapping for ExecuteMultipleCommandsResult
 agcls.AgBackwardsCompatabilityMapping.add_mapping(agcom.GUID.from_registry_format('{ECEFEE1C-F623-4926-A738-3D95FC5E3DEE}').as_data_pair(), agcom.GUID.from_registry_format('{0558BE8E-AF66-4F52-9C6D-76962FC52577}').as_data_pair())
-agcls.AgTypeNameMap["ExecuteMultipleCommandResult"] = ExecuteMultipleCommandResult
+agcls.AgTypeNameMap["ExecuteMultipleCommandsResult"] = ExecuteMultipleCommandsResult
 
 class UnitPreferencesUnit(SupportsDeleteCallback):
     """Provide info about a unit."""
@@ -1933,7 +1933,7 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_full_name_method_offset = 1
     _get_abbrv_method_offset = 2
-    _get_id_method_offset = 3
+    _get_identifier_method_offset = 3
     _get_dimension_method_offset = 4
     _metadata = {
         "iid_data" : (5635454554877079377, 14141992965915125166),
@@ -1959,13 +1959,13 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
         """Return the abbreviation of the unit."""
         return self._intf.get_property(UnitPreferencesUnit._metadata, UnitPreferencesUnit._get_abbrv_metadata)
 
-    _get_id_metadata = { "offset" : _get_id_method_offset,
+    _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def id(self) -> int:
+    def identifier(self) -> int:
         """Return the ID of the unit."""
-        return self._intf.get_property(UnitPreferencesUnit._metadata, UnitPreferencesUnit._get_id_metadata)
+        return self._intf.get_property(UnitPreferencesUnit._metadata, UnitPreferencesUnit._get_identifier_metadata)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1977,7 +1977,7 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
 
     _property_names[full_name] = "full_name"
     _property_names[abbrv] = "abbrv"
-    _property_names[id] = "id"
+    _property_names[identifier] = "identifier"
     _property_names[dimension] = "dimension"
 
     def __init__(self, sourceObject=None):
@@ -2091,7 +2091,7 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_id_method_offset = 1
+    _get_identifier_method_offset = 1
     _get_name_method_offset = 2
     _get_available_units_method_offset = 3
     _get_current_unit_method_offset = 4
@@ -2104,13 +2104,13 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, UnitPreferencesDimension)
     
-    _get_id_metadata = { "offset" : _get_id_method_offset,
+    _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def id(self) -> int:
+    def identifier(self) -> int:
         """Return the ID of the dimension."""
-        return self._intf.get_property(UnitPreferencesDimension._metadata, UnitPreferencesDimension._get_id_metadata)
+        return self._intf.get_property(UnitPreferencesDimension._metadata, UnitPreferencesDimension._get_identifier_metadata)
 
     _get_name_metadata = { "offset" : _get_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2143,7 +2143,7 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
         """Set the Unit for this simple dimension."""
         return self._intf.invoke(UnitPreferencesDimension._metadata, UnitPreferencesDimension._set_current_unit_metadata, unitAbbrv)
 
-    _property_names[id] = "id"
+    _property_names[identifier] = "identifier"
     _property_names[name] = "name"
     _property_names[available_units] = "available_units"
     _property_names[current_unit] = "current_unit"
@@ -2868,10 +2868,10 @@ class Geodetic(IPosition, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
-    _get_lat_method_offset = 1
-    _set_lat_method_offset = 2
-    _get_lon_method_offset = 3
-    _set_lon_method_offset = 4
+    _get_latitude_method_offset = 1
+    _set_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
+    _set_longitude_method_offset = 4
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
@@ -2882,35 +2882,35 @@ class Geodetic(IPosition, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Geodetic)
     
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lat(self) -> typing.Any:
+    def latitude(self) -> typing.Any:
         """Latitude. Uses Latitude Dimension."""
-        return self._intf.get_property(Geodetic._metadata, Geodetic._get_lat_metadata)
+        return self._intf.get_property(Geodetic._metadata, Geodetic._get_latitude_metadata)
 
-    _set_lat_metadata = { "offset" : _set_lat_method_offset,
+    _set_latitude_metadata = { "offset" : _set_latitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lat.setter
-    def lat(self, pLat:typing.Any) -> None:
-        return self._intf.set_property(Geodetic._metadata, Geodetic._set_lat_metadata, pLat)
+    @latitude.setter
+    def latitude(self, pLat:typing.Any) -> None:
+        return self._intf.set_property(Geodetic._metadata, Geodetic._set_latitude_metadata, pLat)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Longitude. Uses Longitude Dimension."""
-        return self._intf.get_property(Geodetic._metadata, Geodetic._get_lon_metadata)
+        return self._intf.get_property(Geodetic._metadata, Geodetic._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pLon:typing.Any) -> None:
-        return self._intf.set_property(Geodetic._metadata, Geodetic._set_lon_metadata, pLon)
+    @longitude.setter
+    def longitude(self, pLon:typing.Any) -> None:
+        return self._intf.set_property(Geodetic._metadata, Geodetic._set_longitude_metadata, pLon)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -2927,8 +2927,8 @@ class Geodetic(IPosition, SupportsDeleteCallback):
     def altitude(self, pAlt:float) -> None:
         return self._intf.set_property(Geodetic._metadata, Geodetic._set_altitude_metadata, pAlt)
 
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
     def __init__(self, sourceObject=None):
@@ -2954,10 +2954,10 @@ class Geocentric(IPosition, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
-    _get_lat_method_offset = 1
-    _set_lat_method_offset = 2
-    _get_lon_method_offset = 3
-    _set_lon_method_offset = 4
+    _get_latitude_method_offset = 1
+    _set_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
+    _set_longitude_method_offset = 4
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
@@ -2968,35 +2968,35 @@ class Geocentric(IPosition, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Geocentric)
     
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lat(self) -> typing.Any:
+    def latitude(self) -> typing.Any:
         """Uses Latitude Dimension."""
-        return self._intf.get_property(Geocentric._metadata, Geocentric._get_lat_metadata)
+        return self._intf.get_property(Geocentric._metadata, Geocentric._get_latitude_metadata)
 
-    _set_lat_metadata = { "offset" : _set_lat_method_offset,
+    _set_latitude_metadata = { "offset" : _set_latitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lat.setter
-    def lat(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Geocentric._metadata, Geocentric._set_lat_metadata, pVal)
+    @latitude.setter
+    def latitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Geocentric._metadata, Geocentric._set_latitude_metadata, pVal)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Uses Longitude Dimension."""
-        return self._intf.get_property(Geocentric._metadata, Geocentric._get_lon_metadata)
+        return self._intf.get_property(Geocentric._metadata, Geocentric._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Geocentric._metadata, Geocentric._set_lon_metadata, pVal)
+    @longitude.setter
+    def longitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Geocentric._metadata, Geocentric._set_longitude_metadata, pVal)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -3013,8 +3013,8 @@ class Geocentric(IPosition, SupportsDeleteCallback):
     def altitude(self, pVal:float) -> None:
         return self._intf.set_property(Geocentric._metadata, Geocentric._set_altitude_metadata, pVal)
 
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
     def __init__(self, sourceObject=None):
@@ -3040,10 +3040,10 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
-    _get_lat_method_offset = 1
-    _set_lat_method_offset = 2
-    _get_lon_method_offset = 3
-    _set_lon_method_offset = 4
+    _get_latitude_method_offset = 1
+    _set_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
+    _set_longitude_method_offset = 4
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
@@ -3054,35 +3054,35 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Planetodetic)
     
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lat(self) -> typing.Any:
+    def latitude(self) -> typing.Any:
         """Latitude. Uses Latitude Dimension."""
-        return self._intf.get_property(Planetodetic._metadata, Planetodetic._get_lat_metadata)
+        return self._intf.get_property(Planetodetic._metadata, Planetodetic._get_latitude_metadata)
 
-    _set_lat_metadata = { "offset" : _set_lat_method_offset,
+    _set_latitude_metadata = { "offset" : _set_latitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lat.setter
-    def lat(self, pLat:typing.Any) -> None:
-        return self._intf.set_property(Planetodetic._metadata, Planetodetic._set_lat_metadata, pLat)
+    @latitude.setter
+    def latitude(self, pLat:typing.Any) -> None:
+        return self._intf.set_property(Planetodetic._metadata, Planetodetic._set_latitude_metadata, pLat)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Longitude. Uses Longitude Dimension."""
-        return self._intf.get_property(Planetodetic._metadata, Planetodetic._get_lon_metadata)
+        return self._intf.get_property(Planetodetic._metadata, Planetodetic._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pLon:typing.Any) -> None:
-        return self._intf.set_property(Planetodetic._metadata, Planetodetic._set_lon_metadata, pLon)
+    @longitude.setter
+    def longitude(self, pLon:typing.Any) -> None:
+        return self._intf.set_property(Planetodetic._metadata, Planetodetic._set_longitude_metadata, pLon)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -3099,8 +3099,8 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
     def altitude(self, pAlt:float) -> None:
         return self._intf.set_property(Planetodetic._metadata, Planetodetic._set_altitude_metadata, pAlt)
 
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
     def __init__(self, sourceObject=None):
@@ -3126,10 +3126,10 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
-    _get_lat_method_offset = 1
-    _set_lat_method_offset = 2
-    _get_lon_method_offset = 3
-    _set_lon_method_offset = 4
+    _get_latitude_method_offset = 1
+    _set_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
+    _set_longitude_method_offset = 4
     _get_altitude_method_offset = 5
     _set_altitude_method_offset = 6
     _metadata = {
@@ -3140,35 +3140,35 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Planetocentric)
     
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lat(self) -> typing.Any:
+    def latitude(self) -> typing.Any:
         """Uses Latitude Dimension."""
-        return self._intf.get_property(Planetocentric._metadata, Planetocentric._get_lat_metadata)
+        return self._intf.get_property(Planetocentric._metadata, Planetocentric._get_latitude_metadata)
 
-    _set_lat_metadata = { "offset" : _set_lat_method_offset,
+    _set_latitude_metadata = { "offset" : _set_latitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lat.setter
-    def lat(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Planetocentric._metadata, Planetocentric._set_lat_metadata, pVal)
+    @latitude.setter
+    def latitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Planetocentric._metadata, Planetocentric._set_latitude_metadata, pVal)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Uses Longitude Dimension."""
-        return self._intf.get_property(Planetocentric._metadata, Planetocentric._get_lon_metadata)
+        return self._intf.get_property(Planetocentric._metadata, Planetocentric._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Planetocentric._metadata, Planetocentric._set_lon_metadata, pVal)
+    @longitude.setter
+    def longitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Planetocentric._metadata, Planetocentric._set_longitude_metadata, pVal)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -3185,8 +3185,8 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
     def altitude(self, pVal:float) -> None:
         return self._intf.set_property(Planetocentric._metadata, Planetocentric._set_altitude_metadata, pVal)
 
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
     def __init__(self, sourceObject=None):
@@ -3212,10 +3212,10 @@ class Spherical(IPosition, SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IPosition._vtable_offset + IPosition._num_methods
-    _get_lat_method_offset = 1
-    _set_lat_method_offset = 2
-    _get_lon_method_offset = 3
-    _set_lon_method_offset = 4
+    _get_latitude_method_offset = 1
+    _set_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
+    _set_longitude_method_offset = 4
     _get_radius_method_offset = 5
     _set_radius_method_offset = 6
     _metadata = {
@@ -3226,35 +3226,35 @@ class Spherical(IPosition, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Spherical)
     
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lat(self) -> typing.Any:
+    def latitude(self) -> typing.Any:
         """Uses Latitude Dimension."""
-        return self._intf.get_property(Spherical._metadata, Spherical._get_lat_metadata)
+        return self._intf.get_property(Spherical._metadata, Spherical._get_latitude_metadata)
 
-    _set_lat_metadata = { "offset" : _set_lat_method_offset,
+    _set_latitude_metadata = { "offset" : _set_latitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lat.setter
-    def lat(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Spherical._metadata, Spherical._set_lat_metadata, pVal)
+    @latitude.setter
+    def latitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Spherical._metadata, Spherical._set_latitude_metadata, pVal)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Uses Longitude Dimension."""
-        return self._intf.get_property(Spherical._metadata, Spherical._get_lon_metadata)
+        return self._intf.get_property(Spherical._metadata, Spherical._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Spherical._metadata, Spherical._set_lon_metadata, pVal)
+    @longitude.setter
+    def longitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Spherical._metadata, Spherical._set_longitude_metadata, pVal)
 
     _get_radius_metadata = { "offset" : _get_radius_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -3271,8 +3271,8 @@ class Spherical(IPosition, SupportsDeleteCallback):
     def radius(self, pVal:float) -> None:
         return self._intf.set_property(Spherical._metadata, Spherical._set_radius_metadata, pVal)
 
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[radius] = "radius"
 
     def __init__(self, sourceObject=None):
@@ -3302,8 +3302,8 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
     _set_radius_method_offset = 2
     _get_z_method_offset = 3
     _set_z_method_offset = 4
-    _get_lon_method_offset = 5
-    _set_lon_method_offset = 6
+    _get_longitude_method_offset = 5
+    _set_longitude_method_offset = 6
     _metadata = {
         "iid_data" : (4746503479402464409, 7300718477734136235),
         "vtable_reference" : IPosition._vtable_offset + IPosition._num_methods - 1,
@@ -3342,24 +3342,24 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
     def z(self, pVal:float) -> None:
         return self._intf.set_property(Cylindrical._metadata, Cylindrical._set_z_metadata, pVal)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def lon(self) -> typing.Any:
+    def longitude(self) -> typing.Any:
         """Dimension depends on context."""
-        return self._intf.get_property(Cylindrical._metadata, Cylindrical._get_lon_metadata)
+        return self._intf.get_property(Cylindrical._metadata, Cylindrical._get_longitude_metadata)
 
-    _set_lon_metadata = { "offset" : _set_lon_method_offset,
+    _set_longitude_metadata = { "offset" : _set_longitude_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @lon.setter
-    def lon(self, pVal:typing.Any) -> None:
-        return self._intf.set_property(Cylindrical._metadata, Cylindrical._set_lon_metadata, pVal)
+    @longitude.setter
+    def longitude(self, pVal:typing.Any) -> None:
+        return self._intf.set_property(Cylindrical._metadata, Cylindrical._set_longitude_metadata, pVal)
 
     _property_names[radius] = "radius"
     _property_names[z] = "z"
-    _property_names[lon] = "lon"
+    _property_names[longitude] = "longitude"
 
     def __init__(self, sourceObject=None):
         """Construct an object of type Cylindrical."""
@@ -4332,10 +4332,10 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5310750197822733971, 15113477984957915526), RuntimeTypeInfo)
 agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
-class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class AgCROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """AzEl orientation method."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CROrientationAzEl."""
+        """Construct an object of type AgCROrientationAzEl."""
         SupportsDeleteCallback.__init__(self)
         IOrientationAzEl.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
@@ -4350,15 +4350,15 @@ class CROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffs
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, AgCROrientationAzEl, [IOrientationAzEl, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), CROrientationAzEl)
-agcls.AgTypeNameMap["CROrientationAzEl"] = CROrientationAzEl
+agcls.AgClassCatalog.add_catalog_entry((5629425498071360462, 13472887956028455354), AgCROrientationAzEl)
+agcls.AgTypeNameMap["AgCROrientationAzEl"] = AgCROrientationAzEl
 
-class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class AgCROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Euler Angles orientation method."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CROrientationEulerAngles."""
+        """Construct an object of type AgCROrientationEulerAngles."""
         SupportsDeleteCallback.__init__(self)
         IOrientationEulerAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
@@ -4373,15 +4373,15 @@ class CROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientati
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, AgCROrientationEulerAngles, [IOrientationEulerAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), CROrientationEulerAngles)
-agcls.AgTypeNameMap["CROrientationEulerAngles"] = CROrientationEulerAngles
+agcls.AgClassCatalog.add_catalog_entry((4840627131925552121, 3902022524010776716), AgCROrientationEulerAngles)
+agcls.AgTypeNameMap["AgCROrientationEulerAngles"] = AgCROrientationEulerAngles
 
-class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class AgCROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Quaternion orientation method."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CROrientationQuaternion."""
+        """Construct an object of type AgCROrientationQuaternion."""
         SupportsDeleteCallback.__init__(self)
         IOrientationQuaternion.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
@@ -4396,15 +4396,15 @@ class CROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientation
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, AgCROrientationQuaternion, [IOrientationQuaternion, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), CROrientationQuaternion)
-agcls.AgTypeNameMap["CROrientationQuaternion"] = CROrientationQuaternion
+agcls.AgClassCatalog.add_catalog_entry((4916724588521169912, 1914183132378344616), AgCROrientationQuaternion)
+agcls.AgTypeNameMap["AgCROrientationQuaternion"] = AgCROrientationQuaternion
 
-class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
+class AgCROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CROrientationYPRAngles."""
+        """Construct an object of type AgCROrientationYPRAngles."""
         SupportsDeleteCallback.__init__(self)
         IOrientationYPRAngles.__init__(self, sourceObject)
         IOrientation.__init__(self, sourceObject)
@@ -4419,15 +4419,15 @@ class CROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPo
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
+        set_class_attribute(self, attrname, value, AgCROrientationYPRAngles, [IOrientationYPRAngles, IOrientation, IOrientationPositionOffset])
 
-agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), CROrientationYPRAngles)
-agcls.AgTypeNameMap["CROrientationYPRAngles"] = CROrientationYPRAngles
+agcls.AgClassCatalog.add_catalog_entry((5537483897697766249, 8061659922439947453), AgCROrientationYPRAngles)
+agcls.AgTypeNameMap["AgCROrientationYPRAngles"] = AgCROrientationYPRAngles
 
-class CROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
+class AgCROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
     """Orientation offset cartesian."""
     def __init__(self, sourceObject=None):
-        """Construct an object of type CROrientationOffsetCart."""
+        """Construct an object of type AgCROrientationOffsetCart."""
         SupportsDeleteCallback.__init__(self)
         ICartesian3Vector.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
@@ -4438,10 +4438,10 @@ class CROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, CROrientationOffsetCart, [ICartesian3Vector])
+        set_class_attribute(self, attrname, value, AgCROrientationOffsetCart, [ICartesian3Vector])
 
-agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), CROrientationOffsetCart)
-agcls.AgTypeNameMap["CROrientationOffsetCart"] = CROrientationOffsetCart
+agcls.AgClassCatalog.add_catalog_entry((5639253642343045290, 17032588021575169672), AgCROrientationOffsetCart)
+agcls.AgTypeNameMap["AgCROrientationOffsetCart"] = AgCROrientationOffsetCart
 
 
 ################################################################################

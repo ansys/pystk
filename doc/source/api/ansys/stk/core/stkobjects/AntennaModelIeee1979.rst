@@ -1,13 +1,13 @@
-AntennaModelIeee1979
+AntennaModelIEEE1979
 ====================
 
-.. py:class:: ansys.stk.core.stkobjects.AntennaModelIeee1979
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelIEEE1979
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a IEEE 1979 antenna model.
 
-.. py:currentmodule:: AntennaModelIeee1979
+.. py:currentmodule:: AntennaModelIEEE1979
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelIeee1979.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelIEEE1979.filename`
               - Gets or sets the user antenna data filename.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import AntennaModelIeee1979
+    from ansys.stk.core.stkobjects import AntennaModelIEEE1979
 
 
 Property detail
 ---------------
 
 .. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.AntennaModelIeee1979.filename
+    :canonical: ansys.stk.core.stkobjects.AntennaModelIEEE1979.filename
     :type: str
 
     Gets or sets the user antenna data filename.

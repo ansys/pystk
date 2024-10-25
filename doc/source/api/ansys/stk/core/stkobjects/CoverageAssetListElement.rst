@@ -37,7 +37,7 @@ Overview
               - Returns the sub assets for this asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.required`
               - Flag sets whether Asset is required for all valid access intervals.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.use_const_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.use_constellation_constraints`
               - Flag determines whether constellation constraints are considered.
 
 
@@ -83,8 +83,8 @@ Property detail
 
     Flag sets whether Asset is required for all valid access intervals.
 
-.. py:property:: use_const_constraints
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.use_const_constraints
+.. py:property:: use_constellation_constraints
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.use_constellation_constraints
     :type: bool
 
     Flag determines whether constellation constraints are considered.

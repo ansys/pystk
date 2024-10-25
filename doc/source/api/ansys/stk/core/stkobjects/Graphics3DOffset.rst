@@ -24,7 +24,7 @@ Overview
               - Returns the translational offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.label`
               - Returns the label offset attributes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.attach_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.attachment_point`
               - Returns the attach point offset attributes.
 
 
@@ -58,9 +58,9 @@ Property detail
 
     Returns the label offset attributes.
 
-.. py:property:: attach_point
-    :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.attach_point
-    :type: Graphics3DOffsetAttach
+.. py:property:: attachment_point
+    :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.attachment_point
+    :type: Graphics3DOffsetAttachment
 
     Returns the attach point offset attributes.
 

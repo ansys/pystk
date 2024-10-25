@@ -1,11 +1,11 @@
-MtoGraphics2DTrackCollection
+MTOGraphics2DTrackCollection
 ============================
 
-.. py:class:: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection
+.. py:class:: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection
 
    MTO 2D Graphics Track List.
 
-.. py:currentmodule:: MtoGraphics2DTrackCollection
+.. py:currentmodule:: MTOGraphics2DTrackCollection
 
 Overview
 --------
@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.get_track_from_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.get_track_from_identifier`
               - Given a track id, returns an element in the collection.
 
     .. tab-item:: Properties
@@ -29,11 +29,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._NewEnum`
               - Returns an enumerator that can iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.recycling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.recycling`
               - Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
 
 
@@ -43,26 +43,26 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoGraphics2DTrackCollection
+    from ansys.stk.core.stkobjects import MTOGraphics2DTrackCollection
 
 
 Property detail
 ---------------
 
 .. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.count
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.count
     :type: int
 
     Returns the number of elements in a collection.
 
 .. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection._NewEnum
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._NewEnum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
 
 .. py:property:: recycling
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.recycling
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.recycling
     :type: bool
 
     Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
@@ -72,8 +72,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index: int) -> MtoGraphics2DTrack
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.item
+.. py:method:: item(self, index: int) -> MTOGraphics2DTrack
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -83,11 +83,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoGraphics2DTrack`
+        :obj:`~MTOGraphics2DTrack`
 
 
-.. py:method:: get_track_from_id(self, trackId: int) -> MtoGraphics2DTrack
-    :canonical: ansys.stk.core.stkobjects.MtoGraphics2DTrackCollection.get_track_from_id
+.. py:method:: get_track_from_identifier(self, trackId: int) -> MTOGraphics2DTrack
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.get_track_from_identifier
 
     Given a track id, returns an element in the collection.
 
@@ -97,7 +97,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoGraphics2DTrack`
+        :obj:`~MTOGraphics2DTrack`
 
 
 

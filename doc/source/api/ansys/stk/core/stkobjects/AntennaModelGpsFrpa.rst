@@ -1,13 +1,13 @@
-AntennaModelGpsFrpa
+AntennaModelGPSFRPA
 ===================
 
-.. py:class:: ansys.stk.core.stkobjects.AntennaModelGpsFrpa
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelGPSFRPA
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a GPS FRPA antenna model.
 
-.. py:currentmodule:: AntennaModelGpsFrpa
+.. py:currentmodule:: AntennaModelGPSFRPA
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGpsFrpa.efficiency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGPSFRPA.efficiency`
               - Gets or sets the efficiency.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import AntennaModelGpsFrpa
+    from ansys.stk.core.stkobjects import AntennaModelGPSFRPA
 
 
 Property detail
 ---------------
 
 .. py:property:: efficiency
-    :canonical: ansys.stk.core.stkobjects.AntennaModelGpsFrpa.efficiency
+    :canonical: ansys.stk.core.stkobjects.AntennaModelGPSFRPA.efficiency
     :type: float
 
     Gets or sets the efficiency.

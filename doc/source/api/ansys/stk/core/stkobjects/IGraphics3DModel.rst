@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: Graphics3DModelArtic
+    :type: Graphics3DModelArticulation
 
     Articulation property.
 

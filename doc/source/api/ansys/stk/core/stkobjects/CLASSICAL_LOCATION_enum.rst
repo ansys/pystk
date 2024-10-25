@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~LOCATION_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Represents unsupported spacecraft location.
 
-            * - :py:attr:`~LOCATION_ARGUMENT_OF_LATITUDE`
+            * - :py:attr:`~ARGUMENT_OF_LATITUDE`
               - Use Argument of Latitude to specify spacecraft location.
 
-            * - :py:attr:`~LOCATION_ECCENTRIC_ANOMALY`
+            * - :py:attr:`~ECCENTRIC_ANOMALY`
               - Use Eccentric Anomaly to specify spacecraft location.
 
-            * - :py:attr:`~LOCATION_MEAN_ANOMALY`
+            * - :py:attr:`~MEAN_ANOMALY`
               - Use Mean Anomaly to specify spacecraft location.
 
-            * - :py:attr:`~LOCATION_TIME_PAST_AN`
+            * - :py:attr:`~TIME_PAST_ASCENDING_NODE`
               - Use Time Past Ascending Node to specify spacecraft location.
 
-            * - :py:attr:`~LOCATION_TIME_PAST_PERIGEE`
+            * - :py:attr:`~TIME_PAST_PERIGEE`
               - Use Time Past Perigee to specify spacecraft location.
 
-            * - :py:attr:`~LOCATION_TRUE_ANOMALY`
+            * - :py:attr:`~TRUE_ANOMALY`
               - Use True Anomaly to specify spacecraft location.
 
 

@@ -22,9 +22,9 @@ Overview
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_filter`
               - Set the current filter model by name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_rf_stc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_rfstc_type`
               - Set the RF STC Type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_if_stc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.set_ifstc_type`
               - Set the IF STC Type.
 
     .. tab-item:: Properties
@@ -49,7 +49,7 @@ Overview
               - Gets the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_polarization`
               - Gets or sets the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_orthogonal_polarization`
               - Gets or sets the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.polarization`
               - Gets the polarization.
@@ -63,17 +63,17 @@ Overview
               - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.system_noise_temperature`
               - Gets the system noise temperature interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_rf_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_rfstc`
               - Gets or sets whether the RF STC is enabled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.rf_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.rfstc`
               - Gets the RF STC.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_if_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.enable_ifstc`
               - Gets or sets whether the IF STC is enabled.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.if_stc`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.ifstc`
               - Gets the IF STC.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_rf_stc_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_rfstc_types`
               - Gets the RF STC Types.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_if_stc_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.supported_ifstc_types`
               - Gets the IF STC Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarReceiver.frequency`
               - Gets or sets the receiver center frequency.
@@ -139,8 +139,8 @@ Property detail
 
     Gets or sets the enable polarization option.
 
-.. py:property:: enable_ortho_polarization
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_ortho_polarization
+.. py:property:: enable_orthogonal_polarization
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_orthogonal_polarization
     :type: bool
 
     Gets or sets the option for enabling the orthogonal polarization.
@@ -181,38 +181,38 @@ Property detail
 
     Gets the system noise temperature interface.
 
-.. py:property:: enable_rf_stc
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_rf_stc
+.. py:property:: enable_rfstc
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_rfstc
     :type: bool
 
     Gets or sets whether the RF STC is enabled.
 
-.. py:property:: rf_stc
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.rf_stc
-    :type: IRadarStcAttenuation
+.. py:property:: rfstc
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.rfstc
+    :type: IRadarSTCAttenuation
 
     Gets the RF STC.
 
-.. py:property:: enable_if_stc
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_if_stc
+.. py:property:: enable_ifstc
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.enable_ifstc
     :type: bool
 
     Gets or sets whether the IF STC is enabled.
 
-.. py:property:: if_stc
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.if_stc
-    :type: IRadarStcAttenuation
+.. py:property:: ifstc
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.ifstc
+    :type: IRadarSTCAttenuation
 
     Gets the IF STC.
 
-.. py:property:: supported_rf_stc_types
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_rf_stc_types
+.. py:property:: supported_rfstc_types
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_rfstc_types
     :type: list
 
     Gets the RF STC Types.
 
-.. py:property:: supported_if_stc_types
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_if_stc_types
+.. py:property:: supported_ifstc_types
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.supported_ifstc_types
     :type: list
 
     Gets the IF STC Types.
@@ -279,8 +279,8 @@ Method detail
 
 
 
-.. py:method:: set_rf_stc_type(self, typeName: str) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_rf_stc_type
+.. py:method:: set_rfstc_type(self, typeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_rfstc_type
 
     Set the RF STC Type.
 
@@ -295,8 +295,8 @@ Method detail
 
 
 
-.. py:method:: set_if_stc_type(self, typeName: str) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_if_stc_type
+.. py:method:: set_ifstc_type(self, typeName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.RadarReceiver.set_ifstc_type
 
     Set the IF STC Type.
 

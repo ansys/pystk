@@ -37,7 +37,7 @@ Overview
               - Line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.line_width`
               - Line width.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer`
               - User-defined unique ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type`
               - Offset direction (left or right).
@@ -79,8 +79,8 @@ Property detail
 
     Line width.
 
-.. py:property:: unique_id
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_id
+.. py:property:: unique_identifer
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.unique_identifer
     :type: str
 
     User-defined unique ID.

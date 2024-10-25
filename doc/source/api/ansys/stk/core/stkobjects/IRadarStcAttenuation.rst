@@ -1,11 +1,11 @@
-IRadarStcAttenuation
+IRadarSTCAttenuation
 ====================
 
-.. py:class:: ansys.stk.core.stkobjects.IRadarStcAttenuation
+.. py:class:: ansys.stk.core.stkobjects.IRadarSTCAttenuation
 
    Provide access to the properties and methods defining a radar STC attenuation.
 
-.. py:currentmodule:: IRadarStcAttenuation
+.. py:currentmodule:: IRadarSTCAttenuation
 
 Overview
 --------
@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuation.type`
               - Gets the STC type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarStcAttenuation.name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuation.name`
               - Gets the radar STC string name.
 
 
@@ -29,20 +29,20 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import IRadarStcAttenuation
+    from ansys.stk.core.stkobjects import IRadarSTCAttenuation
 
 
 Property detail
 ---------------
 
 .. py:property:: type
-    :canonical: ansys.stk.core.stkobjects.IRadarStcAttenuation.type
+    :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuation.type
     :type: RADAR_STC_ATTENUATION_TYPE
 
     Gets the STC type.
 
 .. py:property:: name
-    :canonical: ansys.stk.core.stkobjects.IRadarStcAttenuation.name
+    :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuation.name
     :type: str
 
     Gets the radar STC string name.

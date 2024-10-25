@@ -1,13 +1,13 @@
-BeamformerAsciiFile
+BeamformerASCIIFile
 ===================
 
-.. py:class:: ansys.stk.core.stkobjects.BeamformerAsciiFile
+.. py:class:: ansys.stk.core.stkobjects.BeamformerASCIIFile
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
 
    Class defining a beamformer ascii file.
 
-.. py:currentmodule:: BeamformerAsciiFile
+.. py:currentmodule:: BeamformerASCIIFile
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerAsciiFile.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerASCIIFile.filename`
               - Gets or sets the file.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import BeamformerAsciiFile
+    from ansys.stk.core.stkobjects import BeamformerASCIIFile
 
 
 Property detail
 ---------------
 
 .. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.BeamformerAsciiFile.filename
+    :canonical: ansys.stk.core.stkobjects.BeamformerASCIIFile.filename
     :type: str
 
     Gets or sets the file.

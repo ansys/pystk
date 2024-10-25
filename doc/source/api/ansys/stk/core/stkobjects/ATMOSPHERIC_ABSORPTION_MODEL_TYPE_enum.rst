@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~TIREM550`
               - TIREM 5.50 atmospheric absorption model type.
 
-            * - :py:attr:`~VOACAP`
+            * - :py:attr:`~GRAPHICS_3D_ACAP`
               - Voacap atmospheric absorption model type.
 
             * - :py:attr:`~COM_PLUGIN`

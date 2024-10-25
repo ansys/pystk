@@ -39,19 +39,19 @@ Overview
               - Animation start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.enable_anim_cycle_time`
               - Enable a selection between end time and loop-at time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_cycle_time`
               - Animation end time. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_value`
               - Animation time step. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta`
               - Amount of time between refresh updates. The actual refresh delta is limited by the minimum time necessary to draw the scenario. The refresh time varies with processor performance, graphics hardware and scenario complexity. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type`
               - Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type`
               - Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
               - Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_realtime_from_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause`
               - Animation XRealtime Continue from Paused Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_period`
               - Allows the user to configure the scenario's animation time period.
@@ -83,14 +83,14 @@ Property detail
 
     Enable a selection between end time and loop-at time.
 
-.. py:property:: anim_cycle_time
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_time
+.. py:property:: animation_cycle_time
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_cycle_time
     :type: typing.Any
 
     Animation end time. Uses DateFormat Dimension.
 
-.. py:property:: anim_step_value
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_value
+.. py:property:: animation_step_value
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_value
     :type: float
 
     Animation time step. Dimension depends on context.
@@ -101,8 +101,8 @@ Property detail
 
     Amount of time between refresh updates. The actual refresh delta is limited by the minimum time necessary to draw the scenario. The refresh time varies with processor performance, graphics hardware and scenario complexity. Uses Time Dimension.
 
-.. py:property:: anim_cycle_type
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_type
+.. py:property:: animation_end_loop_type
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type
     :type: SCENARIO_END_LOOP_TYPE
 
     Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
@@ -113,14 +113,14 @@ Property detail
 
     Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
 
-.. py:property:: anim_step_type
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_type
+.. py:property:: animation_step_type
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type
     :type: SCENARIO_TIME_STEP_TYPE
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 
-.. py:property:: continue_x_realtime_from_pause
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_realtime_from_pause
+.. py:property:: ccontinue_x_real_time_from_pause
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause
     :type: bool
 
     Animation XRealtime Continue from Paused Time.

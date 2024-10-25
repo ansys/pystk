@@ -1,11 +1,11 @@
-MtoAnalysisPosition
+MTOAnalysisPosition
 ===================
 
-.. py:class:: ansys.stk.core.stkobjects.MtoAnalysisPosition
+.. py:class:: ansys.stk.core.stkobjects.MTOAnalysisPosition
 
    MTO Position Computation.
 
-.. py:currentmodule:: MtoAnalysisPosition
+.. py:currentmodule:: MTOAnalysisPosition
 
 Overview
 --------
@@ -18,11 +18,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_all_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_all_tracks`
               - Compute the position of all tracks at the given time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_tracks`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks`
               - Compute the position of all track of given Id at the given time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_track`
               - Compute the position of the track Id at the given time.
 
     .. tab-item:: Properties
@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoAnalysisPosition.altitude_reference`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisPosition.altitude_reference`
               - Specify the altitude reference. Default is Ellipsoid.
 
 
@@ -41,14 +41,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoAnalysisPosition
+    from ansys.stk.core.stkobjects import MTOAnalysisPosition
 
 
 Property detail
 ---------------
 
 .. py:property:: altitude_reference
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisPosition.altitude_reference
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.altitude_reference
     :type: ALTITUDE_REFERENCE_TYPE
 
     Specify the altitude reference. Default is Ellipsoid.
@@ -59,8 +59,8 @@ Method detail
 
 
 
-.. py:method:: compute_all_tracks(self, time: typing.Any) -> MtoTrackPointCollection
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_all_tracks
+.. py:method:: compute_all_tracks(self, time: typing.Any) -> MTOTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_all_tracks
 
     Compute the position of all tracks at the given time.
 
@@ -70,10 +70,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPointCollection`
+        :obj:`~MTOTrackPointCollection`
 
-.. py:method:: compute_tracks(self, trackIds: list, time: typing.Any) -> MtoTrackPointCollection
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_tracks
+.. py:method:: compute_tracks(self, trackIds: list, time: typing.Any) -> MTOTrackPointCollection
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_tracks
 
     Compute the position of all track of given Id at the given time.
 
@@ -84,10 +84,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPointCollection`
+        :obj:`~MTOTrackPointCollection`
 
-.. py:method:: compute_track(self, trackId: int, time: typing.Any) -> MtoTrackPoint
-    :canonical: ansys.stk.core.stkobjects.MtoAnalysisPosition.compute_track
+.. py:method:: compute_track(self, trackId: int, time: typing.Any) -> MTOTrackPoint
+    :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.compute_track
 
     Compute the position of the track Id at the given time.
 
@@ -98,5 +98,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPoint`
+        :obj:`~MTOTrackPoint`
 

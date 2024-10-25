@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~OFFSET_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown Offset.
 
             * - :py:attr:`~OFFSET_LEFT`

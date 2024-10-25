@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.type
-    :type: RADAR_P_DET_TYPE
+    :type: RADAR_PROBABILITY_OF_DETECTION_TYPE
 
     Gets the probability of detection type.
 

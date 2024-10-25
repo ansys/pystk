@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PASS_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown pass.
 
-            * - :py:attr:`~PASS_SHOW_ALL`
+            * - :py:attr:`~SHOW_ALL`
               - Show all passes.
 
-            * - :py:attr:`~PASS_SHOW_PASSES`
+            * - :py:attr:`~SHOW_PASSES_IN_RANGE`
               - Show passes in a user-specified range.
 
 

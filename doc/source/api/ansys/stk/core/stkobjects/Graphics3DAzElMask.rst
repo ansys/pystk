@@ -18,11 +18,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.compass_directions_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.show_compass_directions`
               - Display of compass directions on the outline of the mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.altitude_labels_visible`
               - Display of altitude labels.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.numb_altitude_labels`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.number_of_altitude_labels`
               - The number of altitude labels to display on the outline of the mask.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DAzElMask.interior_translucency`
               - The translucency of the mask, where 1 = completely invisible.
@@ -44,8 +44,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: compass_directions_visible
-    :canonical: ansys.stk.core.stkobjects.Graphics3DAzElMask.compass_directions_visible
+.. py:property:: show_compass_directions
+    :canonical: ansys.stk.core.stkobjects.Graphics3DAzElMask.show_compass_directions
     :type: bool
 
     Display of compass directions on the outline of the mask.
@@ -56,8 +56,8 @@ Property detail
 
     Display of altitude labels.
 
-.. py:property:: numb_altitude_labels
-    :canonical: ansys.stk.core.stkobjects.Graphics3DAzElMask.numb_altitude_labels
+.. py:property:: number_of_altitude_labels
+    :canonical: ansys.stk.core.stkobjects.Graphics3DAzElMask.number_of_altitude_labels
     :type: int
 
     The number of altitude labels to display on the outline of the mask.

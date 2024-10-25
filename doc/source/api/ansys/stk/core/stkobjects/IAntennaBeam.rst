@@ -27,9 +27,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.identifier`
               - Gets or sets the antenna beam identifier.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.active`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.is_active`
               - Gets or sets the beam active flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaBeam.frequency`
               - Gets or sets the beam frequency.
@@ -58,14 +58,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.IAntennaBeam.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeam.identifier
     :type: str
 
     Gets or sets the antenna beam identifier.
 
-.. py:property:: active
-    :canonical: ansys.stk.core.stkobjects.IAntennaBeam.active
+.. py:property:: is_active
+    :canonical: ansys.stk.core.stkobjects.IAntennaBeam.is_active
     :type: bool
 
     Gets or sets the beam active flag.

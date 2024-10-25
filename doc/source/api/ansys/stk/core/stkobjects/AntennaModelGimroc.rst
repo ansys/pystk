@@ -1,13 +1,13 @@
-AntennaModelGimroc
+AntennaModelGIMROC
 ==================
 
-.. py:class:: ansys.stk.core.stkobjects.AntennaModelGimroc
+.. py:class:: ansys.stk.core.stkobjects.AntennaModelGIMROC
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IAntennaModel`, :py:class:`~ansys.stk.core.stkobjects.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.ICloneable`
 
    Class defining a GIMROC antenna model.
 
-.. py:currentmodule:: AntennaModelGimroc
+.. py:currentmodule:: AntennaModelGIMROC
 
 Overview
 --------
@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGimroc.filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGIMROC.filename`
               - Gets or sets the user antenna data filename.
 
 
@@ -30,14 +30,14 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import AntennaModelGimroc
+    from ansys.stk.core.stkobjects import AntennaModelGIMROC
 
 
 Property detail
 ---------------
 
 .. py:property:: filename
-    :canonical: ansys.stk.core.stkobjects.AntennaModelGimroc.filename
+    :canonical: ansys.stk.core.stkobjects.AntennaModelGIMROC.filename
     :type: str
 
     Gets or sets the user antenna data filename.

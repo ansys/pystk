@@ -107,59 +107,59 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_BUG72717(self):
         gfx: "FigureOfMeritGraphics" = EarlyBoundTests.AG_FOM.graphics
-        gfxAnim: "FigureOfMeritGraphics2DAttributesAnimation" = gfx.animation
+        gfxAnim: "FigureOfMeritGraphics2DAttributesAnimation" = gfx.animation_settings
         gfxStatic: "IFigureOfMeritGraphics2DAttributes" = gfx.static
 
         # Hold original values
-        holdHideAll: bool = gfx.is_object_graphics_visible
-        holdAnimationIsVisible: bool = gfxAnim.is_visible
-        holdStaticIsVisible: bool = gfxStatic.is_visible
+        holdHideAll: bool = gfx.show_graphics
+        holdAnimationIsVisible: bool = gfxAnim.show_graphics
+        holdStaticIsVisible: bool = gfxStatic.show_graphics
 
         # The "Show" properties can be set, regardless of the "Hide All" property (for backward compatibility)
-        gfx.is_object_graphics_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)
-        gfxAnim.is_visible = True
-        Assert.assertTrue(gfxAnim.is_visible)
-        gfxAnim.is_visible = False
-        Assert.assertFalse(gfxAnim.is_visible)
-        gfxStatic.is_visible = True
-        Assert.assertTrue(gfxStatic.is_visible)
-        gfxStatic.is_visible = False
-        Assert.assertFalse(gfxStatic.is_visible)
+        gfx.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)
+        gfxAnim.show_graphics = True
+        Assert.assertTrue(gfxAnim.show_graphics)
+        gfxAnim.show_graphics = False
+        Assert.assertFalse(gfxAnim.show_graphics)
+        gfxStatic.show_graphics = True
+        Assert.assertTrue(gfxStatic.show_graphics)
+        gfxStatic.show_graphics = False
+        Assert.assertFalse(gfxStatic.show_graphics)
 
-        gfx.is_object_graphics_visible = False
-        Assert.assertFalse(gfx.is_object_graphics_visible)
-        gfxAnim.is_visible = True
-        Assert.assertTrue(gfxAnim.is_visible)
-        gfxAnim.is_visible = False
-        Assert.assertFalse(gfxAnim.is_visible)
-        gfxStatic.is_visible = True
-        Assert.assertTrue(gfxStatic.is_visible)
-        gfxStatic.is_visible = False
-        Assert.assertFalse(gfxStatic.is_visible)
+        gfx.show_graphics = False
+        Assert.assertFalse(gfx.show_graphics)
+        gfxAnim.show_graphics = True
+        Assert.assertTrue(gfxAnim.show_graphics)
+        gfxAnim.show_graphics = False
+        Assert.assertFalse(gfxAnim.show_graphics)
+        gfxStatic.show_graphics = True
+        Assert.assertTrue(gfxStatic.show_graphics)
+        gfxStatic.show_graphics = False
+        Assert.assertFalse(gfxStatic.show_graphics)
 
         # Setting either of the "Show" properties to true should reset the "Hide All" property
-        gfx.is_object_graphics_visible = False
-        gfxAnim.is_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)  # value changed
+        gfx.show_graphics = False
+        gfxAnim.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)  # value changed
 
-        gfx.is_object_graphics_visible = False
-        gfxStatic.is_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)  # value changed
+        gfx.show_graphics = False
+        gfxStatic.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)  # value changed
 
         # When "Hide All" is set to false, the "Show" properties should return false.
-        gfxAnim.is_visible = True
-        gfx.is_object_graphics_visible = False
-        Assert.assertFalse(gfxAnim.is_visible)  # value changed
+        gfxAnim.show_graphics = True
+        gfx.show_graphics = False
+        Assert.assertFalse(gfxAnim.show_graphics)  # value changed
 
-        gfxStatic.is_visible = True
-        gfx.is_object_graphics_visible = False
-        Assert.assertFalse(gfxStatic.is_visible)  # value changed
+        gfxStatic.show_graphics = True
+        gfx.show_graphics = False
+        Assert.assertFalse(gfxStatic.show_graphics)  # value changed
 
         # Restore original values
-        gfx.is_object_graphics_visible = holdHideAll
-        gfxAnim.is_visible = holdAnimationIsVisible
-        gfxStatic.is_visible = holdStaticIsVisible
+        gfx.show_graphics = holdHideAll
+        gfxAnim.show_graphics = holdAnimationIsVisible
+        gfxStatic.show_graphics = holdStaticIsVisible
 
     # endregion
 
@@ -207,28 +207,30 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
         )
         Assert.assertIsNotNone(oSatellite)
-        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
+        oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
-        # BoundsType (BOUNDS_LAT)
+        # BoundsType (LATITUDE)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_LAT
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.LATITUDE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_LAT, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(COVERAGE_BOUNDS.LATITUDE, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
-        lat: "CoverageBoundsLat" = CoverageBoundsLat(EarlyBoundTests.AG_COV.grid.bounds)
+        lat: "CoverageBoundsLatitude" = CoverageBoundsLatitude(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(lat)
         TestBase.logger.WriteLine7(
-            "\t\tThe current Bounds is: MinLatitude = {0}, MaxLatitude = {1}", lat.min_latitude, lat.max_latitude
+            "\t\tThe current Bounds is: MinLatitude = {0}, MaxLatitude = {1}",
+            lat.minimum_latitude,
+            lat.maximum_latitude,
         )
-        lat.min_latitude = -15
-        lat.max_latitude = 15
+        lat.minimum_latitude = -15
+        lat.maximum_latitude = 15
         TestBase.logger.WriteLine7(
-            "\t\tThe new Bounds is: MinLatitude = {0}, MaxLatitude = {1}", lat.min_latitude, lat.max_latitude
+            "\t\tThe new Bounds is: MinLatitude = {0}, MaxLatitude = {1}", lat.minimum_latitude, lat.maximum_latitude
         )
-        Assert.assertAlmostEqual(-15, float(lat.min_latitude), delta=0.001)
-        Assert.assertAlmostEqual(15, float(lat.max_latitude), delta=0.001)
+        Assert.assertAlmostEqual(-15, float(lat.minimum_latitude), delta=0.001)
+        Assert.assertAlmostEqual(15, float(lat.maximum_latitude), delta=0.001)
 
         # AssetList.Add
         EarlyBoundTests.AG_COV.asset_list.remove_all()
@@ -271,13 +273,13 @@ class EarlyBoundTests(TestBase):
         # PointFOM
         oTimeVar: "DataProviderTimeVarying" = DataProviderTimeVarying(oInspector.point_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
-        oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
+        oResult = DataProviderResultWriter(oTimeVar.execute_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointFOM result:")
         oResult.Dump()
         # PointSatisfaction
         oInterval: "DataProviderInterval" = DataProviderInterval(oInspector.point_satisfaction)
         Assert.assertIsNotNone(oInterval)
-        oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
+        oResult = DataProviderResultWriter(oInterval.execute("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointSatisfaction result:")
         oResult.Dump()
         # SelectRegion
@@ -286,13 +288,13 @@ class EarlyBoundTests(TestBase):
         # RegionFOM
         oTimeVar = DataProviderTimeVarying(oInspector.region_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
-        oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
+        oResult = DataProviderResultWriter(oTimeVar.execute_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFOM result:")
         oResult.Dump()
         # RegionSatisfaction
         oInterval = DataProviderInterval(oInspector.region_satisfaction)
         Assert.assertIsNotNone(oInterval)
-        oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
+        oResult = DataProviderResultWriter(oInterval.execute("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionSatisfaction result:")
         oResult.Dump()
         # ClearSelection
@@ -300,10 +302,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\n\tThe ClearSelection message:{0}", oInspector.message)
         Assert.assertEqual("", oInspector.message)
 
-        # BoundsType (BOUNDS_CUSTOM_REGIONS)
-        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        # BoundsType (CUSTOM_REGIONS)
+        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(COVERAGE_BOUNDS.CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
         oCustom: "CoverageBoundsCustomRegions" = CoverageBoundsCustomRegions(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(oCustom)
@@ -318,25 +320,25 @@ class EarlyBoundTests(TestBase):
         # PointFOM
         oTimeVar = DataProviderTimeVarying(oInspector.point_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
-        oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
+        oResult = DataProviderResultWriter(oTimeVar.execute_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointFOM result:")
         oResult.Dump()
         # PointSatisfaction
         oInterval = DataProviderInterval(oInspector.point_satisfaction)
         Assert.assertIsNotNone(oInterval)
-        oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
+        oResult = DataProviderResultWriter(oInterval.execute("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tPointSatisfaction result:")
         oResult.Dump()
         # RegionFOM
         oTimeVar = DataProviderTimeVarying(oInspector.region_figure_of_merit)
         Assert.assertIsNotNone(oTimeVar)
-        oResult = DataProviderResultWriter(oTimeVar.exec_single("1 Jul 1999 00:00:00.00"))
+        oResult = DataProviderResultWriter(oTimeVar.execute_single("1 Jul 1999 00:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionFOM result:")
         oResult.Dump()
         # RegionSatisfaction
         oInterval = DataProviderInterval(oInspector.region_satisfaction)
         Assert.assertIsNotNone(oInterval)
-        oResult = DataProviderResultWriter(oInterval.exec("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
+        oResult = DataProviderResultWriter(oInterval.execute("1 Jul 1999 00:00:00.00", "1 Jul 1999 12:00:00.00"))
         TestBase.logger.WriteLine("\n\tRegionSatisfaction result:")
         oResult.Dump()
         # ClearSelection
@@ -360,10 +362,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oGraphics)
 
         # IsObjectGraphicsVisible
-        oGraphics.is_object_graphics_visible = False
-        Assert.assertFalse(oGraphics.is_object_graphics_visible)
-        oGraphics.is_object_graphics_visible = True
-        Assert.assertTrue(oGraphics.is_object_graphics_visible)
+        oGraphics.show_graphics = False
+        Assert.assertFalse(oGraphics.show_graphics)
+        oGraphics.show_graphics = True
+        Assert.assertTrue(oGraphics.show_graphics)
 
         helper = FOMHelper(TestBase.Application)
         # Static
@@ -383,20 +385,20 @@ class EarlyBoundTests(TestBase):
         oGraphics.static.fill_points = oldFillPoints
 
         # Animation (readonly)
-        helper.GfxAnimationAttributes(oGraphics.animation, True)
+        helper.GfxAnimationAttributes(oGraphics.animation_settings, True)
         # Animation
         EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
         Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
-        helper.GfxAnimationAttributes(oGraphics.animation, False)
+        helper.GfxAnimationAttributes(oGraphics.animation_settings, False)
         # Contours (readonly)
-        helper.GfxAnimationContours(oGraphics.animation.contours, True, True)
-        helper.GfxContourLines(oGraphics.animation.contours, True)
+        helper.GfxAnimationContours(oGraphics.animation_settings.contours, True, True)
+        helper.GfxContourLines(oGraphics.animation_settings.contours, True)
         # Contours
         EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME)
         Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME, EarlyBoundTests.AG_FOM.definition_type)
-        EarlyBoundTests.AG_FOM.graphics.animation.contours.is_visible = True
-        helper.GfxAnimationContours(oGraphics.animation.contours, False, False)
-        helper.GfxContourLines(oGraphics.animation.contours, False)
+        EarlyBoundTests.AG_FOM.graphics.animation_settings.contours.show_graphics = True
+        helper.GfxAnimationContours(oGraphics.animation_settings.contours, False, False)
+        helper.GfxContourLines(oGraphics.animation_settings.contours, False)
         TestBase.logger.WriteLine("----- GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -417,23 +419,23 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oVO.granularity = 12.3
         # PixelsPerDeg
-        TestBase.logger.WriteLine6("\tThe current PixelsPerDeg is: {0}", oVO.pixels_per_deg)
-        oVO.pixels_per_deg = 12.3
-        TestBase.logger.WriteLine6("\tThe new PixelsPerDeg is: {0}", oVO.pixels_per_deg)
-        Assert.assertEqual(12.3, oVO.pixels_per_deg)
+        TestBase.logger.WriteLine6("\tThe current PixelsPerDeg is: {0}", oVO.pixels_per_degree)
+        oVO.pixels_per_degree = 12.3
+        TestBase.logger.WriteLine6("\tThe new PixelsPerDeg is: {0}", oVO.pixels_per_degree)
+        Assert.assertEqual(12.3, oVO.pixels_per_degree)
         with pytest.raises(Exception):
-            oVO.pixels_per_deg = -12.3
+            oVO.pixels_per_degree = -12.3
 
         # Static
         self.VOAttributes(oVO.static, False)
         # Animation (readonly)
         EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
         Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP, EarlyBoundTests.AG_FOM.definition_type)
-        self.VOAttributes(oVO.animation, True)
+        self.VOAttributes(oVO.animation_graphics_3d_settings, True)
         # Animation
         EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
         Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
-        self.VOAttributes(oVO.animation, False)
+        self.VOAttributes(oVO.animation_graphics_3d_settings, False)
         TestBase.logger.WriteLine("----- VO TEST ----- END -----")
 
     # endregion
@@ -445,7 +447,7 @@ class EarlyBoundTests(TestBase):
         if bReadOnly:
             #  (readonly)
             with pytest.raises(Exception):
-                oAttributes.is_visible = True
+                oAttributes.show_graphics = True
             # PointSize (readonly)
             with pytest.raises(Exception):
                 oAttributes.point_size = 5.6
@@ -455,10 +457,10 @@ class EarlyBoundTests(TestBase):
 
         else:
             # IsVisible (false)
-            TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oAttributes.is_visible)
-            oAttributes.is_visible = False
-            TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
-            Assert.assertFalse(oAttributes.is_visible)
+            TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oAttributes.show_graphics)
+            oAttributes.show_graphics = False
+            TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.show_graphics)
+            Assert.assertFalse(oAttributes.show_graphics)
             # PointSize (readonly)
             with pytest.raises(Exception):
                 oAttributes.point_size = 5.6
@@ -466,9 +468,9 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception):
                 oAttributes.translucency = 56.78
             # IsVisible (true)
-            oAttributes.is_visible = True
-            TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
-            Assert.assertTrue(oAttributes.is_visible)
+            oAttributes.show_graphics = True
+            TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.show_graphics)
+            Assert.assertTrue(oAttributes.show_graphics)
             # PointSize
             TestBase.logger.WriteLine6("\tThe current PointSize is: {0}", oAttributes.point_size)
             oAttributes.point_size = 5.6
@@ -505,7 +507,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", oCovDef.grid.bounds_type)
-            noSmoothFillBounds: "List[COVERAGE_BOUNDS]" = [COVERAGE_BOUNDS.BOUNDS_CUSTOM_BOUNDARY]
+            noSmoothFillBounds: "List[COVERAGE_BOUNDS]" = [COVERAGE_BOUNDS.CUSTOM_BOUNDARY]
             eBound: "COVERAGE_BOUNDS"
             for eBound in noSmoothFillBounds:
                 oCovDef.grid.bounds_type = eBound
@@ -515,11 +517,11 @@ class EarlyBoundTests(TestBase):
                 self.TestFOMGfxContours(oFOMerit, False)
 
             SmoothFillBounds: "List[COVERAGE_BOUNDS]" = [
-                COVERAGE_BOUNDS.BOUNDS_LAT_LINE,
-                COVERAGE_BOUNDS.BOUNDS_LON_LINE,
-                COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS,
-                COVERAGE_BOUNDS.BOUNDS_GLOBAL,
-                COVERAGE_BOUNDS.BOUNDS_LAT,
+                COVERAGE_BOUNDS.LATITUDE_LINE,
+                COVERAGE_BOUNDS.LONGITUDE_LINE,
+                COVERAGE_BOUNDS.CUSTOM_REGIONS,
+                COVERAGE_BOUNDS.GLOBAL,
+                COVERAGE_BOUNDS.LATITUDE,
             ]
             eBound: "COVERAGE_BOUNDS"
             for eBound in SmoothFillBounds:
@@ -549,19 +551,21 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\t\tThe new DefinitionType is: {0}", fom.definition_type)
         Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION, fom.definition_type)
         # Graphics.Static.IsVisible
-        TestBase.logger.WriteLine4("\t\tThe current Graphics.Static.IsVisible is: {0}", fom.graphics.static.is_visible)
-        fom.graphics.static.is_visible = True
-        TestBase.logger.WriteLine4("\t\tThe new Graphics.Static.IsVisible is: {0}", fom.graphics.static.is_visible)
-        Assert.assertTrue(fom.graphics.static.is_visible)
+        TestBase.logger.WriteLine4(
+            "\t\tThe current Graphics.Static.IsVisible is: {0}", fom.graphics.static.show_graphics
+        )
+        fom.graphics.static.show_graphics = True
+        TestBase.logger.WriteLine4("\t\tThe new Graphics.Static.IsVisible is: {0}", fom.graphics.static.show_graphics)
+        Assert.assertTrue(fom.graphics.static.show_graphics)
         # Graphics.Static.Contours.IsVisible
         TestBase.logger.WriteLine4(
-            "\t\tThe current Graphics.Static.Contours.IsVisible is: {0}", fom.graphics.static.contours.is_visible
+            "\t\tThe current Graphics.Static.Contours.IsVisible is: {0}", fom.graphics.static.contours.show_graphics
         )
-        fom.graphics.static.contours.is_visible = True
+        fom.graphics.static.contours.show_graphics = True
         TestBase.logger.WriteLine4(
-            "\t\tThe new Graphics.Static.Contours.IsVisible is: {0}", fom.graphics.static.contours.is_visible
+            "\t\tThe new Graphics.Static.Contours.IsVisible is: {0}", fom.graphics.static.contours.show_graphics
         )
-        Assert.assertTrue(fom.graphics.static.contours.is_visible)
+        Assert.assertTrue(fom.graphics.static.contours.show_graphics)
         # Graphics.Static.Contours.ContourType
         TestBase.logger.WriteLine6(
             "\t\tThe current Graphics.Static.Contours.ContourType is: {0}", fom.graphics.static.contours.contour_type
@@ -604,7 +608,7 @@ class EarlyBoundTests(TestBase):
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
         covdef.point_definition.use_grid_seed = True
         covdef.point_definition.use_object_as_seed = True
-        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_RECEIVER
+        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.RECEIVER
         covdef.point_definition.seed_instance = "Facility/Fac1Bug44875/Receiver/Rcv1Bug44875"
         covchilds: "IStkObjectCollection" = covdefobj.children
 
@@ -614,18 +618,18 @@ class EarlyBoundTests(TestBase):
         fomcs1 = fom1.set_access_constraint_definition_name("C/No")
         if not TestBase.NoGraphicsMode:
             fomc1: "IFigureOfMeritGraphics2DContours" = fom1.graphics.static.contours
-            fomc1.is_visible = True
+            fomc1.show_graphics = True
             col1: "FigureOfMeritGraphics2DLevelAttributesCollection" = fomc1.level_attributes
-            unit1a: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("RatioUnit")
-            unit2a: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("BandwidthUnit")
-            TestBase.Application.unit_preferences.set_current_unit("RatioUnit", "dB")
-            TestBase.Application.unit_preferences.set_current_unit("BandwidthUnit", "MHz")
+            unit1a: str = TestBase.Application.units_preferences.get_current_unit_abbrv("RatioUnit")
+            unit2a: str = TestBase.Application.units_preferences.get_current_unit_abbrv("BandwidthUnit")
+            TestBase.Application.units_preferences.set_current_unit("RatioUnit", "dB")
+            TestBase.Application.units_preferences.set_current_unit("BandwidthUnit", "MHz")
             col1.add_level_range(-100, 0, 10)
             Assert.assertEqual(11, col1.count)
             TestBase.logger.WriteLine(("unit1a = " + unit1a))
             TestBase.logger.WriteLine(("unit2a = " + unit2a))
-            TestBase.Application.unit_preferences.set_current_unit("RatioUnit", unit1a)
-            TestBase.Application.unit_preferences.set_current_unit("BandwidthUnit", unit2a)
+            TestBase.Application.units_preferences.set_current_unit("RatioUnit", unit1a)
+            TestBase.Application.units_preferences.set_current_unit("BandwidthUnit", unit2a)
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -637,18 +641,18 @@ class EarlyBoundTests(TestBase):
         fomcs2 = fom2.set_access_constraint_definition_name("PowerFluxDensity")
         if not TestBase.NoGraphicsMode:
             fomc2: "IFigureOfMeritGraphics2DContours" = fom2.graphics.static.contours
-            fomc2.is_visible = True
+            fomc2.show_graphics = True
             col2: "FigureOfMeritGraphics2DLevelAttributesCollection" = fomc2.level_attributes
-            unit1b: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("Power")
-            unit2b: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("SmallDistance")
-            TestBase.Application.unit_preferences.set_current_unit("Power", "GW")
-            TestBase.Application.unit_preferences.set_current_unit("SmallDistance", "ft")
+            unit1b: str = TestBase.Application.units_preferences.get_current_unit_abbrv("Power")
+            unit2b: str = TestBase.Application.units_preferences.get_current_unit_abbrv("SmallDistance")
+            TestBase.Application.units_preferences.set_current_unit("Power", "GW")
+            TestBase.Application.units_preferences.set_current_unit("SmallDistance", "ft")
             col2.add_level_range(0.1, 100, 10)
             Assert.assertEqual(10, col2.count)
             TestBase.logger.WriteLine(("unit1b = " + unit1b))
             TestBase.logger.WriteLine(("unit2b = " + unit2b))
-            TestBase.Application.unit_preferences.set_current_unit("Power", unit1b)
-            TestBase.Application.unit_preferences.set_current_unit("SmallDistance", unit2b)
+            TestBase.Application.units_preferences.set_current_unit("Power", unit1b)
+            TestBase.Application.units_preferences.set_current_unit("SmallDistance", unit2b)
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
@@ -689,7 +693,7 @@ class EarlyBoundTests(TestBase):
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
         covdef.point_definition.use_grid_seed = True
         covdef.point_definition.use_object_as_seed = True
-        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_RECEIVER
+        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.RECEIVER
         covdef.point_definition.seed_instance = (("Facility/Fac1" + bugNum) + "/Receiver/Rcv1") + bugNum
         covchilds: "IStkObjectCollection" = covdefobj.children
 
@@ -766,14 +770,14 @@ class EarlyBoundTests(TestBase):
         # ===================================================================
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.OVER_NO)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.OVER_NO, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0, fomcs.constraint_name)
         Assert.assertEqual("C/No", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("C/No")
         Assert.assertEqual("C/No", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.OVER_NO, fomcs.constraint_name)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0, fomcs.constraint_name)
 
         # ===================================================================
         # J/S
@@ -794,28 +798,28 @@ class EarlyBoundTests(TestBase):
         # ===================================================================
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.SRCH_TRK_SINGLE_PULSE_J_OVER_S)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SRCH_TRK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
         Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("SrchTrkSinglePulseJOverS")
         Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SRCH_TRK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
 
         # ===================================================================
         # CrdnCondition
         # ===================================================================
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.CRDN_CONDITION)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CRDN_CONDITION, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION, fomcs.constraint_name)
         Assert.assertEqual("CrdnCondition", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
         fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("CrdnCondition")
         Assert.assertEqual("CrdnCondition", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CRDN_CONDITION, fomcs.constraint_name)
+        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION, fomcs.constraint_name)
 
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
@@ -834,10 +838,10 @@ class EarlyBoundTests(TestBase):
 
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
-        holdDateFormat: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
 
         try:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
             coverageDefinitionObj: "IStkObject" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(
@@ -857,11 +861,11 @@ class EarlyBoundTests(TestBase):
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
-            result: "DataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.execute()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp.pre_data = "Bogus"
-            result = dpFixed.exec()
+            result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
             satelliteObj: "IStkObject" = clr.CastAs(
@@ -869,8 +873,8 @@ class EarlyBoundTests(TestBase):
                 IStkObject,
             )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
-            satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            satelliteProp: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
+            satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             satelliteProp.propagate()
             attitudeCoverageObj: "IStkObject" = clr.CastAs(
                 satelliteObj.children.new(STK_OBJECT_TYPE.ATTITUDE_COVERAGE, "AttitudeCoveragePreDataTest"), IStkObject
@@ -889,12 +893,12 @@ class EarlyBoundTests(TestBase):
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
             TestBase.Application.execute_command((("AttCov " + attitudeCoverageObj.path) + " Access Compute"))
-            result: "DataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.execute()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp.pre_data = "Bogus"
             TestBase.Application.execute_command((("AttCov " + attitudeCoverageObj.path) + " Access Compute"))
-            result = dpFixed.exec()
+            result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
         finally:
@@ -902,6 +906,6 @@ class EarlyBoundTests(TestBase):
                 STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
             )
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest")
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", holdDateFormat)
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
 
     # endregion

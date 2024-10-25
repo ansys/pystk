@@ -1,13 +1,13 @@
-RadarStcAttenuationMapRange
+RadarSTCAttenuationMapRange
 ===========================
 
-.. py:class:: ansys.stk.core.stkobjects.RadarStcAttenuationMapRange
+.. py:class:: ansys.stk.core.stkobjects.RadarSTCAttenuationMapRange
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarStcAttenuationMap`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IRadarSTCAttenuation`, :py:class:`~ansys.stk.core.stkobjects.IRadarSTCAttenuationMap`
 
    Class defining an radar stc range map.
 
-.. py:currentmodule:: RadarStcAttenuationMapRange
+.. py:currentmodule:: RadarSTCAttenuationMapRange
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import RadarStcAttenuationMapRange
+    from ansys.stk.core.stkobjects import RadarSTCAttenuationMapRange
 
 
 

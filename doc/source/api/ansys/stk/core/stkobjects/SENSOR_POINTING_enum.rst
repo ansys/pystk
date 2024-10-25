@@ -19,31 +19,31 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~POINT_3D_MODEL`
+            * - :py:attr:`~ELEMENT_OF_3D_MODEL`
               - 3D model: point a sensor along one of the available elements of the selected 3D Model.
 
-            * - :py:attr:`~POINT_EXTERNAL`
+            * - :py:attr:`~FILE`
               - External: import a custom sensor pointing file.
 
-            * - :py:attr:`~POINT_FIXED`
+            * - :py:attr:`~FIXED_IN_PARENT_BODY_AXES`
               - Fixed: model sensors that are fixed in the parent object's body coordinate frame, so that they always point in the same direction relative to the parent.
 
-            * - :py:attr:`~POINT_FIXED_AXES`
+            * - :py:attr:`~FIXED_IN_AXES`
               - Fixed in axes: point a sensor with reference to a set of axes, using the selected orientation system.
 
-            * - :py:attr:`~POINT_SPINNING`
+            * - :py:attr:`~SPINNING`
               - Spinning: model radars, push broom sensors and other instruments that spin, scan or sweep over time.
 
-            * - :py:attr:`~POINT_TARGETED`
+            * - :py:attr:`~TARGETED`
               - Targeted: model sensors that track other objects.
 
-            * - :py:attr:`~POINT_GRAZING_ALTITUDE`
+            * - :py:attr:`~BORESIGHT_GRAZING_ALTITUDE`
               - Grazing altitude: model a sensor so that the boresight vector will graze the central body at a specified altitude.
 
-            * - :py:attr:`~POINT_ALONG_VECTOR`
+            * - :py:attr:`~ALONG_VECTOR`
               - Along Vector: model a sensor so that sensor pointing alignment is controlled by using a pair of vectors defined using the Vector Geometry tool.
 
-            * - :py:attr:`~POINT_SCHEDULE`
+            * - :py:attr:`~SCHEDULED`
               - Schedule: controls scheduled sensor pointing.
 
 

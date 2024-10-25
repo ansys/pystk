@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~AG_E_ANTENNA_GRAPHICS_COORDINATE_SYSTEM_POLAR`
+            * - :py:attr:`~POLAR`
               - Polar.
 
-            * - :py:attr:`~AG_E_ANTENNA_GRAPHICS_COORDINATE_SYSTEM_RECTANGULAR`
+            * - :py:attr:`~RECTANGULAR`
               - Rectangular.
 
-            * - :py:attr:`~AG_E_ANTENNA_GRAPHICS_COORDINATE_SYSTEM_SPHERICAL_AZ_EL`
+            * - :py:attr:`~SPHERICAL_AZ_EL`
               - Spherical Az/El.
 
 

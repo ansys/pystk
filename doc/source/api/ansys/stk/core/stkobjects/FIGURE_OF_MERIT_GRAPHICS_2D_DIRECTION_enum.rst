@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~HORIZONTAL_MAX_TO_MIN`
+            * - :py:attr:`~HORIZONTAL_MAXIMUM_TO_MINIMUM`
               - Levels are displayed horizontally, in descending order.
 
-            * - :py:attr:`~HORIZONTAL_MIN_TO_MAX`
+            * - :py:attr:`~HORIZONTAL_MINIMUM_TO_MAXIMUM`
               - Levels are displayed horizontally, in ascending order.
 
-            * - :py:attr:`~VERTICAL_MAX_TO_MIN`
+            * - :py:attr:`~VERTICAL_MAXIMUM_TO_MINIMUM`
               - Levels are displayed vertically, in descending order.
 
-            * - :py:attr:`~VERTICAL_MIN_TO_MAX`
+            * - :py:attr:`~VERTICAL_MINIMUM_TO_MAXIMUM`
               - Levels are displayed vertically, in ascending order.
 
 

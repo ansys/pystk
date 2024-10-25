@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformPulseDefinition.prf_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_repetition_frequency_mode`
               - Gets or sets the prf mode enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformPulseDefinition.prf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_repetition_frequency`
               - Gets or sets the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.WaveformPulseDefinition.unambiguous_range`
               - Gets or sets the unambiguous range.
@@ -48,14 +48,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prf_mode
-    :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.prf_mode
+.. py:property:: pulse_repetition_frequency_mode
+    :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_repetition_frequency_mode
     :type: PRF_MODE
 
     Gets or sets the prf mode enumeration.
 
-.. py:property:: prf
-    :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.prf
+.. py:property:: pulse_repetition_frequency
+    :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_repetition_frequency
     :type: float
 
     Gets or sets the pulse repetition frequency.

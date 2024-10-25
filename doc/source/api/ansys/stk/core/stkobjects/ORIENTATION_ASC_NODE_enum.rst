@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ASC_NODE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Represents ascending node value not supported by the Object Model.
 
-            * - :py:attr:`~ASC_NODE_LAN`
+            * - :py:attr:`~LONGITUDE_ASCENDING_NODE`
               - Longitude of Ascending Node.
 
-            * - :py:attr:`~ASC_NODE_RAAN`
+            * - :py:attr:`~RIGHT_ASCENSION_ASCENDING_NODE`
               - Right Ascension of Ascending Node.
 
 

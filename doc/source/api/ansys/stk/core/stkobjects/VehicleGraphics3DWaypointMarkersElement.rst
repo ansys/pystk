@@ -33,7 +33,7 @@ Overview
               - Get the marker type of the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.shape`
               - Gets or sets the shape of the waypoint marker.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.marker_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.marker_filename`
               - Gets or sets the path and file name of the image used for the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.pixel_size`
               - Gets or sets the pixel size of the waypoint marker. Dimensionless.
@@ -71,8 +71,8 @@ Property detail
 
     Gets or sets the shape of the waypoint marker.
 
-.. py:property:: marker_file
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.marker_file
+.. py:property:: marker_filename
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.marker_filename
     :type: str
 
     Gets or sets the path and file name of the image used for the waypoint.

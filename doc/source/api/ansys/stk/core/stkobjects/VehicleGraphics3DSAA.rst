@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSAA.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSAA.show_graphics`
               - Opt whether to display South Atlantic Anomaly contours.
 
 
@@ -34,8 +34,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSAA.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSAA.show_graphics
     :type: bool
 
     Opt whether to display South Atlantic Anomaly contours.

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: selection
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdateProperties.selection
-    :type: VEHICLE_GPS_ELEM_SELECTION
+    :type: VEHICLE_GPS_ELEMENT_SELECTION_TYPE
 
     Whether Automatic Update is active.
 

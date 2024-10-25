@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.proximity`
               - Get the aircraft's 3D proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours`
               - Get the aircraft's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AircraftGraphics3D.covariance_pointing_contour`
               - Get the aircraft's 3D covariance pointing properties.
@@ -52,9 +52,9 @@ Property detail
 
     Get the aircraft's 3D proximity properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.AircraftGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the aircraft's 3D elevation contour properties.
 

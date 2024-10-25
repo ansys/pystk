@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.enable_local_rain_data`
               - Gets or sets the option for enabling local rain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_iso_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_height`
               - Gets or sets the local rain iso height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_rate`
               - Gets or sets the local rain rate.
@@ -47,8 +47,8 @@ Property detail
 
     Gets or sets the option for enabling local rain data.
 
-.. py:property:: local_rain_iso_height
-    :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_iso_height
+.. py:property:: local_rain_height
+    :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_height
     :type: float
 
     Gets or sets the local rain iso height.

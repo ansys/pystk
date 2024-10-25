@@ -19,22 +19,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PULSE_STYLE_BOX`
+            * - :py:attr:`~BOX`
               - Box style.
 
-            * - :py:attr:`~PULSE_STYLE_NEG_BOX`
+            * - :py:attr:`~NEGATIVE_BOX`
               - Negative box style.
 
-            * - :py:attr:`~PULSE_STYLE_POSITION_BOX`
+            * - :py:attr:`~POSITIVE_BOX`
               - Positive box style.
 
-            * - :py:attr:`~PULSE_STYLE_SINE`
+            * - :py:attr:`~SINE_WAVE`
               - Sine style.
 
-            * - :py:attr:`~PULSE_STYLE_NEG_SINE`
+            * - :py:attr:`~NEGATIVE_SINE_WAVE`
               - Negative sine style.
 
-            * - :py:attr:`~PULSE_STYLE_POSITION_SINE`
+            * - :py:attr:`~POSITIVE_SINE_WAVE`
               - Positive sine style.
 
 

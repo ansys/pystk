@@ -1,13 +1,13 @@
-DemodulatorModel16psk
+DemodulatorModel16PSK
 =====================
 
-.. py:class:: ansys.stk.core.stkobjects.DemodulatorModel16psk
+.. py:class:: ansys.stk.core.stkobjects.DemodulatorModel16PSK
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.IDemodulatorModel`
 
    Class defining a 16PSK modulator model.
 
-.. py:currentmodule:: DemodulatorModel16psk
+.. py:currentmodule:: DemodulatorModel16PSK
 
 Overview
 --------
@@ -19,7 +19,7 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import DemodulatorModel16psk
+    from ansys.stk.core.stkobjects import DemodulatorModel16PSK
 
 
 

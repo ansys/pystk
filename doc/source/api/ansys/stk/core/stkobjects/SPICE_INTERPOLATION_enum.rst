@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~INTERPOLATION09_LANGRANGIAN`
+            * - :py:attr:`~LAGRANGE_9TH_ORDER`
               - Type 9 (LaGrangian).
 
-            * - :py:attr:`~INTERPOLATION13_HERMITIAN`
+            * - :py:attr:`~HERMITE_13TH_ORDER`
               - Type 13 (Hermitian).
 
 

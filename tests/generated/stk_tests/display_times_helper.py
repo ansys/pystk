@@ -36,9 +36,9 @@ class DisplayTimesHelper(object):
             with pytest.raises(Exception):
                 oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
 
-        # TYPE_UNKNOWN
+        # UNKNOWN
         with pytest.raises(Exception):
-            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.TYPE_UNKNOWN)
+            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.UNKNOWN)
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.display_status_type)
 
@@ -53,8 +53,8 @@ class DisplayTimesHelper(object):
             self.m_logger.WriteLine6("\tThe new DisplayStatusType is: {0}", oDisplay.display_status_type)
             eType1: "DISPLAY_TIMES_TYPE" = oDisplay.display_status_type
             Assert.assertEqual(eType, eType1)
-            if eType == DISPLAY_TIMES_TYPE.TYPE_UNKNOWN:
-                Assert.fail("TYPE_UNKNOWN should not be supported!")
+            if eType == DISPLAY_TIMES_TYPE.UNKNOWN:
+                Assert.fail("UNKNOWN should not be supported!")
             elif (((eType == DISPLAY_TIMES_TYPE.ALWAYS_OFF)) or ((eType == DISPLAY_TIMES_TYPE.ALWAYS_ON))) or (
                 (eType == DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
             ):
@@ -62,14 +62,14 @@ class DisplayTimesHelper(object):
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
             elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
-                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DuringAccess))
-            elif eType == DISPLAY_TIMES_TYPE.USE_INTERVALS:
-                oHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
+                self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DisplayTimesDuringAccess))
+            elif eType == DISPLAY_TIMES_TYPE.INTERVALS:
+                oHelper = IntervalCollectionHelper(self.m_oRoot.units_preferences)
                 oHelper.Run(
-                    IntervalCollection(oDisplay.display_times_data),
+                    TimeIntervalCollection(oDisplay.display_times_data),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
-            elif eType == DISPLAY_TIMES_TYPE.USE_TIME_COMPONENT:
+            elif eType == DISPLAY_TIMES_TYPE.TIME_COMPONENT:
                 self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, DisplayTimesTimeComponent))
             else:
                 Assert.fail("Unknown DISPLAY_TIMES_TYPE")
@@ -79,14 +79,14 @@ class DisplayTimesHelper(object):
     # endregion
 
     # region DuringAccess method
-    def DuringAccess(self, oAccess: "DuringAccess"):
+    def DuringAccess(self, oAccess: "DisplayTimesDuringAccess"):
         Assert.assertIsNotNone(oAccess)
         # AccessObjects
         oOLCHelper = ObjectLinkCollectionHelper()
         oOLCHelper.Run(oAccess.access_objects, self.m_oRoot)
         # DisplayIntervals
         oAccess.access_objects.add("Star/Star1")
-        oICHelper = IntervalCollectionHelper(self.m_oRoot.unit_preferences)
+        oICHelper = IntervalCollectionHelper(self.m_oRoot.units_preferences)
         oICHelper.Run(oAccess.display_intervals, IntervalCollectionHelper.IntervalCollectionType.DuringAccess)
 
     # endregion
@@ -125,24 +125,29 @@ class DisplayTimesHelper(object):
         )
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.analysis_workbench_components.time_instants["AnalysisStartTime"],
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            self.m_oRoot.current_scenario.children["Facility1"].vgt.time_interval_collections["LightingIntervals"],
+            self.m_oRoot.current_scenario.children["Facility1"].analysis_workbench_components.time_interval_collections[
+                "LightingIntervals"
+            ],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdnFac)
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.time_arrays["OneMinuteSampleTimes"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.analysis_workbench_components.time_arrays["OneMinuteSampleTimes"],
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception):
             dttc.set_time_component(crdn)
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.analysis_workbench_components.time_intervals["AnalysisInterval"],
+            IAnalysisWorkbenchComponent,
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(
@@ -151,7 +156,8 @@ class DisplayTimesHelper(object):
         )
 
         crdn = clr.CastAs(
-            self.m_oRoot.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"], IAnalysisWorkbenchComponent
+            self.m_oRoot.current_scenario.analysis_workbench_components.time_interval_lists["AvailabilityIntervals"],
+            IAnalysisWorkbenchComponent,
         )
         dttc.set_time_component(crdn)
         Assert.assertEqual(
@@ -190,7 +196,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "IntervalCollection", eType):
+    def Run(self, oCollection: "TimeIntervalCollection", eType):
         Assert.assertIsNotNone(oCollection)
         self.m_logger.WriteLine("IntervalCollection test:")
         # set DateFormat
@@ -231,7 +237,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region DuringAccess
-    def DuringAccess(self, oCollection: "IntervalCollection"):
+    def DuringAccess(self, oCollection: "TimeIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         with pytest.raises(Exception):
@@ -289,7 +295,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Constraint
-    def Constraint(self, oCollection: "IntervalCollection"):
+    def Constraint(self, oCollection: "TimeIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         if self.m_bReadOnlyFile:
             # RemoveAll
@@ -527,7 +533,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region Intervals
-    def Intervals(self, oCollection: "IntervalCollection"):
+    def Intervals(self, oCollection: "TimeIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)
@@ -727,7 +733,7 @@ class IntervalCollectionHelper(object):
     # endregion
 
     # region LabelNotes
-    def LabelNotes(self, oCollection: "IntervalCollection"):
+    def LabelNotes(self, oCollection: "TimeIntervalCollection"):
         Assert.assertIsNotNone(oCollection)
         # RemoveAll
         self.m_logger.WriteLine3("\tBefore RemoveAll() collection contains: {0} elements", oCollection.count)

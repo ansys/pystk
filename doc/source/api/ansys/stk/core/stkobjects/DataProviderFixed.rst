@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.exec`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.execute`
               - Compute the data; fixed data providers do not require arguments.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.exec_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderFixed.execute_elements`
               - Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
 
 
@@ -39,8 +39,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: exec(self) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.exec
+.. py:method:: execute(self) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.execute
 
     Compute the data; fixed data providers do not require arguments.
 
@@ -48,8 +48,8 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_elements(self, elementNames: list) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.exec_elements
+.. py:method:: execute_elements(self, elementNames: list) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderFixed.execute_elements
 
     Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
 

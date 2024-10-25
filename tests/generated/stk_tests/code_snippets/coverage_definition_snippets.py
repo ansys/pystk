@@ -77,7 +77,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         cvGrid: "CoverageGrid" = coverageDefinition.grid
 
         # Define custom region
-        cvGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        cvGrid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
         oBoundsCustom: "CoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, CoverageBoundsCustomRegions)
         oBoundsCustom.region_files.add(regionFilePath)
         oBoundsCustom.area_targets.add("AreaTarget/AreaTarget1")
@@ -92,7 +92,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         ]
 
         # SetPointsLLA expects a two dimensional array of LLA points
-        coverageDefinition.point_definition.set_points_lla(points)
+        coverageDefinition.point_definition.set_points_detic(points)
 
     # endregion
 
@@ -109,7 +109,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         cvGrid: "CoverageGrid" = coverageDefinition.grid
 
         # Set bound region type to use custom regions
-        cvGrid.bounds_type = COVERAGE_BOUNDS.BOUNDS_CUSTOM_REGIONS
+        cvGrid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
 
         # Get CoverageBoundsCustomRegions interface
         boundRegion: "CoverageBoundsCustomRegions" = clr.CastAs(cvGrid.bounds, CoverageBoundsCustomRegions)
@@ -129,7 +129,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         grid: "CoverageGrid" = coverageDefinition.grid
 
         # Set resolution type
-        grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
+        grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
 
         # Get the resolution interface
         resolution: "ICoverageResolution" = grid.resolution
@@ -137,7 +137,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
         # Assign LatLon used to define grid resolution
         # Uses Angle Dimension
-        latLonResolution.lat_lon = 3.0
+        latLonResolution.latitude_longitude = 3.0
 
     # endregion
 
@@ -152,12 +152,12 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         pointDefinition: "CoveragePointDefinition" = coverageDefinition.point_definition
 
         # Set facility as object seed instance
-        pointDefinition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_FACILITY
+        pointDefinition.grid_class = COVERAGE_GRID_CLASS.FACILITY
         pointDefinition.use_grid_seed = True
         pointDefinition.seed_instance = "Facility/North"
 
         # Configure Altitude
-        pointDefinition.altitude_method = COVERAGE_ALTITUDE_METHOD.ALTITUDE
+        pointDefinition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
         pointDefinition.altitude = 0.0
         coverageDefinition.point_definition.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
 
@@ -200,13 +200,13 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     def ConfigureCoverageDefinitionGraphics(self, cvGraphics: "CoverageGraphics"):
         # Configure animation
-        cvAnimation: "CoverageGraphics2DAnimation" = cvGraphics.animation
-        cvAnimation.is_satisfaction_visible = True
+        cvAnimation: "CoverageGraphics2DAnimation" = cvGraphics.animation_settings
+        cvAnimation.show_satisfaction = True
         cvAnimation.color = Colors.Green
 
         # Configure progress
         cvProgress: "CoverageGraphics2DProgress" = cvGraphics.progress
-        cvProgress.is_visible = True
+        cvProgress.show_graphics = True
         cvProgress.color = Colors.Red
 
         # Configure static
@@ -222,7 +222,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     def ConfigureCoverageDefinitionFixedStepSampling(self, coverageDefinition: "CoverageDefinition"):
         # Get the Sampling interface
-        advanced: "CoverageAdvanced" = coverageDefinition.advanced
+        advanced: "CoverageAdvancedSettings" = coverageDefinition.advanced
         sampling: "AccessSampling" = advanced.sampling
 
         # Set the Sampling Method
@@ -241,7 +241,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     def ConfigureCoverageDefinitionAdaptiveSampling(self, coverageDefinition: "CoverageDefinition"):
         # Get the Sampling interface
-        advanced: "CoverageAdvanced" = coverageDefinition.advanced
+        advanced: "CoverageAdvancedSettings" = coverageDefinition.advanced
         sampling: "AccessSampling" = advanced.sampling
 
         # Set the Sampling Method
@@ -249,8 +249,8 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
         adaptive: "SamplingMethodAdaptive" = clr.CastAs(sampling.strategy, SamplingMethodAdaptive)
 
         # Set properties on the Adaptive sampling method interface
-        adaptive.max_time_step = 180.0
-        adaptive.min_time_step = 1.0
+        adaptive.maximum_time_step = 180.0
+        adaptive.minimum_time_step = 1.0
 
     # endregion
 
@@ -263,8 +263,8 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
         aircraft: "Aircraft" = Aircraft((IStkObject(scenario)).children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1"))
         (IStkObject(aircraft)).children.new(STK_OBJECT_TYPE.SENSOR, "AircraftSensor1")
-        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        greatArc: "VehiclePropagatorGreatArc" = VehiclePropagatorGreatArc(aircraft.route)
+        aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        greatArc: "PropagatorGreatArc" = PropagatorGreatArc(aircraft.route)
 
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.077, 0],
@@ -288,7 +288,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
     def ConfigureCoverageAnalysisTimeToAssetAvailabilityTimeSpanUsingExplicitTimes(
         self, stkRoot: "StkObjectRoot", coverage: "CoverageDefinition"
     ):
-        currentDateFormat: str = stkRoot.unit_preferences.get_current_unit_abbrv("DateFormat")
+        currentDateFormat: str = stkRoot.units_preferences.get_current_unit_abbrv("DateFormat")
 
         # For this example, we will set the coverage analysis time to the times the asset is available.
         # Note, this doesn't handle subassets. To do that, you'll just have to iterate through the subasset list.
@@ -299,8 +299,8 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
         for cvAsset in coverage.asset_list:
             subAsset: "IStkObject" = stkRoot.get_object_from_path(cvAsset.object_name)
-            if subAsset.vgt.time_intervals.contains("AvailabilityTimeSpan"):
-                availableTimeSpan: "TimeToolTimeIntervalResult" = subAsset.vgt.time_intervals[
+            if subAsset.analysis_workbench_components.time_intervals.contains("AvailabilityTimeSpan"):
+                availableTimeSpan: "TimeToolTimeIntervalResult" = subAsset.analysis_workbench_components.time_intervals[
                     "AvailabilityTimeSpan"
                 ].find_interval()
                 startDate: "Date" = stkRoot.conversion_utility.new_date(

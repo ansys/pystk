@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~RURAL_HI_VIS`
+            * - :py:attr:`~RURAL_HIGH_VISIBILITY`
               - Rural High Visibility.
 
-            * - :py:attr:`~RURAL_LOW_VIS`
+            * - :py:attr:`~RURAL_LOW_VISIBILITY`
               - Rural Low Visibility.
 
             * - :py:attr:`~NAVY_MARITIME`
@@ -37,10 +37,10 @@ Overview
             * - :py:attr:`~TROPOSPHERIC`
               - Tropospheric.
 
-            * - :py:attr:`~FOG_LOW_VIS`
+            * - :py:attr:`~FOG_LOW_VISIBILITY`
               - Fog Low Visibility.
 
-            * - :py:attr:`~FOG_HI_VIS`
+            * - :py:attr:`~FOG_HIGH_VISIBILITY`
               - Fog High Visibility.
 
             * - :py:attr:`~DESERT`

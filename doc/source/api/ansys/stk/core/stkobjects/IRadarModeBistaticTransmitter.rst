@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticTransmitter.type
-    :type: RADAR_MODE_TYPE
+    :type: RADAR_MODE
 
     Gets the radar mode type enumeration.
 

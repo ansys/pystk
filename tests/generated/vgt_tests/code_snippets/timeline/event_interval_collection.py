@@ -11,7 +11,7 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     # region DetermineIfEpochOccurredInIntervalCollection
     def test_DetermineIfEpochOccurredInIntervalCollection(self):
         self.DetermineIfEpochOccurredInIntervalCollection(
-            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
 
     def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
@@ -47,7 +47,9 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsInEventIntervalCollection
     def test_DetermineIntervalsInEventIntervalCollection(self):
-        self.DetermineIntervalsInEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIntervalsInEventIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineIntervalsInEventIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections["LightingIntervals"]
@@ -70,8 +72,12 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
     def CreateSignaledEventIntervalCollection(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         intervalCollection: "ITimeToolTimeIntervalCollection" = (
             satelliteVgtProvider.time_interval_collections.factory.create_signaled(
@@ -108,7 +114,9 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region CreateLightingEventIntervalCollection
     def test_CreateLightingEventIntervalCollection(self):
-        self.CreateLightingEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateLightingEventIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateLightingEventIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalCollection: "ITimeToolTimeIntervalCollection" = (

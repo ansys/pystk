@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~SWAP_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown label swap distance option.
 
-            * - :py:attr:`~SWAP_ALL`
+            * - :py:attr:`~ALL`
               - All.
 
-            * - :py:attr:`~SWAP_MODEL_LABEL`
+            * - :py:attr:`~MODEL_LABEL`
               - Model Label.
 
-            * - :py:attr:`~SWAP_MARKER_LABEL`
+            * - :py:attr:`~MARKER_LABEL`
               - Marker Label.
 
-            * - :py:attr:`~SWAP_MARKER`
+            * - :py:attr:`~MARKER`
               - Marker.
 
-            * - :py:attr:`~SWAP_POINT`
+            * - :py:attr:`~POINT`
               - Point.
 
-            * - :py:attr:`~SWAP_CUSTOM`
+            * - :py:attr:`~CUSTOM`
               - Indicate that label swap distance is set to custom value.
 
 

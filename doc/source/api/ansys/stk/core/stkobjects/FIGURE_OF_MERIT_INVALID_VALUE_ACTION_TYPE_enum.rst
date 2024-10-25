@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~INVALID_VALUE_ACTION_IGNORE`
+            * - :py:attr:`~IGNORE`
               - Ignore: Time samples are ignored and not included in the computation of navigation solution.
 
-            * - :py:attr:`~INVALID_VALUE_ACTION_INCLUDE`
+            * - :py:attr:`~INCLUDE`
               - Include: Time samples are included in the computation of navigation solution.
 
 

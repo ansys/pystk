@@ -22,16 +22,16 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - An invalid AgESpEnvSAAChannel value.
 
-            * - :py:attr:`~CHANNEL23_ME_V`
+            * - :py:attr:`~CHANNEL_23_MEV`
               - Models proton energies > 23 MeV.
 
-            * - :py:attr:`~CHANNEL38_ME_V`
+            * - :py:attr:`~CHANNEL_38_MEV`
               - Models proton energies > 38 MeV.
 
-            * - :py:attr:`~CHANNEL66_ME_V`
+            * - :py:attr:`~CHANNEL_66_MEV`
               - Models proton energies > 66 MeV.
 
-            * - :py:attr:`~CHANNEL94_ME_V`
+            * - :py:attr:`~CHANNEL_94_MEV`
               - Models proton energies > 94 MeV.
 
 

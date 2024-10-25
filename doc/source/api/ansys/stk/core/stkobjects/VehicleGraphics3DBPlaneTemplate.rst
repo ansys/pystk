@@ -30,9 +30,9 @@ Overview
               - Gets or sets the template's reference vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.available_vectors`
               - Gets a list of available vectors.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.is_cartesian_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.show_cartesian_grid`
               - Whether the Cartesian grid is displayed with the template.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.is_polar_grid_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.show_polar_grid`
               - Whether the Polar grid is displayed with the template.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.grid_spacing`
               - Gets or sets the distance between grid lines. Uses Distance Dimension.
@@ -88,14 +88,14 @@ Property detail
 
     Gets a list of available vectors.
 
-.. py:property:: is_cartesian_grid_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.is_cartesian_grid_visible
+.. py:property:: show_cartesian_grid
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.show_cartesian_grid
     :type: bool
 
     Whether the Cartesian grid is displayed with the template.
 
-.. py:property:: is_polar_grid_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.is_polar_grid_visible
+.. py:property:: show_polar_grid
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplate.show_polar_grid
     :type: bool
 
     Whether the Polar grid is displayed with the template.

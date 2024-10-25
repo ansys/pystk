@@ -1,11 +1,11 @@
-MtoTrackPointCollection
+MTOTrackPointCollection
 =======================
 
-.. py:class:: ansys.stk.core.stkobjects.MtoTrackPointCollection
+.. py:class:: ansys.stk.core.stkobjects.MTOTrackPointCollection
 
    MTO track point list.
 
-.. py:currentmodule:: MtoTrackPointCollection
+.. py:currentmodule:: MTOTrackPointCollection
 
 Overview
 --------
@@ -18,21 +18,21 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.item`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.item`
               - Given an index, returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.remove_at`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.remove_at`
               - Remove an element from the collection using a specified index.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.remove_all`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.remove_all`
               - Remove all elements from the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.add`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.add`
               - Add a new element to the collection. Time uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.add_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.add_point`
               - Add a new element to the collection using specified point data. Time uses DateFormat Dimension. Latitude/Longitude use Angle Dimension. Altitude uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.load_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.load_points`
               - Load MTO track points.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.extend`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.extend`
               - Extend the track with the specified point data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.insert_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.insert_point`
               - Insert a point into the track point collection. Uses the time to determine where the point should be inserted. This is slower than AddPoint, AddPoints or Extend.
 
     .. tab-item:: Properties
@@ -41,11 +41,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.count`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection._NewEnum`
               - Returns an enumerator that can iterate through the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MtoTrackPointCollection.recycling`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.recycling`
               - Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
 
 
@@ -55,26 +55,26 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects import MtoTrackPointCollection
+    from ansys.stk.core.stkobjects import MTOTrackPointCollection
 
 
 Property detail
 ---------------
 
 .. py:property:: count
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.count
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.count
     :type: int
 
     Returns the number of elements in a collection.
 
 .. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection._NewEnum
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection._NewEnum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
 
 .. py:property:: recycling
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.recycling
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.recycling
     :type: bool
 
     Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
@@ -84,8 +84,8 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index: int) -> MtoTrackPoint
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.item
+.. py:method:: item(self, index: int) -> MTOTrackPoint
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.item
 
     Given an index, returns an element in the collection.
 
@@ -95,11 +95,11 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPoint`
+        :obj:`~MTOTrackPoint`
 
 
 .. py:method:: remove_at(self, index: int) -> None
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.remove_at
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.remove_at
 
     Remove an element from the collection using a specified index.
 
@@ -112,7 +112,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: remove_all(self) -> None
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.remove_all
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.remove_all
 
     Remove all elements from the collection.
 
@@ -120,8 +120,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time: typing.Any) -> MtoTrackPoint
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.add
+.. py:method:: add(self, time: typing.Any) -> MTOTrackPoint
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.add
 
     Add a new element to the collection. Time uses DateFormat Dimension.
 
@@ -131,10 +131,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPoint`
+        :obj:`~MTOTrackPoint`
 
-.. py:method:: add_point(self, time: typing.Any, latitude: float, longitude: float, altitude: float) -> MtoTrackPoint
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.add_point
+.. py:method:: add_point(self, time: typing.Any, latitude: float, longitude: float, altitude: float) -> MTOTrackPoint
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.add_point
 
     Add a new element to the collection using specified point data. Time uses DateFormat Dimension. Latitude/Longitude use Angle Dimension. Altitude uses Distance Dimension.
 
@@ -147,10 +147,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~MtoTrackPoint`
+        :obj:`~MTOTrackPoint`
 
 .. py:method:: load_points(self, mtoTrackPoints: str) -> None
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.load_points
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.load_points
 
     Load MTO track points.
 
@@ -163,7 +163,7 @@ Method detail
         :obj:`~None`
 
 .. py:method:: extend(self, timeVals: list, latVals: list, lonVals: list, altVals: list) -> None
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.extend
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.extend
 
     Extend the track with the specified point data.
 
@@ -181,7 +181,7 @@ Method detail
 
 
 .. py:method:: insert_point(self, time: typing.Any, latitude: float, longitude: float, altitude: float) -> None
-    :canonical: ansys.stk.core.stkobjects.MtoTrackPointCollection.insert_point
+    :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.insert_point
 
     Insert a point into the track point collection. Uses the time to determine where the point should be inserted. This is slower than AddPoint, AddPoints or Extend.
 

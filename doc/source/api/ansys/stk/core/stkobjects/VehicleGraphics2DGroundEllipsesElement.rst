@@ -26,9 +26,9 @@ Overview
               - Opt whether to display dynamic graphics: an ellipse is interpolated between all specified ellipses, linearly interpolating semimajor/minor axes and bearings. Position is interpolated between the ellipses with the closest times to the animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.interpolate`
               - Opt whether to interpolate between time points or the last known size and orientation for dynamic graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.is_name_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.show_name`
               - Opt whether to display the name of the ellipse set at the center of each ellipse in the ellipse set.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.is_center_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.show_center_point_marker`
               - Opt whether to display the point marker for each ellipse in the ellipse set.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.color`
               - Color of the ellipse set name and ellipse graphics for all ellipses in the set.
@@ -72,14 +72,14 @@ Property detail
 
     Opt whether to interpolate between time points or the last known size and orientation for dynamic graphics.
 
-.. py:property:: is_name_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.is_name_visible
+.. py:property:: show_name
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.show_name
     :type: bool
 
     Opt whether to display the name of the ellipse set at the center of each ellipse in the ellipse set.
 
-.. py:property:: is_center_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.is_center_visible
+.. py:property:: show_center_point_marker
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.show_center_point_marker
     :type: bool
 
     Opt whether to display the point marker for each ellipse in the ellipse set.

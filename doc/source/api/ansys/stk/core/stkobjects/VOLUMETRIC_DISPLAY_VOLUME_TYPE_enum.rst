@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~VOLUME_ACTIVE_GRID_PTS`
+            * - :py:attr:`~ACTIVE_GRID_POINTS`
               - Active Grid Points Volume.
 
-            * - :py:attr:`~VOLUME_SPATIAL_CALC_LEVELS`
+            * - :py:attr:`~SPATIAL_CALCULATION_VALUE_LEVELS`
               - Spatial Calculation Levels Volume.
 
 

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudePointing.advanced
-    :type: VehicleAccessAdvanced
+    :type: VehicleAccessAdvancedSettings
 
     Returns advanced targeting access computation properties.
 

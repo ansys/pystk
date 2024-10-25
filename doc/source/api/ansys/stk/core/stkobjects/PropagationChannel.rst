@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.set_atmos_absorption_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.set_atmospheric_absorption_model`
               - Set the atmospheric absorption model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.set_rain_loss_model`
               - Set the rain loss model by name.
@@ -37,11 +37,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.enable_atmos_absorption`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.enable_atmospheric_absorption`
               - Gets or sets the option to use the atmospheric absorption model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.supported_atmos_absorption_models`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.supported_atmospheric_absorption_models`
               - Gets an array of supported atmospheric absorption model names.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.atmos_absorption_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.atmospheric_absorption_model`
               - Gets the atmospheric absorption model.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.enable_rain_loss`
               - Gets or sets the option to use the rain loss model.
@@ -95,20 +95,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable_atmos_absorption
-    :canonical: ansys.stk.core.stkobjects.PropagationChannel.enable_atmos_absorption
+.. py:property:: enable_atmospheric_absorption
+    :canonical: ansys.stk.core.stkobjects.PropagationChannel.enable_atmospheric_absorption
     :type: bool
 
     Gets or sets the option to use the atmospheric absorption model.
 
-.. py:property:: supported_atmos_absorption_models
-    :canonical: ansys.stk.core.stkobjects.PropagationChannel.supported_atmos_absorption_models
+.. py:property:: supported_atmospheric_absorption_models
+    :canonical: ansys.stk.core.stkobjects.PropagationChannel.supported_atmospheric_absorption_models
     :type: list
 
     Gets an array of supported atmospheric absorption model names.
 
-.. py:property:: atmos_absorption_model
-    :canonical: ansys.stk.core.stkobjects.PropagationChannel.atmos_absorption_model
+.. py:property:: atmospheric_absorption_model
+    :canonical: ansys.stk.core.stkobjects.PropagationChannel.atmospheric_absorption_model
     :type: IAtmosphericAbsorptionModel
 
     Gets the atmospheric absorption model.
@@ -234,8 +234,8 @@ Method detail
 
 
 
-.. py:method:: set_atmos_absorption_model(self, modelName: str) -> None
-    :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_atmos_absorption_model
+.. py:method:: set_atmospheric_absorption_model(self, modelName: str) -> None
+    :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_atmospheric_absorption_model
 
     Set the atmospheric absorption model by name.
 

@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: flight_path_angle_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle_type
-    :type: MIXED_SPHERICAL_FLIGHT_PATH_ANGLE
+    :type: MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE
 
     Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
 

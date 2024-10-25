@@ -72,8 +72,8 @@ class EarlyBoundTests(TestBase):
 
     # region SetUp
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
 
         # Needs to be something other than Simple transmitter for 2D properties to be available
         EarlyBoundTests.transmitter.set_model("Complex Transmitter Model")
@@ -92,7 +92,7 @@ class EarlyBoundTests(TestBase):
 
     # region TearDown
     def tearDown(self):
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     # endregion
 
@@ -247,10 +247,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAntennaContour_RelativeToMaxGain
     def Test_IAgAntennaContour_RelativeToMaxGain(self, antennaContour: "IAntennaContour"):
-        antennaContour.relative_to_max_gain = True
-        Assert.assertTrue(antennaContour.relative_to_max_gain)
-        antennaContour.relative_to_max_gain = False
-        Assert.assertFalse(antennaContour.relative_to_max_gain)
+        antennaContour.relative_to_maximum_gain = True
+        Assert.assertTrue(antennaContour.relative_to_maximum_gain)
+        antennaContour.relative_to_maximum_gain = False
+        Assert.assertFalse(antennaContour.relative_to_maximum_gain)
 
     # endregion
 
@@ -259,21 +259,21 @@ class EarlyBoundTests(TestBase):
         antennaContour.show_labels = True
         Assert.assertTrue(antennaContour.show_labels)
 
-        antennaContour.num_label_dec_digits = 0
-        Assert.assertEqual(0, antennaContour.num_label_dec_digits)
-        antennaContour.num_label_dec_digits = 12
-        Assert.assertEqual(12, antennaContour.num_label_dec_digits)
+        antennaContour.number_of_label_decimal_digits = 0
+        Assert.assertEqual(0, antennaContour.number_of_label_decimal_digits)
+        antennaContour.number_of_label_decimal_digits = 12
+        Assert.assertEqual(12, antennaContour.number_of_label_decimal_digits)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = -1
+            antennaContour.number_of_label_decimal_digits = -1
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = 13
+            antennaContour.number_of_label_decimal_digits = 13
 
         antennaContour.show_labels = False
         Assert.assertFalse(antennaContour.show_labels)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaContour.num_label_dec_digits = 1
+            antennaContour.number_of_label_decimal_digits = 1
 
     # endregion
 
@@ -434,7 +434,7 @@ class EarlyBoundTests(TestBase):
             antennaContourGain_Helper.CoordinateSystem(antennaContourGain)
         elif type == ANTENNA_CONTOUR_TYPE.EIRP:
             Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourEirp: "AntennaContourEirp" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEirp)
+            antennaContourEirp: "AntennaContourEIRP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEIRP)
 
             antennaContourEirp_Helper = IAgAntennaContourEirp_Helper()
 
@@ -590,7 +590,7 @@ class EarlyBoundTests(TestBase):
             )  # above max maxEl
         elif type == ANTENNA_CONTOUR_TYPE.RIP:
             Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourRip: "AntennaContourRip" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRip)
+            antennaContourRip: "AntennaContourRIP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRIP)
 
             antennaContourRip_Helper = IAgAntennaContourRip_Helper()
 
@@ -809,20 +809,22 @@ class EarlyBoundTests(TestBase):
         elNumPoints: int,
         elExpectedRes: float,
     ):
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(azStart, azStop, azNumPoints, elStart, elStop, elNumPoints)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
+            azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
+        )
 
         Assert.assertEqual(azStart, EarlyBoundTests.antennaVolumeGraphics.azimuth_start)
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
-        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points)
+        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points)
         Assert.assertAlmostEqual(azExpectedRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
-        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points)
+        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points)
         Assert.assertAlmostEqual(elExpectedRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
 
         # Set back to defaults so other tests are not affected
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(-180, 180, 50, 0, 90, 50)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(-180, 180, 50, 0, 90, 50)
 
     # endregion
 
@@ -846,7 +848,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code3():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -862,7 +864,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code4():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -901,14 +903,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
         Assert.assertAlmostEqual(azRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points, delta=2.0
+            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points, delta=2.0
         )
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
         Assert.assertAlmostEqual(elRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points, delta=2.0
+            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points, delta=2.0
         )
 
         # Set back to defaults so other tests are not affected
@@ -964,7 +966,12 @@ class EarlyBoundTests(TestBase):
         i: int = 0
         while i < len(arRefrSuppTypes):
             if (
-                ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD))
+                (
+                    (
+                        SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
+                        == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD
+                    )
+                )
                 or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.ITU_R_P834_4))
             ) or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.SCF_METHOD)):
                 pass
@@ -977,14 +984,14 @@ class EarlyBoundTests(TestBase):
 
     # region RefractionModel Interface tests
     def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
-        EffectiveRadiusMethod.eff_rad = 0.1
-        Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
-        EffectiveRadiusMethod.eff_rad = 100
-        Assert.assertEqual(100, EffectiveRadiusMethod.eff_rad)
+        EffectiveRadiusMethod.effective_radius = 0.1
+        Assert.assertEqual(0.1, EffectiveRadiusMethod.effective_radius)
+        EffectiveRadiusMethod.effective_radius = 100
+        Assert.assertEqual(100, EffectiveRadiusMethod.effective_radius)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 0.0
+            EffectiveRadiusMethod.effective_radius = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 101.0
+            EffectiveRadiusMethod.effective_radius = 101.0
 
         EffectiveRadiusMethod.ceiling = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.ceiling)
@@ -993,12 +1000,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.ceiling = -1.0
 
-        EffectiveRadiusMethod.max_target_altitude = 0.0
-        Assert.assertEqual(0.0, EffectiveRadiusMethod.max_target_altitude)
-        EffectiveRadiusMethod.max_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, EffectiveRadiusMethod.max_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 0.0
+        Assert.assertEqual(0.0, EffectiveRadiusMethod.maximum_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, EffectiveRadiusMethod.maximum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.max_target_altitude = -1.0
+            EffectiveRadiusMethod.maximum_target_altitude = -1.0
 
         EffectiveRadiusMethod.use_extrapolation = True
         Assert.assertTrue(EffectiveRadiusMethod.use_extrapolation)
@@ -1013,12 +1020,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.ceiling = -1.0
 
-        ITURP8344.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, ITURP8344.atmos_altitude)
-        ITURP8344.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, ITURP8344.atmos_altitude)
+        ITURP8344.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, ITURP8344.atmosphere_altitude)
+        ITURP8344.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, ITURP8344.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            ITURP8344.atmos_altitude = -1.0
+            ITURP8344.atmosphere_altitude = -1.0
 
         ITURP8344.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, ITURP8344.knee_bend_factor)
@@ -1101,12 +1108,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.ceiling = -1.0
 
-        SCFMethod.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.atmos_altitude)
-        SCFMethod.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.atmos_altitude)
+        SCFMethod.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.atmosphere_altitude)
+        SCFMethod.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.atmos_altitude = -1.0
+            SCFMethod.atmosphere_altitude = -1.0
 
         SCFMethod.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, SCFMethod.knee_bend_factor)
@@ -1117,12 +1124,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = 1.1
 
-        SCFMethod.min_target_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.min_target_altitude)
-        SCFMethod.min_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.min_target_altitude)
+        SCFMethod.minimum_target_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.minimum_target_altitude)
+        SCFMethod.minimum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.minimum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.min_target_altitude = -1.0
+            SCFMethod.minimum_target_altitude = -1.0
 
         SCFMethod.use_extrapolation = True
         Assert.assertTrue(SCFMethod.use_extrapolation)
@@ -1134,7 +1141,7 @@ class EarlyBoundTests(TestBase):
     # region IAgTransmitter_Refraction
     @parameterized.expand(
         [
-            (SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD,),
+            (SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD,),
             (SENSOR_REFRACTION_TYPE.ITU_R_P834_4,),
             (SENSOR_REFRACTION_TYPE.SCF_METHOD,),
         ]
@@ -1143,7 +1150,7 @@ class EarlyBoundTests(TestBase):
         if EarlyBoundTests.transmitter.is_refraction_type_supported(eSnRefractionType):
             EarlyBoundTests.transmitter.refraction = eSnRefractionType
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.transmitter.refraction)
-            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
+            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
                     clr.CastAs(EarlyBoundTests.transmitter.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
@@ -1203,7 +1210,7 @@ class EarlyBoundTests(TestBase):
         # Needs to be something other than Simple transmitter for 2D properties to be available
         EarlyBoundTests.transmitter.set_model("Complex Re-Transmitter Model")
         Assert.assertEqual(
-            TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_COMPLEX, EarlyBoundTests.transmitter.model.type
+            TRANSMITTER_MODEL_TYPE.RETRANSMITTER_MODEL_TYPE_COMPLEX, EarlyBoundTests.transmitter.model.type
         )
 
         EarlyBoundTests.transmitterGraphics.show = True
@@ -1390,7 +1397,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgTransferFunctionInputBackOffCOverImTable
-    def Test_IAgTransferFunctionInputBackOffCOverImTable(self, table: "TransferFunctionInputBackOffCOverImTable"):
+    def Test_IAgTransferFunctionInputBackOffCOverImTable(self, table: "TransferFunctionInputBackOffVsCOverImTable"):
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
@@ -1399,7 +1406,7 @@ class EarlyBoundTests(TestBase):
             table.remove_at(2)
 
         Assert.assertEqual(2, table.count)  # initial value, always at least 2
-        row: "TransferFunctionInputBackOffCOverImTableRow" = None
+        row: "TransferFunctionInputBackOffVsCOverImTableRow" = None
         row = table.add(10, 10.1)
         row = table.insert_at(0, 100, 100.1)
         row = table.add(20, 20.1)
@@ -1427,7 +1434,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(30, table[7].input_back_off)
         Assert.assertEqual(30.1, table[7].c_over_im)
 
-        row2: "TransferFunctionInputBackOffCOverImTableRow"
+        row2: "TransferFunctionInputBackOffVsCOverImTableRow"
 
         for row2 in table:
             hold: float = row2.input_back_off
@@ -1468,12 +1475,13 @@ class EarlyBoundTests(TestBase):
 
         reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER
         Assert.assertEqual(RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER, reTransmitterModel.operational_mode)
-        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.RCV_ANT_GAIN_DELTA_ADJUSTED_FLUX_DENSITY
+        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY
         Assert.assertEqual(
-            RE_TRANSMITTER_OP_MODE.RCV_ANT_GAIN_DELTA_ADJUSTED_FLUX_DENSITY, reTransmitterModel.operational_mode
+            RE_TRANSMITTER_OP_MODE.RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY,
+            reTransmitterModel.operational_mode,
         )
-        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.UNADJUSTED_RCV_FLUX_DENSITY
-        Assert.assertEqual(RE_TRANSMITTER_OP_MODE.UNADJUSTED_RCV_FLUX_DENSITY, reTransmitterModel.operational_mode)
+        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.UNADJUSTED_RECEIVE_FLUX_DENSITY
+        Assert.assertEqual(RE_TRANSMITTER_OP_MODE.UNADJUSTED_RECEIVE_FLUX_DENSITY, reTransmitterModel.operational_mode)
 
         # Transfer Functions tab - Frequency sub-tab
 
@@ -1623,7 +1631,7 @@ class EarlyBoundTests(TestBase):
         # Antenna tab - Orientation sub-tab
 
         complex.antenna_control.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED  # to make orientation read-write
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(complex.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -1725,7 +1733,7 @@ class EarlyBoundTests(TestBase):
         complexRe.antenna_control.reference_type = (
             ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
         )  # to make orientation read-write
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(complexRe.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -1830,7 +1838,7 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab - Model Specs sub-tab
 
-        TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
         antennaHelper = AntennaHelper(TestBase.Application)
         antennaModelType: "ANTENNA_MODEL_TYPE"
         for antennaModelType in Enum.GetValues(clr.TypeOf(ANTENNA_MODEL_TYPE)):
@@ -1863,7 +1871,7 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab - Orientation sub-tab
 
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(laser.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -2364,11 +2372,13 @@ class EarlyBoundTests(TestBase):
         antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE)
         Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE, antennaSystem.beam_selection_strategy.type)
 
-        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MAX_GAIN)
-        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.MAX_GAIN, antennaSystem.beam_selection_strategy.type)
+        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MAXIMUM_GAIN)
+        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.MAXIMUM_GAIN, antennaSystem.beam_selection_strategy.type)
 
-        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MIN_BORESIGHT_ANGLE)
-        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.MIN_BORESIGHT_ANGLE, antennaSystem.beam_selection_strategy.type)
+        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MINIMUM_BORESIGHT_ANGLE)
+        Assert.assertEqual(
+            BEAM_SELECTION_STRATEGY_TYPE.MINIMUM_BORESIGHT_ANGLE, antennaSystem.beam_selection_strategy.type
+        )
         if not OSHelper.IsLinux():
             # script plugins do not work on linux
             antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.SCRIPT_PLUGIN)
@@ -2462,7 +2472,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(TRANSMITTER_MODEL_TYPE.CABLE, transmitterModel.type)
             self.Test_IAgTransmitterModelCable(clr.CastAs(transmitterModel, TransmitterModelCable))
         elif modelName == "Complex Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_COMPLEX, transmitterModel.type)
+            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RETRANSMITTER_MODEL_TYPE_COMPLEX, transmitterModel.type)
             self.Test_IAgReTransmitterModelComplex(clr.CastAs(transmitterModel, ReTransmitterModelComplex))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Complex Transmitter Model":
@@ -2475,7 +2485,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(TRANSMITTER_MODEL_TYPE.LASER, transmitterModel.type)
             self.Test_IAgTransmitterModelLaser(clr.CastAs(transmitterModel, TransmitterModelLaser))
         elif modelName == "Medium Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_MEDIUM, transmitterModel.type)
+            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RETRANSMITTER_MODEL_TYPE_MEDIUM, transmitterModel.type)
             self.Test_IAgReTransmitterModelMedium(clr.CastAs(transmitterModel, ReTransmitterModelMedium))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Medium Transmitter Model":
@@ -2497,7 +2507,7 @@ class EarlyBoundTests(TestBase):
                 self.Test_IAgTransmitterModelScriptPlugin(clr.CastAs(transmitterModel, ITransmitterModelScriptPlugin))
 
         elif modelName == "Simple Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_SIMPLE, transmitterModel.type)
+            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RETRANSMITTER_MODEL_TYPE_SIMPLE, transmitterModel.type)
             self.Test_IAgReTransmitterModelSimple(clr.CastAs(transmitterModel, ReTransmitterModelSimple))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Simple Transmitter Model":
@@ -2523,7 +2533,7 @@ class EarlyBoundTests(TestBase):
             mm.psd_limit_multiplier = 1001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            mm.auto_scale_bandwidth = True
+            mm.scale_bandwidth_automatically = True
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2565,8 +2575,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.psd_limit_multiplier = 1
 
-        mm.auto_scale_bandwidth = True
-        Assert.assertTrue(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = True
+        Assert.assertTrue(mm.scale_bandwidth_automatically)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2602,8 +2612,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(90, mm.spreading_gain)
 
-        mm.auto_scale_bandwidth = False
-        Assert.assertFalse(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = False
+        Assert.assertFalse(mm.scale_bandwidth_automatically)
 
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
@@ -2674,7 +2684,7 @@ class EarlyBoundTests(TestBase):
         elif modulatorName == "BOC":
             Assert.assertEqual(MODULATOR_MODEL_TYPE.BOC, mm.type)
             self.Test_IAgModulatorModel(mm)
-            self.Test_IAgModulatorModelBoc(clr.CastAs(mm, ModulatorModelBoc))
+            self.Test_IAgModulatorModelBoc(clr.CastAs(mm, ModulatorModelBOC))
         elif modulatorName == "BPSK":
             Assert.assertEqual(MODULATOR_MODEL_TYPE.BPSK, mm.type)
             self.Test_IAgModulatorModel(mm)
@@ -2796,8 +2806,8 @@ class EarlyBoundTests(TestBase):
             mm.enable_signal_psd = False
             Assert.assertFalse(mm.enable_signal_psd)
 
-        mm.auto_scale_bandwidth = True
-        Assert.assertTrue(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = True
+        Assert.assertTrue(mm.scale_bandwidth_automatically)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2811,8 +2821,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1
 
-        mm.auto_scale_bandwidth = False
-        Assert.assertFalse(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = False
+        Assert.assertFalse(mm.scale_bandwidth_automatically)
 
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
@@ -2856,7 +2866,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1000000000
 
-    def Test_IAgModulatorModelBoc(self, boc: "ModulatorModelBoc"):
+    def Test_IAgModulatorModelBoc(self, boc: "ModulatorModelBOC"):
         boc.subcarrier_frequency = 0
         Assert.assertEqual(0, boc.subcarrier_frequency)
         boc.subcarrier_frequency = 1000000000

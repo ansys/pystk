@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PointTargetGraphics3DModel.marker`
               - VO Marker attributes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PointTargetGraphics3DModel.is_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PointTargetGraphics3DModel.show_point`
               - Whether the point that is shown at certain viewing distances to represent an object, is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.PointTargetGraphics3DModel.point_size`
               - A size of the point (in pixels).
@@ -50,8 +50,8 @@ Property detail
 
     VO Marker attributes.
 
-.. py:property:: is_point_visible
-    :canonical: ansys.stk.core.stkobjects.PointTargetGraphics3DModel.is_point_visible
+.. py:property:: show_point
+    :canonical: ansys.stk.core.stkobjects.PointTargetGraphics3DModel.show_point
     :type: bool
 
     Whether the point that is shown at certain viewing distances to represent an object, is visible.
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.PointTargetGraphics3DModel.gltf_image_based
-    :type: Graphics3DModelGltfImageBased
+    :type: Graphics3DModelglTFImageBased
 
     Gets the glTF Image Based properties.
 

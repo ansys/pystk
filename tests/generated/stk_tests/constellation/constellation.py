@@ -46,32 +46,22 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oConstraints)
 
         # FromParentConstraint
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_ANY
+        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY
+        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY, oConstraints.from_parent_constraint)
+        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT
         Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_ANY, oConstraints.from_parent_constraint
+            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT, oConstraints.from_parent_constraint
         )
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_DIFFERENT
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_DIFFERENT, oConstraints.from_parent_constraint
-        )
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_SAME
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_SAME, oConstraints.from_parent_constraint
-        )
+        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT
+        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT, oConstraints.from_parent_constraint)
 
         # ToParentConstraint
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_ANY
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_ANY, oConstraints.to_parent_constraint
-        )
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_DIFFERENT
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_DIFFERENT, oConstraints.to_parent_constraint
-        )
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_SAME
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.PARENT_CONSTRAINT_SAME, oConstraints.to_parent_constraint
-        )
+        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY
+        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY, oConstraints.to_parent_constraint)
+        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT
+        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT, oConstraints.to_parent_constraint)
+        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT
+        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT, oConstraints.to_parent_constraint)
 
         # FromRestrictionType - From
         TestBase.logger.WriteLine6("\tThe current FromRestrictionType is: {0}", oConstraints.from_restriction_type)
@@ -281,14 +271,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(routing.use_routing_file)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            routing.routing_file = TestBase.GetScenarioFile("Constellation1.routing")
+            routing.routing_filename = TestBase.GetScenarioFile("Constellation1.routing")
 
         routing.use_routing_file = True
         Assert.assertTrue(routing.use_routing_file)
 
-        routing.routing_file = TestBase.GetScenarioFile("Constellation1.routing")
-        Assert.assertEqual("Constellation1.routing", routing.routing_file)
+        routing.routing_filename = TestBase.GetScenarioFile("Constellation1.routing")
+        Assert.assertEqual("Constellation1.routing", routing.routing_filename)
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            routing.routing_file = TestBase.GetScenarioFile("bogus.routing")
+            routing.routing_filename = TestBase.GetScenarioFile("bogus.routing")
 
     # endregion

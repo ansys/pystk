@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~TWO_RAY`
               - urban/terrestrial loss model two ray type.
 
-            * - :py:attr:`~WIRELESS_IN_SITE_RT`
+            * - :py:attr:`~WIRELESS_INSITE_REAL_TIME`
               - urban/terrestrial loss model REMCOM Wireless InSite Real Time type.
 
-            * - :py:attr:`~WIRELESS_IN_SITE64`
+            * - :py:attr:`~WIRELESS_INSITE_64`
               - urban/terrestrial loss model REMCOM Wireless InSite 64 type.
 
 

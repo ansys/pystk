@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PROPAGATION_FRAME_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown propagation frame.
 
-            * - :py:attr:`~PROPAGATION_FRAME_INERTIAL`
+            * - :py:attr:`~INERTIAL`
               - Inertial propagation frame.
 
-            * - :py:attr:`~PROPAGATION_FRAME_TRUE_OF_DATE`
+            * - :py:attr:`~TRUE_OF_DATE`
               - True Of Date propagation frame.
 
-            * - :py:attr:`~PROPAGATION_FRAME_TRUE_OF_EPOCH`
+            * - :py:attr:`~TRUE_OF_EPOCH`
               - True Of Epoch propagation frame.
 
 

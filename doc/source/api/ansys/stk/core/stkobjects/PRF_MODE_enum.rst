@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~UNAMBIGUOUS_RANGE`
               - Unambiguous Range.
 
-            * - :py:attr:`~UNAMBIGUOUS_VEL`
+            * - :py:attr:`~UNAMBIGUOUS_VELOCITY`
               - Unambiguous Velocity.
 
 

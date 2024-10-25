@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PARENT_CONSTRAINT_ANY`
+            * - :py:attr:`~ANY`
               - Constellation constraint: Parent objects can be the same or different.
 
-            * - :py:attr:`~PARENT_CONSTRAINT_SAME`
+            * - :py:attr:`~SAME_PARENT`
               - Constellation constraint: Parent objects must be the same.
 
-            * - :py:attr:`~PARENT_CONSTRAINT_DIFFERENT`
+            * - :py:attr:`~DIFFERENT_PARENT`
               - Constellation constraint: Parent objects must be different.
 
 

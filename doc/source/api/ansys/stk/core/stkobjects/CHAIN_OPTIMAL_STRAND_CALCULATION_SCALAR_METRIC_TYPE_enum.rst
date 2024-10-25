@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~STRAND_CALCULATION_SCALAR_METRIC_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported Chain optimal strand calculation scalar metric type.
 
             * - :py:attr:`~STRAND_CALCULATION_SCALAR_METRIC_FILE`
