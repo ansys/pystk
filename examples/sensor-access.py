@@ -109,10 +109,10 @@ aircraft = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft")
 # Because the aircraft's route is defined by a set of waypoints, the aircraft's flight is modeled with a Great Arc propagator. Set the aircraft's propagator to the Great Arc propagator:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 # -
 
 # The aircraft flies between Cheyenne and Raton, so the propagator's route must include waypoints for both locations.
@@ -155,10 +155,10 @@ satellite = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ImageSat")
 # Set the satellite's propagator to J4Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
+satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
 propagator = satellite.propagator
 # -
 
@@ -177,7 +177,7 @@ orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLAS
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
 
 
-orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS
+orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
 # -
 
 # Set the orbit's semimajor axis to $7178.14$ km and it's eccentricity to $0$:
@@ -188,7 +188,7 @@ orbit.size_shape.eccentricity = 0
 # Then, use the `orientation` property of the `IOrbitStateClassical` object to set the inclination to $60^\circ$ and the argument of perigee to $0^\circ$:
 
 orbit.orientation.inclination = 60
-orbit.orientation.arg_of_perigee = 0
+orbit.orientation.argument_of_periapsis = 0
 
 # Using the orientation property, set the ascending node type to RAAN:
 
@@ -196,12 +196,12 @@ orbit.orientation.arg_of_perigee = 0
 from ansys.stk.core.stkobjects import ORIENTATION_ASC_NODE
 
 
-orbit.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
+orbit.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
 # -
 
 # Set the RAAN value to $20^\circ$:
 
-orbit.orientation.asc_node.value = 20
+orbit.orientation.ascending_node.value = 20
 
 # Then, use the `location` property of the `IOrbitStateClassical` object to set the location type to true anomaly:
 
@@ -209,7 +209,7 @@ orbit.orientation.asc_node.value = 20
 from ansys.stk.core.stkobjects import CLASSICAL_LOCATION
 
 
-orbit.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+orbit.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
 # -
 
 # Set the true anomaly value to $0^\circ$:
@@ -266,7 +266,7 @@ fixed_sat_access.compute_access()
 
 # Then, use the access object's data providers to get an Access Data report for the time period between the scenario's start and end times. Convert the report to a pandas data frame for easier viewing:
 
-fixed_sat_access.data_providers.item("Access Data").exec(
+fixed_sat_access.data_providers.item("Access Data").execute(
     scenario.start_time, scenario.stop_time
 ).data_sets.to_pandas_dataframe()
 
@@ -288,7 +288,7 @@ moving_sat_sensor = satellite.children.new(
 from ansys.stk.core.stkobjects import SENSOR_POINTING
 
 
-moving_sat_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
+moving_sat_sensor.set_pointing_type(SENSOR_POINTING.TARGETED)
 # -
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $5^\circ$ and an angular resolution of $1^\circ$:
@@ -314,7 +314,7 @@ moving_sat_access.compute_access()
 
 # Then, use the access object's data providers to get an Access Data report for the time period between the scenario's start and end times and convert the report to a pandas data frame:
 
-moving_sat_access.data_providers.item("Access Data").exec(
+moving_sat_access.data_providers.item("Access Data").execute(
     scenario.start_time, scenario.stop_time
 ).data_sets.to_pandas_dataframe()
 
@@ -342,18 +342,18 @@ radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 # First, add a range access constraint to the sensor:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
+from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
 dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.RANGE
+    ACCESS_CONSTRAINT_TYPE.RANGE
 )
 # -
 
 # Then, set the constraint to have a maximum range of $150$ km:
 
-dome_range_constraint.enable_max = True
-dome_range_constraint.max = 150
+dome_range_constraint.enable_maximum = True
+dome_range_constraint.maximum = 150
 
 # The sensor can now only see $150$ km in each direction.
 
@@ -394,7 +394,7 @@ radar_dome_access.compute_access()
 
 radar_dome_access_df = (
     radar_dome_access.data_providers.item("Access Data")
-    .exec(scenario.start_time, scenario.stop_time)
+    .execute(scenario.start_time, scenario.stop_time)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -409,7 +409,7 @@ radar_dome_access_df
 aer_df = (
     radar_dome_access.data_providers.item("AER Data")
     .group.item("Default")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -485,7 +485,7 @@ radar_sweep_sensor.common_tasks.set_pattern_rectangular(5, 35)
 
 # First, set the radar's pointing type to spinning. This type of sensor is used to model radars, push broom sensors and other instruments that spin, scan or sweep over time.
 
-radar_sweep_sensor.set_pointing_type(SENSOR_POINTING.POINT_SPINNING)
+radar_sweep_sensor.set_pointing_type(SENSOR_POINTING.SPINNING)
 
 # The sensor's `pointing` property now contains an `ISensorPointingSpinning` object. The spin rate property of this object describes the rate at which the boresight spins about the spin axis, measured in revolutions per minute. Set the spin rate to $12$ revs/min:
 
@@ -502,13 +502,13 @@ radar_sweep_sensor.pointing.spin_axis_cone_angle = 55
 # First, add a range constraint to the sweeping sensor:
 
 sweep_range_constraint = radar_sweep_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.RANGE
+    ACCESS_CONSTRAINT_TYPE.RANGE
 )
 
 # Then, configure the constraint to a maximum range of $150$ km:
 
-sweep_range_constraint.enable_max = True
-sweep_range_constraint.max = 150
+sweep_range_constraint.enable_maximum = True
+sweep_range_constraint.maximum = 150
 
 # ## Configure the 2D projection properties
 
@@ -545,7 +545,7 @@ sweeping_access.compute_access()
 
 sweeping_access_df = (
     sweeping_access.data_providers.item("Access Data")
-    .exec(scenario.start_time, scenario.stop_time)
+    .execute(scenario.start_time, scenario.stop_time)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -614,7 +614,7 @@ fixed_aircraft_access.compute_access()
 
 fixed_aircraft_access_df = (
     fixed_aircraft_access.data_providers.item("Access Data")
-    .exec(scenario.start_time, scenario.stop_time)
+    .execute(scenario.start_time, scenario.stop_time)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -630,7 +630,7 @@ moving_aircraft_access.compute_access()
 
 moving_aircraft_access_df = (
     moving_aircraft_access.data_providers.item("Access Data")
-    .exec(scenario.start_time, scenario.stop_time)
+    .execute(scenario.start_time, scenario.stop_time)
     .data_sets.to_pandas_dataframe()
 )
 

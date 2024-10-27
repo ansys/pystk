@@ -75,7 +75,7 @@ terrain_path = str(
 # Then, add the file to the Earth central body's terrain collection:
 
 terrain = scenario.terrain.item("Earth").terrain_collection.add(
-    terrain_path, TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE
+    terrain_path, TERRAIN_FILE_TYPE.PDTT
 )
 
 # This file is used for analysis by default after it is inserted.
@@ -87,7 +87,7 @@ terrain = scenario.terrain.item("Earth").terrain_collection.add(
 # To add the satellite, first insert a satellite object:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PROPAGATOR_TYPE
 
 
 satellite = root.current_scenario.children.new(
@@ -97,12 +97,12 @@ satellite = root.current_scenario.children.new(
 
 # Then, set the satellite's propagator to the SGP4 propagator:
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
 propagator = satellite.propagator
 
 # Finally, use the propagator's `common_tasks` property to add the satellite's orbit from an online source, and propagate the satellite:
 
-propagator.common_tasks.add_segs_from_online_source("31698")
+propagator.common_tasks.add_segments_from_online_source("31698")
 propagator.propagate()
 
 # ## Add the camp site
@@ -143,7 +143,7 @@ transmitter.model.enable_polarization = True
 from ansys.stk.core.stkobjects import POLARIZATION_TYPE
 
 
-transmitter.model.set_polarization_type(POLARIZATION_TYPE.RHC)
+transmitter.model.set_polarization_type(POLARIZATION_TYPE.RIGHT_HAND_CIRCULAR)
 # -
 
 # ## Add a steerable sensor
@@ -175,7 +175,7 @@ sensor.pattern.antenna_diameter = 1.6
 from ansys.stk.core.stkobjects import SENSOR_POINTING
 
 
-sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
+sensor.set_pointing_type(SENSOR_POINTING.TARGETED)
 # -
 
 # The sensor's `pointing` property now holds a `SensorPointingTargeted` object, through which it is possible to set the satellite as the sensor's target:
@@ -193,7 +193,7 @@ sensor_to_satellite_access.compute_access()
 
 sensor_to_satellite_access_df = (
     sensor_to_satellite_access.data_providers.item("Access Data")
-    .exec(scenario.start_time, scenario.stop_time)
+    .execute(scenario.start_time, scenario.stop_time)
     .data_sets.to_pandas_dataframe()
 )
 sensor_to_satellite_access_df
@@ -247,7 +247,7 @@ receiver.model.enable_polarization = True
 
 # The receiver's polarization type is the same as the transmitter's polarization, so set the model's polarization type to right-hand circular:
 
-receiver.model.set_polarization_type(POLARIZATION_TYPE.RHC)
+receiver.model.set_polarization_type(POLARIZATION_TYPE.RIGHT_HAND_CIRCULAR)
 
 # ## Calculate access
 
@@ -260,7 +260,7 @@ receiver_basic_access.compute_access()
 
 receiver_basic_link_df = (
     receiver_basic_access.data_providers.item("Link Information")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -297,11 +297,11 @@ receiver_basic_link_df.head(10)[link_budget_columns]
 # Next, add a terrain mask to the receiver to add terrain into the access analysis. A terrain mask causes STK to constrain access to an object by any terrain data in the line of sight to which access is being calculated. Add a terrain mask access constraint:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
+from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
 terrain_constraint = receiver.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.TERRAIN_MASK
+    ACCESS_CONSTRAINT_TYPE.TERRAIN_MASK
 )
 # -
 
@@ -310,14 +310,14 @@ terrain_constraint = receiver.access_constraints.add_constraint(
 receiver_basic_access.compute_access()
 receiver_terrain_link_df = (
     receiver_basic_access.data_providers.item("Link Information")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 receiver_terrain_link_df.head(10)[link_budget_columns]
 
 # Next, get the access data for the updated access:
 
-receiver_basic_access.data_providers.item("Access Data").exec(
+receiver_basic_access.data_providers.item("Access Data").execute(
     scenario.start_time, scenario.stop_time
 ).data_sets.to_pandas_dataframe()
 
@@ -333,7 +333,7 @@ scenario.rf_environment.propagation_channel.enable_rain_loss = True
 
 # Then, enable the use of the atmospheric absorption model:
 
-scenario.rf_environment.propagation_channel.enable_atmos_absorption = True
+scenario.rf_environment.propagation_channel.enable_atmospheric_absorption = True
 
 # It is possible to configure which specific model is used for the different environmental factors. However, in this case, the default models are sufficient.
 
@@ -342,7 +342,7 @@ scenario.rf_environment.propagation_channel.enable_atmos_absorption = True
 receiver_basic_access.compute_access()
 receiver_environmental_link_df = (
     receiver_basic_access.data_providers.item("Link Information")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 receiver_environmental_link_df.head(10)[link_budget_columns]
@@ -354,16 +354,16 @@ receiver_environmental_link_df.head(10)[link_budget_columns]
 # The receiver's system noise temperature enables specifying the system's inherent noise characteristics, which can help simulate real-world RF situations more accurately. STK can use either a constant system noise temperature value, or can calculate it based off of different noise sources. In this case, configure the receiver model's system noise temperature to use calculated values:
 
 # +
-from ansys.stk.core.stkobjects import NOISE_TEMP_COMPUTE_TYPE
+from ansys.stk.core.stkobjects import NOISE_TEMPERATURE_COMPUTE_TYPE
 
 
-receiver.model.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+receiver.model.system_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 # -
 
 # Do the same for the model's antenna noise temperature:
 
 receiver.model.system_noise_temperature.antenna_noise_temperature.compute_type = (
-    NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+    NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 )
 
 # Then, enable the use of sun, atmosphere, rain, and cosmic background in computations:
@@ -378,7 +378,7 @@ receiver.model.system_noise_temperature.antenna_noise_temperature.use_cosmic_bac
 receiver_basic_access.compute_access()
 receiver_noise_link_df = (
     receiver_basic_access.data_providers.item("Link Information")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 receiver_noise_link_df.head(10)[link_budget_columns]

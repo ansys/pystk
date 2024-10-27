@@ -101,17 +101,17 @@ earth, mars = [scenario.children[planet] for planet in planet_names_and_colors]
 
 # +
 # General graphics configuration
-scenario.graphics.labels_visible = True
+scenario.graphics.show_label = True
 
 # Vehicle specific graphics
-scenario.graphics.orbits_visible = True
+scenario.graphics.show_orbits = True
 
 # Planet specific graphics
-scenario.graphics.planet_orbits_visible = True
-scenario.graphics.inertial_position_labels_visible = True
-scenario.graphics.inertial_position_visible = True
-scenario.graphics.sub_planet_points_visible = False
-scenario.graphics.sub_planet_labels_visible = False
+scenario.graphics.show_planet_orbits = True
+scenario.graphics.show_inertial_position_labels = True
+scenario.graphics.show_inertial_position = True
+scenario.graphics.show_sub_planet_points = False
+scenario.graphics.show_sub_planet_labels = False
 # -
 
 # Finally, the camera position is updated to provide a better overview of the scene with the planets orbiting the Sun.
@@ -180,7 +180,7 @@ def get_object_pos_vel_at_epoch(
             )
         )
         data = from_data_result_to_dict(
-            data_provider.exec_single_elements(epoch, ["x", "y", "z"])
+            data_provider.execute_single_elements(epoch, ["x", "y", "z"])
         )
         state[path] = [coord[0] for coord in data.values()]
     return tuple(state.values())
@@ -219,10 +219,10 @@ satellite = root.current_scenario.children.new_on_central_body(
 # Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
 # -
 
 # Remove all the main sequence to ensure no prior segments lead to wrong results during the simulation.
