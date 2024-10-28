@@ -103,7 +103,7 @@ jobs:
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
-    # needs: doc-style
+    needs: doc-style
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -309,7 +309,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    # needs: code-style
+    needs: code-style
     strategy:
       matrix:
         # Tests run against Python 3.10 to ensure backwards compatibility with
