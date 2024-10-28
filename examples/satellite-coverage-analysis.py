@@ -105,7 +105,9 @@ orbit.orientation.argument_of_periapsis = 0
 from ansys.stk.core.stkobjects import ORIENTATION_ASC_NODE
 
 
-orbit.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+orbit.orientation.ascending_node_type = (
+    ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+)
 # -
 
 # Set the RAAN value to $150.34^\circ$:
@@ -184,7 +186,9 @@ root.execute_command(
 from ansys.stk.core.stkobjects import COVERAGE_RESOLUTION
 
 
-sat_grave_coverage.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
+sat_grave_coverage.grid.resolution_type = (
+    COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
+)
 # -
 
 # Then, set the resolution to $2^\circ$:

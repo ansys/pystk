@@ -332,7 +332,9 @@ airport_radar.model.antenna_control.embedded_model.efficiency = 55
 from ansys.stk.core.stkobjects import RADAR_FREQUENCY_SPECIFICATION_TYPE
 
 
-airport_radar.model.transmitter.frequency_specification = RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY
+airport_radar.model.transmitter.frequency_specification = (
+    RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY
+)
 # -
 
 # Then, set the transmitter's frequency to $2.8$ GHz:

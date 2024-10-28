@@ -126,7 +126,9 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
-access_constraint = sensor.access_constraints.add_constraint(ACCESS_CONSTRAINT_TYPE.RANGE)
+access_constraint = sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINT_TYPE.RANGE
+)
 # -
 
 # This method returns an ``IAccessConstraintMinMax`` object, through it is possible to access the access constraint attributes. Use this object to enable a maximum range value and set it to 40 km (the units are set to km by default):
@@ -292,7 +294,9 @@ from ansys.stk.core.vgt import VECTOR_TYPE
 vector = facility.analysis_workbench_components.vectors.factory.create(
     "FromTo", "Vector description", VECTOR_TYPE.DISPLACEMENT
 )
-vector.destination.set_point(satellite.analysis_workbench_components.points.item("Center"))
+vector.destination.set_point(
+    satellite.analysis_workbench_components.points.item("Center")
+)
 # -
 
 # Visualize the vector and set its size to 4.0:
@@ -315,7 +319,9 @@ facility.graphics_3d.vector.vector_size_scale = 4.0
 
 # First, get the built in calculation object from Analysis Workbench:
 
-parameter_sets = access.analysis_workbench_components.parameter_sets.item("From-To-AER(Body)")
+parameter_sets = access.analysis_workbench_components.parameter_sets.item(
+    "From-To-AER(Body)"
+)
 
 # Then, get the magnitude vector:
 

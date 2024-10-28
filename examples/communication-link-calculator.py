@@ -87,7 +87,7 @@ terrain = scenario.terrain.item("Earth").terrain_collection.add(
 # To add the satellite, first insert a satellite object:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE, PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE, STK_OBJECT_TYPE
 
 
 satellite = root.current_scenario.children.new(
@@ -357,7 +357,9 @@ receiver_environmental_link_df.head(10)[link_budget_columns]
 from ansys.stk.core.stkobjects import NOISE_TEMPERATURE_COMPUTE_TYPE
 
 
-receiver.model.system_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+receiver.model.system_noise_temperature.compute_type = (
+    NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+)
 # -
 
 # Do the same for the model's antenna noise temperature:

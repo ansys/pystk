@@ -114,9 +114,7 @@ carrier.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 from ansys.stk.core.stkobjects import VEHICLE_ALTITUDE_REFERENCE
 
 
-carrier.route.set_altitude_reference_type(
-    VEHICLE_ALTITUDE_REFERENCE.TERRAIN
-)
+carrier.route.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.TERRAIN)
 # -
 
 # Next, define the distance between sampling points along the ship's route. This option is used when waypoint altitudes are referenced to terrain. Set the distance to $1$ km:

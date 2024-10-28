@@ -196,7 +196,9 @@ orbit.orientation.argument_of_periapsis = 0
 from ansys.stk.core.stkobjects import ORIENTATION_ASC_NODE
 
 
-orbit.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+orbit.orientation.ascending_node_type = (
+    ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+)
 # -
 
 # Set the RAAN value to $20^\circ$:
