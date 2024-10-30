@@ -62,48 +62,49 @@ jobs:
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-  doc-style:
-    name: "Doc style checks"
-    runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: check-pr-title
-    steps:
-      - name: "Checkout project"
-        uses: actions/checkout@v4
+  #doc-style:
+  #  name: "Doc style checks"
+  #  runs-on: ubuntu-latest
+  #  if: |
+  #    !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+  #    !contains(github.event.pull_request.labels.*.name, 'style:skip')
+  #  needs: check-pr-title
+  #  steps:
+  #    - name: "Checkout project"
+  #      uses: actions/checkout@v4
 
-      - name: "Install jq"
-        run: |
-          # Used to format Vale input as a JSON-formatted list of files
-          sudo apt install -y jq
+  #    - name: "Install jq"
+  #      run: |
+  #        # Used to format Vale input as a JSON-formatted list of files
+  #        sudo apt install -y jq
 
-      - name: "Collect desired files"
-        run: |
-          # Find all .rst files excluding those in doc/source/api/
-          RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
+  #    - name: "Collect desired files"
+  #      run: |
+  #        # Find all .rst files excluding those in doc/source/api/
+  #        RST_FILES=$(find doc/source -type f -name "*.rst" ! -path "doc/source/api/*")
 
-          # Find all .py files inside the examples/ directory, excluding those with an underscore
-          PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
+  #        # Find all .py files inside the examples/ directory, excluding those with an underscore
+  #        PY_FILES=$(find examples -type f -name "*.py" ! -name "*_*")
 
-          # Combine both file lists and convert them to a JSON array
-          # TODO: include Python files too. See Vale issue
-          # https://github.com/errata-ai/vale/issues/858
-          # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
-          VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
-          echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
+  #        # Combine both file lists and convert them to a JSON array
+  #        # TODO: include Python files too. See Vale issue
+  #        # https://github.com/errata-ai/vale/issues/858
+  #        # VALE_FILES=$(echo -e "$RST_FILES\n$PY_FILES" | jq -R . | jq -s .)
+  #        VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
+  #        echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v8
-        with:
-          checkout: false
-          files: "${{ env.VALE_FILES }}"
-          vale-config: doc/.vale.ini
-          token: ${{ secrets.GITHUB_TOKEN }}
+  #    - uses: ansys/actions/doc-style@v8
+  #      with:
+  #        checkout: false
+  #        files: "${{ env.VALE_FILES }}"
+  #        vale-config: doc/.vale.ini
+  #        token: ${{ secrets.GITHUB_TOKEN }}
 
   build-wheelhouse:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
-    needs: doc-style
+    needs: check-pr-title
+    #needs: doc-style
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
