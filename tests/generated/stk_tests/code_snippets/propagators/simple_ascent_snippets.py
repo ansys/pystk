@@ -45,24 +45,22 @@ class SimpleAscentSnippets(CodeSnippetsTestBase):
     # region ConfigureSimpleAscentPropagator
     def test_ConfigureSimpleAscentPropagator(self):
         # Set launch vehicle propagator to Simple Ascent
-        self.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SIMPLE_ASCENT)
+        self.m_Object.set_trajectory_type(PROPAGATOR_TYPE.SIMPLE_ASCENT)
 
-        # Get J2 VehiclePropagatorSimpleAscent interface
-        propagator: "VehiclePropagatorSimpleAscent" = clr.CastAs(
-            self.m_Object.trajectory, VehiclePropagatorSimpleAscent
-        )
+        # Get J2 PropagatorSimpleAscent interface
+        propagator: "PropagatorSimpleAscent" = clr.CastAs(self.m_Object.trajectory, PropagatorSimpleAscent)
 
         self.ConfigureSimpleAscentPropagator(propagator)
 
-    def ConfigureSimpleAscentPropagator(self, propagator: "VehiclePropagatorSimpleAscent"):
+    def ConfigureSimpleAscentPropagator(self, propagator: "PropagatorSimpleAscent"):
         # Configure time period
         propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         propagator.step = 60.0
 
         # Set the initial state
-        propagator.initial_state.launch.assign_geodetic(38.3721, -77.6402, 25.0)
-        propagator.initial_state.burnout.assign_geodetic(48.1395, -82.5145, 25.0)
-        propagator.initial_state.burnout_vel = 7.7258
+        propagator.initial_state.launch.assign_detic(38.3721, -77.6402, 25.0)
+        propagator.initial_state.burnout.assign_detic(48.1395, -82.5145, 25.0)
+        propagator.initial_state.burnout_velocity = 7.7258
 
         # Propagate
         propagator.propagate()

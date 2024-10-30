@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_FIXED`
+            * - :py:attr:`~FIXED`
               - Not time dependent, e.g. facility position.
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_TIME_VARYING`
+            * - :py:attr:`~TIME_VARYING`
               - Time varying, e.g. satellite position.
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_INTVL`
+            * - :py:attr:`~INTERVAL`
               - Interval, e.g. lighting data.
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_DUP_TIME`
+            * - :py:attr:`~ALLOW_DUPLICATE_TIMES`
               - Allow duplicated times.
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_STAND_ALONE`
+            * - :py:attr:`~STAND_ALONE`
               - Do not mix data from different data providers.
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_INTVL_DEFINED`
+            * - :py:attr:`~RESULTS_DEPEND_ON_INPUT_INTERVALS`
               - Results depend on evaluation interval(s).
 
-            * - :py:attr:`~DATA_PROVIDER_RESULT_DYNAMIC_IGNORE`
+            * - :py:attr:`~NOT_AVAILABLE_FORDYNAMIC_GRAPHS_AND_STRIP_CHARTS`
               - Make unavailable for dynamic displays and strip charts.
 
 

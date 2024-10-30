@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.eff_rad`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.effective_radius`
               - Effective radius used to compute refracted elevation. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.max_target_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.maximum_target_altitude`
               - Maximum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.use_extrapolation`
               - Flag controls whether extrapolation is used past the maximum target altitude.
@@ -40,14 +40,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: eff_rad
-    :canonical: ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.eff_rad
+.. py:property:: effective_radius
+    :canonical: ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.effective_radius
     :type: float
 
     Effective radius used to compute refracted elevation. Dimensionless.
 
-.. py:property:: max_target_altitude
-    :canonical: ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.max_target_altitude
+.. py:property:: maximum_target_altitude
+    :canonical: ansys.stk.core.stkobjects.RefractionModelEffectiveRadiusMethod.maximum_target_altitude
     :type: float
 
     Maximum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.

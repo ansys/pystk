@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.Volumetric.advanced
-    :type: VolumetricAdvanced
+    :type: VolumetricAdvancedSettings
 
     Get Advanced options.
 

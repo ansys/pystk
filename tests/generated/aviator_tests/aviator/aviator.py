@@ -27,9 +27,9 @@ class EarlyBoundTests(TestBase):
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC"))
         )
         # Set to Propagator to Aviator
-        EarlyBoundTests.AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+        EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.AVIATOR)
         # Get the aircrafts route (still on the STKObjects side)
-        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
+        aircraftRoute: "PropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, PropagatorAviator)
         # Get the Aviator propagator
         EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
         # Get the Aviator mission
@@ -610,7 +610,7 @@ class EarlyBoundTests(TestBase):
 
         self.EmptyProcedures()
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
         proc2: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
             SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_ENROUTE
@@ -711,7 +711,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(proc2, IProcedure))
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(proc3, IProcedure))
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(proc4, IProcedure))
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     # endregion
 
@@ -1190,21 +1190,21 @@ class EarlyBoundTests(TestBase):
         extEphem.use_shift_rotate = True
         Assert.assertTrue(extEphem.use_shift_rotate)
 
-        holdSmallTimeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("SmallTimeUnit")
-        holdLatitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("LatitudeUnit")
-        holdLongitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("LongitudeUnit")
-        holdFlightAltitudeUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv(
+        holdSmallTimeUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("SmallTimeUnit")
+        holdLatitudeUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("LatitudeUnit")
+        holdLongitudeUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("LongitudeUnit")
+        holdFlightAltitudeUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv(
             "AviatorAltitudeUnit"
         )
-        holdAviatorBearingAngleUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv(
+        holdAviatorBearingAngleUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv(
             "AviatorBearingAngleUnit"
         )
 
-        TestBase.Application.unit_preferences.set_current_unit("SmallTimeUnit", "msec")
-        TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", "rad")
-        TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", "rad")
-        TestBase.Application.unit_preferences.set_current_unit("AviatorAltitudeUnit", "m")
-        TestBase.Application.unit_preferences.set_current_unit("AviatorBearingAngleUnit", "rad")
+        TestBase.Application.units_preferences.set_current_unit("SmallTimeUnit", "msec")
+        TestBase.Application.units_preferences.set_current_unit("LatitudeUnit", "rad")
+        TestBase.Application.units_preferences.set_current_unit("LongitudeUnit", "rad")
+        TestBase.Application.units_preferences.set_current_unit("AviatorAltitudeUnit", "m")
+        TestBase.Application.units_preferences.set_current_unit("AviatorBearingAngleUnit", "rad")
 
         extEphem.shift_time = 10
         Assert.assertEqual(10, extEphem.shift_time)
@@ -1217,11 +1217,11 @@ class EarlyBoundTests(TestBase):
         extEphem.course = 50
         Assert.assertEqual(50, extEphem.course)
 
-        TestBase.Application.unit_preferences.set_current_unit("SmallTimeUnit", holdSmallTimeUnit)
-        TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", holdLatitudeUnit)
-        TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", holdLongitudeUnit)
-        TestBase.Application.unit_preferences.set_current_unit("AviatorAltitudeUnit", holdFlightAltitudeUnit)
-        TestBase.Application.unit_preferences.set_current_unit("AviatorBearingAngleUnit", holdAviatorBearingAngleUnit)
+        TestBase.Application.units_preferences.set_current_unit("SmallTimeUnit", holdSmallTimeUnit)
+        TestBase.Application.units_preferences.set_current_unit("LatitudeUnit", holdLatitudeUnit)
+        TestBase.Application.units_preferences.set_current_unit("LongitudeUnit", holdLongitudeUnit)
+        TestBase.Application.units_preferences.set_current_unit("AviatorAltitudeUnit", holdFlightAltitudeUnit)
+        TestBase.Application.units_preferences.set_current_unit("AviatorBearingAngleUnit", holdAviatorBearingAngleUnit)
 
         extEphem.shift_time = 10
         Assert.assertEqual(10, extEphem.shift_time)
@@ -1330,7 +1330,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(TestBase.PathCombine("AviatorTests", "Formation_Flyer", "Scenario1.sc"))
         EarlyBoundTests.AG_Scenario = TestBase.Application.current_scenario
         EarlyBoundTests.AG_AC = Aircraft((EarlyBoundTests.AG_Scenario.children.get_item_by_name("Wingman")))
-        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, VehiclePropagatorAviator)
+        aircraftRoute: "PropagatorAviator" = clr.CastAs(EarlyBoundTests.AG_AC.route, PropagatorAviator)
         EarlyBoundTests.AG_AvtrProp = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
         EarlyBoundTests.AG_Mission = EarlyBoundTests.AG_AvtrProp.aviator_mission
         EarlyBoundTests.AG_Phases = EarlyBoundTests.AG_Mission.phases
@@ -1438,7 +1438,7 @@ class EarlyBoundTests(TestBase):
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
-        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
         mission2: "Mission" = prop2.aviator_mission
         phases2: "PhaseCollection" = mission2.phases
@@ -1456,8 +1456,8 @@ class EarlyBoundTests(TestBase):
 
         self.TestProcedureName(formRecov.get_as_procedure(), "Formation/Recover")
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        TestBase.Application.unit_preferences.set_current_unit("Duration", "Sec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("Duration", "Sec")
         formRecov.start_time = 2
         startTime: typing.Any = formRecov.start_time
         Assert.assertEqual(2, float(startTime))
@@ -1553,7 +1553,7 @@ class EarlyBoundTests(TestBase):
             formRecov.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
         currentPhase.set_default_performance_models()
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(formRecov, IProcedure))
         ac2Obj.unload()
 
@@ -1959,7 +1959,7 @@ class EarlyBoundTests(TestBase):
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
-        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
         mission2: "Mission" = prop2.aviator_mission
         phases2: "PhaseCollection" = mission2.phases
@@ -1987,8 +1987,8 @@ class EarlyBoundTests(TestBase):
         inFormation.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF
         Assert.assertEqual(PHASE_OF_FLIGHT.FLIGHT_PHASE_TAKEOFF, inFormation.flight_mode)
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        TestBase.Application.unit_preferences.set_current_unit("Duration", "Sec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("Duration", "Sec")
 
         Assert.assertTrue(("Center" == str(inFormation.formation_point)))
         inFormation.formation_point = "AC2 SubPoint(Detic)"
@@ -2028,7 +2028,7 @@ class EarlyBoundTests(TestBase):
             inFormation.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
         currentPhase.set_default_performance_models()
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(formRecov, IProcedure))
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(inFormation, IProcedure))
@@ -2108,21 +2108,21 @@ class EarlyBoundTests(TestBase):
         missile: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
-        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
-        impact.lat = -20
-        impact.lon = -20
+        impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
+        impact.latitude = -20
+        impact.longitude = -20
         traj.propagate()
 
         missile2: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        traj2: "PropagatorBallistic" = clr.CastAs(missile2.trajectory, PropagatorBallistic)
         impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
-        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
-        impact2.lat = -20
-        impact2.lon = -20
+        impact2: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation2.impact, VehicleImpactLocationDetic)
+        impact2.latitude = -20
+        impact2.longitude = -20
         traj2.propagate()
 
         launchProc: "ProcedureLaunch" = clr.CastAs(
@@ -2205,21 +2205,21 @@ class EarlyBoundTests(TestBase):
         missile: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
-        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
-        impact.lat = -20
-        impact.lon = -20
+        impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
+        impact.latitude = -20
+        impact.longitude = -20
         traj.propagate()
 
         missile2: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        traj2: "PropagatorBallistic" = clr.CastAs(missile2.trajectory, PropagatorBallistic)
         impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
-        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
-        impact2.lat = -20
-        impact2.lon = -20
+        impact2: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation2.impact, VehicleImpactLocationDetic)
+        impact2.latitude = -20
+        impact2.longitude = -20
         traj2.propagate()
 
         launchProc: "ProcedureLaunchDynamicState" = clr.CastAs(
@@ -2432,7 +2432,7 @@ class EarlyBoundTests(TestBase):
 
         self.TestProcedureName(refState.get_as_procedure(), "ReferenceState")
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         refState.start_time = 1
         time: typing.Any = refState.start_time
         Assert.assertEqual(1, float(time))
@@ -2746,7 +2746,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("must be")):
             groundspeedTest: float = wowOpts.groundspeed
 
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(refState, IProcedure))
 
     # endregion
@@ -3020,7 +3020,7 @@ class EarlyBoundTests(TestBase):
         acObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
         ac2Obj: "IStkObject" = acObj.copy_object("AC2")
         ac2: "Aircraft" = clr.CastAs(ac2Obj, Aircraft)
-        route2: "VehiclePropagatorAviator" = clr.CastAs(ac2.route, VehiclePropagatorAviator)
+        route2: "PropagatorAviator" = clr.CastAs(ac2.route, PropagatorAviator)
         prop2: "AviatorPropagator" = clr.CastAs(route2.aviator_propagator, AviatorPropagator)
         mission2: "Mission" = prop2.aviator_mission
         prop2.propagate()
@@ -3034,8 +3034,8 @@ class EarlyBoundTests(TestBase):
 
         self.TestProcedureName(vgtProc.get_as_procedure(), "VGT Point")
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        TestBase.Application.unit_preferences.set_current_unit("Duration", "Sec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("Duration", "Sec")
         vgtProc.start_time = 2
         startTime: typing.Any = vgtProc.start_time
         Assert.assertEqual(2, float(startTime))
@@ -3085,7 +3085,7 @@ class EarlyBoundTests(TestBase):
             vgtProc.fuel_flow_type = FUEL_FLOW_TYPE.FUEL_FLOW_VTOL
 
         currentPhase.set_default_performance_models()
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(vgtProc, IProcedure))
         ac2Obj.unload()
 
@@ -3108,7 +3108,7 @@ class EarlyBoundTests(TestBase):
         basicManeuver.max_downrange = 11
         Assert.assertEqual(11, basicManeuver.max_downrange)
 
-        TestBase.Application.unit_preferences.set_current_unit("Duration", "HMS")
+        TestBase.Application.units_preferences.set_current_unit("Duration", "HMS")
         basicManeuver.use_max_time_of_flight = True
         basicManeuver.max_time_of_flight = "00:01:30.000"
         Assert.assertEqual("00:01:30.000", basicManeuver.max_time_of_flight)
@@ -3151,7 +3151,7 @@ class EarlyBoundTests(TestBase):
             basicManeuver.fuel_flow_type = BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_VTOL
 
         currentPhase.set_default_performance_models()
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         EarlyBoundTests.AG_Procedures.remove(clr.CastAs(basicManeuver, IProcedure))
 
@@ -3837,11 +3837,11 @@ class EarlyBoundTests(TestBase):
         missile: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
-        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
-        impact.lat = -20
-        impact.lon = -20
+        impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
+        impact.latitude = -20
+        impact.longitude = -20
         traj.propagate()
         intercept.target_name = "Missile/Missile"
 
@@ -5316,21 +5316,21 @@ class EarlyBoundTests(TestBase):
         missile: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
-        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
-        impact.lat = -20
-        impact.lon = -20
+        impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
+        impact.latitude = -20
+        impact.longitude = -20
         traj.propagate()
 
         missile2: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        traj2: "PropagatorBallistic" = clr.CastAs(missile2.trajectory, PropagatorBallistic)
         impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
-        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
-        impact2.lat = -20
-        impact2.lon = -20
+        impact2: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation2.impact, VehicleImpactLocationDetic)
+        impact2.latitude = -20
+        impact2.longitude = -20
         traj2.propagate()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
@@ -5375,7 +5375,7 @@ class EarlyBoundTests(TestBase):
         names = objectWaypointSite.valid_object_names
         Assert.assertTrue((Array.Length(names) >= 2))
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         scenario: "Scenario" = clr.CastAs(EarlyBoundTests.AG_Scenario, Scenario)
 
         objectWaypointSite.minimize_site_procedure_time_diff = (
@@ -5446,7 +5446,7 @@ class EarlyBoundTests(TestBase):
         objectWaypointSite.vgt_point = "SubPoint(Detic)"
         Assert.assertEqual("SubPoint(Detic)", objectWaypointSite.vgt_point)
 
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         EarlyBoundTests.AG_Procedures.remove(proc1)
         areaTarget.unload()
         place.unload()
@@ -5489,21 +5489,21 @@ class EarlyBoundTests(TestBase):
         missile: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile")), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(traj.impact_location, VehicleImpactLocationPoint)
-        impact: "VehicleImpactLLA" = clr.CastAs(impactLocation.impact, VehicleImpactLLA)
-        impact.lat = -20
-        impact.lon = -20
+        impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
+        impact.latitude = -20
+        impact.longitude = -20
         traj.propagate()
 
         missile2: "Missile" = clr.CastAs(
             (EarlyBoundTests.AG_Scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile2")), Missile
         )
-        traj2: "VehiclePropagatorBallistic" = clr.CastAs(missile2.trajectory, VehiclePropagatorBallistic)
+        traj2: "PropagatorBallistic" = clr.CastAs(missile2.trajectory, PropagatorBallistic)
         impactLocation2: "VehicleImpactLocationPoint" = clr.CastAs(traj2.impact_location, VehicleImpactLocationPoint)
-        impact2: "VehicleImpactLLA" = clr.CastAs(impactLocation2.impact, VehicleImpactLLA)
-        impact2.lat = -20
-        impact2.lon = -20
+        impact2: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation2.impact, VehicleImpactLocationDetic)
+        impact2.latitude = -20
+        impact2.longitude = -20
         traj2.propagate()
 
         proc1: "IProcedure" = EarlyBoundTests.AG_Procedures.add(
@@ -5982,7 +5982,7 @@ class EarlyBoundTests(TestBase):
         prop.fuel_flow = 70
         Assert.assertAlmostEqual(70, prop.fuel_flow, delta=tolerance)
 
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
         tempAC.get_as_catalog_item().remove()
 
     # endregion

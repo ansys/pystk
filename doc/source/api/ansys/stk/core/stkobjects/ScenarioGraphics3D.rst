@@ -55,7 +55,7 @@ Overview
               - Default text outline style.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.text_outline_color`
               - Default text outline color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.text_antialiasing_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.text_anti_aliasing_enabled`
               - True if the text anti-aliasing is turned on.
 
 
@@ -131,8 +131,8 @@ Property detail
 
     Default text outline color.
 
-.. py:property:: text_antialiasing_enabled
-    :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.text_antialiasing_enabled
+.. py:property:: text_anti_aliasing_enabled
+    :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.text_anti_aliasing_enabled
     :type: bool
 
     True if the text anti-aliasing is turned on.

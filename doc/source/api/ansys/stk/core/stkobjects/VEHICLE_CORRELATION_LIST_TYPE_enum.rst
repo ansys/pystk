@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~CORRELATION_LIST_DRAG`
+            * - :py:attr:`~DRAG`
               - Drag parameter.
 
-            * - :py:attr:`~CORRELATION_LIST_NONE`
+            * - :py:attr:`~NONE`
               - None.
 
-            * - :py:attr:`~CORRELATION_LIST_SRP`
+            * - :py:attr:`~SOLAR_RADIATION_PRESSURE`
               - Solar radiation pressure parameter.
 
 

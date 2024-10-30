@@ -66,7 +66,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.ExecuteCommandResult`
               - Collection of strings returned by the ExecuteCommand.
 
-            * - :py:class:`~ansys.stk.core.stkutil.ExecuteMultipleCommandResult`
+            * - :py:class:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult`
               - Collection of objects returned by the ExecuteMultipleCommands.
 
             * - :py:class:`~ansys.stk.core.stkutil.UnitPreferencesUnit`
@@ -162,19 +162,19 @@ Summary
             * - :py:class:`~ansys.stk.core.stkutil.RuntimeTypeInfo`
               - Runtime Type info coclass.
 
-            * - :py:class:`~ansys.stk.core.stkutil.CROrientationAzEl`
+            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationAzEl`
               - AzEl orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.CROrientationEulerAngles`
+            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationEulerAngles`
               - Euler Angles orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.CROrientationQuaternion`
+            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationQuaternion`
               - Quaternion orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.CROrientationYPRAngles`
+            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationYPRAngles`
               - Yaw-Pitch Roll (YPR) Angles orientation system.
 
-            * - :py:class:`~ansys.stk.core.stkutil.CROrientationOffsetCart`
+            * - :py:class:`~ansys.stk.core.stkutil.AgCROrientationOffsetCart`
               - Orientation offset cartesian.
 
 
@@ -274,7 +274,7 @@ in the STK X and STK Objects libraries.
     :hidden:
 
      ExecuteCommandResult<stkutil/ExecuteCommandResult>
-     ExecuteMultipleCommandResult<stkutil/ExecuteMultipleCommandResult>
+     ExecuteMultipleCommandsResult<stkutil/ExecuteMultipleCommandsResult>
      UnitPreferencesUnit<stkutil/UnitPreferencesUnit>
      UnitPreferencesUnitCollection<stkutil/UnitPreferencesUnitCollection>
      UnitPreferencesDimension<stkutil/UnitPreferencesDimension>
@@ -306,11 +306,11 @@ in the STK X and STK Objects libraries.
      PropertyInfo<stkutil/PropertyInfo>
      PropertyInfoCollection<stkutil/PropertyInfoCollection>
      RuntimeTypeInfo<stkutil/RuntimeTypeInfo>
-     CROrientationAzEl<stkutil/CROrientationAzEl>
-     CROrientationEulerAngles<stkutil/CROrientationEulerAngles>
-     CROrientationQuaternion<stkutil/CROrientationQuaternion>
-     CROrientationYPRAngles<stkutil/CROrientationYPRAngles>
-     CROrientationOffsetCart<stkutil/CROrientationOffsetCart>
+     AgCROrientationAzEl<stkutil/AgCROrientationAzEl>
+     AgCROrientationEulerAngles<stkutil/AgCROrientationEulerAngles>
+     AgCROrientationQuaternion<stkutil/AgCROrientationQuaternion>
+     AgCROrientationYPRAngles<stkutil/AgCROrientationYPRAngles>
+     AgCROrientationOffsetCart<stkutil/AgCROrientationOffsetCart>
 
 .. toctree::
     :titlesonly:

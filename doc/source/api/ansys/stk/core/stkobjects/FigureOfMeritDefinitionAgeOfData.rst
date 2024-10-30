@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.min_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.minimum_assets`
               - Minimum number of assets for computing time between the end of a coverage interval and the current time Figure of Merit.
 
 
@@ -36,8 +36,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min_assets
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.min_assets
+.. py:property:: minimum_assets
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAgeOfData.minimum_assets
     :type: int
 
     Minimum number of assets for computing time between the end of a coverage interval and the current time Figure of Merit.

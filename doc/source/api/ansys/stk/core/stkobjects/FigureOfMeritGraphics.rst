@@ -20,9 +20,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics.static`
               - Get the static graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics.animation_settings`
               - Get the animation graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics.show_graphics`
               - Specify whether graphics attributes of the Figure of Merit are visible.
 
 
@@ -44,14 +44,14 @@ Property detail
 
     Get the static graphics.
 
-.. py:property:: animation
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics.animation
+.. py:property:: animation_settings
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics.animation_settings
     :type: FigureOfMeritGraphics2DAttributesAnimation
 
     Get the animation graphics.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the Figure of Merit are visible.

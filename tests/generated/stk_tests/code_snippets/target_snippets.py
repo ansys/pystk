@@ -79,8 +79,8 @@ class TargetSnippets(CodeSnippetsTestBase):
         # Note, if SetAzElMask is set to a type other than AZ_EL_MASK_TYPE.MASK_FILE,
         # the second parameter is ignored.
         target.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, maskfile)
-        target.terrain_norm = TERRAIN_NORM_TYPE.SLOPE_AZIMUTH
-        target.altitude_reference = ALTITUDE_REFERENCE_TYPE.MSL
+        target.terrain_normal = TERRAIN_NORMAL_TYPE.SLOPE_AZIMUTH
+        target.altitude_reference = ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL
         target.height_above_ground = 1472.0
 
     # endregion

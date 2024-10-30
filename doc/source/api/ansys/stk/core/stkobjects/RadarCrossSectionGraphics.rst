@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.set_number_of_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -39,11 +39,11 @@ Overview
               - Enables the ability to view the contours at a set altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.altitude`
               - Gets or sets the altitude to view the contours.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.relative_to_max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.relative_to_maximum_gain`
               - Gets or sets the contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.show_labels`
               - Gets or sets the option for showing contour labels.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.num_label_dec_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.number_of_label_decimal_digits`
               - Gets or sets the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.line_width`
               - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
@@ -61,7 +61,7 @@ Overview
               - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.azimuth_resolution`
               - Gets the azimuth resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.azimuth_number_of_points`
               - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_start`
               - Gets the elevation start value.
@@ -69,7 +69,7 @@ Overview
               - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_resolution`
               - Gets the elevation resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_number_of_points`
               - Gets the number of elevation points.
 
 
@@ -115,8 +115,8 @@ Property detail
 
     Gets or sets the altitude to view the contours.
 
-.. py:property:: relative_to_max_gain
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.relative_to_max_gain
+.. py:property:: relative_to_maximum_gain
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.relative_to_maximum_gain
     :type: bool
 
     Gets or sets the contours value represents the gain value relative to the maximum.
@@ -127,8 +127,8 @@ Property detail
 
     Gets or sets the option for showing contour labels.
 
-.. py:property:: num_label_dec_digits
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.num_label_dec_digits
+.. py:property:: number_of_label_decimal_digits
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.number_of_label_decimal_digits
     :type: int
 
     Gets or sets the integer number of decimal places to display in the contour label.
@@ -181,8 +181,8 @@ Property detail
 
     Gets the azimuth resolution.
 
-.. py:property:: azimuth_num_points
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.azimuth_num_points
+.. py:property:: azimuth_number_of_points
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.azimuth_number_of_points
     :type: int
 
     Gets the number of azimuth points.
@@ -205,8 +205,8 @@ Property detail
 
     Gets the elevation resolution.
 
-.. py:property:: elevation_num_points
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_num_points
+.. py:property:: elevation_number_of_points
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.elevation_number_of_points
     :type: int
 
     Gets the number of elevation points.
@@ -266,8 +266,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_num_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.set_num_points
+.. py:method:: set_number_of_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.set_number_of_points
 
     Set the azimuth/elevation ranges and number of points.
 

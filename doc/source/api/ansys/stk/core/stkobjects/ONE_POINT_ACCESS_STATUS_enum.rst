@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MAX`
+            * - :py:attr:`~MAXIMUM`
               - Constraint value violates max limit of the min-max constraint.
 
-            * - :py:attr:`~MIN`
+            * - :py:attr:`~MINIMUM`
               - Constraint value violates min limit of the min-max constraint.
 
             * - :py:attr:`~ZERO`

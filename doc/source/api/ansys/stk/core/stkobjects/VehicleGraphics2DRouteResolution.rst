@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution.route`
               - Route resolution in terms of the ephemeris step. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution.min_route`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution.minimum_route`
               - Minimum route resolution in terms of the ephemeris step. Uses Time Dimension.
 
 
@@ -42,8 +42,8 @@ Property detail
 
     Route resolution in terms of the ephemeris step. Uses Time Dimension.
 
-.. py:property:: min_route
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution.min_route
+.. py:property:: minimum_route
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DRouteResolution.minimum_route
     :type: float
 
     Minimum route resolution in terms of the ephemeris step. Uses Time Dimension.

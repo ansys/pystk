@@ -27,7 +27,7 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
 
     # region SetUp
     def setUp(self):
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
         LaunchVehicleSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
                 STK_OBJECT_TYPE.LAUNCH_VEHICLE, LaunchVehicleSnippets.m_DefaultName
@@ -64,6 +64,6 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
         self.DetermineIfTrajectoryIsSupported(LaunchVehicleSnippets.m_Object)
 
     def DetermineIfTrajectoryIsSupported(self, launchVehicle: "LaunchVehicle"):
-        supported: bool = launchVehicle.is_trajectory_type_supported(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        supported: bool = launchVehicle.is_trajectory_type_supported(PROPAGATOR_TYPE.REAL_TIME)
 
     # endregion

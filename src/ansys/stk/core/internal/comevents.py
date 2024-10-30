@@ -254,7 +254,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_animation_playback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
-            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTIONS"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTIONS"](eDirection.python_val))
+            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTION_TYPE"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTION_TYPE"](eDirection.python_val))
                 
     def _on_animation_rewind(self, pThis:PVOID) -> None:
         for callback in self._events["OnAnimationRewind"]._callbacks:
@@ -266,7 +266,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_scenario_before_save(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnScenarioBeforeSave"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_animation_step(self, pThis:PVOID, CurrentTime:float) -> None:
@@ -287,7 +287,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_percent_complete_update(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnPercentCompleteUpdate"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["PctCmpltEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ProgressBarEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_percent_complete_end(self, pThis:PVOID) -> None:
@@ -300,7 +300,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_changed(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_scenario_before_close(self, pThis:PVOID) -> None:
@@ -309,7 +309,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_delete(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_stk_object_start_3d_editing(self, pThis:PVOID, path:str) -> None:
@@ -330,17 +330,17 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_cut(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_copy(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_paste(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
       
     

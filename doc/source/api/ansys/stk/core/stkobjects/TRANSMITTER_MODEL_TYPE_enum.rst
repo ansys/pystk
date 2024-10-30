@@ -31,13 +31,13 @@ Overview
             * - :py:attr:`~COMPLEX`
               - Complex transmitter model.
 
-            * - :py:attr:`~RE_TRANSMITTER_MODEL_TYPE_SIMPLE`
+            * - :py:attr:`~RETRANSMITTER_MODEL_TYPE_SIMPLE`
               - Simple re-transmitter model.
 
-            * - :py:attr:`~RE_TRANSMITTER_MODEL_TYPE_MEDIUM`
+            * - :py:attr:`~RETRANSMITTER_MODEL_TYPE_MEDIUM`
               - Medium re-transmitter model.
 
-            * - :py:attr:`~RE_TRANSMITTER_MODEL_TYPE_COMPLEX`
+            * - :py:attr:`~RETRANSMITTER_MODEL_TYPE_COMPLEX`
               - Complex re-transmitter model.
 
             * - :py:attr:`~SCRIPT_PLUGIN_RF`

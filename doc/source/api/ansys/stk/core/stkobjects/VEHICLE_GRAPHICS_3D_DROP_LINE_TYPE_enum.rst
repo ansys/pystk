@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DROP_LINE_MEAN_SEA_LEVEL`
+            * - :py:attr:`~MEAN_SEA_LEVEL`
               - Drop lines to Mean Sea Level.
 
-            * - :py:attr:`~DROP_LINE_TERRAIN`
+            * - :py:attr:`~TERRAIN`
               - Drop lines to terrain.
 
-            * - :py:attr:`~DROP_LINE_WGS84_ELLIPSOID`
+            * - :py:attr:`~ELLIPSOID`
               - Drop lines to the central body's reference ellipsoid (WGS84).
 
 

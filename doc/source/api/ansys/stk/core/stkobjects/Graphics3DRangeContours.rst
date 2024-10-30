@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics`
               - Display the contour cone's projection on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DRangeContours.translucent_lines`
               - Make the contour cone translucent at the specified percentage.
@@ -42,8 +42,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.Graphics3DRangeContours.show_graphics
     :type: bool
 
     Display the contour cone's projection on the surface of the central body.

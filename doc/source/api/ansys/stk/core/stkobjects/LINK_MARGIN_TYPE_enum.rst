@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~BER`
+            * - :py:attr:`~BIT_ERROR_RATE`
               - BER.
 
-            * - :py:attr:`~EB_OVER_NO`
+            * - :py:attr:`~EB_OVER_N0`
               - Eb/No.
 
             * - :py:attr:`~C_OVER_N`
               - C/N.
 
-            * - :py:attr:`~C_OVER_NO`
+            * - :py:attr:`~C_OVER_N0`
               - C/No.
 
             * - :py:attr:`~FLUX_DENSITY`
               - Flux Density.
 
-            * - :py:attr:`~RCVD_CARRIER_POWER`
+            * - :py:attr:`~RECEIVED_CARRIER_POWER`
               - Rcvd Carrier Power.
 
-            * - :py:attr:`~RIP`
+            * - :py:attr:`~RECEIVED_ISOTROPIC_POWER`
               - RIP.
 
 

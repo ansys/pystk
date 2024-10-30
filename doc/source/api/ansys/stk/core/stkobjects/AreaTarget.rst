@@ -24,7 +24,7 @@ Overview
               - Opt whether to use a local time offset from GMT.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.local_time_offset`
               - The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.auto_centroid`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid`
               - Opt whether to have the centroid automatically computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTarget.position`
               - Get the position of the area target centroid.
@@ -70,8 +70,8 @@ Property detail
 
     The amount of the time offset from GMT, if this option is used. Uses Time Dimension.
 
-.. py:property:: auto_centroid
-    :canonical: ansys.stk.core.stkobjects.AreaTarget.auto_centroid
+.. py:property:: automatic_computation_of_centroid
+    :canonical: ansys.stk.core.stkobjects.AreaTarget.automatic_computation_of_centroid
     :type: bool
 
     Opt whether to have the centroid automatically computed.

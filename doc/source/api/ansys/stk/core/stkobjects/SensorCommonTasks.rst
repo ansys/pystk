@@ -36,7 +36,7 @@ Overview
               - Set the pointing method to Fixed with an AzEl orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler`
               - Set the pointing method to Fixed with a Euler Angles orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion`
               - Set the pointing method to Fixed with a Quaternion orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr`
               - Set the pointing method to Fixed with a YPR Angles orientation.
@@ -44,7 +44,7 @@ Overview
               - Set the pointing method to FixedAxes with an AzEl orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler`
               - Set the pointing method to FixedAxes with a Euler Angles orientation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_quat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_quaternion`
               - Set the pointing method to FixedAxes with a Quaternion orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_ypr`
               - Set the pointing method to FixedAxes with a YPR Angles orientation.
@@ -103,7 +103,7 @@ Method detail
 
         :obj:`~SensorComplexConicPattern`
 
-.. py:method:: set_pattern_eoir(self, lineOfSiteJitter: float, eProcessingLevel: SENSOR_EOIR_PROCESSING_LEVELS) -> SensorEOIRPattern
+.. py:method:: set_pattern_eoir(self, lineOfSiteJitter: float, eProcessingLevel: SENSOR_EOIR_PROCESSING_LEVEL_TYPE) -> SensorEOIRPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_eoir
 
     Define the sensor using a EOIR pattern.
@@ -111,7 +111,7 @@ Method detail
     :Parameters:
 
     **lineOfSiteJitter** : :obj:`~float`
-    **eProcessingLevel** : :obj:`~SENSOR_EOIR_PROCESSING_LEVELS`
+    **eProcessingLevel** : :obj:`~SENSOR_EOIR_PROCESSING_LEVEL_TYPE`
 
     :Returns:
 
@@ -207,8 +207,8 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_quat(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quat
+.. py:method:: set_pointing_fixed_quaternion(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion
 
     Set the pointing method to Fixed with a Quaternion orientation.
 
@@ -239,7 +239,7 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_axes_az_el(self, referenceAxes: str, azimuth: typing.Any, elevation: typing.Any, aboutBoresight: AZ_EL_ABOUT_BORESIGHT) -> SensorPointingFixedAxes
+.. py:method:: set_pointing_fixed_axes_az_el(self, referenceAxes: str, azimuth: typing.Any, elevation: typing.Any, aboutBoresight: AZ_EL_ABOUT_BORESIGHT) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_az_el
 
     Set the pointing method to FixedAxes with an AzEl orientation.
@@ -253,9 +253,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~SensorPointingFixedAxes`
+        :obj:`~SensorPointingFixedInAxes`
 
-.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes: str, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedAxes
+.. py:method:: set_pointing_fixed_axes_euler(self, referenceAxes: str, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler
 
     Set the pointing method to FixedAxes with a Euler Angles orientation.
@@ -270,10 +270,10 @@ Method detail
 
     :Returns:
 
-        :obj:`~SensorPointingFixedAxes`
+        :obj:`~SensorPointingFixedInAxes`
 
-.. py:method:: set_pointing_fixed_axes_quat(self, referenceAxes: str, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixedAxes
-    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_quat
+.. py:method:: set_pointing_fixed_axes_quaternion(self, referenceAxes: str, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixedInAxes
+    :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_quaternion
 
     Set the pointing method to FixedAxes with a Quaternion orientation.
 
@@ -287,9 +287,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~SensorPointingFixedAxes`
+        :obj:`~SensorPointingFixedInAxes`
 
-.. py:method:: set_pointing_fixed_axes_ypr(self, referenceAxes: str, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedAxes
+.. py:method:: set_pointing_fixed_axes_ypr(self, referenceAxes: str, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_ypr
 
     Set the pointing method to FixedAxes with a YPR Angles orientation.
@@ -304,7 +304,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~SensorPointingFixedAxes`
+        :obj:`~SensorPointingFixedInAxes`
 
 .. py:method:: set_pointing_3d_model(self, attachName: str) -> SensorPointing3DModel
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model
@@ -353,14 +353,14 @@ Method detail
 
         :obj:`~SensorPointingSpinning`
 
-.. py:method:: set_pointing_targeted_tracking(self, trackModeType: TRACK_MODE_TYPE, aboutBoresightType: BORESIGHT_TYPE, targetPath: str) -> SensorPointingTargeted
+.. py:method:: set_pointing_targeted_tracking(self, trackModeType: TRACK_MODE, aboutBoresightType: BORESIGHT_TYPE, targetPath: str) -> SensorPointingTargeted
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_targeted_tracking
 
     Set the pointing method to Targeted with Tracking.
 
     :Parameters:
 
-    **trackModeType** : :obj:`~TRACK_MODE_TYPE`
+    **trackModeType** : :obj:`~TRACK_MODE`
     **aboutBoresightType** : :obj:`~BORESIGHT_TYPE`
     **targetPath** : :obj:`~str`
 

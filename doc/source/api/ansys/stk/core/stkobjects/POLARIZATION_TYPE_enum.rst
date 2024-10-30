@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~ELLIPTICAL`
               - Elliptical.
 
-            * - :py:attr:`~LHC`
+            * - :py:attr:`~LEFT_HAND_CIRCULAR`
               - Lefthand Circular.
 
-            * - :py:attr:`~RHC`
+            * - :py:attr:`~RIGHT_HAND_CIRCULAR`
               - Righthand Circular.
 
             * - :py:attr:`~LINEAR`

@@ -32,7 +32,7 @@ Overview
               - Gets or sets the chips per bit.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.spreading_gain`
               - Gets the spreading gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.scale_bandwidth_automatically`
               - Gets or sets the option for auto scaling the bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModel.symmetric_bandwidth`
               - Gets or sets the option for specifying symmetric bandwidth.
@@ -97,8 +97,8 @@ Property detail
 
     Gets the spreading gain.
 
-.. py:property:: auto_scale_bandwidth
-    :canonical: ansys.stk.core.stkobjects.IModulatorModel.auto_scale_bandwidth
+.. py:property:: scale_bandwidth_automatically
+    :canonical: ansys.stk.core.stkobjects.IModulatorModel.scale_bandwidth_automatically
     :type: bool
 
     Gets or sets the option for auto scaling the bandwidth.

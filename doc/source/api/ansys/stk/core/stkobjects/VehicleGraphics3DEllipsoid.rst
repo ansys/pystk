@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.x_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.x_semiaxis_length`
               - Indicates how far along the X axis of the reference frame the box extends. Value must be greater than 0.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.y_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.y_semiaxis_length`
               - Indicates how far along the Y axis of the reference frame the box extends. Value must be greater than 0.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.z_semi_axis_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.z_semiaxis_length`
               - Indicates how far along the Z axis of the reference frame the box extends. Value must be greater than 0.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.x_axis_offset`
               - Gets or sets the distance to offset the box (positive or negative) along the X axis of the reference frame.
@@ -54,20 +54,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: x_semi_axis_length
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.x_semi_axis_length
+.. py:property:: x_semiaxis_length
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.x_semiaxis_length
     :type: float
 
     Indicates how far along the X axis of the reference frame the box extends. Value must be greater than 0.
 
-.. py:property:: y_semi_axis_length
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.y_semi_axis_length
+.. py:property:: y_semiaxis_length
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.y_semiaxis_length
     :type: float
 
     Indicates how far along the Y axis of the reference frame the box extends. Value must be greater than 0.
 
-.. py:property:: z_semi_axis_length
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.z_semi_axis_length
+.. py:property:: z_semiaxis_length
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DEllipsoid.z_semiaxis_length
     :type: float
 
     Indicates how far along the Z axis of the reference frame the box extends. Value must be greater than 0.

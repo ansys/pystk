@@ -22,7 +22,7 @@ Overview
               - Return a string containing the XML representation of the available data providers.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderCollection.item`
               - Given an index, returns the element in the collection. If the index is an integer, then method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderCollection.get_data_provider_info_from_path`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderCollection.get_data_provider_information_from_path`
               - Return the data provider information specified by the data provider path.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderCollection.get_data_provider_time_varying_from_path`
               - Return the time variable data provider specified by the data provider path.
@@ -99,8 +99,8 @@ Method detail
 
 
 
-.. py:method:: get_data_provider_info_from_path(self, dataProviderPath: str) -> IDataProviderInfo
-    :canonical: ansys.stk.core.stkobjects.DataProviderCollection.get_data_provider_info_from_path
+.. py:method:: get_data_provider_information_from_path(self, dataProviderPath: str) -> IDataProviderInfo
+    :canonical: ansys.stk.core.stkobjects.DataProviderCollection.get_data_provider_information_from_path
 
     Return the data provider information specified by the data provider path.
 

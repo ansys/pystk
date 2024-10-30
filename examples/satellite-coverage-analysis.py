@@ -62,10 +62,10 @@ satellite = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "EarthObsSat")
 # Set the propagator to J2Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+satellite.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
 propagator = satellite.propagator
 # -
 
@@ -86,7 +86,7 @@ orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLAS
 from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
 
 
-orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS
+orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
 # -
 
 # Set the orbit's semi-major axis to $6852.45$ km and it's eccentricity to $0$:
@@ -97,7 +97,7 @@ orbit.size_shape.eccentricity = 0
 # Then, use the `orientation` property of the `IOrbitStateClassical` object to set the inclination to $98^\circ$ and the argument of perigee to $0^\circ$:
 
 orbit.orientation.inclination = 98
-orbit.orientation.arg_of_perigee = 0
+orbit.orientation.argument_of_periapsis = 0
 
 # Using the orientation property, set the ascending node type to RAAN:
 
@@ -105,12 +105,14 @@ orbit.orientation.arg_of_perigee = 0
 from ansys.stk.core.stkobjects import ORIENTATION_ASC_NODE
 
 
-orbit.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
+orbit.orientation.ascending_node_type = (
+    ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+)
 # -
 
 # Set the RAAN value to $150.34^\circ$:
 
-orbit.orientation.asc_node.value = 150.34
+orbit.orientation.ascending_node.value = 150.34
 
 # Then, use the `location` property of the `IOrbitStateClassical` object to set the location type to true anomaly:
 
@@ -118,7 +120,7 @@ orbit.orientation.asc_node.value = 150.34
 from ansys.stk.core.stkobjects import CLASSICAL_LOCATION
 
 
-orbit.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+orbit.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
 # -
 
 # Set the true anomaly value to $0^\circ$:
@@ -184,12 +186,14 @@ root.execute_command(
 from ansys.stk.core.stkobjects import COVERAGE_RESOLUTION
 
 
-sat_grave_coverage.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LAT_LON
+sat_grave_coverage.grid.resolution_type = (
+    COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
+)
 # -
 
 # Then, set the resolution to $2^\circ$:
 
-sat_grave_coverage.grid.resolution.lat_lon = 2
+sat_grave_coverage.grid.resolution.latitude_longitude = 2
 
 # It is now possible to see the coverage definition in the 3D graphics widget:
 
@@ -233,7 +237,7 @@ figure_of_merit.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVER
 
 satisfied_by_time_df = (
     figure_of_merit.data_providers.item("Satisfied by Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -289,11 +293,11 @@ plt.show()
 from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
 
 
-figure_of_merit.graphics.is_object_graphics_visible = True
-figure_of_merit.graphics.animation.accumulation = (
+figure_of_merit.graphics.show_graphics = True
+figure_of_merit.graphics.animation_settings.accumulation = (
     FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT
 )
-figure_of_merit.graphics.animation.is_visible = True
+figure_of_merit.graphics.animation_settings.show_graphics = True
 # -
 
 # Now, animate the scenario. The satellite's sensor colors the region along its path when the sensor passes over the grid points.
@@ -310,11 +314,11 @@ root.play_forward()
 # The satellite graveyard can only be imaged by the satellite's sensor when it is illuminated by daylight. To reflect this constraint, assign a lighting constraint to the Place object representing Point Nemo:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
+from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
 lighting_constraint = point_nemo.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.LIGHTING
+    ACCESS_CONSTRAINT_TYPE.LIGHTING
 )
 # -
 
@@ -333,7 +337,7 @@ lighting_constraint.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
 from ansys.stk.core.stkobjects import COVERAGE_GRID_CLASS
 
 
-sat_grave_coverage.point_definition.grid_class = COVERAGE_GRID_CLASS.GRID_CLASS_PLACE
+sat_grave_coverage.point_definition.grid_class = COVERAGE_GRID_CLASS.PLACE
 # -
 
 # Then, configure the point definition to use an object instance as the grid seed:
@@ -354,7 +358,7 @@ sat_grave_coverage.compute_accesses()
 
 satisfied_by_time_lighting_df = (
     figure_of_merit.data_providers.item("Satisfied by Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 

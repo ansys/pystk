@@ -95,8 +95,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(STAR_REFERENCE_FRAME.J2000, EarlyBoundTests.AG_SR.reference_frame)
 
         # Radial velocity
-        unit: str = (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.get_current_unit_abbrv("Distance")
-        (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.set_current_unit("Distance", "m")
+        unit: str = (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.get_current_unit_abbrv("Distance")
+        (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", "m")
         try:
             EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 10  # in meters
             Assert.assertEqual(10, EarlyBoundTests.AG_SR.proper_motion_radial_velocity)
@@ -114,7 +114,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.AG_SR.proper_motion_radial_velocity = 20000000000.0
 
         finally:
-            (IStkObject(EarlyBoundTests.AG_SR)).root.unit_preferences.set_current_unit("Distance", unit)
+            (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.set_current_unit("Distance", unit)
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
@@ -137,12 +137,12 @@ class EarlyBoundTests(TestBase):
         gfx: "StarGraphics" = EarlyBoundTests.AG_SR.graphics
         Assert.assertIsNotNone(gfx)
         # IsObjectGraphicsVisible
-        TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
-        gfx.is_object_graphics_visible = False
-        TestBase.logger.WriteLine4("The The IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
-        Assert.assertFalse(gfx.is_object_graphics_visible)
-        gfx.is_object_graphics_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)
+        TestBase.logger.WriteLine4("The current IsObjectGraphicsVisible is: {0}", gfx.show_graphics)
+        gfx.show_graphics = False
+        TestBase.logger.WriteLine4("The The IsObjectGraphicsVisible is: {0}", gfx.show_graphics)
+        Assert.assertFalse(gfx.show_graphics)
+        gfx.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)
         # Color
         TestBase.logger.WriteLine6("The current Color is: {0}", gfx.color)
         gfx.color = Colors.from_argb(6636321)
@@ -162,7 +162,7 @@ class EarlyBoundTests(TestBase):
         bCaught: bool = False
         try:
             bCaught = False
-            gfx.label_visible = True
+            gfx.show_label = True
 
         except Exception as e:
             bCaught = True
@@ -175,13 +175,13 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("The new Inherit flag is: {0}", gfx.inherit)
         Assert.assertEqual(False, gfx.inherit)
         # LabelVisible
-        TestBase.logger.WriteLine4("The current LabelVisible flag is: {0}", gfx.label_visible)
-        gfx.label_visible = False
-        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.label_visible)
-        Assert.assertEqual(False, gfx.label_visible)
-        gfx.label_visible = True
-        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.label_visible)
-        Assert.assertEqual(True, gfx.label_visible)
+        TestBase.logger.WriteLine4("The current LabelVisible flag is: {0}", gfx.show_label)
+        gfx.show_label = False
+        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.show_label)
+        Assert.assertEqual(False, gfx.show_label)
+        gfx.show_label = True
+        TestBase.logger.WriteLine4("The new LabelVisible flag is: {0}", gfx.show_label)
+        Assert.assertEqual(True, gfx.show_label)
         TestBase.logger.WriteLine("----- THE GRAPHICS TEST ----- END -----")
 
     # endregion
@@ -193,21 +193,21 @@ class EarlyBoundTests(TestBase):
         vo: "StarGraphics3D" = EarlyBoundTests.AG_SR.graphics_3d
         Assert.assertIsNotNone(vo)
         # InertialPositionVisible
-        TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
-        vo.inertial_position_visible = False
-        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
-        Assert.assertEqual(False, vo.inertial_position_visible)
-        vo.inertial_position_visible = True
-        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.inertial_position_visible)
-        Assert.assertEqual(True, vo.inertial_position_visible)
+        TestBase.logger.WriteLine4("The current InertialPositionVisible flag is: {0}", vo.show_inertial_position)
+        vo.show_inertial_position = False
+        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.show_inertial_position)
+        Assert.assertEqual(False, vo.show_inertial_position)
+        vo.show_inertial_position = True
+        TestBase.logger.WriteLine4("The new InertialPositionVisible flag is: {0}", vo.show_inertial_position)
+        Assert.assertEqual(True, vo.show_inertial_position)
         # SubStarPointVisible
-        TestBase.logger.WriteLine4("The current SubStarPointVisible flag is: {0}", vo.sub_star_point_visible)
-        vo.sub_star_point_visible = False
-        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.sub_star_point_visible)
-        Assert.assertEqual(False, vo.sub_star_point_visible)
-        vo.sub_star_point_visible = True
-        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.sub_star_point_visible)
-        Assert.assertEqual(True, vo.sub_star_point_visible)
+        TestBase.logger.WriteLine4("The current SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
+        vo.show_sub_star_point = False
+        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
+        Assert.assertEqual(False, vo.show_sub_star_point)
+        vo.show_sub_star_point = True
+        TestBase.logger.WriteLine4("The new SubStarPointVisible flag is: {0}", vo.show_sub_star_point)
+        Assert.assertEqual(True, vo.show_sub_star_point)
         # InheritFrom2dGfx
         TestBase.logger.WriteLine4("The current InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
         vo.inherit_from_2d_graphics_2d = True
@@ -216,7 +216,7 @@ class EarlyBoundTests(TestBase):
         bCaught: bool = False
         try:
             bCaught = False
-            vo.sub_star_label_visible = True
+            vo.show_sub_star_label = True
 
         except Exception as e:
             bCaught = True
@@ -227,7 +227,7 @@ class EarlyBoundTests(TestBase):
 
         try:
             bCaught = False
-            vo.position_label_visible = True
+            vo.show_position_label = True
 
         except Exception as e:
             bCaught = True
@@ -240,21 +240,21 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("The new InheritFrom2dGfx flag is: {0}", vo.inherit_from_2d_graphics_2d)
         Assert.assertEqual(False, vo.inherit_from_2d_graphics_2d)
         # SubStarLabelVisible
-        TestBase.logger.WriteLine4("The current SubStarLabelVisible flag is: {0}", vo.sub_star_label_visible)
-        vo.sub_star_label_visible = False
-        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.sub_star_label_visible)
-        Assert.assertEqual(False, vo.sub_star_label_visible)
-        vo.sub_star_label_visible = True
-        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.sub_star_label_visible)
-        Assert.assertEqual(True, vo.sub_star_label_visible)
+        TestBase.logger.WriteLine4("The current SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
+        vo.show_sub_star_label = False
+        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
+        Assert.assertEqual(False, vo.show_sub_star_label)
+        vo.show_sub_star_label = True
+        TestBase.logger.WriteLine4("The new SubStarLabelVisible flag is: {0}", vo.show_sub_star_label)
+        Assert.assertEqual(True, vo.show_sub_star_label)
         # PositionLabelVisible
-        TestBase.logger.WriteLine4("The current PositionLabelVisible flag is: {0}", vo.position_label_visible)
-        vo.position_label_visible = False
-        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.position_label_visible)
-        Assert.assertEqual(False, vo.position_label_visible)
-        vo.position_label_visible = True
-        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.position_label_visible)
-        Assert.assertEqual(True, vo.position_label_visible)
+        TestBase.logger.WriteLine4("The current PositionLabelVisible flag is: {0}", vo.show_position_label)
+        vo.show_position_label = False
+        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.show_position_label)
+        Assert.assertEqual(False, vo.show_position_label)
+        vo.show_position_label = True
+        TestBase.logger.WriteLine4("The new PositionLabelVisible flag is: {0}", vo.show_position_label)
+        Assert.assertEqual(True, vo.show_position_label)
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
 
     # endregion

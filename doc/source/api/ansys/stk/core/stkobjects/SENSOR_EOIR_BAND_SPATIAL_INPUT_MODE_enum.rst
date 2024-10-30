@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~FO_VAND_NUM_PIX`
+            * - :py:attr:`~FIELD_OF_VIEW_AND_NUMBER_OF_PIXELS`
               - EOIR: Use the field-of-view and number of pixels to specify the spatial properties.
 
-            * - :py:attr:`~FO_VAND_PIXEL_PITCH`
+            * - :py:attr:`~FIELD_OF_VIEW_AND_PIXEL_PITCH`
               - EOIR: Use the field-of-view and the pixel pitch to specify the spatial properties.
 
-            * - :py:attr:`~NUM_PIX_AND_PIXEL_PITCH`
+            * - :py:attr:`~NUMBER_OF_PIXELS_AND_PIXEL_PITCH`
               - EOIR: Use the number of pixels and pixel pitch to specify the spatial properties.
 
 

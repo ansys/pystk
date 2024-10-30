@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MTCSP_APPARENT`
+            * - :py:attr:`~APPARENT`
               - Apparent: takes into account the time required for light to travel from the sun to the position of the spacecraft.
 
-            * - :py:attr:`~MTCSP_APPARENT_TO_TRUE_CB`
+            * - :py:attr:`~APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION`
               - Apparent Sun to True Central Body: takes into account the time required for light to travel from the sun to the central body.
 
-            * - :py:attr:`~MTCSP_TRUE`
+            * - :py:attr:`~TRUE`
               - True: assumes that light from the sun reaches the spacecraft instantaneously.
 
 

@@ -22,13 +22,13 @@ Overview
             * - :py:attr:`~REAL`
               - Real number.
 
-            * - :py:attr:`~INT`
+            * - :py:attr:`~INTEGER`
               - Integer.
 
-            * - :py:attr:`~CHAR`
+            * - :py:attr:`~STRING`
               - Character.
 
-            * - :py:attr:`~CHAR_OR_REAL`
+            * - :py:attr:`~STRING_OR_REAL`
               - Character or real number.
 
 

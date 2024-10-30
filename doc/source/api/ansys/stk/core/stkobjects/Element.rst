@@ -22,7 +22,7 @@ Overview
               - Gets the x position, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.Element.y`
               - Gets the y position, in wavelengths.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Element.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Element.identifier`
               - Gets the element Id.
             * - :py:attr:`~ansys.stk.core.stkobjects.Element.enabled`
               - Gets or set whether or not the element is enabled.
@@ -52,8 +52,8 @@ Property detail
 
     Gets the y position, in wavelengths.
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.Element.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.Element.identifier
     :type: int
 
     Gets the element Id.

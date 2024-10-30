@@ -58,10 +58,10 @@ class ShipSnippets(CodeSnippetsTestBase):
 
     def SetShipToUseGreatArcPropagator(self, ship: "Ship"):
         # Set ship route to great arc
-        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        ship.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(ship.route, VehiclePropagatorGreatArc)
+        propagator: "PropagatorGreatArc" = clr.CastAs(ship.route, PropagatorGreatArc)
 
     # endregion
 
@@ -71,10 +71,10 @@ class ShipSnippets(CodeSnippetsTestBase):
 
     def SetShipToUseStkExternalPropagator(self, ship: "Ship"):
         # Set ship route to STK External propagator
-        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        ship.set_route_type(PROPAGATOR_TYPE.STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorStkExternal" = clr.CastAs(ship.route, VehiclePropagatorStkExternal)
+        propagator: "PropagatorStkExternal" = clr.CastAs(ship.route, PropagatorStkExternal)
 
     # endregion
 
@@ -84,9 +84,9 @@ class ShipSnippets(CodeSnippetsTestBase):
 
     def SetShipToUseRealtimePropagator(self, ship: "Ship"):
         # Set ship route to STK External propagator
-        ship.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        ship.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorRealtime" = clr.CastAs(ship.route, VehiclePropagatorRealtime)
+        propagator: "PropagatorRealtime" = clr.CastAs(ship.route, PropagatorRealtime)
 
     # endregion

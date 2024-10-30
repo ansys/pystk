@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~VECTOR_GEOMETRY_TOOL_ANGLE`
               - Angle constraint.
 
-            * - :py:attr:`~VECTOR_GEOMETRY_TOOL_VECTOR_MAGNITUDE`
+            * - :py:attr:`~VECTOR_MAGNITUDE`
               - Vector Magnitude constraint.
 
             * - :py:attr:`~ELEVATION_ANGLE`
@@ -64,10 +64,10 @@ Overview
             * - :py:attr:`~HEIGHT_ABOVE_HORIZON`
               - Height Above Horizon constraint.
 
-            * - :py:attr:`~LOS_LUNAR_EXCLUSION`
+            * - :py:attr:`~LINE_OF_SIGHT_LUNAR_EXCLUSION_ANGLE`
               - LOS Lunar Exclusion constraint.
 
-            * - :py:attr:`~LOS_SUN_EXCLUSION`
+            * - :py:attr:`~LINE_OF_SIGHT_SOLAR_EXCLUSION_ANGLE`
               - LOS Sun Exclusion constraint.
 
             * - :py:attr:`~LUNAR_ELEVATION_ANGLE`
@@ -91,16 +91,16 @@ Overview
             * - :py:attr:`~SAR_AREA_RATE`
               - SAR Area Rate constraint.
 
-            * - :py:attr:`~SAR_AZ_RES`
+            * - :py:attr:`~SAR_AZIMUTH_RESOLUTION`
               - SAR Azimuth Resolution constraint.
 
-            * - :py:attr:`~SAR_CNR`
+            * - :py:attr:`~SAR_CARRIER_TO_NOISE_RATIO`
               - SAR Carrier-to-Noise Ratio constraint.
 
             * - :py:attr:`~SAR_EXTERNAL_DATA`
               - SAR External Data constraint.
 
-            * - :py:attr:`~SAR_INT_TIME`
+            * - :py:attr:`~SAR_INTEGRATION_TIME`
               - SAR Integration Time constraint.
 
             * - :py:attr:`~SAR_PTCR`
@@ -115,22 +115,22 @@ Overview
             * - :py:attr:`~SAR_SIGMA_N`
               - SAR Sigma N constraint.
 
-            * - :py:attr:`~SRCH_TRK_DWELL_TIME`
+            * - :py:attr:`~SEARCH_TRACK_DWELL_TIME`
               - Search-Track Dwell Time constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_P_DET`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION`
               - Search-Track Integrated Probability of Detection constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_SNR`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_SNR`
               - Search-Track Integrated Signal-to-Noise Ratio constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATION_TIME`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATION_TIME`
               - Search-Track Integration Time constraint.
 
-            * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_P_DET`
+            * - :py:attr:`~SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION`
               - Search-Track Single Pulse Probability of Detection constraint.
 
-            * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_SNR`
+            * - :py:attr:`~SEARCH_TRACK_SINGLE_PULSE_SNR`
               - Search-Track Single Pulse Signal-to-Noise Ratio constraint.
 
             * - :py:attr:`~SUN_ELEVATION_ANGLE`
@@ -166,10 +166,10 @@ Overview
             * - :py:attr:`~LOCAL_TIME`
               - Local Time constraint.
 
-            * - :py:attr:`~LOS_CENTRAL_BODY_EXCLUSION`
+            * - :py:attr:`~LINE_OF_SIGHT_CENTRAL_BODY_EXCLUSION`
               - Loss Of Signal Central Body Exclusion constraint.
 
-            * - :py:attr:`~VECTOR_GEOMETRY_TOOL_POINT_METRIC`
+            * - :py:attr:`~POINT_METRIC`
               - Coordinate Point Metric constraint.
 
             * - :py:attr:`~CENTROID_AZIMUTH_ANGLE`
@@ -190,7 +190,7 @@ Overview
             * - :py:attr:`~LATITUDE`
               - Latitude constraint.
 
-            * - :py:attr:`~SUN_GROUND_ELEV_ANGLE`
+            * - :py:attr:`~SUN_GROUND_ELEVATION_ANGLE`
               - Sun Ground Elevation Angle constraint.
 
             * - :py:attr:`~TERRAIN_MASK`
@@ -226,7 +226,7 @@ Overview
             * - :py:attr:`~GRAZING_ALTITUDE`
               - Grazing Altitude constraint.
 
-            * - :py:attr:`~GROUND_ELEV_ANGLE`
+            * - :py:attr:`~GROUND_ELEVATION_ANGLE`
               - Ground Elevation Angle constraint.
 
             * - :py:attr:`~GROUND_TRACK`
@@ -253,37 +253,37 @@ Overview
             * - :py:attr:`~BORESIGHT_GRAZING_ANGLE`
               - Boresight Grazing Angle constraint.
 
-            * - :py:attr:`~BS_INTERSECT_LIGHTING_CONDITION`
+            * - :py:attr:`~BORESIGHT_INTERSECTION_LIGHTING_CONDITION`
               - BS Intersection Light Condition constraint.
 
-            * - :py:attr:`~FOV_SUN_SPECULAR_EXCLUSION`
+            * - :py:attr:`~FIELD_OF_VIEW_SUN_SPECULAR_EXCLUSION`
               - Field Of View Sun Specular Exclusion constraint.
 
-            * - :py:attr:`~FOV_SUN_SPECULAR_INCLUSION`
+            * - :py:attr:`~FIELD_OF_VIEW_SUN_SPECULAR_INCLUSION`
               - Field Of View Sun Specular Inclusion constraint.
 
             * - :py:attr:`~HORIZON_CROSSING`
               - Horizon Crossing constraint.
 
-            * - :py:attr:`~BS_LUNAR_EXCLUSION`
+            * - :py:attr:`~BORESIGHT_LUNAR_EXCLUSION_ANGLE`
               - BS Lunar Exclusion constraint.
 
-            * - :py:attr:`~BS_SUN_EXCLUSION`
+            * - :py:attr:`~BORESIGHT_SOLAR_EXCLUSION_ANGLE`
               - BS Sun Exclusion constraint.
 
-            * - :py:attr:`~BS_CENTRAL_BODY_EXCLUSION`
+            * - :py:attr:`~BORESIGHT_CENTRAL_BODY_EXCLUSION_ANGLE`
               - BS Centray Body Exclusion constraint.
 
-            * - :py:attr:`~FOV_CENTRAL_BODY_OBSTRUCTION_CROSS_IN`
+            * - :py:attr:`~CENTRAL_BODY_OBSTRUCTION_CROSS_INWARD`
               - Field Of View Central Body Obstruction Cross In constraint.
 
-            * - :py:attr:`~FOV_CENTRAL_BODY_OBSTRUCTION_CROSS_OUT`
+            * - :py:attr:`~CENTRAL_BODY_OBSTRUCTION_CROSS_OUTWARD`
               - Field Of View Central Body Obstruction Cross Out constraint.
 
-            * - :py:attr:`~FOV_CENTRAL_BODY_HORIZON_REFINE`
+            * - :py:attr:`~CENTRAL_BODY_HORIZON_REFINE`
               - Field Of View Central Body Horizon Refine constraint.
 
-            * - :py:attr:`~FOV_CENTRAL_BODY_CENTER`
+            * - :py:attr:`~CENTRAL_BODY_CENTER`
               - Field Of View Central Body Center constraint.
 
             * - :py:attr:`~SENSOR_AZ_EL_MASK`
@@ -295,10 +295,10 @@ Overview
             * - :py:attr:`~INFRARED_DETECTION`
               - Infrared Detection constraint.
 
-            * - :py:attr:`~RDR_XMT_TARGET_ACCESS`
+            * - :py:attr:`~RADAR_TRANSMITTER_TARGET_ACCESS`
               - Radar Xmt Target Access constraint.
 
-            * - :py:attr:`~RDR_XMT_ACCESS`
+            * - :py:attr:`~RADAR_TRANSMITTER_ACCESS`
               - Radar Xmt Access constraint.
 
             * - :py:attr:`~RADAR_ACCESS`
@@ -310,58 +310,58 @@ Overview
             * - :py:attr:`~NOISE_TEMPERATURE`
               - Noise Temperature constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_PULSES`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_PULSES`
               - Search-Track Integrated Pulses constraint.
 
-            * - :py:attr:`~SRCH_TRK_MLC_FILTER`
+            * - :py:attr:`~SEARCH_TRACK_MLC_FILTER`
               - Search-Track MLC Filter constraint.
 
-            * - :py:attr:`~SRCH_TRK_SLC_FILTER`
+            * - :py:attr:`~SEARCH_TRACK_SLC_FILTER`
               - Search-Track SLC Filter constraint.
 
-            * - :py:attr:`~SRCH_TRK_CLEAR_DOPPLER`
+            * - :py:attr:`~SEARCH_TRACK_CLEAR_DOPPLER`
               - Search-Track Clear Doppler constraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_RANGE`
+            * - :py:attr:`~SEARCH_TRACK_UNAMBIGUOUS_RANGE`
               - Search-Track Unambiguous Range constraint.
 
-            * - :py:attr:`~SRCH_TRK_UNAMBIGUOUS_DOPPLER`
+            * - :py:attr:`~SEARCH_TRACK_UNAMBIGUOUS_DOPPLER`
               - Search-Track Unambiguous Doppler constraint.
 
-            * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_SNR_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_SINGLE_PULSE_SNR_JAMMING`
               - Search-Track Single Pulse SNR Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_J_OVER_S`
+            * - :py:attr:`~SEARCH_TRACK_SINGLE_PULSE_J_OVER_S`
               - Search-Track Single Pulse J/S constraint.
 
-            * - :py:attr:`~SRCH_TRK_SINGLE_PULSE_P_DET_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING`
               - Search-Track Single Pulse PDet Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_SNR_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_SNR_JAMMING`
               - Search-Track Integrated SNR Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_J_OVER_S`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_J_OVER_S`
               - Search-Track Integrated J/S constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_P_DET_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING`
               - Search-Track Integrated PDet Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATED_PULSES_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATED_PULSES_JAMMING`
               - Search-Track Integrated Pulses Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_INTEGRATION_TIME_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_INTEGRATION_TIME_JAMMING`
               - Search-Track Integration Time Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_DWELL_TIME_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_DWELL_TIME_JAMMING`
               - Search-Track Dwell Time Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_CONSTR_PLUGIN`
+            * - :py:attr:`~SEARCH_TRACK_CONSTRAINT_PLUGIN`
               - Search-Track Constraint Plugin constraint.
 
             * - :py:attr:`~SAR_SNR_JAMMING`
               - SAR SNR Jamming constraint.
 
-            * - :py:attr:`~SAR_CNR_JAMMING`
+            * - :py:attr:`~SAR_CARRIER_TO_NOISE_RATIO_JAMMING`
               - SAR CNR Jamming constraint.
 
             * - :py:attr:`~SAR_SCR_JAMMING`
@@ -370,79 +370,79 @@ Overview
             * - :py:attr:`~SAR_J_OVER_S`
               - SAR J/S constraint.
 
-            * - :py:attr:`~SAR_CONSTR_PLUGIN`
+            * - :py:attr:`~SAR_CONSTRAINT_PLUGIN`
               - SAR Constraint Plugin constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_SNR`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_SNR`
               - SAR Orthogonal Polar SNR constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_CNR`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_CNR`
               - SAR Orthogonal Polar CNR constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_SCR`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_SCR`
               - SAR Orthogonal Polar SCR constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_PTCR`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_PTCR`
               - SAR Orthogonal Polar PTCR constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_SNR_JAMMING`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_SNR_JAMMING`
               - SAR Orthogonal Polar SNR Jamming constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_CNR_JAMMING`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_CNR_JAMMING`
               - SAR Orthogonal Polar CNR Jamming constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_SCR_JAMMING`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_SCR_JAMMING`
               - SAR Orthogonal Polar SCR Jamming constraint.
 
-            * - :py:attr:`~SAR_ORTHO_POL_J_OVER_S`
+            * - :py:attr:`~SAR_ORTHOGONAL_POLARIZATION_J_OVER_S`
               - SAR Orthogonal Polar J/S constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_SINGLE_PULSE_SNR`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR`
               - Search-Track Orthogonal Polar Single Pulse SNR constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_SINGLE_PULSE_P_DET`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION`
               - Search-Track Orthogonal Polar Single Pulse PDet constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_SNR`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR`
               - Search-Track Orthogonal Polar Integrated SNR constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_P_DET`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION`
               - Search-Track Orthogonal Polar Integrated PDet constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_PULSES`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES`
               - Search-Track Orthogonal Polar Integrated Pulses constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATION_TIME`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME`
               - Search-Track Orthogonal Polar Integration Time constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_DWELL_TIME`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME`
               - Search-Track Orthogonal Polar Dwell Time constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_SINGLE_PULSE_SNR_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR_JAMMING`
               - Search-Track Orthogonal Polar Single Pulse SNR Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_SINGLE_PULSE_J_OVER_S`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_J_OVER_S`
               - Search-Track Orthogonal Polar Single Pulse J/S constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_SINGLE_PULSE_P_DET_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING`
               - Search-Track Orthogonal Polar Single Pulse PDet Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_SNR_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR_JAMMING`
               - Search-Track Orthogonal Polar Integrated SNR Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_J_OVER_S`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_J_OVER_S`
               - Search-Track Orthogonal Polar Integrated J/S constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_P_DET_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING`
               - Search-Track Orthogonal Polar Integrated PDet Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATED_PULSES_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES_JAMMING`
               - Search-Track Orthogonal Polar Integrated Pulses Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_INTEGRATION_TIME_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME_JAMMING`
               - Search-Track Orthogonal Polar Integration Time Jamming constraint.
 
-            * - :py:attr:`~SRCH_TRK_ORTHO_POL_DWELL_TIME_JAMMING`
+            * - :py:attr:`~SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME_JAMMING`
               - Search-Track Orthogonal Polar Dwell Time Jamming constraint.
 
             * - :py:attr:`~FREQUENCY`
@@ -451,7 +451,7 @@ Overview
             * - :py:attr:`~DOPPLER_SHIFT`
               - Doppler Shift constraint.
 
-            * - :py:attr:`~RCVD_ISOTROPIC_POWER`
+            * - :py:attr:`~RECEIVED_ISOTROPIC_POWER`
               - Received Isotropic Power constraint.
 
             * - :py:attr:`~POWER_AT_RECEIVER_INPUT`
@@ -463,22 +463,22 @@ Overview
             * - :py:attr:`~G_OVER_T`
               - G/T constraint.
 
-            * - :py:attr:`~OVER_NO`
+            * - :py:attr:`~C_OVER_N0`
               - C/No constraint.
 
-            * - :py:attr:`~OVER_N`
+            * - :py:attr:`~C_OVER_N`
               - C/N constraint.
 
             * - :py:attr:`~LINK_MARGIN`
               - Link Margin constraint.
 
-            * - :py:attr:`~EB_OVER_NO`
+            * - :py:attr:`~EB_OVER_N0`
               - Energy per bit to noise ratio (Eb/No) constraint.
 
             * - :py:attr:`~BIT_ERROR_RATE`
               - Bit Error Rate constraint.
 
-            * - :py:attr:`~POL_RELATIVE_ANGLE`
+            * - :py:attr:`~POLARIZATION_RELATIVE_ANGLE`
               - Polarization Relative Angle constraint.
 
             * - :py:attr:`~COMM_PLUGIN`
@@ -490,16 +490,16 @@ Overview
             * - :py:attr:`~POWER_FLUX_DENSITY`
               - Power Flux Density constraint.
 
-            * - :py:attr:`~TOTAL_RCVD_REFRACTION_POWER`
+            * - :py:attr:`~TOTAL_RECEIVED_REFRACTION_POWER`
               - Total Received Rf Power constraint.
 
-            * - :py:attr:`~OVER_NO_PLUS_IO`
+            * - :py:attr:`~C_OVER_N0_PLUS_I0`
               - C/No+Io constraint.
 
-            * - :py:attr:`~OVER_N_PLUS_I`
+            * - :py:attr:`~C_OVER_N_PLUS_I`
               - C/N+I constraint.
 
-            * - :py:attr:`~OVER_I`
+            * - :py:attr:`~C_OVER_I`
               - C/I constraint.
 
             * - :py:attr:`~J_OVER_S`
@@ -508,7 +508,7 @@ Overview
             * - :py:attr:`~DELTA_T_OVER_T`
               - Delta T/T constraint.
 
-            * - :py:attr:`~EB_OVER_NO_PLUS_IO`
+            * - :py:attr:`~EB_OVER_N0_PLUS_I0`
               - Eb/No+Io constraint.
 
             * - :py:attr:`~BER_PLUS_I`
@@ -523,7 +523,7 @@ Overview
             * - :py:attr:`~CODE_TRACK`
               - Code Track constraint.
 
-            * - :py:attr:`~NO_IGPS_CHAIN`
+            * - :py:attr:`~C_OVER_N0_PLUS_I_GPS_CHANNEL`
               - CNoIGPSCh constraint.
 
             * - :py:attr:`~ACCESS_CONSTRAINT_PLUGIN`
@@ -535,7 +535,7 @@ Overview
             * - :py:attr:`~SPECTRAL_FLUX_DENSITY`
               - Spectral Flux Density constraint.
 
-            * - :py:attr:`~CRDN_CONDITION`
+            * - :py:attr:`~CONDITION`
               - Crdn Condition constraint.
 
 

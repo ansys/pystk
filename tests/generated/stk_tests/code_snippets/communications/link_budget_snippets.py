@@ -42,8 +42,8 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         )
 
         sat: "Satellite" = Satellite(LinkBudgetSnippets.m_Satellite)
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
+        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         twoBody.initial_state.representation.epoch = "1 Jan 2012 12:00:00.000"
         twoBody.initial_state.representation.assign_classical(
@@ -123,13 +123,13 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         simpleRcvr.g_over_t = 60.0
 
         # Create an access object for the access between the transmitter and recevier objects
-        linkAccess: "StkAccess" = xmtrAsStkObject.get_access_to_object(rcvrAsStkObject)
+        linkAccess: "Access" = xmtrAsStkObject.get_access_to_object(rcvrAsStkObject)
 
         # Compute access
         linkAccess.compute_access()
 
         # Get the access intervals
-        accessIntervals: "IntervalCollection" = linkAccess.computed_access_interval_times
+        accessIntervals: "TimeIntervalCollection" = linkAccess.computed_access_interval_times
 
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "Eb/No", "BER"]
@@ -145,7 +145,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
             (startTime, stopTime) = accessIntervals.get_interval(index0)
 
-            result: "DataProviderResult" = dp.exec_elements(startTime, stopTime, 60, dataPrvElements)
+            result: "DataProviderResult" = dp.execute_elements(startTime, stopTime, 60, dataPrvElements)
 
             timeValues = result.data_sets[0].get_values()
             ebno = result.data_sets[1].get_values()
@@ -223,10 +223,12 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         complexRcvr.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        complexRcvr.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+        complexRcvr.system_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 
         # Enable the antenna noise temperature computation
-        complexRcvr.system_noise_temperature.antenna_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+        complexRcvr.system_noise_temperature.antenna_noise_temperature.compute_type = (
+            NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+        )
         complexRcvr.system_noise_temperature.antenna_noise_temperature.use_rain = True
 
         # Orient the antenna object's boresight to point directly at the transmitter's location
@@ -244,13 +246,13 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         parabolic.diameter = 5.0
 
         # Create an access object for the access between the transmitter and recevier objects
-        linkAccess: "StkAccess" = xmtrAsStkObject.get_access_to_object(rcvrAsStkObject)
+        linkAccess: "Access" = xmtrAsStkObject.get_access_to_object(rcvrAsStkObject)
 
         # Compute access
         linkAccess.compute_access()
 
         # Get the access intervals
-        accessIntervals: "IntervalCollection" = linkAccess.computed_access_interval_times
+        accessIntervals: "TimeIntervalCollection" = linkAccess.computed_access_interval_times
 
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "Xmtr Gain", "Rcvr Gain", "Eb/No", "BER"]
@@ -266,7 +268,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
             (startTime, stopTime) = accessIntervals.get_interval(index0)
 
-            result: "DataProviderResult" = dp.exec_elements(startTime, stopTime, 60, dataPrvElements)
+            result: "DataProviderResult" = dp.execute_elements(startTime, stopTime, 60, dataPrvElements)
 
             timeValues = result.data_sets[0].get_values()
             xmtrGain = result.data_sets[1].get_values()

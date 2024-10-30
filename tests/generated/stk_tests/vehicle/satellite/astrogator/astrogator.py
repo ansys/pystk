@@ -26,7 +26,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
             EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-            EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+            EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
             EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
         except Exception as e:
@@ -268,7 +268,7 @@ class EarlyBoundTests(TestBase):
         satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "REQ57491"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
         ts: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
@@ -297,7 +297,7 @@ class EarlyBoundTests(TestBase):
         satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ENG56187"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
         sequence: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
@@ -332,7 +332,7 @@ class EarlyBoundTests(TestBase):
         satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ReferencePoint"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
         prop: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition: "StoppingCondition" = clr.CastAs(
@@ -359,7 +359,7 @@ class EarlyBoundTests(TestBase):
         satellite: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ENG55298"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
         sequence: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
@@ -872,7 +872,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
@@ -981,23 +981,23 @@ class EarlyBoundTests(TestBase):
 
         sc1.set_base_selection(BASE_SELECTION.SPECIFY)
         Assert.assertEqual(BASE_SELECTION.SPECIFY, sc1.base_selection_type, "wrong BaseSelectionType")
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", sc1.base_selection.name)
 
-        sc1.target_object.bind_to("Facility/Facility1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
         Assert.assertEqual("Facility/Facility1", sc1.target_object.name)
-        sc1.target_object.bind_to("Star/Star1")
+        sc1.target_object.bind_to_object("Star/Star1")
         Assert.assertEqual("Star/Star1", sc1.target_object.name)
 
         with pytest.raises(Exception):
-            sc1.base_selection.bind_to("Planet/Planet1")
+            sc1.base_selection.bind_to_object("Planet/Planet1")
 
-        sc1.target_object.bind_to("Facility/Facility1")
-        sc1.base_selection.bind_to("Planet/Planet1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
+        sc1.base_selection.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
-            sc1.target_object.bind_to("Star/Star1")
+            sc1.target_object.bind_to_object("Star/Star1")
 
-        sc1.base_selection.bind_to("Aircraft/Boing737")
+        sc1.base_selection.bind_to_object("Aircraft/Boing737")
 
         sc1.use_light_time_delay = False
         Assert.assertFalse(sc1.use_light_time_delay)
@@ -1009,24 +1009,24 @@ class EarlyBoundTests(TestBase):
         sc1.clock_host = IV_CLOCK_HOST.BASE
         Assert.assertEqual(IV_CLOCK_HOST.BASE, sc1.clock_host)
 
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
         with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
 
-        sc1.base_selection.bind_to("Planet/Planet1")
+        sc1.base_selection.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
 
-        sc1.base_selection.bind_to("Aircraft/Boing737")
-        sc1.target_object.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Aircraft/Boing737")
+        sc1.target_object.bind_to_object("Satellite/Satellite1")
         with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
 
-        sc1.target_object.bind_to("Planet/Planet1")
+        sc1.target_object.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
             sc1.clock_host = IV_CLOCK_HOST.BASE
 
-        sc1.target_object.bind_to("Facility/Facility1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
 
         sc1.signal_sense = IV_TIME_SENSE.RECEIVE
         Assert.assertEqual(IV_TIME_SENSE.RECEIVE, sc1.signal_sense)
@@ -1066,7 +1066,7 @@ class EarlyBoundTests(TestBase):
         sc1.sequence = "Stop"
         Assert.assertEqual("Stop", sc1.sequence)
 
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
 
         sc: "LightingStoppingCondition" = LightingStoppingCondition(
             propagate.stopping_conditions.add("Lighting").properties
@@ -1174,7 +1174,7 @@ class EarlyBoundTests(TestBase):
     def test_Follow(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Follow START")
         follow: "MCSFollow" = MCSFollow(EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.FOLLOW, "Follow", "-"))
-        follow.leader.bind_to("Missile/Missile1")
+        follow.leader.bind_to_object("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", follow.leader.name)
         Assert.assertIsNotNone(follow.leader.linked_object)
         self.TestSegment(clr.CastAs(follow, IMCSSegment))
@@ -1224,8 +1224,8 @@ class EarlyBoundTests(TestBase):
         leader: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AstgLeader57325"), Satellite
         )
-        leader.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        follow.leader.bind_to((IStkObject(leader)).path)
+        leader.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        follow.leader.bind_to_object((IStkObject(leader)).path)
         Assert.assertEqual(follow.leader.name, "Satellite/AstgLeader57325")
 
         follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER
@@ -1453,36 +1453,36 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission START")
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("Test")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
         #
         scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.start_time = "1 Jan 1993 00:00:00.00"
         scene.stop_time = "1 Jan 1994 00:00:00.00"
         if not TestBase.NoGraphicsMode:
-            scene.animation.start_time = "1 Jan 1993 00:00:00.00"
-            scene.animation.enable_anim_cycle_time = True
-            scene.animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
-            scene.animation.anim_cycle_time = "1 Jan 1994 00:00:00.00"
+            scene.animation_settings.start_time = "1 Jan 1993 00:00:00.00"
+            scene.animation_settings.enable_anim_cycle_time = True
+            scene.animation_settings.animation_end_loop_type = SCENARIO_END_LOOP_TYPE.END_TIME
+            scene.animation_settings.animation_cycle_time = "1 Jan 1994 00:00:00.00"
             (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                scene.animation.start_time = "1 Jan 1993 00:00:00.00"
+                scene.animation_settings.start_time = "1 Jan 1993 00:00:00.00"
 
         #
         sun: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Sun"))
-        sun.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        sun.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
         pos: "PlanetPositionCentralBody" = PlanetPositionCentralBody(sun.position_source_data)
-        pos.auto_rename = True
+        pos.rename_automatically = True
         pos.central_body = "Sun"
         #
         moon: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Moon"))
-        moon.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        moon.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
         pos = PlanetPositionCentralBody(moon.position_source_data)
         pos.central_body = "Moon"
         #
         earth: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Earth"))
-        earth.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        earth.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
         pos = PlanetPositionCentralBody(earth.position_source_data)
         pos.central_body = "Earth"
 
@@ -1490,15 +1490,15 @@ class EarlyBoundTests(TestBase):
         sat: "Satellite" = Satellite(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LunarProbe")
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = MCSDriver(sat.propagator)
         driver.options.draw_trajectory_in_2d = True
         driver.options.draw_trajectory_in_3d = True
         driver.options.update_animation_time_for_all_objects = True
         if not TestBase.NoGraphicsMode:
-            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-            sat.graphics.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_NONE)
-            sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_ALL)
+            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
+            sat.graphics.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.NONE)
+            sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.ALL)
             sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
             sat.graphics_3d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
             markerData: "Graphics3DMarkerShape" = Graphics3DMarkerShape(sat.graphics_3d.model.orbit_marker.marker_data)
@@ -1510,7 +1510,7 @@ class EarlyBoundTests(TestBase):
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
+                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
 
@@ -1877,7 +1877,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission END")
 
@@ -2219,7 +2219,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
@@ -2426,7 +2426,7 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
@@ -2506,7 +2506,7 @@ longitude = 121;"""
         anotherSat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NonGator"), Satellite
         )
-        newSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        newSat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         otherMCS: "MCSDriver" = clr.CastAs(newSat.propagator, MCSDriver)
         prop: "MCSPropagate" = clr.CastAs(EarlyBoundTests.AG_VA.main_sequence["Propagate"], MCSPropagate)
         result: "IComponentInfo" = (IMCSSegment(prop)).results.add(
@@ -2519,10 +2519,10 @@ longitude = 121;"""
         Assert.assertEqual(SEGMENT_STATE.FINAL, diffAcrossSegs.segment_state_to_use)
         STKUtilHelper.TestComponent(clr.CastAs(diffAcrossSegs, IComponentInfo), False)
         refSat: "LinkToObject" = diffAcrossSegs.reference_satellite
-        refSat.bind_to("Satellite/DiffAcross")
+        refSat.bind_to_object("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
         with pytest.raises(Exception):
-            refSat.bind_to("Satellite/NonGator")
+            refSat.bind_to_object("Satellite/NonGator")
         diffAcrossSegs.calculation_object_name = "Keplerian Elems/Eccentricity"
         Assert.assertEqual("Eccentricity", diffAcrossSegs.calculation_object_name)
         diffAcrossSegs.other_segment_name = "Propagate"
@@ -2534,10 +2534,10 @@ longitude = 121;"""
         valueAtSegment: "StateCalcValueAtSegmentOtherSat" = clr.CastAs(result, StateCalcValueAtSegmentOtherSat)
         STKUtilHelper.TestComponent(clr.CastAs(valueAtSegment, IComponentInfo), False)
         refSat = valueAtSegment.reference_satellite
-        refSat.bind_to("Satellite/DiffAcross")
+        refSat.bind_to_object("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
         with pytest.raises(Exception):
-            refSat.bind_to("Satellite/NonGator")
+            refSat.bind_to_object("Satellite/NonGator")
         valueAtSegment.calculation_object_name = "Keplerian Elems/Eccentricity"
         Assert.assertEqual("Eccentricity", valueAtSegment.calculation_object_name)
         valueAtSegment.other_segment_name = "Propagate"
@@ -2596,7 +2596,9 @@ longitude = 121;"""
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
         (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
-        spatialInfo: "VehicleSpatialInfo" = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo: "VehicleSpatialInformation" = (
+            IProvideSpatialInfo(EarlyBoundTests.AG_SAT)
+        ).get_spatial_information(False)
         spatialState: "SpatialState" = spatialInfo.get_state((IMCSSegment(initialState)).initial_state.epoch)
 
         # the appended run will be 2 hours long
@@ -2629,7 +2631,7 @@ longitude = 121;"""
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will be two hours
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(initialState)).initial_state.epoch)
 
         startTime = convUtil.new_date("UTCG", str(spatialState.start_time))
@@ -2645,7 +2647,7 @@ longitude = 121;"""
         elems = ["Time", "Semimajor_Axis"]
 
         # get the sma at the end of the propagate2 segment
-        resInfo: "DataProviderResult" = dp.exec_single_elements(str(spatialState.stop_time), elems)
+        resInfo: "DataProviderResult" = dp.execute_single_elements(str(spatialState.stop_time), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
 
         Assert.assertLess(float((result[0])), 7000)  # show that the maneuver doesn't occur
@@ -2679,7 +2681,7 @@ longitude = 121;"""
         # span is 12 hours 1 second.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
         # need to get a new spatial state since the old one isn't in the ephemeris anymore
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2694,12 +2696,12 @@ longitude = 121;"""
 
         firstTestPoint: "Date" = startTime.add("sec", 1800)  # puts us in the middle of the one hour propagate
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         secondTestPoint: "Date" = startTime.add("sec", 21600)  # puts us in middle of long propagate
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2726,7 +2728,7 @@ longitude = 121;"""
         (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2744,7 +2746,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2752,14 +2754,14 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         # test that the long propagate is still intact and based on the post maneuver state
 
         thirdTestPoint: "Date" = startTime.add("sec", 21600)
-        resInfo = dp.exec_single_elements(thirdTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(thirdTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2787,7 +2789,7 @@ longitude = 121;"""
         # append from time using the final time of propagate, coincident with maneuver, orbit should
         # be the postmaneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2805,7 +2807,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2814,7 +2816,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2842,7 +2844,7 @@ longitude = 121;"""
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2859,7 +2861,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2868,7 +2870,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
         # endregion
@@ -2899,7 +2901,7 @@ longitude = 121;"""
         # span is 12 hours.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2914,12 +2916,12 @@ longitude = 121;"""
 
         firstTestPoint = startTime.add("sec", 1800)  # puts us in the middle of the one hour propagate
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         secondTestPoint = startTime.add("sec", 21600)  # puts us in middle of long propagate
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
         # endregion
@@ -2947,7 +2949,7 @@ longitude = 121;"""
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -2965,7 +2967,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2973,14 +2975,14 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         # test that the long propagate is still intact and based on the post maneuver state
 
         thirdTestPoint = startTime.add("sec", 21600)
-        resInfo = dp.exec_single_elements(thirdTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(thirdTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
         # endregion
@@ -3008,7 +3010,7 @@ longitude = 121;"""
         # append from state using the intial state of the maneuever, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
         spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
@@ -3025,7 +3027,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -3034,7 +3036,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -3044,7 +3046,7 @@ longitude = 121;"""
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
@@ -3055,7 +3057,7 @@ longitude = 121;"""
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "RunCodes"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         targSeq: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
@@ -3123,7 +3125,7 @@ longitude = 121;"""
         # TODO: fix NUNIT2JUNIT test conversion to handle OnPercentCompleteUpdate tests
         (IStkObject(sat)).unload()
 
-    def Application_OnPercentCompleteUpdate(self, args: "PctCmpltEventArgs"):
+    def Application_OnPercentCompleteUpdate(self, args: "ProgressBarEventArguments"):
         args.cancel()
 
     # endregion
@@ -3134,7 +3136,7 @@ longitude = 121;"""
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NumIterations"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         targSeq: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
@@ -3168,10 +3170,10 @@ longitude = 121;"""
         Assert.assertAlmostEqual(86400.0, float(diffCorr.results[0].values[12]), delta=1e-06)
 
         # make sure Values are being treated as a quantity
-        TestBase.Application.current_scenario.root.unit_preferences.set_current_unit("TimeUnit", "day")
+        TestBase.Application.current_scenario.root.units_preferences.set_current_unit("TimeUnit", "day")
         Assert.assertAlmostEqual(1.0, float(diffCorr.control_parameters[0].values[12]), delta=1e-06)
         Assert.assertAlmostEqual(1.0, float(diffCorr.results[0].values[12]), delta=1e-06)
-        TestBase.Application.current_scenario.root.unit_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.current_scenario.root.units_preferences.set_current_unit("TimeUnit", "sec")
 
         # test "Values" for dates
         diffCorr.control_parameters[0].enable = False
@@ -3216,7 +3218,7 @@ longitude = 121;"""
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CustomUnits"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         targSeq: "MCSTargetSequence" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
@@ -3265,7 +3267,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeodeticInitState"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         initState: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
         initState.coord_system_name = "CentralBody/Earth Inertial"
@@ -3329,7 +3331,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NormalizedVectors"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         initState: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
@@ -3383,7 +3385,7 @@ longitude = 121;"""
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ManeuverSummary"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         # set up the epochs
@@ -3444,7 +3446,7 @@ longitude = 121;"""
         # Run the data provider
         satObj: "IStkObject" = clr.CastAs(sat, IStkObject)
         intvl: "DataProviderInterval" = clr.CastAs(satObj.data_providers["Maneuver Summary"], DataProviderInterval)
-        result: "DataProviderResult" = intvl.exec(scene.start_time, scene.stop_time)
+        result: "DataProviderResult" = intvl.execute(scene.start_time, scene.stop_time)
         intervals: "DataProviderResultIntervalCollection" = result.intervals
 
         Assert.assertEqual("3 Jan 2010 00:00:00.000", intervals[0].start_time)
@@ -3532,7 +3534,7 @@ longitude = 121;"""
 
         # Run the data provider again
         intvl = clr.CastAs(satObj.data_providers["Maneuver Summary"], DataProviderInterval)
-        result = intvl.exec(scene.start_time, scene.stop_time)
+        result = intvl.execute(scene.start_time, scene.stop_time)
         intervals = result.intervals
 
         Assert.assertEqual("1 Jan 2010 23:11:40.000", intervals[0].start_time)
@@ -3607,7 +3609,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ScriptingToolParams"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-")
         driver.main_sequence.cut("Propagate")
@@ -3644,13 +3646,13 @@ longitude = 121;"""
             60, float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
 
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "hr")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "hr")
         parameter.use_max_value = True
         parameter.max_value = 70  # should be hours
         Assert.assertAlmostEqual(70, float(parameter.max_value), delta=1e-13)
         parameter.parameter_value = 60  # this should be 60 hours
         sequence.apply_script()
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
         Assert.assertAlmostEqual(
             (60 * 3600), float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
@@ -3804,7 +3806,7 @@ longitude = 121;"""
         Assert.assertEqual("EpSec", parameter.unit)
 
         # switch object model to use epsec
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         parameter.parameter_value = 0.0
         with pytest.raises(Exception):
             parameter.max_value = 100.4
@@ -3832,7 +3834,7 @@ longitude = 121;"""
 
         parameter.unit = "UTCG"
         Assert.assertEqual("UTCG", parameter.unit)
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         parameter.parameter_value = "21 Dec 2012 12:00:00"
         Assert.assertEqual("21 Dec 2012 12:00:00.000", parameter.parameter_value)
         with pytest.raises(Exception):
@@ -4223,7 +4225,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ScriptingToolParamsBUG"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         driver.main_sequence.remove_all()
 
@@ -4339,7 +4341,7 @@ longitude = 121;"""
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG108892"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         maneuver: "MCSManeuver" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MCSManeuver
@@ -4348,8 +4350,8 @@ longitude = 121;"""
         driver.run_mcs()
         # Save the satellite here, and notice the "Begin OverrideTrajectory" section in the file.
 
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
+        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
         # Save the satellite here, and notice that the "Begin OverrideTrajectory" section is NOT in the file.
 
@@ -4412,7 +4414,7 @@ longitude = 121;"""
         sat: "Satellite" = Satellite(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CalculationGraphs")
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = MCSDriver(sat.propagator)
 
         graphs: "CalculationGraphCollection" = driver.calculation_graphs
@@ -4456,7 +4458,7 @@ longitude = 121;"""
         satellite: "Satellite" = Satellite(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TestSat")
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = MCSDriver(satellite.propagator)
 
         driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-")
@@ -4476,7 +4478,7 @@ longitude = 121;"""
         )
         elements = ["Maneuver Number", "Start Time"]
 
-        result: "DataProviderResult" = interval.exec_elements(
+        result: "DataProviderResult" = interval.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements,
@@ -4490,7 +4492,7 @@ longitude = 121;"""
         )
         elements2 = ["Segment Name", "Segment Type", "Start Time"]
 
-        result2: "DataProviderResult" = interval2.exec_elements(
+        result2: "DataProviderResult" = interval2.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements2,
@@ -4505,7 +4507,7 @@ longitude = 121;"""
 
         elements3 = []
 
-        result3: "DataProviderResult" = interval3.exec_elements(
+        result3: "DataProviderResult" = interval3.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements3,
@@ -4519,7 +4521,7 @@ longitude = 121;"""
         )
         elements4 = ["Bogus"]
         with pytest.raises(Exception):
-            result4: "DataProviderResult" = interval4.exec_elements(
+            result4: "DataProviderResult" = interval4.execute_elements(
                 (Scenario(TestBase.Application.current_scenario)).start_time,
                 (Scenario(TestBase.Application.current_scenario)).stop_time,
                 elements4,
@@ -4537,7 +4539,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CompBrowsCutCopyPaste"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         prop1: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
 
@@ -5448,7 +5450,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ComponentsInFolders"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         astComps: "ComponentInfoCollection" = (
@@ -5541,7 +5543,7 @@ longitude = 121;"""
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "VGT_Space"), Satellite
         )
 
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         propSeg: "IMCSSegment" = driver.main_sequence["Propagate"]
         vecX: "StateCalcVectorX" = StateCalcVectorX(propSeg.results.add("Vector/Vector X"))
@@ -5606,7 +5608,7 @@ longitude = 121;"""
         sat78776: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Sat78776"), Satellite
         )
-        sat78776.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat78776.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat78776.propagator, MCSDriver)
         prop: "MCSPropagate" = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MCSPropagate

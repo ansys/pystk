@@ -50,9 +50,9 @@ class AttitudeSnippets(CodeSnippetsTestBase):
         self.SetAttitudeProfileTypeIsSupported(AttitudeSnippets.m_Object)
 
     def SetAttitudeProfileTypeIsSupported(self, satellite: "Satellite"):
-        standard: "VehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, VehicleOrbitAttitudeStandard)
-        if standard.basic.is_profile_type_supported(VEHICLE_PROFILE.PROFILE_SPINNING):
-            standard.basic.set_profile_type(VEHICLE_PROFILE.PROFILE_SPINNING)
+        standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
+        if standard.basic.is_profile_type_supported(ATTITUDE_PROFILE.SPINNING):
+            standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
 
     # endregion
 
@@ -61,10 +61,10 @@ class AttitudeSnippets(CodeSnippetsTestBase):
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(AttitudeSnippets.m_Object)
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self, satellite: "Satellite"):
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.ATTITUDE_STANDARD)
-        standard: "VehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, VehicleOrbitAttitudeStandard)
-        standard.basic.set_profile_type(VEHICLE_PROFILE.PROFILE_INERTIALLY_FIXED)
-        interfix: "VehicleProfileInertial" = clr.CastAs(standard.basic.profile, VehicleProfileInertial)
+        satellite.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
+        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        interfix: "AttitudeProfileInertial" = clr.CastAs(standard.basic.profile, AttitudeProfileInertial)
 
         interfix.inertial.assign_quaternion(-0.34298, -0.47081, 0.70345, 0.40725)
 
@@ -73,7 +73,8 @@ class AttitudeSnippets(CodeSnippetsTestBase):
     # region AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF
     def test_AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(self):
         dtTime: "Date" = CodeSnippetsTestBase.m_Root.conversion_utility.new_date(
-            CodeSnippetsTestBase.m_Root.unit_preferences.get_current_unit_abbrv("DateFormat"), "1 Jan 2012 12:00:00.000"
+            CodeSnippetsTestBase.m_Root.units_preferences.get_current_unit_abbrv("DateFormat"),
+            "1 Jan 2012 12:00:00.000",
         )
         time: str = dtTime.format("UTCG")
         cpfQuaternion = [[time, 0.5, 0.5, 0.5, 0.5], [time, 0.125, 0.25, 0.5, 0.35], [time, 0.35, 0.4, 0.45, 0.5]]
@@ -84,12 +85,12 @@ class AttitudeSnippets(CodeSnippetsTestBase):
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
         self, root: "StkObjectRoot", satellite: "Satellite", cpfQuaternion
     ):
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.ATTITUDE_REAL_TIME)
+        satellite.set_attitude_type(VEHICLE_ATTITUDE.REAL_TIME)
         realtime: "VehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, VehicleAttitudeRealTime)
 
         i: int = 0
         while i <= (len(cpfQuaternion) - 1):
-            realtime.add_cbf_quaternion(
+            realtime.add_quaternion_relative_to_central_body_fixed(
                 cpfQuaternion[i][0],
                 float(cpfQuaternion[i][1]),
                 float(cpfQuaternion[i][2]),
@@ -107,14 +108,14 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite: "Satellite"):
         # Set Attitude to Standard
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.ATTITUDE_STANDARD)
-        # Get VehicleOrbitAttitudeStandard interface
-        standard: "VehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, VehicleOrbitAttitudeStandard)
+        satellite.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        # Get AttitudeStandardOrbit interface
+        standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
 
         # Set Profile to Inertially Fixed
-        standard.basic.set_profile_type(VEHICLE_PROFILE.PROFILE_INERTIALLY_FIXED)
-        # Get VehicleProfileInertial interface
-        interfix: "VehicleProfileInertial" = clr.CastAs(standard.basic.profile, VehicleProfileInertial)
+        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        # Get AttitudeProfileInertial interface
+        interfix: "AttitudeProfileInertial" = clr.CastAs(standard.basic.profile, AttitudeProfileInertial)
 
         interfix.inertial.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123, 20.1, 50.0, 20.0)
 
@@ -126,7 +127,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
     def ConfigureRealTimeAttitude(self, satellite: "Satellite"):
         # set attitude type to real time
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.ATTITUDE_REAL_TIME)
+        satellite.set_attitude_type(VEHICLE_ATTITUDE.REAL_TIME)
         realtime: "VehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, VehicleAttitudeRealTime)
 
         # Set our Attitude Look Ahead method to Extrapolate
@@ -139,6 +140,6 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
         # BlockFactor
         realtime.block_factor = 40
-        realtime.data_reference.set_profile_type(VEHICLE_PROFILE.PROFILE_INERTIALLY_FIXED)
+        realtime.data_reference.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
 
     # endregion

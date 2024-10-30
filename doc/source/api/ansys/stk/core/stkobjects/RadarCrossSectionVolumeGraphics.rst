@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.set_number_of_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -43,7 +43,7 @@ Overview
               - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.azimuth_resolution`
               - Gets the azimuth resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.azimuth_number_of_points`
               - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_start`
               - Gets the elevation start value.
@@ -51,7 +51,7 @@ Overview
               - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_resolution`
               - Gets the elevation resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_number_of_points`
               - Gets the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.color_method`
               - Color method for contours (color ramp or explicit).
@@ -119,8 +119,8 @@ Property detail
 
     Gets the azimuth resolution.
 
-.. py:property:: azimuth_num_points
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.azimuth_num_points
+.. py:property:: azimuth_number_of_points
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.azimuth_number_of_points
     :type: int
 
     Gets the number of azimuth points.
@@ -143,8 +143,8 @@ Property detail
 
     Gets the elevation resolution.
 
-.. py:property:: elevation_num_points
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_num_points
+.. py:property:: elevation_number_of_points
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.elevation_number_of_points
     :type: int
 
     Gets the number of elevation points.
@@ -217,8 +217,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_num_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
-    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.set_num_points
+.. py:method:: set_number_of_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.set_number_of_points
 
     Set the azimuth/elevation ranges and number of points.
 

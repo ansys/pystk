@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.enable_label_max_viewing_dist`
               - Use the maximum viewing distance for displaying the area target label.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_max_viewing_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_maximum_viewing_dist`
               - Specify the maximum distance (distance from the viewer's eye position in 3D to the centroid) at which the area target label is displayed. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_interior`
               - Display the area target as a filled polygon indicating the portion of the globe that the area target covers.
@@ -52,8 +52,8 @@ Property detail
 
     Use the maximum viewing distance for displaying the area target label.
 
-.. py:property:: label_max_viewing_dist
-    :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_max_viewing_dist
+.. py:property:: label_maximum_viewing_dist
+    :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_maximum_viewing_dist
     :type: float
 
     Specify the maximum distance (distance from the viewer's eye position in 3D to the centroid) at which the area target label is displayed. Uses Distance Dimension.

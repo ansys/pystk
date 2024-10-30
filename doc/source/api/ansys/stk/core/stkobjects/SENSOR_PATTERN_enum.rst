@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~EOIR`
               - EOIR: defined by Band Properties.
 
-            * - :py:attr:`~UNKNOWN_PATTERN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown/unsupported sensor pattern.
 
 

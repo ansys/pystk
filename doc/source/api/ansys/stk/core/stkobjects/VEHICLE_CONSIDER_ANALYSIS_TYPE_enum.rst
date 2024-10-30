@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~CONSIDER_ANALYSIS_DRAG`
+            * - :py:attr:`~DRAG`
               - Drag: the consider parameter is the ballistic coefficient B, where B = Cd * DragArea/Mass.
 
-            * - :py:attr:`~CONSIDER_ANALYSIS_SRP`
+            * - :py:attr:`~SOLAR_RADIATION_PRESSURE`
               - Solar radiation pressure (SRP): the consider parameter is K, where K = Cr * SRPArea/Mass.
 
 

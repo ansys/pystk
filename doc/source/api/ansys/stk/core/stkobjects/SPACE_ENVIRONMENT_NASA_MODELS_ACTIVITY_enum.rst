@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - An invalid AgESpEnvNasaModelsActivity value.
 
-            * - :py:attr:`~SOLAR_MIN`
+            * - :py:attr:`~SOLAR_MINIMUM`
               - Set the NASA models to use values appropriate for the minimum of the solar cycle.
 
-            * - :py:attr:`~SOLAR_MAX`
+            * - :py:attr:`~SOLAR_MAXIMUM`
               - Set the NASA models to use values appropriate for the maximum of the solar cycle.
 
 

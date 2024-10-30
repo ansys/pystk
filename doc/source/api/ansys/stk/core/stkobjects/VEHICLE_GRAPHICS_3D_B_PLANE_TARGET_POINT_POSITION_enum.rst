@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~POSITION_CARTESIAN`
+            * - :py:attr:`~CARTESIAN`
               - Cartesian Position.
 
-            * - :py:attr:`~POSITION_POLAR`
+            * - :py:attr:`~POLAR`
               - Polar Position.
 
 

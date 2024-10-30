@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: options
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.options
-    :type: VEHICLE_GRAPHICS_2D_OPTIONS
+    :type: VEHICLE_GRAPHICS_2D_OPTION_TYPE
 
     Options for swath display.
 

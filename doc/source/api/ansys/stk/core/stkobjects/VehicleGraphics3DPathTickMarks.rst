@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.show_graphics`
               - Opt whether to display tick marks.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_type`
               - Get the type of tick marks to display.
@@ -51,8 +51,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.show_graphics
     :type: bool
 
     Opt whether to display tick marks.

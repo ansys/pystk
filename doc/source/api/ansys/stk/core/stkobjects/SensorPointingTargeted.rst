@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargeted.access_times
-    :type: AccessTimeCollection
+    :type: AccessTargetTimesCollection
 
     Get the access periods between the sensor and its target(s).
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargeted.advanced
-    :type: SensorAccessAdvanced
+    :type: SensorAccessAdvancedSettings
 
     Get advanced targeting properties used for access computations.
 

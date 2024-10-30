@@ -40,11 +40,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
         AviatorCodeSnippets.AG_Scenario = scenario
         AviatorCodeSnippets.AG_AC = Aircraft((scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AviatorAC")))
         # Set to Propagator to Aviator
-        AviatorCodeSnippets.AG_AC.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+        AviatorCodeSnippets.AG_AC.set_route_type(PROPAGATOR_TYPE.AVIATOR)
         # Get the aircrafts route (still on the STKObjects side)
-        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(
-            AviatorCodeSnippets.AG_AC.route, VehiclePropagatorAviator
-        )
+        aircraftRoute: "PropagatorAviator" = clr.CastAs(AviatorCodeSnippets.AG_AC.route, PropagatorAviator)
         # Get the Aviator propagator
         AviatorCodeSnippets.AG_AvtrProp = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
         # Get the Aviator mission
@@ -81,9 +79,9 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def ConfigureAviatorPropagator(self, aircraft: "Aircraft"):
         # Set to Propagator to Aviator
-        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+        aircraft.set_route_type(PROPAGATOR_TYPE.AVIATOR)
         # Get the aircraft's route
-        aircraftRoute: "VehiclePropagatorAviator" = clr.CastAs(aircraft.route, VehiclePropagatorAviator)
+        aircraftRoute: "PropagatorAviator" = clr.CastAs(aircraft.route, PropagatorAviator)
         # Get the Aviator propagator
         propagator: "AviatorPropagator" = clr.CastAs(aircraftRoute.aviator_propagator, AviatorPropagator)
         # Get the Aviator mission
@@ -468,7 +466,7 @@ class AviatorCodeSnippets(CodeSnippetsTestBase):
 
     def ConfigureProcedureTimeOptions(self, procedure: "IProcedure"):
         # Get the time in epoch seconds
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         # Get the time options
         timeOptions: "ProcedureTimeOptions" = procedure.time_options
         # Get the start time

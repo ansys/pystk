@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DIRECTION_ASCENDING`
+            * - :py:attr:`~ASCENDING`
               - Ascending: constrain access to the ascending side of the satellite's ground track, defined as the portions of the ground track where the Earth-fixed latitude increases.
 
-            * - :py:attr:`~DIRECTION_DESCENDING`
+            * - :py:attr:`~DESCENDING`
               - Descending: constrain access to the descending side of the satellite's ground track, defined as the portions of the ground track where the Earth-fixed latitude decreases.
 
 

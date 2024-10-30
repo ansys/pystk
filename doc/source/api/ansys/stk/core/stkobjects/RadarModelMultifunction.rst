@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.location
-    :type: CRLocation
+    :type: CommRadCartesianLocation
 
     Gets the radar location object.
 

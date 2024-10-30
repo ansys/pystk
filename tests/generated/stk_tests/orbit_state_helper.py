@@ -8,7 +8,7 @@ class OrbitStateHelper(object):
     def __init__(self, oApplication: "StkObjectRoot"):
         self.m_oCartesian: "OrbitStateCartesian" = None
         self.m_oClassical: "OrbitStateClassical" = None
-        self.m_oGeodetic: "OrbitStateGeodetic" = None
+        self.m_oGeodetic: "OrbitStateDetic" = None
         self.m_oDelaunay: "OrbitStateDelaunay" = None
         self.m_oEquinoctial: "OrbitStateEquinoctial" = None
         self.m_oMixed: "OrbitStateMixedSpherical" = None
@@ -16,7 +16,7 @@ class OrbitStateHelper(object):
         self.m_logger = Logger.Instance
         Assert.assertIsNotNone(oApplication)
         self.m_oApplication: "StkObjectRoot" = oApplication
-        self.m_oUnits: "UnitPreferencesDimensionCollection" = self.m_oApplication.unit_preferences
+        self.m_oUnits: "UnitPreferencesDimensionCollection" = self.m_oApplication.units_preferences
 
     # region CoordinateSystemTest
     def CoordinateSystemTest(self, eOrbitStateType: "ORBIT_STATE_TYPE", eSystemType: "COORDINATE_SYSTEM"):
@@ -184,7 +184,7 @@ class OrbitStateHelper(object):
         self.ClassicalTest()
 
         # Geodetic OrbitState test
-        self.m_oGeodetic = OrbitStateGeodetic(oOrbitState.convert_to(ORBIT_STATE_TYPE.GEODETIC))
+        self.m_oGeodetic = OrbitStateDetic(oOrbitState.convert_to(ORBIT_STATE_TYPE.GEODETIC))
         Assert.assertIsNotNone(self.m_oGeodetic)
         self.m_logger.WriteLine6("\tNew OrbitState type is: {0}", self.m_oGeodetic.orbit_state_type)
         self.m_oGeodetic.assign(oOrbitState)
@@ -466,14 +466,14 @@ class OrbitStateHelper(object):
 
         # SizeShape test
         self.m_logger.WriteLine6("\t\tCurrent SizeShape type is: {0}", self.m_oClassical.size_shape_type)
-        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE)
-        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_MEAN_MOTION)
-        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD)
-        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_RADIUS)
-        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.ALTITUDE)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.MEAN_MOTION)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.PERIOD)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.RADIUS)
+        self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS)
         try:
-            self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_UNKNOWN)
-            Assert.fail("Cannot set CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_UNKNOWN.")
+            self.ClassicalSizeShape(CLASSICAL_SIZE_SHAPE.UNKNOWN)
+            Assert.fail("Cannot set CLASSICAL_SIZE_SHAPE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -486,15 +486,15 @@ class OrbitStateHelper(object):
 
         # Location test
         self.m_logger.WriteLine6("\t\tCurrent Location type is: {0}", self.m_oClassical.location_type)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_ARGUMENT_OF_LATITUDE)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_ECCENTRIC_ANOMALY)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_MEAN_ANOMALY)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TIME_PAST_AN)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TIME_PAST_PERIGEE)
-        self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY)
+        self.ClassicalLocation(CLASSICAL_LOCATION.ARGUMENT_OF_LATITUDE)
+        self.ClassicalLocation(CLASSICAL_LOCATION.ECCENTRIC_ANOMALY)
+        self.ClassicalLocation(CLASSICAL_LOCATION.MEAN_ANOMALY)
+        self.ClassicalLocation(CLASSICAL_LOCATION.TIME_PAST_ASCENDING_NODE)
+        self.ClassicalLocation(CLASSICAL_LOCATION.TIME_PAST_PERIGEE)
+        self.ClassicalLocation(CLASSICAL_LOCATION.TRUE_ANOMALY)
         try:
-            self.ClassicalLocation(CLASSICAL_LOCATION.LOCATION_UNKNOWN)
-            Assert.fail("Cannot set CLASSICAL_LOCATION.LOCATION_UNKNOWN.")
+            self.ClassicalLocation(CLASSICAL_LOCATION.UNKNOWN)
+            Assert.fail("Cannot set CLASSICAL_LOCATION.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -603,15 +603,15 @@ class OrbitStateHelper(object):
         self.m_oClassical.size_shape_type = eShapeType
         self.m_logger.WriteLine6("\t\tNew SizeShape type is: {0}", self.m_oClassical.size_shape_type)
         Assert.assertEqual(eShapeType, self.m_oClassical.size_shape_type)
-        if eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE:
+        if eShapeType == CLASSICAL_SIZE_SHAPE.ALTITUDE:
             self.ClassicalSizeShapeAltitude(ClassicalSizeShapeAltitude(self.m_oClassical.size_shape))
-        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_MEAN_MOTION:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.MEAN_MOTION:
             self.ClassicalSizeShapeMeanMotion(ClassicalSizeShapeMeanMotion(self.m_oClassical.size_shape))
-        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.PERIOD:
             self.ClassicalSizeShapePeriod(ClassicalSizeShapePeriod(self.m_oClassical.size_shape))
-        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_RADIUS:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.RADIUS:
             self.ClassicalSizeShapeRadius(ClassicalSizeShapeRadius(self.m_oClassical.size_shape))
-        elif eShapeType == CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_SEMIMAJOR_AXIS:
+        elif eShapeType == CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS:
             self.ClassicalSizeShapeSemimajorAxis(ClassicalSizeShapeSemimajorAxis(self.m_oClassical.size_shape))
         else:
             Assert.fail("Invalid SizeShape type!")
@@ -943,14 +943,14 @@ class OrbitStateHelper(object):
         # base properties test
         self.m_logger.WriteLine("\t\t\tCurent values:")
         self.m_logger.WriteLine6("\t\t\t\t Inclination is: {0}", oOrientation.inclination)
-        self.m_logger.WriteLine6("\t\t\t\t ArgOfPerigee is: {0}", oOrientation.arg_of_perigee)
+        self.m_logger.WriteLine6("\t\t\t\t ArgOfPerigee is: {0}", oOrientation.argument_of_periapsis)
         oOrientation.inclination = 1.23456
-        oOrientation.arg_of_perigee = 2.34561
+        oOrientation.argument_of_periapsis = 2.34561
         self.m_logger.WriteLine("\t\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t\t Inclination is: {0}", oOrientation.inclination)
-        self.m_logger.WriteLine6("\t\t\t\t ArgOfPerigee is: {0}", oOrientation.arg_of_perigee)
+        self.m_logger.WriteLine6("\t\t\t\t ArgOfPerigee is: {0}", oOrientation.argument_of_periapsis)
         Assert.assertEqual(1.23456, oOrientation.inclination)
-        Assert.assertEqual(2.34561, oOrientation.arg_of_perigee)
+        Assert.assertEqual(2.34561, oOrientation.argument_of_periapsis)
         bCaught: bool = False
         try:
             bCaught = False
@@ -965,7 +965,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            oOrientation.arg_of_perigee = -12345.6
+            oOrientation.argument_of_periapsis = -12345.6
 
         except Exception as e:
             bCaught = True
@@ -975,12 +975,12 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set ArgOfPerigee out of bounds")
 
         # AscNode test
-        self.m_logger.WriteLine6("\t\t\tCurent AscNodeType is: {0}", oOrientation.asc_node_type)
+        self.m_logger.WriteLine6("\t\t\tCurent AscNodeType is: {0}", oOrientation.ascending_node_type)
         # LAN test
-        oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_LAN
-        self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
-        Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_LAN, oOrientation.asc_node_type)
-        oLAN: "OrientationAscNodeLAN" = OrientationAscNodeLAN(oOrientation.asc_node)
+        oOrientation.ascending_node_type = ORIENTATION_ASC_NODE.LONGITUDE_ASCENDING_NODE
+        self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.ascending_node_type)
+        Assert.assertEqual(ORIENTATION_ASC_NODE.LONGITUDE_ASCENDING_NODE, oOrientation.ascending_node_type)
+        oLAN: "OrientationLongitudeOfAscending" = OrientationLongitudeOfAscending(oOrientation.ascending_node)
         Assert.assertIsNotNone(oLAN)
         self.m_logger.WriteLine6("\t\t\t\t Current LAN value is: {0}", oLAN.value)
         oLAN.value = 1.23456
@@ -998,10 +998,12 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set LAN.Value out of bounds")
 
         # RAAN test
-        oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-        self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.asc_node_type)
-        Assert.assertEqual(ORIENTATION_ASC_NODE.ASC_NODE_RAAN, oOrientation.asc_node_type)
-        oRAAN: "OrientationAscNodeRAAN" = OrientationAscNodeRAAN(oOrientation.asc_node)
+        oOrientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        self.m_logger.WriteLine6("\t\t\tNew AscNodeType is: {0}", oOrientation.ascending_node_type)
+        Assert.assertEqual(ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE, oOrientation.ascending_node_type)
+        oRAAN: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
+            oOrientation.ascending_node
+        )
         Assert.assertIsNotNone(oRAAN)
         self.m_logger.WriteLine6("\t\t\t\t Current RAAN value is: {0}", oRAAN.value)
         oRAAN.value = 1.23456
@@ -1018,10 +1020,10 @@ class OrbitStateHelper(object):
         if not bCaught:
             Assert.fail("Cannot set RAAN.Value out of bounds")
 
-        # ASC_NODE_UNKNOWN test
+        # UNKNOWN test
         try:
-            oOrientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_UNKNOWN
-            Assert.fail("Cannot set ORIENTATION_ASC_NODE.ASC_NODE_UNKNOWN.")
+            oOrientation.ascending_node_type = ORIENTATION_ASC_NODE.UNKNOWN
+            Assert.fail("Cannot set ORIENTATION_ASC_NODE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -1043,7 +1045,7 @@ class OrbitStateHelper(object):
         self.m_logger.WriteLine6("\t\tNew Location type is: {0}", self.m_oClassical.location_type)
         Assert.assertEqual(eType, self.m_oClassical.location_type)
         bCaught: bool = False
-        if eType == CLASSICAL_LOCATION.LOCATION_ARGUMENT_OF_LATITUDE:
+        if eType == CLASSICAL_LOCATION.ARGUMENT_OF_LATITUDE:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1076,7 +1078,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == CLASSICAL_LOCATION.LOCATION_ECCENTRIC_ANOMALY:
+        elif eType == CLASSICAL_LOCATION.ECCENTRIC_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1109,7 +1111,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == CLASSICAL_LOCATION.LOCATION_MEAN_ANOMALY:
+        elif eType == CLASSICAL_LOCATION.MEAN_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1140,7 +1142,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("AngleUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-        elif eType == CLASSICAL_LOCATION.LOCATION_TIME_PAST_AN:
+        elif eType == CLASSICAL_LOCATION.TIME_PAST_ASCENDING_NODE:
             # set TimeUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
@@ -1148,7 +1150,9 @@ class OrbitStateHelper(object):
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit is: {0}", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
             Assert.assertEqual("hr", self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
 
-            oAN: "ClassicalLocationTimePastAN" = ClassicalLocationTimePastAN(self.m_oClassical.location)
+            oAN: "ClassicalLocationTimePastAscendingNode" = ClassicalLocationTimePastAscendingNode(
+                self.m_oClassical.location
+            )
             Assert.assertIsNotNone(oAN)
             self.m_logger.WriteLine6("\t\t\t Current TimePastAN value is: {0}", oAN.value)
             oAN.value = 1.23456
@@ -1169,7 +1173,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("TimeUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        elif eType == CLASSICAL_LOCATION.LOCATION_TIME_PAST_PERIGEE:
+        elif eType == CLASSICAL_LOCATION.TIME_PAST_PERIGEE:
             # set TimeUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
             self.m_logger.WriteLine5("\t\t\tThe current TimeUnit is: {0}", strUnit)
@@ -1198,7 +1202,7 @@ class OrbitStateHelper(object):
             self.m_oUnits.set_current_unit("TimeUnit", strUnit)
             self.m_logger.WriteLine5("\t\t\tThe new TimeUnit (restored) is: {0}", strUnit)
             Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
-        elif eType == CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY:
+        elif eType == CLASSICAL_LOCATION.TRUE_ANOMALY:
             # set AngleUnit
             strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
             self.m_logger.WriteLine5("\t\t\tThe current AngleUnit is: {0}", strUnit)
@@ -1464,10 +1468,10 @@ class OrbitStateHelper(object):
 
         # Geodetic Size (Altitude) test
         self.m_logger.WriteLine6("\t\tCurrent Size type is: {0}", self.m_oGeodetic.size_type)
-        self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_ALTITUDE
+        self.m_oGeodetic.size_type = GEODETIC_SIZE.ALTITUDE
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
-        Assert.assertEqual(GEODETIC_SIZE.SIZE_ALTITUDE, self.m_oGeodetic.size_type)
-        oAltitude: "GeodeticSizeAltitude" = GeodeticSizeAltitude(self.m_oGeodetic.size)
+        Assert.assertEqual(GEODETIC_SIZE.ALTITUDE, self.m_oGeodetic.size_type)
+        oAltitude: "DeticSizeAltitude" = DeticSizeAltitude(self.m_oGeodetic.size)
         Assert.assertIsNotNone(oAltitude)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Altitude is: {0}", oAltitude.altitude)
@@ -1502,10 +1506,10 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set Rate out of bounds")
 
         # Geodetic Size (Radius) test
-        self.m_oGeodetic.size_type = GEODETIC_SIZE.SIZE_RADIUS
+        self.m_oGeodetic.size_type = GEODETIC_SIZE.RADIUS
         self.m_logger.WriteLine6("\t\tNew Size type is: {0}", self.m_oGeodetic.size_type)
-        Assert.assertEqual(GEODETIC_SIZE.SIZE_RADIUS, self.m_oGeodetic.size_type)
-        oRadius: "GeodeticSizeRadius" = GeodeticSizeRadius(self.m_oGeodetic.size)
+        Assert.assertEqual(GEODETIC_SIZE.RADIUS, self.m_oGeodetic.size_type)
+        oRadius: "DeticSizeRadius" = DeticSizeRadius(self.m_oGeodetic.size)
         Assert.assertIsNotNone(oRadius)
         self.m_logger.WriteLine("\t\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t\t Radius is: {0}", oRadius.radius)
@@ -1568,18 +1572,18 @@ class OrbitStateHelper(object):
         # basic properties test
         self.m_logger.WriteLine("\t\tCurrent values:")
         self.m_logger.WriteLine6("\t\t\t MeanAnomaly is: {0}", self.m_oDelaunay.mean_anomaly)
-        self.m_logger.WriteLine6("\t\t\t ArgOfPerigee is: {0}", self.m_oDelaunay.arg_of_periapsis)
-        self.m_logger.WriteLine6("\t\t\t RAAN is: {0}", self.m_oDelaunay.raan)
+        self.m_logger.WriteLine6("\t\t\t ArgOfPerigee is: {0}", self.m_oDelaunay.argument_of_periapsis)
+        self.m_logger.WriteLine6("\t\t\t RAAN is: {0}", self.m_oDelaunay.right_ascension_ascending_node)
         self.m_oDelaunay.mean_anomaly = 1.23456789
-        self.m_oDelaunay.arg_of_periapsis = 2.34567891
-        self.m_oDelaunay.raan = 3.45678912
+        self.m_oDelaunay.argument_of_periapsis = 2.34567891
+        self.m_oDelaunay.right_ascension_ascending_node = 3.45678912
         self.m_logger.WriteLine("\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t MeanAnomaly is: {0}", self.m_oDelaunay.mean_anomaly)
-        self.m_logger.WriteLine6("\t\t\t ArgOfPerigee is: {0}", self.m_oDelaunay.arg_of_periapsis)
-        self.m_logger.WriteLine6("\t\t\t RAAN is: {0}", self.m_oDelaunay.raan)
+        self.m_logger.WriteLine6("\t\t\t ArgOfPerigee is: {0}", self.m_oDelaunay.argument_of_periapsis)
+        self.m_logger.WriteLine6("\t\t\t RAAN is: {0}", self.m_oDelaunay.right_ascension_ascending_node)
         Assert.assertEqual(1.23456789, self.m_oDelaunay.mean_anomaly)
-        Assert.assertEqual(2.34567891, self.m_oDelaunay.arg_of_periapsis)
-        Assert.assertEqual(3.45678912, self.m_oDelaunay.raan)
+        Assert.assertEqual(2.34567891, self.m_oDelaunay.argument_of_periapsis)
+        Assert.assertEqual(3.45678912, self.m_oDelaunay.right_ascension_ascending_node)
         # out of bounds
         bCaught: bool = False
         try:
@@ -1595,7 +1599,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            self.m_oDelaunay.arg_of_periapsis = -12.34
+            self.m_oDelaunay.argument_of_periapsis = -12.34
 
         except Exception as e:
             bCaught = True
@@ -1606,7 +1610,7 @@ class OrbitStateHelper(object):
 
         try:
             bCaught = False
-            self.m_oDelaunay.raan = 12.34
+            self.m_oDelaunay.right_ascension_ascending_node = 12.34
 
         except Exception as e:
             bCaught = True
@@ -2000,7 +2004,7 @@ class OrbitStateHelper(object):
         self.m_oEquinoctial.p = 3.45678912
         self.m_oEquinoctial.q = 4.56789123
         self.m_oEquinoctial.mean_longitude = 5.67891234
-        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.FORMULATION_POSIGRADE
+        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.POSIGRADE
         self.m_logger.WriteLine("\t\tNew values:")
         self.m_logger.WriteLine6("\t\t\t H is: {0}", self.m_oEquinoctial.h)
         self.m_logger.WriteLine6("\t\t\t K is: {0}", self.m_oEquinoctial.k)
@@ -2013,10 +2017,10 @@ class OrbitStateHelper(object):
         Assert.assertEqual(3.45678912, self.m_oEquinoctial.p)
         Assert.assertEqual(4.56789123, self.m_oEquinoctial.q)
         Assert.assertEqual(5.67891234, self.m_oEquinoctial.mean_longitude)
-        Assert.assertEqual(EQUINOCTIAL_FORMULATION.FORMULATION_POSIGRADE, self.m_oEquinoctial.formulation)
-        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.FORMULATION_RETROGRADE
+        Assert.assertEqual(EQUINOCTIAL_FORMULATION.POSIGRADE, self.m_oEquinoctial.formulation)
+        self.m_oEquinoctial.formulation = EQUINOCTIAL_FORMULATION.RETROGRADE
         self.m_logger.WriteLine6("\t\t\t Formulation is: {0}", self.m_oEquinoctial.formulation)
-        Assert.assertEqual(EQUINOCTIAL_FORMULATION.FORMULATION_RETROGRADE, self.m_oEquinoctial.formulation)
+        Assert.assertEqual(EQUINOCTIAL_FORMULATION.RETROGRADE, self.m_oEquinoctial.formulation)
         # out of bounds
         try:
             bCaught = False
@@ -2329,11 +2333,9 @@ class OrbitStateHelper(object):
 
         # FPA (Horizontal) test
         self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
-        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_HORIZONTAL
+        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
-        Assert.assertEqual(
-            MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_HORIZONTAL, self.m_oMixed.flight_path_angle_type
-        )
+        Assert.assertEqual(MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.HORIZONTAL, self.m_oMixed.flight_path_angle_type)
         oHorizontal: "MixedSphericalFlightPathAngleHorizontal" = MixedSphericalFlightPathAngleHorizontal(
             self.m_oMixed.flight_path_angle
         )
@@ -2354,11 +2356,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_VERTICAL
+        self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oMixed.flight_path_angle_type)
-        Assert.assertEqual(
-            MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_VERTICAL, self.m_oMixed.flight_path_angle_type
-        )
+        Assert.assertEqual(MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.VERTICAL, self.m_oMixed.flight_path_angle_type)
         oVertical: "MixedSphericalFlightPathAngleVertical" = MixedSphericalFlightPathAngleVertical(
             self.m_oMixed.flight_path_angle
         )
@@ -2380,8 +2380,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_UNKNOWN
-            Assert.fail("Cannot set MIXED_SPHERICAL_FLIGHT_PATH_ANGLE.FLIGHT_PATH_ANGLE_UNKNOWN.")
+            self.m_oMixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.UNKNOWN
+            Assert.fail("Cannot set MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))
@@ -2544,9 +2544,9 @@ class OrbitStateHelper(object):
 
         # FPA (Horizontal) test
         self.m_logger.WriteLine6("\t\tCurrent FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
-        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.HORIZONTAL
+        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.HORIZONTAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
-        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_ANGLE.HORIZONTAL, self.m_oSpherical.flight_path_angle_type)
+        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.HORIZONTAL, self.m_oSpherical.flight_path_angle_type)
         oHorizontal: "SphericalFlightPathAngleHorizontal" = SphericalFlightPathAngleHorizontal(
             self.m_oSpherical.flight_path_angle
         )
@@ -2567,9 +2567,9 @@ class OrbitStateHelper(object):
             Assert.fail("Cannot set FPA out of bounds")
 
         # FPA (Vertical) test
-        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.VERTICAL
+        self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.VERTICAL
         self.m_logger.WriteLine6("\t\tNew FPA type is: {0}", self.m_oSpherical.flight_path_angle_type)
-        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_ANGLE.VERTICAL, self.m_oSpherical.flight_path_angle_type)
+        Assert.assertEqual(SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.VERTICAL, self.m_oSpherical.flight_path_angle_type)
         oVertical: "SphericalFlightPathAngleVertical" = SphericalFlightPathAngleVertical(
             self.m_oSpherical.flight_path_angle
         )
@@ -2591,8 +2591,8 @@ class OrbitStateHelper(object):
 
         # FPA (Vertical) test
         try:
-            self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_ANGLE.UNKNOWN
-            Assert.fail("Cannot set SPHERICAL_FLIGHT_PATH_ANGLE.UNKNOWN.")
+            self.m_oSpherical.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.UNKNOWN
+            Assert.fail("Cannot set SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.UNKNOWN.")
 
         except AssertionError as e:
             Assert.fail(str(e))

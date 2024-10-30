@@ -32,7 +32,7 @@ Overview
               - Returns the 3D AzElMask properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics3D.model_pointing`
               - Returns 3D model pointing properties used to point parts of a target model toward a target, such as the Sun or Earth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics3D.aou_label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics3D.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics3D.vapor_trail`
               - Vapor trail attributes.
@@ -94,8 +94,8 @@ Property detail
 
     Returns 3D model pointing properties used to point parts of a target model toward a target, such as the Sun or Earth.
 
-.. py:property:: aou_label_swap_distance
-    :canonical: ansys.stk.core.stkobjects.TargetGraphics3D.aou_label_swap_distance
+.. py:property:: uncertainty_area_label_swap_distance
+    :canonical: ansys.stk.core.stkobjects.TargetGraphics3D.uncertainty_area_label_swap_distance
     :type: Graphics3DLabelSwapDistance
 
     Area of uncertainty label swap distance.

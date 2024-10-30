@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MAX`
+            * - :py:attr:`~MAXIMUM`
               - Max.
 
-            * - :py:attr:`~MAX_OF_SAMPLES`
+            * - :py:attr:`~MAXIMUM_OF_SAMPLES`
               - Max Of Samples.
 
-            * - :py:attr:`~MIN`
+            * - :py:attr:`~MINIMUM`
               - Min.
 
-            * - :py:attr:`~MIN_OF_SAMPLES`
+            * - :py:attr:`~MINIMUM_OF_SAMPLES`
               - Min Of Samples.
 
 

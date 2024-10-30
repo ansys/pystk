@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~ALTITUDE_AT_TERRAIN`
               - Altitude at terrain.
 
-            * - :py:attr:`~ALTITUDE_ABOVE_MSL`
+            * - :py:attr:`~ALTITUDE_ABOVE_MEAN_SEA_LEVEL`
               - Altitude above MSL of the surface.
 
             * - :py:attr:`~USE_POINT_ALTITUDE`

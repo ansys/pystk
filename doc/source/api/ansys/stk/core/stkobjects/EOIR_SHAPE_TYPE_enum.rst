@@ -40,10 +40,10 @@ Overview
             * - :py:attr:`~COUPLER`
               - Shape is defined as a Coupler.
 
-            * - :py:attr:`~GEO_COMM`
+            * - :py:attr:`~GEO_COMM_SATELLITE`
               - Shape is defined as a representative GEO comm satellite.
 
-            * - :py:attr:`~LEO_COMM`
+            * - :py:attr:`~LEO_COMM_SATELLITE`
               - Shape is defined as a representative LEO comm satellite.
 
             * - :py:attr:`~LEO_IMAGING`

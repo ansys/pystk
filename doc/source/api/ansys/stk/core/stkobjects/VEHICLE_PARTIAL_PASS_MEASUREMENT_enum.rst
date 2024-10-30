@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~ANGLE`
               - By Angle: angles are used to measure partial passes.
 
-            * - :py:attr:`~MEAN_ARG_OF_LAT`
+            * - :py:attr:`~MEAN_ARGUMENT_OF_LATITUDE`
               - By Mean Argument of Latitude: passes are measured as the difference in the mean argument of latitude at the current time and that at the start of the pass break divided by 2 pi (argument of latitude = mean anomaly plus argument of perigee).
 
             * - :py:attr:`~TIME`

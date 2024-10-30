@@ -51,10 +51,10 @@ class AircraftSnippets(CodeSnippetsTestBase):
 
     def SetAircraftToUseGreatArcPropagator(self, aircraft: "Aircraft"):
         # Set ship route to great arc
-        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 
         # Retrieve propagator interface
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, VehiclePropagatorGreatArc)
+        propagator: "PropagatorGreatArc" = clr.CastAs(aircraft.route, PropagatorGreatArc)
 
     # endregion
 
@@ -64,21 +64,21 @@ class AircraftSnippets(CodeSnippetsTestBase):
 
     def ConfigureAircraftRouteUsingGreatArcPropagator(self, aircraft: "Aircraft"):
         # Set ship route to great arc
-        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 
         # Retrieve propagator interface
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, VehiclePropagatorGreatArc)
+        propagator: "PropagatorGreatArc" = clr.CastAs(aircraft.route, PropagatorGreatArc)
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive VehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN)
+        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.TERRAIN)
         altRef: "VehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.ELLIPSOID_HEIGHT
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
         # Add waypoints
         point1: "VehicleWaypointsElement" = propagator.waypoints.add()

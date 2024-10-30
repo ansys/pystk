@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.exec`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute`
               - Compute the data; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.exec_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_elements`
               - Compute the data and return just the indicated data elements; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.exec_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array`
               - Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.exec_elements_event_array`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderInterval.execute_elements_event_array`
               - Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
 
@@ -43,8 +43,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: exec(self, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.exec
+.. py:method:: execute(self, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute
 
     Compute the data; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
 
@@ -57,8 +57,8 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_elements(self, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.exec_elements
+.. py:method:: execute_elements(self, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_elements
 
     Compute the data and return just the indicated data elements; interval data providers require an interval or list of intervals. StartTime/StopTime use DateFormat Dimension.
 
@@ -72,8 +72,8 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.exec_event_array
+.. py:method:: execute_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_event_array
 
     Compute the data given a Times Array component. Also requires object start and stop times, which use DateFormat Dimension.
 
@@ -87,8 +87,8 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: exec_elements_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
-    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.exec_elements_event_array
+.. py:method:: execute_elements_event_array(self, pEventArray: ITimeToolTimeArray, startTime: typing.Any, stopTime: typing.Any, elementNames: list) -> DataProviderResult
+    :canonical: ansys.stk.core.stkobjects.DataProviderInterval.execute_elements_event_array
 
     Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 

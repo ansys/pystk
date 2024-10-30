@@ -49,9 +49,9 @@ class VOSnippets(CodeSnippetsTestBase):
         root.begin_update()  # Suspend updates
 
         # Put modifications here
-        voElt.is_visible = True
+        voElt.show_graphics = True
         voElt.use_background = True
-        voElt.bg_color = Colors.Green
+        voElt.background_color = Colors.Green
         voElt.use_background = False
 
         root.end_update()  # Resume updates now

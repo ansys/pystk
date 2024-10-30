@@ -22,7 +22,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.m_satellite = Satellite(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CopyPasteTest")
         )
-        EarlyBoundTests.m_satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        EarlyBoundTests.m_satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         EarlyBoundTests.m_driver = MCSDriver(EarlyBoundTests.m_satellite.propagator)
 
     # endregion

@@ -41,11 +41,11 @@ Overview
               - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.enable_polarization`
               - Gets or sets the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.enable_orthogonal_polarization`
               - Gets or sets the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.polarization`
               - Gets the polarization.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.power_amp_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.power_amplifier_bandwidth`
               - Gets or sets the power amplifier bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitter.enable_filter`
               - Gets or set the flag determines whether or not to enable the Filter.
@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: frequency_specification
     :canonical: ansys.stk.core.stkobjects.RadarTransmitter.frequency_specification
-    :type: RADAR_FREQUENCY_SPEC
+    :type: RADAR_FREQUENCY_SPECIFICATION_TYPE
 
     Gets or sets the frequency specification.
 
@@ -103,8 +103,8 @@ Property detail
 
     Gets or sets the enable polarization option.
 
-.. py:property:: enable_ortho_polarization
-    :canonical: ansys.stk.core.stkobjects.RadarTransmitter.enable_ortho_polarization
+.. py:property:: enable_orthogonal_polarization
+    :canonical: ansys.stk.core.stkobjects.RadarTransmitter.enable_orthogonal_polarization
     :type: bool
 
     Gets or sets the option for enabling the orthogonal polarization.
@@ -115,8 +115,8 @@ Property detail
 
     Gets the polarization.
 
-.. py:property:: power_amp_bandwidth
-    :canonical: ansys.stk.core.stkobjects.RadarTransmitter.power_amp_bandwidth
+.. py:property:: power_amplifier_bandwidth
+    :canonical: ansys.stk.core.stkobjects.RadarTransmitter.power_amplifier_bandwidth
     :type: float
 
     Gets or sets the power amplifier bandwidth.

@@ -45,7 +45,7 @@ Overview
               - Returns an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes`
               - Get the graphics attributes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_cone_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.show_cone`
               - Opt whether to display a cone connecting the center of the current object with the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.size`
               - Get the size of the contour.
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_type
-    :type: VEHICLE_GRAPHICS_3D_ATTRIBUTES
+    :type: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE
 
     Get the graphics attributes type.
 
@@ -101,8 +101,8 @@ Property detail
 
     Get the graphics attributes.
 
-.. py:property:: is_cone_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_cone_visible
+.. py:property:: show_cone
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.show_cone
     :type: bool
 
     Opt whether to display a cone connecting the center of the current object with the contour.
@@ -153,27 +153,27 @@ Method detail
 
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.set_attributes_type
 
     Set the graphics attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE`
 
     :Returns:
 

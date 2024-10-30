@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.identifier`
               - Gets or sets the antenna beam identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.pointing_strategy`
               - Gets the pointing strategy.
@@ -57,8 +57,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.identifier
     :type: str
 
     Gets or sets the antenna beam identifier.

@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PLUS_MINUS_X`
+            * - :py:attr:`~X_AXIS`
               - +/-X: calculate the primary boresight axis using the parent's body-fixed X axis.
 
-            * - :py:attr:`~PLUS_MINUS_Y`
+            * - :py:attr:`~Y_AXIS`
               - +/-Y: calculate the primary boresight axis using the parent's body-fixed Y axis.
 
-            * - :py:attr:`~PLUS_MINUS_Z`
+            * - :py:attr:`~Z_AXIS`
               - +/-Z: calculate the primary boresight axis using the parent's body-fixed Z axis.
 
 

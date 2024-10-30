@@ -22,9 +22,9 @@ Overview
               - Ground track resolution in terms of the ephemeris step. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.trajectory`
               - Trajectory resolution in terms of the ephemeris step. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.min_ground_track`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.minimum_ground_track`
               - Minimum ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.min_trajectory`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.minimum_trajectory`
               - Minimum trajectory resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
 
@@ -52,14 +52,14 @@ Property detail
 
     Trajectory resolution in terms of the ephemeris step. Uses Time Dimension.
 
-.. py:property:: min_ground_track
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.min_ground_track
+.. py:property:: minimum_ground_track
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.minimum_ground_track
     :type: float
 
     Minimum ground track resolution defined in terms of the ephemeris step. Uses Time Dimension.
 
-.. py:property:: min_trajectory
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.min_trajectory
+.. py:property:: minimum_trajectory
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTrajectoryResolution.minimum_trajectory
     :type: float
 
     Minimum trajectory resolution defined in terms of the ephemeris step. Uses Time Dimension.

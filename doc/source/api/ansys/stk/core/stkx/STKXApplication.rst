@@ -236,7 +236,7 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
+.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
@@ -248,7 +248,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ExecuteMultipleCommandResult`
+        :obj:`~ExecuteMultipleCommandsResult`
 
 .. py:method:: is_feature_available(self, featureCode: FEATURE_CODES) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.is_feature_available

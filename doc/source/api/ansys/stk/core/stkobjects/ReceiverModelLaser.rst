@@ -41,15 +41,15 @@ Overview
               - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_receive_gains_losses`
               - Gets the collection of additional pre-receive gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demodulator_gains_losses`
               - Gets the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.link_margin`
               - Gets the interface for configuring the link margin computation parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically`
               - Gets or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.bandwidth`
               - Gets or set the bandwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.select_demodulator_automatically`
               - Gets or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.supported_demodulators`
               - Gets an array of supported demodulator model names.
@@ -59,7 +59,7 @@ Overview
               - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.polarization`
               - Gets the polarization.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.track_frequency_automatically`
               - Gets or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.frequency`
               - Gets or set the frequency.
@@ -77,7 +77,7 @@ Overview
               - Gets or set the detector noise temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.detector_load_impedance`
               - Gets or set the detector load impedance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.use_apd_detector_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.use_avalanche_photo_detector_model`
               - Gets or set the flag for using the APD detector model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelLaser.propagation_loss_models`
               - This property is deprecated. The laser propagation loss models can be accessed from the LaserEnvironment property.
@@ -119,8 +119,8 @@ Property detail
 
     Gets the collection of additional pre-receive gains and losses.
 
-.. py:property:: pre_demod_gains_losses
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demod_gains_losses
+.. py:property:: pre_demodulator_gains_losses
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.pre_demodulator_gains_losses
     :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
@@ -131,8 +131,8 @@ Property detail
 
     Gets the interface for configuring the link margin computation parameters.
 
-.. py:property:: auto_scale_bandwidth
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.auto_scale_bandwidth
+.. py:property:: scale_bandwidth_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.scale_bandwidth_automatically
     :type: bool
 
     Gets or set the auto scale bandwidth option.
@@ -143,8 +143,8 @@ Property detail
 
     Gets or set the bandwidth.
 
-.. py:property:: auto_select_demodulator
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.auto_select_demodulator
+.. py:property:: select_demodulator_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.select_demodulator_automatically
     :type: bool
 
     Gets or set the auto select demodulator option.
@@ -173,8 +173,8 @@ Property detail
 
     Gets the polarization.
 
-.. py:property:: auto_track_frequency
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.auto_track_frequency
+.. py:property:: track_frequency_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.track_frequency_automatically
     :type: bool
 
     Gets or set the auto track frequency option.
@@ -227,8 +227,8 @@ Property detail
 
     Gets or set the detector load impedance.
 
-.. py:property:: use_apd_detector_model
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.use_apd_detector_model
+.. py:property:: use_avalanche_photo_detector_model
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelLaser.use_avalanche_photo_detector_model
     :type: bool
 
     Gets or set the flag for using the APD detector model.

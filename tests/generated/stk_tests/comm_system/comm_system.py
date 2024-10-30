@@ -114,7 +114,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.commSystem.calculate_interference)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            EarlyBoundTests.commSystem.reference_bandwidth = COMM_SYSTEM_REFERENCE_BANDWIDTH.BANDWIDTH10_M_HZ
+            EarlyBoundTests.commSystem.reference_bandwidth = COMM_SYSTEM_REFERENCE_BANDWIDTH.BANDWIDTH_10_MHZ
 
         EarlyBoundTests.commSystem.calculate_interference = True
         Assert.assertTrue(EarlyBoundTests.commSystem.calculate_interference)
@@ -176,13 +176,19 @@ class EarlyBoundTests(TestBase):
     # region Interval
     def test_Interval(self):
         smartInterval: "TimeToolTimeIntervalSmartInterval" = EarlyBoundTests.commSystem.time_period
-        smartInterval.set_implicit_interval(TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"])
+        smartInterval.set_implicit_interval(
+            TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["TodayInterval"]
+        )
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"].find_interval().interval.start,
+            TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["TodayInterval"]
+            .find_interval()
+            .interval.start,
             EarlyBoundTests.commSystem.time_period.reference_interval.find_interval().interval.start,
         )
         Assert.assertEqual(
-            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"].find_interval().interval.stop,
+            TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["TodayInterval"]
+            .find_interval()
+            .interval.stop,
             EarlyBoundTests.commSystem.time_period.reference_interval.find_interval().interval.stop,
         )
 
@@ -262,23 +268,23 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertIsNotNone(adaptive)
 
-        adaptive.max_time_step = 0.01
-        Assert.assertEqual(0.01, adaptive.max_time_step)
-        adaptive.max_time_step = 300000000
-        Assert.assertEqual(300000000, adaptive.max_time_step)
+        adaptive.maximum_time_step = 0.01
+        Assert.assertEqual(0.01, adaptive.maximum_time_step)
+        adaptive.maximum_time_step = 300000000
+        Assert.assertEqual(300000000, adaptive.maximum_time_step)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            adaptive.max_time_step = 0.0
+            adaptive.maximum_time_step = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            adaptive.max_time_step = 400000000
+            adaptive.maximum_time_step = 400000000
 
-        adaptive.min_time_step = 1e-06  # depends on Max
-        Assert.assertEqual(1e-06, adaptive.min_time_step)
-        adaptive.min_time_step = 300000000
-        Assert.assertEqual(300000000, adaptive.min_time_step)
+        adaptive.minimum_time_step = 1e-06  # depends on Max
+        Assert.assertEqual(1e-06, adaptive.minimum_time_step)
+        adaptive.minimum_time_step = 300000000
+        Assert.assertEqual(300000000, adaptive.minimum_time_step)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            adaptive.min_time_step = 0.0
+            adaptive.minimum_time_step = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            adaptive.min_time_step = 300000001
+            adaptive.minimum_time_step = 300000001
 
         accessOptions.sampling_method_type = COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.FIXED
         Assert.assertEqual(COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.FIXED, accessOptions.sampling_method_type)
@@ -345,12 +351,12 @@ class EarlyBoundTests(TestBase):
 
     # region Advanced
     def test_Advanced(self):
-        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTE_DATA
-        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTE_DATA)
+        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTED_DATA
+        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTED_DATA)
         EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.COMPUTE_DATA_ON_LOAD
         Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.COMPUTE_DATA_ON_LOAD)
-        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTE_DATA
-        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTE_DATA)
+        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTED_DATA
+        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTED_DATA)
 
     # endregion
 

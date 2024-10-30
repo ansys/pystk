@@ -69,15 +69,15 @@ Overview
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step`
               - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.laser_environment`
               - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.rf_environment`
               - Gets the RF environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_terrain`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_central_body_shape`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.trajectory_type
-    :type: VEHICLE_PROPAGATOR_TYPE
+    :type: PROPAGATOR_TYPE
 
     Get the propagator type used by the launch vehicle.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.trajectory
-    :type: IVehiclePropagator
+    :type: IPropagator
 
     Get the launch vehicle's trajectory properties.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.space_environment
-    :type: VehicleSpaceEnvironment
+    :type: SpaceEnvironment
 
     Returns the launch vehicle's SpaceEnvironment properties.
 
@@ -195,8 +195,8 @@ Property detail
 
     Opt whether to compute lighting using terrain data.
 
-.. py:property:: lighting_max_step
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step
+.. py:property:: lighting_maximum_step
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step
     :type: float
 
     This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
@@ -213,14 +213,14 @@ Property detail
 
     Gets the RF environment.
 
-.. py:property:: lighting_max_step_terrain
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step_terrain
+.. py:property:: lighting_maximum_step_terrain
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_terrain
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
-.. py:property:: lighting_max_step_central_body_shape
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_max_step_central_body_shape
+.. py:property:: lighting_maximum_step_central_body_shape
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_central_body_shape
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
@@ -230,27 +230,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_trajectory_type(self, trajectory: VEHICLE_PROPAGATOR_TYPE) -> None
+.. py:method:: set_trajectory_type(self, trajectory: PROPAGATOR_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.set_trajectory_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **trajectory** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **trajectory** : :obj:`~PROPAGATOR_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trajectory_type_supported(self, trajectory: VEHICLE_PROPAGATOR_TYPE) -> bool
+.. py:method:: is_trajectory_type_supported(self, trajectory: PROPAGATOR_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.is_trajectory_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **trajectory** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **trajectory** : :obj:`~PROPAGATOR_TYPE`
 
     :Returns:
 

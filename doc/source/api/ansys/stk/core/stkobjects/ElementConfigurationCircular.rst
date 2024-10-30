@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationCircular.num_elements`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationCircular.number_of_elements`
               - Gets or sets the number of elements on the perimiter of the circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationCircular.spacing`
               - Gets or sets the spacing between adjacent elements in wavelengths.
@@ -38,8 +38,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: num_elements
-    :canonical: ansys.stk.core.stkobjects.ElementConfigurationCircular.num_elements
+.. py:property:: number_of_elements
+    :canonical: ansys.stk.core.stkobjects.ElementConfigurationCircular.number_of_elements
     :type: int
 
     Gets or sets the number of elements on the perimiter of the circle.

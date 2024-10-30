@@ -56,11 +56,11 @@ class StarSnippets(CodeSnippetsTestBase):
         star: "Star" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children[StarSnippets.m_DefaultName], Star
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "yr")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("AngleUnit", "arcSec")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("TimeUnit", "yr")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("AngleUnit", "arcSec")
         self.DefineStarBasicProperties(star)
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("TimeUnit", "min")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("AngleUnit", "deg")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("TimeUnit", "min")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("AngleUnit", "deg")
 
     def DefineStarBasicProperties(self, star: "Star"):
         # Units depend on current unit preferences

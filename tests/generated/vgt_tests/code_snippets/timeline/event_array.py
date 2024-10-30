@@ -10,7 +10,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region DetermineTimesOfEventArray
     def test_DetermineTimesOfEventArray(self):
-        self.DetermineTimesOfEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineTimesOfEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineTimesOfEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays["Orbit.Classical.SemimajorAxis.TimesOfLocalMax"]
@@ -36,7 +38,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateFilteredEventArray
     def test_CreateFilteredEventArray(self):
-        self.CreateFilteredEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFilteredEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFilteredEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_filtered(
@@ -73,7 +77,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateFixedStepEventArray
     def test_CreateFixedStepEventArray(self):
-        self.CreateFixedStepEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFixedStepEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFixedStepEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_fixed_step(
@@ -113,7 +119,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateMergedEventArray
     def test_CreateMergedEventArray(self):
-        self.CreateMergedEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateMergedEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateMergedEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_merged(
@@ -148,8 +156,12 @@ class EventArray(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventArray(TestBase.Application)
 
     def CreateSignaledEventArray(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         eventArray: "ITimeToolTimeArray" = satelliteVgtProvider.time_arrays.factory.create_signaled(
             "MyEventArraySignaled", "MyDescription"
@@ -188,7 +200,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateStartStopTimesEventArray
     def test_CreateStartStopTimesEventArray(self):
-        self.CreateStartStopTimesEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateStartStopTimesEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateStartStopTimesEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_start_stop_times(
@@ -220,7 +234,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateConditionCrossingsEventArray
     def test_CreateConditionCrossingsEventArray(self):
-        self.CreateConditionCrossingsEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateConditionCrossingsEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateConditionCrossingsEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_condition_crossings(
@@ -263,7 +279,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
 
     # region CreateExtremaEventArray
     def test_CreateExtremaEventArray(self):
-        self.CreateExtremaEventArray(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateExtremaEventArray(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateExtremaEventArray(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventArray: "ITimeToolTimeArray" = provider.time_arrays.factory.create_extrema(
@@ -304,11 +322,15 @@ class EventArray(TimelineCodeSnippetsTestBase):
         aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
 
         # Configure a fixed step array that samples every 20 seconds.
-        twentySecondSample: "ITimeToolTimeArray" = aircraft.vgt.time_arrays.factory.create_fixed_step(
-            "TwentySecondSample", "MyDescription"
+        twentySecondSample: "ITimeToolTimeArray" = (
+            aircraft.analysis_workbench_components.time_arrays.factory.create_fixed_step(
+                "TwentySecondSample", "MyDescription"
+            )
         )
         asFixedStep: "TimeToolTimeArrayFixedStep" = clr.CastAs(twentySecondSample, TimeToolTimeArrayFixedStep)
-        asFixedStep.bounding_interval_list = aircraft.vgt.time_interval_lists["AvailabilityIntervals"]
+        asFixedStep.bounding_interval_list = aircraft.analysis_workbench_components.time_interval_lists[
+            "AvailabilityIntervals"
+        ]
         asFixedStep.sampling_time_step = 20
         asFixedStep.reference_type = SAMPLE_REFERENCE_TIME_TYPE.START_OF_INTERVAL_LIST
 
@@ -321,9 +343,9 @@ class EventArray(TimelineCodeSnippetsTestBase):
             i: int = 0
             while i < numTimes:
                 epoch: typing.Any = timeArrays.times[i]
-                altitueAtTime = aircraft.vgt.calculation_scalars["GroundTrajectory.Detic.LLA.Altitude"].quick_evaluate(
-                    epoch
-                )
+                altitueAtTime = aircraft.analysis_workbench_components.calculation_scalars[
+                    "GroundTrajectory.Detic.LLA.Altitude"
+                ].quick_evaluate(epoch)
                 if bool(altitueAtTime[0]) == True:
                     Console.WriteLine("{0}: {1}", epoch, altitueAtTime[1])
 

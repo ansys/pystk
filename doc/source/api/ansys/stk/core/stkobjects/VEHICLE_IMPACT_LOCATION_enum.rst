@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~IMPACT_LOCATION_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~IMPACT_LOCATION_LAUNCH_AZ_EL`
+            * - :py:attr:`~LAUNCH_AZ_EL`
               - Use azimuth and elevation.
 
-            * - :py:attr:`~IMPACT_LOCATION_POINT`
+            * - :py:attr:`~POINT`
               - Use geodetic or geocentric elements.
 
 

@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_values`
               - Retrieve an array of values of the elements in the dataset.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_unit_values`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_units_values`
               - Get the Internal Unit Values of the Data.
 
     .. tab-item:: Properties
@@ -100,8 +100,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_internal_unit_values(self) -> list
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_unit_values
+.. py:method:: get_internal_units_values(self) -> list
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.get_internal_units_values
 
     Get the Internal Unit Values of the Data.
 

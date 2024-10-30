@@ -33,7 +33,7 @@ Overview
               - Returns a collection of elements associated with a DataProvider or a SubDataProvider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data`
               - The string associated with the current PreData parameter.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.allow_user_interface`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.allow_user_interface_for_pre_data`
               - When set to true the data provider will display a user interface to select/enter the pre-data required.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_valid`
               - Returns whether the data provider is valid.
@@ -66,8 +66,8 @@ Property detail
 
     The string associated with the current PreData parameter.
 
-.. py:property:: allow_user_interface
-    :canonical: ansys.stk.core.stkobjects.IDataProvider.allow_user_interface
+.. py:property:: allow_user_interface_for_pre_data
+    :canonical: ansys.stk.core.stkobjects.IDataProvider.allow_user_interface_for_pre_data
     :type: bool
 
     When set to true the data provider will display a user interface to select/enter the pre-data required.
@@ -101,14 +101,14 @@ Method detail
 
 
 
-.. py:method:: is_statistic_available(self, statistic: STATISTICS, elementName: str) -> bool
+.. py:method:: is_statistic_available(self, statistic: STATISTIC_TYPE, elementName: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IDataProvider.is_statistic_available
 
     Is the supplied statistic available for the provided element name?
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTICS`
+    **statistic** : :obj:`~STATISTIC_TYPE`
     **elementName** : :obj:`~str`
 
     :Returns:

@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ALTITUDE_REFERENCE_MSL`
+            * - :py:attr:`~MEAN_SEA_LEVEL`
               - Altitude reference: Mean Sea Level.
 
-            * - :py:attr:`~ALTITUDE_REFERENCE_OBJECT`
+            * - :py:attr:`~OBJECT`
               - Altitude reference: the altitude of the object.
 
-            * - :py:attr:`~ALTITUDE_REFERENCE_TERRAIN`
+            * - :py:attr:`~TERRAIN`
               - Altitude reference: the altitude of the terrain.
 
-            * - :py:attr:`~ALTITUDE_REFERENCE_WGS84`
+            * - :py:attr:`~WGS84`
               - Altitude reference: the altitude of the central body's reference ellipsoid.
 
 
