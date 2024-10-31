@@ -7,7 +7,7 @@ name = "ansys-stk-core"
 dynamic = ["version"]
 description = "A Python API for STK"
 readme = "README.rst"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
     {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},

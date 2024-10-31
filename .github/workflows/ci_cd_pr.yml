@@ -4,8 +4,8 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.12'
-  MINIMUM_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.13'
+  MINIMUM_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -107,7 +107,7 @@ jobs:
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
-           python-version: ['3.10', '3.11', '3.12']
+           python-version: ['3.11', '3.12', '3.13']
            target: ['all', 'grpc', 'visualization']
     steps:
       - name: "Build a wheelhouse of the Python library"
@@ -143,6 +143,13 @@ jobs:
 
       - name: "Checkout the project"
         uses: actions/checkout@v4
+
+      - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
+        if: |
+          !contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
       - name: "Download wheelhouse into static path"
         uses: actions/download-artifact@v4
@@ -209,6 +216,7 @@ jobs:
               ${{ env.STK_CONTAINER }} /bin/bash -c \
               "python -m pip install tox && rm -rf .tox"
           else
+            python --version
             python -m pip install tox && rm -rf .tox
           fi
 
@@ -312,13 +320,13 @@ jobs:
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.10 to ensure backwards compatibility with
+        # Tests run against Python 3.11 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.10']
+        python: ['3.11']
       fail-fast: false
     steps:
 
