@@ -144,6 +144,13 @@ jobs:
       - name: "Checkout the project"
         uses: actions/checkout@v4
 
+      - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
+        if: |
+          !contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
       - name: "Download wheelhouse into static path"
         uses: actions/download-artifact@v4
         with:
