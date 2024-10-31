@@ -209,6 +209,7 @@ jobs:
               ${{ env.STK_CONTAINER }} /bin/bash -c \
               "python -m pip install tox && rm -rf .tox"
           else
+            python --version
             python -m pip install tox && rm -rf .tox
           fi
 
