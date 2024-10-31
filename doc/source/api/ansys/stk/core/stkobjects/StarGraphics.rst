@@ -24,9 +24,9 @@ Overview
               - Specify whether display of label is inherited from the Scenario-level setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.StarGraphics.marker_style`
               - The style of the star's marker.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StarGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StarGraphics.show_label`
               - Specify whether the star's label is displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StarGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StarGraphics.show_graphics`
               - Specify whether graphics attributes of the star are visible.
 
 
@@ -60,14 +60,14 @@ Property detail
 
     The style of the star's marker.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.StarGraphics.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.StarGraphics.show_label
     :type: bool
 
     Specify whether the star's label is displayed.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.StarGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.StarGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the star are visible.

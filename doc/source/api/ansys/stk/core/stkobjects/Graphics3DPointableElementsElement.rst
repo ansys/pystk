@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.intervals
-    :type: IntervalCollection
+    :type: TimeIntervalCollection
 
     Gets a collection of intervals during which an 3d model part points towards selected targets.
 

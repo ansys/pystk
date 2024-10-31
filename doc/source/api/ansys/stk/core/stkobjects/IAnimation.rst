@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.IAnimation.mode
-    :type: ANIMATION_MODES
+    :type: ANIMATION_END_TIME_MODE
 
     Animation mode.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: animation_options
     :canonical: ansys.stk.core.stkobjects.IAnimation.animation_options
-    :type: ANIMATION_OPTIONS
+    :type: ANIMATION_OPTION_TYPE
 
     Animation options.
 

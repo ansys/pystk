@@ -360,7 +360,7 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
     
     def animate(self, time_step):        
-        self.root.current_scenario.animation.anim_step_value = time_step
+        self.root.current_scenario.animation_settings.animation_step_value = time_step
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
@@ -380,7 +380,7 @@ class WidgetBase(RemoteFrameBuffer):
             data = super()._repr_mimebundle_(include=include, exclude=exclude)
         else:
             data = {
-                "image/png": array2png(self.get_frame())
+                "image/png": array2png(self.snapshot().data)
             }
         return data
 

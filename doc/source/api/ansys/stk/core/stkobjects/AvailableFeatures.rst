@@ -37,14 +37,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: is_propagator_type_available(self, propagatorType: VEHICLE_PROPAGATOR_TYPE) -> bool
+.. py:method:: is_propagator_type_available(self, propagatorType: PROPAGATOR_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.AvailableFeatures.is_propagator_type_available
 
     Return true if the specified propagator is available.
 
     :Parameters:
 
-    **propagatorType** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **propagatorType** : :obj:`~PROPAGATOR_TYPE`
 
     :Returns:
 

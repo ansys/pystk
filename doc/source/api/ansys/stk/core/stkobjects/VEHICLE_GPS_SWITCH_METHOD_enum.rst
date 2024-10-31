@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~GPS_SWITCH_METHOD_EPOCH`
+            * - :py:attr:`~EPOCH`
               - Switch between TLE sets based on the epoch of the TLE.
 
-            * - :py:attr:`~GPS_SWITCH_METHOD_MIDPOINT`
+            * - :py:attr:`~MIDPOINT`
               - Switch between TLE sets based on the mid-point between two TLE epochs.
 
-            * - :py:attr:`~GPS_SWITCH_METHOD_TCA`
+            * - :py:attr:`~TIME_OF_CLOSEST_APPROACH`
               - Switch between TLE sets based on the time of closest approach, calculated by propagating the first and second TLE sets over the time period between their respective epochs and determining the point at which the two paths are nearest each other.
 
 

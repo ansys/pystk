@@ -90,14 +90,14 @@ class EarlyBoundTests(TestBase):
 
     # region SetUp
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
 
     # endregion
 
     # region TearDown
     def tearDown(self):
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     # endregion
 
@@ -275,7 +275,7 @@ class EarlyBoundTests(TestBase):
             antennaContourGain_Helper.CoordinateSystem(antennaContourGain)
         elif type == ANTENNA_CONTOUR_TYPE.EIRP:
             Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourEirp: "AntennaContourEirp" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEirp)
+            antennaContourEirp: "AntennaContourEIRP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEIRP)
 
             antennaContourEirp_Helper = IAgAntennaContourEirp_Helper()
 
@@ -431,7 +431,7 @@ class EarlyBoundTests(TestBase):
             )  # above max maxEl
         elif type == ANTENNA_CONTOUR_TYPE.RIP:
             Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourRip: "AntennaContourRip" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRip)
+            antennaContourRip: "AntennaContourRIP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRIP)
 
             antennaContourRip_Helper = IAgAntennaContourRip_Helper()
 
@@ -609,10 +609,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAntennaContour_RelativeToMaxGain
     def Test_IAgAntennaContour_RelativeToMaxGain(self, antennaContour: "IAntennaContour"):
-        antennaContour.relative_to_max_gain = True
-        Assert.assertTrue(antennaContour.relative_to_max_gain)
-        antennaContour.relative_to_max_gain = False
-        Assert.assertFalse(antennaContour.relative_to_max_gain)
+        antennaContour.relative_to_maximum_gain = True
+        Assert.assertTrue(antennaContour.relative_to_maximum_gain)
+        antennaContour.relative_to_maximum_gain = False
+        Assert.assertFalse(antennaContour.relative_to_maximum_gain)
 
     # endregion
 
@@ -621,21 +621,21 @@ class EarlyBoundTests(TestBase):
         antennaContour.show_labels = True
         Assert.assertTrue(antennaContour.show_labels)
 
-        antennaContour.num_label_dec_digits = 0
-        Assert.assertEqual(0, antennaContour.num_label_dec_digits)
-        antennaContour.num_label_dec_digits = 12
-        Assert.assertEqual(12, antennaContour.num_label_dec_digits)
+        antennaContour.number_of_label_decimal_digits = 0
+        Assert.assertEqual(0, antennaContour.number_of_label_decimal_digits)
+        antennaContour.number_of_label_decimal_digits = 12
+        Assert.assertEqual(12, antennaContour.number_of_label_decimal_digits)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = -1
+            antennaContour.number_of_label_decimal_digits = -1
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = 13
+            antennaContour.number_of_label_decimal_digits = 13
 
         antennaContour.show_labels = False
         Assert.assertFalse(antennaContour.show_labels)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaContour.num_label_dec_digits = 1
+            antennaContour.number_of_label_decimal_digits = 1
 
     # endregion
 
@@ -794,20 +794,22 @@ class EarlyBoundTests(TestBase):
         elNumPoints: int,
         elExpectedRes: float,
     ):
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(azStart, azStop, azNumPoints, elStart, elStop, elNumPoints)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
+            azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
+        )
 
         Assert.assertEqual(azStart, EarlyBoundTests.antennaVolumeGraphics.azimuth_start)
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
-        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points)
+        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points)
         Assert.assertAlmostEqual(azExpectedRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
-        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points)
+        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points)
         Assert.assertAlmostEqual(elExpectedRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
 
         # Set back to defaults so other tests are not affected
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(-180, 180, 50, 0, 90, 50)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(-180, 180, 50, 0, 90, 50)
 
     # endregion
 
@@ -831,7 +833,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code1():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -847,7 +849,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code2():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -886,14 +888,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
         Assert.assertAlmostEqual(azRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points, delta=2.0
+            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points, delta=2.0
         )
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
         Assert.assertAlmostEqual(elRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points, delta=2.0
+            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points, delta=2.0
         )
 
         # Set back to defaults so other tests are not affected
@@ -935,7 +937,7 @@ class EarlyBoundTests(TestBase):
     # region IAgRadar_Refraction
     @parameterized.expand(
         [
-            (SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD,),
+            (SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD,),
             (SENSOR_REFRACTION_TYPE.ITU_R_P834_4,),
             (SENSOR_REFRACTION_TYPE.SCF_METHOD,),
         ]
@@ -944,7 +946,7 @@ class EarlyBoundTests(TestBase):
         if EarlyBoundTests.radar.is_refraction_type_supported(eSnRefractionType):
             EarlyBoundTests.radar.refraction = eSnRefractionType
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.radar.refraction)
-            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
+            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
                     clr.CastAs(EarlyBoundTests.radar.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
@@ -971,7 +973,12 @@ class EarlyBoundTests(TestBase):
         i: int = 0
         while i < len(arRefrSuppTypes):
             if (
-                ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD))
+                (
+                    (
+                        SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
+                        == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD
+                    )
+                )
                 or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.ITU_R_P834_4))
             ) or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.SCF_METHOD)):
                 pass
@@ -993,14 +1000,14 @@ class EarlyBoundTests(TestBase):
 
     # region RefractionModel Interface tests
     def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
-        EffectiveRadiusMethod.eff_rad = 0.1
-        Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
-        EffectiveRadiusMethod.eff_rad = 100
-        Assert.assertEqual(100, EffectiveRadiusMethod.eff_rad)
+        EffectiveRadiusMethod.effective_radius = 0.1
+        Assert.assertEqual(0.1, EffectiveRadiusMethod.effective_radius)
+        EffectiveRadiusMethod.effective_radius = 100
+        Assert.assertEqual(100, EffectiveRadiusMethod.effective_radius)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 0.0
+            EffectiveRadiusMethod.effective_radius = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 101.0
+            EffectiveRadiusMethod.effective_radius = 101.0
 
         EffectiveRadiusMethod.ceiling = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.ceiling)
@@ -1009,12 +1016,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.ceiling = -1.0
 
-        EffectiveRadiusMethod.max_target_altitude = 0.0
-        Assert.assertEqual(0.0, EffectiveRadiusMethod.max_target_altitude)
-        EffectiveRadiusMethod.max_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, EffectiveRadiusMethod.max_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 0.0
+        Assert.assertEqual(0.0, EffectiveRadiusMethod.maximum_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, EffectiveRadiusMethod.maximum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.max_target_altitude = -1.0
+            EffectiveRadiusMethod.maximum_target_altitude = -1.0
 
         EffectiveRadiusMethod.use_extrapolation = True
         Assert.assertTrue(EffectiveRadiusMethod.use_extrapolation)
@@ -1029,12 +1036,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.ceiling = -1.0
 
-        ITURP8344.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, ITURP8344.atmos_altitude)
-        ITURP8344.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, ITURP8344.atmos_altitude)
+        ITURP8344.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, ITURP8344.atmosphere_altitude)
+        ITURP8344.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, ITURP8344.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            ITURP8344.atmos_altitude = -1.0
+            ITURP8344.atmosphere_altitude = -1.0
 
         ITURP8344.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, ITURP8344.knee_bend_factor)
@@ -1117,12 +1124,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.ceiling = -1.0
 
-        SCFMethod.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.atmos_altitude)
-        SCFMethod.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.atmos_altitude)
+        SCFMethod.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.atmosphere_altitude)
+        SCFMethod.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.atmos_altitude = -1.0
+            SCFMethod.atmosphere_altitude = -1.0
 
         SCFMethod.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, SCFMethod.knee_bend_factor)
@@ -1133,12 +1140,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = 1.1
 
-        SCFMethod.min_target_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.min_target_altitude)
-        SCFMethod.min_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.min_target_altitude)
+        SCFMethod.minimum_target_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.minimum_target_altitude)
+        SCFMethod.minimum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.minimum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.min_target_altitude = -1.0
+            SCFMethod.minimum_target_altitude = -1.0
 
         SCFMethod.use_extrapolation = True
         Assert.assertTrue(SCFMethod.use_extrapolation)
@@ -1152,66 +1159,74 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarAccessGraphics_BistaticRadarTGTGraphics
     @category("Graphics Tests")
     def test_IAgRadarAccessGraphics_BistaticRadarTGTGraphics(self):
-        EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target = False
-        Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target)
+        EarlyBoundTests.accessGraphics.show_bistatic_radar_to_target = False
+        Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_radar_to_target)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Red
+            EarlyBoundTests.accessGraphics.bistatic_radar_to_target_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style = LINE_STYLE.DASHED
+            EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_style = LINE_STYLE.DASHED
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_width = LINE_WIDTH.WIDTH1
+            EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_width = LINE_WIDTH.WIDTH1
 
-        EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target = True
-        Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_rdr_to_target)
+        EarlyBoundTests.accessGraphics.show_bistatic_radar_to_target = True
+        Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_radar_to_target)
 
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_color)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_color)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_color)
 
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style = LINE_STYLE.DASHED
-        Assert.assertEqual(LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style)
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style = LINE_STYLE.DOT
-        Assert.assertEqual(LINE_STYLE.DOT, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_style)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_style = LINE_STYLE.DASHED
+        Assert.assertEqual(LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_style)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_style = LINE_STYLE.DOT
+        Assert.assertEqual(LINE_STYLE.DOT, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_style)
 
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_width)
-        EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, EarlyBoundTests.accessGraphics.bistatic_rdr_to_target_line_width)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_width = LINE_WIDTH.WIDTH1
+        Assert.assertEqual(LINE_WIDTH.WIDTH1, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_width)
+        EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_width = LINE_WIDTH.WIDTH5
+        Assert.assertEqual(LINE_WIDTH.WIDTH5, EarlyBoundTests.accessGraphics.bistatic_radar_to_target_line_width)
 
     # endregion
 
     # region IAgRadarAccessGraphics_BistaticXmtrToBistaticRcvrGraphics
     @category("Graphics Tests")
     def test_IAgRadarAccessGraphics_BistaticXmtrToBistaticRcvrGraphics(self):
-        EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr = False
-        Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr)
+        EarlyBoundTests.accessGraphics.show_bistatic_transmitter_to_bistatic_receiver = False
+        Assert.assertFalse(EarlyBoundTests.accessGraphics.show_bistatic_transmitter_to_bistatic_receiver)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Red
+            EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style = LINE_STYLE.DASHED
+            EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style = LINE_STYLE.DASHED
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width = LINE_WIDTH.WIDTH1
+            EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width = LINE_WIDTH.WIDTH1
 
-        EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr = True
-        Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_xmtr_to_bistatic_rcvr)
+        EarlyBoundTests.accessGraphics.show_bistatic_transmitter_to_bistatic_receiver = True
+        Assert.assertTrue(EarlyBoundTests.accessGraphics.show_bistatic_transmitter_to_bistatic_receiver)
 
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_color)
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_color = Colors.Red
+        Assert.assertEqual(Colors.Red, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_color)
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_color = Colors.Blue
+        Assert.assertEqual(Colors.Blue, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_color)
 
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style = LINE_STYLE.DASHED
-        Assert.assertEqual(LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style)
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style = LINE_STYLE.DOT
-        Assert.assertEqual(LINE_STYLE.DOT, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style)
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style = LINE_STYLE.DASHED
+        Assert.assertEqual(
+            LINE_STYLE.DASHED, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style
+        )
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style = LINE_STYLE.DOT
+        Assert.assertEqual(
+            LINE_STYLE.DOT, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style
+        )
 
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width)
-        EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, EarlyBoundTests.accessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width)
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width = LINE_WIDTH.WIDTH1
+        Assert.assertEqual(
+            LINE_WIDTH.WIDTH1, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width
+        )
+        EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width = LINE_WIDTH.WIDTH5
+        Assert.assertEqual(
+            LINE_WIDTH.WIDTH5, EarlyBoundTests.accessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width
+        )
 
     # endregion
 
@@ -1324,78 +1339,102 @@ class EarlyBoundTests(TestBase):
     # region IAgRadarMultipathGraphics_RcvrTgtReflectionPoint
     @category("Graphics Tests")
     def test_IAgRadarMultipathGraphics_RcvrTgtReflectionPoint(self):
-        EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp = False
-        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp)
+        EarlyBoundTests.multipathGraphics.show_receiver_to_target_ground_reflection_point = False
+        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_receiver_to_target_ground_reflection_point)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Red
+            EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Plus"
+            EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_marker_style = "Plus"
 
-        EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp = True
-        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_rcv_to_target_grp)
+        EarlyBoundTests.multipathGraphics.show_receiver_to_target_ground_reflection_point = True
+        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_receiver_to_target_ground_reflection_point)
 
-        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color)
-        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.rcv_to_target_grp_color)
+        EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_color = Colors.Red
+        Assert.assertEqual(
+            Colors.Red, EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_color
+        )
+        EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_color = Colors.Blue
+        Assert.assertEqual(
+            Colors.Blue, EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_color
+        )
 
-        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Plus"
-        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style)
-        EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style = "Square"
-        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.rcv_to_target_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_marker_style = "Plus"
+        Assert.assertEqual(
+            "Plus", EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_marker_style
+        )
+        EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_marker_style = "Square"
+        Assert.assertEqual(
+            "Square", EarlyBoundTests.multipathGraphics.receiver_to_target_ground_reflection_point_marker_style
+        )
 
     # endregion
 
     # region IAgRadarMultipathGraphics_XmtrRcvReflectionPoint
     @category("Graphics Tests")
     def test_IAgRadarMultipathGraphics_XmtrRcvReflectionPoint(self):
-        EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp = False
-        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp)
+        EarlyBoundTests.multipathGraphics.show_transmitter_to_receiver_ground_reflection_point = False
+        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_transmitter_to_receiver_ground_reflection_point)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Red
+            EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style = "Plus"
+            EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_marker_style = "Plus"
 
-        EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp = True
-        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_rcv_grp)
+        EarlyBoundTests.multipathGraphics.show_transmitter_to_receiver_ground_reflection_point = True
+        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_transmitter_to_receiver_ground_reflection_point)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_color)
+        EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_color = Colors.Red
+        Assert.assertEqual(
+            Colors.Red, EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_color
+        )
+        EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_color = Colors.Blue
+        Assert.assertEqual(
+            Colors.Blue, EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_color
+        )
 
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style = "Plus"
-        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style)
-        EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style = "Square"
-        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.xmt_to_rcv_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_marker_style = "Plus"
+        Assert.assertEqual(
+            "Plus", EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_marker_style
+        )
+        EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_marker_style = "Square"
+        Assert.assertEqual(
+            "Square", EarlyBoundTests.multipathGraphics.transmitter_to_receiver_ground_reflection_point_marker_style
+        )
 
     # endregion
 
     # region IAgRadarMultipathGraphics_XmtrTgtReflectionPoint
     @category("Graphics Tests")
     def test_IAgRadarMultipathGraphics_XmtrTgtReflectionPoint(self):
-        EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp = False
-        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp)
+        EarlyBoundTests.multipathGraphics.show_transmitter_to_target_ground_reflection_point = False
+        Assert.assertFalse(EarlyBoundTests.multipathGraphics.show_transmitter_to_target_ground_reflection_point)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Red
+            EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Plus"
+            EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_marker_style = "Plus"
 
-        EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp = True
-        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_xmt_to_target_grp)
+        EarlyBoundTests.multipathGraphics.show_transmitter_to_target_ground_reflection_point = True
+        Assert.assertTrue(EarlyBoundTests.multipathGraphics.show_transmitter_to_target_ground_reflection_point)
 
-        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Red
-        Assert.assertEqual(Colors.Red, EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color)
-        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color = Colors.Blue
-        Assert.assertEqual(Colors.Blue, EarlyBoundTests.multipathGraphics.xmt_to_target_grp_color)
+        EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_color = Colors.Red
+        Assert.assertEqual(
+            Colors.Red, EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_color
+        )
+        EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_color = Colors.Blue
+        Assert.assertEqual(
+            Colors.Blue, EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_color
+        )
 
-        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Plus"
-        Assert.assertEqual("Plus", EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style)
-        EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style = "Square"
-        Assert.assertEqual("Square", EarlyBoundTests.multipathGraphics.xmt_to_target_grp_marker_style)
+        EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_marker_style = "Plus"
+        Assert.assertEqual(
+            "Plus", EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_marker_style
+        )
+        EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_marker_style = "Square"
+        Assert.assertEqual(
+            "Square", EarlyBoundTests.multipathGraphics.transmitter_to_target_ground_reflection_point_marker_style
+        )
 
     # endregion
 
@@ -1429,23 +1468,23 @@ class EarlyBoundTests(TestBase):
     def Test_IAgRadarWaveformSarPulseDefinition(
         self, sarPulseDef: "RadarWaveformSarPulseDefinition", bIsMonostatic: bool
     ):
-        sarPulseDef.prf_mode = RADAR_SAR_PRF_MODE.PRF
-        Assert.assertEqual(RADAR_SAR_PRF_MODE.PRF, sarPulseDef.prf_mode)
+        sarPulseDef.pulse_repetition_frequency_mode = RADAR_SAR_PRF_MODE.PRF
+        Assert.assertEqual(RADAR_SAR_PRF_MODE.PRF, sarPulseDef.pulse_repetition_frequency_mode)
 
-        sarPulseDef.prf = 1e-06
-        Assert.assertEqual(1e-06, sarPulseDef.prf)
-        sarPulseDef.prf = 0.01
-        Assert.assertEqual(0.01, sarPulseDef.prf)
+        sarPulseDef.pulse_repetition_frequency = 1e-06
+        Assert.assertEqual(1e-06, sarPulseDef.pulse_repetition_frequency)
+        sarPulseDef.pulse_repetition_frequency = 0.01
+        Assert.assertEqual(0.01, sarPulseDef.pulse_repetition_frequency)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            sarPulseDef.prf = 0.02
+            sarPulseDef.pulse_repetition_frequency = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            sarPulseDef.prf = 0.02
+            sarPulseDef.pulse_repetition_frequency = 0.02
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.unambiguous_range = 0.02
 
-        sarPulseDef.prf_mode = RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE
-        Assert.assertEqual(RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE, sarPulseDef.prf_mode)
+        sarPulseDef.pulse_repetition_frequency_mode = RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE
+        Assert.assertEqual(RADAR_SAR_PRF_MODE.UNAMBIGUOUS_RANGE, sarPulseDef.pulse_repetition_frequency_mode)
 
         sarPulseDef.unambiguous_range = 9
         Assert.assertEqual(9, sarPulseDef.unambiguous_range)
@@ -1456,7 +1495,7 @@ class EarlyBoundTests(TestBase):
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { sarPulseDef.UnambiguousRange = 0.02; });
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            sarPulseDef.prf = 0.02
+            sarPulseDef.pulse_repetition_frequency = 0.02
 
         sarPulseDef.range_resolution_mode = RADAR_SAR_RANGE_RESOLUTION_MODE.RANGE_RESOLUTION
         Assert.assertEqual(RADAR_SAR_RANGE_RESOLUTION_MODE.RANGE_RESOLUTION, sarPulseDef.range_resolution_mode)
@@ -1487,17 +1526,17 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.range_resolution = 0.02
 
-        sarPulseDef.pcr_mode = RADAR_SAR_PCR_MODE.PCR
-        Assert.assertEqual(RADAR_SAR_PCR_MODE.PCR, sarPulseDef.pcr_mode)
+        sarPulseDef.pulse_compression_ratio_mode = RADAR_SAR_PCR_MODE.PULSE_COMPRESSION_RATIO
+        Assert.assertEqual(RADAR_SAR_PCR_MODE.PULSE_COMPRESSION_RATIO, sarPulseDef.pulse_compression_ratio_mode)
 
-        sarPulseDef.pcr = 0.0001
-        Assert.assertEqual(0.0001, sarPulseDef.pcr)
-        sarPulseDef.pcr = 1020
-        Assert.assertEqual(1020, sarPulseDef.pcr)
+        sarPulseDef.pulse_compression_ratio = 0.0001
+        Assert.assertEqual(0.0001, sarPulseDef.pulse_compression_ratio)
+        sarPulseDef.pulse_compression_ratio = 1020
+        Assert.assertEqual(1020, sarPulseDef.pulse_compression_ratio)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            sarPulseDef.pcr = 0
+            sarPulseDef.pulse_compression_ratio = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            sarPulseDef.pcr = 1021
+            sarPulseDef.pulse_compression_ratio = 1021
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.pulse_width = 0.02
@@ -1506,8 +1545,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.fm_chirp_rate = 0.02
 
-        sarPulseDef.pcr_mode = RADAR_SAR_PCR_MODE.PULSE_WIDTH
-        Assert.assertEqual(RADAR_SAR_PCR_MODE.PULSE_WIDTH, sarPulseDef.pcr_mode)
+        sarPulseDef.pulse_compression_ratio_mode = RADAR_SAR_PCR_MODE.PULSE_WIDTH
+        Assert.assertEqual(RADAR_SAR_PCR_MODE.PULSE_WIDTH, sarPulseDef.pulse_compression_ratio_mode)
 
         sarPulseDef.pulse_width = 1e-07
         Assert.assertEqual(1e-07, sarPulseDef.pulse_width)
@@ -1519,14 +1558,14 @@ class EarlyBoundTests(TestBase):
             sarPulseDef.pulse_width = 0.001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            sarPulseDef.pcr = 0.02
+            sarPulseDef.pulse_compression_ratio = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.scene_depth = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.fm_chirp_rate = 0.02
 
-        sarPulseDef.pcr_mode = RADAR_SAR_PCR_MODE.SCENE_DEPTH
-        Assert.assertEqual(RADAR_SAR_PCR_MODE.SCENE_DEPTH, sarPulseDef.pcr_mode)
+        sarPulseDef.pulse_compression_ratio_mode = RADAR_SAR_PCR_MODE.SCENE_DEPTH
+        Assert.assertEqual(RADAR_SAR_PCR_MODE.SCENE_DEPTH, sarPulseDef.pulse_compression_ratio_mode)
 
         sarPulseDef.scene_depth = 1e-07
         Assert.assertEqual(1e-07, sarPulseDef.scene_depth)
@@ -1538,14 +1577,14 @@ class EarlyBoundTests(TestBase):
             sarPulseDef.scene_depth = 53
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            sarPulseDef.pcr = 0.02
+            sarPulseDef.pulse_compression_ratio = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.pulse_width = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.fm_chirp_rate = 53
 
-        sarPulseDef.pcr_mode = RADAR_SAR_PCR_MODE.FM_CHIRP_RATE
-        Assert.assertEqual(RADAR_SAR_PCR_MODE.FM_CHIRP_RATE, sarPulseDef.pcr_mode)
+        sarPulseDef.pulse_compression_ratio_mode = RADAR_SAR_PCR_MODE.FM_CHIRP_RATE
+        Assert.assertEqual(RADAR_SAR_PCR_MODE.FM_CHIRP_RATE, sarPulseDef.pulse_compression_ratio_mode)
 
         sarPulseDef.fm_chirp_rate = 284
         Assert.assertEqual(284, sarPulseDef.fm_chirp_rate)
@@ -1556,7 +1595,7 @@ class EarlyBoundTests(TestBase):
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { sarPulseDef.FMChirpRate = 53; });
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            sarPulseDef.pcr = 0.02
+            sarPulseDef.pulse_compression_ratio = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             sarPulseDef.pulse_width = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -1594,8 +1633,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgRadarWaveformSarPulseIntegration
     def Test_IAgRadarWaveformSarPulseIntegration(self, sarPulseInt: "RadarWaveformSarPulseIntegration"):
-        sarPulseInt.analysis_mode = RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE.FIXED_AZ_RES
-        Assert.assertEqual(RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE.FIXED_AZ_RES, sarPulseInt.analysis_mode)
+        sarPulseInt.analysis_mode = RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE.FIXED_AZIMUTH_RESOLUTION
+        Assert.assertEqual(
+            RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE.FIXED_AZIMUTH_RESOLUTION, sarPulseInt.analysis_mode
+        )
 
         sarPulseInt.analysis_mode_value = 1e-05
         Assert.assertEqual(1e-05, sarPulseInt.analysis_mode_value)
@@ -1605,8 +1646,8 @@ class EarlyBoundTests(TestBase):
             sarPulseInt.analysis_mode_value = 0
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { sarPulseInt.AnalysisModeValue = 0.02; });
 
-        sarPulseInt.analysis_mode = RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE.FIXED_INT_TIME
-        Assert.assertEqual(RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_TYPE.FIXED_INT_TIME, sarPulseInt.analysis_mode)
+        sarPulseInt.analysis_mode = RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE.FIXED_INTEGRATION_TIME
+        Assert.assertEqual(RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE.FIXED_INTEGRATION_TIME, sarPulseInt.analysis_mode)
 
         sarPulseInt.analysis_mode_value = 1e-05
         Assert.assertEqual(1e-05, sarPulseInt.analysis_mode_value)
@@ -1652,8 +1693,8 @@ class EarlyBoundTests(TestBase):
     ):
         self.Test_IAgRadarModulator(continuous.modulator)
 
-        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.FIXED_TIME
-        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.FIXED_TIME, continuous.analysis_mode_type)
+        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.FIXED_TIME
+        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.FIXED_TIME, continuous.analysis_mode_type)
 
         fixedTime: "RadarContinuousWaveAnalysisModeFixedTime" = clr.CastAs(
             continuous.analysis_mode, RadarContinuousWaveAnalysisModeFixedTime
@@ -1666,8 +1707,8 @@ class EarlyBoundTests(TestBase):
             fixedTime.fixed_time = -1
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { fixedTime.FixedTime = 1.1; });
 
-        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.GOAL_SNR
-        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.GOAL_SNR, continuous.analysis_mode_type)
+        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.GOAL_SNR
+        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.GOAL_SNR, continuous.analysis_mode_type)
 
         goalSNR: "RadarContinuousWaveAnalysisModeGoalSNR" = clr.CastAs(
             continuous.analysis_mode, RadarContinuousWaveAnalysisModeGoalSNR
@@ -1693,25 +1734,25 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgRadarWaveformSearchTrackPulseDefinition
     def Test_IAgRadarWaveformSearchTrackPulseDefinition(self, pulseDef: "RadarWaveformSearchTrackPulseDefinition"):
-        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.PRF
-        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.PRF, pulseDef.prf_mode)
+        pulseDef.pulse_repetition_frequency_mode = RADAR_SEARCH_TRACK_PRF_MODE.PRF
+        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.PRF, pulseDef.pulse_repetition_frequency_mode)
 
-        pulseDef.prf = 1e-06
-        Assert.assertEqual(1e-06, pulseDef.prf)
-        pulseDef.prf = 10
-        Assert.assertEqual(10, pulseDef.prf)
+        pulseDef.pulse_repetition_frequency = 1e-06
+        Assert.assertEqual(1e-06, pulseDef.pulse_repetition_frequency)
+        pulseDef.pulse_repetition_frequency = 10
+        Assert.assertEqual(10, pulseDef.pulse_repetition_frequency)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            pulseDef.prf = 0
+            pulseDef.pulse_repetition_frequency = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            pulseDef.prf = 11
+            pulseDef.pulse_repetition_frequency = 11
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_range = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_velocity = 0.02
 
-        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE
-        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE, pulseDef.prf_mode)
+        pulseDef.pulse_repetition_frequency_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE
+        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_RANGE, pulseDef.pulse_repetition_frequency_mode)
 
         pulseDef.unambiguous_range = 9
         Assert.assertEqual(9, pulseDef.unambiguous_range)
@@ -1722,12 +1763,12 @@ class EarlyBoundTests(TestBase):
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { sarPulseDef.UnambiguousRange = 0.02; });
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            pulseDef.prf = 0.02
+            pulseDef.pulse_repetition_frequency = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_velocity = 0.02
 
-        pulseDef.prf_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL
-        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL, pulseDef.prf_mode)
+        pulseDef.pulse_repetition_frequency_mode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VELOCITY
+        Assert.assertEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VELOCITY, pulseDef.pulse_repetition_frequency_mode)
 
         pulseDef.unambiguous_velocity = 1e-06
         Assert.assertEqual(1e-06, pulseDef.unambiguous_velocity)
@@ -1739,7 +1780,7 @@ class EarlyBoundTests(TestBase):
             pulseDef.unambiguous_velocity = 1001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            pulseDef.prf = 0.02
+            pulseDef.pulse_repetition_frequency = 0.02
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             pulseDef.unambiguous_range = 0.02
 
@@ -1809,10 +1850,10 @@ class EarlyBoundTests(TestBase):
     # region Test_IAgRadarProbabilityOfDetection
 
     def Test_IAgRadarProbabilityOfDetection(
-        self, probOfDet: "IRadarProbabilityOfDetection", probOfDetType: "RADAR_P_DET_TYPE"
+        self, probOfDet: "IRadarProbabilityOfDetection", probOfDetType: "RADAR_PROBABILITY_OF_DETECTION_TYPE"
     ):
-        if RADAR_P_DET_TYPE.CFAR == probOfDetType:
-            Assert.assertEqual(RADAR_P_DET_TYPE.CFAR, probOfDet.type)
+        if RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR == probOfDetType:
+            Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR, probOfDet.type)
 
             probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(probOfDet, IRadarProbabilityOfDetectionCFAR)
 
@@ -1825,15 +1866,15 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 probOfDetCFAR.probability_of_false_alarm = 1.1
 
-            probOfDetCFAR.num_cfar_reference_cells = 1
-            Assert.assertEqual(1, probOfDetCFAR.num_cfar_reference_cells)
-            probOfDetCFAR.num_cfar_reference_cells = 200000000
-            Assert.assertEqual(200000000, probOfDetCFAR.num_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 1
+            Assert.assertEqual(1, probOfDetCFAR.number_of_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 200000000
+            Assert.assertEqual(200000000, probOfDetCFAR.number_of_cfar_reference_cells)
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                probOfDetCFAR.num_cfar_reference_cells = 0
+                probOfDetCFAR.number_of_cfar_reference_cells = 0
 
-        elif RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING == probOfDetType:
-            Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING, probOfDet.type)
+        elif RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING == probOfDetType:
+            Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING, probOfDet.type)
 
             probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(probOfDet, IRadarProbabilityOfDetectionCFAR)
 
@@ -1846,17 +1887,17 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 probOfDetCFAR.probability_of_false_alarm = 0.1
 
-            probOfDetCFAR.num_cfar_reference_cells = 1
-            Assert.assertEqual(1, probOfDetCFAR.num_cfar_reference_cells)
-            probOfDetCFAR.num_cfar_reference_cells = 32
-            Assert.assertEqual(32, probOfDetCFAR.num_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 1
+            Assert.assertEqual(1, probOfDetCFAR.number_of_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 32
+            Assert.assertEqual(32, probOfDetCFAR.number_of_cfar_reference_cells)
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                probOfDetCFAR.num_cfar_reference_cells = 0
+                probOfDetCFAR.number_of_cfar_reference_cells = 0
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                probOfDetCFAR.num_cfar_reference_cells = 33
+                probOfDetCFAR.number_of_cfar_reference_cells = 33
 
-        elif RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS == probOfDetType:
-            Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS, probOfDet.type)
+        elif RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS == probOfDetType:
+            Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS, probOfDet.type)
 
             probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(probOfDet, IRadarProbabilityOfDetectionCFAR)
 
@@ -1869,17 +1910,17 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                 probOfDetCFAR.probability_of_false_alarm = 0.001
 
-            probOfDetCFAR.num_cfar_reference_cells = 4
-            Assert.assertEqual(4, probOfDetCFAR.num_cfar_reference_cells)
-            probOfDetCFAR.num_cfar_reference_cells = 32
-            Assert.assertEqual(32, probOfDetCFAR.num_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 4
+            Assert.assertEqual(4, probOfDetCFAR.number_of_cfar_reference_cells)
+            probOfDetCFAR.number_of_cfar_reference_cells = 32
+            Assert.assertEqual(32, probOfDetCFAR.number_of_cfar_reference_cells)
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                probOfDetCFAR.num_cfar_reference_cells = 3
+                probOfDetCFAR.number_of_cfar_reference_cells = 3
             with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-                probOfDetCFAR.num_cfar_reference_cells = 33
+                probOfDetCFAR.number_of_cfar_reference_cells = 33
 
-        elif RADAR_P_DET_TYPE.NON_CFAR == probOfDetType:
-            Assert.assertEqual(RADAR_P_DET_TYPE.NON_CFAR, probOfDet.type)
+        elif RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR == probOfDetType:
+            Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR, probOfDet.type)
 
             probOfDetNonCFAR: "RadarProbabilityOfDetectionNonCFAR" = clr.CastAs(
                 probOfDet, RadarProbabilityOfDetectionNonCFAR
@@ -2017,8 +2058,8 @@ class EarlyBoundTests(TestBase):
         goalSNR.integrator_type = RADAR_PULSE_INTEGRATOR_TYPE.INTEGRATION_FILE
         Assert.assertEqual(RADAR_PULSE_INTEGRATOR_TYPE.INTEGRATION_FILE, goalSNR.integrator_type)
 
-        goalSNR.integration_file = TestBase.GetScenarioFile("CommRad", "IntegrationGain.ig")
-        Assert.assertEqual(TestBase.PathCombine("CommRad", "IntegrationGain.ig"), goalSNR.integration_file)
+        goalSNR.integration_filename = TestBase.GetScenarioFile("CommRad", "IntegrationGain.ig")
+        Assert.assertEqual(TestBase.PathCombine("CommRad", "IntegrationGain.ig"), goalSNR.integration_filename)
 
         goalSNR.non_coherent_integration = True
         Assert.assertTrue(goalSNR.non_coherent_integration)
@@ -2052,23 +2093,31 @@ class EarlyBoundTests(TestBase):
         self.Test_IAgRadarModulator(fixedPRF.modulator)
 
         fixedPRF.set_probability_of_detection("Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR, fixedPRF.probability_of_detection.type)
-        self.Test_IAgRadarProbabilityOfDetection(fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR)
+        Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR, fixedPRF.probability_of_detection.type)
+        self.Test_IAgRadarProbabilityOfDetection(
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR
+        )
 
         fixedPRF.set_probability_of_detection("Non-constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.NON_CFAR, fixedPRF.probability_of_detection.type)
-        self.Test_IAgRadarProbabilityOfDetection(fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.NON_CFAR)
+        Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR, fixedPRF.probability_of_detection.type)
+        self.Test_IAgRadarProbabilityOfDetection(
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR
+        )
 
         fixedPRF.set_probability_of_detection("Cell Averaging Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING, fixedPRF.probability_of_detection.type)
+        Assert.assertEqual(
+            RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING, fixedPRF.probability_of_detection.type
+        )
         self.Test_IAgRadarProbabilityOfDetection(
-            fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING
         )
 
         fixedPRF.set_probability_of_detection("Ordered Statistics Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS, fixedPRF.probability_of_detection.type)
+        Assert.assertEqual(
+            RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS, fixedPRF.probability_of_detection.type
+        )
         self.Test_IAgRadarProbabilityOfDetection(
-            fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS
         )
 
         fixedPRF.pulse_integration_type = RADAR_PULSE_INTEGRATION_TYPE.FIXED_NUMBER_OF_PULSES
@@ -2124,8 +2173,8 @@ class EarlyBoundTests(TestBase):
     def Test_IAgRadarTransmitter(self, radarTrans: "RadarTransmitter"):
         # Specs sub-tab
 
-        radarTrans.frequency_specification = RADAR_FREQUENCY_SPEC.FREQUENCY
-        Assert.assertEqual(RADAR_FREQUENCY_SPEC.FREQUENCY, radarTrans.frequency_specification)
+        radarTrans.frequency_specification = RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY
+        Assert.assertEqual(RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY, radarTrans.frequency_specification)
 
         radarTrans.frequency = 0.01
         Assert.assertEqual(0.01, radarTrans.frequency)
@@ -2139,8 +2188,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             radarTrans.wavelength = 1
 
-        radarTrans.frequency_specification = RADAR_FREQUENCY_SPEC.WAVELENGTH
-        Assert.assertEqual(RADAR_FREQUENCY_SPEC.WAVELENGTH, radarTrans.frequency_specification)
+        radarTrans.frequency_specification = RADAR_FREQUENCY_SPECIFICATION_TYPE.WAVELENGTH
+        Assert.assertEqual(RADAR_FREQUENCY_SPECIFICATION_TYPE.WAVELENGTH, radarTrans.frequency_specification)
 
         radarTrans.wavelength = 0.001
         Assert.assertEqual(0.001, radarTrans.wavelength)
@@ -2198,7 +2247,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             radarTrans.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            radarTrans.enable_ortho_polarization = True
+            radarTrans.enable_orthogonal_polarization = True
 
         radarTrans.enable_polarization = True
         Assert.assertTrue(radarTrans.enable_polarization)
@@ -2216,10 +2265,10 @@ class EarlyBoundTests(TestBase):
                 polarizationHelper = PolarizationHelper(TestBase.Application)
                 polarizationHelper.Run(radarTrans.polarization, type)
 
-        radarTrans.enable_ortho_polarization = True
-        Assert.assertTrue(radarTrans.enable_ortho_polarization)
-        radarTrans.enable_ortho_polarization = False
-        Assert.assertFalse(radarTrans.enable_ortho_polarization)
+        radarTrans.enable_orthogonal_polarization = True
+        Assert.assertTrue(radarTrans.enable_orthogonal_polarization)
+        radarTrans.enable_orthogonal_polarization = False
+        Assert.assertFalse(radarTrans.enable_orthogonal_polarization)
 
         # Additional Gains and Losses tab
 
@@ -2341,7 +2390,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             radarReceiver.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            radarReceiver.enable_ortho_polarization = True
+            radarReceiver.enable_orthogonal_polarization = True
 
         radarReceiver.enable_polarization = True
         Assert.assertTrue(radarReceiver.enable_polarization)
@@ -2359,10 +2408,10 @@ class EarlyBoundTests(TestBase):
                 polarizationHelper = PolarizationHelper(TestBase.Application)
                 polarizationHelper.Run(radarReceiver.polarization, type)
 
-        radarReceiver.enable_ortho_polarization = True
-        Assert.assertTrue(radarReceiver.enable_ortho_polarization)
-        radarReceiver.enable_ortho_polarization = False
-        Assert.assertFalse(radarReceiver.enable_ortho_polarization)
+        radarReceiver.enable_orthogonal_polarization = True
+        Assert.assertTrue(radarReceiver.enable_orthogonal_polarization)
+        radarReceiver.enable_orthogonal_polarization = False
+        Assert.assertFalse(radarReceiver.enable_orthogonal_polarization)
 
         # System Noise Temperature sub-tab
 
@@ -2371,30 +2420,30 @@ class EarlyBoundTests(TestBase):
 
         # STC sub-tab
 
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
 
-        radarReceiver.enable_rf_stc = False
-        Assert.assertFalse(radarReceiver.enable_rf_stc)
+        radarReceiver.enable_rfstc = False
+        Assert.assertFalse(radarReceiver.enable_rfstc)
 
         stcHelper = STCHelper(TestBase.Application)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             stcHelper.Run_RF(radarReceiver)
 
-        radarReceiver.enable_rf_stc = True
-        Assert.assertTrue(radarReceiver.enable_rf_stc)
+        radarReceiver.enable_rfstc = True
+        Assert.assertTrue(radarReceiver.enable_rfstc)
 
         stcHelper = STCHelper(TestBase.Application)
         stcHelper.Run_RF(radarReceiver)
 
-        radarReceiver.enable_if_stc = False
-        Assert.assertFalse(radarReceiver.enable_if_stc)
+        radarReceiver.enable_ifstc = False
+        Assert.assertFalse(radarReceiver.enable_ifstc)
 
         stcHelper = STCHelper(TestBase.Application)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             stcHelper.Run_IF(radarReceiver)
 
-        radarReceiver.enable_if_stc = True
-        Assert.assertTrue(radarReceiver.enable_if_stc)
+        radarReceiver.enable_ifstc = True
+        Assert.assertTrue(radarReceiver.enable_ifstc)
 
         stcHelper = STCHelper(TestBase.Application)
         stcHelper.Run_IF(radarReceiver)
@@ -2602,7 +2651,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Clutter Geometry CSharp Example", spp.name)
 
         sppPlugin: "ScatteringPointProviderPlugin" = clr.CastAs(spp, ScatteringPointProviderPlugin)
-        pluginConfig: "CRPluginConfiguration" = sppPlugin.plugin_configuration
+        pluginConfig: "IAgCRPluginConfiguration" = sppPlugin.plugin_configuration
         arProps = pluginConfig.available_properties
         Assert.assertEqual(2, Array.Length(arProps))
         Assert.assertEqual("PatchArea", str(arProps[0]))
@@ -2863,7 +2912,7 @@ class EarlyBoundTests(TestBase):
             ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                 Assert.assertIsNotNone(rawPluginObject)
 
-            pluginConfiguration: "CRPluginConfiguration" = plugin.plugin_configuration
+            pluginConfiguration: "IAgCRPluginConfiguration" = plugin.plugin_configuration
             availableProperties = pluginConfiguration.available_properties
             Assert.assertEqual(2, Array.Length(availableProperties))
             Assert.assertEqual("ConstantCoefficient", availableProperties[0])
@@ -2884,7 +2933,7 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgScatteringPointModelWindTurbine
     def Test_IAgScatteringPointModelWindTurbine(self, windTurbine: "ScatteringPointModelWindTurbine"):
-        holdAngleUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("AngleUnit")
+        holdAngleUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("AngleUnit")
 
         windTurbine.blade_length = 0.001
         Assert.assertEqual(0.001, windTurbine.blade_length)
@@ -2895,7 +2944,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             windTurbine.blade_length = 10001
 
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "rad")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "rad")
 
         windTurbine.blade_rotation = -10000
         Assert.assertEqual(-10000, windTurbine.blade_rotation)
@@ -2906,7 +2955,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             windTurbine.blade_rotation = 10001
 
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
 
         windTurbine.wind_direction = 0
         Assert.assertEqual(0, windTurbine.wind_direction)
@@ -2935,7 +2984,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             windTurbine.structure_scattering_cross_section = 91
 
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", holdAngleUnit)
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", holdAngleUnit)
 
     # endregion
 
@@ -2971,11 +3020,11 @@ class EarlyBoundTests(TestBase):
         monostatic.set_mode("SAR")
         mode = monostatic.mode
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
 
-        sar: "RadarModeMonostaticSar" = clr.CastAs(mode, RadarModeMonostaticSar)
+        sar: "RadarModeMonostaticSAR" = clr.CastAs(mode, RadarModeMonostaticSAR)
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
         self.Test_IAgRadarWaveformSarPulseDefinition(sar.pulse_definition, True)
 
         # Mode (SAR) - Modulator sub tab
@@ -2991,7 +3040,7 @@ class EarlyBoundTests(TestBase):
         monostatic.set_mode("Search Track")
         mode = monostatic.mode
         Assert.assertEqual("Search Track", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SEARCH_TRACK, mode.type)
+        Assert.assertEqual(RADAR_MODE.SEARCH_TRACK, mode.type)
 
         searchTrack: "RadarModeMonostaticSearchTrack" = clr.CastAs(mode, RadarModeMonostaticSearchTrack)
 
@@ -3045,8 +3094,8 @@ class EarlyBoundTests(TestBase):
     def Test_IAgRadarWaveformBistaticReceiverSearchTrackContinuous(
         self, continuous: "RadarWaveformBistaticReceiverSearchTrackContinuous"
     ):
-        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.FIXED_TIME
-        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.FIXED_TIME, continuous.analysis_mode_type)
+        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.FIXED_TIME
+        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.FIXED_TIME, continuous.analysis_mode_type)
 
         fixedTime: "RadarContinuousWaveAnalysisModeFixedTime" = clr.CastAs(
             continuous.analysis_mode, RadarContinuousWaveAnalysisModeFixedTime
@@ -3059,8 +3108,8 @@ class EarlyBoundTests(TestBase):
             fixedTime.fixed_time = -1
         # no max TryCatchAssertBlock.ExpectedException("is invalid", delegate() { fixedTime.FixedTime = 1.1; });
 
-        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.GOAL_SNR
-        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE.GOAL_SNR, continuous.analysis_mode_type)
+        continuous.analysis_mode_type = RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.GOAL_SNR
+        Assert.assertEqual(RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE.GOAL_SNR, continuous.analysis_mode_type)
 
         goalSNR: "RadarContinuousWaveAnalysisModeGoalSNR" = clr.CastAs(
             continuous.analysis_mode, RadarContinuousWaveAnalysisModeGoalSNR
@@ -3089,23 +3138,31 @@ class EarlyBoundTests(TestBase):
         self, fixedPRF: "RadarWaveformBistaticReceiverSearchTrackFixedPRF"
     ):
         fixedPRF.set_probability_of_detection("Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR, fixedPRF.probability_of_detection.type)
-        self.Test_IAgRadarProbabilityOfDetection(fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR)
+        Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR, fixedPRF.probability_of_detection.type)
+        self.Test_IAgRadarProbabilityOfDetection(
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR
+        )
 
         fixedPRF.set_probability_of_detection("Non-constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.NON_CFAR, fixedPRF.probability_of_detection.type)
-        self.Test_IAgRadarProbabilityOfDetection(fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.NON_CFAR)
+        Assert.assertEqual(RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR, fixedPRF.probability_of_detection.type)
+        self.Test_IAgRadarProbabilityOfDetection(
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR
+        )
 
         fixedPRF.set_probability_of_detection("Cell Averaging Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING, fixedPRF.probability_of_detection.type)
+        Assert.assertEqual(
+            RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING, fixedPRF.probability_of_detection.type
+        )
         self.Test_IAgRadarProbabilityOfDetection(
-            fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING
         )
 
         fixedPRF.set_probability_of_detection("Ordered Statistics Constant False Alarm Rate")
-        Assert.assertEqual(RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS, fixedPRF.probability_of_detection.type)
+        Assert.assertEqual(
+            RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS, fixedPRF.probability_of_detection.type
+        )
         self.Test_IAgRadarProbabilityOfDetection(
-            fixedPRF.probability_of_detection, RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS
+            fixedPRF.probability_of_detection, RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS
         )
 
         fixedPRF.pulse_integration_type = RADAR_PULSE_INTEGRATION_TYPE.FIXED_NUMBER_OF_PULSES
@@ -3162,11 +3219,11 @@ class EarlyBoundTests(TestBase):
         bistaticReceiver.set_mode("SAR")
         mode: "IRadarModeBistaticReceiver" = bistaticReceiver.mode
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
 
-        sar: "RadarModeBistaticReceiverSar" = clr.CastAs(mode, RadarModeBistaticReceiverSar)
+        sar: "RadarModeBistaticReceiverSAR" = clr.CastAs(mode, RadarModeBistaticReceiverSAR)
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
         self.Test_IAgRadarWaveformSarPulseIntegration(sar.pulse_integration)
 
         # Mode (Search Track)
@@ -3174,7 +3231,7 @@ class EarlyBoundTests(TestBase):
         bistaticReceiver.set_mode("Search Track")
         mode = bistaticReceiver.mode
         Assert.assertEqual("Search Track", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SEARCH_TRACK, mode.type)
+        Assert.assertEqual(RADAR_MODE.SEARCH_TRACK, mode.type)
 
         searchTrack: "RadarModeBistaticReceiverSearchTrack" = clr.CastAs(mode, RadarModeBistaticReceiverSearchTrack)
 
@@ -3285,11 +3342,11 @@ class EarlyBoundTests(TestBase):
         bistaticTransmitter.set_mode("SAR")
         mode: "IRadarModeBistaticTransmitter" = bistaticTransmitter.mode
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
 
-        sar: "RadarModeBistaticTransmitterSar" = clr.CastAs(mode, RadarModeBistaticTransmitterSar)
+        sar: "RadarModeBistaticTransmitterSAR" = clr.CastAs(mode, RadarModeBistaticTransmitterSAR)
         Assert.assertEqual("SAR", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SAR, mode.type)
+        Assert.assertEqual(RADAR_MODE.SAR, mode.type)
         self.Test_IAgRadarWaveformSarPulseDefinition(sar.pulse_definition, False)
 
         # Mode (SAR) - Modulator sub tab
@@ -3301,7 +3358,7 @@ class EarlyBoundTests(TestBase):
         bistaticTransmitter.set_mode("Search Track")
         mode = bistaticTransmitter.mode
         Assert.assertEqual("Search Track", mode.name)
-        Assert.assertEqual(RADAR_MODE_TYPE.SEARCH_TRACK, mode.type)
+        Assert.assertEqual(RADAR_MODE.SEARCH_TRACK, mode.type)
 
         searchTrack: "RadarModeBistaticTransmitterSearchTrack" = clr.CastAs(
             mode, RadarModeBistaticTransmitterSearchTrack
@@ -3342,7 +3399,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgCRLocation
-    def Test_IAgCRLocation(self, crLocation: "CRLocation"):
+    def Test_IAgCRLocation(self, crLocation: "CommRadCartesianLocation"):
         crLocation.x = -100000000000000000000.0
         Assert.assertEqual(-100000000000000000000.0, crLocation.x)
         crLocation.x = 100000000000000000000.0
@@ -3389,7 +3446,8 @@ class EarlyBoundTests(TestBase):
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
                 Assert.assertEqual(
-                    RADAR_P_DET_TYPE.CFAR_CELL_AVERAGING, detectionProcessing.probability_of_detection.type
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_CELL_AVERAGING,
+                    detectionProcessing.probability_of_detection.type,
                 )
                 probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(
                     detectionProcessing.probability_of_detection, IRadarProbabilityOfDetectionCFAR
@@ -3404,19 +3462,21 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                     probOfDetCFAR.probability_of_false_alarm = 0.1
 
-                probOfDetCFAR.num_cfar_reference_cells = 1
-                Assert.assertEqual(1, probOfDetCFAR.num_cfar_reference_cells)
-                probOfDetCFAR.num_cfar_reference_cells = 32
-                Assert.assertEqual(32, probOfDetCFAR.num_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 1
+                Assert.assertEqual(1, probOfDetCFAR.number_of_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 32
+                Assert.assertEqual(32, probOfDetCFAR.number_of_cfar_reference_cells)
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                    probOfDetCFAR.num_cfar_reference_cells = 0
+                    probOfDetCFAR.number_of_cfar_reference_cells = 0
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                    probOfDetCFAR.num_cfar_reference_cells = 33
+                    probOfDetCFAR.number_of_cfar_reference_cells = 33
 
             elif probOfDetName == "Constant False Alarm Rate":
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
-                Assert.assertEqual(RADAR_P_DET_TYPE.CFAR, detectionProcessing.probability_of_detection.type)
+                Assert.assertEqual(
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR, detectionProcessing.probability_of_detection.type
+                )
                 probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(
                     detectionProcessing.probability_of_detection, IRadarProbabilityOfDetectionCFAR
                 )
@@ -3430,17 +3490,19 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                     probOfDetCFAR.probability_of_false_alarm = 2
 
-                probOfDetCFAR.num_cfar_reference_cells = 1
-                Assert.assertEqual(1, probOfDetCFAR.num_cfar_reference_cells)
-                probOfDetCFAR.num_cfar_reference_cells = 2140000000
-                Assert.assertEqual(2140000000, probOfDetCFAR.num_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 1
+                Assert.assertEqual(1, probOfDetCFAR.number_of_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 2140000000
+                Assert.assertEqual(2140000000, probOfDetCFAR.number_of_cfar_reference_cells)
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                    probOfDetCFAR.num_cfar_reference_cells = 0
+                    probOfDetCFAR.number_of_cfar_reference_cells = 0
 
             elif probOfDetName == "Non-constant False Alarm Rate":
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
-                Assert.assertEqual(RADAR_P_DET_TYPE.NON_CFAR, detectionProcessing.probability_of_detection.type)
+                Assert.assertEqual(
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.NON_CFAR, detectionProcessing.probability_of_detection.type
+                )
                 probOfDetNonCFAR: "RadarProbabilityOfDetectionNonCFAR" = clr.CastAs(
                     detectionProcessing.probability_of_detection, RadarProbabilityOfDetectionNonCFAR
                 )
@@ -3458,7 +3520,8 @@ class EarlyBoundTests(TestBase):
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
                 Assert.assertEqual(
-                    RADAR_P_DET_TYPE.CFAR_ORDERED_STATISTICS, detectionProcessing.probability_of_detection.type
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.CFAR_ORDERED_STATISTICS,
+                    detectionProcessing.probability_of_detection.type,
                 )
                 probOfDetCFAR: "IRadarProbabilityOfDetectionCFAR" = clr.CastAs(
                     detectionProcessing.probability_of_detection, IRadarProbabilityOfDetectionCFAR
@@ -3473,19 +3536,21 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                     probOfDetCFAR.probability_of_false_alarm = 0.001
 
-                probOfDetCFAR.num_cfar_reference_cells = 4
-                Assert.assertEqual(4, probOfDetCFAR.num_cfar_reference_cells)
-                probOfDetCFAR.num_cfar_reference_cells = 32
-                Assert.assertEqual(32, probOfDetCFAR.num_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 4
+                Assert.assertEqual(4, probOfDetCFAR.number_of_cfar_reference_cells)
+                probOfDetCFAR.number_of_cfar_reference_cells = 32
+                Assert.assertEqual(32, probOfDetCFAR.number_of_cfar_reference_cells)
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                    probOfDetCFAR.num_cfar_reference_cells = 3
+                    probOfDetCFAR.number_of_cfar_reference_cells = 3
                 with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                    probOfDetCFAR.num_cfar_reference_cells = 33
+                    probOfDetCFAR.number_of_cfar_reference_cells = 33
 
             elif probOfDetName == "Plugin Cell Averaging CFAR":
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
-                Assert.assertEqual(RADAR_P_DET_TYPE.PLUGIN, detectionProcessing.probability_of_detection.type)
+                Assert.assertEqual(
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.PLUGIN, detectionProcessing.probability_of_detection.type
+                )
                 probOfDetPlugin: "RadarProbabilityOfDetectionPlugin" = clr.CastAs(
                     detectionProcessing.probability_of_detection, RadarProbabilityOfDetectionPlugin
                 )
@@ -3497,7 +3562,7 @@ class EarlyBoundTests(TestBase):
                 ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                     Assert.assertIsNotNone(objRaw)
 
-                pluginConfig: "CRPluginConfiguration" = probOfDetPlugin.plugin_configuration
+                pluginConfig: "IAgCRPluginConfiguration" = probOfDetPlugin.plugin_configuration
                 arProps = pluginConfig.available_properties
                 Assert.assertEqual(2, Array.Length(arProps))
                 pluginConfig.set_property("ProbabilityOfFalseAlarm", 1e-05)
@@ -3513,7 +3578,9 @@ class EarlyBoundTests(TestBase):
             elif probOfDetName == "Plugin Ordered Statistics CFAR":
                 detectionProcessing.set_probability_of_detection(probOfDetName)
                 Assert.assertEqual(probOfDetName, detectionProcessing.probability_of_detection.name)
-                Assert.assertEqual(RADAR_P_DET_TYPE.PLUGIN, detectionProcessing.probability_of_detection.type)
+                Assert.assertEqual(
+                    RADAR_PROBABILITY_OF_DETECTION_TYPE.PLUGIN, detectionProcessing.probability_of_detection.type
+                )
                 probOfDetPlugin: "RadarProbabilityOfDetectionPlugin" = clr.CastAs(
                     detectionProcessing.probability_of_detection, RadarProbabilityOfDetectionPlugin
                 )
@@ -3525,7 +3592,7 @@ class EarlyBoundTests(TestBase):
                 ) and (EngineLifetimeManager.target != TestTarget.eStkRuntimeNoGfx):
                     Assert.assertIsNotNone(objRaw)
 
-                pluginConfig: "CRPluginConfiguration" = probOfDetPlugin.plugin_configuration
+                pluginConfig: "IAgCRPluginConfiguration" = probOfDetPlugin.plugin_configuration
                 arProps = pluginConfig.available_properties
                 Assert.assertEqual(2, Array.Length(arProps))
                 pluginConfig.set_property("ProbabilityOfFalseAlarm", 0.0001)
@@ -3615,25 +3682,25 @@ class EarlyBoundTests(TestBase):
     def Test_IAgRadarTransmitterMultifunction(self, transMultifunction: "RadarTransmitterMultifunction"):
         # Specs
 
-        transMultifunction.max_power_limit = -2890
-        Assert.assertEqual(-2890, transMultifunction.max_power_limit)
-        transMultifunction.max_power_limit = 2890
-        Assert.assertEqual(2890, transMultifunction.max_power_limit)
+        transMultifunction.maximum_power_limit = -2890
+        Assert.assertEqual(-2890, transMultifunction.maximum_power_limit)
+        transMultifunction.maximum_power_limit = 2890
+        Assert.assertEqual(2890, transMultifunction.maximum_power_limit)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            transMultifunction.max_power_limit = -2891
+            transMultifunction.maximum_power_limit = -2891
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            transMultifunction.max_power_limit = 2891
+            transMultifunction.maximum_power_limit = 2891
 
         # RF Filter
 
-        transMultifunction.power_amp_bandwidth = 1e-06
-        Assert.assertEqual(1e-06, transMultifunction.power_amp_bandwidth)
-        transMultifunction.power_amp_bandwidth = 300000000000
-        Assert.assertEqual(300000000000, transMultifunction.power_amp_bandwidth)
+        transMultifunction.power_amplifier_bandwidth = 1e-06
+        Assert.assertEqual(1e-06, transMultifunction.power_amplifier_bandwidth)
+        transMultifunction.power_amplifier_bandwidth = 300000000000
+        Assert.assertEqual(300000000000, transMultifunction.power_amplifier_bandwidth)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            transMultifunction.power_amp_bandwidth = 0.0
+            transMultifunction.power_amplifier_bandwidth = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            transMultifunction.power_amp_bandwidth = 10000000000000.0
+            transMultifunction.power_amplifier_bandwidth = 10000000000000.0
 
         arSupportedFilters = transMultifunction.supported_filters
         Assert.assertEqual(18, len(arSupportedFilters))
@@ -3661,7 +3728,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             transMultifunction.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            transMultifunction.enable_ortho_polarization = True
+            transMultifunction.enable_orthogonal_polarization = True
 
         transMultifunction.enable_polarization = True
         Assert.assertTrue(transMultifunction.enable_polarization)
@@ -3679,10 +3746,10 @@ class EarlyBoundTests(TestBase):
                 polarizationHelper = PolarizationHelper(TestBase.Application)
                 polarizationHelper.Run(transMultifunction.polarization, type)
 
-        transMultifunction.enable_ortho_polarization = True
-        Assert.assertTrue(transMultifunction.enable_ortho_polarization)
-        transMultifunction.enable_ortho_polarization = False
-        Assert.assertFalse(transMultifunction.enable_ortho_polarization)
+        transMultifunction.enable_orthogonal_polarization = True
+        Assert.assertTrue(transMultifunction.enable_orthogonal_polarization)
+        transMultifunction.enable_orthogonal_polarization = False
+        Assert.assertFalse(transMultifunction.enable_orthogonal_polarization)
 
         # Additional Gains and Losses tab
 
@@ -3693,14 +3760,14 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgPointingStrategyFixed
     def Test_IAgPointingStrategyFixed(self, strategyFixed: "PointingStrategyFixed"):
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(strategyFixed.orientation, Orientations.All)
 
     # endregion
 
     # region Test_IAgPointingStrategySpinning
     def Test_IAgPointingStrategySpinning(self, spinning: "PointingStrategySpinning"):
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(spinning.spin_axes_orientation, Orientations.All)
 
         spinning.cone_angle = 0
@@ -3778,10 +3845,10 @@ class EarlyBoundTests(TestBase):
         activityTCLE.component = "Satellite/Satellite1 AvailabilityTimeSpan EventInterval"
         Assert.assertEqual("Satellite/Satellite1 AvailabilityTimeSpan EventInterval", activityTCLE.component)
 
-        activityTCLE.active = False
-        Assert.assertFalse(activityTCLE.active)
-        activityTCLE.active = True
-        Assert.assertTrue(activityTCLE.active)
+        activityTCLE.is_active = False
+        Assert.assertFalse(activityTCLE.is_active)
+        activityTCLE.is_active = True
+        Assert.assertTrue(activityTCLE.is_active)
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
             activityTCLE.component = "Bogus"
 
@@ -3837,10 +3904,10 @@ class EarlyBoundTests(TestBase):
         activityTILE = activityTILC.add()
         Assert.assertEqual(3, activityTILC.count)
 
-        activityTILE.active = False
-        Assert.assertFalse(activityTILE.active)
-        activityTILE.active = True
-        Assert.assertTrue(activityTILE.active)
+        activityTILE.is_active = False
+        Assert.assertFalse(activityTILE.is_active)
+        activityTILE.is_active = True
+        Assert.assertTrue(activityTILE.is_active)
 
         activityTILE.stop = "3 Jul 1999 00:00:00.000"
         Assert.assertEqual("3 Jul 1999 00:00:00.000", activityTILE.stop)
@@ -3903,10 +3970,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgRadarAntennaBeamCollection
     def Test_IAgRadarAntennaBeam(self, beam: "RadarAntennaBeam"):
-        beam.id = ""
-        Assert.assertEqual("", beam.id)
-        beam.id = "BeamName"
-        Assert.assertEqual("BeamName", beam.id)
+        beam.identifier = ""
+        Assert.assertEqual("", beam.identifier)
+        beam.identifier = "BeamName"
+        Assert.assertEqual("BeamName", beam.identifier)
 
         # Active Times tab
 
@@ -3955,8 +4022,8 @@ class EarlyBoundTests(TestBase):
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.UnambiguousRange = 0.0148; });
         #    //TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.UnambiguousRange = 11; });   // no max
 
-        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL;
-        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VEL, pulseDef.PrfMode);
+        # pulseDef.PrfMode = RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VELOCITY;
+        # Assert.AreEqual(RADAR_SEARCH_TRACK_PRF_MODE.UNAMBIGUOUS_VELOCITY, pulseDef.PrfMode);
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.Prf = 1; });
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { pulseDef.UnambiguousRange = 1; });
         #    pulseDef.UnambiguousVelocity = 1e-09;
@@ -3986,8 +4053,8 @@ class EarlyBoundTests(TestBase):
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.DutyFactor = 1e-13; });
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { pulseDef.DutyFactor = 1.1; });
 
-        # beam.FrequencySpecification = RADAR_FREQUENCY_SPEC.FREQUENCY;
-        # Assert.AreEqual(RADAR_FREQUENCY_SPEC.FREQUENCY, beam.FrequencySpecification);
+        # beam.FrequencySpecification = RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY;
+        # Assert.AreEqual(RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY, beam.FrequencySpecification);
 
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { beam.Wavelength = 1; });
         #    beam.Frequency = 0.003;
@@ -3997,8 +4064,8 @@ class EarlyBoundTests(TestBase):
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { beam.Frequency = 0.00299; });
         #    TryCatchAssertBlock.ExpectedException("invalid", delegate () { beam.Frequency = 3e08; });
 
-        # beam.FrequencySpecification = RADAR_FREQUENCY_SPEC.WAVELENGTH;
-        # Assert.AreEqual(RADAR_FREQUENCY_SPEC.WAVELENGTH, beam.FrequencySpecification);
+        # beam.FrequencySpecification = RADAR_FREQUENCY_SPECIFICATION_TYPE.WAVELENGTH;
+        # Assert.AreEqual(RADAR_FREQUENCY_SPECIFICATION_TYPE.WAVELENGTH, beam.FrequencySpecification);
 
         #    TryCatchAssertBlock.ExpectedException("read only", delegate () { beam.Frequency = 1; });
         #    beam.Wavelength = 1e-09;
@@ -4062,26 +4129,26 @@ class EarlyBoundTests(TestBase):
             beamColl.remove_at(0)
 
         beam = beamColl.add()
-        beam.id = "Beam2"
+        beam.identifier = "Beam2"
         beam = beamColl.add()
-        beam.id = "Beam3"
+        beam.identifier = "Beam3"
         beam = beamColl.add()
-        beam.id = "Beam4"
+        beam.identifier = "Beam4"
         Assert.assertEqual(4, beamColl.count)
 
         i: int = 0
         while i < beamColl.count:
-            Assert.assertTrue(("Beam" in beamColl[i].id))
+            Assert.assertTrue(("Beam" in beamColl[i].identifier))
 
             i += 1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
-            s: str = beamColl[4].id
+            s: str = beamColl[4].identifier
 
         b: "RadarAntennaBeam"
 
         for b in beamColl:
-            Assert.assertTrue(("Beam" in b.id))
+            Assert.assertTrue(("Beam" in b.identifier))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
             beam = beamColl.insert_at(-1)
@@ -4089,8 +4156,8 @@ class EarlyBoundTests(TestBase):
             beam = beamColl.insert_at(4)
 
         beam = beamColl.insert_at(2)
-        beam.id = "InsertedAt2"
-        Assert.assertEqual("InsertedAt2", beamColl[2].id)
+        beam.identifier = "InsertedAt2"
+        Assert.assertEqual("InsertedAt2", beamColl[2].identifier)
         Assert.assertEqual(5, beamColl.count)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -4099,8 +4166,8 @@ class EarlyBoundTests(TestBase):
             beam = beamColl.duplicate_beam(5)
 
         beam = beamColl.duplicate_beam(4)
-        beam.id = "DupAt4"
-        Assert.assertEqual("DupAt4", beamColl[4].id)
+        beam.identifier = "DupAt4"
+        Assert.assertEqual("DupAt4", beamColl[4].identifier)
         Assert.assertEqual(6, beamColl.count)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("out of range")):
@@ -4109,7 +4176,7 @@ class EarlyBoundTests(TestBase):
             beamColl.remove_at(6)
 
         beamColl.remove_at(3)
-        Assert.assertEqual("DupAt4", beamColl[3].id)
+        Assert.assertEqual("DupAt4", beamColl[3].identifier)
         Assert.assertEqual(5, beamColl.count)
 
         self.Test_IAgRadarAntennaBeam(beamColl[0])

@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~DEFAULT`
               - EOIR : Use spectral shape determined by optical and radiometric parameters.
 
-            * - :py:attr:`~PROVIDE_RSR`
+            * - :py:attr:`~SPECIFIED_SYSTEM_RELATIVE_SPECTRAL_RESPONSE`
               - EOIR : Use a specified system relative spectral response.
 
 

@@ -34,7 +34,7 @@ class StkExternalSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -62,8 +62,8 @@ class StkExternalSnippets(CodeSnippetsTestBase):
         )
 
         # Configure propagator's external file path
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
-        ext: "VehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, VehiclePropagatorStkExternal)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.STK_EXTERNAL)
+        ext: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
         ext.filename = ephemerisFilePath
 
         # Propagate

@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.type`
               - Get the option for where to end the drop lines.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.show_graphics`
               - Opt whether to display the drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.use_2d_color`
               - Opt whether to use the color in the vehicle's 2D attributes for the drop lines.
@@ -52,8 +52,8 @@ Property detail
 
     Get the option for where to end the drop lines.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.show_graphics
     :type: bool
 
     Opt whether to display the drop lines.

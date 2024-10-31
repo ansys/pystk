@@ -32,7 +32,7 @@ Overview
               - Returns the AzElMask property.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.model_pointing`
               - Returns ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.aou_label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.vapor_trail`
               - Vapor trail attributes.
@@ -94,8 +94,8 @@ Property detail
 
     Returns ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
 
-.. py:property:: aou_label_swap_distance
-    :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.aou_label_swap_distance
+.. py:property:: uncertainty_area_label_swap_distance
+    :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.uncertainty_area_label_swap_distance
     :type: Graphics3DLabelSwapDistance
 
     Area of uncertainty label swap distance.

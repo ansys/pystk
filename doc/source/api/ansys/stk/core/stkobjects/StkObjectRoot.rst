@@ -36,7 +36,7 @@ Overview
               - Add a custom marker to Application.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.get_object_from_path`
               - Get the object instance that matches the path provided.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_to_xml`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_in_xml`
               - Return an XML representation of AllInstanceNames.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.begin_update`
               - Signals the object that the batch update is starting.
@@ -75,7 +75,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.unit_preferences`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.units_preferences`
               - Provides access to the Global Unit table.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.current_scenario`
               - Returns a Scenario object or null if no scenario has been loaded yet.
@@ -83,17 +83,17 @@ Overview
               - Returns whether the instance is isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility`
               - Returns the conversion utility interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols`
               - Returns the interface that enables creating 2525b symbols.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.available_features`
               - Allows the user to inquiry about the available features.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.vgt_root`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root`
               - Returns an instance of VGT root object.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.central_bodies`
               - Returns a collection of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.notification_filter`
               - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.preferences`
               - Configures STK preferences.
 
 
@@ -109,8 +109,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: unit_preferences
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.unit_preferences
+.. py:property:: units_preferences
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.units_preferences
     :type: IUnitPreferencesDimensionCollection
 
     Provides access to the Global Unit table.
@@ -133,9 +133,9 @@ Property detail
 
     Returns the conversion utility interface.
 
-.. py:property:: std_military2525_b_symbols
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols
-    :type: StdMilitary2525bSymbols
+.. py:property:: military_standard_2525b_symbols
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols
+    :type: MilitaryStandard2525bSymbols
 
     Returns the interface that enables creating 2525b symbols.
 
@@ -145,15 +145,15 @@ Property detail
 
     Allows the user to inquiry about the available features.
 
-.. py:property:: vgt_root
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.vgt_root
+.. py:property:: analysis_workbench_components_root
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root
     :type: IAnalysisWorkbenchRoot
 
     Returns an instance of VGT root object.
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
-    :type: StkCentralBodyCollection
+    :type: CentralBodyCollection
 
     Returns a collection of available central bodies.
 
@@ -163,9 +163,9 @@ Property detail
 
     Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
 
-.. py:property:: stk_preferences
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences
-    :type: StkPreferences
+.. py:property:: preferences
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.preferences
+    :type: Preferences
 
     Configures STK preferences.
 
@@ -271,8 +271,8 @@ Method detail
 
         :obj:`~IStkObject`
 
-.. py:method:: all_instance_names_to_xml(self) -> str
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_to_xml
+.. py:method:: all_instance_names_in_xml(self) -> str
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_in_xml
 
     Return an XML representation of AllInstanceNames.
 
@@ -298,7 +298,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
+.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
     Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
@@ -310,7 +310,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ExecuteMultipleCommandResult`
+        :obj:`~IExecuteMultipleCommandsResult`
 
 .. py:method:: isolate(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolate

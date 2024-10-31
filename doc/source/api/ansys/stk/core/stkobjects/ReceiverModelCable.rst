@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelCable.ber`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelCable.bit_error_rate`
               - Gets or sets the BER.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelCable.extra_cable_factor`
               - Gets or sets the extra cable factor.
@@ -40,8 +40,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: ber
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelCable.ber
+.. py:property:: bit_error_rate
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelCable.bit_error_rate
     :type: float
 
     Gets or sets the BER.

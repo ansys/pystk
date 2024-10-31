@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DISPLAY_ONE_ORBIT`
+            * - :py:attr:`~ONE_ORBIT`
               - Display one full orbit.
 
             * - :py:attr:`~ORBIT_DISPLAY_TIME`

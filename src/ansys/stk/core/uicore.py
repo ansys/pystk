@@ -467,7 +467,7 @@ class Toolbar(SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_id_method_offset = 1
+    _get_identifier_method_offset = 1
     _get_caption_method_offset = 2
     _get_visible_method_offset = 3
     _set_visible_method_offset = 4
@@ -481,13 +481,13 @@ class Toolbar(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Toolbar)
     
-    _get_id_metadata = { "offset" : _get_id_method_offset,
+    _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def id(self) -> int:
+    def identifier(self) -> int:
         """The identity."""
-        return self._intf.get_property(Toolbar._metadata, Toolbar._get_id_metadata)
+        return self._intf.get_property(Toolbar._metadata, Toolbar._get_identifier_metadata)
 
     _get_caption_metadata = { "offset" : _get_caption_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -527,7 +527,7 @@ class Toolbar(SupportsDeleteCallback):
     def float_state(self, newVal:"WINDOW_ARRANGE_STATE") -> None:
         return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, newVal)
 
-    _property_names[id] = "id"
+    _property_names[identifier] = "identifier"
     _property_names[caption] = "caption"
     _property_names[visible] = "visible"
     _property_names[float_state] = "float_state"

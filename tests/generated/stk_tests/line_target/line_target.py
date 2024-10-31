@@ -55,7 +55,10 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}", iIndex, oPoints[iIndex].lat, oPoints[iIndex].lon
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
+                iIndex,
+                oPoints[iIndex].latitude,
+                oPoints[iIndex].longitude,
             )
 
             iIndex += 1
@@ -72,7 +75,10 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}", iIndex, oPoints[iIndex].lat, oPoints[iIndex].lon
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
+                iIndex,
+                oPoints[iIndex].latitude,
+                oPoints[iIndex].longitude,
             )
 
             iIndex += 1
@@ -81,10 +87,10 @@ class EarlyBoundTests(TestBase):
         point: "LineTargetPoint"
         for point in oPoints:
             Assert.assertIsNotNone(point)
-            point.lat = (idx * idx) / 100.0
-            Assert.assertEqual(((idx * idx) / 100.0), point.lat)
-            point.lon = idx
-            Assert.assertEqual(idx, point.lon)
+            point.latitude = (idx * idx) / 100.0
+            Assert.assertEqual(((idx * idx) / 100.0), point.latitude)
+            point.longitude = idx
+            Assert.assertEqual(idx, point.longitude)
             idx += 1
 
         size = oPoints.count
@@ -95,7 +101,10 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}", iIndex, oPoints[iIndex].lat, oPoints[iIndex].lon
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
+                iIndex,
+                oPoints[iIndex].latitude,
+                oPoints[iIndex].longitude,
             )
 
             iIndex += 1
@@ -137,11 +146,11 @@ class EarlyBoundTests(TestBase):
         # Graphics
         gfx: "LineTargetGraphics" = EarlyBoundTests.AG_LT.graphics
         # IsObjectGraphicsVisible (true)
-        TestBase.logger.WriteLine4("\tThe current IsObjectGraphicsVisible is: {0}", gfx.is_object_graphics_visible)
-        gfx.is_object_graphics_visible = False
-        Assert.assertFalse(gfx.is_object_graphics_visible)
-        gfx.is_object_graphics_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)
+        TestBase.logger.WriteLine4("\tThe current IsObjectGraphicsVisible is: {0}", gfx.show_graphics)
+        gfx.show_graphics = False
+        Assert.assertFalse(gfx.show_graphics)
+        gfx.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)
         # Inherit (true)
         TestBase.logger.WriteLine4("\tThe current Inherit is: {0}", gfx.inherit)
         gfx.inherit = True
@@ -149,20 +158,20 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(True, gfx.inherit)
         # LabelVisible
         with pytest.raises(Exception):
-            gfx.label_visible = False
+            gfx.show_label = False
         # Inherit (false)
         TestBase.logger.WriteLine4("\tThe new Inherit is: {0}", gfx.inherit)
         gfx.inherit = False
         TestBase.logger.WriteLine4("\tThe new Inherit is: {0}", gfx.inherit)
         Assert.assertEqual(False, gfx.inherit)
         # LabelVisible
-        TestBase.logger.WriteLine4("\tThe current LabelVisible is: {0}", gfx.label_visible)
-        gfx.label_visible = False
-        TestBase.logger.WriteLine4("\tThe new LabelVisible is: {0}", gfx.label_visible)
-        Assert.assertEqual(False, gfx.label_visible)
-        gfx.label_visible = True
-        TestBase.logger.WriteLine4("\tThe new LabelVisible is: {0}", gfx.label_visible)
-        Assert.assertEqual(True, gfx.label_visible)
+        TestBase.logger.WriteLine4("\tThe current LabelVisible is: {0}", gfx.show_label)
+        gfx.show_label = False
+        TestBase.logger.WriteLine4("\tThe new LabelVisible is: {0}", gfx.show_label)
+        Assert.assertEqual(False, gfx.show_label)
+        gfx.show_label = True
+        TestBase.logger.WriteLine4("\tThe new LabelVisible is: {0}", gfx.show_label)
+        Assert.assertEqual(True, gfx.show_label)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: {0}", gfx.color)
         gfx.color = Colors.from_argb(16711680)
@@ -174,13 +183,13 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LabelColor is: {0}", gfx.label_color)
         AssertEx.AreEqual(Colors.from_argb(65280), gfx.label_color)
         # BoundingRectVisible
-        TestBase.logger.WriteLine4("\tThe current BoundingRectVisible is: {0}", gfx.bounding_rect_visible)
-        gfx.bounding_rect_visible = True
-        TestBase.logger.WriteLine4("\tThe new BoundingRectVisible is: {0}", gfx.bounding_rect_visible)
-        Assert.assertEqual(True, gfx.bounding_rect_visible)
-        gfx.bounding_rect_visible = False
-        TestBase.logger.WriteLine4("\tThe new BoundingRectVisible is: {0}", gfx.bounding_rect_visible)
-        Assert.assertEqual(False, gfx.bounding_rect_visible)
+        TestBase.logger.WriteLine4("\tThe current BoundingRectVisible is: {0}", gfx.show_bounding_rectangle)
+        gfx.show_bounding_rectangle = True
+        TestBase.logger.WriteLine4("\tThe new BoundingRectVisible is: {0}", gfx.show_bounding_rectangle)
+        Assert.assertEqual(True, gfx.show_bounding_rectangle)
+        gfx.show_bounding_rectangle = False
+        TestBase.logger.WriteLine4("\tThe new BoundingRectVisible is: {0}", gfx.show_bounding_rectangle)
+        Assert.assertEqual(False, gfx.show_bounding_rectangle)
         # MarkerStyle
         TestBase.logger.WriteLine5("\tThe current MarkerStyle is: {0}", gfx.marker_style)
         gfx.marker_style = "Star"
@@ -195,10 +204,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("\tThe new LabelName is: {0}", gfx.label_name)
         Assert.assertEqual("My target", gfx.label_name)
         # UseInstNameLabel
-        TestBase.logger.WriteLine4("\tThe current UseInstNameLabel is: {0}", gfx.use_inst_name_label)
-        gfx.use_inst_name_label = True
-        TestBase.logger.WriteLine4("\tThe new UseInstNameLabel is: {0}", gfx.use_inst_name_label)
-        Assert.assertEqual(True, gfx.use_inst_name_label)
+        TestBase.logger.WriteLine4("\tThe current UseInstNameLabel is: {0}", gfx.use_instance_name_label)
+        gfx.use_instance_name_label = True
+        TestBase.logger.WriteLine4("\tThe new UseInstNameLabel is: {0}", gfx.use_instance_name_label)
+        Assert.assertEqual(True, gfx.use_instance_name_label)
         Assert.assertEqual("LineTarget2", gfx.label_name)
 
         # LineWidth
@@ -217,13 +226,13 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine6("\tThe new LineStyle is: {0}", gfx.line_style)
         Assert.assertEqual(LINE_STYLE.DASHED, gfx.line_style)
         # LinePtsVisible
-        TestBase.logger.WriteLine4("\tThe current LinePtsVisible is: {0}", gfx.line_pts_visible)
-        gfx.line_pts_visible = False
-        TestBase.logger.WriteLine4("\tThe new LinePtsVisible is: {0}", gfx.line_pts_visible)
-        Assert.assertEqual(False, gfx.line_pts_visible)
-        gfx.line_pts_visible = True
-        TestBase.logger.WriteLine4("\tThe new LinePtsVisible is: {0}", gfx.line_pts_visible)
-        Assert.assertEqual(True, gfx.line_pts_visible)
+        TestBase.logger.WriteLine4("\tThe current LinePtsVisible is: {0}", gfx.show_line_points)
+        gfx.show_line_points = False
+        TestBase.logger.WriteLine4("\tThe new LinePtsVisible is: {0}", gfx.show_line_points)
+        Assert.assertEqual(False, gfx.show_line_points)
+        gfx.show_line_points = True
+        TestBase.logger.WriteLine4("\tThe new LinePtsVisible is: {0}", gfx.show_line_points)
+        Assert.assertEqual(True, gfx.show_line_points)
         # LabelNotes
         oHelper = GfxLabelNoteHelper(self.Units)
         oHelper.Run(gfx.label_notes)
@@ -271,16 +280,16 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, vo.enable_label_max_viewing_dist)
         # LabelMaxViewingDist
         with pytest.raises(Exception):
-            vo.label_max_viewing_dist = 1000000000000.0
+            vo.label_maximum_viewing_dist = 1000000000000.0
         # EnableLabelMaxViewingDist (true)
         vo.enable_label_max_viewing_dist = True
         TestBase.logger.WriteLine4("\tThe new EnableLabelMaxViewingDist is: {0}", vo.enable_label_max_viewing_dist)
         Assert.assertEqual(True, vo.enable_label_max_viewing_dist)
         # LabelMaxViewingDist
-        TestBase.logger.WriteLine6("\tThe current LabelMaxViewingDist is: {0}", vo.label_max_viewing_dist)
-        vo.label_max_viewing_dist = 1000000000000.0
-        TestBase.logger.WriteLine6("\tThe new LabelMaxViewingDist is: {0}", vo.label_max_viewing_dist)
-        Assert.assertEqual(1000000000000.0, vo.label_max_viewing_dist)
+        TestBase.logger.WriteLine6("\tThe current LabelMaxViewingDist is: {0}", vo.label_maximum_viewing_dist)
+        vo.label_maximum_viewing_dist = 1000000000000.0
+        TestBase.logger.WriteLine6("\tThe new LabelMaxViewingDist is: {0}", vo.label_maximum_viewing_dist)
+        Assert.assertEqual(1000000000000.0, vo.label_maximum_viewing_dist)
         # restore Units
         self.Units.reset_units()
         TestBase.logger.WriteLine("----- THE VO TEST ----- END -----")
@@ -321,16 +330,14 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        Assert.assertEqual(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY, oSatellite.propagator_type)
-        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(oSatellite.propagator)
+        oSatellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        Assert.assertEqual(PROPAGATOR_TYPE.TWO_BODY, oSatellite.propagator_type)
+        oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()
 
         # get access to satellite
-        oAccess: "StkAccess" = (IStkObject(EarlyBoundTests.AG_LT)).get_access_to_object(
-            clr.CastAs(oSatellite, IStkObject)
-        )
+        oAccess: "Access" = (IStkObject(EarlyBoundTests.AG_LT)).get_access_to_object(clr.CastAs(oSatellite, IStkObject))
         Assert.assertNotEqual(None, oAccess)
         oAccess.compute_access()
         helper = VODataDisplayHelper(TestBase.Application)

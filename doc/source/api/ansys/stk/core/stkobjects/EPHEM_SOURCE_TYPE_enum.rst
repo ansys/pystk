@@ -28,7 +28,7 @@ Overview
             * - :py:attr:`~SPICE`
               - SPICE: use the SPICE toolkit to generate ephemeris. Available only if a SPICE ephemeris file (.bsp) has been loaded for the selected planet.
 
-            * - :py:attr:`~JPLDE`
+            * - :py:attr:`~JPL_DEVELOPMENTAL_EPHEMERIS`
               - Default JPL DE file.
 
 

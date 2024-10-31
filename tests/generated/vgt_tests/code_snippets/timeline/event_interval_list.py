@@ -11,7 +11,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     # region DetermineIfEpochOccurredInIntervalCollection
     def test_DetermineIfEpochOccurredInIntervalCollection(self):
         self.DetermineIfEpochOccurredInIntervalCollection(
-            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
 
     def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
@@ -30,7 +30,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsInEventIntervalLists
     def test_DetermineIntervalsInEventIntervalLists(self):
-        self.DetermineIntervalsInEventIntervalLists(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIntervalsInEventIntervalLists(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineIntervalsInEventIntervalLists(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalsList: "ITimeToolTimeIntervalList" = provider.time_interval_lists["AttitudeIntervals"]
@@ -47,7 +49,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateFilteredEventIntervalList
     def test_CreateFilteredEventIntervalList(self):
-        self.CreateFilteredEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFilteredEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFilteredEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_filtered(
@@ -85,7 +89,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateTimeOffsetEventIntervalList
     def test_CreateTimeOffsetEventIntervalList(self):
-        self.CreateTimeOffsetEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateTimeOffsetEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateTimeOffsetEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_time_offset(
@@ -112,7 +118,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     # region CreateEventIntervalListFile
     def test_CreateEventIntervalListFile(self):
         intervalFile: str = TestBase.GetScenarioFile("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt")
-        self.CreateEventIntervalListFile(TestBase.Application.get_object_from_path("Satellite/LEO").vgt, intervalFile)
+        self.CreateEventIntervalListFile(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components, intervalFile
+        )
 
     def CreateEventIntervalListFile(self, provider: "AnalysisWorkbenchComponentProvider", intervalFile: str):
         # Example contents of a file
@@ -151,8 +159,12 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateMergedEventIntervalList(TestBase.Application)
 
     def CreateMergedEventIntervalList(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         intervalList: "ITimeToolTimeIntervalList" = satelliteVgtProvider.time_interval_lists.factory.create_merged(
             "MyIntervalListMerged", "MyDescription"
@@ -174,7 +186,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateListConditionEventInterval
     def test_CreateListConditionEventInterval(self):
-        self.CreateListConditionEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateListConditionEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateListConditionEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_from_condition(
@@ -197,7 +211,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateScaledEventIntervalList
     def test_CreateScaledEventIntervalList(self):
-        self.CreateScaledEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateScaledEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateScaledEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
         intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_scaled(
@@ -225,8 +241,12 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalList(TestBase.Application)
 
     def CreateSignaledEventIntervalList(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         intervalList: "ITimeToolTimeIntervalList" = satelliteVgtProvider.time_interval_lists.factory.create_signaled(
             "MyIntervalListSignaled", "MyDescription"
@@ -258,7 +278,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(TestBase.Application)
 
     def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "StkObjectRoot"):
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         intervalList: "ITimeToolTimeIntervalList" = (
             aircraftVgtProvider.time_interval_lists.factory.create_from_condition(
@@ -298,16 +320,22 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         # Compute UAV's access to the satellite
         satellite: "IStkObject" = stkRoot.get_object_from_path("Satellite/LEO")
         aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
-        satelliteAccess: "StkAccess" = aircraft.get_access_to_object(satellite)
+        satelliteAccess: "Access" = aircraft.get_access_to_object(satellite)
         satelliteAccess.compute_access()
 
         # Subtract the aircraft availability time with the access times to get the times without access.
-        intervalList: "ITimeToolTimeIntervalList" = aircraft.vgt.time_interval_lists.factory.create_merged(
-            "IntervalsWithoutAccess", "MyDescription"
+        intervalList: "ITimeToolTimeIntervalList" = (
+            aircraft.analysis_workbench_components.time_interval_lists.factory.create_merged(
+                "IntervalsWithoutAccess", "MyDescription"
+            )
         )
         asListMerged: "TimeToolTimeIntervalListMerged" = clr.CastAs(intervalList, TimeToolTimeIntervalListMerged)
-        asListMerged.set_interval_list_a(aircraft.vgt.time_interval_lists["AvailabilityIntervals"])
-        asListMerged.set_interval_list_b(satelliteAccess.vgt.time_interval_lists["AccessIntervals"])
+        asListMerged.set_interval_list_a(
+            aircraft.analysis_workbench_components.time_interval_lists["AvailabilityIntervals"]
+        )
+        asListMerged.set_interval_list_b(
+            satelliteAccess.analysis_workbench_components.time_interval_lists["AccessIntervals"]
+        )
         asListMerged.merge_operation = EVENT_LIST_MERGE_OPERATION.MINUS
 
         # Print times without access.

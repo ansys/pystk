@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~BANDWIDTH1_HZ`
+            * - :py:attr:`~BANDWIDTH_1_HZ`
               - 1 Hz.
 
-            * - :py:attr:`~BANDWIDTH4_K_HZ`
+            * - :py:attr:`~BANDWIDTH_4_KHZ`
               - 4 kHz.
 
-            * - :py:attr:`~BANDWIDTH40_K_HZ`
+            * - :py:attr:`~BANDWIDTH_40_KHZ`
               - 40 kHz.
 
-            * - :py:attr:`~BANDWIDTH1_M_HZ`
+            * - :py:attr:`~BANDWIDTH_1_MHZ`
               - 1 MHz.
 
-            * - :py:attr:`~BANDWIDTH10_M_HZ`
+            * - :py:attr:`~BANDWIDTH_10_MHZ`
               - 10 MHz.
 
-            * - :py:attr:`~BANDWIDTH20_M_HZ`
+            * - :py:attr:`~BANDWIDTH_20_MHZ`
               - 20 MHz.
 
-            * - :py:attr:`~BANDWIDTH40_M_HZ`
+            * - :py:attr:`~BANDWIDTH_40_MHZ`
               - 40 MHz.
 
 

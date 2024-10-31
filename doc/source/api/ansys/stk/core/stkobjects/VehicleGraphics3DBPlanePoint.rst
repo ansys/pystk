@@ -20,9 +20,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.name`
               - Gets or sets the name of B-Plane point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_mul_t`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_dot_t`
               - Gets or sets the value of BdotT (Cartesian). Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_mul_r`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_dot_r`
               - Gets or sets the value of BdotR (Cartesian). Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_magnitude`
               - Gets or sets the value of BMag (polar). Uses Distance Dimension.
@@ -48,14 +48,14 @@ Property detail
 
     Gets or sets the name of B-Plane point.
 
-.. py:property:: b_mul_t
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_mul_t
+.. py:property:: b_dot_t
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_dot_t
     :type: float
 
     Gets or sets the value of BdotT (Cartesian). Uses Distance Dimension.
 
-.. py:property:: b_mul_r
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_mul_r
+.. py:property:: b_dot_r
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePoint.b_dot_r
     :type: float
 
     Gets or sets the value of BdotR (Cartesian). Uses Distance Dimension.

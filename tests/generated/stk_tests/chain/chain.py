@@ -84,13 +84,13 @@ class EarlyBoundTests(TestBase):
     def test_Advanced(self):
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED TEST ----- BEGIN -----")
         # AutoRecompute
-        TestBase.logger.WriteLine4("\tThe current AutoRecompute is: {0}", EarlyBoundTests.AG_CH.auto_recompute)
-        EarlyBoundTests.AG_CH.auto_recompute = False
-        TestBase.logger.WriteLine4("\tThe new AutoRecompute is: {0}", EarlyBoundTests.AG_CH.auto_recompute)
-        Assert.assertFalse(EarlyBoundTests.AG_CH.auto_recompute)
-        EarlyBoundTests.AG_CH.auto_recompute = True
-        TestBase.logger.WriteLine4("\tThe new AutoRecompute is: {0}", EarlyBoundTests.AG_CH.auto_recompute)
-        Assert.assertTrue(EarlyBoundTests.AG_CH.auto_recompute)
+        TestBase.logger.WriteLine4("\tThe current AutoRecompute is: {0}", EarlyBoundTests.AG_CH.recompute_automatically)
+        EarlyBoundTests.AG_CH.recompute_automatically = False
+        TestBase.logger.WriteLine4("\tThe new AutoRecompute is: {0}", EarlyBoundTests.AG_CH.recompute_automatically)
+        Assert.assertFalse(EarlyBoundTests.AG_CH.recompute_automatically)
+        EarlyBoundTests.AG_CH.recompute_automatically = True
+        TestBase.logger.WriteLine4("\tThe new AutoRecompute is: {0}", EarlyBoundTests.AG_CH.recompute_automatically)
+        Assert.assertTrue(EarlyBoundTests.AG_CH.recompute_automatically)
         # DataSaveMode
         TestBase.logger.WriteLine6("\tThe current DataSaveMode is: {0}", EarlyBoundTests.AG_CH.data_save_mode)
         EarlyBoundTests.AG_CH.data_save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
@@ -112,7 +112,7 @@ class EarlyBoundTests(TestBase):
         # SetTimePeriodType
 
         for eType in Enum.GetValues(clr.TypeOf(CHAIN_TIME_PERIOD_TYPE)):
-            if eType == CHAIN_TIME_PERIOD_TYPE.TIME_PERIOD_UNKNOWN:
+            if eType == CHAIN_TIME_PERIOD_TYPE.UNKNOWN:
                 with pytest.raises(Exception):
                     EarlyBoundTests.AG_CH.set_time_period_type(eType)
                 continue
@@ -123,12 +123,12 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(eType, EarlyBoundTests.AG_CH.time_period_type)
 
             # TimePeriod
-            oBase: "IChainTimePeriodBase" = EarlyBoundTests.AG_CH.time_period
+            oBase: "IChainTimePeriod" = EarlyBoundTests.AG_CH.time_period
             Assert.assertIsNotNone(oBase)
             # Type
             TestBase.logger.WriteLine6("\t\tThe Type is: {0}", oBase.type)
             Assert.assertEqual(eType, oBase.type)
-            if eType == CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD:
+            if eType == CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD:
                 oUser: "ChainUserSpecifiedTimePeriod" = ChainUserSpecifiedTimePeriod(oBase)
                 Assert.assertIsNotNone(oUser)
                 # Set Time Interval
@@ -145,18 +145,22 @@ class EarlyBoundTests(TestBase):
 
         # AccessIntervalsFile
         TestBase.logger.WriteLine5(
-            "\tThe current AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_file
+            "\tThe current AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_filename
         )
         # SetAccessIntervalsFile
         EarlyBoundTests.AG_CH.set_access_intervals_file("times.int")
-        TestBase.logger.WriteLine5("\tThe new AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_file)
-        Assert.assertEqual("times.int", EarlyBoundTests.AG_CH.access_intervals_file)
+        TestBase.logger.WriteLine5(
+            "\tThe new AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_filename
+        )
+        Assert.assertEqual("times.int", EarlyBoundTests.AG_CH.access_intervals_filename)
         with pytest.raises(Exception):
             EarlyBoundTests.AG_CH.set_access_intervals_file("")
         # ResetAccessIntervalsFile
         EarlyBoundTests.AG_CH.reset_access_intervals_file()
-        TestBase.logger.WriteLine5("\tThe new AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_file)
-        Assert.assertEqual("", EarlyBoundTests.AG_CH.access_intervals_file)
+        TestBase.logger.WriteLine5(
+            "\tThe new AccessIntervalsFile is: {0}", EarlyBoundTests.AG_CH.access_intervals_filename
+        )
+        Assert.assertEqual("", EarlyBoundTests.AG_CH.access_intervals_filename)
         # TimeConvergence
         TestBase.logger.WriteLine6("\tThe current TimeConvergence is: {0}", EarlyBoundTests.AG_CH.time_convergence)
         EarlyBoundTests.AG_CH.time_convergence = 0.2
@@ -179,10 +183,10 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertTrue(EarlyBoundTests.AG_CH.enable_light_time_delay)
         # MaxTimeStep
-        TestBase.logger.WriteLine6("\tThe current MaxTimeStep is: {0}", EarlyBoundTests.AG_CH.max_time_step)
-        EarlyBoundTests.AG_CH.max_time_step = 10.11
-        TestBase.logger.WriteLine6("\tThe new MaxTimeStep is: {0}", EarlyBoundTests.AG_CH.max_time_step)
-        Assert.assertEqual(10.11, EarlyBoundTests.AG_CH.max_time_step)
+        TestBase.logger.WriteLine6("\tThe current MaxTimeStep is: {0}", EarlyBoundTests.AG_CH.maximum_time_step)
+        EarlyBoundTests.AG_CH.maximum_time_step = 10.11
+        TestBase.logger.WriteLine6("\tThe new MaxTimeStep is: {0}", EarlyBoundTests.AG_CH.maximum_time_step)
+        Assert.assertEqual(10.11, EarlyBoundTests.AG_CH.maximum_time_step)
         # DetectEventsBasedOnSamplesOnly
         TestBase.logger.WriteLine4(
             "\tThe current DetectEventsBasedOnSamplesOnly is: {0}",
@@ -207,26 +211,24 @@ class EarlyBoundTests(TestBase):
         oSHelper = AccessSamplingHelper()
         oSHelper.Run(EarlyBoundTests.AG_CH.sampling, False)
         # ConstConstraintsMode
-        currentConstConstraintsMode: "CHAIN_CONST_CONSTRAINTS_MODE" = EarlyBoundTests.AG_CH.const_constraints_mode
+        currentConstConstraintsMode: "CHAIN_CONSTELLATION_CONSTRAINTS_MODE" = (
+            EarlyBoundTests.AG_CH.const_constraints_mode
+        )
         TestBase.logger.WriteLine6(
             "\tThe current ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONST_CONSTRAINTS_MODE.CONST_CONSTRAINTS_OBJECTS
+        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.OBJECTS
         TestBase.logger.WriteLine6(
             "\tThe new ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        Assert.assertEqual(
-            CHAIN_CONST_CONSTRAINTS_MODE.CONST_CONSTRAINTS_OBJECTS, EarlyBoundTests.AG_CH.const_constraints_mode
-        )
-        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONST_CONSTRAINTS_MODE.CONST_CONSTRAINTS_STRANDS
+        Assert.assertEqual(CHAIN_CONSTELLATION_CONSTRAINTS_MODE.OBJECTS, EarlyBoundTests.AG_CH.const_constraints_mode)
+        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.STRANDS
         TestBase.logger.WriteLine6(
             "\tThe new ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        Assert.assertEqual(
-            CHAIN_CONST_CONSTRAINTS_MODE.CONST_CONSTRAINTS_STRANDS, EarlyBoundTests.AG_CH.const_constraints_mode
-        )
+        Assert.assertEqual(CHAIN_CONSTELLATION_CONSTRAINTS_MODE.STRANDS, EarlyBoundTests.AG_CH.const_constraints_mode)
         with pytest.raises(Exception):
-            EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONST_CONSTRAINTS_MODE.CONST_CONSTRAINTS_UNKNOWN
+            EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.UNKNOWN
         EarlyBoundTests.AG_CH.const_constraints_mode = currentConstConstraintsMode
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED TEST ----- END -----")
 
@@ -298,7 +300,7 @@ class EarlyBoundTests(TestBase):
         # Make sure number of strands should be 3
         newChainObj: "IStkObject" = clr.CastAs(newChain, IStkObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
-        resInfo: "DataProviderResult" = dpInfo.exec()
+        resInfo: "DataProviderResult" = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 3)
@@ -446,7 +448,7 @@ class EarlyBoundTests(TestBase):
         )
 
         # turn off auto-recompute to set up connections
-        newChain.auto_recompute = False
+        newChain.recompute_automatically = False
 
         # Get objects to set up connections
         place1: "IStkObject" = TestBase.Application.current_scenario.children["Place1"]
@@ -483,7 +485,7 @@ class EarlyBoundTests(TestBase):
         # on a different platform, not reality.
         newChainObj: "IStkObject" = clr.CastAs(newChain, IStkObject)
         dpInfo: "DataProviderFixed" = clr.CastAs(newChainObj.data_providers["Strand Names"], DataProviderFixed)
-        resInfo: "DataProviderResult" = dpInfo.exec()
+        resInfo: "DataProviderResult" = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 60)
@@ -501,7 +503,7 @@ class EarlyBoundTests(TestBase):
         newChain.connections.add(allXmtrsSubset, place2Rcvr2, 0, 1)
         newChain.compute_access()
 
-        resInfo = dpInfo.exec()
+        resInfo = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 2077)
@@ -521,7 +523,7 @@ class EarlyBoundTests(TestBase):
         )
         newChain.compute_access()
 
-        resInfo = dpInfo.exec()
+        resInfo = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 60)
@@ -552,7 +554,7 @@ class EarlyBoundTests(TestBase):
         ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.NONE
         newChain.compute_access()
 
-        resInfo = dpInfo.exec()
+        resInfo = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 2077)
@@ -565,7 +567,7 @@ class EarlyBoundTests(TestBase):
         ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.DIFFERENT
         newChain.compute_access()
 
-        resInfo = dpInfo.exec()
+        resInfo = dpInfo.execute()
         Assert.assertEqual(resInfo.data_sets.count, 2)
         Assert.assertEqual(Array.Length(resInfo.data_sets[0].get_values()), 1)
         Assert.assertEqual(Array.Length(resInfo.data_sets[1].get_values()), 60)
@@ -745,7 +747,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(optStrandOpts.compute)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_UNKNOWN
+            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.UNKNOWN
 
         optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
         Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, optStrandOpts.type)
@@ -779,9 +781,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.calc_scalar_type = (
-                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_UNKNOWN
-            )
+            optStrandOpts.calc_scalar_type = CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.UNKNOWN
 
         optStrandOpts.calc_scalar_type = (
             CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
@@ -814,7 +814,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("My_CS.awb", optStrandOpts.calc_scalar_file_name)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_UNKNOWN
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.UNKNOWN
 
         optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
         Assert.assertEqual(
@@ -868,30 +868,30 @@ class EarlyBoundTests(TestBase):
     def test_Graphics(self):
         TestBase.logger.WriteLine("----- THE CHAIN GRAPHICS TEST ----- BEGIN -----")
         # Global
-        EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible = False
-        Assert.assertFalse(EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible)
-        EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible = True
-        Assert.assertTrue(EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible)
-        EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible_in_2d = False
-        Assert.assertFalse(EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible_in_2d)
-        EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible_in_2d = True
-        Assert.assertTrue(EarlyBoundTests.AG_CH.graphics.is_object_graphics_visible_in_2d)
+        EarlyBoundTests.AG_CH.graphics.show_graphics = False
+        Assert.assertFalse(EarlyBoundTests.AG_CH.graphics.show_graphics)
+        EarlyBoundTests.AG_CH.graphics.show_graphics = True
+        Assert.assertTrue(EarlyBoundTests.AG_CH.graphics.show_graphics)
+        EarlyBoundTests.AG_CH.graphics.show_graphics_2d = False
+        Assert.assertFalse(EarlyBoundTests.AG_CH.graphics.show_graphics_2d)
+        EarlyBoundTests.AG_CH.graphics.show_graphics_2d = True
+        Assert.assertTrue(EarlyBoundTests.AG_CH.graphics.show_graphics_2d)
         # Static
         oStatic: "ChainGraphics2DStatic" = EarlyBoundTests.AG_CH.graphics.static
         Assert.assertIsNotNone(oStatic)
         # IsVisible (false)
-        TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oStatic.is_visible)
-        oStatic.is_visible = False
-        TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.is_visible)
-        Assert.assertFalse(oStatic.is_visible)
+        TestBase.logger.WriteLine4("\tThe current IsVisible is: {0}", oStatic.show_graphics)
+        oStatic.show_graphics = False
+        TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.show_graphics)
+        Assert.assertFalse(oStatic.show_graphics)
         with pytest.raises(Exception):
             oStatic.color = Colors.from_argb(1122867)
         with pytest.raises(Exception):
             oStatic.line_width = LINE_WIDTH.WIDTH4
         # IsVisible (true)
-        oStatic.is_visible = True
-        TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.is_visible)
-        Assert.assertTrue(oStatic.is_visible)
+        oStatic.show_graphics = True
+        TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.show_graphics)
+        Assert.assertTrue(oStatic.show_graphics)
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oStatic.color)
         oStatic.color = Colors.from_argb(11189196)
@@ -909,17 +909,17 @@ class EarlyBoundTests(TestBase):
             oStatic.line_width = 11
 
         # Animation
-        oAnimation: "ChainGraphics2DAnimation" = EarlyBoundTests.AG_CH.graphics.animation
+        oAnimation: "ChainGraphics2DAnimation" = EarlyBoundTests.AG_CH.graphics.animation_settings
         Assert.assertIsNotNone(oAnimation)
 
         # IsHighlightVisible
-        TestBase.logger.WriteLine4("\tThe current IsHighlightVisible is: {0}", oAnimation.is_highlight_visible)
-        oAnimation.is_highlight_visible = False
-        TestBase.logger.WriteLine4("\tThe new IsHighlightVisible is: {0}", oAnimation.is_highlight_visible)
-        Assert.assertFalse(oAnimation.is_highlight_visible)
-        oAnimation.is_highlight_visible = True
-        TestBase.logger.WriteLine4("\tThe new IsHighlightVisible is: {0}", oAnimation.is_highlight_visible)
-        Assert.assertTrue(oAnimation.is_highlight_visible)
+        TestBase.logger.WriteLine4("\tThe current IsHighlightVisible is: {0}", oAnimation.show_highlight)
+        oAnimation.show_highlight = False
+        TestBase.logger.WriteLine4("\tThe new IsHighlightVisible is: {0}", oAnimation.show_highlight)
+        Assert.assertFalse(oAnimation.show_highlight)
+        oAnimation.show_highlight = True
+        TestBase.logger.WriteLine4("\tThe new IsHighlightVisible is: {0}", oAnimation.show_highlight)
+        Assert.assertTrue(oAnimation.show_highlight)
 
         # Color
         TestBase.logger.WriteLine6("\tThe current Color is: 0x{0:X}", oAnimation.color)
@@ -952,46 +952,40 @@ class EarlyBoundTests(TestBase):
 
         # NumberOfOptStrandsToDisplay
         TestBase.logger.WriteLine3(
-            "\tThe current NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+            "\tThe current NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_optimal_strands_to_display
         )
-        oAnimation.number_of_opt_strands_to_display = 5
+        oAnimation.number_of_optimal_strands_to_display = 5
         TestBase.logger.WriteLine3(
-            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_optimal_strands_to_display
         )
-        Assert.assertEqual(oAnimation.number_of_opt_strands_to_display, 5)
-        oAnimation.number_of_opt_strands_to_display = 1
+        Assert.assertEqual(oAnimation.number_of_optimal_strands_to_display, 5)
+        oAnimation.number_of_optimal_strands_to_display = 1
         TestBase.logger.WriteLine3(
-            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_opt_strands_to_display
+            "\tThe new NumberOfOptStrandsToDisplay is: {0}", oAnimation.number_of_optimal_strands_to_display
         )
-        Assert.assertEqual(oAnimation.number_of_opt_strands_to_display, 1)
+        Assert.assertEqual(oAnimation.number_of_optimal_strands_to_display, 1)
 
         # IsLineVisible (false)
-        TestBase.logger.WriteLine4("\tThe current IsLineVisible is: {0}", oAnimation.is_line_visible)
-        oAnimation.is_line_visible = False
-        TestBase.logger.WriteLine4("\tThe new IsLineVisible is: {0}", oAnimation.is_line_visible)
-        Assert.assertFalse(oAnimation.is_line_visible)
+        TestBase.logger.WriteLine4("\tThe current IsLineVisible is: {0}", oAnimation.show_line)
+        oAnimation.show_line = False
+        TestBase.logger.WriteLine4("\tThe new IsLineVisible is: {0}", oAnimation.show_line)
+        Assert.assertFalse(oAnimation.show_line)
         with pytest.raises(Exception):
             oAnimation.line_width = LINE_WIDTH.WIDTH2
-        TestBase.logger.WriteLine4(
-            "\tThe current OptimalPathIsLineVisible is: {0}", oAnimation.optimal_path_is_line_visible
-        )
-        oAnimation.optimal_path_is_line_visible = False
-        TestBase.logger.WriteLine4(
-            "\tThe new OptimalPathIsLineVisible is: {0}", oAnimation.optimal_path_is_line_visible
-        )
-        Assert.assertFalse(oAnimation.optimal_path_is_line_visible)
+        TestBase.logger.WriteLine4("\tThe current OptimalPathIsLineVisible is: {0}", oAnimation.show_optimal_path_line)
+        oAnimation.show_optimal_path_line = False
+        TestBase.logger.WriteLine4("\tThe new OptimalPathIsLineVisible is: {0}", oAnimation.show_optimal_path_line)
+        Assert.assertFalse(oAnimation.show_optimal_path_line)
         with pytest.raises(Exception):
-            oAnimation.is_direction_visible = False
+            oAnimation.show_link_numbers_in_strands = False
 
         # IsLineVisible (true)
-        oAnimation.is_line_visible = True
-        TestBase.logger.WriteLine4("\tThe new IsLineVisible is: {0}", oAnimation.is_line_visible)
-        Assert.assertTrue(oAnimation.is_line_visible)
-        oAnimation.optimal_path_is_line_visible = True
-        TestBase.logger.WriteLine4(
-            "\tThe new OptimalPathIsLineVisible is: {0}", oAnimation.optimal_path_is_line_visible
-        )
-        Assert.assertTrue(oAnimation.optimal_path_is_line_visible)
+        oAnimation.show_line = True
+        TestBase.logger.WriteLine4("\tThe new IsLineVisible is: {0}", oAnimation.show_line)
+        Assert.assertTrue(oAnimation.show_line)
+        oAnimation.show_optimal_path_line = True
+        TestBase.logger.WriteLine4("\tThe new OptimalPathIsLineVisible is: {0}", oAnimation.show_optimal_path_line)
+        Assert.assertTrue(oAnimation.show_optimal_path_line)
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", oAnimation.line_width)
@@ -1012,39 +1006,40 @@ class EarlyBoundTests(TestBase):
             oAnimation.optimal_path_line_width = 11
 
         # IsDirectionVisible
-        TestBase.logger.WriteLine4("\tThe current IsDirectionVisible is: {0}", oAnimation.is_direction_visible)
-        oAnimation.is_direction_visible = False
-        TestBase.logger.WriteLine4("\tThe new IsDirectionVisible is: {0}", oAnimation.is_direction_visible)
-        Assert.assertFalse(oAnimation.is_direction_visible)
-        oAnimation.is_direction_visible = True
-        TestBase.logger.WriteLine4("\tThe new IsDirectionVisible is: {0}", oAnimation.is_direction_visible)
-        Assert.assertTrue(oAnimation.is_direction_visible)
+        TestBase.logger.WriteLine4("\tThe current IsDirectionVisible is: {0}", oAnimation.show_link_numbers_in_strands)
+        oAnimation.show_link_numbers_in_strands = False
+        TestBase.logger.WriteLine4("\tThe new IsDirectionVisible is: {0}", oAnimation.show_link_numbers_in_strands)
+        Assert.assertFalse(oAnimation.show_link_numbers_in_strands)
+        oAnimation.show_link_numbers_in_strands = True
+        TestBase.logger.WriteLine4("\tThe new IsDirectionVisible is: {0}", oAnimation.show_link_numbers_in_strands)
+        Assert.assertTrue(oAnimation.show_link_numbers_in_strands)
 
         # Hide animation lines options if more than some number of valid strands exists
         oAnimation.use_hide_animation_graphics_2d_if_more_than_n_strands = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num = 1
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number = 1
         oAnimation.use_hide_animation_graphics_2d_if_more_than_n_strands = True
         origHideAnimationGfxIfMoreThanNStrandsNum: int = (
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number
         )
         TestBase.logger.WriteLine3(
             "\tThe current HideAnimationGfxIfMoreThanNStrands is: {0}",
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num,
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number,
         )
-        oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num = 7777
+        oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number = 7777
         TestBase.logger.WriteLine3(
             "\tThe new HideAnimationGfxIfMoreThanNStrands is: {0}",
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num,
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number,
         )
-        Assert.assertEqual(oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num, 7777)
-        oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num = origHideAnimationGfxIfMoreThanNStrandsNum
+        Assert.assertEqual(oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number, 7777)
+        oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number = origHideAnimationGfxIfMoreThanNStrandsNum
         TestBase.logger.WriteLine3(
             "\tThe new HideAnimationGfxIfMoreThanNStrands is: {0}",
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num,
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number,
         )
         Assert.assertEqual(
-            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num, origHideAnimationGfxIfMoreThanNStrandsNum
+            oAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number,
+            origHideAnimationGfxIfMoreThanNStrandsNum,
         )
 
         TestBase.logger.WriteLine("----- THE CHAIN GRAPHICS TEST ----- END -----")
@@ -1071,76 +1066,82 @@ class EarlyBoundTests(TestBase):
         oConstraints: "ChainConstraints" = EarlyBoundTests.AG_CH.constraints
         Assert.assertIsNotNone(oConstraints)
         # UseMinAngle (false)
-        TestBase.logger.WriteLine4("\tThe current UseMinAngle is: {0}", oConstraints.use_min_angle)
-        oConstraints.use_min_angle = False
-        TestBase.logger.WriteLine4("\tThe new UseMinAngle is: {0}", oConstraints.use_min_angle)
-        Assert.assertFalse(oConstraints.use_min_angle)
+        TestBase.logger.WriteLine4("\tThe current UseMinAngle is: {0}", oConstraints.use_minimum_angle)
+        oConstraints.use_minimum_angle = False
+        TestBase.logger.WriteLine4("\tThe new UseMinAngle is: {0}", oConstraints.use_minimum_angle)
+        Assert.assertFalse(oConstraints.use_minimum_angle)
         with pytest.raises(Exception):
-            oConstraints.min_angle = 123
+            oConstraints.minimum_angle = 123
         # UseMinAngle (true)
-        oConstraints.use_min_angle = True
-        TestBase.logger.WriteLine4("\tThe new UseMinAngle is: {0}", oConstraints.use_min_angle)
-        Assert.assertTrue(oConstraints.use_min_angle)
+        oConstraints.use_minimum_angle = True
+        TestBase.logger.WriteLine4("\tThe new UseMinAngle is: {0}", oConstraints.use_minimum_angle)
+        Assert.assertTrue(oConstraints.use_minimum_angle)
         # MinAngle
-        TestBase.logger.WriteLine6("\tThe current MinAngle is: {0}", oConstraints.min_angle)
-        oConstraints.min_angle = 12
-        TestBase.logger.WriteLine6("\tThe new MinAngle is: {0}", oConstraints.min_angle)
-        Assert.assertEqual(12, oConstraints.min_angle)
+        TestBase.logger.WriteLine6("\tThe current MinAngle is: {0}", oConstraints.minimum_angle)
+        oConstraints.minimum_angle = 12
+        TestBase.logger.WriteLine6("\tThe new MinAngle is: {0}", oConstraints.minimum_angle)
+        Assert.assertEqual(12, oConstraints.minimum_angle)
         with pytest.raises(Exception):
-            oConstraints.min_angle = -123
+            oConstraints.minimum_angle = -123
         # UseMaxAngle (false)
-        TestBase.logger.WriteLine4("\tThe current UseMaxAngle is: {0}", oConstraints.use_max_angle)
-        oConstraints.use_max_angle = False
-        TestBase.logger.WriteLine4("\tThe new UseMaxAngle is: {0}", oConstraints.use_max_angle)
-        Assert.assertFalse(oConstraints.use_max_angle)
+        TestBase.logger.WriteLine4("\tThe current UseMaxAngle is: {0}", oConstraints.use_maximum_angle)
+        oConstraints.use_maximum_angle = False
+        TestBase.logger.WriteLine4("\tThe new UseMaxAngle is: {0}", oConstraints.use_maximum_angle)
+        Assert.assertFalse(oConstraints.use_maximum_angle)
         with pytest.raises(Exception):
-            oConstraints.max_angle = 123
+            oConstraints.maximum_angle = 123
         # UseMaxAngle (true)
-        oConstraints.use_max_angle = True
-        TestBase.logger.WriteLine4("\tThe new UseMaxAngle is: {0}", oConstraints.use_max_angle)
-        Assert.assertTrue(oConstraints.use_max_angle)
+        oConstraints.use_maximum_angle = True
+        TestBase.logger.WriteLine4("\tThe new UseMaxAngle is: {0}", oConstraints.use_maximum_angle)
+        Assert.assertTrue(oConstraints.use_maximum_angle)
         # MaxAngle
-        TestBase.logger.WriteLine6("\tThe current MaxAngle is: {0}", oConstraints.max_angle)
-        oConstraints.max_angle = 123
-        TestBase.logger.WriteLine6("\tThe new MaxAngle is: {0}", oConstraints.max_angle)
-        Assert.assertEqual(123, oConstraints.max_angle)
+        TestBase.logger.WriteLine6("\tThe current MaxAngle is: {0}", oConstraints.maximum_angle)
+        oConstraints.maximum_angle = 123
+        TestBase.logger.WriteLine6("\tThe new MaxAngle is: {0}", oConstraints.maximum_angle)
+        Assert.assertEqual(123, oConstraints.maximum_angle)
         with pytest.raises(Exception):
-            oConstraints.max_angle = -123
+            oConstraints.maximum_angle = -123
         # MinAngle > MaxAngle
         with pytest.raises(Exception):
-            oConstraints.max_angle = 1
+            oConstraints.maximum_angle = 1
         # MaxAngle < MinAngle
         with pytest.raises(Exception):
-            oConstraints.min_angle = 132
+            oConstraints.minimum_angle = 132
         # UseMinLinkTime (false)
-        TestBase.logger.WriteLine4("\tThe current UseMinLinkTime is: {0}", oConstraints.use_min_link_time)
-        oConstraints.use_min_link_time = False
-        TestBase.logger.WriteLine4("\tThe new UseMinLinkTime is: {0}", oConstraints.use_min_link_time)
-        Assert.assertFalse(oConstraints.use_min_link_time)
+        TestBase.logger.WriteLine4("\tThe current UseMinLinkTime is: {0}", oConstraints.use_minimum_link_time)
+        oConstraints.use_minimum_link_time = False
+        TestBase.logger.WriteLine4("\tThe new UseMinLinkTime is: {0}", oConstraints.use_minimum_link_time)
+        Assert.assertFalse(oConstraints.use_minimum_link_time)
         with pytest.raises(Exception):
-            oConstraints.min_link_time = 123
+            oConstraints.minimum_link_time = 123
         # UseMinLinkTime (true)
-        oConstraints.use_min_link_time = True
-        TestBase.logger.WriteLine4("\tThe new UseMinLinkTime is: {0}", oConstraints.use_min_link_time)
-        Assert.assertTrue(oConstraints.use_min_link_time)
+        oConstraints.use_minimum_link_time = True
+        TestBase.logger.WriteLine4("\tThe new UseMinLinkTime is: {0}", oConstraints.use_minimum_link_time)
+        Assert.assertTrue(oConstraints.use_minimum_link_time)
         # MinLinkTime
-        TestBase.logger.WriteLine6("\tThe current MinLinkTime is: {0}", oConstraints.min_link_time)
-        oConstraints.min_link_time = 123
-        TestBase.logger.WriteLine6("\tThe new MinLinkTime is: {0}", oConstraints.min_link_time)
-        Assert.assertEqual(123, oConstraints.min_link_time)
+        TestBase.logger.WriteLine6("\tThe current MinLinkTime is: {0}", oConstraints.minimum_link_time)
+        oConstraints.minimum_link_time = 123
+        TestBase.logger.WriteLine6("\tThe new MinLinkTime is: {0}", oConstraints.minimum_link_time)
+        Assert.assertEqual(123, oConstraints.minimum_link_time)
         with pytest.raises(Exception):
-            oConstraints.min_link_time = -123
+            oConstraints.minimum_link_time = -123
         # UseLoadIntervalFile (false)
-        TestBase.logger.WriteLine4("\tThe current UseLoadIntervalFile is: {0}", oConstraints.use_load_interval_file)
-        oConstraints.use_load_interval_file = False
-        TestBase.logger.WriteLine4("\tThe new UseLoadIntervalFile is: {0}", oConstraints.use_load_interval_file)
-        Assert.assertFalse(oConstraints.use_load_interval_file)
+        TestBase.logger.WriteLine4(
+            "\tThe current UseLoadIntervalFile is: {0}", oConstraints.filter_access_intervals_by_file
+        )
+        oConstraints.filter_access_intervals_by_file = False
+        TestBase.logger.WriteLine4(
+            "\tThe new UseLoadIntervalFile is: {0}", oConstraints.filter_access_intervals_by_file
+        )
+        Assert.assertFalse(oConstraints.filter_access_intervals_by_file)
         with pytest.raises(Exception):
             oConstraints.load_interval_file = "times.int"
         # UseLoadIntervalFile (true)
-        oConstraints.use_load_interval_file = True
-        TestBase.logger.WriteLine4("\tThe new UseLoadIntervalFile is: {0}", oConstraints.use_load_interval_file)
-        Assert.assertTrue(oConstraints.use_load_interval_file)
+        oConstraints.filter_access_intervals_by_file = True
+        TestBase.logger.WriteLine4(
+            "\tThe new UseLoadIntervalFile is: {0}", oConstraints.filter_access_intervals_by_file
+        )
+        Assert.assertTrue(oConstraints.filter_access_intervals_by_file)
         # LoadIntervalFile
         TestBase.logger.WriteLine5("\tThe current LoadIntervalFile is: {0}", oConstraints.load_interval_file)
         oConstraints.load_interval_file = "times.int"

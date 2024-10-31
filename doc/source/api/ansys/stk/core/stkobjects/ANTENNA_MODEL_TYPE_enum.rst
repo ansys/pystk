@@ -73,7 +73,7 @@ Overview
             * - :py:attr:`~GPS_FRPA`
               - GPS FRPA antenna model.
 
-            * - :py:attr:`~ITU_BO1213_CO_POLAR`
+            * - :py:attr:`~ITU_BO1213_COPOLAR`
               - ITU-R BO1213 co-polar antenna model.
 
             * - :py:attr:`~ITU_BO1213_CROSS_POLAR`
@@ -106,52 +106,52 @@ Overview
             * - :py:attr:`~ITU_S672_RECTANGULAR`
               - ITU-R S672-4 rectangular antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_COSINE`
+            * - :py:attr:`~CIRCULAR_COSINE`
               - Circular cosine aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_BESSEL`
+            * - :py:attr:`~BESSEL`
               - Circular bessel aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_BESSEL_ENVELOPE`
+            * - :py:attr:`~BESSEL_ENVELOPE`
               - Circular bessel envelope aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_COSINE_PEDESTAL`
+            * - :py:attr:`~CIRCULAR_COSINE_PEDESTAL`
               - Circular cosine pedestal aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_COSINE_SQUARED`
+            * - :py:attr:`~CIRCULAR_COSINE_SQUARED`
               - Circular cosine squared aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_COSINE_SQUARED_PEDESTAL`
+            * - :py:attr:`~CIRCULAR_COSINE_SQUARED_PEDESTAL`
               - Circular cosine squared pedestal aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_SINC_INT_POWER`
+            * - :py:attr:`~CIRCULAR_SINC_INTEGER_POWER`
               - Circular sinc integer power aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_SINC_REAL_POWER`
+            * - :py:attr:`~CIRCULAR_SINC_REAL_POWER`
               - Circular sinc real power aperture antenna model.
 
-            * - :py:attr:`~APERTURE_CIRCULAR_UNIFORM`
+            * - :py:attr:`~CIRCULAR_UNIFORM`
               - Circular uniform aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_COSINE`
+            * - :py:attr:`~RECTANGULAR_COSINE`
               - Rectangular cosine aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_COSINE_PEDESTAL`
+            * - :py:attr:`~RECTANGULAR_COSINE_PEDESTAL`
               - Rectangular cosine pedestal aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_COSINE_SQUARED`
+            * - :py:attr:`~RECTANGULAR_COSINE_SQUARED`
               - Rectangular cosine squared aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_COSINE_SQUARED_PEDESTAL`
+            * - :py:attr:`~RECTANGULAR_COSINE_SQUARED_PEDESTAL`
               - Rectangular cosine squared pedestal aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_SINC_INT_POWER`
+            * - :py:attr:`~RECTANGULAR_SINC_INTEGER_POWER`
               - Rectangular sinc integer power aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_SINC_REAL_POWER`
+            * - :py:attr:`~RECTANGULAR_SINC_REAL_POWER`
               - Rectangular sinc real power aperture antenna model.
 
-            * - :py:attr:`~APERTURE_RECTANGULAR_UNIFORM`
+            * - :py:attr:`~RECTANGULAR_UNIFORM`
               - Rectangular uniform aperture antenna model.
 
             * - :py:attr:`~OPTICAL_SIMPLE`
@@ -169,7 +169,7 @@ Overview
             * - :py:attr:`~REMCOM_UAN_FORMAT`
               - Pattern Remcom Uan antenna model.
 
-            * - :py:attr:`~ANSY_SFFD_FORMAT`
+            * - :py:attr:`~ANSYS_FFD_FORMAT`
               - Pattern ANSYS ffd antenna model.
 
             * - :py:attr:`~TICRA_GRASP_FORMAT`

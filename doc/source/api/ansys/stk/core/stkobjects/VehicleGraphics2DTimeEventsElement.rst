@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics`
               - Opt whether to display time event graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type`
               - Type of time event graphics: line, marker or text.
@@ -51,8 +51,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics
     :type: bool
 
     Opt whether to display time event graphics.

@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModel.third_body_gravity
-    :type: VehicleThirdBodyGravity
+    :type: PropagatorLOPThirdBodyGravity
 
     Get the 3rd body gravity parameters.
 

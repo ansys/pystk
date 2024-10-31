@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: constraint
     :canonical: ansys.stk.core.stkobjects.OnePointAccessConstraint.constraint
-    :type: ACCESS_CONSTRAINTS
+    :type: ACCESS_CONSTRAINT_TYPE
 
     Get the type of the constraint being evaluated.
 

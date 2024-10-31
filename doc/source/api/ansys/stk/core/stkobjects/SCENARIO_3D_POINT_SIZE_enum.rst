@@ -19,52 +19,52 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~FONT_SIZE8`
+            * - :py:attr:`~FONT_SIZE_8`
               - Font size: 8 points.
 
-            * - :py:attr:`~FONT_SIZE9`
+            * - :py:attr:`~FONT_SIZE_9`
               - Font size: 9 points.
 
-            * - :py:attr:`~FONT_SIZE10`
+            * - :py:attr:`~FONT_SIZE_10`
               - Font size: 10 points.
 
-            * - :py:attr:`~FONT_SIZE11`
+            * - :py:attr:`~FONT_SIZE_11`
               - Font size: 11 points.
 
-            * - :py:attr:`~FONT_SIZE12`
+            * - :py:attr:`~FONT_SIZE_12`
               - Font size: 12 points.
 
-            * - :py:attr:`~FONT_SIZE14`
+            * - :py:attr:`~FONT_SIZE_14`
               - Font size: 14 points.
 
-            * - :py:attr:`~FONT_SIZE16`
+            * - :py:attr:`~FONT_SIZE_16`
               - Font size: 16 points.
 
-            * - :py:attr:`~FONT_SIZE18`
+            * - :py:attr:`~FONT_SIZE_18`
               - Font size: 18 points.
 
-            * - :py:attr:`~FONT_SIZE20`
+            * - :py:attr:`~FONT_SIZE_20`
               - Font size: 20 points.
 
-            * - :py:attr:`~FONT_SIZE22`
+            * - :py:attr:`~FONT_SIZE_22`
               - Font size: 22 points.
 
-            * - :py:attr:`~FONT_SIZE24`
+            * - :py:attr:`~FONT_SIZE_24`
               - Font size: 24 points.
 
-            * - :py:attr:`~FONT_SIZE26`
+            * - :py:attr:`~FONT_SIZE_26`
               - Font size: 26 points.
 
-            * - :py:attr:`~FONT_SIZE28`
+            * - :py:attr:`~FONT_SIZE_28`
               - Font size: 28 points.
 
-            * - :py:attr:`~FONT_SIZE36`
+            * - :py:attr:`~FONT_SIZE_36`
               - Font size: 36 points.
 
-            * - :py:attr:`~FONT_SIZE48`
+            * - :py:attr:`~FONT_SIZE_48`
               - Font size: 48 points.
 
-            * - :py:attr:`~FONT_SIZE72`
+            * - :py:attr:`~FONT_SIZE_72`
               - Font size: 72 points.
 
 

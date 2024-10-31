@@ -10,7 +10,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region DetermineIfEventOccursBeforeEpoch
     def test_DetermineIfEventOccursBeforeEpoch(self):
-        self.DetermineIfEventOccursBeforeEpoch(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIfEventOccursBeforeEpoch(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def DetermineIfEventOccursBeforeEpoch(self, provider: "AnalysisWorkbenchComponentProvider"):
         # The event you are interested in.
@@ -33,7 +35,9 @@ class Event(TimelineCodeSnippetsTestBase):
         self.DetermineTimeOfEvent(TestBase.Application)
 
     def DetermineTimeOfEvent(self, stkRoot: "StkObjectRoot"):
-        provider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
+        provider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
         timeEvent: "ITimeToolInstant" = provider.time_instants["PassIntervals.First.Start"]
 
         occurrence: "TimeToolInstantOccurrenceResult" = timeEvent.find_occurrence()
@@ -47,7 +51,7 @@ class Event(TimelineCodeSnippetsTestBase):
         noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
             STK_OBJECT_TYPE.SATELLITE, "NoEphem_FindOccurenceTest"
         )
-        provider2: "AnalysisWorkbenchComponentProvider" = noEphemObj.vgt
+        provider2: "AnalysisWorkbenchComponentProvider" = noEphemObj.analysis_workbench_components
         timeEvent2: "ITimeToolInstant" = provider2.time_instants["EphemerisStartTime"]
         occurrence2: "TimeToolInstantOccurrenceResult" = timeEvent2.find_occurrence()
 
@@ -59,7 +63,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateFixedEpochEvent
     def test_CreateFixedEpochEvent(self):
-        self.CreateFixedEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFixedEpochEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFixedEpochEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         timeEvent: "ITimeToolInstant" = provider.time_instants.factory.create_epoch("MyEventFixed", "MyDescription")
@@ -80,7 +86,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateFixedTimeOffsetEvent
     def test_CreateFixedTimeOffsetEvent(self):
-        self.CreateFixedTimeOffsetEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateFixedTimeOffsetEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateFixedTimeOffsetEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         timeEvent: "ITimeToolInstant" = provider.time_instants.factory.create_time_offset(
@@ -104,8 +112,12 @@ class Event(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEvent(TestBase.Application)
 
     def CreateSignaledEvent(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
         timeEvent: "ITimeToolInstant" = satelliteVgtProvider.time_instants.factory.create_signaled(
             "MyEventSignaled", "MyDescription"
@@ -131,7 +143,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateStartStopTimeEvent
     def test_CreateStartStopTimeEvent(self):
-        self.CreateStartStopTimeEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateStartStopTimeEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateStartStopTimeEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         timeEvent: "ITimeToolInstant" = provider.time_instants.factory.create_start_stop_time(
@@ -151,7 +165,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateExtremumEvent
     def test_CreateExtremumEvent(self):
-        self.CreateExtremumEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateExtremumEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateExtremumEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         timeEvent: "ITimeToolInstant" = provider.time_instants.factory.create_extremum(
@@ -171,7 +187,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateExplicitSmartEpochEvent
     def test_CreateExplicitSmartEpochEvent(self):
-        self.CreateExplicitSmartEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateExplicitSmartEpochEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateExplicitSmartEpochEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         smartEpoch: "TimeToolInstantSmartEpoch" = provider.time_instants.factory.create_smart_epoch_from_time(
@@ -187,7 +205,9 @@ class Event(TimelineCodeSnippetsTestBase):
 
     # region CreateImplicitSmartEpochEvent
     def test_CreateImplicitSmartEpochEvent(self):
-        self.CreateImplicitSmartEpochEvent(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.CreateImplicitSmartEpochEvent(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
     def CreateImplicitSmartEpochEvent(self, provider: "AnalysisWorkbenchComponentProvider"):
         referencedEvent: "ITimeToolInstant" = provider.time_instants["AvailabilityStartTime"]

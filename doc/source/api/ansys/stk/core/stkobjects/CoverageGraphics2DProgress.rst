@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DProgress.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DProgress.show_graphics`
               - Show Access Progress: specify whether to highlight the grid regions and points as accesses are being computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DProgress.color`
               - Progress graphics color.
@@ -36,8 +36,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DProgress.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DProgress.show_graphics
     :type: bool
 
     Show Access Progress: specify whether to highlight the grid regions and points as accesses are being computed.

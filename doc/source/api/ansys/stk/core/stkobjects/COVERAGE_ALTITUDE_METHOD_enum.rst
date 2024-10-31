@@ -19,22 +19,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ALTITUDE_METHOD_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown altitude method.
 
-            * - :py:attr:`~ALTITUDE_ABOVE_TERRAIN`
+            * - :py:attr:`~ABOVE_TERRAIN`
               - Altitude above terrain.
 
-            * - :py:attr:`~ALTITUDE`
+            * - :py:attr:`~ABOVE_ELLIPSOID`
               - Altitude above the surface.
 
             * - :py:attr:`~RADIUS`
               - Radius from the center of the Earth.
 
-            * - :py:attr:`~ALTITUDE_ABOVE_MSL`
+            * - :py:attr:`~ABOVE_MEAN_SEA_LEVEL`
               - Altitude above MSL of the surface.
 
-            * - :py:attr:`~ALTITUDE_DEPTH`
+            * - :py:attr:`~DEPTH`
               - Depth below the surface.
 
 

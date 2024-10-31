@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.bind_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.bind_to_object`
               - Binds to existing object instance using the specified object path.
 
     .. tab-item:: Properties
@@ -79,8 +79,8 @@ Method detail
 
 
 
-.. py:method:: bind_to(self, path: str) -> IStkObject
-    :canonical: ansys.stk.core.stkobjects.LinkToObject.bind_to
+.. py:method:: bind_to_object(self, path: str) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.LinkToObject.bind_to_object
 
     Binds to existing object instance using the specified object path.
 

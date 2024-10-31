@@ -35,7 +35,7 @@ Overview
               - Text color.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.text`
               - Text.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.unique_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.unique_identifer`
               - User-defined unique ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_type`
               - Offset direction: left or right.
@@ -71,8 +71,8 @@ Property detail
 
     Text.
 
-.. py:property:: unique_id
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.unique_id
+.. py:property:: unique_identifer
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.unique_identifer
     :type: str
 
     User-defined unique ID.

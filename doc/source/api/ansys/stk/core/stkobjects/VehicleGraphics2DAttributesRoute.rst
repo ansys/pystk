@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.is_route_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route`
               - Opt whether to show the vehicle's route.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.is_route_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route_marker`
               - Opt whether to show the vehicle's route marker.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.pick_string`
               - String displayed after instance name when the vehicle line is picked in 2D or 3D.
@@ -40,14 +40,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_route_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.is_route_visible
+.. py:property:: show_route
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route
     :type: bool
 
     Opt whether to show the vehicle's route.
 
-.. py:property:: is_route_marker_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.is_route_marker_visible
+.. py:property:: show_route_marker
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesRoute.show_route_marker
     :type: bool
 
     Opt whether to show the vehicle's route marker.

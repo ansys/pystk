@@ -28,7 +28,7 @@ Overview
             * - :py:attr:`~TERRAIN`
               - Lighting obstruction is computed using terrain data.
 
-            * - :py:attr:`~E_LIGHTING_OBSTRUCTION_GROUND_MODEL`
+            * - :py:attr:`~GROUND_MODEL`
               - The lighting obstruction model is the object's ground model as used in the line-of-sight constraint computation.
 
 

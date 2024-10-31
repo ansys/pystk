@@ -19,43 +19,43 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~GRID_CLASS_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown template class.
 
-            * - :py:attr:`~GRID_CLASS_AIRCRAFT`
+            * - :py:attr:`~AIRCRAFT`
               - Aircraft class.
 
-            * - :py:attr:`~GRID_CLASS_FACILITY`
+            * - :py:attr:`~FACILITY`
               - Facility class.
 
-            * - :py:attr:`~GRID_CLASS_RADAR`
+            * - :py:attr:`~RADAR`
               - Radar class.
 
-            * - :py:attr:`~GRID_CLASS_RECEIVER`
+            * - :py:attr:`~RECEIVER`
               - Receiver class.
 
-            * - :py:attr:`~GRID_CLASS_SATELLITE`
+            * - :py:attr:`~SATELLITE`
               - Satellite class.
 
-            * - :py:attr:`~GRID_CLASS_SUBMARINE`
+            * - :py:attr:`~SUBMARINE`
               - Submarine class.
 
-            * - :py:attr:`~GRID_CLASS_TARGET`
+            * - :py:attr:`~TARGET`
               - Target class.
 
-            * - :py:attr:`~GRID_CLASS_TRANSMITTER`
+            * - :py:attr:`~TRANSMITTER`
               - Transmitter class.
 
-            * - :py:attr:`~GRID_CLASS_GROUND_VEHICLE`
+            * - :py:attr:`~GROUND_VEHICLE`
               - GroundVehicle class.
 
-            * - :py:attr:`~GRID_CLASS_SHIP`
+            * - :py:attr:`~SHIP`
               - Ship class.
 
-            * - :py:attr:`~GRID_CLASS_PLACE`
+            * - :py:attr:`~PLACE`
               - Place class.
 
-            * - :py:attr:`~GRID_CLASS_SENSOR`
+            * - :py:attr:`~SENSOR`
               - Sensor class.
 
 

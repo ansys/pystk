@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~CCSD_SV2_ORBIT_EPHEMERIS_MESSAGE`
+            * - :py:attr:`~ORBIT_EPHEMERIS_MESSAGE`
               - The Ephemeris Export tool will generate an Orbit Ephemeris Message (.oem) file following the CCSDS Ephemeris v2.0 standard.
 
-            * - :py:attr:`~CCSD_SV2_XML`
+            * - :py:attr:`~XML`
               - The Ephemeris Export tool will generate an XML file following the CCSDS Ephemeris v2.0 standard.
 
 

@@ -49,11 +49,11 @@ Overview
               - Get the vehicle's 2D ground ellipses graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_notes`
               - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.use_instance_name_label`
               - Specify whether to use the name of the vehicle (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.label_name`
               - The user-specified name to use as a label for the vehicle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.show_graphics`
               - Specify whether graphics attributes of the vehicle are visible.
 
 
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type
-    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTES
+    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE
 
     Get the 2D Graphics attributes type for the vehicle: basic, access intervals, custom intervals, or real time.
 
@@ -128,8 +128,8 @@ Property detail
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
-.. py:property:: use_inst_name_label
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.use_inst_name_label
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.use_instance_name_label
     :type: bool
 
     Specify whether to use the name of the vehicle (as shown in the Object Browser) as its label.
@@ -140,8 +140,8 @@ Property detail
 
     The user-specified name to use as a label for the vehicle.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the vehicle are visible.
@@ -151,27 +151,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.set_attributes_type
 
     Set the 2D Graphics attributes type for the vehicle.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
 
     :Returns:
 

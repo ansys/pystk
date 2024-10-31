@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.show_graphics`
               - Controls whether the element is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.name`
               - Returns the element name.
@@ -26,7 +26,7 @@ Overview
               - Specifies the element color.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.scale_factor`
               - Specifies the element scale factor. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.show_label`
               - Specifies whether the element label is visible.
 
 
@@ -42,8 +42,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.show_graphics
     :type: bool
 
     Controls whether the element is visible.
@@ -66,8 +66,8 @@ Property detail
 
     Specifies the element scale factor. Dimensionless.
 
-.. py:property:: is_label_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.is_label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayElement.show_label
     :type: bool
 
     Specifies whether the element label is visible.

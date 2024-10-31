@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~GRID_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown volumetirc grid option.
 
             * - :py:attr:`~GRID_SPATIAL_CALCULATION`
               - Volumetric : volume grid spatial calculations.
 
-            * - :py:attr:`~EXTERNAL_FILE`
+            * - :py:attr:`~FILE`
               - Volumetric : volume external file.
 
 

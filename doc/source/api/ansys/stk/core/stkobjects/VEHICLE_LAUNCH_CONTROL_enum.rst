@@ -19,19 +19,19 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~LAUNCH_CONTROL_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~LAUNCH_CONTROL_FIXED_APOGEE_ALTITUDE`
+            * - :py:attr:`~FIXED_APOGEE_ALTITUDE`
               - Fixed apogee altitude.
 
-            * - :py:attr:`~LAUNCH_CONTROL_FIXED_DELTA_V`
+            * - :py:attr:`~FIXED_DELTA_V`
               - Fixed Delta V.
 
-            * - :py:attr:`~LAUNCH_CONTROL_FIXED_DELTA_V_MIN_ECCENTRICITY`
+            * - :py:attr:`~FIXED_DELTA_V_MINIMUM_ECCENTRICITY`
               - Fixed Delta V minimum eccentricity.
 
-            * - :py:attr:`~LAUNCH_CONTROL_FIXED_TIME_OF_FLIGHT`
+            * - :py:attr:`~FIXED_TIME_OF_FLIGHT`
               - Fixed time of flight.
 
 

@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.static`
               - Get the static graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.animation_graphics_3d_settings`
               - Get the animation graphics:.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.granularity`
               - Fill granularity: the sampling distance between points used when grid points are filled and smooth contours are not used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_deg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_degree`
               - Gets or sets the number of pixels used in one degree in the temporary file created when smooth contours are used.
 
 
@@ -46,8 +46,8 @@ Property detail
 
     Get the static graphics.
 
-.. py:property:: animation
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.animation
+.. py:property:: animation_graphics_3d_settings
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.animation_graphics_3d_settings
     :type: FigureOfMeritGraphics3DAttributes
 
     Get the animation graphics:.
@@ -58,8 +58,8 @@ Property detail
 
     Fill granularity: the sampling distance between points used when grid points are filled and smooth contours are not used.
 
-.. py:property:: pixels_per_deg
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_deg
+.. py:property:: pixels_per_degree
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_degree
     :type: float
 
     Gets or sets the number of pixels used in one degree in the temporary file created when smooth contours are used.

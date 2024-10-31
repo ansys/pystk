@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.advanced
-    :type: CoverageAdvanced
+    :type: CoverageAdvancedSettings
 
     Advanced properties of the coverage definition.
 

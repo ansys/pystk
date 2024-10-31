@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~GCS`
               - Geospatial Content Server.
 
-            * - :py:attr:`~CESIUMION`
+            * - :py:attr:`~CESIUM_ION`
               - Cesium ion.
 
             * - :py:attr:`~GOOGLE_MAPS`

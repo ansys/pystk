@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Unknown rain loss model type.
 
-            * - :py:attr:`~ITURP_618_10`
+            * - :py:attr:`~ITU_R_P618_10`
               - ITU-R P618-10 rain loss model type.
 
             * - :py:attr:`~CRANE1985`
@@ -37,10 +37,10 @@ Overview
             * - :py:attr:`~SCRIPT_PLUGIN`
               - Script plugin rain loss model type.
 
-            * - :py:attr:`~ITURP_618_12`
+            * - :py:attr:`~ITU_R_P618_12`
               - ITU-R P618-12 rain loss model type.
 
-            * - :py:attr:`~ITURP_618_13`
+            * - :py:attr:`~ITU_R_P618_13`
               - ITU-R P618-13 rain loss model type.
 
 

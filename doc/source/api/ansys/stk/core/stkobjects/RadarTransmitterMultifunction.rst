@@ -33,11 +33,11 @@ Overview
               - Gets the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_polarization`
               - Gets or sets the enable polarization option.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_ortho_polarization`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_orthogonal_polarization`
               - Gets or sets the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.polarization`
               - Gets the polarization.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amp_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amplifier_bandwidth`
               - Gets or sets the power amplifier bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_filter`
               - Gets or set the flag determines whether or not to enable the Filter.
@@ -45,7 +45,7 @@ Overview
               - Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter`
               - Gets the current filter model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.max_power_limit`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit`
               - Gets or sets the power.
 
 
@@ -73,8 +73,8 @@ Property detail
 
     Gets or sets the enable polarization option.
 
-.. py:property:: enable_ortho_polarization
-    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_ortho_polarization
+.. py:property:: enable_orthogonal_polarization
+    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_orthogonal_polarization
     :type: bool
 
     Gets or sets the option for enabling the orthogonal polarization.
@@ -85,8 +85,8 @@ Property detail
 
     Gets the polarization.
 
-.. py:property:: power_amp_bandwidth
-    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amp_bandwidth
+.. py:property:: power_amplifier_bandwidth
+    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amplifier_bandwidth
     :type: float
 
     Gets or sets the power amplifier bandwidth.
@@ -109,8 +109,8 @@ Property detail
 
     Gets the current filter model.
 
-.. py:property:: max_power_limit
-    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.max_power_limit
+.. py:property:: maximum_power_limit
+    :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit
     :type: float
 
     Gets or sets the power.

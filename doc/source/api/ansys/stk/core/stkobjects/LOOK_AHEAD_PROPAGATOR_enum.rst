@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Reserved for look ahead propagators that are not currently supported.
 
-            * - :py:attr:`~HOLD_CBI_POSITION`
+            * - :py:attr:`~HOLD_CENTRAL_BODY_INERTIAL_POSITION`
               - The HoldCBIPosition look ahead propagator keeps position and velocity constant in the inertial (i.e., CBI) frame.
 
-            * - :py:attr:`~HOLD_CBF_POSITION`
+            * - :py:attr:`~HOLD_CENTRAL_BODY_FIXED_POSITION`
               - The HoldCBFPosition look ahead propagator keeps position and velocity constant in the fixed (i.e., CBF) frame.
 
             * - :py:attr:`~TWO_BODY`
@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~J4_PERTURBATION`
               - The J4 Perturbation (second-order) propagator accounts for secular variations in the orbit elements due to Earth oblateness.
 
-            * - :py:attr:`~DEAD_RECKON`
+            * - :py:attr:`~DEAD_RECKONING`
               - The DeadReckon look ahead propagator projects the motion of the vehicle along a straight line, along the last velocity vector.
 
             * - :py:attr:`~BALLISTIC`

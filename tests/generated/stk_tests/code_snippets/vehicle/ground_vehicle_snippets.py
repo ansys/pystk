@@ -64,10 +64,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "GroundVehicle"):
         # Set ground vehicle route to great arc
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        groundVehicle.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.route, VehiclePropagatorGreatArc)
+        propagator: "PropagatorGreatArc" = clr.CastAs(groundVehicle.route, PropagatorGreatArc)
 
     # endregion
 
@@ -77,10 +77,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "GroundVehicle"):
         # Set groundVehicle route to STK External propagator
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        groundVehicle.set_route_type(PROPAGATOR_TYPE.STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.route, VehiclePropagatorStkExternal)
+        propagator: "PropagatorStkExternal" = clr.CastAs(groundVehicle.route, PropagatorStkExternal)
 
     # endregion
 
@@ -90,10 +90,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "GroundVehicle"):
         # Set ground vehicle route to STK External propagator
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        groundVehicle.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorRealtime" = clr.CastAs(groundVehicle.route, VehiclePropagatorRealtime)
+        propagator: "PropagatorRealtime" = clr.CastAs(groundVehicle.route, PropagatorRealtime)
 
     # endregion
 
@@ -107,7 +107,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
         (IStkObject(gv)).unload()
 
     def GetExportStkEphemerisTool(self, groundVehicle: "GroundVehicle"):
-        stkEphem: "VehicleEphemerisStkExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
+        stkEphem: "VehicleEphemerisExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
 
     # endregion
 
@@ -135,8 +135,6 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
         (IStkObject(gv)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "GroundVehicle"):
-        attExTool: "VehiclePropagationDefinitionExportTool" = (
-            groundVehicle.export_tools.get_propagator_definition_export_tool()
-        )
+        attExTool: "PropagatorDefinitionExportTool" = groundVehicle.export_tools.get_propagator_definition_export_tool()
 
     # endregion

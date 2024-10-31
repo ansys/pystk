@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.enable_label_max_viewing_dist`
               - Use the maximum viewing distance for displaying the line target label.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.label_max_viewing_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.label_maximum_viewing_dist`
               - Specify the maximum distance at which the line target label is displayed. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics3D.border_wall`
               - Retrieve the border wall properties.
@@ -46,8 +46,8 @@ Property detail
 
     Use the maximum viewing distance for displaying the line target label.
 
-.. py:property:: label_max_viewing_dist
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.label_max_viewing_dist
+.. py:property:: label_maximum_viewing_dist
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics3D.label_maximum_viewing_dist
     :type: float
 
     Specify the maximum distance at which the line target label is displayed. Uses Distance Dimension.

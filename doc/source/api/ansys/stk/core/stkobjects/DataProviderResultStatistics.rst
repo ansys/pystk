@@ -41,14 +41,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute_statistic(self, statistic: STATISTICS) -> DataProviderResultStatisticResult
+.. py:method:: compute_statistic(self, statistic: STATISTIC_TYPE) -> DataProviderResultStatisticResult
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.compute_statistic
 
     Compute the requested statistic for the data set.
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTICS`
+    **statistic** : :obj:`~STATISTIC_TYPE`
 
     :Returns:
 
@@ -67,14 +67,14 @@ Method detail
 
         :obj:`~DataProviderResultTimeVaryingExtremumResult`
 
-.. py:method:: is_statistic_available(self, statistic: STATISTICS) -> bool
+.. py:method:: is_statistic_available(self, statistic: STATISTIC_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.is_statistic_available
 
     Is the supplied statistic available for the data?
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTICS`
+    **statistic** : :obj:`~STATISTIC_TYPE`
 
     :Returns:
 

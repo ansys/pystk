@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.show_graphics`
               - Show graphics: highlight each point on the 2D map that meets the specified Satisfaction criterion (if Satisfaction is enabled) or the default Satisfaction criterion (if Satisfaction is disabled).
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.color`
               - Color in which points display on the 2D map.
@@ -43,8 +43,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritGraphics2DAttributes.show_graphics
     :type: bool
 
     Show graphics: highlight each point on the 2D map that meets the specified Satisfaction criterion (if Satisfaction is enabled) or the default Satisfaction criterion (if Satisfaction is disabled).

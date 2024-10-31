@@ -70,8 +70,8 @@ facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Philade
 
 # First set the position units to degrees:
 
-root.unit_preferences.item("LatitudeUnit").set_current_unit("deg")
-root.unit_preferences.item("LongitudeUnit").set_current_unit("deg")
+root.units_preferences.item("LatitudeUnit").set_current_unit("deg")
+root.units_preferences.item("LongitudeUnit").set_current_unit("deg")
 
 # Then, set the position of the facility using a cartodetic (latitude, longitude, altitude) position. The ``position`` property is of the type ``IPosition`` located in the STK Utility library (``ansys.stk.core.stkutil``). Change the position of the facility to latitude $39.95^\circ$ and longitude $-75.16^\circ$, which corresponds approximately to Philadelphia's location:
 
@@ -88,7 +88,7 @@ print(f"{latitude = }", f"{longitude = }", f"{altitude = }", sep="\n")
 # The STK Object Model follows the logic of the STK desktop application. For example, to change the label for the facility, the `IFacility` interface contains the ``graphics`` property, which in turn contains the `label_name` property. To change the label, the “Use Instance Name as Label” property must first be set to ``False``.
 # <!-- Google.WordList.application = on -->
 
-facility.graphics.use_inst_name_label = False
+facility.graphics.use_instance_name_label = False
 facility.graphics.label_name = "Philadelphia Facility"
 
 # ### Add a sensor to a facility
@@ -123,16 +123,18 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 # Add an access constraint to the sensor defining a maximum range of 40 km:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
+from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
-access_constraint = sensor.access_constraints.add_constraint(ACCESS_CONSTRAINTS.RANGE)
+access_constraint = sensor.access_constraints.add_constraint(
+    ACCESS_CONSTRAINT_TYPE.RANGE
+)
 # -
 
 # This method returns an ``IAccessConstraintMinMax`` object, through it is possible to access the access constraint attributes. Use this object to enable a maximum range value and set it to 40 km (the units are set to km by default):
 
-access_constraint.enable_max = True
-access_constraint.max = 40
+access_constraint.enable_maximum = True
+access_constraint.maximum = 40
 
 # ### Add a satellite using the SPG4 propagator
 
@@ -141,13 +143,13 @@ access_constraint.max = 40
 # First, create the satellite using online data for the International Space Station (SSN number 25544):
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
 satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
 propagator = satellite.propagator
-propagator.common_tasks.add_segs_from_online_source("25544")
+propagator.common_tasks.add_segments_from_online_source("25544")
 propagator.propagate()
 # -
 
@@ -167,7 +169,7 @@ from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
 
 
 lighting_constraint = satellite.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.LIGHTING
+    ACCESS_CONSTRAINT_TYPE.LIGHTING
 )
 lighting_constraint.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
 # -
@@ -199,7 +201,7 @@ data_provider_elements = ["Time", "Azimuth", "Elevation", "Range"]
 
 for i in range(0, access_intervals.count):
     times = access_intervals.get_interval(i)
-    data_provider_result = access_data_provider_aer.exec_elements(
+    data_provider_result = access_data_provider_aer.execute_elements(
         times[0], times[1], 1, data_provider_elements
     )
     time_values = data_provider_result.data_sets.get_data_set_by_name(
@@ -289,20 +291,22 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 from ansys.stk.core.vgt import VECTOR_TYPE
 
 
-vector = facility.vgt.vectors.factory.create(
+vector = facility.analysis_workbench_components.vectors.factory.create(
     "FromTo", "Vector description", VECTOR_TYPE.DISPLACEMENT
 )
-vector.destination.set_point(satellite.vgt.points.item("Center"))
+vector.destination.set_point(
+    satellite.analysis_workbench_components.points.item("Center")
+)
 # -
 
 # Visualize the vector and set its size to 4.0:
 
 # +
-from ansys.stk.core.stkobjects import GEOMETRIC_ELEM_TYPE
+from ansys.stk.core.stkobjects import GEOMETRIC_ELEMENT_TYPE
 
 
-boresight_vector = facility.graphics_3d.vector.reference_crdns.add(
-    GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Facility/Philadelphia FromTo Vector"
+boresight_vector = facility.graphics_3d.vector.vector_geometry_tool_components.add(
+    GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT, "Facility/Philadelphia FromTo Vector"
 )
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -
@@ -315,7 +319,9 @@ facility.graphics_3d.vector.vector_size_scale = 4.0
 
 # First, get the built in calculation object from Analysis Workbench:
 
-parameter_sets = access.vgt.parameter_sets.item("From-To-AER(Body)")
+parameter_sets = access.analysis_workbench_components.parameter_sets.item(
+    "From-To-AER(Body)"
+)
 
 # Then, get the magnitude vector:
 

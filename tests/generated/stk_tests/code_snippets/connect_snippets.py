@@ -52,7 +52,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
-        result: "ExecuteMultipleCommandResult" = root.execute_multiple_commands(
+        result: "ExecuteMultipleCommandsResult" = root.execute_multiple_commands(
             connectCommands, EXECUTE_MULTIPLE_COMMANDS_MODE.EXCEPTION_ON_ERROR
         )
 
@@ -77,12 +77,12 @@ class ConnectSnippets(CodeSnippetsTestBase):
     def test_ExtractDataFromMultiExecConnectResult(self):
         obj = ["GetSTKVersion /"]
 
-        result: "ExecuteMultipleCommandResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
+        result: "ExecuteMultipleCommandsResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
             obj, EXECUTE_MULTIPLE_COMMANDS_MODE.CONTINUE_ON_ERROR
         )
         self.ExtractDataFromMultiExecConnectResult(result)
 
-    def ExtractDataFromMultiExecConnectResult(self, result: "ExecuteMultipleCommandResult"):
+    def ExtractDataFromMultiExecConnectResult(self, result: "ExecuteMultipleCommandsResult"):
         i: int = 0
         while i < result.count:
             if result[i].is_succeeded:

@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.shape_type`
               - Property used to access the shape type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.mesh_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.mesh_filename`
               - Property used to access the mesh file.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.shape_object`
               - Property used to access the shape object.
@@ -32,7 +32,7 @@ Overview
               - Property used to access the C dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.material_specification_type`
               - Property used to access the shape material specification type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.material_map_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.material_map_filename`
               - Property used to access the material map file.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.material_element_index`
               - Property used to access the currently selected material element index.
@@ -40,7 +40,7 @@ Overview
               - Property used to access the number of material elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.material_elements`
               - Property used to access the material element collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.target_signature_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShape.target_signature_filename`
               - Property used to access the target signature file.
 
 
@@ -62,8 +62,8 @@ Property detail
 
     Property used to access the shape type.
 
-.. py:property:: mesh_file
-    :canonical: ansys.stk.core.stkobjects.EOIRShape.mesh_file
+.. py:property:: mesh_filename
+    :canonical: ansys.stk.core.stkobjects.EOIRShape.mesh_filename
     :type: str
 
     Property used to access the mesh file.
@@ -98,8 +98,8 @@ Property detail
 
     Property used to access the shape material specification type.
 
-.. py:property:: material_map_file
-    :canonical: ansys.stk.core.stkobjects.EOIRShape.material_map_file
+.. py:property:: material_map_filename
+    :canonical: ansys.stk.core.stkobjects.EOIRShape.material_map_filename
     :type: str
 
     Property used to access the material map file.
@@ -122,8 +122,8 @@ Property detail
 
     Property used to access the material element collection.
 
-.. py:property:: target_signature_file
-    :canonical: ansys.stk.core.stkobjects.EOIRShape.target_signature_file
+.. py:property:: target_signature_filename
+    :canonical: ansys.stk.core.stkobjects.EOIRShape.target_signature_filename
     :type: str
 
     Property used to access the target signature file.

@@ -161,7 +161,7 @@ antenna_sensor.common_tasks.set_pattern_simple_conic(2, 1)
 from ansys.stk.core.stkobjects import SENSOR_POINTING
 
 
-antenna_sensor.set_pointing_type(SENSOR_POINTING.POINT_TARGETED)
+antenna_sensor.set_pointing_type(SENSOR_POINTING.TARGETED)
 # -
 
 # Finally, set the aircraft as the sensor's target:
@@ -175,29 +175,29 @@ antenna_sensor.pointing.targets.add(aircraft.path)
 # First, insert an elevation angle constraint on the sensor:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINTS
+from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
 
 
 elevation_constraint = antenna_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.ELEVATION_ANGLE
+    ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE
 )
 # -
 
 # The elevation angle constraint is represented by an `AccessConstraintMinMax` object, through which it is possible to enable a minimum and/or maximum amount on the constraint, and designate what those amounts are. Use the constraint to enable a maximum elevation angle and set the maximum angle to $30^\circ$:
 
-elevation_constraint.enable_max = True
-elevation_constraint.max = 30
+elevation_constraint.enable_maximum = True
+elevation_constraint.maximum = 30
 
 # Then, insert a range constraint on the sensor:
 
 range_constraint = antenna_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINTS.RANGE
+    ACCESS_CONSTRAINT_TYPE.RANGE
 )
 
 # The range constraint is also represented by an `AccessConstraintMinMax` object. Use this object to set a maximum range of $150$ km:
 
-range_constraint.enable_max = True
-range_constraint.max = 150
+range_constraint.enable_maximum = True
+range_constraint.maximum = 150
 
 # View the sensor's field of view using the 3D graphics window:
 
@@ -216,7 +216,7 @@ basic_access.compute_access()
 aer_df = (
     basic_access.data_providers.item("AER Data")
     .group.item("Default")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 aer_df
@@ -329,10 +329,12 @@ airport_radar.model.antenna_control.embedded_model.efficiency = 55
 # First, configure the transmitter to use frequency (instead of wavelength) as its frequency specification:
 
 # +
-from ansys.stk.core.stkobjects import RADAR_FREQUENCY_SPEC
+from ansys.stk.core.stkobjects import RADAR_FREQUENCY_SPECIFICATION_TYPE
 
 
-airport_radar.model.transmitter.frequency_specification = RADAR_FREQUENCY_SPEC.FREQUENCY
+airport_radar.model.transmitter.frequency_specification = (
+    RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY
+)
 # -
 
 # Then, set the transmitter's frequency to $2.8$ GHz:
@@ -366,17 +368,17 @@ airport_radar.model.receiver.enable_polarization = True
 # Set the receiver's system noise temperature compute type to calculate:
 
 # +
-from ansys.stk.core.stkobjects import NOISE_TEMP_COMPUTE_TYPE
+from ansys.stk.core.stkobjects import NOISE_TEMPERATURE_COMPUTE_TYPE
 
 
 airport_radar.model.receiver.system_noise_temperature.compute_type = (
-    NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+    NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 )
 # -
 
 # Then, use the receiver's system noise temperature's `antenna_noise_temperature` property to access an `AntennaNoiseTemperature` object, through which it is possible to set the antenna noise temperature parameters. Set the compute type to calculate and then enable the use of Sun and cosmic background in antenna noise temperature calculations:
 
-airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.use_sun = True
 airport_radar.model.receiver.system_noise_temperature.antenna_noise_temperature.use_cosmic_background = True
 
@@ -395,7 +397,7 @@ large_aircraft_access.compute_access()
 
 large_aircraft_df = (
     large_aircraft_access.data_providers.item("Radar SearchTrack")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -428,7 +430,7 @@ medium_aircraft_access.compute_access()
 
 medium_aircraft_df = (
     medium_aircraft_access.data_providers.item("Radar SearchTrack")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -461,7 +463,7 @@ small_aircraft_access.compute_access()
 
 small_aircraft_df = (
     small_aircraft_access.data_providers.item("Radar SearchTrack")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -494,7 +496,7 @@ bird_aircraft_access.compute_access()
 
 bird_aircraft_df = (
     bird_aircraft_access.data_providers.item("Radar SearchTrack")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -553,7 +555,7 @@ aspect_dep_aircraft_access.compute_access()
 
 aspect_dep_df = (
     aspect_dep_aircraft_access.data_providers.item("Radar SearchTrack")
-    .exec(scenario.start_time, scenario.stop_time, 30)
+    .execute(scenario.start_time, scenario.stop_time, 30)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -577,7 +579,7 @@ aspect_dep_df[
 
 rcs_df = (
     aspect_dep_aircraft_access.data_providers.item("Radar RCS")
-    .exec(scenario.start_time, scenario.stop_time, 1)
+    .execute(scenario.start_time, scenario.stop_time, 1)
     .data_sets.to_pandas_dataframe()
 )
 

@@ -20,13 +20,13 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.time`
               - Time of the waypoint. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.show_graphics`
               - Opt whether to show the waypoint.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.show_label`
               - Opt whether to display a label for the waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.label`
               - Content of the waypoint label.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.use_veh_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.use_vehicle_color`
               - Opt whether to set the waypoint color to the color of the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.color`
               - Color of the waypoint marker.
@@ -52,14 +52,14 @@ Property detail
 
     Time of the waypoint. Uses DateFormat Dimension.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.show_graphics
     :type: bool
 
     Opt whether to show the waypoint.
 
-.. py:property:: is_label_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.is_label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.show_label
     :type: bool
 
     Opt whether to display a label for the waypoint.
@@ -70,8 +70,8 @@ Property detail
 
     Content of the waypoint label.
 
-.. py:property:: use_veh_color
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.use_veh_color
+.. py:property:: use_vehicle_color
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DWaypointMarkersElement.use_vehicle_color
     :type: bool
 
     Opt whether to set the waypoint color to the color of the vehicle.

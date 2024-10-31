@@ -19,10 +19,10 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
     @staticmethod
     def setUpClass():
         CodeSnippetsTestBase.Initialize()
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Angle", "deg")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Distance", "km")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Power", "dBW")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Ratio", "dB")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Angle", "deg")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Distance", "km")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Power", "dBW")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Ratio", "dB")
 
     # endregion
 
@@ -48,21 +48,21 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         SearchTrackPDetSnippets.m_TargetAircraft = clr.CastAs(
             scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDetSnippets.m_DefaultTargetName), Aircraft
         )
-        SearchTrackPDetSnippets.m_TargetAircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(
-            SearchTrackPDetSnippets.m_TargetAircraft.route, VehiclePropagatorGreatArc
+        SearchTrackPDetSnippets.m_TargetAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        propagator: "PropagatorGreatArc" = clr.CastAs(
+            SearchTrackPDetSnippets.m_TargetAircraft.route, PropagatorGreatArc
         )
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive VehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN)
+        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.TERRAIN)
         altRef: "VehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.ELLIPSOID_HEIGHT
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
         # Add waypoints
         point1: "VehicleWaypointsElement" = propagator.waypoints.add()
@@ -147,7 +147,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         fixedPrf: "RadarWaveformMonostaticSearchTrackFixedPRF" = clr.CastAs(
             searchTrackMode.waveform, RadarWaveformMonostaticSearchTrackFixedPRF
         )
-        fixedPrf.pulse_definition.prf = 0.002  # 2 kHz
+        fixedPrf.pulse_definition.pulse_repetition_frequency = 0.002  # 2 kHz
 
         # Set the pulse width to 1e-8 sec
         fixedPrf.pulse_definition.pulse_width = 1e-08  # sec
@@ -163,7 +163,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         pulseIntGoalSNR.snr = 40.0  # dB
 
         # Set the transmit frequency
-        monostaticModel.transmitter.frequency_specification = RADAR_FREQUENCY_SPEC.FREQUENCY
+        monostaticModel.transmitter.frequency_specification = RADAR_FREQUENCY_SPECIFICATION_TYPE.FREQUENCY
         monostaticModel.transmitter.frequency = 2.1  # GHz
 
         # Set the transmit power
@@ -174,11 +174,11 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         monostaticModel.receiver.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        monostaticModel.receiver.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+        monostaticModel.receiver.system_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
 
         # Enable the antenna noise temperature computation
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = (
-            NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+            NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
         )
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.use_rain = True
 
@@ -196,13 +196,13 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         constValRcs.constant_value = 0.5  # dBsm
 
         # Create an access object for the access between the radar and target
-        radarAccess: "StkAccess" = rdrAsStkObject.get_access_to_object(tgtAsStkObject)
+        radarAccess: "Access" = rdrAsStkObject.get_access_to_object(tgtAsStkObject)
 
         # Compute access
         radarAccess.compute_access()
 
         # Get the access intervals
-        accessIntervals: "IntervalCollection" = radarAccess.computed_access_interval_times
+        accessIntervals: "TimeIntervalCollection" = radarAccess.computed_access_interval_times
 
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "S/T SNR1", "S/T PDet1", "S/T Integrated SNR", "S/T Integrated PDet"]
@@ -218,7 +218,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
             (startTime, stopTime) = accessIntervals.get_interval(index0)
 
-            result: "DataProviderResult" = dp.exec_elements(startTime, stopTime, 60, dataPrvElements)
+            result: "DataProviderResult" = dp.execute_elements(startTime, stopTime, 60, dataPrvElements)
 
             timeValues = result.data_sets.get_data_set_by_name("Time").get_values()
             snr1 = result.data_sets.get_data_set_by_name("S/T SNR1").get_values()

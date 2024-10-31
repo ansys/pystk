@@ -29,9 +29,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.file`
               - Name of gravity (.grv) file, an ASCII file containing the Central Body geopotential model coefficients.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_degree`
               - Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order`
               - Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
               - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
@@ -59,14 +59,14 @@ Property detail
 
     Name of gravity (.grv) file, an ASCII file containing the Central Body geopotential model coefficients.
 
-.. py:property:: max_degree
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_degree
+.. py:property:: maximum_degree
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_degree
     :type: int
 
     Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
 
-.. py:property:: max_order
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_order
+.. py:property:: maximum_order
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order
     :type: int
 
     Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.

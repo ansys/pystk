@@ -27,7 +27,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.show_graphics`
               - Opt whether to show the plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.longitude`
               - Center longitude of the plane at the initial condition of the satellite at epoch. Uses Longitude Dimension.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.show_graphics
     :type: bool
 
     Opt whether to show the plane.

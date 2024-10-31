@@ -36,7 +36,7 @@ Overview
               - Set the sensor's location type, a member of the AgESnLocation enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view`
               - Return celestial bodies within the sensor's field of view.
 
     .. tab-item:: Properties
@@ -338,8 +338,8 @@ Method detail
 
 
 
-.. py:method:: get_stars_in_fov(self, epoch: typing.Any) -> CelestialBodyCollection
-    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_fov
+.. py:method:: get_stars_in_field_of_view(self, epoch: typing.Any) -> ICelestialBodyInformationCollection
+    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view
 
     Return celestial bodies within the sensor's field of view.
 
@@ -349,5 +349,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~CelestialBodyCollection`
+        :obj:`~ICelestialBodyInformationCollection`
 

@@ -25,10 +25,10 @@ Overview
             * - :py:attr:`~AGGREGATE`
               - Aggregate.
 
-            * - :py:attr:`~MAX_GAIN`
+            * - :py:attr:`~MAXIMUM_GAIN`
               - Maximum gain.
 
-            * - :py:attr:`~MIN_BORESIGHT_ANGLE`
+            * - :py:attr:`~MINIMUM_BORESIGHT_ANGLE`
               - Minimum boresight angle.
 
             * - :py:attr:`~SCRIPT_PLUGIN`

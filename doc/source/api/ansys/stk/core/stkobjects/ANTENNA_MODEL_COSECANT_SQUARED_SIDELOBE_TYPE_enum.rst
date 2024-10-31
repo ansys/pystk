@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~VAL_CONSTANT`
+            * - :py:attr:`~CONSTANT`
               - Cosecant Squared Sidelobe Value Constant.
 
             * - :py:attr:`~SINC`

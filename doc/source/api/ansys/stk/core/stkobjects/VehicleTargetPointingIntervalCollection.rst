@@ -68,7 +68,7 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index: int) -> VehicleScheduleTimesElement
+.. py:method:: item(self, index: int) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.item
 
     Given an index, returns an element in the collection.
@@ -79,7 +79,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~VehicleScheduleTimesElement`
+        :obj:`~AttitudeScheduleTimesElement`
 
 
 .. py:method:: remove_at(self, index: int) -> None
@@ -104,7 +104,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, startTime: typing.Any, stopTime: typing.Any) -> VehicleScheduleTimesElement
+.. py:method:: add(self, startTime: typing.Any, stopTime: typing.Any) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add
 
     Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
@@ -116,5 +116,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~VehicleScheduleTimesElement`
+        :obj:`~AttitudeScheduleTimesElement`
 

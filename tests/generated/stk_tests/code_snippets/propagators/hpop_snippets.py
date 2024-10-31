@@ -34,7 +34,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -53,16 +53,16 @@ class HPOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.HPOP)
 
-        # Get VehiclePropagatorLOP interface
-        hpopProp: "VehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, VehiclePropagatorHPOP)
+        # Get PropagatorLOP interface
+        hpopProp: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
 
         # Configure force model
         hpopForceModel: "VehicleHPOPForceModel" = hpopProp.force_model
         hpopForceModel.central_body_gravity.file = r"STKData\CentralBodies\Earth\GGM02C.grv"
-        hpopForceModel.central_body_gravity.max_degree = 45
-        hpopForceModel.central_body_gravity.max_order = 10
+        hpopForceModel.central_body_gravity.maximum_degree = 45
+        hpopForceModel.central_body_gravity.maximum_order = 10
         hpopForceModel.central_body_gravity.use_ocean_tides = True
 
         hpopForceModel.drag.use = True

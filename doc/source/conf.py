@@ -43,6 +43,7 @@ html_context = {
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
 }
 html_theme_options = {
+    "header_links_before_dropdown": 6,
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
@@ -148,6 +149,10 @@ rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
 with open(links_filepath) as links_file:
     rst_epilog += links_file.read()
+
+# -- Autosectionlabel configuration ------------------------------------------
+autosectionlabel_maxdepth = 6
+
 
 # -- Linkcheck configuration -------------------------------------------------
 user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
@@ -312,10 +317,14 @@ if not WHEELHOUSE_PATH.exists():
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
+    "PYSTK_VERSION": version,
     "STK_VERSION": "12.9.0",
 }
 
 jinja_contexts = {
+    "toxenvs": {
+        "envs": subprocess.run(["tox", "list", "-d"], capture_output=True, text=True).stdout.splitlines()[1:],
+    },
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
@@ -589,5 +598,5 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
 
-    if not BUILD_EXAMPLES or BUILD_API:
+    if not BUILD_EXAMPLES or not BUILD_API:
         app.connect("missing-reference", ignore_examples_and_api_refs)

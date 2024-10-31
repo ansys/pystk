@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~TYPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown display type.
 
             * - :py:attr:`~ALWAYS_OFF`
@@ -31,13 +31,13 @@ Overview
             * - :py:attr:`~DURING_ACCESS`
               - Graphics for the object display during access to specified objects.
 
-            * - :py:attr:`~USE_INTERVALS`
+            * - :py:attr:`~INTERVALS`
               - Graphics for the object display during user-defined intervals.
 
             * - :py:attr:`~DURING_CHAIN_ACCESS`
               - Graphics for the object display during chain access.
 
-            * - :py:attr:`~USE_TIME_COMPONENT`
+            * - :py:attr:`~TIME_COMPONENT`
               - Graphics for the object display during the intervals provided by an interval or interval list time component.
 
 

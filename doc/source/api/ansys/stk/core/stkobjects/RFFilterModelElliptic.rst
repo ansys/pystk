@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelElliptic.order`
               - Gets or sets the filter order.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelElliptic.cutoff_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelElliptic.cut_off_frequency`
               - Gets or sets the filter cut off frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelElliptic.ripple`
               - Gets or sets the ripple.
@@ -46,8 +46,8 @@ Property detail
 
     Gets or sets the filter order.
 
-.. py:property:: cutoff_frequency
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelElliptic.cutoff_frequency
+.. py:property:: cut_off_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelElliptic.cut_off_frequency
     :type: float
 
     Gets or sets the filter cut off frequency.

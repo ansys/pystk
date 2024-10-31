@@ -36,11 +36,11 @@ Overview
               - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.projection`
               - Get the 2D Projection properties of the sensor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.show_fill`
               - Opt whether to display the region covered by the sensor footprint as a filled area.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.percent_translucency`
               - Specify the percent translucency of the sensor projection. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics.show_graphics`
               - Specify whether graphics attributes of the sensor are visible.
 
 
@@ -110,8 +110,8 @@ Property detail
 
     Get the 2D Projection properties of the sensor.
 
-.. py:property:: fill_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics.fill_visible
+.. py:property:: show_fill
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics.show_fill
     :type: bool
 
     Opt whether to display the region covered by the sensor footprint as a filled area.
@@ -122,8 +122,8 @@ Property detail
 
     Specify the percent translucency of the sensor projection. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the sensor are visible.

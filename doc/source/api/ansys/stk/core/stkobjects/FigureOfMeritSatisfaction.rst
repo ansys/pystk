@@ -28,9 +28,9 @@ Overview
               - A value to indicate when contouring is invalid.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.use_value_range_check`
               - Enable FOM Values Limits for computing Statistics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.min_value_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.minimum_value_range`
               - Gets or sets the Min Value in the range.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.max_value_range`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.maximum_value_range`
               - Gets or sets the Max Value in the range.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.exclude_value_range`
               - Exclude Value Range.
@@ -78,14 +78,14 @@ Property detail
 
     Enable FOM Values Limits for computing Statistics.
 
-.. py:property:: min_value_range
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.min_value_range
+.. py:property:: minimum_value_range
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.minimum_value_range
     :type: typing.Any
 
     Gets or sets the Min Value in the range.
 
-.. py:property:: max_value_range
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.max_value_range
+.. py:property:: maximum_value_range
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritSatisfaction.maximum_value_range
     :type: typing.Any
 
     Gets or sets the Max Value in the range.

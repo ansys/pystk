@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ELEVATION_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
             * - :py:attr:`~ELEVATION_GROUND_ELEVATION`

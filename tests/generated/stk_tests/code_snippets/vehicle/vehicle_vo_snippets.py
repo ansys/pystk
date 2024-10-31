@@ -46,15 +46,15 @@ class VehicleVOSnippets(CodeSnippetsTestBase):
 
     def ConfigureVeVOPass(self, veVoPass: "VehicleGraphics3DPass"):
         # Set lead data type to fraction, retrieved IAgVeGfxLeadData implementation
-        veVoPass.track_data.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_QUARTER)
+        veVoPass.track_data.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.QUARTER)
 
-        veVoPass.track_data.pass_data.ground_track.set_trail_data_type(LEAD_TRAIL_DATA.DATA_HALF)
-        veVoPass.track_data.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_QUARTER)
+        veVoPass.track_data.pass_data.ground_track.set_trail_data_type(LEAD_TRAIL_DATA.HALF)
+        veVoPass.track_data.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.QUARTER)
         veVoPass.track_data.pass_data.orbit.set_trail_same_as_lead()
 
-        veVoPass.tick_marks.ground_track.is_visible = True
+        veVoPass.tick_marks.ground_track.show_graphics = True
         veVoPass.tick_marks.ground_track.set_tick_data_type(TICK_DATA.RADIAL)
-        veVoPass.tick_marks.orbit.is_visible = True
+        veVoPass.tick_marks.orbit.show_graphics = True
         veVoPass.tick_marks.orbit.set_tick_data_type(TICK_DATA.RADIAL_AND_CROSS_TRACK)
         veVoPass.tick_marks.time_between_ticks = 180
 
@@ -70,7 +70,7 @@ class VehicleVOSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
 
     def ConfigureVeVODropline(self, dropLine: "VehicleGraphics3DDropLinePathItem"):
-        dropLine.is_visible = True
+        dropLine.show_graphics = True
         dropLine.use_2d_color = False
         dropLine.color = Colors.Red
         dropLine.line_style = LINE_STYLE.DASHED

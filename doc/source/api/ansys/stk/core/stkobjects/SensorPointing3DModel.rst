@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointing3DModel.attach_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointing3DModel.attachment_name`
               - Name of the element of the 3D model along which the sensor points.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorPointing3DModel.available_elements`
               - Get the available elements of the 3D model.
@@ -38,8 +38,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: attach_name
-    :canonical: ansys.stk.core.stkobjects.SensorPointing3DModel.attach_name
+.. py:property:: attachment_name
+    :canonical: ansys.stk.core.stkobjects.SensorPointing3DModel.attachment_name
     :type: str
 
     Name of the element of the 3D model along which the sensor points.

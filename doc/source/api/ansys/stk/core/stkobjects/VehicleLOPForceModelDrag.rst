@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.advanced
-    :type: VehicleAdvanced
+    :type: VehicleLOPDragSettings
 
     Get the advanced drag parameters.
 

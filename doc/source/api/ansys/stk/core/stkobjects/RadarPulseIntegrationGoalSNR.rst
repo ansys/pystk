@@ -30,7 +30,7 @@ Overview
               - Gets or sets the constant efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.exponent_on_pulse_number`
               - Gets or sets the exponent on pulse number value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integration_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integration_filename`
               - Gets or sets the integration file.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.non_coherent_integration`
               - Gets or sets the non-coherent integration flag.
@@ -78,8 +78,8 @@ Property detail
 
     Gets or sets the exponent on pulse number value.
 
-.. py:property:: integration_file
-    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integration_file
+.. py:property:: integration_filename
+    :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationGoalSNR.integration_filename
     :type: str
 
     Gets or sets the integration file.

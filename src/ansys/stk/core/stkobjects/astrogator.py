@@ -4155,7 +4155,7 @@ agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 
 
-class MCSDriver(IVehiclePropagator, SupportsDeleteCallback):
+class MCSDriver(IPropagator, SupportsDeleteCallback):
     """Properties for the Mission Control Sequence."""
 
     _num_methods = 14
@@ -4293,16 +4293,16 @@ class MCSDriver(IVehiclePropagator, SupportsDeleteCallback):
         """Construct an object of type MCSDriver."""
         SupportsDeleteCallback.__init__(self)
         initialize_from_source_object(self, sourceObject, MCSDriver)
-        IVehiclePropagator.__init__(self, sourceObject)
+        IPropagator.__init__(self, sourceObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IVehiclePropagator._private_init(self, intf)
+        IPropagator._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MCSDriver, [MCSDriver, IVehiclePropagator])
+        set_class_attribute(self, attrname, value, MCSDriver, [MCSDriver, IPropagator])
 
 agcls.AgClassCatalog.add_catalog_entry((5389292584719371376, 5476973722651125132), MCSDriver)
 agcls.AgTypeNameMap["MCSDriver"] = MCSDriver

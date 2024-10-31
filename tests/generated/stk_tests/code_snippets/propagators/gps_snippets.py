@@ -34,7 +34,7 @@ class GPSSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -49,9 +49,9 @@ class GPSSnippets(CodeSnippetsTestBase):
 
     # region ConfigureGPSWithAlmanac
     def test_ConfigureGPSWithAlmanac(self):
-        GPSSnippets.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GPS)
+        GPSSnippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.GPS)
 
-        propagator: "VehiclePropagatorGPS" = clr.CastAs(GPSSnippets.m_Object.propagator, VehiclePropagatorGPS)
+        propagator: "PropagatorGPS" = clr.CastAs(GPSSnippets.m_Object.propagator, PropagatorGPS)
 
         self.ConfigureGPSWithAlmanac(
             propagator,
@@ -59,31 +59,33 @@ class GPSSnippets(CodeSnippetsTestBase):
             (IStkObject(GPSSnippets.m_Object)).root.current_scenario,
         )
 
-    def ConfigureGPSWithAlmanac(self, propagator: "VehiclePropagatorGPS", almanacPath: str, scenario: "IStkObject"):
+    def ConfigureGPSWithAlmanac(self, propagator: "PropagatorGPS", almanacPath: str, scenario: "IStkObject"):
         # Configure properties
         # Use the scenario's analysis interval
-        propagator.ephemeris_interval.set_implicit_interval(scenario.vgt.time_intervals["AnalysisInterval"])
+        propagator.ephemeris_interval.set_implicit_interval(
+            scenario.analysis_workbench_components.time_intervals["AnalysisInterval"]
+        )
 
         # PRN must be set before configuring GPS almanac
         propagator.prn = int(str(propagator.available_prns[0]))
 
         # Turn the Auto-update off
-        propagator.auto_update_enabled = False
+        propagator.automatic_update_enabled = False
 
         # Specify a catalog
         propagator.specify_catalog.filename = almanacPath
-        if propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_SEM:
+        if propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.SEM:
             # configure the SEM almanac
             sem: "VehicleGPSAlmanacPropertiesSEM" = clr.CastAs(
                 propagator.specify_catalog.properties, VehicleGPSAlmanacPropertiesSEM
             )
             sem.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
-        elif propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_SP3:
+        elif propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.SP3:
             # SP3 almanac contains no configurable properties
             sp3: "VehicleGPSAlmanacPropertiesSP3" = clr.CastAs(
                 propagator.specify_catalog.properties, VehicleGPSAlmanacPropertiesSP3
             )
-        elif propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.GPS_ALMANAC_TYPE_YUMA:
+        elif propagator.specify_catalog.properties.type == VEHICLE_GPS_ALMANAC_TYPE.YUMA:
             # configure the YUMA almanac
             yuma: "VehicleGPSAlmanacPropertiesYUMA" = clr.CastAs(
                 propagator.specify_catalog.properties, VehicleGPSAlmanacPropertiesYUMA

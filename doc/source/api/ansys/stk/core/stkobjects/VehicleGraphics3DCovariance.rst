@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes_type
-    :type: VEHICLE_GRAPHICS_3D_ATTRIBUTES
+    :type: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE
 
     Get the position ellipsoid attributes type.
 
@@ -129,27 +129,27 @@ Method detail
 
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> None
+.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.set_attributes_type
 
     Set the position ellipsoid attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE`
 
     :Returns:
 

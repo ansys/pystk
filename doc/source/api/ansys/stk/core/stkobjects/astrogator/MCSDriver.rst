@@ -3,7 +3,7 @@ MCSDriver
 
 .. py:class:: ansys.stk.core.stkobjects.astrogator.MCSDriver
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IVehiclePropagator`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IPropagator`
 
    Basic properties of an Astrogator satellite.
 

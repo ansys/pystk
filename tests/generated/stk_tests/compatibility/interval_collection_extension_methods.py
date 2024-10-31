@@ -7,11 +7,11 @@ from test_util import *
 
 class IntervalCollectionExtensionMethods(object):
     @staticmethod
-    def GetIntervalHelper(intervalCollection: "IntervalCollection", index: int):
+    def GetIntervalHelper(intervalCollection: "TimeIntervalCollection", index: int):
         (start, stop) = intervalCollection.get_interval(index)
         return (start, stop)
 
     @staticmethod
-    def GetIntervalHelper2(intervalCollection: "ImmutableIntervalCollection", index: int):
+    def GetIntervalHelper2(intervalCollection: "TimeIntervalCollectionReadOnly", index: int):
         (start, stop) = intervalCollection.get_interval(index)
         return (start, stop)

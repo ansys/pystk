@@ -19,34 +19,34 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DATA_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~DATA_NONE`
+            * - :py:attr:`~NONE`
               - None: Display none of the selected portion (leading or trailing) of the track.
 
-            * - :py:attr:`~DATA_ALL`
+            * - :py:attr:`~ALL`
               - All: Display the track spanning the entire vehicle ephemeris.
 
-            * - :py:attr:`~DATA_FRACTION`
+            * - :py:attr:`~FRACTION`
               - Fraction: Display the specified fraction of the selected portion (leading or trailing) of the track.
 
-            * - :py:attr:`~DATA_FULL`
+            * - :py:attr:`~FULL`
               - Full: Display all of the selected portion (leading or trailing) of the track.
 
-            * - :py:attr:`~DATA_HALF`
+            * - :py:attr:`~HALF`
               - Half: Display 1/2 of the selected portion (leading or trailing) of the track.
 
-            * - :py:attr:`~DATA_ONE_PASS`
+            * - :py:attr:`~ONE_PASS`
               - One pass (satellites only): Display forward to the first pass break. At the pass break, display forward to the next one.
 
-            * - :py:attr:`~DATA_QUARTER`
+            * - :py:attr:`~QUARTER`
               - Quarter:  Display 1/4 of the selected portion (leading or trailing) of the track.
 
-            * - :py:attr:`~DATA_TIME`
+            * - :py:attr:`~TIME`
               - Time: Display the segment of the selected portion (leading or trailing) of the vehicle's path that it traverses in the specified amount of time.
 
-            * - :py:attr:`~DATA_CURRENT_INTERVAL`
+            * - :py:attr:`~CURRENT_INTERVAL`
               - Current Interval: Display the leading portion of the vehicle's track for the current animation time interval.
 
 

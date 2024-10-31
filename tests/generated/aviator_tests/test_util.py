@@ -1027,11 +1027,11 @@ class TestBase(unittest.TestCase):
 
         TestBase.root.new_scenario("Snippet")
         parent: Satellite = TestBase.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "parent")
-        clr.CastAs(parent.propagator, VehiclePropagatorTwoBody).propagate()
+        clr.CastAs(parent.propagator, PropagatorTwoBody).propagate()
         accessConstraints = parent.access_constraints
 
         TestBase.Application = TestBase.root
-        TestBase.Units = TestBase.Application.unit_preferences
+        TestBase.Units = TestBase.Application.units_preferences
 
         TestBase.CurrentDirectory = TestBase._GetTestBaseDirectory()
         TestBase.CodeBaseDir = TestBase.CurrentDirectory
@@ -1099,7 +1099,7 @@ class TestBase(unittest.TestCase):
             TestBase.ScenarioDirectory = Path.Combine(
                 TestBase.CodeBaseDir, TestBase.ScenarioDirName, Path.GetDirName(path)
             )
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     @staticmethod
     def LoadBaseScenario():
@@ -1107,9 +1107,9 @@ class TestBase(unittest.TestCase):
         TestBase.LoadTestScenario("Scenario1.sc")
 
         ac1: Aircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
-        ac1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: VehiclePropagatorGreatArc = clr.CastAs(ac1.route, VehiclePropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        ac1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ga: PropagatorGreatArc = clr.CastAs(ac1.route, PropagatorGreatArc)
+        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1120,9 +1120,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         gv1: GroundVehicle = clr.CastAs(TestBase.Application.current_scenario.children["GroundVehicle1"], GroundVehicle)
-        gv1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: VehiclePropagatorGreatArc = clr.CastAs(gv1.route, VehiclePropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        gv1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ga: PropagatorGreatArc = clr.CastAs(gv1.route, PropagatorGreatArc)
+        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1133,9 +1133,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         sh1: Ship = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], Ship)
-        sh1.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: VehiclePropagatorGreatArc = clr.CastAs(sh1.route, VehiclePropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        sh1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ga: PropagatorGreatArc = clr.CastAs(sh1.route, PropagatorGreatArc)
+        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1146,8 +1146,8 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         ms1: Missile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], Missile)
-        ms1.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
-        ballistic: VehiclePropagatorBallistic = clr.CastAs(ms1.trajectory, VehiclePropagatorBallistic)
+        ms1.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        ballistic: PropagatorBallistic = clr.CastAs(ms1.trajectory, PropagatorBallistic)
         ballistic.step = 59
         ballistic.propagate()
         lt: LineTarget = clr.CastAs(TestBase.Application.current_scenario.children["LineTarget2"], LineTarget)
@@ -1214,7 +1214,7 @@ class TestBase(unittest.TestCase):
             TestBase.UsingLatestICRFDataFiles = "2023" in timeStampLine
 
     def setUp(self):
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     def tearDown(self):
         EngineLifetimeManager.UpdateWindow()
@@ -1266,8 +1266,8 @@ class TestBase(unittest.TestCase):
         return True
 
     @staticmethod
-    def PropagateGreatArc(ga: "VehiclePropagatorGreatArc"):
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+    def PropagateGreatArc(ga: "PropagatorGreatArc"):
+        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
         wpe: "VehicleWaypointsElement" = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1622,11 +1622,11 @@ class DataProviderResultWriter(object):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
-        if self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.INTERVAL_LIST:
+        if self._result.category == DATA_PROVIDER_RESULT_CATEGORY.INTERVAL_LIST:
             self.DumpDPIntervalList(DataProviderResultIntervalCollection(self._result.value), 1)
-        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.SUB_SECTION_LIST:
+        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORY.SUB_SECTION_LIST:
             self.DumpDPSubSectionList(DataProviderResultSubSectionCollection(self._result.value), 1)
-        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORIES.MESSAGE:
+        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORY.MESSAGE:
             self.DumpDPMessage(DataProviderResultTextMessage(self._result.value), 1)
         return Regex.Replace(self.outStr, "\n", "")
 

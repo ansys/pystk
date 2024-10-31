@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~FULL_CORRECTION`
               - Full correction: use a full evaluation of the acceleration model at the end of a Gauss-Jackson integration step.
 
-            * - :py:attr:`~PSEUDO_CORRECTION`
+            * - :py:attr:`~PSEUDOCORRECTION`
               - Pseudo correction: use a pseudo-evaluation where only the two body acceleration is updated.
 
 

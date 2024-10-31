@@ -1708,7 +1708,7 @@ class STKXApplication(SupportsDeleteCallback):
     _execute_multiple_commands_metadata = { "offset" : _execute_multiple_commands_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(EXECUTE_MULTIPLE_COMMANDS_MODE), agmarshall.InterfaceOutArg,) }
-    def execute_multiple_commands(self, connectCommands:list, eAction:"EXECUTE_MULTIPLE_COMMANDS_MODE") -> "ExecuteMultipleCommandResult":
+    def execute_multiple_commands(self, connectCommands:list, eAction:"EXECUTE_MULTIPLE_COMMANDS_MODE") -> "ExecuteMultipleCommandsResult":
         """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, OutArg())
 

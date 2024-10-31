@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_table
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_table
-    :type: TransferFunctionInputBackOffCOverImTable
+    :type: TransferFunctionInputBackOffVsCOverImTable
 
     Gets the C/Im transfer function table.
 

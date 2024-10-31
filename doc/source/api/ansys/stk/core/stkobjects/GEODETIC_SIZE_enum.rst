@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Represents a value not supported by the Object Model.
 
-            * - :py:attr:`~SIZE_ALTITUDE`
+            * - :py:attr:`~ALTITUDE`
               - Use altitude.
 
-            * - :py:attr:`~SIZE_RADIUS`
+            * - :py:attr:`~RADIUS`
               - Use radius.
 
 
