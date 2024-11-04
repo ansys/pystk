@@ -3,7 +3,7 @@ Prerequisites
 
 You can use PySTK locally on Windows and Linux operating systems, or by using Windows-based or Linux-based Docker containers.  
 
-Local Prerequisites
+Local prerequisites
 ===================
 
 To get started using PySTK locally, the following is required:
@@ -27,7 +27,7 @@ STK Desktop or STK Engine must be installed and licensed on your machine.
 Install STK Desktop
 -------------------
 
-STK desktop is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context.  Refer to the `STK installation
+STK desktop is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation
 instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details
 on installing STK.
 
@@ -46,7 +46,7 @@ instructions <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting
 
     If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 
-Docker Prerequisites
+Docker prerequisites
 ====================
 You can use PySTK inside a Windows-based Docker container or inside a Linux-based Docker container. To get started, you must have Docker installed on your operation system. Refer to the links below to install Docker on your desired operating system:
 
