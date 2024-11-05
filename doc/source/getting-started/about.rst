@@ -49,8 +49,7 @@ adoption occurs.
 Contribute to PySTK
 ===================
 
-Contributions to the `PySTK GitHub repository
-<https://github.com/ansys-internal/pystk>`_ are welcome and encouraged. This
+Contributions to the `PySTK GitHub repository <https://github.com/ansys-internal/pystk>`_ are welcome and encouraged. This
 includes updates to the documentation, examples, and the addition of high-level
 APIs/helper functions that facilitate specific workflows.
 
@@ -77,16 +76,16 @@ installation instructions for your desired environment.
       - **Prerequisites guide**
       - **Installation guide**
     * - Locally on Windows
-      - :ref:`Prerequisites <Windows local prerequisites>`
+      - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK locally in Windows>`
     * - Locally on Linux
-      - :ref:`Prerequisites <Linux local prerequisites>`
+      - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK locally in Linux>`
     * - Windows Docker container
-      - :ref:`Prerequisites <Windows Docker prerequisites>`
+      - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK in a Windows container>`
     * - Linux Docker container
-      - :ref:`Prerequisites <Linux Docker prerequisites>`
+      - :ref:`Prerequisites <Prerequisites>`
       - :ref:`Installation <Install PySTK in a Linux container>`
      
 
