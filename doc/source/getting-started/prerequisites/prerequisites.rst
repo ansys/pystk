@@ -19,6 +19,10 @@ A working Python environment using Python version 3.10 or greater is required. Y
 Additionally, you can install Jupyter Notebooks by downloading an install from
 https://jupyter.org/install.
 
+.. note::
+
+    If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
+
 Install STK Desktop or STK Engine
 ---------------------------------
 
@@ -42,13 +46,10 @@ instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.h
 - For Linux installations, refer to the `STK Engine Installation
 instructions <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting_Started_with_EngineOnLinux.htm#Installing>`_ for details on installing STK Engine on Linux.
 
-.. note::
-
-    If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 
 Docker prerequisites
 ====================
-You can use PySTK inside a Windows-based Docker container or inside a Linux-based Docker container. To get started, you must have Docker installed on your operation system. Refer to the links below to install Docker on your desired operating system:
+You can use PySTK inside a Windows-based Docker container or inside a Linux-based Docker container. To get started, you must have Docker installed. Refer to the links below to install Docker on your desired operating system:
 
 - `Install Docker Desktop on Windows <https://docs.docker.com/desktop/install/windows-install/>`_
 - `Install Docker Desktop on Linux <https://docs.docker.com/desktop/install/linux/>`_
