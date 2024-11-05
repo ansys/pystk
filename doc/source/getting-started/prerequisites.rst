@@ -46,7 +46,7 @@ STK Engine is available on Windows and Linux platforms. It enables you to build 
 
 - For Windows installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.htm>`_ for details on installing STK Engine. 
 
-- For Linux installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting_Started_with_EngineOnLinux.htm#Installing>`_ for details on installing STK Engine on Linux. 
+- For Linux installations, refer to the `STK Engine on Linux installation instructions <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting_Started_with_EngineOnLinux.htm#Installing>`_ for details on installing STK Engine on Linux. 
 
 .. note::
 
