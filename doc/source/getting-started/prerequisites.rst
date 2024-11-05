@@ -12,7 +12,7 @@ To get started using PySTK locally, the following is required:
 - STK Desktop or STK Engine
 
 Install Python
---------------
+^^^^^^^^^^^^^^
 
 A working Python environment using Python version 3.10 or greater is required. You can download and install Python from https://www.python.org/downloads.
 
@@ -24,19 +24,19 @@ https://jupyter.org/install.
     If using the remote API, modules ``grpcio`` and ``protobuf`` are required. They can be obtained from PyPI and installed using pip.
 
 Install STK Desktop or STK Engine
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 STK Desktop or STK Engine must be installed and licensed on your machine.
 
 Install STK Desktop
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 STK desktop is available on Windows platforms. It provides a physics-based modeling environment for analyzing platforms and payloads in a realistic mission context. Refer to the `STK installation
 instructions <https://help.agi.com/stk/Content/install/installingSTK.htm>`_ for details
 on installing STK.
 
 Install STK Engine
-------------------
+^^^^^^^^^^^^^^^^^^
 
 STK Engine is available on Windows and Linux platforms. It enables you to build an app that harnesses the analytical power and visual capabilities of STK. 
 
