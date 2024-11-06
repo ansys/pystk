@@ -37,7 +37,7 @@ STK desktop is available on Windows platforms. It provides a physics-based model
 
 .. note::
 
-    Once installed, refer to the `Licensing STK help topic <https://help.agi.com/stk/#licensing/licensing.htm>`_ for instructions on licensing STK.
+    Once installed, refer to the `Licensing STK help topic <https://help.agi.com/stk/Content/licensing/licensing.htm>`_ for information on licensing STK.
 
 Install STK Engine
 ^^^^^^^^^^^^^^^^^^
@@ -46,11 +46,11 @@ STK Engine is available on Windows and Linux platforms. It enables you to build 
 
 - For Windows installations, refer to the `STK Engine installation instructions <https://help.agi.com/stkdevkit/Content/stkEngine/Getting_Started.htm>`_ for details on installing STK Engine. 
 
-- For Linux installations, refer to the `STK Engine on Linux installation instructions <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting_Started_with_EngineOnLinux.htm#Installing>`_ for details on installing STK Engine on Linux. 
+- For Linux installations, refer to the `STK Engine on Linux installation instructions <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/Getting_Started_with_EngineOnLinux.htm>`_ for details on installing STK Engine on Linux. 
 
 .. note::
 
-    Once installed, refer to the `Obtaining and registering AGI licenses help topic <https://help.agi.com/stkEngineOnUNIX/index.htm#stkEngineUX/Getting_Started_with_EngineOnLinux.htm#obtaining?TocPath=Getting%2520Started%2520with%2520STK%2520Engine%257C_____5>`_ for information on licensing STK Engine.
+    Once installed, refer to the `Obtaining and registering AGI licenses help topic <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/Getting_Started_with_EngineOnLinux.htm>`_ and navigate to the Obtaining and Registering AGI Licenses section for information on licensing STK Engine.
 
 Docker prerequisites
 ====================
