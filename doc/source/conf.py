@@ -323,7 +323,7 @@ jinja_globals = {
 
 jinja_contexts = {
     "toxenvs": {
-        "envs": subprocess.run(["tox", "list", "-d"], capture_output=True, text=True).stdout.splitlines()[1:],
+        "envs": subprocess.run(["tox", "list", "-d", "-q"], capture_output=True, text=True).stdout.splitlines()[1:],
     },
     "main_toctree": {
         "build_api": BUILD_API,
