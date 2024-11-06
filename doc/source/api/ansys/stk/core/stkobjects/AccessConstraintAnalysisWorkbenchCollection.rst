@@ -110,14 +110,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_constraint(self, eConstraint: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE, reference: str) -> IAccessConstraint
+.. py:method:: add_constraint(self, constraint: ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE, reference: str) -> IAccessConstraint
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.add_constraint
 
     Add a constraint to the AWB Constraint Collection.
 
     :Parameters:
 
-    **eConstraint** : :obj:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE`
     **reference** : :obj:`~str`
 
     :Returns:

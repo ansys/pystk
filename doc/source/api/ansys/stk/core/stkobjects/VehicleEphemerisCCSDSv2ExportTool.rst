@@ -202,14 +202,14 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName: str) -> None
+.. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.export
 
     Export the ephemeris file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

@@ -152,16 +152,16 @@ Method detail
 
 
 
-.. py:method:: assign_cartesian(self, xVal: float, yVal: float, zVal: float) -> None
+.. py:method:: assign_cartesian(self, x_value: float, y_value: float, z_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveThrustVector.assign_cartesian
 
     Assign all three Cartesian components of the DeltaV vector (dimension: SmallDistance/Time).
 
     :Parameters:
 
-    **xVal** : :obj:`~float`
-    **yVal** : :obj:`~float`
-    **zVal** : :obj:`~float`
+    **x_value** : :obj:`~float`
+    **y_value** : :obj:`~float`
+    **z_value** : :obj:`~float`
 
     :Returns:
 
@@ -176,16 +176,16 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: assign_spherical(self, azVal: typing.Any, elVal: typing.Any, magVal: float) -> None
+.. py:method:: assign_spherical(self, azimuth_value: typing.Any, elevation_value: typing.Any, magnitude_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveThrustVector.assign_spherical
 
     Assign all three spherical components of the DeltaV vector (order Az, El, Mag; dimensions: Angle, Angle, SmallDistance/Time).
 
     :Parameters:
 
-    **azVal** : :obj:`~typing.Any`
-    **elVal** : :obj:`~typing.Any`
-    **magVal** : :obj:`~float`
+    **azimuth_value** : :obj:`~typing.Any`
+    **elevation_value** : :obj:`~typing.Any`
+    **magnitude_value** : :obj:`~float`
 
     :Returns:
 

@@ -37,16 +37,16 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, angleName: str, description: str, angleType: ANGLE_TYPE) -> IVectorGeometryToolAngle
+.. py:method:: create(self, angle_name: str, description: str, angle_type: ANGLE_TYPE) -> IVectorGeometryToolAngle
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleFactory.create
 
     Create a VGT angle using specified name, description and type.
 
     :Parameters:
 
-    **angleName** : :obj:`~str`
+    **angle_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **angleType** : :obj:`~ANGLE_TYPE`
+    **angle_type** : :obj:`~ANGLE_TYPE`
 
     :Returns:
 

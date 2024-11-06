@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> DesignCR3BPObject
+.. py:method:: item(self, index_or_name: typing.Any) -> DesignCR3BPObject
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection.item
 
     Iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

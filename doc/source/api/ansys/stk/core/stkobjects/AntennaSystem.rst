@@ -62,14 +62,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_beam_selection_strategy_type(self, val: BEAM_SELECTION_STRATEGY_TYPE) -> None
+.. py:method:: set_beam_selection_strategy_type(self, value: BEAM_SELECTION_STRATEGY_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaSystem.set_beam_selection_strategy_type
 
     Set the beam selection strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~BEAM_SELECTION_STRATEGY_TYPE`
+    **value** : :obj:`~BEAM_SELECTION_STRATEGY_TYPE`
 
     :Returns:
 

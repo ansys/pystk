@@ -68,14 +68,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_graphics_3d_window_identifiers(self, windowIds: list) -> None
+.. py:method:: set_graphics_3d_window_identifiers(self, window_ids: list) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsSpecialElement.set_graphics_3d_window_identifiers
 
     Select the 3D Graphics window ids.
 
     :Parameters:
 
-    **windowIds** : :obj:`~list`
+    **window_ids** : :obj:`~list`
 
     :Returns:
 

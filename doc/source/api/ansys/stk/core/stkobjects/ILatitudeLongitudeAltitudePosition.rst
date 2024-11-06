@@ -72,14 +72,14 @@ Method detail
         :obj:`~ILatitudeLongitudeAltitudePosition`
 
 
-.. py:method:: assign(self, pPos: ILatitudeLongitudeAltitudePosition) -> None
+.. py:method:: assign(self, pos: ILatitudeLongitudeAltitudePosition) -> None
     :canonical: ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.assign
 
     Assign a new position.
 
     :Parameters:
 
-    **pPos** : :obj:`~ILatitudeLongitudeAltitudePosition`
+    **pos** : :obj:`~ILatitudeLongitudeAltitudePosition`
 
     :Returns:
 

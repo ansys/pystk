@@ -110,14 +110,14 @@ Method detail
         :obj:`~IPosition`
 
 
-.. py:method:: assign(self, pPosition: IPosition) -> None
+.. py:method:: assign(self, position: IPosition) -> None
     :canonical: ansys.stk.core.stkutil.IPosition.assign
 
     Assign the coordinates into the system.
 
     :Parameters:
 
-    **pPosition** : :obj:`~IPosition`
+    **position** : :obj:`~IPosition`
 
     :Returns:
 

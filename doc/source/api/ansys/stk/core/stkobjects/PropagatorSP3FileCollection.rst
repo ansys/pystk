@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filePath: str) -> PropagatorSP3File
+.. py:method:: add(self, file_path: str) -> PropagatorSP3File
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3FileCollection.add
 
     Load an SP3 file using the specified file path and adds the file to a collection of SP3 files.
 
     :Parameters:
 
-    **filePath** : :obj:`~str`
+    **file_path** : :obj:`~str`
 
     :Returns:
 

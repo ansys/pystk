@@ -92,14 +92,14 @@ Method detail
         :obj:`~IDirection`
 
 
-.. py:method:: assign(self, pDirection: IDirection) -> None
+.. py:method:: assign(self, direction: IDirection) -> None
     :canonical: ansys.stk.core.stkutil.IDirection.assign
 
     Assign a new direction.
 
     :Parameters:
 
-    **pDirection** : :obj:`~IDirection`
+    **direction** : :obj:`~IDirection`
 
     :Returns:
 

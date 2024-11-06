@@ -70,14 +70,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_break_angle_type(self, breakAngleType: VEHICLE_BREAK_ANGLE_TYPE) -> None
+.. py:method:: set_break_angle_type(self, break_angle_type: VEHICLE_BREAK_ANGLE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.set_break_angle_type
 
     Set the Break Angle type.
 
     :Parameters:
 
-    **breakAngleType** : :obj:`~VEHICLE_BREAK_ANGLE_TYPE`
+    **break_angle_type** : :obj:`~VEHICLE_BREAK_ANGLE_TYPE`
 
     :Returns:
 

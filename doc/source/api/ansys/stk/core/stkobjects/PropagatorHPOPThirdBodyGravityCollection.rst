@@ -115,27 +115,27 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_third_body(self, thirdBody: str) -> PropagatorHPOPThirdBodyGravityElement
+.. py:method:: add_third_body(self, third_body: str) -> PropagatorHPOPThirdBodyGravityElement
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.add_third_body
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **thirdBody** : :obj:`~str`
+    **third_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~PropagatorHPOPThirdBodyGravityElement`
 
-.. py:method:: remove_third_body(self, thirdBody: str) -> None
+.. py:method:: remove_third_body(self, third_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.remove_third_body
 
     Remove an element from the collection.
 
     :Parameters:
 
-    **thirdBody** : :obj:`~str`
+    **third_body** : :obj:`~str`
 
     :Returns:
 

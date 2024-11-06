@@ -190,14 +190,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: get_service_by_type(self, serviceType: WINDOW_SERVICE_TYPE) -> typing.Any
+.. py:method:: get_service_by_type(self, service_type: WINDOW_SERVICE_TYPE) -> typing.Any
     :canonical: ansys.stk.core.uicore.Window.get_service_by_type
 
     Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
 
     :Parameters:
 
-    **serviceType** : :obj:`~WINDOW_SERVICE_TYPE`
+    **service_type** : :obj:`~WINDOW_SERVICE_TYPE`
 
     :Returns:
 

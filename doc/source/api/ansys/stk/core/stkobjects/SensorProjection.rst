@@ -174,27 +174,27 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: enable_constraint(self, constraintName: str) -> None
+.. py:method:: enable_constraint(self, constraint_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.SensorProjection.enable_constraint
 
     Enable the constraint with the name given.
 
     :Parameters:
 
-    **constraintName** : :obj:`~str`
+    **constraint_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_constraint(self, constraintName: str) -> None
+.. py:method:: disable_constraint(self, constraint_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.SensorProjection.disable_constraint
 
     Disables the constraint with the name given.
 
     :Parameters:
 
-    **constraintName** : :obj:`~str`
+    **constraint_name** : :obj:`~str`
 
     :Returns:
 

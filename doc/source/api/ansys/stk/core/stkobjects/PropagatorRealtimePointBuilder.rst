@@ -119,14 +119,14 @@ Method detail
 
 
 
-.. py:method:: get_points_in_frame(self, referenceFrame: str) -> PropagatorRealtimeCartesianPoints
+.. py:method:: get_points_in_frame(self, reference_frame: str) -> PropagatorRealtimeCartesianPoints
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtimePointBuilder.get_points_in_frame
 
     Allow adding points using specified reference frame.
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~str`
+    **reference_frame** : :obj:`~str`
 
     :Returns:
 

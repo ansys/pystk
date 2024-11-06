@@ -290,7 +290,7 @@ Method detail
 
 
 
-.. py:method:: create_all_performance_models(self, name: str, overwrite: bool, makeDefault: bool) -> None
+.. py:method:: create_all_performance_models(self, name: str, overwrite: bool, make_default: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_performance_models
 
     Create a set of advanced performance models for the aircraft with the given name.
@@ -299,7 +299,7 @@ Method detail
 
     **name** : :obj:`~str`
     **overwrite** : :obj:`~bool`
-    **makeDefault** : :obj:`~bool`
+    **make_default** : :obj:`~bool`
 
     :Returns:
 

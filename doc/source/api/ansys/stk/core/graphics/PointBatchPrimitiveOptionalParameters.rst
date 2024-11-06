@@ -35,14 +35,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_pixel_sizes(self, pixelSizes: list) -> None
+.. py:method:: set_pixel_sizes(self, pixel_sizes: list) -> None
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveOptionalParameters.set_pixel_sizes
 
     Define a collection of pixel sizes, one for each point in the point batch.
 
     :Parameters:
 
-    **pixelSizes** : :obj:`~list`
+    **pixel_sizes** : :obj:`~list`
 
     :Returns:
 

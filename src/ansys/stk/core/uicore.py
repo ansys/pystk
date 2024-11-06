@@ -147,9 +147,9 @@ class WindowsCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrCaption:typing.Any) -> "Window":
+    def item(self, index_or_caption:typing.Any) -> "Window":
         """Retrieve a window object."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._item_metadata, indexOrCaption, OutArg())
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._item_metadata, index_or_caption, OutArg())
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -162,16 +162,16 @@ class WindowsCollection(SupportsDeleteCallback):
     _arrange_metadata = { "offset" : _arrange_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STYLE),) }
-    def arrange(self, arrangeStyle:"WINDOW_ARRANGE_STYLE") -> None:
+    def arrange(self, arrange_style:"WINDOW_ARRANGE_STYLE") -> None:
         """Arranges the application windows using the specified style."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrangeStyle)
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrange_style)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def add(self, pluginID:str, initData:typing.Any) -> "Window":
+    def add(self, plugin_id:str, init_data:typing.Any) -> "Window":
         """Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, pluginID, initData, OutArg())
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, plugin_id, init_data, OutArg())
 
     _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -289,8 +289,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
     @window_state.setter
-    def window_state(self, newVal:"APPLICATION_WINDOW_STATE") -> None:
-        return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, newVal)
+    def window_state(self, new_value:"APPLICATION_WINDOW_STATE") -> None:
+        return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, new_value)
 
     _close_metadata = { "offset" : _close_method_offset,
             "arg_types" : (),
@@ -311,8 +311,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @height.setter
-    def height(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_height_metadata, newVal)
+    def height(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_height_metadata, new_value)
 
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -326,8 +326,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @width.setter
-    def width(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_width_metadata, newVal)
+    def width(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_width_metadata, new_value)
 
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -341,8 +341,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @left.setter
-    def left(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_left_metadata, newVal)
+    def left(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_left_metadata, new_value)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -356,8 +356,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @top.setter
-    def top(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_top_metadata, newVal)
+    def top(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_top_metadata, new_value)
 
     _get_dock_style_metadata = { "offset" : _get_dock_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -371,8 +371,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_DOCK_STYLE),) }
     @dock_style.setter
-    def dock_style(self, newVal:"WINDOW_DOCK_STYLE") -> None:
-        return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, newVal)
+    def dock_style(self, new_value:"WINDOW_DOCK_STYLE") -> None:
+        return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, new_value)
 
     _get_no_workbook_close_metadata = { "offset" : _get_no_workbook_close_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -386,8 +386,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_workbook_close.setter
-    def no_workbook_close(self, newVal:bool) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_no_workbook_close_metadata, newVal)
+    def no_workbook_close(self, new_value:bool) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_no_workbook_close_metadata, new_value)
 
     _get_unpinned_metadata = { "offset" : _get_unpinned_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -401,8 +401,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @unpinned.setter
-    def unpinned(self, newVal:bool) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_unpinned_metadata, newVal)
+    def unpinned(self, new_value:bool) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_unpinned_metadata, new_value)
 
     _get_can_pin_metadata = { "offset" : _get_can_pin_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -430,9 +430,9 @@ class Window(SupportsDeleteCallback):
     _get_service_by_type_metadata = { "offset" : _get_service_by_type_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(WINDOW_SERVICE_TYPE), agmarshall.InterfaceOutArg,) }
-    def get_service_by_type(self, serviceType:"WINDOW_SERVICE_TYPE") -> typing.Any:
+    def get_service_by_type(self, service_type:"WINDOW_SERVICE_TYPE") -> typing.Any:
         """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
-        return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, serviceType, OutArg())
+        return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, service_type, OutArg())
 
     _property_names[caption] = "caption"
     _property_names[window_state] = "window_state"
@@ -509,8 +509,8 @@ class Toolbar(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(Toolbar._metadata, Toolbar._set_visible_metadata, newVal)
+    def visible(self, new_value:bool) -> None:
+        return self._intf.set_property(Toolbar._metadata, Toolbar._set_visible_metadata, new_value)
 
     _get_float_state_metadata = { "offset" : _get_float_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -524,8 +524,8 @@ class Toolbar(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STATE),) }
     @float_state.setter
-    def float_state(self, newVal:"WINDOW_ARRANGE_STATE") -> None:
-        return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, newVal)
+    def float_state(self, new_value:"WINDOW_ARRANGE_STATE") -> None:
+        return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, new_value)
 
     _property_names[identifier] = "identifier"
     _property_names[caption] = "caption"
@@ -583,9 +583,9 @@ class ToolbarCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrCaption:typing.Any) -> "Toolbar":
+    def item(self, index_or_caption:typing.Any) -> "Toolbar":
         """Retrieve a toolbar object."""
-        return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._item_metadata, indexOrCaption, OutArg())
+        return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._item_metadata, index_or_caption, OutArg())
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),

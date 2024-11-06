@@ -48,7 +48,7 @@ Method detail
 
         :obj:`~IProjection`
 
-.. py:method:: initialize_with_data(self, position: list, orientation: IOrientation, fieldOfViewHorizontal: float, fieldOfViewVertical: float, nearPlane: float, farPlane: float) -> IProjection
+.. py:method:: initialize_with_data(self, position: list, orientation: IOrientation, field_of_view_horizontal: float, field_of_view_vertical: float, near_plane: float, far_plane: float) -> IProjection
     :canonical: ansys.stk.core.graphics.ProjectionFactory.initialize_with_data
 
     Initialize a new instance.
@@ -57,10 +57,10 @@ Method detail
 
     **position** : :obj:`~list`
     **orientation** : :obj:`~IOrientation`
-    **fieldOfViewHorizontal** : :obj:`~float`
-    **fieldOfViewVertical** : :obj:`~float`
-    **nearPlane** : :obj:`~float`
-    **farPlane** : :obj:`~float`
+    **field_of_view_horizontal** : :obj:`~float`
+    **field_of_view_vertical** : :obj:`~float`
+    **near_plane** : :obj:`~float`
+    **far_plane** : :obj:`~float`
 
     :Returns:
 

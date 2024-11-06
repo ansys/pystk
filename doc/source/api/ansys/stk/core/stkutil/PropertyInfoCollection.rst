@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> PropertyInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> PropertyInfo
     :canonical: ansys.stk.core.stkutil.PropertyInfoCollection.item
 
     Allow the user to iterate through the properties.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

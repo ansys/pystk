@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> GridSearchControl
+.. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> GridSearchControl
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **controlPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **control_path** : :obj:`~str`
 
     :Returns:
 

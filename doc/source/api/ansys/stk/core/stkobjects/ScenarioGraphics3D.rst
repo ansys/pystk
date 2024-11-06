@@ -169,57 +169,57 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: show_object(self, truncPath: str, windowID: str) -> None
+.. py:method:: show_object(self, trunc_path: str, window_id: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.show_object
 
     Show the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the object in all 3d windows.
 
     :Parameters:
 
-    **truncPath** : :obj:`~str`
-    **windowID** : :obj:`~str`
+    **trunc_path** : :obj:`~str`
+    **window_id** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: show_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+.. py:method:: show_objects(self, trunc_object_paths: list, window_id_or_title: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.show_objects
 
     Show multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to show the objects in all 3d windows.
 
     :Parameters:
 
-    **truncObjectPaths** : :obj:`~list`
-    **windowIdOrTitle** : :obj:`~str`
+    **trunc_object_paths** : :obj:`~list`
+    **window_id_or_title** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: hide_object(self, truncPath: str, windowID: str) -> None
+.. py:method:: hide_object(self, trunc_path: str, window_id: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.hide_object
 
     Hides the object identified by its path in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide the object in all 3d windows.
 
     :Parameters:
 
-    **truncPath** : :obj:`~str`
-    **windowID** : :obj:`~str`
+    **trunc_path** : :obj:`~str`
+    **window_id** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: hide_objects(self, truncObjectPaths: list, windowIdOrTitle: str) -> None
+.. py:method:: hide_objects(self, trunc_object_paths: list, window_id_or_title: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.hide_objects
 
     Hides multiple objects in a specified 3D window. Users can specify either a window identifier or a window title or 'all' to hide objects in all 3d windows.
 
     :Parameters:
 
-    **truncObjectPaths** : :obj:`~list`
-    **windowIdOrTitle** : :obj:`~str`
+    **trunc_object_paths** : :obj:`~list`
+    **window_id_or_title** : :obj:`~str`
 
     :Returns:
 

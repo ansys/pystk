@@ -79,14 +79,14 @@ Method detail
 
 
 
-.. py:method:: get_segments_from_online(self, SSCNum: str) -> list
+.. py:method:: get_segments_from_online(self, ssc_num: str) -> list
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4OnlineLoad.get_segments_from_online
 
     Return an array with all segments related to the supplied SSC number.
 
     :Parameters:
 
-    **SSCNum** : :obj:`~str`
+    **ssc_num** : :obj:`~str`
 
     :Returns:
 

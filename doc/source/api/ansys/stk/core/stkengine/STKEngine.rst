@@ -37,7 +37,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: start_application(noGraphics: bool = True) -> STKEngineApplication
+.. py:method:: start_application(no_graphics: bool = True) -> STKEngineApplication
     :canonical: ansys.stk.core.stkengine.STKEngine.start_application
 
     Initialize STK Engine in-process and return the instance.
@@ -46,7 +46,7 @@ Method detail
 
     :Parameters:
 
-    **noGraphics** : :obj:`~bool`
+    **no_graphics** : :obj:`~bool`
 
     :Returns:
 

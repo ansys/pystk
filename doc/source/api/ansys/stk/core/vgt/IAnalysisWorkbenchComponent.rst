@@ -169,14 +169,14 @@ Method detail
 
 
 
-.. py:method:: duplicate(self, newName: str, description: str) -> IAnalysisWorkbenchComponent
+.. py:method:: duplicate(self, new_name: str, description: str) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.duplicate
 
     Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
 
     :Parameters:
 
-    **newName** : :obj:`~str`
+    **new_name** : :obj:`~str`
     **description** : :obj:`~str`
 
     :Returns:
@@ -220,14 +220,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: rename(self, newName: str) -> None
+.. py:method:: rename(self, new_name: str) -> None
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.rename
 
     Rename the component.
 
     :Parameters:
 
-    **newName** : :obj:`~str`
+    **new_name** : :obj:`~str`
 
     :Returns:
 

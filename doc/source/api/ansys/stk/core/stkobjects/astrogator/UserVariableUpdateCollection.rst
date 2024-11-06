@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UserVariableUpdate
+.. py:method:: item(self, index_or_name: typing.Any) -> UserVariableUpdate
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdateCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

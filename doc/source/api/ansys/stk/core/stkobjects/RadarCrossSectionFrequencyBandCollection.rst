@@ -93,15 +93,15 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, minFrequency: float, maxFrequency: float) -> RadarCrossSectionFrequencyBand
+.. py:method:: add(self, min_frequency: float, max_frequency: float) -> RadarCrossSectionFrequencyBand
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBandCollection.add
 
     Add a band with supplied minimum and maximum frequencies.
 
     :Parameters:
 
-    **minFrequency** : :obj:`~float`
-    **maxFrequency** : :obj:`~float`
+    **min_frequency** : :obj:`~float`
+    **max_frequency** : :obj:`~float`
 
     :Returns:
 

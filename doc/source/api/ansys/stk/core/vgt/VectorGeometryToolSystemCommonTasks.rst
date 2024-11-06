@@ -52,15 +52,15 @@ Method detail
 
         :obj:`~VectorGeometryToolSystemAssembled`
 
-.. py:method:: create_assembled(self, originPoint: IVectorGeometryToolPoint, referenceAxes: IVectorGeometryToolAxes) -> VectorGeometryToolSystemAssembled
+.. py:method:: create_assembled(self, origin_point: IVectorGeometryToolPoint, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolSystemAssembled
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemCommonTasks.create_assembled
 
     Create a non-persistent system component assembled from an origin point and a set of reference axes.
 
     :Parameters:
 
-    **originPoint** : :obj:`~IVectorGeometryToolPoint`
-    **referenceAxes** : :obj:`~IVectorGeometryToolAxes`
+    **origin_point** : :obj:`~IVectorGeometryToolPoint`
+    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 

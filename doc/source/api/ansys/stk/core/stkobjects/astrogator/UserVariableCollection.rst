@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UserVariable
+.. py:method:: item(self, index_or_name: typing.Any) -> UserVariable
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -113,7 +113,7 @@ Method detail
 
 
 
-.. py:method:: set_heading(self, heading: typing.Any, isMagnetic: bool) -> None
+.. py:method:: set_heading(self, heading: typing.Any, is_magnetic: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalLanding.set_heading
 
     Set the heading and heading reference.
@@ -121,7 +121,7 @@ Method detail
     :Parameters:
 
     **heading** : :obj:`~typing.Any`
-    **isMagnetic** : :obj:`~bool`
+    **is_magnetic** : :obj:`~bool`
 
     :Returns:
 

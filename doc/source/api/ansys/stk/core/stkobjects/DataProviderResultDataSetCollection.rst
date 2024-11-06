@@ -102,14 +102,14 @@ Method detail
         :obj:`~DataProviderResultDataSet`
 
 
-.. py:method:: get_data_set_by_name(self, dataSetName: str) -> DataProviderResultDataSet
+.. py:method:: get_data_set_by_name(self, data_set_name: str) -> DataProviderResultDataSet
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.get_data_set_by_name
 
     Return the element, given the name.
 
     :Parameters:
 
-    **dataSetName** : :obj:`~str`
+    **data_set_name** : :obj:`~str`
 
     :Returns:
 

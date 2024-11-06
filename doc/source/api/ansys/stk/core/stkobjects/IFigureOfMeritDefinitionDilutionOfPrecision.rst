@@ -137,27 +137,27 @@ Method detail
 
 
 
-.. py:method:: set_type(self, computeType: FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE) -> None
+.. py:method:: set_type(self, compute_type: FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.set_type
 
     Set the compute option.
 
     :Parameters:
 
-    **computeType** : :obj:`~FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE`
+    **compute_type** : :obj:`~FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_type_supported(self, computeType: FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE) -> bool
+.. py:method:: is_type_supported(self, compute_type: FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.is_type_supported
 
     Is the compute option supported?
 
     :Parameters:
 
-    **computeType** : :obj:`~FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE`
+    **compute_type** : :obj:`~FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE`
 
     :Returns:
 

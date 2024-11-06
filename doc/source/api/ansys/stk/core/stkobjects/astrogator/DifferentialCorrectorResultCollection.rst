@@ -88,15 +88,15 @@ Method detail
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> DifferentialCorrectorResult
+.. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> DifferentialCorrectorResult
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **resultPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **result_path** : :obj:`~str`
 
     :Returns:
 

@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, axesName: str) -> None
+.. py:method:: remove(self, axes_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.remove
 
     Remove a specified Axes.
 
     :Parameters:
 
-    **axesName** : :obj:`~str`
+    **axes_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolAxes
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.item
 
     Return an axes by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -157,14 +157,14 @@ Method detail
 
 
 
-.. py:method:: set_points_detic(self, lLAPoints: list) -> None
+.. py:method:: set_points_detic(self, lla_points: list) -> None
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.set_points_detic
 
     Use an array of latitude/longitude/altitude values to define a coverage grid point.
 
     :Parameters:
 
-    **lLAPoints** : :obj:`~list`
+    **lla_points** : :obj:`~list`
 
     :Returns:
 

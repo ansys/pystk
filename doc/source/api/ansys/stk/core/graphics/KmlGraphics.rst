@@ -70,92 +70,92 @@ Method detail
 -------------
 
 
-.. py:method:: load_document(self, kmlUri: str) -> KmlDocument
+.. py:method:: load_document(self, kml_uri: str) -> KmlDocument
     :canonical: ansys.stk.core.graphics.KmlGraphics.load_document
 
     Load a kml document from a uri.
 
     :Parameters:
 
-    **kmlUri** : :obj:`~str`
+    **kml_uri** : :obj:`~str`
 
     :Returns:
 
         :obj:`~KmlDocument`
 
-.. py:method:: load_document_string(self, kmlUri: str) -> KmlDocument
+.. py:method:: load_document_string(self, kml_uri: str) -> KmlDocument
     :canonical: ansys.stk.core.graphics.KmlGraphics.load_document_string
 
     Load a kml document from a Uri.
 
     :Parameters:
 
-    **kmlUri** : :obj:`~str`
+    **kml_uri** : :obj:`~str`
 
     :Returns:
 
         :obj:`~KmlDocument`
 
-.. py:method:: load(self, kmlDocument: str) -> KmlDocument
+.. py:method:: load(self, kml_document: str) -> KmlDocument
     :canonical: ansys.stk.core.graphics.KmlGraphics.load
 
     Load a kml document from a string containing the document.
 
     :Parameters:
 
-    **kmlDocument** : :obj:`~str`
+    **kml_document** : :obj:`~str`
 
     :Returns:
 
         :obj:`~KmlDocument`
 
-.. py:method:: load_document_async(self, kmlUri: str) -> None
+.. py:method:: load_document_async(self, kml_uri: str) -> None
     :canonical: ansys.stk.core.graphics.KmlGraphics.load_document_async
 
     Load a kml document asynchronously from a uri. The document loaded event is raised when the document is loaded.
 
     :Parameters:
 
-    **kmlUri** : :obj:`~str`
+    **kml_uri** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: load_document_async_string(self, kmlUri: str) -> None
+.. py:method:: load_document_async_string(self, kml_uri: str) -> None
     :canonical: ansys.stk.core.graphics.KmlGraphics.load_document_async_string
 
     Load a kml document asynchronously from a Uri. The document loaded event is raised when the document is loaded.
 
     :Parameters:
 
-    **kmlUri** : :obj:`~str`
+    **kml_uri** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: load_async(self, kmlDocument: str) -> None
+.. py:method:: load_async(self, kml_document: str) -> None
     :canonical: ansys.stk.core.graphics.KmlGraphics.load_async
 
     Load a kml document asynchronously from a string containing the document. The document loaded event is raised when the document is loaded.
 
     :Parameters:
 
-    **kmlDocument** : :obj:`~str`
+    **kml_document** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: unload(self, kmlDocument: KmlDocument) -> None
+.. py:method:: unload(self, kml_document: KmlDocument) -> None
     :canonical: ansys.stk.core.graphics.KmlGraphics.unload
 
     Unloads a kml document. All associated visual features will be removed from the Scene. Once a KmlDocument is unloaded, it is no longer valid and will throw when accessing properties or methods.
 
     :Parameters:
 
-    **kmlDocument** : :obj:`~KmlDocument`
+    **kml_document** : :obj:`~KmlDocument`
 
     :Returns:
 

@@ -68,7 +68,7 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: set_property(self, path: str, propertyValue: typing.Any) -> None
+.. py:method:: set_property(self, path: str, property_value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PluginProperties.set_property
 
     Set a property.
@@ -76,7 +76,7 @@ Method detail
     :Parameters:
 
     **path** : :obj:`~str`
-    **propertyValue** : :obj:`~typing.Any`
+    **property_value** : :obj:`~typing.Any`
 
     :Returns:
 

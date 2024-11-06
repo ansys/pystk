@@ -95,21 +95,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, inputBackOff: float, cOverIm: float) -> TransferFunctionInputBackOffVsCOverImTableRow
+.. py:method:: add(self, input_back_off: float, c_over_im: float) -> TransferFunctionInputBackOffVsCOverImTableRow
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTable.add
 
     Add and returns a new row.
 
     :Parameters:
 
-    **inputBackOff** : :obj:`~float`
-    **cOverIm** : :obj:`~float`
+    **input_back_off** : :obj:`~float`
+    **c_over_im** : :obj:`~float`
 
     :Returns:
 
         :obj:`~TransferFunctionInputBackOffVsCOverImTableRow`
 
-.. py:method:: insert_at(self, index: int, inputBackOff: float, cOverIm: float) -> TransferFunctionInputBackOffVsCOverImTableRow
+.. py:method:: insert_at(self, index: int, input_back_off: float, c_over_im: float) -> TransferFunctionInputBackOffVsCOverImTableRow
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTable.insert_at
 
     Insert and returns a new row at the supplied index.
@@ -117,8 +117,8 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **inputBackOff** : :obj:`~float`
-    **cOverIm** : :obj:`~float`
+    **input_back_off** : :obj:`~float`
+    **c_over_im** : :obj:`~float`
 
     :Returns:
 

@@ -130,40 +130,40 @@ Method detail
 
 
 
-.. py:method:: set(self, surfaceTriangulator: SurfaceTriangulatorResult) -> None
+.. py:method:: set(self, surface_triangulator: SurfaceTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set
 
     Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **surfaceTriangulator** : :obj:`~SurfaceTriangulatorResult`
+    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_without_texturing(self, surfaceTriangulator: SurfaceTriangulatorResult) -> None
+.. py:method:: set_without_texturing(self, surface_triangulator: SurfaceTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set_without_texturing
 
     Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **surfaceTriangulator** : :obj:`~SurfaceTriangulatorResult`
+    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: supported(self, renderingMethod: SURFACE_MESH_RENDERING_METHOD) -> bool
+.. py:method:: supported(self, rendering_method: SURFACE_MESH_RENDERING_METHOD) -> bool
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.supported
 
     Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod.
 
     :Parameters:
 
-    **renderingMethod** : :obj:`~SURFACE_MESH_RENDERING_METHOD`
+    **rendering_method** : :obj:`~SURFACE_MESH_RENDERING_METHOD`
 
     :Returns:
 

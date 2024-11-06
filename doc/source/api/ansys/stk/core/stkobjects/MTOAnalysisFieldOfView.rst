@@ -97,14 +97,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: is_track_in_field_of_view(self, trackId: int, time: typing.Any) -> bool
+.. py:method:: is_track_in_field_of_view(self, track_id: int, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.is_track_in_field_of_view
 
     Return true is the track is in the field of view of the sensor at the given time.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -144,14 +144,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_field_of_view(self, anyOrAll: MTO_TRACK_EVALUATION_TYPE, tracks: list, time: typing.Any) -> bool
+.. py:method:: are_tracks_in_field_of_view(self, any_or_all: MTO_TRACK_EVALUATION_TYPE, tracks: list, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.are_tracks_in_field_of_view
 
     Return an array of track ids and boolean values.
 
     :Parameters:
 
-    **anyOrAll** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
+    **any_or_all** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
     **tracks** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 

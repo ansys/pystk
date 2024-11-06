@@ -35,14 +35,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: export(self, fileName: str) -> None
+.. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorDefinitionExportTool.export
 
     Export the Propagator (Prop Def) file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

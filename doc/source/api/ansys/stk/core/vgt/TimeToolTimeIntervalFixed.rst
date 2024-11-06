@@ -65,15 +65,15 @@ Method detail
 
 
 
-.. py:method:: set_interval(self, startEpoch: typing.Any, stopEpoch: typing.Any) -> None
+.. py:method:: set_interval(self, start_epoch: typing.Any, stop_epoch: typing.Any) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalFixed.set_interval
 
     Set interval's start and stop times.
 
     :Parameters:
 
-    **startEpoch** : :obj:`~typing.Any`
-    **stopEpoch** : :obj:`~typing.Any`
+    **start_epoch** : :obj:`~typing.Any`
+    **stop_epoch** : :obj:`~typing.Any`
 
     :Returns:
 

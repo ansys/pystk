@@ -234,14 +234,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_offset(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed_offset(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.set_airspeed_offset
 
     Set the airspeed offset value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -262,14 +262,14 @@ Method detail
 
 
 
-.. py:method:: set_min_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_min_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.set_min_airspeed
 
     Set the minimum airspeed value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -278,14 +278,14 @@ Method detail
 
 
 
-.. py:method:: set_max_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_max_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.set_max_airspeed
 
     Set the maximum airspeed value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

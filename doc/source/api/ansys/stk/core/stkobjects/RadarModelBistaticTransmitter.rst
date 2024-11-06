@@ -88,14 +88,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_mode(self, modeName: str) -> None
+.. py:method:: set_mode(self, mode_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelBistaticTransmitter.set_mode
 
     Set the current radar mode by name.
 
     :Parameters:
 
-    **modeName** : :obj:`~str`
+    **mode_name** : :obj:`~str`
 
     :Returns:
 

@@ -41,27 +41,27 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_aircraft(self, aircraftName: str) -> AircraftModel
+.. py:method:: get_aircraft(self, aircraft_name: str) -> AircraftModel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.get_aircraft
 
     Get the aircraft with the given name.
 
     :Parameters:
 
-    **aircraftName** : :obj:`~str`
+    **aircraft_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~AircraftModel`
 
-.. py:method:: add_aircraft(self, aircraftName: str) -> AircraftModel
+.. py:method:: add_aircraft(self, aircraft_name: str) -> AircraftModel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftModels.add_aircraft
 
     Create a new aircraft with the given name.
 
     :Parameters:
 
-    **aircraftName** : :obj:`~str`
+    **aircraft_name** : :obj:`~str`
 
     :Returns:
 

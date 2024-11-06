@@ -90,14 +90,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_implicit_time(self, eventEpoch: ITimeToolInstant) -> None
+.. py:method:: set_implicit_time(self, event_epoch: ITimeToolInstant) -> None
     :canonical: ansys.stk.core.vgt.TimeToolInstantSmartEpoch.set_implicit_time
 
     Set the reference event and the smart epoch's state to Implicit.
 
     :Parameters:
 
-    **eventEpoch** : :obj:`~ITimeToolInstant`
+    **event_epoch** : :obj:`~ITimeToolInstant`
 
     :Returns:
 

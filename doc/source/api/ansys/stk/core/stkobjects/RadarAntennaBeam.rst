@@ -99,14 +99,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, val: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: POINTING_STRATEGY_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~POINTING_STRATEGY_TYPE`
 
     :Returns:
 
@@ -117,28 +117,28 @@ Method detail
 
 
 
-.. py:method:: set_activity_type(self, activityType: RADAR_ACTIVITY_TYPE) -> None
+.. py:method:: set_activity_type(self, activity_type: RADAR_ACTIVITY_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_activity_type
 
     Set the activity type.
 
     :Parameters:
 
-    **activityType** : :obj:`~RADAR_ACTIVITY_TYPE`
+    **activity_type** : :obj:`~RADAR_ACTIVITY_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_waveform_selection_strategy(self, val: WAVEFORM_SELECTION_STRATEGY_TYPE) -> None
+.. py:method:: set_waveform_selection_strategy(self, value: WAVEFORM_SELECTION_STRATEGY_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_waveform_selection_strategy
 
     Set the current waveform selection strategy.
 
     :Parameters:
 
-    **val** : :obj:`~WAVEFORM_SELECTION_STRATEGY_TYPE`
+    **value** : :obj:`~WAVEFORM_SELECTION_STRATEGY_TYPE`
 
     :Returns:
 

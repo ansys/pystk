@@ -63,14 +63,14 @@ Method detail
 
 
 
-.. py:method:: set_distance_level(self, val: GRAPHICS_3D_LABEL_SWAP_DISTANCE) -> None
+.. py:method:: set_distance_level(self, value: GRAPHICS_3D_LABEL_SWAP_DISTANCE) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.set_distance_level
 
     Select the screen object(s) for which swapping occurs at the specified distance.
 
     :Parameters:
 
-    **val** : :obj:`~GRAPHICS_3D_LABEL_SWAP_DISTANCE`
+    **value** : :obj:`~GRAPHICS_3D_LABEL_SWAP_DISTANCE`
 
     :Returns:
 

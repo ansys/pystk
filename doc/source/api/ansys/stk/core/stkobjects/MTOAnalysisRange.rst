@@ -139,21 +139,21 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: is_track_in_range(self, trackId: int, time: typing.Any) -> bool
+.. py:method:: is_track_in_range(self, track_id: int, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.is_track_in_range
 
     Return true is the track id is within range.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
     **time** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: compute_ranges(self, mode: MTO_RANGE_MODE, trackIds: list, time: typing.Any) -> list
+.. py:method:: compute_ranges(self, mode: MTO_RANGE_MODE, track_ids: list, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.compute_ranges
 
     Return an array of track ids with a bool value if it's in range of the object.
@@ -161,7 +161,7 @@ Method detail
     :Parameters:
 
     **mode** : :obj:`~MTO_RANGE_MODE`
-    **trackIds** : :obj:`~list`
+    **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -184,15 +184,15 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_range(self, allOrAny: MTO_TRACK_EVALUATION_TYPE, trackIds: list, time: typing.Any) -> bool
+.. py:method:: are_tracks_in_range(self, all_or_any: MTO_TRACK_EVALUATION_TYPE, track_ids: list, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.are_tracks_in_range
 
     Return true if any track in the array is visible to the object.
 
     :Parameters:
 
-    **allOrAny** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
-    **trackIds** : :obj:`~list`
+    **all_or_any** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
+    **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
     :Returns:

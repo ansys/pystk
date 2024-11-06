@@ -129,14 +129,14 @@ Method detail
 
 
 
-.. py:method:: show_track(self, trackId: int, time: typing.Any) -> bool
+.. py:method:: show_track(self, track_id: int, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.show_track
 
     Return true is the track is visible to the object.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -145,7 +145,7 @@ Method detail
 
 
 
-.. py:method:: are_tracks_visible(self, eval: MTO_TRACK_EVALUATION_TYPE, trackIds: list, time: typing.Any) -> bool
+.. py:method:: are_tracks_visible(self, eval: MTO_TRACK_EVALUATION_TYPE, track_ids: list, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.are_tracks_visible
 
     Return true if any track in the array is visible to the object.
@@ -153,14 +153,14 @@ Method detail
     :Parameters:
 
     **eval** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
-    **trackIds** : :obj:`~list`
+    **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: compute_tracks(self, mode: MTO_VISIBILITY_MODE, trackIds: list, time: typing.Any) -> list
+.. py:method:: compute_tracks(self, mode: MTO_VISIBILITY_MODE, track_ids: list, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.compute_tracks
 
     Return an array of track ids with a bool value indicating if it's visible to the specified object.
@@ -168,7 +168,7 @@ Method detail
     :Parameters:
 
     **mode** : :obj:`~MTO_VISIBILITY_MODE`
-    **trackIds** : :obj:`~list`
+    **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
     :Returns:

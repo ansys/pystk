@@ -57,14 +57,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute_circle_with_granularity(self, centralBody: str, center: list, radius: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_circle_with_granularity(self, central_body: str, center: list, radius: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_circle_with_granularity
 
     Compute boundary positions for a circle on the specified centralBody with the specified center, radius and granularity.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
     **radius** : :obj:`~float`
     **granularity** : :obj:`~float`
@@ -73,14 +73,14 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_circle(self, centralBody: str, center: list, radius: float) -> SurfaceShapesResult
+.. py:method:: compute_circle(self, central_body: str, center: list, radius: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_circle
 
     Compute boundary positions for a circle on the specified centralBody with the specified center and radius. This is equivalent to calling ComputeCircle with a granularity of 1 degree.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
     **radius** : :obj:`~float`
 
@@ -88,14 +88,14 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_circle_cartographic_with_granularity(self, centralBody: str, center: list, radius: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_circle_cartographic_with_granularity(self, central_body: str, center: list, radius: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_circle_cartographic_with_granularity
 
     For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
     **radius** : :obj:`~float`
     **granularity** : :obj:`~float`
@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_circle_cartographic(self, centralBody: str, center: list, radius: float) -> SurfaceShapesResult
+.. py:method:: compute_circle_cartographic(self, central_body: str, center: list, radius: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_circle_cartographic
 
     For convenience. Computes boundary positions for a circle on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeCircle.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
     **radius** : :obj:`~float`
 
@@ -119,17 +119,17 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_ellipse_with_granularity(self, centralBody: str, center: list, majorAxisRadius: float, minorAxisRadius: float, bearing: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_ellipse_with_granularity(self, central_body: str, center: list, major_axis_radius: float, minor_axis_radius: float, bearing: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_ellipse_with_granularity
 
     Compute boundary positions for an ellipse on the specified centralBody.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **majorAxisRadius** : :obj:`~float`
-    **minorAxisRadius** : :obj:`~float`
+    **major_axis_radius** : :obj:`~float`
+    **minor_axis_radius** : :obj:`~float`
     **bearing** : :obj:`~float`
     **granularity** : :obj:`~float`
 
@@ -137,34 +137,34 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_ellipse(self, centralBody: str, center: list, majorAxisRadius: float, minorAxisRadius: float, bearing: float) -> SurfaceShapesResult
+.. py:method:: compute_ellipse(self, central_body: str, center: list, major_axis_radius: float, minor_axis_radius: float, bearing: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_ellipse
 
     Compute boundary positions for an ellipse on the specified centralBody. This is equivalent to calling ComputeEllipse with a granularity of 1 degree.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **majorAxisRadius** : :obj:`~float`
-    **minorAxisRadius** : :obj:`~float`
+    **major_axis_radius** : :obj:`~float`
+    **minor_axis_radius** : :obj:`~float`
     **bearing** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_ellipse_cartographic_with_granularity(self, centralBody: str, center: list, majorAxisRadius: float, minorAxisRadius: float, bearing: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_ellipse_cartographic_with_granularity(self, central_body: str, center: list, major_axis_radius: float, minor_axis_radius: float, bearing: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_ellipse_cartographic_with_granularity
 
     For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **majorAxisRadius** : :obj:`~float`
-    **minorAxisRadius** : :obj:`~float`
+    **major_axis_radius** : :obj:`~float`
+    **minor_axis_radius** : :obj:`~float`
     **bearing** : :obj:`~float`
     **granularity** : :obj:`~float`
 
@@ -172,92 +172,92 @@ Method detail
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_ellipse_cartographic(self, centralBody: str, center: list, majorAxisRadius: float, minorAxisRadius: float, bearing: float) -> SurfaceShapesResult
+.. py:method:: compute_ellipse_cartographic(self, central_body: str, center: list, major_axis_radius: float, minor_axis_radius: float, bearing: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_ellipse_cartographic
 
     For convenience. Computes boundary positions for an ellipse on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeEllipse.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **majorAxisRadius** : :obj:`~float`
-    **minorAxisRadius** : :obj:`~float`
+    **major_axis_radius** : :obj:`~float`
+    **minor_axis_radius** : :obj:`~float`
     **bearing** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_sector_with_granularity(self, centralBody: str, center: list, innerRadius: float, outerRadius: float, startBearing: float, endBearing: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_sector_with_granularity(self, central_body: str, center: list, inner_radius: float, outer_radius: float, start_bearing: float, end_bearing: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_sector_with_granularity
 
     Compute boundary positions for a sector on the specified centralBody.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **innerRadius** : :obj:`~float`
-    **outerRadius** : :obj:`~float`
-    **startBearing** : :obj:`~float`
-    **endBearing** : :obj:`~float`
+    **inner_radius** : :obj:`~float`
+    **outer_radius** : :obj:`~float`
+    **start_bearing** : :obj:`~float`
+    **end_bearing** : :obj:`~float`
     **granularity** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_sector(self, centralBody: str, center: list, innerRadius: float, outerRadius: float, startBearing: float, endBearing: float) -> SurfaceShapesResult
+.. py:method:: compute_sector(self, central_body: str, center: list, inner_radius: float, outer_radius: float, start_bearing: float, end_bearing: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_sector
 
     Compute boundary positions for a sector on the specified centralBody. This is equivalent to calling ComputeSector with a granularity of 1 degree.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **innerRadius** : :obj:`~float`
-    **outerRadius** : :obj:`~float`
-    **startBearing** : :obj:`~float`
-    **endBearing** : :obj:`~float`
+    **inner_radius** : :obj:`~float`
+    **outer_radius** : :obj:`~float`
+    **start_bearing** : :obj:`~float`
+    **end_bearing** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_sector_cartographic_with_granularity(self, centralBody: str, center: list, innerRadius: float, outerRadius: float, startBearing: float, endBearing: float, granularity: float) -> SurfaceShapesResult
+.. py:method:: compute_sector_cartographic_with_granularity(self, central_body: str, center: list, inner_radius: float, outer_radius: float, start_bearing: float, end_bearing: float, granularity: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_sector_cartographic_with_granularity
 
     For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **innerRadius** : :obj:`~float`
-    **outerRadius** : :obj:`~float`
-    **startBearing** : :obj:`~float`
-    **endBearing** : :obj:`~float`
+    **inner_radius** : :obj:`~float`
+    **outer_radius** : :obj:`~float`
+    **start_bearing** : :obj:`~float`
+    **end_bearing** : :obj:`~float`
     **granularity** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SurfaceShapesResult`
 
-.. py:method:: compute_sector_cartographic(self, centralBody: str, center: list, innerRadius: float, outerRadius: float, startBearing: float, endBearing: float) -> SurfaceShapesResult
+.. py:method:: compute_sector_cartographic(self, central_body: str, center: list, inner_radius: float, outer_radius: float, start_bearing: float, end_bearing: float) -> SurfaceShapesResult
     :canonical: ansys.stk.core.graphics.SurfaceShapesInitializer.compute_sector_cartographic
 
     For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **center** : :obj:`~list`
-    **innerRadius** : :obj:`~float`
-    **outerRadius** : :obj:`~float`
-    **startBearing** : :obj:`~float`
-    **endBearing** : :obj:`~float`
+    **inner_radius** : :obj:`~float`
+    **outer_radius** : :obj:`~float`
+    **start_bearing** : :obj:`~float`
+    **end_bearing** : :obj:`~float`
 
     :Returns:
 

@@ -123,7 +123,7 @@ Method detail
 
 
 
-.. py:method:: transform(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformResult
+.. py:method:: transform(self, epoch: typing.Any, output_axes: IVectorGeometryToolAxes, vector_in_my_axes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform
 
     Transform the input vector from this axes into the output axes.
@@ -131,14 +131,14 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
-    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
+    **output_axes** : :obj:`~IVectorGeometryToolAxes`
+    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
         :obj:`~AnalysisWorkbenchAxesTransformResult`
 
-.. py:method:: transform_with_rate(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector, rateInMyAxes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformWithRateResult
+.. py:method:: transform_with_rate(self, epoch: typing.Any, output_axes: IVectorGeometryToolAxes, vector_in_my_axes: ICartesian3Vector, rate_in_my_axes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform_with_rate
 
     Transform the input vector and vector's rate from this axes into the output axes.
@@ -146,9 +146,9 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
-    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
-    **rateInMyAxes** : :obj:`~ICartesian3Vector`
+    **output_axes** : :obj:`~IVectorGeometryToolAxes`
+    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
+    **rate_in_my_axes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 

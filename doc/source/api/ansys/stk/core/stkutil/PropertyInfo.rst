@@ -106,14 +106,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: set_value(self, propertyInfo: typing.Any) -> None
+.. py:method:: set_value(self, property_info: typing.Any) -> None
     :canonical: ansys.stk.core.stkutil.PropertyInfo.set_value
 
     Set the value of the property. Use PropertyType to determine the type to cast to.
 
     :Parameters:
 
-    **propertyInfo** : :obj:`~typing.Any`
+    **property_info** : :obj:`~typing.Any`
 
     :Returns:
 

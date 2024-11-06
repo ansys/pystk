@@ -149,30 +149,30 @@ Method detail
 
         :obj:`~MTOTrackPoint`
 
-.. py:method:: load_points(self, mtoTrackPoints: str) -> None
+.. py:method:: load_points(self, mto_track_points: str) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.load_points
 
     Load MTO track points.
 
     :Parameters:
 
-    **mtoTrackPoints** : :obj:`~str`
+    **mto_track_points** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: extend(self, timeVals: list, latVals: list, lonVals: list, altVals: list) -> None
+.. py:method:: extend(self, time_vals: list, lat_vals: list, lon_vals: list, alt_vals: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.extend
 
     Extend the track with the specified point data.
 
     :Parameters:
 
-    **timeVals** : :obj:`~list`
-    **latVals** : :obj:`~list`
-    **lonVals** : :obj:`~list`
-    **altVals** : :obj:`~list`
+    **time_vals** : :obj:`~list`
+    **lat_vals** : :obj:`~list`
+    **lon_vals** : :obj:`~list`
+    **alt_vals** : :obj:`~list`
 
     :Returns:
 

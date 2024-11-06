@@ -127,17 +127,17 @@ Method detail
 
 
 
-.. py:method:: compute_first_satisfaction(self, startTime: typing.Any, stopTime: typing.Any, maxNumAccessesToFind: int, minDuration: float) -> TimeIntervalCollectionReadOnly
+.. py:method:: compute_first_satisfaction(self, start_time: typing.Any, stop_time: typing.Any, max_num_accesses_to_find: int, min_duration: float) -> TimeIntervalCollectionReadOnly
     :canonical: ansys.stk.core.stkobjects.OnePointAccess.compute_first_satisfaction
 
     Compute and reports the first N satisfaction intervals (where N <= MaxNumAccessesToFind) over the specified interval whose spans meet the specified minimum duration. Does not use output file.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
-    **maxNumAccessesToFind** : :obj:`~int`
-    **minDuration** : :obj:`~float`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
+    **max_num_accesses_to_find** : :obj:`~int`
+    **min_duration** : :obj:`~float`
 
     :Returns:
 

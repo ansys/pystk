@@ -80,14 +80,14 @@ Method detail
 
 
 
-.. py:method:: set_atmospheric_loss_model(self, modelName: str) -> None
+.. py:method:: set_atmospheric_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.set_atmospheric_loss_model
 
     Set the current atmospheric absorption loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -96,14 +96,14 @@ Method detail
 
 
 
-.. py:method:: set_tropospheric_scintillation_loss_model(self, modelName: str) -> None
+.. py:method:: set_tropospheric_scintillation_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ILaserPropagationChannel.set_tropospheric_scintillation_loss_model
 
     Set the current tropospheric scintillation loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

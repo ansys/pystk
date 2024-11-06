@@ -157,14 +157,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+.. py:method:: set_polarization_type(self, value: POLARIZATION_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~POLARIZATION_TYPE`
+    **value** : :obj:`~POLARIZATION_TYPE`
 
     :Returns:
 

@@ -163,7 +163,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: append_run_from_time(self, epoch: typing.Any, clearEphemerisDirection: CLEAR_EPHEMERIS_DIRECTION) -> None
+.. py:method:: append_run_from_time(self, epoch: typing.Any, clear_ephemeris_direction: CLEAR_EPHEMERIS_DIRECTION) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.append_run_from_time
 
     Append the existing ephemeris with another individual segment mode run, starting at a specified time. Ephemeris is cleared from time based on clear direction.
@@ -171,21 +171,21 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **clearEphemerisDirection** : :obj:`~CLEAR_EPHEMERIS_DIRECTION`
+    **clear_ephemeris_direction** : :obj:`~CLEAR_EPHEMERIS_DIRECTION`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: append_run_from_state(self, appendState: State, clearEphemerisDirection: CLEAR_EPHEMERIS_DIRECTION) -> None
+.. py:method:: append_run_from_state(self, append_state: State, clear_ephemeris_direction: CLEAR_EPHEMERIS_DIRECTION) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSDriver.append_run_from_state
 
     Append the existing ephemeris with another individual segment mode run, starting at a specified state. Ephemeris is cleared from time based on clear direction.
 
     :Parameters:
 
-    **appendState** : :obj:`~State`
-    **clearEphemerisDirection** : :obj:`~CLEAR_EPHEMERIS_DIRECTION`
+    **append_state** : :obj:`~State`
+    **clear_ephemeris_direction** : :obj:`~CLEAR_EPHEMERIS_DIRECTION`
 
     :Returns:
 

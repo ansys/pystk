@@ -82,7 +82,7 @@ Method detail
 
         :obj:`~Tileset3D`
 
-.. py:method:: add(self, name: str, uRI: str, sourceType: TILESET_3D_SOURCE_TYPE, referenceFrame: str) -> Tileset3D
+.. py:method:: add(self, name: str, uri: str, source_type: TILESET_3D_SOURCE_TYPE, reference_frame: str) -> Tileset3D
     :canonical: ansys.stk.core.stkobjects.Tileset3DCollection.add
 
     Add a 3DTileset item to the collection.
@@ -90,9 +90,9 @@ Method detail
     :Parameters:
 
     **name** : :obj:`~str`
-    **uRI** : :obj:`~str`
-    **sourceType** : :obj:`~TILESET_3D_SOURCE_TYPE`
-    **referenceFrame** : :obj:`~str`
+    **uri** : :obj:`~str`
+    **source_type** : :obj:`~TILESET_3D_SOURCE_TYPE`
+    **reference_frame** : :obj:`~str`
 
     :Returns:
 

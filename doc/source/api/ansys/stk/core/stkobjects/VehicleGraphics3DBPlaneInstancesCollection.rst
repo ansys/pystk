@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, templateName: str) -> VehicleGraphics3DBPlaneInstance
+.. py:method:: add(self, template_name: str) -> VehicleGraphics3DBPlaneInstance
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstancesCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **templateName** : :obj:`~str`
+    **template_name** : :obj:`~str`
 
     :Returns:
 

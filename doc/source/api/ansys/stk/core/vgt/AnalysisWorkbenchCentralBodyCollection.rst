@@ -80,27 +80,27 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, centralBodyName: str) -> bool
+.. py:method:: add(self, central_body_name: str) -> bool
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.add
 
     Add a central body to the collection of central bodies. True indicates success.
 
     :Parameters:
 
-    **centralBodyName** : :obj:`~str`
+    **central_body_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: remove(self, centralBodyName: str) -> None
+.. py:method:: remove(self, central_body_name: str) -> None
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.remove
 
     Remove a central body with the specified name from the collection of the central bodies.
 
     :Parameters:
 
-    **centralBodyName** : :obj:`~str`
+    **central_body_name** : :obj:`~str`
 
     :Returns:
 

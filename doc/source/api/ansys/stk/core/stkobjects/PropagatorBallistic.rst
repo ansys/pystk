@@ -160,27 +160,27 @@ Method detail
 
 
 
-.. py:method:: set_impact_location_type(self, impactLocation: VEHICLE_IMPACT_LOCATION) -> None
+.. py:method:: set_impact_location_type(self, impact_location: VEHICLE_IMPACT_LOCATION) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.set_impact_location_type
 
     Set the impact location type.
 
     :Parameters:
 
-    **impactLocation** : :obj:`~VEHICLE_IMPACT_LOCATION`
+    **impact_location** : :obj:`~VEHICLE_IMPACT_LOCATION`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_impact_location_type_supported(self, impactLocation: VEHICLE_IMPACT_LOCATION) -> bool
+.. py:method:: is_impact_location_type_supported(self, impact_location: VEHICLE_IMPACT_LOCATION) -> bool
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.is_impact_location_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **impactLocation** : :obj:`~VEHICLE_IMPACT_LOCATION`
+    **impact_location** : :obj:`~VEHICLE_IMPACT_LOCATION`
 
     :Returns:
 

@@ -74,14 +74,14 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, vtIndex: typing.Any) -> CentralBodyTerrainCollectionElement
+.. py:method:: item(self, index: typing.Any) -> CentralBodyTerrainCollectionElement
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item
 
     Given an index or a name of a central body, returns an element in the collection.
 
     :Parameters:
 
-    **vtIndex** : :obj:`~typing.Any`
+    **index** : :obj:`~typing.Any`
 
     :Returns:
 

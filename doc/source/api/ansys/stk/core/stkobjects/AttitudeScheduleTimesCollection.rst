@@ -112,14 +112,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, targetPath: str) -> AttitudeScheduleTimesElement
+.. py:method:: add(self, target_path: str) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **targetPath** : :obj:`~str`
+    **target_path** : :obj:`~str`
 
     :Returns:
 

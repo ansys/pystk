@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, qualifiedPath: str) -> IVehicleGraphics2DTimeComponentsElement
+.. py:method:: add(self, qualified_path: str) -> IVehicleGraphics2DTimeComponentsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add
 
     Add a new element to the collection using the specified fully qualified component's path (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\"). Only intervals, interval lists or interval collections are allowed.
 
     :Parameters:
 
-    **qualifiedPath** : :obj:`~str`
+    **qualified_path** : :obj:`~str`
 
     :Returns:
 

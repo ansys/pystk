@@ -276,14 +276,14 @@ Method detail
 
 
 
-.. py:method:: export_nodes(self, fileName: str) -> None
+.. py:method:: export_nodes(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.export_nodes
 
     Export the current set of collocation nodes to a file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

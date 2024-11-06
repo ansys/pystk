@@ -79,14 +79,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_attitude_control_type(self, attitudeControlType: ATTITUDE_CONTROL) -> None
+.. py:method:: set_attitude_control_type(self, attitude_control_type: ATTITUDE_CONTROL) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuver.set_attitude_control_type
 
     Set the attitude control type.
 
     :Parameters:
 
-    **attitudeControlType** : :obj:`~ATTITUDE_CONTROL`
+    **attitude_control_type** : :obj:`~ATTITUDE_CONTROL`
 
     :Returns:
 
@@ -94,14 +94,14 @@ Method detail
 
 
 
-.. py:method:: set_propulsion_method(self, propulsionMethod: PROPULSION_METHOD, value: str) -> None
+.. py:method:: set_propulsion_method(self, propulsion_method: PROPULSION_METHOD, value: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.IManeuver.set_propulsion_method
 
     Set the propulsion type and associated engine/thruster set.
 
     :Parameters:
 
-    **propulsionMethod** : :obj:`~PROPULSION_METHOD`
+    **propulsion_method** : :obj:`~PROPULSION_METHOD`
     **value** : :obj:`~str`
 
     :Returns:

@@ -74,14 +74,14 @@ Method detail
 
 
 
-.. py:method:: item(self, centralBody: str) -> CentralBodyGraphics
+.. py:method:: item(self, central_body: str) -> CentralBodyGraphics
     :canonical: ansys.stk.core.graphics.CentralBodyGraphicsIndexer.item
 
     Get the central body graphics for the specified central body.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
 
     :Returns:
 

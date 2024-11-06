@@ -88,15 +88,15 @@ Method detail
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> DifferentialCorrectorControl
+.. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> DifferentialCorrectorControl
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **controlPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **control_path** : :obj:`~str`
 
     :Returns:
 

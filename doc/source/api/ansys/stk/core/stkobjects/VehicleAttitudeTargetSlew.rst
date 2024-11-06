@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_slew_mode_type(self, slewMode: VEHICLE_SLEW_MODE) -> None
+.. py:method:: set_slew_mode_type(self, slew_mode: VEHICLE_SLEW_MODE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.set_slew_mode_type
 
     Select an attitude slew mode.
 
     :Parameters:
 
-    **slewMode** : :obj:`~VEHICLE_SLEW_MODE`
+    **slew_mode** : :obj:`~VEHICLE_SLEW_MODE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_slew_mode_type_supported(self, slewMode: VEHICLE_SLEW_MODE) -> bool
+.. py:method:: is_slew_mode_type_supported(self, slew_mode: VEHICLE_SLEW_MODE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.is_slew_mode_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **slewMode** : :obj:`~VEHICLE_SLEW_MODE`
+    **slew_mode** : :obj:`~VEHICLE_SLEW_MODE`
 
     :Returns:
 

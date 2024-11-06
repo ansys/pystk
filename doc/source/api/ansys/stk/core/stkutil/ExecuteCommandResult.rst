@@ -86,15 +86,15 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: range(self, startIndex: int, stopIndex: int) -> list
+.. py:method:: range(self, start_index: int, stop_index: int) -> list
     :canonical: ansys.stk.core.stkutil.ExecuteCommandResult.range
 
     Return the elements within the specified range.
 
     :Parameters:
 
-    **startIndex** : :obj:`~int`
-    **stopIndex** : :obj:`~int`
+    **start_index** : :obj:`~int`
+    **stop_index** : :obj:`~int`
 
     :Returns:
 

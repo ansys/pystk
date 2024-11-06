@@ -251,14 +251,14 @@ Method detail
 
 
 
-.. py:method:: set_time_period_type(self, timePeriodType: CHAIN_TIME_PERIOD_TYPE) -> None
+.. py:method:: set_time_period_type(self, time_period_type: CHAIN_TIME_PERIOD_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.Chain.set_time_period_type
 
     Set the option used to specify the time period.
 
     :Parameters:
 
-    **timePeriodType** : :obj:`~CHAIN_TIME_PERIOD_TYPE`
+    **time_period_type** : :obj:`~CHAIN_TIME_PERIOD_TYPE`
 
     :Returns:
 

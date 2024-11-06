@@ -134,16 +134,16 @@ Method detail
 
 
 
-.. py:method:: set_airspeeds(self, airspeedType: AIRSPEED_TYPE, topAirspeed: float, bottomAirspeed: float) -> None
+.. py:method:: set_airspeeds(self, airspeed_type: AIRSPEED_TYPE, top_airspeed: float, bottom_airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBarrelRoll.set_airspeeds
 
     Set the speeds at the top and bottom of the loop.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **topAirspeed** : :obj:`~float`
-    **bottomAirspeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **top_airspeed** : :obj:`~float`
+    **bottom_airspeed** : :obj:`~float`
 
     :Returns:
 

@@ -37,28 +37,28 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add_segments_from_file(self, sSCNumber: str, fileName: str) -> None
+.. py:method:: add_segments_from_file(self, ssc_number: str, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4CommonTasks.add_segments_from_file
 
     Search the specified file for elements matching the specified SSC number and adds them to the collection.
 
     :Parameters:
 
-    **sSCNumber** : :obj:`~str`
-    **fileName** : :obj:`~str`
+    **ssc_number** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_segments_from_online_source(self, SSCNum: str) -> None
+.. py:method:: add_segments_from_online_source(self, ssc_num: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4CommonTasks.add_segments_from_online_source
 
     Search the online source (AGI server) for elements matching the specified SSC number and adds them to the collection. The method uses the propagator's start/stop.
 
     :Parameters:
 
-    **SSCNum** : :obj:`~str`
+    **ssc_num** : :obj:`~str`
 
     :Returns:
 

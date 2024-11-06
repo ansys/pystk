@@ -61,14 +61,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName: str) -> None
+.. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.set_model
 
     Set the current clutter map model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

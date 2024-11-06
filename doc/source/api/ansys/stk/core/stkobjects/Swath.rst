@@ -153,15 +153,15 @@ Method detail
 
 
 
-.. py:method:: add_time_interval(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: add_time_interval(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Swath.add_time_interval
 
     Add an interval to the list of valid swath intervals. Start/Stop Times use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 

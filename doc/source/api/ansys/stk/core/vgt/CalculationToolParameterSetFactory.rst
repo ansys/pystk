@@ -132,14 +132,14 @@ Method detail
 
         :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: is_type_supported(self, eType: PARAMETER_SET_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: PARAMETER_SET_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolParameterSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~PARAMETER_SET_TYPE`
+    **type** : :obj:`~PARAMETER_SET_TYPE`
 
     :Returns:
 

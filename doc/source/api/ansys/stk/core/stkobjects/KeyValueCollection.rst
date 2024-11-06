@@ -159,7 +159,7 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set_read_only(self, key: str, isReadOnly: bool) -> None
+.. py:method:: set_read_only(self, key: str, is_read_only: bool) -> None
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.set_read_only
 
     Given a key, sets read-only flag.
@@ -167,7 +167,7 @@ Method detail
     :Parameters:
 
     **key** : :obj:`~str`
-    **isReadOnly** : :obj:`~bool`
+    **is_read_only** : :obj:`~bool`
 
     :Returns:
 
