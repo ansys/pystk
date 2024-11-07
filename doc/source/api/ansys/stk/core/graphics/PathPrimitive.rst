@@ -195,14 +195,14 @@ Method detail
         :obj:`~PathPoint`
 
 
-.. py:method:: add_front(self, pathPoint: PathPoint) -> None
+.. py:method:: add_front(self, path_point: PathPoint) -> None
     :canonical: ansys.stk.core.graphics.PathPrimitive.add_front
 
     Add a path point to the front of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~PathPoint`
+    **path_point** : :obj:`~PathPoint`
 
     :Returns:
 
@@ -221,14 +221,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_back(self, pathPoint: PathPoint) -> None
+.. py:method:: add_back(self, path_point: PathPoint) -> None
     :canonical: ansys.stk.core.graphics.PathPrimitive.add_back
 
     Add a path point to the back of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~PathPoint`
+    **path_point** : :obj:`~PathPoint`
 
     :Returns:
 

@@ -164,14 +164,14 @@ Method detail
 
         :obj:`~ITimeToolTimeInterval`
 
-.. py:method:: is_type_supported(self, eType: EVENT_INTERVAL_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EVENT_INTERVAL_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~EVENT_INTERVAL_TYPE`
+    **type** : :obj:`~EVENT_INTERVAL_TYPE`
 
     :Returns:
 

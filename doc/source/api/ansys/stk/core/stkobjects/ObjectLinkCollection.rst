@@ -149,27 +149,27 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_object(self, pObject: IStkObject) -> None
+.. py:method:: add_object(self, object: IStkObject) -> None
     :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection.add_object
 
     Add to the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_object(self, pObject: IStkObject) -> None
+.. py:method:: remove_object(self, object: IStkObject) -> None
     :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection.remove_object
 
     Remove from the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 

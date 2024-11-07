@@ -152,20 +152,20 @@ Method detail
 
         :obj:`~ITimeToolTimeIntervalList`
 
-.. py:method:: is_type_supported(self, eType: EVENT_INTERVAL_LIST_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EVENT_INTERVAL_LIST_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~EVENT_INTERVAL_LIST_TYPE`
+    **type** : :obj:`~EVENT_INTERVAL_LIST_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: create_from_file(self, name: str, description: str, filePath: str) -> ITimeToolTimeIntervalList
+.. py:method:: create_from_file(self, name: str, description: str, file_path: str) -> ITimeToolTimeIntervalList
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListFactory.create_from_file
 
     Create an interval list based on specified interval file.
@@ -174,7 +174,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **filePath** : :obj:`~str`
+    **file_path** : :obj:`~str`
 
     :Returns:
 

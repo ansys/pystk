@@ -155,14 +155,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.set_airspeed
 
     Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -178,15 +178,15 @@ Method detail
 
 
 
-.. py:method:: set_glide_speed_control_mode(self, eGSMode: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE, dControlAlt: float) -> None
+.. py:method:: set_glide_speed_control_mode(self, glide_speed_mode: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE, control_altitude: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.set_glide_speed_control_mode
 
     Set the glide speed control mode and altitude.
 
     :Parameters:
 
-    **eGSMode** : :obj:`~BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
-    **dControlAlt** : :obj:`~float`
+    **glide_speed_mode** : :obj:`~BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
+    **control_altitude** : :obj:`~float`
 
     :Returns:
 

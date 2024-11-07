@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.remove
 
     Remove a specified System.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolSystem
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.item
 
     Return a System by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

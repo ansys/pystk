@@ -105,15 +105,15 @@ Method detail
 
 
 
-.. py:method:: set_maximum_degree_and_order(self, maximumDegree: int, maximumOrder: int) -> None
+.. py:method:: set_maximum_degree_and_order(self, maximum_degree: int, maximum_order: int) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.set_maximum_degree_and_order
 
     Set maximum degree and maximum order of geopotential coefficients to be included for Central Body gravity computations. An exception is raised if MaximumDegree is less than MaximumOrder. Both values are dimensionless.
 
     :Parameters:
 
-    **maximumDegree** : :obj:`~int`
-    **maximumOrder** : :obj:`~int`
+    **maximum_degree** : :obj:`~int`
+    **maximum_order** : :obj:`~int`
 
     :Returns:
 

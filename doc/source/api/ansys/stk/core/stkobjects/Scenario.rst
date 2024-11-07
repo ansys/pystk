@@ -265,15 +265,15 @@ Method detail
 
 
 
-.. py:method:: set_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: set_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Scenario.set_time_period
 
     Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -322,15 +322,15 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_access_between_objects_by_path(self, objectPath1: str, objectPath2: str) -> Access
+.. py:method:: get_access_between_objects_by_path(self, object_path1: str, object_path2: str) -> Access
     :canonical: ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path
 
     Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     :Parameters:
 
-    **objectPath1** : :obj:`~str`
-    **objectPath2** : :obj:`~str`
+    **object_path1** : :obj:`~str`
+    **object_path2** : :obj:`~str`
 
     :Returns:
 

@@ -242,41 +242,41 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_access(self, objectPath: str) -> Access
+.. py:method:: get_access(self, object_path: str) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access
 
     Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~Access`
 
-.. py:method:: get_access_to_object(self, pObject: IStkObject) -> Access
+.. py:method:: get_access_to_object(self, object: IStkObject) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access_to_object
 
     Return an IAgStkAccess object associated with this STK object and another STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~Access`
 
 
-.. py:method:: create_one_point_access(self, pathToObject: str) -> OnePointAccess
+.. py:method:: create_one_point_access(self, path_to_object: str) -> OnePointAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.create_one_point_access
 
     Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
 
     :Parameters:
 
-    **pathToObject** : :obj:`~str`
+    **path_to_object** : :obj:`~str`
 
     :Returns:
 
@@ -302,14 +302,14 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: copy_object(self, newObjectName: str) -> IStkObject
+.. py:method:: copy_object(self, new_object_name: str) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObject.copy_object
 
     Copy and paste the current instance of STK Object. The copied object will be pasted as the sibling of the instance being copied.
 
     :Parameters:
 
-    **newObjectName** : :obj:`~str`
+    **new_object_name** : :obj:`~str`
 
     :Returns:
 

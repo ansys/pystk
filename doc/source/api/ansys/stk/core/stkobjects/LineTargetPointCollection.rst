@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~LineTargetPoint`
 
-.. py:method:: remove(self, itemIndex: int) -> None
+.. py:method:: remove(self, item_index: int) -> None
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.remove
 
     Remove an item using a given index.
 
     :Parameters:
 
-    **itemIndex** : :obj:`~int`
+    **item_index** : :obj:`~int`
 
     :Returns:
 

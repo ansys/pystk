@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName: str) -> None
+.. py:method:: remove(self, event_name: str) -> None
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup.remove
 
     Remove a specified element.
 
     :Parameters:
 
-    **eventName** : :obj:`~str`
+    **event_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ISpatialAnalysisToolVolumeGrid
+.. py:method:: item(self, index_or_name: typing.Any) -> ISpatialAnalysisToolVolumeGrid
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup.item
 
     Return an element by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

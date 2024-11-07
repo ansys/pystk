@@ -98,146 +98,146 @@ Method detail
         :obj:`~IOrbitState`
 
 
-.. py:method:: assign(self, pOrbitState: IOrbitState) -> None
+.. py:method:: assign(self, orbit_state: IOrbitState) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign
 
     Assign a new coordinate type.
 
     :Parameters:
 
-    **pOrbitState** : :obj:`~IOrbitState`
+    **orbit_state** : :obj:`~IOrbitState`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_classical(self, eCoordinateSystem: COORDINATE_SYSTEM, semiMajorAxis: float, eccentricity: float, inclination: float, argOfPerigee: float, rAAN: float, meanAnomaly: float) -> None
+.. py:method:: assign_classical(self, coordinate_system: COORDINATE_SYSTEM, semi_major_axis: float, eccentricity: float, inclination: float, arg_of_perigee: float, raan: float, mean_anomaly: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_classical
 
     Assign a new orbit state using Classical representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
-    **semiMajorAxis** : :obj:`~float`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
+    **semi_major_axis** : :obj:`~float`
     **eccentricity** : :obj:`~float`
     **inclination** : :obj:`~float`
-    **argOfPerigee** : :obj:`~float`
-    **rAAN** : :obj:`~float`
-    **meanAnomaly** : :obj:`~float`
+    **arg_of_perigee** : :obj:`~float`
+    **raan** : :obj:`~float`
+    **mean_anomaly** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_cartesian(self, eCoordinateSystem: COORDINATE_SYSTEM, xPosition: float, yPosition: float, zPosition: float, xVelocity: float, yVelocity: float, zVelocity: float) -> None
+.. py:method:: assign_cartesian(self, coordinate_system: COORDINATE_SYSTEM, x_position: float, y_position: float, z_position: float, x_velocity: float, y_velocity: float, z_velocity: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_cartesian
 
     Assign a new orbit state using Cartesian representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
-    **xPosition** : :obj:`~float`
-    **yPosition** : :obj:`~float`
-    **zPosition** : :obj:`~float`
-    **xVelocity** : :obj:`~float`
-    **yVelocity** : :obj:`~float`
-    **zVelocity** : :obj:`~float`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
+    **x_position** : :obj:`~float`
+    **y_position** : :obj:`~float`
+    **z_position** : :obj:`~float`
+    **x_velocity** : :obj:`~float`
+    **y_velocity** : :obj:`~float`
+    **z_velocity** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_geodetic(self, eCoordinateSystem: COORDINATE_SYSTEM, latitude: float, longitude: float, altitude: float, latitudeRate: float, longitudeRate: float, altitudeRate: float) -> None
+.. py:method:: assign_geodetic(self, coordinate_system: COORDINATE_SYSTEM, latitude: float, longitude: float, altitude: float, latitude_rate: float, longitude_rate: float, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_geodetic
 
     Assign a new orbit state using Geodetic representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
     **latitude** : :obj:`~float`
     **longitude** : :obj:`~float`
     **altitude** : :obj:`~float`
-    **latitudeRate** : :obj:`~float`
-    **longitudeRate** : :obj:`~float`
-    **altitudeRate** : :obj:`~float`
+    **latitude_rate** : :obj:`~float`
+    **longitude_rate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_equinoctial_posigrade(self, eCoordinateSystem: COORDINATE_SYSTEM, semiMajorAxis: float, h: float, k: float, p: float, q: float, meanLon: float) -> None
+.. py:method:: assign_equinoctial_posigrade(self, coordinate_system: COORDINATE_SYSTEM, semi_major_axis: float, h: float, k: float, p: float, q: float, mean_lon: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_posigrade
 
     Assign a new orbit state using Equinoctial representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
-    **semiMajorAxis** : :obj:`~float`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
+    **semi_major_axis** : :obj:`~float`
     **h** : :obj:`~float`
     **k** : :obj:`~float`
     **p** : :obj:`~float`
     **q** : :obj:`~float`
-    **meanLon** : :obj:`~float`
+    **mean_lon** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_equinoctial_retrograde(self, eCoordinateSystem: COORDINATE_SYSTEM, semiMajorAxis: float, h: float, k: float, p: float, q: float, meanLon: float) -> None
+.. py:method:: assign_equinoctial_retrograde(self, coordinate_system: COORDINATE_SYSTEM, semi_major_axis: float, h: float, k: float, p: float, q: float, mean_lon: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_equinoctial_retrograde
 
     Assign a new orbit state using Equinoctial representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
-    **semiMajorAxis** : :obj:`~float`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
+    **semi_major_axis** : :obj:`~float`
     **h** : :obj:`~float`
     **k** : :obj:`~float`
     **p** : :obj:`~float`
     **q** : :obj:`~float`
-    **meanLon** : :obj:`~float`
+    **mean_lon** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_mixed_spherical(self, eCoordinateSystem: COORDINATE_SYSTEM, latitude: float, longitude: float, altitude: float, horFlightPathAngle: float, flightPathAzimuth: float, velocity: float) -> None
+.. py:method:: assign_mixed_spherical(self, coordinate_system: COORDINATE_SYSTEM, latitude: float, longitude: float, altitude: float, horizontal_flight_path_angle: float, flight_path_azimuth: float, velocity: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_mixed_spherical
 
     Assign a new orbit state using Mixed Spherical representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
     **latitude** : :obj:`~float`
     **longitude** : :obj:`~float`
     **altitude** : :obj:`~float`
-    **horFlightPathAngle** : :obj:`~float`
-    **flightPathAzimuth** : :obj:`~float`
+    **horizontal_flight_path_angle** : :obj:`~float`
+    **flight_path_azimuth** : :obj:`~float`
     **velocity** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_spherical(self, eCoordinateSystem: COORDINATE_SYSTEM, rightAscension: float, declination: float, radius: float, horFlightPathAngle: float, flightPathAzimuth: float, velocity: float) -> None
+.. py:method:: assign_spherical(self, coordinate_system: COORDINATE_SYSTEM, right_ascension: float, declination: float, radius: float, horizontal_flight_path_angle: float, flight_path_azimuth: float, velocity: float) -> None
     :canonical: ansys.stk.core.stkutil.IOrbitState.assign_spherical
 
     Assign a new orbit state using Spherical representation.
 
     :Parameters:
 
-    **eCoordinateSystem** : :obj:`~COORDINATE_SYSTEM`
-    **rightAscension** : :obj:`~float`
+    **coordinate_system** : :obj:`~COORDINATE_SYSTEM`
+    **right_ascension** : :obj:`~float`
     **declination** : :obj:`~float`
     **radius** : :obj:`~float`
-    **horFlightPathAngle** : :obj:`~float`
-    **flightPathAzimuth** : :obj:`~float`
+    **horizontal_flight_path_angle** : :obj:`~float`
+    **flight_path_azimuth** : :obj:`~float`
     **velocity** : :obj:`~float`
 
     :Returns:

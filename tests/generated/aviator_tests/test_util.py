@@ -82,9 +82,9 @@ class EngineLifetimeManager:
             elif EngineLifetimeManager.target == TestTarget.eStkGrpc:
                 EngineLifetimeManager.app_provider = PythonStkApplicationProvider(args=args, use_grpc=True)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntime:
-                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=False, args=args)
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(no_graphics=False, args=args)
             elif EngineLifetimeManager.target == TestTarget.eStkRuntimeNoGfx:
-                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(noGraphics=True, args=args)
+                EngineLifetimeManager.app_provider = PythonStkRuntimeApplicationProvider(no_graphics=True, args=args)
 
             if EngineLifetimeManager.app_provider != None:
                 EngineLifetimeManager.stk = EngineLifetimeManager.app_provider.stk
@@ -913,7 +913,7 @@ class PythonStkApplicationProvider(IAgAppProvider):
             )
         else:
             self.stk: "STKDesktopApplication" = STKDesktop.start_application(
-                userControl=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
+                user_control=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
             )
         PythonStkApplicationProvider.Application = self.stk.root
 
@@ -929,7 +929,7 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
 
     Application = None
 
-    def __init__(self, noGraphics: bool, args):
+    def __init__(self, no_graphics: bool, args):
         from ansys.stk.core.stkruntime import STKRuntimeApplication, STKRuntime
 
         if args.attach:
@@ -938,7 +938,7 @@ class PythonStkRuntimeApplicationProvider(IAgAppProvider):
             )
         else:
             self.stk: "STKRuntimeApplication" = STKRuntime.start_application(
-                noGraphics=noGraphics, grpc_port=args.grpc_port, grpc_host=args.grpc_host
+                no_graphics=no_graphics, grpc_port=args.grpc_port, grpc_host=args.grpc_host
             )
         PythonStkRuntimeApplicationProvider.Application = self.stk.new_object_root()
 
@@ -958,7 +958,7 @@ class PythonStkXApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk: "STKEngineApplication" = STKEngine.start_application(noGraphics=False)
+        self.stk: "STKEngineApplication" = STKEngine.start_application(no_graphics=False)
         PythonStkXApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":
@@ -977,7 +977,7 @@ class PythonStkXNoGfxApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self):
-        self.stk: "STKEngineApplication" = STKEngine.start_application(noGraphics=True)
+        self.stk: "STKEngineApplication" = STKEngine.start_application(no_graphics=True)
         PythonStkXNoGfxApplicationProvider.Application = self.stk.new_object_root()
 
     def CreateApplication(self, ignored) -> "StkObjectRoot":

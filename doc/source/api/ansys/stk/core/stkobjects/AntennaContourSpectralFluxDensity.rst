@@ -74,16 +74,16 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthResolution: float, elevationResolution: float, maxElevation: float) -> None
+.. py:method:: set_resolution(self, azimuth_resolution: float, elevation_resolution: float, max_elevation: float) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourSpectralFluxDensity.set_resolution
 
     Set the azimuth and elevation resolution as well as the maximum elevation angle.
 
     :Parameters:
 
-    **azimuthResolution** : :obj:`~float`
-    **elevationResolution** : :obj:`~float`
-    **maxElevation** : :obj:`~float`
+    **azimuth_resolution** : :obj:`~float`
+    **elevation_resolution** : :obj:`~float`
+    **max_elevation** : :obj:`~float`
 
     :Returns:
 

@@ -70,14 +70,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_segments_from_file(self, SSCNum: str) -> list
+.. py:method:: get_segments_from_file(self, ssc_num: str) -> list
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4LoadFile.get_segments_from_file
 
     Return an array of available segments from a file using the specified SSC Number.
 
     :Parameters:
 
-    **SSCNum** : :obj:`~str`
+    **ssc_num** : :obj:`~str`
 
     :Returns:
 

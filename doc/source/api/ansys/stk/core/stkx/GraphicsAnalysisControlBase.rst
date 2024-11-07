@@ -120,14 +120,14 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, picture: IPictureDisp) -> None
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 
     :Parameters:
 
-    **pPicture** : :obj:`~IPictureDisp`
+    **picture** : :obj:`~IPictureDisp`
 
     :Returns:
 

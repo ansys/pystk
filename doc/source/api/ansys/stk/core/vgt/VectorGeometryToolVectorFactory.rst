@@ -61,16 +61,16 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, vectorName: str, description: str, vectorType: VECTOR_TYPE) -> IVectorGeometryToolVector
+.. py:method:: create(self, vector_name: str, description: str, vector_type: VECTOR_TYPE) -> IVectorGeometryToolVector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create
 
     Create a VGT vector using specified name, description and type.
 
     :Parameters:
 
-    **vectorName** : :obj:`~str`
+    **vector_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **vectorType** : :obj:`~VECTOR_TYPE`
+    **vector_type** : :obj:`~VECTOR_TYPE`
 
     :Returns:
 
@@ -89,47 +89,47 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: create_displacement_vector(self, vectorName: str, originPoint: IVectorGeometryToolPoint, destPoint: IVectorGeometryToolPoint) -> VectorGeometryToolVectorDisplacement
+.. py:method:: create_displacement_vector(self, vector_name: str, origin_point: IVectorGeometryToolPoint, dest_point: IVectorGeometryToolPoint) -> VectorGeometryToolVectorDisplacement
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_displacement_vector
 
     Create a displacement vector.
 
     :Parameters:
 
-    **vectorName** : :obj:`~str`
-    **originPoint** : :obj:`~IVectorGeometryToolPoint`
-    **destPoint** : :obj:`~IVectorGeometryToolPoint`
+    **vector_name** : :obj:`~str`
+    **origin_point** : :obj:`~IVectorGeometryToolPoint`
+    **dest_point** : :obj:`~IVectorGeometryToolPoint`
 
     :Returns:
 
         :obj:`~VectorGeometryToolVectorDisplacement`
 
 
-.. py:method:: create_plugin_from_display_name(self, vectorName: str, description: str, displayName: str) -> IVectorGeometryToolVector
+.. py:method:: create_plugin_from_display_name(self, vector_name: str, description: str, display_name: str) -> IVectorGeometryToolVector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_plugin_from_display_name
 
     Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see.
 
     :Parameters:
 
-    **vectorName** : :obj:`~str`
+    **vector_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **displayName** : :obj:`~str`
+    **display_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolVector`
 
-.. py:method:: create_cross_product(self, vectorName: str, vectorA: IVectorGeometryToolVector, vectorB: IVectorGeometryToolVector) -> VectorGeometryToolVectorCross
+.. py:method:: create_cross_product(self, vector_name: str, vector_a: IVectorGeometryToolVector, vector_b: IVectorGeometryToolVector) -> VectorGeometryToolVectorCross
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_cross_product
 
     Create a cross product C = A x B.
 
     :Parameters:
 
-    **vectorName** : :obj:`~str`
-    **vectorA** : :obj:`~IVectorGeometryToolVector`
-    **vectorB** : :obj:`~IVectorGeometryToolVector`
+    **vector_name** : :obj:`~str`
+    **vector_a** : :obj:`~IVectorGeometryToolVector`
+    **vector_b** : :obj:`~IVectorGeometryToolVector`
 
     :Returns:
 

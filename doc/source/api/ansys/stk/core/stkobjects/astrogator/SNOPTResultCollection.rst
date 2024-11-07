@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> SNOPTResult
+.. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> SNOPTResult
     :canonical: ansys.stk.core.stkobjects.astrogator.SNOPTResultCollection.get_result_by_paths
 
     Return the result specified by the object/result names.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **resultPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **result_path** : :obj:`~str`
 
     :Returns:
 

@@ -132,28 +132,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, systemName: str) -> VehicleGraphics3DSystemsElement
+.. py:method:: add(self, system_name: str) -> VehicleGraphics3DSystemsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~VehicleGraphics3DSystemsElement`
 
 
-.. py:method:: contains(self, systemName: str) -> bool
+.. py:method:: contains(self, system_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.contains
 
     Check whether the given frame is already in the list.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -161,14 +161,14 @@ Method detail
 
 
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove
 
     Remove a system by name.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 

@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UnitPreferencesUnit
+.. py:method:: item(self, index_or_name: typing.Any) -> UnitPreferencesUnit
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection.item
 
     Return the specific item in the collection given a unit identifier or an index.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

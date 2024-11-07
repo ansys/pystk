@@ -63,14 +63,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_waveform_type(self, val: RADAR_WAVEFORM_SEARCH_TRACK_TYPE) -> None
+.. py:method:: set_waveform_type(self, value: RADAR_WAVEFORM_SEARCH_TRACK_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.set_waveform_type
 
     Set the waveform type.
 
     :Parameters:
 
-    **val** : :obj:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
+    **value** : :obj:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
 
     :Returns:
 

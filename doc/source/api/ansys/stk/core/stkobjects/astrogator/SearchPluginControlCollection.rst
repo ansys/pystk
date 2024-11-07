@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> SearchPluginControl
+.. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> SearchPluginControl
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **controlPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **control_path** : :obj:`~str`
 
     :Returns:
 

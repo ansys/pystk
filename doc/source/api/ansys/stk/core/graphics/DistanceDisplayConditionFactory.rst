@@ -46,15 +46,15 @@ Method detail
 
         :obj:`~DistanceDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, minimumDistance: float, maximumDistance: float) -> DistanceDisplayCondition
+.. py:method:: initialize_with_distances(self, minimum_distance: float, maximum_distance: float) -> DistanceDisplayCondition
     :canonical: ansys.stk.core.graphics.DistanceDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **minimumDistance** : :obj:`~float`
-    **maximumDistance** : :obj:`~float`
+    **minimum_distance** : :obj:`~float`
+    **maximum_distance** : :obj:`~float`
 
     :Returns:
 

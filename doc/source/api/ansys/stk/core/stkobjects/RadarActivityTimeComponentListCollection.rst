@@ -97,7 +97,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: insert_at(self, index: int, componentIdentifier: str) -> RadarActivityTimeComponentListElement
+.. py:method:: insert_at(self, index: int, component_identifier: str) -> RadarActivityTimeComponentListElement
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.insert_at
 
     Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
@@ -105,20 +105,20 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **componentIdentifier** : :obj:`~str`
+    **component_identifier** : :obj:`~str`
 
     :Returns:
 
         :obj:`~RadarActivityTimeComponentListElement`
 
-.. py:method:: add(self, componentIdentifier: str) -> RadarActivityTimeComponentListElement
+.. py:method:: add(self, component_identifier: str) -> RadarActivityTimeComponentListElement
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.add
 
     Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
 
     :Parameters:
 
-    **componentIdentifier** : :obj:`~str`
+    **component_identifier** : :obj:`~str`
 
     :Returns:
 

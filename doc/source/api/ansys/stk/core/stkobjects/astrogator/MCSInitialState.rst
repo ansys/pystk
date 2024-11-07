@@ -124,14 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_element_type(self, elementType: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ELEMENT_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.set_element_type
 
     Select an coordinate type.
 
     :Parameters:
 
-    **elementType** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ELEMENT_TYPE`
 
     :Returns:
 

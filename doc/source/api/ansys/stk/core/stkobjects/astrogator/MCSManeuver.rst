@@ -78,14 +78,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_maneuver_type(self, maneuverType: MANEUVER_TYPE) -> None
+.. py:method:: set_maneuver_type(self, maneuver_type: MANEUVER_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSManeuver.set_maneuver_type
 
     Set the maneuver type.
 
     :Parameters:
 
-    **maneuverType** : :obj:`~MANEUVER_TYPE`
+    **maneuver_type** : :obj:`~MANEUVER_TYPE`
 
     :Returns:
 

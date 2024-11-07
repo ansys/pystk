@@ -68,7 +68,7 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: set_property(self, path: str, val: typing.Any) -> None
+.. py:method:: set_property(self, path: str, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.AgCRPluginConfiguration.set_property
 
     Set a property.
@@ -76,7 +76,7 @@ Method detail
     :Parameters:
 
     **path** : :obj:`~str`
-    **val** : :obj:`~typing.Any`
+    **value** : :obj:`~typing.Any`
 
     :Returns:
 

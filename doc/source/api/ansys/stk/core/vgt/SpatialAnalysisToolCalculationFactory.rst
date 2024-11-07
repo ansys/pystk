@@ -53,14 +53,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: is_type_supported(self, eType: SPATIAL_CALCULATION_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: SPATIAL_CALCULATION_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~SPATIAL_CALCULATION_TYPE`
+    **type** : :obj:`~SPATIAL_CALCULATION_TYPE`
 
     :Returns:
 

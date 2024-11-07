@@ -115,15 +115,15 @@ Method detail
 
 
 
-.. py:method:: set_level_turn(self, turnMode: TURN_MODE, turnValue: typing.Any) -> None
+.. py:method:: set_level_turn(self, turn_mode: TURN_MODE, turn_value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.set_level_turn
 
     Set the level turn mode and corresponding value.
 
     :Parameters:
 
-    **turnMode** : :obj:`~TURN_MODE`
-    **turnValue** : :obj:`~typing.Any`
+    **turn_mode** : :obj:`~TURN_MODE`
+    **turn_value** : :obj:`~typing.Any`
 
     :Returns:
 

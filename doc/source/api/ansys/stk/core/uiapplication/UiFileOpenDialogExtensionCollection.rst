@@ -63,14 +63,14 @@ Method detail
 
 
 
-.. py:method:: item(self, nIndex: int) -> str
+.. py:method:: item(self, n_index: int) -> str
     :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.item
 
     Get the file at the specified index.
 
     :Parameters:
 
-    **nIndex** : :obj:`~int`
+    **n_index** : :obj:`~int`
 
     :Returns:
 

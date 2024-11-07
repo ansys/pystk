@@ -193,14 +193,14 @@ Method detail
 
 
 
-.. py:method:: paste_configuration(self, otherConfiguration: Configuration) -> None
+.. py:method:: paste_configuration(self, other_configuration: Configuration) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.paste_configuration
 
     Paste the aircraft's configuration.
 
     :Parameters:
 
-    **otherConfiguration** : :obj:`~Configuration`
+    **other_configuration** : :obj:`~Configuration`
 
     :Returns:
 

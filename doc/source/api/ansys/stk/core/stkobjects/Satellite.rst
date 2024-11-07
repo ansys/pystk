@@ -238,14 +238,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_propagator_type(self, ePropagator: PROPAGATOR_TYPE) -> None
+.. py:method:: set_propagator_type(self, propagator: PROPAGATOR_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.Satellite.set_propagator_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **ePropagator** : :obj:`~PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PROPAGATOR_TYPE`
 
     :Returns:
 

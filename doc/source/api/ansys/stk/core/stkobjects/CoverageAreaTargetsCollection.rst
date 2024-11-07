@@ -114,27 +114,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, targetName: str) -> None
+.. py:method:: add(self, target_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **targetName** : :obj:`~str`
+    **target_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, targetName: str) -> None
+.. py:method:: remove(self, target_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.remove
 
     Remove an element from the collection given a Target name.
 
     :Parameters:
 
-    **targetName** : :obj:`~str`
+    **target_name** : :obj:`~str`
 
     :Returns:
 

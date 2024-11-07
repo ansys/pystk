@@ -102,14 +102,14 @@ Method detail
 
         :obj:`~AreaTypePattern`
 
-.. py:method:: remove(self, itemIndex: int) -> None
+.. py:method:: remove(self, item_index: int) -> None
     :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection.remove
 
     Remove an Item using a given index.
 
     :Parameters:
 
-    **itemIndex** : :obj:`~int`
+    **item_index** : :obj:`~int`
 
     :Returns:
 

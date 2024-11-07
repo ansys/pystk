@@ -67,28 +67,28 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IStkObject
+.. py:method:: item(self, index_or_name: typing.Any) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.item
 
     Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IStkObject`
 
 
-.. py:method:: contains(self, instName: str) -> bool
+.. py:method:: contains(self, inst_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.contains
 
     Check whether an object with the given name exists.
 
     :Parameters:
 
-    **instName** : :obj:`~str`
+    **inst_name** : :obj:`~str`
 
     :Returns:
 

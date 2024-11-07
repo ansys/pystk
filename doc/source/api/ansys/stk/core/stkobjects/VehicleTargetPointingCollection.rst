@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, shortPath: str) -> VehicleTargetPointingElement
+.. py:method:: add(self, short_path: str) -> VehicleTargetPointingElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **shortPath** : :obj:`~str`
+    **short_path** : :obj:`~str`
 
     :Returns:
 

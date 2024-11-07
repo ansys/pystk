@@ -121,14 +121,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: select_region(self, regionName: str) -> None
+.. py:method:: select_region(self, region_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.select_region
 
     Select a region.
 
     :Parameters:
 
-    **regionName** : :obj:`~str`
+    **region_name** : :obj:`~str`
 
     :Returns:
 

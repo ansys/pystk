@@ -112,14 +112,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_coordinate_axes_type(self, coordinateAxes: ATTITUDE_COORDINATE_AXES) -> None
+.. py:method:: set_coordinate_axes_type(self, coordinate_axes: ATTITUDE_COORDINATE_AXES) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.set_coordinate_axes_type
 
     Select the coordinate axes to be used in the file.
 
     :Parameters:
 
-    **coordinateAxes** : :obj:`~ATTITUDE_COORDINATE_AXES`
+    **coordinate_axes** : :obj:`~ATTITUDE_COORDINATE_AXES`
 
     :Returns:
 
@@ -134,14 +134,14 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName: str) -> None
+.. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.export
 
     Export the Attitude file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

@@ -121,27 +121,27 @@ Method detail
 
         :obj:`~VehicleGroundEllipseElement`
 
-.. py:method:: remove_ellipse_set(self, ellipseSetName: str) -> None
+.. py:method:: remove_ellipse_set(self, ellipse_set_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection.remove_ellipse_set
 
     Remove an element from the collection using the Ellipse Set name.
 
     :Parameters:
 
-    **ellipseSetName** : :obj:`~str`
+    **ellipse_set_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_ellipse_set(self, ellipseSetName: str) -> VehicleGroundEllipseElement
+.. py:method:: get_ellipse_set(self, ellipse_set_name: str) -> VehicleGroundEllipseElement
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection.get_ellipse_set
 
     Get an element from the collection using the Ellipse Set name.
 
     :Parameters:
 
-    **ellipseSetName** : :obj:`~str`
+    **ellipse_set_name** : :obj:`~str`
 
     :Returns:
 

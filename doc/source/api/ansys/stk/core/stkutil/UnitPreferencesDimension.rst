@@ -81,14 +81,14 @@ Method detail
 
 
 
-.. py:method:: set_current_unit(self, unitAbbrv: str) -> None
+.. py:method:: set_current_unit(self, unit_abbrv: str) -> None
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.set_current_unit
 
     Set the Unit for this simple dimension.
 
     :Parameters:
 
-    **unitAbbrv** : :obj:`~str`
+    **unit_abbrv** : :obj:`~str`
 
     :Returns:
 

@@ -106,27 +106,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, filePath: str) -> Propagator11ParametersDescriptor
+.. py:method:: add(self, file_path: str) -> Propagator11ParametersDescriptor
     :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptorCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **filePath** : :obj:`~str`
+    **file_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~Propagator11ParametersDescriptor`
 
-.. py:method:: add_from_array(self, arrayOfFiles: list) -> None
+.. py:method:: add_from_array(self, array_of_files: list) -> None
     :canonical: ansys.stk.core.stkobjects.Propagator11ParametersDescriptorCollection.add_from_array
 
     Add multiple files to the collection.
 
     :Parameters:
 
-    **arrayOfFiles** : :obj:`~list`
+    **array_of_files** : :obj:`~list`
 
     :Returns:
 

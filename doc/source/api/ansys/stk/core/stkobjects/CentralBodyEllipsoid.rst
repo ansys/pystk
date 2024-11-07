@@ -90,17 +90,17 @@ Method detail
 
 
 
-.. py:method:: compute_surface_distance(self, startLat: typing.Any, startLon: typing.Any, endLat: typing.Any, endLon: typing.Any) -> float
+.. py:method:: compute_surface_distance(self, start_lat: typing.Any, start_lon: typing.Any, end_lat: typing.Any, end_lon: typing.Any) -> float
     :canonical: ansys.stk.core.stkobjects.CentralBodyEllipsoid.compute_surface_distance
 
     Compute the distance between two points on the surface of the central body. Distance is measured along a great arc path.
 
     :Parameters:
 
-    **startLat** : :obj:`~typing.Any`
-    **startLon** : :obj:`~typing.Any`
-    **endLat** : :obj:`~typing.Any`
-    **endLon** : :obj:`~typing.Any`
+    **start_lat** : :obj:`~typing.Any`
+    **start_lon** : :obj:`~typing.Any`
+    **end_lat** : :obj:`~typing.Any`
+    **end_lon** : :obj:`~typing.Any`
 
     :Returns:
 

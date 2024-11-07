@@ -220,14 +220,14 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, picture: IPictureDisp) -> None
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 
     :Parameters:
 
-    **pPicture** : :obj:`~IPictureDisp`
+    **picture** : :obj:`~IPictureDisp`
 
     :Returns:
 
@@ -278,14 +278,14 @@ Method detail
 
 
 
-.. py:method:: copy_from_window_id(self, winID: int) -> None
+.. py:method:: copy_from_window_id(self, win_id: int) -> None
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.copy_from_window_id
 
     Copy an existing Window's scene into this control.
 
     :Parameters:
 
-    **winID** : :obj:`~int`
+    **win_id** : :obj:`~int`
 
     :Returns:
 
@@ -309,7 +309,7 @@ Method detail
 
 
 
-.. py:method:: get_window_projected_position(self, lat: float, lon: float, alt: float, drawCoords: GRAPHICS_2D_DRAW_COORDINATES) -> WindowProjectionPosition
+.. py:method:: get_window_projected_position(self, lat: float, lon: float, alt: float, draw_coords: GRAPHICS_2D_DRAW_COORDINATES) -> WindowProjectionPosition
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.get_window_projected_position
 
     Get the window projected position for given values.
@@ -319,21 +319,21 @@ Method detail
     **lat** : :obj:`~float`
     **lon** : :obj:`~float`
     **alt** : :obj:`~float`
-    **drawCoords** : :obj:`~GRAPHICS_2D_DRAW_COORDINATES`
+    **draw_coords** : :obj:`~GRAPHICS_2D_DRAW_COORDINATES`
 
     :Returns:
 
         :obj:`~WindowProjectionPosition`
 
 
-.. py:method:: set_mouse_cursor_from_file(self, cursorFileName: str) -> None
+.. py:method:: set_mouse_cursor_from_file(self, cursor_file_name: str) -> None
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.set_mouse_cursor_from_file
 
     Set mouse cursor to the selected cursor file.
 
     :Parameters:
 
-    **cursorFileName** : :obj:`~str`
+    **cursor_file_name** : :obj:`~str`
 
     :Returns:
 
@@ -348,14 +348,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle: int) -> None
+.. py:method:: set_mouse_cursor_from_handle(self, cursor_handle: int) -> None
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.set_mouse_cursor_from_handle
 
     Set mouse cursor to the passed cursor handle.
 
     :Parameters:
 
-    **cursorHandle** : :obj:`~int`
+    **cursor_handle** : :obj:`~int`
 
     :Returns:
 

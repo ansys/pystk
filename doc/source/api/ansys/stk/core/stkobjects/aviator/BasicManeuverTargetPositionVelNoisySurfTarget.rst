@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_base_dynamic_state_link_name(self, newVal: str) -> None
+.. py:method:: set_base_dynamic_state_link_name(self, value: str) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.set_base_dynamic_state_link_name
 
     Set the BaseDynStateLinkName.
 
     :Parameters:
 
-    **newVal** : :obj:`~str`
+    **value** : :obj:`~str`
 
     :Returns:
 

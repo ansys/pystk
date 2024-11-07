@@ -80,14 +80,14 @@ Method detail
 
 
 
-.. py:method:: set_other_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_other_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.set_other_airspeed
 
     Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

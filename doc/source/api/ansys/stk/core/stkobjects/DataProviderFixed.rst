@@ -48,14 +48,14 @@ Method detail
 
         :obj:`~DataProviderResult`
 
-.. py:method:: execute_elements(self, elementNames: list) -> DataProviderResult
+.. py:method:: execute_elements(self, element_names: list) -> DataProviderResult
     :canonical: ansys.stk.core.stkobjects.DataProviderFixed.execute_elements
 
     Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
 
     :Parameters:
 
-    **elementNames** : :obj:`~list`
+    **element_names** : :obj:`~list`
 
     :Returns:
 

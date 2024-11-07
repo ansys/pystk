@@ -108,15 +108,15 @@ class STKRuntime(object):
     def start_application(grpc_host:str="0.0.0.0", \
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
-                         userControl:bool=False, \
-                         noGraphics:bool=True) -> STKRuntimeApplication:
+                         user_control:bool=False, \
+                         no_graphics:bool=True) -> STKRuntimeApplication:
         """
         Create a new STK Runtime instance and attach to the remote host.  
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-        Specify userControl = True to return the application to the user's control 
+        Specify user_control = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
         """
         cmd_line = None
@@ -125,7 +125,7 @@ class STKRuntime(object):
             if ld_env:
                 for path in ld_env.split(':'):
                     if os.path.exists(os.path.join(path, 'stkruntime')):
-                        cmd_line = f"{os.path.join(path, 'stkruntime')} --grpcHost {grpc_host} --grpcPort {grpc_port}" + (" --noGraphics" if noGraphics else "")
+                        cmd_line = f"{os.path.join(path, 'stkruntime')} --grpcHost {grpc_host} --grpcPort {grpc_port}" + (" --noGraphics" if no_graphics else "")
                         break
             else:
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
@@ -137,12 +137,12 @@ class STKRuntime(object):
                 bin_dir = winreg_stk_binary_dir()
                 if bin_dir is None:
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-            cmd_line = f"\"{os.path.join(bin_dir, 'STKRuntime.exe')}\" /grpcHost {grpc_host} /grpcPort {grpc_port}" + (" /noGraphics" if noGraphics else "")
+            cmd_line = f"\"{os.path.join(bin_dir, 'STKRuntime.exe')}\" /grpcHost {grpc_host} /grpcPort {grpc_port}" + (" /noGraphics" if no_graphics else "")
 
         subprocess.Popen(cmd_line, shell=True)
         host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
-        app._intf.client.set_shutdown_stkruntime(not userControl)
+        app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
         

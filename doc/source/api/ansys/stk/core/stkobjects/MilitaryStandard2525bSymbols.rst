@@ -65,15 +65,15 @@ Method detail
 
 
 
-.. py:method:: create_symbol(self, symbolID: str, saveImageFilePath: str) -> None
+.. py:method:: create_symbol(self, symbol_id: str, save_image_file_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.create_symbol
 
     Generate a 2525b symbol. Image will be saved to the file specified by SaveImageFilePath.
 
     :Parameters:
 
-    **symbolID** : :obj:`~str`
-    **saveImageFilePath** : :obj:`~str`
+    **symbol_id** : :obj:`~str`
+    **save_image_file_path** : :obj:`~str`
 
     :Returns:
 

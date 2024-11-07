@@ -86,14 +86,14 @@ Method detail
         :obj:`~MTOGraphics2DTrack`
 
 
-.. py:method:: get_track_from_identifier(self, trackId: int) -> MTOGraphics2DTrack
+.. py:method:: get_track_from_identifier(self, track_id: int) -> MTOGraphics2DTrack
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.get_track_from_identifier
 
     Given a track id, returns an element in the collection.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
 
     :Returns:
 

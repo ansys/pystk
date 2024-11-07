@@ -50,14 +50,14 @@ Method detail
 
         :obj:`~ICatalogWaypoint`
 
-.. py:method:: set_catalog_waypoint(self, pVal: ICatalogWaypoint) -> None
+.. py:method:: set_catalog_waypoint(self, value: ICatalogWaypoint) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteWaypointFromCatalog.set_catalog_waypoint
 
     Set the catalog waypoint.
 
     :Parameters:
 
-    **pVal** : :obj:`~ICatalogWaypoint`
+    **value** : :obj:`~ICatalogWaypoint`
 
     :Returns:
 

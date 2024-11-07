@@ -115,15 +115,15 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_limit(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_airspeed_limit(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.set_airspeed_limit
 
     Set the airspeed limit and airspeed type below the altitude threshold.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 

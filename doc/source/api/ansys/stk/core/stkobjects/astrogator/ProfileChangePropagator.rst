@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSSegment: IMCSSegment) -> None
+.. py:method:: set_segment(self, mcs_segment: IMCSSegment) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangePropagator.set_segment
 
     Set the targeted segment.
 
     :Parameters:
 
-    **pVAMCSSegment** : :obj:`~IMCSSegment`
+    **mcs_segment** : :obj:`~IMCSSegment`
 
     :Returns:
 

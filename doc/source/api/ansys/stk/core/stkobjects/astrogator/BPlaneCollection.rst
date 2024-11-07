@@ -67,27 +67,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, bPlaneName: str) -> None
+.. py:method:: add(self, plane_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.add
 
     Add a BPlane.
 
     :Parameters:
 
-    **bPlaneName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, bPlaneName: str) -> None
+.. py:method:: remove(self, plane_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.remove
 
     Remove a BPlane.
 
     :Parameters:
 
-    **bPlaneName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
 
     :Returns:
 

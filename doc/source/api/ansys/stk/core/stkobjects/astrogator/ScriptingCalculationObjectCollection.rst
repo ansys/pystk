@@ -77,40 +77,40 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ScriptingCalculationObject
+.. py:method:: item(self, index_or_name: typing.Any) -> ScriptingCalculationObject
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~ScriptingCalculationObject`
 
-.. py:method:: add(self, componentName: str) -> ScriptingCalculationObject
+.. py:method:: add(self, component_name: str) -> ScriptingCalculationObject
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.add
 
     Add a calculation object to the collection.
 
     :Parameters:
 
-    **componentName** : :obj:`~str`
+    **component_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ScriptingCalculationObject`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.remove
 
     Remove a calculation object.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -127,14 +127,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.cut
 
     Copy the calc object into the clipboard and removes the calc object from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -149,14 +149,14 @@ Method detail
 
         :obj:`~ScriptingCalculationObject`
 
-.. py:method:: insert_copy(self, calcObj: ScriptingCalculationObject) -> ScriptingCalculationObject
+.. py:method:: insert_copy(self, calc_obj: ScriptingCalculationObject) -> ScriptingCalculationObject
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.insert_copy
 
     Copy the calc object and inserts the copy into the list.
 
     :Parameters:
 
-    **calcObj** : :obj:`~ScriptingCalculationObject`
+    **calc_obj** : :obj:`~ScriptingCalculationObject`
 
     :Returns:
 
@@ -175,14 +175,14 @@ Method detail
 
         :obj:`~ScriptingCalculationObject`
 
-.. py:method:: get_item_by_name(self, componentName: str) -> ScriptingCalculationObject
+.. py:method:: get_item_by_name(self, component_name: str) -> ScriptingCalculationObject
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObjectCollection.get_item_by_name
 
     Retrieve a scripting calc object from the collection by name.
 
     :Parameters:
 
-    **componentName** : :obj:`~str`
+    **component_name** : :obj:`~str`
 
     :Returns:
 

@@ -134,34 +134,34 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_with_negate(self, displayCondition: IDisplayCondition, negate: bool) -> None
+.. py:method:: add_with_negate(self, display_condition: IDisplayCondition, negate: bool) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.add_with_negate
 
     Add a display condition to the end of the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, displayCondition: IDisplayCondition) -> None
+.. py:method:: add(self, display_condition: IDisplayCondition) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.add
 
     Add a display condition to the end of the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: insert_with_negate(self, index: int, displayCondition: IDisplayCondition, negate: bool) -> None
+.. py:method:: insert_with_negate(self, index: int, display_condition: IDisplayCondition, negate: bool) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.insert_with_negate
 
     Insert a display condition at the given zero-based index, shifting existing display conditions.
@@ -169,14 +169,14 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: insert(self, index: int, displayCondition: IDisplayCondition) -> None
+.. py:method:: insert(self, index: int, display_condition: IDisplayCondition) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.insert
 
     Insert a display condition at the given zero-based index, shifting existing display conditions.
@@ -184,20 +184,20 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, displayCondition: IDisplayCondition) -> None
+.. py:method:: remove(self, display_condition: IDisplayCondition) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.remove
 
     Remove a display condition from the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
@@ -225,27 +225,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_negate(self, displayCondition: IDisplayCondition) -> bool
+.. py:method:: get_negate(self, display_condition: IDisplayCondition) -> bool
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.get_negate
 
     Determine if a logical not operation is applied to a display condition in the composite.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: set_negate(self, displayCondition: IDisplayCondition, negate: bool) -> None
+.. py:method:: set_negate(self, display_condition: IDisplayCondition, negate: bool) -> None
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.set_negate
 
     Set if a logical not operation is applied to a display condition in the composite when the composite is evaluated.
 
     :Parameters:
 
-    **displayCondition** : :obj:`~IDisplayCondition`
+    **display_condition** : :obj:`~IDisplayCondition`
     **negate** : :obj:`~bool`
 
     :Returns:

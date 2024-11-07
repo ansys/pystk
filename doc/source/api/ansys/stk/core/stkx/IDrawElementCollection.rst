@@ -98,27 +98,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, elemType: str) -> IDrawElement
+.. py:method:: add(self, elem_type: str) -> IDrawElement
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.add
 
     Create and add a new element to the end of the sequence.
 
     :Parameters:
 
-    **elemType** : :obj:`~str`
+    **elem_type** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IDrawElement`
 
-.. py:method:: remove(self, drawElem: IDrawElement) -> None
+.. py:method:: remove(self, draw_elem: IDrawElement) -> None
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.remove
 
     Remove the specified element.
 
     :Parameters:
 
-    **drawElem** : :obj:`~IDrawElement`
+    **draw_elem** : :obj:`~IDrawElement`
 
     :Returns:
 

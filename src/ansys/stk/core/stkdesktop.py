@@ -164,7 +164,7 @@ class STKDesktop(object):
 
     @staticmethod
     def start_application(visible:bool=False, \
-                         userControl:bool=False, \
+                         user_control:bool=False, \
                          grpc_server:bool=False, \
                          grpc_host:str="0.0.0.0", \
                          grpc_port:int=40704, \
@@ -174,7 +174,7 @@ class STKDesktop(object):
         Create a new STK Desktop application instance.  
 
         Specify visible = True to show the application window.
-        Specify userControl = True to return the application to the user's control .
+        Specify user_control = True to return the application to the user's control .
         (the application remains open) after terminating the Python API connection.
         Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
         grpc_host is the IP address or DNS name of the gRPC server.
@@ -205,7 +205,7 @@ class STKDesktop(object):
             host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
             app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
             app.visible = visible
-            app.user_control = userControl
+            app.user_control = user_control
             return app
         else:
             CLSID_AgUiApplication = GUID()
@@ -217,7 +217,7 @@ class STKDesktop(object):
                     app = STKDesktopApplication()
                     app._private_init(pUnk)
                     app.visible = visible
-                    app.user_control = userControl
+                    app.user_control = user_control
                     return app
             raise STKInitializationError("Failed to create STK Desktop application.  Check for successful install and registration.")
         

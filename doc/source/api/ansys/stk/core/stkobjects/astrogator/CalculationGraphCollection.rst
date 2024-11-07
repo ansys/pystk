@@ -81,27 +81,27 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, graphName: str) -> None
+.. py:method:: add(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add
 
     Add a calculation graph.
 
     :Parameters:
 
-    **graphName** : :obj:`~str`
+    **graph_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, graphName: str) -> None
+.. py:method:: remove(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove
 
     Remove a parameter.
 
     :Parameters:
 
-    **graphName** : :obj:`~str`
+    **graph_name** : :obj:`~str`
 
     :Returns:
 

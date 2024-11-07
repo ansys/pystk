@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: set_local_atmospheric_absorption_model(self, modelName: str) -> None
+.. py:method:: set_local_atmospheric_absorption_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Atmosphere.set_local_atmospheric_absorption_model
 
     Do not use this method, as it is deprecated. Use the PropagationChannel property to set the atmospheric absorption model.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

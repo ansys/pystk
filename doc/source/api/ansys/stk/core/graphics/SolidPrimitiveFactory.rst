@@ -72,14 +72,14 @@ Method detail
 
         :obj:`~SolidPrimitive`
 
-.. py:method:: initialize_with_hint(self, setHint: SET_HINT) -> SolidPrimitive
+.. py:method:: initialize_with_hint(self, set_hint: SET_HINT) -> SolidPrimitive
     :canonical: ansys.stk.core.graphics.SolidPrimitiveFactory.initialize_with_hint
 
     Initialize a solid primitive with the specified setHint.
 
     :Parameters:
 
-    **setHint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SET_HINT`
 
     :Returns:
 

@@ -69,14 +69,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> AutomaticSequence
+.. py:method:: item(self, index_or_name: typing.Any) -> AutomaticSequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item
 
     Return the given automatic sequence.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -95,14 +95,14 @@ Method detail
 
         :obj:`~AutomaticSequence`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove
 
     Remove a sequence.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
