@@ -41,75 +41,75 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: write_string(self, imageUri: str, compressionProfile: JPEG2000_COMPRESSION_PROFILE, compressionRate: int, jpeg2000Uri: str, overwriteExistingFile: bool) -> None
+.. py:method:: write_string(self, image_uri: str, compression_profile: JPEG2000_COMPRESSION_PROFILE, compression_rate: int, jpeg2000_uri: str, overwrite_existing_file: bool) -> None
     :canonical: ansys.stk.core.graphics.Jpeg2000WriterInitializer.write_string
 
     Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF.
 
     :Parameters:
 
-    **imageUri** : :obj:`~str`
-    **compressionProfile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
-    **compressionRate** : :obj:`~int`
-    **jpeg2000Uri** : :obj:`~str`
-    **overwriteExistingFile** : :obj:`~bool`
+    **image_uri** : :obj:`~str`
+    **compression_profile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
+    **compression_rate** : :obj:`~int`
+    **jpeg2000_uri** : :obj:`~str`
+    **overwrite_existing_file** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: write_extent_string(self, imageUri: str, extent: list, compressionProfile: JPEG2000_COMPRESSION_PROFILE, compressionRate: int, jpeg2000Uri: str, overwriteExistingFile: bool) -> None
+.. py:method:: write_extent_string(self, image_uri: str, extent: list, compression_profile: JPEG2000_COMPRESSION_PROFILE, compression_rate: int, jpeg2000_uri: str, overwrite_existing_file: bool) -> None
     :canonical: ansys.stk.core.graphics.Jpeg2000WriterInitializer.write_extent_string
 
     Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
 
     :Parameters:
 
-    **imageUri** : :obj:`~str`
+    **image_uri** : :obj:`~str`
     **extent** : :obj:`~list`
-    **compressionProfile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
-    **compressionRate** : :obj:`~int`
-    **jpeg2000Uri** : :obj:`~str`
-    **overwriteExistingFile** : :obj:`~bool`
+    **compression_profile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
+    **compression_rate** : :obj:`~int`
+    **jpeg2000_uri** : :obj:`~str`
+    **overwrite_existing_file** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: write_extent_and_sub_extent_string(self, imageUri: str, extent: list, subExtent: list, compressionProfile: JPEG2000_COMPRESSION_PROFILE, compressionRate: int, jpeg2000Uri: str, overwriteExistingFile: bool) -> None
+.. py:method:: write_extent_and_sub_extent_string(self, image_uri: str, extent: list, sub_extent: list, compression_profile: JPEG2000_COMPRESSION_PROFILE, compression_rate: int, jpeg2000_uri: str, overwrite_existing_file: bool) -> None
     :canonical: ansys.stk.core.graphics.Jpeg2000WriterInitializer.write_extent_and_sub_extent_string
 
     Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
 
     :Parameters:
 
-    **imageUri** : :obj:`~str`
+    **image_uri** : :obj:`~str`
     **extent** : :obj:`~list`
-    **subExtent** : :obj:`~list`
-    **compressionProfile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
-    **compressionRate** : :obj:`~int`
-    **jpeg2000Uri** : :obj:`~str`
-    **overwriteExistingFile** : :obj:`~bool`
+    **sub_extent** : :obj:`~list`
+    **compression_profile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
+    **compression_rate** : :obj:`~int`
+    **jpeg2000_uri** : :obj:`~str`
+    **overwrite_existing_file** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: write_extent_and_sub_extent_transparent_color_string(self, imageUri: str, extent: list, subExtent: list, compressionProfile: JPEG2000_COMPRESSION_PROFILE, compressionRate: int, jpeg2000Uri: str, overwriteExistingFile: bool, transparentColor: agcolor.Color) -> None
+.. py:method:: write_extent_and_sub_extent_transparent_color_string(self, image_uri: str, extent: list, sub_extent: list, compression_profile: JPEG2000_COMPRESSION_PROFILE, compression_rate: int, jpeg2000_uri: str, overwrite_existing_file: bool, transparent_color: agcolor.Color) -> None
     :canonical: ansys.stk.core.graphics.Jpeg2000WriterInitializer.write_extent_and_sub_extent_transparent_color_string
 
     Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
 
     :Parameters:
 
-    **imageUri** : :obj:`~str`
+    **image_uri** : :obj:`~str`
     **extent** : :obj:`~list`
-    **subExtent** : :obj:`~list`
-    **compressionProfile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
-    **compressionRate** : :obj:`~int`
-    **jpeg2000Uri** : :obj:`~str`
-    **overwriteExistingFile** : :obj:`~bool`
-    **transparentColor** : :obj:`~agcolor.Color`
+    **sub_extent** : :obj:`~list`
+    **compression_profile** : :obj:`~JPEG2000_COMPRESSION_PROFILE`
+    **compression_rate** : :obj:`~int`
+    **jpeg2000_uri** : :obj:`~str`
+    **overwrite_existing_file** : :obj:`~bool`
+    **transparent_color** : :obj:`~agcolor.Color`
 
     :Returns:
 

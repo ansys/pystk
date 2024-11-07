@@ -278,8 +278,8 @@ class IDrawElement(object):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(IDrawElement._metadata, IDrawElement._set_visible_metadata, newVal)
+    def visible(self, value:bool) -> None:
+        return self._intf.set_property(IDrawElement._metadata, IDrawElement._set_visible_metadata, value)
 
     _property_names[visible] = "visible"
 
@@ -374,8 +374,8 @@ class IDrawElementRect(IDrawElement):
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
-    def color(self, newVal:agcolor.Color) -> None:
-        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_color_metadata, newVal)
+    def color(self, value:agcolor.Color) -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_color_metadata, value)
 
     _get_line_width_metadata = { "offset" : _get_line_width_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
@@ -389,8 +389,8 @@ class IDrawElementRect(IDrawElement):
             "arg_types" : (agcom.FLOAT,),
             "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
-    def line_width(self, newVal:float) -> None:
-        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_width_metadata, newVal)
+    def line_width(self, value:float) -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_width_metadata, value)
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -404,8 +404,8 @@ class IDrawElementRect(IDrawElement):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @line_style.setter
-    def line_style(self, newVal:"LINE_STYLE") -> None:
-        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_style_metadata, newVal)
+    def line_style(self, value:"LINE_STYLE") -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_style_metadata, value)
 
     _property_names[left] = "left"
     _property_names[right] = "right"
@@ -498,16 +498,16 @@ class IDrawElementCollection(object):
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add(self, elemType:str) -> "IDrawElement":
+    def add(self, elem_type:str) -> "IDrawElement":
         """Create and add a new element to the end of the sequence."""
-        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._add_metadata, elemType, OutArg())
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._add_metadata, elem_type, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IDrawElement"),) }
-    def remove(self, drawElem:"IDrawElement") -> None:
+    def remove(self, draw_elem:"IDrawElement") -> None:
         """Remove the specified element."""
-        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._remove_metadata, drawElem)
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._remove_metadata, draw_elem)
 
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -521,8 +521,8 @@ class IDrawElementCollection(object):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(IDrawElementCollection._metadata, IDrawElementCollection._set_visible_metadata, newVal)
+    def visible(self, value:bool) -> None:
+        return self._intf.set_property(IDrawElementCollection._metadata, IDrawElementCollection._set_visible_metadata, value)
 
     __getitem__ = item
 
@@ -627,16 +627,16 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_metadata, picture)
 
     _pick_info_metadata = { "offset" : _pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
@@ -657,8 +657,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @window_id.setter
-    def window_id(self, newVal:int) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_window_id_metadata, newVal)
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_window_id_metadata, value)
 
     _get_application_metadata = { "offset" : _get_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -687,8 +687,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_no_logo_metadata, no_logo)
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -702,8 +702,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ole_drop_mode_metadata, psOLEDropMode)
+    def ole_drop_mode(self, ole_drop_mode:"OLE_DROP_MODE") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -717,8 +717,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_vendor_id_metadata, vendor_id)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
@@ -739,8 +739,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_mode_metadata, psMouseMode)
+    def mouse_mode(self, mouse_mode:"MOUSE_MODE") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_draw_elements_metadata = { "offset" : _get_draw_elements_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -770,8 +770,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @ppt_preload_mode.setter
-    def ppt_preload_mode(self, bPptPreloadMode:bool) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ppt_preload_mode_metadata, bPptPreloadMode)
+    def ppt_preload_mode(self, ppt_preload_mode:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ppt_preload_mode_metadata, ppt_preload_mode)
 
     _get_advanced_pick_mode_metadata = { "offset" : _get_advanced_pick_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -785,22 +785,22 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
-    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_advanced_pick_mode_metadata, bAdvancePickMode)
+    def advanced_pick_mode(self, advanced_pick_mode:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_advanced_pick_mode_metadata, advanced_pick_mode)
 
     _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_window_id(self, winID:int) -> None:
+    def copy_from_window_id(self, win_id:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._copy_from_window_id_metadata, winID)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._copy_from_window_id_metadata, win_id)
 
     _start_object_editing_metadata = { "offset" : _start_object_editing_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def start_object_editing(self, objEditPath:str) -> None:
+    def start_object_editing(self, obj_edit_path:str) -> None:
         """Enters into 3D object editing mode."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._start_object_editing_metadata, objEditPath)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._start_object_editing_metadata, obj_edit_path)
 
     _apply_object_editing_metadata = { "offset" : _apply_object_editing_method_offset,
             "arg_types" : (),
@@ -835,9 +835,9 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _set_mouse_cursor_from_file_metadata = { "offset" : _set_mouse_cursor_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursor_file_name:str) -> None:
         """Set mouse cursor to the selected cursor file."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_file_metadata, cursorFileName)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_file_metadata, cursor_file_name)
 
     _restore_mouse_cursor_metadata = { "offset" : _restore_mouse_cursor_method_offset,
             "arg_types" : (),
@@ -849,9 +849,9 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _set_mouse_cursor_from_handle_metadata = { "offset" : _set_mouse_cursor_from_handle_method_offset,
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLEHandleArg,) }
-    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursor_handle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
-        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_handle_metadata, cursorHandle)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_handle_metadata, cursor_handle)
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -865,8 +865,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_show_progress_image_metadata, psProgressImage)
+    def show_progress_image(self, progress_image:"SHOW_PROGRESS_IMAGE") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -880,8 +880,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
-    def progress_image_x_offset(self, xOffset:int) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_offset_metadata, xOffset)
+    def progress_image_x_offset(self, x_offset:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_offset_metadata, x_offset)
 
     _get_progress_image_y_offset_metadata = { "offset" : _get_progress_image_y_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -895,8 +895,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
-    def progress_image_y_offset(self, yOffset:int) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_offset_metadata, yOffset)
+    def progress_image_y_offset(self, y_offset:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_offset_metadata, y_offset)
 
     _get_progress_image_file_metadata = { "offset" : _get_progress_image_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -910,8 +910,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
-    def progress_image_file(self, imageFile:str) -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_file_metadata, imageFile)
+    def progress_image_file(self, image_file:str) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_file_metadata, image_file)
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -925,8 +925,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_origin_metadata, progressImageXOrigin)
+    def progress_image_x_origin(self, progress_image_x_origin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -940,8 +940,8 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_origin_metadata, progressImageYOrigin)
+    def progress_image_y_origin(self, progress_image_y_origin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -955,9 +955,9 @@ class Graphics3DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_from_file_metadata, picture_file)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
@@ -1084,16 +1084,16 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_metadata, picture)
 
     _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1107,8 +1107,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @window_id.setter
-    def window_id(self, newVal:int) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_window_id_metadata, newVal)
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_window_id_metadata, value)
 
     _zoom_in_metadata = { "offset" : _zoom_in_method_offset,
             "arg_types" : (),
@@ -1151,8 +1151,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_no_logo_metadata, no_logo)
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1166,8 +1166,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_ole_drop_mode_metadata, psOLEDropMode)
+    def ole_drop_mode(self, ole_drop_mode:"OLE_DROP_MODE") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1181,8 +1181,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1196,8 +1196,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_mode_metadata, psMouseMode)
+    def mouse_mode(self, mouse_mode:"MOUSE_MODE") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1210,9 +1210,9 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_window_id(self, winID:int) -> None:
+    def copy_from_window_id(self, win_id:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._copy_from_window_id_metadata, winID)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._copy_from_window_id_metadata, win_id)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
@@ -1233,15 +1233,15 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
-    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_advanced_pick_mode_metadata, bAdvancePickMode)
+    def advanced_pick_mode(self, advanced_pick_mode:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_advanced_pick_mode_metadata, advanced_pick_mode)
 
     _get_window_projected_position_metadata = { "offset" : _get_window_projected_position_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(GRAPHICS_2D_DRAW_COORDINATES), agmarshall.InterfaceOutArg,) }
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDINATES") -> "WindowProjectionPosition":
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, draw_coords:"GRAPHICS_2D_DRAW_COORDINATES") -> "WindowProjectionPosition":
         """Get the window projected position for given values."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_projected_position_metadata, lat, lon, alt, drawCoords, OutArg())
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_projected_position_metadata, lat, lon, alt, draw_coords, OutArg())
 
     _get_in_zoom_mode_metadata = { "offset" : _get_in_zoom_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1254,9 +1254,9 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _set_mouse_cursor_from_file_metadata = { "offset" : _set_mouse_cursor_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursor_file_name:str) -> None:
         """Set mouse cursor to the selected cursor file."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_file_metadata, cursorFileName)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_file_metadata, cursor_file_name)
 
     _restore_mouse_cursor_metadata = { "offset" : _restore_mouse_cursor_method_offset,
             "arg_types" : (),
@@ -1268,9 +1268,9 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _set_mouse_cursor_from_handle_metadata = { "offset" : _set_mouse_cursor_from_handle_method_offset,
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLEHandleArg,) }
-    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursor_handle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
-        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_handle_metadata, cursorHandle)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_handle_metadata, cursor_handle)
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1284,8 +1284,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_show_progress_image_metadata, psProgressImage)
+    def show_progress_image(self, progress_image:"SHOW_PROGRESS_IMAGE") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1299,8 +1299,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
-    def progress_image_x_offset(self, xOffset:int) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_offset_metadata, xOffset)
+    def progress_image_x_offset(self, x_offset:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_offset_metadata, x_offset)
 
     _get_progress_image_y_offset_metadata = { "offset" : _get_progress_image_y_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1314,8 +1314,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
-    def progress_image_y_offset(self, yOffset:int) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_offset_metadata, yOffset)
+    def progress_image_y_offset(self, y_offset:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_offset_metadata, y_offset)
 
     _get_progress_image_file_metadata = { "offset" : _get_progress_image_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1329,8 +1329,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
-    def progress_image_file(self, imageFile:str) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_file_metadata, imageFile)
+    def progress_image_file(self, image_file:str) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_file_metadata, image_file)
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1344,8 +1344,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_origin_metadata, progressImageXOrigin)
+    def progress_image_x_origin(self, progress_image_x_origin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1359,8 +1359,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_origin_metadata, progressImageYOrigin)
+    def progress_image_y_origin(self, progress_image_y_origin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1374,9 +1374,9 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_from_file_metadata, picture_file)
 
     _get_pan_mode_enabled_metadata = { "offset" : _get_pan_mode_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1390,8 +1390,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @pan_mode_enabled.setter
-    def pan_mode_enabled(self, bPanMode:bool) -> None:
-        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_pan_mode_enabled_metadata, bPanMode)
+    def pan_mode_enabled(self, pan_mode:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_pan_mode_enabled_metadata, pan_mode)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
@@ -1582,8 +1582,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_connect.setter
-    def enable_connect(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_enable_connect_metadata, newVal)
+    def enable_connect(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_enable_connect_metadata, value)
 
     _get_connect_port_metadata = { "offset" : _get_connect_port_method_offset,
             "arg_types" : (POINTER(agcom.SHORT),),
@@ -1597,8 +1597,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.SHORT,),
             "marshallers" : (agmarshall.ShortArg,) }
     @connect_port.setter
-    def connect_port(self, newVal:int) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_port_metadata, newVal)
+    def connect_port(self, value:int) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_port_metadata, value)
 
     _get_host_id_metadata = { "offset" : _get_host_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1643,15 +1643,15 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_vendor_id_metadata, vendor_id)
 
     _set_online_options_metadata = { "offset" : _set_online_options_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
-    def set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
+    def set_online_options(self, use_proxy:bool, server_name:str, port_num:int, user_name:str, password:str, save_password:bool) -> bool:
         """Set http proxy online options."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_online_options_metadata, use_proxy, server_name, port_num, user_name, password, save_password, OutArg())
 
     _get_online_options_metadata = { "offset" : _get_online_options_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
@@ -1663,9 +1663,9 @@ class STKXApplication(SupportsDeleteCallback):
     _set_connect_handler_metadata = { "offset" : _set_connect_handler_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def set_connect_handler(self, commandID:str, progID:str) -> None:
+    def set_connect_handler(self, command_id:str, prog_id:str) -> None:
         """Set callback to handle a certain connect command."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_connect_handler_metadata, commandID, progID)
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_connect_handler_metadata, command_id, prog_id)
 
     _get_log_file_full_name_metadata = { "offset" : _get_log_file_full_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1687,8 +1687,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
     @logging_mode.setter
-    def logging_mode(self, newVal:"LOGGING_MODE") -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_logging_mode_metadata, newVal)
+    def logging_mode(self, value:"LOGGING_MODE") -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_logging_mode_metadata, value)
 
     _get_connect_max_connections_metadata = { "offset" : _get_connect_max_connections_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1702,22 +1702,22 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @connect_max_connections.setter
-    def connect_max_connections(self, newVal:int) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_max_connections_metadata, newVal)
+    def connect_max_connections(self, value:int) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_max_connections_metadata, value)
 
     _execute_multiple_commands_metadata = { "offset" : _execute_multiple_commands_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(EXECUTE_MULTIPLE_COMMANDS_MODE), agmarshall.InterfaceOutArg,) }
-    def execute_multiple_commands(self, connectCommands:list, eAction:"EXECUTE_MULTIPLE_COMMANDS_MODE") -> "ExecuteMultipleCommandsResult":
+    def execute_multiple_commands(self, connect_commands:list, action:"EXECUTE_MULTIPLE_COMMANDS_MODE") -> "ExecuteMultipleCommandsResult":
         """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connect_commands, action, OutArg())
 
     _is_feature_available_metadata = { "offset" : _is_feature_available_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(FEATURE_CODES), agmarshall.VariantBoolArg,) }
-    def is_feature_available(self, featureCode:"FEATURE_CODES") -> bool:
+    def is_feature_available(self, feature_code:"FEATURE_CODES") -> bool:
         """Return true if the specified feature is available."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._is_feature_available_metadata, featureCode, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._is_feature_available_metadata, feature_code, OutArg())
 
     _get_no_graphics_metadata = { "offset" : _get_no_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1731,8 +1731,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_graphics.setter
-    def no_graphics(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_no_graphics_metadata, newVal)
+    def no_graphics(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_no_graphics_metadata, value)
 
     _terminate_metadata = { "offset" : _terminate_method_offset,
             "arg_types" : (),
@@ -1753,8 +1753,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @show_sla_if_not_accepted.setter
-    def show_sla_if_not_accepted(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_show_sla_if_not_accepted_metadata, newVal)
+    def show_sla_if_not_accepted(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_show_sla_if_not_accepted_metadata, value)
 
     _get_use_hook_metadata = { "offset" : 0,
             "arg_types" : (),
@@ -1769,9 +1769,9 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_hook.setter
-    def use_hook(self, newVal:bool) -> None:
+    def use_hook(self, value:bool) -> None:
         """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_use_hook_metadata, newVal)
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_use_hook_metadata, value)
 
     _use_software_renderer_metadata = { "offset" : _use_software_renderer_method_offset,
             "arg_types" : (),
@@ -2057,9 +2057,9 @@ class ObjectPathCollection(SupportsDeleteCallback):
     _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
-    def range(self, startIndex:int, stopIndex:int) -> list:
+    def range(self, start_index:int, stop_index:int) -> list:
         """Return the elements within the specified range."""
-        return self._intf.invoke(ObjectPathCollection._metadata, ObjectPathCollection._range_metadata, startIndex, stopIndex, OutArg())
+        return self._intf.invoke(ObjectPathCollection._metadata, ObjectPathCollection._range_metadata, start_index, stop_index, OutArg())
 
     __getitem__ = item
 
@@ -2215,16 +2215,16 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_metadata, picture)
 
     _get_no_logo_metadata = { "offset" : _get_no_logo_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2238,8 +2238,8 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_no_logo_metadata, no_logo)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2253,8 +2253,8 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2284,8 +2284,8 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
     @control_mode.setter
-    def control_mode(self, eGfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_control_mode_metadata, eGfxAnalysisMode)
+    def control_mode(self, gfx_analysis_mode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_control_mode_metadata, gfx_analysis_mode)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2299,9 +2299,9 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_from_file_metadata, picture_file)
 
     _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2315,8 +2315,8 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @window_id.setter
-    def window_id(self, newVal:int) -> None:
-        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_window_id_metadata, newVal)
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_window_id_metadata, value)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
@@ -2479,8 +2479,8 @@ class DrawElementLine(SupportsDeleteCallback):
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
-    def color(self, newVal:agcolor.Color) -> None:
-        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_color_metadata, newVal)
+    def color(self, value:agcolor.Color) -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_color_metadata, value)
 
     _get_line_width_metadata = { "offset" : _get_line_width_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
@@ -2494,8 +2494,8 @@ class DrawElementLine(SupportsDeleteCallback):
             "arg_types" : (agcom.FLOAT,),
             "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
-    def line_width(self, newVal:float) -> None:
-        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_width_metadata, newVal)
+    def line_width(self, value:float) -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_width_metadata, value)
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2509,8 +2509,8 @@ class DrawElementLine(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
     @line_style.setter
-    def line_style(self, newVal:"LINE_STYLE") -> None:
-        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_style_metadata, newVal)
+    def line_style(self, value:"LINE_STYLE") -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_style_metadata, value)
 
     _property_names[left] = "left"
     _property_names[right] = "right"
@@ -2564,9 +2564,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _set_ignore_error_metadata = { "offset" : _set_ignore_error_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    def set_ignore_error(self, ignoreError:bool) -> None:
+    def set_ignore_error(self, ignore_error:bool) -> None:
         """Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server."""
-        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_metadata, ignoreError)
+        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_metadata, ignore_error)
 
     _get_is_error_ignored_metadata = { "offset" : _get_is_error_ignored_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2579,9 +2579,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _set_ignore_error_permanently_metadata = { "offset" : _set_ignore_error_permanently_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    def set_ignore_error_permanently(self, ignoreErrorPermanently:bool) -> None:
+    def set_ignore_error_permanently(self, ignore_error_permanently:bool) -> None:
         """Specify True to ignore the certificate error and add the certificate to the list of trusted certificates."""
-        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_permanently_metadata, ignoreErrorPermanently)
+        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_permanently_metadata, ignore_error_permanently)
 
     _get_serial_number_metadata = { "offset" : _get_serial_number_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2651,9 +2651,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @handled.setter
-    def handled(self, bHandled:bool) -> None:
+    def handled(self, handled:bool) -> None:
         """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
-        return self._intf.set_property(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_handled_metadata, bHandled)
+        return self._intf.set_property(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_handled_metadata, handled)
 
     _property_names[is_error_ignored] = "is_error_ignored"
     _property_names[serial_number] = "serial_number"

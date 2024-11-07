@@ -135,14 +135,14 @@ Method detail
 
 
 
-.. py:method:: is_altitude_reference_type_supported(self, refType: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE) -> bool
+.. py:method:: is_altitude_reference_type_supported(self, ref_type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE) -> bool
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.is_altitude_reference_type_supported
 
     Provide verification of the availability of borderwall edge altitude reference.
 
     :Parameters:
 
-    **refType** : :obj:`~BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
+    **ref_type** : :obj:`~BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
 
     :Returns:
 

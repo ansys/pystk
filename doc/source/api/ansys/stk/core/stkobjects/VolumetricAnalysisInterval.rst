@@ -96,14 +96,14 @@ Method detail
 
 
 
-.. py:method:: set_spatial_calcuation_evaluation_type(self, spatialCalcEvalType: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE) -> None
+.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type
 
     Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     :Parameters:
 
-    **spatialCalcEvalType** : :obj:`~VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE`
+    **spatial_calc_eval_type** : :obj:`~VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE`
 
     :Returns:
 

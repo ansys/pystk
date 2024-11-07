@@ -75,14 +75,14 @@ Method detail
 
 
 
-.. py:method:: is_best_n_metric_supported(self, bestNMetric: FIGURE_OF_MERIT_METHOD) -> bool
+.. py:method:: is_best_n_metric_supported(self, best_n_metric: FIGURE_OF_MERIT_METHOD) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.is_best_n_metric_supported
 
     Is the type of Best N metric supported?
 
     :Parameters:
 
-    **bestNMetric** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **best_n_metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
 
     :Returns:
 

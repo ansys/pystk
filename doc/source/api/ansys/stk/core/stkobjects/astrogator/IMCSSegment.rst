@@ -98,14 +98,14 @@ Method detail
 
 
 
-.. py:method:: get_result_value(self, resultName: str) -> typing.Any
+.. py:method:: get_result_value(self, result_name: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.get_result_value
 
     Return a result value.
 
     :Parameters:
 
-    **resultName** : :obj:`~str`
+    **result_name** : :obj:`~str`
 
     :Returns:
 

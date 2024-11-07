@@ -68,31 +68,31 @@ class NativeContainerMethods:
             return jniCoreDllPath
     def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
-    def attach_container(self, pContainer, winid, display):
-        self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(pContainer))
-    def resize_container(self, pContainer, x, y, width, height):
-        self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), INT(width), INT(height))
-    def get_unknown(self, pContainer):
-        return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def detach_container(self, pContainer):
-        self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def release_container(self, pContainer):
-        self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
+    def attach_container(self, container, winid, display):
+        self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(container))
+    def resize_container(self, container, x, y, width, height):
+        self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(width), INT(height))
+    def get_unknown(self, container):
+        return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(container))
+    def detach_container(self, container):
+        self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(container))
+    def release_container(self, container):
+        self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(container))
     if os.name!="nt":
-        def paint(self, pContainer):
-            self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-        def mouse_pressed(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_released(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_moved(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseMotionAdapter_MouseMoved(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_wheel_moved(self, pContainer, x, y, ticks, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), INT(ticks), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def key_pressed(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def key_released(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
+        def paint(self, container):
+            self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(container))
+        def mouse_pressed(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_released(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_moved(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseMotionAdapter_MouseMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_wheel_moved(self, container, x, y, ticks, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(ticks), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def key_pressed(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def key_released(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""

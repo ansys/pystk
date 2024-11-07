@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, pointName: str) -> None
+.. py:method:: remove(self, point_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.remove
 
     Remove a specified point by name.
 
     :Parameters:
 
-    **pointName** : :obj:`~str`
+    **point_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolPoint
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolPoint
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.item
 
     Return a point by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

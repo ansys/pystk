@@ -46,7 +46,7 @@ Method detail
 
         :obj:`~DurationPathPrimitiveUpdatePolicy`
 
-.. py:method:: initialize_with_parameters(self, duration: float, removeLocation: PATH_PRIMITIVE_REMOVE_LOCATION) -> DurationPathPrimitiveUpdatePolicy
+.. py:method:: initialize_with_parameters(self, duration: float, remove_location: PATH_PRIMITIVE_REMOVE_LOCATION) -> DurationPathPrimitiveUpdatePolicy
     :canonical: ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicyFactory.initialize_with_parameters
 
     Initialize a policy with the specified duration and removeLocation.
@@ -54,7 +54,7 @@ Method detail
     :Parameters:
 
     **duration** : :obj:`~float`
-    **removeLocation** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
+    **remove_location** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
 
     :Returns:
 

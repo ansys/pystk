@@ -78,14 +78,14 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
 
-.. py:method:: is_type_supported(self, eType: VOLUME_GRID_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: VOLUME_GRID_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~VOLUME_GRID_TYPE`
+    **type** : :obj:`~VOLUME_GRID_TYPE`
 
     :Returns:
 

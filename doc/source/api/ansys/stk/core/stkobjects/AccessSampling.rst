@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_type(self, samplingMethod: SAMPLING_METHOD) -> None
+.. py:method:: set_type(self, sampling_method: SAMPLING_METHOD) -> None
     :canonical: ansys.stk.core.stkobjects.AccessSampling.set_type
 
     Set the type of sampling method.
 
     :Parameters:
 
-    **samplingMethod** : :obj:`~SAMPLING_METHOD`
+    **sampling_method** : :obj:`~SAMPLING_METHOD`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_type_supported(self, samplingMethod: SAMPLING_METHOD) -> bool
+.. py:method:: is_type_supported(self, sampling_method: SAMPLING_METHOD) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessSampling.is_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **samplingMethod** : :obj:`~SAMPLING_METHOD`
+    **sampling_method** : :obj:`~SAMPLING_METHOD`
 
     :Returns:
 

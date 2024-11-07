@@ -69,7 +69,7 @@ Method detail
 
 
 
-.. py:method:: set_fixed_step(self, min: float, max: float, includeMinMax: bool, refValue: float, fixedStep: float) -> SpatialAnalysisToolGridValuesFixedStep
+.. py:method:: set_fixed_step(self, min: float, max: float, include_min_max: bool, ref_value: float, fixed_step: float) -> SpatialAnalysisToolGridValuesFixedStep
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_step
 
     Set grid values type to fixed step.
@@ -78,15 +78,15 @@ Method detail
 
     **min** : :obj:`~float`
     **max** : :obj:`~float`
-    **includeMinMax** : :obj:`~bool`
-    **refValue** : :obj:`~float`
-    **fixedStep** : :obj:`~float`
+    **include_min_max** : :obj:`~bool`
+    **ref_value** : :obj:`~float`
+    **fixed_step** : :obj:`~float`
 
     :Returns:
 
         :obj:`~SpatialAnalysisToolGridValuesFixedStep`
 
-.. py:method:: set_grid_values_fixed_number_of_steps(self, min: float, max: float, numSteps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
+.. py:method:: set_grid_values_fixed_number_of_steps(self, min: float, max: float, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_grid_values_fixed_number_of_steps
 
     Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx.
@@ -95,7 +95,7 @@ Method detail
 
     **min** : :obj:`~float`
     **max** : :obj:`~float`
-    **numSteps** : :obj:`~int`
+    **num_steps** : :obj:`~int`
 
     :Returns:
 
@@ -114,7 +114,7 @@ Method detail
 
         :obj:`~SpatialAnalysisToolGridValuesCustom`
 
-.. py:method:: set_fixed_number_of_steps(self, min: Quantity, max: Quantity, numSteps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
+.. py:method:: set_fixed_number_of_steps(self, min: Quantity, max: Quantity, num_steps: int) -> SpatialAnalysisToolGridValuesFixedNumberOfSteps
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.set_fixed_number_of_steps
 
     Set grid values type to fixed number of steps with min and max as IAgQuantity.
@@ -123,7 +123,7 @@ Method detail
 
     **min** : :obj:`~Quantity`
     **max** : :obj:`~Quantity`
-    **numSteps** : :obj:`~int`
+    **num_steps** : :obj:`~int`
 
     :Returns:
 

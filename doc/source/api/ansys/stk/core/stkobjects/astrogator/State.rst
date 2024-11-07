@@ -186,14 +186,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_element_type(self, elementType: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ELEMENT_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.State.set_element_type
 
     Set the element type.
 
     :Parameters:
 
-    **elementType** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ELEMENT_TYPE`
 
     :Returns:
 
@@ -229,14 +229,14 @@ Method detail
 
 
 
-.. py:method:: get_in_frame_name(self, frameName: str) -> State
+.. py:method:: get_in_frame_name(self, frame_name: str) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.State.get_in_frame_name
 
     Get the orbit state in the specified frame.
 
     :Parameters:
 
-    **frameName** : :obj:`~str`
+    **frame_name** : :obj:`~str`
 
     :Returns:
 

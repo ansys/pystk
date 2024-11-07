@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> DataProviderElement
+.. py:method:: item(self, index_or_name: typing.Any) -> DataProviderElement
     :canonical: ansys.stk.core.stkobjects.DataProviderElements.item
 
     Return the specific item provided an Index.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -69,42 +69,42 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption: typing.Any) -> Window
+.. py:method:: item(self, index_or_caption: typing.Any) -> Window
     :canonical: ansys.stk.core.uicore.WindowsCollection.item
 
     Retrieve a window object.
 
     :Parameters:
 
-    **indexOrCaption** : :obj:`~typing.Any`
+    **index_or_caption** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~Window`
 
 
-.. py:method:: arrange(self, arrangeStyle: WINDOW_ARRANGE_STYLE) -> None
+.. py:method:: arrange(self, arrange_style: WINDOW_ARRANGE_STYLE) -> None
     :canonical: ansys.stk.core.uicore.WindowsCollection.arrange
 
     Arranges the application windows using the specified style.
 
     :Parameters:
 
-    **arrangeStyle** : :obj:`~WINDOW_ARRANGE_STYLE`
+    **arrange_style** : :obj:`~WINDOW_ARRANGE_STYLE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, pluginID: str, initData: typing.Any) -> Window
+.. py:method:: add(self, plugin_id: str, init_data: typing.Any) -> Window
     :canonical: ansys.stk.core.uicore.WindowsCollection.add
 
     Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin.
 
     :Parameters:
 
-    **pluginID** : :obj:`~str`
-    **initData** : :obj:`~typing.Any`
+    **plugin_id** : :obj:`~str`
+    **init_data** : :obj:`~typing.Any`
 
     :Returns:
 

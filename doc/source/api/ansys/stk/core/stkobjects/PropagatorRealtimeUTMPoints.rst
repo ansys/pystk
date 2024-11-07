@@ -37,7 +37,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: add_position(self, time: typing.Any, zoneStr: str, easting: float, northing: float, alt: float) -> None
+.. py:method:: add_position(self, time: typing.Any, zone_str: str, easting: float, northing: float, alt: float) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtimeUTMPoints.add_position
 
     Add an ephemeris point using position only. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance.
@@ -45,7 +45,7 @@ Method detail
     :Parameters:
 
     **time** : :obj:`~typing.Any`
-    **zoneStr** : :obj:`~str`
+    **zone_str** : :obj:`~str`
     **easting** : :obj:`~float`
     **northing** : :obj:`~float`
     **alt** : :obj:`~float`
@@ -54,7 +54,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time: typing.Any, zoneStr: str, easting: float, northing: float, alt: float, lonRate: float, latRate: float, altRate: float) -> None
+.. py:method:: add(self, time: typing.Any, zone_str: str, easting: float, northing: float, alt: float, lon_rate: float, lat_rate: float, alt_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtimeUTMPoints.add
 
     Add an ephemeris point. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance. LonRate and LatRate are entered in degrees/second. AltRate is entered in Distance/second.
@@ -62,13 +62,13 @@ Method detail
     :Parameters:
 
     **time** : :obj:`~typing.Any`
-    **zoneStr** : :obj:`~str`
+    **zone_str** : :obj:`~str`
     **easting** : :obj:`~float`
     **northing** : :obj:`~float`
     **alt** : :obj:`~float`
-    **lonRate** : :obj:`~float`
-    **latRate** : :obj:`~float`
-    **altRate** : :obj:`~float`
+    **lon_rate** : :obj:`~float`
+    **lat_rate** : :obj:`~float`
+    **alt_rate** : :obj:`~float`
 
     :Returns:
 

@@ -171,7 +171,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters(self, positions: list, normals: list, indices: list, optionalParameters: TriangleMeshPrimitiveOptionalParameters) -> None
+.. py:method:: set_with_optional_parameters(self, positions: list, normals: list, indices: list, optional_parameters: TriangleMeshPrimitiveOptionalParameters) -> None
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_with_optional_parameters
 
     Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
@@ -181,7 +181,7 @@ Method detail
     **positions** : :obj:`~list`
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
-    **optionalParameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
 
     :Returns:
 

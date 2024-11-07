@@ -87,40 +87,40 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ScriptingSegment
+.. py:method:: item(self, index_or_name: typing.Any) -> ScriptingSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegmentCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~ScriptingSegment`
 
-.. py:method:: add(self, componentName: str) -> ScriptingSegment
+.. py:method:: add(self, component_name: str) -> ScriptingSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegmentCollection.add
 
     Add an object property to the collection.
 
     :Parameters:
 
-    **componentName** : :obj:`~str`
+    **component_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ScriptingSegment`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegmentCollection.remove
 
     Remove a object property.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -138,14 +138,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegmentCollection.cut
 
     Copy the object property into the clipboard and removes the object property from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -160,14 +160,14 @@ Method detail
 
         :obj:`~ScriptingSegment`
 
-.. py:method:: insert_copy(self, objProperty: ScriptingSegment) -> ScriptingSegment
+.. py:method:: insert_copy(self, obj_property: ScriptingSegment) -> ScriptingSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegmentCollection.insert_copy
 
     Copy the object property and inserts the copy into the list.
 
     :Parameters:
 
-    **objProperty** : :obj:`~ScriptingSegment`
+    **obj_property** : :obj:`~ScriptingSegment`
 
     :Returns:
 

@@ -50,14 +50,14 @@ Method detail
 
         :obj:`~ICatalogAirport`
 
-.. py:method:: set_catalog_airport(self, pVal: ICatalogAirport) -> None
+.. py:method:: set_catalog_airport(self, value: ICatalogAirport) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteAirportFromCatalog.set_catalog_airport
 
     Set the catalog airport.
 
     :Parameters:
 
-    **pVal** : :obj:`~ICatalogAirport`
+    **value** : :obj:`~ICatalogAirport`
 
     :Returns:
 

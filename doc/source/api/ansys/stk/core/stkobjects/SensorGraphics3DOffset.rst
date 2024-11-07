@@ -121,28 +121,28 @@ Method detail
 
 
 
-.. py:method:: get_axis_offset_value(self, offsetType: AXIS_OFFSET) -> float
+.. py:method:: get_axis_offset_value(self, offset_type: AXIS_OFFSET) -> float
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.get_axis_offset_value
 
     Get the selected axis offset type.
 
     :Parameters:
 
-    **offsetType** : :obj:`~AXIS_OFFSET`
+    **offset_type** : :obj:`~AXIS_OFFSET`
 
     :Returns:
 
         :obj:`~float`
 
-.. py:method:: set_axis_offset_value(self, offsetType: AXIS_OFFSET, axisOffsetValue: float) -> None
+.. py:method:: set_axis_offset_value(self, offset_type: AXIS_OFFSET, axis_offset_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.set_axis_offset_value
 
     Select the axis offset type.
 
     :Parameters:
 
-    **offsetType** : :obj:`~AXIS_OFFSET`
-    **axisOffsetValue** : :obj:`~float`
+    **offset_type** : :obj:`~AXIS_OFFSET`
+    **axis_offset_value** : :obj:`~float`
 
     :Returns:
 

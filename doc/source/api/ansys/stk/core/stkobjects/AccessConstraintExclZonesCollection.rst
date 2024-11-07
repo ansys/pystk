@@ -146,23 +146,23 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_exclusion_zone(self, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
+.. py:method:: remove_exclusion_zone(self, min_lat: typing.Any, min_lon: typing.Any, max_lat: typing.Any, max_lon: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_exclusion_zone
 
     Remove an Exclusion Zone using the min and max lat/lon values. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
     :Parameters:
 
-    **minLat** : :obj:`~typing.Any`
-    **minLon** : :obj:`~typing.Any`
-    **maxLat** : :obj:`~typing.Any`
-    **maxLon** : :obj:`~typing.Any`
+    **min_lat** : :obj:`~typing.Any`
+    **min_lon** : :obj:`~typing.Any`
+    **max_lat** : :obj:`~typing.Any`
+    **max_lon** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: change_exclusion_zone(self, index: int, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
+.. py:method:: change_exclusion_zone(self, index: int, min_lat: typing.Any, min_lon: typing.Any, max_lat: typing.Any, max_lon: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.change_exclusion_zone
 
     Update Exclusion Zone data at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
@@ -170,10 +170,10 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **minLat** : :obj:`~typing.Any`
-    **minLon** : :obj:`~typing.Any`
-    **maxLat** : :obj:`~typing.Any`
-    **maxLon** : :obj:`~typing.Any`
+    **min_lat** : :obj:`~typing.Any`
+    **min_lon** : :obj:`~typing.Any`
+    **max_lat** : :obj:`~typing.Any`
+    **max_lon** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -51,7 +51,7 @@ Method detail
 
         :obj:`~SolidTriangulatorResult`
 
-.. py:method:: compute(self, length: float, bottomRadius: float, topRadius: float, slices: int, cylinderFill: CYLINDER_FILL_OPTIONS) -> SolidTriangulatorResult
+.. py:method:: compute(self, length: float, bottom_radius: float, top_radius: float, slices: int, cylinder_fill: CYLINDER_FILL_OPTIONS) -> SolidTriangulatorResult
     :canonical: ansys.stk.core.graphics.CylinderTriangulatorInitializer.compute
 
     Compute the triangulation for a cylinder centered at the origin.
@@ -59,10 +59,10 @@ Method detail
     :Parameters:
 
     **length** : :obj:`~float`
-    **bottomRadius** : :obj:`~float`
-    **topRadius** : :obj:`~float`
+    **bottom_radius** : :obj:`~float`
+    **top_radius** : :obj:`~float`
     **slices** : :obj:`~int`
-    **cylinderFill** : :obj:`~CYLINDER_FILL_OPTIONS`
+    **cylinder_fill** : :obj:`~CYLINDER_FILL_OPTIONS`
 
     :Returns:
 

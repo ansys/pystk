@@ -68,14 +68,14 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: is_type_supported(self, eType: VOLUME_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: VOLUME_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~VOLUME_TYPE`
+    **type** : :obj:`~VOLUME_TYPE`
 
     :Returns:
 

@@ -174,14 +174,14 @@ Method detail
 
 
 
-.. py:method:: set_link_selection_criteria_type(self, val: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE) -> None
+.. py:method:: set_link_selection_criteria_type(self, value: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.CommSystem.set_link_selection_criteria_type
 
     Set the link selection criteria by name.
 
     :Parameters:
 
-    **val** : :obj:`~COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
+    **value** : :obj:`~COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
 
     :Returns:
 

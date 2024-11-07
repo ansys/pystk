@@ -155,7 +155,7 @@ Method detail
 
         :obj:`~ICalculationToolScalar`
 
-.. py:method:: create_data_element(self, name: str, description: str, dataProvider: str, elementName: str) -> ICalculationToolScalar
+.. py:method:: create_data_element(self, name: str, description: str, data_provider: str, element_name: str) -> ICalculationToolScalar
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.create_data_element
 
     Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object.
@@ -164,14 +164,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **dataProvider** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ICalculationToolScalar`
 
-.. py:method:: create_data_element_within_group(self, name: str, description: str, dataProvider: str, groupName: str, elementName: str) -> ICalculationToolScalar
+.. py:method:: create_data_element_within_group(self, name: str, description: str, data_provider: str, group_name: str, element_name: str) -> ICalculationToolScalar
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.create_data_element_within_group
 
     Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object.
@@ -180,9 +180,9 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **dataProvider** : :obj:`~str`
-    **groupName** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **group_name** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 
@@ -287,7 +287,7 @@ Method detail
 
         :obj:`~ICalculationToolScalar`
 
-.. py:method:: create_plugin_from_display_name(self, name: str, description: str, displayName: str) -> ICalculationToolScalar
+.. py:method:: create_plugin_from_display_name(self, name: str, description: str, display_name: str) -> ICalculationToolScalar
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.create_plugin_from_display_name
 
     Create a scalar calculation based on a COM plugin. For information how to implement and register VGT plugins, see <topic name='Engine Plugins: COM-based Engine Plugin Components'>COM-based Engine Plugins.</topic>.
@@ -296,20 +296,20 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **displayName** : :obj:`~str`
+    **display_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ICalculationToolScalar`
 
-.. py:method:: is_type_supported(self, eType: CALCULATION_SCALAR_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: CALCULATION_SCALAR_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~CALCULATION_SCALAR_TYPE`
+    **type** : :obj:`~CALCULATION_SCALAR_TYPE`
 
     :Returns:
 

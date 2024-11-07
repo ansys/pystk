@@ -177,27 +177,27 @@ Method detail
 
         :obj:`~TimeToolInstantSmartEpoch`
 
-.. py:method:: create_smart_epoch_from_event(self, refEvent: ITimeToolInstant) -> TimeToolInstantSmartEpoch
+.. py:method:: create_smart_epoch_from_event(self, ref_event: ITimeToolInstant) -> TimeToolInstantSmartEpoch
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.create_smart_epoch_from_event
 
     Create a smart epoch from an event.
 
     :Parameters:
 
-    **refEvent** : :obj:`~ITimeToolInstant`
+    **ref_event** : :obj:`~ITimeToolInstant`
 
     :Returns:
 
         :obj:`~TimeToolInstantSmartEpoch`
 
-.. py:method:: is_type_supported(self, eType: TIME_EVENT_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: TIME_EVENT_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~TIME_EVENT_TYPE`
+    **type** : :obj:`~TIME_EVENT_TYPE`
 
     :Returns:
 

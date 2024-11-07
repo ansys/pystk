@@ -136,57 +136,57 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, trackId: int) -> MTOTrack
+.. py:method:: add(self, track_id: int) -> MTOTrack
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
 
     :Returns:
 
         :obj:`~MTOTrack`
 
-.. py:method:: add_track(self, trackId: int, timeVals: list, latVals: list, lonVals: list, altVals: list) -> MTOTrack
+.. py:method:: add_track(self, track_id: int, time_vals: list, lat_vals: list, lon_vals: list, alt_vals: list) -> MTOTrack
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.add_track
 
     Add a new track with the specified point data.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
-    **timeVals** : :obj:`~list`
-    **latVals** : :obj:`~list`
-    **lonVals** : :obj:`~list`
-    **altVals** : :obj:`~list`
+    **track_id** : :obj:`~int`
+    **time_vals** : :obj:`~list`
+    **lat_vals** : :obj:`~list`
+    **lon_vals** : :obj:`~list`
+    **alt_vals** : :obj:`~list`
 
     :Returns:
 
         :obj:`~MTOTrack`
 
-.. py:method:: load_command_file(self, commandFile: str) -> None
+.. py:method:: load_command_file(self, command_file: str) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.load_command_file
 
     Load Track Command File.
 
     :Parameters:
 
-    **commandFile** : :obj:`~str`
+    **command_file** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_track_from_identifier(self, trackId: int) -> MTOTrack
+.. py:method:: get_track_from_identifier(self, track_id: int) -> MTOTrack
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.get_track_from_identifier
 
     Given a track id, returns an element in the collection.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
 
     :Returns:
 
@@ -194,41 +194,41 @@ Method detail
 
 
 
-.. py:method:: remove(self, pTrack: MTOTrack) -> None
+.. py:method:: remove(self, track: MTOTrack) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.remove
 
     Remove an element from the collection using a specified track.
 
     :Parameters:
 
-    **pTrack** : :obj:`~MTOTrack`
+    **track** : :obj:`~MTOTrack`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_by_identifier(self, trackId: int) -> None
+.. py:method:: remove_by_identifier(self, track_id: int) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.remove_by_identifier
 
     Remove an element from the collection using a specified id.
 
     :Parameters:
 
-    **trackId** : :obj:`~int`
+    **track_id** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_tracks(self, startingTrackId: int, numberofTracks: int) -> list
+.. py:method:: add_tracks(self, starting_track_id: int, numberof_tracks: int) -> list
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.add_tracks
 
     Add and returns the desired number of new tracks starting with the desired id.
 
     :Parameters:
 
-    **startingTrackId** : :obj:`~int`
-    **numberofTracks** : :obj:`~int`
+    **starting_track_id** : :obj:`~int`
+    **numberof_tracks** : :obj:`~int`
 
     :Returns:
 
@@ -247,65 +247,65 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_tracks_by_identifier(self, trackIds: list) -> None
+.. py:method:: remove_tracks_by_identifier(self, track_ids: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.remove_tracks_by_identifier
 
     Remove tracks based on the provided Ids.
 
     :Parameters:
 
-    **trackIds** : :obj:`~list`
+    **track_ids** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_tracks_with_position_data(self, trackIdsArray: list, numPtsPerTrackArray: list, datatype: MTO_INPUT_DATA_TYPE, timesArray: list, xorLatsArray: list, yorLonsArray: list, zorAltsArray: list) -> None
+.. py:method:: add_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTO_INPUT_DATA_TYPE, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.add_tracks_with_position_data
 
     Add new track with the specified position data.
 
     :Parameters:
 
-    **trackIdsArray** : :obj:`~list`
-    **numPtsPerTrackArray** : :obj:`~list`
+    **track_ids_array** : :obj:`~list`
+    **num_pts_per_track_array** : :obj:`~list`
     **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
-    **timesArray** : :obj:`~list`
-    **xorLatsArray** : :obj:`~list`
-    **yorLonsArray** : :obj:`~list`
-    **zorAltsArray** : :obj:`~list`
+    **times_array** : :obj:`~list`
+    **x_or_lats_array** : :obj:`~list`
+    **y_or_lons_array** : :obj:`~list`
+    **z_or_alts_array** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: extend_tracks_with_position_data(self, trackIdsArray: list, numPtsPerTrackArray: list, datatype: MTO_INPUT_DATA_TYPE, timesArray: list, xorLatsArray: list, yorLonsArray: list, zorAltsArray: list) -> None
+.. py:method:: extend_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTO_INPUT_DATA_TYPE, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.extend_tracks_with_position_data
 
     Extend tracks with the specified position data.
 
     :Parameters:
 
-    **trackIdsArray** : :obj:`~list`
-    **numPtsPerTrackArray** : :obj:`~list`
+    **track_ids_array** : :obj:`~list`
+    **num_pts_per_track_array** : :obj:`~list`
     **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
-    **timesArray** : :obj:`~list`
-    **xorLatsArray** : :obj:`~list`
-    **yorLonsArray** : :obj:`~list`
-    **zorAltsArray** : :obj:`~list`
+    **times_array** : :obj:`~list`
+    **x_or_lats_array** : :obj:`~list`
+    **y_or_lons_array** : :obj:`~list`
+    **z_or_alts_array** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_input_data_vector_geometry_tool_system_name(self, commandSystem: str) -> None
+.. py:method:: set_input_data_vector_geometry_tool_system_name(self, command_system: str) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.set_input_data_vector_geometry_tool_system_name
 
     Set VGT Data System to MTO tracks.
 
     :Parameters:
 
-    **commandSystem** : :obj:`~str`
+    **command_system** : :obj:`~str`
 
     :Returns:
 

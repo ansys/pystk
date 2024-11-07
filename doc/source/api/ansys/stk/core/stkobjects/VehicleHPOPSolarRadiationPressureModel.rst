@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_model_type(self, sRPModel: SOLAR_RADIATION_PRESSURE_MODEL_TYPE) -> None
+.. py:method:: set_model_type(self, srp_model: SOLAR_RADIATION_PRESSURE_MODEL_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.set_model_type
 
     Change the active solar radiation pressure model type.
 
     :Parameters:
 
-    **sRPModel** : :obj:`~SOLAR_RADIATION_PRESSURE_MODEL_TYPE`
+    **srp_model** : :obj:`~SOLAR_RADIATION_PRESSURE_MODEL_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_model_type_supported(self, sRPModel: SOLAR_RADIATION_PRESSURE_MODEL_TYPE) -> bool
+.. py:method:: is_model_type_supported(self, srp_model: SOLAR_RADIATION_PRESSURE_MODEL_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.is_model_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **sRPModel** : :obj:`~SOLAR_RADIATION_PRESSURE_MODEL_TYPE`
+    **srp_model** : :obj:`~SOLAR_RADIATION_PRESSURE_MODEL_TYPE`
 
     :Returns:
 

@@ -196,7 +196,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_altitude(self, enable: bool, altitudeRate: float) -> None
+.. py:method:: set_stop_altitude(self, enable: bool, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_altitude
 
     Set whether to enable the altitude stopping condition and the corresponding value.
@@ -204,7 +204,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **altitudeRate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
@@ -212,7 +212,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_altitude_rate(self, enable: bool, altitudeRate: float) -> None
+.. py:method:: set_stop_altitude_rate(self, enable: bool, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_altitude_rate
 
     Set whether to enable the altitude rate stopping condition and the corresponding value.
@@ -220,7 +220,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **altitudeRate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
@@ -229,7 +229,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_airspeed(self, enable: bool, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_airspeed
 
     Set whether to enable the airspeed stopping condition and the corresponding value.
@@ -237,7 +237,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

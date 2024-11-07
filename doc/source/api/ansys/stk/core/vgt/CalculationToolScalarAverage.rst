@@ -167,15 +167,15 @@ Method detail
 
 
 
-.. py:method:: set_offsets(self, startOffset: float, stopOffset: float) -> None
+.. py:method:: set_offsets(self, start_offset: float, stop_offset: float) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarAverage.set_offsets
 
     Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window.
 
     :Parameters:
 
-    **startOffset** : :obj:`~float`
-    **stopOffset** : :obj:`~float`
+    **start_offset** : :obj:`~float`
+    **stop_offset** : :obj:`~float`
 
     :Returns:
 

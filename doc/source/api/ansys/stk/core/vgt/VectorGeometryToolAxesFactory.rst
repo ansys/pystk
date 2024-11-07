@@ -57,16 +57,16 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, axesName: str, description: str, axesType: AXES_TYPE) -> IVectorGeometryToolAxes
+.. py:method:: create(self, axes_name: str, description: str, axes_type: AXES_TYPE) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFactory.create
 
     Create a VGT axes using specified name, description and type.
 
     :Parameters:
 
-    **axesName** : :obj:`~str`
+    **axes_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **axesType** : :obj:`~AXES_TYPE`
+    **axes_type** : :obj:`~AXES_TYPE`
 
     :Returns:
 
@@ -86,16 +86,16 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: create_plugin_from_display_name(self, axesName: str, description: str, displayName: str) -> IVectorGeometryToolAxes
+.. py:method:: create_plugin_from_display_name(self, axes_name: str, description: str, display_name: str) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFactory.create_plugin_from_display_name
 
     Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see.
 
     :Parameters:
 
-    **axesName** : :obj:`~str`
+    **axes_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **displayName** : :obj:`~str`
+    **display_name** : :obj:`~str`
 
     :Returns:
 

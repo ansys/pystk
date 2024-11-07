@@ -36,12 +36,12 @@ DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 class AsyncioTimerManager(object):
     """Provide timer support for animation in jupyter notebooks."""
     class TimerInfo(object):
-        def __init__(self, id, milliseconds, TIMERPROC, callbackData):
+        def __init__(self, id, milliseconds, timer_proc, callback_data):
             """Construct an object of type TimerInfo."""
             self.id = id
             self.interval = milliseconds/1000
-            self.callback = TIMERPROC
-            self.callback_data = callbackData
+            self.callback = timer_proc
+            self.callback_data = callback_data
             self._reset()
 
         def _reset(self):
@@ -80,17 +80,17 @@ class AsyncioTimerManager(object):
     def terminate(self):
         self._timers.clear()
 
-    def __install_timer(self, milliseconds, TIMERPROC, callbackData):
+    def __install_timer(self, milliseconds, timer_proc, callback_data):
         id = self._next_id
         self._next_id = id + 1
         self._timers[id] = AsyncioTimerManager.TimerInfo(
-            id, milliseconds, TIMERPROC, callbackData)
+            id, milliseconds, timer_proc, callback_data)
         self._set_alarm_for_next_timer_proc()
         return id
 
-    def __delete_timer(self, timerID, callbackData):
-        if timerID in self._timers:
-            del(self._timers[timerID])
+    def __delete_timer(self, timer_id, callback_data):
+        if timer_id in self._timers:
+            del(self._timers[timer_id])
         return 0
 
     def _fire_timers(self):
@@ -176,14 +176,14 @@ class RemoteFrameBufferHost(object):
         )
         self.__dict__['_pUnk'] = pointer(self._vtable)
 
-    def _add_ref(self, pThis: PVOID) -> int:
+    def _add_ref(self, this: PVOID) -> int:
         return 1
 
-    def _release(self, pThis: PVOID) -> int:
+    def _release(self, this: PVOID) -> int:
         return 0
 
     def _query_interface(self,
-                        pThis: PVOID,
+                        this: PVOID,
                         riid: REFIID,
                         ppvObject: POINTER(PVOID)) -> int:
         iid = riid.contents
@@ -197,7 +197,7 @@ class RemoteFrameBufferHost(object):
             ppvObject[0] = 0
             return E_NOINTERFACE
 
-    def _refresh(self, pThis: PVOID) -> None:
+    def _refresh(self, this: PVOID) -> None:
         self.owner.request_draw()
 
 

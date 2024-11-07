@@ -104,14 +104,14 @@ Method detail
 
 
 
-.. py:method:: set_image_file(self, markerFile: str) -> None
+.. py:method:: set_image_file(self, marker_file: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.set_image_file
 
     Set a file name of the image used for the waypoint.
 
     :Parameters:
 
-    **markerFile** : :obj:`~str`
+    **marker_file** : :obj:`~str`
 
     :Returns:
 

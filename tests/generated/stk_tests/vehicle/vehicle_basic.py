@@ -5103,7 +5103,7 @@ class PropagatorHPOPHelper(object):
                 oInterpolation.order = 321
             # VOPmu
             with pytest.raises(Exception):
-                oInterpolation.graphics_3d_vop_mu_value = 12.34
+                oInterpolation.vop_mu = 12.34
             # Method (LAGRANGE)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5117,7 +5117,7 @@ class PropagatorHPOPHelper(object):
                 oInterpolation.order = 321
             # VOPmu
             with pytest.raises(Exception):
-                oInterpolation.graphics_3d_vop_mu_value = 12.34
+                oInterpolation.vop_mu = 12.34
             # Method (VOP)
             oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.VOP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
@@ -5131,27 +5131,27 @@ class PropagatorHPOPHelper(object):
         with pytest.raises(Exception):
             oInterpolation.order = 321
         # VOPmu
-        self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.graphics_3d_vop_mu_value)
+        self.m_logger.WriteLine6("\t\tThe current VOPmu is: {0}", oInterpolation.vop_mu)
         if self.m_EarthGravModel == TestBase.GravModel.EGM2008:
-            oInterpolation.graphics_3d_vop_mu_value = 199300220750000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_vop_mu_value)
-            Assert.assertEqual(199300220750000, oInterpolation.graphics_3d_vop_mu_value)
-            oInterpolation.graphics_3d_vop_mu_value = 797200883000000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_vop_mu_value)
-            Assert.assertEqual(797200883000000, oInterpolation.graphics_3d_vop_mu_value)
+            oInterpolation.vop_mu = 199300220750000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.vop_mu)
+            Assert.assertEqual(199300220750000, oInterpolation.vop_mu)
+            oInterpolation.vop_mu = 797200883000000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.vop_mu)
+            Assert.assertEqual(797200883000000, oInterpolation.vop_mu)
 
         else:
-            oInterpolation.graphics_3d_vop_mu_value = 199300220900000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_vop_mu_value)
-            Assert.assertEqual(199300220900000, oInterpolation.graphics_3d_vop_mu_value)
-            oInterpolation.graphics_3d_vop_mu_value = 797200883600000
-            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.graphics_3d_vop_mu_value)
-            Assert.assertEqual(797200883600000, oInterpolation.graphics_3d_vop_mu_value)
+            oInterpolation.vop_mu = 199300220900000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.vop_mu)
+            Assert.assertEqual(199300220900000, oInterpolation.vop_mu)
+            oInterpolation.vop_mu = 797200883600000
+            self.m_logger.WriteLine6("\t\tThe new VOPmu is: {0}", oInterpolation.vop_mu)
+            Assert.assertEqual(797200883600000, oInterpolation.vop_mu)
 
         with pytest.raises(Exception):
-            oInterpolation.graphics_3d_vop_mu_value = 199300220749999
+            oInterpolation.vop_mu = 199300220749999
         with pytest.raises(Exception):
-            oInterpolation.graphics_3d_vop_mu_value = 797200883600001
+            oInterpolation.vop_mu = 797200883600001
 
     # endregion
 

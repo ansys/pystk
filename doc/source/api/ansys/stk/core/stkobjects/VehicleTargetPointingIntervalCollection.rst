@@ -104,15 +104,15 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, startTime: typing.Any, stopTime: typing.Any) -> AttitudeScheduleTimesElement
+.. py:method:: add(self, start_time: typing.Any, stop_time: typing.Any) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add
 
     Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 

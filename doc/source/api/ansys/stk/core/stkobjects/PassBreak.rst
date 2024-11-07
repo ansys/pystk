@@ -108,14 +108,14 @@ Method detail
 
 
 
-.. py:method:: set_pass_numbering_type(self, passNumbering: VEHICLE_PASS_NUMBERING) -> None
+.. py:method:: set_pass_numbering_type(self, pass_numbering: VEHICLE_PASS_NUMBERING) -> None
     :canonical: ansys.stk.core.stkobjects.PassBreak.set_pass_numbering_type
 
     Set the pass number corresponding to the initial conditions of the satellite.
 
     :Parameters:
 
-    **passNumbering** : :obj:`~VEHICLE_PASS_NUMBERING`
+    **pass_numbering** : :obj:`~VEHICLE_PASS_NUMBERING`
 
     :Returns:
 

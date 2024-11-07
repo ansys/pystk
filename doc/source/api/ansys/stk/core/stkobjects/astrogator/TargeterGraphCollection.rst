@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> TargeterGraph
+.. py:method:: item(self, index_or_name: typing.Any) -> TargeterGraph
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -109,28 +109,28 @@ Method detail
 
         :obj:`~TargeterGraph`
 
-.. py:method:: remove_graph(self, indexOrName: typing.Any) -> None
+.. py:method:: remove_graph(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.remove_graph
 
     Remove a targeter graph.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.cut
 
     Copy a targeter graph to the clipboard and removes the targeter graph from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

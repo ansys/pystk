@@ -136,14 +136,14 @@ Method detail
 
 
 
-.. py:method:: set_density_scaling(self, useScaling: bool, exponent: float) -> None
+.. py:method:: set_density_scaling(self, use_scaling: bool, exponent: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.set_density_scaling
 
     Set the option to use density scaling and set the density ratio exponent.
 
     :Parameters:
 
-    **useScaling** : :obj:`~bool`
+    **use_scaling** : :obj:`~bool`
     **exponent** : :obj:`~float`
 
     :Returns:

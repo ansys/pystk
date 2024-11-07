@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, planeName: str) -> None
+.. py:method:: remove(self, plane_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup.remove
 
     Remove a specified Plane.
 
     :Parameters:
 
-    **planeName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolPlane
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolPlane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup.item
 
     Return an Plane by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

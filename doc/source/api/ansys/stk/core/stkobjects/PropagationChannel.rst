@@ -234,14 +234,14 @@ Method detail
 
 
 
-.. py:method:: set_atmospheric_absorption_model(self, modelName: str) -> None
+.. py:method:: set_atmospheric_absorption_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_atmospheric_absorption_model
 
     Set the atmospheric absorption model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -251,14 +251,14 @@ Method detail
 
 
 
-.. py:method:: set_rain_loss_model(self, modelName: str) -> None
+.. py:method:: set_rain_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_rain_loss_model
 
     Set the rain loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -273,14 +273,14 @@ Method detail
 
 
 
-.. py:method:: set_urban_terrestrial_loss_model(self, modelName: str) -> None
+.. py:method:: set_urban_terrestrial_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_urban_terrestrial_loss_model
 
     Set the urban/terrestrial loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -288,14 +288,14 @@ Method detail
 
 
 
-.. py:method:: set_clouds_and_fog_fading_loss_model(self, modelName: str) -> None
+.. py:method:: set_clouds_and_fog_fading_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_clouds_and_fog_fading_loss_model
 
     Set the CloudsAndFogFading loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -303,14 +303,14 @@ Method detail
 
 
 
-.. py:method:: set_tropospheric_scintillation_fading_loss_model(self, modelName: str) -> None
+.. py:method:: set_tropospheric_scintillation_fading_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_tropospheric_scintillation_fading_loss_model
 
     Set the Tropospheric Scintillation Fading loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -318,14 +318,14 @@ Method detail
 
 
 
-.. py:method:: set_ionospheric_fading_loss_model(self, modelName: str) -> None
+.. py:method:: set_ionospheric_fading_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.PropagationChannel.set_ionospheric_fading_loss_model
 
     Set the Ionospheric Fading loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventIntervalName: str) -> None
+.. py:method:: remove(self, event_interval_name: str) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalGroup.remove
 
     Remove an element by name.
 
     :Parameters:
 
-    **eventIntervalName** : :obj:`~str`
+    **event_interval_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ITimeToolTimeInterval
+.. py:method:: item(self, index_or_name: typing.Any) -> ITimeToolTimeInterval
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalGroup.item
 
     Return an element by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -174,15 +174,15 @@ Method detail
 
 
 
-.. py:method:: specify_access_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: specify_access_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Access.specify_access_time_period
 
     If eUserSpec is selected for AccessTimePeriod, specify the start and stop times for the user-defined period.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -191,14 +191,14 @@ Method detail
 
 
 
-.. py:method:: specify_access_intervals(self, accessIntervals: list) -> None
+.. py:method:: specify_access_intervals(self, access_intervals: list) -> None
     :canonical: ansys.stk.core.stkobjects.Access.specify_access_intervals
 
     Allow a list of intervals to be used for the access calculation.
 
     :Parameters:
 
-    **accessIntervals** : :obj:`~list`
+    **access_intervals** : :obj:`~list`
 
     :Returns:
 
@@ -206,14 +206,14 @@ Method detail
 
 
 
-.. py:method:: specify_access_event_intervals(self, pEventIntervalList: ITimeToolTimeIntervalList) -> None
+.. py:method:: specify_access_event_intervals(self, event_interval_list: ITimeToolTimeIntervalList) -> None
     :canonical: ansys.stk.core.stkobjects.Access.specify_access_event_intervals
 
     Access is computed using the intervals in the specified event interval list.
 
     :Parameters:
 
-    **pEventIntervalList** : :obj:`~ITimeToolTimeIntervalList`
+    **event_interval_list** : :obj:`~ITimeToolTimeIntervalList`
 
     :Returns:
 

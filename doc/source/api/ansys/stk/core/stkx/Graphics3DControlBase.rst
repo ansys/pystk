@@ -238,14 +238,14 @@ Method detail
 
 
 
-.. py:method:: picture_put_reference(self, pPicture: IPictureDisp) -> None
+.. py:method:: picture_put_reference(self, picture: IPictureDisp) -> None
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.picture_put_reference
 
     Set a reference to the splash logo graphic to be displayed in the control.
 
     :Parameters:
 
-    **pPicture** : :obj:`~IPictureDisp`
+    **picture** : :obj:`~IPictureDisp`
 
     :Returns:
 
@@ -308,27 +308,27 @@ Method detail
 
 
 
-.. py:method:: copy_from_window_id(self, winID: int) -> None
+.. py:method:: copy_from_window_id(self, win_id: int) -> None
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.copy_from_window_id
 
     Copy an existing Window's scene into this control.
 
     :Parameters:
 
-    **winID** : :obj:`~int`
+    **win_id** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: start_object_editing(self, objEditPath: str) -> None
+.. py:method:: start_object_editing(self, obj_edit_path: str) -> None
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.start_object_editing
 
     Enters into 3D object editing mode.
 
     :Parameters:
 
-    **objEditPath** : :obj:`~str`
+    **obj_edit_path** : :obj:`~str`
 
     :Returns:
 
@@ -358,14 +358,14 @@ Method detail
 
 
 
-.. py:method:: set_mouse_cursor_from_file(self, cursorFileName: str) -> None
+.. py:method:: set_mouse_cursor_from_file(self, cursor_file_name: str) -> None
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.set_mouse_cursor_from_file
 
     Set mouse cursor to the selected cursor file.
 
     :Parameters:
 
-    **cursorFileName** : :obj:`~str`
+    **cursor_file_name** : :obj:`~str`
 
     :Returns:
 
@@ -380,14 +380,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_mouse_cursor_from_handle(self, cursorHandle: int) -> None
+.. py:method:: set_mouse_cursor_from_handle(self, cursor_handle: int) -> None
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.set_mouse_cursor_from_handle
 
     Set mouse cursor to the passed cursor handle.
 
     :Parameters:
 
-    **cursorHandle** : :obj:`~int`
+    **cursor_handle** : :obj:`~int`
 
     :Returns:
 

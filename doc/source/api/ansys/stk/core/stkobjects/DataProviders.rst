@@ -68,28 +68,28 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> IDataProviderInfo
     :canonical: ansys.stk.core.stkobjects.DataProviders.item
 
     Given an index, returns an element in the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IDataProviderInfo`
 
 
-.. py:method:: contains(self, dataProviderName: str) -> bool
+.. py:method:: contains(self, data_provider_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviders.contains
 
     Determine whether the collection contains a specific data provider.
 
     :Parameters:
 
-    **dataProviderName** : :obj:`~str`
+    **data_provider_name** : :obj:`~str`
 
     :Returns:
 

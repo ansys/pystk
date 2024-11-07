@@ -42,19 +42,19 @@ Method detail
 .. py:method:: create_container(self, progid)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.create_container
 
-.. py:method:: attach_container(self, pContainer, winid, display)
+.. py:method:: attach_container(self, container, winid, display)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.attach_container
 
-.. py:method:: resize_container(self, pContainer, x, y, width, height)
+.. py:method:: resize_container(self, container, x, y, width, height)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.resize_container
 
-.. py:method:: get_unknown(self, pContainer)
+.. py:method:: get_unknown(self, container)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.get_unknown
 
-.. py:method:: detach_container(self, pContainer)
+.. py:method:: detach_container(self, container)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.detach_container
 
-.. py:method:: release_container(self, pContainer)
+.. py:method:: release_container(self, container)
     :canonical: ansys.stk.core.stkengine.tkcontrols.NativeContainerMethods.release_container
 
 

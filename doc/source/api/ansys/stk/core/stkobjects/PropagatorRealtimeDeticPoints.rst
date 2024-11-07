@@ -57,7 +57,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, time: typing.Any, lat: float, lon: float, alt: float, latRate: float, lonRate: float, altRate: float) -> None
+.. py:method:: add(self, time: typing.Any, lat: float, lon: float, alt: float, lat_rate: float, lon_rate: float, alt_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtimeDeticPoints.add
 
     Add an ephemeris point using position and velocity. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension.
@@ -68,9 +68,9 @@ Method detail
     **lat** : :obj:`~float`
     **lon** : :obj:`~float`
     **alt** : :obj:`~float`
-    **latRate** : :obj:`~float`
-    **lonRate** : :obj:`~float`
-    **altRate** : :obj:`~float`
+    **lat_rate** : :obj:`~float`
+    **lon_rate** : :obj:`~float`
+    **alt_rate** : :obj:`~float`
 
     :Returns:
 
@@ -92,7 +92,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_batch(self, times: list, lats: list, lons: list, alts: list, latRates: list, lonRates: list, altRates: list) -> None
+.. py:method:: add_batch(self, times: list, lats: list, lons: list, alts: list, lat_rates: list, lon_rates: list, alt_rates: list) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtimeDeticPoints.add_batch
 
     Add data points with velocity information.
@@ -103,9 +103,9 @@ Method detail
     **lats** : :obj:`~list`
     **lons** : :obj:`~list`
     **alts** : :obj:`~list`
-    **latRates** : :obj:`~list`
-    **lonRates** : :obj:`~list`
-    **altRates** : :obj:`~list`
+    **lat_rates** : :obj:`~list`
+    **lon_rates** : :obj:`~list`
+    **alt_rates** : :obj:`~list`
 
     :Returns:
 

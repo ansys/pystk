@@ -77,14 +77,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> Thruster
+.. py:method:: item(self, index_or_name: typing.Any) -> Thruster
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.item
 
     Iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -92,27 +92,27 @@ Method detail
 
 
 
-.. py:method:: add(self, thrusterName: str) -> Thruster
+.. py:method:: add(self, thruster_name: str) -> Thruster
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.add
 
     Add a new thruster.
 
     :Parameters:
 
-    **thrusterName** : :obj:`~str`
+    **thruster_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~Thruster`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.remove
 
     Remove a specified thruster.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -127,14 +127,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSetCollection.cut
 
     Copy a thruster to the clipboard and removes the thruster from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

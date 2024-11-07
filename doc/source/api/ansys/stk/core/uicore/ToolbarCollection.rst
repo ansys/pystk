@@ -67,14 +67,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption: typing.Any) -> Toolbar
+.. py:method:: item(self, index_or_caption: typing.Any) -> Toolbar
     :canonical: ansys.stk.core.uicore.ToolbarCollection.item
 
     Retrieve a toolbar object.
 
     :Parameters:
 
-    **indexOrCaption** : :obj:`~typing.Any`
+    **index_or_caption** : :obj:`~typing.Any`
 
     :Returns:
 

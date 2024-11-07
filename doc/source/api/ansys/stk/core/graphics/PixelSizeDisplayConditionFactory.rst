@@ -46,15 +46,15 @@ Method detail
 
         :obj:`~PixelSizeDisplayCondition`
 
-.. py:method:: initialize_with_pixel_sizes(self, minimumPixelSize: int, maximumPixelSize: int) -> PixelSizeDisplayCondition
+.. py:method:: initialize_with_pixel_sizes(self, minimum_pixel_size: int, maximum_pixel_size: int) -> PixelSizeDisplayCondition
     :canonical: ansys.stk.core.graphics.PixelSizeDisplayConditionFactory.initialize_with_pixel_sizes
 
     Initialize a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]...
 
     :Parameters:
 
-    **minimumPixelSize** : :obj:`~int`
-    **maximumPixelSize** : :obj:`~int`
+    **minimum_pixel_size** : :obj:`~int`
+    **maximum_pixel_size** : :obj:`~int`
 
     :Returns:
 

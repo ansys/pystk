@@ -91,14 +91,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: contains(self, centralName: str) -> bool
+.. py:method:: contains(self, central_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.contains
 
     Search for a central body with a given name. Returns false if the specified element does not exist.
 
     :Parameters:
 
-    **centralName** : :obj:`~str`
+    **central_name** : :obj:`~str`
 
     :Returns:
 
@@ -108,14 +108,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> CentralBody
+.. py:method:: item(self, index_or_name: typing.Any) -> CentralBody
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.item
 
     Return a central body by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -135,14 +135,14 @@ Method detail
 
         :obj:`~CentralBody`
 
-.. py:method:: get_item_by_name(self, cbName: str) -> CentralBody
+.. py:method:: get_item_by_name(self, cb_name: str) -> CentralBody
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.get_item_by_name
 
     Retrieve a central body from the collection by name.
 
     :Parameters:
 
-    **cbName** : :obj:`~str`
+    **cb_name** : :obj:`~str`
 
     :Returns:
 

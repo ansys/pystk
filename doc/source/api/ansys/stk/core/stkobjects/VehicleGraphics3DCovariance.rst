@@ -100,27 +100,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_sigma_scale_type(self, sigmaScale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> None
+.. py:method:: set_sigma_scale_type(self, sigma_scale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.set_sigma_scale_type
 
     Set the sigma scale type.
 
     :Parameters:
 
-    **sigmaScale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+    **sigma_scale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_sigma_scale_type_supported(self, sigmaScale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> bool
+.. py:method:: is_sigma_scale_type_supported(self, sigma_scale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.is_sigma_scale_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **sigmaScale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+    **sigma_scale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
 
     :Returns:
 

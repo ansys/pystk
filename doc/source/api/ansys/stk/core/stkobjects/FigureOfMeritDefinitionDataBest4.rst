@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: is_best_4_metric_supported(self, best4Metric: FIGURE_OF_MERIT_METHOD) -> bool
+.. py:method:: is_best_4_metric_supported(self, best_4_metric: FIGURE_OF_MERIT_METHOD) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best_4_metric_supported
 
     Is the type of Best 4 metric supported?
 
     :Parameters:
 
-    **best4Metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **best_4_metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
 
     :Returns:
 

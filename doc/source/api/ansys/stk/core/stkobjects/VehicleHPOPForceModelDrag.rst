@@ -134,14 +134,14 @@ Method detail
 
 
 
-.. py:method:: set_solar_flux_geo_magnitude_type(self, solarFluxGeoMag: VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE) -> None
+.. py:method:: set_solar_flux_geo_magnitude_type(self, solar_flux_geo_mag: VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.set_solar_flux_geo_magnitude_type
 
     Set the method for specifying solar and geomagnetic flux.
 
     :Parameters:
 
-    **solarFluxGeoMag** : :obj:`~VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE`
+    **solar_flux_geo_mag** : :obj:`~VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE`
 
     :Returns:
 
@@ -149,27 +149,27 @@ Method detail
 
 
 
-.. py:method:: set_drag_model_type(self, dragModel: DRAG_MODEL) -> None
+.. py:method:: set_drag_model_type(self, drag_model: DRAG_MODEL) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.set_drag_model_type
 
     Change the active drag model type.
 
     :Parameters:
 
-    **dragModel** : :obj:`~DRAG_MODEL`
+    **drag_model** : :obj:`~DRAG_MODEL`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_drag_model_type_supported(self, dragModel: DRAG_MODEL) -> bool
+.. py:method:: is_drag_model_type_supported(self, drag_model: DRAG_MODEL) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.is_drag_model_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **dragModel** : :obj:`~DRAG_MODEL`
+    **drag_model** : :obj:`~DRAG_MODEL`
 
     :Returns:
 

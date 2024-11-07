@@ -57,11 +57,11 @@ class STKEngineApplication(STKXApplication):
         self.__dict__["_initialized"] = False
         self.__dict__["_grpc_exceptions"] = True
 
-    def _private_init(self, pUnk:IUnknown, noGraphics):
+    def _private_init(self, pUnk:IUnknown, no_graphics):
         STKXApplication._private_init(self, pUnk)
         if os.name!="nt":
             self._stkx_intialize()
-        self._stkx_intialize_timer(noGraphics)
+        self._stkx_intialize_timer(no_graphics)
         self.__dict__["_initialized"] = True
         
     def __del__(self):
@@ -109,11 +109,11 @@ class STKEngineApplication(STKXApplication):
     def _user_override_timer_type(self) -> bool:
         return ("STK_PYTHONAPI_TIMERTYPE" in os.environ)
                 
-    def _stkx_intialize_timer(self, noGraphics):
+    def _stkx_intialize_timer(self, no_graphics):
         if os.name=="nt":
             #Timers are not implemented on Windows, use a placeholder.
             self.__dict__["_timer_impl"] = NullTimer()
-        elif noGraphics:
+        elif no_graphics:
             self._set_timer_type_from_env()
         else:
             #default to Tkinter mainloop in graphics applications, but allow the user to override
@@ -188,8 +188,8 @@ class STKEngine(object):
     _is_engine_running = False
             
     @staticmethod
-    def _init_x11(noGraphics):
-        if noGraphics or os.name=="nt":
+    def _init_x11(no_graphics):
+        if no_graphics or os.name=="nt":
             return
         try:
             x11lib = cdll.LoadLibrary(find_library("X11"))
@@ -199,7 +199,7 @@ class STKEngine(object):
             raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
             
     @staticmethod
-    def start_application(noGraphics:bool=True) -> STKEngineApplication:
+    def start_application(no_graphics:bool=True) -> STKEngineApplication:
         """
         Initialize STK Engine in-process and return the instance.
 
@@ -215,10 +215,10 @@ class STKEngine(object):
             if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
                 pUnk.take_ownership(isApplication=True)
                 STKEngine._is_engine_running = True
-                STKEngine._init_x11(noGraphics)
+                STKEngine._init_x11(no_graphics)
                 engine = STKEngineApplication()
-                engine._private_init(pUnk, noGraphics)
-                engine.no_graphics = noGraphics
+                engine._private_init(pUnk, no_graphics)
+                engine.no_graphics = no_graphics
                 atexit.register(engine.shutdown)
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")

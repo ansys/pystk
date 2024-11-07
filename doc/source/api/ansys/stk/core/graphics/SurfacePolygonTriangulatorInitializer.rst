@@ -45,59 +45,59 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute(self, centralBody: str, positions: list) -> SurfaceTriangulatorResult
+.. py:method:: compute(self, central_body: str, positions: list) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute
 
     Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions. This is equivalent to calling Compute with an altitude of 0, a granularity of 1 degree, and a positionsWindingOrder of compute.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
 
     :Returns:
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_cartographic(self, centralBody: str, positions: list) -> SurfaceTriangulatorResult
+.. py:method:: compute_cartographic(self, central_body: str, positions: list) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_cartographic
 
     For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
 
     :Returns:
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_with_hole(self, centralBody: str, positions: list, holePositions: list) -> SurfaceTriangulatorResult
+.. py:method:: compute_with_hole(self, central_body: str, positions: list, hole_positions: list) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_with_hole
 
     Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions. This is equivalent to calling Compute with an altitude of 0 and a granularity of 1 degree.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
-    **holePositions** : :obj:`~list`
+    **hole_positions** : :obj:`~list`
 
     :Returns:
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_with_hole_altitude_and_granularity(self, centralBody: str, positions: list, holePositions: list, altitude: float, granularity: float) -> SurfaceTriangulatorResult
+.. py:method:: compute_with_hole_altitude_and_granularity(self, central_body: str, positions: list, hole_positions: list, altitude: float, granularity: float) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_with_hole_altitude_and_granularity
 
     Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions with a hole specified by holePositions.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
-    **holePositions** : :obj:`~list`
+    **hole_positions** : :obj:`~list`
     **altitude** : :obj:`~float`
     **granularity** : :obj:`~float`
 
@@ -105,35 +105,35 @@ Method detail
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_with_altitude_and_granularity(self, centralBody: str, positions: list, altitude: float, granularity: float, positionsWindingOrder: WINDING_ORDER) -> SurfaceTriangulatorResult
+.. py:method:: compute_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WINDING_ORDER) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_with_altitude_and_granularity
 
     Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
     **granularity** : :obj:`~float`
-    **positionsWindingOrder** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WINDING_ORDER`
 
     :Returns:
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_cartographic_with_altitude_and_granularity(self, centralBody: str, positions: list, altitude: float, granularity: float, positionsWindingOrder: WINDING_ORDER) -> SurfaceTriangulatorResult
+.. py:method:: compute_cartographic_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WINDING_ORDER) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_cartographic_with_altitude_and_granularity
 
     For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
     **granularity** : :obj:`~float`
-    **positionsWindingOrder** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WINDING_ORDER`
 
     :Returns:
 

@@ -79,14 +79,14 @@ Method detail
 
 
 
-.. py:method:: convert_to_unit(self, unitAbbrv: str) -> None
+.. py:method:: convert_to_unit(self, unit_abbrv: str) -> None
     :canonical: ansys.stk.core.stkutil.Quantity.convert_to_unit
 
     Change the value in this quantity to the specified unit.
 
     :Parameters:
 
-    **unitAbbrv** : :obj:`~str`
+    **unit_abbrv** : :obj:`~str`
 
     :Returns:
 

@@ -54,14 +54,14 @@ Method detail
 
         :obj:`~DataProviderResultStatisticResult`
 
-.. py:method:: compute_time_varying_extremum(self, timeVarExtremum: TIME_VARYING_EXTREMUM) -> DataProviderResultTimeVaryingExtremumResult
+.. py:method:: compute_time_varying_extremum(self, time_var_extremum: TIME_VARYING_EXTREMUM) -> DataProviderResultTimeVaryingExtremumResult
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.compute_time_varying_extremum
 
     Compute the requested time varying extremum for the data set.
 
     :Parameters:
 
-    **timeVarExtremum** : :obj:`~TIME_VARYING_EXTREMUM`
+    **time_var_extremum** : :obj:`~TIME_VARYING_EXTREMUM`
 
     :Returns:
 
@@ -80,14 +80,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: is_time_varying_extremum_available(self, timeVarExtremum: TIME_VARYING_EXTREMUM) -> bool
+.. py:method:: is_time_varying_extremum_available(self, time_var_extremum: TIME_VARYING_EXTREMUM) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.is_time_varying_extremum_available
 
     Is the supplied time varying extremum available for the data?
 
     :Parameters:
 
-    **timeVarExtremum** : :obj:`~TIME_VARYING_EXTREMUM`
+    **time_var_extremum** : :obj:`~TIME_VARYING_EXTREMUM`
 
     :Returns:
 

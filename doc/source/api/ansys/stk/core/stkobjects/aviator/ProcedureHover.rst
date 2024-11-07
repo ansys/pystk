@@ -189,20 +189,20 @@ Method detail
 
 
 
-.. py:method:: set_relative_course(self, headingChange: typing.Any) -> None
+.. py:method:: set_relative_course(self, heading_change: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.set_relative_course
 
     Set the relative heading change.
 
     :Parameters:
 
-    **headingChange** : :obj:`~typing.Any`
+    **heading_change** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_absolute_course(self, course: typing.Any, isMagnetic: bool) -> None
+.. py:method:: set_absolute_course(self, course: typing.Any, is_magnetic: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.set_absolute_course
 
     Set the absolute heading and reference.
@@ -210,7 +210,7 @@ Method detail
     :Parameters:
 
     **course** : :obj:`~typing.Any`
-    **isMagnetic** : :obj:`~bool`
+    **is_magnetic** : :obj:`~bool`
 
     :Returns:
 

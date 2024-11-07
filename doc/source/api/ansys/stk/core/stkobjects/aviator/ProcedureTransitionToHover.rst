@@ -130,7 +130,7 @@ Method detail
 
 
 
-.. py:method:: set_transition_course(self, course: typing.Any, useMagneticCourse: bool) -> None
+.. py:method:: set_transition_course(self, course: typing.Any, use_magnetic_course: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.set_transition_course
 
     Set the course and heading reference.
@@ -138,7 +138,7 @@ Method detail
     :Parameters:
 
     **course** : :obj:`~typing.Any`
-    **useMagneticCourse** : :obj:`~bool`
+    **use_magnetic_course** : :obj:`~bool`
 
     :Returns:
 

@@ -85,14 +85,14 @@ Method detail
 
 
 
-.. py:method:: get_transformation_value(self, lOD: int, articulation: str, trans: str) -> float
+.. py:method:: get_transformation_value(self, level_of_detail: int, articulation: str, trans: str) -> float
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModelArticulation.get_transformation_value
 
     Get the Transformation Value given the LOD (level of detail), articulation name and the transformation name.
 
     :Parameters:
 
-    **lOD** : :obj:`~int`
+    **level_of_detail** : :obj:`~int`
     **articulation** : :obj:`~str`
     **trans** : :obj:`~str`
 
@@ -100,44 +100,44 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: set_transformation_value(self, lOD: int, articulation: str, trans: str, transVal: float) -> None
+.. py:method:: set_transformation_value(self, level_of_detail: int, articulation: str, trans: str, transformation_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModelArticulation.set_transformation_value
 
     Set the Transformation Value given the LOD and articulation name.
 
     :Parameters:
 
-    **lOD** : :obj:`~int`
+    **level_of_detail** : :obj:`~int`
     **articulation** : :obj:`~str`
     **trans** : :obj:`~str`
-    **transVal** : :obj:`~float`
+    **transformation_value** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_available_articulations(self, lOD: int) -> list
+.. py:method:: get_available_articulations(self, level_of_detail: int) -> list
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModelArticulation.get_available_articulations
 
     Get the available articulations.
 
     :Parameters:
 
-    **lOD** : :obj:`~int`
+    **level_of_detail** : :obj:`~int`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: get_available_transformations(self, lOD: int, articName: str) -> Graphics3DModelTransformationCollection
+.. py:method:: get_available_transformations(self, level_of_detail: int, artic_name: str) -> Graphics3DModelTransformationCollection
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModelArticulation.get_available_transformations
 
     Get the available transformations.
 
     :Parameters:
 
-    **lOD** : :obj:`~int`
-    **articName** : :obj:`~str`
+    **level_of_detail** : :obj:`~int`
+    **artic_name** : :obj:`~str`
 
     :Returns:
 

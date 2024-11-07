@@ -95,7 +95,7 @@ Method detail
 
 
 
-.. py:method:: set_thresholds_and_labels(self, thresholds: list, thresholdLabels: list) -> None
+.. py:method:: set_thresholds_and_labels(self, thresholds: list, threshold_labels: list) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetScalarThresholds.set_thresholds_and_labels
 
     Set thresholds and threshold labels.
@@ -103,7 +103,7 @@ Method detail
     :Parameters:
 
     **thresholds** : :obj:`~list`
-    **thresholdLabels** : :obj:`~list`
+    **threshold_labels** : :obj:`~list`
 
     :Returns:
 

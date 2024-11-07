@@ -75,40 +75,40 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, resultName: str) -> AsTriggerCondition
+.. py:method:: add(self, result_name: str) -> AsTriggerCondition
     :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.add
 
     Add a constraint to the collection.
 
     :Parameters:
 
-    **resultName** : :obj:`~str`
+    **result_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~AsTriggerCondition`
 
-.. py:method:: item(self, indexOrName: typing.Any) -> AsTriggerCondition
+.. py:method:: item(self, index_or_name: typing.Any) -> AsTriggerCondition
     :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.item
 
     Iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~AsTriggerCondition`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.remove
 
     Remove a specified constraint from the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -116,14 +116,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection.cut
 
     Copy the constraint into the clipboard and removes the constraint from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

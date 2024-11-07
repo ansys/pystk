@@ -175,14 +175,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_time_array_qualified_path(self, qualifiedPath: str) -> None
+.. py:method:: set_time_array_qualified_path(self, qualified_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_qualified_path
 
     Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
 
     :Parameters:
 
-    **qualifiedPath** : :obj:`~str`
+    **qualified_path** : :obj:`~str`
 
     :Returns:
 
