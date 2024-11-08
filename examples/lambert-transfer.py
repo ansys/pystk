@@ -21,13 +21,13 @@
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
