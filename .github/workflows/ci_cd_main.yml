@@ -56,8 +56,8 @@ jobs:
           cp -r gh-pages/version/dev/api doc/_build/html/api
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
           cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
-          # Copy landing page to include links to previous sections
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+          # Copy static search content
+          cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
 
       - name: "Upload combined artifacts"
         uses: actions/upload-artifact@v4
