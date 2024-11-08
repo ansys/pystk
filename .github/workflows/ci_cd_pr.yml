@@ -284,7 +284,6 @@ jobs:
         run: |
           cp gh-pages/version/dev/api.html doc/_build/html/api.html
           cp -r gh-pages/version/dev/api doc/_build/html/api
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Include 'Examples' section from nightly build docs"
         if: |
@@ -294,7 +293,14 @@ jobs:
           cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+
+      - name: "Include 'search.json' section from nightly build docs"
+        if: |
+          steps.build-doc-with-api.outcome == 'success' ||
+          steps.build-doc-with-examples.outcome == 'success' ||
+          steps.build-doc-minimum.outcome == 'success'
+        run:
+          cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
 
       - name: "Upload HTML documentation artifacts"
         uses: actions/upload-artifact@v4
