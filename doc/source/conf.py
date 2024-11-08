@@ -167,11 +167,11 @@ linkcheck_ignore = [
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
-    exclude_patterns.extend(["api.rst", "api/**"])
+    exclude_patterns.extend(["api/**"])
 
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
-    exclude_patterns.extend(["examples.rst", "examples/**"])
+    exclude_patterns.extend(["examples/**"])
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
@@ -557,25 +557,6 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
-def ignore_examples_and_api_refs(app, env, pending_xref, node):
-    """Ignore any references targeting to the examples and API sections.
-
-    Parameters
-    ----------
-    app : ~sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
-    env : ~sphinx.environment.BuildEnvironment
-        Environment used to build the documentation.
-    pending_xref : dict
-        Cross-reference information.
-    node : ~docutils.nodes.Node
-        Object representing the information in the documentation.
-
-    """
-    if pending_xref["reftarget"] in ["examples", "api reference"]:
-        raise NoUri
-
-
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -597,6 +578,3 @@ def setup(app: sphinx.application.Sphinx):
         app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
-
-    if not BUILD_EXAMPLES or not BUILD_API:
-        app.connect("missing-reference", ignore_examples_and_api_refs)
