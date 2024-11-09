@@ -1,8 +1,6 @@
 # # Porkchop plots
 #
 
-
-
 # # Launch STK
 
 # +
@@ -47,10 +45,7 @@ def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
     }
 
 
-# +
-from datetime import datetime
-
-def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: datetime, frame_name: str) -> tuple:
+def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: "Date", frame_name: str) -> tuple:
     """Compute the position and velocity vectors of an object in the desired reference frame.
 
     Parameters
@@ -68,60 +63,12 @@ def get_object_pos_vel_at_epoch(stk_object: "StkObject", epoch: datetime, frame_
         Tuple containing the position and velocity vectors as a list.
 
     """
-    epoch = epoch.strftime("%d %B %Y")
     state = {"Position": None, "Velocity": None}
     for path in state:
         data_provider = stk_object.data_providers.get_data_provider_time_varying_from_path(f"Cartesian {path}/{frame_name}")
-        data = from_data_result_to_dict(data_provider.execute_single_elements(epoch, ["x", "y", "z"]))
+        data = from_data_result_to_dict(data_provider.execute_single_elements(epoch.format("UTCG"), ["x", "y", "z"]))
         state[path] = [coord[0] for coord in data.values()]
     return tuple(state.values())
-
-
-# -
-
-def get_transfer_angle(r1, r2, prograde):
-    """
-    Solves for the transfer angle being known the sense of rotation.
-
-    Parameters
-    ----------
-    r1: np.array
-        Initial position vector.
-    r2: np.array
-        Final position vector.
-    prograde: bool
-        If True, it assumes prograde motion, otherwise assumes retrograde.
-
-    Returns
-    -------
-    dtheta: float
-        Transfer angle in radians.
-
-    """
-
-    # Check if both position vectors are collinear. If so, check if the transfer
-    # angle is 0 or pi.
-    if np.all(np.cross(r1, r2) == 0):
-        return 0 if np.all(np.sign(r1) == np.sign(r2)) else np.pi
-
-    # Solve for a unitary vector normal to the vector plane. Its direction and
-    # sense the one given by the cross product (right-hand) from r1 to r2.
-    h = cross(r1, r2) / norm(np.cross(r1, r2))
-
-    # Compute the projection of the normal vector onto the reference plane.
-    alpha = dot(np.array([0, 0, 1]), h)
-
-    # Get the minimum angle (0 <= dtheta <= pi) between r1 and r2.
-    r1_norm, r2_norm = [norm(vec) for vec in [r1, r2]]
-    theta0 = np.arccos(dot(r1, r2) / (r1_norm * r2_norm))
-
-    # Fix the value of theta if necessary
-    if prograde is True:
-        dtheta = theta0 if alpha > 0 else 2 * np.pi - theta0
-    else:
-        dtheta = theta0 if alpha < 0 else 2 * np.pi - theta0
-
-    return dtheta
 
 
 # +
@@ -139,12 +86,12 @@ def lambert_solver(
     arrival_body: "Planet",
     departure_date: datetime,
     arrival_date: datetime,
-    prograde: bool,
+    is_prograde: bool,
 ):
     # Compute the time of flight
-    time_of_flight = (arrival_date - departure_date).total_seconds()
+    time_of_flight = arrival_date.span(departure_date).value
     if time_of_flight <= 0:
-        return None, None
+        return None, None, None
     lambert.time_of_flight = time_of_flight
 
     # Compute the departure and arrival state vectors
@@ -155,7 +102,7 @@ def lambert_solver(
     r1_times_r2 = np.linalg.norm(departure_position) * np.linalg.norm(arrival_position)
     h0_z = (r1_cross_r2 / r1_times_r2)[-1]
 
-    if prograde is True:
+    if is_prograde:
         path = LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG if h0_z < 0 else LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
     else:
         path = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT if h0_z < 0 else LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
@@ -167,7 +114,7 @@ def lambert_solver(
     #print(f"Arrival velocity {arrival_velocity}")
 
     # Update the initial state of the satellite
-    initial_state.orbit_epoch = departure_date.strftime("%d %B %Y")
+    initial_state.orbit_epoch = departure_date.format("UTCG")
     initial_state.element.x = departure_position[0]
     initial_state.element.y = departure_position[1]
     initial_state.element.z = departure_position[2]
@@ -175,7 +122,7 @@ def lambert_solver(
     initial_state.element.vy = departure_velocity[1]
     initial_state.element.vz = departure_velocity[2]
     
-    # Declare the final state of the satellite
+    # Declare the final state of  satellite
     lambert.target_position_x = arrival_position[0] * 1000
     lambert.target_position_y = arrival_position[1] * 1000
     lambert.target_position_z = arrival_position[2] * 1000
@@ -198,11 +145,17 @@ def lambert_solver(
 # ## Generate the time span
 
 # +
-from datetime import datetime, timedelta
+def parse_datetime(date_str):
+    for fmt in ("%d %b %Y %H:%M:%S.%f", "%d %b %Y"):
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+    raise ValueError("Date string does not match expected formats.")
 
 
 def linspace_datetimes(start_date, end_date, num_dates=20):
-    start, end = [datetime.strptime(date, "%d %b %Y") for date in [start_date, end_date]]
+    start, end = [parse_datetime(date) for date in [start_date, end_date]]
     delta_seconds = (end - start).total_seconds() / num_dates
     return [start + i * timedelta(seconds=delta_seconds) for i in range(num_dates)]
 
@@ -216,7 +169,7 @@ from ansys.stk.core.stkobjects import PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_
 
 for name in ["Earth", "Mars"]:
     planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, name, "Sun")
-    planet.common_tasks.set_position_source_central_body(name, EPHEM_SOURCE_TYPE.DEFAULT)
+    planet.common_tasks.set_position_source_central_body(name, EPHEM_SOURCE_TYPE.SPICE)
 
 earth, mars = [scenario.children[object_name] for object_name in ["Earth", "Mars"]]
 # -
@@ -283,11 +236,24 @@ lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTIN
 lambert_transfer.continue_on_failure = False
 lambert_transfer.reset_inner_targeters = False
 
-# +
-num_dates = 75
 
-launch_span = linspace_datetimes("30 Apr 2005", "7 Oct 2005", num_dates)
-arrival_span = linspace_datetimes("16 Nov 2005", "21 Dec 2006", num_dates)
+# -
+
+def linspace_dates(first_date, last_date, num_dates):
+
+    total_seconds = last_date.span(first_date).value
+    delta_seconds = total_seconds / num_dates
+    return [first_date.add("sec", i * delta_seconds) for i in range(num_dates)]   
+
+
+# +
+num_dates = 100
+
+first_launch, last_launch = [root.conversion_utility.new_date("UTCG", date) for date in ["30 Apr 2005", "7 Oct 2005"]]
+first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) for date in ["16 Nov 2005", "21 Dec 2006"]]
+
+launch_span = linspace_dates(first_launch, last_launch, num_dates)
+arrival_span = linspace_dates(first_arrival, last_arrival, num_dates)
 
 dv_arrival = np.zeros((len(launch_span), len(arrival_span)))
 c3_launch = np.zeros((len(launch_span), len(arrival_span)))
@@ -295,9 +261,15 @@ tof_values = np.zeros((len(launch_span), len(arrival_span)))
 
 for i, launch_date in enumerate(launch_span):
     for j, arrival_date in enumerate(arrival_span):
-        dv_launch, dv_arrival[j, i], tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date, prograde=True)
+        dv_launch, dv_arrival[j, i], tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date, is_prograde=True)
         c3_launch[j, i] = dv_launch ** 2
-        tof_values[j, i] = tof / 3600 / 24  
+        tof_values[j, i] = tof / 3600 / 24
+# -
+
+# ## Convert to Julian Dates
+
+launch_span = [date.whole_days for date in launch_span]
+arrival_span = [date.whole_days for date in arrival_span]
 
 # +
 import matplotlib.pyplot as plt
@@ -315,6 +287,10 @@ fig, ax = plt.subplots(figsize=(15, 15))
 ax.set_title(f"Characteristic launch energy $C_{3}$\n{earth.instance_name.capitalize()} - {mars.instance_name.capitalize()}")
 ax.set_xlabel("Launch date")
 ax.set_ylabel("Arrival date")
+
+
+
+
 
 # Characteristic energy contour
 c3_launch_contourf = ax.contourf(
@@ -347,4 +323,19 @@ ax.clabel(
     dv_arrival_contour, inline=1, fmt="%1.0f km/s", colors="navy", fontsize=12
 )
 
+
+x, y = np.meshgrid(launch_span, arrival_span)
+ax.scatter(x, y, marker="+", c="k", s=0.75)
+
+
+
+
+
 plt.show()
+# -
+
+# # TODO
+#
+# Ensure time span is generated via STK too. Do not rely on custom sampled times.
+
+
