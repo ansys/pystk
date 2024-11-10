@@ -10,7 +10,7 @@
 #
 # ## Problem statement
 #
-# The goal of this tutorial is to reproduce the porkchop in Fig. 7 from  [NASA's Interplanetary Mission Design Handbook, Volume I, Part 2](https://ntrs.nasa.gov/api/citations/19840010158/downloads/19840010158.pdf). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
+# The goal of this tutorial is to reproduce the porkchop in Fig. 4 from  [NASA's Interplanetary Mission Design Handbook, Volume I, Part 2](https://ntrs.nasa.gov/api/citations/19840010158/downloads/19840010158.pdf). This porkchop shows the characteristic energy at launch $C_{3_{\text{launch}}} = \Delta v_{\text{launch}}^2$ for a interplanetary Lambert transfer between Earth and Mars.
 #
 # ![Fig. 7 directly taken from NASA's manual](./img/nasa-porkchop.png)
 
@@ -89,8 +89,8 @@ def linspace_dates(start_date, end_date, interval, unit):
 
 # Declare the launch and arrival boundary dates as shown in the original figure by NASA:
 
-first_launch, last_launch = [root.conversion_utility.new_date("UTCG", date) for date in ["30 Aug 1996", "6 Feb 1997"]]
-first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) for date in ["17 Apr 1997", "22 May 1998"]]
+first_launch, last_launch = [root.conversion_utility.new_date("UTCG", date) for date in ["29 May 1990", "5 Nov 1990"]]
+first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) for date in ["25 Nov 1990", "30 Dec 1991"]]
 
 # Then, generate the launch and arrival date spans:
 
@@ -415,28 +415,31 @@ arrival_span = [as_datetime(date) for date in arrival_span]
 # To increase the beauty of the porkchop plot, the following contour levels apply:
 
 c3_launch_levels = np.linspace(0, 45, 19)
-dv_arrival_levels = np.linspace(0, 7, 8)
-tof_levels = np.linspace(0, 500, 6)
+dv_arrival_levels = np.linspace(0, 5, 6)
+tof_levels = np.linspace(0, 400, 5)
 
 # Finally, plot the porkchop
 
 # +
 import matplotlib.pyplot as plt
 from matplotlib import patheffects
+import matplotlib.dates as mdates
+import matplotlib.lines as mlines
 
 
-fig, ax = plt.subplots(figsize=(10, 15))
+fig, ax = plt.subplots(figsize=(10, 12))
 
-ax.set_title("EARTH - MARS 1996/7, C3L\nBALLISTIC TRANSFER TRAJECTORY")
-ax.set_xlabel("Launch date")
-ax.set_ylabel("Arrival date")
+ax.set_title("EARTH - MARS 1990, C3L\nBALLISTIC TRANSFER TRAJECTORY")
+ax.set_xlabel("LAUNCH DATE")
+ax.set_ylabel("ARRIVAL DATE")
 
 # Contour color for the characteristic energy
 c3_colors =  ax.contourf(
     launch_span, arrival_span, c3_launch_values, c3_launch_levels
 )
-c3_colorbar = fig.colorbar(c3_colors)
-c3_colorbar.set_label("$km^2 / s^2$")
+c3_colorbar_axes = fig.add_axes([1.05, 0.1, 0.03, 0.8])
+c3_colorbar = fig.colorbar(c3_colors, c3_colorbar_axes)
+c3_colorbar.set_label("Characteristic energy $km^2 / s^2$")
 
 # Contour lines for the characteristic energy
 c3_lines = ax.contour(
@@ -466,84 +469,32 @@ tof_labels = ax.clabel(
 plt.setp(tof_labels, path_effects=[
     patheffects.withStroke(linewidth=2, foreground="w")])
 
-# Add the target marker for the line of nodes
-marker_position = (datetime(1996, 11, 12), datetime(1997, 7, 8))
-ax.plot(*marker_position, marker="o", markersize=50, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
-ax.plot(*marker_position, marker="+", markersize=50, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
+# Format dates shown in the axes
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%y/%m/%d'))
+ax.yaxis.set_major_formatter(mdates.DateFormatter('%y/%m/%d'))
+plt.xticks(rotation=90)
 
+# Set the ticks for bot axes
+ax.set_xticks([
+    as_datetime(date) 
+    for date in linspace_dates(first_launch, last_launch, 20, "day")
+])
+ax.set_yticks([
+    as_datetime(date) 
+    for date in linspace_dates(first_arrival, last_arrival, 40, "day")
+])
+
+# Duplicate
+#ax2 = ax.twinx()
+#ax2.set_ylabel("ARRIVAL JD-2400000.0")
+#ax2.spines['right'].set_position(('axes', 1.07))
+
+# Custom legend
+legend_lines = [
+    mlines.Line2D([], [], color='red', label='Time of flight'),
+    mlines.Line2D([], [], color='navy', label='Arrival velocity')
+]
+ax.legend(handles=legend_lines, loc='upper left')
+
+ax.grid(True, which='both', axis='both', color='gray', linestyle=':', linewidth=0.7)
 plt.show()
-
-# +
-fig, ax = plt.subplots()
-
-marker_pos = (0.5, 0.5)
-
-ax.plot(*marker_pos, marker="o", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
-ax.plot(*marker_pos, marker="+", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
-
-plt.show()
-
-# +
-random = np.random.RandomState(1)
-
-left = random.randn(2, 10)
-right = random.randn(2, 10)
-
-
-
-from matplotlib.markers import MarkerStyle
-
-plt.scatter(left[0], left[1], 
-            marker=MarkerStyle('o', fillstyle='left'),
-            color='red', label='left')
-plt.scatter(right[0], right[1], 
-            marker=MarkerStyle('o', fillstyle='right'),
-            color='blue', label='right')
-plt.legend()
-
-# +
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-
-# Create the figure and axes
-fig, ax = plt.subplots()
-
-# Marker position
-marker_pos = (0.5, 0.5)
-
-# Plot the circular marker with the cross marker
-#ax.plot(*marker_pos, marker="o", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
-#ax.plot(*marker_pos, marker="+", markersize=100, color="black")
-
-# Radius of the marker
-radius = 0.1
-
-# Add black filled triangles for top-right and bottom-left quadrants
-triangle1 = patches.Polygon([
-    (marker_pos[0], marker_pos[1]),
-    (marker_pos[0] + radius, marker_pos[1]),
-    (marker_pos[0], marker_pos[1] + radius)
-], closed=True, color="black")
-
-triangle2 = patches.Polygon([
-    (marker_pos[0], marker_pos[1]),
-    (marker_pos[0] - radius, marker_pos[1]),
-    (marker_pos[0], marker_pos[1] - radius)
-], closed=True, color="black")
-
-# Add the triangles to the plot
-ax.add_patch(triangle1)
-ax.add_patch(triangle2)
-
-# Set plot limits
-ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-
-# Remove axes for a cleaner look
-ax.axis("off")
-
-# Display the plot
-plt.show()
-# -
-
-
