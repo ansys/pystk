@@ -56,7 +56,8 @@ scenario = root.children.new_on_central_body(
 
 # ## Generating a span of launch and arrival dates
 #
-# Generating a span of launch and arrival dates allows to compute, in the future, for any combination of dates. When manipulating dates and times in PySTK, it is important to always use the API. Do not rely on the Python <inv:datetime> module since it does not accound for leap-seconds.
+# Generating a span of launch and arrival dates allows to compute, in the future, for any combination of dates. When manipulating dates and times in PySTK, it is important to always use the API. Do not rely on the Python <inv:datetime> module since it does not account for leap-seconds.
+
 
 def linspace_dates(start_date, end_date, interval, unit):
     """Generate a list of linearly spaced dates.
@@ -78,7 +79,6 @@ def linspace_dates(start_date, end_date, interval, unit):
         List of dates linearly spaced by the desired interval.
 
     """
-
     dates = []
     next_date = start_date
     while next_date.whole_days <= end_date.whole_days:
@@ -89,8 +89,14 @@ def linspace_dates(start_date, end_date, interval, unit):
 
 # Declare the launch and arrival boundary dates as shown in the original figure by NASA:
 
-first_launch, last_launch = [root.conversion_utility.new_date("UTCG", date) for date in ["29 May 1990", "5 Nov 1990"]]
-first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) for date in ["25 Nov 1990", "30 Dec 1991"]]
+first_launch, last_launch = [
+    root.conversion_utility.new_date("UTCG", date)
+    for date in ["29 May 1990", "5 Nov 1990"]
+]
+first_arrival, last_arrival = [
+    root.conversion_utility.new_date("UTCG", date)
+    for date in ["25 Nov 1990", "30 Dec 1991"]
+]
 
 # Then, generate the launch and arrival date spans:
 
@@ -108,6 +114,7 @@ print("...")
 # ## Solve the ephemerides of the planets
 #
 # With launch and arrival dates generated, it is time to generate a routine for computing the state vector of the planets. This function was presented in the [Lambert transfer](./lambert-transfer.py) example. Therefore, it is reproduced in here:
+
 
 # +
 def from_data_result_to_dict(data_result: "DataProviderResult") -> dict:
@@ -169,12 +176,14 @@ def get_object_pos_vel_at_epoch(
 # Now, add the planets to the scene:
 
 # +
-from ansys.stk.core.stkobjects import PLANET_POSITION_SOURCE_TYPE, EPHEM_SOURCE_TYPE
+from ansys.stk.core.stkobjects import EPHEM_SOURCE_TYPE, PLANET_POSITION_SOURCE_TYPE
 
 
 for name in ["Earth", "Mars"]:
     planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, name, "Sun")
-    planet.common_tasks.set_position_source_central_body(name, EPHEM_SOURCE_TYPE.DEFAULT)
+    planet.common_tasks.set_position_source_central_body(
+        name, EPHEM_SOURCE_TYPE.DEFAULT
+    )
 
 earth, mars = [scenario.children[object_name] for object_name in ["Earth", "Mars"]]
 # -
@@ -189,7 +198,9 @@ print(f"{'Date':<25} {'Position':<47} {'Velocity':<50}")
 print(f"{'----':<25} {45 * '-':<47} {25 * '-':<50}")
 for date in launch_span[:5]:
     (rx, ry, rz), (vx, vy, vz) = get_object_pos_vel_at_epoch(earth, date, "ICRF")
-    print(f"{date.format('UTCG'):<25} [{rx:>10.2f}, {ry:>10.2f}, {rz:>10.2f}] km   [{vx:>3.2f}, {vy:>3.2f}, {vz:>3.2f}] km/s ")
+    print(
+        f"{date.format('UTCG'):<25} [{rx:>10.2f}, {ry:>10.2f}, {rz:>10.2f}] km   [{vx:>3.2f}, {vy:>3.2f}, {vz:>3.2f}] km/s "
+    )
 print("...")
 # -
 
@@ -201,7 +212,9 @@ print("...")
 from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-satellite = scenario.children.new_on_central_body(STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun")
+satellite = scenario.children.new_on_central_body(
+    STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun"
+)
 satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
 satellite.propagator.main_sequence.remove_all()
 # -
@@ -214,7 +227,9 @@ satellite.propagator.main_sequence.remove_all()
 from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
 
 
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
+initial_state = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+)
 initial_state.coord_system_name = "CentralBody/Sun Inertial"
 initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
 # -
@@ -225,7 +240,9 @@ initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
 
 # Start by declaring the different segments of the Lambert transfer:
 
-transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-")
+transfer = satellite.propagator.main_sequence.insert(
+    SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-"
+)
 first_impulse = transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
 propagate = transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
 last_impulse = transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
@@ -249,7 +266,10 @@ lambert = transfer.profiles.add("Lambert Profile")
 # Configure the profile. Do not configure any parameters related with the target:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_SOLUTION_OPTION_TYPE, LAMBERT_TARGET_COORDINATE_TYPE
+from ansys.stk.core.stkobjects.astrogator import (
+    LAMBERT_SOLUTION_OPTION_TYPE,
+    LAMBERT_TARGET_COORDINATE_TYPE,
+)
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
@@ -278,7 +298,11 @@ lambert.second_maneuver_segment = last_impulse.name
 # Activate the profile and configure its behavior when solving for the results:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, TARGET_SEQUENCE_ACTION, PROFILES_FINISH
+from ansys.stk.core.stkobjects.astrogator import (
+    PROFILE_MODE,
+    PROFILES_FINISH,
+    TARGET_SEQUENCE_ACTION,
+)
 
 
 lambert.mode = PROFILE_MODE.ACTIVE
@@ -293,7 +317,7 @@ transfer.reset_inner_targeters = False
 # Only the constant parameters have been configured so far. Now, it is time to create a routine capable of modifying the state of the satellite and the Lambert profile so that the required impulses can be solved for any launch and arrival date.
 #
 # :::{important}
-# The porkchop plots presented in NASA's manual assume prograde transfers. However, the Lambert profile only differentiates between long and short solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude can not be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed. 
+# The porkchop plots presented in NASA's manual assume prograde transfers. However, the Lambert profile only differentiates between long and short solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude can not be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed.
 
 # +
 import numpy as np
@@ -301,11 +325,15 @@ import numpy as np
 from ansys.stk.core.stkobjects.astrogator import LAMBERT_DIRECTION_OF_MOTION_TYPE
 
 
-def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival_date, is_prograde=True):
-
+def lambert_solver(
+    satellite, departure_body, arrival_body, launch_date, arrival_date, is_prograde=True
+):
+    """Solve the Lambert transfer between two bodies for a given launch and arrival date."""
     # Retrieve the initial state and lambert profile from the satellite
     initial_state = satellite.propagator.main_sequence["Initial State"]
-    lambert = satellite.propagator.main_sequence["Lambert Transfer"].profiles["Lambert Profile"]
+    lambert = satellite.propagator.main_sequence["Lambert Transfer"].profiles[
+        "Lambert Profile"
+    ]
 
     # Compute the time of flight
     time_of_flight = arrival_date.span(launch_date).value
@@ -314,8 +342,12 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     lambert.time_of_flight = time_of_flight
 
     # Compute the departure and arrival state vectors
-    departure_position, departure_velocity = get_object_pos_vel_at_epoch(departure_body, launch_date, "ICRF")
-    arrival_position, arrival_velocity = get_object_pos_vel_at_epoch(arrival_body, arrival_date, "ICRF")
+    departure_position, departure_velocity = get_object_pos_vel_at_epoch(
+        departure_body, launch_date, "ICRF"
+    )
+    arrival_position, arrival_velocity = get_object_pos_vel_at_epoch(
+        arrival_body, arrival_date, "ICRF"
+    )
 
     # Impose the direction of motion according to the angular momentum of the orbit
     r1_cross_r2 = np.cross(departure_position, arrival_position)
@@ -323,9 +355,17 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     h0_z = (r1_cross_r2 / r1_times_r2)[-1]
 
     if is_prograde:
-        path = LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG if h0_z < 0 else LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+        path = (
+            LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
+            if h0_z < 0
+            else LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+        )
     else:
-        path = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT if h0_z < 0 else LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
+        path = (
+            LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+            if h0_z < 0
+            else LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
+        )
     lambert.direction_of_motion = path
 
     # Update the initial state of the satellite
@@ -336,7 +376,7 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     initial_state.element.vx = departure_velocity[0]
     initial_state.element.vy = departure_velocity[1]
     initial_state.element.vz = departure_velocity[2]
-    
+
     # Update final state of satellite
     lambert.target_position_x = arrival_position[0] * 1000
     lambert.target_position_y = arrival_position[1] * 1000
@@ -352,7 +392,7 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     # Compute the impulses
     delta_v1 = first_impulse.maneuver.attitude_control.magnitude / 1000
     delta_v2 = last_impulse.maneuver.attitude_control.magnitude / 1000
-    
+
     return delta_v1, delta_v2, time_of_flight
 
 
@@ -367,16 +407,18 @@ tof_values = np.zeros((len(arrival_span), len(launch_span)))
 
 for i, launch_date in enumerate(launch_span):
     for j, arrival_date in enumerate(arrival_span):
-        dv_launch, dv_arrival, tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date)
+        dv_launch, dv_arrival, tof = lambert_solver(
+            satellite, earth, mars, launch_date, arrival_date
+        )
 
         dv_arrival_values[j, i] = dv_arrival
-        c3_launch_values[j, i] = dv_launch ** 2
+        c3_launch_values[j, i] = dv_launch**2
         tof_values[j, i] = tof / 3600 / 24
 # -
 
 # ## Plot the porkchop
 #
-# With the values for $C_{3_{\text{launch}}}$, $\Delta v_{\text{arrival}}$, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, we need to convert the <inv:Date> objects to <inv:datetime.datetime> objects so that Matplotlib can 
+# With the values for $C_{3_{\text{launch}}}$, $\Delta v_{\text{arrival}}$, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, we need to convert the <inv:Date> objects to <inv:datetime.datetime> objects so that Matplotlib can
 
 # +
 from datetime import datetime
@@ -387,19 +429,20 @@ def as_datetime(date):
 
     Warns
     -----
-    If a leap second is casted, one second is substracted.
+    If a leap second is casted, one second is subtracted.
 
     Note
     ----
-    Casting as Python dates introduces a loss of precission. Avoid using casted
+    Casting as Python dates introduces a loss of precision. Avoid using casted
     date types in future computations.
-    
+
     """
     UTCG_FORMAT = "%d %b %Y %H:%M:%S.%f"
     try:
         return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
     except ValueError as LeapSecondsError:
         import warnings
+
         warnings.warn(f"Date {date.format('UTCG')} is a leap second.")
         adjusted_date = date.subtract("sec", 1)
         return datetime.strptime(adjusted_date.format("UTCG"), UTCG_FORMAT)
@@ -421,10 +464,10 @@ tof_levels = np.linspace(0, 400, 5)
 # Finally, plot the porkchop
 
 # +
-import matplotlib.pyplot as plt
 from matplotlib import patheffects
 import matplotlib.dates as mdates
 import matplotlib.lines as mlines
+import matplotlib.pyplot as plt
 
 
 fig, ax = plt.subplots(figsize=(10, 12))
@@ -434,24 +477,30 @@ ax.set_xlabel("LAUNCH DATE")
 ax.set_ylabel("ARRIVAL DATE")
 
 # Contour color for the characteristic energy
-c3_colors =  ax.contourf(
-    launch_span, arrival_span, c3_launch_values, c3_launch_levels
-)
+c3_colors = ax.contourf(launch_span, arrival_span, c3_launch_values, c3_launch_levels)
 c3_colorbar_axes = fig.add_axes([1.05, 0.1, 0.03, 0.8])
 c3_colorbar = fig.colorbar(c3_colors, c3_colorbar_axes)
 c3_colorbar.set_label("Characteristic energy $km^2 / s^2$")
 
 # Contour lines for the characteristic energy
 c3_lines = ax.contour(
-    launch_span, arrival_span, c3_launch_values, c3_launch_levels, 
-    colors="black", linestyles="solid"
+    launch_span,
+    arrival_span,
+    c3_launch_values,
+    c3_launch_levels,
+    colors="black",
+    linestyles="solid",
 )
 ax.clabel(c3_lines, inline=1, fmt="%1.1f", colors="k", fontsize=10)
 
 # Lines for the arrival velocity
 dv_arrival_lines = ax.contour(
-    launch_span, arrival_span, dv_arrival_values, dv_arrival_levels,
-    colors="navy", linestyles="solid"
+    launch_span,
+    arrival_span,
+    dv_arrival_values,
+    dv_arrival_levels,
+    colors="navy",
+    linestyles="solid",
 )
 dv_arrival_labels = ax.clabel(
     dv_arrival_lines, inline=1, fmt="%1.0f km/s", colors="navy", fontsize=10
@@ -459,42 +508,52 @@ dv_arrival_labels = ax.clabel(
 
 # Lines for the time of flight
 tof_lines = ax.contour(
-    launch_span, arrival_span, tof_values, tof_levels,
-    colors="red", linestyles="dashed", linewidths=2.5,
+    launch_span,
+    arrival_span,
+    tof_values,
+    tof_levels,
+    colors="red",
+    linestyles="dashed",
+    linewidths=2.5,
 )
 tof_lines.set(path_effects=[patheffects.withStroke(linewidth=3.5, foreground="w")])
 tof_labels = ax.clabel(
-    tof_lines, inline=True, fmt="%1.0f days", colors="red", fontsize=14, use_clabeltext=True
+    tof_lines,
+    inline=True,
+    fmt="%1.0f days",
+    colors="red",
+    fontsize=14,
+    use_clabeltext=True,
 )
-plt.setp(tof_labels, path_effects=[
-    patheffects.withStroke(linewidth=2, foreground="w")])
+plt.setp(tof_labels, path_effects=[patheffects.withStroke(linewidth=2, foreground="w")])
 
 # Format dates shown in the axes
-ax.xaxis.set_major_formatter(mdates.DateFormatter('%y/%m/%d'))
-ax.yaxis.set_major_formatter(mdates.DateFormatter('%y/%m/%d'))
+ax.xaxis.set_major_formatter(mdates.DateFormatter("%y/%m/%d"))
+ax.yaxis.set_major_formatter(mdates.DateFormatter("%y/%m/%d"))
 plt.xticks(rotation=90)
 
 # Set the ticks for bot axes
-ax.set_xticks([
-    as_datetime(date) 
-    for date in linspace_dates(first_launch, last_launch, 20, "day")
-])
-ax.set_yticks([
-    as_datetime(date) 
-    for date in linspace_dates(first_arrival, last_arrival, 40, "day")
-])
+ax.set_xticks(
+    [as_datetime(date) for date in linspace_dates(first_launch, last_launch, 20, "day")]
+)
+ax.set_yticks(
+    [
+        as_datetime(date)
+        for date in linspace_dates(first_arrival, last_arrival, 40, "day")
+    ]
+)
 
 # Duplicate
-#ax2 = ax.twinx()
-#ax2.set_ylabel("ARRIVAL JD-2400000.0")
-#ax2.spines['right'].set_position(('axes', 1.07))
+# ax2 = ax.twinx()
+# ax2.set_ylabel("ARRIVAL JD-2400000.0")
+# ax2.spines['right'].set_position(('axes', 1.07))
 
 # Custom legend
 legend_lines = [
-    mlines.Line2D([], [], color='red', label='Time of flight'),
-    mlines.Line2D([], [], color='navy', label='Arrival velocity')
+    mlines.Line2D([], [], color="red", label="Time of flight"),
+    mlines.Line2D([], [], color="navy", label="Arrival velocity"),
 ]
-ax.legend(handles=legend_lines, loc='upper left')
+ax.legend(handles=legend_lines, loc="upper left")
 
-ax.grid(True, which='both', axis='both', color='gray', linestyle=':', linewidth=0.7)
+ax.grid(True, which="both", axis="both", color="gray", linestyle=":", linewidth=0.7)
 plt.show()
