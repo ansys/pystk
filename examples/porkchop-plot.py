@@ -400,9 +400,9 @@ def as_datetime(date):
         return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
     except ValueError as LeapSecondsError:
         import warnings
-        warnings.warn("Date {date.format('UTCG')} is a leap second.")
+        warnings.warn(f"Date {date.format('UTCG')} is a leap second.")
         adjusted_date = date.subtract("sec", 1)
-        return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
+        return datetime.strptime(adjusted_date.format("UTCG"), UTCG_FORMAT)
 
 
 # -
@@ -410,13 +410,7 @@ def as_datetime(date):
 # Cast dates to ensure Matplotlib representation:
 
 launch_span = [as_datetime(date) for date in launch_span]
-arrival_span =  [as_datetime(date) for date in arrival_span]
-
-for date in arrival_span:
-    try:
-        as_datetime(date)
-    except:
-        print(date.format("UTCG"))
+arrival_span = [as_datetime(date) for date in arrival_span]
 
 # Finally, plot the porkchop:
 
@@ -483,10 +477,3 @@ ax.scatter(x, y, marker="+", c="k", s=0.75)
 
 
 plt.show()
-# -
-
-first_arrival.subtract("sec", 1)
-
-dir(first_arrival)
-
-
