@@ -361,17 +361,17 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
 # Finally, solve the transfer for every launch and arrival date combination:
 
 # +
-dv_arrival_values = np.zeros((len(launch_span), len(arrival_span)))
-c3_launch_values = np.zeros((len(launch_span), len(arrival_span)))
-tof_values = np.zeros((len(launch_span), len(arrival_span)))
+dv_arrival_values = np.zeros((len(arrival_span), len(launch_span)))
+c3_launch_values = np.zeros((len(arrival_span), len(launch_span)))
+tof_values = np.zeros((len(arrival_span), len(launch_span)))
 
 for i, launch_date in enumerate(launch_span):
     for j, arrival_date in enumerate(arrival_span):
         dv_launch, dv_arrival, tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date)
 
-        dv_arrival_values[i, j] = dv_arrival
-        c3_launch_values[i, j] = dv_launch ** 2
-        tof_values[i, j] = tof / 3600 / 24
+        dv_arrival_values[j, i] = dv_arrival
+        c3_launch_values[j, i] = dv_launch ** 2
+        tof_values[j, i] = tof / 3600 / 24
 # -
 
 # ## Plot the porkchop
@@ -412,68 +412,138 @@ def as_datetime(date):
 launch_span = [as_datetime(date) for date in launch_span]
 arrival_span = [as_datetime(date) for date in arrival_span]
 
-# Finally, plot the porkchop:
+# To increase the beauty of the porkchop plot, the following contour levels apply:
+
+c3_launch_levels = np.linspace(0, 45, 19)
+dv_arrival_levels = np.linspace(0, 7, 8)
+tof_levels = np.linspace(0, 500, 6)
+
+# Finally, plot the porkchop
 
 # +
 import matplotlib.pyplot as plt
+from matplotlib import patheffects
 
 
+fig, ax = plt.subplots(figsize=(10, 15))
 
-c3_levels = np.linspace(
-    0, 45, 30
-)
-tof_levels = np.linspace(100, 500, 5)
-dv_arrival_levels = np.linspace(0, 5, 5)
-
-
-fig, ax = plt.subplots(figsize=(15, 15))
-ax.set_title(f"Characteristic launch energy $C_{3}$\n{earth.instance_name.capitalize()} - {mars.instance_name.capitalize()}")
+ax.set_title("EARTH - MARS 1996/7, C3L\nBALLISTIC TRANSFER TRAJECTORY")
 ax.set_xlabel("Launch date")
 ax.set_ylabel("Arrival date")
 
-
-
-
-
-# Characteristic energy contour
-c3_launch_contourf = ax.contourf(
-    launch_span, arrival_span, c3_launch_values.T, c3_levels
+# Contour color for the characteristic energy
+c3_colors =  ax.contourf(
+    launch_span, arrival_span, c3_launch_values, c3_launch_levels
 )
-cbar = fig.colorbar(c3_launch_contourf)
-cbar.set_label("km2 / s2")
+c3_colorbar = fig.colorbar(c3_colors)
+c3_colorbar.set_label("$km^2 / s^2$")
 
-c3_launch_contour = ax.contour(
-    launch_span, arrival_span, c3_launch_values.T, c3_levels, 
+# Contour lines for the characteristic energy
+c3_lines = ax.contour(
+    launch_span, arrival_span, c3_launch_values, c3_launch_levels, 
     colors="black", linestyles="solid"
 )
-ax.clabel(c3_launch_contour, inline=1, fmt="%1.1f", colors="k", fontsize=10)
+ax.clabel(c3_lines, inline=1, fmt="%1.1f", colors="k", fontsize=10)
 
-
-"""
-# Time of flight
-tof_contour = ax.contour(
-    launch_span, arrival_span, tof_values.T, tof_levels, 
-    colors="red", linestyles="dashed", linewidths=3.5,
+# Lines for the arrival velocity
+dv_arrival_lines = ax.contour(
+    launch_span, arrival_span, dv_arrival_values, dv_arrival_levels,
+    colors="navy", linestyles="solid"
 )
-ax.clabel(
-    tof_contour, inline=1, fmt="%1.0f days", colors="r", fontsize=14
+dv_arrival_labels = ax.clabel(
+    dv_arrival_lines, inline=1, fmt="%1.0f km/s", colors="navy", fontsize=10
 )
 
-# Arrival velocity
-dv_arrival_contour = ax.contour(
-    launch_span, arrival_span, dv_arrival_values.T, dv_arrival_levels, 
-    colors="navy", linestyles="solid", linewidths=3.5,
+# Lines for the time of flight
+tof_lines = ax.contour(
+    launch_span, arrival_span, tof_values, tof_levels,
+    colors="red", linestyles="dashed", linewidths=2.5,
 )
-ax.clabel(
-    dv_arrival_contour, inline=1, fmt="%1.0f km/s", colors="navy", fontsize=12
+tof_lines.set(path_effects=[patheffects.withStroke(linewidth=3.5, foreground="w")])
+tof_labels = ax.clabel(
+    tof_lines, inline=True, fmt="%1.0f days", colors="red", fontsize=14, use_clabeltext=True
 )
+plt.setp(tof_labels, path_effects=[
+    patheffects.withStroke(linewidth=2, foreground="w")])
 
-
-x, y = np.meshgrid(launch_span, arrival_span)
-ax.scatter(x, y, marker="+", c="k", s=0.75)
-"""
-
-
-
+# Add the target marker for the line of nodes
+marker_position = (datetime(1996, 11, 12), datetime(1997, 7, 8))
+ax.plot(*marker_position, marker="o", markersize=50, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
+ax.plot(*marker_position, marker="+", markersize=50, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
 
 plt.show()
+
+# +
+fig, ax = plt.subplots()
+
+marker_pos = (0.5, 0.5)
+
+ax.plot(*marker_pos, marker="o", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
+ax.plot(*marker_pos, marker="+", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
+
+plt.show()
+
+# +
+random = np.random.RandomState(1)
+
+left = random.randn(2, 10)
+right = random.randn(2, 10)
+
+
+
+from matplotlib.markers import MarkerStyle
+
+plt.scatter(left[0], left[1], 
+            marker=MarkerStyle('o', fillstyle='left'),
+            color='red', label='left')
+plt.scatter(right[0], right[1], 
+            marker=MarkerStyle('o', fillstyle='right'),
+            color='blue', label='right')
+plt.legend()
+
+# +
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
+# Create the figure and axes
+fig, ax = plt.subplots()
+
+# Marker position
+marker_pos = (0.5, 0.5)
+
+# Plot the circular marker with the cross marker
+#ax.plot(*marker_pos, marker="o", markersize=100, markerfacecolor="white", markeredgecolor="black", fillstyle="full")
+#ax.plot(*marker_pos, marker="+", markersize=100, color="black")
+
+# Radius of the marker
+radius = 0.1
+
+# Add black filled triangles for top-right and bottom-left quadrants
+triangle1 = patches.Polygon([
+    (marker_pos[0], marker_pos[1]),
+    (marker_pos[0] + radius, marker_pos[1]),
+    (marker_pos[0], marker_pos[1] + radius)
+], closed=True, color="black")
+
+triangle2 = patches.Polygon([
+    (marker_pos[0], marker_pos[1]),
+    (marker_pos[0] - radius, marker_pos[1]),
+    (marker_pos[0], marker_pos[1] - radius)
+], closed=True, color="black")
+
+# Add the triangles to the plot
+ax.add_patch(triangle1)
+ax.add_patch(triangle2)
+
+# Set plot limits
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+
+# Remove axes for a cleaner look
+ax.axis("off")
+
+# Display the plot
+plt.show()
+# -
+
+
