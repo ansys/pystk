@@ -94,8 +94,8 @@ first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) fo
 
 # Then, generate the launch and arrival date spans:
 
-launch_span = linspace_dates(first_launch, last_launch, 1, "day")
-arrival_span = linspace_dates(first_arrival, last_arrival, 1, "day")
+launch_span = linspace_dates(first_launch, last_launch, 3, "day")
+arrival_span = linspace_dates(first_arrival, last_arrival, 3, "day")
 
 # It is possible to print previous lists to verify the values they contain:
 
@@ -282,10 +282,10 @@ from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, TARGET_SEQUENCE_A
 
 
 lambert.mode = PROFILE_MODE.ACTIVE
-lambert_transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
-lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
-lambert_transfer.continue_on_failure = False
-lambert_transfer.reset_inner_targeters = False
+transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
+transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
+transfer.continue_on_failure = False
+transfer.reset_inner_targeters = False
 # -
 
 # ## Solve the transfer
@@ -295,35 +295,26 @@ lambert_transfer.reset_inner_targeters = False
 # :::{important}
 # The porkchop plots presented in NASA's manual assume prograde transfers. However, the Lambert profile only differentiates between long and short solution transfers. The relation between prograde/retrograde and long/short transfers is set by the angular momentum. Although its magnitude can not be found unless solving the problem, its direction can be retrieved from the initial and final position vectors. Therefore, depending on the angular momentum, a long or short transfer is imposed. 
 
-
-
-asdf
-
-
-
-
-
-
-
-
-
 # +
 import numpy as np
 
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_SOLUTION_OPTION_TYPE, LAMBERT_DIRECTION_OF_MOTION_TYPE, ELEMENT_TYPE, SEGMENT_TYPE, TARGET_SEQUENCE_ACTION, MANEUVER_TYPE, LAMBERT_TARGET_COORDINATE_TYPE, PROFILE_MODE, PROFILES_FINISH
+from ansys.stk.core.stkobjects.astrogator import LAMBERT_DIRECTION_OF_MOTION_TYPE
 
 
-def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival_date, is_prograde):
+def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival_date, is_prograde=True):
+
+    # Retrieve the initial state and lambert profile from the satellite
+    initial_state = satellite.propagator.main_sequence["Initial State"]
+    lambert = satellite.propagator.main_sequence["Lambert Transfer"].profiles["Lambert Profile"]
 
     # Compute the time of flight
-    time_of_flight = arrival_date.span(departure_date).value
+    time_of_flight = arrival_date.span(launch_date).value
     if time_of_flight <= 0:
         return None, None, None
     lambert.time_of_flight = time_of_flight
 
     # Compute the departure and arrival state vectors
-    departure_position, departure_velocity = get_object_pos_vel_at_epoch(departure_body, departure_date, "ICRF")
+    departure_position, departure_velocity = get_object_pos_vel_at_epoch(departure_body, launch_date, "ICRF")
     arrival_position, arrival_velocity = get_object_pos_vel_at_epoch(arrival_body, arrival_date, "ICRF")
 
     # Impose the direction of motion according to the angular momentum of the orbit
@@ -338,8 +329,7 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     lambert.direction_of_motion = path
 
     # Update the initial state of the satellite
-    initial_state = satellite.propagator.main_sequence["Initial State"]
-    initial_state.orbit_epoch = departure_date.format("UTCG")
+    initial_state.orbit_epoch = launch_date.format("UTCG")
     initial_state.element.x = departure_position[0]
     initial_state.element.y = departure_position[1]
     initial_state.element.z = departure_position[2]
@@ -348,7 +338,6 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     initial_state.element.vz = departure_velocity[2]
     
     # Update final state of satellite
-    lambert = satellite.propagator.main_sequence["Lambert Transfer"].profiles["Lambert Profile"]
     lambert.target_position_x = arrival_position[0] * 1000
     lambert.target_position_y = arrival_position[1] * 1000
     lambert.target_position_z = arrival_position[2] * 1000
@@ -360,110 +349,76 @@ def lambert_solver(satellite, departure_body, arrival_body, launch_date, arrival
     satellite.propagator.run_mcs()
     satellite.propagator.apply_all_profile_changes()
 
-    # Compute the deltaV
+    # Compute the impulses
     delta_v1 = first_impulse.maneuver.attitude_control.magnitude / 1000
     delta_v2 = last_impulse.maneuver.attitude_control.magnitude / 1000
+    
     return delta_v1, delta_v2, time_of_flight
 
 
 # -
 
-# ## Add a satellite
-
-satellite = scenario.children.new_on_central_body(STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun")
-satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
-satellite.propagator.main_sequence.remove_all()
-
-# ### Initial state
-
-initial_state = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
-initial_state.coord_system_name = "CentralBody/Sun Inertial"
-initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
-
-# ### Target sequence
+# Finally, solve the transfer for every launch and arrival date combination:
 
 # +
-# Declare the segments
-lambert_transfer = satellite.propagator.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-")
-first_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
-propagate = lambert_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-last_impulse = lambert_transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
-
-# Configure the segments of the target sequence
-first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-propagate.propagator_name = "Sun Point Mass"
-last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-
-# Add the Lambert transfer profile
-lambert_transfer.profiles.remove_all()
-lambert = lambert_transfer.profiles.add("Lambert Profile")
-
-# Constant configuration for the profile
-lambert.coord_system_name = "CentralBody/Sun Inertial"
-lambert.set_target_coord_type(LAMBERT_TARGET_COORDINATE_TYPE.CARTESIAN)
-lambert.enable_second_maneuver = True
-
-# Additional configuration parameters
-lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
-lambert.revolutions = 0
-# TODO
-#lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT 
-lambert.central_body_collision_altitude_padding = 0
-
-# Allow the profile to write the computations to the segments
-lambert.enable_write_to_first_maneuver = True
-lambert.first_maneuver_segment = first_impulse.name
-
-lambert.enable_write_duration_to_propagate = True
-lambert.disable_non_lambert_propagate_stop_conditions = True
-lambert.propagate_segment = propagate.name
-
-lambert.enable_write_to_second_maneuver = True
-lambert.second_maneuver_segment = last_impulse.name
-
-# Activate the profile
-lambert.mode = PROFILE_MODE.ACTIVE
-
-# Additional configuration
-lambert_transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
-lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
-lambert_transfer.continue_on_failure = False
-lambert_transfer.reset_inner_targeters = False
-
-
-# -
-
-def linspace_dates(first_date, last_date, num_dates):
-
-    total_seconds = last_date.span(first_date).value
-    delta_seconds = total_seconds / num_dates
-    return [first_date.add("sec", i * delta_seconds) for i in range(num_dates)]   
-
-
-# +
-num_dates = 100
-
-first_launch, last_launch = [root.conversion_utility.new_date("UTCG", date) for date in ["30 Apr 2005", "7 Oct 2005"]]
-first_arrival, last_arrival = [root.conversion_utility.new_date("UTCG", date) for date in ["16 Nov 2005", "21 Dec 2006"]]
-
-launch_span = linspace_dates(first_launch, last_launch, num_dates)
-arrival_span = linspace_dates(first_arrival, last_arrival, num_dates)
-
-dv_arrival = np.zeros((len(launch_span), len(arrival_span)))
-c3_launch = np.zeros((len(launch_span), len(arrival_span)))
+dv_arrival_values = np.zeros((len(launch_span), len(arrival_span)))
+c3_launch_values = np.zeros((len(launch_span), len(arrival_span)))
 tof_values = np.zeros((len(launch_span), len(arrival_span)))
 
 for i, launch_date in enumerate(launch_span):
     for j, arrival_date in enumerate(arrival_span):
-        dv_launch, dv_arrival[j, i], tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date, is_prograde=True)
-        c3_launch[j, i] = dv_launch ** 2
-        tof_values[j, i] = tof / 3600 / 24
+        dv_launch, dv_arrival, tof = lambert_solver(satellite, earth, mars, launch_date, arrival_date)
+
+        dv_arrival_values[i, j] = dv_arrival
+        c3_launch_values[i, j] = dv_launch ** 2
+        tof_values[i, j] = tof / 3600 / 24
 # -
 
-# ## Convert to Julian Dates
+# ## Plot the porkchop
+#
+# With the values for $C_{3_{\text{launch}}}$, $\Delta v_{\text{arrival}}$, and the time of flight, it is possible to generate the porkchop plot. However, before proceeding, we need to convert the <inv:Date> objects to <inv:datetime.datetime> objects so that Matplotlib can 
 
-launch_span = [date.whole_days for date in launch_span]
-arrival_span = [date.whole_days for date in arrival_span]
+# +
+from datetime import datetime
+
+
+def as_datetime(date):
+    """Convert a :ref:`~Date` object into a :ref:`~datetime.datetime` instance.
+
+    Warns
+    -----
+    If a leap second is casted, one second is substracted.
+
+    Note
+    ----
+    Casting as Python dates introduces a loss of precission. Avoid using casted
+    date types in future computations.
+    
+    """
+    UTCG_FORMAT = "%d %b %Y %H:%M:%S.%f"
+    try:
+        return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
+    except ValueError as LeapSecondsError:
+        import warnings
+        warnings.warn("Date {date.format('UTCG')} is a leap second.")
+        adjusted_date = date.subtract("sec", 1)
+        return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
+
+
+# -
+
+# Cast dates to ensure Matplotlib representation:
+
+launch_span = [as_datetime(date) for date in launch_span]
+arrival_span =  [as_datetime(date) for date in arrival_span]
+
+for date in arrival_span:
+    try:
+        as_datetime(date)
+    except:
+        print(date.format("UTCG"))
+
+# Finally, plot the porkchop:
 
 # +
 import matplotlib.pyplot as plt
@@ -488,20 +443,22 @@ ax.set_ylabel("Arrival date")
 
 # Characteristic energy contour
 c3_launch_contourf = ax.contourf(
-    launch_span, arrival_span, c3_launch, c3_levels
+    launch_span, arrival_span, c3_launch_values.T, c3_levels
 )
 cbar = fig.colorbar(c3_launch_contourf)
 cbar.set_label("km2 / s2")
 
 c3_launch_contour = ax.contour(
-    launch_span, arrival_span, c3_launch, c3_levels, 
+    launch_span, arrival_span, c3_launch_values.T, c3_levels, 
     colors="black", linestyles="solid"
 )
 ax.clabel(c3_launch_contour, inline=1, fmt="%1.1f", colors="k", fontsize=10)
 
+
+"""
 # Time of flight
 tof_contour = ax.contour(
-    launch_span, arrival_span, tof_values, tof_levels, 
+    launch_span, arrival_span, tof_values.T, tof_levels, 
     colors="red", linestyles="dashed", linewidths=3.5,
 )
 ax.clabel(
@@ -510,7 +467,7 @@ ax.clabel(
 
 # Arrival velocity
 dv_arrival_contour = ax.contour(
-    launch_span, arrival_span, dv_arrival, dv_arrival_levels, 
+    launch_span, arrival_span, dv_arrival_values.T, dv_arrival_levels, 
     colors="navy", linestyles="solid", linewidths=3.5,
 )
 ax.clabel(
@@ -520,7 +477,7 @@ ax.clabel(
 
 x, y = np.meshgrid(launch_span, arrival_span)
 ax.scatter(x, y, marker="+", c="k", s=0.75)
-
+"""
 
 
 
@@ -528,8 +485,8 @@ ax.scatter(x, y, marker="+", c="k", s=0.75)
 plt.show()
 # -
 
-# # TODO
-#
-# Ensure time span is generated via STK too. Do not rely on custom sampled times.
+first_arrival.subtract("sec", 1)
+
+dir(first_arrival)
 
 
