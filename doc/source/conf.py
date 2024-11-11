@@ -589,6 +589,6 @@ def setup(app: sphinx.application.Sphinx):
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
-        #app.connect("build-finished", remove_examples_from_source_dir)
+        # app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
