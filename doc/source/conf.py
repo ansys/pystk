@@ -466,13 +466,13 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    SOURCE_IMAGES = SOURCE_EXAMPLES.parent.parent.parent / "examples" / "img"
+    SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
     for directory in [SOURCE_EXAMPLES, SOURCE_IMAGES]:
         if not directory.exists():
             directory.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
-    IMAGES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
     # Copy the the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
@@ -589,6 +589,6 @@ def setup(app: sphinx.application.Sphinx):
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
-        app.connect("build-finished", remove_examples_from_source_dir)
+        #app.connect("build-finished", remove_examples_from_source_dir)
         app.connect("build-finished", copy_examples_to_output_dir)
         app.connect("build-finished", render_examples_as_pdf)
