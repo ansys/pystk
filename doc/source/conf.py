@@ -499,7 +499,7 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
         stringify_func=(lambda file: file.name),
     ):
         destination_file = SOURCE_IMAGES / file.name
-        destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+        destination_file.write_bytes(file.read_bytes())
 
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
