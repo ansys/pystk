@@ -27,8 +27,8 @@ Examples
         examples/satellite-coverage-calculator
         examples/satellite-coverage-analysis
     
-    Orbital maneuvers
-    =================
+    Space mission
+    =============
     
     This series of tutorials explain how to model and simulate orbital maneuvers using Python and PySTK.
     
@@ -38,6 +38,11 @@ Examples
         examples/hohmann-transfer
         examples/bielliptic-transfer
         examples/lambert-transfer
+
+    .. nbgallery::
+        :caption: Mission analysis
+    
+        examples/porkchop-plots
     
     Communications and radar
     ========================
