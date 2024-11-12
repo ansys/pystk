@@ -8,8 +8,11 @@ __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
 from tkinter                    import Frame
-from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
-                    get_last_error)
+if os.name == "nt":
+    from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
+                        get_last_error)
+else:
+    from ctypes import (CDLL, POINTER, cdll)
 
 from ..stkx             import Graphics3DControlBase, Graphics2DControlBase, GraphicsAnalysisControlBase
 from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
