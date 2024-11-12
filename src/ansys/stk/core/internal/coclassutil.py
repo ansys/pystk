@@ -9,7 +9,7 @@ from ctypes import byref, cast, pointer, POINTER, Structure
 from .comutil import BSTR, DWORD, GUID, HRESULT, INT, LONG, LPOLESTR, PVOID, ULONG, S_OK
 from .comutil import OLE32Lib, OLEAut32Lib, IFuncType, IUnknown, Succeeded
 from ..utilities.comobject  import COMObject
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKRuntimeError
 
 ###############################################################################
 #   Backwards Compatibility Mapping

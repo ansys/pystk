@@ -130,10 +130,10 @@ from .internal.comutil     import IUnknown, IDispatch
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .utilities.exceptions import STKRuntimeError
 
-from .stkutil import *
+from .stkutil import (EULER_ORIENTATION_SEQUENCE_TYPE, ICartesian3Vector, IDirection, IOrientation,
+                      IPosition, Quantity)
 
 
 def _raise_uninitialized_error(*args):

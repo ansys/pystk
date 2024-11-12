@@ -12,8 +12,7 @@ from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
 from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
     set_class_attribute, SupportsDeleteCallback)
-from ..internal.eventutil   import *
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):

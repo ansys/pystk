@@ -60,10 +60,12 @@ from .internal.comutil     import IDispatch, IPictureDisp
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .internal.eventutil import (ISTKXApplicationEventHandler, IUiAxGraphics2DCntrlEventHandler,
+                                 IUiAxGraphics3DCntrlEventHandler)
+from .utilities.exceptions import STKRuntimeError
 
-from .stkutil import *
+from .stkutil import (EXECUTE_MULTIPLE_COMMANDS_MODE, ExecuteCommandResult,
+                      ExecuteMultipleCommandsResult, LINE_STYLE)
 
 
 def _raise_uninitialized_error(*args):
