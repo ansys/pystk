@@ -10,10 +10,11 @@ __all__ = [ "GrpcEventHandlerImpl",
             "IStkGraphicsImageCollectionEventGrpcHandler",
             "IStkGraphicsTerrainCollectionEventGrpcHandler"]
 
-from .grpcutil import *
+import typing
+
+from .grpcutil import GrpcInterface
 from .coclassutil import AgTypeNameMap
 from . import AgGrpcServices_pb2
-from ..utilities.exceptions import *
 
 class _iadd_callback(object):
     def __init__(self, intf, event_name, handler, callback_func):

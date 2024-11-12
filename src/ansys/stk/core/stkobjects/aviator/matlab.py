@@ -22,10 +22,9 @@ from ...internal  import marshall         as agmarshall
 from ...internal.comutil     import IUnknown
 from ...internal.apiutil     import (InterfaceProxy, OutArg, initialize_from_source_object, 
     get_interface_property, set_class_attribute, SupportsDeleteCallback)
-from ...internal.eventutil   import *
-from ...utilities.exceptions import *
+from ...utilities.exceptions import STKRuntimeError
 
-from ...stkobjects.aviator import *
+from ...stkobjects.aviator import CLOSURE_MODE, IAutomationStrategyFactory, IBasicManeuverStrategy
 
 
 def _raise_uninitialized_error(*args):
