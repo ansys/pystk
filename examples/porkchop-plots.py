@@ -543,11 +543,6 @@ ax.set_yticks(
     ]
 )
 
-# Duplicate
-# ax2 = ax.twinx()
-# ax2.set_ylabel("ARRIVAL JD-2400000.0")
-# ax2.spines['right'].set_position(('axes', 1.07))
-
 # Custom legend
 legend_lines = [
     mlines.Line2D([], [], color="red", label="Time of flight"),
