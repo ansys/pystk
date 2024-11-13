@@ -74,7 +74,7 @@ propagator = satellite.propagator
 # First, set the orbit's coordinate type to classical:
 
 # +
-from ansys.stk.core.stkobjects import ORBIT_STATE_TYPE
+from ansys.stk.core.stkutil import ORBIT_STATE_TYPE
 
 
 orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
