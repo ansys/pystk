@@ -25,13 +25,12 @@ Overview
               - Create a new STK Desktop application instance.  
                 
                 Specify visible = True to show the application window.
-                Specify user_control = True to return the application to the user's control .
+                Specify user_control = True to return the application to the user's control.
                 (the application remains open) after terminating the Python API connection.
                 Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
                 grpc_host is the IP address or DNS name of the gRPC server.
-                grpc_port is the integral port number that the gRPC server is using.
+                grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-                grpc_desktop_options passes extra command line options to UiApplication.
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
               - Attach to an existing STK Desktop instance. 
@@ -62,19 +61,18 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = False, grpc_port: int = False, grpc_timeout_sec: int = False, grpc_desktop_options: str = False) -> STKDesktopApplication
+.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = False, grpc_port: int = False, grpc_timeout_sec: int = False) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
     Create a new STK Desktop application instance.  
     
     Specify visible = True to show the application window.
-    Specify user_control = True to return the application to the user's control .
+    Specify user_control = True to return the application to the user's control.
     (the application remains open) after terminating the Python API connection.
     Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
     grpc_host is the IP address or DNS name of the gRPC server.
-    grpc_port is the integral port number that the gRPC server is using.
+    grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-    grpc_desktop_options passes extra command line options to UiApplication.
     Only available on Windows.
 
     :Parameters:
@@ -85,7 +83,6 @@ Method detail
     **grpc_host** : :obj:`~str`
     **grpc_port** : :obj:`~int`
     **grpc_timeout_sec** : :obj:`~int`
-    **grpc_desktop_options** : :obj:`~str`
 
     :Returns:
 

@@ -25,7 +25,7 @@ Overview
               - Create a new STK Runtime instance and attach to the remote host.  
                 
                 grpc_host is the IP address or DNS name of the gRPC server.
-                grpc_port is the integral port number that the gRPC server is using.
+                grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
                 Specify user_control = True to return the application to the user's control 
                 (the application remains open) after terminating the Python API connection.
@@ -53,7 +53,7 @@ Method detail
     Create a new STK Runtime instance and attach to the remote host.  
     
     grpc_host is the IP address or DNS name of the gRPC server.
-    grpc_port is the integral port number that the gRPC server is using.
+    grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
     Specify user_control = True to return the application to the user's control 
     (the application remains open) after terminating the Python API connection.

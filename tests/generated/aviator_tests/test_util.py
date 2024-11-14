@@ -906,14 +906,14 @@ class PythonStkApplicationProvider(IAgAppProvider):
     Application = None
 
     def __init__(self, args, use_grpc: bool = False):
-        options = "/Automation" if use_grpc else ""
         if args.attach:
             self.stk: "STKDesktopApplication" = STKDesktop.attach_to_application(
                 grpc_server=use_grpc, grpc_port=args.grpc_port, grpc_host=args.grpc_host
             )
         else:
+            STKDesktop._disable_pop_ups = True
             self.stk: "STKDesktopApplication" = STKDesktop.start_application(
-                user_control=False, visible=True, grpc_server=use_grpc, grpc_desktop_options=options
+                user_control=False, visible=True, grpc_server=use_grpc
             )
         PythonStkApplicationProvider.Application = self.stk.root
 
