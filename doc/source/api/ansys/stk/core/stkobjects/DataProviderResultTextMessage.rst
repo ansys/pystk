@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.count`
               - Returns a number of strings in the message.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum`
               - Returns a string enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages`
               - Returns an array of strings in the message.
@@ -55,8 +55,8 @@ Property detail
 
     Returns a number of strings in the message.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum
     :type: EnumeratorProxy
 
     Returns a string enumeration.

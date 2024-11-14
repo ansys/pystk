@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.count`
               - Gets the size of the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._new_enum`
               - Enumerates the elements of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.load_method_type`
               - File Load Type.
@@ -69,8 +69,8 @@ Property detail
 
     Gets the size of the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the elements of the collection.

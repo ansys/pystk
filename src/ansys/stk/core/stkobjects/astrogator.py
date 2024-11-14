@@ -3236,9 +3236,9 @@ class IStoppingConditionComponent(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IStoppingConditionComponent."""
-        initialize_from_source_object(self, sourceObject, IStoppingConditionComponent)
+        initialize_from_source_object(self, source_object, IStoppingConditionComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3286,9 +3286,9 @@ class IAttitudeControl(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAttitudeControl."""
-        initialize_from_source_object(self, sourceObject, IAttitudeControl)
+        initialize_from_source_object(self, source_object, IAttitudeControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3411,9 +3411,9 @@ class IAttitudeControlFinite(IAttitudeControl):
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAttitudeControlFinite."""
-        initialize_from_source_object(self, sourceObject, IAttitudeControlFinite)
+        initialize_from_source_object(self, source_object, IAttitudeControlFinite)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControl._private_init(self, intf)
@@ -3441,9 +3441,9 @@ class IAttitudeControlImpulsive(IAttitudeControl):
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAttitudeControlImpulsive."""
-        initialize_from_source_object(self, sourceObject, IAttitudeControlImpulsive)
+        initialize_from_source_object(self, source_object, IAttitudeControlImpulsive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControl._private_init(self, intf)
@@ -3471,9 +3471,9 @@ class IAttitudeControlOptimalFinite(IAttitudeControl):
         "vtable_reference" : IAttitudeControl._vtable_offset + IAttitudeControl._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAttitudeControlOptimalFinite."""
-        initialize_from_source_object(self, sourceObject, IAttitudeControlOptimalFinite)
+        initialize_from_source_object(self, source_object, IAttitudeControlOptimalFinite)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControl._private_init(self, intf)
@@ -3507,9 +3507,9 @@ class IManeuver(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IManeuver."""
-        initialize_from_source_object(self, sourceObject, IManeuver)
+        initialize_from_source_object(self, source_object, IManeuver)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3586,9 +3586,9 @@ class IDisplaySystem(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDisplaySystem."""
-        initialize_from_source_object(self, sourceObject, IDisplaySystem)
+        initialize_from_source_object(self, source_object, IDisplaySystem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3615,9 +3615,9 @@ class IBurnout(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IBurnout."""
-        initialize_from_source_object(self, sourceObject, IBurnout)
+        initialize_from_source_object(self, source_object, IBurnout)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3644,9 +3644,9 @@ class IElement(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IElement."""
-        initialize_from_source_object(self, sourceObject, IElement)
+        initialize_from_source_object(self, source_object, IElement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3681,9 +3681,9 @@ class IMCSSegment(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IMCSSegment."""
-        initialize_from_source_object(self, sourceObject, IMCSSegment)
+        initialize_from_source_object(self, source_object, IMCSSegment)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3787,9 +3787,9 @@ class IMCSSequence(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IMCSSequence."""
-        initialize_from_source_object(self, sourceObject, IMCSSequence)
+        initialize_from_source_object(self, source_object, IMCSSequence)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3898,9 +3898,9 @@ class IProfile(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IProfile."""
-        initialize_from_source_object(self, sourceObject, IProfile)
+        initialize_from_source_object(self, source_object, IProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4000,9 +4000,9 @@ class ICentralBodyComponentEphemeris(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICentralBodyComponentEphemeris."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyComponentEphemeris)
+        initialize_from_source_object(self, source_object, ICentralBodyComponentEphemeris)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4029,9 +4029,9 @@ class ICentralBodyComponentShape(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICentralBodyComponentShape."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyComponentShape)
+        initialize_from_source_object(self, source_object, ICentralBodyComponentShape)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4058,9 +4058,9 @@ class ICentralBodyComponentAttitude(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICentralBodyComponentAttitude."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyComponentAttitude)
+        initialize_from_source_object(self, source_object, ICentralBodyComponentAttitude)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4089,9 +4089,9 @@ class ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides(ICentralBodyComp
         "vtable_reference" : ICentralBodyComponentEphemeris._vtable_offset + ICentralBodyComponentEphemeris._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides."""
-        initialize_from_source_object(self, sourceObject, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
+        initialize_from_source_object(self, source_object, ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemeris._private_init(self, intf)
@@ -4135,9 +4135,9 @@ class INumericalIntegrator(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type INumericalIntegrator."""
-        initialize_from_source_object(self, sourceObject, INumericalIntegrator)
+        initialize_from_source_object(self, source_object, INumericalIntegrator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4290,11 +4290,11 @@ class MCSDriver(IPropagator, SupportsDeleteCallback):
     _property_names[auto_sequence] = "auto_sequence"
     _property_names[calculation_graphs] = "calculation_graphs"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSDriver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSDriver)
-        IPropagator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSDriver)
+        IPropagator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPropagator._private_init(self, intf)
@@ -4317,7 +4317,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _insert_method_offset = 2
     _remove_method_offset = 3
     _remove_all_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _cut_method_offset = 7
     _paste_method_offset = 8
@@ -4335,7 +4335,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         return get_interface_property(attrname, MCSSegmentCollection)
     def __iter__(self):
         """Create an iterator for the MCSSegmentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IMCSSegment":
@@ -4375,13 +4375,13 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Remove all segments; the End segment cannot be deleted."""
         return self._intf.invoke(MCSSegmentCollection._metadata, MCSSegmentCollection._remove_all_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -4444,15 +4444,15 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSSegmentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSSegmentCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSSegmentCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -4480,13 +4480,13 @@ class MCSEnd(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, SupportsDele
         return get_interface_property(attrname, MCSEnd)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSEnd."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSEnd)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSEnd)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -4644,14 +4644,14 @@ class MCSInitialState(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICl
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[user_variables] = "user_variables"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSInitialState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSInitialState)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSInitialState)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -4844,11 +4844,11 @@ class SpacecraftParameters(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[k1] = "k1"
     _property_names[k2] = "k2"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpacecraftParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpacecraftParameters)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpacecraftParameters)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -4984,11 +4984,11 @@ class FuelTank(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[fuel_mass] = "fuel_mass"
     _property_names[maximum_fuel_mass] = "maximum_fuel_mass"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FuelTank."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FuelTank)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, FuelTank)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -5124,12 +5124,12 @@ class ElementCartesian(IElement, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names[vy] = "vy"
     _property_names[vz] = "vz"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementCartesian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementCartesian)
-        IElement.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementCartesian)
+        IElement.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -5572,11 +5572,11 @@ class ElementKeplerian(IElement, SupportsDeleteCallback):
     _property_names[periapsis_altitude_shape] = "periapsis_altitude_shape"
     _property_names[periapsis_radius_shape] = "periapsis_radius_shape"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementKeplerian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementKeplerian)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementKeplerian)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -5748,11 +5748,11 @@ class ElementEquinoctial(IElement, SupportsDeleteCallback):
     _property_names[mean_longitude] = "mean_longitude"
     _property_names[formulation] = "formulation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementEquinoctial."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementEquinoctial)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementEquinoctial)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -5942,11 +5942,11 @@ class ElementDelaunay(IElement, SupportsDeleteCallback):
     _property_names[delaunay_h] = "delaunay_h"
     _property_names[inclination] = "inclination"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementDelaunay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementDelaunay)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementDelaunay)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6100,11 +6100,11 @@ class ElementMixedSpherical(IElement, SupportsDeleteCallback):
     _property_names[velocity_magnitude] = "velocity_magnitude"
     _property_names[vertical_flight_path_angle] = "vertical_flight_path_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementMixedSpherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementMixedSpherical)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementMixedSpherical)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6258,11 +6258,11 @@ class ElementSpherical(IElement, SupportsDeleteCallback):
     _property_names[velocity_magnitude] = "velocity_magnitude"
     _property_names[vertical_flight_path_angle] = "vertical_flight_path_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementSpherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementSpherical)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementSpherical)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6398,11 +6398,11 @@ class ElementTargetVectorIncomingAsymptote(IElement, SupportsDeleteCallback):
     _property_names[velocity_azimuth_periapsis] = "velocity_azimuth_periapsis"
     _property_names[true_anomaly] = "true_anomaly"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementTargetVectorIncomingAsymptote."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementTargetVectorIncomingAsymptote)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementTargetVectorIncomingAsymptote)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6538,11 +6538,11 @@ class ElementTargetVectorOutgoingAsymptote(IElement, SupportsDeleteCallback):
     _property_names[velocity_azimuth_periapsis] = "velocity_azimuth_periapsis"
     _property_names[true_anomaly] = "true_anomaly"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementTargetVectorOutgoingAsymptote."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementTargetVectorOutgoingAsymptote)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementTargetVectorOutgoingAsymptote)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6714,11 +6714,11 @@ class ElementGeodetic(IElement, SupportsDeleteCallback):
     _property_names[altitude_rate] = "altitude_rate"
     _property_names[radius_rate] = "radius_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementGeodetic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementGeodetic)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementGeodetic)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -6980,11 +6980,11 @@ class ElementBPlane(IElement, SupportsDeleteCallback):
     _property_names[b_magnitude_second_b_vector] = "b_magnitude_second_b_vector"
     _property_names[true_anomaly] = "true_anomaly"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementBPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementBPlane)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementBPlane)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -7120,11 +7120,11 @@ class ElementSphericalRangeRate(IElement, SupportsDeleteCallback):
     _property_names[declination_rate] = "declination_rate"
     _property_names[range_rate] = "range_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ElementSphericalRangeRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ElementSphericalRangeRate)
-        IElement.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ElementSphericalRangeRate)
+        IElement.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IElement._private_init(self, intf)
@@ -7340,14 +7340,14 @@ class MCSPropagate(IMCSSegment, IComponentInfo, ICloneable, IRuntimeTypeInfoProv
     _property_names[should_stop_for_initially_surpassed_epoch_stopping_conditions] = "should_stop_for_initially_surpassed_epoch_stopping_conditions"
     _property_names[should_reinitialize_stm_at_start_of_segment_propagation] = "should_reinitialize_stm_at_start_of_segment_propagation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSPropagate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSPropagate)
-        IMCSSegment.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSPropagate)
+        IMCSSegment.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -7676,11 +7676,11 @@ class State(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[k1] = "k1"
     _property_names[k2] = "k2"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type State."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, State)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, State)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -7702,7 +7702,7 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _item_method_offset = 1
     _add_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _cut_method_offset = 6
     _paste_method_offset = 7
@@ -7718,7 +7718,7 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
         return get_interface_property(attrname, StoppingConditionCollection)
     def __iter__(self):
         """Create an iterator for the StoppingConditionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "StoppingConditionElement":
@@ -7751,13 +7751,13 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
         """Remove a stopping condition."""
         return self._intf.invoke(StoppingConditionCollection._metadata, StoppingConditionCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(StoppingConditionCollection._metadata, StoppingConditionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(StoppingConditionCollection._metadata, StoppingConditionCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7805,14 +7805,14 @@ class StoppingConditionCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StoppingConditionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StoppingConditionCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StoppingConditionCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -8096,14 +8096,14 @@ class AccessStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComp
     _property_names[time_delay_convergence_tolerance] = "time_delay_convergence_tolerance"
     _property_names[use_light_time_delay] = "use_light_time_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AccessStoppingCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AccessStoppingCondition)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
-        IStoppingConditionComponent.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AccessStoppingCondition)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+        IStoppingConditionComponent.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -8298,14 +8298,14 @@ class LightingStoppingCondition(IComponentInfo, ICloneable, IStoppingConditionCo
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[available_eclipsing_bodies] = "available_eclipsing_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LightingStoppingCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LightingStoppingCondition)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
-        IStoppingConditionComponent.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, LightingStoppingCondition)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+        IStoppingConditionComponent.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -8609,14 +8609,14 @@ class StoppingCondition(IComponentInfo, ICloneable, IStoppingConditionComponent,
     _property_names[reference_point] = "reference_point"
     _property_names[user_calculation_object_link_embed_control] = "user_calculation_object_link_embed_control"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StoppingCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StoppingCondition)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
-        IStoppingConditionComponent.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StoppingCondition)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
+        IStoppingConditionComponent.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -8709,12 +8709,12 @@ class StoppingConditionElement(IComponentInfo, IRuntimeTypeInfoProvider, Support
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[properties] = "properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StoppingConditionElement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StoppingConditionElement)
-        IComponentInfo.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StoppingConditionElement)
+        IComponentInfo.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -8731,14 +8731,14 @@ agcls.AgTypeNameMap["StoppingConditionElement"] = StoppingConditionElement
 
 class MCSSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, IComponentInfo, ICloneable, SupportsDeleteCallback):
     """The Sequence segment."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSSequence."""
         SupportsDeleteCallback.__init__(self)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IMCSSequence.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IMCSSequence.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -8770,15 +8770,15 @@ class MCSBackwardSequence(IMCSSegment, IRuntimeTypeInfoProvider, IMCSSequence, I
         return get_interface_property(attrname, MCSBackwardSequence)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSBackwardSequence."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSBackwardSequence)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IMCSSequence.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSBackwardSequence)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IMCSSequence.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -9102,14 +9102,14 @@ class MCSLaunch(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names[set_mission_elapsed_time_epoch] = "set_mission_elapsed_time_epoch"
     _property_names[user_variables] = "user_variables"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSLaunch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSLaunch)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSLaunch)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -9194,11 +9194,11 @@ class DisplaySystemGeodetic(IDisplaySystem, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DisplaySystemGeodetic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DisplaySystemGeodetic)
-        IDisplaySystem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DisplaySystemGeodetic)
+        IDisplaySystem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplaySystem._private_init(self, intf)
@@ -9280,11 +9280,11 @@ class DisplaySystemGeocentric(IDisplaySystem, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DisplaySystemGeocentric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DisplaySystemGeocentric)
-        IDisplaySystem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DisplaySystemGeocentric)
+        IDisplaySystem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplaySystem._private_init(self, intf)
@@ -9366,11 +9366,11 @@ class BurnoutGeodetic(IBurnout, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutGeodetic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutGeodetic)
-        IBurnout.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BurnoutGeodetic)
+        IBurnout.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBurnout._private_init(self, intf)
@@ -9506,11 +9506,11 @@ class BurnoutCBFCartesian(IBurnout, SupportsDeleteCallback):
     _property_names[cartesian_burnout_vy] = "cartesian_burnout_vy"
     _property_names[cartesian_burnout_vz] = "cartesian_burnout_vz"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutCBFCartesian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutCBFCartesian)
-        IBurnout.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BurnoutCBFCartesian)
+        IBurnout.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBurnout._private_init(self, intf)
@@ -9592,11 +9592,11 @@ class BurnoutGeocentric(IBurnout, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutGeocentric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutGeocentric)
-        IBurnout.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BurnoutGeocentric)
+        IBurnout.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBurnout._private_init(self, intf)
@@ -9678,11 +9678,11 @@ class BurnoutLaunchAzAltitude(IBurnout, SupportsDeleteCallback):
     _property_names[down_range_dist] = "down_range_dist"
     _property_names[altitude_radius] = "altitude_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutLaunchAzAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutLaunchAzAltitude)
-        IBurnout.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BurnoutLaunchAzAltitude)
+        IBurnout.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBurnout._private_init(self, intf)
@@ -9764,11 +9764,11 @@ class BurnoutLaunchAzRadius(IBurnout, SupportsDeleteCallback):
     _property_names[down_range_dist] = "down_range_dist"
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutLaunchAzRadius."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutLaunchAzRadius)
-        IBurnout.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BurnoutLaunchAzRadius)
+        IBurnout.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBurnout._private_init(self, intf)
@@ -9886,10 +9886,10 @@ class BurnoutVelocity(SupportsDeleteCallback):
     _property_names[inertial_velocity_azimuth] = "inertial_velocity_azimuth"
     _property_names[inertial_horizontal_flight_path_angle] = "inertial_horizontal_flight_path_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BurnoutVelocity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BurnoutVelocity)
+        initialize_from_source_object(self, source_object, BurnoutVelocity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10118,14 +10118,14 @@ class MCSFollow(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[user_variables] = "user_variables"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSFollow."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSFollow)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSFollow)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -10218,14 +10218,14 @@ class MCSManeuver(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, IClonea
     _property_names[maneuver] = "maneuver"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSManeuver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSManeuver)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSManeuver)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -10320,12 +10320,12 @@ class ManeuverFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallback
     _property_names[thrust_efficiency_mode] = "thrust_efficiency_mode"
     _property_names[propagator] = "propagator"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverFinite."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverFinite)
-        IManeuver.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ManeuverFinite)
+        IManeuver.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IManeuver._private_init(self, intf)
@@ -10372,12 +10372,12 @@ class ManeuverImpulsive(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteCallb
 
     _property_names[update_mass] = "update_mass"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverImpulsive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverImpulsive)
-        IManeuver.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ManeuverImpulsive)
+        IManeuver.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IManeuver._private_init(self, intf)
@@ -10434,13 +10434,13 @@ class AttitudeControlImpulsiveVelocityVector(IAttitudeControlImpulsive, IAttitud
     _property_names[delta_v_magnitude] = "delta_v_magnitude"
     _property_names[body_constraint_vector] = "body_constraint_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlImpulsiveVelocityVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlImpulsiveVelocityVector)
-        IAttitudeControlImpulsive.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlImpulsiveVelocityVector)
+        IAttitudeControlImpulsive.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlImpulsive._private_init(self, intf)
@@ -10498,13 +10498,13 @@ class AttitudeControlImpulsiveAntiVelocityVector(IAttitudeControlImpulsive, IAtt
     _property_names[delta_v_magnitude] = "delta_v_magnitude"
     _property_names[body_constraint_vector] = "body_constraint_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlImpulsiveAntiVelocityVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlImpulsiveAntiVelocityVector)
-        IAttitudeControlImpulsive.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlImpulsiveAntiVelocityVector)
+        IAttitudeControlImpulsive.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlImpulsive._private_init(self, intf)
@@ -10580,13 +10580,13 @@ class AttitudeControlImpulsiveAttitude(IAttitudeControlImpulsive, IAttitudeContr
     _property_names[reference_axes_name] = "reference_axes_name"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlImpulsiveAttitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlImpulsiveAttitude)
-        IAttitudeControlImpulsive.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlImpulsiveAttitude)
+        IAttitudeControlImpulsive.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlImpulsive._private_init(self, intf)
@@ -10680,13 +10680,13 @@ class AttitudeControlImpulsiveFile(IAttitudeControlImpulsive, IAttitudeControl, 
     _property_names[file_time_offset] = "file_time_offset"
     _property_names[full_filename] = "full_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlImpulsiveFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlImpulsiveFile)
-        IAttitudeControlImpulsive.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlImpulsiveFile)
+        IAttitudeControlImpulsive.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlImpulsive._private_init(self, intf)
@@ -10920,13 +10920,13 @@ class AttitudeControlImpulsiveThrustVector(IAttitudeControlImpulsive, IAttitudeC
     _property_names[elevation] = "elevation"
     _property_names[magnitude] = "magnitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlImpulsiveThrustVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlImpulsiveThrustVector)
-        IAttitudeControlImpulsive.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlImpulsiveThrustVector)
+        IAttitudeControlImpulsive.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlImpulsive._private_init(self, intf)
@@ -10984,13 +10984,13 @@ class AttitudeControlFiniteAntiVelocityVector(IAttitudeControlFinite, IAttitudeC
     _property_names[attitude_update] = "attitude_update"
     _property_names[body_constraint_vector] = "body_constraint_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteAntiVelocityVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteAntiVelocityVector)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteAntiVelocityVector)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11066,13 +11066,13 @@ class AttitudeControlFiniteAttitude(IAttitudeControlFinite, IAttitudeControl, IR
     _property_names[reference_axes_name] = "reference_axes_name"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteAttitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteAttitude)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteAttitude)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11148,13 +11148,13 @@ class AttitudeControlFiniteFile(IAttitudeControlFinite, IAttitudeControl, IRunti
     _property_names[file_time_offset] = "file_time_offset"
     _property_names[full_filename] = "full_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteFile)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteFile)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11240,13 +11240,13 @@ class AttitudeControlFiniteThrustVector(IAttitudeControlFinite, IAttitudeControl
     _property_names[body_constraint_vector] = "body_constraint_vector"
     _property_names[thrust_vector] = "thrust_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteThrustVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteThrustVector)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteThrustVector)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11592,13 +11592,13 @@ class AttitudeControlFiniteTimeVarying(IAttitudeControlFinite, IAttitudeControl,
     _property_names[elevation_sinusoidal_frequency] = "elevation_sinusoidal_frequency"
     _property_names[elevation_sinusoidal_phase] = "elevation_sinusoidal_phase"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteTimeVarying."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteTimeVarying)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteTimeVarying)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11656,13 +11656,13 @@ class AttitudeControlFiniteVelocityVector(IAttitudeControlFinite, IAttitudeContr
     _property_names[attitude_update] = "attitude_update"
     _property_names[body_constraint_vector] = "body_constraint_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFiniteVelocityVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFiniteVelocityVector)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFiniteVelocityVector)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11720,13 +11720,13 @@ class AttitudeControlFinitePlugin(IAttitudeControlFinite, IAttitudeControl, IRun
     _property_names[plugin_name] = "plugin_name"
     _property_names[plugin_config] = "plugin_config"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlFinitePlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlFinitePlugin)
-        IAttitudeControlFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlFinitePlugin)
+        IAttitudeControlFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlFinite._private_init(self, intf)
@@ -11766,13 +11766,13 @@ class AttitudeControlOptimalFiniteLagrange(IAttitudeControlOptimalFinite, IAttit
 
     _property_names[body_constraint_vector] = "body_constraint_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeControlOptimalFiniteLagrange."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeControlOptimalFiniteLagrange)
-        IAttitudeControlOptimalFinite.__init__(self, sourceObject)
-        IAttitudeControl.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AttitudeControlOptimalFiniteLagrange)
+        IAttitudeControlOptimalFinite.__init__(self, source_object)
+        IAttitudeControl.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAttitudeControlOptimalFinite._private_init(self, intf)
@@ -11992,11 +11992,11 @@ class ManeuverFinitePropagator(IRuntimeTypeInfoProvider, SupportsDeleteCallback)
     _property_names[should_stop_for_initially_surpassed_epoch_stopping_conditions] = "should_stop_for_initially_surpassed_epoch_stopping_conditions"
     _property_names[should_reinitialize_stm_at_start_of_segment_propagation] = "should_reinitialize_stm_at_start_of_segment_propagation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverFinitePropagator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverFinitePropagator)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ManeuverFinitePropagator)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -12230,14 +12230,14 @@ class MCSHold(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
     _property_names[override_max_propagation_time] = "override_max_propagation_time"
     _property_names[should_stop_for_initially_surpassed_epoch_stopping_conditions] = "should_stop_for_initially_surpassed_epoch_stopping_conditions"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSHold."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSHold)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSHold)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -12352,14 +12352,14 @@ class MCSUpdate(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
     _property_names[control_parameters_available] = "control_parameters_available"
     _property_names[user_variables] = "user_variables"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSUpdate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSUpdate)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSUpdate)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -12408,14 +12408,14 @@ class MCSReturn(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneabl
 
     _property_names[return_control_to_parent_sequence] = "return_control_to_parent_sequence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSReturn."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSReturn)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSReturn)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -12464,14 +12464,14 @@ class MCSStop(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, ICloneable,
 
     _property_names[enabled] = "enabled"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSStop."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSStop)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSStop)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -12642,14 +12642,14 @@ class MCSTargetSequence(IMCSSegment, IRuntimeTypeInfoProvider, IComponentInfo, I
     _property_names[profiles] = "profiles"
     _property_names[reset_inner_targeters] = "reset_inner_targeters"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSTargetSequence."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSTargetSequence)
-        IMCSSegment.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSTargetSequence)
+        IMCSSegment.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IMCSSegment._private_init(self, intf)
@@ -12673,7 +12673,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _add_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _get_count_method_offset = 4
     _get_available_profiles_method_offset = 5
     _remove_method_offset = 6
@@ -12694,7 +12694,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         return get_interface_property(attrname, ProfileCollection)
     def __iter__(self):
         """Create an iterator for the ProfileCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IProfile":
@@ -12720,13 +12720,13 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(ProfileCollection._metadata, ProfileCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ProfileCollection._metadata, ProfileCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ProfileCollection._metadata, ProfileCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12811,16 +12811,16 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[available_profiles] = "available_profiles"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -13183,10 +13183,10 @@ class MCSOptions(SupportsDeleteCallback):
     _property_names[user_variables] = "user_variables"
     _property_names[smart_run_mode] = "smart_run_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSOptions)
+        initialize_from_source_object(self, source_object, MCSOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13207,7 +13207,7 @@ class CalculationObjectCollection(SupportsDeleteCallback):
     _add_method_offset = 1
     _item_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _cut_method_offset = 6
     _paste_method_offset = 7
@@ -13223,7 +13223,7 @@ class CalculationObjectCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationObjectCollection)
     def __iter__(self):
         """Create an iterator for the CalculationObjectCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IComponentInfo":
@@ -13256,13 +13256,13 @@ class CalculationObjectCollection(SupportsDeleteCallback):
         """Remove a calc object from the collection."""
         return self._intf.invoke(CalculationObjectCollection._metadata, CalculationObjectCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(CalculationObjectCollection._metadata, CalculationObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationObjectCollection._metadata, CalculationObjectCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13310,13 +13310,13 @@ class CalculationObjectCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationObjectCollection)
+        initialize_from_source_object(self, source_object, CalculationObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13337,7 +13337,7 @@ class ConstraintCollection(SupportsDeleteCallback):
     _add_method_offset = 1
     _item_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _cut_method_offset = 6
     _paste_method_offset = 7
@@ -13353,7 +13353,7 @@ class ConstraintCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ConstraintCollection)
     def __iter__(self):
         """Create an iterator for the ConstraintCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "AsTriggerCondition":
@@ -13386,13 +13386,13 @@ class ConstraintCollection(SupportsDeleteCallback):
         """Remove a specified constraint from the collection."""
         return self._intf.invoke(ConstraintCollection._metadata, ConstraintCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """A property that allows you to enumerate through the collection."""
-        return self._intf.get_property(ConstraintCollection._metadata, ConstraintCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ConstraintCollection._metadata, ConstraintCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13440,13 +13440,13 @@ class ConstraintCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConstraintCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ConstraintCollection)
+        initialize_from_source_object(self, source_object, ConstraintCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13499,10 +13499,10 @@ class PluginProperties(SupportsDeleteCallback):
 
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PluginProperties."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PluginProperties)
+        initialize_from_source_object(self, source_object, PluginProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13617,12 +13617,12 @@ class ProfileSearchPlugin(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCall
     _property_names[targeter_graphs] = "targeter_graphs"
     _property_names[log_file] = "log_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileSearchPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileSearchPlugin)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileSearchPlugin)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -13804,11 +13804,11 @@ class TargeterGraph(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[active_controls] = "active_controls"
     _property_names[results] = "results"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraph."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraph)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraph)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -13828,7 +13828,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _add_graph_method_offset = 4
     _remove_graph_method_offset = 5
@@ -13847,7 +13847,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         return get_interface_property(attrname, TargeterGraphCollection)
     def __iter__(self):
         """Create an iterator for the TargeterGraphCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TargeterGraph":
@@ -13866,13 +13866,13 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(TargeterGraphCollection._metadata, TargeterGraphCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(TargeterGraphCollection._metadata, TargeterGraphCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TargeterGraphCollection._metadata, TargeterGraphCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13942,15 +13942,15 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraphCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraphCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraphCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -13970,7 +13970,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_provide_runtime_type_info_method_offset = 4
     _metadata = {
@@ -13982,7 +13982,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
         return get_interface_property(attrname, TargeterGraphResultCollection)
     def __iter__(self):
         """Create an iterator for the TargeterGraphResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TargeterGraphResult":
@@ -14001,13 +14001,13 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
         """Allow you to iterate through the collection."""
         return self._intf.invoke(TargeterGraphResultCollection._metadata, TargeterGraphResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(TargeterGraphResultCollection._metadata, TargeterGraphResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TargeterGraphResultCollection._metadata, TargeterGraphResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14028,15 +14028,15 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraphResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraphResultCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraphResultCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -14056,7 +14056,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_provide_runtime_type_info_method_offset = 4
     _metadata = {
@@ -14068,7 +14068,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
         return get_interface_property(attrname, TargeterGraphActiveControlCollection)
     def __iter__(self):
         """Create an iterator for the TargeterGraphActiveControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TargeterGraphActiveControl":
@@ -14087,13 +14087,13 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
         """Allow you to iterate through the collection."""
         return self._intf.invoke(TargeterGraphActiveControlCollection._metadata, TargeterGraphActiveControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(TargeterGraphActiveControlCollection._metadata, TargeterGraphActiveControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TargeterGraphActiveControlCollection._metadata, TargeterGraphActiveControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -14114,15 +14114,15 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraphActiveControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraphActiveControlCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraphActiveControlCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -14246,11 +14246,11 @@ class TargeterGraphActiveControl(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names[point_style] = "point_style"
     _property_names[y_axis] = "y_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraphActiveControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraphActiveControl)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraphActiveControl)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -14412,11 +14412,11 @@ class TargeterGraphResult(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[graph_option] = "graph_option"
     _property_names[show_tolerance_band] = "show_tolerance_band"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TargeterGraphResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TargeterGraphResult)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TargeterGraphResult)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -14800,12 +14800,12 @@ class ProfileDifferentialCorrector(IProfile, IRuntimeTypeInfoProvider, SupportsD
     _property_names[targeter_graphs] = "targeter_graphs"
     _property_names[stop_on_limit_cycle_detection] = "stop_on_limit_cycle_detection"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileDifferentialCorrector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileDifferentialCorrector)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileDifferentialCorrector)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -14924,12 +14924,12 @@ class ProfileScriptingTool(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _property_names[parameters] = "parameters"
     _property_names[language_type] = "language_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileScriptingTool."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileScriptingTool)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileScriptingTool)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -15190,11 +15190,11 @@ class DifferentialCorrectorControl(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DifferentialCorrectorControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DifferentialCorrectorControl)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DifferentialCorrectorControl)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -15426,11 +15426,11 @@ class DifferentialCorrectorResult(IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DifferentialCorrectorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DifferentialCorrectorResult)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DifferentialCorrectorResult)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -15450,7 +15450,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _get_provide_runtime_type_info_method_offset = 5
@@ -15463,7 +15463,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
         return get_interface_property(attrname, DifferentialCorrectorControlCollection)
     def __iter__(self):
         """Create an iterator for the DifferentialCorrectorControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "DifferentialCorrectorControl":
@@ -15482,13 +15482,13 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
         """Allow you to iterate through the collection."""
         return self._intf.invoke(DifferentialCorrectorControlCollection._metadata, DifferentialCorrectorControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(DifferentialCorrectorControlCollection._metadata, DifferentialCorrectorControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(DifferentialCorrectorControlCollection._metadata, DifferentialCorrectorControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15516,15 +15516,15 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DifferentialCorrectorControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DifferentialCorrectorControlCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DifferentialCorrectorControlCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -15544,7 +15544,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _get_provide_runtime_type_info_method_offset = 5
@@ -15557,7 +15557,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
         return get_interface_property(attrname, DifferentialCorrectorResultCollection)
     def __iter__(self):
         """Create an iterator for the DifferentialCorrectorResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "DifferentialCorrectorResult":
@@ -15576,13 +15576,13 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
         """Allow you to iterate through the collection."""
         return self._intf.invoke(DifferentialCorrectorResultCollection._metadata, DifferentialCorrectorResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(DifferentialCorrectorResultCollection._metadata, DifferentialCorrectorResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(DifferentialCorrectorResultCollection._metadata, DifferentialCorrectorResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15610,15 +15610,15 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DifferentialCorrectorResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DifferentialCorrectorResultCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DifferentialCorrectorResultCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -15770,10 +15770,10 @@ class SearchPluginControl(SupportsDeleteCallback):
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SearchPluginControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SearchPluginControl)
+        initialize_from_source_object(self, source_object, SearchPluginControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15792,7 +15792,7 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -15804,7 +15804,7 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, SearchPluginControlCollection)
     def __iter__(self):
         """Create an iterator for the SearchPluginControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "SearchPluginControl":
@@ -15823,13 +15823,13 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(SearchPluginControlCollection._metadata, SearchPluginControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Property that allows you to enumerate through the collection."""
-        return self._intf.get_property(SearchPluginControlCollection._metadata, SearchPluginControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(SearchPluginControlCollection._metadata, SearchPluginControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15849,13 +15849,13 @@ class SearchPluginControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SearchPluginControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SearchPluginControlCollection)
+        initialize_from_source_object(self, source_object, SearchPluginControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15988,10 +15988,10 @@ class SearchPluginResult(SupportsDeleteCallback):
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SearchPluginResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SearchPluginResult)
+        initialize_from_source_object(self, source_object, SearchPluginResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16010,7 +16010,7 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -16022,7 +16022,7 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, SearchPluginResultCollection)
     def __iter__(self):
         """Create an iterator for the SearchPluginResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "SearchPluginResult":
@@ -16041,13 +16041,13 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(SearchPluginResultCollection._metadata, SearchPluginResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Function to enumerate through the collection."""
-        return self._intf.get_property(SearchPluginResultCollection._metadata, SearchPluginResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(SearchPluginResultCollection._metadata, SearchPluginResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16067,13 +16067,13 @@ class SearchPluginResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SearchPluginResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SearchPluginResultCollection)
+        initialize_from_source_object(self, source_object, SearchPluginResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16136,12 +16136,12 @@ class ProfileChangeManeuverType(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _property_names[segment] = "segment"
     _property_names[maneuver_type] = "maneuver_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileChangeManeuverType."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileChangeManeuverType)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileChangeManeuverType)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16214,12 +16214,12 @@ class ProfileChangeReturnSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDel
     _property_names[segment_name] = "segment_name"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileChangeReturnSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileChangeReturnSegment)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileChangeReturnSegment)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16292,12 +16292,12 @@ class ProfileChangePropagator(IProfile, IRuntimeTypeInfoProvider, SupportsDelete
     _property_names[segment_name] = "segment_name"
     _property_names[propagator_name] = "propagator_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileChangePropagator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileChangePropagator)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileChangePropagator)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16370,12 +16370,12 @@ class ProfileChangeStopSegment(IProfile, IRuntimeTypeInfoProvider, SupportsDelet
     _property_names[segment_name] = "segment_name"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileChangeStopSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileChangeStopSegment)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileChangeStopSegment)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16474,12 +16474,12 @@ class ProfileChangeStoppingConditionState(IProfile, IRuntimeTypeInfoProvider, Su
     _property_names[state] = "state"
     _property_names[trigger_name] = "trigger_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileChangeStoppingConditionState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileChangeStoppingConditionState)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileChangeStoppingConditionState)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16552,12 +16552,12 @@ class ProfileSeedFiniteManeuver(IProfile, IRuntimeTypeInfoProvider, SupportsDele
     _property_names[segment_name] = "segment_name"
     _property_names[leave_all_active_stopping_conditions_active] = "leave_all_active_stopping_conditions_active"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileSeedFiniteManeuver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileSeedFiniteManeuver)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileSeedFiniteManeuver)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16586,12 +16586,12 @@ class ProfileRunOnce(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallback)
         return get_interface_property(attrname, ProfileRunOnce)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileRunOnce."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileRunOnce)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileRunOnce)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -16615,7 +16615,7 @@ class BPlaneCollection(SupportsDeleteCallback):
     _remove_method_offset = 2
     _remove_all_method_offset = 3
     _item_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _metadata = {
         "iid_data" : (5594941962752983119, 13562937374643146671),
@@ -16626,7 +16626,7 @@ class BPlaneCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, BPlaneCollection)
     def __iter__(self):
         """Create an iterator for the BPlaneCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -16666,13 +16666,13 @@ class BPlaneCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(BPlaneCollection._metadata, BPlaneCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(BPlaneCollection._metadata, BPlaneCollection._get__NewEnum_metadata)
+        return self._intf.get_property(BPlaneCollection._metadata, BPlaneCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16685,13 +16685,13 @@ class BPlaneCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BPlaneCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BPlaneCollection)
+        initialize_from_source_object(self, source_object, BPlaneCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16718,12 +16718,12 @@ class StateCalcDamageFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcDamageFlux)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDamageFlux."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDamageFlux)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDamageFlux)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16752,12 +16752,12 @@ class StateCalcDamageMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
         return get_interface_property(attrname, StateCalcDamageMassFlux)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDamageMassFlux."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDamageMassFlux)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDamageMassFlux)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16786,12 +16786,12 @@ class StateCalcMagneticFieldDipoleL(IComponentInfo, ICloneable, SupportsDeleteCa
         return get_interface_property(attrname, StateCalcMagneticFieldDipoleL)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMagneticFieldDipoleL."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMagneticFieldDipoleL)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMagneticFieldDipoleL)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16830,12 +16830,12 @@ class StateCalcSEETMagneticFieldLineSeparationAngle(IComponentInfo, ICloneable, 
 
     _property_names[target_object] = "target_object"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSEETMagneticFieldLineSeparationAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSEETMagneticFieldLineSeparationAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSEETMagneticFieldLineSeparationAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16864,12 +16864,12 @@ class StateCalcImpactFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcImpactFlux)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcImpactFlux."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcImpactFlux)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcImpactFlux)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16898,12 +16898,12 @@ class StateCalcImpactMassFlux(IComponentInfo, ICloneable, SupportsDeleteCallback
         return get_interface_property(attrname, StateCalcImpactMassFlux)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcImpactMassFlux."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcImpactMassFlux)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcImpactMassFlux)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16932,12 +16932,12 @@ class StateCalcSEETSAAFlux(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcSEETSAAFlux)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSEETSAAFlux."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSEETSAAFlux)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSEETSAAFlux)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -16966,12 +16966,12 @@ class StateCalcSEETVehTemp(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcSEETVehTemp)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSEETVehTemp."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSEETVehTemp)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSEETVehTemp)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17000,12 +17000,12 @@ class StateCalcEpoch(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcEpoch)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEpoch)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEpoch)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17034,12 +17034,12 @@ class StateCalcJacobiConstant(IComponentInfo, ICloneable, SupportsDeleteCallback
         return get_interface_property(attrname, StateCalcJacobiConstant)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcJacobiConstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcJacobiConstant)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcJacobiConstant)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17104,12 +17104,12 @@ class StateCalcJacobiOsculating(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names[central_body_name] = "central_body_name"
     _property_names[secondary_name] = "secondary_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcJacobiOsculating."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcJacobiOsculating)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcJacobiOsculating)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17156,12 +17156,12 @@ class StateCalcCartesianElem(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCartesianElem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCartesianElem)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCartesianElem)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17244,12 +17244,12 @@ class StateCalcCartSTMElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[final_state_component] = "final_state_component"
     _property_names[initial_state_component] = "initial_state_component"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCartSTMElem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCartSTMElem)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCartSTMElem)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17332,12 +17332,12 @@ class StateCalcSTMEigenval(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[eigenvalue_number] = "eigenvalue_number"
     _property_names[eigenvalue_complex_part] = "eigenvalue_complex_part"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSTMEigenval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSTMEigenval)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSTMEigenval)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17438,12 +17438,12 @@ class StateCalcSTMEigenvecElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[state_variable] = "state_variable"
     _property_names[eigenvector_complex_part] = "eigenvector_complex_part"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSTMEigenvecElem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSTMEigenvecElem)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSTMEigenvecElem)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17508,12 +17508,12 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[atmos_model_name] = "atmos_model_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEnvironment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEnvironment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEnvironment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17580,12 +17580,12 @@ class StateCalcOrbitDelaunayG(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitDelaunayG."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitDelaunayG)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitDelaunayG)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17652,12 +17652,12 @@ class StateCalcOrbitDelaunayH(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitDelaunayH."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitDelaunayH)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitDelaunayH)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17724,12 +17724,12 @@ class StateCalcOrbitDelaunayL(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitDelaunayL."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitDelaunayL)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitDelaunayL)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17796,12 +17796,12 @@ class StateCalcOrbitSemilatusRectum(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitSemilatusRectum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitSemilatusRectum)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitSemilatusRectum)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17866,12 +17866,12 @@ class StateCalcEquinoctialElem(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEquinoctialElem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEquinoctialElem)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEquinoctialElem)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -17946,12 +17946,12 @@ class StateCalcCloseApproachBearing(IComponentInfo, ICloneable, SupportsDeleteCa
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachBearing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachBearing)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachBearing)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18026,12 +18026,12 @@ class StateCalcCloseApproachMagnitude(IComponentInfo, ICloneable, SupportsDelete
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachMagnitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachMagnitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18106,12 +18106,12 @@ class StateCalcCloseApproachTheta(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachTheta."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachTheta)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachTheta)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18186,12 +18186,12 @@ class StateCalcCloseApproachX(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachX."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachX)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachX)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18266,12 +18266,12 @@ class StateCalcCloseApproachY(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachY."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachY)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachY)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18346,12 +18346,12 @@ class StateCalcCloseApproachCosBearing(IComponentInfo, ICloneable, SupportsDelet
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCloseApproachCosBearing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCloseApproachCosBearing)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCloseApproachCosBearing)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18462,12 +18462,12 @@ class StateCalcRelativeGroundTrackError(IComponentInfo, ICloneable, SupportsDele
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativeGroundTrackError."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativeGroundTrackError)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativeGroundTrackError)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18578,12 +18578,12 @@ class StateCalcRelativeAtAOLMaster(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativeAtAOLMaster."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativeAtAOLMaster)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativeAtAOLMaster)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18658,12 +18658,12 @@ class StateCalcDeltaFromMaster(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaFromMaster."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDeltaFromMaster)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDeltaFromMaster)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18728,12 +18728,12 @@ class StateCalcLonDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcLonDriftRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcLonDriftRate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcLonDriftRate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18780,12 +18780,12 @@ class StateCalcMeanEarthLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMeanEarthLon."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMeanEarthLon)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMeanEarthLon)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18832,12 +18832,12 @@ class StateCalcRectifiedLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRectifiedLon."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRectifiedLon)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRectifiedLon)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18884,12 +18884,12 @@ class StateCalcTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTrueLongitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTrueLongitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTrueLongitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18936,12 +18936,12 @@ class StateCalcGeodeticTrueLongitude(IComponentInfo, ICloneable, SupportsDeleteC
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGeodeticTrueLongitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGeodeticTrueLongitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGeodeticTrueLongitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -18988,12 +18988,12 @@ class StateCalcGeodeticTrueLongitudeAtTimeOfPerigee(IComponentInfo, ICloneable, 
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGeodeticTrueLongitudeAtTimeOfPerigee."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGeodeticTrueLongitudeAtTimeOfPerigee)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19040,12 +19040,12 @@ class StateCalcMeanRightAscension(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMeanRightAscension."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMeanRightAscension)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMeanRightAscension)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19092,12 +19092,12 @@ class StateCalcGeodeticMeanRightAscension(IComponentInfo, ICloneable, SupportsDe
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGeodeticMeanRightAscension."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGeodeticMeanRightAscension)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGeodeticMeanRightAscension)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19144,12 +19144,12 @@ class StateCalcTwoBodyDriftRate(IComponentInfo, ICloneable, SupportsDeleteCallba
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTwoBodyDriftRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTwoBodyDriftRate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTwoBodyDriftRate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19214,12 +19214,12 @@ class StateCalcDriftRateFactor(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[central_body_name] = "central_body_name"
     _property_names[drift_rate_model] = "drift_rate_model"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDriftRateFactor."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDriftRateFactor)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDriftRateFactor)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19266,12 +19266,12 @@ class StateCalcEccentricityX(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEccentricityX."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEccentricityX)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEccentricityX)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19318,12 +19318,12 @@ class StateCalcEccentricityY(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEccentricityY."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEccentricityY)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEccentricityY)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19388,12 +19388,12 @@ class StateCalcInclinationX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[inclination_magnitude_type] = "inclination_magnitude_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInclinationX."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInclinationX)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInclinationX)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19458,12 +19458,12 @@ class StateCalcInclinationY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[inclination_magnitude_type] = "inclination_magnitude_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInclinationY."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInclinationY)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInclinationY)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19510,12 +19510,12 @@ class StateCalcUnitAngularMomentumX(IComponentInfo, ICloneable, SupportsDeleteCa
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcUnitAngularMomentumX."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcUnitAngularMomentumX)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcUnitAngularMomentumX)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19562,12 +19562,12 @@ class StateCalcUnitAngularMomentumY(IComponentInfo, ICloneable, SupportsDeleteCa
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcUnitAngularMomentumY."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcUnitAngularMomentumY)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcUnitAngularMomentumY)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19614,12 +19614,12 @@ class StateCalcUnitAngularMomentumZ(IComponentInfo, ICloneable, SupportsDeleteCa
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcUnitAngularMomentumZ."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcUnitAngularMomentumZ)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcUnitAngularMomentumZ)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19667,12 +19667,12 @@ class StateCalcHeightAboveTerrain(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcHeightAboveTerrain."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcHeightAboveTerrain)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcHeightAboveTerrain)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19719,12 +19719,12 @@ class StateCalcGeodeticElem(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGeodeticElem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGeodeticElem)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGeodeticElem)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19841,12 +19841,12 @@ class StateCalcRepeatingGroundTrackErr(IComponentInfo, ICloneable, SupportsDelet
     _property_names[repeat_count] = "repeat_count"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRepeatingGroundTrackErr."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRepeatingGroundTrackErr)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRepeatingGroundTrackErr)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19911,12 +19911,12 @@ class StateCalcAltitudeOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcAltitudeOfApoapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcAltitudeOfApoapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcAltitudeOfApoapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -19981,12 +19981,12 @@ class StateCalcAltitudeOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcAltitudeOfPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcAltitudeOfPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcAltitudeOfPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20051,12 +20051,12 @@ class StateCalcArgumentOfLatitude(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcArgumentOfLatitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcArgumentOfLatitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcArgumentOfLatitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20121,12 +20121,12 @@ class StateCalcArgumentOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcArgumentOfPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcArgumentOfPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcArgumentOfPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20191,12 +20191,12 @@ class StateCalcEccentricityAnomaly(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEccentricityAnomaly."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEccentricityAnomaly)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEccentricityAnomaly)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20261,12 +20261,12 @@ class StateCalcLonOfAscNode(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcLonOfAscNode."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcLonOfAscNode)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcLonOfAscNode)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20331,12 +20331,12 @@ class StateCalcMeanMotion(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMeanMotion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMeanMotion)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMeanMotion)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20401,12 +20401,12 @@ class StateCalcOrbitPeriod(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitPeriod."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitPeriod)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitPeriod)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20471,12 +20471,12 @@ class StateCalcNumRevs(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcNumRevs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcNumRevs)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcNumRevs)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20541,12 +20541,12 @@ class StateCalcRadOfApoapsis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadOfApoapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRadOfApoapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRadOfApoapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20611,12 +20611,12 @@ class StateCalcRadOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadOfPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRadOfPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRadOfPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20681,12 +20681,12 @@ class StateCalcSemimajorAxis(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSemimajorAxis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSemimajorAxis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSemimajorAxis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20751,12 +20751,12 @@ class StateCalcTimePastAscNode(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTimePastAscNode."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTimePastAscNode)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTimePastAscNode)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20821,12 +20821,12 @@ class StateCalcTimePastPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTimePastPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTimePastPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTimePastPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20891,12 +20891,12 @@ class StateCalcTrueAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTrueAnomaly."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTrueAnomaly)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTrueAnomaly)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20925,12 +20925,12 @@ class StateCalcDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcDeltaV)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaV."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDeltaV)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDeltaV)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20959,12 +20959,12 @@ class StateCalcDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallback)
         return get_interface_property(attrname, StateCalcDeltaVSquared)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaVSquared."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDeltaVSquared)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDeltaVSquared)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -20993,12 +20993,12 @@ class StateCalcMCSDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcMCSDeltaV)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMCSDeltaV."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMCSDeltaV)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMCSDeltaV)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21046,12 +21046,12 @@ class StateCalcMCSDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteCallba
 
     _property_names[squared_type] = "squared_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMCSDeltaVSquared."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMCSDeltaVSquared)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMCSDeltaVSquared)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21098,12 +21098,12 @@ class StateCalcSequenceDeltaV(IComponentInfo, ICloneable, SupportsDeleteCallback
 
     _property_names[sequence_name] = "sequence_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSequenceDeltaV."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSequenceDeltaV)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSequenceDeltaV)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21169,12 +21169,12 @@ class StateCalcSequenceDeltaVSquared(IComponentInfo, ICloneable, SupportsDeleteC
     _property_names[sequence_name] = "sequence_name"
     _property_names[squared_type] = "squared_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSequenceDeltaVSquared."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSequenceDeltaVSquared)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSequenceDeltaVSquared)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21203,12 +21203,12 @@ class StateCalcFuelMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcFuelMass)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcFuelMass."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcFuelMass)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcFuelMass)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21237,12 +21237,12 @@ class StateCalcDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcDensity)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDensity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDensity)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDensity)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21271,12 +21271,12 @@ class StateCalcInertialDeltaVMagnitude(IComponentInfo, ICloneable, SupportsDelet
         return get_interface_property(attrname, StateCalcInertialDeltaVMagnitude)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInertialDeltaVMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInertialDeltaVMagnitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInertialDeltaVMagnitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21323,12 +21323,12 @@ class StateCalcInertialDeltaVx(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _property_names[coord_axes_name] = "coord_axes_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInertialDeltaVx."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInertialDeltaVx)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInertialDeltaVx)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21375,12 +21375,12 @@ class StateCalcInertialDeltaVy(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _property_names[coord_axes_name] = "coord_axes_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInertialDeltaVy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInertialDeltaVy)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInertialDeltaVy)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21427,12 +21427,12 @@ class StateCalcInertialDeltaVz(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _property_names[coord_axes_name] = "coord_axes_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInertialDeltaVz."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInertialDeltaVz)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInertialDeltaVz)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21461,12 +21461,12 @@ class StateCalcManeuverSpecificImpulse(IComponentInfo, ICloneable, SupportsDelet
         return get_interface_property(attrname, StateCalcManeuverSpecificImpulse)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcManeuverSpecificImpulse."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcManeuverSpecificImpulse)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcManeuverSpecificImpulse)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21495,12 +21495,12 @@ class StateCalcPressure(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcPressure)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcPressure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcPressure)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcPressure)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21529,12 +21529,12 @@ class StateCalcTemperature(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcTemperature)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTemperature."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTemperature)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTemperature)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21635,12 +21635,12 @@ class StateCalcVectorY(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[unit_dimension] = "unit_dimension"
     _property_names[normalize] = "normalize"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorY."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorY)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorY)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21741,12 +21741,12 @@ class StateCalcVectorZ(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[unit_dimension] = "unit_dimension"
     _property_names[normalize] = "normalize"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorZ."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorZ)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorZ)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21775,12 +21775,12 @@ class StateCalcMass(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcMass)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMass."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMass)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMass)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21809,12 +21809,12 @@ class StateCalcManeuverTotalMassFlowRate(IComponentInfo, ICloneable, SupportsDel
         return get_interface_property(attrname, StateCalcManeuverTotalMassFlowRate)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcManeuverTotalMassFlowRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcManeuverTotalMassFlowRate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcManeuverTotalMassFlowRate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21861,12 +21861,12 @@ class StateCalcAbsoluteValue(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcAbsoluteValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcAbsoluteValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcAbsoluteValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -21931,12 +21931,12 @@ class StateCalcDifference(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[calculation_object_name] = "calculation_object_name"
     _property_names[difference_order] = "difference_order"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDifference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDifference)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDifference)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22037,12 +22037,12 @@ class StateCalcDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDelete
     _property_names[segment_state_to_use] = "segment_state_to_use"
     _property_names[difference_order] = "difference_order"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDifferenceOtherSegment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDifferenceOtherSegment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22107,12 +22107,12 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcPositionDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcPositionDifferenceOtherSegment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcPositionDifferenceOtherSegment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22177,12 +22177,12 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDel
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVelDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVelDifferenceOtherSegment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVelDifferenceOtherSegment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22247,12 +22247,12 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, Sup
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcPositionVelDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcPositionVelDifferenceOtherSegment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcPositionVelDifferenceOtherSegment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22335,12 +22335,12 @@ class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcValueAtSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcValueAtSegment)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcValueAtSegment)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22387,12 +22387,12 @@ class StateCalcMaxValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMaxValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMaxValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMaxValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22439,12 +22439,12 @@ class StateCalcMinValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMinValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMinValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMinValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22491,12 +22491,12 @@ class StateCalcMeanValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMeanValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMeanValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMeanValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22543,12 +22543,12 @@ class StateCalcMedianValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMedianValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMedianValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMedianValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22595,12 +22595,12 @@ class StateCalcStandardDeviation(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcStandardDeviation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcStandardDeviation)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcStandardDeviation)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22647,12 +22647,12 @@ class StateCalcNegative(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[calculation_object_name] = "calculation_object_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcNegative."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcNegative)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcNegative)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22717,12 +22717,12 @@ class StateCalcEccentricity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEccentricity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEccentricity)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEccentricity)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22787,12 +22787,12 @@ class StateCalcMeanAnomaly(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcMeanAnomaly."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcMeanAnomaly)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcMeanAnomaly)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22857,12 +22857,12 @@ class StateCalcRAAN(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRAAN."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRAAN)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRAAN)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22927,12 +22927,12 @@ class BDotRCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[target_body_name] = "target_body_name"
     _property_names[reference_vector_name] = "reference_vector_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BDotRCalc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BDotRCalc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BDotRCalc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -22997,12 +22997,12 @@ class BDotTCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[target_body_name] = "target_body_name"
     _property_names[reference_vector_name] = "reference_vector_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BDotTCalc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BDotTCalc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BDotTCalc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23049,12 +23049,12 @@ class BMagnitudeCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[target_body_name] = "target_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BMagnitudeCalc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BMagnitudeCalc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BMagnitudeCalc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23119,12 +23119,12 @@ class BThetaCalc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[target_body_name] = "target_body_name"
     _property_names[reference_vector_name] = "reference_vector_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BThetaCalc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BThetaCalc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BThetaCalc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23207,12 +23207,12 @@ class StateCalcDeltaDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[reference_type] = "reference_type"
     _property_names[reference_body] = "reference_body"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaDec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDeltaDec)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDeltaDec)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23295,12 +23295,12 @@ class StateCalcDeltaRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[reference_type] = "reference_type"
     _property_names[reference_body] = "reference_body"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDeltaRA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDeltaRA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDeltaRA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23347,12 +23347,12 @@ class StateCalcBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcBetaAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcBetaAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcBetaAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23399,12 +23399,12 @@ class StateCalcLocalApparentSolarLon(IComponentInfo, ICloneable, SupportsDeleteC
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcLocalApparentSolarLon."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcLocalApparentSolarLon)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcLocalApparentSolarLon)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23469,12 +23469,12 @@ class StateCalcLonOfPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcLonOfPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcLonOfPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcLonOfPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23681,12 +23681,12 @@ class StateCalcOrbitStateValue(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[vz] = "vz"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOrbitStateValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOrbitStateValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOrbitStateValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23751,12 +23751,12 @@ class StateCalcSignedEccentricity(IComponentInfo, ICloneable, SupportsDeleteCall
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSignedEccentricity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSignedEccentricity)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSignedEccentricity)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23821,12 +23821,12 @@ class StateCalcInclination(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInclination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInclination)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInclination)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23891,12 +23891,12 @@ class StateCalcTrueLon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[coord_system_name] = "coord_system_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcTrueLon."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcTrueLon)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcTrueLon)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -23943,12 +23943,12 @@ class StateCalcPower(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[power_source_name] = "power_source_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcPower."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcPower)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcPower)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24041,12 +24041,12 @@ class StateCalcRelativeMotion(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativeMotion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativeMotion)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativeMotion)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24193,12 +24193,12 @@ class StateCalcSolarBetaAngle(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[sun_position] = "sun_position"
     _property_names[sign_convention] = "sign_convention"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSolarBetaAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSolarBetaAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSolarBetaAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24363,12 +24363,12 @@ class StateCalcSolarInPlaneAngle(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names[counter_clockwise_rotation] = "counter_clockwise_rotation"
     _property_names[reference_direction] = "reference_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSolarInPlaneAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSolarInPlaneAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSolarInPlaneAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24515,12 +24515,12 @@ class StateCalcRelativePositionDecAngle(IComponentInfo, ICloneable, SupportsDele
     _property_names[relative_position_type] = "relative_position_type"
     _property_names[sign_convention] = "sign_convention"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativePositionDecAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativePositionDecAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativePositionDecAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24685,12 +24685,12 @@ class StateCalcRelativePositionInPlaneAngle(IComponentInfo, ICloneable, Supports
     _property_names[counter_clockwise_rotation] = "counter_clockwise_rotation"
     _property_names[reference_direction] = "reference_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativePositionInPlaneAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativePositionInPlaneAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativePositionInPlaneAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24801,12 +24801,12 @@ class StateCalcRelativeInclination(IComponentInfo, ICloneable, SupportsDeleteCal
     _property_names[reference_selection] = "reference_selection"
     _property_names[reference] = "reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRelativeInclination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRelativeInclination)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRelativeInclination)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -24953,12 +24953,12 @@ class StateCalcCurvilinearRelativeMotion(IComponentInfo, ICloneable, SupportsDel
     _property_names[element_type] = "element_type"
     _property_names[sign_convention] = "sign_convention"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCurvilinearRelativeMotion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCurvilinearRelativeMotion)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCurvilinearRelativeMotion)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25041,12 +25041,12 @@ class StateCalcCustomFunction(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[eval_function_name] = "eval_function_name"
     _property_names[unit_dimension] = "unit_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCustomFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCustomFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCustomFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25131,12 +25131,12 @@ class StateCalcScript(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[unit_dimension] = "unit_dimension"
     _property_names[calculation_object_arguments_link_embed] = "calculation_object_arguments_link_embed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcScript)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcScript)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25165,12 +25165,12 @@ class StateCalcCd(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcCd)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCd."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCd)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCd)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25199,12 +25199,12 @@ class StateCalcCr(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcCr)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCr."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCr)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCr)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25233,12 +25233,12 @@ class StateCalcDragArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcDragArea)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDragArea."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDragArea)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDragArea)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25267,12 +25267,12 @@ class StateCalcRadiationPressureArea(IComponentInfo, ICloneable, SupportsDeleteC
         return get_interface_property(attrname, StateCalcRadiationPressureArea)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadiationPressureArea."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRadiationPressureArea)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRadiationPressureArea)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25301,12 +25301,12 @@ class StateCalcRadiationPressureCoefficient(IComponentInfo, ICloneable, Supports
         return get_interface_property(attrname, StateCalcRadiationPressureCoefficient)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRadiationPressureCoefficient."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRadiationPressureCoefficient)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRadiationPressureCoefficient)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25335,12 +25335,12 @@ class StateCalcSRPArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcSRPArea)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSRPArea."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSRPArea)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSRPArea)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25387,12 +25387,12 @@ class StateCalcCosOfVerticalFlightPathAngle(IComponentInfo, ICloneable, Supports
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcCosOfVerticalFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcCosOfVerticalFlightPathAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcCosOfVerticalFlightPathAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25439,12 +25439,12 @@ class StateCalcDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDec)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDec)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25491,12 +25491,12 @@ class StateCalcFlightPathAngle(IComponentInfo, ICloneable, SupportsDeleteCallbac
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcFlightPathAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcFlightPathAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25544,12 +25544,12 @@ class StateCalcRMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[reference_point_name] = "reference_point_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRMagnitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRMagnitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25596,12 +25596,12 @@ class StateCalcRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25648,12 +25648,12 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVMagnitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVMagnitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25700,12 +25700,12 @@ class StateCalcVelAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVelAz."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVelAz)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVelAz)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25770,12 +25770,12 @@ class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[central_body_name] = "central_body_name"
     _property_names[element_type] = "element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcC3Energy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcC3Energy)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcC3Energy)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25822,12 +25822,12 @@ class StateCalcInAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInAsympDec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInAsympDec)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInAsympDec)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25874,12 +25874,12 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInAsympRA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInAsympRA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInAsympRA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25926,12 +25926,12 @@ class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcInVelAzAtPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcInVelAzAtPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcInVelAzAtPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -25978,12 +25978,12 @@ class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOutAsympDec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOutAsympDec)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOutAsympDec)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26030,12 +26030,12 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOutAsympRA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOutAsympRA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOutAsympRA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26082,12 +26082,12 @@ class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOutVelAzAtPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOutVelAzAtPeriapsis)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOutVelAzAtPeriapsis)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26116,12 +26116,12 @@ class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcDuration)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDuration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDuration)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDuration)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26169,12 +26169,12 @@ class StateCalcUserValue(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[variable_name] = "variable_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcUserValue."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcUserValue)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcUserValue)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26221,12 +26221,12 @@ class StateCalcVectorGeometryToolAngle(IComponentInfo, ICloneable, SupportsDelet
 
     _property_names[angle_name] = "angle_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorGeometryToolAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorGeometryToolAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorGeometryToolAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26291,12 +26291,12 @@ class StateCalcAngle(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[vector1_name] = "vector1_name"
     _property_names[vector2_name] = "vector2_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcAngle)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcAngle)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26361,12 +26361,12 @@ class StateCalcDotProduct(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[vector1_name] = "vector1_name"
     _property_names[vector2_name] = "vector2_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDotProduct."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDotProduct)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDotProduct)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26431,12 +26431,12 @@ class StateCalcVectorDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[coord_axes_name] = "coord_axes_name"
     _property_names[vector_name] = "vector_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorDec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorDec)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorDec)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26501,12 +26501,12 @@ class StateCalcVectorMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[vector_name] = "vector_name"
     _property_names[unit_dimension] = "unit_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorMagnitude)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorMagnitude)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26571,12 +26571,12 @@ class StateCalcVectorRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[coord_axes_name] = "coord_axes_name"
     _property_names[vector_name] = "vector_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorRA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorRA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorRA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26677,12 +26677,12 @@ class StateCalcVectorX(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[unit_dimension] = "unit_dimension"
     _property_names[normalize] = "normalize"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcVectorX."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcVectorX)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcVectorX)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26839,12 +26839,12 @@ class StateCalcOnePointAccess(IComponentInfo, ICloneable, SupportsDeleteCallback
     _property_names[time_delay_convergence_tolerance] = "time_delay_convergence_tolerance"
     _property_names[use_light_time_delay] = "use_light_time_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcOnePointAccess."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcOnePointAccess)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcOnePointAccess)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -26955,12 +26955,12 @@ class StateCalcDifferenceAcrossSegmentsOtherSatellite(IComponentInfo, ICloneable
     _property_names[difference_order] = "difference_order"
     _property_names[reference_satellite] = "reference_satellite"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDifferenceAcrossSegmentsOtherSatellite."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDifferenceAcrossSegmentsOtherSatellite)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDifferenceAcrossSegmentsOtherSatellite)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27053,12 +27053,12 @@ class StateCalcValueAtSegmentOtherSat(IComponentInfo, ICloneable, SupportsDelete
     _property_names[segment_state_to_use] = "segment_state_to_use"
     _property_names[reference_satellite] = "reference_satellite"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcValueAtSegmentOtherSat."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcValueAtSegmentOtherSat)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcValueAtSegmentOtherSat)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27105,12 +27105,12 @@ class StateCalcRARate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRARate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRARate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRARate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27157,12 +27157,12 @@ class StateCalcDecRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcDecRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcDecRate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcDecRate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27209,12 +27209,12 @@ class StateCalcRangeRate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[coord_system_name] = "coord_system_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcRangeRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcRangeRate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcRangeRate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27297,12 +27297,12 @@ class StateCalcGravitationalParameter(IComponentInfo, ICloneable, SupportsDelete
     _property_names[gravitational_parameter_source] = "gravitational_parameter_source"
     _property_names[gravity_filename] = "gravity_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGravitationalParameter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGravitationalParameter)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGravitationalParameter)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27385,12 +27385,12 @@ class StateCalcReferenceRadius(IComponentInfo, ICloneable, SupportsDeleteCallbac
     _property_names[reference_radius_source] = "reference_radius_source"
     _property_names[gravity_filename] = "gravity_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcReferenceRadius."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcReferenceRadius)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcReferenceRadius)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27527,12 +27527,12 @@ class StateCalcGravCoeff(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[order] = "order"
     _property_names[normalization_type] = "normalization_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcGravCoeff."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcGravCoeff)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcGravCoeff)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27561,12 +27561,12 @@ class StateCalcSpeedOfLight(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcSpeedOfLight)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcSpeedOfLight."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcSpeedOfLight)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcSpeedOfLight)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27595,12 +27595,12 @@ class StateCalcPi(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return get_interface_property(attrname, StateCalcPi)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcPi."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcPi)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcPi)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27665,12 +27665,12 @@ class StateCalcScalar(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[scalar_name] = "scalar_name"
     _property_names[unit_dimension] = "unit_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcScalar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcScalar)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcScalar)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27717,12 +27717,12 @@ class StateCalcApparentSolarTime(IComponentInfo, ICloneable, SupportsDeleteCallb
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcApparentSolarTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcApparentSolarTime)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcApparentSolarTime)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27769,12 +27769,12 @@ class StateCalcEarthMeanSolarTime(IComponentInfo, ICloneable, SupportsDeleteCall
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEarthMeanSolarTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEarthMeanSolarTime)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEarthMeanSolarTime)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27821,12 +27821,12 @@ class StateCalcEarthMeanLocalTimeOfAscendingNode(IComponentInfo, ICloneable, Sup
 
     _property_names[central_body_name] = "central_body_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateCalcEarthMeanLocalTimeOfAscendingNode."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateCalcEarthMeanLocalTimeOfAscendingNode)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateCalcEarthMeanLocalTimeOfAscendingNode)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -27849,7 +27849,7 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
     _item_method_offset = 1
     _add_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _get_item_by_index_method_offset = 6
     _get_item_by_name_method_offset = 7
@@ -27862,7 +27862,7 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, AutomaticSequenceCollection)
     def __iter__(self):
         """Create an iterator for the AutomaticSequenceCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "AutomaticSequence":
@@ -27895,13 +27895,13 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
         """Remove a sequence."""
         return self._intf.invoke(AutomaticSequenceCollection._metadata, AutomaticSequenceCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(AutomaticSequenceCollection._metadata, AutomaticSequenceCollection._get__NewEnum_metadata)
+        return self._intf.get_property(AutomaticSequenceCollection._metadata, AutomaticSequenceCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -27928,13 +27928,13 @@ class AutomaticSequenceCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AutomaticSequenceCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AutomaticSequenceCollection)
+        initialize_from_source_object(self, source_object, AutomaticSequenceCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28015,10 +28015,10 @@ class AutomaticSequence(SupportsDeleteCallback):
     _property_names[user_comment] = "user_comment"
     _property_names[sequence] = "sequence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AutomaticSequence."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AutomaticSequence)
+        initialize_from_source_object(self, source_object, AutomaticSequence)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28038,7 +28038,7 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _remove_method_offset = 5
     _remove_all_method_offset = 6
@@ -28053,7 +28053,7 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, CentralBodyComponentCollection)
     def __iter__(self):
         """Create an iterator for the CentralBodyComponentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "CentralBodyComponent":
@@ -28080,13 +28080,13 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
         """Return the size of the collection."""
         return self._intf.get_property(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Iterates through the collection."""
-        return self._intf.get_property(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CentralBodyComponentCollection._metadata, CentralBodyComponentCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -28127,12 +28127,12 @@ class CentralBodyComponentCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentCollection)
+        initialize_from_source_object(self, source_object, CentralBodyComponentCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28509,12 +28509,12 @@ class CentralBodyComponent(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[default_ephemeris_name] = "default_ephemeris_name"
     _property_names[default_ephemeris_data] = "default_ephemeris_data"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponent."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponent)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponent)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -28633,10 +28633,10 @@ class CentralBodyComponentGravityModel(SupportsDeleteCallback):
     _property_names[j3] = "j3"
     _property_names[j4] = "j4"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentGravityModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentGravityModel)
+        initialize_from_source_object(self, source_object, CentralBodyComponentGravityModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28681,11 +28681,11 @@ class CentralBodyComponentShapeSphere(ICentralBodyComponentShape, SupportsDelete
 
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentShapeSphere."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeSphere)
-        ICentralBodyComponentShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentShapeSphere)
+        ICentralBodyComponentShape.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentShape._private_init(self, intf)
@@ -28759,11 +28759,11 @@ class CentralBodyComponentShapeOblateSpheroid(ICentralBodyComponentShape, Suppor
     _property_names[max_radius] = "max_radius"
     _property_names[flattening_coefficient] = "flattening_coefficient"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentShapeOblateSpheroid."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeOblateSpheroid)
-        ICentralBodyComponentShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentShapeOblateSpheroid)
+        ICentralBodyComponentShape.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentShape._private_init(self, intf)
@@ -28845,11 +28845,11 @@ class CentralBodyComponentShapeTriaxialEllipsoid(ICentralBodyComponentShape, Sup
     _property_names[semimid_axis] = "semimid_axis"
     _property_names[semiminor_axis] = "semiminor_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentShapeTriaxialEllipsoid."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentShapeTriaxialEllipsoid)
-        ICentralBodyComponentShape.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentShapeTriaxialEllipsoid)
+        ICentralBodyComponentShape.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentShape._private_init(self, intf)
@@ -28895,11 +28895,11 @@ class CentralBodyComponentAttitudeRotationCoefficientsFile(ICentralBodyComponent
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentAttitudeRotationCoefficientsFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentAttitudeRotationCoefficientsFile)
-        ICentralBodyComponentAttitude.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentAttitudeRotationCoefficientsFile)
+        ICentralBodyComponentAttitude.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentAttitude._private_init(self, intf)
@@ -29035,11 +29035,11 @@ class CentralBodyComponentAttitudeIAU1994(ICentralBodyComponentAttitude, Support
     _property_names[rotation_offset] = "rotation_offset"
     _property_names[rotation_rate] = "rotation_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentAttitudeIAU1994."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentAttitudeIAU1994)
-        ICentralBodyComponentAttitude.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentAttitudeIAU1994)
+        ICentralBodyComponentAttitude.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentAttitude._private_init(self, intf)
@@ -29301,11 +29301,11 @@ class CentralBodyComponentEphemerisAnalyticOrbit(ICentralBodyComponentEphemeris,
     _property_names[mean_longitude] = "mean_longitude"
     _property_names[mean_longitude_rate] = "mean_longitude_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentEphemerisAnalyticOrbit."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisAnalyticOrbit)
-        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentEphemerisAnalyticOrbit)
+        ICentralBodyComponentEphemeris.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemeris._private_init(self, intf)
@@ -29351,11 +29351,11 @@ class CentralBodyComponentEphemerisJPLSpice(ICentralBodyComponentEphemeris, Supp
 
     _property_names[jpl_spice_id] = "jpl_spice_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentEphemerisJPLSpice."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisJPLSpice)
-        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentEphemerisJPLSpice)
+        ICentralBodyComponentEphemeris.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemeris._private_init(self, intf)
@@ -29401,11 +29401,11 @@ class CentralBodyComponentEphemerisFile(ICentralBodyComponentEphemeris, Supports
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentEphemerisFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisFile)
-        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentEphemerisFile)
+        ICentralBodyComponentEphemeris.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemeris._private_init(self, intf)
@@ -29421,11 +29421,11 @@ agcls.AgTypeNameMap["CentralBodyComponentEphemerisFile"] = CentralBodyComponentE
 
 class CentralBodyComponentEphemerisJPLDesignExplorerOptimizer(ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides, ICentralBodyComponentEphemeris, SupportsDeleteCallback):
     """Central Body Ephemeris - JPL DE."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentEphemerisJPLDesignExplorerOptimizer."""
         SupportsDeleteCallback.__init__(self)
-        ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides.__init__(self, sourceObject)
-        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
+        ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides.__init__(self, source_object)
+        ICentralBodyComponentEphemeris.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides._private_init(self, intf)
@@ -29472,11 +29472,11 @@ class CentralBodyComponentEphemerisPlanetary(ICentralBodyComponentEphemeris, Sup
 
     _property_names[planetary_filename] = "planetary_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyComponentEphemerisPlanetary."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyComponentEphemerisPlanetary)
-        ICentralBodyComponentEphemeris.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CentralBodyComponentEphemerisPlanetary)
+        ICentralBodyComponentEphemeris.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICentralBodyComponentEphemeris._private_init(self, intf)
@@ -29586,11 +29586,11 @@ class MCSSegmentProperties(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[b_planes] = "b_planes"
     _property_names[last_run_code] = "last_run_code"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MCSSegmentProperties."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MCSSegmentProperties)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MCSSegmentProperties)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -29706,12 +29706,12 @@ class PowerInternal(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[reference_epoch] = "reference_epoch"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PowerInternal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PowerInternal)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PowerInternal)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -29828,12 +29828,12 @@ class PowerProcessed(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[input_power_source_name] = "input_power_source_name"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PowerProcessed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PowerProcessed)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PowerProcessed)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30122,12 +30122,12 @@ class PowerSolarArray(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[approximation_formula] = "approximation_formula"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PowerSolarArray."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PowerSolarArray)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PowerSolarArray)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30156,12 +30156,12 @@ class GeneralRelativityFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
         return get_interface_property(attrname, GeneralRelativityFunction)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GeneralRelativityFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GeneralRelativityFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GeneralRelativityFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30190,12 +30190,12 @@ class StateTransformationFunction(IComponentInfo, ICloneable, SupportsDeleteCall
         return get_interface_property(attrname, StateTransformationFunction)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StateTransformationFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StateTransformationFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StateTransformationFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30312,12 +30312,12 @@ class CR3BPFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[characteristic_velocity] = "characteristic_velocity"
     _property_names[characteristic_acceleration] = "characteristic_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CR3BPFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CR3BPFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CR3BPFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30444,12 +30444,12 @@ class ER3BPFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[characteristic_velocity] = "characteristic_velocity"
     _property_names[characteristic_acceleration] = "characteristic_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ER3BPFunc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ER3BPFunc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ER3BPFunc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30596,12 +30596,12 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
     _property_names[radiation_pressure_coefficient] = "radiation_pressure_coefficient"
     _property_names[radiation_pressure_area] = "radiation_pressure_area"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RadiationPressureFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RadiationPressureFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RadiationPressureFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30774,12 +30774,12 @@ class YarkovskyFunc(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[a2] = "a2"
     _property_names[a3] = "a3"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type YarkovskyFunc."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, YarkovskyFunc)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, YarkovskyFunc)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -30891,12 +30891,12 @@ class BlendedDensity(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_approx_altitude] = "use_approx_altitude"
     _property_names[lower_bound_upper_atmosphere_model] = "lower_bound_upper_atmosphere_model"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BlendedDensity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BlendedDensity)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BlendedDensity)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -31189,12 +31189,12 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Cira72Function."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Cira72Function)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Cira72Function)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -31377,12 +31377,12 @@ class Exponential(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Exponential."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Exponential)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Exponential)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -31603,12 +31603,12 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type HarrisPriester."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, HarrisPriester)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, HarrisPriester)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -32101,12 +32101,12 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DensityModelPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DensityModelPlugin)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DensityModelPlugin)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -32399,12 +32399,12 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type JacchiaRoberts."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, JacchiaRoberts)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, JacchiaRoberts)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -32767,12 +32767,12 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type JacchiaBowman2008."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, JacchiaBowman2008)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, JacchiaBowman2008)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -32939,12 +32939,12 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Jacchia_1960."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Jacchia_1960)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Jacchia_1960)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -33237,12 +33237,12 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Jacchia_1970."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Jacchia_1970)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Jacchia_1970)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -33535,12 +33535,12 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Jacchia_1971."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Jacchia_1971)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Jacchia_1971)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -33833,12 +33833,12 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MSISE_1990."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MSISE_1990)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MSISE_1990)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -34131,12 +34131,12 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MSIS_1986."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MSIS_1986)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MSIS_1986)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -34429,12 +34429,12 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type NRLMSISE_2000."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, NRLMSISE_2000)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, NRLMSISE_2000)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -34583,12 +34583,12 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type US_Standard_Atmosphere."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, US_Standard_Atmosphere)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, US_Standard_Atmosphere)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -34863,12 +34863,12 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM37."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarsGRAM37)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarsGRAM37)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -35143,12 +35143,12 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2000."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarsGRAM2000)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarsGRAM2000)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -35423,12 +35423,12 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2001."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarsGRAM2001)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarsGRAM2001)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -35703,12 +35703,12 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2005."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarsGRAM2005)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarsGRAM2005)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -35983,12 +35983,12 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarsGRAM2010."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarsGRAM2010)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarsGRAM2010)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -36191,12 +36191,12 @@ class VenusGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VenusGRAM2005."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VenusGRAM2005)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VenusGRAM2005)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -36489,12 +36489,12 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DTM2012."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DTM2012)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DTM2012)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -36787,12 +36787,12 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DTM2020."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DTM2020)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DTM2020)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37141,12 +37141,12 @@ class GravityFieldFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[max_partials_degree_text] = "max_partials_degree_text"
     _property_names[max_partials_order_text] = "max_partials_order_text"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GravityFieldFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GravityFieldFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GravityFieldFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37211,12 +37211,12 @@ class PointMassFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[gravitational_parameter_source] = "gravitational_parameter_source"
     _property_names[mu] = "mu"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PointMassFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PointMassFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PointMassFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37299,12 +37299,12 @@ class TwoBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[mu] = "mu"
     _property_names[min_radius_percent] = "min_radius_percent"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TwoBodyFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TwoBodyFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TwoBodyFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37361,12 +37361,12 @@ class HPOPPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type HPOPPluginFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, HPOPPluginFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, HPOPPluginFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37423,12 +37423,12 @@ class EOMFuncPluginFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EOMFuncPluginFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EOMFuncPluginFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EOMFuncPluginFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37575,12 +37575,12 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPAerospaceT20."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAerospaceT20)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPAerospaceT20)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37727,12 +37727,12 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPAerospaceT30."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPAerospaceT30)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPAerospaceT30)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -37879,12 +37879,12 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aIIA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPGSPM04aIIA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPGSPM04aIIA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -38031,12 +38031,12 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aIIR."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPGSPM04aIIR)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPGSPM04aIIR)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -38183,12 +38183,12 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aeIIA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPGSPM04aeIIA)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPGSPM04aeIIA)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -38335,12 +38335,12 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPGSPM04aeIIR."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPGSPM04aeIIR)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPGSPM04aeIIR)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -38541,12 +38541,12 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPSpherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPSpherical)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPSpherical)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -38765,12 +38765,12 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPNPlate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPNPlate)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPNPlate)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39007,12 +39007,12 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[tab_area_vector_definition_file] = "tab_area_vector_definition_file"
     _property_names[interpolation_method] = "interpolation_method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPTabulatedAreaVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPTabulatedAreaVector)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPTabulatedAreaVector)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39231,12 +39231,12 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[solar_radius] = "solar_radius"
     _property_names[variable_area_history_file] = "variable_area_history_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPVariableArea."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPVariableArea)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPVariableArea)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39339,12 +39339,12 @@ class ThirdBodyFunction(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[mode_type] = "mode_type"
     _property_names[ephemeris_source_warning] = "ephemeris_source_warning"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ThirdBodyFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ThirdBodyFunction)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ThirdBodyFunction)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39401,12 +39401,12 @@ class DragModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DragModelPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DragModelPlugin)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DragModelPlugin)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39581,12 +39581,12 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[use_sun_central_body_file_values] = "use_sun_central_body_file_values"
     _property_names[solar_radius] = "solar_radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SRPReflectionPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SRPReflectionPlugin)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SRPReflectionPlugin)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39703,12 +39703,12 @@ class EngineConstantAcceleration(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names[isp] = "isp"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineConstantAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineConstantAcceleration)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineConstantAcceleration)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -39825,12 +39825,12 @@ class EngineConstant(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[isp] = "isp"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineConstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineConstant)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineConstant)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40029,12 +40029,12 @@ class EngineIon(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[engine_definition] = "engine_definition"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineIon."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineIon)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineIon)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40223,12 +40223,12 @@ class EngineThrottleTable(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[reference_epoch] = "reference_epoch"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineThrottleTable."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineThrottleTable)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineThrottleTable)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40399,12 +40399,12 @@ class EngineCustom(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[update_function_name] = "update_function_name"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineCustom."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineCustom)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineCustom)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40479,12 +40479,12 @@ class EnginePlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EnginePlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EnginePlugin)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EnginePlugin)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40585,12 +40585,12 @@ class EngineModelPolynomial(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[isp_coefficients] = "isp_coefficients"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineModelPolynomial."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineModelPolynomial)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EngineModelPolynomial)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -40907,10 +40907,10 @@ class EngineModelThrustCoefficients(SupportsDeleteCallback):
     _property_names[k1] = "k1"
     _property_names[reference_temp] = "reference_temp"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineModelThrustCoefficients."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineModelThrustCoefficients)
+        initialize_from_source_object(self, source_object, EngineModelThrustCoefficients)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -41225,10 +41225,10 @@ class EngineModelIspCoefficients(SupportsDeleteCallback):
     _property_names[k1] = "k1"
     _property_names[reference_temp] = "reference_temp"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineModelIspCoefficients."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineModelIspCoefficients)
+        initialize_from_source_object(self, source_object, EngineModelIspCoefficients)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -41637,10 +41637,10 @@ class EngineDefinition(SupportsDeleteCallback):
     _property_names[power_efficiency_equation] = "power_efficiency_equation"
     _property_names[input_power_source_name] = "input_power_source_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EngineDefinition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EngineDefinition)
+        initialize_from_source_object(self, source_object, EngineDefinition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -41925,12 +41925,12 @@ class DesignCR3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[associated_objects] = "associated_objects"
     _property_names[include_stm] = "include_stm"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignCR3BPSetup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignCR3BPSetup)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DesignCR3BPSetup)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -41989,10 +41989,10 @@ class DesignCR3BPObject(SupportsDeleteCallback):
     _property_names[object_type] = "object_type"
     _property_names[object_depends_on] = "object_depends_on"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignCR3BPObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignCR3BPObject)
+        initialize_from_source_object(self, source_object, DesignCR3BPObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42011,7 +42011,7 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
@@ -42024,7 +42024,7 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, DesignCR3BPObjectCollection)
     def __iter__(self):
         """Create an iterator for the DesignCR3BPObjectCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "DesignCR3BPObject":
@@ -42043,13 +42043,13 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
         """Iterate through the collection."""
         return self._intf.invoke(DesignCR3BPObjectCollection._metadata, DesignCR3BPObjectCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """A property that allows you to enumerate through the collection."""
-        return self._intf.get_property(DesignCR3BPObjectCollection._metadata, DesignCR3BPObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(DesignCR3BPObjectCollection._metadata, DesignCR3BPObjectCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -42076,13 +42076,13 @@ class DesignCR3BPObjectCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignCR3BPObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignCR3BPObjectCollection)
+        initialize_from_source_object(self, source_object, DesignCR3BPObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42377,12 +42377,12 @@ class DesignER3BPSetup(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[associated_objects] = "associated_objects"
     _property_names[include_stm] = "include_stm"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignER3BPSetup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignER3BPSetup)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DesignER3BPSetup)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -42441,10 +42441,10 @@ class DesignER3BPObject(SupportsDeleteCallback):
     _property_names[object_type] = "object_type"
     _property_names[object_depends_on] = "object_depends_on"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignER3BPObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignER3BPObject)
+        initialize_from_source_object(self, source_object, DesignER3BPObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42463,7 +42463,7 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
@@ -42476,7 +42476,7 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, DesignER3BPObjectCollection)
     def __iter__(self):
         """Create an iterator for the DesignER3BPObjectCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "DesignER3BPObject":
@@ -42495,13 +42495,13 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
         """Iterate through the collection."""
         return self._intf.invoke(DesignER3BPObjectCollection._metadata, DesignER3BPObjectCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """A property that allows you to enumerate through the collection."""
-        return self._intf.get_property(DesignER3BPObjectCollection._metadata, DesignER3BPObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(DesignER3BPObjectCollection._metadata, DesignER3BPObjectCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -42528,13 +42528,13 @@ class DesignER3BPObjectCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DesignER3BPObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DesignER3BPObjectCollection)
+        initialize_from_source_object(self, source_object, DesignER3BPObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42703,10 +42703,10 @@ class Thruster(SupportsDeleteCallback):
     _property_names[thruster_direction] = "thruster_direction"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Thruster."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Thruster)
+        initialize_from_source_object(self, source_object, Thruster)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42725,7 +42725,7 @@ class ThrusterSetCollection(SupportsDeleteCallback):
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _add_method_offset = 4
     _remove_method_offset = 5
@@ -42744,7 +42744,7 @@ class ThrusterSetCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ThrusterSetCollection)
     def __iter__(self):
         """Create an iterator for the ThrusterSetCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Thruster":
@@ -42763,13 +42763,13 @@ class ThrusterSetCollection(SupportsDeleteCallback):
         """Iterate through the collection."""
         return self._intf.invoke(ThrusterSetCollection._metadata, ThrusterSetCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """A property that allows you to enumerate through the collection."""
-        return self._intf.get_property(ThrusterSetCollection._metadata, ThrusterSetCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ThrusterSetCollection._metadata, ThrusterSetCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -42838,13 +42838,13 @@ class ThrusterSetCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ThrusterSetCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ThrusterSetCollection)
+        initialize_from_source_object(self, source_object, ThrusterSetCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -42899,12 +42899,12 @@ class ThrusterSet(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[direction_definition] = "direction_definition"
     _property_names[thrusters] = "thrusters"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ThrusterSet."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ThrusterSet)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ThrusterSet)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -43057,12 +43057,12 @@ class AsTriggerCondition(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[tolerance] = "tolerance"
     _property_names[use_absolute_value] = "use_absolute_value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AsTriggerCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AsTriggerCondition)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AsTriggerCondition)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -43127,12 +43127,12 @@ class CustomFunctionScriptEngine(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names[script_filename] = "script_filename"
     _property_names[file_extension_name] = "file_extension_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CustomFunctionScriptEngine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CustomFunctionScriptEngine)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CustomFunctionScriptEngine)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -43289,12 +43289,12 @@ class NumericalPropagatorWrapper(IComponentInfo, ICloneable, SupportsDeleteCallb
     _property_names[numerical_integrator] = "numerical_integrator"
     _property_names[numerical_integrator_type] = "numerical_integrator_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type NumericalPropagatorWrapper."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, NumericalPropagatorWrapper)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, NumericalPropagatorWrapper)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -43379,12 +43379,12 @@ class NumericalPropagatorWrapperCR3BP(IComponentInfo, ICloneable, SupportsDelete
     _property_names[numerical_integrator] = "numerical_integrator"
     _property_names[numerical_integrator_type] = "numerical_integrator_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type NumericalPropagatorWrapperCR3BP."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, NumericalPropagatorWrapperCR3BP)
-        IComponentInfo.__init__(self, sourceObject)
-        ICloneable.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, NumericalPropagatorWrapperCR3BP)
+        IComponentInfo.__init__(self, source_object)
+        ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IComponentInfo._private_init(self, intf)
@@ -43407,7 +43407,7 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
     _add_method_offset = 1
     _item_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _remove_all_method_offset = 6
     _cut_method_offset = 7
@@ -43424,7 +43424,7 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, PropagatorFunctionCollection)
     def __iter__(self):
         """Create an iterator for the PropagatorFunctionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IComponentInfo":
@@ -43457,13 +43457,13 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
         """Remove the specified function from the collection."""
         return self._intf.invoke(PropagatorFunctionCollection._metadata, PropagatorFunctionCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(PropagatorFunctionCollection._metadata, PropagatorFunctionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(PropagatorFunctionCollection._metadata, PropagatorFunctionCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -43518,13 +43518,13 @@ class PropagatorFunctionCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PropagatorFunctionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PropagatorFunctionCollection)
+        initialize_from_source_object(self, source_object, PropagatorFunctionCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -43767,11 +43767,11 @@ class BulirschStoerIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[first_safety_coefficient] = "first_safety_coefficient"
     _property_names[second_safety_coefficient] = "second_safety_coefficient"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BulirschStoerIntegrator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BulirschStoerIntegrator)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BulirschStoerIntegrator)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -43899,11 +43899,11 @@ class GaussJacksonIntegrator(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[single_step_integrator] = "single_step_integrator"
     _property_names[single_step_integrator_type] = "single_step_integrator_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GaussJacksonIntegrator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GaussJacksonIntegrator)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GaussJacksonIntegrator)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -44147,11 +44147,11 @@ class RungeKutta2nd3rd(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[error_control] = "error_control"
     _property_names[max_iterations] = "max_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKutta2nd3rd."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKutta2nd3rd)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKutta2nd3rd)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -44197,11 +44197,11 @@ class RungeKutta4th(INumericalIntegrator, SupportsDeleteCallback):
 
     _property_names[initial_step] = "initial_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKutta4th."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKutta4th)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKutta4th)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -44445,11 +44445,11 @@ class RungeKutta4th5th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[error_control] = "error_control"
     _property_names[max_iterations] = "max_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKutta4th5th."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKutta4th5th)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKutta4th5th)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -44693,11 +44693,11 @@ class RungeKutta4thAdapt(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[error_control] = "error_control"
     _property_names[max_iterations] = "max_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKutta4thAdapt."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKutta4thAdapt)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKutta4thAdapt)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -44941,11 +44941,11 @@ class RungeKuttaF7th8th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[error_control] = "error_control"
     _property_names[max_iterations] = "max_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKuttaF7th8th."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKuttaF7th8th)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKuttaF7th8th)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -45207,11 +45207,11 @@ class RungeKuttaV8th9th(INumericalIntegrator, SupportsDeleteCallback):
     _property_names[max_iterations] = "max_iterations"
     _property_names[coefficient_type] = "coefficient_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RungeKuttaV8th9th."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RungeKuttaV8th9th)
-        INumericalIntegrator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RungeKuttaV8th9th)
+        INumericalIntegrator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         INumericalIntegrator._private_init(self, intf)
@@ -45347,11 +45347,11 @@ class ScriptingTool(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[language_type] = "language_type"
     _property_names[pre_iterate] = "pre_iterate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingTool."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingTool)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingTool)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -45374,7 +45374,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _add_method_offset = 2
     _remove_method_offset = 3
     _remove_all_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _get_provide_runtime_type_info_method_offset = 7
     _cut_method_offset = 8
@@ -45391,7 +45391,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         return get_interface_property(attrname, ScriptingSegmentCollection)
     def __iter__(self):
         """Create an iterator for the ScriptingSegmentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ScriptingSegment":
@@ -45431,13 +45431,13 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
         """Remove all object properties."""
         return self._intf.invoke(ScriptingSegmentCollection._metadata, ScriptingSegmentCollection._remove_all_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ScriptingSegmentCollection._metadata, ScriptingSegmentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScriptingSegmentCollection._metadata, ScriptingSegmentCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -45493,15 +45493,15 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingSegmentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingSegmentCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingSegmentCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -45639,11 +45639,11 @@ class ScriptingSegment(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[object_name] = "object_name"
     _property_names[available_object_names] = "available_object_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingSegment)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingSegment)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -45666,7 +45666,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     _add_method_offset = 2
     _remove_method_offset = 3
     _remove_all_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _get_provide_runtime_type_info_method_offset = 7
     _cut_method_offset = 8
@@ -45683,7 +45683,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
         return get_interface_property(attrname, ScriptingParameterCollection)
     def __iter__(self):
         """Create an iterator for the ScriptingParameterCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ScriptingParameter":
@@ -45723,13 +45723,13 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
         """Remove all parameters."""
         return self._intf.invoke(ScriptingParameterCollection._metadata, ScriptingParameterCollection._remove_all_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ScriptingParameterCollection._metadata, ScriptingParameterCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScriptingParameterCollection._metadata, ScriptingParameterCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -45785,15 +45785,15 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingParameterCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingParameterCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingParameterCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -46029,11 +46029,11 @@ class ScriptingParameter(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
     _property_names[use_max_value] = "use_max_value"
     _property_names[max_value] = "max_value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingParameter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingParameter)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingParameter)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -46149,10 +46149,10 @@ class ScriptingCalculationObject(SupportsDeleteCallback):
     _property_names[calculation_object] = "calculation_object"
     _property_names[unit] = "unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingCalculationObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingCalculationObject)
+        initialize_from_source_object(self, source_object, ScriptingCalculationObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46174,7 +46174,7 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
     _add_method_offset = 2
     _remove_method_offset = 3
     _remove_all_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _cut_method_offset = 7
     _paste_method_offset = 8
@@ -46190,7 +46190,7 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ScriptingCalculationObjectCollection)
     def __iter__(self):
         """Create an iterator for the ScriptingCalculationObjectCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ScriptingCalculationObject":
@@ -46230,13 +46230,13 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
         """Remove all calculation objects."""
         return self._intf.invoke(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._remove_all_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScriptingCalculationObjectCollection._metadata, ScriptingCalculationObjectCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46284,13 +46284,13 @@ class ScriptingCalculationObjectCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingCalculationObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingCalculationObjectCollection)
+        initialize_from_source_object(self, source_object, ScriptingCalculationObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46355,10 +46355,10 @@ class UserVariableDefinition(SupportsDeleteCallback):
     _property_names[unit_dimension] = "unit_dimension"
     _property_names[variable_name] = "variable_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariableDefinition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariableDefinition)
+        initialize_from_source_object(self, source_object, UserVariableDefinition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46458,10 +46458,10 @@ class UserVariable(SupportsDeleteCallback):
     _property_names[variable_value] = "variable_value"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariable."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariable)
+        initialize_from_source_object(self, source_object, UserVariable)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46578,10 +46578,10 @@ class UserVariableUpdate(SupportsDeleteCallback):
     _property_names[variable_action] = "variable_action"
     _property_names[control_parameters_available] = "control_parameters_available"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariableUpdate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariableUpdate)
+        initialize_from_source_object(self, source_object, UserVariableUpdate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46603,7 +46603,7 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
     _add_method_offset = 2
     _remove_method_offset = 3
     _remove_all_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_count_method_offset = 6
     _get_item_by_index_method_offset = 7
     _get_item_by_name_method_offset = 8
@@ -46616,7 +46616,7 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UserVariableDefinitionCollection)
     def __iter__(self):
         """Create an iterator for the UserVariableDefinitionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "UserVariableDefinition":
@@ -46656,13 +46656,13 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
         """Remove all user variables."""
         return self._intf.invoke(UserVariableDefinitionCollection._metadata, UserVariableDefinitionCollection._remove_all_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(UserVariableDefinitionCollection._metadata, UserVariableDefinitionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UserVariableDefinitionCollection._metadata, UserVariableDefinitionCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46689,13 +46689,13 @@ class UserVariableDefinitionCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariableDefinitionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariableDefinitionCollection)
+        initialize_from_source_object(self, source_object, UserVariableDefinitionCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46714,7 +46714,7 @@ class UserVariableCollection(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
@@ -46727,7 +46727,7 @@ class UserVariableCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UserVariableCollection)
     def __iter__(self):
         """Create an iterator for the UserVariableCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "UserVariable":
@@ -46746,13 +46746,13 @@ class UserVariableCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(UserVariableCollection._metadata, UserVariableCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(UserVariableCollection._metadata, UserVariableCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UserVariableCollection._metadata, UserVariableCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46779,13 +46779,13 @@ class UserVariableCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariableCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariableCollection)
+        initialize_from_source_object(self, source_object, UserVariableCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46804,7 +46804,7 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
@@ -46817,7 +46817,7 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UserVariableUpdateCollection)
     def __iter__(self):
         """Create an iterator for the UserVariableUpdateCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "UserVariableUpdate":
@@ -46836,13 +46836,13 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(UserVariableUpdateCollection._metadata, UserVariableUpdateCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(UserVariableUpdateCollection._metadata, UserVariableUpdateCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UserVariableUpdateCollection._metadata, UserVariableUpdateCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -46869,13 +46869,13 @@ class UserVariableUpdateCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVariableUpdateCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVariableUpdateCollection)
+        initialize_from_source_object(self, source_object, UserVariableUpdateCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -46894,7 +46894,7 @@ class CalculationGraphCollection(SupportsDeleteCallback):
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _add_method_offset = 3
     _remove_method_offset = 4
     _remove_all_method_offset = 5
@@ -46908,7 +46908,7 @@ class CalculationGraphCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationGraphCollection)
     def __iter__(self):
         """Create an iterator for the CalculationGraphCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -46927,13 +46927,13 @@ class CalculationGraphCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(CalculationGraphCollection._metadata, CalculationGraphCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(CalculationGraphCollection._metadata, CalculationGraphCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationGraphCollection._metadata, CalculationGraphCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR,),
@@ -46967,13 +46967,13 @@ class CalculationGraphCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationGraphCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationGraphCollection)
+        initialize_from_source_object(self, source_object, CalculationGraphCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -47036,11 +47036,11 @@ class ScriptingParameterEnumerationChoice(IRuntimeTypeInfoProvider, SupportsDele
     _property_names[name] = "name"
     _property_names[value] = "value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingParameterEnumerationChoice."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingParameterEnumerationChoice)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingParameterEnumerationChoice)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -47062,7 +47062,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
     _item_method_offset = 1
     _add_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _cut_method_offset = 6
     _paste_method_offset = 7
@@ -47079,7 +47079,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
         return get_interface_property(attrname, ScriptingParameterEnumerationChoiceCollection)
     def __iter__(self):
         """Create an iterator for the ScriptingParameterEnumerationChoiceCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ScriptingParameterEnumerationChoice":
@@ -47112,13 +47112,13 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
         """Remove an enumeration choice."""
         return self._intf.invoke(ScriptingParameterEnumerationChoiceCollection._metadata, ScriptingParameterEnumerationChoiceCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ScriptingParameterEnumerationChoiceCollection._metadata, ScriptingParameterEnumerationChoiceCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScriptingParameterEnumerationChoiceCollection._metadata, ScriptingParameterEnumerationChoiceCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -47174,15 +47174,15 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScriptingParameterEnumerationChoiceCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScriptingParameterEnumerationChoiceCollection)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScriptingParameterEnumerationChoiceCollection)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRuntimeTypeInfoProvider._private_init(self, intf)
@@ -47412,12 +47412,12 @@ class ProfileSNOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names[options_filename] = "options_filename"
     _property_names[allow_internal_primal_infeasibility_measure_normalization] = "allow_internal_primal_infeasibility_measure_normalization"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileSNOPTOptimizer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileSNOPTOptimizer)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileSNOPTOptimizer)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -47602,10 +47602,10 @@ class SNOPTControl(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SNOPTControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SNOPTControl)
+        initialize_from_source_object(self, source_object, SNOPTControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -47806,10 +47806,10 @@ class SNOPTResult(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SNOPTResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SNOPTResult)
+        initialize_from_source_object(self, source_object, SNOPTResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -47828,7 +47828,7 @@ class SNOPTControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -47840,7 +47840,7 @@ class SNOPTControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, SNOPTControlCollection)
     def __iter__(self):
         """Create an iterator for the SNOPTControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "SNOPTControl":
@@ -47859,13 +47859,13 @@ class SNOPTControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(SNOPTControlCollection._metadata, SNOPTControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(SNOPTControlCollection._metadata, SNOPTControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(SNOPTControlCollection._metadata, SNOPTControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -47885,13 +47885,13 @@ class SNOPTControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SNOPTControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SNOPTControlCollection)
+        initialize_from_source_object(self, source_object, SNOPTControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -47910,7 +47910,7 @@ class SNOPTResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -47922,7 +47922,7 @@ class SNOPTResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, SNOPTResultCollection)
     def __iter__(self):
         """Create an iterator for the SNOPTResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "SNOPTResult":
@@ -47941,13 +47941,13 @@ class SNOPTResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(SNOPTResultCollection._metadata, SNOPTResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(SNOPTResultCollection._metadata, SNOPTResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(SNOPTResultCollection._metadata, SNOPTResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -47967,13 +47967,13 @@ class SNOPTResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SNOPTResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SNOPTResultCollection)
+        initialize_from_source_object(self, source_object, SNOPTResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -48166,12 +48166,12 @@ class ProfileIPOPTOptimizer(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names[tolerance_on_complementary_infeasibility] = "tolerance_on_complementary_infeasibility"
     _property_names[options_filename] = "options_filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileIPOPTOptimizer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileIPOPTOptimizer)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileIPOPTOptimizer)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -48356,10 +48356,10 @@ class IPOPTControl(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPOPTControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, IPOPTControl)
+        initialize_from_source_object(self, source_object, IPOPTControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -48560,10 +48560,10 @@ class IPOPTResult(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPOPTResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, IPOPTResult)
+        initialize_from_source_object(self, source_object, IPOPTResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -48582,7 +48582,7 @@ class IPOPTControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -48594,7 +48594,7 @@ class IPOPTControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, IPOPTControlCollection)
     def __iter__(self):
         """Create an iterator for the IPOPTControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPOPTControl":
@@ -48613,13 +48613,13 @@ class IPOPTControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(IPOPTControlCollection._metadata, IPOPTControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(IPOPTControlCollection._metadata, IPOPTControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(IPOPTControlCollection._metadata, IPOPTControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -48639,13 +48639,13 @@ class IPOPTControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPOPTControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, IPOPTControlCollection)
+        initialize_from_source_object(self, source_object, IPOPTControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -48664,7 +48664,7 @@ class IPOPTResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -48676,7 +48676,7 @@ class IPOPTResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, IPOPTResultCollection)
     def __iter__(self):
         """Create an iterator for the IPOPTResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IPOPTResult":
@@ -48695,13 +48695,13 @@ class IPOPTResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(IPOPTResultCollection._metadata, IPOPTResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(IPOPTResultCollection._metadata, IPOPTResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(IPOPTResultCollection._metadata, IPOPTResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -48721,13 +48721,13 @@ class IPOPTResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPOPTResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, IPOPTResultCollection)
+        initialize_from_source_object(self, source_object, IPOPTResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -49121,12 +49121,12 @@ class ManeuverOptimalFinite(IManeuver, IRuntimeTypeInfoProvider, SupportsDeleteC
     _property_names[initial_guess_interpolation_method] = "initial_guess_interpolation_method"
     _property_names[should_reinitialize_stm_at_start_of_segment_propagation] = "should_reinitialize_stm_at_start_of_segment_propagation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFinite."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFinite)
-        IManeuver.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFinite)
+        IManeuver.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IManeuver._private_init(self, intf)
@@ -49345,10 +49345,10 @@ class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
     _property_names[allow_internal_primal_infeasibility_measure_normalization] = "allow_internal_primal_infeasibility_measure_normalization"
     _property_names[snopt_scaling] = "snopt_scaling"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteSNOPTOptimizer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteSNOPTOptimizer)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteSNOPTOptimizer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -49464,10 +49464,10 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
     _property_names[l] = "l"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteInitialBoundaryConditions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteInitialBoundaryConditions)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteInitialBoundaryConditions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -49618,10 +49618,10 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
     _property_names[upper_delta_final_time] = "upper_delta_final_time"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteFinalBoundaryConditions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteFinalBoundaryConditions)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteFinalBoundaryConditions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -49808,10 +49808,10 @@ class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
     _property_names[upper_bound_elevation] = "upper_bound_elevation"
     _property_names[provide_runtime_type_info] = "provide_runtime_type_info"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFinitePathBoundaryConditions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFinitePathBoundaryConditions)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFinitePathBoundaryConditions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -49978,10 +49978,10 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
     _property_names[vel_y] = "vel_y"
     _property_names[vel_z] = "vel_z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteSteeringNodeElement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteSteeringNodeElement)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteSteeringNodeElement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -50000,7 +50000,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _metadata = {
         "iid_data" : (5138882826234024662, 1556125155199223470),
@@ -50011,7 +50011,7 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ManeuverOptimalFiniteSteeringNodeCollection)
     def __iter__(self):
         """Create an iterator for the ManeuverOptimalFiniteSteeringNodeCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ManeuverOptimalFiniteSteeringNodeElement":
@@ -50030,13 +50030,13 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(ManeuverOptimalFiniteSteeringNodeCollection._metadata, ManeuverOptimalFiniteSteeringNodeCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeCollection._metadata, ManeuverOptimalFiniteSteeringNodeCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeCollection._metadata, ManeuverOptimalFiniteSteeringNodeCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -50049,13 +50049,13 @@ class ManeuverOptimalFiniteSteeringNodeCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteSteeringNodeCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteSteeringNodeCollection)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteSteeringNodeCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -50118,10 +50118,10 @@ class ManeuverOptimalFiniteBounds(SupportsDeleteCallback):
     _property_names[lower_bound] = "lower_bound"
     _property_names[upper_bound] = "upper_bound"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteBounds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ManeuverOptimalFiniteBounds)
+        initialize_from_source_object(self, source_object, ManeuverOptimalFiniteBounds)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -50652,12 +50652,12 @@ class ProfileLambertProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCa
     _property_names[enable_write_to_second_maneuver] = "enable_write_to_second_maneuver"
     _property_names[second_maneuver_segment] = "second_maneuver_segment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileLambertProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileLambertProfile)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileLambertProfile)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -51262,12 +51262,12 @@ class ProfileLambertSearchProfile(IProfile, IRuntimeTypeInfoProvider, SupportsDe
     _property_names[enable_write_to_second_maneuver] = "enable_write_to_second_maneuver"
     _property_names[second_maneuver_segment] = "second_maneuver_segment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileLambertSearchProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileLambertSearchProfile)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileLambertSearchProfile)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -51382,12 +51382,12 @@ class ProfileGoldenSection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCal
     _property_names[log_file] = "log_file"
     _property_names[enable_display_status] = "enable_display_status"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileGoldenSection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileGoldenSection)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileGoldenSection)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -51408,7 +51408,7 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -51420,7 +51420,7 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, GoldenSectionControlCollection)
     def __iter__(self):
         """Create an iterator for the GoldenSectionControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "GoldenSectionControl":
@@ -51439,13 +51439,13 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(GoldenSectionControlCollection._metadata, GoldenSectionControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(GoldenSectionControlCollection._metadata, GoldenSectionControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(GoldenSectionControlCollection._metadata, GoldenSectionControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -51465,13 +51465,13 @@ class GoldenSectionControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GoldenSectionControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GoldenSectionControlCollection)
+        initialize_from_source_object(self, source_object, GoldenSectionControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -51636,10 +51636,10 @@ class GoldenSectionControl(SupportsDeleteCallback):
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[tolerance] = "tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GoldenSectionControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GoldenSectionControl)
+        initialize_from_source_object(self, source_object, GoldenSectionControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -51658,7 +51658,7 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -51670,7 +51670,7 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, GoldenSectionResultCollection)
     def __iter__(self):
         """Create an iterator for the GoldenSectionResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "GoldenSectionResult":
@@ -51689,13 +51689,13 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(GoldenSectionResultCollection._metadata, GoldenSectionResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(GoldenSectionResultCollection._metadata, GoldenSectionResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(GoldenSectionResultCollection._metadata, GoldenSectionResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -51715,13 +51715,13 @@ class GoldenSectionResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GoldenSectionResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GoldenSectionResultCollection)
+        initialize_from_source_object(self, source_object, GoldenSectionResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -51850,10 +51850,10 @@ class GoldenSectionResult(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GoldenSectionResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GoldenSectionResult)
+        initialize_from_source_object(self, source_object, GoldenSectionResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -51966,12 +51966,12 @@ class ProfileGridSearch(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallba
     _property_names[enable_display_status] = "enable_display_status"
     _property_names[should_generate_graph] = "should_generate_graph"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileGridSearch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileGridSearch)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileGridSearch)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -51992,7 +51992,7 @@ class GridSearchControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -52004,7 +52004,7 @@ class GridSearchControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, GridSearchControlCollection)
     def __iter__(self):
         """Create an iterator for the GridSearchControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "GridSearchControl":
@@ -52023,13 +52023,13 @@ class GridSearchControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(GridSearchControlCollection._metadata, GridSearchControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(GridSearchControlCollection._metadata, GridSearchControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(GridSearchControlCollection._metadata, GridSearchControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -52049,13 +52049,13 @@ class GridSearchControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GridSearchControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GridSearchControlCollection)
+        initialize_from_source_object(self, source_object, GridSearchControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52220,10 +52220,10 @@ class GridSearchControl(SupportsDeleteCallback):
     _property_names[custom_display_unit] = "custom_display_unit"
     _property_names[step] = "step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GridSearchControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GridSearchControl)
+        initialize_from_source_object(self, source_object, GridSearchControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52242,7 +52242,7 @@ class GridSearchResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -52254,7 +52254,7 @@ class GridSearchResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, GridSearchResultCollection)
     def __iter__(self):
         """Create an iterator for the GridSearchResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "GridSearchResult":
@@ -52273,13 +52273,13 @@ class GridSearchResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(GridSearchResultCollection._metadata, GridSearchResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(GridSearchResultCollection._metadata, GridSearchResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(GridSearchResultCollection._metadata, GridSearchResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -52299,13 +52299,13 @@ class GridSearchResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GridSearchResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GridSearchResultCollection)
+        initialize_from_source_object(self, source_object, GridSearchResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52434,10 +52434,10 @@ class GridSearchResult(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GridSearchResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GridSearchResult)
+        initialize_from_source_object(self, source_object, GridSearchResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52458,7 +52458,7 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     _add_method_offset = 1
     _item_method_offset = 2
     _remove_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_count_method_offset = 5
     _cut_method_offset = 6
     _paste_method_offset = 7
@@ -52474,7 +52474,7 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationObjectLinkEmbedControlCollection)
     def __iter__(self):
         """Create an iterator for the CalculationObjectLinkEmbedControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IComponentLinkEmbedControl":
@@ -52507,13 +52507,13 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
         """Remove a link/embed calc object from the collection."""
         return self._intf.invoke(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._remove_metadata, index_or_name)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationObjectLinkEmbedControlCollection._metadata, CalculationObjectLinkEmbedControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -52561,13 +52561,13 @@ class CalculationObjectLinkEmbedControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationObjectLinkEmbedControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationObjectLinkEmbedControlCollection)
+        initialize_from_source_object(self, source_object, CalculationObjectLinkEmbedControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52670,12 +52670,12 @@ class ProfileBisection(IProfile, IRuntimeTypeInfoProvider, SupportsDeleteCallbac
     _property_names[reset_controls_before_run] = "reset_controls_before_run"
     _property_names[maximum_iterations] = "maximum_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProfileBisection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProfileBisection)
-        IProfile.__init__(self, sourceObject)
-        IRuntimeTypeInfoProvider.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProfileBisection)
+        IProfile.__init__(self, source_object)
+        IRuntimeTypeInfoProvider.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProfile._private_init(self, intf)
@@ -52824,10 +52824,10 @@ class BisectionControl(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BisectionControl."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BisectionControl)
+        initialize_from_source_object(self, source_object, BisectionControl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -52846,7 +52846,7 @@ class BisectionControlCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_control_by_paths_method_offset = 4
     _metadata = {
@@ -52858,7 +52858,7 @@ class BisectionControlCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, BisectionControlCollection)
     def __iter__(self):
         """Create an iterator for the BisectionControlCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "BisectionControl":
@@ -52877,13 +52877,13 @@ class BisectionControlCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(BisectionControlCollection._metadata, BisectionControlCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(BisectionControlCollection._metadata, BisectionControlCollection._get__NewEnum_metadata)
+        return self._intf.get_property(BisectionControlCollection._metadata, BisectionControlCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -52903,13 +52903,13 @@ class BisectionControlCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BisectionControlCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BisectionControlCollection)
+        initialize_from_source_object(self, source_object, BisectionControlCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -53056,10 +53056,10 @@ class BisectionResult(SupportsDeleteCallback):
     _property_names[use_custom_display_unit] = "use_custom_display_unit"
     _property_names[custom_display_unit] = "custom_display_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BisectionResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BisectionResult)
+        initialize_from_source_object(self, source_object, BisectionResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -53078,7 +53078,7 @@ class BisectionResultCollection(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_result_by_paths_method_offset = 4
     _metadata = {
@@ -53090,7 +53090,7 @@ class BisectionResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, BisectionResultCollection)
     def __iter__(self):
         """Create an iterator for the BisectionResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "BisectionResult":
@@ -53109,13 +53109,13 @@ class BisectionResultCollection(SupportsDeleteCallback):
         """Allow you to iterate through the collection."""
         return self._intf.invoke(BisectionResultCollection._metadata, BisectionResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Allow you to enumerate through the collection."""
-        return self._intf.get_property(BisectionResultCollection._metadata, BisectionResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(BisectionResultCollection._metadata, BisectionResultCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -53135,13 +53135,13 @@ class BisectionResultCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BisectionResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BisectionResultCollection)
+        initialize_from_source_object(self, source_object, BisectionResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

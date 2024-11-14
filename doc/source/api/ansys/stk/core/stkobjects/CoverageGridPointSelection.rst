@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection._new_enum`
               - Returns a COM enumerator object.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridPointSelection.count`
               - Returns the number of points in the selection.
@@ -47,8 +47,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CoverageGridPointSelection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CoverageGridPointSelection._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator object.

@@ -1889,9 +1889,9 @@ class IVectorGeometryToolPoint(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolPoint."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPoint)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1944,9 +1944,9 @@ class IVectorGeometryToolVector(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolVector."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVector)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2000,9 +2000,9 @@ class IVectorGeometryToolSystem(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolSystem."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystem)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolSystem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2068,9 +2068,9 @@ class IVectorGeometryToolAxes(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolAxes."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxes)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2175,9 +2175,9 @@ class IVectorGeometryToolAngle(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolAngle."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngle)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolAngle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2247,9 +2247,9 @@ class IVectorGeometryToolPlane(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolPlane."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlane)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2323,9 +2323,9 @@ class IAnalysisWorkbenchComponentContext(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentContext."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentContext)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentContext)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2380,9 +2380,9 @@ class IAnalysisWorkbenchComponent(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponent."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponent)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2579,9 +2579,9 @@ class ICalculationToolScalar(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolScalar."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolScalar)
+        initialize_from_source_object(self, source_object, ICalculationToolScalar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2692,9 +2692,9 @@ class ICalculationToolCondition(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolCondition."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolCondition)
+        initialize_from_source_object(self, source_object, ICalculationToolCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2747,9 +2747,9 @@ class ICalculationToolConditionSet(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolConditionSet."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSet)
+        initialize_from_source_object(self, source_object, ICalculationToolConditionSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2799,9 +2799,9 @@ class IAnalysisWorkbenchConvergence(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchConvergence."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchConvergence)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchConvergence)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2828,9 +2828,9 @@ class IAnalysisWorkbenchDerivative(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchDerivative."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchDerivative)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchDerivative)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2864,9 +2864,9 @@ class ITimeToolInstant(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolInstant."""
-        initialize_from_source_object(self, sourceObject, ITimeToolInstant)
+        initialize_from_source_object(self, source_object, ITimeToolInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2954,9 +2954,9 @@ class ITimeToolTimeArray(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeArray."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeArray)
+        initialize_from_source_object(self, source_object, ITimeToolTimeArray)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3006,9 +3006,9 @@ class ITimeToolTimeInterval(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeInterval."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeInterval)
+        initialize_from_source_object(self, source_object, ITimeToolTimeInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3098,9 +3098,9 @@ class ITimeToolTimeIntervalCollection(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeIntervalCollection."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeIntervalCollection)
+        initialize_from_source_object(self, source_object, ITimeToolTimeIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3164,9 +3164,9 @@ class ITimeToolTimeIntervalList(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeIntervalList."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeIntervalList)
+        initialize_from_source_object(self, source_object, ITimeToolTimeIntervalList)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3234,9 +3234,9 @@ class IAnalysisWorkbenchIntegral(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchIntegral."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchIntegral)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchIntegral)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3263,9 +3263,9 @@ class IAnalysisWorkbenchInterpolator(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchInterpolator."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInterpolator)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3298,9 +3298,9 @@ class ICalculationToolParameterSet(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolParameterSet."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSet)
+        initialize_from_source_object(self, source_object, ICalculationToolParameterSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3378,9 +3378,9 @@ class ITimeToolPruneFilter(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolPruneFilter."""
-        initialize_from_source_object(self, sourceObject, ITimeToolPruneFilter)
+        initialize_from_source_object(self, source_object, ITimeToolPruneFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3416,9 +3416,9 @@ class IAnalysisWorkbenchSampling(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchSampling."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSampling)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchSampling)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3446,9 +3446,9 @@ class ICalculationToolSamplingMethod(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolSamplingMethod."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethod)
+        initialize_from_source_object(self, source_object, ICalculationToolSamplingMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3484,9 +3484,9 @@ class IAnalysisWorkbenchSignalDelay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchSignalDelay."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSignalDelay)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchSignalDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3514,9 +3514,9 @@ class ISpatialAnalysisToolGridValuesMethod(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolGridValuesMethod."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesMethod)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolGridValuesMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3552,9 +3552,9 @@ class ISpatialAnalysisToolVolume(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolVolume."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolume)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolVolume)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3581,9 +3581,9 @@ class ISpatialAnalysisToolSpatialCalculation(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolSpatialCalculation."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolSpatialCalculation)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolSpatialCalculation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3610,9 +3610,9 @@ class ISpatialAnalysisToolVolumeGrid(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolVolumeGrid."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGrid)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolVolumeGrid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3640,9 +3640,9 @@ class IAnalysisWorkbenchComponentTimeProperties(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentTimeProperties."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentTimeProperties)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentTimeProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3677,9 +3677,9 @@ class IAnalysisWorkbenchComponentReference(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentReference."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentReference)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentReference)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3716,9 +3716,9 @@ class IAnalysisWorkbenchMethodCallResult(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchMethodCallResult."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchMethodCallResult)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchMethodCallResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3780,10 +3780,10 @@ class CalculationToolEvaluateResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[value] = "value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolEvaluateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolEvaluateResult)
+        initialize_from_source_object(self, source_object, CalculationToolEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3840,10 +3840,10 @@ class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names[value] = "value"
     _property_names[rate] = "rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolEvaluateWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolEvaluateWithRateResult)
+        initialize_from_source_object(self, source_object, CalculationToolEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3890,10 +3890,10 @@ class TimeToolTimeIntervalResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[interval] = "interval"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3940,10 +3940,10 @@ class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantOccurrenceResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantOccurrenceResult)
+        initialize_from_source_object(self, source_object, TimeToolInstantOccurrenceResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4020,10 +4020,10 @@ class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
     _property_names[stop] = "stop"
     _property_names[times] = "times"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFindTimesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFindTimesResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFindTimesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4070,10 +4070,10 @@ class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[interval_collections] = "interval_collections"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalsVectorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalsVectorResult)
+        initialize_from_source_object(self, source_object, TimeToolIntervalsVectorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4120,10 +4120,10 @@ class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[index] = "index"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionOccurredResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionOccurredResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionOccurredResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4170,10 +4170,10 @@ class TimeToolIntervalListResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalListResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalListResult)
+        initialize_from_source_object(self, source_object, TimeToolIntervalListResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4193,7 +4193,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5575174488488139361, 17888026257103832750),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -4203,7 +4203,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolIntervalVectorCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolIntervalVectorCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolIntervalCollection":
@@ -4230,24 +4230,24 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalVectorCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalVectorCollection)
+        initialize_from_source_object(self, source_object, TimeToolIntervalVectorCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4271,7 +4271,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4283,7 +4283,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolInstantGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolInstantGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolInstant":
@@ -4340,13 +4340,13 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(TimeToolInstantGroup._metadata, TimeToolInstantGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolInstantGroup._metadata, TimeToolInstantGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolInstantGroup._metadata, TimeToolInstantGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4368,12 +4368,12 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantGroup)
+        initialize_from_source_object(self, source_object, TimeToolInstantGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4397,7 +4397,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4409,7 +4409,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeInterval":
@@ -4466,13 +4466,13 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4494,12 +4494,12 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4523,7 +4523,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4535,7 +4535,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalListGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalListGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeIntervalList":
@@ -4592,13 +4592,13 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4620,12 +4620,12 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4649,7 +4649,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4661,7 +4661,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeArrayGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeArrayGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeArray":
@@ -4718,13 +4718,13 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4746,12 +4746,12 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4775,7 +4775,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4787,7 +4787,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolScalarGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolScalarGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolScalar":
@@ -4844,13 +4844,13 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4872,12 +4872,12 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarGroup)
+        initialize_from_source_object(self, source_object, CalculationToolScalarGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4901,7 +4901,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4913,7 +4913,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalCollectionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeIntervalCollection":
@@ -4970,13 +4970,13 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4998,12 +4998,12 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5027,7 +5027,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5039,7 +5039,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolParameterSetGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolParameterSetGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolParameterSet":
@@ -5096,13 +5096,13 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5124,12 +5124,12 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetGroup)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5153,7 +5153,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5165,7 +5165,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolConditionGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolConditionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolCondition":
@@ -5222,13 +5222,13 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5250,12 +5250,12 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionGroup)
+        initialize_from_source_object(self, source_object, CalculationToolConditionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5279,7 +5279,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5291,7 +5291,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolConditionSetGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolConditionSetGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolConditionSet":
@@ -5348,13 +5348,13 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5376,12 +5376,12 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetGroup)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5428,10 +5428,10 @@ class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetEvaluateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetEvaluateResult)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5488,10 +5488,10 @@ class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names[values] = "values"
     _property_names[rates] = "rates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetEvaluateWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetEvaluateWithRateResult)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5515,7 +5515,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5527,7 +5527,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolVolumeGridGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolumeGrid":
@@ -5584,13 +5584,13 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5612,12 +5612,12 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5641,7 +5641,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5653,7 +5653,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolConditionGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolConditionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolume":
@@ -5710,13 +5710,13 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5738,12 +5738,12 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5767,7 +5767,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5779,7 +5779,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolCalculationGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolSpatialCalculation":
@@ -5836,13 +5836,13 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
         """Return an element by name or at a specified position."""
         return self._intf.invoke(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5864,12 +5864,12 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5884,11 +5884,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolCalculationGroup"] = SpatialAnalysisTool
 
 class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Any scalar calculation that is not constant by construction."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalar."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -5935,12 +5935,12 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchCompo
 
     _property_names[input_angle] = "input_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAngle)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAngle)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6193,12 +6193,12 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAverage."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAverage)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAverage)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6263,12 +6263,12 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[value] = "value"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarConstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarConstant)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarConstant)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6341,12 +6341,12 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComp
     _property_names[filename] = "filename"
     _property_names[invalidate_on_execution_error] = "invalidate_on_execution_error"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarCustom."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarCustom)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCustom)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6463,12 +6463,12 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
     _property_names[derivative_function] = "derivative_function"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarCustomInlineScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarCustomInlineScript)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCustomInlineScript)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6633,12 +6633,12 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
     _property_names[save_data_option] = "save_data_option"
     _property_names[invalid_data_indicator] = "invalid_data_indicator"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDataElement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDataElement)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDataElement)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6721,12 +6721,12 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
     _property_names[differencing_time_step] = "differencing_time_step"
     _property_names[force_use_of_numerical_differences] = "force_use_of_numerical_differences"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDerivative."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDerivative)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDerivative)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6845,12 +6845,12 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
     _property_names[normalize_vector_b] = "normalize_vector_b"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDotProduct."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDotProduct)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDotProduct)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6897,12 +6897,12 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenc
 
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarElapsedTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarElapsedTime)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarElapsedTime)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7125,10 +7125,10 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFactory)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7243,12 +7243,12 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
     _property_names[file_interpolation_order] = "file_interpolation_order"
     _property_names[use_native_file_interpolation_settings] = "use_native_file_interpolation_settings"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFile)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFile)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7313,12 +7313,12 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
     _property_names[input_scalar] = "input_scalar"
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFixedAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFixedAtTimeInstant)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFixedAtTimeInstant)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7627,12 +7627,12 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFunction)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFunction)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7869,12 +7869,12 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
     _property_names[selected_function] = "selected_function"
     _property_names[output_units] = "output_units"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFunctionOf2Variables."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFunctionOf2Variables)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFunctionOf2Variables)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8127,12 +8127,12 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarIntegral."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarIntegral)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarIntegral)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8215,12 +8215,12 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarPlugin)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarPlugin)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8285,12 +8285,12 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
     _property_names[trajectory_point] = "trajectory_point"
     _property_names[spatial_calculation] = "spatial_calculation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAlongTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAlongTrajectory)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAlongTrajectory)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8543,12 +8543,12 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarStandardDeviation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarStandardDeviation)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarStandardDeviation)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8649,12 +8649,12 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
     _property_names[surface_central_body] = "surface_central_body"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarSurfaceDistanceBetweenPoints."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarSurfaceDistanceBetweenPoints)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarSurfaceDistanceBetweenPoints)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8737,12 +8737,12 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
     _property_names[reference_axes] = "reference_axes"
     _property_names[component] = "component"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarVectorComponent."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorComponent)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarVectorComponent)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8789,12 +8789,12 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWork
 
     _property_names[input_vector] = "input_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarVectorMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorMagnitude)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarVectorMagnitude)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8811,11 +8811,11 @@ agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolSca
 
 class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolCondition."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -8920,12 +8920,12 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
     _property_names[boolean_operation] = "boolean_operation"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionCombined."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionCombined)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionCombined)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -8994,10 +8994,10 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._create_trajectory_within_volume_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionFactory)
+        initialize_from_source_object(self, source_object, CalculationToolConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9060,12 +9060,12 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
     _property_names[point] = "point"
     _property_names[constraint] = "constraint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionTrajectoryWithinVolume."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionTrajectoryWithinVolume)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionTrajectoryWithinVolume)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -9210,12 +9210,12 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
     _property_names[scalar] = "scalar"
     _property_names[operation] = "operation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionScalarBounds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionScalarBounds)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionScalarBounds)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -9232,11 +9232,11 @@ agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolCon
 
 class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSet."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolConditionSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolConditionSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
@@ -9289,10 +9289,10 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
         return self._intf.invoke(CalculationToolConditionSetFactory._metadata, CalculationToolConditionSetFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetFactory)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9401,12 +9401,12 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
     _property_names[include_above_highest_threshold] = "include_above_highest_threshold"
     _property_names[include_below_lowest_threshold] = "include_below_lowest_threshold"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetScalarThresholds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetScalarThresholds)
-        ICalculationToolConditionSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetScalarThresholds)
+        ICalculationToolConditionSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
@@ -9423,11 +9423,11 @@ agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = Calculation
 
 class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for convergence definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchConvergence."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchConvergence.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
@@ -9528,12 +9528,12 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
     _property_names[absolute_tolerance] = "absolute_tolerance"
     _property_names[relative_tolerance] = "relative_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConvergeBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConvergeBasic)
-        IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConvergeBasic)
+        IAnalysisWorkbenchConvergence.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
@@ -9550,11 +9550,11 @@ agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBas
 
 class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for derivative definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchDerivative."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchDerivative.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
@@ -9601,12 +9601,12 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWork
 
     _property_names[time_step] = "time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolDerivativeBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolDerivativeBasic)
-        IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolDerivativeBasic)
+        IAnalysisWorkbenchDerivative.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
@@ -9623,11 +9623,11 @@ agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativ
 
 class TimeToolInstant(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Define an event (time instant)."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstant."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -9644,11 +9644,11 @@ agcls.AgTypeNameMap["TimeToolInstant"] = TimeToolInstant
 
 class TimeToolTimeArray(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered array of times, which may or may not be evenly spaced."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArray."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -9803,12 +9803,12 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayConditionCrossings."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayConditionCrossings)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayConditionCrossings)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -9981,12 +9981,12 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayExtrema."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayExtrema)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayExtrema)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10095,10 +10095,10 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._create_fixed_times_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10233,12 +10233,12 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names[include_interval_stop_times] = "include_interval_stop_times"
     _property_names[filter_interval_list] = "filter_interval_list"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFiltered."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFiltered)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFiltered)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10357,12 +10357,12 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
     _property_names[reference_type] = "reference_type"
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedStep)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFixedStep)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10409,12 +10409,12 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponen
 
     _property_names[array_times] = "array_times"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFixedTimes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedTimes)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFixedTimes)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10479,12 +10479,12 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
     _property_names[time_array_a] = "time_array_a"
     _property_names[time_array_b] = "time_array_b"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayMerged."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayMerged)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayMerged)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10603,12 +10603,12 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArraySignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArraySignaled)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArraySignaled)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10673,12 +10673,12 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
     _property_names[start_stop_option] = "start_stop_option"
     _property_names[reference_intervals] = "reference_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayStartStopTimes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayStartStopTimes)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayStartStopTimes)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10725,12 +10725,12 @@ class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, Suppor
 
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantEpoch)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantEpoch)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -10885,12 +10885,12 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantExtremum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantExtremum)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantExtremum)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -11011,10 +11011,10 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
     _property_names[today] = "today"
     _property_names[tomorrow] = "tomorrow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantFactory)
+        initialize_from_source_object(self, source_object, TimeToolInstantFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11029,11 +11029,11 @@ agcls.AgTypeNameMap["TimeToolInstantFactory"] = TimeToolInstantFactory
 
 class TimeToolTimeInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A single time interval."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeInterval."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11098,12 +11098,12 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
     _property_names[start_time_instant] = "start_time_instant"
     _property_names[stop_time_instant] = "stop_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalBetweenTimeInstants."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalBetweenTimeInstants)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalBetweenTimeInstants)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11120,11 +11120,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalBetweenTimeInstants"] = TimeToolTimeInt
 
 class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A collection of related interval lists."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11261,12 +11261,12 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionCondition)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionCondition)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11335,10 +11335,10 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._create_satisfaction_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11419,12 +11419,12 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionLighting."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionLighting)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionLighting)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11543,12 +11543,12 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionSignaled)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionSignaled)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11649,10 +11649,10 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeIntervalFactory._metadata, TimeToolTimeIntervalFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11707,12 +11707,12 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchCompone
     _property_names[start_time] = "start_time"
     _property_names[stop_time] = "stop_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixed)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFixed)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11795,12 +11795,12 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
     _property_names[start_offset] = "start_offset"
     _property_names[stop_offset] = "stop_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFixedDuration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixedDuration)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFixedDuration)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11883,12 +11883,12 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
     _property_names[interval_selection] = "interval_selection"
     _property_names[interval_number] = "interval_number"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFromIntervalList."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFromIntervalList)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFromIntervalList)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11905,11 +11905,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalFromIntervalList"] = TimeToolTimeInterv
 
 class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered list of time intervals."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalList."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12046,12 +12046,12 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListCondition)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListCondition)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12160,10 +12160,10 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._create_fixed_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12224,12 +12224,12 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbench
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFile)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFile)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12304,12 +12304,12 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names[filter_factory] = "filter_factory"
     _property_names[filter] = "filter"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFiltered."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFiltered)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFiltered)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12354,12 +12354,12 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenc
         return self._intf.invoke(TimeToolTimeIntervalListFixed._metadata, TimeToolTimeIntervalListFixed._set_intervals_metadata, intervals)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFixed)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFixed)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12514,12 +12514,12 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
     _property_names[interval_list_or_interval_b] = "interval_list_or_interval_b"
     _property_names[merge_operation] = "merge_operation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListMerged."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListMerged)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListMerged)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12620,12 +12620,12 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
     _property_names[relative_increment] = "relative_increment"
     _property_names[use_absolute_increment] = "use_absolute_increment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListScaled)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListScaled)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12744,12 +12744,12 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListSignaled)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListSignaled)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12814,12 +12814,12 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
     _property_names[reference_intervals] = "reference_intervals"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListTimeOffset)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListTimeOffset)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12920,12 +12920,12 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
     _property_names[relative_increment] = "relative_increment"
     _property_names[use_absolute_increment] = "use_absolute_increment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalScaled)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalScaled)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13044,12 +13044,12 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSignaled)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSignaled)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13220,12 +13220,12 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _property_names[duration_as_string] = "duration_as_string"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSmartInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSmartInterval)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSmartInterval)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13290,12 +13290,12 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
     _property_names[reference_interval] = "reference_interval"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalTimeOffset)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalTimeOffset)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13414,12 +13414,12 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantSignaled)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantSignaled)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13502,12 +13502,12 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _property_names[reference_epoch] = "reference_epoch"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantSmartEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantSmartEpoch)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantSmartEpoch)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13572,12 +13572,12 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
     _property_names[use_start] = "use_start"
     _property_names[reference_interval] = "reference_interval"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantStartStopTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantStartStopTime)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantStartStopTime)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13642,12 +13642,12 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantTimeOffset)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantTimeOffset)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13694,11 +13694,11 @@ class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDel
 
     _property_names[maximum_number_of_intervals] = "maximum_number_of_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFirstIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFirstIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFirstIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -13762,11 +13762,11 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
     _property_names[duration_type] = "duration_type"
     _property_names[gap_duration] = "gap_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalGapsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalGapsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalGapsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -13782,11 +13782,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalGapsFilter"] = TimeToolTimeIntervalGaps
 
 class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for integral definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchIntegral."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchIntegral.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
@@ -13869,12 +13869,12 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
     _property_names[tolerance] = "tolerance"
     _property_names[maximum_iterations] = "maximum_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolIntegralBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolIntegralBasic)
-        IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolIntegralBasic)
+        IAnalysisWorkbenchIntegral.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
@@ -13891,11 +13891,11 @@ agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBas
 
 class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for interpolation definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchInterpolator."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchInterpolator.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
@@ -13960,12 +13960,12 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
     _property_names[type] = "type"
     _property_names[order] = "order"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolInterpolatorBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolInterpolatorBasic)
-        IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolInterpolatorBasic)
+        IAnalysisWorkbenchInterpolator.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
@@ -14030,11 +14030,11 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     _property_names[duration_type] = "duration_type"
     _property_names[interval_duration] = "interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14080,11 +14080,11 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
 
     _property_names[maximum_number_of_intervals] = "maximum_number_of_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalLastIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalLastIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalLastIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14100,11 +14100,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalLastIntervalsFilter"] = TimeToolTimeInt
 
 class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Parameter set contains various sets of scalar computations."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSet."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14169,12 +14169,12 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysi
     _property_names[axes] = "axes"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetAttitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetAttitude)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetAttitude)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14259,10 +14259,10 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
         return self._intf.invoke(CalculationToolParameterSetFactory._metadata, CalculationToolParameterSetFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetFactory)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14325,12 +14325,12 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
     _property_names[location] = "location"
     _property_names[central_body] = "central_body"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetGroundTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetGroundTrajectory)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetGroundTrajectory)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14467,12 +14467,12 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
     _property_names[use_central_body_gravitational_parameter] = "use_central_body_gravitational_parameter"
     _property_names[use_central_body_inertial] = "use_central_body_inertial"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetOrbit."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetOrbit)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetOrbit)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14537,12 +14537,12 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnaly
     _property_names[point] = "point"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetTrajectory)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetTrajectory)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14607,12 +14607,12 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisW
     _property_names[vector] = "vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetVector)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetVector)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14629,10 +14629,10 @@ agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParame
 
 class TimeToolPruneFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     """A filter used with event interval list pruned class to prune interval lists..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPruneFilter."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14668,10 +14668,10 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolPruneFilterFactory._metadata, TimeToolPruneFilterFactory._create_metadata, filter, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPruneFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPruneFilterFactory)
+        initialize_from_source_object(self, source_object, TimeToolPruneFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14752,11 +14752,11 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
     _property_names[duration_type] = "duration_type"
     _property_names[relative_interval_duration] = "relative_interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalRelativeSatisfactionConditionFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14772,11 +14772,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalRelativeSatisfactionConditionFilter"] =
 
 class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base sampling interface."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSampling."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchSampling.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
@@ -14833,12 +14833,12 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
     _property_names[sampling_method] = "sampling_method"
     _property_names[method_factory] = "method_factory"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingBasic)
-        IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingBasic)
+        IAnalysisWorkbenchSampling.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
@@ -14975,11 +14975,11 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
     _property_names[absolute_tolerance] = "absolute_tolerance"
     _property_names[curvature_tolerance] = "curvature_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingCurvatureTolerance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingCurvatureTolerance)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingCurvatureTolerance)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15025,11 +15025,11 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsD
 
     _property_names[time_step] = "time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingFixedStep)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingFixedStep)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15045,10 +15045,10 @@ agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplin
 
 class CalculationToolSamplingMethod(ICalculationToolSamplingMethod, SupportsDeleteCallback):
     """A sampling method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingMethod."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15100,10 +15100,10 @@ class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
         return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_relative_tolerance_metadata, relative_tolerance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingMethodFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingMethodFactory)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingMethodFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15220,11 +15220,11 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
     _property_names[relative_tolerance] = "relative_tolerance"
     _property_names[absolute_tolerance] = "absolute_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingRelativeTolerance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingRelativeTolerance)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingRelativeTolerance)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15306,11 +15306,11 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
     _property_names[duration_type] = "duration_type"
     _property_names[interval_duration] = "interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSatisfactionConditionFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSatisfactionConditionFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSatisfactionConditionFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -15326,11 +15326,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalSatisfactionConditionFilter"] = TimeToo
 
 class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSignalDelay."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchSignalDelay.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
@@ -15449,12 +15449,12 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
     _property_names[transfer_speed] = "transfer_speed"
     _property_names[time_delay_convergence] = "time_delay_convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolSignalDelayBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolSignalDelayBasic)
-        IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolSignalDelayBasic)
+        IAnalysisWorkbenchSignalDelay.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
@@ -15563,10 +15563,10 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._create_propagation_delay_to_location_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15673,10 +15673,10 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._create_from_access_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15767,10 +15767,10 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._create_bearing_altitude_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15849,10 +15849,10 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     _property_names[method_type] = "method_type"
     _property_names[grid_values_method] = "grid_values_method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridCoordinateDefinition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridCoordinateDefinition)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridCoordinateDefinition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15897,11 +15897,11 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, 
 
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesCustom."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesCustom)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesCustom)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16019,11 +16019,11 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
     _property_names[minimum] = "minimum"
     _property_names[maximum] = "maximum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesFixedNumberOfSteps."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16141,11 +16141,11 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
     _property_names[reference_value] = "reference_value"
     _property_names[step] = "step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesFixedStep)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesFixedStep)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16161,10 +16161,10 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisT
 
 class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
     """A grid values method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesMethod."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16282,10 +16282,10 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
     _property_names[clock_host] = "clock_host"
     _property_names[time_sense] = "time_sense"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolLightTimeDelay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolLightTimeDelay)
+        initialize_from_source_object(self, source_object, TimeToolLightTimeDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16300,11 +16300,11 @@ agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
 class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolume."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -16321,11 +16321,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolSpatialCalculation."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16426,12 +16426,12 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
     _property_names[use_custom_reference] = "use_custom_reference"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAltitude)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationAltitude)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16550,12 +16550,12 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
     _property_names[reference_vector] = "reference_vector"
     _property_names[about_vector] = "about_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationAngleToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAngleToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationAngleToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16764,12 +16764,12 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
     _property_names[minimum_duration_time] = "minimum_duration_time"
     _property_names[maximum_duration_time] = "maximum_duration_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationConditionSatisfactionMetric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16906,12 +16906,12 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
     _property_names[speed_type] = "speed_type"
     _property_names[speed] = "speed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationPropagationDelayToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationPropagationDelayToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationPropagationDelayToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16966,12 +16966,12 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFile)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFile)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17018,12 +17018,12 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
 
     _property_names[scalar] = "scalar"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFromCalculationScalar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFromCalculationScalar)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFromCalculationScalar)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17124,12 +17124,12 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
     _property_names[reference_plane] = "reference_plane"
     _property_names[along_vector] = "along_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationDistanceToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationDistanceToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationDistanceToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17194,12 +17194,12 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationSolarIntensity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationSolarIntensity)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationSolarIntensity)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17296,12 +17296,12 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
     _property_names[boolean_operation] = "boolean_operation"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionCombined."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionCombined)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionCombined)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17406,12 +17406,12 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
     _property_names[operation] = "operation"
     _property_names[spatial_calculation] = "spatial_calculation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionSpatialCalculationBounds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionSpatialCalculationBounds)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionSpatialCalculationBounds)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17530,12 +17530,12 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionConditionAtLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionConditionAtLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionConditionAtLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17600,12 +17600,12 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
     _property_names[edge_type] = "edge_type"
     _property_names[volume_grid] = "volume_grid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionGridBoundingVolume."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionGridBoundingVolume)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionGridBoundingVolume)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17652,12 +17652,12 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
 
     _property_names[time_satisfaction] = "time_satisfaction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionValidTimeAtLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionValidTimeAtLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionValidTimeAtLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17674,11 +17674,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolConditionValidTimeAtLocation"] = Spatial
 
 class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGrid."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17809,12 +17809,12 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
     _property_names[bearing_angle] = "bearing_angle"
     _property_names[reference_location] = "reference_location"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17891,12 +17891,12 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names[y_grid_parameters] = "y_grid_parameters"
     _property_names[z_grid_parameters] = "z_grid_parameters"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridCartesian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCartesian)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridCartesian)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17961,12 +17961,12 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
     _property_names[reference_grid] = "reference_grid"
     _property_names[constraint] = "constraint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridConstrained."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridConstrained)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridConstrained)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18043,12 +18043,12 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
     _property_names[radius_coordinates] = "radius_coordinates"
     _property_names[height_coordinates] = "height_coordinates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridCylindrical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCylindrical)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridCylindrical)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18143,12 +18143,12 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
     _property_names[altitude_grid_parameters] = "altitude_grid_parameters"
     _property_names[auto_fit_bounds] = "auto_fit_bounds"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18257,10 +18257,10 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
     _property_names[native_position_vector] = "native_position_vector"
     _property_names[gradient_vector] = "gradient_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridResult)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18335,12 +18335,12 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names[elevation_grid_parameters] = "elevation_grid_parameters"
     _property_names[range_coordinates] = "range_coordinates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridSpherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridSpherical)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridSpherical)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18397,12 +18397,12 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
     _property_names[constraint_object] = "constraint_object"
     _property_names[light_time_delay] = "light_time_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionAccessToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionAccessToLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionAccessToLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18485,12 +18485,12 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
     _property_names[lighting_conditions] = "lighting_conditions"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionLighting."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionLighting)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionLighting)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18609,12 +18609,12 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
     _property_names[start_offset] = "start_offset"
     _property_names[stop_offset] = "stop_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionOverTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionOverTime)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionOverTime)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18631,10 +18631,10 @@ agcls.AgTypeNameMap["SpatialAnalysisToolConditionOverTime"] = SpatialAnalysisToo
 
 class AnalysisWorkbenchComponent(IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Generic VGT component."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponent."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -18692,10 +18692,10 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
     _property_names[type_name] = "type_name"
     _property_names[short_type_description] = "short_type_description"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentTypeInformation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentTypeInformation)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentTypeInformation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18742,11 +18742,11 @@ class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, Sup
     _property_names[instance_path] = "instance_path"
     _property_names[template] = "template"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentInstance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentInstance)
-        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentInstance)
+        IAnalysisWorkbenchComponentContext.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentContext._private_init(self, intf)
@@ -18784,11 +18784,11 @@ class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, Sup
 
     _property_names[class_name] = "class_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentTemplate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentTemplate)
-        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentTemplate)
+        IAnalysisWorkbenchComponentContext.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentContext._private_init(self, intf)
@@ -18848,11 +18848,11 @@ class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolPointReference._metadata, VectorGeometryToolPointReference._has_cyclic_dependency_metadata, point, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -18912,11 +18912,11 @@ class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, Su
         return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._has_cyclic_dependency_metadata, vector, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -18976,11 +18976,11 @@ class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, Supp
         return self._intf.invoke(VectorGeometryToolAxesReference._metadata, VectorGeometryToolAxesReference._has_cyclic_dependency_metadata, axes, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19040,11 +19040,11 @@ class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolAngleReference._metadata, VectorGeometryToolAngleReference._has_cyclic_dependency_metadata, angle, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19104,11 +19104,11 @@ class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, Su
         return self._intf.invoke(VectorGeometryToolSystemReference._metadata, VectorGeometryToolSystemReference._has_cyclic_dependency_metadata, system, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19168,11 +19168,11 @@ class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._has_cyclic_dependency_metadata, plane, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19188,12 +19188,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneReference"] = VectorGeometryToolPlan
 
 class VectorGeometryToolVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic vector class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVector."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -19277,10 +19277,10 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
     _property_names[label_y] = "label_y"
     _property_names[label_z] = "label_z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesLabels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesLabels)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19295,12 +19295,12 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabe
 
 class VectorGeometryToolAxes(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic axes class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxes."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19318,12 +19318,12 @@ agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
 class VectorGeometryToolPoint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic VGT point class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPoint."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -19341,12 +19341,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
 class VectorGeometryToolSystem(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystem."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -19364,12 +19364,12 @@ agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
 class VectorGeometryToolAngle(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngle."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -19435,10 +19435,10 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
     _property_names[x_axis_label] = "x_axis_label"
     _property_names[y_axis_label] = "y_axis_label"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneLabels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneLabels)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19453,12 +19453,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLa
 
 class VectorGeometryToolPlane(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlane."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -19528,13 +19528,13 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnal
     _property_names[alignment_direction] = "alignment_direction"
     _property_names[constraint_direction] = "constraint_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAlignedAndConstrained."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAlignedAndConstrained)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAlignedAndConstrained)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19612,13 +19612,13 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWork
     _property_names[reference_axes] = "reference_axes"
     _property_names[fixed_offset_angle] = "fixed_offset_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAngularOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAngularOffset)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAngularOffset)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19686,13 +19686,13 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names[reference_axes] = "reference_axes"
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFixedAtEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixedAtEpoch)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFixedAtEpoch)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19770,13 +19770,13 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
     _property_names[target_body] = "target_body"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesBPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesBPlane)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesBPlane)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19834,13 +19834,13 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names[reference_axes] = "reference_axes"
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesCustomScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesCustomScript)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesCustomScript)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19888,13 +19888,13 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkb
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAttitudeFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAttitudeFile)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAttitudeFile)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19944,13 +19944,13 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchCom
     _property_names[reference_axes] = "reference_axes"
     _property_names[fixed_orientation] = "fixed_orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixed)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFixed)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19998,13 +19998,13 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWo
 
     _property_names[pointable_element_name] = "pointable_element_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesModelAttachment)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesModelAttachment)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20108,13 +20108,13 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
     _property_names[initial_offset] = "initial_offset"
     _property_names[spin_rate] = "spin_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesSpinning."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesSpinning)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesSpinning)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20182,13 +20182,13 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenc
     _property_names[reference_point] = "reference_point"
     _property_names[use_mean_sea_level] = "use_mean_sea_level"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesOnSurface)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesOnSurface)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20256,13 +20256,13 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
     _property_names[reference_system] = "reference_system"
     _property_names[trajectory_axes_type] = "trajectory_axes_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesTrajectory)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesTrajectory)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20330,13 +20330,13 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
     _property_names[point_type] = "point_type"
     _property_names[secondary_central_bodies] = "secondary_central_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesLagrangeLibration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesLagrangeLibration)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesLagrangeLibration)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20398,10 +20398,10 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._sample_metadata, axes, reference_axes, intervals, min_step, max_step, target_rate, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20482,13 +20482,13 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
     _property_names[source_axes] = "source_axes"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolAxes.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -20572,13 +20572,13 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolAxes.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -20628,13 +20628,13 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisW
     _property_names[from_vector] = "from_vector"
     _property_names[to_vector] = "to_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleBetweenVectors."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenVectors)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleBetweenVectors)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20684,13 +20684,13 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWo
     _property_names[from_plane] = "from_plane"
     _property_names[to_plane] = "to_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleBetweenPlanes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenPlanes)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleBetweenPlanes)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20786,13 +20786,13 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
     _property_names[counter_clockwise_rotation] = "counter_clockwise_rotation"
     _property_names[signed_angle] = "signed_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleDihedral."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleDihedral)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleDihedral)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20860,13 +20860,13 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
     _property_names[to_axes] = "to_axes"
     _property_names[reference_direction] = "reference_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleRotation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleRotation)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleRotation)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20934,13 +20934,13 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
     _property_names[reference_plane] = "reference_plane"
     _property_names[signed] = "signed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleToPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleToPlane)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleToPlane)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -21000,13 +21000,13 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbench
     _property_names[reference_vector] = "reference_vector"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneNormal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneNormal)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneNormal)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21064,13 +21064,13 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
     _property_names[reference_system] = "reference_system"
     _property_names[quadrant] = "quadrant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneQuadrant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneQuadrant)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneQuadrant)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21138,13 +21138,13 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkb
     _property_names[reference_system] = "reference_system"
     _property_names[rotation_offset] = "rotation_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTrajectory)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTrajectory)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21222,13 +21222,13 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchC
     _property_names[reference_point] = "reference_point"
     _property_names[rotation_offset] = "rotation_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTriad."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTriad)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTriad)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21288,13 +21288,13 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbe
     _property_names[vector_2] = "vector_2"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTwoVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTwoVector)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTwoVector)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21380,13 +21380,13 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
     _property_names[point_type] = "point_type"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointBPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointBPlane)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointBPlane)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21434,13 +21434,13 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchCo
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFile)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFile)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21490,13 +21490,13 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWo
     _property_names[reference] = "reference"
     _property_names[fixed_point] = "fixed_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFixedInSystem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFixedInSystem)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFixedInSystem)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21574,13 +21574,13 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenc
     _property_names[direction_vector] = "direction_vector"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGrazing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGrazing)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGrazing)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21640,13 +21640,13 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchC
     _property_names[source_point] = "source_point"
     _property_names[observer_point] = "observer_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGlint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGlint)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGlint)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21786,13 +21786,13 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
     _property_names[scale] = "scale"
     _property_names[use_probability] = "use_probability"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCovarianceGrazing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCovarianceGrazing)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCovarianceGrazing)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21852,13 +21852,13 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalys
     _property_names[reference_plane] = "reference_plane"
     _property_names[origin_point] = "origin_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlaneIntersection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneIntersection)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlaneIntersection)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21944,13 +21944,13 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
     _property_names[reference_shape] = "reference_shape"
     _property_names[surface_type] = "surface_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointOnSurface)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointOnSurface)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22016,13 +22016,13 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
     _property_names[pointable_element_name] = "pointable_element_name"
     _property_names[use_scale] = "use_scale"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointModelAttachment)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointModelAttachment)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22070,13 +22070,13 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
 
     _property_names[entry_name] = "entry_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointSatelliteCollectionEntry."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointSatelliteCollectionEntry)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointSatelliteCollectionEntry)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22126,13 +22126,13 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysis
     _property_names[source_point] = "source_point"
     _property_names[reference_plane] = "reference_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlaneProjection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneProjection)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlaneProjection)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22200,13 +22200,13 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
     _property_names[point_type] = "point_type"
     _property_names[secondary_central_bodies] = "secondary_central_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointLagrangeLibration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointLagrangeLibration)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointLagrangeLibration)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22260,10 +22260,10 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._sample_metadata, point, reference_system, intervals, min_step, max_step, target_rate, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -22496,13 +22496,13 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
     _property_names[use_maximum_range] = "use_maximum_range"
     _property_names[allow_intersection_from_below] = "allow_intersection_from_below"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCentralBodyIntersect."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyIntersect)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCentralBodyIntersect)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22586,13 +22586,13 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
     _property_names[source_point] = "source_point"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22676,13 +22676,13 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22758,13 +22758,13 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
     _property_names[reference_shape] = "reference_shape"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCentralBodyFixedOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyFixedOffset)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCentralBodyFixedOffset)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22814,13 +22814,13 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWork
     _property_names[origin_point] = "origin_point"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemAssembled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemAssembled)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemAssembled)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -22906,13 +22906,13 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
     _property_names[use_mean_sea_level] = "use_mean_sea_level"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemOnSurface)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemOnSurface)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -22996,10 +22996,10 @@ class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPositionLLA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPositionLLA)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPositionLLA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -23042,10 +23042,10 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolSystemCommonTasks._metadata, VectorGeometryToolSystemCommonTasks._create_assembled_metadata, origin_point, reference_axes, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -23100,13 +23100,13 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWork
     _property_names[angle] = "angle"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorAngleRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngleRate)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorAngleRate)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23174,13 +23174,13 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
     _property_names[central_body] = "central_body"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorApoapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorApoapsis)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorApoapsis)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23248,13 +23248,13 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisW
     _property_names[source_vector] = "source_vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedAtEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtEpoch)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedAtEpoch)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23322,13 +23322,13 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalys
     _property_names[reference_axes] = "reference_axes"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorAngularVelocity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngularVelocity)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorAngularVelocity)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23468,13 +23468,13 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
     _property_names[clock_angle_rate] = "clock_angle_rate"
     _property_names[mode] = "mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorConing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorConing)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorConing)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23560,13 +23560,13 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
     _property_names[is_normalized] = "is_normalized"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorCross."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCross)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorCross)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23642,13 +23642,13 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
     _property_names[script_file] = "script_file"
     _property_names[initialization_script_file] = "initialization_script_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorCustomScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCustomScript)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorCustomScript)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23734,13 +23734,13 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
     _property_names[differencing_time_step] = "differencing_time_step"
     _property_names[force_use_of_numerical_differences] = "force_use_of_numerical_differences"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDerivative."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDerivative)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDerivative)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23854,13 +23854,13 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
     _property_names[signal_sense] = "signal_sense"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDisplacement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDisplacement)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDisplacement)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23910,13 +23910,13 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
     _property_names[plane_a] = "plane_a"
     _property_names[plane_b] = "plane_b"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorTwoPlanesIntersection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorTwoPlanesIntersection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorTwoPlanesIntersection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23964,13 +23964,13 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalys
 
     _property_names[pointable_element_name] = "pointable_element_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorModelAttachment)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorModelAttachment)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24020,13 +24020,13 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWor
     _property_names[source] = "source"
     _property_names[reference_plane] = "reference_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorProjection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorProjection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24102,13 +24102,13 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkben
     _property_names[scale] = "scale"
     _property_names[is_normalized] = "is_normalized"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScaled)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScaled)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24176,13 +24176,13 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorEccentricity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorEccentricity)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorEccentricity)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24232,13 +24232,13 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWo
     _property_names[reference_axes] = "reference_axes"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedInAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedInAxes)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedInAxes)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24288,13 +24288,13 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWo
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorLineOfNodes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLineOfNodes)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorLineOfNodes)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24362,13 +24362,13 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorOrbitAngularMomentum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitAngularMomentum)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorOrbitAngularMomentum)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24436,13 +24436,13 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorOrbitNormal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitNormal)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorOrbitNormal)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24510,13 +24510,13 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPeriapsis)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorPeriapsis)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24620,13 +24620,13 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
     _property_names[allow_reflections_on_backside] = "allow_reflections_on_backside"
     _property_names[scale_factor] = "scale_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorReflection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReflection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorReflection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24694,13 +24694,13 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysi
     _property_names[reference_axes] = "reference_axes"
     _property_names[force_minimum_rotation] = "force_minimum_rotation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorRotationVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorRotationVector)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorRotationVector)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24748,13 +24748,13 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalys
 
     _property_names[selected_star] = "selected_star"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDirectionToStar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDirectionToStar)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDirectionToStar)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24838,13 +24838,13 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
     _property_names[source_vector] = "source_vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25018,13 +25018,13 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
     _property_names[output_dimension_inheritance] = "output_dimension_inheritance"
     _property_names[output_dimension] = "output_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorLinearCombination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLinearCombination)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorLinearCombination)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25090,13 +25090,13 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
     _property_names[source_vector] = "source_vector"
     _property_names[along_vector] = "along_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorProjectionAlongVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjectionAlongVector)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorProjectionAlongVector)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25342,13 +25342,13 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
     _property_names[output_dimension_inheritance] = "output_dimension_inheritance"
     _property_names[output_dimension] = "output_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScalarLinearCombination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarLinearCombination)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScalarLinearCombination)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25486,13 +25486,13 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
     _property_names[dimension_inheritance] = "dimension_inheritance"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScalarScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarScaled)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScalarScaled)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25576,13 +25576,13 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
     _property_names[point] = "point"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorVelocityAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorVelocityAcceleration)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorVelocityAcceleration)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25666,13 +25666,13 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25774,13 +25774,13 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
     _property_names[surface_central_body] = "surface_central_body"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorSurfaceDisplacement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorSurfaceDisplacement)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorSurfaceDisplacement)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25860,10 +25860,10 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -25924,10 +25924,10 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -25970,10 +25970,10 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26042,10 +26042,10 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26088,10 +26088,10 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26134,10 +26134,10 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26161,7 +26161,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26173,7 +26173,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolVectorGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolVectorGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolVector":
@@ -26230,13 +26230,13 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
         """Return a vector by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26258,12 +26258,12 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26287,7 +26287,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26300,7 +26300,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolPointGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolPointGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPoint":
@@ -26357,13 +26357,13 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
         """Return a point by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26393,13 +26393,13 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26423,7 +26423,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26435,7 +26435,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolAngleGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolAngleGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAngle":
@@ -26492,13 +26492,13 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
         """Return an angle by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26520,12 +26520,12 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26549,7 +26549,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26562,7 +26562,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolAxesGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolAxesGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAxes":
@@ -26619,13 +26619,13 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
         """Return an axes by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26655,13 +26655,13 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26685,7 +26685,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26697,7 +26697,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolPlaneGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolPlaneGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPlane":
@@ -26754,13 +26754,13 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
         """Return an Plane by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26782,12 +26782,12 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26811,7 +26811,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26824,7 +26824,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolSystemGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolSystemGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolSystem":
@@ -26881,13 +26881,13 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
         """Return a System by name or at a specified position."""
         return self._intf.invoke(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26917,13 +26917,13 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27166,10 +27166,10 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     _property_names[volumes] = "volumes"
     _property_names[spatial_calculations] = "spatial_calculations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentProvider."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentProvider)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27232,10 +27232,10 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     _property_names[well_known_systems] = "well_known_systems"
     _property_names[well_known_axes] = "well_known_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchRoot."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchRoot)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchRoot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27254,7 +27254,7 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
     _metadata = {
         "iid_data" : (4710478852462905673, 1995567772504852135),
@@ -27272,13 +27272,13 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
         """Earth's Fixed coordinate system."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolSystem":
+    def icrf(self) -> "IVectorGeometryToolSystem":
         """Earth's ICRF."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27289,13 +27289,13 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
         return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_inertial_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownEarthSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownEarthSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownEarthSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27314,9 +27314,9 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _metadata = {
         "iid_data" : (5483010606787155483, 17339470825221630117),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -27333,13 +27333,13 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
         """Earth's Fixed axes."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolAxes":
+    def icrf(self) -> "IVectorGeometryToolAxes":
         """Earth's ICRF axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27349,23 +27349,23 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
         """Earth's Inertial axes (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolAxes":
+    def j2000(self) -> "IVectorGeometryToolAxes":
         """The Earth's J2000 axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_j2000_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownEarthAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownEarthAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownEarthAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27384,9 +27384,9 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _get_barycenter_method_offset = 5
     _metadata = {
         "iid_data" : (4865958749773106719, 13197055767931333526),
@@ -27404,13 +27404,13 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         """The Sun's Fixed coordinate system."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolSystem":
+    def icrf(self) -> "IVectorGeometryToolSystem":
         """The Sun's International Celestial Reference Frame (ICRF)."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27420,13 +27420,13 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         """The Sun's Inertial coordinate system (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolSystem":
+    def j2000(self) -> "IVectorGeometryToolSystem":
         """The Sun's J2000 coordinate system."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_j2000_metadata)
 
     _get_barycenter_metadata = { "offset" : _get_barycenter_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27437,15 +27437,15 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_barycenter_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
     _property_names[barycenter] = "barycenter"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSunSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSunSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSunSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27464,9 +27464,9 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _metadata = {
         "iid_data" : (4663702446183210292, 13434367744902099591),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -27483,13 +27483,13 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
         """Sun's Fixed axes."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolAxes":
+    def icrf(self) -> "IVectorGeometryToolAxes":
         """Sun's ICRF."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27499,23 +27499,23 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
         """Sun's Inertial axes (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolAxes":
+    def j2000(self) -> "IVectorGeometryToolAxes":
         """The Sun's J2000 axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_j2000_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSunAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSunAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSunAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27562,10 +27562,10 @@ class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
     _property_names[earth] = "earth"
     _property_names[sun] = "sun"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27612,10 +27612,10 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
     _property_names[earth] = "earth"
     _property_names[sun] = "sun"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27692,11 +27692,11 @@ class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, Suppo
     _property_names[vector_to] = "vector_to"
     _property_names[vector_about] = "vector_about"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27784,11 +27784,11 @@ class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResul
     _property_names[vector_to] = "vector_to"
     _property_names[vector_about] = "vector_about"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27836,11 +27836,11 @@ class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, S
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesTransformResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27898,11 +27898,11 @@ class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallR
     _property_names[vector] = "vector"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesTransformWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27950,11 +27950,11 @@ class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names[is_valid] = "is_valid"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28012,11 +28012,11 @@ class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names[angular_velocity] = "angular_velocity"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28074,11 +28074,11 @@ class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult,
     _property_names[x_axis] = "x_axis"
     _property_names[y_axis] = "y_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28156,11 +28156,11 @@ class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names[y_axis] = "y_axis"
     _property_names[y_axis_rate] = "y_axis_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28228,11 +28228,11 @@ class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResul
     _property_names[x_axis] = "x_axis"
     _property_names[y_axis] = "y_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28330,11 +28330,11 @@ class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodC
     _property_names[y_axis] = "y_axis"
     _property_names[y_axis_rate] = "y_axis_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28382,11 +28382,11 @@ class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallRes
     _property_names[is_valid] = "is_valid"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPointLocateInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28444,11 +28444,11 @@ class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMetho
     _property_names[position] = "position"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPointLocateInSystemWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28496,11 +28496,11 @@ class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult,
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemTransformResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28558,11 +28558,11 @@ class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names[vector] = "vector"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemTransformWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28640,11 +28640,11 @@ class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResu
     _property_names[rate] = "rate"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemFindInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemFindInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28692,11 +28692,11 @@ class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchVectorFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28754,11 +28754,11 @@ class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCa
     _property_names[vector] = "vector"
     _property_names[rate] = "rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchVectorFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28816,11 +28816,11 @@ class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names[angle] = "angle"
     _property_names[angle_rate] = "angle_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindAngleWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindAngleWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28868,11 +28868,11 @@ class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names[is_valid] = "is_valid"
     _property_names[angle] = "angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindAngleResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindAngleResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28920,10 +28920,10 @@ class TimeToolInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInterval)
+        initialize_from_source_object(self, source_object, TimeToolInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28943,7 +28943,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (4991188993072027394, 12329114457855179136),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -28953,7 +28953,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolInterval":
@@ -28980,24 +28980,24 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         """Return an interval at a specified index."""
         return self._intf.invoke(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29034,10 +29034,10 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
 
     _property_names[name] = "name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBody."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBody)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBody)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29088,11 +29088,11 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
         return self._intf.invoke(AnalysisWorkbenchCentralBodyReference._metadata, AnalysisWorkbenchCentralBodyReference._get_central_body_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBodyReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBodyReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBodyReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -29113,7 +29113,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _remove_method_offset = 5
     _metadata = {
@@ -29125,7 +29125,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, AnalysisWorkbenchCentralBodyCollection)
     def __iter__(self):
         """Create an iterator for the AnalysisWorkbenchCentralBodyCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -29152,13 +29152,13 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         """Return a central body name at a specified index."""
         return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._get__NewEnum_metadata)
+        return self._intf.get_property(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
@@ -29178,12 +29178,12 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBodyCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBodyCollection)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBodyCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29204,7 +29204,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _contains_method_offset = 1
     _get_count_method_offset = 2
     _item_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_item_by_index_method_offset = 5
     _get_item_by_name_method_offset = 6
     _metadata = {
@@ -29216,7 +29216,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, AnalysisWorkbenchComponentCollection)
     def __iter__(self):
         """Create an iterator for the AnalysisWorkbenchComponentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IAnalysisWorkbenchComponent":
@@ -29250,13 +29250,13 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         """Retrieve an element of the collection using the name of the element or a position in the collection."""
         return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -29276,12 +29276,12 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentCollection)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29328,10 +29328,10 @@ class TimeToolPointSamplingResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingResult)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29408,10 +29408,10 @@ class TimeToolPointSamplingInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingInterval)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29431,7 +29431,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5530358145792459749, 592623579709177530),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -29441,7 +29441,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolPointSamplingIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolPointSamplingIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolPointSamplingInterval":
@@ -29468,24 +29468,24 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29532,10 +29532,10 @@ class TimeToolAxesSamplingResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingResult)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29612,10 +29612,10 @@ class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingInterval)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29635,7 +29635,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5710623310116775291, 12435953586864494518),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -29645,7 +29645,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolAxesSamplingIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolAxesSamplingIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolAxesSamplingInterval":
@@ -29672,24 +29672,24 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

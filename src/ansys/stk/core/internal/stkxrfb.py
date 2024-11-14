@@ -29,9 +29,9 @@ class IRemoteFrameBufferHost(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRemoteFrameBufferHost."""
-        initialize_from_source_object(self, sourceObject, IRemoteFrameBufferHost)
+        initialize_from_source_object(self, source_object, IRemoteFrameBufferHost)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -80,9 +80,9 @@ class IRemoteFrameBuffer(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRemoteFrameBuffer."""
-        initialize_from_source_object(self, sourceObject, IRemoteFrameBuffer)
+        initialize_from_source_object(self, source_object, IRemoteFrameBuffer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

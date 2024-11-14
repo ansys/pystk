@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection.count`
               - Number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection._new_enum`
               - Returns a COM enumerator.
 
 
@@ -51,8 +51,8 @@ Property detail
 
     Number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.TimeToolPointSamplingIntervalCollection._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

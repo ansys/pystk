@@ -41,7 +41,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection._new_enum`
               - A property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ConstraintCollection.count`
               - Returns the size of the collection.
@@ -59,8 +59,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ConstraintCollection._new_enum
     :type: EnumeratorProxy
 
     A property that allows you to enumerate through the collection.

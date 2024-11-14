@@ -106,9 +106,9 @@ class IUiApplicationPartnerAccess(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IUiApplicationPartnerAccess."""
-        initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
+        initialize_from_source_object(self, source_object, IUiApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -487,11 +487,11 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _property_names[display_alerts] = "display_alerts"
     _property_names[process_id] = "process_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiApplication."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiApplication)
-        IUiApplicationPartnerAccess.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UiApplication)
+        IUiApplicationPartnerAccess.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IUiApplicationPartnerAccess._private_init(self, intf)
@@ -512,7 +512,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5511485448271886598, 17798322995058890112),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -522,7 +522,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, MostRecentlyUsedCollection)
     def __iter__(self):
         """Create an iterator for the MostRecentlyUsedCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -549,24 +549,24 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         """Get the total count of MRUs in the collection."""
         return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the MRU collection."""
-        return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get__NewEnum_metadata)
+        return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MostRecentlyUsedCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MostRecentlyUsedCollection)
+        initialize_from_source_object(self, source_object, MostRecentlyUsedCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -585,7 +585,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _item_method_offset = 3
     _metadata = {
         "iid_data" : (5663541480808773789, 6468980721787839653),
@@ -596,7 +596,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UiFileOpenDialogExtensionCollection)
     def __iter__(self):
         """Create an iterator for the UiFileOpenDialogExtensionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -616,13 +616,13 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         """Get the total count of files in the collection."""
         return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the file collection."""
-        return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get__new_enum_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
@@ -635,12 +635,12 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiFileOpenDialogExtensionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiFileOpenDialogExtensionCollection)
+        initialize_from_source_object(self, source_object, UiFileOpenDialogExtensionCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -724,10 +724,10 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
     _property_names[filter_description] = "filter_description"
     _property_names[filter_pattern] = "filter_pattern"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiFileOpenDialogExtension."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiFileOpenDialogExtension)
+        initialize_from_source_object(self, source_object, UiFileOpenDialogExtension)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

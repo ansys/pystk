@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.count`
               - Returns a number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._new_enum`
               - Enumerates through the vector collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.available_vector_geometry_tool_components`
               - Get a list of available VGT elements that can be added to the collection.
@@ -63,8 +63,8 @@ Property detail
 
     Returns a number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the vector collection.

@@ -57,10 +57,10 @@ class STKXInitialize(SupportsDeleteCallback):
         return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, install_home, config_directory, defaults, styles, vgt, amm, gator, online_data, online_sgp4)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXInitialize."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXInitialize)
+        initialize_from_source_object(self, source_object, STKXInitialize)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

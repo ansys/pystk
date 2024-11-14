@@ -33,7 +33,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.total_cache_size`
               - Total cache size (not individual terrain sources) for the analytical terrain in the scenario. Dimensionless.
@@ -57,8 +57,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.

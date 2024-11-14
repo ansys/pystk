@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.count`
               - Returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._new_enum`
               - Returns an enumerator for the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Returns an element in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviders._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviders._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.

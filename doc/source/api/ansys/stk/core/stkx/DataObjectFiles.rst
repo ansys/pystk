@@ -27,7 +27,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkx.DataObjectFiles._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.DataObjectFiles._new_enum`
               - Returns an object that can be used to iterate through all the file names in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.DataObjectFiles.count`
               - Number of file names contained in the collection.
@@ -45,8 +45,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkx.DataObjectFiles._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkx.DataObjectFiles._new_enum
     :type: EnumeratorProxy
 
     Returns an object that can be used to iterate through all the file names in the collection.

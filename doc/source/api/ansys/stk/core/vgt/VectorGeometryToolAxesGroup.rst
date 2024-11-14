@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup.factory`
               - Returns a Factory object used to create custom axes.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc.
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom axes.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

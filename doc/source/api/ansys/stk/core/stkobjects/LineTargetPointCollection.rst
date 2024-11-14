@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum`
               - Enumerates through the collection of points.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.count`
               - Returns the number of latitude-longitude pairs.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection of points.

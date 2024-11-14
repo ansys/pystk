@@ -51,7 +51,7 @@ Overview
               - Gets or sets the ExclInterval.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type`
               - Gets the constraint type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum`
               - Enumerate the IAgAccessCnstrZone interfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step`
               - Maximum time step used in adaptive sampling.
@@ -101,8 +101,8 @@ Property detail
 
     Gets the constraint type.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerate the IAgAccessCnstrZone interfaces.

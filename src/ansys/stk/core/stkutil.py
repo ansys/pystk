@@ -515,9 +515,9 @@ class ILocationData(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ILocationData."""
-        initialize_from_source_object(self, sourceObject, ILocationData)
+        initialize_from_source_object(self, source_object, ILocationData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -565,9 +565,9 @@ class IPosition(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPosition."""
-        initialize_from_source_object(self, sourceObject, IPosition)
+        initialize_from_source_object(self, source_object, IPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -760,9 +760,9 @@ class IDirection(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDirection."""
-        initialize_from_source_object(self, sourceObject, IDirection)
+        initialize_from_source_object(self, source_object, IDirection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -905,9 +905,9 @@ class ICartesian3Vector(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICartesian3Vector."""
-        initialize_from_source_object(self, sourceObject, ICartesian3Vector)
+        initialize_from_source_object(self, source_object, ICartesian3Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1018,9 +1018,9 @@ class IOrientation(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientation."""
-        initialize_from_source_object(self, sourceObject, IOrientation)
+        initialize_from_source_object(self, source_object, IOrientation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1160,9 +1160,9 @@ class IOrientationAzEl(IOrientation):
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientationAzEl."""
-        initialize_from_source_object(self, sourceObject, IOrientationAzEl)
+        initialize_from_source_object(self, source_object, IOrientationAzEl)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
@@ -1246,9 +1246,9 @@ class IOrientationEulerAngles(IOrientation):
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientationEulerAngles."""
-        initialize_from_source_object(self, sourceObject, IOrientationEulerAngles)
+        initialize_from_source_object(self, source_object, IOrientationEulerAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
@@ -1348,9 +1348,9 @@ class IOrientationQuaternion(IOrientation):
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientationQuaternion."""
-        initialize_from_source_object(self, sourceObject, IOrientationQuaternion)
+        initialize_from_source_object(self, source_object, IOrientationQuaternion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
@@ -1450,9 +1450,9 @@ class IOrientationYPRAngles(IOrientation):
         "vtable_reference" : IOrientation._vtable_offset + IOrientation._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientationYPRAngles."""
-        initialize_from_source_object(self, sourceObject, IOrientationYPRAngles)
+        initialize_from_source_object(self, source_object, IOrientationYPRAngles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
@@ -1545,9 +1545,9 @@ class IOrientationPositionOffset(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrientationPositionOffset."""
-        initialize_from_source_object(self, sourceObject, IOrientationPositionOffset)
+        initialize_from_source_object(self, source_object, IOrientationPositionOffset)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1596,9 +1596,9 @@ class IOrbitState(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOrbitState."""
-        initialize_from_source_object(self, sourceObject, IOrbitState)
+        initialize_from_source_object(self, source_object, IOrbitState)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1723,9 +1723,9 @@ class IRuntimeTypeInfoProvider(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRuntimeTypeInfoProvider."""
-        initialize_from_source_object(self, sourceObject, IRuntimeTypeInfoProvider)
+        initialize_from_source_object(self, source_object, IRuntimeTypeInfoProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1760,7 +1760,7 @@ class ExecuteCommandResult(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _range_method_offset = 4
     _get_is_succeeded_method_offset = 5
     _metadata = {
@@ -1772,7 +1772,7 @@ class ExecuteCommandResult(SupportsDeleteCallback):
         return get_interface_property(attrname, ExecuteCommandResult)
     def __iter__(self):
         """Create an iterator for the ExecuteCommandResult object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -1799,13 +1799,13 @@ class ExecuteCommandResult(SupportsDeleteCallback):
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(ExecuteCommandResult._metadata, ExecuteCommandResult._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
-        return self._intf.get_property(ExecuteCommandResult._metadata, ExecuteCommandResult._get__NewEnum_metadata)
+        return self._intf.get_property(ExecuteCommandResult._metadata, ExecuteCommandResult._get__new_enum_metadata)
 
     _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
@@ -1826,13 +1826,13 @@ class ExecuteCommandResult(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[is_succeeded] = "is_succeeded"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ExecuteCommandResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExecuteCommandResult)
+        initialize_from_source_object(self, source_object, ExecuteCommandResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1855,7 +1855,7 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5271171048043179548, 17166981793534785703),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -1865,7 +1865,7 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
         return get_interface_property(attrname, ExecuteMultipleCommandsResult)
     def __iter__(self):
         """Create an iterator for the ExecuteMultipleCommandsResult object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ExecuteCommandResult":
@@ -1892,24 +1892,24 @@ class ExecuteMultipleCommandsResult(SupportsDeleteCallback):
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the objects in the collection."""
-        return self._intf.get_property(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._get__NewEnum_metadata)
+        return self._intf.get_property(ExecuteMultipleCommandsResult._metadata, ExecuteMultipleCommandsResult._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ExecuteMultipleCommandsResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExecuteMultipleCommandsResult)
+        initialize_from_source_object(self, source_object, ExecuteMultipleCommandsResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1979,10 +1979,10 @@ class UnitPreferencesUnit(SupportsDeleteCallback):
     _property_names[identifier] = "identifier"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UnitPreferencesUnit."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UnitPreferencesUnit)
+        initialize_from_source_object(self, source_object, UnitPreferencesUnit)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2002,7 +2002,7 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
     _metadata = {
@@ -2014,7 +2014,7 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UnitPreferencesUnitCollection)
     def __iter__(self):
         """Create an iterator for the UnitPreferencesUnitCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "UnitPreferencesUnit":
@@ -2041,13 +2041,13 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
         """Return the number of items in the collection."""
         return self._intf.get_property(UnitPreferencesUnitCollection._metadata, UnitPreferencesUnitCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumeration of UnitPreferencesUnit."""
-        return self._intf.get_property(UnitPreferencesUnitCollection._metadata, UnitPreferencesUnitCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UnitPreferencesUnitCollection._metadata, UnitPreferencesUnitCollection._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -2067,12 +2067,12 @@ class UnitPreferencesUnitCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UnitPreferencesUnitCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UnitPreferencesUnitCollection)
+        initialize_from_source_object(self, source_object, UnitPreferencesUnitCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2147,10 +2147,10 @@ class UnitPreferencesDimension(SupportsDeleteCallback):
     _property_names[available_units] = "available_units"
     _property_names[current_unit] = "current_unit"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UnitPreferencesDimension."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UnitPreferencesDimension)
+        initialize_from_source_object(self, source_object, UnitPreferencesDimension)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2176,7 +2176,7 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
     _set_mission_elapsed_time_method_offset = 6
     _get_julian_date_offset_method_offset = 7
     _set_julian_date_offset_method_offset = 8
-    _get__NewEnum_method_offset = 9
+    _get__new_enum_method_offset = 9
     _reset_units_method_offset = 10
     _get_item_by_index_method_offset = 11
     _get_item_by_name_method_offset = 12
@@ -2189,7 +2189,7 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UnitPreferencesDimensionCollection)
     def __iter__(self):
         """Create an iterator for the UnitPreferencesDimensionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "UnitPreferencesDimension":
@@ -2260,13 +2260,13 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
     def julian_date_offset(self, julian_date_offset:float) -> None:
         return self._intf.set_property(UnitPreferencesDimensionCollection._metadata, UnitPreferencesDimensionCollection._set_julian_date_offset_metadata, julian_date_offset)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a collection of UnitPreferencesDimension."""
-        return self._intf.get_property(UnitPreferencesDimensionCollection._metadata, UnitPreferencesDimensionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UnitPreferencesDimensionCollection._metadata, UnitPreferencesDimensionCollection._get__new_enum_metadata)
 
     _reset_units_metadata = { "offset" : _reset_units_method_offset,
             "arg_types" : (),
@@ -2295,12 +2295,12 @@ class UnitPreferencesDimensionCollection(SupportsDeleteCallback):
     _property_names[count] = "count"
     _property_names[mission_elapsed_time] = "mission_elapsed_time"
     _property_names[julian_date_offset] = "julian_date_offset"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UnitPreferencesDimensionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UnitPreferencesDimensionCollection)
+        initialize_from_source_object(self, source_object, UnitPreferencesDimensionCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2471,10 +2471,10 @@ class ConversionUtility(SupportsDeleteCallback):
         return self._intf.invoke(ConversionUtility._metadata, ConversionUtility._new_cartesian3_vector_from_position_metadata, input_position, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConversionUtility."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ConversionUtility)
+        initialize_from_source_object(self, source_object, ConversionUtility)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2579,10 +2579,10 @@ class Quantity(SupportsDeleteCallback):
     _property_names[unit] = "unit"
     _property_names[value] = "value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Quantity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Quantity)
+        initialize_from_source_object(self, source_object, Quantity)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2739,10 +2739,10 @@ class Date(SupportsDeleteCallback):
     _property_names[whole_days_utc] = "whole_days_utc"
     _property_names[sec_into_day_utc] = "sec_into_day_utc"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Date."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Date)
+        initialize_from_source_object(self, source_object, Date)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2757,11 +2757,11 @@ agcls.AgTypeNameMap["Date"] = Date
 
 class Position(ILocationData, IPosition, SupportsDeleteCallback):
     """The Position class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Position."""
         SupportsDeleteCallback.__init__(self)
-        ILocationData.__init__(self, sourceObject)
-        IPosition.__init__(self, sourceObject)
+        ILocationData.__init__(self, source_object)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ILocationData._private_init(self, intf)
@@ -2844,11 +2844,11 @@ class Cartesian(IPosition, SupportsDeleteCallback):
     _property_names[y] = "y"
     _property_names[z] = "z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Cartesian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Cartesian)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Cartesian)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -2930,11 +2930,11 @@ class Geodetic(IPosition, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Geodetic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Geodetic)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Geodetic)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3016,11 +3016,11 @@ class Geocentric(IPosition, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Geocentric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Geocentric)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Geocentric)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3102,11 +3102,11 @@ class Planetodetic(IPosition, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Planetodetic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Planetodetic)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Planetodetic)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3188,11 +3188,11 @@ class Planetocentric(IPosition, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Planetocentric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Planetocentric)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Planetocentric)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3274,11 +3274,11 @@ class Spherical(IPosition, SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Spherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Spherical)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Spherical)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3360,11 +3360,11 @@ class Cylindrical(IPosition, SupportsDeleteCallback):
     _property_names[z] = "z"
     _property_names[longitude] = "longitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Cylindrical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Cylindrical)
-        IPosition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, Cylindrical)
+        IPosition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPosition._private_init(self, intf)
@@ -3380,10 +3380,10 @@ agcls.AgTypeNameMap["Cylindrical"] = Cylindrical
 
 class Direction(IDirection, SupportsDeleteCallback):
     """Class defining direction options for aligned and constrained vectors."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Direction."""
         SupportsDeleteCallback.__init__(self)
-        IDirection.__init__(self, sourceObject)
+        IDirection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
@@ -3465,11 +3465,11 @@ class DirectionEuler(IDirection, SupportsDeleteCallback):
     _property_names[c] = "c"
     _property_names[sequence] = "sequence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DirectionEuler."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DirectionEuler)
-        IDirection.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DirectionEuler)
+        IDirection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
@@ -3551,11 +3551,11 @@ class DirectionPR(IDirection, SupportsDeleteCallback):
     _property_names[roll] = "roll"
     _property_names[sequence] = "sequence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DirectionPR."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DirectionPR)
-        IDirection.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DirectionPR)
+        IDirection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
@@ -3637,11 +3637,11 @@ class DirectionRADec(IDirection, SupportsDeleteCallback):
     _property_names[ra] = "ra"
     _property_names[magnitude] = "magnitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DirectionRADec."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DirectionRADec)
-        IDirection.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DirectionRADec)
+        IDirection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
@@ -3723,11 +3723,11 @@ class DirectionXYZ(IDirection, SupportsDeleteCallback):
     _property_names[y] = "y"
     _property_names[z] = "z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DirectionXYZ."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DirectionXYZ)
-        IDirection.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DirectionXYZ)
+        IDirection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDirection._private_init(self, intf)
@@ -3743,10 +3743,10 @@ agcls.AgTypeNameMap["DirectionXYZ"] = DirectionXYZ
 
 class Orientation(IOrientation, SupportsDeleteCallback):
     """Class defining the orientation of an orbit."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Orientation."""
         SupportsDeleteCallback.__init__(self)
-        IOrientation.__init__(self, sourceObject)
+        IOrientation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientation._private_init(self, intf)
@@ -3762,11 +3762,11 @@ agcls.AgTypeNameMap["Orientation"] = Orientation
 
 class OrientationAzEl(IOrientationAzEl, IOrientation, SupportsDeleteCallback):
     """AzEl orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type OrientationAzEl."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationAzEl.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
+        IOrientationAzEl.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationAzEl._private_init(self, intf)
@@ -3783,11 +3783,11 @@ agcls.AgTypeNameMap["OrientationAzEl"] = OrientationAzEl
 
 class OrientationEulerAngles(IOrientationEulerAngles, IOrientation, SupportsDeleteCallback):
     """Euler Angles orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type OrientationEulerAngles."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationEulerAngles.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
+        IOrientationEulerAngles.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationEulerAngles._private_init(self, intf)
@@ -3804,11 +3804,11 @@ agcls.AgTypeNameMap["OrientationEulerAngles"] = OrientationEulerAngles
 
 class OrientationQuaternion(IOrientationQuaternion, IOrientation, SupportsDeleteCallback):
     """Quaternion orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type OrientationQuaternion."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationQuaternion.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
+        IOrientationQuaternion.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationQuaternion._private_init(self, intf)
@@ -3825,11 +3825,11 @@ agcls.AgTypeNameMap["OrientationQuaternion"] = OrientationQuaternion
 
 class OrientationYPRAngles(IOrientationYPRAngles, IOrientation, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type OrientationYPRAngles."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationYPRAngles.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
+        IOrientationYPRAngles.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationYPRAngles._private_init(self, intf)
@@ -3851,7 +3851,7 @@ class DoublesCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _remove_at_method_offset = 5
     _remove_all_method_offset = 6
@@ -3866,7 +3866,7 @@ class DoublesCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, DoublesCollection)
     def __iter__(self):
         """Create an iterator for the DoublesCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> float:
@@ -3893,13 +3893,13 @@ class DoublesCollection(SupportsDeleteCallback):
         """Return the number of items in the collection."""
         return self._intf.get_property(DoublesCollection._metadata, DoublesCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a collection enumerator."""
-        return self._intf.get_property(DoublesCollection._metadata, DoublesCollection._get__NewEnum_metadata)
+        return self._intf.get_property(DoublesCollection._metadata, DoublesCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.DOUBLE,),
@@ -3940,12 +3940,12 @@ class DoublesCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DoublesCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DoublesCollection)
+        initialize_from_source_object(self, source_object, DoublesCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3960,10 +3960,10 @@ agcls.AgTypeNameMap["DoublesCollection"] = DoublesCollection
 
 class Cartesian3Vector(ICartesian3Vector, SupportsDeleteCallback):
     """A 3-D cartesian vector."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Cartesian3Vector."""
         SupportsDeleteCallback.__init__(self)
-        ICartesian3Vector.__init__(self, sourceObject)
+        ICartesian3Vector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICartesian3Vector._private_init(self, intf)
@@ -4051,10 +4051,10 @@ class Cartesian2Vector(SupportsDeleteCallback):
     _property_names[x] = "x"
     _property_names[y] = "y"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Cartesian2Vector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Cartesian2Vector)
+        initialize_from_source_object(self, source_object, Cartesian2Vector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4157,10 +4157,10 @@ class PropertyInfo(SupportsDeleteCallback):
     _property_names[min] = "min"
     _property_names[max] = "max"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PropertyInfo."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PropertyInfo)
+        initialize_from_source_object(self, source_object, PropertyInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4179,7 +4179,7 @@ class PropertyInfoCollection(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _get_count_method_offset = 3
     _get_item_by_index_method_offset = 4
     _get_item_by_name_method_offset = 5
@@ -4192,7 +4192,7 @@ class PropertyInfoCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, PropertyInfoCollection)
     def __iter__(self):
         """Create an iterator for the PropertyInfoCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "PropertyInfo":
@@ -4211,13 +4211,13 @@ class PropertyInfoCollection(SupportsDeleteCallback):
         """Allow the user to iterate through the properties."""
         return self._intf.invoke(PropertyInfoCollection._metadata, PropertyInfoCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the properties."""
-        return self._intf.get_property(PropertyInfoCollection._metadata, PropertyInfoCollection._get__NewEnum_metadata)
+        return self._intf.get_property(PropertyInfoCollection._metadata, PropertyInfoCollection._get__new_enum_metadata)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -4244,13 +4244,13 @@ class PropertyInfoCollection(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PropertyInfoCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PropertyInfoCollection)
+        initialize_from_source_object(self, source_object, PropertyInfoCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4315,10 +4315,10 @@ class RuntimeTypeInfo(SupportsDeleteCallback):
     _property_names[is_collection] = "is_collection"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RuntimeTypeInfo."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RuntimeTypeInfo)
+        initialize_from_source_object(self, source_object, RuntimeTypeInfo)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4333,12 +4333,12 @@ agcls.AgTypeNameMap["RuntimeTypeInfo"] = RuntimeTypeInfo
 
 class AgCROrientationAzEl(IOrientationAzEl, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """AzEl orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AgCROrientationAzEl."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationAzEl.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
-        IOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationAzEl.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
+        IOrientationPositionOffset.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationAzEl._private_init(self, intf)
@@ -4356,12 +4356,12 @@ agcls.AgTypeNameMap["AgCROrientationAzEl"] = AgCROrientationAzEl
 
 class AgCROrientationEulerAngles(IOrientationEulerAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Euler Angles orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AgCROrientationEulerAngles."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationEulerAngles.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
-        IOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationEulerAngles.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
+        IOrientationPositionOffset.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationEulerAngles._private_init(self, intf)
@@ -4379,12 +4379,12 @@ agcls.AgTypeNameMap["AgCROrientationEulerAngles"] = AgCROrientationEulerAngles
 
 class AgCROrientationQuaternion(IOrientationQuaternion, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Quaternion orientation method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AgCROrientationQuaternion."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationQuaternion.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
-        IOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationQuaternion.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
+        IOrientationPositionOffset.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationQuaternion._private_init(self, intf)
@@ -4402,12 +4402,12 @@ agcls.AgTypeNameMap["AgCROrientationQuaternion"] = AgCROrientationQuaternion
 
 class AgCROrientationYPRAngles(IOrientationYPRAngles, IOrientation, IOrientationPositionOffset, SupportsDeleteCallback):
     """Yaw-Pitch Roll (YPR) Angles orientation system."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AgCROrientationYPRAngles."""
         SupportsDeleteCallback.__init__(self)
-        IOrientationYPRAngles.__init__(self, sourceObject)
-        IOrientation.__init__(self, sourceObject)
-        IOrientationPositionOffset.__init__(self, sourceObject)
+        IOrientationYPRAngles.__init__(self, source_object)
+        IOrientation.__init__(self, source_object)
+        IOrientationPositionOffset.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOrientationYPRAngles._private_init(self, intf)
@@ -4425,10 +4425,10 @@ agcls.AgTypeNameMap["AgCROrientationYPRAngles"] = AgCROrientationYPRAngles
 
 class AgCROrientationOffsetCart(ICartesian3Vector, SupportsDeleteCallback):
     """Orientation offset cartesian."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AgCROrientationOffsetCart."""
         SupportsDeleteCallback.__init__(self)
-        ICartesian3Vector.__init__(self, sourceObject)
+        ICartesian3Vector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICartesian3Vector._private_init(self, intf)

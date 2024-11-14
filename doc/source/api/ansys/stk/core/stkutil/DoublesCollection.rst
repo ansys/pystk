@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection.count`
               - Returns the number of items in the collection.
-            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.DoublesCollection._new_enum`
               - Returns a collection enumerator.
 
 
@@ -61,8 +61,8 @@ Property detail
 
     Returns the number of items in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.DoublesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.DoublesCollection._new_enum
     :type: EnumeratorProxy
 
     Returns a collection enumerator.

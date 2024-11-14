@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.count`
               - Returns the size of the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._new_enum`
               - Iterates through the collection.
 
 
@@ -61,8 +61,8 @@ Property detail
 
     Returns the size of the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._new_enum
     :type: EnumeratorProxy
 
     Iterates through the collection.

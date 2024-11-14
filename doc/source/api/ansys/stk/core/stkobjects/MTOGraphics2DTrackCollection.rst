@@ -31,7 +31,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection.recycling`
               - Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
@@ -55,8 +55,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.MTOGraphics2DTrackCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.

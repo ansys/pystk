@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection.count`
               - Returns the number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection._new_enum`
               - Returns an enumerator for the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Returns the number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.TransferFunctionPolynomialCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.

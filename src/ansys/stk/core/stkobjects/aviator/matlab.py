@@ -110,11 +110,11 @@ class StrategyMATLABNavigation(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[check_for_errors] = "check_for_errors"
     _property_names[display_output] = "display_output"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StrategyMATLABNavigation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StrategyMATLABNavigation)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StrategyMATLABNavigation)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -207,11 +207,11 @@ class StrategyMATLABProfile(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[check_for_errors] = "check_for_errors"
     _property_names[display_output] = "display_output"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StrategyMATLABProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StrategyMATLABProfile)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StrategyMATLABProfile)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -304,11 +304,11 @@ class StrategyMATLABFull3D(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[check_for_errors] = "check_for_errors"
     _property_names[display_output] = "display_output"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StrategyMATLABFull3D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StrategyMATLABFull3D)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StrategyMATLABFull3D)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -609,11 +609,11 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[airspeed_options] = "airspeed_options"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StrategyMATLAB3DGuidance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StrategyMATLAB3DGuidance)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, StrategyMATLAB3DGuidance)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -629,10 +629,10 @@ agcls.AgTypeNameMap["StrategyMATLAB3DGuidance"] = StrategyMATLAB3DGuidance
 
 class BasicManeuverMATLABFactory(IAutomationStrategyFactory, SupportsDeleteCallback):
     """Class defining the factory to create the basic maneuver PropNav strategies."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverMATLABFactory."""
         SupportsDeleteCallback.__init__(self)
-        IAutomationStrategyFactory.__init__(self, sourceObject)
+        IAutomationStrategyFactory.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAutomationStrategyFactory._private_init(self, intf)

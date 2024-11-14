@@ -71,7 +71,7 @@ Overview
               - Gets or sets the width, in pixels, of the outline around the line.
             * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive.per_item_picking_enabled`
               - Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
-            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive._new_enum`
               - Returns an enumerator that iterates through the collection.
             * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive.central_body_clipped`
               - Gets or sets whether the polyline will be clipped by the central body.
@@ -149,8 +149,8 @@ Property detail
 
     Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.PathPrimitive._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.PathPrimitive._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that iterates through the collection.

@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection._new_enum`
               - Enumerates through the properties.
             * - :py:attr:`~ansys.stk.core.stkutil.PropertyInfoCollection.count`
               - Get the number of properties available.
@@ -49,8 +49,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.PropertyInfoCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.PropertyInfoCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the properties.

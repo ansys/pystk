@@ -41,7 +41,7 @@ Overview
               - Returns the Moon central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection.count`
               - Returns a number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection._new_enum`
               - Enumerates the elements in the collection.
 
 
@@ -81,8 +81,8 @@ Property detail
 
     Returns a number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CentralBodyCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CentralBodyCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the elements in the collection.

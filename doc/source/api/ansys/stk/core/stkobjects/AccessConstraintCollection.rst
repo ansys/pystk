@@ -53,7 +53,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.count`
               - Returns the size of the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection._new_enum`
               - Enumerate the AccessConstraint items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.analysis_workbench_constraints`
               - Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
@@ -81,8 +81,8 @@ Property detail
 
     Returns the size of the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerate the AccessConstraint items in the collection.
