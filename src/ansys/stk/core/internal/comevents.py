@@ -17,8 +17,10 @@ from ctypes import CFUNCTYPE, POINTER, c_void_p, cast, addressof, Structure
 
 from .                       import marshall     as agmarshall
 from .                       import coclassutil  as agcls
-from .comutil                import *
-from ..utilities.exceptions  import *
+from .comutil import (BSTR, DISPID, DispParams, DOUBLE, ExcepInfo, E_NOINTERFACE, E_NOTIMPL, GUID,
+                      HRESULT, IDispatch, IUnknown, LCID, LONG, LPOLESTR, OLE_XPOS_PIXELS,
+                      OLE_YPOS_PIXELS, PVOID, REFIID, SHORT, S_OK, UINT, ULONG, Variant, WORD,
+                      pointer)
 
 class COMEventHandlerImpl(object):
     _IID_IUnknown  = GUID.from_registry_format(IUnknown._guid)

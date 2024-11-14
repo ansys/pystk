@@ -84,11 +84,13 @@ from .internal.comutil     import IUnknown, IPictureDisp
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .internal.eventutil import (IImageCollectionEventHandler, IKmlGraphicsEventHandler,
+                                 ISceneEventHandler, ITerrainOverlayCollectionEventHandler)
+from .utilities.exceptions import STKRuntimeError
 
-from .stkutil import *
-from .vgt import *
+from .stkutil import IOrientation
+from .vgt import (IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem,
+                  IVectorGeometryToolVector)
 
 
 def _raise_uninitialized_error(*args):

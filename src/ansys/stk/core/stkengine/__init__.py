@@ -10,11 +10,13 @@ import os
 import atexit
 from ctypes import byref
 from enum import IntEnum
-from ..internal.timerutil import *
 
 if os.name != "nt":
     from ctypes import CFUNCTYPE, cdll
     from ctypes.util import find_library
+    from ..internal.timerutil import NullTimer, SigAlarmTimer, SigRtTimer, TclTimer
+else:
+    from ..internal.timerutil import NullTimer
 
 from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
 from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
@@ -97,14 +99,15 @@ class STKEngineApplication(STKXApplication):
         timer_type = int(os.getenv("STK_PYTHONAPI_TIMERTYPE", "4"))
         if os.name=="nt" or timer_type == STK_ENGINE_TIMER_TYPE.DISABLE_TIMERS:
             self.__dict__["_timer_impl"] = NullTimer()
-        elif timer_type == STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP or timer_type == STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON:
-            self.__dict__["_timer_impl"] = TclTimer()
-        elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_ALARM:
-            self.__dict__["_timer_impl"] = SigAlarmTimer()
-        elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_RT:
-            sigrtmin_offset = int(os.getenv("STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET", "0"))
-            signo = STKEngineApplication._get_signo(sigrtmin_offset)
-            self.__dict__["_timer_impl"] = SigRtTimer(signo)
+        elif os.name != "nt":
+            if timer_type == STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP or timer_type == STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON:
+                self.__dict__["_timer_impl"] = TclTimer()
+            elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_ALARM:
+                self.__dict__["_timer_impl"] = SigAlarmTimer()
+            elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_RT:
+                sigrtmin_offset = int(os.getenv("STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET", "0"))
+                signo = STKEngineApplication._get_signo(sigrtmin_offset)
+                self.__dict__["_timer_impl"] = SigRtTimer(signo)
             
     def _user_override_timer_type(self) -> bool:
         return ("STK_PYTHONAPI_TIMERTYPE" in os.environ)

@@ -3,7 +3,7 @@
 import gc
 import typing
 
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKAttributeError, STKInitializationError, STKInvalidCastError
 
 class InterfaceProxy(object):
     """Proxy class to isolate the call strategy to STK (COM, gRPC, etc)."""

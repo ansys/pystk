@@ -25,7 +25,7 @@ on:
 
 env:
   LIBRARY_NAME: 'ansys-stk-core'
-  MAIN_PYTHON_VERSION: '3.13'
+  MAIN_PYTHON_VERSION: '3.12'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
   STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
