@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup.factory`
               - Returns a factory object used to create calc scalar components.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup._new_enum`
               - Returns a COM enumerator.
 
 
@@ -75,8 +75,8 @@ Property detail
 
     Returns a factory object used to create calc scalar components.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

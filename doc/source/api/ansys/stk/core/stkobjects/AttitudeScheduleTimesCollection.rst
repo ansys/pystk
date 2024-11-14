@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection.available_targets`
               - Returns a list of available targets.
@@ -59,8 +59,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AttitudeScheduleTimesCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.

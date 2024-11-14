@@ -41,7 +41,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection.count`
               - Number of items in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._new_enum`
               - Enumerate the IAgAccessCnstrAWB interfaces.
 
 
@@ -63,8 +63,8 @@ Property detail
 
     Number of items in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerate the IAgAccessCnstrAWB interfaces.

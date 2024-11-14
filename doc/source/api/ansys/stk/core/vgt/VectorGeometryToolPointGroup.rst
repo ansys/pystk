@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.factory`
               - Returns a Factory object used to create custom points.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom points.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

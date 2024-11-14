@@ -43,7 +43,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.available_assets`
               - Available objects to assign as coverage assets.
@@ -67,8 +67,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.

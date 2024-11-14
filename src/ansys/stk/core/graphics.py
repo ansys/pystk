@@ -1309,9 +1309,9 @@ class IScreenOverlayContainer(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IScreenOverlayContainer."""
-        initialize_from_source_object(self, sourceObject, IScreenOverlayContainer)
+        initialize_from_source_object(self, source_object, IScreenOverlayContainer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1384,9 +1384,9 @@ class ITriangulatorResult(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITriangulatorResult."""
-        initialize_from_source_object(self, sourceObject, ITriangulatorResult)
+        initialize_from_source_object(self, source_object, ITriangulatorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1465,9 +1465,9 @@ class IGlobeOverlay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IGlobeOverlay."""
-        initialize_from_source_object(self, sourceObject, IGlobeOverlay)
+        initialize_from_source_object(self, source_object, IGlobeOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1556,9 +1556,9 @@ class IPathPrimitiveUpdatePolicy(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPathPrimitiveUpdatePolicy."""
-        initialize_from_source_object(self, sourceObject, IPathPrimitiveUpdatePolicy)
+        initialize_from_source_object(self, source_object, IPathPrimitiveUpdatePolicy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1604,9 +1604,9 @@ class IProjection(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IProjection."""
-        initialize_from_source_object(self, sourceObject, IProjection)
+        initialize_from_source_object(self, source_object, IProjection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1727,7 +1727,7 @@ class IScreenOverlayCollectionBase(object):
     _get_count_method_offset = 1
     _get_is_read_only_method_offset = 2
     _item_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _contains_method_offset = 5
     _remove_method_offset = 6
     _clear_method_offset = 7
@@ -1737,9 +1737,9 @@ class IScreenOverlayCollectionBase(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IScreenOverlayCollectionBase."""
-        initialize_from_source_object(self, sourceObject, IScreenOverlayCollectionBase)
+        initialize_from_source_object(self, source_object, IScreenOverlayCollectionBase)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -1753,7 +1753,7 @@ class IScreenOverlayCollectionBase(object):
         set_interface_attribute(self, attrname, value, IScreenOverlayCollectionBase, None)
     def __iter__(self):
         """Create an iterator for the IScreenOverlayCollectionBase object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IScreenOverlay":
@@ -1788,13 +1788,13 @@ class IScreenOverlayCollectionBase(object):
         """Get the overlay at the specified index."""
         return self._intf.invoke(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._get__NewEnum_metadata)
+        return self._intf.get_property(IScreenOverlayCollectionBase._metadata, IScreenOverlayCollectionBase._get__new_enum_metadata)
 
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
@@ -1829,7 +1829,7 @@ class IScreenOverlayCollectionBase(object):
 
     _property_names[count] = "count"
     _property_names[is_read_only] = "is_read_only"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
 
 agcls.AgClassCatalog.add_catalog_entry((5748013200866698085, 10184546868944523949), IScreenOverlayCollectionBase)
@@ -1845,9 +1845,9 @@ class IDisplayCondition(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDisplayCondition."""
-        initialize_from_source_object(self, sourceObject, IDisplayCondition)
+        initialize_from_source_object(self, source_object, IDisplayCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1887,9 +1887,9 @@ class IGlobeImageOverlay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IGlobeImageOverlay."""
-        initialize_from_source_object(self, sourceObject, IGlobeImageOverlay)
+        initialize_from_source_object(self, source_object, IGlobeImageOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2027,9 +2027,9 @@ class IConvolutionFilter(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IConvolutionFilter."""
-        initialize_from_source_object(self, sourceObject, IConvolutionFilter)
+        initialize_from_source_object(self, source_object, IConvolutionFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2114,9 +2114,9 @@ class IRaster(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRaster."""
-        initialize_from_source_object(self, sourceObject, IRaster)
+        initialize_from_source_object(self, source_object, IRaster)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2219,9 +2219,9 @@ class IRasterFilter(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRasterFilter."""
-        initialize_from_source_object(self, sourceObject, IRasterFilter)
+        initialize_from_source_object(self, source_object, IRasterFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2251,9 +2251,9 @@ class IRasterStream(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IRasterStream."""
-        initialize_from_source_object(self, sourceObject, IRasterStream)
+        initialize_from_source_object(self, source_object, IRasterStream)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2304,9 +2304,9 @@ class IKmlContainer(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IKmlContainer."""
-        initialize_from_source_object(self, sourceObject, IKmlContainer)
+        initialize_from_source_object(self, source_object, IKmlContainer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2351,9 +2351,9 @@ class IKmlFeature(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IKmlFeature."""
-        initialize_from_source_object(self, sourceObject, IKmlFeature)
+        initialize_from_source_object(self, source_object, IKmlFeature)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2533,9 +2533,9 @@ class IOverlay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IOverlay."""
-        initialize_from_source_object(self, sourceObject, IOverlay)
+        initialize_from_source_object(self, source_object, IOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3174,9 +3174,9 @@ class IPositionInterpolator(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPositionInterpolator."""
-        initialize_from_source_object(self, sourceObject, IPositionInterpolator)
+        initialize_from_source_object(self, source_object, IPositionInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3235,9 +3235,9 @@ class IPrimitive(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPrimitive."""
-        initialize_from_source_object(self, sourceObject, IPrimitive)
+        initialize_from_source_object(self, source_object, IPrimitive)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3392,9 +3392,9 @@ class IScreenOverlay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IScreenOverlay."""
-        initialize_from_source_object(self, sourceObject, IScreenOverlay)
+        initialize_from_source_object(self, source_object, IScreenOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3426,9 +3426,9 @@ class ITerrainOverlay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITerrainOverlay."""
-        initialize_from_source_object(self, sourceObject, ITerrainOverlay)
+        initialize_from_source_object(self, source_object, ITerrainOverlay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3612,10 +3612,10 @@ class PathPoint(SupportsDeleteCallback):
     _property_names[outline_translucency] = "outline_translucency"
     _property_names[is_translucent] = "is_translucent"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PathPoint)
+        initialize_from_source_object(self, source_object, PathPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3682,10 +3682,10 @@ class PathPointFactory(SupportsDeleteCallback):
         return self._intf.invoke(PathPointFactory._metadata, PathPointFactory._initialize_with_date_position_color_and_translucency_metadata, path_point_date, position, color, translucency, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPointFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PathPointFactory)
+        initialize_from_source_object(self, source_object, PathPointFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3732,10 +3732,10 @@ class BoundingSphere(SupportsDeleteCallback):
     _property_names[center] = "center"
     _property_names[radius] = "radius"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BoundingSphere."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BoundingSphere)
+        initialize_from_source_object(self, source_object, BoundingSphere)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3780,10 +3780,10 @@ class BoundingSphereFactory(SupportsDeleteCallback):
 
     _property_names[maximum_radius_bounding_sphere] = "maximum_radius_bounding_sphere"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BoundingSphereFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BoundingSphereFactory)
+        initialize_from_source_object(self, source_object, BoundingSphereFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3890,10 +3890,10 @@ class TextureFilter2D(SupportsDeleteCallback):
     _property_names[linear_clamp_to_edge] = "linear_clamp_to_edge"
     _property_names[linear_repeat] = "linear_repeat"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureFilter2D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureFilter2D)
+        initialize_from_source_object(self, source_object, TextureFilter2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3984,10 +3984,10 @@ class TextureFilter2DFactory(SupportsDeleteCallback):
     _property_names[linear_clamp_to_edge] = "linear_clamp_to_edge"
     _property_names[linear_repeat] = "linear_repeat"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureFilter2DFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureFilter2DFactory)
+        initialize_from_source_object(self, source_object, TextureFilter2DFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4024,10 +4024,10 @@ class RendererTexture2D(SupportsDeleteCallback):
 
     _property_names[template] = "template"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RendererTexture2D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RendererTexture2D)
+        initialize_from_source_object(self, source_object, RendererTexture2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4084,10 +4084,10 @@ class RendererTextureTemplate2D(SupportsDeleteCallback):
     _property_names[width] = "width"
     _property_names[height] = "height"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RendererTextureTemplate2D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RendererTextureTemplate2D)
+        initialize_from_source_object(self, source_object, RendererTextureTemplate2D)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4107,7 +4107,7 @@ class PathPointCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5688438264765407641, 15401492857366987175),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4117,7 +4117,7 @@ class PathPointCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, PathPointCollection)
     def __iter__(self):
         """Create an iterator for the PathPointCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "PathPoint":
@@ -4144,24 +4144,24 @@ class PathPointCollection(SupportsDeleteCallback):
         """Return a path point at the specified position in the collection."""
         return self._intf.invoke(PathPointCollection._metadata, PathPointCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(PathPointCollection._metadata, PathPointCollection._get__NewEnum_metadata)
+        return self._intf.get_property(PathPointCollection._metadata, PathPointCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPointCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PathPointCollection)
+        initialize_from_source_object(self, source_object, PathPointCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4181,7 +4181,7 @@ class ObjectCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (4775746742546311368, 7552453374623214760),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4191,7 +4191,7 @@ class ObjectCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ObjectCollection)
     def __iter__(self):
         """Create an iterator for the ObjectCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
@@ -4218,24 +4218,24 @@ class ObjectCollection(SupportsDeleteCallback):
         """Return an item in the collection at the specified index."""
         return self._intf.invoke(ObjectCollection._metadata, ObjectCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(ObjectCollection._metadata, ObjectCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ObjectCollection._metadata, ObjectCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ObjectCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ObjectCollection)
+        initialize_from_source_object(self, source_object, ObjectCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4255,7 +4255,7 @@ class SceneCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5372104015339339678, 805902352111732909),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4265,7 +4265,7 @@ class SceneCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, SceneCollection)
     def __iter__(self):
         """Create an iterator for the SceneCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Scene":
@@ -4292,24 +4292,24 @@ class SceneCollection(SupportsDeleteCallback):
         """Return a scene in the collection at a specified index."""
         return self._intf.invoke(SceneCollection._metadata, SceneCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(SceneCollection._metadata, SceneCollection._get__NewEnum_metadata)
+        return self._intf.get_property(SceneCollection._metadata, SceneCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneCollection)
+        initialize_from_source_object(self, source_object, SceneCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4329,7 +4329,7 @@ class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5200561598852205868, 13511979759557490105),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4339,7 +4339,7 @@ class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ScreenOverlayPickResultCollection)
     def __iter__(self):
         """Create an iterator for the ScreenOverlayPickResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ScreenOverlayPickResult":
@@ -4366,24 +4366,24 @@ class ScreenOverlayPickResultCollection(SupportsDeleteCallback):
         """Get an element at the specified position in the collection."""
         return self._intf.invoke(ScreenOverlayPickResultCollection._metadata, ScreenOverlayPickResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(ScreenOverlayPickResultCollection._metadata, ScreenOverlayPickResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ScreenOverlayPickResultCollection._metadata, ScreenOverlayPickResultCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayPickResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScreenOverlayPickResultCollection)
+        initialize_from_source_object(self, source_object, ScreenOverlayPickResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4420,10 +4420,10 @@ class GlobeImageOverlayAddCompleteEventArgs(SupportsDeleteCallback):
 
     _property_names[overlay] = "overlay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GlobeImageOverlayAddCompleteEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GlobeImageOverlayAddCompleteEventArgs)
+        initialize_from_source_object(self, source_object, GlobeImageOverlayAddCompleteEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4460,10 +4460,10 @@ class TerrainOverlayAddCompleteEventArgs(SupportsDeleteCallback):
 
     _property_names[overlay] = "overlay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TerrainOverlayAddCompleteEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TerrainOverlayAddCompleteEventArgs)
+        initialize_from_source_object(self, source_object, TerrainOverlayAddCompleteEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4483,7 +4483,7 @@ class PickResultCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5309094562372375985, 3068566077694695567),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4493,7 +4493,7 @@ class PickResultCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, PickResultCollection)
     def __iter__(self):
         """Create an iterator for the PickResultCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "PickResult":
@@ -4520,24 +4520,24 @@ class PickResultCollection(SupportsDeleteCallback):
         """Return a picked object at the specified position in the collection."""
         return self._intf.invoke(PickResultCollection._metadata, PickResultCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(PickResultCollection._metadata, PickResultCollection._get__NewEnum_metadata)
+        return self._intf.get_property(PickResultCollection._metadata, PickResultCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PickResultCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PickResultCollection)
+        initialize_from_source_object(self, source_object, PickResultCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4584,10 +4584,10 @@ class RenderingEventArgs(SupportsDeleteCallback):
     _property_names[time] = "time"
     _property_names[time_in_ep_secs] = "time_in_ep_secs"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RenderingEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RenderingEventArgs)
+        initialize_from_source_object(self, source_object, RenderingEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4634,10 +4634,10 @@ class BatchPrimitiveIndex(SupportsDeleteCallback):
     _property_names[index] = "index"
     _property_names[primitive] = "primitive"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BatchPrimitiveIndex."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BatchPrimitiveIndex)
+        initialize_from_source_object(self, source_object, BatchPrimitiveIndex)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4657,7 +4657,7 @@ class KmlDocumentCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5732338628688371025, 7645622644953202819),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4667,7 +4667,7 @@ class KmlDocumentCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, KmlDocumentCollection)
     def __iter__(self):
         """Create an iterator for the KmlDocumentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "KmlDocument":
@@ -4694,24 +4694,24 @@ class KmlDocumentCollection(SupportsDeleteCallback):
         """Get an element at the specified position in the collection."""
         return self._intf.invoke(KmlDocumentCollection._metadata, KmlDocumentCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(KmlDocumentCollection._metadata, KmlDocumentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(KmlDocumentCollection._metadata, KmlDocumentCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlDocumentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlDocumentCollection)
+        initialize_from_source_object(self, source_object, KmlDocumentCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4731,7 +4731,7 @@ class KmlFeatureCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5283280579351142389, 14460084154557776063),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -4741,7 +4741,7 @@ class KmlFeatureCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, KmlFeatureCollection)
     def __iter__(self):
         """Create an iterator for the KmlFeatureCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IKmlFeature":
@@ -4768,24 +4768,24 @@ class KmlFeatureCollection(SupportsDeleteCallback):
         """Get an element at the specified position in the collection."""
         return self._intf.invoke(KmlFeatureCollection._metadata, KmlFeatureCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(KmlFeatureCollection._metadata, KmlFeatureCollection._get__NewEnum_metadata)
+        return self._intf.get_property(KmlFeatureCollection._metadata, KmlFeatureCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlFeatureCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlFeatureCollection)
+        initialize_from_source_object(self, source_object, KmlFeatureCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4832,10 +4832,10 @@ class KmlDocumentLoadedEventArgs(SupportsDeleteCallback):
     _property_names[document] = "document"
     _property_names[exception] = "exception"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlDocumentLoadedEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlDocumentLoadedEventArgs)
+        initialize_from_source_object(self, source_object, KmlDocumentLoadedEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5692,10 +5692,10 @@ class FactoryAndInitializers(SupportsDeleteCallback):
     _property_names[polyline_primitive_optional_parameters] = "polyline_primitive_optional_parameters"
     _property_names[point_batch_primitive_optional_parameters] = "point_batch_primitive_optional_parameters"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FactoryAndInitializers."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FactoryAndInitializers)
+        initialize_from_source_object(self, source_object, FactoryAndInitializers)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5752,11 +5752,11 @@ class ExtrudedPolylineTriangulatorResult(ITriangulatorResult, SupportsDeleteCall
     _property_names[bottom_boundary_positions] = "bottom_boundary_positions"
     _property_names[boundary_positions_winding_order] = "boundary_positions_winding_order"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ExtrudedPolylineTriangulatorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExtrudedPolylineTriangulatorResult)
-        ITriangulatorResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ExtrudedPolylineTriangulatorResult)
+        ITriangulatorResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITriangulatorResult._private_init(self, intf)
@@ -5824,11 +5824,11 @@ class SolidTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
     _property_names[outline_polyline_type] = "outline_polyline_type"
     _property_names[closed] = "closed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SolidTriangulatorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SolidTriangulatorResult)
-        ITriangulatorResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SolidTriangulatorResult)
+        ITriangulatorResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITriangulatorResult._private_init(self, intf)
@@ -5886,10 +5886,10 @@ class SurfaceShapesResult(SupportsDeleteCallback):
     _property_names[positions_winding_order] = "positions_winding_order"
     _property_names[polyline_type] = "polyline_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceShapesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceShapesResult)
+        initialize_from_source_object(self, source_object, SurfaceShapesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5966,11 +5966,11 @@ class SurfaceTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
     _property_names[boundary_positions_winding_order] = "boundary_positions_winding_order"
     _property_names[boundary_polyline_type] = "boundary_polyline_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceTriangulatorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceTriangulatorResult)
-        ITriangulatorResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SurfaceTriangulatorResult)
+        ITriangulatorResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITriangulatorResult._private_init(self, intf)
@@ -5986,10 +5986,10 @@ agcls.AgTypeNameMap["SurfaceTriangulatorResult"] = SurfaceTriangulatorResult
 
 class TriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
     """The result from triangulation: a triangle mesh defined using an indexed triangle list. This is commonly visualized with the triangle mesh primitive or surface mesh primitive."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TriangulatorResult."""
         SupportsDeleteCallback.__init__(self)
-        ITriangulatorResult.__init__(self, sourceObject)
+        ITriangulatorResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITriangulatorResult._private_init(self, intf)
@@ -6017,12 +6017,12 @@ class AGICustomTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCall
         return get_interface_property(attrname, AGICustomTerrainOverlay)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGICustomTerrainOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGICustomTerrainOverlay)
-        ITerrainOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AGICustomTerrainOverlay)
+        ITerrainOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITerrainOverlay._private_init(self, intf)
@@ -6051,12 +6051,12 @@ class AGIProcessedImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsD
         return get_interface_property(attrname, AGIProcessedImageGlobeOverlay)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedImageGlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIProcessedImageGlobeOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AGIProcessedImageGlobeOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -6085,12 +6085,12 @@ class AGIProcessedTerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteC
         return get_interface_property(attrname, AGIProcessedTerrainOverlay)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedTerrainOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIProcessedTerrainOverlay)
-        ITerrainOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AGIProcessedTerrainOverlay)
+        ITerrainOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITerrainOverlay._private_init(self, intf)
@@ -6119,12 +6119,12 @@ class AGIRoamImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDelete
         return get_interface_property(attrname, AGIRoamImageGlobeOverlay)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIRoamImageGlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIRoamImageGlobeOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AGIRoamImageGlobeOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -6193,10 +6193,10 @@ class CameraSnapshot(SupportsDeleteCallback):
         return self._intf.invoke(CameraSnapshot._metadata, CameraSnapshot._save_to_texture_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CameraSnapshot."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CameraSnapshot)
+        initialize_from_source_object(self, source_object, CameraSnapshot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6265,10 +6265,10 @@ class CameraVideoRecording(SupportsDeleteCallback):
 
     _property_names[is_recording] = "is_recording"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CameraVideoRecording."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CameraVideoRecording)
+        initialize_from_source_object(self, source_object, CameraVideoRecording)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6344,10 +6344,10 @@ class CentralBodyGraphicsIndexer(SupportsDeleteCallback):
     _property_names[moon] = "moon"
     _property_names[sun] = "sun"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyGraphicsIndexer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyGraphicsIndexer)
+        initialize_from_source_object(self, source_object, CentralBodyGraphicsIndexer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6444,12 +6444,12 @@ class CustomImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
     _property_names[maximum_meters_per_pixel] = "maximum_meters_per_pixel"
     _property_names[projection] = "projection"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CustomImageGlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CustomImageGlobeOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CustomImageGlobeOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -6494,10 +6494,10 @@ class CustomImageGlobeOverlayPluginActivator(SupportsDeleteCallback):
         return self._intf.invoke(CustomImageGlobeOverlayPluginActivator._metadata, CustomImageGlobeOverlayPluginActivator._get_available_display_names_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CustomImageGlobeOverlayPluginActivator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CustomImageGlobeOverlayPluginActivator)
+        initialize_from_source_object(self, source_object, CustomImageGlobeOverlayPluginActivator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6554,10 +6554,10 @@ class CustomImageGlobeOverlayPluginProxy(SupportsDeleteCallback):
     _property_names[is_custom_image_globe_overlay_supported] = "is_custom_image_globe_overlay_supported"
     _property_names[real_plugin_object] = "real_plugin_object"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CustomImageGlobeOverlayPluginProxy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CustomImageGlobeOverlayPluginProxy)
+        initialize_from_source_object(self, source_object, CustomImageGlobeOverlayPluginProxy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6620,12 +6620,12 @@ class GeospatialImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDel
     _property_names[use_transparent_color] = "use_transparent_color"
     _property_names[transparent_color] = "transparent_color"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GeospatialImageGlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GeospatialImageGlobeOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GeospatialImageGlobeOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -6642,10 +6642,10 @@ agcls.AgTypeNameMap["GeospatialImageGlobeOverlay"] = GeospatialImageGlobeOverlay
 
 class GlobeOverlay(IGlobeOverlay, SupportsDeleteCallback):
     """The base class of all terrain overlay and globe image overlay objects."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        IGlobeOverlay.__init__(self, sourceObject)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeOverlay._private_init(self, intf)
@@ -6727,10 +6727,10 @@ class GlobeOverlaySettings(SupportsDeleteCallback):
     _property_names[imagery_cache_size] = "imagery_cache_size"
     _property_names[preload_terrain_and_imagery] = "preload_terrain_and_imagery"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GlobeOverlaySettings."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GlobeOverlaySettings)
+        initialize_from_source_object(self, source_object, GlobeOverlaySettings)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6829,10 +6829,10 @@ class Lighting(SupportsDeleteCallback):
     _property_names[diffuse_intensity] = "diffuse_intensity"
     _property_names[night_lights_intensity] = "night_lights_intensity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Lighting."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Lighting)
+        initialize_from_source_object(self, source_object, Lighting)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6847,10 +6847,10 @@ agcls.AgTypeNameMap["Lighting"] = Lighting
 
 class PathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDeleteCallback):
     """A class that encapsulates the update logic for a path primitive. Derived classes must implement the Update method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPrimitiveUpdatePolicy."""
         SupportsDeleteCallback.__init__(self)
-        IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
+        IPathPrimitiveUpdatePolicy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
@@ -7204,12 +7204,12 @@ class ProjectedRasterOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCa
     _property_names[directions] = "directions"
     _property_names[supported] = "supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectedRasterOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectedRasterOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProjectedRasterOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -7226,10 +7226,10 @@ agcls.AgTypeNameMap["ProjectedRasterOverlay"] = ProjectedRasterOverlay
 
 class Projection(IProjection, SupportsDeleteCallback):
     """A projection represents a simplified camera with a position, orientation, and field of view horizontal and field of view vertical..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Projection."""
         SupportsDeleteCallback.__init__(self)
-        IProjection.__init__(self, sourceObject)
+        IProjection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProjection._private_init(self, intf)
@@ -7283,11 +7283,11 @@ class ProjectionStream(IProjection, SupportsDeleteCallback):
 
     _property_names[update_delta] = "update_delta"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectionStream."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectionStream)
-        IProjection.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProjectionStream)
+        IProjection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProjection._private_init(self, intf)
@@ -7387,10 +7387,10 @@ class SceneGlobeOverlaySettings(SupportsDeleteCallback):
     _property_names[imagery_pixel_error] = "imagery_pixel_error"
     _property_names[projected_raster_model_projection] = "projected_raster_model_projection"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneGlobeOverlaySettings."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneGlobeOverlaySettings)
+        initialize_from_source_object(self, source_object, SceneGlobeOverlaySettings)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7405,10 +7405,10 @@ agcls.AgTypeNameMap["SceneGlobeOverlaySettings"] = SceneGlobeOverlaySettings
 
 class ScreenOverlayCollectionBase(IScreenOverlayCollectionBase, SupportsDeleteCallback):
     """The common base class for collections of overlays held by screen overlay and by screen overlay manager."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayCollectionBase."""
         SupportsDeleteCallback.__init__(self)
-        IScreenOverlayCollectionBase.__init__(self, sourceObject)
+        IScreenOverlayCollectionBase.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlayCollectionBase._private_init(self, intf)
@@ -7452,10 +7452,10 @@ class Texture2DFactory(SupportsDeleteCallback):
         return self._intf.invoke(Texture2DFactory._metadata, Texture2DFactory._from_raster_metadata, raster, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Texture2DFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Texture2DFactory)
+        initialize_from_source_object(self, source_object, Texture2DFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7536,10 +7536,10 @@ class VisualEffects(SupportsDeleteCallback):
     _property_names[vignette_enabled] = "vignette_enabled"
     _property_names[vignette_strength] = "vignette_strength"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VisualEffects."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VisualEffects)
+        initialize_from_source_object(self, source_object, VisualEffects)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7620,11 +7620,11 @@ class AltitudeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names[maximum_altitude] = "maximum_altitude"
     _property_names[central_body] = "central_body"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AltitudeDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AltitudeDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AltitudeDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -7850,11 +7850,11 @@ class AxesPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[length] = "length"
     _property_names[width] = "width"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AxesPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AxesPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AxesPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -8324,10 +8324,10 @@ class Camera(SupportsDeleteCallback):
     _property_names[position_reference_frame] = "position_reference_frame"
     _property_names[reference_point_reference_frame] = "reference_point_reference_frame"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Camera."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Camera)
+        initialize_from_source_object(self, source_object, Camera)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8564,10 +8564,10 @@ class CentralBodyGraphics(SupportsDeleteCallback):
     _property_names[imagery] = "imagery"
     _property_names[kml] = "kml"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CentralBodyGraphics."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CentralBodyGraphics)
+        initialize_from_source_object(self, source_object, CentralBodyGraphics)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8676,10 +8676,10 @@ class Clouds(SupportsDeleteCallback):
     _property_names[altitude] = "altitude"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Clouds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Clouds)
+        initialize_from_source_object(self, source_object, Clouds)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8702,7 +8702,7 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _get_logic_operation_method_offset = 3
     _set_logic_operation_method_offset = 4
     _item_method_offset = 5
-    _get__NewEnum_method_offset = 6
+    _get__new_enum_method_offset = 6
     _reserve_method_offset = 7
     _add_with_negate_method_offset = 8
     _add_method_offset = 9
@@ -8724,7 +8724,7 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         return get_interface_property(attrname, CompositeDisplayCondition)
     def __iter__(self):
         """Create an iterator for the CompositeDisplayCondition object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IDisplayCondition":
@@ -8774,13 +8774,13 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         """Return the condition at the given zero-based index."""
         return self._intf.invoke(CompositeDisplayCondition._metadata, CompositeDisplayCondition._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(CompositeDisplayCondition._metadata, CompositeDisplayCondition._get__NewEnum_metadata)
+        return self._intf.get_property(CompositeDisplayCondition._metadata, CompositeDisplayCondition._get__new_enum_metadata)
 
     _reserve_metadata = { "offset" : _reserve_method_offset,
             "arg_types" : (agcom.INT,),
@@ -8872,13 +8872,13 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names[count] = "count"
     _property_names[capacity] = "capacity"
     _property_names[logic_operation] = "logic_operation"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CompositeDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CompositeDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CompositeDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -8904,7 +8904,7 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
     _remove_method_offset = 5
     _contains_method_offset = 6
     _clear_method_offset = 7
-    _get__NewEnum_method_offset = 8
+    _get__new_enum_method_offset = 8
     _metadata = {
         "iid_data" : (5261699596467587241, 17508946501537161350),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -8914,7 +8914,7 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
         return get_interface_property(attrname, CompositePrimitive)
     def __iter__(self):
         """Create an iterator for the CompositePrimitive object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
@@ -8977,23 +8977,23 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
         """Remove all primitives from the composite."""
         return self._intf.invoke(CompositePrimitive._metadata, CompositePrimitive._clear_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
-        return self._intf.get_property(CompositePrimitive._metadata, CompositePrimitive._get__NewEnum_metadata)
+        return self._intf.get_property(CompositePrimitive._metadata, CompositePrimitive._get__new_enum_metadata)
 
     _property_names[count] = "count"
     _property_names[translucent_primitives_sort_order] = "translucent_primitives_sort_order"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CompositePrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CompositePrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CompositePrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -9039,11 +9039,11 @@ class ConstantDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
 
     _property_names[display] = "display"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConstantDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ConstantDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ConstantDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9059,10 +9059,10 @@ agcls.AgTypeNameMap["ConstantDisplayCondition"] = ConstantDisplayCondition
 
 class DisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     """When assigned to objects, such as primitives or globe overlays, display conditions are evaluated to determine if the object should be rendered."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        IDisplayCondition.__init__(self, sourceObject)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9146,11 +9146,11 @@ class DistanceDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names[minimum_distance_squared] = "minimum_distance_squared"
     _property_names[maximum_distance_squared] = "maximum_distance_squared"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DistanceDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9252,11 +9252,11 @@ class DistanceToGlobeOverlayDisplayCondition(IDisplayCondition, SupportsDeleteCa
     _property_names[maximum_distance] = "maximum_distance"
     _property_names[maximum_distance_squared] = "maximum_distance_squared"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToGlobeOverlayDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToGlobeOverlayDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DistanceToGlobeOverlayDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9376,11 +9376,11 @@ class DistanceToPositionDisplayCondition(IDisplayCondition, SupportsDeleteCallba
     _property_names[position] = "position"
     _property_names[reference_frame] = "reference_frame"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToPositionDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToPositionDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DistanceToPositionDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9482,11 +9482,11 @@ class DistanceToPrimitiveDisplayCondition(IDisplayCondition, SupportsDeleteCallb
     _property_names[maximum_distance] = "maximum_distance"
     _property_names[maximum_distance_squared] = "maximum_distance_squared"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToPrimitiveDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToPrimitiveDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DistanceToPrimitiveDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -9550,11 +9550,11 @@ class DurationPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDele
     _property_names[duration] = "duration"
     _property_names[remove_location] = "remove_location"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DurationPathPrimitiveUpdatePolicy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DurationPathPrimitiveUpdatePolicy)
-        IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DurationPathPrimitiveUpdatePolicy)
+        IPathPrimitiveUpdatePolicy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
@@ -9618,10 +9618,10 @@ class FrameRate(SupportsDeleteCallback):
     _property_names[frames_per_second] = "frames_per_second"
     _property_names[maximum_number_of_frames] = "maximum_number_of_frames"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FrameRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FrameRate)
+        initialize_from_source_object(self, source_object, FrameRate)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9636,11 +9636,11 @@ agcls.AgTypeNameMap["FrameRate"] = FrameRate
 
 class GlobeImageOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteCallback):
     """A globe overlay that shows an image."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GlobeImageOverlay."""
         SupportsDeleteCallback.__init__(self)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -9759,10 +9759,10 @@ class GraphicsFont(SupportsDeleteCallback):
     _property_names[style] = "style"
     _property_names[antialias] = "antialias"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GraphicsFont."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GraphicsFont)
+        initialize_from_source_object(self, source_object, GraphicsFont)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9825,11 +9825,11 @@ class GreatArcInterpolator(IPositionInterpolator, SupportsDeleteCallback):
     _property_names[central_body] = "central_body"
     _property_names[granularity] = "granularity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GreatArcInterpolator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GreatArcInterpolator)
-        IPositionInterpolator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GreatArcInterpolator)
+        IPositionInterpolator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPositionInterpolator._private_init(self, intf)
@@ -9851,7 +9851,7 @@ class ImageCollection(SupportsDeleteCallback):
     _get_count_method_offset = 1
     _get_is_read_only_method_offset = 2
     _item_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _contains_method_offset = 5
     _contains_uri_string_method_offset = 6
     _remove_method_offset = 7
@@ -9877,7 +9877,7 @@ class ImageCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ImageCollection)
     def __iter__(self):
         """Create an iterator for the ImageCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IGlobeImageOverlay":
@@ -9915,13 +9915,13 @@ class ImageCollection(SupportsDeleteCallback):
         """Get the globe image overlay at the specified index."""
         return self._intf.invoke(ImageCollection._metadata, ImageCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Construct an iterator that can be used to iterate the collection."""
-        return self._intf.get_property(ImageCollection._metadata, ImageCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ImageCollection._metadata, ImageCollection._get__new_enum_metadata)
 
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
@@ -10040,12 +10040,12 @@ class ImageCollection(SupportsDeleteCallback):
 
     _property_names[count] = "count"
     _property_names[is_read_only] = "is_read_only"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ImageCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ImageCollection)
+        initialize_from_source_object(self, source_object, ImageCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10072,11 +10072,11 @@ class AlphaFromLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
         return get_interface_property(attrname, AlphaFromLuminanceFilter)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromLuminanceFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromLuminanceFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AlphaFromLuminanceFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10104,11 +10104,11 @@ class AlphaFromPixelFilter(IRasterFilter, SupportsDeleteCallback):
         return get_interface_property(attrname, AlphaFromPixelFilter)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromPixelFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromPixelFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AlphaFromPixelFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10154,11 +10154,11 @@ class AlphaFromRasterFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[raster] = "raster"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromRasterFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromRasterFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AlphaFromRasterFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10204,11 +10204,11 @@ class BandExtractFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[extract_format] = "extract_format"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BandExtractFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BandExtractFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BandExtractFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10272,11 +10272,11 @@ class BandOrderFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names[band_order] = "band_order"
     _property_names[maintain_raster_format] = "maintain_raster_format"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BandOrderFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BandOrderFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BandOrderFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10322,12 +10322,12 @@ class BlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
 
     _property_names[method] = "method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BlurFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BlurFilter)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BlurFilter)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -10374,11 +10374,11 @@ class BrightnessFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[adjustment] = "adjustment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BrightnessFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BrightnessFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BrightnessFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10406,11 +10406,11 @@ class ColorToLuminanceFilter(IRasterFilter, SupportsDeleteCallback):
         return get_interface_property(attrname, ColorToLuminanceFilter)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ColorToLuminanceFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ColorToLuminanceFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ColorToLuminanceFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10456,11 +10456,11 @@ class ContrastFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[adjustment] = "adjustment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ContrastFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ContrastFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ContrastFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10476,11 +10476,11 @@ agcls.AgTypeNameMap["ContrastFilter"] = ContrastFilter
 
 class ConvolutionFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     """Apply convolution to the source raster. Convolution is the modification of a pixel's value based on the values of its surrounding pixels. The kernel is the numerical matrix that is applied to each pixel in this process..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConvolutionFilter."""
         SupportsDeleteCallback.__init__(self)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -10527,12 +10527,12 @@ class EdgeDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
 
     _property_names[method] = "method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EdgeDetectFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EdgeDetectFilter)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, EdgeDetectFilter)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -10581,12 +10581,12 @@ class FilteringRasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
     _property_names[filter] = "filter"
     _property_names[stream] = "stream"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FilteringRasterStream."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FilteringRasterStream)
-        IRasterStream.__init__(self, sourceObject)
-        IRaster.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, FilteringRasterStream)
+        IRasterStream.__init__(self, source_object)
+        IRaster.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterStream._private_init(self, intf)
@@ -10633,11 +10633,11 @@ class FlipFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[flip_axis] = "flip_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FlipFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FlipFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, FlipFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10683,11 +10683,11 @@ class GammaCorrectionFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[gamma] = "gamma"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GammaCorrectionFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GammaCorrectionFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GammaCorrectionFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10715,12 +10715,12 @@ class GaussianBlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallba
         return get_interface_property(attrname, GaussianBlurFilter)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GaussianBlurFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GaussianBlurFilter)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GaussianBlurFilter)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -10767,12 +10767,12 @@ class GradientDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCall
 
     _property_names[method] = "method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GradientDetectFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GradientDetectFilter)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, GradientDetectFilter)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -10817,11 +10817,11 @@ class LevelsFilter(IRasterFilter, SupportsDeleteCallback):
         return self._intf.invoke(LevelsFilter._metadata, LevelsFilter._clear_adjustments_metadata, )
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LevelsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LevelsFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, LevelsFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -10865,10 +10865,10 @@ class ProjectionRasterStreamPluginActivator(SupportsDeleteCallback):
         return self._intf.invoke(ProjectionRasterStreamPluginActivator._metadata, ProjectionRasterStreamPluginActivator._get_available_display_names_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectionRasterStreamPluginActivator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectionRasterStreamPluginActivator)
+        initialize_from_source_object(self, source_object, ProjectionRasterStreamPluginActivator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10945,10 +10945,10 @@ class ProjectionRasterStreamPluginProxy(SupportsDeleteCallback):
     _property_names[is_projection_stream_supported] = "is_projection_stream_supported"
     _property_names[real_plugin_object] = "real_plugin_object"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectionRasterStreamPluginProxy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectionRasterStreamPluginProxy)
+        initialize_from_source_object(self, source_object, ProjectionRasterStreamPluginProxy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10963,10 +10963,10 @@ agcls.AgTypeNameMap["ProjectionRasterStreamPluginProxy"] = ProjectionRasterStrea
 
 class Raster(IRaster, SupportsDeleteCallback):
     """A raster dataset. A raster consists of one or more bands, or sets of values, which are most commonly associated with colors when the raster represents an image..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Raster."""
         SupportsDeleteCallback.__init__(self)
-        IRaster.__init__(self, sourceObject)
+        IRaster.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRaster._private_init(self, intf)
@@ -11102,10 +11102,10 @@ class RasterAttributes(SupportsDeleteCallback):
     _property_names[number_of_bands] = "number_of_bands"
     _property_names[row_stride] = "row_stride"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterAttributes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RasterAttributes)
+        initialize_from_source_object(self, source_object, RasterAttributes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11120,10 +11120,10 @@ agcls.AgTypeNameMap["RasterAttributes"] = RasterAttributes
 
 class RasterFilter(IRasterFilter, SupportsDeleteCallback):
     """A filter for processing raster datasets. RasterFilter is the base class for all raster filters..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterFilter."""
         SupportsDeleteCallback.__init__(self)
-        IRasterFilter.__init__(self, sourceObject)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -11139,11 +11139,11 @@ agcls.AgTypeNameMap["RasterFilter"] = RasterFilter
 
 class RasterStream(IRasterStream, IRaster, SupportsDeleteCallback):
     """A raster, the data of which, is updated dynamically at the specified update delta. The class can be used to stream video and other dynamic raster data to textures and other raster clients..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterStream."""
         SupportsDeleteCallback.__init__(self)
-        IRasterStream.__init__(self, sourceObject)
-        IRaster.__init__(self, sourceObject)
+        IRasterStream.__init__(self, source_object)
+        IRaster.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterStream._private_init(self, intf)
@@ -11190,11 +11190,11 @@ class RotateFilter(IRasterFilter, SupportsDeleteCallback):
 
     _property_names[angle] = "angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotateFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotateFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RotateFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -11282,11 +11282,11 @@ class SequenceFilter(IRasterFilter, SupportsDeleteCallback):
     _property_names[continue_on_failure] = "continue_on_failure"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SequenceFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SequenceFilter)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SequenceFilter)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterFilter._private_init(self, intf)
@@ -11332,12 +11332,12 @@ class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
 
     _property_names[method] = "method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SharpenFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SharpenFilter)
-        IConvolutionFilter.__init__(self, sourceObject)
-        IRasterFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SharpenFilter)
+        IConvolutionFilter.__init__(self, source_object)
+        IRasterFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IConvolutionFilter._private_init(self, intf)
@@ -11678,12 +11678,12 @@ class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
     _property_names[enable_audio] = "enable_audio"
     _property_names[audio_uri] = "audio_uri"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VideoStream."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VideoStream)
-        IRasterStream.__init__(self, sourceObject)
-        IRaster.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VideoStream)
+        IRasterStream.__init__(self, source_object)
+        IRaster.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IRasterStream._private_init(self, intf)
@@ -11700,11 +11700,11 @@ agcls.AgTypeNameMap["VideoStream"] = VideoStream
 
 class KmlContainer(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
     """A KmlContainer contains a collection of children kml features."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlContainer."""
         SupportsDeleteCallback.__init__(self)
-        IKmlContainer.__init__(self, sourceObject)
-        IKmlFeature.__init__(self, sourceObject)
+        IKmlContainer.__init__(self, source_object)
+        IKmlFeature.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IKmlContainer._private_init(self, intf)
@@ -11743,12 +11743,12 @@ class KmlDocument(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
 
     _property_names[uri] = "uri"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlDocument."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlDocument)
-        IKmlContainer.__init__(self, sourceObject)
-        IKmlFeature.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, KmlDocument)
+        IKmlContainer.__init__(self, source_object)
+        IKmlFeature.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IKmlContainer._private_init(self, intf)
@@ -11765,10 +11765,10 @@ agcls.AgTypeNameMap["KmlDocument"] = KmlDocument
 
 class KmlFeature(IKmlFeature, SupportsDeleteCallback):
     """A KML feature."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlFeature."""
         SupportsDeleteCallback.__init__(self)
-        IKmlFeature.__init__(self, sourceObject)
+        IKmlFeature.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IKmlFeature._private_init(self, intf)
@@ -11796,12 +11796,12 @@ class KmlFolder(IKmlContainer, IKmlFeature, SupportsDeleteCallback):
         return get_interface_property(attrname, KmlFolder)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlFolder."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlFolder)
-        IKmlContainer.__init__(self, sourceObject)
-        IKmlFeature.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, KmlFolder)
+        IKmlContainer.__init__(self, source_object)
+        IKmlFeature.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IKmlContainer._private_init(self, intf)
@@ -11907,10 +11907,10 @@ class KmlGraphics(SupportsDeleteCallback):
 
     _property_names[documents] = "documents"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlGraphics."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlGraphics)
+        initialize_from_source_object(self, source_object, KmlGraphics)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12095,11 +12095,11 @@ class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
     _property_names[link_snippet] = "link_snippet"
     _property_names[expires] = "expires"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type KmlNetworkLink."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, KmlNetworkLink)
-        IKmlFeature.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, KmlNetworkLink)
+        IKmlFeature.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IKmlFeature._private_init(self, intf)
@@ -12599,11 +12599,11 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[clamp_to_pixel] = "clamp_to_pixel"
     _property_names[central_body_clipped] = "central_body_clipped"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarkerBatchPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarkerBatchPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MarkerBatchPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -12711,10 +12711,10 @@ class MarkerBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
         return self._intf.invoke(MarkerBatchPrimitiveOptionalParameters._metadata, MarkerBatchPrimitiveOptionalParameters._set_displays_metadata, displays)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarkerBatchPrimitiveOptionalParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarkerBatchPrimitiveOptionalParameters)
+        initialize_from_source_object(self, source_object, MarkerBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12777,11 +12777,11 @@ class MaximumCountPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, Supports
     _property_names[maximum_count] = "maximum_count"
     _property_names[remove_location] = "remove_location"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MaximumCountPathPrimitiveUpdatePolicy."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MaximumCountPathPrimitiveUpdatePolicy)
-        IPathPrimitiveUpdatePolicy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MaximumCountPathPrimitiveUpdatePolicy)
+        IPathPrimitiveUpdatePolicy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPathPrimitiveUpdatePolicy._private_init(self, intf)
@@ -12806,7 +12806,7 @@ class ModelArticulation(SupportsDeleteCallback):
     _get_item_by_string_method_offset = 4
     _get_by_name_method_offset = 5
     _contains_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _metadata = {
         "iid_data" : (5348326078254719861, 10849601624272152503),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -12816,7 +12816,7 @@ class ModelArticulation(SupportsDeleteCallback):
         return get_interface_property(attrname, ModelArticulation)
     def __iter__(self):
         """Create an iterator for the ModelArticulation object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ModelTransformation":
@@ -12872,25 +12872,25 @@ class ModelArticulation(SupportsDeleteCallback):
         """Return true if the collection contains the transformation."""
         return self._intf.invoke(ModelArticulation._metadata, ModelArticulation._contains_metadata, name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return the enumerator for this collection."""
-        return self._intf.get_property(ModelArticulation._metadata, ModelArticulation._get__NewEnum_metadata)
+        return self._intf.get_property(ModelArticulation._metadata, ModelArticulation._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[name] = "name"
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ModelArticulation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ModelArticulation)
+        initialize_from_source_object(self, source_object, ModelArticulation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12913,7 +12913,7 @@ class ModelArticulationCollection(SupportsDeleteCallback):
     _get_item_by_string_method_offset = 3
     _get_by_name_method_offset = 4
     _contains_method_offset = 5
-    _get__NewEnum_method_offset = 6
+    _get__new_enum_method_offset = 6
     _metadata = {
         "iid_data" : (4825692293668155476, 4454785697263668652),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -12923,7 +12923,7 @@ class ModelArticulationCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ModelArticulationCollection)
     def __iter__(self):
         """Create an iterator for the ModelArticulationCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ModelArticulation":
@@ -12971,24 +12971,24 @@ class ModelArticulationCollection(SupportsDeleteCallback):
         """Return true if the collection contains the articulation."""
         return self._intf.invoke(ModelArticulationCollection._metadata, ModelArticulationCollection._contains_metadata, name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return the enumerator for this collection."""
-        return self._intf.get_property(ModelArticulationCollection._metadata, ModelArticulationCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ModelArticulationCollection._metadata, ModelArticulationCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ModelArticulationCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ModelArticulationCollection)
+        initialize_from_source_object(self, source_object, ModelArticulationCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13113,11 +13113,11 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[orientation] = "orientation"
     _property_names[articulations] = "articulations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ModelPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ModelPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ModelPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -13223,10 +13223,10 @@ class ModelTransformation(SupportsDeleteCallback):
     _property_names[name] = "name"
     _property_names[type] = "type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ModelTransformation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ModelTransformation)
+        initialize_from_source_object(self, source_object, ModelTransformation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13241,11 +13241,11 @@ agcls.AgTypeNameMap["ModelTransformation"] = ModelTransformation
 
 class Overlay(IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Overlay."""
         SupportsDeleteCallback.__init__(self)
-        IOverlay.__init__(self, sourceObject)
-        IScreenOverlayContainer.__init__(self, sourceObject)
+        IOverlay.__init__(self, source_object)
+        IScreenOverlayContainer.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IOverlay._private_init(self, intf)
@@ -13282,7 +13282,7 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
     _get_per_item_picking_enabled_method_offset = 15
     _set_per_item_picking_enabled_method_offset = 16
     _item_method_offset = 17
-    _get__NewEnum_method_offset = 18
+    _get__new_enum_method_offset = 18
     _add_front_method_offset = 19
     _add_range_to_front_method_offset = 20
     _add_back_method_offset = 21
@@ -13305,7 +13305,7 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
         return get_interface_property(attrname, PathPrimitive)
     def __iter__(self):
         """Create an iterator for the PathPrimitive object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "PathPoint":
@@ -13446,13 +13446,13 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
         """Return the point at the given zero-based index."""
         return self._intf.invoke(PathPrimitive._metadata, PathPrimitive._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection."""
-        return self._intf.get_property(PathPrimitive._metadata, PathPrimitive._get__NewEnum_metadata)
+        return self._intf.get_property(PathPrimitive._metadata, PathPrimitive._get__new_enum_metadata)
 
     _add_front_metadata = { "offset" : _add_front_method_offset,
             "arg_types" : (agcom.PVOID,),
@@ -13559,14 +13559,14 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[display_outline] = "display_outline"
     _property_names[outline_width] = "outline_width"
     _property_names[per_item_picking_enabled] = "per_item_picking_enabled"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[central_body_clipped] = "central_body_clipped"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PathPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PathPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -13624,10 +13624,10 @@ class PickResult(SupportsDeleteCallback):
     _property_names[depth] = "depth"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PickResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PickResult)
+        initialize_from_source_object(self, source_object, PickResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13690,11 +13690,11 @@ class PixelSizeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names[minimum_pixel_size] = "minimum_pixel_size"
     _property_names[maximum_pixel_size] = "maximum_pixel_size"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PixelSizeDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PixelSizeDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PixelSizeDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -14016,11 +14016,11 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[per_item_picking_enabled] = "per_item_picking_enabled"
     _property_names[central_body_clipped] = "central_body_clipped"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PointBatchPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PointBatchPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PointBatchPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -14056,10 +14056,10 @@ class PointBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
         return self._intf.invoke(PointBatchPrimitiveOptionalParameters._metadata, PointBatchPrimitiveOptionalParameters._set_pixel_sizes_metadata, pixel_sizes)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PointBatchPrimitiveOptionalParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PointBatchPrimitiveOptionalParameters)
+        initialize_from_source_object(self, source_object, PointBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14446,11 +14446,11 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[per_item_picking_enabled] = "per_item_picking_enabled"
     _property_names[central_body_clipped] = "central_body_clipped"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PolylinePrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PolylinePrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PolylinePrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -14486,10 +14486,10 @@ class PolylinePrimitiveOptionalParameters(SupportsDeleteCallback):
         return self._intf.invoke(PolylinePrimitiveOptionalParameters._metadata, PolylinePrimitiveOptionalParameters._set_time_intervals_metadata, time_intervals)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PolylinePrimitiveOptionalParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PolylinePrimitiveOptionalParameters)
+        initialize_from_source_object(self, source_object, PolylinePrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14504,10 +14504,10 @@ agcls.AgTypeNameMap["PolylinePrimitiveOptionalParameters"] = PolylinePrimitiveOp
 
 class PositionInterpolator(IPositionInterpolator, SupportsDeleteCallback):
     """Position interpolators compute positions based on a collection of input positions. Position interpolators are used in conjunction with the polyline primitive to render things such as great arcs and rhumb lines."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PositionInterpolator."""
         SupportsDeleteCallback.__init__(self)
-        IPositionInterpolator.__init__(self, sourceObject)
+        IPositionInterpolator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPositionInterpolator._private_init(self, intf)
@@ -14523,10 +14523,10 @@ agcls.AgTypeNameMap["PositionInterpolator"] = PositionInterpolator
 
 class Primitive(IPrimitive, SupportsDeleteCallback):
     """Primitives represent objects rendered in the 3D scene."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Primitive."""
         SupportsDeleteCallback.__init__(self)
-        IPrimitive.__init__(self, sourceObject)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -14554,7 +14554,7 @@ class PrimitiveManager(SupportsDeleteCallback):
     _remove_method_offset = 7
     _contains_method_offset = 8
     _clear_method_offset = 9
-    _get__NewEnum_method_offset = 10
+    _get__new_enum_method_offset = 10
     _metadata = {
         "iid_data" : (5712467222312543641, 18164203771391217825),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -14564,7 +14564,7 @@ class PrimitiveManager(SupportsDeleteCallback):
         return get_interface_property(attrname, PrimitiveManager)
     def __iter__(self):
         """Create an iterator for the PrimitiveManager object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> typing.Any:
@@ -14642,23 +14642,23 @@ class PrimitiveManager(SupportsDeleteCallback):
         """Remove all primitives from the manager."""
         return self._intf.invoke(PrimitiveManager._metadata, PrimitiveManager._clear_metadata, )
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added."""
-        return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get__NewEnum_metadata)
+        return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get__new_enum_metadata)
 
     _property_names[count] = "count"
     _property_names[precision_exponent] = "precision_exponent"
     _property_names[translucent_primitives_sort_order] = "translucent_primitives_sort_order"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PrimitiveManager."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PrimitiveManager)
+        initialize_from_source_object(self, source_object, PrimitiveManager)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14721,12 +14721,12 @@ class RasterImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
     _property_names[use_transparent_color] = "use_transparent_color"
     _property_names[transparent_color] = "transparent_color"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterImageGlobeOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RasterImageGlobeOverlay)
-        IGlobeImageOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RasterImageGlobeOverlay)
+        IGlobeImageOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IGlobeImageOverlay._private_init(self, intf)
@@ -14791,11 +14791,11 @@ class RhumbLineInterpolator(IPositionInterpolator, SupportsDeleteCallback):
     _property_names[central_body] = "central_body"
     _property_names[granularity] = "granularity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RhumbLineInterpolator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RhumbLineInterpolator)
-        IPositionInterpolator.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RhumbLineInterpolator)
+        IPositionInterpolator.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPositionInterpolator._private_init(self, intf)
@@ -15054,10 +15054,10 @@ class Scene(SupportsDeleteCallback):
     _property_names[clouds] = "clouds"
     _property_names[show_star_labels] = "show_star_labels"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Scene."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Scene)
+        initialize_from_source_object(self, source_object, Scene)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15108,11 +15108,11 @@ class SceneDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
         return self._intf.invoke(SceneDisplayCondition._metadata, SceneDisplayCondition._display_only_in_scene_metadata, scene)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SceneDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -15218,10 +15218,10 @@ class SceneManager(SupportsDeleteCallback):
     _property_names[initializers] = "initializers"
     _property_names[frame_rate] = "frame_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneManager."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneManager)
+        initialize_from_source_object(self, source_object, SceneManager)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15236,12 +15236,12 @@ agcls.AgTypeNameMap["SceneManager"] = SceneManager
 
 class ScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
     """A visible element drawn in screen space. Overlays are useful for floating logos, heads up displays, and integrating user interfaces into the 3D window."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlay."""
         SupportsDeleteCallback.__init__(self)
-        IScreenOverlay.__init__(self, sourceObject)
-        IOverlay.__init__(self, sourceObject)
-        IScreenOverlayContainer.__init__(self, sourceObject)
+        IScreenOverlay.__init__(self, source_object)
+        IOverlay.__init__(self, source_object)
+        IScreenOverlayContainer.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlay._private_init(self, intf)
@@ -15271,11 +15271,11 @@ class ScreenOverlayCollection(IScreenOverlayCollectionBase, SupportsDeleteCallba
         return get_interface_property(attrname, ScreenOverlayCollection)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScreenOverlayCollection)
-        IScreenOverlayCollectionBase.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScreenOverlayCollection)
+        IScreenOverlayCollectionBase.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlayCollectionBase._private_init(self, intf)
@@ -15359,12 +15359,12 @@ class ScreenOverlayManager(IScreenOverlayCollectionBase, IScreenOverlayContainer
     _property_names[padding] = "padding"
     _property_names[display] = "display"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayManager."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScreenOverlayManager)
-        IScreenOverlayCollectionBase.__init__(self, sourceObject)
-        IScreenOverlayContainer.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ScreenOverlayManager)
+        IScreenOverlayCollectionBase.__init__(self, source_object)
+        IScreenOverlayContainer.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlayCollectionBase._private_init(self, intf)
@@ -15423,10 +15423,10 @@ class ScreenOverlayPickResult(SupportsDeleteCallback):
     _property_names[control_position] = "control_position"
     _property_names[overlay] = "overlay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayPickResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScreenOverlayPickResult)
+        initialize_from_source_object(self, source_object, ScreenOverlayPickResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15805,11 +15805,11 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[back_line_width] = "back_line_width"
     _property_names[set_hint] = "set_hint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SolidPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SolidPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SolidPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -15909,10 +15909,10 @@ class Stereoscopic(SupportsDeleteCallback):
     _property_names[projection_distance] = "projection_distance"
     _property_names[eye_separation_factor] = "eye_separation_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Stereoscopic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Stereoscopic)
+        initialize_from_source_object(self, source_object, Stereoscopic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16091,11 +16091,11 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[texture_matrix] = "texture_matrix"
     _property_names[transparent_texture_border] = "transparent_texture_border"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceMeshPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceMeshPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SurfaceMeshPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -16117,7 +16117,7 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
     _get_count_method_offset = 1
     _get_is_read_only_method_offset = 2
     _item_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _contains_method_offset = 5
     _contains_uri_string_method_offset = 6
     _remove_method_offset = 7
@@ -16143,7 +16143,7 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TerrainOverlayCollection)
     def __iter__(self):
         """Create an iterator for the TerrainOverlayCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITerrainOverlay":
@@ -16181,13 +16181,13 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
         """Get the terrain overlay at the specified index."""
         return self._intf.invoke(TerrainOverlayCollection._metadata, TerrainOverlayCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Construct an iterator that can be used to iterate the collection."""
-        return self._intf.get_property(TerrainOverlayCollection._metadata, TerrainOverlayCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TerrainOverlayCollection._metadata, TerrainOverlayCollection._get__new_enum_metadata)
 
     _contains_metadata = { "offset" : _contains_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
@@ -16306,12 +16306,12 @@ class TerrainOverlayCollection(SupportsDeleteCallback):
 
     _property_names[count] = "count"
     _property_names[is_read_only] = "is_read_only"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TerrainOverlayCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TerrainOverlayCollection)
+        initialize_from_source_object(self, source_object, TerrainOverlayCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16326,11 +16326,11 @@ agcls.AgTypeNameMap["TerrainOverlayCollection"] = TerrainOverlayCollection
 
 class TerrainOverlay(ITerrainOverlay, IGlobeOverlay, SupportsDeleteCallback):
     """A globe overlay which shows terrain."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TerrainOverlay."""
         SupportsDeleteCallback.__init__(self)
-        ITerrainOverlay.__init__(self, sourceObject)
-        IGlobeOverlay.__init__(self, sourceObject)
+        ITerrainOverlay.__init__(self, source_object)
+        IGlobeOverlay.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITerrainOverlay._private_init(self, intf)
@@ -16635,11 +16635,11 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[texture_filter] = "texture_filter"
     _property_names[render_in_screen_space] = "render_in_screen_space"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextBatchPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextBatchPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TextBatchPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -16789,10 +16789,10 @@ class TextBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
     _property_names[maximum_string_length] = "maximum_string_length"
     _property_names[screen_space_rendering] = "screen_space_rendering"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextBatchPrimitiveOptionalParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextBatchPrimitiveOptionalParameters)
+        initialize_from_source_object(self, source_object, TextBatchPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16873,13 +16873,13 @@ class TextOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDel
     _property_names[outline_color] = "outline_color"
     _property_names[font] = "font"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextOverlay)
-        IScreenOverlay.__init__(self, sourceObject)
-        IOverlay.__init__(self, sourceObject)
-        IScreenOverlayContainer.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TextOverlay)
+        IScreenOverlay.__init__(self, source_object)
+        IOverlay.__init__(self, source_object)
+        IScreenOverlayContainer.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlay._private_init(self, intf)
@@ -17069,10 +17069,10 @@ class TextureMatrix(SupportsDeleteCallback):
     _property_names[m43] = "m43"
     _property_names[m44] = "m44"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureMatrix."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureMatrix)
+        initialize_from_source_object(self, source_object, TextureMatrix)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -17153,13 +17153,13 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
     _property_names[texture_filter] = "texture_filter"
     _property_names[maintain_aspect_ratio] = "maintain_aspect_ratio"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureScreenOverlay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureScreenOverlay)
-        IScreenOverlay.__init__(self, sourceObject)
-        IOverlay.__init__(self, sourceObject)
-        IScreenOverlayContainer.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TextureScreenOverlay)
+        IScreenOverlay.__init__(self, source_object)
+        IOverlay.__init__(self, source_object)
+        IScreenOverlayContainer.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IScreenOverlay._private_init(self, intf)
@@ -17225,11 +17225,11 @@ class TimeIntervalDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
     _property_names[minimum_time] = "minimum_time"
     _property_names[maximum_time] = "maximum_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeIntervalDisplayCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeIntervalDisplayCondition)
-        IDisplayCondition.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeIntervalDisplayCondition)
+        IDisplayCondition.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDisplayCondition._private_init(self, intf)
@@ -17471,11 +17471,11 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[central_body_clipped] = "central_body_clipped"
     _property_names[two_sided_lighting] = "two_sided_lighting"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TriangleMeshPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TriangleMeshPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TriangleMeshPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -17519,10 +17519,10 @@ class TriangleMeshPrimitiveOptionalParameters(SupportsDeleteCallback):
         return self._intf.invoke(TriangleMeshPrimitiveOptionalParameters._metadata, TriangleMeshPrimitiveOptionalParameters._set_per_vertex_colors_metadata, colors)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TriangleMeshPrimitiveOptionalParameters."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TriangleMeshPrimitiveOptionalParameters)
+        initialize_from_source_object(self, source_object, TriangleMeshPrimitiveOptionalParameters)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -17801,11 +17801,11 @@ class VectorPrimitive(IPrimitive, SupportsDeleteCallback):
     _property_names[width] = "width"
     _property_names[true_scale] = "true_scale"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorPrimitive."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorPrimitive)
-        IPrimitive.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorPrimitive)
+        IPrimitive.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPrimitive._private_init(self, intf)
@@ -17841,10 +17841,10 @@ class BoxTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(BoxTriangulatorInitializer._metadata, BoxTriangulatorInitializer._compute_metadata, size, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BoxTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BoxTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, BoxTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -17887,10 +17887,10 @@ class CylinderTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(CylinderTriangulatorInitializer._metadata, CylinderTriangulatorInitializer._compute_metadata, length, bottom_radius, top_radius, slices, cylinder_fill, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CylinderTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CylinderTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, CylinderTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -17933,10 +17933,10 @@ class EllipsoidTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(EllipsoidTriangulatorInitializer._metadata, EllipsoidTriangulatorInitializer._compute_metadata, radii, slices, stacks, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EllipsoidTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EllipsoidTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, EllipsoidTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18059,10 +18059,10 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_single_constant_altitude_cartographic_with_winding_order_metadata, central_body, positions, altitude, positions_winding_order, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ExtrudedPolylineTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ExtrudedPolylineTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, ExtrudedPolylineTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18105,10 +18105,10 @@ class SurfaceExtentTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(SurfaceExtentTriangulatorInitializer._metadata, SurfaceExtentTriangulatorInitializer._compute_metadata, central_body, extent, altitude, granularity, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceExtentTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceExtentTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, SurfaceExtentTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18183,10 +18183,10 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
         return self._intf.invoke(SurfacePolygonTriangulatorInitializer._metadata, SurfacePolygonTriangulatorInitializer._compute_cartographic_with_altitude_and_granularity_metadata, central_body, positions, altitude, granularity, positions_winding_order, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfacePolygonTriangulatorInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfacePolygonTriangulatorInitializer)
+        initialize_from_source_object(self, source_object, SurfacePolygonTriangulatorInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18309,10 +18309,10 @@ class SurfaceShapesInitializer(SupportsDeleteCallback):
         return self._intf.invoke(SurfaceShapesInitializer._metadata, SurfaceShapesInitializer._compute_sector_cartographic_metadata, central_body, center, inner_radius, outer_radius, start_bearing, end_bearing, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceShapesInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceShapesInitializer)
+        initialize_from_source_object(self, source_object, SurfaceShapesInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18347,10 +18347,10 @@ class AGICustomTerrainOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(AGICustomTerrainOverlayFactory._metadata, AGICustomTerrainOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGICustomTerrainOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGICustomTerrainOverlayFactory)
+        initialize_from_source_object(self, source_object, AGICustomTerrainOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18385,10 +18385,10 @@ class AGIProcessedImageGlobeOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(AGIProcessedImageGlobeOverlayFactory._metadata, AGIProcessedImageGlobeOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedImageGlobeOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIProcessedImageGlobeOverlayFactory)
+        initialize_from_source_object(self, source_object, AGIProcessedImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18423,10 +18423,10 @@ class AGIProcessedTerrainOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(AGIProcessedTerrainOverlayFactory._metadata, AGIProcessedTerrainOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIProcessedTerrainOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIProcessedTerrainOverlayFactory)
+        initialize_from_source_object(self, source_object, AGIProcessedTerrainOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18461,10 +18461,10 @@ class AGIRoamImageGlobeOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(AGIRoamImageGlobeOverlayFactory._metadata, AGIRoamImageGlobeOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AGIRoamImageGlobeOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AGIRoamImageGlobeOverlayFactory)
+        initialize_from_source_object(self, source_object, AGIRoamImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18499,10 +18499,10 @@ class CustomImageGlobeOverlayPluginActivatorFactory(SupportsDeleteCallback):
         return self._intf.invoke(CustomImageGlobeOverlayPluginActivatorFactory._metadata, CustomImageGlobeOverlayPluginActivatorFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CustomImageGlobeOverlayPluginActivatorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CustomImageGlobeOverlayPluginActivatorFactory)
+        initialize_from_source_object(self, source_object, CustomImageGlobeOverlayPluginActivatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18537,10 +18537,10 @@ class GeospatialImageGlobeOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(GeospatialImageGlobeOverlayFactory._metadata, GeospatialImageGlobeOverlayFactory._initialize_with_string_metadata, uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GeospatialImageGlobeOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GeospatialImageGlobeOverlayFactory)
+        initialize_from_source_object(self, source_object, GeospatialImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18585,10 +18585,10 @@ class ProjectedRasterOverlayFactory(SupportsDeleteCallback):
 
     _property_names[supported] = "supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectedRasterOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectedRasterOverlayFactory)
+        initialize_from_source_object(self, source_object, ProjectedRasterOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18639,10 +18639,10 @@ class ProjectionFactory(SupportsDeleteCallback):
         return self._intf.invoke(ProjectionFactory._metadata, ProjectionFactory._initialize_from_projection_metadata, projection, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectionFactory)
+        initialize_from_source_object(self, source_object, ProjectionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18693,10 +18693,10 @@ class AltitudeDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(AltitudeDisplayConditionFactory._metadata, AltitudeDisplayConditionFactory._initialize_with_central_body_and_altitudes_metadata, central_body, minimum_altitude, maximum_altitude, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AltitudeDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AltitudeDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, AltitudeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18731,10 +18731,10 @@ class AxesPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(AxesPrimitiveFactory._metadata, AxesPrimitiveFactory._initialize_with_direction_metadata, reference_frame, axes, font, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AxesPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AxesPrimitiveFactory)
+        initialize_from_source_object(self, source_object, AxesPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18769,10 +18769,10 @@ class CompositeDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(CompositeDisplayConditionFactory._metadata, CompositeDisplayConditionFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CompositeDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CompositeDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, CompositeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18807,10 +18807,10 @@ class CompositePrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(CompositePrimitiveFactory._metadata, CompositePrimitiveFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CompositePrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CompositePrimitiveFactory)
+        initialize_from_source_object(self, source_object, CompositePrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18853,10 +18853,10 @@ class ConstantDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(ConstantDisplayConditionFactory._metadata, ConstantDisplayConditionFactory._initialize_display_metadata, display, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConstantDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ConstantDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, ConstantDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18899,10 +18899,10 @@ class DistanceDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(DistanceDisplayConditionFactory._metadata, DistanceDisplayConditionFactory._initialize_with_distances_metadata, minimum_distance, maximum_distance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, DistanceDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18945,10 +18945,10 @@ class DistanceToGlobeOverlayDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(DistanceToGlobeOverlayDisplayConditionFactory._metadata, DistanceToGlobeOverlayDisplayConditionFactory._initialize_with_distances_metadata, globe_overlay, minimum_distance, maximum_distance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToGlobeOverlayDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToGlobeOverlayDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, DistanceToGlobeOverlayDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18999,10 +18999,10 @@ class DistanceToPositionDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(DistanceToPositionDisplayConditionFactory._metadata, DistanceToPositionDisplayConditionFactory._initialize_with_reference_frame_and_distances_metadata, reference_frame, position, minimum_distance, maximum_distance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToPositionDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToPositionDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, DistanceToPositionDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19045,10 +19045,10 @@ class DistanceToPrimitiveDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(DistanceToPrimitiveDisplayConditionFactory._metadata, DistanceToPrimitiveDisplayConditionFactory._initialize_with_distances_metadata, primitive, minimum_distance, maximum_distance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DistanceToPrimitiveDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DistanceToPrimitiveDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, DistanceToPrimitiveDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19091,10 +19091,10 @@ class DurationPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
         return self._intf.invoke(DurationPathPrimitiveUpdatePolicyFactory._metadata, DurationPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, duration, remove_location, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DurationPathPrimitiveUpdatePolicyFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DurationPathPrimitiveUpdatePolicyFactory)
+        initialize_from_source_object(self, source_object, DurationPathPrimitiveUpdatePolicyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19131,10 +19131,10 @@ class GlobeImageOverlayInitializer(SupportsDeleteCallback):
 
     _property_names[more_than_one_image_globe_overlay_supported] = "more_than_one_image_globe_overlay_supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GlobeImageOverlayInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GlobeImageOverlayInitializer)
+        initialize_from_source_object(self, source_object, GlobeImageOverlayInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19177,10 +19177,10 @@ class GraphicsFontFactory(SupportsDeleteCallback):
         return self._intf.invoke(GraphicsFontFactory._metadata, GraphicsFontFactory._initialize_with_name_size_metadata, name, size, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GraphicsFontFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GraphicsFontFactory)
+        initialize_from_source_object(self, source_object, GraphicsFontFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19231,10 +19231,10 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
         return self._intf.invoke(GreatArcInterpolatorFactory._metadata, GreatArcInterpolatorFactory._initialize_with_central_body_and_granularity_metadata, central_body, granularity, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GreatArcInterpolatorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GreatArcInterpolatorFactory)
+        initialize_from_source_object(self, source_object, GreatArcInterpolatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19269,10 +19269,10 @@ class AlphaFromLuminanceFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(AlphaFromLuminanceFilterFactory._metadata, AlphaFromLuminanceFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromLuminanceFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromLuminanceFilterFactory)
+        initialize_from_source_object(self, source_object, AlphaFromLuminanceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19307,10 +19307,10 @@ class AlphaFromPixelFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(AlphaFromPixelFilterFactory._metadata, AlphaFromPixelFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromPixelFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromPixelFilterFactory)
+        initialize_from_source_object(self, source_object, AlphaFromPixelFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19353,10 +19353,10 @@ class AlphaFromRasterFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(AlphaFromRasterFilterFactory._metadata, AlphaFromRasterFilterFactory._initialize_with_raster_metadata, raster, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AlphaFromRasterFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AlphaFromRasterFilterFactory)
+        initialize_from_source_object(self, source_object, AlphaFromRasterFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19407,10 +19407,10 @@ class BandExtractFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(BandExtractFilterFactory._metadata, BandExtractFilterFactory._initialize_with_format_metadata, raster_format, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BandExtractFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BandExtractFilterFactory)
+        initialize_from_source_object(self, source_object, BandExtractFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19461,10 +19461,10 @@ class BandOrderFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(BandOrderFilterFactory._metadata, BandOrderFilterFactory._initialize_with_order_and_bool_metadata, band_order, maintain_image_format, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BandOrderFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BandOrderFilterFactory)
+        initialize_from_source_object(self, source_object, BandOrderFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19507,10 +19507,10 @@ class BlurFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(BlurFilterFactory._metadata, BlurFilterFactory._initialize_with_method_metadata, method, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BlurFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BlurFilterFactory)
+        initialize_from_source_object(self, source_object, BlurFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19553,10 +19553,10 @@ class BrightnessFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(BrightnessFilterFactory._metadata, BrightnessFilterFactory._initialize_with_adjustment_metadata, adjustment, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BrightnessFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BrightnessFilterFactory)
+        initialize_from_source_object(self, source_object, BrightnessFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19591,10 +19591,10 @@ class ColorToLuminanceFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(ColorToLuminanceFilterFactory._metadata, ColorToLuminanceFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ColorToLuminanceFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ColorToLuminanceFilterFactory)
+        initialize_from_source_object(self, source_object, ColorToLuminanceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19637,10 +19637,10 @@ class ContrastFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(ContrastFilterFactory._metadata, ContrastFilterFactory._initialize_with_adjustment_metadata, adjustment, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ContrastFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ContrastFilterFactory)
+        initialize_from_source_object(self, source_object, ContrastFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19699,10 +19699,10 @@ class ConvolutionFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(ConvolutionFilterFactory._metadata, ConvolutionFilterFactory._initialize_with_kernel_divisor_and_offset_metadata, kernel, divisor, offset, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ConvolutionFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ConvolutionFilterFactory)
+        initialize_from_source_object(self, source_object, ConvolutionFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19745,10 +19745,10 @@ class EdgeDetectFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(EdgeDetectFilterFactory._metadata, EdgeDetectFilterFactory._initialize_with_method_metadata, method, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EdgeDetectFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EdgeDetectFilterFactory)
+        initialize_from_source_object(self, source_object, EdgeDetectFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19783,10 +19783,10 @@ class FilteringRasterStreamFactory(SupportsDeleteCallback):
         return self._intf.invoke(FilteringRasterStreamFactory._metadata, FilteringRasterStreamFactory._initialize_metadata, raster_stream, filter, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FilteringRasterStreamFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FilteringRasterStreamFactory)
+        initialize_from_source_object(self, source_object, FilteringRasterStreamFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19829,10 +19829,10 @@ class FlipFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(FlipFilterFactory._metadata, FlipFilterFactory._initialize_with_flip_axis_metadata, flip_axis, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FlipFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FlipFilterFactory)
+        initialize_from_source_object(self, source_object, FlipFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19875,10 +19875,10 @@ class GammaCorrectionFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(GammaCorrectionFilterFactory._metadata, GammaCorrectionFilterFactory._initialize_with_gamma_metadata, gamma, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GammaCorrectionFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GammaCorrectionFilterFactory)
+        initialize_from_source_object(self, source_object, GammaCorrectionFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19913,10 +19913,10 @@ class GaussianBlurFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(GaussianBlurFilterFactory._metadata, GaussianBlurFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GaussianBlurFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GaussianBlurFilterFactory)
+        initialize_from_source_object(self, source_object, GaussianBlurFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19959,10 +19959,10 @@ class GradientDetectFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(GradientDetectFilterFactory._metadata, GradientDetectFilterFactory._initialize_with_method_metadata, method, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GradientDetectFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GradientDetectFilterFactory)
+        initialize_from_source_object(self, source_object, GradientDetectFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20021,10 +20021,10 @@ class Jpeg2000WriterInitializer(SupportsDeleteCallback):
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_and_sub_extent_transparent_color_string_metadata, image_uri, extent, sub_extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file, transparent_color)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Jpeg2000WriterInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Jpeg2000WriterInitializer)
+        initialize_from_source_object(self, source_object, Jpeg2000WriterInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20059,10 +20059,10 @@ class LevelsFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(LevelsFilterFactory._metadata, LevelsFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LevelsFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LevelsFilterFactory)
+        initialize_from_source_object(self, source_object, LevelsFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20097,10 +20097,10 @@ class ProjectionRasterStreamPluginActivatorFactory(SupportsDeleteCallback):
         return self._intf.invoke(ProjectionRasterStreamPluginActivatorFactory._metadata, ProjectionRasterStreamPluginActivatorFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProjectionRasterStreamPluginActivatorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProjectionRasterStreamPluginActivatorFactory)
+        initialize_from_source_object(self, source_object, ProjectionRasterStreamPluginActivatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20151,10 +20151,10 @@ class RasterFactory(SupportsDeleteCallback):
         return self._intf.invoke(RasterFactory._metadata, RasterFactory._initialize_with_raster_metadata, raster, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RasterFactory)
+        initialize_from_source_object(self, source_object, RasterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20229,10 +20229,10 @@ class RasterAttributesFactory(SupportsDeleteCallback):
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_raster_metadata, raster, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterAttributesFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RasterAttributesFactory)
+        initialize_from_source_object(self, source_object, RasterAttributesFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20275,10 +20275,10 @@ class RotateFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(RotateFilterFactory._metadata, RotateFilterFactory._initialize_with_angle_metadata, rotate_angle, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotateFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotateFilterFactory)
+        initialize_from_source_object(self, source_object, RotateFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20313,10 +20313,10 @@ class SequenceFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(SequenceFilterFactory._metadata, SequenceFilterFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SequenceFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SequenceFilterFactory)
+        initialize_from_source_object(self, source_object, SequenceFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20359,10 +20359,10 @@ class SharpenFilterFactory(SupportsDeleteCallback):
         return self._intf.invoke(SharpenFilterFactory._metadata, SharpenFilterFactory._initialize_with_method_metadata, method, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SharpenFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SharpenFilterFactory)
+        initialize_from_source_object(self, source_object, SharpenFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20413,10 +20413,10 @@ class VideoStreamFactory(SupportsDeleteCallback):
         return self._intf.invoke(VideoStreamFactory._metadata, VideoStreamFactory._initialize_audio_video_with_string_uri_metadata, uri, audio_uri, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VideoStreamFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VideoStreamFactory)
+        initialize_from_source_object(self, source_object, VideoStreamFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20499,10 +20499,10 @@ class MarkerBatchPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._supported_metadata, rendering_method, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarkerBatchPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarkerBatchPrimitiveFactory)
+        initialize_from_source_object(self, source_object, MarkerBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20537,10 +20537,10 @@ class MarkerBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         return self._intf.invoke(MarkerBatchPrimitiveOptionalParametersFactory._metadata, MarkerBatchPrimitiveOptionalParametersFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MarkerBatchPrimitiveOptionalParametersFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MarkerBatchPrimitiveOptionalParametersFactory)
+        initialize_from_source_object(self, source_object, MarkerBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20583,10 +20583,10 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
         return self._intf.invoke(MaximumCountPathPrimitiveUpdatePolicyFactory._metadata, MaximumCountPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, maximum_count, remove_location, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MaximumCountPathPrimitiveUpdatePolicyFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MaximumCountPathPrimitiveUpdatePolicyFactory)
+        initialize_from_source_object(self, source_object, MaximumCountPathPrimitiveUpdatePolicyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20637,10 +20637,10 @@ class ModelPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(ModelPrimitiveFactory._metadata, ModelPrimitiveFactory._initialize_with_string_uri_and_up_axis_metadata, uri, up_axis, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ModelPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ModelPrimitiveFactory)
+        initialize_from_source_object(self, source_object, ModelPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20703,10 +20703,10 @@ class PathPrimitiveFactory(SupportsDeleteCallback):
     _property_names[minimum_width_supported] = "minimum_width_supported"
     _property_names[maximum_width_supported] = "maximum_width_supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PathPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PathPrimitiveFactory)
+        initialize_from_source_object(self, source_object, PathPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20749,10 +20749,10 @@ class PixelSizeDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(PixelSizeDisplayConditionFactory._metadata, PixelSizeDisplayConditionFactory._initialize_with_pixel_sizes_metadata, minimum_pixel_size, maximum_pixel_size, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PixelSizeDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PixelSizeDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, PixelSizeDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20815,10 +20815,10 @@ class PointBatchPrimitiveFactory(SupportsDeleteCallback):
     _property_names[minimum_pixel_size_supported] = "minimum_pixel_size_supported"
     _property_names[maximum_pixel_size_supported] = "maximum_pixel_size_supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PointBatchPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PointBatchPrimitiveFactory)
+        initialize_from_source_object(self, source_object, PointBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20853,10 +20853,10 @@ class PointBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         return self._intf.invoke(PointBatchPrimitiveOptionalParametersFactory._metadata, PointBatchPrimitiveOptionalParametersFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PointBatchPrimitiveOptionalParametersFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PointBatchPrimitiveOptionalParametersFactory)
+        initialize_from_source_object(self, source_object, PointBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20951,10 +20951,10 @@ class PolylinePrimitiveFactory(SupportsDeleteCallback):
     _property_names[minimum_width_supported] = "minimum_width_supported"
     _property_names[maximum_width_supported] = "maximum_width_supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PolylinePrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PolylinePrimitiveFactory)
+        initialize_from_source_object(self, source_object, PolylinePrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20989,10 +20989,10 @@ class PolylinePrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         return self._intf.invoke(PolylinePrimitiveOptionalParametersFactory._metadata, PolylinePrimitiveOptionalParametersFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PolylinePrimitiveOptionalParametersFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PolylinePrimitiveOptionalParametersFactory)
+        initialize_from_source_object(self, source_object, PolylinePrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21043,10 +21043,10 @@ class RasterImageGlobeOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(RasterImageGlobeOverlayFactory._metadata, RasterImageGlobeOverlayFactory._initialize_with_raster_metadata, raster, extent, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RasterImageGlobeOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RasterImageGlobeOverlayFactory)
+        initialize_from_source_object(self, source_object, RasterImageGlobeOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21097,10 +21097,10 @@ class RhumbLineInterpolatorFactory(SupportsDeleteCallback):
         return self._intf.invoke(RhumbLineInterpolatorFactory._metadata, RhumbLineInterpolatorFactory._initialize_with_central_body_and_granularity_metadata, central_body, granularity, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RhumbLineInterpolatorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RhumbLineInterpolatorFactory)
+        initialize_from_source_object(self, source_object, RhumbLineInterpolatorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21135,10 +21135,10 @@ class SceneDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(SceneDisplayConditionFactory._metadata, SceneDisplayConditionFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, SceneDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21233,10 +21233,10 @@ class SceneManagerInitializer(SupportsDeleteCallback):
     _property_names[scenes] = "scenes"
     _property_names[frame_rate] = "frame_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SceneManagerInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SceneManagerInitializer)
+        initialize_from_source_object(self, source_object, SceneManagerInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21279,10 +21279,10 @@ class ScreenOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(ScreenOverlayFactory._metadata, ScreenOverlayFactory._initialize_with_position_and_size_metadata, position, size, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ScreenOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ScreenOverlayFactory)
+        initialize_from_source_object(self, source_object, ScreenOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21345,10 +21345,10 @@ class SolidPrimitiveFactory(SupportsDeleteCallback):
     _property_names[minimum_silhouette_width_supported] = "minimum_silhouette_width_supported"
     _property_names[maximum_silhouette_width_supported] = "maximum_silhouette_width_supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SolidPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SolidPrimitiveFactory)
+        initialize_from_source_object(self, source_object, SolidPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21415,10 +21415,10 @@ class SurfaceMeshPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(SurfaceMeshPrimitiveFactory._metadata, SurfaceMeshPrimitiveFactory._supported_with_default_rendering_method_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SurfaceMeshPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SurfaceMeshPrimitiveFactory)
+        initialize_from_source_object(self, source_object, SurfaceMeshPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21455,10 +21455,10 @@ class TerrainOverlayInitializer(SupportsDeleteCallback):
 
     _property_names[supported] = "supported"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TerrainOverlayInitializer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TerrainOverlayInitializer)
+        initialize_from_source_object(self, source_object, TerrainOverlayInitializer)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21509,10 +21509,10 @@ class TextBatchPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(TextBatchPrimitiveFactory._metadata, TextBatchPrimitiveFactory._initialize_with_graphics_font_and_set_hint_2d_metadata, font, set_hint, render_in_screen_space, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextBatchPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextBatchPrimitiveFactory)
+        initialize_from_source_object(self, source_object, TextBatchPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21547,10 +21547,10 @@ class TextBatchPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         return self._intf.invoke(TextBatchPrimitiveOptionalParametersFactory._metadata, TextBatchPrimitiveOptionalParametersFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextBatchPrimitiveOptionalParametersFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextBatchPrimitiveOptionalParametersFactory)
+        initialize_from_source_object(self, source_object, TextBatchPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21609,10 +21609,10 @@ class TextOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(TextOverlayFactory._metadata, TextOverlayFactory._initialize_with_width_height_units_metadata, font, width, width_unit, height, height_unit, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextOverlayFactory)
+        initialize_from_source_object(self, source_object, TextOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21671,10 +21671,10 @@ class TextureMatrixFactory(SupportsDeleteCallback):
         return self._intf.invoke(TextureMatrixFactory._metadata, TextureMatrixFactory._initialize_with_rectangles_metadata, corner0, corner1, corner2, corner3, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureMatrixFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureMatrixFactory)
+        initialize_from_source_object(self, source_object, TextureMatrixFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21741,10 +21741,10 @@ class TextureScreenOverlayFactory(SupportsDeleteCallback):
         return self._intf.invoke(TextureScreenOverlayFactory._metadata, TextureScreenOverlayFactory._initialize_with_position_texture_metadata, position, texture, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TextureScreenOverlayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TextureScreenOverlayFactory)
+        initialize_from_source_object(self, source_object, TextureScreenOverlayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21795,10 +21795,10 @@ class TimeIntervalDisplayConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeIntervalDisplayConditionFactory._metadata, TimeIntervalDisplayConditionFactory._initialize_with_time_interval_metadata, time_interval, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeIntervalDisplayConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeIntervalDisplayConditionFactory)
+        initialize_from_source_object(self, source_object, TimeIntervalDisplayConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21841,10 +21841,10 @@ class TriangleMeshPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(TriangleMeshPrimitiveFactory._metadata, TriangleMeshPrimitiveFactory._initialize_with_set_hint_metadata, set_hint, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TriangleMeshPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TriangleMeshPrimitiveFactory)
+        initialize_from_source_object(self, source_object, TriangleMeshPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21879,10 +21879,10 @@ class TriangleMeshPrimitiveOptionalParametersFactory(SupportsDeleteCallback):
         return self._intf.invoke(TriangleMeshPrimitiveOptionalParametersFactory._metadata, TriangleMeshPrimitiveOptionalParametersFactory._initialize_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TriangleMeshPrimitiveOptionalParametersFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TriangleMeshPrimitiveOptionalParametersFactory)
+        initialize_from_source_object(self, source_object, TriangleMeshPrimitiveOptionalParametersFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21917,10 +21917,10 @@ class VectorPrimitiveFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorPrimitiveFactory._metadata, VectorPrimitiveFactory._initialize_with_direction_metadata, reference_frame, dir, font, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorPrimitiveFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorPrimitiveFactory)
+        initialize_from_source_object(self, source_object, VectorPrimitiveFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

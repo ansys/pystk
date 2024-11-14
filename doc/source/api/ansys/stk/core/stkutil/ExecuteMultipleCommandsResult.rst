@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult.count`
               - Number of elements contained in the collection.
-            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._new_enum`
               - Returns an object that can be used to iterate through all the objects in the collection.
 
 
@@ -51,8 +51,8 @@ Property detail
 
     Number of elements contained in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.ExecuteMultipleCommandsResult._new_enum
     :type: EnumeratorProxy
 
     Returns an object that can be used to iterate through all the objects in the collection.

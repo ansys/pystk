@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.factory`
               - Returns a Factory object used to create custom VGT systems.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom VGT systems.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

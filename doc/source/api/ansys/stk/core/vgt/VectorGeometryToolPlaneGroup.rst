@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneGroup.factory`
               - Returns a Factory object used to create custom planes.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPlaneGroup._new_enum`
               - Returns a COM enumerator.
 
 
@@ -75,8 +75,8 @@ Property detail
 
     Returns a Factory object used to create custom planes.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.

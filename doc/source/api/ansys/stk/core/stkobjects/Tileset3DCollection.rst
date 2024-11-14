@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection.count`
               - Get the number of items in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Tileset3DCollection._new_enum`
               - Enumerates through the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Get the number of items in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.Tileset3DCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.

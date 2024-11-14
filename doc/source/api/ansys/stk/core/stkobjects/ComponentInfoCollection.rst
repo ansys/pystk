@@ -39,7 +39,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection._new_enum`
               - Enumerates through the components.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.count`
               - Get the number of components available.
@@ -63,8 +63,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the components.

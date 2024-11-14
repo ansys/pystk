@@ -39,7 +39,7 @@ Overview
               - Gets the number of primitives in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order`
               - Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
-            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive._new_enum`
               - Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
@@ -67,8 +67,8 @@ Property detail
 
     Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.CompositePrimitive._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.CompositePrimitive._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.

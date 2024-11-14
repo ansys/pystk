@@ -65,7 +65,7 @@ Overview
               - Gets the number of globe overlay objects in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.ImageCollection.is_read_only`
               - Gets whether or not the collection is read only.
-            * - :py:attr:`~ansys.stk.core.graphics.ImageCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ImageCollection._new_enum`
               - Constructs an iterator that can be used to iterate the collection.
 
 
@@ -93,8 +93,8 @@ Property detail
 
     Gets whether or not the collection is read only.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.ImageCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.ImageCollection._new_enum
     :type: EnumeratorProxy
 
     Constructs an iterator that can be used to iterate the collection.

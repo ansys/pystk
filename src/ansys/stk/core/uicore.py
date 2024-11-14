@@ -119,7 +119,7 @@ class WindowsCollection(SupportsDeleteCallback):
     _get_count_method_offset = 2
     _arrange_method_offset = 3
     _add_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_item_by_index_method_offset = 6
     _get_item_by_name_method_offset = 7
     _metadata = {
@@ -131,7 +131,7 @@ class WindowsCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, WindowsCollection)
     def __iter__(self):
         """Create an iterator for the WindowsCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Window":
@@ -172,13 +172,13 @@ class WindowsCollection(SupportsDeleteCallback):
         """Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, plugin_id, init_data, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the windows in the collection."""
-        return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get__NewEnum_metadata)
+        return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -198,12 +198,12 @@ class WindowsCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowsCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowsCollection)
+        initialize_from_source_object(self, source_object, WindowsCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -445,10 +445,10 @@ class Window(SupportsDeleteCallback):
     _property_names[can_pin] = "can_pin"
     _property_names[toolbars] = "toolbars"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Window."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Window)
+        initialize_from_source_object(self, source_object, Window)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -531,10 +531,10 @@ class Toolbar(SupportsDeleteCallback):
     _property_names[visible] = "visible"
     _property_names[float_state] = "float_state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Toolbar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Toolbar)
+        initialize_from_source_object(self, source_object, Toolbar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -554,7 +554,7 @@ class ToolbarCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _get_toolbar_by_id_method_offset = 4
     _get_item_by_index_method_offset = 5
     _get_item_by_name_method_offset = 6
@@ -567,7 +567,7 @@ class ToolbarCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ToolbarCollection)
     def __iter__(self):
         """Create an iterator for the ToolbarCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Toolbar":
@@ -594,13 +594,13 @@ class ToolbarCollection(SupportsDeleteCallback):
         """Return a total number of toolbars in the collection."""
         return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the toolbars in the collection."""
-        return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get__new_enum_metadata)
 
     _get_toolbar_by_id_metadata = { "offset" : _get_toolbar_by_id_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
@@ -627,12 +627,12 @@ class ToolbarCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ToolbarCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ToolbarCollection)
+        initialize_from_source_object(self, source_object, ToolbarCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -669,10 +669,10 @@ class WindowMapObject(SupportsDeleteCallback):
 
     _property_names[map_id] = "map_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowMapObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowMapObject)
+        initialize_from_source_object(self, source_object, WindowMapObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -709,10 +709,10 @@ class WindowGlobeObject(SupportsDeleteCallback):
 
     _property_names[scene_id] = "scene_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowGlobeObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowGlobeObject)
+        initialize_from_source_object(self, source_object, WindowGlobeObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

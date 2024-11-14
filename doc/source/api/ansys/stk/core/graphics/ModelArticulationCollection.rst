@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection.count`
               - Gets the number of articulations in the collection.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulationCollection._new_enum`
               - Returns the enumerator for this collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Gets the number of articulations in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.ModelArticulationCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.ModelArticulationCollection._new_enum
     :type: EnumeratorProxy
 
     Returns the enumerator for this collection.

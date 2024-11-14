@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count`
               - Returns a number of elements in collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum`
               - Returns an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count`
               - Returns the number of rows in the dataset collection.
@@ -65,8 +65,8 @@ Property detail
 
     Returns a number of elements in collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.

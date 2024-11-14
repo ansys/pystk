@@ -37,7 +37,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection.available_third_body_names`
               - Gets the available third bodies. The return result is a collection of strings representing names of the central bodies that can be used as third body.
@@ -61,8 +61,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.

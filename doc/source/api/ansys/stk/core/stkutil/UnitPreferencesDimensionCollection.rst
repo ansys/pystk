@@ -43,7 +43,7 @@ Overview
               - The MissionElapsedTime.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.julian_date_offset`
               - The JulianDateOffset.
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum`
               - Returns a collection of IAgUnitPrefsDim.
 
 
@@ -77,8 +77,8 @@ Property detail
 
     The JulianDateOffset.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum
     :type: EnumeratorProxy
 
     Returns a collection of IAgUnitPrefsDim.

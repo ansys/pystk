@@ -2664,9 +2664,9 @@ class ISite(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISite."""
-        initialize_from_source_object(self, sourceObject, ISite)
+        initialize_from_source_object(self, source_object, ISite)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2723,9 +2723,9 @@ class ICatalogItem(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogItem."""
-        initialize_from_source_object(self, sourceObject, ICatalogItem)
+        initialize_from_source_object(self, source_object, ICatalogItem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2854,9 +2854,9 @@ class IBasicManeuverStrategy(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IBasicManeuverStrategy."""
-        initialize_from_source_object(self, sourceObject, IBasicManeuverStrategy)
+        initialize_from_source_object(self, source_object, IBasicManeuverStrategy)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2884,9 +2884,9 @@ class IAviatorVehicle(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAviatorVehicle."""
-        initialize_from_source_object(self, sourceObject, IAviatorVehicle)
+        initialize_from_source_object(self, source_object, IAviatorVehicle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2925,9 +2925,9 @@ class IARINC424Item(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IARINC424Item."""
-        initialize_from_source_object(self, sourceObject, IARINC424Item)
+        initialize_from_source_object(self, source_object, IARINC424Item)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2989,9 +2989,9 @@ class IStation(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IStation."""
-        initialize_from_source_object(self, sourceObject, IStation)
+        initialize_from_source_object(self, source_object, IStation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3022,9 +3022,9 @@ class ICatalogSource(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogSource."""
-        initialize_from_source_object(self, sourceObject, ICatalogSource)
+        initialize_from_source_object(self, source_object, ICatalogSource)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3081,9 +3081,9 @@ class IBasicFixedWingLiftHelper(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IBasicFixedWingLiftHelper."""
-        initialize_from_source_object(self, sourceObject, IBasicFixedWingLiftHelper)
+        initialize_from_source_object(self, source_object, IBasicFixedWingLiftHelper)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3110,9 +3110,9 @@ class ICatalogRunway(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogRunway."""
-        initialize_from_source_object(self, sourceObject, ICatalogRunway)
+        initialize_from_source_object(self, source_object, ICatalogRunway)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3139,9 +3139,9 @@ class ICatalogAirport(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogAirport."""
-        initialize_from_source_object(self, sourceObject, ICatalogAirport)
+        initialize_from_source_object(self, source_object, ICatalogAirport)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3168,9 +3168,9 @@ class ICatalogNavaid(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogNavaid."""
-        initialize_from_source_object(self, sourceObject, ICatalogNavaid)
+        initialize_from_source_object(self, source_object, ICatalogNavaid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3197,9 +3197,9 @@ class ICatalogVTOLPoint(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogVTOLPoint."""
-        initialize_from_source_object(self, sourceObject, ICatalogVTOLPoint)
+        initialize_from_source_object(self, source_object, ICatalogVTOLPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3226,9 +3226,9 @@ class ICatalogWaypoint(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICatalogWaypoint."""
-        initialize_from_source_object(self, sourceObject, ICatalogWaypoint)
+        initialize_from_source_object(self, source_object, ICatalogWaypoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3256,9 +3256,9 @@ class IARINC424Airport(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IARINC424Airport."""
-        initialize_from_source_object(self, sourceObject, IARINC424Airport)
+        initialize_from_source_object(self, source_object, IARINC424Airport)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3297,9 +3297,9 @@ class IDAFIFItem(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDAFIFItem."""
-        initialize_from_source_object(self, sourceObject, IDAFIFItem)
+        initialize_from_source_object(self, source_object, IDAFIFItem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3367,9 +3367,9 @@ class IVerticalPlaneOptions(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVerticalPlaneOptions."""
-        initialize_from_source_object(self, sourceObject, IVerticalPlaneOptions)
+        initialize_from_source_object(self, source_object, IVerticalPlaneOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3453,9 +3453,9 @@ class IEnrouteAndDelayOptions(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IEnrouteAndDelayOptions."""
-        initialize_from_source_object(self, sourceObject, IEnrouteAndDelayOptions)
+        initialize_from_source_object(self, source_object, IEnrouteAndDelayOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3540,9 +3540,9 @@ class ICruiseAirspeedAndProfileOptions(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICruiseAirspeedAndProfileOptions."""
-        initialize_from_source_object(self, sourceObject, ICruiseAirspeedAndProfileOptions)
+        initialize_from_source_object(self, source_object, ICruiseAirspeedAndProfileOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3629,9 +3629,9 @@ class IAutomationStrategyFactory(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAutomationStrategyFactory."""
-        initialize_from_source_object(self, sourceObject, IAutomationStrategyFactory)
+        initialize_from_source_object(self, source_object, IAutomationStrategyFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3666,9 +3666,9 @@ class IConnect(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IConnect."""
-        initialize_from_source_object(self, sourceObject, IConnect)
+        initialize_from_source_object(self, source_object, IConnect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3712,9 +3712,9 @@ class IProcedure(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IProcedure."""
-        initialize_from_source_object(self, sourceObject, IProcedure)
+        initialize_from_source_object(self, source_object, IProcedure)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3830,9 +3830,9 @@ class IPerformanceModel(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IPerformanceModel."""
-        initialize_from_source_object(self, sourceObject, IPerformanceModel)
+        initialize_from_source_object(self, source_object, IPerformanceModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3859,9 +3859,9 @@ class IAdvancedFixedWingGeometry(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAdvancedFixedWingGeometry."""
-        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingGeometry)
+        initialize_from_source_object(self, source_object, IAdvancedFixedWingGeometry)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3888,9 +3888,9 @@ class IAdvancedFixedWingPowerplant(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAdvancedFixedWingPowerplant."""
-        initialize_from_source_object(self, sourceObject, IAdvancedFixedWingPowerplant)
+        initialize_from_source_object(self, source_object, IAdvancedFixedWingPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3917,9 +3917,9 @@ class ISiteUnknown(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISiteUnknown."""
-        initialize_from_source_object(self, sourceObject, ISiteUnknown)
+        initialize_from_source_object(self, source_object, ISiteUnknown)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3998,11 +3998,11 @@ class SiteWaypoint(ISite, SupportsDeleteCallback):
     _property_names[latitude] = "latitude"
     _property_names[longitude] = "longitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteWaypoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteWaypoint)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteWaypoint)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4038,11 +4038,11 @@ class SiteEndOfPrevProcedure(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteEndOfPrevProcedure._metadata, SiteEndOfPrevProcedure._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteEndOfPrevProcedure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteEndOfPrevProcedure)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteEndOfPrevProcedure)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4154,11 +4154,11 @@ class SiteVTOLPoint(ISite, SupportsDeleteCallback):
     _property_names[altitude] = "altitude"
     _property_names[altitude_reference] = "altitude_reference"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteVTOLPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteVTOLPoint)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteVTOLPoint)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4194,11 +4194,11 @@ class SiteReferenceState(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteReferenceState._metadata, SiteReferenceState._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteReferenceState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteReferenceState)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteReferenceState)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4263,11 +4263,11 @@ class SiteSTKVehicle(ISite, SupportsDeleteCallback):
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteSTKVehicle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteSTKVehicle)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteSTKVehicle)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4303,11 +4303,11 @@ class SiteSuperProcedure(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteSuperProcedure._metadata, SiteSuperProcedure._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteSuperProcedure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteSuperProcedure)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteSuperProcedure)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4400,11 +4400,11 @@ class SiteRelativeToPrevProcedure(ISite, SupportsDeleteCallback):
     _property_names[bearing] = "bearing"
     _property_names[range] = "range"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteRelativeToPrevProcedure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRelativeToPrevProcedure)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteRelativeToPrevProcedure)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4622,11 +4622,11 @@ class SiteSTKObjectWaypoint(ISite, SupportsDeleteCallback):
     _property_names[range] = "range"
     _property_names[vgt_point] = "vgt_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteSTKObjectWaypoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteSTKObjectWaypoint)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteSTKObjectWaypoint)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4691,11 +4691,11 @@ class SiteSTKStaticObject(ISite, SupportsDeleteCallback):
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteSTKStaticObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteSTKStaticObject)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteSTKStaticObject)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4817,11 +4817,11 @@ class SiteRelativeToSTKObject(ISite, SupportsDeleteCallback):
     _property_names[use_magnetic_bearing] = "use_magnetic_bearing"
     _property_names[range] = "range"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteRelativeToSTKObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRelativeToSTKObject)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteRelativeToSTKObject)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -4886,11 +4886,11 @@ class SiteSTKAreaTarget(ISite, SupportsDeleteCallback):
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteSTKAreaTarget."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteSTKAreaTarget)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteSTKAreaTarget)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -5094,11 +5094,11 @@ class SiteRunway(ISite, SupportsDeleteCallback):
     _property_names[high_end_heading] = "high_end_heading"
     _property_names[is_magnetic] = "is_magnetic"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteRunway."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRunway)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteRunway)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -5114,11 +5114,11 @@ agcls.AgTypeNameMap["SiteRunway"] = SiteRunway
 
 class Site(ISite, ISiteUnknown, SupportsDeleteCallback):
     """Class defining an unknown site type."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Site."""
         SupportsDeleteCallback.__init__(self)
-        ISite.__init__(self, sourceObject)
-        ISiteUnknown.__init__(self, sourceObject)
+        ISite.__init__(self, source_object)
+        ISiteUnknown.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -5254,11 +5254,11 @@ class ProcedureLanding(IProcedure, SupportsDeleteCallback):
     _property_names[vertical_plane_options] = "vertical_plane_options"
     _property_names[approach_mode] = "approach_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureLanding."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureLanding)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureLanding)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -5334,11 +5334,11 @@ class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_options] = "enroute_options"
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureEnroute."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureEnroute)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureEnroute)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -5639,11 +5639,11 @@ class ProcedureExtEphem(IProcedure, SupportsDeleteCallback):
     _property_names[course_mode] = "course_mode"
     _property_names[altitude_mode] = "altitude_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureExtEphem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureExtEphem)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureExtEphem)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -5850,11 +5850,11 @@ class ProcedureFormationFlyer(IProcedure, SupportsDeleteCallback):
     _property_names[stop_fuel_state] = "stop_fuel_state"
     _property_names[stop_on_hover] = "stop_on_hover"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureFormationFlyer."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureFormationFlyer)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureFormationFlyer)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -5940,11 +5940,11 @@ class ProcedureBasicPointToPoint(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
     _property_names[vertical_plane_options] = "vertical_plane_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureBasicPointToPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureBasicPointToPoint)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureBasicPointToPoint)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6040,11 +6040,11 @@ class ProcedureArcEnroute(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
     _property_names[enroute_turn_direction_options] = "enroute_turn_direction_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureArcEnroute."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureArcEnroute)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureArcEnroute)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6169,11 +6169,11 @@ class ProcedureArcPointToPoint(IProcedure, SupportsDeleteCallback):
     _property_names[fly_cruise_airspeed_profile] = "fly_cruise_airspeed_profile"
     _property_names[vertical_plane_options] = "vertical_plane_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureArcPointToPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureArcPointToPoint)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureArcPointToPoint)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6392,11 +6392,11 @@ class ProcedureFlightLine(IProcedure, SupportsDeleteCallback):
     _property_names[must_level_off] = "must_level_off"
     _property_names[level_off_mode] = "level_off_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureFlightLine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureFlightLine)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureFlightLine)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6510,11 +6510,11 @@ class ProcedureDelay(IProcedure, SupportsDeleteCallback):
     _property_names[turn_direction] = "turn_direction"
     _property_names[turn_radius_factor] = "turn_radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureDelay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureDelay)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureDelay)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6609,11 +6609,11 @@ class ProcedureTakeoff(IProcedure, SupportsDeleteCallback):
     _property_names[mode_as_low_transition] = "mode_as_low_transition"
     _property_names[takeoff_mode] = "takeoff_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureTakeoff."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureTakeoff)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureTakeoff)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -6634,7 +6634,7 @@ class ProcedureCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _add_at_index_method_offset = 5
     _remove_method_offset = 6
@@ -6650,7 +6650,7 @@ class ProcedureCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ProcedureCollection)
     def __iter__(self):
         """Create an iterator for the ProcedureCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IProcedure":
@@ -6677,13 +6677,13 @@ class ProcedureCollection(SupportsDeleteCallback):
         """Given an index, returns an element in the collection."""
         return self._intf.invoke(ProcedureCollection._metadata, ProcedureCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that can iterate through the collection."""
-        return self._intf.get_property(ProcedureCollection._metadata, ProcedureCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ProcedureCollection._metadata, ProcedureCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
@@ -6731,12 +6731,12 @@ class ProcedureCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureCollection)
+        initialize_from_source_object(self, source_object, ProcedureCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6824,10 +6824,10 @@ class Phase(SupportsDeleteCallback):
     _property_names[procedures] = "procedures"
     _property_names[name] = "name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Phase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Phase)
+        initialize_from_source_object(self, source_object, Phase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -6847,7 +6847,7 @@ class PhaseCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _add_at_index_method_offset = 5
     _remove_method_offset = 6
@@ -6861,7 +6861,7 @@ class PhaseCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, PhaseCollection)
     def __iter__(self):
         """Create an iterator for the PhaseCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Phase":
@@ -6888,13 +6888,13 @@ class PhaseCollection(SupportsDeleteCallback):
         """Given an index, returns an element in the collection."""
         return self._intf.invoke(PhaseCollection._metadata, PhaseCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that can iterate through the collection."""
-        return self._intf.get_property(PhaseCollection._metadata, PhaseCollection._get__NewEnum_metadata)
+        return self._intf.get_property(PhaseCollection._metadata, PhaseCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6928,12 +6928,12 @@ class PhaseCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PhaseCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PhaseCollection)
+        initialize_from_source_object(self, source_object, PhaseCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7037,10 +7037,10 @@ class Mission(SupportsDeleteCallback):
     _property_names[atmosphere_model] = "atmosphere_model"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Mission."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Mission)
+        initialize_from_source_object(self, source_object, Mission)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7114,10 +7114,10 @@ class AviatorPropagator(SupportsDeleteCallback):
     _property_names[auto_recalculate] = "auto_recalculate"
     _property_names[aviator_catalog] = "aviator_catalog"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AviatorPropagator."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AviatorPropagator)
+        initialize_from_source_object(self, source_object, AviatorPropagator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7489,11 +7489,11 @@ class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
     _property_names[attitude_blend_time] = "attitude_blend_time"
     _property_names[control_time_constant] = "control_time_constant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureBasicManeuver."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureBasicManeuver)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureBasicManeuver)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -7641,11 +7641,11 @@ class BasicManeuverStrategyWeave(IBasicManeuverStrategy, SupportsDeleteCallback)
     _property_names[control_limit_horizontal_acceleration] = "control_limit_horizontal_acceleration"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyWeave."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyWeave)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyWeave)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -7814,10 +7814,10 @@ class ProcedureTimeOptions(SupportsDeleteCallback):
     _property_names[use_stop_time] = "use_stop_time"
     _property_names[stop_time] = "stop_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureTimeOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureTimeOptions)
+        initialize_from_source_object(self, source_object, ProcedureTimeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7977,10 +7977,10 @@ class CalculationOptions(SupportsDeleteCallback):
     _property_names[integrator_type] = "integrator_type"
     _property_names[integrator_type_string] = "integrator_type_string"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationOptions)
+        initialize_from_source_object(self, source_object, CalculationOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8037,10 +8037,10 @@ class AircraftCategory(SupportsDeleteCallback):
     _property_names[missile_models] = "missile_models"
     _property_names[rotorcraft_models] = "rotorcraft_models"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftCategory)
+        initialize_from_source_object(self, source_object, AircraftCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8127,10 +8127,10 @@ class Catalog(SupportsDeleteCallback):
     _property_names[vtol_point_category] = "vtol_point_category"
     _property_names[waypoint_category] = "waypoint_category"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Catalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Catalog)
+        initialize_from_source_object(self, source_object, Catalog)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -8275,12 +8275,12 @@ class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[vtol] = "vtol"
     _property_names[terrain_follow] = "terrain_follow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftModel)
-        IAviatorVehicle.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftModel)
+        IAviatorVehicle.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAviatorVehicle._private_init(self, intf)
@@ -8755,12 +8755,12 @@ class MissileModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[aerodynamics] = "aerodynamics"
     _property_names[propulsion] = "propulsion"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileModel)
-        IAviatorVehicle.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MissileModel)
+        IAviatorVehicle.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAviatorVehicle._private_init(self, intf)
@@ -9206,12 +9206,12 @@ class RotorcraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
     _property_names[aerodynamics] = "aerodynamics"
     _property_names[propulsion] = "propulsion"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotorcraftModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftModel)
-        IAviatorVehicle.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RotorcraftModel)
+        IAviatorVehicle.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAviatorVehicle._private_init(self, intf)
@@ -9449,10 +9449,10 @@ class RotorcraftAerodynamic(SupportsDeleteCallback):
     _property_names[blade_profile_drag_k] = "blade_profile_drag_k"
     _property_names[induced_power_correction_factor] = "induced_power_correction_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotorcraftAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftAerodynamic)
+        initialize_from_source_object(self, source_object, RotorcraftAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9536,10 +9536,10 @@ class RotorcraftPropulsion(SupportsDeleteCallback):
     _property_names[max_sl_power] = "max_sl_power"
     _property_names[max_sl_fuel_flow] = "max_sl_fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotorcraftPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftPropulsion)
+        initialize_from_source_object(self, source_object, RotorcraftPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9598,11 +9598,11 @@ class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftAcceleration._metadata, AircraftAcceleration._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAcceleration)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAcceleration)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -9688,12 +9688,12 @@ class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDe
     _property_names[aerodynamics] = "aerodynamics"
     _property_names[propulsion] = "propulsion"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicAccelerationModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicAccelerationModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicAccelerationModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -9754,11 +9754,11 @@ class AircraftClimb(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftClimb._metadata, AircraftClimb._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftClimb."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftClimb)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftClimb)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -9818,11 +9818,11 @@ class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftCruise._metadata, AircraftCruise._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftCruise."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftCruise)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftCruise)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -9882,11 +9882,11 @@ class AircraftDescent(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftDescent._metadata, AircraftDescent._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftDescent."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftDescent)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftDescent)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -9946,11 +9946,11 @@ class AircraftLanding(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftLanding._metadata, AircraftLanding._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftLanding."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftLanding)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftLanding)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -10010,11 +10010,11 @@ class AircraftTakeoff(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftTakeoff._metadata, AircraftTakeoff._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftTakeoff."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftTakeoff)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftTakeoff)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -10211,12 +10211,12 @@ class AircraftBasicClimbModel(IPerformanceModel, ICatalogItem, SupportsDeleteCal
     _property_names[enable_relative_airspeed_tolerance] = "enable_relative_airspeed_tolerance"
     _property_names[relative_airspeed_tolerance] = "relative_airspeed_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicClimbModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicClimbModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicClimbModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -10441,12 +10441,12 @@ class AircraftAdvancedClimbModel(IPerformanceModel, ICatalogItem, SupportsDelete
     _property_names[flight_path_angle] = "flight_path_angle"
     _property_names[compute_delta_altitude] = "compute_delta_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedClimbModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedClimbModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedClimbModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -10768,12 +10768,12 @@ class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCa
     _property_names[max_airspeed_fuel_flow] = "max_airspeed_fuel_flow"
     _property_names[max_performance_airspeed_fuel_flow] = "max_performance_airspeed_fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicCruiseModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicCruiseModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicCruiseModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -10933,12 +10933,12 @@ class AircraftAdvancedCruiseModel(IPerformanceModel, ICatalogItem, SupportsDelet
     _property_names[airspeed_limit] = "airspeed_limit"
     _property_names[compute_delta_downrange] = "compute_delta_downrange"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedCruiseModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedCruiseModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedCruiseModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -11136,12 +11136,12 @@ class AircraftBasicDescentModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[enable_relative_airspeed_tolerance] = "enable_relative_airspeed_tolerance"
     _property_names[relative_airspeed_tolerance] = "relative_airspeed_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicDescentModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicDescentModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicDescentModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -11348,12 +11348,12 @@ class AircraftAdvancedDescentModel(IPerformanceModel, ICatalogItem, SupportsDele
     _property_names[airspeed_limit] = "airspeed_limit"
     _property_names[compute_delta_altitude] = "compute_delta_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedDescentModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedDescentModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedDescentModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -11541,12 +11541,12 @@ class AircraftBasicTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[acceleration_fuel_flow] = "acceleration_fuel_flow"
     _property_names[departure_fuel_flow] = "departure_fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicTakeoffModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicTakeoffModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicTakeoffModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -11723,12 +11723,12 @@ class AircraftAdvancedTakeoffModel(IPerformanceModel, ICatalogItem, SupportsDele
     _property_names[departure_speed_limit_type] = "departure_speed_limit_type"
     _property_names[use_afterburner] = "use_afterburner"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedTakeoffModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedTakeoffModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedTakeoffModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -11869,12 +11869,12 @@ class AircraftBasicLandingModel(IPerformanceModel, ICatalogItem, SupportsDeleteC
     _property_names[scale_fuel_flow_by_non_std_density] = "scale_fuel_flow_by_non_std_density"
     _property_names[fuel_flow] = "fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicLandingModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicLandingModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftBasicLandingModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -12023,12 +12023,12 @@ class AircraftAdvancedLandingModel(IPerformanceModel, ICatalogItem, SupportsDele
     _property_names[speedbrakes] = "speedbrakes"
     _property_names[braking_deceleration_g] = "braking_deceleration_g"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedLandingModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedLandingModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedLandingModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -12067,10 +12067,10 @@ class AirportCategory(SupportsDeleteCallback):
 
     _property_names[arinc424_airports] = "arinc424_airports"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AirportCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AirportCategory)
+        initialize_from_source_object(self, source_object, AirportCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12085,13 +12085,13 @@ agcls.AgTypeNameMap["AirportCategory"] = AirportCategory
 
 class ARINC424Airport(IARINC424Item, ICatalogAirport, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an ARINC424 Airport."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Airport."""
         SupportsDeleteCallback.__init__(self)
-        IARINC424Item.__init__(self, sourceObject)
-        ICatalogAirport.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IARINC424Item.__init__(self, source_object)
+        ICatalogAirport.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IARINC424Item._private_init(self, intf)
@@ -12130,14 +12130,14 @@ class ARINC424Runway(IARINC424Item, ICatalogRunway, ICatalogWaypoint, ICatalogIt
         return self._intf.invoke(ARINC424Runway._metadata, ARINC424Runway._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Runway."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ARINC424Runway)
-        IARINC424Item.__init__(self, sourceObject)
-        ICatalogRunway.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ARINC424Runway)
+        IARINC424Item.__init__(self, source_object)
+        ICatalogRunway.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IARINC424Item._private_init(self, intf)
@@ -12156,13 +12156,13 @@ agcls.AgTypeNameMap["ARINC424Runway"] = ARINC424Runway
 
 class DAFIFRunway(IDAFIFItem, ICatalogRunway, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an DAFIF Runway."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DAFIFRunway."""
         SupportsDeleteCallback.__init__(self)
-        IDAFIFItem.__init__(self, sourceObject)
-        ICatalogRunway.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IDAFIFItem.__init__(self, source_object)
+        ICatalogRunway.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDAFIFItem._private_init(self, intf)
@@ -12181,13 +12181,13 @@ agcls.AgTypeNameMap["DAFIFRunway"] = DAFIFRunway
 
 class DAFIFHelipad(IDAFIFItem, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an DAFIF Helipad."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DAFIFHelipad."""
         SupportsDeleteCallback.__init__(self)
-        IDAFIFItem.__init__(self, sourceObject)
-        ICatalogVTOLPoint.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IDAFIFItem.__init__(self, source_object)
+        ICatalogVTOLPoint.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDAFIFItem._private_init(self, intf)
@@ -12206,12 +12206,12 @@ agcls.AgTypeNameMap["DAFIFHelipad"] = DAFIFHelipad
 
 class DAFIFWaypoint(IDAFIFItem, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an DAFIF Waypoint."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DAFIFWaypoint."""
         SupportsDeleteCallback.__init__(self)
-        IDAFIFItem.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IDAFIFItem.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDAFIFItem._private_init(self, intf)
@@ -12271,10 +12271,10 @@ class RunwayCategory(SupportsDeleteCallback):
     _property_names[arinc424_runways] = "arinc424_runways"
     _property_names[dafif_runways] = "dafif_runways"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RunwayCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RunwayCategory)
+        initialize_from_source_object(self, source_object, RunwayCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12325,11 +12325,11 @@ class UserRunwaySource(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(UserRunwaySource._metadata, UserRunwaySource._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserRunwaySource."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserRunwaySource)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserRunwaySource)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -12522,13 +12522,13 @@ class UserRunway(ICatalogRunway, ICatalogItem, ICatalogWaypoint, SupportsDeleteC
     _property_names[high_end_heading] = "high_end_heading"
     _property_names[is_magnetic] = "is_magnetic"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserRunway."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserRunway)
-        ICatalogRunway.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserRunway)
+        ICatalogRunway.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogRunway._private_init(self, intf)
@@ -12596,10 +12596,10 @@ class AltitudeMSLOptions(SupportsDeleteCallback):
     _property_names[use_default_cruise_altitude] = "use_default_cruise_altitude"
     _property_names[msl_altitude] = "msl_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AltitudeMSLOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AltitudeMSLOptions)
+        initialize_from_source_object(self, source_object, AltitudeMSLOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12683,10 +12683,10 @@ class AltitudeOptions(SupportsDeleteCallback):
     _property_names[altitude_reference] = "altitude_reference"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AltitudeOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AltitudeOptions)
+        initialize_from_source_object(self, source_object, AltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12770,10 +12770,10 @@ class ArcAltitudeOptions(SupportsDeleteCallback):
     _property_names[start_arc_altitude] = "start_arc_altitude"
     _property_names[stop_arc_altitude] = "stop_arc_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ArcAltitudeOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ArcAltitudeOptions)
+        initialize_from_source_object(self, source_object, ArcAltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12876,10 +12876,10 @@ class ArcAltitudeAndDelayOptions(SupportsDeleteCallback):
     _property_names[start_arc_altitude] = "start_arc_altitude"
     _property_names[stop_arc_altitude] = "stop_arc_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ArcAltitudeAndDelayOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ArcAltitudeAndDelayOptions)
+        initialize_from_source_object(self, source_object, ArcAltitudeAndDelayOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13039,10 +13039,10 @@ class ArcOptions(SupportsDeleteCallback):
     _property_names[join_arc] = "join_arc"
     _property_names[exit_arc] = "exit_arc"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ArcOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ArcOptions)
+        initialize_from_source_object(self, source_object, ArcOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13145,10 +13145,10 @@ class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
     _property_names[must_level_off] = "must_level_off"
     _property_names[level_off_mode] = "level_off_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AltitudeMSLAndLevelOffOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AltitudeMSLAndLevelOffOptions)
+        initialize_from_source_object(self, source_object, AltitudeMSLAndLevelOffOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13222,10 +13222,10 @@ class CruiseAirspeedOptions(SupportsDeleteCallback):
     _property_names[other_airspeed_type] = "other_airspeed_type"
     _property_names[other_airspeed] = "other_airspeed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CruiseAirspeedOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CruiseAirspeedOptions)
+        initialize_from_source_object(self, source_object, CruiseAirspeedOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13271,10 +13271,10 @@ class CruiseAirspeedProfile(SupportsDeleteCallback):
 
     _property_names[fly_cruise_airspeed_profile] = "fly_cruise_airspeed_profile"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CruiseAirspeedProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CruiseAirspeedProfile)
+        initialize_from_source_object(self, source_object, CruiseAirspeedProfile)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13289,10 +13289,10 @@ agcls.AgTypeNameMap["CruiseAirspeedProfile"] = CruiseAirspeedProfile
 
 class CruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, SupportsDeleteCallback):
     """Class defining the cruise airspeed and profile options in a procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CruiseAirspeedAndProfileOptions."""
         SupportsDeleteCallback.__init__(self)
-        ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
+        ICruiseAirspeedAndProfileOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedAndProfileOptions._private_init(self, intf)
@@ -13308,10 +13308,10 @@ agcls.AgTypeNameMap["CruiseAirspeedAndProfileOptions"] = CruiseAirspeedAndProfil
 
 class LandingCruiseAirspeedAndProfileOptions(ICruiseAirspeedAndProfileOptions, SupportsDeleteCallback):
     """Class defining the cruise airspeed and profile options for a landing procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingCruiseAirspeedAndProfileOptions."""
         SupportsDeleteCallback.__init__(self)
-        ICruiseAirspeedAndProfileOptions.__init__(self, sourceObject)
+        ICruiseAirspeedAndProfileOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICruiseAirspeedAndProfileOptions._private_init(self, intf)
@@ -13377,10 +13377,10 @@ class EnrouteOptions(SupportsDeleteCallback):
     _property_names[use_max_speed_turns] = "use_max_speed_turns"
     _property_names[max_turn_radius_factor] = "max_turn_radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EnrouteOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EnrouteOptions)
+        initialize_from_source_object(self, source_object, EnrouteOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13395,10 +13395,10 @@ agcls.AgTypeNameMap["EnrouteOptions"] = EnrouteOptions
 
 class EnrouteAndDelayOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
     """Class defining the enroute and delay options in a procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EnrouteAndDelayOptions."""
         SupportsDeleteCallback.__init__(self)
-        IEnrouteAndDelayOptions.__init__(self, sourceObject)
+        IEnrouteAndDelayOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IEnrouteAndDelayOptions._private_init(self, intf)
@@ -13414,10 +13414,10 @@ agcls.AgTypeNameMap["EnrouteAndDelayOptions"] = EnrouteAndDelayOptions
 
 class LandingEnrouteOptions(IEnrouteAndDelayOptions, SupportsDeleteCallback):
     """Class defining the enroute options in a landing procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingEnrouteOptions."""
         SupportsDeleteCallback.__init__(self)
-        IEnrouteAndDelayOptions.__init__(self, sourceObject)
+        IEnrouteAndDelayOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IEnrouteAndDelayOptions._private_init(self, intf)
@@ -13483,10 +13483,10 @@ class EnrouteTurnDirectionOptions(SupportsDeleteCallback):
     _property_names[enroute_first_turn] = "enroute_first_turn"
     _property_names[enroute_second_turn] = "enroute_second_turn"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type EnrouteTurnDirectionOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, EnrouteTurnDirectionOptions)
+        initialize_from_source_object(self, source_object, EnrouteTurnDirectionOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13608,10 +13608,10 @@ class NavigationOptions(SupportsDeleteCallback):
     _property_names[enroute_first_turn] = "enroute_first_turn"
     _property_names[enroute_second_turn] = "enroute_second_turn"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type NavigationOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, NavigationOptions)
+        initialize_from_source_object(self, source_object, NavigationOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13626,10 +13626,10 @@ agcls.AgTypeNameMap["NavigationOptions"] = NavigationOptions
 
 class VerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback):
     """Class defining the vertical plane options in a procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VerticalPlaneOptions."""
         SupportsDeleteCallback.__init__(self)
-        IVerticalPlaneOptions.__init__(self, sourceObject)
+        IVerticalPlaneOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVerticalPlaneOptions._private_init(self, intf)
@@ -13752,10 +13752,10 @@ class ArcVerticalPlaneOptions(SupportsDeleteCallback):
     _property_names[max_enroute_flight_path_angle] = "max_enroute_flight_path_angle"
     _property_names[max_vert_plane_radius_factor] = "max_vert_plane_radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ArcVerticalPlaneOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ArcVerticalPlaneOptions)
+        initialize_from_source_object(self, source_object, ArcVerticalPlaneOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13858,10 +13858,10 @@ class VerticalPlaneAndFlightPathOptions(SupportsDeleteCallback):
     _property_names[max_enroute_flight_path_angle] = "max_enroute_flight_path_angle"
     _property_names[max_vert_plane_radius_factor] = "max_vert_plane_radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VerticalPlaneAndFlightPathOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VerticalPlaneAndFlightPathOptions)
+        initialize_from_source_object(self, source_object, VerticalPlaneAndFlightPathOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -13876,10 +13876,10 @@ agcls.AgTypeNameMap["VerticalPlaneAndFlightPathOptions"] = VerticalPlaneAndFligh
 
 class LandingVerticalPlaneOptions(IVerticalPlaneOptions, SupportsDeleteCallback):
     """Class defining the vertical plane options in a landing procedure."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingVerticalPlaneOptions."""
         SupportsDeleteCallback.__init__(self)
-        IVerticalPlaneOptions.__init__(self, sourceObject)
+        IVerticalPlaneOptions.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVerticalPlaneOptions._private_init(self, intf)
@@ -13926,10 +13926,10 @@ class RunwayHeadingOptions(SupportsDeleteCallback):
 
     _property_names[runway_mode] = "runway_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RunwayHeadingOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RunwayHeadingOptions)
+        initialize_from_source_object(self, source_object, RunwayHeadingOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14127,10 +14127,10 @@ class LandingEnterDownwindPattern(SupportsDeleteCallback):
     _property_names[use_runway_terrain] = "use_runway_terrain"
     _property_names[touch_and_go] = "touch_and_go"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingEnterDownwindPattern."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LandingEnterDownwindPattern)
+        initialize_from_source_object(self, source_object, LandingEnterDownwindPattern)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14271,10 +14271,10 @@ class LandingInterceptGlideslope(SupportsDeleteCallback):
     _property_names[use_runway_terrain] = "use_runway_terrain"
     _property_names[touch_and_go] = "touch_and_go"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingInterceptGlideslope."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LandingInterceptGlideslope)
+        initialize_from_source_object(self, source_object, LandingInterceptGlideslope)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14453,10 +14453,10 @@ class LandingStandardInstrumentApproach(SupportsDeleteCallback):
     _property_names[use_runway_terrain] = "use_runway_terrain"
     _property_names[touch_and_go] = "touch_and_go"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LandingStandardInstrumentApproach."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LandingStandardInstrumentApproach)
+        initialize_from_source_object(self, source_object, LandingStandardInstrumentApproach)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14597,10 +14597,10 @@ class TakeoffDeparturePoint(SupportsDeleteCallback):
     _property_names[runway_altitude_offset] = "runway_altitude_offset"
     _property_names[hold_on_deck] = "hold_on_deck"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TakeoffDeparturePoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TakeoffDeparturePoint)
+        initialize_from_source_object(self, source_object, TakeoffDeparturePoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14684,10 +14684,10 @@ class TakeoffLowTransition(SupportsDeleteCallback):
     _property_names[runway_altitude_offset] = "runway_altitude_offset"
     _property_names[hold_on_deck] = "hold_on_deck"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TakeoffLowTransition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TakeoffLowTransition)
+        initialize_from_source_object(self, source_object, TakeoffLowTransition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14809,10 +14809,10 @@ class TakeoffNormal(SupportsDeleteCallback):
     _property_names[runway_altitude_offset] = "runway_altitude_offset"
     _property_names[hold_on_deck] = "hold_on_deck"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TakeoffNormal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TakeoffNormal)
+        initialize_from_source_object(self, source_object, TakeoffNormal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14936,10 +14936,10 @@ class LevelTurns(SupportsDeleteCallback):
     _property_names[maneuver_mode] = "maneuver_mode"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type LevelTurns."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, LevelTurns)
+        initialize_from_source_object(self, source_object, LevelTurns)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15023,10 +15023,10 @@ class AttitudeTransitions(SupportsDeleteCallback):
     _property_names[pitch_rate] = "pitch_rate"
     _property_names[yaw_rate] = "yaw_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AttitudeTransitions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AttitudeTransitions)
+        initialize_from_source_object(self, source_object, AttitudeTransitions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15139,10 +15139,10 @@ class ClimbAndDescentTransitions(SupportsDeleteCallback):
     _property_names[ignore_flight_path_angle] = "ignore_flight_path_angle"
     _property_names[maneuver_mode_helper] = "maneuver_mode_helper"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ClimbAndDescentTransitions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ClimbAndDescentTransitions)
+        initialize_from_source_object(self, source_object, ClimbAndDescentTransitions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15350,10 +15350,10 @@ class AerodynamicPropulsionManeuverModeHelper(SupportsDeleteCallback):
     _property_names[control_authority] = "control_authority"
     _property_names[status_message] = "status_message"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AerodynamicPropulsionManeuverModeHelper."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AerodynamicPropulsionManeuverModeHelper)
+        initialize_from_source_object(self, source_object, AerodynamicPropulsionManeuverModeHelper)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15428,12 +15428,12 @@ class AircraftAdvancedAccelerationModel(IPerformanceModel, ICatalogItem, Support
     _property_names[climb_and_descent_transitions] = "climb_and_descent_transitions"
     _property_names[acceleration_mode] = "acceleration_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAdvancedAccelerationModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAdvancedAccelerationModel)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftAdvancedAccelerationModel)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -15500,10 +15500,10 @@ class AircraftAccelerationMode(SupportsDeleteCallback):
     _property_names[acceleration_mode] = "acceleration_mode"
     _property_names[acceleration_g] = "acceleration_g"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAccelerationMode."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAccelerationMode)
+        initialize_from_source_object(self, source_object, AircraftAccelerationMode)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15606,10 +15606,10 @@ class AircraftSimpleAerodynamic(SupportsDeleteCallback):
     _property_names[cl_max] = "cl_max"
     _property_names[cd] = "cd"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftSimpleAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftSimpleAerodynamic)
+        initialize_from_source_object(self, source_object, AircraftSimpleAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15766,10 +15766,10 @@ class AircraftExternalAerodynamic(SupportsDeleteCallback):
     _property_names[can_set_takeoff_landing_reference_area] = "can_set_takeoff_landing_reference_area"
     _property_names[is_takeoff_landing_valid] = "is_takeoff_landing_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftExternalAerodynamic)
+        initialize_from_source_object(self, source_object, AircraftExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15893,10 +15893,10 @@ class AircraftAerodynamic(SupportsDeleteCallback):
     _property_names[lift_factor] = "lift_factor"
     _property_names[drag_factor] = "drag_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftAerodynamic)
+        initialize_from_source_object(self, source_object, AircraftAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16227,10 +16227,10 @@ class AircraftBasicFixedWingAerodynamic(SupportsDeleteCallback):
     _property_names[takeoff_landing_cd0] = "takeoff_landing_cd0"
     _property_names[takeoff_landing_k] = "takeoff_landing_k"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicFixedWingAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingAerodynamic)
+        initialize_from_source_object(self, source_object, AircraftBasicFixedWingAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16374,10 +16374,10 @@ class AircraftPropulsion(SupportsDeleteCallback):
     _property_names[mode_as_turbojet] = "mode_as_turbojet"
     _property_names[mode_as_rocket] = "mode_as_rocket"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftPropulsion)
+        initialize_from_source_object(self, source_object, AircraftPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16470,10 +16470,10 @@ class AircraftSimplePropulsion(SupportsDeleteCallback):
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftSimplePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftSimplePropulsion)
+        initialize_from_source_object(self, source_object, AircraftSimplePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16612,10 +16612,10 @@ class AircraftExternalPropulsion(SupportsDeleteCallback):
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftExternalPropulsion)
+        initialize_from_source_object(self, source_object, AircraftExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16860,10 +16860,10 @@ class AircraftBasicFixedWingPropulsion(SupportsDeleteCallback):
     _property_names[use_density_scaling] = "use_density_scaling"
     _property_names[density_ratio_exponent] = "density_ratio_exponent"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftBasicFixedWingPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftBasicFixedWingPropulsion)
+        initialize_from_source_object(self, source_object, AircraftBasicFixedWingPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16963,11 +16963,11 @@ class ARINC424Source(ICatalogSource, SupportsDeleteCallback):
     _property_names[master_data_filepath] = "master_data_filepath"
     _property_names[override_data_filepath] = "override_data_filepath"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Source."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ARINC424Source)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ARINC424Source)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -17060,11 +17060,11 @@ class DAFIFSource(ICatalogSource, SupportsDeleteCallback):
     _property_names[expiration_date] = "expiration_date"
     _property_names[spec_revision] = "spec_revision"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DAFIFSource."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DAFIFSource)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, DAFIFSource)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -17080,10 +17080,10 @@ agcls.AgTypeNameMap["DAFIFSource"] = DAFIFSource
 
 class BasicFixedWingForwardFlightLiftHelper(IBasicFixedWingLiftHelper, SupportsDeleteCallback):
     """Class defining the Lift Coefficient Helper for Forward Flight in the Basic Fixed Wing Aerodynamics interface for the Basic Acceleration Model of an aircraft."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicFixedWingForwardFlightLiftHelper."""
         SupportsDeleteCallback.__init__(self)
-        IBasicFixedWingLiftHelper.__init__(self, sourceObject)
+        IBasicFixedWingLiftHelper.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicFixedWingLiftHelper._private_init(self, intf)
@@ -17147,11 +17147,11 @@ class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[reference_frame] = "reference_frame"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyStraightAhead."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyStraightAhead)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyStraightAhead)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -17297,11 +17297,11 @@ class BasicManeuverStrategyCruiseProfile(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[stop_after_level_off] = "stop_after_level_off"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyCruiseProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyCruiseProfile)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyCruiseProfile)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -17521,11 +17521,11 @@ class BasicManeuverStrategyGlideProfile(IBasicManeuverStrategy, SupportsDeleteCa
     _property_names[glide_speed_control_mode] = "glide_speed_control_mode"
     _property_names[glide_speed_control_altitude] = "glide_speed_control_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyGlideProfile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyGlideProfile)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyGlideProfile)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -17577,11 +17577,11 @@ class AircraftModels(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(AircraftModels._metadata, AircraftModels._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftModels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftModels)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftModels)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -17633,11 +17633,11 @@ class MissileModels(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(MissileModels._metadata, MissileModels._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileModels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileModels)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, MissileModels)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -17689,11 +17689,11 @@ class RotorcraftModels(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(RotorcraftModels._metadata, RotorcraftModels._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RotorcraftModels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RotorcraftModels)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, RotorcraftModels)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -17920,10 +17920,10 @@ class Configuration(SupportsDeleteCallback):
     _property_names[total_capacity] = "total_capacity"
     _property_names[initial_fuel_state] = "initial_fuel_state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Configuration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Configuration)
+        initialize_from_source_object(self, source_object, Configuration)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18064,11 +18064,11 @@ class FuelTankInternal(IStation, SupportsDeleteCallback):
     _property_names[position_y] = "position_y"
     _property_names[position_z] = "position_z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FuelTankInternal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FuelTankInternal)
-        IStation.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, FuelTankInternal)
+        IStation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IStation._private_init(self, intf)
@@ -18210,10 +18210,10 @@ class FuelTankExternal(SupportsDeleteCallback):
     _property_names[consumption_order] = "consumption_order"
     _property_names[drag_index] = "drag_index"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FuelTankExternal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FuelTankExternal)
+        initialize_from_source_object(self, source_object, FuelTankExternal)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18321,11 +18321,11 @@ class PayloadStation(IStation, SupportsDeleteCallback):
     _property_names[position_y] = "position_y"
     _property_names[position_z] = "position_z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PayloadStation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PayloadStation)
-        IStation.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, PayloadStation)
+        IStation.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IStation._private_init(self, intf)
@@ -18346,7 +18346,7 @@ class StationCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _get_internal_fuel_tank_by_name_method_offset = 4
     _add_internal_fuel_tank_method_offset = 5
     _get_payload_station_by_name_method_offset = 6
@@ -18364,7 +18364,7 @@ class StationCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, StationCollection)
     def __iter__(self):
         """Create an iterator for the StationCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IStation":
@@ -18391,13 +18391,13 @@ class StationCollection(SupportsDeleteCallback):
         """Given an index, returns an element in the collection."""
         return self._intf.invoke(StationCollection._metadata, StationCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that can iterate through the collection."""
-        return self._intf.get_property(StationCollection._metadata, StationCollection._get__NewEnum_metadata)
+        return self._intf.get_property(StationCollection._metadata, StationCollection._get__new_enum_metadata)
 
     _get_internal_fuel_tank_by_name_metadata = { "offset" : _get_internal_fuel_tank_by_name_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
@@ -18460,13 +18460,13 @@ class StationCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[station_names] = "station_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type StationCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, StationCollection)
+        initialize_from_source_object(self, source_object, StationCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18586,10 +18586,10 @@ class WindModel(SupportsDeleteCallback):
     _property_names[mode_as_constant] = "mode_as_constant"
     _property_names[mode_as_adds] = "mode_as_adds"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindModel)
+        initialize_from_source_object(self, source_object, WindModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18692,10 +18692,10 @@ class WindModelConstant(SupportsDeleteCallback):
     _property_names[wind_speed] = "wind_speed"
     _property_names[wind_bearing] = "wind_bearing"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindModelConstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindModelConstant)
+        initialize_from_source_object(self, source_object, WindModelConstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18854,10 +18854,10 @@ class WindModelADDS(SupportsDeleteCallback):
     _property_names[interpolation_blend_time] = "interpolation_blend_time"
     _property_names[messages] = "messages"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindModelADDS."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindModelADDS)
+        initialize_from_source_object(self, source_object, WindModelADDS)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18934,10 +18934,10 @@ class ADDSMessage(SupportsDeleteCallback):
     _property_names[type] = "type"
     _property_names[source] = "source"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ADDSMessage."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ADDSMessage)
+        initialize_from_source_object(self, source_object, ADDSMessage)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18957,7 +18957,7 @@ class ADDSMessageCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _remove_message_method_offset = 4
     _clear_messages_method_offset = 5
     _metadata = {
@@ -18969,7 +18969,7 @@ class ADDSMessageCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ADDSMessageCollection)
     def __iter__(self):
         """Create an iterator for the ADDSMessageCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ADDSMessage":
@@ -18996,13 +18996,13 @@ class ADDSMessageCollection(SupportsDeleteCallback):
         """Given an index, returns an element in the collection."""
         return self._intf.invoke(ADDSMessageCollection._metadata, ADDSMessageCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an enumerator that can iterate through the collection."""
-        return self._intf.get_property(ADDSMessageCollection._metadata, ADDSMessageCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ADDSMessageCollection._metadata, ADDSMessageCollection._get__new_enum_metadata)
 
     _remove_message_metadata = { "offset" : _remove_message_method_offset,
             "arg_types" : (agcom.PVOID,),
@@ -19022,12 +19022,12 @@ class ADDSMessageCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ADDSMessageCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ADDSMessageCollection)
+        initialize_from_source_object(self, source_object, ADDSMessageCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19042,11 +19042,11 @@ agcls.AgTypeNameMap["ADDSMessageCollection"] = ADDSMessageCollection
 
 class Procedure(IProcedure, IConnect, SupportsDeleteCallback):
     """Class defining an unknown procedure type."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Procedure."""
         SupportsDeleteCallback.__init__(self)
-        IProcedure.__init__(self, sourceObject)
-        IConnect.__init__(self, sourceObject)
+        IProcedure.__init__(self, source_object)
+        IConnect.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -19139,10 +19139,10 @@ class AtmosphereModel(SupportsDeleteCallback):
     _property_names[atmosphere_model_source] = "atmosphere_model_source"
     _property_names[mode_as_basic] = "mode_as_basic"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AtmosphereModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AtmosphereModel)
+        initialize_from_source_object(self, source_object, AtmosphereModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19274,10 +19274,10 @@ class AtmosphereModelBasic(SupportsDeleteCallback):
     _property_names[pressure] = "pressure"
     _property_names[density_altitude] = "density_altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AtmosphereModelBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AtmosphereModelBasic)
+        initialize_from_source_object(self, source_object, AtmosphereModelBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19379,11 +19379,11 @@ class BasicManeuverStrategySimpleTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[turn_radius_factor] = "turn_radius_factor"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategySimpleTurn."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategySimpleTurn)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategySimpleTurn)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -19554,11 +19554,11 @@ class BasicManeuverStrategyAileronRoll(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[override_roll_rate] = "override_roll_rate"
     _property_names[airspeed_options] = "airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyAileronRoll."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyAileronRoll)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyAileronRoll)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -19748,11 +19748,11 @@ class BasicManeuverStrategyFlyAOA(IBasicManeuverStrategy, SupportsDeleteCallback
     _property_names[aoa] = "aoa"
     _property_names[airspeed_options] = "airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyFlyAOA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyFlyAOA)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyFlyAOA)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -19866,11 +19866,11 @@ class BasicManeuverStrategyPull(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[override_pull_g] = "override_pull_g"
     _property_names[airspeed_options] = "airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyPull."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyPull)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyPull)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -20060,11 +20060,11 @@ class BasicManeuverStrategyRollingPull(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[override_pull_g] = "override_pull_g"
     _property_names[airspeed_options] = "airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRollingPull."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRollingPull)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRollingPull)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -20368,11 +20368,11 @@ class BasicManeuverStrategySmoothAcceleration(IBasicManeuverStrategy, SupportsDe
     _property_names[stop_on_pitch_angle] = "stop_on_pitch_angle"
     _property_names[airspeed_options] = "airspeed_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategySmoothAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategySmoothAcceleration)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategySmoothAcceleration)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -20581,11 +20581,11 @@ class BasicManeuverStrategySmoothTurn(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[airspeed_options] = "airspeed_options"
     _property_names[flight_path_angle_mode] = "flight_path_angle_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategySmoothTurn."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategySmoothTurn)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategySmoothTurn)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -20946,10 +20946,10 @@ class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
     _property_names[interpolate_stop_at_end_time] = "interpolate_stop_at_end_time"
     _property_names[thrust] = "thrust"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverAirspeedOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverAirspeedOptions)
+        initialize_from_source_object(self, source_object, BasicManeuverAirspeedOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21146,10 +21146,10 @@ class PropulsionThrust(SupportsDeleteCallback):
     _property_names[max_airspeed_type] = "max_airspeed_type"
     _property_names[max_airspeed] = "max_airspeed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PropulsionThrust."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PropulsionThrust)
+        initialize_from_source_object(self, source_object, PropulsionThrust)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -21318,11 +21318,11 @@ class BasicManeuverStrategyAutopilotNavigation(IBasicManeuverStrategy, SupportsD
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[stop_when_conditions_met] = "stop_when_conditions_met"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyAutopilotNavigation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyAutopilotNavigation)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyAutopilotNavigation)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -21625,11 +21625,11 @@ class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteC
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[stop_when_conditions_met] = "stop_when_conditions_met"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyAutopilotProf."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyAutopilotProf)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyAutopilotProf)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -21809,11 +21809,11 @@ class BasicManeuverStrategyBarrelRoll(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[top_airspeed] = "top_airspeed"
     _property_names[bottom_airspeed] = "bottom_airspeed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyBarrelRoll."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyBarrelRoll)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyBarrelRoll)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -21974,11 +21974,11 @@ class BasicManeuverStrategyLoop(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[top_airspeed] = "top_airspeed"
     _property_names[bottom_airspeed] = "bottom_airspeed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyLoop."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyLoop)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyLoop)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -22234,11 +22234,11 @@ class BasicManeuverStrategyLTAHover(IBasicManeuverStrategy, SupportsDeleteCallba
     _property_names[parachute_area] = "parachute_area"
     _property_names[parachute_cd] = "parachute_cd"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyLTAHover."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyLTAHover)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyLTAHover)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -22587,11 +22587,11 @@ class BasicManeuverStrategyIntercept(IBasicManeuverStrategy, SupportsDeleteCallb
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyIntercept."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyIntercept)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyIntercept)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -22789,11 +22789,11 @@ class BasicManeuverStrategyRelativeBearing(IBasicManeuverStrategy, SupportsDelet
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeBearing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeBearing)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRelativeBearing)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -23143,11 +23143,11 @@ class BasicManeuverStrategyRelativeCourse(IBasicManeuverStrategy, SupportsDelete
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeCourse."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeCourse)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRelativeCourse)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -23544,11 +23544,11 @@ class BasicManeuverStrategyRendezvous(IBasicManeuverStrategy, SupportsDeleteCall
     _property_names[stop_condition] = "stop_condition"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRendezvous."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRendezvous)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRendezvous)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -23936,11 +23936,11 @@ class BasicManeuverStrategyStationkeeping(IBasicManeuverStrategy, SupportsDelete
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyStationkeeping."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyStationkeeping)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyStationkeeping)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -24193,11 +24193,11 @@ class BasicManeuverStrategyRelativeFlightPathAngle(IBasicManeuverStrategy, Suppo
     _property_names[use_max_altitude_relative_anchor] = "use_max_altitude_relative_anchor"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeFlightPathAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeFlightPathAngle)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRelativeFlightPathAngle)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -24583,11 +24583,11 @@ class BasicManeuverStrategyRelativeSpeedAltitude(IBasicManeuverStrategy, Support
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
     _property_names[position_vel_strategies] = "position_vel_strategies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyRelativeSpeedAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyRelativeSpeedAltitude)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyRelativeSpeedAltitude)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -24822,11 +24822,11 @@ class BasicManeuverStrategyBezier(IBasicManeuverStrategy, SupportsDeleteCallback
     _property_names[stop_airspeed_type] = "stop_airspeed_type"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyBezier."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyBezier)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyBezier)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -25109,11 +25109,11 @@ class BasicManeuverStrategyPushPull(IBasicManeuverStrategy, SupportsDeleteCallba
     _property_names[stop_airspeed_type] = "stop_airspeed_type"
     _property_names[compensate_for_coriolis_acceleration] = "compensate_for_coriolis_acceleration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyPushPull."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyPushPull)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyPushPull)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -25397,11 +25397,11 @@ class ProcedureHoldingCircular(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
     _property_names[enroute_turn_direction_options] = "enroute_turn_direction_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureHoldingCircular."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureHoldingCircular)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureHoldingCircular)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -25685,11 +25685,11 @@ class ProcedureHoldingFigure8(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
     _property_names[enroute_turn_direction_options] = "enroute_turn_direction_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureHoldingFigure8."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureHoldingFigure8)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureHoldingFigure8)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -25973,11 +25973,11 @@ class ProcedureHoldingRacetrack(IProcedure, SupportsDeleteCallback):
     _property_names[enroute_cruise_airspeed_options] = "enroute_cruise_airspeed_options"
     _property_names[enroute_turn_direction_options] = "enroute_turn_direction_options"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureHoldingRacetrack."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureHoldingRacetrack)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureHoldingRacetrack)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -26146,11 +26146,11 @@ class ProcedureTransitionToHover(IProcedure, SupportsDeleteCallback):
     _property_names[vertical_plane_options] = "vertical_plane_options"
     _property_names[smooth_transition_mode] = "smooth_transition_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureTransitionToHover."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureTransitionToHover)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureTransitionToHover)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -26263,11 +26263,11 @@ class ProcedureTerrainFollow(IProcedure, SupportsDeleteCallback):
     _property_names[reduce_turn_radii] = "reduce_turn_radii"
     _property_names[turn_factor] = "turn_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureTerrainFollow."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureTerrainFollow)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureTerrainFollow)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -26586,11 +26586,11 @@ class ProcedureHover(IProcedure, SupportsDeleteCallback):
     _property_names[smooth_translation_mode] = "smooth_translation_mode"
     _property_names[radius_factor] = "radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureHover."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureHover)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureHover)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -26795,11 +26795,11 @@ class ProcedureHoverTranslate(IProcedure, SupportsDeleteCallback):
     _property_names[smooth_translation_mode] = "smooth_translation_mode"
     _property_names[radius_factor] = "radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureHoverTranslate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureHoverTranslate)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureHoverTranslate)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -26918,11 +26918,11 @@ class ProcedureTransitionToForwardFlight(IProcedure, SupportsDeleteCallback):
     _property_names[relative_course] = "relative_course"
     _property_names[flight_path_angle] = "flight_path_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureTransitionToForwardFlight."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureTransitionToForwardFlight)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureTransitionToForwardFlight)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -27007,10 +27007,10 @@ class HoverAltitudeOptions(SupportsDeleteCallback):
     _property_names[altitude] = "altitude"
     _property_names[final_altitude_rate] = "final_altitude_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type HoverAltitudeOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, HoverAltitudeOptions)
+        initialize_from_source_object(self, source_object, HoverAltitudeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27168,11 +27168,11 @@ class ProcedureVerticalTakeoff(IProcedure, SupportsDeleteCallback):
     _property_names[heading_into_wind] = "heading_into_wind"
     _property_names[hold_on_deck] = "hold_on_deck"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureVerticalTakeoff."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureVerticalTakeoff)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureVerticalTakeoff)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -27331,11 +27331,11 @@ class ProcedureVerticalLanding(IProcedure, SupportsDeleteCallback):
     _property_names[use_magnetic_heading] = "use_magnetic_heading"
     _property_names[radius_factor] = "radius_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureVerticalLanding."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureVerticalLanding)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureVerticalLanding)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -27563,11 +27563,11 @@ class ProcedureReferenceState(IProcedure, SupportsDeleteCallback):
     _property_names[mode_as_hover] = "mode_as_hover"
     _property_names[mode_as_weight_on_wheels] = "mode_as_weight_on_wheels"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureReferenceState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureReferenceState)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureReferenceState)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -27619,11 +27619,11 @@ class ProcedureSuperProcedure(IProcedure, SupportsDeleteCallback):
         return self._intf.invoke(ProcedureSuperProcedure._metadata, ProcedureSuperProcedure._load_procedures_from_file_metadata, filepath)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureSuperProcedure."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureSuperProcedure)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureSuperProcedure)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -27858,11 +27858,11 @@ class ProcedureLaunch(IProcedure, SupportsDeleteCallback):
     _property_names[override_fuel_flow] = "override_fuel_flow"
     _property_names[true_course_hint] = "true_course_hint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureLaunch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureLaunch)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureLaunch)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -28055,11 +28055,11 @@ class ProcedureAirway(IProcedure, SupportsDeleteCallback):
     _property_names[entry_id] = "entry_id"
     _property_names[exit_id] = "exit_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureAirway."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureAirway)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureAirway)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -28262,11 +28262,11 @@ class ProcedureAirwayRouter(IProcedure, SupportsDeleteCallback):
     _property_names[entry_exit_and_or] = "entry_exit_and_or"
     _property_names[max_waypoint_count] = "max_waypoint_count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureAirwayRouter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureAirwayRouter)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureAirwayRouter)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -28492,11 +28492,11 @@ class ProcedureAreaTargetSearch(IProcedure, SupportsDeleteCallback):
     _property_names[must_level_off] = "must_level_off"
     _property_names[level_off_mode] = "level_off_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureAreaTargetSearch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureAreaTargetSearch)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureAreaTargetSearch)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -28882,11 +28882,11 @@ class ProcedureFormationRecover(IProcedure, SupportsDeleteCallback):
     _property_names[use_delay] = "use_delay"
     _property_names[delay_turn_direction] = "delay_turn_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureFormationRecover."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureFormationRecover)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureFormationRecover)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -29093,11 +29093,11 @@ class ProcedureInFormation(IProcedure, SupportsDeleteCallback):
     _property_names[override_fuel_flow_value] = "override_fuel_flow_value"
     _property_names[consider_acceleration_for_fuel_flow] = "consider_acceleration_for_fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureInFormation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureInFormation)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureInFormation)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -29306,11 +29306,11 @@ class ProcedureParallelFlightLine(IProcedure, SupportsDeleteCallback):
     _property_names[must_level_off] = "must_level_off"
     _property_names[level_off_mode] = "level_off_mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureParallelFlightLine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureParallelFlightLine)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureParallelFlightLine)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -29556,11 +29556,11 @@ class ProcedureVGTPoint(IProcedure, SupportsDeleteCallback):
     _property_names[flight_mode] = "flight_mode"
     _property_names[display_step_time] = "display_step_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureVGTPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureVGTPoint)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureVGTPoint)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -29658,10 +29658,10 @@ class PerformanceModelOptions(SupportsDeleteCallback):
     _property_names[is_linked_to_catalog] = "is_linked_to_catalog"
     _property_names[properties] = "properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PerformanceModelOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PerformanceModelOptions)
+        initialize_from_source_object(self, source_object, PerformanceModelOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30082,10 +30082,10 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _property_names[powerplant_mode_as_basic_turbojet] = "powerplant_mode_as_basic_turbojet"
     _property_names[powerplant_mode_as_sub_super_hypersonic] = "powerplant_mode_as_sub_super_hypersonic"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTool."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTool)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTool)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30140,10 +30140,10 @@ class AdvancedFixedWingExternalAerodynamic(SupportsDeleteCallback):
     _property_names[filepath] = "filepath"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalAerodynamic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30285,10 +30285,10 @@ class AdvancedFixedWingSubsonicAerodynamic(SupportsDeleteCallback):
     _property_names[mach_divergence] = "mach_divergence"
     _property_names[transonic_mach_drag_factor] = "transonic_mach_drag_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingSubsonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubsonicAerodynamic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingSubsonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30467,10 +30467,10 @@ class AdvancedFixedWingSubSuperHypersonicAerodynamic(SupportsDeleteCallback):
     _property_names[transonic_mach_drag_factor] = "transonic_mach_drag_factor"
     _property_names[wave_drag_factor] = "wave_drag_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingSubSuperHypersonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicAerodynamic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingSubSuperHypersonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30688,10 +30688,10 @@ class AdvancedFixedWingSupersonicAerodynamic(SupportsDeleteCallback):
     _property_names[supersonic_mach_drag_factor] = "supersonic_mach_drag_factor"
     _property_names[leading_edge_suction_efficiency] = "leading_edge_suction_efficiency"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingSupersonicAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSupersonicAerodynamic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingSupersonicAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -30706,11 +30706,11 @@ agcls.AgTypeNameMap["AdvancedFixedWingSupersonicAerodynamic"] = AdvancedFixedWin
 
 class PerformanceModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
     """Class defining an unknown performance model."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PerformanceModel."""
         SupportsDeleteCallback.__init__(self)
-        IPerformanceModel.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IPerformanceModel.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IPerformanceModel._private_init(self, intf)
@@ -30776,11 +30776,11 @@ class AdvancedFixedWingGeometryBasic(IAdvancedFixedWingGeometry, SupportsDeleteC
     _property_names[aspect_ratio] = "aspect_ratio"
     _property_names[wing_sweep] = "wing_sweep"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingGeometryBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingGeometryBasic)
-        IAdvancedFixedWingGeometry.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingGeometryBasic)
+        IAdvancedFixedWingGeometry.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAdvancedFixedWingGeometry._private_init(self, intf)
@@ -30902,11 +30902,11 @@ class AdvancedFixedWingGeometryVariable(IAdvancedFixedWingGeometry, SupportsDele
     _property_names[min_sweep_angle] = "min_sweep_angle"
     _property_names[max_sweep_angle] = "max_sweep_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingGeometryVariable."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingGeometryVariable)
-        IAdvancedFixedWingGeometry.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingGeometryVariable)
+        IAdvancedFixedWingGeometry.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAdvancedFixedWingGeometry._private_init(self, intf)
@@ -30991,10 +30991,10 @@ class AdvancedFixedWingElectricPowerplant(SupportsDeleteCallback):
     _property_names[propeller_count] = "propeller_count"
     _property_names[propeller_diameter] = "propeller_diameter"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingElectricPowerplant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingElectricPowerplant)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingElectricPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31049,10 +31049,10 @@ class AdvancedFixedWingExternalPropulsion(SupportsDeleteCallback):
     _property_names[filepath] = "filepath"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingExternalPropulsion)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31320,10 +31320,10 @@ class AdvancedFixedWingSubSuperHypersonicPropulsion(SupportsDeleteCallback):
     _property_names[max_ram_scram_compression_temperature] = "max_ram_scram_compression_temperature"
     _property_names[max_ram_scram_burner_total_temperature] = "max_ram_scram_burner_total_temperature"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingSubSuperHypersonicPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingSubSuperHypersonicPropulsion)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingSubSuperHypersonicPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31445,10 +31445,10 @@ class AdvancedFixedWingPistonPowerplant(SupportsDeleteCallback):
     _property_names[propeller_diameter] = "propeller_diameter"
     _property_names[fuel_flow] = "fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingPistonPowerplant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingPistonPowerplant)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingPistonPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31551,10 +31551,10 @@ class AdvancedFixedWingEmpiricalJetEngine(SupportsDeleteCallback):
     _property_names[design_point_mach_number] = "design_point_mach_number"
     _property_names[fuel_flow] = "fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingEmpiricalJetEngine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingEmpiricalJetEngine)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingEmpiricalJetEngine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31581,10 +31581,10 @@ class AdvancedFixedWingTurbofanBasicABPowerplant(SupportsDeleteCallback):
         return get_interface_property(attrname, AdvancedFixedWingTurbofanBasicABPowerplant)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTurbofanBasicABPowerplant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbofanBasicABPowerplant)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTurbofanBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31611,10 +31611,10 @@ class AdvancedFixedWingTurbojetBasicABPowerplant(SupportsDeleteCallback):
         return get_interface_property(attrname, AdvancedFixedWingTurbojetBasicABPowerplant)
     
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTurbojetBasicABPowerplant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbojetBasicABPowerplant)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTurbojetBasicABPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -31899,10 +31899,10 @@ class AdvancedFixedWingTurbofanBasicABPropulsion(SupportsDeleteCallback):
     _property_names[fuel_mode_as_afprop] = "fuel_mode_as_afprop"
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTurbofanBasicABPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbofanBasicABPropulsion)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTurbofanBasicABPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32168,10 +32168,10 @@ class AdvancedFixedWingTurbojetBasicABPropulsion(SupportsDeleteCallback):
     _property_names[fuel_mode_as_afprop] = "fuel_mode_as_afprop"
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTurbojetBasicABPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbojetBasicABPropulsion)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTurbojetBasicABPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32274,10 +32274,10 @@ class AdvancedFixedWingTurbopropPowerplant(SupportsDeleteCallback):
     _property_names[propeller_diameter] = "propeller_diameter"
     _property_names[fuel_flow] = "fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTurbopropPowerplant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingTurbopropPowerplant)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingTurbopropPowerplant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32389,10 +32389,10 @@ class MissileSimpleAerodynamic(SupportsDeleteCallback):
     _property_names[calculate_aoa] = "calculate_aoa"
     _property_names[max_aoa] = "max_aoa"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileSimpleAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileSimpleAerodynamic)
+        initialize_from_source_object(self, source_object, MissileSimpleAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32484,10 +32484,10 @@ class MissileExternalAerodynamic(SupportsDeleteCallback):
     _property_names[can_set_reference_area] = "can_set_reference_area"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileExternalAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileExternalAerodynamic)
+        initialize_from_source_object(self, source_object, MissileExternalAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -32970,10 +32970,10 @@ class MissileAdvancedAerodynamic(SupportsDeleteCallback):
     _property_names[tail_max_thickness_along_mac] = "tail_max_thickness_along_mac"
     _property_names[tail_lift_fraction] = "tail_lift_fraction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileAdvancedAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileAdvancedAerodynamic)
+        initialize_from_source_object(self, source_object, MissileAdvancedAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33049,10 +33049,10 @@ class MissileAerodynamic(SupportsDeleteCallback):
     _property_names[mode_as_external] = "mode_as_external"
     _property_names[mode_as_advanced] = "mode_as_advanced"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileAerodynamic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileAerodynamic)
+        initialize_from_source_object(self, source_object, MissileAerodynamic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33148,10 +33148,10 @@ class MissilePropulsion(SupportsDeleteCallback):
     _property_names[mode_as_turbojet] = "mode_as_turbojet"
     _property_names[mode_as_rocket] = "mode_as_rocket"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissilePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissilePropulsion)
+        initialize_from_source_object(self, source_object, MissilePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33235,10 +33235,10 @@ class MissileSimplePropulsion(SupportsDeleteCallback):
     _property_names[fuel_flow] = "fuel_flow"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileSimplePropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileSimplePropulsion)
+        initialize_from_source_object(self, source_object, MissileSimplePropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33320,10 +33320,10 @@ class MissileExternalPropulsion(SupportsDeleteCallback):
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
     _property_names[is_valid] = "is_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileExternalPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileExternalPropulsion)
+        initialize_from_source_object(self, source_object, MissileExternalPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33559,10 +33559,10 @@ class MissileRamjetPropulsion(SupportsDeleteCallback):
     _property_names[burner_efficiency] = "burner_efficiency"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileRamjetPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileRamjetPropulsion)
+        initialize_from_source_object(self, source_object, MissileRamjetPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -33760,10 +33760,10 @@ class MissileRocketPropulsion(SupportsDeleteCallback):
     _property_names[boost_chamber_pressure] = "boost_chamber_pressure"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileRocketPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileRocketPropulsion)
+        initialize_from_source_object(self, source_object, MissileRocketPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -34075,10 +34075,10 @@ class MissileTurbojetPropulsion(SupportsDeleteCallback):
     _property_names[mechanical_efficiency] = "mechanical_efficiency"
     _property_names[no_thrust_when_no_fuel] = "no_thrust_when_no_fuel"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MissileTurbojetPropulsion."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MissileTurbojetPropulsion)
+        initialize_from_source_object(self, source_object, MissileTurbojetPropulsion)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -34418,10 +34418,10 @@ class ReferenceStateForwardFlightOptions(SupportsDeleteCallback):
     _property_names[push_pull_g] = "push_pull_g"
     _property_names[attitude_rate_type] = "attitude_rate_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ReferenceStateForwardFlightOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ReferenceStateForwardFlightOptions)
+        initialize_from_source_object(self, source_object, ReferenceStateForwardFlightOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -34761,10 +34761,10 @@ class ReferenceStateTakeoffLandingOptions(SupportsDeleteCallback):
     _property_names[push_pull_g] = "push_pull_g"
     _property_names[attitude_rate_type] = "attitude_rate_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ReferenceStateTakeoffLandingOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ReferenceStateTakeoffLandingOptions)
+        initialize_from_source_object(self, source_object, ReferenceStateTakeoffLandingOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35057,10 +35057,10 @@ class ReferenceStateHoverOptions(SupportsDeleteCallback):
     _property_names[push_pull_g] = "push_pull_g"
     _property_names[attitude_rate_type] = "attitude_rate_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ReferenceStateHoverOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ReferenceStateHoverOptions)
+        initialize_from_source_object(self, source_object, ReferenceStateHoverOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35220,10 +35220,10 @@ class ReferenceStateWeightOnWheelsOptions(SupportsDeleteCallback):
     _property_names[course_dot] = "course_dot"
     _property_names[lateral_acceleration_type] = "lateral_acceleration_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ReferenceStateWeightOnWheelsOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ReferenceStateWeightOnWheelsOptions)
+        initialize_from_source_object(self, source_object, ReferenceStateWeightOnWheelsOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35274,11 +35274,11 @@ class SiteRunwayFromCatalog(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteRunwayFromCatalog._metadata, SiteRunwayFromCatalog._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteRunwayFromCatalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteRunwayFromCatalog)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteRunwayFromCatalog)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -35330,11 +35330,11 @@ class SiteAirportFromCatalog(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteAirportFromCatalog._metadata, SiteAirportFromCatalog._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteAirportFromCatalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteAirportFromCatalog)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteAirportFromCatalog)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -35386,11 +35386,11 @@ class SiteNavaidFromCatalog(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteNavaidFromCatalog._metadata, SiteNavaidFromCatalog._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteNavaidFromCatalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteNavaidFromCatalog)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteNavaidFromCatalog)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -35442,11 +35442,11 @@ class SiteVTOLPointFromCatalog(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteVTOLPointFromCatalog._metadata, SiteVTOLPointFromCatalog._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteVTOLPointFromCatalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteVTOLPointFromCatalog)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteVTOLPointFromCatalog)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -35498,11 +35498,11 @@ class SiteWaypointFromCatalog(ISite, SupportsDeleteCallback):
         return self._intf.invoke(SiteWaypointFromCatalog._metadata, SiteWaypointFromCatalog._get_as_site_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteWaypointFromCatalog."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteWaypointFromCatalog)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteWaypointFromCatalog)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -35540,10 +35540,10 @@ class NavaidCategory(SupportsDeleteCallback):
 
     _property_names[arinc424_navaids] = "arinc424_navaids"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type NavaidCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, NavaidCategory)
+        initialize_from_source_object(self, source_object, NavaidCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35600,10 +35600,10 @@ class VTOLPointCategory(SupportsDeleteCallback):
     _property_names[arinc424_helipads] = "arinc424_helipads"
     _property_names[dafif_helipads] = "dafif_helipads"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VTOLPointCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VTOLPointCategory)
+        initialize_from_source_object(self, source_object, VTOLPointCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35740,10 +35740,10 @@ class WaypointCategory(SupportsDeleteCallback):
     _property_names[dafif_runways] = "dafif_runways"
     _property_names[dafif_waypoints] = "dafif_waypoints"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WaypointCategory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WaypointCategory)
+        initialize_from_source_object(self, source_object, WaypointCategory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -35758,13 +35758,13 @@ agcls.AgTypeNameMap["WaypointCategory"] = WaypointCategory
 
 class ARINC424Navaid(IARINC424Item, ICatalogNavaid, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an ARINC424 Navaid."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Navaid."""
         SupportsDeleteCallback.__init__(self)
-        IARINC424Item.__init__(self, sourceObject)
-        ICatalogNavaid.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IARINC424Item.__init__(self, source_object)
+        ICatalogNavaid.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IARINC424Item._private_init(self, intf)
@@ -35783,13 +35783,13 @@ agcls.AgTypeNameMap["ARINC424Navaid"] = ARINC424Navaid
 
 class ARINC424Helipad(IARINC424Item, ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an ARINC424 Helipad."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Helipad."""
         SupportsDeleteCallback.__init__(self)
-        IARINC424Item.__init__(self, sourceObject)
-        ICatalogVTOLPoint.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IARINC424Item.__init__(self, source_object)
+        ICatalogVTOLPoint.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IARINC424Item._private_init(self, intf)
@@ -35808,12 +35808,12 @@ agcls.AgTypeNameMap["ARINC424Helipad"] = ARINC424Helipad
 
 class ARINC424Waypoint(IARINC424Item, ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     """Class defining an ARINC424 Waypoint."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ARINC424Waypoint."""
         SupportsDeleteCallback.__init__(self)
-        IARINC424Item.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        IARINC424Item.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IARINC424Item._private_init(self, intf)
@@ -35867,11 +35867,11 @@ class UserVTOLPointSource(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(UserVTOLPointSource._metadata, UserVTOLPointSource._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVTOLPointSource."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVTOLPointSource)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserVTOLPointSource)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -35988,13 +35988,13 @@ class UserVTOLPoint(ICatalogVTOLPoint, ICatalogWaypoint, ICatalogItem, SupportsD
     _property_names[latitude] = "latitude"
     _property_names[longitude] = "longitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserVTOLPoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserVTOLPoint)
-        ICatalogVTOLPoint.__init__(self, sourceObject)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserVTOLPoint)
+        ICatalogVTOLPoint.__init__(self, source_object)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogVTOLPoint._private_init(self, intf)
@@ -36048,11 +36048,11 @@ class UserWaypointSource(ICatalogSource, SupportsDeleteCallback):
         return self._intf.invoke(UserWaypointSource._metadata, UserWaypointSource._get_as_catalog_source_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserWaypointSource."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserWaypointSource)
-        ICatalogSource.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserWaypointSource)
+        ICatalogSource.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogSource._private_init(self, intf)
@@ -36142,12 +36142,12 @@ class UserWaypoint(ICatalogWaypoint, ICatalogItem, SupportsDeleteCallback):
     _property_names[latitude] = "latitude"
     _property_names[longitude] = "longitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UserWaypoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UserWaypoint)
-        ICatalogWaypoint.__init__(self, sourceObject)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UserWaypoint)
+        ICatalogWaypoint.__init__(self, source_object)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogWaypoint._private_init(self, intf)
@@ -36252,10 +36252,10 @@ class PropulsionEfficiencies(SupportsDeleteCallback):
     _property_names[turbine_type] = "turbine_type"
     _property_names[exhaust_nozzle_type] = "exhaust_nozzle_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PropulsionEfficiencies."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PropulsionEfficiencies)
+        initialize_from_source_object(self, source_object, PropulsionEfficiencies)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -36320,10 +36320,10 @@ class FuelModelKeroseneAFPROP(SupportsDeleteCallback):
     _property_names[subtype] = "subtype"
     _property_names[specific_energy] = "specific_energy"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FuelModelKeroseneAFPROP."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FuelModelKeroseneAFPROP)
+        initialize_from_source_object(self, source_object, FuelModelKeroseneAFPROP)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -36388,10 +36388,10 @@ class FuelModelKeroseneCEA(SupportsDeleteCallback):
     _property_names[subtype] = "subtype"
     _property_names[specific_energy] = "specific_energy"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type FuelModelKeroseneCEA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, FuelModelKeroseneCEA)
+        initialize_from_source_object(self, source_object, FuelModelKeroseneCEA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -36562,10 +36562,10 @@ class AdvancedFixedWingRamjetBasic(SupportsDeleteCallback):
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
     _property_names[efficiencies_and_losses] = "efficiencies_and_losses"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingRamjetBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingRamjetBasic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingRamjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -36736,10 +36736,10 @@ class AdvancedFixedWingScramjetBasic(SupportsDeleteCallback):
     _property_names[fuel_mode_as_cea] = "fuel_mode_as_cea"
     _property_names[efficiencies_and_losses] = "efficiencies_and_losses"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingScramjetBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AdvancedFixedWingScramjetBasic)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingScramjetBasic)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -37003,10 +37003,10 @@ class AircraftVTOLModel(SupportsDeleteCallback):
     _property_names[forward_flight_airspeed_type] = "forward_flight_airspeed_type"
     _property_names[forward_flight_transition_time] = "forward_flight_transition_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftVTOLModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftVTOLModel)
+        initialize_from_source_object(self, source_object, AircraftVTOLModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -37049,11 +37049,11 @@ class AircraftVTOL(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftVTOL._metadata, AircraftVTOL._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftVTOL."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftVTOL)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftVTOL)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -37376,10 +37376,10 @@ class AircraftTerrainFollowModel(SupportsDeleteCallback):
     _property_names[terrain_window] = "terrain_window"
     _property_names[max_load_factor] = "max_load_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftTerrainFollowModel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftTerrainFollowModel)
+        initialize_from_source_object(self, source_object, AircraftTerrainFollowModel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -37422,11 +37422,11 @@ class AircraftTerrainFollow(ICatalogItem, SupportsDeleteCallback):
         return self._intf.invoke(AircraftTerrainFollow._metadata, AircraftTerrainFollow._get_as_catalog_item_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AircraftTerrainFollow."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AircraftTerrainFollow)
-        ICatalogItem.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AircraftTerrainFollow)
+        ICatalogItem.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICatalogItem._private_init(self, intf)
@@ -37540,11 +37540,11 @@ class BasicManeuverStrategyBallistic3D(IBasicManeuverStrategy, SupportsDeleteCal
     _property_names[parachute_cd] = "parachute_cd"
     _property_names[wind_force_effective_area] = "wind_force_effective_area"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyBallistic3D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyBallistic3D)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyBallistic3D)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -37817,11 +37817,11 @@ class ProcedureLaunchDynamicState(IProcedure, SupportsDeleteCallback):
     _property_names[override_fuel_flow] = "override_fuel_flow"
     _property_names[true_course_hint] = "true_course_hint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureLaunchDynamicState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureLaunchDynamicState)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureLaunchDynamicState)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -38037,11 +38037,11 @@ class ProcedureLaunchWaypoint(IProcedure, SupportsDeleteCallback):
     _property_names[fuel_flow_type] = "fuel_flow_type"
     _property_names[override_fuel_flow] = "override_fuel_flow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureLaunchWaypoint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureLaunchWaypoint)
-        IProcedure.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, ProcedureLaunchWaypoint)
+        IProcedure.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IProcedure._private_init(self, intf)
@@ -38106,11 +38106,11 @@ class SiteDynamicState(ISite, SupportsDeleteCallback):
     _property_names[object_name] = "object_name"
     _property_names[valid_object_names] = "valid_object_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SiteDynamicState."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SiteDynamicState)
-        ISite.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SiteDynamicState)
+        ISite.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISite._private_init(self, intf)
@@ -38243,11 +38243,11 @@ class BasicManeuverStrategyPitch3D(IBasicManeuverStrategy, SupportsDeleteCallbac
     _property_names[airspeed_options] = "airspeed_options"
     _property_names[wind_force_effective_area] = "wind_force_effective_area"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverStrategyPitch3D."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverStrategyPitch3D)
-        IBasicManeuverStrategy.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, BasicManeuverStrategyPitch3D)
+        IBasicManeuverStrategy.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IBasicManeuverStrategy._private_init(self, intf)
@@ -38370,10 +38370,10 @@ class RefuelDumpProperties(SupportsDeleteCallback):
     _property_names[can_use_end_of_enroute_segment_as_epoch] = "can_use_end_of_enroute_segment_as_epoch"
     _property_names[use_end_of_enroute_segment_as_epoch] = "use_end_of_enroute_segment_as_epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RefuelDumpProperties."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RefuelDumpProperties)
+        initialize_from_source_object(self, source_object, RefuelDumpProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38444,10 +38444,10 @@ class ProcedureFastTimeOptions(SupportsDeleteCallback):
     _property_names[start_time] = "start_time"
     _property_names[stop_time] = "stop_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ProcedureFastTimeOptions."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ProcedureFastTimeOptions)
+        initialize_from_source_object(self, source_object, ProcedureFastTimeOptions)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38548,10 +38548,10 @@ class BasicManeuverTargetPositionVel(SupportsDeleteCallback):
     _property_names[mode_as_noisy_bearing_range] = "mode_as_noisy_bearing_range"
     _property_names[mode_as_noisy_surf_target] = "mode_as_noisy_surf_target"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverTargetPositionVel."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVel)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVel)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38682,10 +38682,10 @@ class BasicManeuverTargetPositionVelNoisyBearingRange(SupportsDeleteCallback):
     _property_names[angle_error_std_dev] = "angle_error_std_dev"
     _property_names[range_error_std_dev] = "range_error_std_dev"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverTargetPositionVelNoisyBearingRange."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisyBearingRange)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelNoisyBearingRange)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -38816,10 +38816,10 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
     _property_names[course_error] = "course_error"
     _property_names[speed_error] = "speed_error"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type BasicManeuverTargetPositionVelNoisySurfTarget."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, BasicManeuverTargetPositionVelNoisySurfTarget)
+        initialize_from_source_object(self, source_object, BasicManeuverTargetPositionVelNoisySurfTarget)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

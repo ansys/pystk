@@ -37,7 +37,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.count`
               - Returns a total number of window objects in the collection.
-            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection._new_enum`
               - Enumerates the windows in the collection.
 
 
@@ -59,8 +59,8 @@ Property detail
 
     Returns a total number of window objects in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uicore.WindowsCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.uicore.WindowsCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the windows in the collection.

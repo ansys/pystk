@@ -1868,7 +1868,7 @@ class VGT(CodeSnippetsTestBase):
         zICRF: float = float(dpResult.data_sets[2].get_values()[0])
 
         # Create a vector using the ICRF coordinates
-        axesICRF: "IVectorGeometryToolAxes" = sat.analysis_workbench_components.well_known_axes.earth.ICRF
+        axesICRF: "IVectorGeometryToolAxes" = sat.analysis_workbench_components.well_known_axes.earth.icrf
         vectorICRF: "ICartesian3Vector" = TestBase.Application.conversion_utility.new_cartesian3_vector()
         vectorICRF.set(xICRF, yICRF, zICRF)
 
@@ -1909,7 +1909,7 @@ class VGT(CodeSnippetsTestBase):
         zvelICRF: float = float(dpResult.data_sets[2].get_values()[0])
 
         # Create a position vector using the ICRF coordinates
-        axesICRF: "IVectorGeometryToolAxes" = sat.analysis_workbench_components.well_known_axes.earth.ICRF
+        axesICRF: "IVectorGeometryToolAxes" = sat.analysis_workbench_components.well_known_axes.earth.icrf
         vectorICRF: "ICartesian3Vector" = TestBase.Application.conversion_utility.new_cartesian3_vector()
         vectorICRF.set(xICRF, yICRF, zICRF)
 

@@ -254,9 +254,9 @@ class IDrawElement(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDrawElement."""
-        initialize_from_source_object(self, sourceObject, IDrawElement)
+        initialize_from_source_object(self, source_object, IDrawElement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -310,9 +310,9 @@ class IDrawElementRect(IDrawElement):
         "vtable_reference" : IDrawElement._vtable_offset + IDrawElement._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDrawElementRect."""
-        initialize_from_source_object(self, sourceObject, IDrawElementRect)
+        initialize_from_source_object(self, source_object, IDrawElementRect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElement._private_init(self, intf)
@@ -428,7 +428,7 @@ class IDrawElementCollection(object):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _clear_method_offset = 4
     _add_method_offset = 5
     _remove_method_offset = 6
@@ -439,9 +439,9 @@ class IDrawElementCollection(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IDrawElementCollection."""
-        initialize_from_source_object(self, sourceObject, IDrawElementCollection)
+        initialize_from_source_object(self, source_object, IDrawElementCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -455,7 +455,7 @@ class IDrawElementCollection(object):
         set_interface_attribute(self, attrname, value, IDrawElementCollection, None)
     def __iter__(self):
         """Create an iterator for the IDrawElementCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IDrawElement":
@@ -482,13 +482,13 @@ class IDrawElementCollection(object):
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
-        return self._intf.get_property(IDrawElementCollection._metadata, IDrawElementCollection._get__NewEnum_metadata)
+        return self._intf.get_property(IDrawElementCollection._metadata, IDrawElementCollection._get__new_enum_metadata)
 
     _clear_metadata = { "offset" : _clear_method_offset,
             "arg_types" : (),
@@ -530,7 +530,7 @@ class IDrawElementCollection(object):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[visible] = "visible"
 
 
@@ -983,10 +983,10 @@ class Graphics3DControlBase(SupportsDeleteCallback):
     _property_names[progress_image_y_origin] = "progress_image_y_origin"
     _property_names[picture_from_file] = "picture_from_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Graphics3DControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Graphics3DControlBase)
+        initialize_from_source_object(self, source_object, Graphics3DControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1415,10 +1415,10 @@ class Graphics2DControlBase(SupportsDeleteCallback):
     _property_names[picture_from_file] = "picture_from_file"
     _property_names[pan_mode_enabled] = "pan_mode_enabled"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Graphics2DControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Graphics2DControlBase)
+        initialize_from_source_object(self, source_object, Graphics2DControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1505,10 +1505,10 @@ class PickInfoData(SupportsDeleteCallback):
     _property_names[is_object_path_valid] = "is_object_path_valid"
     _property_names[is_lat_lon_altitude_valid] = "is_lat_lon_altitude_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PickInfoData."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PickInfoData)
+        initialize_from_source_object(self, source_object, PickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1795,10 +1795,10 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names[show_sla_if_not_accepted] = "show_sla_if_not_accepted"
     _property_names[use_hook] = "use_hook"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXApplication."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXApplication)
+        initialize_from_source_object(self, source_object, STKXApplication)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1833,10 +1833,10 @@ class STKXApplicationPartnerAccess(SupportsDeleteCallback):
         return self._intf.invoke(STKXApplicationPartnerAccess._metadata, STKXApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXApplicationPartnerAccess."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXApplicationPartnerAccess)
+        initialize_from_source_object(self, source_object, STKXApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1873,10 +1873,10 @@ class DataObject(SupportsDeleteCallback):
 
     _property_names[files] = "files"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DataObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DataObject)
+        initialize_from_source_object(self, source_object, DataObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1894,7 +1894,7 @@ class DataObjectFiles(SupportsDeleteCallback):
 
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get__NewEnum_method_offset = 1
+    _get__new_enum_method_offset = 1
     _item_method_offset = 2
     _get_count_method_offset = 3
     _metadata = {
@@ -1906,7 +1906,7 @@ class DataObjectFiles(SupportsDeleteCallback):
         return get_interface_property(attrname, DataObjectFiles)
     def __iter__(self):
         """Create an iterator for the DataObjectFiles object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -1918,13 +1918,13 @@ class DataObjectFiles(SupportsDeleteCallback):
             raise StopIteration
         return nextval
     
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the file names in the collection."""
-        return self._intf.get_property(DataObjectFiles._metadata, DataObjectFiles._get__NewEnum_metadata)
+        return self._intf.get_property(DataObjectFiles._metadata, DataObjectFiles._get__new_enum_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
@@ -1944,13 +1944,13 @@ class DataObjectFiles(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DataObjectFiles."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DataObjectFiles)
+        initialize_from_source_object(self, source_object, DataObjectFiles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1987,10 +1987,10 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
 
     _property_names[object_paths] = "object_paths"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RubberBandPickInfoData."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RubberBandPickInfoData)
+        initialize_from_source_object(self, source_object, RubberBandPickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2010,7 +2010,7 @@ class ObjectPathCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _range_method_offset = 4
     _metadata = {
         "iid_data" : (5633526467684881384, 4210768304776055218),
@@ -2021,7 +2021,7 @@ class ObjectPathCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ObjectPathCollection)
     def __iter__(self):
         """Create an iterator for the ObjectPathCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -2048,13 +2048,13 @@ class ObjectPathCollection(SupportsDeleteCallback):
         """Get the element at the specified index (0-based)."""
         return self._intf.invoke(ObjectPathCollection._metadata, ObjectPathCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the object paths in the collection."""
-        return self._intf.get_property(ObjectPathCollection._metadata, ObjectPathCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ObjectPathCollection._metadata, ObjectPathCollection._get__new_enum_metadata)
 
     _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
@@ -2067,12 +2067,12 @@ class ObjectPathCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ObjectPathCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ObjectPathCollection)
+        initialize_from_source_object(self, source_object, ObjectPathCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2087,10 +2087,10 @@ agcls.AgTypeNameMap["ObjectPathCollection"] = ObjectPathCollection
 
 class DrawElementRect(IDrawElementRect, SupportsDeleteCallback):
     """Define a rectangle in window coordinates."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DrawElementRect."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElementRect.__init__(self, sourceObject)
+        IDrawElementRect.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElementRect._private_init(self, intf)
@@ -2106,10 +2106,10 @@ agcls.AgTypeNameMap["DrawElementRect"] = DrawElementRect
 
 class DrawElementCollection(IDrawElementCollection, SupportsDeleteCallback):
     """Collection of elements to draw on the control."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DrawElementCollection."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElementCollection.__init__(self, sourceObject)
+        IDrawElementCollection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElementCollection._private_init(self, intf)
@@ -2125,10 +2125,10 @@ agcls.AgTypeNameMap["DrawElementCollection"] = DrawElementCollection
 
 class Draw2DElemRect(IDrawElementRect, SupportsDeleteCallback):
     """Define a rectangle in window coordinates for map control."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Draw2DElemRect."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElementRect.__init__(self, sourceObject)
+        IDrawElementRect.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElementRect._private_init(self, intf)
@@ -2144,10 +2144,10 @@ agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
 
 class Draw2DElemCollection(IDrawElementCollection, SupportsDeleteCallback):
     """Collection of elements to draw on map control."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Draw2DElemCollection."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElementCollection.__init__(self, sourceObject)
+        IDrawElementCollection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IDrawElementCollection._private_init(self, intf)
@@ -2330,10 +2330,10 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     _property_names[picture_from_file] = "picture_from_file"
     _property_names[window_id] = "window_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type GraphicsAnalysisControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, GraphicsAnalysisControlBase)
+        initialize_from_source_object(self, source_object, GraphicsAnalysisControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2390,10 +2390,10 @@ class WindowProjectionPosition(SupportsDeleteCallback):
     _property_names[y_position] = "y_position"
     _property_names[is_window_projection_position_valid] = "is_window_projection_position_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowProjectionPosition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowProjectionPosition)
+        initialize_from_source_object(self, source_object, WindowProjectionPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2522,10 +2522,10 @@ class DrawElementLine(SupportsDeleteCallback):
     _property_names[line_width] = "line_width"
     _property_names[line_style] = "line_style"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DrawElementLine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DrawElementLine)
+        initialize_from_source_object(self, source_object, DrawElementLine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2667,10 +2667,10 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _property_names[pem_data] = "pem_data"
     _property_names[handled] = "handled"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXSSLCertificateErrorEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXSSLCertificateErrorEventArgs)
+        initialize_from_source_object(self, source_object, STKXSSLCertificateErrorEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2716,10 +2716,10 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
 
     _property_names[acknowledge] = "acknowledge"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXConControlQuitReceivedEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXConControlQuitReceivedEventArgs)
+        initialize_from_source_object(self, source_object, STKXConControlQuitReceivedEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

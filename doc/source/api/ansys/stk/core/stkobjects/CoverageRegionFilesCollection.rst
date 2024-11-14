@@ -37,7 +37,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageRegionFilesCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageRegionFilesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageRegionFilesCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
 
 
@@ -59,8 +59,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CoverageRegionFilesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CoverageRegionFilesCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
